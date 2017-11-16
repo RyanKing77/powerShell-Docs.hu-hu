@@ -1,0 +1,128 @@
+---
+ms.date: 2017-06-05
+keywords: PowerShell parancsmag
+title: "Windows PowerShell rendszerkövetelményei"
+ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
+ms.openlocfilehash: 33824eac4de28de97990ffa1ea2500e61e03e847
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 09/29/2017
+---
+# <a name="windows-powershell-system-requirements"></a><span data-ttu-id="845d7-103">Windows PowerShell rendszerkövetelményei</span><span class="sxs-lookup"><span data-stu-id="845d7-103">Windows PowerShell System Requirements</span></span>
+<span data-ttu-id="845d7-104">Ez a témakör a Windows PowerShell 3.0, a Windows PowerShell 4.0-s verzióját és a Windows PowerShell 5.0, valamint a speciális funkciók, például a Windows PowerShell integrált parancsfájlkezelési környezet (ISE), a CIM-parancsok és a munkafolyamatok rendszerkövetelményeit ismerteti.</span><span class="sxs-lookup"><span data-stu-id="845d7-104">This topic lists the system requirements for Windows PowerShell 3.0, Windows PowerShell 4.0 and Windows PowerShell 5.0, and for special features, such as Windows PowerShell Integrated Scripting Environment (ISE), CIM commands, and workflows.</span></span>
+
+<span data-ttu-id="845d7-105">Windows® 8.1 és Windows Server® 2012 R2 tartalmazzák az összes szükséges programokat.</span><span class="sxs-lookup"><span data-stu-id="845d7-105">Windows® 8.1 and Windows Server® 2012 R2 include all required programs.</span></span> <span data-ttu-id="845d7-106">Ez a témakör célja a felhasználók számára a Windows korábbi verzióiban.</span><span class="sxs-lookup"><span data-stu-id="845d7-106">This topic is designed for users of earlier releases of Windows.</span></span>
+
+## <a name="operating-system-requirements"></a><span data-ttu-id="845d7-107">Operációs rendszerre vonatkozó követelmények</span><span class="sxs-lookup"><span data-stu-id="845d7-107">Operating System Requirements</span></span>
+<span data-ttu-id="845d7-108">A Windows PowerShell 5.0 futtatja a következő Windows-verziókban.</span><span class="sxs-lookup"><span data-stu-id="845d7-108">Windows PowerShell 5.0 runs on the following versions of Windows.</span></span>
+
+- <span data-ttu-id="845d7-109">Windows Server 2016-os, alapértelmezés szerint telepítve</span><span class="sxs-lookup"><span data-stu-id="845d7-109">Windows Server 2016, installed by default</span></span>
+
+- <span data-ttu-id="845d7-110">Telepítse a Windows Server 2012 R2-ben [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) futtatásához a Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="845d7-110">Windows Server 2012 R2, install [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) to run Windows PowerShell 5.0</span></span>
+
+- <span data-ttu-id="845d7-111">Telepítse a Windows Server 2012-ben [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) futtatásához a Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="845d7-111">Windows Server 2012, install [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) to run Windows PowerShell 5.0</span></span>
+
+- <span data-ttu-id="845d7-112">Windows Server 2008 R2 Service Pack 1 telepítése [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) futtatásához a Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="845d7-112">Windows Server 2008 R2 with Service Pack 1, install [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) to run Windows PowerShell 5.0</span></span>
+
+- <span data-ttu-id="845d7-113">A Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="845d7-113">Windows 8.1</span></span>
+
+- <span data-ttu-id="845d7-114">Windows 7 Service Pack 1 telepítése [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) futtatásához a Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="845d7-114">Windows 7 with Service Pack 1, install [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) to run Windows PowerShell 5.0</span></span>
+
+<span data-ttu-id="845d7-115">Windows PowerShell 4.0-s verzióját futtatja, a következő Windows-verziókban.</span><span class="sxs-lookup"><span data-stu-id="845d7-115">Windows PowerShell 4.0 runs on the following versions of Windows.</span></span>
+
+- <span data-ttu-id="845d7-116">Windows 8.1, alapértelmezés szerint telepítve</span><span class="sxs-lookup"><span data-stu-id="845d7-116">Windows 8.1, installed by default</span></span>
+
+- <span data-ttu-id="845d7-117">Windows Server 2012 R2 rendszerben alapértelmezés szerint telepítve</span><span class="sxs-lookup"><span data-stu-id="845d7-117">Windows Server 2012 R2, installed by default</span></span>
+
+- <span data-ttu-id="845d7-118">Windows® 7 Service Pack 1 telepítése [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) futtatásához a Windows PowerShell 4.0</span><span class="sxs-lookup"><span data-stu-id="845d7-118">Windows® 7 with Service Pack 1, install [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) to run Windows PowerShell 4.0</span></span>
+
+- <span data-ttu-id="845d7-119">A Windows Server® 2008 R2 Service Pack 1 telepítése [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) futtatásához a Windows PowerShell 4.0</span><span class="sxs-lookup"><span data-stu-id="845d7-119">Windows Server® 2008 R2 with Service Pack 1, install [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) to run Windows PowerShell 4.0</span></span>
+
+<span data-ttu-id="845d7-120">A Windows PowerShell 3.0 fut, a következő Windows-verziókban.</span><span class="sxs-lookup"><span data-stu-id="845d7-120">Windows PowerShell 3.0 runs on the following versions of Windows.</span></span>
+
+- <span data-ttu-id="845d7-121">Windows 8, alapértelmezés szerint telepítve</span><span class="sxs-lookup"><span data-stu-id="845d7-121">Windows 8, installed by default</span></span>
+
+- <span data-ttu-id="845d7-122">Windows Server 2012 rendszerben alapértelmezés szerint telepítve</span><span class="sxs-lookup"><span data-stu-id="845d7-122">Windows Server 2012, installed by default</span></span>
+
+- <span data-ttu-id="845d7-123">Windows® 7 Service Pack 1 telepítése [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) futtatásához a Windows PowerShell 3.0</span><span class="sxs-lookup"><span data-stu-id="845d7-123">Windows® 7 with Service Pack 1, install [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) to run Windows PowerShell 3.0</span></span>
+
+- <span data-ttu-id="845d7-124">A Windows Server® 2008 R2 Service Pack 1 telepítése [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) futtatásához a Windows PowerShell 3.0</span><span class="sxs-lookup"><span data-stu-id="845d7-124">Windows Server® 2008 R2 with Service Pack 1, install [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) to run Windows PowerShell 3.0</span></span>
+
+- <span data-ttu-id="845d7-125">Telepítse a Windows Server 2008 Service Pack 2 [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) futtatásához a Windows PowerShell 3.0</span><span class="sxs-lookup"><span data-stu-id="845d7-125">Windows Server 2008 with Service Pack 2, install [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) to run Windows PowerShell 3.0</span></span>
+
+## <a name="microsoft-net-framework-requirements"></a><span data-ttu-id="845d7-126">A Microsoft .NET-keretrendszer követelményei</span><span class="sxs-lookup"><span data-stu-id="845d7-126">Microsoft .NET Framework Requirements</span></span>
+<span data-ttu-id="845d7-127">A Windows PowerShell 5.0 a Microsoft .NET-keretrendszer 4.5 teljes telepítése szükséges.</span><span class="sxs-lookup"><span data-stu-id="845d7-127">Windows PowerShell 5.0 requires the full installation of Microsoft .NET Framework 4.5.</span></span> <span data-ttu-id="845d7-128">Windows 8.1 és Windows Server 2012 R2 tartalmazza a Microsoft .NET-keretrendszer 4.5 alapértelmezés szerint.</span><span class="sxs-lookup"><span data-stu-id="845d7-128">Windows 8.1 and Windows Server 2012 R2 include Microsoft .NET Framework 4.5 by default.</span></span>
+
+<span data-ttu-id="845d7-129">A Windows PowerShell 4.0-s verzióját a Microsoft .NET-keretrendszer 4.5 teljes telepítése szükséges.</span><span class="sxs-lookup"><span data-stu-id="845d7-129">Windows PowerShell 4.0 requires the full installation of Microsoft .NET Framework 4.5.</span></span> <span data-ttu-id="845d7-130">Windows 8.1 és Windows Server 2012 R2 tartalmazza a Microsoft .NET-keretrendszer 4.5 alapértelmezés szerint.</span><span class="sxs-lookup"><span data-stu-id="845d7-130">Windows 8.1 and Windows Server 2012 R2 include Microsoft .NET Framework 4.5 by default.</span></span>
+
+<span data-ttu-id="845d7-131">A Windows PowerShell 3.0 a Microsoft .NET-keretrendszer 4 teljes telepítése szükséges.</span><span class="sxs-lookup"><span data-stu-id="845d7-131">Windows PowerShell 3.0 requires the full installation of Microsoft .NET Framework 4.</span></span> <span data-ttu-id="845d7-132">Windows 8 és Windows Server 2012 tartalmazza a Microsoft .NET-keretrendszer 4.5 alapértelmezés szerint ennek a követelménynek megfelel.</span><span class="sxs-lookup"><span data-stu-id="845d7-132">Windows 8 and Windows Server 2012 include Microsoft .NET Framework 4.5 by default, which fulfills this requirement.</span></span>
+
+<span data-ttu-id="845d7-133">A Microsoft .NET-keretrendszer 4.5 (dotNetFx45_Full_setup.exe) telepítéséhez tekintse át [Microsoft .NET-keretrendszer 4.5](http://go.microsoft.com/fwlink/?LinkID=242919) a Microsoft Download Center.</span><span class="sxs-lookup"><span data-stu-id="845d7-133">To install Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe), see [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919) on the Microsoft Download Center.</span></span>
+
+<span data-ttu-id="845d7-134">A Microsoft .NET-keretrendszer 4 (dotNetFx40_Full_setup.exe) teljes verziójának telepítéséhez tekintse át [Microsoft .NET-keretrendszer 4 (webes telepítő)](http://go.microsoft.com/fwlink/?LinkID=212931) a Microsoft Download Center.</span><span class="sxs-lookup"><span data-stu-id="845d7-134">To install the full installation of Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe), see [Microsoft .NET Framework 4 (Web Installer)](http://go.microsoft.com/fwlink/?LinkID=212931) on the Microsoft Download Center.</span></span>
+
+## <a name="windows-management-framework-40"></a><span data-ttu-id="845d7-135">A Windows Management Framework 4.0</span><span class="sxs-lookup"><span data-stu-id="845d7-135">Windows Management Framework 4.0</span></span>
+<span data-ttu-id="845d7-136">A Windows PowerShell 5.0 Windows Management Framework 4.0 a Windows Server 2008 R2 SP1 és Windows 7 SP1 előtelepítve igényel.</span><span class="sxs-lookup"><span data-stu-id="845d7-136">Windows PowerShell 5.0 requires Windows Management Framework 4.0 to be preinstalled on Windows Server 2008 R2 SP1 and Windows 7 SP1.</span></span>
+
+## <a name="ws-management-30"></a><span data-ttu-id="845d7-137">WS-Management 3.0</span><span class="sxs-lookup"><span data-stu-id="845d7-137">WS-Management 3.0</span></span>
+<span data-ttu-id="845d7-138">A Windows PowerShell 3.0 és a Windows PowerShell 4.0 szükséges a WS-Management 3.0, amely támogatja a WinRM szolgáltatás és a WSMan-protokollt.</span><span class="sxs-lookup"><span data-stu-id="845d7-138">Windows PowerShell 3.0 and Windows PowerShell 4.0 require WS-Management 3.0, which supports the WinRM service and WSMan protocol.</span></span> <span data-ttu-id="845d7-139">A program a Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0 és a Windows Management Framework 3.0 része.</span><span class="sxs-lookup"><span data-stu-id="845d7-139">This program is included in Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0, and Windows Management Framework 3.0.</span></span>
+
+## <a name="windows-management-instrumentation-30"></a><span data-ttu-id="845d7-140">A Windows Management Instrumentation 3.0</span><span class="sxs-lookup"><span data-stu-id="845d7-140">Windows Management Instrumentation 3.0</span></span>
+<span data-ttu-id="845d7-141">A Windows PowerShell 3.0 és a Windows PowerShell 4.0 szükséges Windows Management Instrumentation (3.0 WMI).</span><span class="sxs-lookup"><span data-stu-id="845d7-141">Windows PowerShell 3.0 and Windows PowerShell 4.0 require Windows Management Instrumentation 3.0 (WMI).</span></span> <span data-ttu-id="845d7-142">A program a Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0 és a Windows Management Framework 3.0 része.</span><span class="sxs-lookup"><span data-stu-id="845d7-142">This program is included in Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0, and Windows Management Framework 3.0.</span></span> <span data-ttu-id="845d7-143">Ha a program nincs telepítve a számítógépen, a CIM-parancsok, például WMI, igénylő szolgáltatások nem működnek.</span><span class="sxs-lookup"><span data-stu-id="845d7-143">If this program is not installed on the computer, features that require WMI, such as CIM commands, do not run.</span></span>
+
+## <a name="common-language-runtime-40"></a><span data-ttu-id="845d7-144">Közös nyelvi futtatókörnyezet 4.0</span><span class="sxs-lookup"><span data-stu-id="845d7-144">Common Language Runtime 4.0</span></span>
+<span data-ttu-id="845d7-145">A Windows PowerShell 3.0, a Windows PowerShell 4.0-s verzióját és a Windows PowerShell 5.0 összeállítása elleni közös nyelvi futtatókörnyezetet (CLR) 4.0-s verzióját.</span><span class="sxs-lookup"><span data-stu-id="845d7-145">Windows PowerShell 3.0, Windows PowerShell 4.0, and Windows PowerShell 5.0 are compiled against Common Language Runtime (CLR) 4.0.</span></span>
+
+## <a name="graphical-user-interface-requirements"></a><span data-ttu-id="845d7-146">Grafikus felhasználói felület követelmények</span><span class="sxs-lookup"><span data-stu-id="845d7-146">Graphical User Interface Requirements</span></span>
+<span data-ttu-id="845d7-147">A Windows PowerShell egy konzol alapú alkalmazás, amely a grafikus felhasználói felületen nincs szükség.</span><span class="sxs-lookup"><span data-stu-id="845d7-147">Windows PowerShell is a console-based application that does not require a graphical user interface.</span></span> <span data-ttu-id="845d7-148">Ilyen van azt alkalmas arra, hogy képernyőkön vagy figyelők, vagy egy felhasználói felülethez, például a Windows Server 2012 R2 vagy Windows Server 2012 Server Core telepítési lehetőségekkel nem rendelkező számítógépek.</span><span class="sxs-lookup"><span data-stu-id="845d7-148">As such, is it well suited to computers that do not have screens or monitors, or a user interface, such as the Server Core installation options of Windows Server 2012 R2 or Windows Server 2012.</span></span>
+
+<span data-ttu-id="845d7-149">Azonban egyes elemek, például a következő kötelező, grafikus felhasználói felületen.</span><span class="sxs-lookup"><span data-stu-id="845d7-149">However, some items, such as the following, require a graphical user interface.</span></span> <span data-ttu-id="845d7-150">További információkért lásd: az egyes elemekhez tartozó súgó-témakör.</span><span class="sxs-lookup"><span data-stu-id="845d7-150">For details, see the help topic for each item.</span></span>
+
+- <span data-ttu-id="845d7-151">Windows PowerShell integrált parancsfájlkezelési környezet (ISE)</span><span class="sxs-lookup"><span data-stu-id="845d7-151">Windows PowerShell Integrated Scripting Environment (ISE)</span></span>
+
+- <span data-ttu-id="845d7-152">Parancsmagok</span><span class="sxs-lookup"><span data-stu-id="845d7-152">Cmdlets</span></span>
+
+    1.  [<span data-ttu-id="845d7-153">A GridView nézet out</span><span class="sxs-lookup"><span data-stu-id="845d7-153">Out-GridView</span></span>](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
+
+    2.  [<span data-ttu-id="845d7-154">A parancs megjelenítése</span><span class="sxs-lookup"><span data-stu-id="845d7-154">Show-Command</span></span>](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
+
+    3.  [<span data-ttu-id="845d7-155">Megjelenítése-ControlPanelItem</span><span class="sxs-lookup"><span data-stu-id="845d7-155">Show-ControlPanelItem</span></span>](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
+
+    4.  [<span data-ttu-id="845d7-156">Az eseménynaplóban megjelenítése</span><span class="sxs-lookup"><span data-stu-id="845d7-156">Show-EventLog</span></span>](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
+
+- <span data-ttu-id="845d7-157">Paraméterek</span><span class="sxs-lookup"><span data-stu-id="845d7-157">Parameters</span></span>
+
+    1.  <span data-ttu-id="845d7-158">**ShowWindow** paramétere a [Get-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Get-Help) parancsmag.</span><span class="sxs-lookup"><span data-stu-id="845d7-158">**ShowWindow** parameter of the [Get-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.</span></span>
+
+    2.  <span data-ttu-id="845d7-159">**ShowSecurityDescriptorUI** paramétere a [Register-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) és [Set-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) parancsmagok.</span><span class="sxs-lookup"><span data-stu-id="845d7-159">**ShowSecurityDescriptorUI** parameter of the [Register-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) and [Set-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) cmdlets.</span></span>
+
+## <a name="windows-powershell-engine-requirements"></a><span data-ttu-id="845d7-160">A Windows PowerShell-motor kapcsolatos követelmények</span><span class="sxs-lookup"><span data-stu-id="845d7-160">Windows PowerShell Engine Requirements</span></span>
+<span data-ttu-id="845d7-161">A Windows PowerShell 4.0 a visszamenőleges kompatibilitás érdekében a Windows PowerShell 3.0 és a Windows PowerShell 2.0 célja.</span><span class="sxs-lookup"><span data-stu-id="845d7-161">Windows PowerShell 4.0 is designed to be backwards compatible with Windows PowerShell 3.0 and Windows PowerShell 2.0.</span></span> <span data-ttu-id="845d7-162">Parancsmagok, a szolgáltatók, a beépülő modulok, a modulok és a parancsfájlokat a Windows PowerShell 2.0-s és a Windows PowerShell 3.0 futtassa a Windows PowerShell 4.0 változatlan.</span><span class="sxs-lookup"><span data-stu-id="845d7-162">Cmdlets, providers, snap-ins, modules, and scripts written for Windows PowerShell 2.0 and Windows PowerShell 3.0 run unchanged in Windows PowerShell 4.0.</span></span>
+
+<span data-ttu-id="845d7-163">Azonban módosulásának eredményeképpen a futásidejű aktiválási házirend a Microsoft .NET-keretrendszer 4-es, Windows PowerShell gazdagépre programok az Windows PowerShell 2.0-s verziójához és a közös nyelvi futtatókörnyezet (CLR) 2.0 fordítása nem futtatható a Windows rendszerben módosítás nélkül A CLR-beli 4.0-s fordítását, akkor a PowerShell 3.0.</span><span class="sxs-lookup"><span data-stu-id="845d7-163">However, due to a change in the runtime activation policy in Microsoft .NET Framework 4, Windows PowerShell host programs that were written for Windows PowerShell 2.0 and compiled with Common Language Runtime (CLR) 2.0 cannot run without modification in Windows PowerShell 3.0, which is compiled with CLR 4.0.</span></span>
+
+<span data-ttu-id="845d7-164">A Windows PowerShell 2.0 motor 2.0.50727 Microsoft .NET-keretrendszer minimális szükséges.</span><span class="sxs-lookup"><span data-stu-id="845d7-164">The Windows PowerShell 2.0 engine requires Microsoft .NET Framework 2.0.50727 at a minimum.</span></span> <span data-ttu-id="845d7-165">Ez a követelmény teljesül, a Microsoft .NET Framework 3.5 Service Pack 1 által.</span><span class="sxs-lookup"><span data-stu-id="845d7-165">This requirement is fulfilled by Microsoft .NET Framework 3.5 Service Pack 1.</span></span> <span data-ttu-id="845d7-166">Ez a követelmény nem teljesül, a Microsoft .NET-keretrendszer 4-es és újabb verziókban a Microsoft .NET-keretrendszer.</span><span class="sxs-lookup"><span data-stu-id="845d7-166">This requirement is not fulfilled by Microsoft .NET Framework 4 and later releases of Microsoft .NET Framework.</span></span>
+
+<span data-ttu-id="845d7-167">Hozzáadása a Windows PowerShell 2.0 motor telepítése és felvétele vagy a Microsoft .NET-keretrendszer szükséges verzióinak telepítésével kapcsolatos információkért lásd: [telepítése a Windows PowerShell 2.0 motor](Installing-the-Windows-PowerShell-2.0-Engine.md).</span><span class="sxs-lookup"><span data-stu-id="845d7-167">For information about adding or installing the Windows PowerShell 2.0 engine, and adding or installing the required versions of the Microsoft .NET Framework, see [Installing the Windows PowerShell 2.0 Engine](Installing-the-Windows-PowerShell-2.0-Engine.md).</span></span> <span data-ttu-id="845d7-168">További információ a Windows PowerShell 2.0 motor: [indítása a Windows PowerShell 2.0 motor](Starting-the-Windows-PowerShell-2.0-Engine.md).</span><span class="sxs-lookup"><span data-stu-id="845d7-168">For information about starting the Windows PowerShell 2.0 engine, see [Starting the Windows PowerShell 2.0 Engine](Starting-the-Windows-PowerShell-2.0-Engine.md).</span></span>
+
+## <a name="windows-preinstallation-environment"></a><span data-ttu-id="845d7-169">Windows előtelepítési környezet</span><span class="sxs-lookup"><span data-stu-id="845d7-169">Windows Preinstallation Environment</span></span>
+<span data-ttu-id="845d7-170">A Windows PowerShell 2.0, a Windows PowerShell 3.0 és a Windows PowerShell 4.0 futtassa a Windows előtelepítési környezetben (Windows PE).</span><span class="sxs-lookup"><span data-stu-id="845d7-170">Windows PowerShell 2.0, Windows PowerShell 3.0, and Windows PowerShell 4.0 run in the Windows Preinstallation Environment (Windows PE).</span></span> <span data-ttu-id="845d7-171">A következő parancsmagok azonban nem támogatott.</span><span class="sxs-lookup"><span data-stu-id="845d7-171">However, the following cmdlets are not supported.</span></span>
+
+- [<span data-ttu-id="845d7-172">Háttérben futó intelligens átviteli szolgáltatás (BITS) parancsmagok</span><span class="sxs-lookup"><span data-stu-id="845d7-172">Background Intelligent Transfer Service (BITS) Cmdlets</span></span>](http://go.microsoft.com/fwlink/?LinkId=257514)
+
+- [<span data-ttu-id="845d7-173">Get-Eseménynapló</span><span class="sxs-lookup"><span data-stu-id="845d7-173">Get-EventLog</span></span>](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
+
+- [<span data-ttu-id="845d7-174">Get-WinEvent parancsmaggal</span><span class="sxs-lookup"><span data-stu-id="845d7-174">Get-WinEvent</span></span>](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
+
+- [<span data-ttu-id="845d7-175">Save-Help</span><span class="sxs-lookup"><span data-stu-id="845d7-175">Save-Help</span></span>](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
+
+- [<span data-ttu-id="845d7-176">Update-Help</span><span class="sxs-lookup"><span data-stu-id="845d7-176">Update-Help</span></span>](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Update-Help)
+
+<span data-ttu-id="845d7-177">Emellett a **WinRM** szolgáltatás nincs jelen a Windows PE környezetben.</span><span class="sxs-lookup"><span data-stu-id="845d7-177">Also, the **WinRM** service is not present on Windows PE.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="845d7-178">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="845d7-178">See Also</span></span>
+- [<span data-ttu-id="845d7-179">Bevezetés a Windows PowerShell használatával</span><span class="sxs-lookup"><span data-stu-id="845d7-179">Getting Started with Windows PowerShell</span></span>](../getting-started/Getting-Started-with-Windows-PowerShell.md)
+- [<span data-ttu-id="845d7-180">Windows PowerShell telepítése</span><span class="sxs-lookup"><span data-stu-id="845d7-180">Installing Windows PowerShell</span></span>](Installing-Windows-PowerShell.md)
+- [<span data-ttu-id="845d7-181">A Windows PowerShell indítása</span><span class="sxs-lookup"><span data-stu-id="845d7-181">Starting Windows PowerShell</span></span>](Starting-Windows-PowerShell.md)
+
