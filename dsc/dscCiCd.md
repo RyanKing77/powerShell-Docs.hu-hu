@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat létrehozása"
-ms.openlocfilehash: 60b41c5d279560d0121372e593879fe03cd52f7a
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: baa56088d83fba56d3a19cff7954d3081f341f9a
+ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat létrehozása
 
@@ -353,7 +353,7 @@ A build lépés a egység tesztek fut a Microsoft megvizsgálta a korábbi Peste
     **\Integration\**
     ```
 
-1. Állítsa be **TargetFolder** számára`$(BuildArtifactStagingDirectory)\`
+1. Állítsa be **TargetFolder** számára`$(Build.ArtifactStagingDirectory)\`
 
 Ezt a lépést, másolja át a összeállítása és tesztelése a parancsfájlok az átmeneti könyvtárhoz úgy, hogy a tehetők közzé, az összetevők létrehozása a következő lépésben.
 
