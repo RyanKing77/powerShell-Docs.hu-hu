@@ -4,45 +4,45 @@ contributor: manikb
 ms.topic: reference
 keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
 title: "Keresés – parancsprogram"
-ms.openlocfilehash: 15bf23b803250c7893fe970c2580592ea7c0a4b6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: df62a9934d8013d37bd0083c03f90fa7fa05ac0c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
-# <a name="find-script"></a><span data-ttu-id="b13bc-103">Keresés – parancsprogram</span><span class="sxs-lookup"><span data-stu-id="b13bc-103">Find-Script</span></span>
+# <a name="find-script"></a><span data-ttu-id="c294a-103">Keresés – parancsprogram</span><span class="sxs-lookup"><span data-stu-id="c294a-103">Find-Script</span></span>
 
-<span data-ttu-id="b13bc-104">A PowerShell parancsfájlok egy online katalógusból megadott feltételeknek megfelelő talál.</span><span class="sxs-lookup"><span data-stu-id="b13bc-104">Finds the PowerShell script files from an online gallery that match specified criteria.</span></span>
+<span data-ttu-id="c294a-104">A PowerShell parancsfájlok egy online katalógusból megadott feltételeknek megfelelő talál.</span><span class="sxs-lookup"><span data-stu-id="c294a-104">Finds the PowerShell script files from an online gallery that match specified criteria.</span></span>
 
-## <a name="description"></a><span data-ttu-id="b13bc-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="b13bc-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="c294a-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="c294a-105">Description</span></span>
 
-<span data-ttu-id="b13bc-106">Keresés-parancsfájl a parancsfájlok a regisztrált tárházak találhatók, amely a megadott feltételeknek megfelelő deríti fel.</span><span class="sxs-lookup"><span data-stu-id="b13bc-106">Find-Script discovers the script files from registered repositories that matches the specified criteria.</span></span>
-<span data-ttu-id="b13bc-107">Minden parancsprogram található, keresés-parancsfájl egy objektumot ad vissza PSRepositoryItemInfo opcionálisan átirányítható, amely az Install-parancsfájl a parancsfájlok telepítéséhez.</span><span class="sxs-lookup"><span data-stu-id="b13bc-107">For each script found, Find-Script returns a PSRepositoryItemInfo object which can optionally be piped to Install-Script for installing the scripts.</span></span>
-<span data-ttu-id="b13bc-108">Keresés-parancsfájl parancsmag lehetővé teszi a parancsfájlok, például a neve, címke, szűrő, utasítás neve, verziója tartományon, pontos verziót, összes verzió és annak függőségeit és az adott vagy regisztrált összes adattárak különböző keresési feltételekkel felderítéséhez.</span><span class="sxs-lookup"><span data-stu-id="b13bc-108">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
+<span data-ttu-id="c294a-106">Keresés-parancsfájl a parancsfájlok a regisztrált tárházak találhatók, amely a megadott feltételeknek megfelelő deríti fel.</span><span class="sxs-lookup"><span data-stu-id="c294a-106">Find-Script discovers the script files from registered repositories that matches the specified criteria.</span></span>
+<span data-ttu-id="c294a-107">Minden parancsprogram található, keresés-parancsfájl egy objektumot ad vissza PSRepositoryItemInfo opcionálisan átirányítható, amely az Install-parancsfájl a parancsfájlok telepítéséhez.</span><span class="sxs-lookup"><span data-stu-id="c294a-107">For each script found, Find-Script returns a PSRepositoryItemInfo object which can optionally be piped to Install-Script for installing the scripts.</span></span>
+<span data-ttu-id="c294a-108">Keresés-parancsfájl parancsmag lehetővé teszi a parancsfájlok, például a neve, címke, szűrő, utasítás neve, verziója tartományon, pontos verziót, összes verzió és annak függőségeit és az adott vagy regisztrált összes adattárak különböző keresési feltételekkel felderítéséhez.</span><span class="sxs-lookup"><span data-stu-id="c294a-108">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
 
-- <span data-ttu-id="b13bc-109">Keresés-parancsfájlt is szűrő alapján a parancsfájl - paranccsal tartalom és - paramétereket tartalmaz.</span><span class="sxs-lookup"><span data-stu-id="b13bc-109">Find-Script can filter based on script contents with the -Command and -Includes parameters.</span></span>
-- <span data-ttu-id="b13bc-110">Keresés-parancsfájl verziója paraméterekkel szűrheti: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="b13bc-110">Find-Script can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
-  - <span data-ttu-id="b13bc-111">Ezek a paraméterek kölcsönösen kizárják egymást, kivéve a MinmimumVersion és MaximumVersion.</span><span class="sxs-lookup"><span data-stu-id="b13bc-111">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
-  - <span data-ttu-id="b13bc-112">Ezen verzió paraméterek csak nevű egyetlen parancsfájllal bármely helyettesítő karakterek nem engedélyezettek.</span><span class="sxs-lookup"><span data-stu-id="b13bc-112">These version parameters are allowed only with the single script name without any wildcards.</span></span>
-  - <span data-ttu-id="b13bc-113">A RequiredVersion paraméter nincs megadva, ha a keresés-parancsfájl a legújabb verzióját a parancsfájlt, amely egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a parancsfájl nincs minimális verzió megadása adja vissza.</span><span class="sxs-lookup"><span data-stu-id="b13bc-113">If the RequiredVersion parameter is not specified, Find-Script returns the latest version of the script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.</span></span> 
-  - <span data-ttu-id="b13bc-114">A RequiredVersion paraméter van megadva, az keresés-parancsfájl csak adja vissza a parancsfájlt, amely pontosan megegyezik a megadott version verzióját.</span><span class="sxs-lookup"><span data-stu-id="b13bc-114">If the RequiredVersion parameter is specified, Find-Script only returns the version of script that exactly matches the specified version.</span></span>
-- <span data-ttu-id="b13bc-115">Keresés-parancsfájl szűrést végezhet a parancsprogram-metaadatait az a – Tag paraméter.</span><span class="sxs-lookup"><span data-stu-id="b13bc-115">Find-Script can filter on script metadata with the -Tag parameter.</span></span>
-- <span data-ttu-id="b13bc-116">Keresés parancsfájl-tárház vonatkozó keresést nyelvével szűrheti az - szűrő paraméterrel.</span><span class="sxs-lookup"><span data-stu-id="b13bc-116">Find-Script can filter on repository-specific search language with the -Filter parameter.</span></span>
-- <span data-ttu-id="b13bc-117">Keresés-parancsfájl parancsfájlok vagy kevés a regisztrált adattárak végezhet.</span><span class="sxs-lookup"><span data-stu-id="b13bc-117">Find-Script can filter on scripts from all or few of the registered repositories.</span></span>
+- <span data-ttu-id="c294a-109">Keresés-parancsfájlt is szűrő alapján a parancsfájl - paranccsal tartalom és - paramétereket tartalmaz.</span><span class="sxs-lookup"><span data-stu-id="c294a-109">Find-Script can filter based on script contents with the -Command and -Includes parameters.</span></span>
+- <span data-ttu-id="c294a-110">Keresés-parancsfájl verziója paraméterekkel szűrheti: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="c294a-110">Find-Script can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="c294a-111">Ezek a paraméterek kölcsönösen kizárják egymást, kivéve a MinmimumVersion és MaximumVersion.</span><span class="sxs-lookup"><span data-stu-id="c294a-111">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="c294a-112">Ezen verzió paraméterek csak nevű egyetlen parancsfájllal bármely helyettesítő karakterek nem engedélyezettek.</span><span class="sxs-lookup"><span data-stu-id="c294a-112">These version parameters are allowed only with the single script name without any wildcards.</span></span>
+  - <span data-ttu-id="c294a-113">A RequiredVersion paraméter nincs megadva, ha a keresés-parancsfájl a legújabb verzióját a parancsfájlt, amely egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a parancsfájl nincs minimális verzió megadása adja vissza.</span><span class="sxs-lookup"><span data-stu-id="c294a-113">If the RequiredVersion parameter is not specified, Find-Script returns the latest version of the script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.</span></span> 
+  - <span data-ttu-id="c294a-114">A RequiredVersion paraméter van megadva, az keresés-parancsfájl csak adja vissza a parancsfájlt, amely pontosan megegyezik a megadott version verzióját.</span><span class="sxs-lookup"><span data-stu-id="c294a-114">If the RequiredVersion parameter is specified, Find-Script only returns the version of script that exactly matches the specified version.</span></span>
+- <span data-ttu-id="c294a-115">Keresés-parancsfájl szűrést végezhet a parancsprogram-metaadatait az a – Tag paraméter.</span><span class="sxs-lookup"><span data-stu-id="c294a-115">Find-Script can filter on script metadata with the -Tag parameter.</span></span>
+- <span data-ttu-id="c294a-116">Keresés parancsfájl-tárház vonatkozó keresést nyelvével szűrheti az - szűrő paraméterrel.</span><span class="sxs-lookup"><span data-stu-id="c294a-116">Find-Script can filter on repository-specific search language with the -Filter parameter.</span></span>
+- <span data-ttu-id="c294a-117">Keresés-parancsfájl parancsfájlok vagy kevés a regisztrált adattárak végezhet.</span><span class="sxs-lookup"><span data-stu-id="c294a-117">Find-Script can filter on scripts from all or few of the registered repositories.</span></span>
 
-<span data-ttu-id="b13bc-118">**Megjegyzés:** regisztrált PSRepository rendelkeznie kell egy érvényes ScriptSourceLocation.</span><span class="sxs-lookup"><span data-stu-id="b13bc-118">**NOTE:** Registered PSRepository should have a valid ScriptSourceLocation.</span></span> <span data-ttu-id="b13bc-119">A Set-PSRepository ScriptSourceLocation érték használható.</span><span class="sxs-lookup"><span data-stu-id="b13bc-119">You can use the Set-PSRepository to set ScriptSourceLocation value.</span></span>
+<span data-ttu-id="c294a-118">**Megjegyzés:** regisztrált PSRepository rendelkeznie kell egy érvényes ScriptSourceLocation.</span><span class="sxs-lookup"><span data-stu-id="c294a-118">**NOTE:** Registered PSRepository should have a valid ScriptSourceLocation.</span></span> <span data-ttu-id="c294a-119">A Set-PSRepository ScriptSourceLocation érték használható.</span><span class="sxs-lookup"><span data-stu-id="c294a-119">You can use the Set-PSRepository to set ScriptSourceLocation value.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="b13bc-120">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="b13bc-120">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="c294a-120">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="c294a-120">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Find-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="b13bc-121">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="b13bc-121">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="c294a-121">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="c294a-121">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="b13bc-122">Keresés – parancsprogram</span><span class="sxs-lookup"><span data-stu-id="b13bc-122">Find-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619785)
+[<span data-ttu-id="c294a-122">Keresés – parancsprogram</span><span class="sxs-lookup"><span data-stu-id="c294a-122">Find-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619785)
 
-## <a name="example-commands"></a><span data-ttu-id="b13bc-123">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="b13bc-123">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="c294a-123">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="c294a-123">Example commands</span></span>
 
 ```powershell
 # Find a script from the registered repository with ScriptSourceLocation
@@ -73,6 +73,9 @@ Find-Script -Name Connect-O365 -MinimumVersion 1.1 -MaximumVersion 1.6.2
 
 # Find a script with exact version
 Find-Script -Name Connect-O365 -RequiredVersion 1.5.7
+
+# Find a script with a specific pre-release version
+Find-Script -Name Connect-O365 -RequiredVersion 1.3.2-alpha -AllowPrerelease
 
 # Find a script from the specified repository
 Find-Script -Name Fabrikam-ServerScript -Repository MyLocalRepo

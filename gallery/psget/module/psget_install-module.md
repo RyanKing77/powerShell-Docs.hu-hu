@@ -4,68 +4,68 @@ contributor: manikb
 ms.topic: reference
 keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
 title: Install-modul
-ms.openlocfilehash: 37e07cd32e7b2fd4a7a8e6cab179aecc3251baf3
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c066f4b34a03206cc0f31e9d40144fd719d9e305
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
-# <a name="install-module"></a><span data-ttu-id="94f69-103">Install-modul</span><span class="sxs-lookup"><span data-stu-id="94f69-103">Install-Module</span></span>
+# <a name="install-module"></a><span data-ttu-id="b1ceb-103">Install-modul</span><span class="sxs-lookup"><span data-stu-id="b1ceb-103">Install-Module</span></span>
 
-<span data-ttu-id="94f69-104">Online tárházak találhatók a helyi számítógépre a PowerShell-modulok telepítése</span><span class="sxs-lookup"><span data-stu-id="94f69-104">Installs the PowerShell modules from online repositories to the local computer.</span></span>
+<span data-ttu-id="b1ceb-104">Online tárházak találhatók a helyi számítógépre a PowerShell-modulok telepítése</span><span class="sxs-lookup"><span data-stu-id="b1ceb-104">Installs the PowerShell modules from online repositories to the local computer.</span></span>
 
-## <a name="description"></a><span data-ttu-id="94f69-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="94f69-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="b1ceb-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="b1ceb-105">Description</span></span>
 
-<span data-ttu-id="94f69-106">Install-modul a parancsmag egy vagy több modulja letölti az online katalógusból, ellenőrzi, és telepíti azokat a helyi számítógépen a megadott telepítési hatókörbe.</span><span class="sxs-lookup"><span data-stu-id="94f69-106">Install-Module cmdlet downloads one or more modules from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
+<span data-ttu-id="b1ceb-106">Install-modul a parancsmag egy vagy több modulja letölti az online katalógusból, ellenőrzi, és telepíti azokat a helyi számítógépen a megadott telepítési hatókörbe.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-106">Install-Module cmdlet downloads one or more modules from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
 
-<span data-ttu-id="94f69-107">Az Install-modul a parancsmag lekérdezi az online katalógusból megadott feltételeknek, egy vagy több modulja, ellenőrzi, hogy a keresési eredmények között érvényes modulok és a telepítési helyre másolja modul mappák.</span><span class="sxs-lookup"><span data-stu-id="94f69-107">The Install-Module cmdlet gets one or more modules that meet specified criteria from an online gallery, verifies that search results are valid modules, and copies module folders to the installation location.</span></span>
+<span data-ttu-id="b1ceb-107">Az Install-modul a parancsmag lekérdezi az online katalógusból megadott feltételeknek, egy vagy több modulja, ellenőrzi, hogy a keresési eredmények között érvényes modulok és a telepítési helyre másolja modul mappák.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-107">The Install-Module cmdlet gets one or more modules that meet specified criteria from an online gallery, verifies that search results are valid modules, and copies module folders to the installation location.</span></span>
 
-<span data-ttu-id="94f69-108">Nincs hatóköre van definiálva, vagy ha a hatókör-paraméter értéke az AllUsers tulajdonság, a modul %systemdrive%:\Program Files\WindowsPowerShell\Modules van telepítve.</span><span class="sxs-lookup"><span data-stu-id="94f69-108">When no scope is defined, or when the value of the Scope parameter is AllUsers, the module is installed to %systemdrive%:\Program Files\WindowsPowerShell\Modules.</span></span> <span data-ttu-id="94f69-109">CurrentUser hatókör érték esetén a modul $home\Documents\WindowsPowerShell\Modules van telepítve.</span><span class="sxs-lookup"><span data-stu-id="94f69-109">When the value of Scope is CurrentUser, the module is installed to $home\Documents\WindowsPowerShell\Modules.</span></span>
+<span data-ttu-id="b1ceb-108">Nincs hatóköre van definiálva, vagy ha a hatókör-paraméter értéke az AllUsers tulajdonság, a modul %systemdrive%:\Program Files\WindowsPowerShell\Modules van telepítve.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-108">When no scope is defined, or when the value of the Scope parameter is AllUsers, the module is installed to %systemdrive%:\Program Files\WindowsPowerShell\Modules.</span></span> <span data-ttu-id="b1ceb-109">CurrentUser hatókör érték esetén a modul $home\Documents\WindowsPowerShell\Modules van telepítve.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-109">When the value of Scope is CurrentUser, the module is installed to $home\Documents\WindowsPowerShell\Modules.</span></span>
 
-<span data-ttu-id="94f69-110">A megadott modulokban minimális és a pontos verzióit eredmény végezhet.</span><span class="sxs-lookup"><span data-stu-id="94f69-110">You can filter your results based on minimum and exact versions of specified modules.</span></span>
+<span data-ttu-id="b1ceb-110">A megadott modulokban minimális és a pontos verzióit eredmény végezhet.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-110">You can filter your results based on minimum and exact versions of specified modules.</span></span>
 
-- <span data-ttu-id="94f69-111">Egymás melletti verzióinak támogatása a Windows PowerShell 5.0-s vagy újabb</span><span class="sxs-lookup"><span data-stu-id="94f69-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
-- <span data-ttu-id="94f69-112">A modul függőségi telepítés támogatása</span><span class="sxs-lookup"><span data-stu-id="94f69-112">Module dependency installation support</span></span>
-- <span data-ttu-id="94f69-113">**Nem megbízható a parancssorból:**felhasználói elfogadás kell a modulok telepítése egy nem megbízható tárházból.</span><span class="sxs-lookup"><span data-stu-id="94f69-113">**Untrusted prompt:**User acceptance is required for installing the modules from an untrusted repository.</span></span>
-- <span data-ttu-id="94f69-114">-Force újratelepíti a telepített modul</span><span class="sxs-lookup"><span data-stu-id="94f69-114">-Force reinstalls the installed module</span></span>
-- <span data-ttu-id="94f69-115">RequiredVersion SxS PowerShell 5.0-s vagy újabb verziója a meglévő verzióival meghatározott verzióját telepíti.</span><span class="sxs-lookup"><span data-stu-id="94f69-115">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
+- <span data-ttu-id="b1ceb-111">Egymás melletti verzióinak támogatása a Windows PowerShell 5.0-s vagy újabb</span><span class="sxs-lookup"><span data-stu-id="b1ceb-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
+- <span data-ttu-id="b1ceb-112">A modul függőségi telepítés támogatása</span><span class="sxs-lookup"><span data-stu-id="b1ceb-112">Module dependency installation support</span></span>
+- <span data-ttu-id="b1ceb-113">**Nem megbízható a parancssorból:**felhasználói elfogadás kell a modulok telepítése egy nem megbízható tárházból.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-113">**Untrusted prompt:**User acceptance is required for installing the modules from an untrusted repository.</span></span>
+- <span data-ttu-id="b1ceb-114">-Force újratelepíti a telepített modul</span><span class="sxs-lookup"><span data-stu-id="b1ceb-114">-Force reinstalls the installed module</span></span>
+- <span data-ttu-id="b1ceb-115">RequiredVersion SxS PowerShell 5.0-s vagy újabb verziója a meglévő verzióival meghatározott verzióját telepíti.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-115">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
 
-### <a name="scope"></a><span data-ttu-id="94f69-116">Hatókör</span><span class="sxs-lookup"><span data-stu-id="94f69-116">Scope</span></span>
-<span data-ttu-id="94f69-117">Adja meg a telepítést a modul hatókörében.</span><span class="sxs-lookup"><span data-stu-id="94f69-117">Specifies the installation scope of the module.</span></span> <span data-ttu-id="94f69-118">Ez a paraméter elfogadható értékek a következők: AllUsers és CurrentUser.</span><span class="sxs-lookup"><span data-stu-id="94f69-118">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
+### <a name="scope"></a><span data-ttu-id="b1ceb-116">Hatókör</span><span class="sxs-lookup"><span data-stu-id="b1ceb-116">Scope</span></span>
+<span data-ttu-id="b1ceb-117">Adja meg a telepítést a modul hatókörében.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-117">Specifies the installation scope of the module.</span></span> <span data-ttu-id="b1ceb-118">Ez a paraméter elfogadható értékek a következők: AllUsers és CurrentUser.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-118">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
 
-<span data-ttu-id="94f69-119">Az alapértelmezett telepítési hatóköre az AllUsers tulajdonság.</span><span class="sxs-lookup"><span data-stu-id="94f69-119">The default installation scope is AllUsers.</span></span>
+<span data-ttu-id="b1ceb-119">Az alapértelmezett telepítési hatóköre az AllUsers tulajdonság.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-119">The default installation scope is AllUsers.</span></span>
 
-<span data-ttu-id="94f69-120">Az AllUsers tulajdonság hatóköre lehetővé teszi, hogy a modulokat telepíteni, egy olyan helyre, ez azt jelenti, hogy a számítógép összes felhasználója számára elérhető "$env: SystemDrive\Program Files\WindowsPowerShell\Modules".</span><span class="sxs-lookup"><span data-stu-id="94f69-120">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".</span></span>
+<span data-ttu-id="b1ceb-120">Az AllUsers tulajdonság hatóköre lehetővé teszi, hogy a modulokat telepíteni, egy olyan helyre, ez azt jelenti, hogy a számítógép összes felhasználója számára elérhető "$env: SystemDrive\Program Files\WindowsPowerShell\Modules".</span><span class="sxs-lookup"><span data-stu-id="b1ceb-120">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".</span></span>
 
-<span data-ttu-id="94f69-121">A CurrentUser hatókör lehetővé teszi, hogy csak a "$home\Documents\WindowsPowerShell\Modules", telepíthető modulok úgy, hogy a modul csak az aktuális felhasználó számára elérhető.</span><span class="sxs-lookup"><span data-stu-id="94f69-121">The CurrentUser scope lets modules be installed only to "$home\Documents\WindowsPowerShell\Modules", so that the module is available only to the current user.</span></span>
+<span data-ttu-id="b1ceb-121">A CurrentUser hatókör lehetővé teszi, hogy csak a "$home\Documents\WindowsPowerShell\Modules", telepíthető modulok úgy, hogy a modul csak az aktuális felhasználó számára elérhető.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-121">The CurrentUser scope lets modules be installed only to "$home\Documents\WindowsPowerShell\Modules", so that the module is available only to the current user.</span></span>
 
-## <a name="notes"></a><span data-ttu-id="94f69-122">Megjegyzések</span><span class="sxs-lookup"><span data-stu-id="94f69-122">Notes</span></span>
+## <a name="notes"></a><span data-ttu-id="b1ceb-122">Megjegyzések</span><span class="sxs-lookup"><span data-stu-id="b1ceb-122">Notes</span></span>
 
-<span data-ttu-id="94f69-123">Ez a parancsmag a Windows PowerShell 3.0-s vagy újabb kiadásaiban a Windows PowerShell, a Windows 7 vagy Windows 2008 R2 és újabb Windows-verziókat futtatja.</span><span class="sxs-lookup"><span data-stu-id="94f69-123">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
+<span data-ttu-id="b1ceb-123">Ez a parancsmag a Windows PowerShell 3.0-s vagy újabb kiadásaiban a Windows PowerShell, a Windows 7 vagy Windows 2008 R2 és újabb Windows-verziókat futtatja.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-123">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
 
-<span data-ttu-id="94f69-124">Ha telepített modul nem importálható, (Ez azt jelenti, hogy ha egy .psm1, .psd1 vagy egy ugyanilyen nevű .dll nincs a mappában található), telepítés sikertelen lesz, kivéve, ha a Force paramétert a parancshoz adja hozzá.</span><span class="sxs-lookup"><span data-stu-id="94f69-124">If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of the same name within the folder), installation fails unless you add the Force parameter to your command.</span></span>
+<span data-ttu-id="b1ceb-124">Ha telepített modul nem importálható, (Ez azt jelenti, hogy ha egy .psm1, .psd1 vagy egy ugyanilyen nevű .dll nincs a mappában található), telepítés sikertelen lesz, kivéve, ha a Force paramétert a parancshoz adja hozzá.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-124">If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of the same name within the folder), installation fails unless you add the Force parameter to your command.</span></span>
 
-<span data-ttu-id="94f69-125">Ha a modul azon a számítógépen egy verziója megegyezik a Name paraméter megadott értéke, és nem hozzáadta a MinimumVersion vagy RequiredVersion paraméter, Install-modul csendes továbbra is fennáll, hogy a modul telepítése nélkül.</span><span class="sxs-lookup"><span data-stu-id="94f69-125">If a version of the module on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span> <span data-ttu-id="94f69-126">Ha a MinimumVersion vagy RequiredVersion paraméterek vannak megadva, és a meglévő modul nem felel meg, hogy a paraméter értékének, majd hiba lép fel.</span><span class="sxs-lookup"><span data-stu-id="94f69-126">If the MinimumVersion or RequiredVersion parameters are specified, and the existing module does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="94f69-127">Pontosabban: a jelenleg telepített modul verziószáma alacsonyabb, mint a MinimumVersion paraméter értékét, vagy a RequiredVersion paraméter értéke nem egyenlő, ha hiba lép fel.</span><span class="sxs-lookup"><span data-stu-id="94f69-127">To be more specific: if the version of the currently-installed module is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="94f69-128">Ha a telepített modul verziószáma nagyobb, mint a MinimumVersion paraméter értékét, vagy a RequiredVersion paraméter értékének egyenlőnek, Install-modul csendes továbbra is fennáll, hogy a modul telepítése nélkül.</span><span class="sxs-lookup"><span data-stu-id="94f69-128">If the version of the installed module is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span>
+<span data-ttu-id="b1ceb-125">Ha a modul azon a számítógépen egy verziója megegyezik a Name paraméter megadott értéke, és nem hozzáadta a MinimumVersion vagy RequiredVersion paraméter, Install-modul csendes továbbra is fennáll, hogy a modul telepítése nélkül.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-125">If a version of the module on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span> <span data-ttu-id="b1ceb-126">Ha a MinimumVersion vagy RequiredVersion paraméterek vannak megadva, és a meglévő modul nem felel meg, hogy a paraméter értékének, majd hiba lép fel.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-126">If the MinimumVersion or RequiredVersion parameters are specified, and the existing module does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="b1ceb-127">Pontosabban: a jelenleg telepített modul verziószáma alacsonyabb, mint a MinimumVersion paraméter értékét, vagy a RequiredVersion paraméter értéke nem egyenlő, ha hiba lép fel.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-127">To be more specific: if the version of the currently-installed module is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="b1ceb-128">Ha a telepített modul verziószáma nagyobb, mint a MinimumVersion paraméter értékét, vagy a RequiredVersion paraméter értékének egyenlőnek, Install-modul csendes továbbra is fennáll, hogy a modul telepítése nélkül.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-128">If the version of the installed module is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span>
 
-<span data-ttu-id="94f69-129">Install-modul hibát ad vissza, ha nincs modul az online katalógus, amely megfelel a megadott névvel már létezik.</span><span class="sxs-lookup"><span data-stu-id="94f69-129">Install-Module returns an error if no module exists in the online gallery that matches the specified name.</span></span>
+<span data-ttu-id="b1ceb-129">Install-modul hibát ad vissza, ha nincs modul az online katalógus, amely megfelel a megadott névvel már létezik.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-129">Install-Module returns an error if no module exists in the online gallery that matches the specified name.</span></span>
 
-<span data-ttu-id="94f69-130">Több modul telepítéséhez adja meg a modul neve vesszőkkel elválasztva tömbjét.</span><span class="sxs-lookup"><span data-stu-id="94f69-130">To install multiple modules, specify an array of the module names, separated by commas.</span></span> <span data-ttu-id="94f69-131">Nem adhat hozzá MinimumVersion vagy RequiredVersion Ha több modul nevet ad meg.</span><span class="sxs-lookup"><span data-stu-id="94f69-131">You cannot add MinimumVersion or RequiredVersion if you specify multiple module names.</span></span>
+<span data-ttu-id="b1ceb-130">Több modul telepítéséhez adja meg a modul neve vesszőkkel elválasztva tömbjét.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-130">To install multiple modules, specify an array of the module names, separated by commas.</span></span> <span data-ttu-id="b1ceb-131">Nem adhat hozzá MinimumVersion vagy RequiredVersion Ha több modul nevet ad meg.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-131">You cannot add MinimumVersion or RequiredVersion if you specify multiple module names.</span></span>
 
-<span data-ttu-id="94f69-132">Alapértelmezés szerint a modulok telepítve vannak a Program Files mappába, problémák elkerülése érdekében a Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) erőforrások telepítése. Átadhatja az Install-modul; több PSGetItemInfo objektumok Ez az egyetlen parancs telepítésének megadásával több modul egy másik módja.</span><span class="sxs-lookup"><span data-stu-id="94f69-132">By default, modules are installed to the Program Files folder, to prevent confusion when you are installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple PSGetItemInfo objects to Install-Module; this is another way of specifying multiple modules to install in a single command.</span></span>
+<span data-ttu-id="b1ceb-132">Alapértelmezés szerint a modulok telepítve vannak a Program Files mappába, problémák elkerülése érdekében a Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) erőforrások telepítése. Átadhatja az Install-modul; több PSGetItemInfo objektumok Ez az egyetlen parancs telepítésének megadásával több modul egy másik módja.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-132">By default, modules are installed to the Program Files folder, to prevent confusion when you are installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple PSGetItemInfo objects to Install-Module; this is another way of specifying multiple modules to install in a single command.</span></span>
 
-<span data-ttu-id="94f69-133">Telepített rosszindulatú kódot tartalmazó futó modulok megelőzése érdekében rendszer nem automatikusan importálja a telepítés.</span><span class="sxs-lookup"><span data-stu-id="94f69-133">To help prevent running modules that contain malicious code, installed modules are not automatically imported by installation.</span></span> <span data-ttu-id="94f69-134">Biztonsági szempontból ajánlott, kiértékelése modul kód parancsmagok és függvények futtatása egy modulban először előtt.</span><span class="sxs-lookup"><span data-stu-id="94f69-134">As a security best practice, evaluate module code before running any cmdlets or functions in a module for the first time.</span></span>
+<span data-ttu-id="b1ceb-133">Telepített rosszindulatú kódot tartalmazó futó modulok megelőzése érdekében rendszer nem automatikusan importálja a telepítés.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-133">To help prevent running modules that contain malicious code, installed modules are not automatically imported by installation.</span></span> <span data-ttu-id="b1ceb-134">Biztonsági szempontból ajánlott, kiértékelése modul kód parancsmagok és függvények futtatása egy modulban először előtt.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-134">As a security best practice, evaluate module code before running any cmdlets or functions in a module for the first time.</span></span>
 
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="94f69-135">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="94f69-135">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="b1ceb-135">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="b1ceb-135">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="94f69-136">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="94f69-136">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="b1ceb-136">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="b1ceb-136">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="94f69-137">Install-modul</span><span class="sxs-lookup"><span data-stu-id="94f69-137">Install-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398573)
+[<span data-ttu-id="b1ceb-137">Install-modul</span><span class="sxs-lookup"><span data-stu-id="b1ceb-137">Install-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-## <a name="example-commands"></a><span data-ttu-id="94f69-138">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="94f69-138">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="b1ceb-138">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="b1ceb-138">Example commands</span></span>
 
 ```powershell
 
@@ -80,6 +80,12 @@ Install-Module -Name ContosoServer -MinimumVersion 1.0
 
 # Install a specific version of a module
 Install-Module -Name ContosoServer -RequiredVersion 1.1.3
+
+# Install a specific prerelease version of a module
+Install-Module -Name ContosoServer -RequiredVersion 1.1.3-alpha -AllowPrerelease
+
+# Install the latest version of a module by name, including prelrelease versions if one exists
+Install-Module -Name ContosoServer -AllowPrerelease
 
 # Install the latest version of a module to $home\Documents\WindowsPowerShell\Modules.
 Install-Module -Name ContosoServer -Scope CurrentUser
@@ -106,7 +112,7 @@ Install-Module ContosoClient -Force
 Install-Module -Name 
 ```
 
-## <a name="install-module-cmdlet-in-pipeline-operations"></a><span data-ttu-id="94f69-139">Install-modul a parancsmag a csővezeték-műveletek</span><span class="sxs-lookup"><span data-stu-id="94f69-139">Install-Module cmdlet in pipeline operations</span></span>
+## <a name="install-module-cmdlet-in-pipeline-operations"></a><span data-ttu-id="b1ceb-139">Install-modul a parancsmag a csővezeték-műveletek</span><span class="sxs-lookup"><span data-stu-id="b1ceb-139">Install-Module cmdlet in pipeline operations</span></span>
 
 ```powershell
 
@@ -133,11 +139,11 @@ Get-InstalledModule
 
 ```
 
-## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="94f69-140">Egymás melletti verzióinak támogatása PowerShell 5.0-s vagy újabb</span><span class="sxs-lookup"><span data-stu-id="94f69-140">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="b1ceb-140">Egymás melletti verzióinak támogatása PowerShell 5.0-s vagy újabb</span><span class="sxs-lookup"><span data-stu-id="b1ceb-140">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
 
-<span data-ttu-id="94f69-141">PowerShellGet támogatja az egymás melletti (SxS) modul által támogatott verzió Install-modul, a frissítés-modul, és a közzététel-modul parancsmagjai a Windows PowerShell 5.0-s vagy újabb rendszerű.</span><span class="sxs-lookup"><span data-stu-id="94f69-141">PowerShellGet supports the side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
+<span data-ttu-id="b1ceb-141">PowerShellGet támogatja az egymás melletti (SxS) modul által támogatott verzió Install-modul, a frissítés-modul, és a közzététel-modul parancsmagjai a Windows PowerShell 5.0-s vagy újabb rendszerű.</span><span class="sxs-lookup"><span data-stu-id="b1ceb-141">PowerShellGet supports the side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
 
-### <a name="install-module-examples"></a><span data-ttu-id="94f69-142">Install-modul példák</span><span class="sxs-lookup"><span data-stu-id="94f69-142">Install-Module examples</span></span>
+### <a name="install-module-examples"></a><span data-ttu-id="b1ceb-142">Install-modul példák</span><span class="sxs-lookup"><span data-stu-id="b1ceb-142">Install-Module examples</span></span>
 
 ```powershell
 # Install a version of the module
@@ -169,7 +175,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="install-module-with-its-dependencies"></a><span data-ttu-id="94f69-143">A függőségekkel rendelkező modul telepítése</span><span class="sxs-lookup"><span data-stu-id="94f69-143">Install module with its dependencies</span></span>
+## <a name="install-module-with-its-dependencies"></a><span data-ttu-id="b1ceb-143">A függőségekkel rendelkező modul telepítése</span><span class="sxs-lookup"><span data-stu-id="b1ceb-143">Install module with its dependencies</span></span>
 
 ```powershell
 
@@ -263,7 +269,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="error-scenarios"></a><span data-ttu-id="94f69-144">Hiba forgatókönyvek</span><span class="sxs-lookup"><span data-stu-id="94f69-144">Error scenarios</span></span>
+## <a name="error-scenarios"></a><span data-ttu-id="b1ceb-144">Hiba forgatókönyvek</span><span class="sxs-lookup"><span data-stu-id="b1ceb-144">Error scenarios</span></span>
 
 ```powershell
 
