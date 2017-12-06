@@ -1,6 +1,13 @@
-.md---ms.date: 2017-06-05 kulcsszavak: powershell parancsmag-cím: fogalmak hivatkozás ismertetése
 ---
-
+ms.date: 2017-06-05
+keywords: PowerShell parancsmag
+title: "Fogalmak hivatkozás ismertetése"
+ms.openlocfilehash: 0a155b502be35463a30833e08e679d707c39592c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 12/05/2017
+---
 # <a name="understanding-concepts"></a>Understanding fogalmak
 
 *  A PowerShell objektumok  

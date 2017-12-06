@@ -4,48 +4,40 @@ contributor: manikb
 ms.topic: reference
 keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
 title: "Install-parancsfájl"
-ms.openlocfilehash: 4c3fd9393ccb7ee5c3b010f1114b6596a74fdee2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 9ce4125329ea2a38f27f9305b169c7fcf3e9df42
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="install-script"></a>Install-parancsfájl
 
 Telepíti a PowerShell parancsfájlok online tárházak találhatók a helyi számítógépre.
 
-
 ## <a name="description"></a>Leírás
 
-A telepítési parancsfájl-parancsmag szerez be a parancsfájl hasznos adatok között egy adattárból, ellenőrzi, hogy a tartalom egy érvényes PowerShell-parancsfájl, és a parancsfájl a megadott telepítési helyre másolja.
+A telepítési parancsfájl-parancsmag megkeresi és egy vagy több parancsfájlok letölti az online katalógusból, ellenőrzi és telepíti azokat a helyi számítógépen a megadott telepítési hatókörbe.
 
-Az Install-parancsfájl működik elleni alapértelmezett adattárak esetében a Register-PSRepository, a Set-PSRepository, a Unregister-PSRepository és a Get-PSRepository parancsmagok segítségével konfigurálhatók. Ha több adattárak ellen, telepítési parancsfájl-telepíti az első parancsfájl, amely a megadott keresési feltételeknek megfelelő (név, MinimumVersion vagy MaximumVersion) bármely hiba nélkül első tárházból.
+Nincs hatóköre van definiálva, vagy ha a hatókör-paraméter értéke az AllUsers tulajdonság, a parancsfájl %systemdrive%:\Program Files\WindowsPowerShell\scripts van telepítve. Amikor a hatókör CurrentUser értéke, a parancsfájl $home\Documents\WindowsPowerShell\scripts van telepítve.
 
+A megadott parancsfájlok minimális és a pontos verzióit eredmény végezhet.
 
-Install-parancsfájl parancsmag tölt le egy vagy több modulja egy online gyűjtemény, ellenőrzi, és telepíti azokat a helyi számítógépen a megadott telepítési hatókörbe.
-
-A telepítési parancsfájl-parancsmag lekéri az online katalógusból megadott feltételeknek, egy vagy több modulja, ellenőrzi, hogy a keresési eredmények között érvényes modulok és a telepítési helyre másolja modul mappák.
-
-Nincs hatóköre van definiálva, vagy ha a hatókör-paraméter értéke az AllUsers tulajdonság, a modul %systemdrive%:\Program Files\WindowsPowerShell\Modules van telepítve. CurrentUser hatókör érték esetén a modul $home\Documents\WindowsPowerShell\Modules van telepítve.
-
-A megadott modulokban minimális és a pontos verzióit eredmény végezhet.
-
-- Nincs PowerShell parancsfájlok párhuzamos verzió támogatása
-- Parancsfájl függőségi telepítés támogatása
-- **Nem megbízható a parancssorból:** felhasználói elfogadás kell a modulok telepítése egy nem megbízható tárházból.
-- -Force újratelepíti a telepített modul
+Néhány fontos Megjegyzés:
+- Parancsfájlok olyan telepített egyetlen fájlt. Emiatt egy parancsfájl csak egy példánya telepítve van, és a parancsfájlok több verziója nem lehet telepített-mellé a rendszeren. 
+- Parancsfájlok függőségek határozhatnak meg külső modulokat, telepítési-parancsfájl futtatása esetén telepítve lesz.
+- **Nem megbízható a parancssorból:** felhasználói elfogadás szükség a parancsfájlokat egy nem megbízható tárházból telepítéséhez.
 - RequiredVersion SxS PowerShell 5.0-s vagy újabb verziója a meglévő verzióival meghatározott verzióját telepíti.
 
-Helyettesítő karakterek nem támogatottak a - Name Install-modul, mentés-modul, eltávolítás-modulon, Install-parancsfájl, mentés-parancsfájl és eltávolítás parancsfájl-parancsmagokat.
+Helyettesítő karakterek nem támogatottak a - telepítő-parancsfájl, a név mentés-parancsfájl és eltávolítás parancsfájl-parancsmagokat.
 
 ### <a name="scope"></a>Hatókör
-Adja meg a telepítést a modul hatókörében. Ez a paraméter elfogadható értékek a következők: AllUsers és CurrentUser.
+A parancsfájl a telepítés hatóköre határozza meg. Ez a paraméter elfogadható értékek a következők: AllUsers és CurrentUser.
 
 Az alapértelmezett telepítési hatóköre az AllUsers tulajdonság.
 
-Az AllUsers tulajdonság hatóköre lehetővé teszi, hogy a modulokat telepíteni, egy olyan helyre, ez azt jelenti, hogy a számítógép összes felhasználója számára elérhető "$env: SystemDrive\Program Files\WindowsPowerShell\Modules".
+Az AllUsers tulajdonság hatóköre lehetővé teszi, hogy a parancsfájlok telepíthető egy olyan helyre, ez azt jelenti, hogy a számítógép összes felhasználója számára elérhető "$env: SystemDrive\Program Files\WindowsPowerShell\scripts".
 
-A CurrentUser hatókör lehetővé teszi, hogy csak a "$home\Documents\WindowsPowerShell\Modules", telepíthető modulok úgy, hogy a modul csak az aktuális felhasználó számára elérhető.
+A CurrentUser hatókör lehetővé teszi, hogy a parancsfájlok csak a "$home\Documents\WindowsPowerShell\scripts", telepíteni, hogy a parancsfájl csak az aktuális felhasználó számára elérhető.
 
 
 A parancsfájl a telepítés hatóköre határozza meg. Érvényes értékek a következők: AllUsers és CurrentUser. Az alapértelmezett érték a CurrentUser.
@@ -66,17 +58,15 @@ Az AllUsers hatókör meghatározza, hogy a parancsfájl %systemdrive%:\ProgramF
 
 Ez a parancsmag a Windows PowerShell 3.0-s vagy újabb kiadásaiban a Windows PowerShell, a Windows 7 vagy Windows 2008 R2 és újabb Windows-verziókat futtatja.
 
-Ha telepített modul nem importálható, (Ez azt jelenti, hogy ha egy .psm1, .psd1 vagy egy ugyanilyen nevű .dll nincs a mappában található), telepítés sikertelen lesz, kivéve, ha a Force paramétert a parancshoz adja hozzá.
+Ha egy azon a számítógépen a parancsfájl verziója megegyezik a Name paraméter megadott értéke, és nem hozzáadta a MinimumVersion vagy RequiredVersion paraméter, telepítési parancsfájl-csendes továbbra is fennáll, hogy a parancsfájl telepítése nélkül. Ha a MinimumVersion vagy RequiredVersion paraméterek vannak megadva, és a meglévő parancsfájl nem felel meg, hogy a paraméter értékének, majd hiba lép fel. Pontosabban: a jelenleg telepített parancsfájl verziószáma alacsonyabb, mint a MinimumVersion paraméter értékét, vagy a RequiredVersion paraméter értéke nem egyenlő, ha hiba lép fel. Ha a telepített parancsfájl verziószáma nagyobb, mint a MinimumVersion paraméter értékét, vagy a RequiredVersion paraméter értékének egyenlőnek, Install-parancsfájl csendes továbbra is fennáll, hogy a parancsfájl telepítése nélkül.
 
-A modul azon a számítógépen egy verziója megegyezik a Name paraméter megadott értéke, és nem hozzá vannak adva a MinimumVersion vagy RequiredVersion paramétert, ha telepítési-parancsfájl csendes továbbra is fennáll, hogy a modul telepítése nélkül. Ha a MinimumVersion vagy RequiredVersion paraméterek vannak megadva, és a meglévő modul nem felel meg, hogy a paraméter értékének, majd hiba lép fel. Pontosabban: a jelenleg telepített modul verziószáma alacsonyabb, mint a MinimumVersion paraméter értékét, vagy a RequiredVersion paraméter értéke nem egyenlő, ha hiba lép fel. A telepített modul verziószáma nagyobb, mint a MinimumVersion paraméter értékét, vagy a RequiredVersion paraméter értékének egyenlőnek, ha telepítés-parancsfájl csendes továbbra is fennáll, hogy a modul telepítése nélkül.
+Telepítési parancsfájl-hibát ad vissza, ha nem parancsprogram az online katalógus, amely megfelel a megadott névvel már létezik.
 
-Telepítési parancsfájl-hibát ad vissza, ha nincs modul az online katalógus, amely megfelel a megadott névvel már létezik.
+Több parancsfájl telepítéséhez adja meg a parancsfájl neveket, vesszővel elválasztva tömbjét. Nem adhat hozzá MinimumVersion vagy RequiredVersion Ha több parancsfájl nevét adja meg.
 
-Több modul telepítéséhez adja meg a modul neve vesszőkkel elválasztva tömbjét. Nem adhat hozzá MinimumVersion vagy RequiredVersion Ha több modul nevet ad meg.
+Parancsfájlok alapértelmezés szerint a Program Files mappában vannak telepítve. Átadhatja az Install-parancsprogram, több PSGetItemInfo objektumok Ez az egyetlen parancs telepítésének megadásával több parancsfájl egy másik módja.
 
-Alapértelmezés szerint a modulok telepítve vannak a Program Files mappába, problémák elkerülése érdekében a Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) erőforrások telepítése. Átadhatja az Install-parancsprogram, több PSGetItemInfo objektumok Ez az egyetlen parancs telepítésének megadásával több modul egy másik módja.
-
-Telepített rosszindulatú kódot tartalmazó futó modulok megelőzése érdekében rendszer nem automatikusan importálja a telepítés. Biztonsági szempontból ajánlott, kiértékelése modul kód parancsmagok és függvények futtatása egy modulban először előtt.
+Hogy megakadályozza a parancsfájlok futtatását, amelyek tartalmazzák a kártevő kód – telepítve parancsfájlok nem automatikusan importált üzembe helyezése. Biztonsági szempontból ajánlott, parancsfájlkód kiértékelése előtt parancsmagok és funkciók egy parancsfájlban futtatja az első alkalommal.
 
 
 ## <a name="cmdlet-syntax"></a>A parancsmag szintaxisa
@@ -297,42 +287,46 @@ ExternalScript Required-Script2.ps1 C:\\Users\\manikb\\Documents\\WindowsPowerSh
 
 ```powershell
 
-# Install a module by name
-Install-Script -Name MyDscModule
+# Install a script by name
+Install-Script -Name MyDscscript
 
-# Install multiple modules
+# Install multiple scripts
 Install-Script ContosoClient,ContosoServer
 
-# Install a module using its minimum version
+# Install a script using its minimum version
 Install-Script -Name ContosoServer -MinimumVersion 1.0
 
-# Install a specific version of a module
+# Install a specific version of a script
 Install-Script -Name ContosoServer -RequiredVersion 1.1.3
 
-# Install the latest version of a module to $home\Documents\WindowsPowerShell\Modules.
+# Install a specific prerelease version of a script
+Install-Script -Name ContosoServer -RequiredVersion 1.1.3-alpha -AllowPrerelease
+
+# Install the latest version of a script to $home\Documents\WindowsPowerShell\scripts.
 Install-Script -Name ContosoServer -Scope CurrentUser
 
-# if a module is already available under $env:PSModulePath, below command fails with 'ModuleAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
+# if a script is already available under $env:PSModulePath, below command fails with 'scriptAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
 Install-Script ContosoServer -RequiredVersion 1.5
 
-# if a module is already available under $env:PSModulePath, below command fails with 'ModuleAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
+# if a script is already available under $env:PSModulePath, below command fails with 'scriptAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
 Install-Script ContosoServer -MinimumVersion 2.5
 
-# Install multiple modules from multiple registered repositories
+# Install multiple scripts from multiple registered repositories
 Install-Script ContosoClient,ContosoServer -Repository PSGallery, PrivatePSGallery
 
-# Install a module with -WhatIf
+# Install a script with -WhatIf
 Install-Script ContosoClient -WhatIf
 
-# Install a module with -Confirm. A prompt will be displayed to confirm the installation.
+# Install a script with -Confirm. A prompt will be displayed to confirm the installation.
 Install-Script ContosoClient -WhatIf
 
-# -Force option reinstalls the installed module
+# -Force option reinstalls the installed script
 Install-Script ContosoClient -Force
 
-# Install a module with dependencies
-Install-Script -Name 
+# Install a script with dependencies
+Install-Script -Name ContosoClient
 
+# Install a script 
 
 # Install a script from the registered repository with ScriptSourceLocation
 Install-Script Connect-AzureVM
@@ -475,158 +469,25 @@ The scripts install location 'C:\Program Files\WindowsPowerShell\Scripts' is req
 
 ```powershell
 
-# Find a module and install it
+# Find a script and install it
 Find-Script -Name "MyDSC*" | Install-Script
 
-# Find a module and install it to the CurrentUser scope
+# Find a script and install it to the CurrentUser scope
 Find-Script -Name "MyDSC*" | Install-Script -Scope CurrentUser
 
 # Find commands by name and install them
 # The first command finds the specified commands in the INT repository, and then uses the pipeline operator to pass them to Install-Script to install them.
-# The second command uses Get-InstalledModule to verify the modules from the prior command are installed.
+# The second command uses Get-Installedscript to verify the scripts from the prior command are installed.
 Find-Command -Repository "INT" -Name Get-ContosoClient,Get-ContosoServer | Install-Script
-Get-InstalledModule
-
-# This command finds the resource named MyResource and passes it to the Install-Script cmdlet by using the pipeline operator. The Install-Script cmdlet installs the module for the resource. 
-# If you pipe multiple resources to the Install-Script cmdlet from the same module, Install-Script attempts to install the module only once. 
-Find-DscResource -Name "MyResource" | Install-Script
-Get-InstalledModule
+Get-Installedscript
 
 # Find multiple role capabilities and install them
 Find-RoleCapability -Name MyJeaRole, Maintenance | Install-Script
-Get-InstalledModule
+Get-Installedscript
 
 ```
 
-## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Egymás melletti verzióinak támogatása PowerShell 5.0-s vagy újabb
 
-PowerShellGet támogatja az egymás melletti (SxS) modul által támogatott verzió telepítési-parancsfájl, a frissítés-parancsfájl, és a közzététel-parancsfájl parancsmagok a Windows PowerShell 5.0-s vagy újabb rendszerű.
-
-### <a name="install-script-examples"></a>Telepítési parancsfájl-példák
-
-```powershell
-# Install a version of the module
-Install-Script -Name PSScriptAnalyzer -RequiredVersion 1.1.0 -Repository PSGallery
-Get-Script -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
-
-Name : PSScriptAnalyzer
-Version : 1.1.0
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
-
-# Install another version of the module in Side-by-Side with already installed version.
-Install-Script -Name PSScriptAnalyzer -RequiredVersion 1.1.1 -Repository PSGallery
-Get-Script -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
-
-Name       : PSScriptAnalyzer 
-Version    : 1.1.1
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.1
-Name       : PSScriptAnalyzer
-Version    : 1.1.0
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
-
-# Get all versions of an installed module
-Get-InstalledModule -Name PSScriptAnalyzer -AllVersions
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.1.0      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
-1.1.1      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
-
-
-```
-
-## <a name="install-module-with-its-dependencies"></a>A függőségekkel rendelkező modul telepítése
-
-```powershell
-
-# Find a module
-Find-Module -Name TypePx -Repository PSGallery
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-
-# Find a module and its dependencies
-Find-Module -Name TypePx -Repository PSGallery -IncludeDependencies
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experience i...
-
-# Discover the dependencies list without adding -IncludeDependencies
-$result = Find-Module -Name TypePx -Repository PSGallery
-$result.Dependencies
-
-Name                           Value
-----                           -----
-Name                           SnippetPx
-CanonicalId                    powershellget:SnippetPx/#https://www.powershellgallery.com/api/v2/
-
-
-# Now install the module along with its dependencies
-Install-Script -Name TypePx -Repository PSGallery -Verbose
-
-VERBOSE: Repository details, Name = 'PSGallery', Location = 'https://www.powershellgallery.com/api/v2/'; IsTrusted =
-'False'; IsRegistered = 'True'.
-VERBOSE: Using the provider 'PowerShellGet' for searching packages.
-VERBOSE: Using the specified source names : 'PSGallery'.
-VERBOSE: Getting the provider object for the PackageManagement Provider 'NuGet'.
-VERBOSE: The specified Location is 'https://www.powershellgallery.com/api/v2/' and PackageManagementProvider is
-'NuGet'.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='TypePx'' for ''.
-VERBOSE: Total package yield:'1' for the specified package 'TypePx'.
-VERBOSE: Performing the operation "Install-Script" on target "Version '2.0.1.20' of module 'TypePx'".
-
-Untrusted repository
-You are installing the modules from an untrusted repository. If you trust this repository, change its
-InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from
-'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
-VERBOSE: The installation scope is specified to be 'AllUsers'.
-VERBOSE: The specified module will be installed in 'C:\Program Files\WindowsPowerShell\Modules'.
-VERBOSE: The specified Location is 'NuGet' and PackageManagementProvider is 'NuGet'.
-VERBOSE: Downloading module 'TypePx' with version '2.0.1.20' from the repository
-'https://www.powershellgallery.com/api/v2/'.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='TypePx'' for ''.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='SnippetPx'' for ''.
-VERBOSE: InstallPackage' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: DownloadPackage' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896\SnippetPx\SnippetPx.nupkg',
-uri='https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'
-VERBOSE: Downloading 'https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'.
-VERBOSE: Completed downloading 'https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'.
-VERBOSE: Completed downloading 'SnippetPx'.
-VERBOSE: Hash for package 'SnippetPx' does not match hash provided from the server.
-VERBOSE: InstallPackageLocal' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: InstallPackage' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: DownloadPackage' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896\TypePx\TypePx.nupkg',
-uri='https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'
-VERBOSE: Downloading 'https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'.
-VERBOSE: Completed downloading 'https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'.
-VERBOSE: Completed downloading 'TypePx'.
-VERBOSE: Hash for package 'TypePx' does not match hash provided from the server.
-VERBOSE: InstallPackageLocal' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: Installing the dependency module 'SnippetPx' with version '1.0.5.18' for the module 'TypePx'.
-VERBOSE: Module 'SnippetPx' was installed successfully to path 'C:\Program
-Files\WindowsPowerShell\Modules\SnippetPx\1.0.5.18'.
-VERBOSE: Module 'TypePx' was installed successfully to path 'C:\Program
-Files\WindowsPowerShell\Modules\TypePx\2.0.1.20'.
-
-
-# Get the installed modules
-Get-InstalledModule
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experience i...
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-
-```
 
 ## <a name="error-scenarios"></a>Hiba forgatókönyvek
 
@@ -644,79 +505,6 @@ Install-Script ContosoClient,ContosoServer -RequiredVersion 2.0
 # Below command fails with 'VersionParametersAreAllowedOnlyWithSingleName,Install-Script'
 Install-Script ContosoClient,ContosoServer -MinimumVersion 2.0
 
-```
-
-## <a name="installing-a-script-with-dependent-scripts-and-modules"></a>Parancsfájl a függő parancsfájlok és a modulok telepítése
-
-```powershell
-# Installing a script with dependent scripts and modules
-Find-Script -Repository GalleryINT -Name Script-WithDependencies2 -IncludeDependencies
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
-2.5 RequiredModule1 Module GalleryINT RequiredModule1 module
-2.5 RequiredModule2 Module GalleryINT RequiredModule2 module
-2.5 RequiredModule3 Module GalleryINT RequiredModule3 module
-2.0 RequiredModule4 Module GalleryINT RequiredModule4 module
-1.5 RequiredModule5 Module GalleryINT RequiredModule5 module
-2.5 Required-Script1 Script GalleryINT Description for the Required-Script1 script
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-2.5 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-
-Get-InstalledScript
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-1.0 Demo-Script Script LocalRepo1 Script file description goes here
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-Get-InstalledModule
-Install-Script -Repository GalleryINT -Name Script-WithDependencies2 -Scope CurrentUser
-Get-InstalledScript
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-1.0 Demo-Script Script LocalRepo1 Script file description goes here
-2.5 Required-Script1 Script GalleryINT Description for the Required-Script1 script
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
-Get-InstalledModule
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.5 RequiredModule1 Module GalleryINT RequiredModule1 module
-2.5 RequiredModule2 Module GalleryINT RequiredModule2 module
-2.5 RequiredModule3 Module GalleryINT RequiredModule3 module
-2.0 RequiredModule4 Module GalleryINT RequiredModule4 module
-1.5 RequiredModule5 Module GalleryINT RequiredModule5 module
-
-# Contents of Script-WithDependencies2 file.
-<#PSScriptInfo
-.VERSION 2.0
-.GUID 90082fa1-0b84-49fb-a00e-0a624fbb6584
-.AUTHOR manikb
-.COMPANYNAME Microsoft Corporation
-.COPYRIGHT (c) 2015 Microsoft Corporation. All rights reserved.
-.TAGS Tag1 Tag2 Tag-Script-WithDependencies2-2.0
-.LICENSEURI http://script-withdependencies2.com/license
-.PROJECTURI http://script-withdependencies2.com/
-.ICONURI http://script-withdependencies2.com/icon
-.EXTERNALMODULEDEPENDENCIES
-.REQUIREDSCRIPTS Required-Script1,Required-Script2,Required-Script3
-.EXTERNALSCRIPTDEPENDENCIES
-.RELEASENOTES
-Script-WithDependencies2 release notes
-#>
-#Requires -Module RequiredModule1
-#Requires -Module @{ModuleName = 'RequiredModule2'; ModuleVersion = '2.0'}
-#Requires -Module @{RequiredVersion = '2.5'; ModuleName = 'RequiredModule3'}
-#Requires -Module @{ModuleVersion = '1.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '2.0'}
-#Requires -Module @{MaximumVersion = '1.5'; ModuleName = 'RequiredModule5'}
-<#
-.DESCRIPTION
-Description for the Script-WithDependencies2 script
-#>
-Param()
-Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
-Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
 ## <a name="install-script-and-get-installedscript-cmdlets"></a>Telepítési-parancsfájlt és a Get-InstalledScript parancsmagok
