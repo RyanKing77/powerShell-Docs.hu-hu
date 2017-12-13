@@ -4,11 +4,11 @@ author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A helyi Configuration Manager konfigurálása"
-ms.openlocfilehash: 98470f45ca7c11ea63d68da7dec9fcd844f06192
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
+ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="configuring-the-local-configuration-manager"></a>A helyi Configuration Manager konfigurálása
 
@@ -73,7 +73,7 @@ A következő tulajdonságok érhetők el egy **beállítások** blokkot.
 
 |  Tulajdonság  |  Típus  |  Leírás   |
 |----------- |------- |--------------- |
-| ActionAfterReboot| karakterlánc| Itt adhatja meg, mi történik, a rendszer újraindítása után a beállítások alkalmazása során. A lehetséges értékek a következők __"ContinueConfiguration"__ és __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: továbbra is a számítógép újraindítása után a jelenlegi konfiguráció alkalmazása. Ez az az alapértelmezett falue</li><li>__StopConfiguration__: állítsa le a számítógép újraindítása után az aktuális konfigurációt.</li></ul>|
+| ActionAfterReboot| karakterlánc| Itt adhatja meg, mi történik, a rendszer újraindítása után a beállítások alkalmazása során. A lehetséges értékek a következők __"ContinueConfiguration"__ és __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: továbbra is a számítógép újraindítása után a jelenlegi konfiguráció alkalmazása. Ez az az alapértelmezett érték</li><li>__StopConfiguration__: állítsa le a számítógép újraindítása után az aktuális konfigurációt.</li></ul>|
 | AllowModuleOverwrite| logikai érték| __$TRUE__ Ha lekéréses szolgáltatásból letöltött új konfigurációk engedélyezettek-e a célcsomóponton lévő régi felülírják. Ellenkező esetben $FALSE.|
 | CertificateID| karakterlánc| A konfigurációban átadott hitelesítő biztosításához használt tanúsítvány ujjlenyomata. További információ: [szeretné védeni a Windows PowerShell célállapot-konfiguráció-felhasználó hitelesítő adatait a](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Megjegyzés:__ ez kezeli automatikusan Azure Automation DSC lekérési szolgáltatás használatakor.|
 | ConfigurationDownloadManagers| CimInstance]| Elavult. Használjon __ConfigurationRepositoryWeb__ és __ConfigurationRepositoryShare__ érdekében adja meg a konfigurációs lekéréses szolgáltatás végpontjait.|
