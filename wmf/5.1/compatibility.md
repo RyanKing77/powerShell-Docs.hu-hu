@@ -2,13 +2,13 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
+keywords: "WMF, powershell, beállítás"
 title: "WMF 5.1 operációs rendszer kompatibilitási"
-ms.openlocfilehash: b8724538a03ab67529682b9efb29e3ab947339b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 04217c5abb0f04a5dc6b15cd956a632f7b84c9bb
+ms.sourcegitcommit: 5dbf78ba0db482efa79e31a0e4963f8cbeb3df54
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 operációs rendszer kompatibilitási #
 
@@ -33,4 +33,6 @@ ms.lasthandoff: 06/12/2017
 Kapcsolatos "érhető el a-mezőben *": A WMF 5.0 jellemzői foglalt az eredeti Windows 10 RTM verzióját.
 A WMF 5.1 funkcióit a Windows Server 2016 és a Windows 10 évforduló Edition foglalt. WMF 5.1 esetén nem alkalmazható ezen operációsrendszer-verziók, a frissítéseket Windows Update meghatározott.
 
+
+A rendszer egy dolog, ami arról értesít, hogy a WMF nem tartalmaz a Windows. WMF egy frissítési csomagot, amely korábban kiadott Windows-verziókhoz Windows funkciókat biztosít. Ez egy fontos különbséggel lehet végrehajtani, ha a segítségkérés bármely ezeket a szolgáltatásokat, ezen összetevők verziója, nem fog egyezni mi rendszerrel szállított, az eredeti operációs rendszerben.
 
