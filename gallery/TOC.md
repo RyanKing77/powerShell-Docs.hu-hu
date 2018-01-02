@@ -39,6 +39,7 @@
 ### [Közzététel](psget/module/psget_publish-module.md)
 ### [PSEditions paraméterrel rendelkező modulok](psget/module/modulewithpseditionsupport.md)
 ### [Licencfeltételek elfogadását igénylő modulok](psget/module/RequireLicenseAcceptance.md)
+### [Előzetes verziók](psget/module/PreReleaseModule.md)
 ### [Hibaelhárítás](psget/psget_cmdlets_troubleshooting.md)
 
 ## Parancsfájl
@@ -54,7 +55,7 @@
 ### [Közzététel](psget/script/psget_publish-script.md)
 ### [PSEditions paraméterrel rendelkező parancsfájlok](psget/script/scriptwithpseditionsupport.md)
 ### [Licencfeltételek elfogadásának megkövetelése a parancsfájlokhoz](psget/script/script_RequireLicenseAcceptance.md)
-
+### [Előzetes verziók](psget/script/PreReleaseScript.md)
 ## Tárházkezelés
 ### [A NuGet-szolgáltató és a NuGet.exe rendszerindítása](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
 ### [Tárház regisztrálása](psget/repository/psget_register-psrepository.md)
