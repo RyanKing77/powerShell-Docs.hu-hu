@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: PowerShell parancsmag
 title: "A kétugrásos létrehozása a PowerShell-távelérés"
-ms.openlocfilehash: f3b8280819e43bd67bd608ffd0ba9484c2bbc26c
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>A kétugrásos létrehozása a PowerShell-távelérés
 
@@ -256,12 +256,12 @@ Hitelesítő adatok belül átadhatók a **ScriptBlock** hívásakor paramétere
 - Nem igényel különleges kiszolgálói beállítást.
 - 2.0-s vagy újabb verziót futtató a WMF egyetlen kiszolgálón működik.
 
-## <a name="cons"></a>Hátrányok
+### <a name="cons"></a>Hátrányok
 
 - Egy helyen levő kód eljárást igényel.
 - WMF 2.0 fut, ha átadja egy távoli munkamenet argumentumokat igényel különböző szintaxis.
 
-## <a name="example"></a>Példa
+### <a name="example"></a>Példa
 
 A következő példa bemutatja, hogyan a hitelesítő adatok továbbítása egy **Invoke-Command** parancsfájlblokk:
 
@@ -277,7 +277,7 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 
 ## <a name="see-also"></a>Lásd még:
 
-[PowerShell távoli eljáráshívás biztonsági megfontolások](WinRMSecurity.md)
+[PowerShell távoli eljáráshívásainak biztonsági megfontolásai](WinRMSecurity.md)
 
 
 
