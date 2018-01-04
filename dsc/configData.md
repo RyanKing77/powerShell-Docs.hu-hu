@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Konfigurációs adatok használata"
-ms.openlocfilehash: a70cd8f0f6c24eb02743b02d198cebcc3d775756
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60c6c2d5694a03275e1a08522bdcf4b1bc5bb068
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>A DSC konfigurációs adatok használata
 
@@ -153,7 +153,7 @@ Például létrehozhat egy fájlt `MyData.psd1` a következő tartalommal:
 
 ## <a name="compiling-a-configuration-with-configuration-data"></a>A konfigurációs adatok konfiguráció fordítása
 
-Fordítása egy konfigurációt, amely meghatározta a konfigurációs adatokat, akkor a cofiguration mechanizmusok adatok átadására értékeként a **ConfigurationData** paraméter.
+Egy konfigurációt, amely meghatározta a konfigurációs adatok lefordításához át a konfigurációs adatokat az értékeként a **ConfigurationData** paraméter.
 
 Ezzel létrehoz minden bejegyzés esetében MOF-fájlt a **AllNodes** tömb.
 Minden egyes MOF-fájlt nevű a `NodeName` a megfelelő tömb tétel tulajdonság.
@@ -187,7 +187,7 @@ DSC nyújt három néhány speciális változó, amely egy konfigurációs paran
 ## <a name="using-non-node-data"></a>Nem-csomópont adatok használata
 
 Mivel az előző példákban is láttuk a **ConfigurationData** hashtable rendelkezhet egy vagy több kulcsot mellett a szükséges **AllNodes** kulcs.
-Az ebben a témakörben szereplő példák, azt csak egyetlen addiontal csomópont használt, és azt nevű `NonNodeData`. Azonban bármely addiontal kulcsok számának megadása, és bármilyen kívánt nevet őket.
+Ebben a témakörben a példákban azt egyetlen további csomópont használja, és azt nevű `NonNodeData`. Azonban minden további kulcsok számának megadása, és bármilyen kívánt nevet őket.
 
 Például egy nem csomópont adatok használatával, lásd: [konfigurációs és környezeti adatok elválasztó](separatingEnvData.md).
 

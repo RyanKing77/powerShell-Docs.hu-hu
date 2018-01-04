@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Szükségeskonfiguráció-State konfigurálása – áttekintés döntéshozók számára"
-ms.openlocfilehash: e39ab5138b20653e46ac35fa32b99d268f96b2df
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 1800acfa9edae4f65e34db380ff719ad4c034921
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Szükségeskonfiguráció-State konfigurálása – áttekintés döntéshozók számára
 
@@ -34,7 +34,7 @@ Konfigurációk megtalálhatók megosztható keresztül a [PowerShell-galériáb
 
 ## <a name="desired-state-configuration-and-devops"></a>Célállapot-konfiguráció és Devopok
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) személyek, -technológiák és, amelyek lehetővé teszik a gyors üzembe helyezési és iterációs kulturális környezet kombinációja. A DSC úgy lett kialakítva, a DevOps szem előtt. Egy olyan környezetben egyetlen konfigurációval rendelkező megadása azt jelenti, hogy a fejlesztők is kódolja a követelményeknek, a konfiguráció, ellenőrizze, hogy az adatforrás-vezérlő konfigurálása és műveletek csapat könnyedén telepítheti kód nem kell végighaladnia hibákhoz vezethet manuálisan végrehajtott folyamatokat. 
+[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) személyek, a folyamat, valamint az eszközök, amelyek lehetővé teszik a gyors üzembe helyezési és iterációs összpontosított érték továbbítása a végfelhasználók számára, hogy a belső vagy külső kombinációja. A DSC úgy lett kialakítva, a DevOps szem előtt. Egy olyan környezetben egyetlen konfigurációval rendelkező megadása azt jelenti, hogy a fejlesztők is kódolja a követelményeknek, a konfiguráció, ellenőrizze, hogy az adatforrás-vezérlő konfigurálása és műveletek csapat könnyedén telepítheti kód nem kell végighaladnia hibákhoz vezethet manuálisan végrehajtott folyamatokat. 
 
 Konfigurációk megtalálhatók [adatvezérelt](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), így egyszerűbb azonosításához, és módosítsa a fejlesztői beavatkozás nélküli környezetekben ops csoportjai. 
 
