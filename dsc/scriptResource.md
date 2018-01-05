@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC-parancsfájl-erőforrás"
-ms.openlocfilehash: d3e231d33a04fd8a018ffe2f3d51a15360e0d312
-ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
+ms.openlocfilehash: 3824cbf48d980069b923d91e1fa24739e5d4e617
+ms.sourcegitcommit: 378c7ed4e8c8c1c5fe71417b9ba672a4c990630b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="dsc-script-resource"></a>A DSC-parancsfájl-erőforrás
 
@@ -51,8 +51,6 @@ Script [string] #ResourceName
 
 ## <a name="example-1"></a>1. példa
 ```powershell
-$version = Get-Content 'version.txt'
-
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
