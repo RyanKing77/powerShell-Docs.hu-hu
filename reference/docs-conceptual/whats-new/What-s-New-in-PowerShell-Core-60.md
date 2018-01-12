@@ -224,7 +224,7 @@ PowerShell feladatok kapcsolatos további információkért lásd: [about_Jobs](
   - `PSEdition`: A beállított érték `Core` PowerShell alapvető és `Desktop` a Windows PowerShell
   - `GitCommitId`: Ez az a Git commit azonosítója a Git fiók vagy a címke ahol PowerShell lett létrehozva.
     A kiadott buildek, azt valószínűleg találkozik majd olyan azonos `PSVersion`.
-  - `OS`: Ez az az operációs rendszer által visszaadott verzió-karakterlánca`[System.Environment]::OSVersion.VersionString`
+  - `OS`: Ez az az operációs rendszer által visszaadott verzió-karakterlánca`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: A rendszer által visszaadott `[System.Environment]::OSVersion.Platform` érték `Win32NT` Windows, a `MacOSX` a macOS, és `Unix` Linux.
 - Eltávolítja a `BuildVersion` tulajdonságot `$PSVersionTable`.
   Ez a tulajdonság erősen volt kötve a Windows verzió buildszámával.

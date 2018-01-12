@@ -2,10 +2,10 @@
 
 ## <a name="msi"></a>MSI-FÁJL
 
-PowerShell telepítsen egy Windows ügyfél vagy a Windows Server (működik a Windows 7 SP1, Server 2008 R2 és újabb verziók), töltse le az MSI-csomagot
-<!-- TODO: either the Download Center or -->
-a GitHub [kiadott][] lap.
+PowerShell telepítsen egy Windows ügyfél vagy a Windows Server (működik a Windows 7 SP1, Server 2008 R2 és újabb verziók), az MSI-csomag letölthető a GitHub [feloldja a][] lap.
+
 Az MSI-fájl néz ki-`PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+<!-- TODO: should be updated to point to the Download Center as well -->
 
 Miután letöltötte, kattintson duplán a telepítő, és kövesse az utasításokat.
 
@@ -96,7 +96,7 @@ CoreCLR bitként a minden CI build az archívumban közzétesszük [AppVeyor][].
 * `./bin/pwsh.exe`
 
 <!-- [download-center]: TODO -->
-[kiadott]: https://github.com/PowerShell/PowerShell/releases
+[feloldja a]: https://github.com/PowerShell/PowerShell/releases
 [signing]: ../../tools/Sign-Package.ps1
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md

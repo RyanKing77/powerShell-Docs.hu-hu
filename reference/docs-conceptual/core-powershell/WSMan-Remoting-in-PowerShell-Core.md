@@ -35,13 +35,14 @@ Install-PowerShellRemoting.ps1
 #### <a name="executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register"></a>Hajtja végre a nevében a példányon, amely regisztrálja a PowerShell egy másik példánya
 
 ``` powershell
-<path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>" -PowerShellVersion "<the powershell version tag>"
+<path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>"
 ```
 
 Példa:
 
 ``` powershell
-C:\Program Files\PowerShell\6.0.0.9\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0.9\" -PowerShellVersion "6.0.0-alpha.9"
+Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
+.\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
 **Megjegyzés:** a távoli eljáráshívás regisztrációs parancsfájl újraindul a Rendszerfelügyeleti webszolgáltatások, így az összes meglévő PSRP munkamenet befejeződik, a parancsfájl futtatása után azonnal. Ha futtatása egy távoli munkamenet közben, ez megszünteti a kapcsolatot.
@@ -51,8 +52,8 @@ C:\Program Files\PowerShell\6.0.0.9\Install-PowerShellRemoting.ps1 -PowerShellHo
 Hozza létre az új PowerShell-végpont PowerShell munkamenetet megadásával `-ConfigurationName "some endpoint name"`. Ha csatlakozni szeretne a PowerShell-példány a fenti példa, használja:
 
 ``` powershell
-New-PSSession ... -ConfigurationName "powershell.6.0.0-alpha.9"
-Enter-PSSession ... -ConfigurationName "powershell.6.0.0-alpha.9"
+New-PSSession ... -ConfigurationName "powershell.6.0.0"
+Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```
 
 Vegye figyelembe, hogy `New-PSSession` és `Enter-PSSession` , amely nem ad meg indítások `-ConfigurationName` az alapértelmezett PowerShell végpont által megcélzott `microsoft.powershell`.
