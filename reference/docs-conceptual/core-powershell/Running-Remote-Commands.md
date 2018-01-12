@@ -3,25 +3,37 @@ ms.date: 2017-06-05
 keywords: PowerShell parancsmag
 title: "Távoli parancsok futtatása"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 5cf9690b8fe4549a99186f172cb6f0de156a4dea
-ms.sourcegitcommit: c5251755c4442487f99ff74fadf7e37bbf039089
+ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
+ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="running-remote-commands"></a>Távoli parancsok futtatása
+
 A parancsokat egy vagy több száz számítógép egyetlen Windows PowerShell-parancsot. A Windows PowerShell támogatja a távoli számítási különböző technológiákkal, például WMI, RPC és WS-Management használatával.
+
+## <a name="remoting-in-powershell-core"></a>A PowerShell Core távelérése
+
+PowerShell mag, a Windows, a macOS és a Linux, PowerShell újabb kiadása támogatja a WMI, WS-Management és az SSH távelérése.
+(RPC már nem támogatott.)
+
+Ez beállításával kapcsolatos további információkért lásd:
+
+* [SSH PowerShell Core a távoli eljáráshívás] [ssh-távoli eljáráshívási]
+* [A PowerShell alapvető Rendszerfelügyeleti webszolgáltatások távoli eljáráshívási] [a Rendszerfelügyeleti webszolgáltatások-távelérése]
 
 ## <a name="remoting-without-configuration"></a>Távelérési konfiguráció nélkül
 Számos Windows PowerShell-parancsmagok a ComputerName paraméterre, amely lehetővé teszi az adatok gyűjtéséhez és módosíthatja a beállításokat egy vagy több távoli számítógépeken van. Számos különböző kommunikációs technológiák és számos munkahelyi használata az összes Windows operációs rendszeren, amely a Windows PowerShell támogatja a Speciális konfiguráció nélkül.
 
 Ezek a parancsmagok a következők:
+
 * [Indítsa újra a számítógépet](https://go.microsoft.com/fwlink/?LinkId=821625)
 * [Kapcsolat tesztelése](https://go.microsoft.com/fwlink/?LinkId=821646)
 * [Az eseménynaplóban törlése](https://go.microsoft.com/fwlink/?LinkId=821568)
 * [Get-Eseménynapló](https://go.microsoft.com/fwlink/?LinkId=821585)
 * [Get-gyorsjavítás](https://go.microsoft.com/fwlink/?LinkId=821586)
-  - [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
+* [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
 * [Get-szolgáltatás](https://go.microsoft.com/fwlink/?LinkId=821593)
 * [Szolgáltatás beállítása](https://go.microsoft.com/fwlink/?LinkId=821633)
 * [Get-WinEvent parancsmaggal](https://go.microsoft.com/fwlink/?linkid=821529)
@@ -135,3 +147,6 @@ Távoli eljáráshívás hibákkal kapcsolatban lásd: [about_Remote_Troubleshoo
 - [Új-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [A WSMan-szolgáltató](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+
+[wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
+[ssh-resmoting]: SSH-Remoting-in-PowerShell-Core.md
