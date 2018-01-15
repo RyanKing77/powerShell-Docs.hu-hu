@@ -72,8 +72,17 @@
               href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
         - name: ISE-útmutató
           href: core-powershell/ise-guide.md
+        - name: Visual Studio Code
+          items:
+            - name: A Visual Studio Code használata
+              href: core-powershell/vscode/using-vscode.md
         - name: Távoli parancsok futtatása
           href: core-powershell/running-remote-commands.md
+          items:
+            - name: PowerShell távoli eljáráshívás SSH-n keresztül
+              href: core-powershell/SSH-Remoting-in-PowerShell-Core.md
+            - name: WS-Management (WSMan) távoli eljáráshívás a PowerShell Core-ban
+              href: core-powershell/WSMan-Remoting-in-PowerShell-Core.md
         - name: Webes elérés
           href: core-powershell/web-access.md
           items:
@@ -207,6 +216,10 @@
     - name: Telepítés
       href: ''
       items:
+        - name: A PowerShell Core telepítése Windows rendszerre
+          href: setup/Installing-PowerShell-Core-on-Windows.md
+        - name: A PowerShell Core telepítése macOS és Linux rendszerre
+          href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
         - name: A Windows PowerShell ISE kisegítő lehetőségei
           href: setup/accessibility-in-windows-powershell-ise.md
         - name: A Windows PowerShell 2.0 motor telepítése
@@ -234,11 +247,15 @@
     - name: Újdonságok
       href: ''
       items:
-        - name: A PowerShell 50 ISE újdonságai
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
-        - name: A Windows PowerShell 50 újdonságai
-          href: whats-new/what-s-new-in-windows-powershell-50.md
         - name: A PowerShell újdonságai
           href: whats-new/what-s-new-with-powershell.md
+        - name: A Windows PowerShell 5.0 újdonságai
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: A PowerShell 5.0 ISE újdonságai
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
+        - name: A PowerShell Core 6.0 újdonságai
+          href: whats-new/what-s-new-in-powershell-core-60.md
+    - name: A PowerShell Core támogatási életciklusa
+      href: PowerShell-Core-Support.md
     - name: Szószedet
       href: windows-powershell-glossary.md
