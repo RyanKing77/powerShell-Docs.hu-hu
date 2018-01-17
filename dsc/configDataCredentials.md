@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Konfigurációs adatokat a hitelesítő adatok beállításai"
-ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Konfigurációs adatokat a hitelesítő adatok beállításai
 >Vonatkozik: A Windows PowerShell 5.0
@@ -21,7 +20,10 @@ Ne jelenjen meg többé a hibaüzenetek és figyelmeztető üzenetek használja 
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**Megjegyzések:** <p>Egyszerű szöveges jelszavak titkosítás nélkül tárolja/továbbítása általában nem biztonságos. Ebben a témakörben ismertetett módszerek használatával biztonságossá tétele a hitelesítő adatok használata ajánlott.</p> <p>Az Azure Automation DSC szolgáltatás konfigurációk fordítása és biztonságosan tárolt hitelesítő adatok központi kezelését teszi lehetővé.  További információ:: [DSC-konfigurációk fordítása / hitelesítő eszközök](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
+> [!NOTE]
+> Egyszerű szöveges jelszavak titkosítás nélkül tárolja/továbbítása általában nem biztonságos. Ebben a témakörben ismertetett módszerek használatával biztonságossá tétele a hitelesítő adatok használata ajánlott.
+> Az Azure Automation DSC szolgáltatás konfigurációk fordítása és biztonságosan tárolt hitelesítő adatok központi kezelését teszi lehetővé.
+> További információ:: [DSC-konfigurációk fordítása / hitelesítő eszközök](/azure/automation/automation-dsc-compile#credential-assets)
 
 A következő egy példa az egyszerű szöveges hitelesítő adatokat áthaladó:
 
@@ -133,7 +135,8 @@ WMF 5.0 hozzáadott automatikus `PsDscRunAsCredential` összes erőforrás tulaj
 További információ `PsDscRunAsCredential`, lásd: [felhasználói hitelesítő adatokkal rendelkező futtató DSC](runAsUser.md).
 Egyéni erőforrásokat és újabb tulajdonsággal Ez automatikus létrehozása a hitelesítő adatokat a saját tulajdonság helyett.
 
->**Megjegyzés:** bizonyos erőforrások kialakításának bizonyos okból többféle hitelesítő adatot használnak, és saját hitelesítő adat tulajdonságokkal rendelkeznek.
+> [!NOTE]
+> Az egyes erőforrások terv bizonyos okból többféle hitelesítő adatot használnak, és saját hitelesítő adat tulajdonságokkal rendelkeznek.
 
 A rendelkezésre álló hitelesítő adat található erőforrás tulajdonságainak bármelyikével `Get-DscResource -Name ResourceName -Syntax` vagy az Intellisense a ISE (`CTRL+SPACE`).
 
@@ -222,8 +225,8 @@ for node 'localhost'.
 ```
 
 Ebben a példában két problémákkal rendelkezik:
-1.  Hiba ismerteti, hogy a jelszavakat egyszerű szöveges formában nem támogatottak
-2.  Figyelmeztetés tesz elérhetővé a tartományi hitelesítő adatokkal szemben
+1. Hiba ismerteti, hogy a jelszavakat egyszerű szöveges formában nem támogatottak
+2. Figyelmeztetés tesz elérhetővé a tartományi hitelesítő adatokkal szemben
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
@@ -266,12 +269,14 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
->**Megjegyzés:** `NodeName` nem lehet egyenlő csillag, egy adott csomópont nevének megadása kötelező.
+> [!NOTE]
+> `NodeName`nem lehet egyenlő csillag, egy adott csomópont nevének megadása kötelező.
 
 **A Microsoft tesz elérhetővé elkerülése formázatlan szöveges jelszavak miatt a jelentős biztonsági kockázatot jelent.**
+
 Kivétel lenne az Azure Automation DSC szolgáltatással, ha csak, mivel az adatokat a rendszer mindig titkosítva tárolja (az átvitel során, a szolgáltatás aktívan, és a csomóponton aktívan).
 
-## <a name="domain-credentials"></a>Tartományi hitelesítő adatok
+## <a name="domain-credentials"></a>Domain Credentials
 
 A példa konfigurációs parancsprogram újra fut (a vagy titkosítás nélkül), továbbra is a figyelmeztetést, hogy egy tartomány használata nem ajánlott a fiókhoz tartozó hitelesítő adatokat állít elő.
 Helyi fiók használatával nem tartományi hitelesítő adatok, amelyek felhasználhatók a többi kiszolgáló azok elérhetővé tegyék.

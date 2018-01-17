@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Az erőforrás-tervező eszközzel"
-ms.openlocfilehash: 5a034547d0850682513e9a80367ce148bfcf0bdc
-ms.sourcegitcommit: a775e4788616490980123e8e6ea78594ffeb6f7d
+ms.openlocfilehash: c21602e219b5830877cc211e092e93bb7fc8ad9c
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="using-the-resource-designer-tool"></a>Az erőforrás-tervező eszközzel
 
@@ -182,4 +181,4 @@ Az erőforrás-tervező eszköz közzétesz egy további parancsmag segítségé
 [Egyéni Windows PowerShell kívánt állapot konfigurációs erőforrások létrehozása](authoringResource.md)
 
 #### <a name="other-resources"></a>Egyéb források
-[xDscResourceDesigner modul](https://powershellgallery.com/packages/xDscResourceDesigner)
+[xDscResourceDesigner Module](https://powershellgallery.com/packages/xDscResourceDesigner)

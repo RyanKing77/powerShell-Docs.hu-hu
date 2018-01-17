@@ -1,22 +1,20 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell parancsmag
 ms.date: 2016-12-12
 title: Get-pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: eb9f42ab4d9cec111e03a096b2f00740e97ee1b7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 003195457660a18b9bbed065181b6d8c23835348
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
-## <a name="synopsis"></a>ÖSSZEGZÉST
+## <a name="synopsis"></a>SYNOPSIS
 
 A Windows PowerShell® Web Access-engedélyezési szabályok készletét adja vissza.
 
@@ -52,7 +50,7 @@ Adja meg a szabályokat, amelyek ennek a parancsmagnak kell kapnia a azonosító
 | Láncbemenet fogadása?               | Igaz (ByValue, ByPropertyName)       |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-rulenameltstringgt"></a>-RuleName&lt;karakterlánc\[\]&gt;
+### <a name="-rulenameltstringgt"></a>-RuleName&lt;String\[\]&gt;
 
 Meghatározza az engedélyezési szabályok beolvasása nevét. Ez a paraméter a szabály a tömb karakterláncok szabály nevének pontosan egyeznie adja vissza.
 
@@ -87,7 +85,7 @@ Ez a parancsmag egy számokból álló tömb vagy karakterlánc-értékek tömbj
 Ez a parancsmag kimeneteként hoz létre egy PswaAuthorizationRule objektum.
 
 
-## <a name="examples"></a>PÉLDÁK
+## <a name="examples"></a>EXAMPLES
 
 ### <a name="example-1"></a>1. PÉLDA
 

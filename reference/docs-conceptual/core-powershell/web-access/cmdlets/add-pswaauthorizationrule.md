@@ -1,23 +1,21 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell parancsmag
 ms.date: 2016-12-12
 title: "pswaauthorizationrule hozzáadása"
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 18422f71b2a5f9af07af94e4324d3c7774f1d5ea
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 196797215a678e6f674592dc6b289816aced3c01
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
-## <a name="synopsis"></a>ÖSSZEGZÉST
+## <a name="synopsis"></a>SYNOPSIS
 
 Új engedélyezési szabály hozzáadása a Windows PowerShell® Web Access engedélyezési szabályok készletéhez.
 
@@ -60,7 +58,7 @@ Az engedélyezési szabályok kiértékelése elsődleges bejelentkezési hitele
 
 ## <a name="parameters"></a>Paraméterek
 
-### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;karakterlánc&gt;
+### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;String&gt;
 
 Adja meg egy számítógépcsoport nevét, amelyhez ez a szabály engedélyezi a hozzáférést az Active Directory tartományi szolgáltatások (AD DS) vagy helyi csoportot.
 
@@ -86,7 +84,7 @@ A számítógép neve, amelyhez ez a szabály engedélyezi a hozzáférést.
 | Láncbemenet fogadása?               | Igaz (ByPropertyName)                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-configurationnameltstringgt"></a>-ConfigurationName&lt;karakterlánc&gt;
+### <a name="-configurationnameltstringgt"></a>-ConfigurationName&lt;String&gt;
 
 Megadja a nevét, a Windows PowerShell munkamenet-konfiguráció, más néven futási térből, amelyhez ez a szabály engedélyezi a hozzáférést.
 
@@ -126,7 +124,7 @@ Ezenkívül rendszer is kérni fogja a megerősítő egy egyszerű vagy rövid s
 | Láncbemenet fogadása?               | hamis                                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-rulenameltstringgt"></a>-RuleName&lt;karakterlánc&gt;
+### <a name="-rulenameltstringgt"></a>-RuleName&lt;String&gt;
 
 Megadja a szabály rövid nevét.
 
@@ -139,7 +137,7 @@ Megadja a szabály rövid nevét.
 | Láncbemenet fogadása?               | Igaz (ByPropertyName)                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;karakterlánc\[\]&gt;
+### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;String\[\]&gt;
 
 Megadja egy vagy több felhasználói csoport nevét az AD DS vagy helyi csoportot, amelyhez ez a szabály engedélyezi a hozzáférést.
 
@@ -152,7 +150,7 @@ Megadja egy vagy több felhasználói csoport nevét az AD DS vagy helyi csoport
 | Láncbemenet fogadása?               | Igaz (ByPropertyName)                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-usernameltstringgt"></a>-UserName&lt;karakterlánc\[\]&gt;
+### <a name="-usernameltstringgt"></a>-UserName&lt;String\[\]&gt;
 
 Itt adhatja meg, amelyhez ez a szabály engedélyezi a hozzáférést egy vagy több felhasználó. A felhasználónév lehet egy helyi felhasználói fiók az átjáró számítógépre vagy egy felhasználót az Active Directory tartományi Szolgáltatásokban.
 A formátum `domain\user` vagy `computer\user`.
@@ -187,7 +185,7 @@ Ez a parancsmag egy karakterláncot vagy karakterláncok fogad el bemenetként.
 
 Ez a parancsmag adja vissza az engedélyezési szabály objektum.
 
-## <a name="examples"></a>PÉLDÁK
+## <a name="examples"></a>EXAMPLES
 
 ### <a name="example-1"></a>1. PÉLDA
 
@@ -214,7 +212,7 @@ Ez a példa bemutatja, hogyan a felhasználótól, felhasználói név értékek
 "contoso\user1","contoso\user2" | Add-pswaAuthorizationRule –ComputerName srv2.contoso.com –ConfigurationName Microsoft.PowerShell
 ```
 
-### <a name="example-4"></a>4. PÉLDA
+### <a name="example-4"></a>EXAMPLE 4
 
 Ez a példa bemutatja, hogyan minden paraméter láncból értékek tegye meg a tulajdonság nevét.
 
@@ -254,5 +252,5 @@ Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
 - [Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
 - [Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
 - [Tag hozzáadása](http://go.microsoft.com/fwlink/p/?LinkId=113280)
-- [Új objektum](http://go.microsoft.com/fwlink/p/?LinkId=113355)
-- [A GET-Credential parancsmag](http://go.microsoft.com/fwlink/?LinkID=293936)
+- [New-Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)
+- [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)

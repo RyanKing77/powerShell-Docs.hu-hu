@@ -1,16 +1,15 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A DSC PackageManagementSource erőforrás"
-ms.openlocfilehash: 80d157aff5bf7685a797baaf6a26215f02473096
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: DSC PackageManagementSource Resource
+ms.openlocfilehash: 1c904c70369a75802484c3c0520df63602760361
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="dsc-packagemanagementsource-resource"></a>A DSC PackageManagementSource erőforrás
+# <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource Resource
 
 > Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
 
@@ -35,7 +34,7 @@ PSModule [string] #ResourceName
 |---|---| 
 | Név| Megadja a nevét, a csomag forrás-regisztrálva vagy nem regisztrált a rendszeren.| 
 | Győződjön meg arról| Meghatározza, hogy a csomag forrásához regisztrálva vagy nem regisztrált.| 
-| InstallationPolicy| Meghatározza, hogy megbízható-e a csomag forrásához. Egyik: "Nem megbízható", "Megbízható".| 
+| InstallationPolicy| Meghatározza, hogy megbízható-e a csomag forrásához. One of: "Untrusted", "Trusted".| 
 | ProviderName| Megadja a OneGet szolgáltató, amelyen keresztül a csomag forrás együttműködési is nevét.| 
 | SourceUri| Adja meg a csomag forrás URI.| 
 | SourceCredential| A csomag hozzáférést biztosít a távoli adatforráson.| 

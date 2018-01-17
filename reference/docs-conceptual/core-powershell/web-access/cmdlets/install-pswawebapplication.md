@@ -1,22 +1,20 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell parancsmag
 ms.date: 2016-12-12
 title: "pswawebapplication telepítése"
 ms.technology: powershell
-ms.openlocfilehash: a608a6272d3eae56ccf808b9d94525ca39df50cb
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
-## <a name="synopsis"></a>ÖSSZEGZÉST
+## <a name="synopsis"></a>SYNOPSIS
 
 A Windows PowerShell® Web Access webalkalmazás konfigurálja az IIS-ben.
 
@@ -46,7 +44,7 @@ Meghatározza, hogy létrejött-e egy teszttanúsítványt. Ha a paraméter ért
 | Láncbemenet fogadása?               | hamis                                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;karakterlánc&gt;
+### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;String&gt;
 
 Megadja a webalkalmazás nevét. Ez a Windows PowerShell Web Access URL-cím utolsó részeként jelenik meg.
 
@@ -59,7 +57,7 @@ Megadja a webalkalmazás nevét. Ez a Windows PowerShell Web Access URL-cím uto
 | Láncbemenet fogadása?               | hamis                                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;karakterlánc&gt;
+### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;String&gt;
 
 Adja meg a webkiszolgáló (IIS) webhely telepítéséhez a Windows PowerShell Web Access webes alkalmazás neve.
 
@@ -110,7 +108,7 @@ Ez a parancsmag nem bemenetből fogad adatokat.
 
 Ez a parancsmag nem kimenetet hoz létre.
 
-## <a name="examples"></a>PÉLDÁK
+## <a name="examples"></a>EXAMPLES
 
 ### <a name="example-1"></a>1. PÉLDA
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-11
-author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A helyi Configuration Manager konfigurálása"
-ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
-ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
+ms.openlocfilehash: 947bc17347204f6f15a24f83b449582afe65a4ee
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>A helyi Configuration Manager konfigurálása
 
@@ -46,7 +45,7 @@ configuration LCMConfig
             RefreshMode = 'Push'
         }
     }
-} 
+}
 ```
 
 Beállítások alkalmazása az LCM folyamat hasonlít a DSC-konfiguráció alkalmazása.
@@ -83,7 +82,7 @@ A következő tulajdonságok érhetők el egy **beállítások** blokkot.
 | DebugMode| karakterlánc| A lehetséges értékek: __nincs__, __ForceModuleImport__, és __összes__. <ul><li>Beállítása __nincs__ gyorsítótárazott erőforrások használatára. Ez az alapértelmezett, és éles esetekben kell használni.</li><li>Beállítás __ForceModuleImport__, DSC erőforrás modul, töltse be újra, még akkor is, ha azokat korábban betöltötte és gyorsítótárazott LCM okoz. Ez teljesítményére hatással van a DSC-műveletek, minden modul használatára van töltve. Általában akkor használja ezt az értéket közben egy erőforrás-hibakeresés</li><li>Ebben a kiadásban __összes__ azonos __ForceModuleImport__</li></ul> |
 | RebootNodeIfNeeded| logikai érték| Állítsa ezt a beállítást __$true__ automatikusan újraindítja a csomópont a konfigurációkat, amelyek a szükséges újraindítás alkalmazása után. Ellenkező esetben kell újraindítani a rendszert manuálisan minden beállítást, amelynek ezt a csomópontot. Az alapértelmezett érték __$false__. Ezt a beállítást, ha újraindítás feltétel végrehajtása nem DSC (például a Windows Installer) által használandó egyesítése együtt a [xPendingReboot](https://github.com/powershell/xpendingreboot) modul.|
 | RefreshMode| karakterlánc| Itt adhatja meg, hogyan a LCM lekérdezi a konfigurációkat. A lehetséges értékek a következők __"Letiltva"__, __"Push"__, és __"Pull"__. <ul><li>__Letiltott__: a DSC-konfigurációk le van tiltva ezen a csomóponton.</li><li> __Leküldéses__: konfigurációk meghívásával kezdeményezett a [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) parancsmag. A konfiguráció alkalmazása azonnal megtörténik a csomópontra. Ez az alapértelmezett érték.</li><li>__Lekéréses:__ lekéréses szolgáltatás vagy az SMB elérési konfigurációk rendszeresen ellenőrzi a csomópont van konfigurálva. Ha ez a tulajdonság értéke __lekéréses__, egy HTTP (szolgáltatás) vagy SMB (megosztás) elérési utat adjon meg egy __ConfigurationRepositoryWeb__ vagy __ConfigurationRepositoryShare__ blokkot.</li></ul>|
-| RefreshFrequencyMins| UInt32| Az időtartamot (percben), amelynél a LCM frissített konfigurációt beolvasandó lekéréses szolgáltatás ellenőrzi. A rendszer figyelmen kívül hagyja ezt az értéket, ha a LCM nem lekéréses módban van konfigurálva. Az alapértelmezett érték 30.|
+| RefreshFrequencyMins| Uint32| Az időtartamot (percben), amelynél a LCM frissített konfigurációt beolvasandó lekéréses szolgáltatás ellenőrzi. A rendszer figyelmen kívül hagyja ezt az értéket, ha a LCM nem lekéréses módban van konfigurálva. Az alapértelmezett érték 30.|
 | ReportManagers| CimInstance]| Elavult. Használjon __ReportServerWeb__ küldendő végpont meghatározása érdekében jelentésadatait lekéréses szolgáltatáshoz.|
 | ResourceModuleManagers| CimInstance]| Elavult. Használjon __ResourceRepositoryWeb__ és __ResourceRepositoryShare__ lekéréses meghatározása érdekében szolgáltatás HTTP-végpontokról vagy SMB-elérési utak, illetve.|
 | PartialConfigurations| CimInstance| Nincs megvalósítva. Ne használja.|
@@ -130,12 +129,12 @@ A web-alapú konfigurációs kiszolgáló megadásához hozzon létre egy **Conf
 A **ConfigurationRepositoryWeb** következő tulajdonságait határozza meg.
 
 |Tulajdonság|Típus|Leírás|
-|---|---|---| 
+|---|---|---|
 |AllowUnsecureConnection|logikai érték|Beállítása **$TRUE** a kiszolgálóhoz hitelesítés anélkül, hogy a csomópont kapcsolatok lehetővé tételéhez. Beállítása **$FALSE** hitelesítést igényel.|
 |CertificateID|karakterlánc|A kiszolgálón elvégzett hitelesítéshez használt tanúsítvány ujjlenyomata.|
 |ConfigurationNames|String]|A cél csomópont lekérése konfigurációk nevei tömbjét. Segítségükkel lehetséges ugyanis csak akkor, ha a csomópont használatával a lekéréses szolgáltatással van regisztrálva a **RegistrationKey**. További információkért lásd: [konfigurációs nevű lekéréses ügyféltelepítéshez](pullClientConfigNames.md).|
 |RegistrationKey|karakterlánc|A csomópont regisztrálja a lekéréses szolgáltatásban GUID. További információkért lásd: [konfigurációs nevű lekéréses ügyféltelepítéshez](pullClientConfigNames.md).|
-|Kiszolgáló URL-címe|karakterlánc|A konfigurációs szolgáltatás URL-CÍMÉT.|
+|ServerURL|karakterlánc|A konfigurációs szolgáltatás URL-CÍMÉT.|
 
 Egyszerűbbé teheti a ConfigurationRepositoryWeb értéke konfigurálása a helyszíni csomópontok nem érhető el – példa parancsfájl lásd [metaconfigurations DSC generálásához.](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -157,7 +156,7 @@ A **ResourceRepositoryWeb** következő tulajdonságait határozza meg.
 |AllowUnsecureConnection|logikai érték|Beállítása **$TRUE** a kiszolgálóhoz hitelesítés anélkül, hogy a csomópont kapcsolatok lehetővé tételéhez. Beállítása **$FALSE** hitelesítést igényel.|
 |CertificateID|karakterlánc|A kiszolgálón elvégzett hitelesítéshez használt tanúsítvány ujjlenyomata.|
 |RegistrationKey|karakterlánc|A csomópont a lekéréses szolgáltatás azonosító egy GUID.|
-|Kiszolgáló URL-címe|karakterlánc|A konfigurációs kiszolgáló URL-CÍMÉT.|
+|ServerURL|karakterlánc|A konfigurációs kiszolgáló URL-CÍMÉT.|
 
 Egyszerűbbé teheti a ResourceRepositoryWeb értéke konfigurálása a helyszíni csomópontok nem érhető el – példa parancsfájl lásd [metaconfigurations DSC generálásához.](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -180,7 +179,7 @@ A jelentéskészítő kiszolgálói szerepkör nem található kompatibilis SMB-
 |AllowUnsecureConnection|logikai érték|Beállítása **$TRUE** a kiszolgálóhoz hitelesítés anélkül, hogy a csomópont kapcsolatok lehetővé tételéhez. Beállítása **$FALSE** hitelesítést igényel.|
 |CertificateID|karakterlánc|A kiszolgálón elvégzett hitelesítéshez használt tanúsítvány ujjlenyomata.|
 |RegistrationKey|karakterlánc|A csomópont a lekéréses szolgáltatás azonosító egy GUID.|
-|Kiszolgáló URL-címe|karakterlánc|A konfigurációs kiszolgáló URL-CÍMÉT.|
+|ServerURL|karakterlánc|A konfigurációs kiszolgáló URL-CÍMÉT.|
 
 Egyszerűbbé teheti a ReportServerWeb értéke konfigurálása a helyszíni csomópontok nem érhető el – példa parancsfájl lásd [metaconfigurations DSC generálásához.](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -191,7 +190,7 @@ Részleges konfigurációkkal kapcsolatos további információkért lásd: [DSC
 **PartialConfiguration** következő tulajdonságait határozza meg.
 
 |Tulajdonság|Típus|Leírás|
-|---|---|---| 
+|---|---|---|
 |ConfigurationSource|String]|A konfigurációs kiszolgáló, korábban definiált nevét tömbjét **ConfigurationRepositoryWeb** és **ConfigurationRepositoryShare** blokkok, ahol a részleges konfigurációs lekért.|
 |dependsOn|karakterlánc megkeresése|Más konfigurációk, el kell végezni a részleges konfiguráció alkalmazása előtt neveinek listáját.|
 |Leírás|karakterlánc|A részleges konfigurációs leíró szöveg.|
@@ -201,11 +200,11 @@ Részleges konfigurációkkal kapcsolatos további információkért lásd: [DSC
 
 __Megjegyzés:__ részleges konfigurációk vannak támogatva az Azure Automation DSC Szolgáltatásban, de csak egy konfigurációs lekért minden egyes csomópontok automation-fiók is lehet.
 
-## <a name="see-also"></a>Lásd még: 
+## <a name="see-also"></a>Lásd még:
 
 ### <a name="concepts"></a>Fogalmak
 [Szükségeskonfiguráció-State konfigurálása – áttekintés](overview.md)
- 
+
 [Ismerkedés az Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>Egyéb források

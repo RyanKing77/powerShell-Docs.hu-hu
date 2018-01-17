@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat létrehozása"
-ms.openlocfilehash: baa56088d83fba56d3a19cff7954d3081f341f9a
-ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
+ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat létrehozása
 
@@ -318,14 +317,14 @@ Itt azt érintünk csak a fogja hozzáadni a buildre build lépéseket. Build de
 Hozzon létre egy új build definition (válassza ki a **üres** sablon) "InfraDNS" nevű.
 Adja hozzá az alábbi lépések végrehajtásával meg build definíciója:
 
-- PowerShell-parancsfájl
+- PowerShell Script
 - Vizsgálati eredmények közzététele
 - Fájlok másolása
 - Összetevő közzététele
 
 Ezek lépések felépítéséhez, az alábbiak szerint minden lépés tulajdonságainak szerkesztése hozzáadása után:
 
-### <a name="powershell-script"></a>PowerShell-parancsfájl
+### <a name="powershell-script"></a>PowerShell Script
 
 1. Állítsa be a **típus** tulajdonságot `File Path`.
 1. Állítsa be a **parancsfájl elérési útján** tulajdonságot `initiate.ps1`.
@@ -386,13 +385,13 @@ Ehhez az szükséges, hozzáadása új kiadási társított a `InfraDNS` korább
 
 A kiadási definition vegye fel az alábbi lépéseket:
 
-- PowerShell-parancsfájl
+- PowerShell Script
 - Vizsgálati eredmények közzététele
 - Vizsgálati eredmények közzététele
 
 A lépések az alábbiak szerint szerkesztése:
 
-### <a name="powershell-script"></a>PowerShell-parancsfájl
+### <a name="powershell-script"></a>PowerShell Script
 
 1. Állítsa be a **parancsfájl elérési útján** mezőről`$(Build.DefinitionName)\Deploy\initiate.ps1"`
 1. Állítsa be a **argumentumok** mezőről`-fileName Deploy`

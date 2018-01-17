@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC-jelentés kiszolgálóval"
-ms.openlocfilehash: dd61d6ffff43ac2d1ec663b566e39dfc7d6c6565
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 31b0df7d9baf30d93154d6a28b21f32fc052bc06
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="using-a-dsc-report-server"></a>A DSC-jelentés kiszolgálóval
 
@@ -222,5 +221,5 @@ Figyelje meg, hogy ezek a példák úgy van kialakítva, hogy adjon meg egy megh
 ## <a name="see-also"></a>Lásd még:
 - [A helyi Configuration Manager konfigurálása](metaConfig.md)
 - [A DSC lekérési webkiszolgáló beállítása](pullServer.md)
-- [Konfigurációs nevek használatával lekéréses ügyfél beállítása](pullClientConfigNames.md)
+- [Lekérési ügyfél beállítása konfigurációs nevekkel](pullClientConfigNames.md)
 

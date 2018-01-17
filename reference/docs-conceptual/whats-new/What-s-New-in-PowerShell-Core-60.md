@@ -13,14 +13,14 @@ Ez azt jelenti, hogy a Windows PowerShell elérhetővé teszi a .NET-keretrendsz
 
 A .NET Core és a .NET-keretrendszer között megosztott API-k részeként meghatározott [.NET-szabvány][].
 
-Hogyan befolyásolja ez a modul, a parancsfájl kompatibilitási PowerShell Core és a Windows PowerShell között további információkért lásd: [Backwards kompatibilitás a Windows PowerShell-lel] [#backwards-kompatibilitás-az-windows-powershell]
+Hogyan befolyásolja ez a modul, a parancsfájl kompatibilitási PowerShell Core és a Windows PowerShell között további információkért lásd: [Backwards kompatibilitás a Windows PowerShell-lel](#backwards-compatibility-with-windows-powershell).
 
 ## <a name="support-for-macos-and-linux"></a>MacOS és Linux támogatása
 
 PowerShell mostantól hivatalosan támogatja macOS és a Linux, beleértve:
 
 - Windows 7, 8.1 és 10
-- Windows Server 2008 R2, 2012 R2-ben 2016
+- Windows Server 2008 R2, 2012 R2, 2016
 - [Windows Server pontosvesszővel éves csatorna][semi-annual]
 - Ubuntu 14.04, 16.04 és 17.04
 - Debian 8.7 + és 9
@@ -59,7 +59,7 @@ Mások csak jelen, vagy a nem Windows PowerShell Core telepítései alkalmazhat�
 MacOS, a PowerShell szolgáltatás használ a natív `os_log` API-k bejelentkezni az Apple [egyesített naplózási rendszer][os_log].
 Linux, PowerShell használ [Syslog][], a széles körű naplózás megoldást.
 
-### <a name="filesystem"></a>Fájlrendszer
+### <a name="filesystem"></a>Filesystem
 
 Módosításokat végzett macOS és Linux hagyományosan nem támogatott a Windows fájlnévkarakterekkel támogatásához:
 
@@ -177,13 +177,13 @@ Ez a változás által érintett a következő parancsmagokat:
 - Export-Csv
 - Export-PSSession
 - Hexadecimális formátumú
-- Get-tartalom
+- Get-Content
 - Import-Csv
 - Új ModuleManifest
 - Out-File
 - SELECT-karakterlánc
-- Küldési-levélüzenet
-- Set-tartalom
+- Send-MailMessage
+- Set-Content
 
 Ezeket a parancsmagokat is frissítve lett, hogy a `-Encoding` paraméter egységesen fogad el `System.Text.Encoding`.
 
@@ -376,7 +376,7 @@ További információk a hogyan ezen az adatok felhasználási található [blog
 [változásnaplója]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
-[.NET-szabvány]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [gyakran ismételt kérdések]: https://github.com/dotnet/standard/blob/master/docs/faq.md

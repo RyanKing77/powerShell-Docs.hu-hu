@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Lekéréses kiszolgáló ajánlott eljárások"
-ms.openlocfilehash: 66b97f4edb43926866b39731d720a2dc8c91eb2e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 045f98475d6182b329ecf048038a98e933684a82
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="pull-server-best-practices"></a>Lekéréses kiszolgáló ajánlott eljárások
 
@@ -110,7 +109,7 @@ Milyen mérete server kérés?|
 
 Nincsenek service fiókot egy lekéréses server-példány telepítése. Vannak azonban forgatókönyvek, ahol a webhely egy helyi felhasználói fiók kontextusában futtathat. Például ha egy szükséges hozzáférését a storage-megosztásban webhelytartalmat és a Windows Server vagy az eszköz a storage-megosztás üzemeltetési nincsenek tartományhoz.
 
-### <a name="dns-records"></a>DNS-rekordok
+### <a name="dns-records"></a>DNS records
 
 Szüksége lesz a kiszolgáló nevét használja, ha az ügyfelek egy lekéréses kiszolgálói környezetben használható. Tesztelési környezetben jellemzően akkor alkalmazzák a kiszolgáló állomásneve, vagy a kiszolgáló IP-címe használható, ha a DNS-név feloldása nem érhető el. Éles környezetben, amely az éles környezet jelöl laborkörnyezetben, az ajánlott eljárás akkor DNS CNAME rekordot kell létrehozni.
 
@@ -129,7 +128,7 @@ A tervezési feladat|
 ---|
 Tudja Megadja annak a személynek a DNS-rekordok létrehozott és módosított?|
 Újdonságok a DNS-rekord a kérelmek átlagos esetenként?|
-Meg kell igényelnie a kiszolgálók statikus állomásnév (A) rekordot?|
+Do you need to request static Hostname (A) records for servers?|
 Mit fog kér, egy olyan CNAME REKORDOT?|
 Ha szükséges, terheléselosztás megoldás fog használhatja a? (című terheléselosztás részletekért lásd:)|
 
@@ -519,9 +518,9 @@ A PowerShell függvényt [hozzon létre egy ellenőrzőösszeg és DSC MOF közz
 
 Egy adatfájlt létrehozása, amely tartalmazza az OData webszolgáltatást lekéréses kiszolgáló üzembe helyezése során információkat tárolja. A fájl típusát attól függ, az operációs rendszer az alább ismertetett.
 
- - **Windows Server 2012-ben**  
+ - **Windows Server 2012**  
 A fájl típusa mindig lesz .mdb
- - **Windows Server 2012 R2 rendszerben**  
+ - **Windows Server 2012 R2**  
 A fájl típusa alapértelmezett .edb egy .mdb Ha nincs megadva a konfigurációban
 
 Az a [példa parancsfájl speciális](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) egy lekéréses kiszolgáló telepítésekor is talál arról, hogyan automatikusan vezérlőket a web.config fájl bármely fájltípus által okozott hiba esélyét megelőzése érdekében.

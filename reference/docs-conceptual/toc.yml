@@ -11,8 +11,6 @@
               href: core-powershell/console/powershell.exe-command-line-help.md
             - name: A parancssorbővítés használata
               href: core-powershell/console/using-tab-expansion.md
-        - name: A konzol útmutatója
-          href: core-powershell/console-guide.md
         - name: ISE
           href: core-powershell/ise/introducing-the-windows-powershell-ise.md
           items:
@@ -70,8 +68,6 @@
               href: core-powershell/ise/using-the-windows-powershell-ise.md
             - name: A Windows PowerShell ISE objektummodell-referenciája
               href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
-        - name: ISE-útmutató
-          href: core-powershell/ise-guide.md
         - name: Visual Studio Code
           items:
             - name: A Visual Studio Code használata
@@ -211,8 +207,6 @@
           href: getting-started/getting-started-with-windows-powershell.md
         - name: További PowerShell-oktatóanyagok
           href: getting-started/more-powershell-learning.md
-        - name: Referencia a fogalmak megértéséhez
-          href: getting-started/understanding-concepts-reference.md
     - name: Telepítés
       href: ''
       items:

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-31
-author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A MOF-fájl védelme"
-ms.openlocfilehash: ed9d259e2cd963560ad6f5b60702c54e2fa36900
-ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
+ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="securing-the-mof-file"></a>A MOF-fájl védelme
 
@@ -81,7 +80,7 @@ Az alábbi példa:
  3. a nyilvános kulcsú tanúsítvány importálása a **a** tanúsítványtárolójába a **szerzői műveletek munkaterület**.
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>Célcsomóponton: hozzon létre, és a tanúsítvány exportálása
->Szerzői csomópont: Windows Server 2016 és Windows 10
+>Célcsomóponttal: Windows Server 2016 és Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -91,7 +90,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 Egyszer exportált, a ```DscPublicKey.cer``` kell átmásolni a **szerzői csomópont**.
 
->Szerzői csomópont: Windows Server 2012 R2 vagy Windows 8.1 és korábbi
+>Célcsomóponttal: Windows Server 2012 R2 vagy Windows 8.1 és korábbi
 
 Mivel a New-SelfSignedCertificate parancsmag a Windows operációs rendszer Windows 10 és Windows Server 2016 előtti nem támogatják a **típus** paraméter, a tanúsítvány létrehozása alternatív módszert ezek megadása szükséges operációs rendszerek.
 Ebben az esetben használhatja ```makecert.exe``` vagy ```certutil.exe``` a tanúsítvány létrehozásához.
@@ -109,7 +108,6 @@ New-SelfsignedCertificateEx `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
     -StoreLocation 'LocalMachine' `
-    -StoreName 'My' `
     -KeyLength 2048 `
     -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
     -AlgorithmName 'RSA' `

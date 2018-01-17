@@ -1,18 +1,16 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell parancsmag
 ms.date: 2016-12-12
 title: "webes elérés parancsmagjai"
 ms.technology: powershell
-ms.openlocfilehash: daebe2fe2cbccaf8d3f41d265d23dc45d3bb99b6
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 54821c318b165461ec613678a39c4e3b500dfd0e
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>A Webes Windows PowerShell-elérés parancsmagjai
 
@@ -38,7 +36,7 @@ A megadott engedélyezési szabály eltávolítása a Windows PowerShell Web Acc
 
 Teszteli engedélyezési szabályokat, hogy ellenőrizze, hogy egy adott felhasználó, számítógép, végpont hozzáférési kérelem engedélyezve van.
 
-## <a name="uninstall-pswawebapplicationuninstall-pswawebapplicationmd"></a>[Távolítsa el PswaWebApplication](uninstall-pswawebapplication.md)
+## <a name="uninstall-pswawebapplicationuninstall-pswawebapplicationmd"></a>[Uninstall-PswaWebApplication](uninstall-pswawebapplication.md)
 
 Eltávolítja a Windows PowerShell webalkalmazás IIS-ből.
 

@@ -1,22 +1,20 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: PowerShell parancsmag
 ms.date: 2016-12-12
 title: "Távolítsa el a pswawebapplication"
 ms.technology: powershell
-ms.openlocfilehash: 5fe608b3bfbb90f842f16c1f5a8c51879589cf6d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Távolítsa el PswaWebApplication
 
-## <a name="synopsis"></a>ÖSSZEGZÉST
+## <a name="synopsis"></a>SYNOPSIS
 
 Eltávolítja a Windows PowerShell® webalkalmazás.
 
@@ -47,7 +45,7 @@ Csak a tanúsítvány azonos nevű megegyezik a hozta létre a **Install-PswaWeb
 | Láncbemenet fogadása?               | hamis                                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-webapplicationname-ltstringgt"></a>-WebApplicationName &lt;karakterlánc&gt;
+### <a name="-webapplicationname-ltstringgt"></a>-WebApplicationName &lt;String&gt;
 
 A webes alkalmazás eltávolítása a nevét adja meg.
 
@@ -60,7 +58,7 @@ A webes alkalmazás eltávolítása a nevét adja meg.
 | Láncbemenet fogadása?               | hamis                                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-websitename-ltstringgt"></a>-WebSiteName &lt;karakterlánc&gt;
+### <a name="-websitename-ltstringgt"></a>-WebSiteName &lt;String&gt;
 
 Megadja a nevét, a webhely, ahol a webes alkalmazás telepítve van.
 
@@ -111,7 +109,7 @@ Ez a parancsmag nem bemenetből fogad adatokat.
 
 Ez a parancsmag nem-kimenet visszaadása.
 
-## <a name="examples"></a>PÉLDÁK
+## <a name="examples"></a>EXAMPLES
 
 ### <a name="example-1"></a>1. PÉLDA
 

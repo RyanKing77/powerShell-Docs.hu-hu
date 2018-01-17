@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC használata a Nano Server"
-ms.openlocfilehash: 2233106bfd07144132f95ea7957ebfa3248ca219
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 7427d6bb7644f513b9b523f284109f5ae0f8ef27
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>A DSC használata a Nano Server
 
@@ -38,12 +37,12 @@ További információ a telepítéséről és használatáról a Nano Server, va
   * [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
   * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)       
   * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
-  * [STOP-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
+  * [Stop-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
   * [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
-  * [Teszt-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)      
-  * [Közzététel DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx) 
-  * [Frissítés-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
-  * [Visszaállítás-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
+  * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)      
+  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx) 
+  * [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
+  * [Restore-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
   * [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
   * [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx)
   * [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
@@ -65,7 +64,7 @@ További információ a telepítéséről és használatáról a Nano Server, va
   
   **Probléma:** nem működik, ha egy erőforrás PsDscRunAsCredential használ (lásd: [felhasználói hitelesítő adatokkal rendelkező futtató DSC](runAsUser.md))
 
-* [Kereszt-csomópont függőségeinek megadása](crossNodeDependencies.md) 
+* [Csomópontok közötti függőségek megadása](crossNodeDependencies.md) 
 
 * [Erőforrás versioning](sxsResource.md)
 
@@ -84,11 +83,11 @@ További információ a telepítéséről és használatáról a Nano Server, va
 * Teljes körűen működőképes erőforrások
   * [Archív](archiveResource.md)
   * [Környezet](environmentResource.md)
-  * [Fájl](fileResource.md)
-  * [Napló](logResource.md)
+  * [File](fileResource.md)
+  * [Log](logResource.md)
   * ProcessSet
-  * [Beállításkulcs](registryResource.md)
-  * [Parancsfájl](scriptResource.md)
+  * [Registry](registryResource.md)
+  * [Script](scriptResource.md)
   * WindowsPackageCab
   * [WindowsProcess](windowsProcessResource.md)
   * WaitForAll (lásd: [cross-csomópont függőségek megadását](crossNodeDependencies.md))
@@ -101,7 +100,7 @@ További információ a telepítéséről és használatáról a Nano Server, va
   
   **Probléma:** felett erőforrást sikertelen, ha a példány neve kétszer (kétszer azonos konfigurációval fut)
   
-  * [Szolgáltatás](serviceResource.md)
+  * [Service](serviceResource.md)
   * ServiceSet
   
   **Probléma:** csak akkor működik, a (állapot): a szolgáltatás indítása/leállítása. Nem sikerül, ha egy próbál módosítani más szolgáltatás tulajdonságai, például a startuptype, a hitelesítő adatokat, a leírás stb... A hiba lépett fel hasonlít:
