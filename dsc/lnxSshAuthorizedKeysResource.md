@@ -1,20 +1,19 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A Linux nxSshAuthorizedKeys erőforrás DSC"
-ms.openlocfilehash: 3c145eeb86d971dc00e1c7cea60fb50c83d7b9a2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f48ecec39ffe24cee99ca08ad9d050b36c5e04bf
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a><span data-ttu-id="27015-103">A Linux nxSshAuthorizedKeys erőforrás DSC</span><span class="sxs-lookup"><span data-stu-id="27015-103">DSC for Linux nxSshAuthorizedKeys Resource</span></span>
+# <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a><span data-ttu-id="a8f66-103">A Linux nxSshAuthorizedKeys erőforrás DSC</span><span class="sxs-lookup"><span data-stu-id="a8f66-103">DSC for Linux nxSshAuthorizedKeys Resource</span></span>
 
-<span data-ttu-id="27015-104">A **nxAuthorizedKeys** erőforrás a PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) biztosít egy olyan mechanizmus kezelésére jogosult ssh egy adott felhasználó kulcsok.</span><span class="sxs-lookup"><span data-stu-id="27015-104">The **nxAuthorizedKeys** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage authorized ssh keys for a specified user.</span></span>
+<span data-ttu-id="a8f66-104">A **nxAuthorizedKeys** erőforrás a PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) biztosít egy olyan mechanizmus kezelésére jogosult ssh egy adott felhasználó kulcsok.</span><span class="sxs-lookup"><span data-stu-id="a8f66-104">The **nxAuthorizedKeys** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage authorized ssh keys for a specified user.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="27015-105">Szintaxis</span><span class="sxs-lookup"><span data-stu-id="27015-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="a8f66-105">Szintaxis</span><span class="sxs-lookup"><span data-stu-id="a8f66-105">Syntax</span></span>
 
 ```
 nxAuthorizedKeys <string> #ResourceName
@@ -28,19 +27,19 @@ nxAuthorizedKeys <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="27015-106">Tulajdonságok</span><span class="sxs-lookup"><span data-stu-id="27015-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="a8f66-106">Tulajdonságok</span><span class="sxs-lookup"><span data-stu-id="a8f66-106">Properties</span></span>
 
-|  <span data-ttu-id="27015-107">Tulajdonság</span><span class="sxs-lookup"><span data-stu-id="27015-107">Property</span></span> |  <span data-ttu-id="27015-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="27015-108">Description</span></span> | 
+|  <span data-ttu-id="a8f66-107">Tulajdonság</span><span class="sxs-lookup"><span data-stu-id="a8f66-107">Property</span></span> |  <span data-ttu-id="a8f66-108">Leírás</span><span class="sxs-lookup"><span data-stu-id="a8f66-108">Description</span></span> | 
 |---|---|
-| <span data-ttu-id="27015-109">KeyComment</span><span class="sxs-lookup"><span data-stu-id="27015-109">KeyComment</span></span>| <span data-ttu-id="27015-110">A kulcs egyedi megjegyzés.</span><span class="sxs-lookup"><span data-stu-id="27015-110">A unique comment for the key.</span></span> <span data-ttu-id="27015-111">A kulcsok egyedi azonosítására szolgál.</span><span class="sxs-lookup"><span data-stu-id="27015-111">This is used to uniquely identify keys.</span></span>| 
-| <span data-ttu-id="27015-112">Győződjön meg arról</span><span class="sxs-lookup"><span data-stu-id="27015-112">Ensure</span></span>| <span data-ttu-id="27015-113">Meghatározza, hogy van-e adva a kulcs.</span><span class="sxs-lookup"><span data-stu-id="27015-113">Specifies whether the key is defined.</span></span> <span data-ttu-id="27015-114">Állítsa be ezt a tulajdonságot "Hiányzik", annak érdekében, hogy a kulcs nem létezik a felhasználó jogosult kulcsok fájlba.</span><span class="sxs-lookup"><span data-stu-id="27015-114">Set this property to "Absent" to ensure the key does not exist in the user’s authorized keys file.</span></span> <span data-ttu-id="27015-115">Állítsa az "Elérhető" annak érdekében, hogy a felhasználó jogosult kulcsfájl definiálva van a kulcs értékét.</span><span class="sxs-lookup"><span data-stu-id="27015-115">Set it to "Present" to ensure the key is defined in the user’s authorized key file.</span></span>| 
-| <span data-ttu-id="27015-116">Felhasználónév</span><span class="sxs-lookup"><span data-stu-id="27015-116">Username</span></span>| <span data-ttu-id="27015-117">Kezeléséhez ssh felhasználónév jogosult kulcsokat.</span><span class="sxs-lookup"><span data-stu-id="27015-117">The username to manage ssh authorized keys for.</span></span> <span data-ttu-id="27015-118">Ha nincs megadva, az alapértelmezett felhasználói a "Gyökér".</span><span class="sxs-lookup"><span data-stu-id="27015-118">If not defined, the default user is "root".</span></span>| 
-| <span data-ttu-id="27015-119">Billentyű</span><span class="sxs-lookup"><span data-stu-id="27015-119">Key</span></span>| <span data-ttu-id="27015-120">A kulcs a tartalmát.</span><span class="sxs-lookup"><span data-stu-id="27015-120">The contents of the key.</span></span> <span data-ttu-id="27015-121">Erre azért szükség, ha **ellenőrizze, hogy** "Elérhető" értékre van állítva.</span><span class="sxs-lookup"><span data-stu-id="27015-121">This is required if **Ensure** is set to "Present".</span></span>| 
-| <span data-ttu-id="27015-122">dependsOn</span><span class="sxs-lookup"><span data-stu-id="27015-122">DependsOn</span></span> | <span data-ttu-id="27015-123">Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva.</span><span class="sxs-lookup"><span data-stu-id="27015-123">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="27015-124">Például ha a **azonosító** az erőforrás konfigurációs futtatni kívánt először parancsprogramblokkja **ResourceName** és annak típusa **ResourceType**, ez a szintaxis a tulajdonság `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="27015-124">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>| 
+| <span data-ttu-id="a8f66-109">KeyComment</span><span class="sxs-lookup"><span data-stu-id="a8f66-109">KeyComment</span></span>| <span data-ttu-id="a8f66-110">A kulcs egyedi megjegyzés.</span><span class="sxs-lookup"><span data-stu-id="a8f66-110">A unique comment for the key.</span></span> <span data-ttu-id="a8f66-111">A kulcsok egyedi azonosítására szolgál.</span><span class="sxs-lookup"><span data-stu-id="a8f66-111">This is used to uniquely identify keys.</span></span>| 
+| <span data-ttu-id="a8f66-112">Győződjön meg arról</span><span class="sxs-lookup"><span data-stu-id="a8f66-112">Ensure</span></span>| <span data-ttu-id="a8f66-113">Meghatározza, hogy van-e adva a kulcs.</span><span class="sxs-lookup"><span data-stu-id="a8f66-113">Specifies whether the key is defined.</span></span> <span data-ttu-id="a8f66-114">Állítsa be ezt a tulajdonságot "Hiányzik", annak érdekében, hogy a kulcs nem létezik a felhasználó jogosult kulcsok fájlba.</span><span class="sxs-lookup"><span data-stu-id="a8f66-114">Set this property to "Absent" to ensure the key does not exist in the user’s authorized keys file.</span></span> <span data-ttu-id="a8f66-115">Állítsa az "Elérhető" annak érdekében, hogy a felhasználó jogosult kulcsfájl definiálva van a kulcs értékét.</span><span class="sxs-lookup"><span data-stu-id="a8f66-115">Set it to "Present" to ensure the key is defined in the user’s authorized key file.</span></span>| 
+| <span data-ttu-id="a8f66-116">Felhasználónév</span><span class="sxs-lookup"><span data-stu-id="a8f66-116">Username</span></span>| <span data-ttu-id="a8f66-117">Kezeléséhez ssh felhasználónév jogosult kulcsokat.</span><span class="sxs-lookup"><span data-stu-id="a8f66-117">The username to manage ssh authorized keys for.</span></span> <span data-ttu-id="a8f66-118">Ha nincs megadva, az alapértelmezett felhasználói a "Gyökér".</span><span class="sxs-lookup"><span data-stu-id="a8f66-118">If not defined, the default user is "root".</span></span>| 
+| <span data-ttu-id="a8f66-119">Billentyű</span><span class="sxs-lookup"><span data-stu-id="a8f66-119">Key</span></span>| <span data-ttu-id="a8f66-120">A kulcs a tartalmát.</span><span class="sxs-lookup"><span data-stu-id="a8f66-120">The contents of the key.</span></span> <span data-ttu-id="a8f66-121">Erre azért szükség, ha **ellenőrizze, hogy** "Elérhető" értékre van állítva.</span><span class="sxs-lookup"><span data-stu-id="a8f66-121">This is required if **Ensure** is set to "Present".</span></span>| 
+| <span data-ttu-id="a8f66-122">dependsOn</span><span class="sxs-lookup"><span data-stu-id="a8f66-122">DependsOn</span></span> | <span data-ttu-id="a8f66-123">Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva.</span><span class="sxs-lookup"><span data-stu-id="a8f66-123">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="a8f66-124">Például ha a **azonosító** az erőforrás konfigurációs futtatni kívánt először parancsprogramblokkja **ResourceName** és annak típusa **ResourceType**, ez a szintaxis a tulajdonság `DependsOn = "[ResourceType]ResourceName"`.</span><span class="sxs-lookup"><span data-stu-id="a8f66-124">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>| 
 
-## <a name="example"></a><span data-ttu-id="27015-125">Példa</span><span class="sxs-lookup"><span data-stu-id="27015-125">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a8f66-125">Példa</span><span class="sxs-lookup"><span data-stu-id="a8f66-125">Example</span></span>
 
-<span data-ttu-id="27015-126">Az alábbi példa meghatározza ssh jogosult nyilvános kulcsát, a felhasználó "monuser".</span><span class="sxs-lookup"><span data-stu-id="27015-126">The following example defines a public ssh authorized key for the user "monuser".</span></span>
+<span data-ttu-id="a8f66-126">Az alábbi példa meghatározza ssh jogosult nyilvános kulcsát, a felhasználó "monuser".</span><span class="sxs-lookup"><span data-stu-id="a8f66-126">The following example defines a public ssh authorized key for the user "monuser".</span></span>
 
 ```
 Import-DSCResource -Module nx 
