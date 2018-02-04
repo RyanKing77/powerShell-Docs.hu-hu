@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell parancsmag
-title: A Windows PowerShell alapjai
+title: "A Windows PowerShell használatának alapjai"
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: 7b5cdfce876aa7d5559fe772379829011b275a02
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: bd17786d2d8690b89a2d107e0da98ee45f5b2ff7
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/03/2018
 ---
-# <a name="windows-powershell-basics"></a>A Windows PowerShell alapjai
+# <a name="windows-powershell-basics"></a>A Windows PowerShell használatának alapjai
 Grafikus felhasználói felületeket bizonyos alapvető fogalmakkal, amelyek a jól ismert, hogy a számítógép-felhasználók használja. Felhasználók ezek a feladatok végrehajtásához felületek szoftverben támaszkodnak. Operációs rendszer jelenlegi felhasználók tallózható, általában az adott funkciót és a helyi menük környezetfüggő funkció eléréséhez eléréséhez legördülő menükben elemekre grafikus ábrázolása.
 
 Például a Windows PowerShell parancssori felület (CLI) kell használnia egy másik módszert információt teszi közzé, mert menük vagy grafikus rendszerek, hogy a felhasználó nem rendelkezik. A parancsnév előtti azokat kell. Bár a szolgáltatások grafikus felhasználói Felülettel környezetben egyenértékű összetett parancsok adhatja meg, meg kell a gyakran használt parancsok és megismerése parancs paraméterei.
@@ -18,13 +18,10 @@ A legtöbb CLIs nem rendelkeznek, amelyek segítségével a felhasználó a fel�
 
 A Windows PowerShell előnyeit CLIs történelmi ismerete egy felhasználó úgy lett kialakítva. Ebben a fejezetben előadás néhány alapvető eszközök és a fogalmakat, amelyek segítségével gyorsan további Windows PowerShell. Ezek a következők:
 
-- Get-parancs használatával
+- Használatával [Get-Command](/powershell/module/Microsoft.PowerShell.Core/get-command)
 
-- Cmd.exe és UNIX-parancsok használatával
+- Használatával [Cmd.exe](/windows-server/administration/windows-commands/cmd) és [UNIX-parancsok](/windows/wsl/reference)
 
-- Külső parancsok használata
+- [Kiegészítést használata](../../core-powershell/console/using-tab-expansion.md)
 
-- Kiegészítést használata
-
-- Get-Help használatával
-
+- [Get-Help használatával](./getting-detailed-help-information.md)

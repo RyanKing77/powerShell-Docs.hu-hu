@@ -1,12 +1,10 @@
-# <a name="installing-powershell-core-on-macos-and-linux"></a>MacOS és Linux PowerShell központi telepítése
+# <a name="installing-powershell-core-on-macos-and-linux"></a>A PowerShell Core telepítése macOS és Linux rendszerre
 
 Támogatja a [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.04] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 25 ] [ fed25], [Fedora 26][fed26], [architektúrája Linux][arch], és [macOS 10.12][mac].
 
-A Linux terjesztéseket, amelyek hivatalosan nem támogatottak, próbálkozhat a [PowerShell AppImage][lai].
-Közvetlenül a Linux-használat PowerShell bináris fájljainak telepítéséhez is megpróbálhatja [ `tar.gz` archív][tar], de állítsa be a szükséges függőségek az operációs rendszer, a különálló lépések alapján kell.
+A Linux terjesztéseket, amelyek hivatalosan nem támogatottak, próbálkozhat a [PowerShell AppImage][lai]. Közvetlenül a Linux-használat PowerShell bináris fájljainak telepítéséhez is megpróbálhatja [ `tar.gz` archív][tar], de állítsa be a szükséges függőségek az operációs rendszer, a különálló lépések alapján kell.
 
-Minden csomagok érhetők el a githubon [kiadott][] lap.
-A csomag telepítése után futtassa `pwsh` terminálról.
+Minden csomagok érhetők el a githubon [kiadott][] lap. A csomag telepítése után futtassa `pwsh` terminálról.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
@@ -27,8 +25,7 @@ A csomag telepítése után futtassa `pwsh` terminálról.
 
 ### <a name="installation-via-package-repository---ubuntu-1404"></a>Telepítési csomag tárház - Ubuntu 14.04 keresztül
 
-PowerShell-Core, Linux, közzétett csomag tárolóhelyekkel egyszerű telepítés (és a frissítések).
-Ez az elsődleges módszer.
+PowerShell-Core, Linux, közzétett csomag tárolóhelyekkel egyszerű telepítés (és a frissítések). Ez az elsődleges módszer.
 
 ```sh
 # Import the public repository GPG keys
@@ -51,12 +48,16 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Közvetlen letöltése – Ubuntu 14.04 történő telepítést
 
-A Debian csomag `powershell_6.0.0-rc-1.ubuntu.14.04_amd64.deb` a a [kiadott][] lap települ az Ubuntu gépre.
+A Debian csomag `powershell_6.0.0-1.ubuntu.14.04_amd64.deb` a a [kiadott][] lap települ az Ubuntu gépre.
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.ubuntu.14.04_amd64.deb
+```
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```sh
-sudo dpkg -i powershell_6.0.0-rc-1.ubuntu.14.04_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -96,12 +97,16 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Közvetlen letöltése – Ubuntu 16.04 történő telepítést
 
-A Debian csomag `powershell_6.0.0-rc-1.ubuntu.16.04_amd64.deb` a a [kiadott][] lap települ az Ubuntu gépre.
+A Debian csomag `powershell_6.0.0-1.ubuntu.16.04_amd64.deb` a a [kiadott][] az Ubuntu gép oldalon:
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.ubuntu.16.04_amd64.deb
+```
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```sh
-sudo dpkg -i powershell_6.0.0-rc-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -141,12 +146,16 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---ubuntu-1704"></a>Közvetlen letöltése – Ubuntu 17.04 történő telepítést
 
-A Debian csomag `powershell_6.0.0-rc-1.ubuntu.17.04_amd64.deb` a a [kiadott][] lap települ az Ubuntu gépre.
+A Debian csomag `powershell_6.0.0-1.ubuntu.17.04_amd64.deb` a a [kiadott][] az Ubuntu gép oldalon:
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.ubuntu.17.04_amd64.deb
+```
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```sh
-sudo dpkg -i powershell_6.0.0-rc-1.ubuntu.17.04_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.ubuntu.17.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -190,12 +199,16 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---debian-8"></a>Keresztül közvetlen letöltése – Debian 8 telepítése
 
-A Debian csomag `powershell_6.0.0-rc-1.debian.8_amd64.deb` a a [kiadott][] a Debian gép oldalon.
+A Debian csomag `powershell_6.0.0-1.debian.8_amd64.deb` a a [kiadott][] a Debian gép oldalon:
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.debian.8_amd64.deb
+```
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```sh
-sudo dpkg -i powershell_6.0.0-rc-1.debian.8_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.debian.8_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -239,12 +252,16 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---debian-9"></a>Közvetlen letöltése – Debian 9 történő telepítést
 
-A Debian csomag `powershell_6.0.0-rc-1.debian.9_amd64.deb` a a [kiadott][] a Debian gép oldalon.
+A Debian csomag `powershell_6.0.0-1.debian.9_amd64.deb` a a [kiadott][] a Debian gép oldalon:
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.debian.9_amd64.deb
+```
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```sh
-sudo dpkg -i powershell_6.0.0-rc-1.debian.9_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -279,18 +296,22 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ugyanúgy kell 
 
 ### <a name="installation-via-direct-download---centos-7"></a>Közvetlen letöltése – CentOS 7 történő telepítést
 
-Használatával [CentOS 7][], a RPM csomag `powershell-6.0.0_rc-1.rhel.7.x86_64.rpm` a a [kiadott][] a CentOS gép oldalon.
+Használatával [CentOS 7][], a RPM csomag `powershell-6.0.0-1.rhel.7.x86_64.rpm` a a [kiadott][] a CentOS gép oldalon:
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
+```
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```sh
-sudo yum install powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 A RPM nélkül letölti a köztes lépés is telepíthet:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>Az Eltávolítás - CentOS 7
@@ -322,18 +343,22 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ugyanúgy kell 
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Közvetlen letöltése – Red Hat Enterprise Linux (RHEL) 7 történő telepítést
 
-A RPM csomag `powershell-6.0.0_rc-1.rhel.7.x86_64.rpm` a a [kiadott][] a Red Hat Enterprise Linux-gép oldalon.
+A RPM csomag `powershell-6.0.0-1.rhel.7.x86_64.rpm` a a [kiadott][] a Red Hat Enterprise Linux-gép oldalon:
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.debian.9_amd64.deb
+```
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```sh
-sudo yum install powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 A RPM nélkül letölti a köztes lépés is telepíthet:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Az Eltávolítás - Red Hat Enterprise Linux (RHEL) 7
@@ -372,18 +397,22 @@ pwsh
 
 ### <a name="installation-via-direct-download---opensuse-422"></a>Közvetlen letöltése – OpenSUSE 42.2 történő telepítést
 
-A RPM csomag `powershell-6.0.0_rc-1.rhel.7.x86_64.rpm` a a [kiadott][] a OpenSUSE gép oldalon.
+A RPM csomag `powershell-6.0.0-1.rhel.7.x86_64.rpm` a a [kiadott][] a OpenSUSE gép oldalon:
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
+```
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo zypper install powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 A RPM nélkül letölti a köztes lépés is telepíthet:
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---opensuse-422"></a>Az Eltávolítás - OpenSUSE 42.2
@@ -417,18 +446,22 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-25"></a>Közvetlen letöltése – Fedora 25 történő telepítést
 
-A RPM csomag `powershell-6.0.0_rc-1.rhel.7.x86_64.rpm` a a [kiadott][] a Fedora gép oldalon.
+A RPM csomag `powershell-6.0.0-1.rhel.7.x86_64.rpm` a a [kiadott][] a Fedora gép oldalon:
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
+```
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```sh
-sudo dnf install powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 A RPM nélkül letölti a köztes lépés is telepíthet:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---fedora-25"></a>Az Eltávolítás - Fedora 25
@@ -437,7 +470,7 @@ sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0
 sudo dnf remove powershell
 ```
 
-## <a name="fedora-26"></a>26 Fedora
+## <a name="fedora-26"></a>Fedora 26
 
 ### <a name="installation-via-package-repository-preferred---fedora-26"></a>Telepítési csomag tárház (ajánlott) - Fedora 26 keresztül
 
@@ -465,14 +498,18 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-26"></a>Közvetlen letöltése – Fedora 26 történő telepítést
 
-A RPM csomag `powershell-6.0.0_rc-1.rhel.7.x86_64.rpm` a a [kiadott][] a Fedora gép oldalon.
+A RPM csomag `powershell-6.0.0-1.rhel.7.x86_64.rpm` a a [kiadott][] a Fedora gép oldalon:
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
+```
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```sh
 sudo dnf update
 sudo dnf install compat-openssl10
-sudo dnf install powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 A RPM nélkül letölti a köztes lépés is telepíthet:
@@ -480,7 +517,7 @@ A RPM nélkül letölti a köztes lépés is telepíthet:
 ```sh
 sudo dnf update
 sudo dnf install compat-openssl10
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---fedora-26"></a>Az Eltávolítás - Fedora 26
@@ -508,18 +545,16 @@ A csomagok telepítése a AUR a további információkért lásd: a [architektú
 
 ## <a name="linux-appimage"></a>Linux AppImage
 
-A legutóbbi Linux-eloszlás használatával töltse le a AppImage `powershell-6.0.0-rc-x86_64.AppImage` a a [kiadott][] a Linux-gépek oldalon.
+A legutóbbi Linux-eloszlás használatával töltse le a AppImage `powershell-6.0.0-x86_64.AppImage` a a [kiadott][] a Linux-gépek oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```bash
-chmod a+x powershell-6.0.0-rc-x86_64.AppImage
-./powershell-6.0.0-rc-x86_64.AppImage
+chmod a+x powershell-6.0.0-x86_64.AppImage
+./powershell-6.0.0-x86_64.AppImage
 ```
 
-A [AppImage][] lehetővé teszi, hogy a telepítés nélküli PowerShell futtatásához.
-Egy hordozható alkalmazás, amely a PowerShell és a függőségek (beleértve a .NET Core rendszer függőségeket) bundles egy javul csomagba.
-Ez a csomag a felhasználó a Linux-disztribúció függetlenül működik, és egyetlen bináris értékké.
+A [AppImage][] lehetővé teszi, hogy a telepítés nélküli PowerShell futtatásához. Egy hordozható alkalmazás, amely a PowerShell és a függőségek (beleértve a .NET Core rendszer függőségeket) bundles egy javul csomagba. Ez a csomag a felhasználó a Linux-disztribúció függetlenül működik, és egyetlen bináris értékké.
 
 [appimage]: http://appimage.org/
 
@@ -527,11 +562,9 @@ Ez a csomag a felhasználó a Linux-disztribúció függetlenül működik, és 
 
 ### <a name="installation-via-homebrew-preferred---macos-1012"></a>Telepítési Homebrew (ajánlott) - macOS 10.12 keresztül
 
-[Homebrew] [ brew] a hiányzó Csomagkezelőt a macOS van.
-Ha a `brew` parancs nem található, telepítenie kell a következő Homebrew [a utasításaikat][brew].
+[Homebrew] [ brew] a hiányzó Csomagkezelőt a macOS van. Ha a `brew` parancs nem található, telepítenie kell a következő Homebrew [a utasításaikat][brew].
 
-Homebrew telepítése után is könnyen PowerShell telepítése.
-Először telepítse [Homebrew-Cask][cask], így további csomagok telepítése:
+Homebrew telepítése után is könnyen PowerShell telepítése. Először telepítse [Homebrew-Cask][cask], így további csomagok telepítése:
 
 ```sh
 brew tap caskroom/cask
@@ -557,12 +590,12 @@ brew cask reinstall powershell
 
 ### <a name="installation-via-direct-download---macos-1012"></a>Közvetlen letöltés - macOS 10.12 történő telepítést
 
-MacOS 10.12 használ, töltse le a PKG csomagot `powershell-6.0.0-rc-osx.10.12-x64.pkg` a a [kiadott][] lap települ a macOS gépre.
+MacOS 10.12 használ, töltse le a PKG csomagot `powershell-6.0.0-osx.10.12-x64.pkg` a a [kiadott][] lap települ a macOS gépre.
 
 Kattintson duplán a fájlra, és kövesse az utasításokat, vagy telepítse azt a Terminálszolgáltatások:
 
 ```sh
-sudo installer -pkg powershell-6.0.0-rc-osx.10.12-x64.pkg -target /
+sudo installer -pkg powershell-6.0.0-osx.10.12-x64.pkg -target /
 ```
 
 ### <a name="uninstallation---macos-1012"></a>Az Eltávolítás - macOS 10.12
@@ -579,8 +612,7 @@ Ha telepítette a PowerShell segítségével közvetlen letöltési, PowerShell 
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-Távolítsa el a további PowerShell útvonalak (például a felhasználói profil elérési útja) tekintse meg a [elérési utak] [ paths] ebben a dokumentumban az alábbi szakaszt, és távolítsa el a kívánt az elérési utak `sudo rm`.
-(Megjegyzés: Ez nem szükséges, ha telepítette a Homebrew.)
+Távolítsa el a további PowerShell útvonalak (például a felhasználói profil elérési útja) tekintse meg a [elérési utak] [ paths] ebben a dokumentumban az alábbi szakaszt, és távolítsa el a kívánt az elérési utak `sudo rm`. (Megjegyzés: Ez nem szükséges, ha telepítette a Homebrew.)
 
 [paths]:#paths
 
@@ -589,13 +621,14 @@ Távolítsa el a további PowerShell útvonalak (például a felhasználói prof
 ### <a name="installation"></a>Telepítés
 
 ```sh
-# Install prerequisites
-apt-get install libunwind8 libicu55
+# Download & Install prerequisites
+sudo apt-get install libunwind8 libicu55
 wget http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
-dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
+sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
 
-# Install PowerShell
-dpkg -i powershell_6.0.0-rc-1.ubuntu.16.04_amd64.deb
+# Download & Install PowerShell
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.ubuntu.16.04_amd64.deb
 
 # Start PowerShell
 pwsh
@@ -605,19 +638,19 @@ pwsh
 
 ```sh
 # Grab the latest App Image
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0-rc-x86_64.AppImage
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-x86_64.AppImage
 
 # Make executable
-chmod a+x powershell-6.0.0-rc-x86_64.AppImage
+chmod a+x powershell-6.0.0-x86_64.AppImage
 
 # Start PowerShell
-./powershell-6.0.0-rc-x86_64.AppImage
+./powershell-6.0.0-x86_64.AppImage
 ```
 
 ### <a name="uninstallation---kali"></a>Az Eltávolítás - Kali
 
 ```sh
-dpkg -r powershell_6.0.0-rc-1.ubuntu.16.04_amd64.deb
+sudo dpkg -r powershell-6.0.0-x86_64.AppImage
 ```
 
 ## <a name="raspbian"></a>Raspbian
@@ -631,13 +664,13 @@ PowerShell jelenleg csak Raspbian Stretch támogatott.
 sudo apt-get install libunwind8
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0-rc-linux-arm32.tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-linux-arm32.tar.gz
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-6.0.0-rc-linux-arm32.tar.gz -C ~/powershell
+tar -xvf ./powershell-6.0.0-linux-arm32.tar.gz -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
@@ -662,16 +695,15 @@ Az alábbi ábra mutatja a .NET Core 2.0 függőségek különböző Linux terje
 
 | Operációs rendszer                 | Függőségek |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
-| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2 liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
+| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
+| Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind, libcurl, openssl-függvénytárak, libicu |
-| 26 Fedora          | libunwind, libcurl, openssl-függvénytárak, libicu, / compat-openssl10 |
+| Fedora 26          | libunwind, libcurl, openssl-függvénytárak, libicu, / compat-openssl10 |
 
-PowerShell bináris fájljait, a Linux terjesztéseket hivatalosan nem támogatott központi telepítéséhez, akkor kellene telepíteni a szükséges függőségek a cél operációs rendszer a különálló lépések.
-Például a [Amazon Linux dockerfile] [ amazon-dockerfile] függőségek először telepíti, és kinyeri a Linux `tar.gz` archív.
+PowerShell bináris fájljait, a Linux terjesztéseket hivatalosan nem támogatott központi telepítéséhez, akkor kellene telepíteni a szükséges függőségek a cél operációs rendszer a különálló lépések. Például a [Amazon Linux dockerfile] [ amazon-dockerfile] függőségek először telepíti, és kinyeri a Linux `tar.gz` archív.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell/blob/master/docker/community/amazonlinux/Dockerfile
 
@@ -681,38 +713,38 @@ Például a [Amazon Linux dockerfile] [ amazon-dockerfile] függőségek elősz�
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0-rc-linux-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/6.0.0-rc
+sudo mkdir -p /opt/microsoft/powershell/6.0.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.0.0-rc
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.0.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.0.0-rc/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.0.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/6.0.0-rc/pwsh /usr/bin/pwsh
+sudo ln -s /opt/microsoft/powershell/6.0.0/pwsh /usr/bin/pwsh
 ```
 
 #### <a name="macos"></a>macOS
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0-rc-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.0.0-rc
+sudo mkdir -p /usr/local/microsoft/powershell/6.0.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.0.0-rc
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.0.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.0.0-rc/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.0.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.0.0-rc/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/6.0.0/pwsh /usr/local/bin/pwsh
 ```
 
 ### <a name="uninstallation---binary-archives"></a>Az Eltávolítás - bináris archívumokat
@@ -731,7 +763,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 ## <a name="paths"></a>Elérési utak
 
-* `$PSHOME`van`/opt/microsoft/powershell/6.0.0-rc/`
+* `$PSHOME`van`/opt/microsoft/powershell/6.0.0/`
 * Felhasználói profilok rendszer nem olvas be`~/.config/powershell/profile.ps1`
 * Alapértelmezett profilok rendszer nem olvas be`$PSHOME/profile.ps1`
 * Modulok felhasználói rendszer nem olvas be`~/.local/share/powershell/Modules`
@@ -743,8 +775,7 @@ A profilok tiszteletben PowerShell gazdagép konfiguráció, így az alapértelm
 
 A Linux és macOS a [XDG Base könyvtár megadása] [ xdg-bds] tiszteletben tartását.
 
-Vegye figyelembe, hogy mivel macOS BSD, származtatott helyett `/opt`, a használt előtag `/usr/local`.
-Ebből kifolyólag `$PSHOME` van `/usr/local/microsoft/powershell/6.0.0-rc/`, és a symlink van elhelyezve `/usr/local/bin/pwsh`.
+Vegye figyelembe, hogy mivel macOS BSD, származtatott helyett `/opt`, a használt előtag `/usr/local`. Ebből kifolyólag `$PSHOME` van `/usr/local/microsoft/powershell/6.0.0/`, és a symlink van elhelyezve `/usr/local/bin/pwsh`.
 
 [kiadott]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

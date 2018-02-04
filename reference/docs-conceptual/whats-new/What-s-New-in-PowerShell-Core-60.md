@@ -234,7 +234,7 @@ PowerShell feladatok kapcsolatos további információkért lásd: [about_Jobs](
 - Annak meghatározásához, hogy fut-e egy adott operációs rendszer PowerShell három új automatikus változók hozzáadott: `$IsWindows`, `$IsMacOs`, és `$IsLinux`.
 - Adja hozzá `GitCommitId` PowerShell Core fejléc számára.
   Most futtatásához nincs `$PSVersionTable` , amint a verzióval PowerShell elindítása! (#3916) (Köszönet a következőknek @iSazonov!)
-- Nevű JSON-konfigurációs fájl hozzáadása `PowerShellProperties.json` a `$PSHome` néhány indítási idő előtt szükséges beállításokat tárolja (pl. `ExecutionPolicy`).
+- Nevű JSON-konfigurációs fájl hozzáadása `powershell.config.json` a `$PSHome` néhány indítási idő előtt szükséges beállításokat tárolja (pl. `ExecutionPolicy`).
 - Feldolgozási sor nincs blokkolás Windows EXE futtatásakor
 - A COM-gyűjtemények engedélyezett számbavétele. (#4553)
 
