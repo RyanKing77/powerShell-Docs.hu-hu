@@ -11,6 +11,7 @@
 ### [PowerShell-galériabeli fiók létrehozása](psgallery/psgallery_creating_an_account.md)
 ### [Elemek létrehozása és közzététele](psgallery/Creating-and-Publishing-an-item.md)
 ### [A közzététellel kapcsolatos irányelvek és gyakorlati tanácsok](psgallery/psgallery-PublishingGuidelines.md)
+### [Elemek jegyzéke és a galéria felhasználói felülete](psgallery/psgallery_ItemManifestAffectingUI.md)
 ### [Elemek listázásának megszüntetése](psgallery/psgallery_unlist_items.md)
 ### [Elemek törlése](psgallery/Deleting-Items.md)
 ### [Elemtulajdonosok kezelése](psgallery/Managing-Item-Owners.md)
