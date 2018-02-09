@@ -1,14 +1,14 @@
 ---
 ms.date: 2017-08-09
 keywords: "PowerShell, a parancsmag, letöltése, telepítése, beállításához, windows 10, windows 8.1, windows 8.0-s, windows 7"
-title: "Windows PowerShell telepítése"
-ms.openlocfilehash: 781bf50b6ac649e72bcdbb708555275fb7422d94
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: "A Windows PowerShell telepítése"
+ms.openlocfilehash: ec8f09087a5c5f2e7ea6237faa01ea3f447ad1f3
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/09/2018
 ---
-# <a name="installing-windows-powershell"></a>Windows PowerShell telepítése
+# <a name="installing-windows-powershell"></a>A Windows PowerShell telepítése
 
 PowerShell előre telepített alapértelmezés szerint a minden Windows, Windows 7 SP1 és Windows Server 2008 R2 SP1 kezdve.
 
@@ -17,7 +17,7 @@ Szeretné telepíteni a Windows, Linux és macOS felhasználók **PowerShell 6**
 1. PowerShell lekérése az adott operációs rendszer és verzió, a [GitHub](https://github.com/powershell/powershell#get-powershell)
 1. Kövesse a telepítési utasításokat
   - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012)
+  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md)
   - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
 
 PowerShell 6 is rendelkezésre áll, a Docker; Lásd: [Docker telepítési](https://github.com/PowerShell/PowerShell/tree/master/docker) utasításokat.
@@ -74,7 +74,7 @@ A WMF installer verziójának ugyanolyan verziójúak, mint a PowerShell; nem ö
 
 Ha frissítenie kell a meglévő PowerShell, a Windows rendszerben segítségével az alábbi táblázatban keresse meg a telepítő frissíti a PowerShell-verziójának.
 
-Windows | POWERSHELL 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
+Windows | PS 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
 --|--|--|--|--|
 Windows 10 (lásd a Note1)<br/>Windows Server 2016 | - | - | - | telepítve
 A Windows 8.1<br/>Windows Server 2012 R2 | - | telepítve | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)

@@ -3,26 +3,31 @@ ms.date: 2017-06-05
 keywords: PowerShell parancsmag
 title: "A Windows PowerShell integrált parancsfájlkezelési környezet ISE"
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 66f36371cbb8ad8523aa1e1e3cd791cc692194c9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6a2d2bada2d8d6a1d5bedffc7b1b28fe9472544a
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell integrált parancsfájlkezelési környezet (ISE)
+
 A Windows PowerShell integrált parancsfájlkezelési környezet (ISE) a Windows PowerShell-motor és a nyelv két állomás egyike. Azt írni, futtatására és parancsfájlok tesztelése, melyek nem érhetők el a Windows PowerShell-konzolban. Az ISE ad-zintaxisszínek, kiegészítést, az IntelliSense, visual-Hibakeresés és környezetfüggő súgó.
 
 A ISE lehetővé teszi, hogy a konzol ablaktáblában parancsok futtatását, de is támogatja, amelyek segítségével egyszerre forráskódját a parancsfájl és más, amely az ISE csatlakoztatható eszközök ablaktábla. Akkor is megnyithatja több parancsfájl a Windows egy időben, ami akkor hasznos, ha egy parancsfájl, amely más parancsfájlokat vagy modulok meghatározott funkciókat használja hibakeresés alatt.
 
 ## <a name="whats-new"></a>What’s New (Újdonságok)
+
 Az alábbiakban néhány funkciója, amely a legutóbbi kiadásaiban PowerShell ISE lettek hozzáadva.
 
 ### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>Hozzáadva a PowerShell 3.0 (a Windows Server 2012, Windows 8)
+
 **IntelliSense** automatikusan elvégzi a parancsok beíráskor menük egyező parancsmagok, paraméterek, paraméterértékeket, fájlok vagy mappák megjelenítésével.
 
 **Kódtöredékek** , hogy könnyen szúrhat be a parancsfájlok a írási kód rövid szakaszok is vannak. A lista hasznos kódtöredékek gyűjteményét tartalmazza, és segítségével több a **New-részlet** parancsmag.
 
-**Bővítmény eszközök** , adja hozzá az ISE szolgáltatások hozhat létre, amely együttműködik a kód írása a [a Windows PowerShell ISE Scripting objektummodell](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md). Ezek az eszközök vezérlők lapokra ablaktábla megjelenítése, vagy a háttérben láthatatlanul működik. A **parancsok** bővítmény jó példa és 3.0-s verzió megtalálható, és később, amely megjeleníti az elérhető parancsok és azok súgó listáját.
+**Bővítmény eszközök** , adja hozzá az ISE szolgáltatások hozhat létre, amely együttműködik a kód írása a [a Windows PowerShell ISE Scripting objektummodell](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+
+Ezek az eszközök vezérlők lapokra ablaktábla megjelenítése, vagy a háttérben láthatatlanul működik. A **parancsok** bővítmény jó példa és 3.0-s verzió megtalálható, és később, amely megjeleníti az elérhető parancsok és azok súgó listáját.
 
 **Indítsa újra a Manager és az automatikus mentési** automatikusan menti a parancsfájlok két percenként összeomlási vagy váratlan újraindítása esetén munkája adatveszteség elkerülése végett.
 
@@ -51,17 +56,16 @@ Az alábbiakban néhány funkciója, amely a legutóbbi kiadásaiban PowerShell 
 - **Kijelölés blokkolása**. Kiválaszthatja a szöveg blokk alakú adattömb szöveg kijelölése az egérrel panelbe közben az ALT billentyűt lenyomva tartja, vagy megnyomja **Alt + Shift + mutató nyílra**.
 
 ### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>Hozzáadva a PowerShell 2.0-s (Windows Server 2008 R2, Windows 7)
+
 A ISE a PowerShell 2.0-ban jelent.
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>A Windows PowerShell ISE futtatásának követelményei
-Az ISE érhető el minden Windows rendszeren futtatható a Windows PowerShell 2.0-s vagy újabb verzió.
-Minden Windows és Windows Server verziója a Windows PowerShell és az ISE verzióját is tartalmazza, de frissítheti a legújabb elérhető a Windows Management Framework telepítésével.
-Ez a Keresés az elérhető legújabb verzióra kereséséhez futtassa: [letölti](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending).
-Ne feledje, hogy "Előzetes" címkével bejegyzéseket amelyek kiadás előtti újdonsága nem teljes.
+
+Az ISE érhető el minden Windows rendszeren futtatható a Windows PowerShell 2.0-s vagy újabb verzió. Minden Windows és Windows Server verziója a Windows PowerShell és az ISE verzióját is tartalmazza, de frissítheti a legújabb elérhető a Windows Management Framework (WMF) telepítésével. Tekintse meg a [WMF](/powershell/wmf/readme) dokumentációjában talál további információt.
 
 > [!NOTE]
 > A Windows PowerShell ISE használatához a grafikus felhasználói felületen, a Windows Server Server Core esetén nem futtatható.
 
 ## <a name="see-also"></a>Lásd még:
-- [A Windows PowerShell integrált parancsfájlkezelési környezet használata](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+[A windows a power shell ise objektummodell scripting célja](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

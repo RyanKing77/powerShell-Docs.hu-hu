@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell használatával"
+title: "A Windows PowerShell használata"
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 ms.openlocfilehash: 874c6fc6f0b09b0f586725ed7df7bc68c31e1733
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="using-windows-powershell"></a>A Windows PowerShell használatával
+# <a name="using-windows-powershell"></a>A Windows PowerShell használata
 A Windows PowerShell® egy feladatalapú parancssori rendszerhéj és programozási nyelv, amelyet kifejezetten rendszergazdák számára terveztek. A .NET-keretrendszer épülő Windows PowerShell segítségével az informatikusok és kikapcsolás felhasználók és automatizálják a Windows operációs rendszer és a Windows rendszeren futó alkalmazások.
 
 Ebben a szakaszban erőforrások segítséget nyújt a Windows PowerShell, a Windows PowerShell-lel részét képező szolgáltatásokat és a grafikus Windows PowerShell-szerkesztő, a Windows PowerShell integrált parancsfájlkezelési környezet.

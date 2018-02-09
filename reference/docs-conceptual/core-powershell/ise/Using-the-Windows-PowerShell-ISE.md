@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell ISE használatával"
+title: "A Windows PowerShell ISE használata"
 ms.assetid: 64fb5f37-90a8-4b89-9fc8-c6b8fcc0c7d0
 ms.openlocfilehash: 5da609363dc0498a5a62157b49cf3de5683a8510
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="using-the-windows-powershell-ise"></a>A Windows PowerShell ISE használatával
+# <a name="using-the-windows-powershell-ise"></a>A Windows PowerShell ISE használata
 Ebben a dokumentumban a témakörök ismertetik, hogyan használhatja a szolgáltatásokat, a Windows PowerShell® integrált parancsfájl-kezelési környezet (ISE) hatékonyabb legyen.
 
 [Hogyan használja kiegészítést a parancsfájl és a konzol ablaktáblában](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) biztosít a mind a parancsfájl és a konzol ablaktábla kiegészítést végrehajtásához szükséges lépéseket.

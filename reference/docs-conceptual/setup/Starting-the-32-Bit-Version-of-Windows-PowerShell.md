@@ -1,13 +1,13 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell parancsmag
-title: "A 32 bites verzióját a Windows PowerShell elindítása"
+title: "A Windows PowerShell 32 bites verziójának indítása"
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
 ms.openlocfilehash: d682ce45ebc92cda3a9008ab608bacf9ef8eba57
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="starting-the-32-bit-version-of-windows-powershell"></a>A 32 bites Windows PowerShell elindítása
 Ha egy 64 bites számítógépen, telepítse a Windows PowerShell **Windows PowerShell (x86)**, egy 32 bites Windows PowerShell mellett a 64 bites verziója telepítve van. Amikor futtatja a Windows PowerShell, a 64 bites alapértelmezés szerint fut.
@@ -16,7 +16,7 @@ Azonban előfordulhat, hogy időnként futtatásához szükséges **Windows Powe
 
 Egy 32 bites Windows PowerShell indításához használja az alábbi eljárások valamelyikét.
 
-#### <a name="in-windows-server-2012-r2"></a>A Windows Server® 2012 R2-ben
+#### <a name="in-windows-server-2012-r2"></a>In Windows Server® 2012 R2
 
 - Az a **Start** írja be **Windows PowerShell (x86)**. Kattintson a **Windows PowerShell x86** csempére.
 
@@ -26,7 +26,7 @@ Egy 32 bites Windows PowerShell indításához használja az alábbi eljárások
 
 - A parancssorból írja be:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### <a name="in-windows-server-2012"></a>A Windows Server® 2012
+#### <a name="in-windows-server-2012"></a>In Windows Server® 2012
 
 - Az a **Start** írja be **PowerShell** majd **Windows PowerShell (x86)**.
 
@@ -46,7 +46,7 @@ Egy 32 bites Windows PowerShell indításához használja az alábbi eljárások
    
 - A parancssorból írja be:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### <a name="in-windows-8"></a>A Windows® 8
+#### <a name="in-windows-8"></a>In Windows® 8
 
 - A a **Start** képernyőn, a kurzor jobb felső sarokban, kattintson a **beállítások**, kattintson a **Csempék**, és anélkül helyezhet át a **felügyeleti eszközök megjelenítése** Igen csúszkát. Írja be, **PowerShell** kattintson **Windows PowerShell (x86)**.
 

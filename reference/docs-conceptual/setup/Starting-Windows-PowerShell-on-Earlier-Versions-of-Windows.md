@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell parancsmag
-title: "A Windows korábbi verzióiban Windows PowerShell indítása"
+title: "A Windows PowerShell indítása a Windows korábbi verzióin"
 ms.assetid: 57125436-3d1e-4e7f-b5c4-8f0ecb49d642
 ms.openlocfilehash: 52e3acc1fd3009ecad3b7134008e38d4edfb5ca7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="starting-windows-powershell-on-earlier-versions-of-windows"></a>A Windows korábbi verzióiban Windows PowerShell indítása
+# <a name="starting-windows-powershell-on-earlier-versions-of-windows"></a>A Windows PowerShell indítása a Windows korábbi verzióin
 Ez a szakasz ismerteti, hogyan kell elindítani a Windows PowerShell és a Windows PowerShell integrált parancsfájlkezelési környezet (ISE) a Windows® 7, Windows Server® 2008 R2 és Windows Server® 2008. A választható szolgáltatás engedélyezése a Windows PowerShell 2.0 a Windows Server® 2008 R2 és Windows Server® 2008 a Windows PowerShell ISE is ismerteti.
 
 A Windows PowerShell 4.0 telepítése támogatott rendszeren, töltse le és telepítse [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881). További információkért lásd: [Windows PowerShell telepítése](Installing-Windows-PowerShell.md).

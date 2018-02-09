@@ -3,11 +3,11 @@ ms.date: 2017-10-11
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A helyi Configuration Manager konfigurálása"
-ms.openlocfilehash: 81434b57e453ba7b64cc32dffdf309da16ef8882
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b8e0749cf2f67e395e9fd8eaf9cde33b97c0cb67
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>A helyi Configuration Manager konfigurálása
 
@@ -25,8 +25,8 @@ Feladata még számos más DSC, beleértve a következő aspektusait.
 Egy különleges típusú konfiguráció segítségével adhatja meg, ezek közül a viselkedésmódok mindegyikének LCM konfigurálhatja.
 Az alábbi szakaszok azt ismertetik, hogyan konfigurálhatja a LCM.
 
-> **Megjegyzés:**: Ez a témakör a Windows PowerShell 5.0 rendszerben bevezetett LCM vonatkozik.
-A Windows PowerShell 4.0 a LCM konfigurálásával kapcsolatos további információkért lásd: [Windows PowerShell 4.0 kívánt állapot konfigurációs helyi Configuration Manager](metaconfig4.md).
+A Windows PowerShell 5.0 rendszerben jelent meg új beállítások, a helyi Configuration Manager kezelése.
+A Windows PowerShell 4.0 a LCM konfigurálásával kapcsolatos további információkért lásd: [a helyi Configuration Manager konfigurálása a korábbi verziók a Windows PowerShell](metaconfig4.md).
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>Írást, és életbe LCM konfigurálása során
 
@@ -90,38 +90,13 @@ A következő tulajdonságok érhetők el egy **beállítások** blokkot.
 
 ## <a name="pull-service"></a>Lekéréses szolgáltatás
 
-A DSC-ből a beállítások lehetővé teszik, hogy egy csomópont-konfiguráció és a modulok húzza, és a jelentési adatok közzététele egy távoli helyre.
-Az aktuális lekéréses szolgáltatás beállításai a következők:
-
-- Azure Automation kívánt állapot konfigurációs szolgáltatás
-- A Windows Server rendszert futtató lekéréses példánya
-- (Nem támogatja a jelentési adatok közzététele) SMB-megosztáson
-
 LCM konfigurációt is támogatja a következő típusú lekéréses Szolgáltatásvégpontok:
 
 - **Konfigurációs kiszolgáló**: a DSC-konfigurációk tára. Adja meg a konfigurációs kiszolgálók használatával **ConfigurationRepositoryWeb** (a web-alapú kiszolgálók) és **ConfigurationRepositoryShare** (az SMB-alapú kiszolgálók) blokkokat.
 - **Erőforrás-kiszolgáló**: a DSC-erőforrások, PowerShell-modulok csomagolt tára. Adja meg az erőforrás-kiszolgálók használatával **ResourceRepositoryWeb** (a web-alapú kiszolgálók) és **ResourceRepositoryShare** (az SMB-alapú kiszolgálók) blokkokat.
 - **Jelentéskészítő kiszolgáló**: egy szolgáltatás, amely DSC jelentés adatokat küld. Adja meg a jelentéskészítő kiszolgáló használatával **ReportServerWeb** blokkolja. A jelentéskészítő kiszolgáló webszolgáltatás kell lennie.
 
-**Az ajánlott megoldás**, és a lehetőség érhető el, a legtöbb szolgáltatásokkal [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started).
-
-Az Azure-szolgáltatás csomópontok helyszíni saját adatközpontját, illetve például az Azure és az AWS nyilvános felhőket is kezelheti.
-Személyes környezetekben, ahol kiszolgálók nem közvetlenül csatlakozik az internethez, fontolja meg, ezzel a kimenő forgalom csak a közzétett Azure IP-címtartomány (lásd: [Azure Datacenter IP-címtartományok](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
-
-Az online szolgáltatás, amely még nem állnak rendelkezésre az lekéréses szolgáltatásban, a Windows Server funkciói:
-- Összes adata titkosításra kerül az átvitel során, és inaktív
-- Ügyfél-tanúsítványok létrehozása és kezelése automatikusan
-- Titkos kulcsok tárolására központilag kezelésére szolgáló [jelszavak és a hitelesítő adatok](https://docs.microsoft.com/en-us/azure/automation/automation-credentials), vagy [változók](https://docs.microsoft.com/en-us/azure/automation/automation-variables) például a kiszolgáló nevét vagy a kapcsolati karakterláncok
-- Központilag kezelheti a csomópont [LCM konfiguráció](metaConfig.md#basic-settings)
-- Központilag konfigurációk kiosztása ügyfél csomópontok
-- Kiadás configuration "Kanári csoportok" éles elérése előtt tesztelési módosításai
-- Grafikus jelentési
-  - A granularitási DSC erőforrás szintjén állapotának részletei
-  - Az ügyfél gépek hibaelhárítási részletes hibaüzenetek
-- [Integráció az Azure Naplóelemzés](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics) riasztások, automatikus feladatokat, jelentések és riasztási Android vagy iOS-alkalmazás
-
-Azt is megteheti, beállításával és a Windows Server HTTP-lekéréses szolgáltatás használatával kapcsolatos információkért lásd: [állítja be a DSC lekérési kiszolgálójával](pullServer.md).
-Adjon kell arról, hogy egy korlátozott végrehajtásának csak alapvető képességekkel konfigurációk/modulok tárolja, és egy helyi adatbázisba jelentés adatainak rögzítése.
+További információ a lekéréses szolgáltatás:, [kívánt állapot konfigurációs lekéréses szolgáltatás](pullServer.md).
 
 ## <a name="configuration-server-blocks"></a>Konfigurációs kiszolgáló blokkok
 
