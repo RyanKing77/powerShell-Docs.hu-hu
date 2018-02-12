@@ -108,7 +108,7 @@
 
 # A DSC lekéréses modellje
 
-## [Lekérési kiszolgáló beállítása](pullServer.md)
+## [DSC Pull Service](pullServer.md)
 
 ## [A DSC SMB-lekérési kiszolgálójának beállítása](pullServerSMB.md)
 
