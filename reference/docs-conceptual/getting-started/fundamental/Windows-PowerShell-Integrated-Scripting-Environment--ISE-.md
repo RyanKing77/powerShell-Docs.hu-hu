@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell parancsmag
 title: "A Windows PowerShell integrált parancsfájlkezelési környezet ISE"
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 6a2d2bada2d8d6a1d5bedffc7b1b28fe9472544a
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: 413fc375ad4617bfae59d6a1217cf9f91c2cf090
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell integrált parancsfájlkezelési környezet (ISE)
 
@@ -25,7 +25,7 @@ Az alábbiakban néhány funkciója, amely a legutóbbi kiadásaiban PowerShell 
 
 **Kódtöredékek** , hogy könnyen szúrhat be a parancsfájlok a írási kód rövid szakaszok is vannak. A lista hasznos kódtöredékek gyűjteményét tartalmazza, és segítségével több a **New-részlet** parancsmag.
 
-**Bővítmény eszközök** , adja hozzá az ISE szolgáltatások hozhat létre, amely együttműködik a kód írása a [a Windows PowerShell ISE Scripting objektummodell](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+**Bővítmény eszközök** , adja hozzá az ISE szolgáltatások hozhat létre, amely együttműködik a kód írása [a Windows PowerShell ISE Scripting objektummodell](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
 
 Ezek az eszközök vezérlők lapokra ablaktábla megjelenítése, vagy a háttérben láthatatlanul működik. A **parancsok** bővítmény jó példa és 3.0-s verzió megtalálható, és később, amely megjeleníti az elérhető parancsok és azok súgó listáját.
 

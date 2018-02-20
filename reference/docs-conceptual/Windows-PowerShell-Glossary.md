@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell parancsmag
 title: "A Windows PowerShell szószedet"
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
-ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
+ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-glossary"></a>A Windows PowerShell szószedet
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 08/08/2017
 |állomás|A felület a Windows PowerShell motor által, a felhasználó folytatott kommunikációhoz. Például az állomás kérések kezelésének módja Windows PowerShell és a felhasználó között.|
 |gazdagép-alkalmazás|A program, amely a Windows PowerShell-motor betölti a feldolgozás és a műveletek végrehajtásához használja.|
 |a bemeneti feldolgozási mód|Bemeneti kap egy, a parancsmag segítségével a rekordok feldolgozásához metódust. A bemeneti feldolgozási módszerek közé tartozik a BeginProcessing metódus, a ProcessRecord, a EndProcessing metódust, és a StopProcessing módszer.|
-|manifest modul|A Windows PowerShell-modult, amely rendelkezik a jegyzék, amelynek ModulesToProcess kulcs értéke üres.|
+|manifest modul|A Windows PowerShell-modult, amely rendelkezik a jegyzék, amelynek RootModule kulcs értéke üres.|
 |moduljegyzék|A Windows PowerShell adatfájlt (.psd1), amely leírja, hogy a modul tartalmának és, amely meghatározza, hogy a modul feldolgozásának módja.|
 |a munkamenet-állapot modul|A munkamenet-állapot, amely tartalmazza a nyilvános és titkos adatokat a Windows PowerShell-modulok. A személyes adatokat a a munkamenet-állapot nem érhető el egy Windows PowerShell-munkamenet a felhasználó számára.|
 |nem okozó hibát|Hiba, amely nem áll le a Windows PowerShell folyamatos a parancs végrehajtásához.|
@@ -33,7 +33,7 @@ ms.lasthandoff: 08/08/2017
 |Az adatcsatorna|A Windows PowerShellben, az előző parancs küldése a következő parancsot az adatcsatorna számára.|
 |Adatcsatorna|Parancsokat csővezeték operátorral egymáshoz csatolt (&#124;) csatlakoztatva (ASCII 124). Minden egyes csővezeték-kezelőt az előző parancs küldése a következő parancs számára.|
 |PSSession|Egy Windows PowerShell-munkamenetben létrehozott, felügyelt, és a felhasználó által lezárt típusú.|
-|legfelső szintű modul|Egy moduljegyzék ModuleToProcess kulcsában a megadott modul.|
+|legfelső szintű modul|Egy moduljegyzék RootModule kulcsában a megadott modul.|
 |Futási térben|A Windows PowerShell, a működési környezetben, amelyben a folyamat minden parancs végrehajtása.|
 |parancsprogram-blokkot tartalmazzon|A Windows PowerShell programozási nyelv, utasítások vagy egyetlen egységként használható kifejezések gyűjteménye. Parancsprogram-blokkot tartalmazzon argumentumokat fogadják el, és visszatérési értékek.|
 |parancsfájl-modul|Egy Windows PowerShell modul, amelynek gyökérmodult modul parancsfájl (.psm1). Előfordulhat, hogy egy szkriptmodulba, vagy nem tartalmazhatnak egy moduljegyzék.|
@@ -53,6 +53,6 @@ ms.lasthandoff: 08/08/2017
 |Windows PowerShell-szolgáltató|A Microsoft .NET-keretrendszer-alapú program az adatok egy speciális adattár elérhetővé teszi a Windows PowerShellben, hogy megtekintheti és kezelheti azt.|
 |A Windows PowerShell-parancsfájl|Egy parancsfájl, amely a Windows PowerShell nyelven.|
 |A Windows PowerShell-parancsfájl|A .ps1 kiterjesztéssel rendelkező és a Windows PowerShell nyelven írt parancsfájlt tartalmazó fájl.|
-|A Windows PowerShell beépülő modul|Meghatározza a parancsmagok, a szolgáltatók és a Microsoft .NET-keretrendszer típusok a Windows PowerShell környezethez adható hozzá egy készletét erőforrás.|
+|Windows PowerShell snap-in|Meghatározza a parancsmagok, a szolgáltatók és a Microsoft .NET-keretrendszer típusok a Windows PowerShell környezethez adható hozzá egy készletét erőforrás.|
 |A Windows PowerShell munkafolyamat|A munkafolyamat olyan programozott, összekapcsolódó lépések sora, amik hosszan futó feladatokat végeznek el vagy több eszközön vagy felügyelt csomóponton keresztül végrehajtandó, több lépés koordinációját igénylik. A Windows PowerShell munkafolyamat lehetővé teszi, hogy az informatikai szakemberek és fejlesztők hozhatnak létre Többeszközös felügyeleti tevékenységek, vagy egy munkafolyamaton belül egyetlen feladatok munkafolyamatként. A Windows PowerShell munkafolyamat lehetővé teszi a igazítja, és futtassa a Windows PowerShell-parancsfájlok és a XAML-fájlokkal munkafolyamatként.|
 
