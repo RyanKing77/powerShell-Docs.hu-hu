@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: PowerShell parancsmag
 title: "A kétugrásos létrehozása a PowerShell-távelérés"
-ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
-ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
+ms.openlocfilehash: 726b4d1b7a41e9e344347543ecde26da6547bcf3
+ms.sourcegitcommit: fff6c0522508eeb408cb055ba4c9337a2759b392
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>A kétugrásos létrehozása a PowerShell-távelérés
 
@@ -101,7 +101,7 @@ A korlátozott delegálás konfigurálása előtt hozzá kell adnia a `RSAT-AD-P
 ```powershell
 PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
 
-PS C:\> Import-Module ActiveDirector
+PS C:\> Import-Module ActiveDirectory
 ```
 Számos elérhető parancsmagok most már rendelkezik egy **PrincipalsAllowedToDelegateToAccount** paraméter:
 
@@ -212,7 +212,7 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [Hogyan Windows Server 2012 használatának egyszerűbbé tétele a problémás a Kerberos által korlátozott delegálást, 1. rész](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Hogyan Windows Server 2012 használatának egyszerűbbé tétele a problémás a Kerberos által korlátozott delegálást, 2. rész](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Understanding Kerberos által korlátozott delegálás Proxy alkalmazástelepítésekhez az Azure Active Directory integrált Windows-hitelesítés](http://aka.ms/kcdpaper)
-- [[MS-ADA2]: az Active Directory séma attribútumok M2.210 attribútum az msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)
+- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)
 - [[MS-SFU]: Kerberos Protocol Extensions: Service, a felhasználó- és a korlátozott delegálás protokoll 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx)
 - [Erőforrás-alapú Kerberos által korlátozott delegálás](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Távoli felügyelet nélkül PrincipalsAllowedToDelegateToAccount használatával korlátozott delegálás](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
