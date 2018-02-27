@@ -52,7 +52,7 @@ Mások csak jelen, vagy a nem Windows PowerShell Core telepítései alkalmazhat�
 - Figyelmen kívül hagyja a `-ExecutionPolicy` váltani, ha a nem Windows platformokon futó PowerShell, mert parancsfájl aláíró jelenleg nem támogatott. (#3481)
 - Rögzített ConsoleHost tiszteletben `NoEcho` Unix platformokon. (#3801)
 - Rögzített `Get-Help` támogatja a kis-és nagybetűket mintaegyezéshez Unix platformokon. (#3852)
-- `powershell`a csomaghoz adott Man-lap
+- `powershell` a csomaghoz adott Man-lap
 
 ### <a name="logging"></a>Naplózás
 
@@ -65,14 +65,14 @@ Módosításokat végzett macOS és Linux hagyományosan nem támogatott a Windo
 
 - Parancsmagok megadott elérési útvonalai most törtvonallal-független (mind / és \ munkahelyi directory elválasztójelként)
 - Most tiszteletben és alapértelmezés szerint használt XDG Base könyvtár megadása:
-  - A Linux/macOS profil elérési út található:`~/.config/powershell/profile.ps1`
-  - Az előzmények elérési útvonalat mentéséhez itt található:`~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
-  - A felhasználó a modul elérési út található:`~/.local/share/powershell/Modules`
+  - A Linux/macOS profil elérési út található: `~/.config/powershell/profile.ps1`
+  - Az előzmények elérési útvonalat mentéséhez itt található: `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
+  - A felhasználó a modul elérési út található: `~/.local/share/powershell/Modules`
 - A kettőspont a Unix tartalmazó fájl- és mappanevek támogatása. (#4959)
 - Támogatás a parancsfájl nevét vagy teljes elérési rendelkező vesszővel válassza el egymástól. (#4136) (Köszönet a következőknek @TimCurwick!)
 - Észlelés, ha `-LiteralPath` arra, hogy letiltsa a helyettesítő karakterekkel való navigációs parancsmagok szolgál. (#5038)
 - Frissített `Get-ChildItem` működéséhez további hasonló a * nix `ls -R` és a Windows `DIR /S` natív parancsok.
-  `Get-ChildItem`most adja vissza a szimbolikus csatolást közben rekurzív keresését, és a könyvtárak nem keres, amely ezeket a hivatkozásokat cél. (#3780)
+  `Get-ChildItem` most adja vissza a szimbolikus csatolást közben rekurzív keresését, és a könyvtárak nem keres, amely ezeket a hivatkozásokat cél. (#3780)
 
 ### <a name="case-sensitivity"></a>Nagybetűk
 
@@ -93,11 +93,11 @@ Egymás melletti is lehetővé teszi a visszamenőleges kompatibilitás, parancs
 > Alapértelmezés szerint a MSI-alapú telepítő Windows helybeni frissítés telepítését végzi.
 >
 
-## <a name="renamed-powershellexe-to-pwshexe"></a>Átnevezett `powershell(.exe)` számára`pwsh(.exe)`
+## <a name="renamed-powershellexe-to-pwshexe"></a>Átnevezett `powershell(.exe)` számára `pwsh(.exe)`
 
 A PowerShell Core bináris neve módosult `powershell(.exe)` való `pwsh(.exe)`.
 Ez a változás determinisztikus módon biztosít a felhasználók gépen futtatandó PowerShell Core egymás mellett a Windows PowerShell és a PowerShell Core-telepítések támogatásához.
-`pwsh`sokkal rövidebb, és írja be a könnyebben is.
+`pwsh` sokkal rövidebb, és írja be a könnyebben is.
 
 A további módosításokat `pwsh(.exe)` a `powershell.exe`:
 
@@ -210,7 +210,7 @@ PowerShell feladatok kapcsolatos további információkért lásd: [about_Jobs](
 ## <a name="language-updates"></a>Nyelvi frissítések
 
 - Valósítja meg, hogy a felhasználók használhatják a Unicode-karaktereket argumentumok, karakterláncok vagy változónevek elemzése Unicode karaktert. (#3958) (Köszönet a következőknek @rkeithhill!)
-- A hozzáadott új escape-karakter az ESC Billentyűt:`` `e``
+- A hozzáadott új escape-karakter az ESC Billentyűt: `` `e``
 - Felsorolások számára (#4318) karakterlánc alakításának támogatása (Köszönjük @KirkMunro)
 - Rögzített adattípusokról egyelemű tömböt az általános gyűjteményben. (#3170)
 - A hozzáadott karakter tartomány túlterhelési a `..` operátor, így `'a'..'z'` karaktereit adja eredményül. "a" – "z". (#5026) (Köszönjük @IISResetMe!)
@@ -220,11 +220,11 @@ PowerShell feladatok kapcsolatos további információkért lásd: [about_Jobs](
 
 ## <a name="engine-updates"></a>Frissítések
 
-- `$PSVersionTable`négy új tulajdonságokkal rendelkezik:
+- `$PSVersionTable` négy új tulajdonságokkal rendelkezik:
   - `PSEdition`: A beállított érték `Core` PowerShell alapvető és `Desktop` a Windows PowerShell
   - `GitCommitId`: Ez az a Git commit azonosítója a Git fiók vagy a címke ahol PowerShell lett létrehozva.
     A kiadott buildek, azt valószínűleg találkozik majd olyan azonos `PSVersion`.
-  - `OS`: Ez az az operációs rendszer által visszaadott verzió-karakterlánca`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
+  - `OS`: Ez az az operációs rendszer által visszaadott verzió-karakterlánca `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: A rendszer által visszaadott `[System.Environment]::OSVersion.Platform` érték `Win32NT` Windows, a `MacOSX` a macOS, és `Unix` Linux.
 - Eltávolítja a `BuildVersion` tulajdonságot `$PSVersionTable`.
   Ez a tulajdonság erősen volt kötve a Windows verzió buildszámával.
@@ -302,18 +302,18 @@ PowerShell feladatok kapcsolatos további információkért lásd: [about_Jobs](
 - Adja hozzá `-Extension` és `-LeafBase` vált `Split-Path` , hogy a fájlnév kiterjesztése és a fájlnevet a többi közötti útvonalak fel. (#2721) (Köszönet a következőknek @powercode!)
 - Paraméterek hozzáadása `-Top` és `-Bottom` való `Sort-Object` a felső/alsó N rendezési
 - Egy folyamat szülő folyamat elérhetővé hozzáadásával a `CodeProperty "Parent"` való `System.Diagnostics.Process`. (#2850) (Köszönet a következőknek @powercode!)
-- MB használata helyett KB memória oszlopához`Get-Process`
+- MB használata helyett KB memória oszlopához `Get-Process`
 - Adja hozzá `-NoNewLine` átkapcsolni a `Out-String`. (#5056) (Köszönjük @raghav710)
-- `Move-Item`a parancsmag eleget tegyen `-Include`, `-Exclude`, és `-Filter` paraméterek. (#3878)
+- `Move-Item` a parancsmag eleget tegyen `-Include`, `-Exclude`, és `-Filter` paraméterek. (#3878)
 - Engedélyezése `*` beállításjegyzékbeli elérési út a használandó `Remove-Item`. (#4866)
 - Adja hozzá `-Title` való `Get-Credential` és egyesítése, ezáltal a Rákérdezés a felhasználói élmény különböző platformokon.
 - Adja hozzá a `-TimeOut` paramétert `Test-Connection`. (#2492)
-- `Get-AuthenticodeSignature`parancsmagok most kérheti le a fájl aláírása időbélyegző. (#4061)
+- `Get-AuthenticodeSignature` parancsmagok most kérheti le a fájl aláírása időbélyegző. (#4061)
 - Távolítsa el a nem támogatott `-ShowWindow` átállás `Get-Help`. (#4903)
 - Javítsa ki `Get-Content -Delimiter` tartalmazza az elválasztó a tömb elemeinek vissza a (#3706) (Köszönjük @mklement0)
 - Adja hozzá `Meta`, `Charset`, és `Transitional` paraméterek `ConvertTo-HTML` (#4184) (Köszönjük @ergo3114)
 - Adja hozzá `WindowsUBR` és `WindowsVersion` tulajdonságok `Get-ComputerInfo` eredménye
-- Adja hozzá `-Group` paraméterrel`Get-Verb`
+- Adja hozzá `-Group` paraméterrel `Get-Verb`
 - Adja hozzá `ShouldProcess` támogatni szeretné a `New-FileCatalog` és `Test-FileCatalog` (javítások `-WhatIf` és `-Confirm`). (#3074) (Köszönet a következőknek @iSazonov!)
 - Adja hozzá `-WhatIf` váltani `Start-Process` parancsmag (#4735) (Köszönjük @sarithsutha)
 - Adja hozzá `ValidateNotNullOrEmpty` túl sok meglévő paraméterek.
@@ -344,8 +344,8 @@ További részletes őket, lásd: [PowerShell Core 6.0 Megtörje változásai][b
 ## <a name="filesystem-updates"></a>Fájlrendszer frissítések
 
 - A fájlrendszer szolgáltató UNC-útvonalon használatának engedélyezése. ($4998)
-- `Split-Path`UNC-gyökér most működik
-- `cd`argumentum nélkül most úgy viselkedik, mint`cd ~`
+- `Split-Path` UNC-gyökér most működik
+- `cd` argumentum nélkül most úgy viselkedik, mint `cd ~`
 - Rögzített méretű PowerShell-Core az elérési utak legfeljebb 260 karakter hosszú használatának engedélyezése. (#3960)
 
 ## <a name="bug-fixes-and-performance-improvements"></a>Hibajavításokat tartalmaz, és a teljesítménnyel kapcsolatos fejlesztések
@@ -361,8 +361,8 @@ A fentebbi javításhoz és módosításhoz teljes listájáért tekintse meg a 
   - az operációs rendszer platform (`$PSVersionTable.OSDescription`)
   - a PowerShell pontos verzióját (`$PSVersionTable.GitCommitId`)
 
-Ha azt szeretné, hogy lemondja a telemetriai adatot, egyszerűen csak törölje `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`.
-A fájl törlése megkerüli a összes telemetriai adat azelőtt PowerShell első alkalommal történő futtatásakor.
+Ha azt szeretné, hogy lemondja a telemetriai adatot, egyszerűen csak törölje `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` , vagy hozzon létre `POWERSHELL_TELEMETRY_OPTOUT` környezeti változó a következő értékek egyikét: `true`, `1` vagy `yes`.
+Törölni a fájlt, vagy hozzon létre a változót megkerüli az összes telemetriai adat azelőtt PowerShell első alkalommal történő futtatásakor.
 A telemetriai adatok és az azt a telemetriai adatok a glean insights teszi ki a is tervezzük az [közösségi irányítópult][community-dashboard].
 További információk a hogyan ezen az adatok felhasználási található [blogbejegyzés][telemetry-blog].
 

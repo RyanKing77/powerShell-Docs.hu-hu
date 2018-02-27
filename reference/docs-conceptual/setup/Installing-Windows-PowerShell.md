@@ -2,25 +2,16 @@
 ms.date: 2017-08-09
 keywords: "PowerShell, a parancsmag, letöltése, telepítése, beállításához, windows 10, windows 8.1, windows 8.0-s, windows 7"
 title: "A Windows PowerShell telepítése"
-ms.openlocfilehash: ec8f09087a5c5f2e7ea6237faa01ea3f447ad1f3
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="installing-windows-powershell"></a>A Windows PowerShell telepítése
+A Windows PowerShell előre telepített alapértelmezés szerint a minden Windows, Windows 7 SP1 és Windows Server 2008 R2 SP1 kezdve.
 
-PowerShell előre telepített alapértelmezés szerint a minden Windows, Windows 7 SP1 és Windows Server 2008 R2 SP1 kezdve.
-
-Szeretné telepíteni a Windows, Linux és macOS felhasználók **PowerShell 6** (béta), a számítógépükre, szükséges, hogy:
-
-1. PowerShell lekérése az adott operációs rendszer és verzió, a [GitHub](https://github.com/powershell/powershell#get-powershell)
-1. Kövesse a telepítési utasításokat
-  - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md)
-  - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
-
-PowerShell 6 is rendelkezésre áll, a Docker; Lásd: [Docker telepítési](https://github.com/PowerShell/PowerShell/tree/master/docker) utasításokat.
+Ha érdekli PowerShell 6 és újabb verziók, telepítendő PowerShell alapvető Windows PowerShell helyett. Az adott, lásd: [PowerShell központi telepítése Windows](Installing-PowerShell-Core-on-Windows.md).
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>A Windows 10, 8.1, 8.0 és 7 PowerShell keresése
 
@@ -65,7 +56,7 @@ Az egyetlen kivétel a fenti szabály, a Windows Server 2008 R2 SP1; ISE Ebben a
 
 ## <a name="how-to-check-the-version-of-powershell"></a>Hogyan PowerShell verziójának ellenőrzése
 
-Található PowerShell verziójának telepítését, indítsa el a PowerShell-konzolban (vagy az ISE) és típus `$PSVersionTable` nyomja le az ENTER **ENTER**.
+Található PowerShell verziójának telepítését, indítsa el a PowerShell-konzolban (vagy az ISE) és típus `$PSVersionTable` nyomja le az ENTER **ENTER**. Keresse meg a `PSVersion` érték.
 
 ## <a name="upgrading-existing-windows-powershell"></a>Meglévő Windows PowerShell frissítése
 
