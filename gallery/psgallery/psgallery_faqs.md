@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: "gyűjtemény, a powershell, a parancsmag, a psgallery"
 title: psgallery_faqs
-ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="frequently-asked-questions"></a>Gyakori kérdések
 
@@ -18,7 +18,7 @@ Egy PowerShell-modul csomag egy újrafelhasználható tartalmazó néhány Power
 
 ## <a name="what-is-a-powershell-script"></a>Mi az a PowerShell-parancsfájlt?
 
-Egy PowerShell-parancsprogram egy .ps1 fájl újbóli használata és megosztása engedélyezése tárolt parancsokat. PowerShell-munkafolyamatok is PowerShell-parancsfájlok, amelyek felsorolják feladatokhoz, és adja meg ezeket a feladatokat az alkalmazás-előkészítés. További információkért látogasson el a [PowerShell munkafolyamat-első lépések](https://technet.microsoft.com/en-us/library/jj134242.aspx).
+Egy PowerShell-parancsprogram egy .ps1 fájl újbóli használata és megosztása engedélyezése tárolt parancsokat. PowerShell-munkafolyamatok is PowerShell-parancsfájlok, amelyek felsorolják feladatokhoz, és adja meg ezeket a feladatokat az alkalmazás-előkészítés. További információkért látogasson el a [PowerShell munkafolyamat-első lépések](https://technet.microsoft.com/library/jj134242.aspx).
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>Hogyan eltérnek PowerShell-parancsfájlok PowerShell-modulok?
 
@@ -48,7 +48,7 @@ Ez a hiba akkor fordulhat elő, a következő okok miatt:
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Miért nem tudom jelentkezzen be a személyes fiókkal, de sikertelen bejelentkezés tegnap?
 
-Felhívjuk a figyelmét arra, hogy gyűjtemény fiókját nem alkalmazzák a módosításokat az elsődleges e-mail aliasát. További információkért lásd: [Microsoft E-mail aliasok](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account).
+Felhívjuk a figyelmét arra, hogy gyűjtemény fiókját nem alkalmazzák a módosításokat az elsődleges e-mail aliasát. További információkért lásd: [Microsoft E-mail aliasok](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>Miért nem látom az összes gyűjteményelemet a kategória jelölőnégyzetek az elemek lapon kiválasztott?
 
@@ -156,7 +156,7 @@ Ezért **PowerShellGet** a következő operációs rendszerek egyike szükséges
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** is szükséges a .NET-keretrendszer 4.5 vagy újabb. Telepítheti a .NET-keretrendszer 4.5 vagy újabb a [Itt](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx).
+**PowerShellGet** is szükséges a .NET-keretrendszer 4.5 vagy újabb. Telepítheti a .NET-keretrendszer 4.5 vagy újabb a [Itt](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 ## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>Az elemek, a jövőben tesznek közzé nevek lefoglalhat?
 

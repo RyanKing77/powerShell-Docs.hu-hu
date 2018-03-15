@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
 title: "Keresés – DscResource"
-ms.openlocfilehash: 37ba7925d6f73c453126f25e0818b3f8839d3b3b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 6c5713f122d48e9c9d5e0aa45dc14047afc56102
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="find-dscresource"></a>Keresés – DscResource
 
@@ -16,7 +16,7 @@ A DSC-erőforrásokat keresi az modulok.
 
 ## <a name="description"></a>Leírás
 
-A keresés-DscResource parancsmagot talál [kívánt állapot konfigurációs szolgáltatása (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) regisztrált tárházak találhatók a megadott feltételeknek megfelelő modulban található erőforrást.
+A keresés-DscResource parancsmagot talál [kívánt állapot konfigurációs szolgáltatása (DSC)](https://msdn.microsoft.com/PowerShell/dsc/overview) regisztrált tárházak találhatók a megadott feltételeknek megfelelő modulban található erőforrást.
 Minden modul a parancsmag által megtalált keresés-DscResource telepítés-modulhoz, amely a parancsmag visszaadja erőforrásokat tartalmazó moduljainak telepítése egy átadható PSGetDscResourceInfo objektum beállítása/beolvasása.
 
 A DSC-ből egy olyan új felügyeleti platformot, amely lehetővé teszi a telepítésével és konfigurációs adatokat a szoftver szolgáltatások kezelése és a környezet, amelyben a szolgáltatások futnak kezelése a Windows PowerShell.

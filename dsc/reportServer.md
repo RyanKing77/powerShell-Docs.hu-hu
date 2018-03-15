@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC-jelentés kiszolgálóval"
-ms.openlocfilehash: 31b0df7d9baf30d93154d6a28b21f32fc052bc06
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: fdf16a2de6aea46844d3812029fae474e80ae6ac
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-a-dsc-report-server"></a>A DSC-jelentés kiszolgálóval
 
@@ -92,7 +92,7 @@ PullClientConfig
 
 ## <a name="getting-report-data"></a>A jelentés adatainak beolvasása
 
-A lekérési kiszolgálón a jelentések egy adatbázis-bekerülnek a kiszolgálón. A jelentések és a webszolgáltatás hívás érhetők el. Egy konkrét csomóponthoz tartozó jelentések beolvasása, küldjön egy HTTP-kérelem a jelentéskészítő webszolgáltatás a következő formában: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports` ahol `MyNodeAgentId` van a csomópont, amelynek le szeretné kérdezni a jelentések ügynökazonosító. Kaphat a ügynökazonosító egy csomópontra hívásával [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) ezen a csomóponton.
+A lekérési kiszolgálón a jelentések egy adatbázis-bekerülnek a kiszolgálón. A jelentések és a webszolgáltatás hívás érhetők el. Egy konkrét csomóponthoz tartozó jelentések beolvasása, küldjön egy HTTP-kérelem a jelentéskészítő webszolgáltatás a következő formában: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports` ahol `MyNodeAgentId` van a csomópont, amelynek le szeretné kérdezni a jelentések ügynökazonosító. Kaphat a ügynökazonosító egy csomópontra hívásával [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) ezen a csomóponton.
 
 A jelentések, egy JSON-objektumok tömbjét adja vissza.
 

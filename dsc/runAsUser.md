@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Felhasználói hitelesítő adatokkal DSC fut"
-ms.openlocfilehash: 7b57732679e4fb29112a3ca7fe64cba2bda67207
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 11c13d852b506be3e202b798d135eba73d84cfe0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="running-dsc-with-user-credentials"></a>Felhasználói hitelesítő adatokkal DSC fut 
 
@@ -16,8 +16,8 @@ ms.lasthandoff: 01/17/2018
 A DSC-erőforrásra a hitelesítő adatok egy megadott készlet automatikus futtathatja **PsDscRunAsCredential** tulajdonság a konfigurációban. Alapértelmezés szerint a DSC-ből az egyes erőforrások fiókként fut, a rendszer.
 Vannak olyan helyzetek, amikor egy felhasználó szükség, például az MSI-csomagok telepítése egy adott felhasználó környezetében, a felhasználó beállításkulcsok, a felhasználó helyi könyvtárba való hozzáférés vagy a hálózathoz hozzáférő futó megosztani.
 
-Minden DSC erőforrás rendelkezik egy **PsDscRunAsCredential** tulajdonság, amely a felhasználói hitelesítő adatok állítható be (egy [PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) objektum).
-A hitelesítő adatokat is kódolt a konfigurációban a tulajdonság értékeként, vagy állíthat be az érték [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx), amely fogja kérni a felhasználót a hitelesítő adatokat, ha a konfiguráció fordítása történik (További információ konfiguráció fordítása, lásd: [konfigurációk](configurations.md).
+Minden DSC erőforrás rendelkezik egy **PsDscRunAsCredential** tulajdonság, amely a felhasználói hitelesítő adatok állítható be (egy [PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) objektum).
+A hitelesítő adatokat is kódolt a konfigurációban a tulajdonság értékeként, vagy állíthat be az érték [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx), amely fogja kérni a felhasználót a hitelesítő adatokat, ha a konfiguráció fordítása történik (További információ konfiguráció fordítása, lásd: [konfigurációk](configurations.md).
 
 >**Megjegyzés:** PowerShell 5.0, használja a **PsDscRunAsCredential** összetett erőforrások hívása konfigurációk tulajdonság nem támogatott. 
 >A PowerShell 5.1 a **PsDscRunAsCredential** tulajdonság támogatott konfigurációk összetett erőforrások hívja.

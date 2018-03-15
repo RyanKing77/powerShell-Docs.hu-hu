@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: PowerShell parancsmag
 title: "telepítheti és használhatja a windows powershell web access"
-ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Webes Windows PowerShell-elérés telepítése és használata
 
@@ -29,7 +29,7 @@ A Windows PowerShell Web Access beállítása és konfigurációja egy három l�
 1. [Korlátozó engedélyezési szabály konfigurálása](#configure-a-restrictive-authorization-rule)
 
 Mielőtt telepítése és konfigurálása a Windows PowerShell Web Access, azt javasoljuk, hogy elolvasta a teljes útmutató, amely telepítésével kapcsolatos utasításokat tartalmaz, biztonságos, és távolítsa el a Windows PowerShell Web Access.
-A [a webes Windows PowerShell konzol használata](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx) a témakör bemutatja, hogyan jelentkeznek be a webalapú konzolba, és korlátozások és a webes Windows PowerShell konzol közötti különbségeket tartalmazza, és a  **PowerShell.exe** konzol. Olvassa el a végfelhasználók számára a webalapú konzol [használja a Web-alapú Windows PowerShell konzol](use-the-web-based-windows-powershell-console.md), de nem szükséges ez az útmutató többi részétől.
+A [a webes Windows PowerShell konzol használata](https://technet.microsoft.com/library/hh831417(v=ws.11).aspx) a témakör bemutatja, hogyan jelentkeznek be a webalapú konzolba, és korlátozások és a webes Windows PowerShell konzol közötti különbségeket tartalmazza, és a  **PowerShell.exe** konzol. Olvassa el a végfelhasználók számára a webalapú konzol [használja a Web-alapú Windows PowerShell konzol](use-the-web-based-windows-powershell-console.md), de nem szükséges ez az útmutató többi részétől.
 
 Ez a témakör nem ad részletes IIS-webkiszolgáló műveletek útmutatást; Ez a témakör csak a a Windows PowerShell Web Access-átjáró konfigurálásához szükséges lépéseket ismerteti. A webhelyek IIS-ben való konfigurálásával és biztonságossá tételével kapcsolatos további információkért tekintse meg az IIS dokumentációs forrásanyagait a Lásd még szakaszban.
 
@@ -136,12 +136,12 @@ A parancsmag futtatása telepíti a Windows PowerShell Web Access webalkalmazás
 
 A következő beállítások a parancsmag futtatásával konfigurálhatók. Ezeket az adatokat, ha szükséges, az IIS-kezelő konzolján manuálisan módosítani tudja.
 
-- Elérési út: /pswa
+- Path: /pswa
 - ApplicationPool: pswa_pool
 - EnabledProtocols: http
 - PhysicalPath: %*windir*%/Web/PowerShellWebAccess/wwwroot
 
-**Példa**:`Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
+**Példa**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
 Ebben a példában az eredményül kapott webhelye a Windows PowerShell Web Access https://\<*kiszolgáló_neve*\>/myWebApp.
 
@@ -165,7 +165,7 @@ Ebben a példában az eredményül kapott webhelye a Windows PowerShell Web Acce
     Ezeket az adatokat, ha szükséges, az IIS-kezelő konzolján manuálisan módosítani tudja.
     Megadhat értékeket az `Install-PswaWebApplication` parancsmag `WebsiteName` és `WebApplicationName` paramétereihez is.
 
-    - Elérési út: /pswa
+    - Path: /pswa
 
     - ApplicationPool: pswa_pool
 
@@ -187,7 +187,7 @@ Ebben a példában az eredményül kapott webhelye a Windows PowerShell Web Acce
 
 7. Az a **hely kötésének hozzáadása** párbeszédpanel a **típus** mezőben válassza **https**.
 
-8. Az a **SSL-tanúsítvány** mező mellett válassza ki a megfelelő aláírt tanúsítványt a legördülő menüből. Kattintson az **OK** gombra. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
+8. Az a **SSL-tanúsítvány** mező mellett válassza ki a megfelelő aláírt tanúsítványt a legördülő menüből. Kattintson az OK** gombra. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
 
     A Windows PowerShell Web Access webalkalmazás az aláírt SSL-tanúsítvány használatára konfigurálta.
 
@@ -212,7 +212,7 @@ További információt a Windows PowerShell Web Access engedélyezési szabálya
 
     - A Windows **Start** kattintson a jobb gombbal **Windows PowerShell**, és kattintson a **Futtatás rendszergazdaként**.
 
-2. Opcionális megoldás a felhasználói hozzáférés korlátozására munkamenet-konfigurációk használatával: Győződjön meg arról, hogy munkamenet-konfigurációk, a használni kívánt a szabályokban már léteznek. Azok rendelkezik még nem jött létre, ha a munkamenet-konfigurációk létrehozásához használja utasításokat [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Opcionális megoldás a felhasználói hozzáférés korlátozására munkamenet-konfigurációk használatával: Győződjön meg arról, hogy munkamenet-konfigurációk, a használni kívánt a szabályokban már léteznek. Azok rendelkezik még nem jött létre, ha a munkamenet-konfigurációk létrehozásához használja utasításokat [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Írja be a következőt, és nyomja le az **Enter**.
 
@@ -224,7 +224,7 @@ További információt a Windows PowerShell Web Access engedélyezési szabálya
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
-4. Győződjön meg arról, hogy létrejött-e a szabály futtatásával a `Get-PswaAuthorizationRule` parancsmagot, vagy`Test-PswaAuthorizationRule -UserName <domain\user> -ComputerName <computer-name>`
+4. Győződjön meg arról, hogy létrejött-e a szabály futtatásával a `Get-PswaAuthorizationRule` parancsmagot, vagy `Test-PswaAuthorizationRule -UserName <domain\user> -ComputerName <computer-name>`
 
 5. Például: `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
@@ -276,7 +276,7 @@ Ebben a szakaszban található utasítások szolgálnak a Windows PowerShell Web
 
 2. Új alkalmazáskészlet létrehozása a Windows PowerShell Web Access. Bontsa ki az átjárókiszolgáló, az IIS-kezelő fát megjelenítő ablaktáblán válassza ki a csomópontot **alkalmazáskészletek**, és kattintson a **alkalmazáskészlet hozzáadása** a a **műveletek** ablaktáblán.
 
-3. Nevű új alkalmazáskészlet hozzáadása **pswa_pool**, vagy adjon meg egy másik nevet. Kattintson az **OK** gombra.
+3. Nevű új alkalmazáskészlet hozzáadása **pswa_pool**, vagy adjon meg egy másik nevet. Kattintson az OK** gombra.
 
 4. Az IIS-kezelő fát megjelenítő ablaktáblán, bontsa ki a csomópontot, a kiszolgáló, amelyen a Windows PowerShell Web Access telepítve van, amíg a **helyek** mappa meg nem jelenik. Válassza ki a **helyek** mappát.
 
@@ -286,17 +286,17 @@ Ebben a szakaszban található utasítások szolgálnak a Windows PowerShell Web
 
 7. Az a **alkalmazáskészlet** mező mellett válassza ki a 3. lépésben létrehozott alkalmazáskészletet.
 
-8. Az a **fizikai elérési út** mezőben tallózással keresse meg az alkalmazás helyét. Használhatja az alapértelmezett helyet: %windir%/Web/PowerShellWebAccess/wwwroot. Kattintson az **OK** gombra.
+8. Az a **fizikai elérési út** mezőben tallózással keresse meg az alkalmazás helyét. Használhatja az alapértelmezett helyet: %windir%/Web/PowerShellWebAccess/wwwroot. Kattintson az OK** gombra.
 
 9. Az SSL-tanúsítvány konfigurálása IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager) ebben a témakörben szereplő eljárás lépéseit kövesse.
 
-10. ![](images/SecurityNote.jpeg)Nem kötelező biztonsági lépés:
+10. ![](images/SecurityNote.jpeg) Nem kötelező biztonsági lépés:
 
     A webhelyet a fát megjelenítő ablaktáblán kattintson duplán a **SSL-beállítások** a tartalompanelen. Válassza ki **SSL megkövetelése**, majd a **műveletek** ablaktáblában kattintson **alkalmaz**. Nem kötelező a **SSL-beállítások** ablaktáblán megkövetelheti, hogy a Windows PowerShell Web Access webhely csatlakozó felhasználók rendelkezzenek ügyféltanúsítványokkal. Az ügyféltanúsítványok segítségével ellenőrizheti az ügyféleszközök felhasználóinak identitását. Hogyan Ügyféltanúsítványok megkövetelése hogy növelni a Windows PowerShell Web Access biztonsági kapcsolatos további információkért lásd: [engedélyezési szabályai és biztonsági szolgáltatások a Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) az útmutatóban.
 
 11. Nyisson meg egy böngésző-munkamenetet egy ügyféleszközön. Támogatott böngészőkkel és eszközökkel kapcsolatos további információkért lásd: [böngészőből, és támogatja az ügyféleszközön](#browser-and-client-device-support) ebben a témakörben.
 
-12. Nyissa meg az új Windows PowerShell Web Access webhely  **https://\<*átjáró kiszolgálónév*\>/pswa**.
+12. Nyissa meg az új Windows PowerShell Web Access webhely **https://\<*átjáró kiszolgálónév*\>/pswa**.
 
     A böngésző megjelenjen-e a Windows PowerShell Web Access konzol bejelentkezési oldal.
 
@@ -339,7 +339,7 @@ Ebben a szakaszban található utasítások szolgálnak a Windows PowerShell Web
 
     Módosítsa az alapértelmezett portot, ha egy másik webhely már használja a 443-ast, vagy ha egyéb biztonsági okokból módosítani szeretné a portszámot. Ha az átjárókiszolgálón egy másik webhely használja a kiválasztott portot, figyelmeztetés jelenik meg kattintva **OK** a a **webhely hozzáadása** párbeszédpanel megnyitásához. A Windows PowerShell Web Access futtatásához egy nem használt portot kell használnia.
 
-9. Ha a szervezet számára szükséges, megadhat egy állomásnevet, amely a szervezet és a felhasználók, például a **www.contoso.com**. Kattintson az **OK** gombra.
+9. Ha a szervezet számára szükséges, megadhat egy állomásnevet, amely a szervezet és a felhasználók, például a **www.contoso.com**. Kattintson az OK gombra.
 
 10. A biztonságosabb éles környezet érdekében határozottan javasoljuk egy érvényes, hitelesítésszolgáltató által aláírt tanúsítványt biztosítását. Meg kell adnia egy SSL-tanúsítvány, mert a felhasználók kapcsolódhatnak a Windows PowerShell Web Access csak egy HTTPS-webhelyen. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
 
@@ -361,7 +361,7 @@ Ebben a szakaszban található utasítások szolgálnak a Windows PowerShell Web
 
 15. Nyissa meg az új Windows PowerShell Web Access webhely.
 
-    Mivel a gyökérwebhely a Windows PowerShell Web Access mappába, a böngésző megjelenjen-e a Windows PowerShell Web Access bejelentkezési oldal, megnyitásakor  **https://\<*átjárókiszolgáló_neve* \>**. Nem kell hozzáadni **/pswa** URL-címét.
+    Mivel a gyökérwebhely a Windows PowerShell Web Access mappába, a böngésző megjelenjen-e a Windows PowerShell Web Access bejelentkezési oldal, megnyitásakor **https://\<*átjárókiszolgáló_neve* \>**. Nem kell hozzáadni **/pswa** URL-címét.
 
     >**![Megjegyzés:](images/note.jpeg) Megjegyzés** 
     > 
@@ -384,7 +384,7 @@ További információt a Windows PowerShell Web Access engedélyezési szabálya
 
 2. ![Biztonsági Megjegyzés](images/SecurityNote.jpeg) Opcionális megoldás a felhasználói hozzáférés korlátozására munkamenet-konfigurációk használatával:
 
-    Ellenőrizze, hogy léteznek-e már azok a munkamenet-konfigurációk, amelyeket használni szeretne a szabályokban. Azok rendelkezik még nem jött létre, ha a munkamenet-konfigurációk létrehozásához használja utasításokat [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+    Ellenőrizze, hogy léteznek-e már azok a munkamenet-konfigurációk, amelyeket használni szeretne a szabályokban. Azok rendelkezik még nem jött létre, ha a munkamenet-konfigurációk létrehozásához használja utasításokat [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Írja be a következőt, és nyomja le az **Enter**.
 
@@ -418,7 +418,7 @@ A biztonságos éles környezethez mindig érvényes, hitelesítésszolgáltató
 
     - Kattintson a **tanúsítványkérelem létrehozása** tanúsítvány kérése a hitelesítésszolgáltatótól, mint [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), vagy [GeoTrust](https://www.geotrust.com/). A tanúsítvány köznapi nevének egyeznie kell a kérésben szereplő állomás fejlécével.
 
-      Ha például az ügyfél böngészője a http://www.contoso.com/ címre küldi a kérést, a köznapi névnek is a http://www.contoso.com/ címnek kell lennie. Ez a lehetőség a legbiztonságosabb és ajánlott a Windows PowerShell Web Access-átjáró biztosítani a tanúsítványhoz.
+      Például, ha az ügyfél böngészője kérelmek http://www.contoso.com/, akkor a köznapi név is meg kell http://www.contoso.com/. Ez a lehetőség a legbiztonságosabb és ajánlott a Windows PowerShell Web Access-átjáró biztosítani a tanúsítványhoz.
 
     - Kattintson a **önaláírt tanúsítvány létrehozása** egy azonnal használható, és rendelkezik később egy hitelesítésszolgáltató által aláírt szükség tanúsítvány létrehozásához. Adjon meg egy rövid nevet az önaláírt tanúsítvány, például **Windows PowerShell Web Access**. Ez a lehetőség nem tekinthető biztonságosnak, és csak privát tesztkörnyezetben ajánlott.
 

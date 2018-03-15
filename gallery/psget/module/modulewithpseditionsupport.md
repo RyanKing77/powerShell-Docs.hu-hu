@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
 title: modulewithpseditionsupport
-ms.openlocfilehash: 8122756b78e18fe55daef5c46dc299b87ddcaf1a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 8a762ddf307f47ecec8d2a63098e75cde97c391f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Verzióval kompatibilis PowerShell modulok
 Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhető el, amelyek különböző szolgáltatáskészleteket és platformkompatibilitást kínálnak.
@@ -95,7 +95,7 @@ Az alábbiakban a néhány lehetőségek kiválasztásával becsomagolhatja a mo
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-#### <a name="contents-of-psscriptanalyzerpsd1-file"></a>PSScriptAnalyzer.psd1 fájl tartalma
+#### <a name="contents-of-psscriptanalyzerpsd1-file"></a>Contents of PSScriptAnalyzer.psd1 file
 
 ```powershell
 @{
@@ -113,7 +113,7 @@ ModuleVersion = '1.6.1'
 }
 ```
 
-#### <a name="contents-of-psscriptanalyzerpsm1-file"></a>PSScriptAnalyzer.psm1 fájl tartalma
+#### <a name="contents-of-psscriptanalyzerpsm1-file"></a>Contents of PSScriptAnalyzer.psm1 file
 Alább logika betölti a szükséges szerelvényeket, attól függően, hogy a jelenlegi kiadása vagy verziója.
 
 ```powershell
@@ -224,8 +224,8 @@ Mode                LastWriteTime         Length Name
 -a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
 ```
 
-## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditoncore"></a>PowerShell-galériában felhasználói is megtalálhassák egy adott kiadásán PowerShell támogatott listájához PSEdition_Desktop és PSEditon_Core címkék használatával.
-Modulok PSEdition_Desktop és PSEditon_Core címkék nélkül minősülnek PowerShell asztali változatában működnek.
+## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>PowerShell-galériában felhasználói is megtalálhassák egy adott kiadásán PowerShell támogatott listájához PSEdition_Desktop és PSEdition_Core címkék használatával.
+Modulok PSEdition_Desktop és PSEdition_Core címkék nélkül minősülnek PowerShell asztali változatában működnek.
 
 ```powershell
 
@@ -239,7 +239,7 @@ Find-Module -Tag PSEditon_Core
 
 
 ## <a name="more-details"></a>További részletekért
-### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[A PSEditions parancsfájlok](../script/scriptwithpseditionsupport.md)
+### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[PSEditions paraméterrel rendelkező parancsfájlok](../script/scriptwithpseditionsupport.md)
 ### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[Támogatja a PSEditions PowerShellGallery](../../psgallery/psgallery_pseditions.md)
 ### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a>[Frissítési moduljegyzék] (./psget_update-modulemanifest.md)
 

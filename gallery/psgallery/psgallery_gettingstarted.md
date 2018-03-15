@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: "gyűjtemény, a powershell, a parancsmag, a psgallery"
 title: psgallery_gettingstarted
-ms.openlocfilehash: d13c23cd6f9cce433cd3fe1ad5f2d00e3ef0527c
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>Ismerkedjen meg a PowerShell-galériában
 
@@ -103,7 +103,7 @@ Alapértelmezés szerint [Install-modul](https://go.microsoft.com/fwlink/?LinkId
 
 Azure Automation a PowerShell-galériából elemet telepítéséhez kattintson **központi telepítése az Azure Automation** elem részleteit megjelenítő oldalon. Az Azure felügyeleti portálra, ahol regisztrál Azure-fiók hitelesítő adataival irányítja. Vegye figyelembe, hogy függőségekkel rendelkező elemek telepítését helyezik üzembe a függőségek az Azure Automation. A "Központi telepítése az Azure Automation" gomb letiltható hozzáadásával a **AzureAutomationNotSupported** címkén belül, hogy a konfigurációelem-metaadatok.
 
-Azure Automation kapcsolatos további tudnivalókért tekintse meg a [Azure Automation-webhely](http://azure.microsoft.com/en-us/services/automation/).
+Azure Automation kapcsolatos további tudnivalókért tekintse meg a [Azure Automation-webhely](http://azure.microsoft.com/services/automation/).
 
 ## <a name="updating-items-from-the-powershell-gallery"></a>A PowerShell-galériából elemek frissítése
 

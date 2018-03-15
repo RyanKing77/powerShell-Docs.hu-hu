@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC WaitForSome erőforrás"
-ms.openlocfilehash: cbe16c543f0eeb62dbe1fb439af2f9147f1bc210
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 8b0ad0dbd31816cc673c7f77945927987e90e08b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-waitforsome-resource"></a>A DSC WaitForSome erőforrás
 
@@ -40,12 +40,12 @@ WaitForSome [String] #ResourceName
 |---|---| 
 | NodeCount| Ehhez az erőforráshoz sikeres megfelelő állapotban kell lennie csomópontok minimális száma.|
 | Csomópontnév| Az erőforrás függ a célcsomópontokat.| 
-| resourceName| Az erőforrásnév függ.| 
+| resourceName| Az erőforrásnév függ. Ha egy másik konfigurációs ehhez az erőforráshoz tartozik, a neve, ahogyan formázása "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "| 
 | RetryIntervalSec| Másodpercig az újrapróbálkozás előtt száma. Minimális érték 1.| 
 | a retryCount| A próbálkozások maximális számát.| 
 | ThrottleLimit| Az egyidejű csatlakozást a gépek számát. Alapértelmezés szerint új-cimsession alapértelmezett.| 
 | dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.|
-| PsDscRunAsCredential | Lásd: [DSC hitelesítő adatokkal rendelkező felhasználó](https://docs.microsoft.com/en-us/powershell/dsc/runasuser) |
+| PsDscRunAsCredential | Lásd: [DSC hitelesítő adatokkal rendelkező felhasználó](https://docs.microsoft.com/powershell/dsc/runasuser) |
 
 
 ## <a name="example"></a>Példa

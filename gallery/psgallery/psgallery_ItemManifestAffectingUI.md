@@ -2,8 +2,8 @@
 
 Ez a témakör összefoglaló információkat a közzétevők hogyan lehet módosítani a PowerShell-galériában kiadványokat jegyzékfájljának, hogy az érintett szolgáltatások PowerShellGet parancsmagok és a PowerShell-Galériabeli felhasználói felületén. Ez a tartalom ahol a változás megjelenik, kezdve a középen, akkor az a bal oldali navigációs területen van rendezve. Nincs olyan részletei című szakaszban fedi le címkék azonosítja az fontos címkék, valamint a gyakrabban általánosan használt címkék. Számos jegyzékszakaszban példákat biztosítanak két témakörök. 
 
-* A modulok, lásd: [frissítés modul Manifest](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/psget_update-modulemanifest)
-* Parancsfájlok, lásd: [metaadatokkal parancsfájl létrehozása](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+* A modulok, lásd: [frissítés modul Manifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
+* Parancsfájlok, lásd: [metaadatokkal parancsfájl létrehozása](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>PowerShell-galériában szolgáltatás elemek szabályozzák a jegyzék
 
@@ -77,11 +77,11 @@ Ajánlott eljárás az előnyben részesített címke használják, amelyek keve
 | **SQLServer** |  |
 | **DBA** |  |
 | **Biztonság** | Védelmi kevésbé pontos. |
-| **Adatbázis** | Adatbázisok (többes számú) kevésbé kívánatos |
+| **adatbázis** | Adatbázisok (többes számú) kevésbé kívánatos |
 | **DevOps** |  |
 | **Windows** |  |
 | **Build** |  |
-| **Központi telepítés** | Telepítése kevésbé gyakran használt |
+| **központi telepítés** | Telepítése kevésbé gyakran használt |
 | **Felhő** |  |
 | **GIT** |  |
 | **Test** | Tesztelése kevésbé kívánatos |

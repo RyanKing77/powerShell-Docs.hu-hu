@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: PowerShell parancsmag
 title: "a windows powershell web access hozzáférési problémák elhárítása"
-ms.openlocfilehash: 08a9fd286ed8a40e9423deb7d29dc0a8ecf8e5b1
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Hozzáférési problémák hibaelhárítása a Webes Windows PowerShell-elérésben
 
@@ -34,7 +34,7 @@ A hiba oka a következők bármelyike lehet.
 
   Ellenőrizze a távoli felügyelet engedélyezve van a számítógépen, amelyre a felhasználó csatlakozni próbál.
 
-  További információkért lásd: [hogyan konfigurálhatja a számítógép a távoli eljáráshívás](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  További információkért lásd: [hogyan konfigurálhatja a számítógép a távoli eljáráshívás](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## <a name="internal-server-error"></a>Belső kiszolgálóhiba.
 
@@ -61,7 +61,7 @@ Olyan felhasználóknál jelentkezhet, akik kínai karaktereket használó tarto
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Nem lehet csatlakozni egy távoli munkacsoport-számítógéphez
 
-Ha a célszámítógép egy munkacsoport tagja, használja a következő szintaxist a felhasználónév megadásához és a számítógépre történő bejelentkezéshez:`<workgroup_name>\<user_name>`
+Ha a célszámítógép egy munkacsoport tagja, használja a következő szintaxist a felhasználónév megadásához és a számítógépre történő bejelentkezéshez: `<workgroup_name>\<user_name>`
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>A rendszer nem találja a webkiszolgáló (IIS) felügyeleti eszközöket, pedig a szerepkör telepítve van
 
@@ -92,8 +92,8 @@ A számítógép nevét képviselő ne használjon önmagában egy pontot (.) ö
 
 Paraméter | Érték
 -- | --
-UserName | Kiszolgáló\_neve\\felhasználói\_neve<br/>Localhost\\felhasználói\_neve<br/>. \\felhasználói\_neve
-Felhasználói csoport | Kiszolgáló\_neve\\felhasználói\_csoport<br/>Localhost\\felhasználói\_csoport<br/>. \\felhasználói\_csoport
+UserName | Server\_name\\user\_name<br/>Localhost\\user\_name<br/>.\\user\_name
+Felhasználói csoport | Kiszolgáló\_neve\\felhasználói\_csoport<br/>Localhost\\user\_group<br/>. \\felhasználói\_csoport
 ComputerGroup | Kiszolgáló\_neve\\számítógép\_csoport<br/>Localhost\\számítógép\_csoport<br/>. \\számítógép\_csoport
 
 #### <a name="gateway-server-is-in-a-domain"></a>Az átjárókiszolgáló egy tartományhoz tartozik
@@ -112,9 +112,9 @@ ComputerName | Kiszolgálónév
 
 Jelentkezzen be a célkiszolgálóként működő átjárókiszolgálóra a következők valamelyike szerint formázott hitelesítő adatokkal.
 
-- Kiszolgáló\_neve\\felhasználói\_neve
-- Localhost\\felhasználói\_neve
-- . \\felhasználói\_neve
+- Server\_name\\user\_name
+- Localhost\\user\_name
+- .\\user\_name
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>Egy biztonsági azonosítóval (SID) jelenik meg egy engedélyezési szabályban
 
@@ -132,7 +132,7 @@ Az engedélyezési szabályok nem támogatják az IPv6-címek használatát a ta
 Ha IPv6-cím használatával szeretne megadni egy célszámítógépet, használja az eredeti (kettőspontokat tartalmazó) IPv6-címet az engedélyezési szabályban.
 A tartomány és a numerikus (kettőspontokat tartalmazó) IPv6-címeket a célszámítógép nevének a Windows PowerShell Web Access bejelentkezési oldal, de az engedélyezési szabályok nem támogatottak. 
 
-IPv6-címekre vonatkozó további információkért lásd: [IPv6 működése](https://technet.microsoft.com/en-us/library/cc781672(v=ws.10).aspx).
+IPv6-címekre vonatkozó további információkért lásd: [IPv6 működése](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 
 ## <a name="see-also"></a>Lásd még:
 

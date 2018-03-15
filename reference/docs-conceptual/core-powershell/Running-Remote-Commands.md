@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: PowerShell parancsmag
 title: "Távoli parancsok futtatása"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
-ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
+ms.openlocfilehash: 24648e8f35fbc28c9ba9f9b7176ac23e72ffbe78
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="running-remote-commands"></a>Távoli parancsok futtatása
 
@@ -29,14 +29,14 @@ Számos Windows PowerShell-parancsmagok a ComputerName paraméterre, amely lehet
 Ezek a parancsmagok a következők:
 
 * [Indítsa újra a számítógépet](https://go.microsoft.com/fwlink/?LinkId=821625)
-* [Kapcsolat tesztelése](https://go.microsoft.com/fwlink/?LinkId=821646)
-* [Az eseménynaplóban törlése](https://go.microsoft.com/fwlink/?LinkId=821568)
-* [Get-Eseménynapló](https://go.microsoft.com/fwlink/?LinkId=821585)
-* [Get-gyorsjavítás](https://go.microsoft.com/fwlink/?LinkId=821586)
+* [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
+* [Clear-EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
+* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
+* [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
 * [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
-* [Get-szolgáltatás](https://go.microsoft.com/fwlink/?LinkId=821593)
-* [Szolgáltatás beállítása](https://go.microsoft.com/fwlink/?LinkId=821633)
-* [Get-WinEvent parancsmaggal](https://go.microsoft.com/fwlink/?linkid=821529)
+* [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
+* [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
+* [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
 * [Get-WmiObject](https://go.microsoft.com/fwlink/?LinkId=821595)
 
 Speciális konfiguráció nélkül távelérése támogató parancsmagok általában a ComputerName paraméterrel, és a munkamenet-paraméter nem rendelkezik. Ezeket a parancsmagokat a munkamenetben, írja be:
@@ -48,9 +48,9 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 ## <a name="windows-powershell-remoting"></a>A Windows PowerShell-távelérés
 A Windows PowerShell-távelérést, a WS-Management protokollt használja, amely lehetővé teszi, hogy egy vagy több távoli számítógépeken bármely Windows PowerShell-parancs futtatása. Lehetővé teszi az állandó kapcsolatot létrehozni, 1:1 interaktív munkamenetek indításához és parancsfájlok futtatása több számítógépen.
 
-A Windows PowerShell távoli eljáráshívás használatához a távoli számítógép távoli kezelési be kell állítani. További információt, beleértve az utasításokat, lásd: [távoli követelmények](https://technet.microsoft.com/en-us/library/dd315349.aspx).
+A Windows PowerShell távoli eljáráshívás használatához a távoli számítógép távoli kezelési be kell állítani. További információt, beleértve az utasításokat, lásd: [távoli követelmények](https://technet.microsoft.com/library/dd315349.aspx).
 
-Miután konfigurálta a Windows PowerShell-távelérést, sok távelérési stratégia a következő elérhető. Ez a dokumentum tovább részében csak néhány őket a sorolja fel. További információkért lásd: [kapcsolatos távoli](https://technet.microsoft.com/en-us/library/dd347744.aspx) és [távoli GYIK](https://technet.microsoft.com/en-us/library/dd347744.aspx).
+Miután konfigurálta a Windows PowerShell-távelérést, sok távelérési stratégia a következő elérhető. Ez a dokumentum tovább részében csak néhány őket a sorolja fel. További információkért lásd: [kapcsolatos távoli](https://technet.microsoft.com/library/dd347744.aspx) és [távoli GYIK](https://technet.microsoft.com/library/dd347744.aspx).
 
 ### <a name="start-an-interactive-session"></a>Egy interaktív munkamenet indítása
 Egy távoli számítógéppel egy interaktív munkamenet indításához használja a [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) parancsmag.
@@ -144,7 +144,7 @@ Távoli eljáráshívás hibákkal kapcsolatban lásd: [about_Remote_Troubleshoo
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 - [Invoke-Command parancsot](https://go.microsoft.com/fwlink/?LinkId=821493)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
-- [Új-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
+- [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [A WSMan-szolgáltató](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 

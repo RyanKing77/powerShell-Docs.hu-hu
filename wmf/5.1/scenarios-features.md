@@ -2,13 +2,13 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
+keywords: "WMF, powershell, beállítás"
 title: "Új forgatókönyvek és funkciók a WMF 5.1"
-ms.openlocfilehash: 430781c5c9a59fc544db4f94098313ae1e9cf610
-ms.sourcegitcommit: a6ee6e64d369ecf82c730411bed9750278fdb5c1
+ms.openlocfilehash: da3dfb2243c00e3faf637d3dbcb70016cfabb011
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Új forgatókönyvek és funkciók a WMF 5.1 #
 
@@ -28,9 +28,9 @@ Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhet
 
 ## <a name="catalog-cmdlets"></a>Katalógus-parancsmagok  
 
-Két új parancsmagokkal bővült a a [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) modul; ezek létrehozása és a Windows katalógusban fájlok érvényesítése.  
+Két új parancsmagokkal bővült a a [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) modul; ezek létrehozása és a Windows katalógusban fájlok érvényesítése.  
 
-###<a name="new-filecatalog"></a>Új FileCatalog 
+###<a name="new-filecatalog"></a>New-FileCatalog 
 --------------------------------
 
 Új FileCatalog fájlt hoz létre a Windows katalógusban mappák és fájlok. Ez a katalógus fájl tartalmazza az összes fájl megadott elérési utak a kivonatok. Az ezeken a mappákon jelölő megfelelő katalógusfájlt együtt mappák készletét terjeszthetnek. Ez az információ akkor hasznos, ellenőrzése, hogy bármely módosult a mappák katalógus létrehozása óta.    
@@ -51,7 +51,7 @@ Ez a katalógus fájlt hoz létre.
 Katalógusfájlt (Pester.cat a fenti példában) sértetlenségének ellenőrzéséhez használatával írja alá [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) parancsmag.   
 
 
-###<a name="test-filecatalog"></a>Teszt-FileCatalog 
+###<a name="test-filecatalog"></a>Test-FileCatalog 
 --------------------------------
 
 Teszt-FileCatalog érvényesíti a katalógus képviselő mappákat. 
@@ -62,7 +62,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-Ez a parancsmag összehasonlítja a fájlok kivonatok és azok relatív elérési utak található *katalógus* az azokat a *lemez*. Ha a fájlkivonat és elérési utak bármely eltérést észlel a állapotának adja vissza *ValidationFailed*. Felhasználók használatával kérheti le ezt az információt a *-részletes* paraméter. Azt is állapotát jeleníti meg az aláíró katalógust a *aláírás* tulajdonság, amely egyenértékű hívása [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) parancsmag a katalógus fájlra. Felhasználók is hagyhatja a fájl ellenőrzésekor használatával a *- FilesToSkip* paraméter. 
+Ez a parancsmag összehasonlítja a fájlok kivonatok és azok relatív elérési utak található *katalógus* az azokat a *lemez*. Ha a fájlkivonat és elérési utak bármely eltérést észlel a állapotának adja vissza *ValidationFailed*. Felhasználók használatával kérheti le ezt az információt a *-részletes* paraméter. Azt is állapotát jeleníti meg az aláíró katalógust a *aláírás* tulajdonság, amely egyenértékű hívása [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) parancsmag a katalógus fájlra. Felhasználók is hagyhatja a fájl ellenőrzésekor használatával a *- FilesToSkip* paraméter. 
 
 
 ## <a name="module-analysis-cache"></a>A modul elemzés gyorsítótár ##
@@ -101,13 +101,13 @@ A WMF 5.1:
 
 * Használhat [ModuleSpecification konstruktor (hibás)](https://msdn.microsoft.com/library/jj136290). A kivonattábla formátuma, `Get-Module -FullyQualifiedName`.
 
-**Példa:**`using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+**Példa:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
 * Ha a modul több verziója is van, a PowerShell használja a **logikák feloldási** , `Import-Module` nem ad visszatérési hiba – a kívánt viselkedést eredményező beállítást, és `Import-Module` és `Import-DscResource`.
 
 
 ##<a name="improvements-to-pester"></a>Pester fejlesztései
-WMF 5.1 a PowerShell-lel részét képező Pester verziója 3.4.0 véglegesítési https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, amely lehetővé teszi, hogy jobb működése hozzáadásával a 3.3.5 frissült A Nano Server pester. 
+WMF 5.1, a PowerShell-lel részét képező Pester verziója 3.4.0 véglegesítés azonban kiegészül a 3.3.5 megújult https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, amely lehetővé teszi, hogy jobb viselkedését a Nano Server Pester a. 
 
-A verziók 3.3.5 való 3.4.0 változásai áttekintheti a ChangeLog.md fájlban a következő vizsgálatával: https://github.com/pester/Pester/blob/master/CHANGELOG.md
+Ellenőrizze a ChangeLog.md fájlban a következő verziók 3.3.5 való 3.4.0 változásai tekinthetők át: https://github.com/pester/Pester/blob/master/CHANGELOG.md
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC használata a Nano Server"
-ms.openlocfilehash: 7427d6bb7644f513b9b523f284109f5ae0f8ef27
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c8f3669ee9c2ed6107c14ba9f4460d82276e1932
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>A DSC használata a Nano Server
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 01/17/2018
 New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1 -Packages Microsoft-NanoServer-DSC-Package
 ```
 
-További információ a telepítéséről és használatáról a Nano Server, valamint kezelése a PowerShell távelérése a Nano Server: [Ismerkedés a Nano Server](https://technet.microsoft.com/en-us/library/mt126167.aspx).
+További információ a telepítéséről és használatáról a Nano Server, valamint kezelése a PowerShell távelérése a Nano Server: [Ismerkedés a Nano Server](https://technet.microsoft.com/library/mt126167.aspx).
 
 
 ## <a name="dsc-features-available-on-nano-server"></a>A DSC szolgáltatás Nano Server
@@ -32,8 +32,8 @@ További információ a telepítéséről és használatáról a Nano Server, va
 * Mind eseménylekérési és eseményküldési módban
 
 * Minden DSC-parancsmag a teljes verzióját a Windows Server, beleértve a következőket: 
-  * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx)
-  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)   
+  * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
+  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)     
   * [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
   * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)       
   * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
@@ -124,5 +124,5 @@ A következő DSC-szolgáltatások nem érhetők el jelenleg a Nano Server:
 Windows API-k és a CLR-könyvtárak érhető el a Nano Server korlátozott készleteinek miatt a teljes CLR-verzió Windows működő DSC erőforrások feltétlenül működik a Nano Server. Fejezze be a végpontok közötti tesztelése előtt DSC egyéni erőforrások telepítése éles környezetben.
 
 ## <a name="see-also"></a>Lásd még:
-- [Ismerkedés a Nano Server](https://technet.microsoft.com/en-us/library/mt126167.aspx)
+- [Ismerkedés a Nano Server](https://technet.microsoft.com/library/mt126167.aspx)
 

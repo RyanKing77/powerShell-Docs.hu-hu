@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: PowerShell parancsmag
 title: "a web alapú windows powershell konzol használata"
-ms.openlocfilehash: 31ab17f1a1ea1353abc6f770285a2dca70da446d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>A webalapú Windows PowerShell konzol használata
 
@@ -58,7 +58,7 @@ Alapértelmezés szerint ez a cím van *https://\<kiszolgáló_neve\>/pswa*.
 
 Mielőtt bejelentkezik a Windows PowerShell Web Access, lehet, hogy rendelkezik-e a neve vagy IP-cím segítségével felügyelni kívánt távoli számítógép.
 Jogosult felhasználónak kell lennie a távoli számítógépen, amelyet úgy kell konfigurálni, hogy engedélyezze a távoli felügyeletet.
-A számítógép távoli felügyelet engedélyezéséhez konfigurálásával kapcsolatos további információkért lásd: [használata a Windows PowerShell távoli parancsok engedélyezése és](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting).
+A számítógép távoli felügyelet engedélyezéséhez konfigurálásával kapcsolatos további információkért lásd: [használata a Windows PowerShell távoli parancsok engedélyezése és](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting).
 
 A legegyszerűbben úgy konfigurálhatja a számítógép távoli felügyelet engedélyezéséhez, hogy futtassa a **Enable-PSRemoting - force** parancsmagot a számítógépen megnyitott Windows PowerShell-munkamenetet emelt szintű felhasználói jogosultságokkal (**Futtatás rendszergazdaként**).
 
@@ -70,11 +70,11 @@ A legegyszerűbben úgy konfigurálhatja a számítógép távoli felügyelet en
 
     > ![Megjegyzés:](images/Note.jpeg) **Megjegyzés**:
     >
-    > - Ha a célszámítógép egy munkacsoport, használja a következő szintaxist a felhasználónév megadásához és a számítógépre történő bejelentkezéshez:`<workgroup_name>\<user_name>`
+    > - Ha a célszámítógép egy munkacsoport, használja a következő szintaxist a felhasználónév megadásához és a számítógépre történő bejelentkezéshez: `<workgroup_name>\<user_name>`
     > - Ha a célszámítógép az átjárókiszolgáló, megadhatja `localhost` a számítógép neve mezőbe
     > - Ha a célszámítógép az átjárókiszolgáló, pedig az átjárókiszolgáló egy munkacsoporthoz tartozik, akkor kell használnia `<workgroup name>\<user_name>` bejegyezve a felhasználó nevében. Használhat `localhost` a számítógép neve mezőben.
 
-1. A **választható kapcsolati beállítások** szakasz segítségével felügyelni kívánt távoli számítógép engedélyezési követelményeihez kapcsolódik. A választható kapcsolati beállításokkal egyenértékű paraméterekre vonatkozó további információkért lásd: a [Enter-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession) a parancsmag súgójában talál.
+1. A **választható kapcsolati beállítások** szakasz segítségével felügyelni kívánt távoli számítógép engedélyezési követelményeihez kapcsolódik. A választható kapcsolati beállításokkal egyenértékű paraméterekre vonatkozó további információkért lásd: a [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) a parancsmag súgójában talál.
 
     Általában a Windows PowerShell Web Access-átjárón keresztül használt hitelesítő adatok megegyeznek a kezelni kívánt távoli számítógép által elfogadottakkal. Azonban ha azt szeretné, hogy különböző hitelesítő adatot használnak a távoli számítógép kezeléséhez, amelyet a 2. lépés, bontsa ki a **választható kapcsolati beállítások** szakaszt, és adja meg a másodlagos hitelesítő adatokat. Egyéb esetben folytassa a 6. lépéssel.
 

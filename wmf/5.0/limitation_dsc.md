@@ -2,12 +2,12 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: f39328b240a36deb40d484c4aedb889cee91dc8d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: "WMF, powershell, beállítás"
+ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Célállapot-konfiguráció (DSC) ismert problémák és korlátozások
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 06/12/2017
 
 A WMF 4.0-s és a WMF 5.0 Preview kiadásokban DSC nem teszik lehetővé a jelszavak a konfigurációban kell lennie a length több mint 121 karaktereket. A DSC rövid jelszavak használatát, akkor is, ha a hosszú és erős jelszót volt szükség volt kényszerítése. A legfrissebb módosítás lehetővé teszi, hogy a DSC-konfiguráció tetszőleges hosszúságú jelszót.
 
-**Megoldás:** hozza létre újból a tanúsítványt, amelynek adattitkosítás vagy kulcs rejtjelezése kulcs használatát, és a dokumentum titkosítási kibővített kulcshasználat (1.3.6.1.4.1.311.80.1). A TechNet cikknek <https://technet.microsoft.com/en-us/library/dn807171.aspx> további részleteket tartalmaz.
+**Megoldás:** hozza létre újból a tanúsítványt, amelynek adattitkosítás vagy kulcs rejtjelezése kulcs használatát, és a dokumentum titkosítási kibővített kulcshasználat (1.3.6.1.4.1.311.80.1). A TechNet cikknek <https://technet.microsoft.com/library/dn807171.aspx> további részleteket tartalmaz.
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>A DSC-parancsmagok sikertelenek lehetnek a WMF 5.0 RTM telepítése után
@@ -89,7 +89,7 @@ Az Invoke-DscResource parancsmag nem ad vissza figyelmeztetést, a részletes é
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>A DSC-erőforrások nem indítja el egyszerűen Invoke-DscResource használata esetén
 -----------------------------------------------------------------------
 Ha az LCM hibakeresési módban fut. (lásd: [hibakeresés DSC erőforrások](https://msdn.microsoft.com/powershell/dsc/debugresource) további részletekért), Invoke-DscResource parancsmag nem ad futási térben csatlakoztatni a hibakeresési információ.
-**Megoldás:** felderítése, és csatolja a parancsmagok használatával futási térben **Get-PSHostProcessInfo**, **Enter-PSHostProcess** , **Get-futási térben** és  **Hibakeresési-futási térben** hibakeresése a DSC-erőforrás.
+**Megoldás:** felderítése, és csatolja a parancsmagok használatával futási térben **Get-PSHostProcessInfo**, **Enter-PSHostProcess** , **Get-futási térben** és **Hibakeresési-futási térben** hibakeresése a DSC-erőforrás.
 
 ```powershell
 # Find all the processes hosting PowerShell

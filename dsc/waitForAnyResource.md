@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC WaitForAny erőforrás"
-ms.openlocfilehash: 795c005c67c196ef9afb08af790fe2a1695392ec
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 43922dbcccb6d06d7d9edfcf16ce4eb107e9d4e6
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-waitforany-resource"></a>A DSC WaitForAny erőforrás
 
@@ -36,7 +36,7 @@ WaitForAny [string] #ResourceName
 
 |  Tulajdonság  |  Leírás   | 
 |---|---| 
-| resourceName| Az erőforrásnév függ.| 
+| resourceName| Az erőforrásnév függ. Ha egy másik konfigurációs ehhez az erőforráshoz tartozik, a neve, ahogyan formázása "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "| 
 | Csomópontnév| Az erőforrás függ a célcsomópontokat.| 
 | RetryIntervalSec| Másodpercig az újrapróbálkozás előtt száma. Minimális érték 1.| 
 | a retryCount| A próbálkozások maximális számát.| 

@@ -3,14 +3,14 @@ ms.date: 2017-06-12
 author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, a powershell, a biztonsági"
-title: "JEA munkamenet-konfigurációk"
-ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
-ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
+title: JEA Session Configurations
+ms.openlocfilehash: c475a90a59d91b074f954cfb656b00142444c052
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="jea-session-configurations"></a>JEA munkamenet-konfigurációk
+# <a name="jea-session-configurations"></a>JEA Session Configurations
 
 > A következőkre vonatkozik: a Windows PowerShell 5.0
 
@@ -38,7 +38,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 Szövegszerkesztőben nyissa meg a munkamenet-konfigurációs fájlt.
 A `-SessionType RestrictedRemoteServer` mező jelzi, hogy a munkamenet-konfiguráció által használandó JEA biztonságos kezelésére.
-Munkamenetet konfigurálta így fog működni [NoLanguage mód](https://technet.microsoft.com/en-us/library/dn433292.aspx) , és csak a következő 8 alapértelmezett parancsokat (és aliasok) érhető el:
+Munkamenetet konfigurálta így fog működni [NoLanguage mód](https://technet.microsoft.com/library/dn433292.aspx) , és csak a következő 8 alapértelmezett parancsokat (és aliasok) érhető el:
 
 - Törölje az állomás (cls, törölje a jelet)
 - Kilépés-PSSession (exsn, kilépési)
@@ -128,7 +128,7 @@ Az általános jogú felhasználók nem hozzáféréssel kell rendelkeznie a map
 ### <a name="user-drive"></a>Felhasználói meghajtó
 
 Ha a csatlakozó felhasználók kell másolnia a fájlokat a JEA végpont és a parancs futtatásához, engedélyezheti a felhasználói meghajtó a munkamenet-konfigurációs fájlban.
-A felhasználó meghajtó egy [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) , amely egy egyedi mappát az egyes csatlakozó felhasználó van leképezve.
+A felhasználó meghajtó egy [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) , amely egy egyedi mappát az egyes csatlakozó felhasználó van leképezve.
 Ez a mappa adhatja őket a rendszer, és a fájlok adjon hozzáférést a teljes fájlrendszer vagy a fájlrendszer szolgáltató kitettségének nélkül történő másolását funkcionál.
 A felhasználó meghajtó tartalma állandó olyan helyzetekben, ahol lehet megszakítani hálózati kapcsolat munkamenetei között.
 

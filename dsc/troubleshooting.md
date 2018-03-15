@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Hibaelhárítási DSC"
-ms.openlocfilehash: 4141e1f3304460dcaf310ce603fdc5d9550a5069
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: cdb11a80daecec0e0d01071752612663ac69ac6d
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-dsc"></a>Hibaelhárítási DSC
 
@@ -21,7 +21,7 @@ Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) attó
 
 ## <a name="using-get-dscconfigurationstatus"></a>Get-DscConfigurationStatus használatával
 
-A [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) parancsmag konfiguráció állapota információ lekérése a cél-csomópont. Gazdag objektumot ad vissza, amely tartalmazza-e a konfiguráció futtatása sikeres volt-e magas szintű információkat. Akkor is elmerülne a rendszer a objektumba felderítéséhez futtassa, mint a konfigurációs adatait:
+A [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) parancsmag konfiguráció állapota információ lekérése a cél-csomópont. Gazdag objektumot ad vissza, amely tartalmazza-e a konfiguráció futtatása sikeres volt-e magas szintű információkat. Akkor is elmerülne a rendszer a objektumba felderítéséhez futtassa, mint a konfigurációs adatait:
 
 * Az erőforrásokat, melyeknél nem sikerült
 * Minden erőforrás újraindítást kérő
@@ -117,7 +117,7 @@ Consistency engine was run successfully.
 
 Egy adott struktúra, amely lehetővé teszi a felhasználó az összegyűjtött eseményeket egy DSC feladatból DSC események naplózása. A struktúra a következőképpen történik:
 
-**Feladat azonosítója:<Guid>**
+**Feladat azonosítója: <Guid>**
 **<Event Message>**
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>Egy DSC művelettel eseményeinek gyűjtése
@@ -232,7 +232,7 @@ Displaying messages from built-in DSC resources:
 
 ### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4: legutóbbi meghiúsult műveletek a naplóba hibaüzenetek
 
-`$SeparateDscOperations[0].Group`a legutóbbi művelet eseményeket tartalmaz. Futtassa a `Where-Object` parancsmag használatával az események szűréséhez szintű megjelenítendő neve alapján. Eredmények tárolódnak a `$myFailedEvent` változó, amely lehet további minél esemény üzenet:
+`$SeparateDscOperations[0].Group` a legutóbbi művelet eseményeket tartalmaz. Futtassa a `Where-Object` parancsmag használatával az események szűréséhez szintű megjelenítendő neve alapján. Eredmények tárolódnak a `$myFailedEvent` változó, amely lehet további minél esemény üzenet:
 
 ```powershell
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
@@ -247,7 +247,7 @@ Error Code : 1
 
 ### <a name="5-all-events-generated-for-a-particular-job-id"></a>5: összes eseményt hoz létre egy adott feladat.
 
-`$SeparateDscOperations`egy tömb csoportok, amelyek mindegyikének a neve megegyezik a feladat egyedi azonosítója. Futtassa a `Where-Object` parancsmag is kibonthat egy ezeket a csoportokat az eseményeket, amelyek egy adott feladat azonosítója:
+`$SeparateDscOperations` egy tömb csoportok, amelyek mindegyikének a neve megegyezik a feladat egyedi azonosítója. Futtassa a `Where-Object` parancsmag is kibonthat egy ezeket a csoportokat az eseményeket, amelyek egy adott feladat azonosítója:
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -621,5 +621,5 @@ onlyProperty                            PSComputerName
 * [Egyéni Windows PowerShell kívánt állapot konfigurációs erőforrások létrehozása](authoringResource.md)
 
 ### <a name="other-resources"></a>Egyéb források
-* [A Windows PowerShell célállapot-konfiguráló parancsmagok](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+* [A Windows PowerShell célállapot-konfiguráló parancsmagok](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
 

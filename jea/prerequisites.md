@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, a powershell, a biztonsági"
 title: "JEA Előfeltételek"
-ms.openlocfilehash: 75d5db2ba446df1d461050d187dc1495a22fef18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e6ee16e34eb9f1f0b2f3601c1aa9e90ab4f785f1
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="prerequisites"></a>Előfeltételek
 
@@ -33,8 +33,8 @@ Otthoni vagy munkahelyi számítógépen JEA használhatja:
 
 Ügyfél típusú operációs rendszer   | JEA rendelkezésre állása
 --------------------------|-----------------------------------------------------
-Windows 10 1607 +          | Előre telepítve
-Windows 10 1603-as, 1511-es     | Előtelepített, csökken funkció<sup>2</sup>
+Windows 10 1607+          | Előre telepítve
+Windows 10 1603, 1511     | Előtelepített, csökken funkció<sup>2</sup>
 Windows 10 1507           | Nem elérhető el
 Windows 8, 8.1            | A WMF 5.1 összes funkcióját
 Windows 7                 | Csökkentett funkció<sup>1</sup> a WMF 5.1
@@ -72,7 +72,7 @@ Windows 10 kell telepíteni a legújabb szolgáltatás-frissítéseket a Windows
 ## <a name="enable-powershell-remoting"></a>PowerShell-távelérés engedélyezése
 
 PowerShell-távelérést az alapokat amelyen JEA épül.
-Ezért elengedhetetlen, hogy engedélyezve van a PowerShell távelérése és [megfelelően védett](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity) JEA használata előtt a rendszeren.
+Ezért elengedhetetlen, hogy engedélyezve van a PowerShell távelérése és [megfelelően védett](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity) JEA használata előtt a rendszeren.
 
 A Windows Server 2012, 2012 R2 és 2016 alapértelmezés szerint engedélyezve van a PowerShell távvezérlését.
 PowerShell távoli eljáráshívás engedélyezéséhez futtassa a következő parancsot egy emelt szintű PowerShell-ablakban.
@@ -109,6 +109,6 @@ Rendszerszintű PowerShell írjanak elő csoportházirenden keresztül is enged�
 
 ## <a name="see-also"></a>Lásd még:
 
-- [PowerShell távvezérlése és a Rendszerfelügyeleti webszolgáltatások biztonsággal kapcsolatos további információk](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [PowerShell távvezérlése és a Rendszerfelügyeleti webszolgáltatások biztonsággal kapcsolatos további információk](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ a kék Team* a biztonsági által írt blogbejegyzés](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 

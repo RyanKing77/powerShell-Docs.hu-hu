@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Konfigurációs adatokat a hitelesítő adatok beállításai"
-ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6ddf82c2b63309255ec3187d650677a6c3c2afb0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Konfigurációs adatokat a hitelesítő adatok beállításai
 >Vonatkozik: A Windows PowerShell 5.0
@@ -156,7 +156,7 @@ Group [String] #ResourceName
 }
 ```
 
-Ez a példa egy [csoport](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) erőforrást a `PSDesiredStateConfiguration` DSC beépített erőforrás-modul.
+Ez a példa egy [csoport](https://msdn.microsoft.com/powershell/dsc/groupresource) erőforrást a `PSDesiredStateConfiguration` DSC beépített erőforrás-modul.
 Ez lehet helyi csoportok létrehozása és tagok hozzáadása vagy eltávolítása.
 Mindkét fogadja el a `Credential` tulajdonság és az automatikus `PsDscRunAsCredential` tulajdonság.
 Azonban, hogy az erőforrás használja-e csak a `Credential` tulajdonság.
@@ -231,7 +231,7 @@ Ebben a példában két problémákkal rendelkezik:
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 Az első hibaüzenet rendelkezik olyan dokumentáció URL-címe.
-Ez a hivatkozás a jelszavak titkosítása ismerteti egy [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) struktúra és a tanúsítvány.
+Ez a hivatkozás a jelszavak titkosítása ismerteti egy [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) struktúra és a tanúsítvány.
 További információ a tanúsítványok és DSC [olvassa el a feladás egy vagy több](http://aka.ms/certs4dsc).
 
 Az erőforrás megköveteli, hogy egy egyszerű szöveges jelszó, a `PsDscAllowPlainTextPassword` kulcsszó a konfigurációs adatokat a következő szakaszban:
@@ -270,7 +270,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
 > [!NOTE]
-> `NodeName`nem lehet egyenlő csillag, egy adott csomópont nevének megadása kötelező.
+> `NodeName` nem lehet egyenlő csillag, egy adott csomópont nevének megadása kötelező.
 
 **A Microsoft tesz elérhetővé elkerülése formázatlan szöveges jelszavak miatt a jelentős biztonsági kockázatot jelent.**
 

@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC-erőforrás a C# készítése"
-ms.openlocfilehash: 2fc6b8c127bca29e8f66fc7bd8d2828fdfe39f3c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4d276edf1180573df61b62d18a9f90cfa1cd4112
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>A DSC-erőforrás a C# készítése
 
 > Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
 
-Általában a Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) egyéni erőforrás vezettek be egy PowerShell-parancsfájlt. Azonban is valósíthatja meg egyéni DSC-erőforrás funkcióinak parancsmagok írása C# nyelven íródtak. Témakörben megismerkedhet a parancsmagok írása C# nyelven íródtak, [írása egy Windows PowerShell-parancsmag](https://technet.microsoft.com/en-us/library/dd878294.aspx).
+Általában a Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) egyéni erőforrás vezettek be egy PowerShell-parancsfájlt. Azonban is valósíthatja meg egyéni DSC-erőforrás funkcióinak parancsmagok írása C# nyelven íródtak. Témakörben megismerkedhet a parancsmagok írása C# nyelven íródtak, [írása egy Windows PowerShell-parancsmag](https://technet.microsoft.com/library/dd878294.aspx).
 
 Vezérelt végrehajtási az erőforrás a C#, parancsmagok, a folyamat a MOF-séma létrehozása, a gyökérmappa-szerkezetében létrehozása, importálása és az egyéni DSC erőforrás használatával megegyeznek a [MOFegyéniDSCerőforrásírása](authoringResourceMOF.md).
 
@@ -281,5 +281,5 @@ $env: psmodulepath (folder)
 #### <a name="concepts"></a>Fogalmak
 [Egyéni DSC-erőforrás MOF írása](authoringResourceMOF.md)
 #### <a name="other-resources"></a>Egyéb források
-[Egy Windows PowerShell-parancsmag írása](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+[Egy Windows PowerShell-parancsmag írása](https://msdn.microsoft.com/library/dd878294.aspx)
 

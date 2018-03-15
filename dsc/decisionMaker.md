@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Szükségeskonfiguráció-State konfigurálása – áttekintés döntéshozók számára"
-ms.openlocfilehash: cbde5d22f9cf118485a0302e53ee0a75eb4b8843
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 42335d674bd23a109ad8f818d3e22ef221884ca7
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Szükségeskonfiguráció-State konfigurálása – áttekintés döntéshozók számára
 
@@ -17,7 +17,7 @@ Ez a dokumentum ismerteti az üzleti előnyei a PowerShell kívánt állapot kon
 
 Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) olyan nyitott szabványok alapuló Windows beépített konfigurációs felügyeleti platform. A DSC-ből elég rugalmas, megbízható és konzisztens működéséhez az egyes fázisokban, a központi telepítési életciklus (fejlesztési, tesztelési, éles üzem előtti, éles), és a kibővített. 
 
-DSC adatközpontok körül "[konfigurációk](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)".
+DSC adatközpontok körül "[konfigurációk](https://msdn.microsoft.com/powershell/dsc/configurations)".
 A beállítás egy olyan számítógépeket ("csomópont") adott tulajdonságokkal rendelkező környezetben egy könnyen áttekinthető ismertető dokumentum. Lehet, hogy a következő jellemzőkkel más dolga, mint annak biztosításában, egy adott Windows-szolgáltatás engedélyezve vagy nem lehet összetett, mint a SharePoint központi telepítése. 
 
 A DSC-ből is rendelkezik figyelési és jelentéskészítési beépített. Ha a rendszer már nem megfelelő, DSC hoz létre riasztást, és javítsa ki a rendszer való. 
@@ -35,11 +35,11 @@ Konfigurációk megtalálhatók megosztható keresztül a [PowerShell-galériáb
 
 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) személyek, a folyamat, valamint az eszközök, amelyek lehetővé teszik a gyors üzembe helyezési és iterációs összpontosított érték továbbítása a végfelhasználók számára, hogy a belső vagy külső kombinációja. A DSC úgy lett kialakítva, a DevOps szem előtt. Egy olyan környezetben egyetlen konfigurációval rendelkező megadása azt jelenti, hogy a fejlesztők is kódolja a követelményeknek, a konfiguráció, ellenőrizze, hogy az adatforrás-vezérlő konfigurálása és műveletek csapat könnyedén telepítheti kód nem kell végighaladnia hibákhoz vezethet manuálisan végrehajtott folyamatokat. 
 
-Konfigurációk megtalálhatók [adatvezérelt](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), így egyszerűbb azonosításához, és módosítsa a fejlesztői beavatkozás nélküli környezetekben ops csoportjai. 
+Konfigurációk megtalálhatók [adatvezérelt](https://msdn.microsoft.com/powershell/dsc/configdata), így egyszerűbb azonosításához, és módosítsa a fejlesztői beavatkozás nélküli környezetekben ops csoportjai. 
 
 ## <a name="desired-state-configuration-on--and-off-premises"></a>Célállapot-konfiguráció - és kikapcsolása-helyszíni
 
-A DSC mind a helyszíni, mind a helyszíni központi telepítések felügyeletéhez használható. A helyszíni megoldásokkal, DSC rendelkezik egy [lekérési kiszolgálójával](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver) , amelyek segítségével központosíthatja a gépek felügyeletét és a jelentés az állapotuk. A felhőalapú megoldások DSC használható legyen a Windows rendszer használható. Van még a célállapot-konfiguráció, például a épülő Azure adott ajánlatok [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), amely központosítja DSC jelentése. 
+A DSC mind a helyszíni, mind a helyszíni központi telepítések felügyeletéhez használható. A helyszíni megoldásokkal, DSC rendelkezik egy [lekérési kiszolgálójával](https://msdn.microsoft.com/powershell/dsc/pullserver) , amelyek segítségével központosíthatja a gépek felügyeletét és a jelentés az állapotuk. A felhőalapú megoldások DSC használható legyen a Windows rendszer használható. Van még a célállapot-konfiguráció, például a épülő Azure adott ajánlatok [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), amely központosítja DSC jelentése. 
 
 ## <a name="dsc-and-compatibility"></a>A DSC-ből és kompatibilitása
 

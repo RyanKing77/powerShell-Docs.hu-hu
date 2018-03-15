@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, a powershell, a biztonsági"
 title: "JEA használatával"
-ms.openlocfilehash: 9996a432bca27240e0f08adf932126ced116985d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f0c22bf0f823b9fafa203e7f98049a6a6b3b7c05
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-jea"></a>JEA használatával
 
@@ -26,7 +26,7 @@ A JEA interaktív használatához szüksége lesz:
 - A JEA-végpont a számítógépen regisztrált neve
 - A számítógép hitelesítő adatainak a JEA végpontot elérő
 
-Az aktuális adatnak, megkezdheti a JEA munkamenet [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSSession) vagy [Enter-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/enter-pssession).
+Az aktuális adatnak, megkezdheti a JEA munkamenet [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSSession) vagy [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/enter-pssession).
 
 ```powershell
 $nonAdminCred = Get-Credential
@@ -107,7 +107,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 ```
 
 Megőrizni a implicit távoli eljáráshívás segítségével a proxy parancsmagjait [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
-Implicit távelérése kapcsolatos további információkért tekintse meg a Súgó dokumentációját [Import-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) és [Import-Module](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/import-module).
+Implicit távelérése kapcsolatos további információkért tekintse meg a Súgó dokumentációját [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) és [Import-Module](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/import-module).
 
 ## <a name="using-jea-programatically"></a>JEA programozottan használatával
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "PowerShell célállapot-konfiguráció részleges konfigurációk"
-ms.openlocfilehash: 66791bb7b14898d292b9da38dd27ba45b7c75d88
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4401ea80cffd09f4b92c9fcca16d5dcad7f6a327
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell célállapot-konfiguráció részleges konfigurációk
 
@@ -18,10 +18,10 @@ PowerShell 5.0 használata esetén a kívánt állapot konfigurációs szolgált
 Részleges konfigurációk leküldéses módot, lekéréses mód vagy a kettő kombinációja használható.
 
 ## <a name="partial-configurations-in-push-mode"></a>Részleges konfigurációk leküldéses módban
-Részleges konfigurációk leküldéses üzemmódban használja, konfigurálnia a LCM fogadására a részleges konfiguráció célcsomóponton. Minden egyes részleges konfiguráció a cél lehet leküldeni a Publish-DSCConfiguration parancsmag használatával. Célcsomóponton majd egyesíti a részleges konfigurációs adatok egyetlen konfigurációja, és hívja a konfigurációs is alkalmazhat a [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) parancsmag.
+Részleges konfigurációk leküldéses üzemmódban használja, konfigurálnia a LCM fogadására a részleges konfiguráció célcsomóponton. Minden egyes részleges konfiguráció a cél lehet leküldeni a Publish-DSCConfiguration parancsmag használatával. Célcsomóponton majd egyesíti a részleges konfigurációs adatok egyetlen konfigurációja, és hívja a konfigurációs is alkalmazhat a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) parancsmag.
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>A leküldéses módú részleges konfigurációk LCM konfigurálása
-Leküldéses módban a LCM részleges konfigurációk beállításához hozzon létre egy **DSCLocalConfigurationManager** egy konfigurációs **PartialConfiguration** minden egyes részleges konfiguráció blokkja. A LCM konfigurálásával kapcsolatos további információkért lásd: [konfigurálása a helyi Configuration Manager Windows](https://technet.microsoft.com/en-us/library/mt421188.aspx). A következő példa bemutatja, hogy két részleges konfigurációk vár LCM konfigurálása során – egy, az operációs rendszer központi telepítését végző és egy, amely telepíti és konfigurálja a SharePoint.
+Leküldéses módban a LCM részleges konfigurációk beállításához hozzon létre egy **DSCLocalConfigurationManager** egy konfigurációs **PartialConfiguration** minden egyes részleges konfiguráció blokkja. A LCM konfigurálásával kapcsolatos további információkért lásd: [konfigurálása a helyi Configuration Manager Windows](https://technet.microsoft.com/library/mt421188.aspx). A következő példa bemutatja, hogy két részleges konfigurációk vár LCM konfigurálása során – egy, az operációs rendszer központi telepítését végző és egy, amely telepíti és konfigurálja a SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ A **RefreshMode** az egyes részleges beállítás "Leküldéses". Neve a **Part
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Közzététel, és Leküldéses módú részleges konfigurációk indítása
 
-Majd meghívja a [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) átadja a mappákat, amely minden konfigurációs konfigurációs dokumentumok tartalmazzák a **elérési** paraméterek. `Publish-DSCConfiguration`a konfigurációs MOF-fájlok sorbaállítása a célcsomópontokat helyezi. Miután közzétette mindkét konfigurációjában, hívása `Start-DSCConfiguration –UseExisting` célcsomóponton.
+Majd meghívja a [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) átadja a mappákat, amely minden konfigurációs konfigurációs dokumentumok tartalmazzák a **elérési** paraméterek. `Publish-DSCConfiguration`a konfigurációs MOF-fájlok sorbaállítása a célcsomópontokat helyezi. Miután közzétette mindkét konfigurációjában, hívása `Start-DSCConfiguration –UseExisting` célcsomóponton.
 
 Ha például azzal állítottuk össze a következő konfigurációs MOF dokumentumokat a szerzői műveletekhez csomóponton:
 
@@ -96,7 +96,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Megjegyzés:** futtató felhasználó az [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) parancsmag a célcsomóponton lévő rendszergazdai jogosultsággal kell rendelkeznie.
+>**Megjegyzés:** futtató felhasználó az [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) parancsmag a célcsomóponton lévő rendszergazdai jogosultsággal kell rendelkeznie.
 
 ## <a name="partial-configurations-in-pull-mode"></a>Részleges konfigurációk lekéréses módban
 
@@ -211,7 +211,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Kiosztási és helyezi el a konfigurációs dokumentumok a lekérési kiszolgálón (ConfigurationID)
 
-A megadott mappába kell helyezni a részleges konfigurációs dokumentumok a **ConfigurationPath** a a `web.config` a lekérési kiszolgálójával fájlt (általában `C:\Program Files\WindowsPowerShell\DscService\Configuration`). A konfigurációs dokumentumok kell elnevezése a következő: _ConfigurationName_. _ConfigurationID_`.mof`, ahol _ConfigurationName_ a részleges konfiguráció neve és _ConfigurationID_ a konfiguráció azonosítója definiálva van a LCM a a a célcsomóponton. A fenti példában a konfigurációs dokumentumok nevet kell adni az alábbiak szerint:
+A megadott mappába kell helyezni a részleges konfigurációs dokumentumok a **ConfigurationPath** a a `web.config` a lekérési kiszolgálójával fájlt (általában `C:\Program Files\WindowsPowerShell\DscService\Configuration`). A konfigurációs dokumentumok kell elnevezése a következő: _ConfigurationName_. _ConfigurationID_`.mof`, ahol _ConfigurationName_ a részleges konfiguráció neve és _ConfigurationID_ a konfiguráció azonosítója definiálva van a célszámítógépen LCM csomópont. A fenti példában a konfigurációs dokumentumok nevet kell adni az alábbiak szerint:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -377,5 +377,5 @@ SharePointConfig
 **Fogalmak**
 [Windows PowerShell célállapot-konfiguráló lekéréses kiszolgálók](pullServer.md) 
 
-[A Windows a helyi Configuration Manager konfigurálása](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+[A Windows a helyi Configuration Manager konfigurálása](https://technet.microsoft.com/library/mt421188.aspx) 
 

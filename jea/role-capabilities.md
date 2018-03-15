@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, a powershell, a biztonsági"
 title: "JEA szerepkör képességek"
-ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 083cab3b44348168fe20e8355f5076b28be78702
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-role-capabilities"></a>JEA szerepkör képességek
 
@@ -86,7 +86,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> A [gyakori PowerShell-paramétereket](https://technet.microsoft.com/en-us/library/hh847884.aspx) mindig engedélyezettek, még akkor is, ha korlátozza az elérhető paramétereket.
+> A [gyakori PowerShell-paramétereket](https://technet.microsoft.com/library/hh847884.aspx) mindig engedélyezettek, még akkor is, ha korlátozza az elérhető paramétereket.
 > Nem kifejezetten sorolja fel azokat a paramétereket mezőben.
 
 Az alábbi táblázat ismerteti a különböző módszereket testre szabhatja látható parancsmag vagy egy függvényt.
@@ -111,7 +111,7 @@ Egy ValidatePattern és a ValidateSet egy parancsmag vagy függvény nem alkalma
 
 Ha így tesz, a ValidatePattern felülírja a ValidateSet.
 
-ValidatePattern kapcsolatos további információkért tekintse meg [ez *Hey, Scripting Guy!* utáni](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) és a [PowerShell reguláris kifejezések](https://technet.microsoft.com/en-us/library/hh847880.aspx) tartalom hivatkozik.
+ValidatePattern kapcsolatos további információkért tekintse meg [ez *Hey, Scripting Guy!* utáni](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) és a [PowerShell reguláris kifejezések](https://technet.microsoft.com/library/hh847880.aspx) tartalom hivatkozik.
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>Külső parancsok és a PowerShell parancsfájlok
 
@@ -128,7 +128,7 @@ Sok végrehajtható fájlok lehetővé teszik a jelenlegi állapotában olvasás
 Tegyük fel, ellenőrizze, hogy melyik hálózati megosztások a helyi számítógép által üzemeltetett kívánó fájl kiszolgálói rendszergazda szerepkör.
 Ellenőrizze, hogy egy módja `net share`.
 Azonban, így a net.exe nem nagyon súlyos, mert a rendszergazda ugyanilyen könnyen használhatja a parancs ahhoz, hogy a rendszergazda jogosultságokkal rendelkező `net group Administrators unprivilegedjeauser /add`.
-A jobb megoldás, hogy [Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx) amely ugyanazt az eredményt éri el, de korlátozottabb hatókörrel rendelkezik.
+A jobb megoldás, hogy [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) amely ugyanazt az eredményt éri el, de korlátozottabb hatókörrel rendelkezik.
 
 Külső parancsok elérhetővé tétele a felhasználók számára a JEA-munkamenetben, mindig adja meg annak érdekében, hogy egy hasonlóan elnevezett (és potenciálisan malicous) programot, máshová helyezve a rendszer nem hajtódnak inkább a végrehajtható fájl teljes elérési útvonalát.
 

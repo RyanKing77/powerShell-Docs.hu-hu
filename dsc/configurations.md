@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC-konfigurációk"
-ms.openlocfilehash: 3fd2846d0fbfb0ae9baa44cde66afe1f5be65cf7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-configurations"></a>A DSC-konfigurációk
 
@@ -62,7 +62,7 @@ Configuration MyDscConfiguration {
         }
     }
 }
-MyDscConfiguration -ComputerName <MyComputer>
+MyDscConfiguration -ComputerName $ComputerName
 
 ```
 
@@ -141,11 +141,11 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>A konfiguráció új erőforrások használata
 
 Ha az előző példákban futtatta, akkor előfordulhat, hogy észrevette, hogy akkor is figyelmezteti, hogy egy erőforrás használta explicit importálása nélkül.
-A DSC ma, 12-erőforrásokkal érhető el, a PSDesiredStateConfiguration modulja részét. Egyéb erőforrások külső modulban kell helyezni `$env:PSModulePath` ahhoz, hogy ismeri fel a LCM. Egy új parancsmagot [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), annak meghatározására, hogy milyen erőforrásokat telepítve a rendszeren, és használható a LCM által használható. Ha ezek a modulok lettek helyezve `$env:PSModulePath` megfelelően ismeri fel és [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), betöltését belül a konfigurációs továbbra is szükséges. 
+A DSC ma, 12-erőforrásokkal érhető el, a PSDesiredStateConfiguration modulja részét. Egyéb erőforrások külső modulban kell helyezni `$env:PSModulePath` ahhoz, hogy ismeri fel a LCM. Egy új parancsmagot [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), annak meghatározására, hogy milyen erőforrásokat telepítve a rendszeren, és használható a LCM által használható. Ha ezek a modulok lettek helyezve `$env:PSModulePath` megfelelően ismeri fel és [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), betöltését belül a konfigurációs továbbra is szükséges. 
 **Import-DscResource** belül csak érzékelt dinamikus kulcsszó egy **konfigurációs** blokk (azaz nincs parancsmag). 
 **Importálás – DscResource** két paramétereket támogatja:
 - **Modulnév** használatának ajánlott módja **Import-DscResource**. A modul, amely tartalmazza az erőforrásokat, importálandók (valamint a karakterlánc tömbje modulneveket) neve fogad. 
-- **Név** neve, az erőforrás importálásához. Ez nem a rövid név, mint a "Name" által visszaadott [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), de az osztály nevét, ha használt meghatározása az erőforrás-séma (adja vissza a **ResourceType** által [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 
+- **Név** neve, az erőforrás importálásához. Ez nem a rövid név, mint a "Name" által visszaadott [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), de az osztály nevét, ha használt meghatározása az erőforrás-séma (adja vissza a **ResourceType** által [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)). 
 
 ## <a name="see-also"></a>Lásd még:
 * [A Windows PowerShell célállapot-konfiguráló áttekintése](overview.md)

@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: PowerShell parancsmag
 title: "A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói"
-ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói
 
@@ -24,7 +24,7 @@ Miután a Windows PowerShell Web Access telepítve van, és az átjáró, felhas
 Engedélyezési szabályok hozzáadásához és kezeléséhez nincs hasonló grafikus felhasználói felület.
 Lásd: [Windows PowerShell Web Access parancsmagok](cmdlets/web-access-cmdlets.md).
 
-Rendszergazdák meghatározhatnak 0 - *n*  hitelesítési szabályokat Windows PowerShell Web Access.
+Rendszergazdák meghatározhatnak 0 -*n* hitelesítési szabályokat Windows PowerShell Web Access.
 Az alapértelmezett biztonság inkább korlátozóak, nem pedig engedélyezők; a nulla hitelesítési szabály azt jelenti, hogy egyetlen felhasználó sem férhet hozzá semmihez.
 
 [Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) és [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) a Windows Server 2012 R2 tartalmaznak egy Credential paramétert, amely lehetővé teszi a történő hozzáadását és tesztelését egy távoli Windows PowerShell Web Access engedélyezési szabályok számítógép, vagy egy aktív Windows PowerShell Web Access-munkameneten belül.
@@ -32,7 +32,7 @@ Mint a többi Windows PowerShell-parancsmaggal, amelyek tartalmaznak egy Credent
 A távoli számítógépnek átadni kívánt hitelesítő adatokat tartalmazó PSCredential objektum létrehozásához futtassa a [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) parancsmag.
 
 A Windows PowerShell Web Access hitelesítési szabályai engedélyezett szabályok vonatkoznak.
-Minden egyes szabály a felhasználók, számítógépek és az adott Windows PowerShellÂ között engedélyezett kapcsolat definíciója [munkamenet-konfigurációk](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (más néven végpontok vagy _futási terek_) a a megadott célszámítógépeken.
+Minden egyes szabály a felhasználók, számítógépek és az adott Windows PowerShellÂ között engedélyezett kapcsolat definíciója [munkamenet-konfigurációk](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (más néven végpontok vagy _futási terek_) a a megadott célszámítógépeken.
 Az előzetesben **futási terek** lásd [PowerShell futtatóterek használata kezdete](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > **Biztonsági Megjegyzés**
@@ -103,7 +103,7 @@ A rendszer a szabályok értékelését csak a felhasználó átjáró által t�
 A Windows PowerShell Web Access biztonságának végső rétegét a célként megadott számítógép saját biztonsági konfigurációja.
 Felhasználónak rendelkeznie kell egy Windows PowerShell webalapú konzol, amely befolyásolja a célszámítógépet a Windows PowerShell Web Access futtatásához megfelelő hozzáférési jogosultságokkal a cél számítógépen, valamint a Windows PowerShell Web Access-engedélyezési szabályok konfigurálva.
 
-Ez a réteg ugyanazt a biztonsági mechanizmust, amely a csatlakozási próbálkozásokat értékelné ki, ha a felhasználók megpróbálnának létrehozni egy távoli Windows PowerShell-munkamenetet a célszámítógéphez, a Windows PowerShell belül futó kínálja a [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) vagy [New-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-pssession) parancsmagok.
+Ez a réteg ugyanazt a biztonsági mechanizmust, amely a csatlakozási próbálkozásokat értékelné ki, ha a felhasználók megpróbálnának létrehozni egy távoli Windows PowerShell-munkamenetet a célszámítógéphez, a Windows PowerShell belül futó kínálja a [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) vagy [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) parancsmagok.
 
 Alapértelmezés szerint a, az átjáró és a célszámítógép a Windows PowerShell Web Access használ az elsődleges felhasználónév és jelszó.
 A webalapú bejelentkezési oldal, című **választható csatlakozási beállítások**, lehetővé teszi a felhasználók eltérő hitelesítő adatokat adjanak a célszámítógép, amennyiben azok szükségesek.
@@ -254,5 +254,5 @@ Ha az átjárókiszolgáló fut a Windows Server 2012 R2, Windows PowerShell Web
 ## <a name="see-also"></a>Lásd még:
 
 - [Telepítheti és használhatja a Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
-- [about_session_configuration_files](https://technet.microsoft.com/library/dd819508.aspx)
+- [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [A Windows PowerShell webes elérés parancsmagjai](cmdlets/web-access-cmdlets.md)

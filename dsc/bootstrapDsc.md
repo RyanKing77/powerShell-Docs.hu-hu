@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Konfigurálhatja a virtuális gépek kezdeti állítja DSC használatával"
-ms.openlocfilehash: 76c990ee7c98ea47d1fc3d7bd955ce6a993e28a6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 >Vonatkozik: A Windows PowerShell 5.0
 
@@ -20,7 +20,7 @@ A kezdeti állítja a PowerShell 4.0 új virtuális gépek konfigurálásával k
 
 Futtassa az alábbi példák, szüksége lesz:
 
-- A rendszerindító virtuális merevlemez történő együttműködésre. ISO-fájlt a Windows Server 2016: próbaverziója letölthető [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Az ISO-lemezképek, a virtuális merevlemez létrehozásához találhat útmutatót [létrehozása rendszerindításra alkalmas virtuális merevlemezek](https://technet.microsoft.com/en-us/library/gg318049.aspx).
+- A rendszerindító virtuális merevlemez történő együttműködésre. ISO-fájlt a Windows Server 2016: próbaverziója letölthető [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). Az ISO-lemezképek, a virtuális merevlemez létrehozásához találhat útmutatót [létrehozása rendszerindításra alkalmas virtuális merevlemezek](https://technet.microsoft.com/library/gg318049.aspx).
 - Hyper-V engedélyezve van egy állomására. További információ: [Hyper-V – áttekintés](https://technet.microsoft.com/library/hh831531.aspx).
 
 A DSC használata automatizálható, Szoftvertelepítés és a kezdeti állítja: számítógép konfigurációja.

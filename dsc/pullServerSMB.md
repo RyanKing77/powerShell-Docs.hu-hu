@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Egy DSC SMB lekérési kiszolgálójával beállítása"
-ms.openlocfilehash: 427dc8d858bd12e420fbde03b33a66f33cd654dc
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff3faeb1952e6116cf97b1aaf8f125d8931dd35e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Egy DSC SMB lekérési kiszolgálójával beállítása
 
 >Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
 
-A DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) lekéréses kiszolgáló egy olyan DSC konfigurációs fájlokat és a DSC-erőforrások számára elérhetővé tenni célcsomópontokat, ha azokat a csomópontokat, kérje meg őket az SMB-fájlmegosztások futtató számítógép.
+A DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) lekéréses kiszolgáló egy olyan DSC konfigurációs fájlokat és a DSC-erőforrások számára elérhetővé tenni célcsomópontokat, ha azokat a csomópontokat, kérje meg őket az SMB-fájlmegosztások futtató számítógép.
 
 A DSC használandó lekéréses SMB-kiszolgálón, akkor kell:
 - Állítson be olyan kiszolgálón PowerShell 4.0-s vagy újabb SMB-fájlmegosztásra
@@ -25,7 +25,7 @@ Nincsenek többféleképpen SMB-fájlmegosztás beállítása azonban nézzük h
 
 ### <a name="install-the-xsmbshare-resource"></a>Telepítse a xSmbShare erőforrás
 
-Hívja a [Install-modul](https://technet.microsoft.com/en-us/library/dn807162.aspx) telepítésére szolgáló parancsmagot a **xSmbShare** modul.
+Hívja a [Install-modul](https://technet.microsoft.com/library/dn807162.aspx) telepítésére szolgáló parancsmagot a **xSmbShare** modul.
 >**Megjegyzés:**: **Install-modul** megtalálható a **PowerShellGet** modul, amely PowerShell 5.0 szerepel. Letöltheti a **PowerShellGet** modul a PowerShell 3.0 és 4.0-s verzióját, [PackageManagement PowerShell modulok előzetes](https://www.microsoft.com/en-us/download/details.aspx?id=49186). A **xSmbShare** tartalmazza a DSC-erőforrás **xSmbShare**, amelyek segítségével az SMB-fájlmegosztás létrehozása.
 
 ### <a name="create-the-directory-and-file-share"></a>A könyvtár- és fájlmegosztás létrehozása
@@ -208,7 +208,7 @@ $ConfigurationData = @{
 Különleges környezetnek köszönhetően a következőket:
 
 - Nagy F. Robbins, amelynek bejegyzéseket az SMB protokoll segítségével a DSC segített tájékoztatja a tartalom ebben a témakörben. Jelenleg a blog [nagy F Robbins](http://mikefrobbins.com/).
-- Serge Nikalaichyk, akik lett létrehozva a **cNtfsAccessControl** modul. Ez a modul forrásának https://github.com/SNikalaichyk/cNtfsAccessControl jelenleg.
+- Serge Nikalaichyk, akik lett létrehozva a **cNtfsAccessControl** modul. Ez a modul forrásának jelenleg https://github.com/SNikalaichyk/cNtfsAccessControl.
 
 ## <a name="see-also"></a>Lásd még:
 - [A Windows PowerShell célállapot-konfiguráló áttekintése](overview.md)

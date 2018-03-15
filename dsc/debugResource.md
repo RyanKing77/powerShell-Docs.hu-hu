@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Hibakeresési DSC-erőforrások"
-ms.openlocfilehash: 35eb990705bab8190172df899c64c9f34452aa4b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="debugging-dsc-resources"></a>Hibakeresési DSC-erőforrások
 
@@ -16,9 +16,9 @@ ms.lasthandoff: 01/17/2018
 A PowerShell 5.0-s egy új szolgáltatás a szükséges állapot szabásra szolgáló elemeit (DSC), amely lehetővé teszi a DSC-erőforrás hibakeresési módon végzi a configuration jelent meg.
 
 ## <a name="enabling-dsc-debugging"></a>A DSC-hibakeresés engedélyezése
-Mielőtt egy erőforrás megoldhassuk, fel kell meghívásával hibakeresés engedélyezése a [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) parancsmag. Ez a parancsmag egy kötelező paramétert fogad, **BreakAll**. 
+Mielőtt egy erőforrás megoldhassuk, fel kell meghívásával hibakeresés engedélyezése a [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) parancsmag. Ez a parancsmag egy kötelező paramétert fogad, **BreakAll**. 
 
-Ellenőrizheti, hogy hibakeresés engedélyezve van a hívás eredménye alapján [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx).
+Ellenőrizheti, hogy hibakeresés engedélyezve van a hívás eredménye alapján [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).
 
 A következő PowerShell-kimenet hibakeresés engedélyezése eredményének megjelenítése:
 
@@ -59,7 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-A konfiguráció fordítása, után indítsa el azt meghívásával [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). A konfigurációs leáll, amikor az első erőforrásra a konfigurációban az meghívja a helyi Configuration Manager (LCM). Ha használja a `-Verbose` és `-Wait` paraméterek, a kimeneti sorait jeleníti meg, meg kell adnia a hibakeresés.
+A konfiguráció fordítása, után indítsa el azt meghívásával [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx). A konfigurációs leáll, amikor az első erőforrásra a konfigurációban az meghívja a helyi Configuration Manager (LCM). Ha használja a `-Verbose` és `-Wait` paraméterek, a kimeneti sorait jeleníti meg, meg kell adnia a hibakeresés.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -96,7 +96,7 @@ Most már használhat a hibakeresési parancsok a ISE teljesítéséhez a erőfo
 
 ## <a name="disabling-dsc-debugging"></a>A DSC-hibakeresés letiltása
 
-Hívása után [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx), minden hívások [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) belépjen a hibakeresőbe megtörje a konfigurációt eredményez. Ahhoz, hogy konfigurálható, hogy a normál módon futnak, le kell tiltania meghívásával hibakeresés a [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) parancsmag.
+Hívása után [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), minden hívások [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) belépjen a hibakeresőbe megtörje a konfigurációt eredményez. Ahhoz, hogy konfigurálható, hogy a normál módon futnak, le kell tiltania meghívásával hibakeresés a [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) parancsmag.
 
 >**Megjegyzés:** Rebooting nem változik a LCM hibakeresési állapotát. Hibakeresés engedélyezve van, ha egy konfigurációs indítása fog továbbra is megszakítással belépjen a hibakeresőbe a rendszer újraindítása után.
 

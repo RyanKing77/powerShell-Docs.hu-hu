@@ -4,27 +4,27 @@ contributor: manikb
 ms.topic: reference
 keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
 title: PackageManagement_cmdlets
-ms.openlocfilehash: aca4f461ff0e51aa812f8219c74bd7d85d1e7b2d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 92dcebfc79bdb123e3ab3c56fc1af1f793bcb1e3
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement parancsmagok
 Ez a szoftver felderítés, telepítés és a készlet (SDII) támogatásához PackageManagement részében. Próbálja ki ezeket a műveleteket a parancsmagokat:
 -   Keresés-csomag
--   Keresés – PackageProvider
--   Get-csomag
+-   Find-PackageProvider
+-   Get-Package
 -   Get-PackageProvider
 -   Get-PackageSource
--   Importálás – PackageProvider
--   Install-csomag
+-   Import-PackageProvider
+-   Install-Package
 -   Install-PackageProvider
 -   Register-PackageSource
--   Mentés-csomag
+-   Save-Package
 -   Set-PackageSource
 -   Csomag eltávolítása
--   PackageSource regisztrációjának törlése
+-   Unregister-PackageSource
 
 Mivel PackageManagement egy PowerShell-modult, maga PackageManagement frissítéséhez a következőket teheti:
 ```powershell
@@ -32,7 +32,7 @@ PS C:\> Install-Module PackageManagement –Force
 ```
 Ebben az esetben kell PowerShell-munkamenetben írja be újra váltson át a PackageManagement új verziója.
 
-## <a name="find-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890709aspx"></a>[Keresés-csomag parancsmag](https://technet.microsoft.com/en-us/library/dn890709.aspx)
+## <a name="find-package-cmdlethttpstechnetmicrosoftcomlibrarydn890709aspx"></a>[Keresés-csomag parancsmag](https://technet.microsoft.com/library/dn890709.aspx)
 Ez a parancsmag lehetővé teszi a szoftvercsomagok használatával elérhető csomag adatforrások felfedezése csomag szolgáltatók betöltése.
 ```powershell
 # Find all available Windows PowerShell module packages from galleries registered
@@ -52,7 +52,7 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676544aspx"></a>[Keresés – PackageProvider parancsmag](https://technet.microsoft.com/en-us/library/mt676544.aspx)
+## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomlibrarymt676544aspx"></a>[Keresés – PackageProvider parancsmag](https://technet.microsoft.com/library/mt676544.aspx)
 A keresés-PackageProvider parancsmag egyező PackageManagement szolgáltatók csomag adatforrások regisztrálva PowerShellGet a rendelkezésre álló talál. Ezek a csomag szolgáltatók telepíthetők az Install-PackageProvider parancsmaggal. Alapértelmezés szerint ez a "PackageManagement" és "Provider" címkék a PowerShell-galériában modullistából magában foglalja. 
 
 Keresés – PackageProvider is talál megfelelő PackageManagement szolgáltatók által biztosított a PackageManagement azure blob a tárolóban, ahol használjuk a PackageManagement boostrapper szolgáltató kereséséhez és telepíteni kell őket.
@@ -73,7 +73,7 @@ Install-PackageProvider -Source C:\sharedfolder\Providers\ -Name nuget -force
     
 ```
 
-## <a name="get-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890704aspx"></a>[Get-csomag parancsmag](https://technet.microsoft.com/en-us/library/dn890704.aspx)
+## <a name="get-package-cmdlethttpstechnetmicrosoftcomlibrarydn890704aspx"></a>[Get-csomag parancsmag](https://technet.microsoft.com/library/dn890704.aspx)
 Ez a parancsmag az összes szoftvercsomag PackageManagement használatával telepített listáját adja vissza.
 ```powershell
 # Get all the packages installed by Programs provider
@@ -94,7 +94,7 @@ Get-PackageProvider
 Get-PackageProvider -ListAvailable
 ```
 
-## <a name="get-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890705aspx"></a>[Get-PackageSource parancsmag](https://technet.microsoft.com/en-us/library/dn890705.aspx)
+## <a name="get-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890705aspx"></a>[Get-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890705.aspx)
 Ez a parancsmag egy csomag szolgáltató regisztrált adatforrások csomag listájának lekérése.
 ```powershelll
 # Get all package sources
@@ -128,7 +128,7 @@ Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 As of the Windows Server Technical Preview(TP5), Install-PackageProvider does install as well as import the provider. Hence after you run find-packageprovider and install-packageprovider, the provider should be ready to use 
 ```
 
-##<a name="-install-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890711aspx"></a>[Install-Package parancsmag](https://technet.microsoft.com/en-us/library/dn890711.aspx)
+##<a name="-install-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890711aspx"></a>[ Install-Package parancsmag](https://technet.microsoft.com/en-us/library/dn890711.aspx)
 
 Ez a parancsmag lehetővé teszi, hogy a rendelkezésre álló csomag forrásokban használatával szoftvercsomagok telepítése csomag szolgáltatók betöltése.
 ```powershell
@@ -159,7 +159,7 @@ Find-PackageProvider –Name "Gistprovider" | Install-PackageProvider -Verbose
 Install-PackageProvider –Name Gistprovider –Verbose –Scope CurrentUser
 ```
 
-## <a name="register-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890701aspx"></a>[Register-PackageSource parancsmag](https://technet.microsoft.com/en-us/library/dn890701.aspx)
+## <a name="register-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890701aspx"></a>[Register-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890701.aspx)
 Ez a parancsmag egy csomagforrást meghatározott csomag-szolgáltató hozzáadása.
 Előfordulhat, hogy mindegyik PackageManagement-szolgáltató egy vagy több szoftverfrissítési forrásból, vagy tárházak találhatók. PackageManagement a forrás hozzáadása/eltávolítása/lekérdezés PowerShell-parancsmagokat kínál. Például a csomag forrásához regisztrálhatja a NuGet-szolgáltató:
 ```powershell
@@ -178,7 +178,7 @@ Find-Package -Name jquery -Source http://www.nuget.org/api/v2/ | Save-Package -P
 Find-Package -source c:\test
 ```
 
-## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Set-PackageSource parancsmag](https://technet.microsoft.com/en-us/library/dn890710.aspx)
+## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Set-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890710.aspx)
 Ez a parancsmag módosítja egy meglévő csomag forrása kapcsolatos információkat. 
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
@@ -195,7 +195,7 @@ Uninstall-Package -Name jquery –Provider NuGet -Destination c:\test
 Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Package
 ```
 
-## <a name="unregister-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890707aspx"></a>[Unregister-PackageSource parancsmag](https://technet.microsoft.com/en-us/library/dn890707.aspx)
+## <a name="unregister-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890707aspx"></a>[Unregister-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890707.aspx)
 ```powershell
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"

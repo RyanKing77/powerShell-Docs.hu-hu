@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: PowerShell parancsmag
 title: WinRMSecurity
-ms.openlocfilehash: 65cf12466c9dc8fc8b77d79b0d63a6ae61e64d60
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0522844fded847a3fd45c1b3890a141357edb2b2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell távoli eljáráshívás biztonsági megfontolások
 
@@ -14,7 +14,7 @@ PowerShell-távelérést az ajánlott módszer a Windows rendszerek kezelésére
 
 ## <a name="what-is-powershell-remoting"></a>Mi az a PowerShell távelérése?
 
-PowerShell távvezérlése használja [Windows Rendszerfelügyeleti (webszolgáltatások WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx), vagyis a Microsoft általi implementációja a [felügyeleti webszolgáltatások (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protokollt, a felhasználó futtathatja a Powershellt a távoli számítógépeken lévő parancsok. További információk a PowerShell távelérése található [távoli parancsok futtatása](https://technet.microsoft.com/en-us/library/dd819505.aspx).
+PowerShell távvezérlése használja [Windows Rendszerfelügyeleti (webszolgáltatások WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), vagyis a Microsoft általi implementációja a [felügyeleti webszolgáltatások (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protokollt, a felhasználó futtathatja a Powershellt a távoli számítógépeken lévő parancsok. További információk a PowerShell távelérése található [távoli parancsok futtatása](https://technet.microsoft.com/library/dd819505.aspx).
 
 PowerShell távvezérlése nincs megegyezik a **számítógépnév** paraméter, a parancsmag egy távoli számítógépen, a mögöttes protokollként a távoli eljáráshívás (RPC) használó futtatásához.
 
@@ -23,7 +23,7 @@ PowerShell távvezérlése nincs megegyezik a **számítógépnév** paraméter,
 PowerShell távoli eljáráshívás (és a Rendszerfelügyeleti webszolgáltatások) figyelni a következő portokat:
 
 - HTTP: 5985
-- HTTPS: 5986-OS
+- HTTPS: 5986
 
 Alapértelmezés szerint PowerShell-távelérés csak kapcsolatait a Rendszergazdák csoport tagjai. Munkamenetek indítja a felhasználó környezetében, az összes operációs rendszer hozzáférés-vezérlést alkalmazni egyes felhasználók és csoportok továbbra is vonatkoznak rájuk PowerShell távoli eljáráshívás keresztül csatlakozik.
 
@@ -33,7 +33,7 @@ A magánhálózatokon az alapértelmezett Windows tűzfalszabály a PowerShell t
 
 ## <a name="process-isolation"></a>Folyamat elkülönítési
 
-PowerShell távvezérlése használ [Windows Rendszerfelügyeleti (webszolgáltatások WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) számítógépek közötti kommunikációhoz. A Rendszerfelügyeleti webszolgáltatások szolgáltatásként a hálózati szolgáltatás fiók alatt fut, és felhasználói fiókok futtató gazdagép PowerShell példányokhoz elszigetelt folyamatokban indít. Egy felhasználóként fut PowerShell példánya nem egy másik felhasználóként PowerShell példányának futó folyamat hozzáférése van.
+PowerShell távvezérlése használ [Windows Rendszerfelügyeleti (webszolgáltatások WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) számítógépek közötti kommunikációhoz. A Rendszerfelügyeleti webszolgáltatások szolgáltatásként a hálózati szolgáltatás fiók alatt fut, és felhasználói fiókok futtató gazdagép PowerShell példányokhoz elszigetelt folyamatokban indít. Egy felhasználóként fut PowerShell példánya nem egy másik felhasználóként PowerShell példányának futó folyamat hozzáférése van.
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>PowerShell-távelérés által generált eseménynaplók
 
@@ -50,10 +50,10 @@ A szállítási használt protokoll (HTTP vagy HTTPS), függetlenül PowerShell 
 
 Hitelesítési megerősíti, hogy az ügyfél a kiszolgáló - és a kiszolgáló az ügyfélnek ideális - identitását.
     
-Amikor egy ügyfél csatlakozik-e a számítógép nevének tartománykiszolgálóhoz (pl.: kiszolgalo01, vagy server01.contoso.com), az alapértelmezett hitelesítési protokoll [Kerberos](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378747.aspx).
+Amikor egy ügyfél csatlakozik-e a számítógép nevének tartománykiszolgálóhoz (pl.: kiszolgalo01, vagy server01.contoso.com), az alapértelmezett hitelesítési protokoll [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx).
 Kerberos biztosítja, hogy a felhasználó identitása és a kiszolgáló identitásának rendezést a újrafelhasználható hitelesítő adatok elküldése nélkül.
 
-Ha az ügyfél csatlakozik egy tartományhoz kiszolgálóhoz IP-címére, vagy egy munkacsoport-kiszolgáló csatlakozik, a Kerberos-hitelesítés nincs lehetőség. Ebben az esetben PowerShell távoli eljáráshívás támaszkodik a [NTLM hitelesítési protokoll](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378749.aspx). Az NTLM hitelesítési protokoll biztosítja, hogy a felhasználói identitás rendezést a EU hitelesítő adatok elküldése nélkül. Felhasználó identitásának igazolásához, az NTLM protokoll megköveteli, hogy az ügyfél- és számítási a felhasználók a munkamenetkulcsot maga a jelszó átállítására lenne cseréje nélkül. A kiszolgáló általában nem tudja a felhasználó jelszava, így a tartományvezérlő, amely a felhasználói jelszó ismerete, és kiszámítja a munkamenetkulcsot a kiszolgáló kommunikál. 
+Ha az ügyfél csatlakozik egy tartományhoz kiszolgálóhoz IP-címére, vagy egy munkacsoport-kiszolgáló csatlakozik, a Kerberos-hitelesítés nincs lehetőség. Ebben az esetben PowerShell távoli eljáráshívás támaszkodik a [NTLM hitelesítési protokoll](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). Az NTLM hitelesítési protokoll biztosítja, hogy a felhasználói identitás rendezést a EU hitelesítő adatok elküldése nélkül. Felhasználó identitásának igazolásához, az NTLM protokoll megköveteli, hogy az ügyfél- és számítási a felhasználók a munkamenetkulcsot maga a jelszó átállítására lenne cseréje nélkül. A kiszolgáló általában nem tudja a felhasználó jelszava, így a tartományvezérlő, amely a felhasználói jelszó ismerete, és kiszámítja a munkamenetkulcsot a kiszolgáló kommunikál. 
       
 Az NTLM protokoll nem, azonban biztosítja kiszolgáló identitását. Minden protokoll, amely a hitelesítéshez használandó NTLM, a támadó egy tartományhoz csatlakozó számítógép hozzáférő tudta meghívni a(z) kiszámításához az NTLM-munkamenetkulcs, és ezáltal megszemélyesíteni a kiszolgáló a tartományvezérlő.
 

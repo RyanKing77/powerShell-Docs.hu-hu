@@ -1,14 +1,14 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell ISE parancsfájlok hibakeresése"
-ms.openlocfilehash: 0ec520dfcba5e4562258256570f140e618e77cdb
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: "Parancsfájlokban való hibakeresés a PowerShell ISE-ben"
+ms.openlocfilehash: d37fb6cdcd5782cf8eff89c2b124b7c81fdaca71
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>A Windows PowerShell ISE parancsfájlok hibakeresése
+# <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Parancsfájlokban való hibakeresés a PowerShell ISE-ben
 
 Ez a témakör ismerteti a helyi számítógép parancsfájlok hibakeresése a Windows PowerShell integrált parancsfájlkezelési környezet (ISE) visual hibakeresési szolgáltatások segítségével.
 
@@ -42,7 +42,7 @@ Töréspontokat megjeleníti az aktuális Windows PowerShell-munkamenetben.
 Az a **Debug** menüben kattintson a **lista töréspontok**. A következő parancsfájl példája hogyan listázhatja a konzol ablaktáblában töréspontokat használatával a [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) parancsmag.
 
 ``` PowerShell
-# This command lists all breakpoints in the current session. 
+# This command lists all breakpoints in the current session.
 Get-PSBreakpoint
 ```
 
@@ -82,7 +82,7 @@ Disable-PSBreakpoint -Id 0
 Töréspont letiltásával nem távolítja el azt. az kikapcsolja, amíg az nincs engedélyezve.  Le kívánja tiltani töréspontokat a jelenlegi munkamenet a **Debug** menüben kattintson a **tiltsa le a töréspontokat**. A következő parancsfájl példája letiltásáról töréspontokat a konzol ablaktáblában használatával a [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) parancsmag.
 
 ``` PowerShell
-# This command disables all breakpoints in the current session. 
+# This command disables all breakpoints in the current session.
 # You can abbreviate this command as: "gbp | dbp".
 Get-PSBreakpoint | Disable-PSBreakpoint
 ```
@@ -99,13 +99,13 @@ Enable-PSBreakpoint -Id 0, 1, 5
 Ahhoz, hogy az aktuális munkamenetben definiált töréspontokat a **Debug** menüben kattintson a **töréspontokat engedélyezése**. A következő parancsfájl egy példát, hogyan engedélyezheti a konzol ablaktáblában töréspontokat használatával a [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) parancsmag.
 
 ``` PowerShell
-# This command enables all breakpoints in the current session. 
+# This command enables all breakpoints in the current session.
 # You can abbreviate the command by using their aliases: "gbp | ebp".
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="how-to-manage-a-debugging-session"></a>A hibakeresési munkamenetben kezelése
-Mielőtt elkezdené a hibakeresést, meg kell adni egy vagy több töréspontok. Nem állítható be töréspont, kivéve, ha a parancsfájl debug kívánt menti. Bemutatja, hogyan állítható be töréspont az utasításokat, lásd: [töréspontok kezelése](#how-to-manage-breakpoints) vagy [Set-PSBreakpoint](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-psbreakpoint). Hibakeresés indítása után nem szerkeszthetők egy parancsfájl, amíg le nem állítják hibakeresés. Egy parancsfájl, amely rendelkezik egy vagy több töréspontok beállítása előtt fut, automatikusan menti.
+Mielőtt elkezdené a hibakeresést, meg kell adni egy vagy több töréspontok. Nem állítható be töréspont, kivéve, ha a parancsfájl debug kívánt menti. Bemutatja, hogyan állítható be töréspont az utasításokat, lásd: [töréspontok kezelése](#how-to-manage-breakpoints) vagy [Set-PSBreakpoint](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint). Hibakeresés indítása után nem szerkeszthetők egy parancsfájl, amíg le nem állítják hibakeresés. Egy parancsfájl, amely rendelkezik egy vagy több töréspontok beállítása előtt fut, automatikusan menti.
 
 ### <a name="to-start-debugging"></a>A hibakeresés
 Nyomja le az **F5** vagy az eszköztáron kattintson a **-parancsfájl futtatása** ikonra, vagy a a **Debug** menüben kattintson **Futtatás/Folytatás**. A parancsprogram lefut, amíg az első töréspont ütközik. Megszakítja a műveletet, és kiemeli a sor, amikor szünetel.
@@ -174,5 +174,4 @@ C:\ps-test\MyScript.ps1
 ```
 
 ## <a name="see-also"></a>Lásd még:
-- [A Windows PowerShell ISE használatával](Using-the-Windows-PowerShell-ISE.md)
-
+- [A Windows PowerShell ISE felfedezése](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

@@ -3,24 +3,24 @@ ms.date: 2017-06-05
 keywords: PowerShell parancsmag
 title: A PowerShell 50 a milyen s ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="what39s-new-in-the-windows-powershell-ise"></a>Mi &#39;szükségesek, a Windows PowerShell ISE a újdonságai
+# <a name="what39s-new-in-the-windows-powershell-ise"></a>Mi&#39;a újdonságai a Windows PowerShell ISE s
 Ez a témakör ismerteti a Windows PowerShell integrált parancsfájlkezelési környezet (ISE) verzióban bevezetett új és frissített szolgáltatásai.
 
 ## <a name="feature-description"></a>A szolgáltatás leírása
 A Windows PowerShell ISE még egy fogadó alkalmazás, amely lehetővé teszi a írási, futtatására, és tesztelje a parancsfájlokat és a modulok grafikus és intuitív környezetben. A legfontosabb jellemzők zintaxisszínek, például lapon befejezését, visual-hibakeresés, Unicode-megfelelőségi és környezetfüggő Súgó hatékony programozási környezetet biztosítson.
 
-A Windows PowerShell ISE áttekintését lásd: [Windows PowerShell integrált parancsfájlkezelési környezet áttekintése](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+A Windows PowerShell ISE áttekintését lásd: [Windows PowerShell integrált parancsfájlkezelési környezet áttekintése](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
 
 ## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>A Windows PowerShell ISE új és módosított funkciók
 A következő táblázat felsorolja az új és módosított szolgáltatások a jelen kiadása a Windows PowerShell ISE a Windows PowerShellben.
 
-|Szolgáltatás/funkció|A Windows PowerShell ISE 4.0|A Windows PowerShell ISE 3.0|A Windows PowerShell ISE 2.0|
+|Szolgáltatás/funkció|A Windows PowerShell ISE 4.0|A Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
 |**[IntelliSense](#intellisense)**|X|X||
 |**[Részletek](#snippets)**|X|X||
@@ -167,7 +167,7 @@ Más Windows PowerShell ISE szerkesztési funkciói a következők:
 
 - **XML-zintaxisszínek**Windows PowerShell ISE most színek XML szintaxis ugyanúgy, mint azt a Windows PowerShell-szintaxis színek.
 
-- **Megfelelő zárójel** Windows PowerShell ISE megfelelő zárójel és kiemelve, és a következőképpen használható: (használata esetén például a **egyezés Ugrás** parancs vagy **Ctrl +]** talál a záró zárójel, ha egy kijelölt nyitó zárójel).
+- **Megfelelő zárójel** Windows PowerShell ISE megfelelő zárójel és kiemelve, és a következőképpen használható: (használata esetén például a **egyezés Ugrás** parancs vagy **Ctrl +]** megkeresi a záró zárójel, ha egy kijelölt nyitó zárójel).
 
 - **Vázlat nézetben** a parancssori panelbe támogatja, tagolás, amely lehetővé teszi, hogy összecsukás és kód szakasza Kibontás plusz vagy mínusz kattintva jelentkezik be a bal margó. Használhatja a kapcsos zárójelek vagy a **#region** és **#endregion** címkék elején vagy végén egy összecsukható szakasz megjelölni. Kibontásához vagy összecsukásához minden egyes, nyomja le az **Ctrl + M**.
 
@@ -222,7 +222,7 @@ Show-parancsot az új Windows PowerShell ISE 3.0.
 ## <a name="see-also"></a>Lásd még:
 A Windows PowerShell ISE a Windows PowerShell használatával kapcsolatos további információkért tekintse meg a következőket.
 
-- [A Windows PowerShell integrált parancsfájlkezelési környezet használata](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [A Windows PowerShell integrált parancsfájlkezelési környezet felfedezése](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [A TechNet Wiki ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [Script Center](http://technet.microsoft.com/scriptcenter/default)
 

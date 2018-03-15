@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: "gyűjtemény, a powershell, a parancsmag, a psgallery"
 description: "Közzétevők vonatkozó irányelvek"
 title: "PowerShell-galériában irányelvek és bevált gyakorlatok közzététele"
-ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 25bbe31bcc805808c311829598e3c29991f72aad
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery irányelvek és bevált gyakorlatok közzététele
 
@@ -19,7 +19,7 @@ A cikkeket betartásuk közzétett telepíthető, nagy valószínűséggel megb�
 Egy jó PowerShell gyűjteményelem, mely opcionális jegyzék beállításokat a legfontosabbak, a kódot a kezdeti véleményezők visszajelzést javítása hasznossá vonatkozó irányelvek alábbi vannak és [Powershell parancsfájl Analyzer](https://aka.ms/psscriptanalyzer), versioning a modul, dokumentáció, a vizsgálatok és az használata, mi megosztott példák.
 Nagy részét a dokumentáció a következő közzétételi irányelveiről [magas minőségi DSC erőforrás modulok](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-A cikk közzétételéhez a PowerShell-galériában idejéről, lásd: [létrehozása és közzététele egy elem](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item).
+A cikk közzétételéhez a PowerShell-galériában idejéről, lásd: [létrehozása és közzététele egy elem](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item).
 
 Ezeket az irányelveket kapcsolatos visszajelzéseket üdvözölte van. Ha van, nyissa meg a problémákat a [dokumentáció Github-tárházban](https://github.com/powershell/powershell-docs/).
 
@@ -71,7 +71,7 @@ Nincsenek elérhető az MSDN dokumentációját a PowerShell elemek, beleértve 
 * Súgó vonatkozó irányelvek szerepelnek [arról, hogy miként írási parancsmag](https://go.microsoft.com/fwlink/?LinkID=123415)
 * Parancsmag súgójának létrehozására, akkor a legjobb módszer a PowerShell-parancsfájl, függvényt vagy parancsmagot.
   A parancsmag súgójában talál létrehozásával kapcsolatos információért kezdje [arról, hogy miként írási parancsmag](https://go.microsoft.com/fwlink/?LinkID=123415) az MSDN könyvtárában.
-  Egy parancsfájlban súgó hozzáadása, lásd: [Megjegyzés-alapú súgó](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
+  Egy parancsfájlban súgó hozzáadása, lásd: [Megjegyzés-alapú súgó](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
 * Számos modult is dokumentáció szöveges formátumú, például a MarkDown-fájlokat.
   Ez különösen hasznos lehet, ha a github webhelyen, ahol a Markdown terhelésnek kitett formátum a projekt hely van.
   A bevált gyakorlat [Github-stílusú Markdown](https://help.github.com/categories/writing-on-github/)

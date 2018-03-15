@@ -3,11 +3,11 @@ ms.date: 2017-10-31
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A MOF-fájl védelme"
-ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 1bb257f3237344f32c9035f3836dd317b75eef0a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="securing-the-mof-file"></a>A MOF-fájl védelme
 
@@ -19,7 +19,7 @@ Ez a témakör ismerteti a célcsomópont a fájl van titkosítva.
 
 PowerShell 5.0-s verziójának kezdve a teljes MOF-fájl titkosítva van alapértelmezés szerint a csomópont történő alkalmazásakor a **Start-DSCConfiguration** parancsmag.
 A cikkben leírt eljárás esetén szükséges csak egy megoldás, ha a tanúsítványok nem kezelt, annak érdekében, tölti le a célcsomópont konfigurációk visszafejteni, és olvassa el a rendszer, mielőtt a rendszer alkalmazza azokat a lekéréses szolgáltatás protokoll használatával (például a Windows Server rendszerben elérhető lekéréses szolgáltatás).
-Csomópontok regisztrálva [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) lesz automatikusan tanúsítványok telepítése és kezeli a szolgáltatást, amely nem felügyeleti terheket szükséges.
+Csomópontok regisztrálva [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) lesz automatikusan tanúsítványok telepítése és kezeli a szolgáltatást, amely nem felügyeleti terheket szükséges.
 
 >**Megjegyzés:** Ez a témakör ismerteti a titkosításhoz használt tanúsítvány.
 >A titkosításhoz önaláírt tanúsítványt is elegendő, mert a titkos kulcsot mindig tartják a titkos kulcs és a titkosítás nem feltétlenül jelenti a dokumentum megbízhatósági.
@@ -262,7 +262,7 @@ configuration CredentialEncryptionExample
 
 ## <a name="setting-up-decryption"></a>Visszafejtési beállítása
 
-Mielőtt [ `Start-DscConfiguration` ](https://technet.microsoft.com/en-us/library/dn521623.aspx) is működik, hogy mely tanúsítványokat használja a hitelesítő adatok visszafejtése közölje a helyi Configuration Manager minden egyes cél csomóponton a CertificateID erőforrás ellenőrzése a tanúsítvány ujjlenyomata segítségével. Ez a példa funkció megkeresi a megfelelő helyi tanúsítvány (lehetséges, hogy testre szabhatja, így a pontos használni kívánt tanúsítványt keres, megtalálja a):
+Mielőtt [ `Start-DscConfiguration` ](https://technet.microsoft.com/library/dn521623.aspx) is működik, hogy mely tanúsítványokat használja a hitelesítő adatok visszafejtése közölje a helyi Configuration Manager minden egyes cél csomóponton a CertificateID erőforrás ellenőrzése a tanúsítvány ujjlenyomata segítségével. Ez a példa funkció megkeresi a megfelelő helyi tanúsítvány (lehetséges, hogy testre szabhatja, így a pontos használni kívánt tanúsítványt keres, megtalálja a):
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -311,7 +311,7 @@ configuration CredentialEncryptionExample
 
 Ezen a ponton a konfigurációt, amely kimeneteként két fájlt is futtathatja:
 
- * A *. meta.mof fájl, amely a helyi Configuration Manager visszafejtése a hitelesítő adatokat, a tanúsítványt használ, amely a helyi számítógép tárolójában tárolja, és annak ujjlenyomata által azonosított konfigurálja. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx)alkalmazza a *. meta.mof fájlt.
+ * A *. meta.mof fájl, amely a helyi Configuration Manager visszafejtése a hitelesítő adatokat, a tanúsítványt használ, amely a helyi számítógép tárolójában tárolja, és annak ujjlenyomata által azonosított konfigurálja. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) alkalmazza a *. meta.mof fájlt.
  * A MOF-fájlt, amely ténylegesen konfigurációjának alkalmazására szolgál. Start-DscConfiguration konfigurációjának alkalmazására szolgál.
 
 Ezek a parancsok érnek el ezeket a lépéseket:

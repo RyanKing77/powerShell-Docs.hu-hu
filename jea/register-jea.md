@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, a powershell, a biztonsági"
 title: "Regisztrálja a JEA-konfigurációk"
-ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d6b007fed97be6470bfe4cf4d42f72cb4edc3a45
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="registering-jea-configurations"></a>Regisztrálja a JEA-konfigurációk
 
@@ -19,7 +19,7 @@ Ez a folyamat a munkamenet-konfigurációs adatokat a rendszer alkalmazza, és e
 
 ## <a name="single-machine-configuration"></a>Egyetlen számítógép-konfiguráció
 
-Kis környezetek telepíthet JEA regisztrálása a munkamenet konfigurációs fájl használata a [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) parancsmag.
+Kis környezetek telepíthet JEA regisztrálása a munkamenet konfigurációs fájl használata a [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) parancsmag.
 
 Mielőtt elkezdené, győződjön meg arról, hogy teljesülnek-e a következő előfeltételek teljesülését:
 - Egy vagy több szerepkör létrehozása és egy érvényes PowerShell-modul a "RoleCapabilities" mappába.
@@ -28,7 +28,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy teljesülnek-e a következő 
 
 Akkor válassza ki a JEA végpont nevét is.
 A JEA végpont neve lesz szükség, ha a felhasználók szeretné, hogy a rendszer JEA való kapcsolódáshoz.
-Használhatja a [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) parancsmagot, hogy a rendszer a meglévő végpontok a nevek ellenőrzése.
+Használhatja a [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) parancsmagot, hogy a rendszer a meglévő végpontok a nevek ellenőrzése.
 "Microsoft" kezdetű végpontok általában a Windows részeként kapott.
 Az "microsoft.powershell" végpont esetében az alapértelmezett végpont a távoli PowerShell-végponthoz való csatlakozáskor használandó.
 

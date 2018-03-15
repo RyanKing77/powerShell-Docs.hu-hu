@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Lekéréses kiszolgáló ajánlott eljárások"
-ms.openlocfilehash: 045f98475d6182b329ecf048038a98e933684a82
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="pull-server-best-practices"></a>Lekéréses kiszolgáló ajánlott eljárások
 
@@ -24,7 +24,7 @@ Közzétett | 2015. április
 ## <a name="abstract"></a>Absztrakt
 
 Jelen dokumentum célja, hogy bárki a Windows PowerShell célállapot-konfiguráció lekéréses kiszolgáló megvalósításának tervezési hivatalos útmutatást. A lekérési kiszolgálójával egy olyan egyszerű szolgáltatás, hajtson végre központi telepítéséhez csak perc. Bár ez a dokumentum műszaki útmutató útmutatást, amelyek a központi telepítés is használható lesz kínálnak, ez a dokumentum értéke az ajánlott eljárásokat, és milyen üzembe helyezése előtt gondolja hivatkozásként.
-Olvasók kell rendelkeznie a DSC alapszintű ismeretét, és az összetevők leíró feltételeket, amelyek központi telepítésben lévő egy DSC. További információkért lásd: a [Windows PowerShell kívánt állapot beállítása – áttekintés](https://technet.microsoft.com/en-us/library/dn249912.aspx) témakör.
+Olvasók kell rendelkeznie a DSC alapszintű ismeretét, és az összetevők leíró feltételeket, amelyek központi telepítésben lévő egy DSC. További információkért lásd: a [Windows PowerShell kívánt állapot beállítása – áttekintés](https://technet.microsoft.com/library/dn249912.aspx) témakör.
 DSC elvárt azt fejleszteni a felhő ütemben történik az alapul szolgáló technológiát, beleértve a lekérési kiszolgálón is várt fejlődnek, és amelyek új lehetőségeket biztosítanak. Ez a dokumentum egy verzió táblázatot, amely korábbi kiadásokban mutató hivatkozásokat és előretekintő tervek bátorítva jövőbeli kinézetű megoldások mutató hivatkozásokat biztosít a függelékben tartalmaz.
 
 A két fő szakasz ebben a dokumentumban:
@@ -43,7 +43,7 @@ A Windows PowerShell célállapot-konfiguráció, amely hozhat létre és kezelh
 ### <a name="pull-server-role"></a>Lekéréses kiszolgálói szerepkör  
 A lekérési kiszolgálójával hozzáférhető a célcsomópontokat konfigurációk tárolásához egy központosított szolgáltatást biztosít.
  
-A lekéréses kiszolgálói szerepkör vagy a Web Server-példányt, vagy SMB-fájlmegosztásra is telepíthető. A webes képesség OData illesztőfelület tartalmazza, és visszaküldi megerősítése sikeres vagy sikertelen volt, a konfiguráció alkalmazása a célcsomópontokat képességeket választhatóan is. Ez a funkció olyan környezetben hasznos, ahol nagyszámú célcsomópontokat. Egy célcsomóponttal (más néven ügyfél) konfigurálását, hogy a lekéréses kiszolgálóra mutasson a legfrissebb konfigurációt követő adatok és a szükséges parancsfájlokat vannak letöltésére és alkalmazására. Ez akkor fordulhat elő, egy egyszeri központi telepítést, vagy egy újra előforduló is lehetővé teszi a lekérési kiszolgálójával lényeges módosítása a méretezés kezelésére szolgáló feladat. További információkért lásd: [Windows PowerShell kívánt állapot konfigurációs lekéréses kiszolgálók](https://technet.microsoft.com/en-us/library/dn249913.aspx) és [leküldéses és lekéréses konfigurációs módjai](https://technet.microsoft.com/en-us/library/dn249913.aspx).
+A lekéréses kiszolgálói szerepkör vagy a Web Server-példányt, vagy SMB-fájlmegosztásra is telepíthető. A webes képesség OData illesztőfelület tartalmazza, és visszaküldi megerősítése sikeres vagy sikertelen volt, a konfiguráció alkalmazása a célcsomópontokat képességeket választhatóan is. Ez a funkció olyan környezetben hasznos, ahol nagyszámú célcsomópontokat. Egy célcsomóponttal (más néven ügyfél) konfigurálását, hogy a lekéréses kiszolgálóra mutasson a legfrissebb konfigurációt követő adatok és a szükséges parancsfájlokat vannak letöltésére és alkalmazására. Ez akkor fordulhat elő, egy egyszeri központi telepítést, vagy egy újra előforduló is lehetővé teszi a lekérési kiszolgálójával lényeges módosítása a méretezés kezelésére szolgáló feladat. További információkért lásd: [Windows PowerShell kívánt állapot konfigurációs lekéréses kiszolgálók](https://technet.microsoft.com/library/dn249913.aspx) és [leküldéses és lekéréses konfigurációs módjai](https://technet.microsoft.com/library/dn249913.aspx).
 
 ## <a name="configuration-planning"></a>Konfiguráció tervezése
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Konfigurációs és környezeti adatok elkülönítése"
-ms.openlocfilehash: cf0d4a12efe4998176d3c80841740c5f9d9a103b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>Konfigurációs és környezeti adatok elkülönítése
 
@@ -81,7 +81,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof  
 ```
  
-`$MyData`Adja meg a két másik csomópont, saját `NodeName` és `Role`. A konfigurációs dinamikusan létrehoz **csomópont** blokkok azt lekérése csomópontok gyűjteménye megtételével `$MyData` (pontosabban `$AllNodes`) és elleni gyűjteménynek szűrése a `Role` tulajdonság...
+`$MyData` Adja meg a két másik csomópont, saját `NodeName` és `Role`. A konfigurációs dinamikusan létrehoz **csomópont** blokkok azt lekérése csomópontok gyűjteménye megtételével `$MyData` (pontosabban `$AllNodes`) és elleni gyűjteménynek szűrése a `Role` tulajdonság...
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Konfigurációs adatok használatával megadhatók a fejlesztési és éles környezetben
 
@@ -143,7 +143,7 @@ Configuration MyWebApp
     Import-DscResource -Module xSqlPs
     Import-DscResource -Module xWebAdministration
 
-    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.Nodename
+    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.NodeName
    {
         # Install prerequisites
         WindowsFeature installdotNet35
@@ -246,7 +246,7 @@ A következő konfigurációs két webhely jelenléte biztosítja.
 Minden webhelyre vonatkozóan adatok definiálják a **AllNodes** tömb.
 A fájl `Config.xml` mindkét webhely szolgál, ezért azt meg nevű kulcsot `NonNodeData`.
 Ne feledje, hogy akkor is, mint, akkor a fájl nevét bármilyen tetszőleges számú további kulcsok.
-`NonNodeData`egy fenntartott szó, nincs csak mi döntöttünk a további kulcs neve.
+`NonNodeData` egy fenntartott szó, nincs csak mi döntöttünk a további kulcs neve.
 
 A speciális változó használatával éri el további kulcsok **$ConfigurationData**.
 Ebben a példában `ConfigFileContents` a sor segítségével érhető el:

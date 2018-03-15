@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A PowerShell osztályok egyéni DSC-erőforrás írása"
-ms.openlocfilehash: b24351a49ca11dac4687efdce39d400bfd00f399
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>A PowerShell osztályok egyéni DSC-erőforrás írása
 
@@ -69,7 +69,7 @@ Figyelje meg, hogy a tulajdonság módosítását mutatjuk be attribútumok szer
 - **DscProperty(NotConfigurable)**: A tulajdonság csak olvasható. Ez attribútummal rendelkező tulajdonságok nem állíthatják be a konfigurációs, de által a rendszer feltölti a **Get()** metódust, ha létezik.
 - **DscProperty()**: A tulajdonság konfigurálható, de nincs rá szükség.
 
-A **$Path** és **$SourcePath** tulajdonságainak mindkét karakterláncot. A **$CreationTime** van egy [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) tulajdonság. A **$Ensure** tulajdonsága egy számbavételi típus, az alábbiak szerint definiáltuk.
+A **$Path** és **$SourcePath** tulajdonságainak mindkét karakterláncot. A **$CreationTime** van egy [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) tulajdonság. A **$Ensure** tulajdonsága egy számbavételi típus, az alábbiak szerint definiáltuk.
 
 ```powershell
 enum Ensure 
@@ -484,10 +484,10 @@ További információkért lásd: [felhasználói hitelesítő adatokkal rendelk
 A **DscResource()** attribútum egy választható paramétert fogad, **RunAsCredential**.
 Ezt a paramétert értékek egyike szükséges:
 
-- `Optional`**PsDscRunAsCredential** nem kötelező konfigurációk, amelyek ehhez az erőforráshoz. Ez az alapértelmezett érték.
-- `Mandatory`**PsDscRunAsCredential** , amely behívja ehhez az erőforráshoz konfigurálni kell használni.
-- `NotSupported`Ehhez az erőforráshoz hívó konfigurációk nem használható **PsDscRunAsCredential**.
-- `Default`Ugyanaz, mint a `Optional`.
+- `Optional` **PsDscRunAsCredential** nem kötelező konfigurációk, amelyek ehhez az erőforráshoz. Ez az alapértelmezett érték.
+- `Mandatory` **PsDscRunAsCredential** , amely behívja ehhez az erőforráshoz konfigurálni kell használni.
+- `NotSupported` Ehhez az erőforráshoz hívó konfigurációk nem használható **PsDscRunAsCredential**.
+- `Default` Ugyanaz, mint a `Optional`.
 
 Például adja meg, hogy az egyéni erőforrás nem támogatja a következő attribútum segítségével **PsDscRunAsCredential**:
 

@@ -369,10 +369,21 @@ sudo yum remove powershell
 
 ## <a name="opensuse-422"></a>OpenSUSE 42.2
 
-> **Megjegyzés:** PowerShell Core telepítése esetén a OpenSUSE jelenthet, semmi nem biztosít `libcurl`.
-`libcurl`már telepíthető OpenSUSE támogatott verzióit.
-Futtatás `zypper search libcurl` megerősítéséhez.
-A hiba 2 'megoldások"jelent. Válassza ki a "Megoldás 2" PowerShell Core telepítésének folytatásához.
+> **Megjegyzés:** PowerShell központ telepítésekor `zypper` előfordulhat, hogy a következő hiba jelentését:
+>
+> ```text
+> Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
+>  Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
+>  Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+> ```
+>
+> Ebben az esetben ellenőrizze, hogy a kompatibilis `libcurl` könyvtár megtalálható úgy, hogy a következő parancsot a jeleníti meg a `libcurl4` csomag telepítve:
+>
+> ```sh
+> zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
+> ```
+>
+> Válassza ki a `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` megoldás telepítésekor a `powershell` csomag.
 
 ### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Telepítési csomag tárház (ajánlott) - OpenSUSE 42.2 keresztül
 
@@ -384,9 +395,6 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
 # Add the Microsoft Product feed
 curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/zypp/repos.d/microsoft.repo
-
-# Update the list of products
-sudo zypper update
 
 # Install PowerShell
 sudo zypper install powershell
@@ -763,13 +771,13 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 ## <a name="paths"></a>Elérési utak
 
-* `$PSHOME`van`/opt/microsoft/powershell/6.0.0/`
-* Felhasználói profilok rendszer nem olvas be`~/.config/powershell/profile.ps1`
-* Alapértelmezett profilok rendszer nem olvas be`$PSHOME/profile.ps1`
-* Modulok felhasználói rendszer nem olvas be`~/.local/share/powershell/Modules`
-* Megosztott modulok rendszer nem olvas be`/usr/local/share/powershell/Modules`
-* Az alapértelmezett modulokat rendszer nem olvas be`$PSHOME/Modules`
-* A rögzítendő PSReadline előzmények`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME` van `/opt/microsoft/powershell/6.0.0/`
+* Felhasználói profilok rendszer nem olvas be `~/.config/powershell/profile.ps1`
+* Alapértelmezett profilok rendszer nem olvas be `$PSHOME/profile.ps1`
+* Modulok felhasználói rendszer nem olvas be `~/.local/share/powershell/Modules`
+* Megosztott modulok rendszer nem olvas be `/usr/local/share/powershell/Modules`
+* Az alapértelmezett modulokat rendszer nem olvas be `$PSHOME/Modules`
+* A rögzítendő PSReadline előzmények `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 A profilok tiszteletben PowerShell gazdagép konfiguráció, így az alapértelmezett gazdagép-specifikus profilok létezik az `Microsoft.PowerShell_profile.ps1` ugyanazon a helyen.
 

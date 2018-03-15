@@ -1,22 +1,22 @@
 ---
 ms.date: 2017-06-05
 keywords: PowerShell parancsmag
-title: "Írási és a Windows PowerShell ISE található parancsfájlok futtatásának"
+title: "Parancsfájlok írása és futtatása a Windows PowerShell ISE-ben"
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: dd3055df8c84195f0145b1a058f1d17c9c382f33
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 77d8ae81cb03f03b3b5d044e6503bbb23cb5b771
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Írási és a Windows PowerShell ISE található parancsfájlok futtatásának
+# <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Parancsfájlok írása és futtatása a Windows PowerShell ISE-ben
 Ez a témakör ismerteti létrehozása, szerkesztése, futtatása és mentése a parancsfájlok a parancssori panelbe.
 
 ## <a name="how-to-create-and-run-scripts"></a>Hozzon létre, és parancsfájlok futtatása
 Nyissa meg, és szerkesztheti a parancssori panelbe Windows PowerShell-fájlokat. A Windows PowerShell érdeklő adott fájltípusokhoz olyan parancsfájlokat (.ps1), parancsfájlok (.psd1) és parancsfájlok modul (.psm1). Ilyen típusú a parancssori panelbe szerkesztőben színes szintaxist. Más közös fájltípus esetében előfordulhat, hogy nyissa meg a parancssori panelbe konfigurációs fájlok (.ps1xml), XML, és szövegfájlok.
 
 > [!NOTE]
-> A Windows PowerShell végrehajtási házirend határozza meg, hogy parancsfájlok futtatásához, és a Windows PowerShell-profilok és konfigurációs fájlok. Az alapértelmezett végrehajtási házirendjét, korlátozott, megakadályozza, hogy az összes parancsfájl futtatását, és megakadályozza, hogy a profil betöltését. Profilok betölteni, és használható engedélyezi a végrehajtási házirend módosításához lásd [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) és [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
+> A Windows PowerShell végrehajtási házirend határozza meg, hogy parancsfájlok futtatásához, és a Windows PowerShell-profilok és konfigurációs fájlok. Az alapértelmezett végrehajtási házirendjét, korlátozott, megakadályozza, hogy az összes parancsfájl futtatását, és megakadályozza, hogy a profil betöltését. Profilok betölteni, és használható engedélyezi a végrehajtási házirend módosításához lásd [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) és [about_Signing [v4]](https://technet.microsoft.com/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
 
 ### <a name="to-create-a-new-script-file"></a>Az új parancsfájl létrehozása
 Kattintson az eszköztár **új** , vagy a **fájl** menüben kattintson **új**. A létrehozott fájl az aktuális PowerShell lapon új fájl lapon jelenik meg. Ne feledje, hogy a PowerShell fülek láthatók csak ha egynél több. Alapértelmezés szerint a fájl típusa parancsfájl (.ps1) létrejött, de egy olyan új nevét és kiterjesztését is menthető. Több parancsfájlok ugyanazon a PowerShell lapon hozhatók létre.
@@ -139,5 +139,4 @@ A Windows PowerShell ISE támogatja a következő kódolási beállítások: ASC
 A Windows PowerShell ISE nem változtatja meg más szerkesztők által létrehozott parancsfájlok kódolás Windows PowerShell ISE még ha használja a Mentés vagy a Mentés másként parancsokat.
 
 ## <a name="see-also"></a>Lásd még:
-- [A Windows PowerShell ISE használatával](Using-the-Windows-PowerShell-ISE.md)
-
+- [A Windows PowerShell ISE felfedezése](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
