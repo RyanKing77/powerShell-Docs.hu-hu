@@ -2,24 +2,24 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: 6e0493a75e02efd81e833760f941f98566235efe
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: "WMF, powershell, beállítás"
+ms.openlocfilehash: c8ad7c6c6ec992c8b6891ff657536797164562a8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="format-hex"></a><span data-ttu-id="37ef5-102">Hexadecimális formátumú</span><span class="sxs-lookup"><span data-stu-id="37ef5-102">Format-Hex</span></span>
-<span data-ttu-id="37ef5-103">**Hexadecimális formátumú** lehetővé teszi, hogy a szöveges vagy bináris adatok megtekintéséhez hexadecimális formátumban, tanulmányozza a [hexadecimális formátumban](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span><span class="sxs-lookup"><span data-stu-id="37ef5-103">**Format-Hex** lets you view text or binary data in hexadecimal format; see [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span></span>
+# <a name="format-hex"></a><span data-ttu-id="9df57-102">Hexadecimális formátumú</span><span class="sxs-lookup"><span data-stu-id="9df57-102">Format-Hex</span></span>
+<span data-ttu-id="9df57-103">**Hexadecimális formátumú** lehetővé teszi, hogy a szöveges vagy bináris adatok megtekintéséhez hexadecimális formátumban, tanulmányozza a [hexadecimális formátumban](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span><span class="sxs-lookup"><span data-stu-id="9df57-103">**Format-Hex** lets you view text or binary data in hexadecimal format; see [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span></span>
 
-## <a name="example-1"></a><span data-ttu-id="37ef5-104">1. példa</span><span class="sxs-lookup"><span data-stu-id="37ef5-104">Example 1</span></span>
-<span data-ttu-id="37ef5-105">Hexadecimális formátumú karakterlánc tartalmának megtekintése.</span><span class="sxs-lookup"><span data-stu-id="37ef5-105">View the contents of a string in hexadecimal format.</span></span>
+## <a name="example-1"></a><span data-ttu-id="9df57-104">1. példa</span><span class="sxs-lookup"><span data-stu-id="9df57-104">Example 1</span></span>
+<span data-ttu-id="9df57-105">Hexadecimális formátumú karakterlánc tartalmának megtekintése.</span><span class="sxs-lookup"><span data-stu-id="9df57-105">View the contents of a string in hexadecimal format.</span></span>
 
 ```powershell
 "This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 ```
 
-<span data-ttu-id="37ef5-106">Kimenetek</span><span class="sxs-lookup"><span data-stu-id="37ef5-106">Outputs</span></span>
+<span data-ttu-id="9df57-106">Kimenetek</span><span class="sxs-lookup"><span data-stu-id="9df57-106">Outputs</span></span>
 ```
 PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 

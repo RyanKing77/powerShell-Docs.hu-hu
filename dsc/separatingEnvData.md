@@ -3,30 +3,30 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "Konfigurációs és környezeti adatok elkülönítése"
-ms.openlocfilehash: cf0d4a12efe4998176d3c80841740c5f9d9a103b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="1d80b-103">Konfigurációs és környezeti adatok elkülönítése</span><span class="sxs-lookup"><span data-stu-id="1d80b-103">Separating configuration and environment data</span></span>
+# <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="fe578-103">Konfigurációs és környezeti adatok elkülönítése</span><span class="sxs-lookup"><span data-stu-id="fe578-103">Separating configuration and environment data</span></span>
 
-><span data-ttu-id="1d80b-104">Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="1d80b-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+><span data-ttu-id="fe578-104">Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="fe578-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="1d80b-105">A konfigurációból, magát a DSC-konfiguráció a konfigurációs adatok használt adatokat külön hasznos lehet.</span><span class="sxs-lookup"><span data-stu-id="1d80b-105">It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data.</span></span>
-<span data-ttu-id="1d80b-106">Ennek hatására egyetlen konfigurációja több környezetekben is használhatja.</span><span class="sxs-lookup"><span data-stu-id="1d80b-106">By doing this, you can use a single configuration for multiple environments.</span></span>
+<span data-ttu-id="fe578-105">A konfigurációból, magát a DSC-konfiguráció a konfigurációs adatok használt adatokat külön hasznos lehet.</span><span class="sxs-lookup"><span data-stu-id="fe578-105">It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data.</span></span>
+<span data-ttu-id="fe578-106">Ennek hatására egyetlen konfigurációja több környezetekben is használhatja.</span><span class="sxs-lookup"><span data-stu-id="fe578-106">By doing this, you can use a single configuration for multiple environments.</span></span>
 
-<span data-ttu-id="1d80b-107">Például ha alkalmazást fejleszt, után egy konfigurációt használja a fejlesztési és éles környezetben is, is minden környezet adatainak megadása a konfigurációs adatok használatával.</span><span class="sxs-lookup"><span data-stu-id="1d80b-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
+<span data-ttu-id="fe578-107">Például ha alkalmazást fejleszt, után egy konfigurációt használja a fejlesztési és éles környezetben is, is minden környezet adatainak megadása a konfigurációs adatok használatával.</span><span class="sxs-lookup"><span data-stu-id="fe578-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
 
-## <a name="what-is-configuration-data"></a><span data-ttu-id="1d80b-108">Mi az a konfigurációs adatokat?</span><span class="sxs-lookup"><span data-stu-id="1d80b-108">What is configuration data?</span></span>
+## <a name="what-is-configuration-data"></a><span data-ttu-id="fe578-108">Mi az a konfigurációs adatokat?</span><span class="sxs-lookup"><span data-stu-id="fe578-108">What is configuration data?</span></span>
 
-<span data-ttu-id="1d80b-109">Konfigurációs adatok definiálva egy a, és ha ez a konfiguráció fordítása a DSC-konfiguráció átadott adatokat.</span><span class="sxs-lookup"><span data-stu-id="1d80b-109">Configuration data is data that is defined in a hashtable and passed to a DSC configuration when you compile that configuration.</span></span>
+<span data-ttu-id="fe578-109">Konfigurációs adatok definiálva egy a, és ha ez a konfiguráció fordítása a DSC-konfiguráció átadott adatokat.</span><span class="sxs-lookup"><span data-stu-id="fe578-109">Configuration data is data that is defined in a hashtable and passed to a DSC configuration when you compile that configuration.</span></span>
 
-<span data-ttu-id="1d80b-110">Részletes leírása a **ConfigurationData** hashtable, lásd: [konfigurációs adatok](configData.md).</span><span class="sxs-lookup"><span data-stu-id="1d80b-110">For a detailed description of the **ConfigurationData** hashtable, see [Using configuration data](configData.md).</span></span>
+<span data-ttu-id="fe578-110">Részletes leírása a **ConfigurationData** hashtable, lásd: [konfigurációs adatok](configData.md).</span><span class="sxs-lookup"><span data-stu-id="fe578-110">For a detailed description of the **ConfigurationData** hashtable, see [Using configuration data](configData.md).</span></span>
 
-## <a name="a-simple-example"></a><span data-ttu-id="1d80b-111">Egy egyszerű példa</span><span class="sxs-lookup"><span data-stu-id="1d80b-111">A simple example</span></span>
+## <a name="a-simple-example"></a><span data-ttu-id="fe578-111">Egy egyszerű példa</span><span class="sxs-lookup"><span data-stu-id="fe578-111">A simple example</span></span>
 
-<span data-ttu-id="1d80b-112">Egy nagyon egyszerű példa megtekintéséhez, ennek működéséről vizsgáljuk meg.</span><span class="sxs-lookup"><span data-stu-id="1d80b-112">Let's look at a very simple example to see how this works.</span></span> <span data-ttu-id="1d80b-113">Hozzon létre, amely biztosítja, hogy egyetlen konfigurációja **IIS** -e egyes csomópontok, és hogy a **Hyper-V** -e a többi:</span><span class="sxs-lookup"><span data-stu-id="1d80b-113">We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others:</span></span> 
+<span data-ttu-id="fe578-112">Egy nagyon egyszerű példa megtekintéséhez, ennek működéséről vizsgáljuk meg.</span><span class="sxs-lookup"><span data-stu-id="fe578-112">Let's look at a very simple example to see how this works.</span></span> <span data-ttu-id="fe578-113">Hozzon létre, amely biztosítja, hogy egyetlen konfigurációja **IIS** -e egyes csomópontok, és hogy a **Hyper-V** -e a többi:</span><span class="sxs-lookup"><span data-stu-id="fe578-113">We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others:</span></span> 
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -67,9 +67,9 @@ $MyData =
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-<span data-ttu-id="1d80b-114">Ez a parancsfájl utolsó sorában lefordítja a konfigurációt, hogy `$MyData` értékeként **ConfigurationData** paraméter.</span><span class="sxs-lookup"><span data-stu-id="1d80b-114">The last line in this script compiles the configuration, passing `$MyData` as the value **ConfigurationData** parameter.</span></span>
+<span data-ttu-id="fe578-114">Ez a parancsfájl utolsó sorában lefordítja a konfigurációt, hogy `$MyData` értékeként **ConfigurationData** paraméter.</span><span class="sxs-lookup"><span data-stu-id="fe578-114">The last line in this script compiles the configuration, passing `$MyData` as the value **ConfigurationData** parameter.</span></span>
 
-<span data-ttu-id="1d80b-115">Az eredménye, hogy két MOF-fájlok jönnek létre:</span><span class="sxs-lookup"><span data-stu-id="1d80b-115">The result is that two MOF files are created:</span></span>
+<span data-ttu-id="fe578-115">Az eredménye, hogy két MOF-fájlok jönnek létre:</span><span class="sxs-lookup"><span data-stu-id="fe578-115">The result is that two MOF files are created:</span></span>
 
 ```
     Directory: C:\DscTests\MyDscConfiguration
@@ -81,15 +81,15 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof  
 ```
  
-<span data-ttu-id="1d80b-116">`$MyData`Adja meg a két másik csomópont, saját `NodeName` és `Role`.</span><span class="sxs-lookup"><span data-stu-id="1d80b-116">`$MyData` specifies two different nodes, each with its own `NodeName` and `Role`.</span></span> <span data-ttu-id="1d80b-117">A konfigurációs dinamikusan létrehoz **csomópont** blokkok azt lekérése csomópontok gyűjteménye megtételével `$MyData` (pontosabban `$AllNodes`) és elleni gyűjteménynek szűrése a `Role` tulajdonság...</span><span class="sxs-lookup"><span data-stu-id="1d80b-117">The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the `Role` property..</span></span>
+<span data-ttu-id="fe578-116">`$MyData` Adja meg a két másik csomópont, saját `NodeName` és `Role`.</span><span class="sxs-lookup"><span data-stu-id="fe578-116">`$MyData` specifies two different nodes, each with its own `NodeName` and `Role`.</span></span> <span data-ttu-id="fe578-117">A konfigurációs dinamikusan létrehoz **csomópont** blokkok azt lekérése csomópontok gyűjteménye megtételével `$MyData` (pontosabban `$AllNodes`) és elleni gyűjteménynek szűrése a `Role` tulajdonság...</span><span class="sxs-lookup"><span data-stu-id="fe578-117">The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the `Role` property..</span></span>
 
-## <a name="using-configuration-data-to-define-development-and-production-environments"></a><span data-ttu-id="1d80b-118">Konfigurációs adatok használatával megadhatók a fejlesztési és éles környezetben</span><span class="sxs-lookup"><span data-stu-id="1d80b-118">Using configuration data to define development and production environments</span></span>
+## <a name="using-configuration-data-to-define-development-and-production-environments"></a><span data-ttu-id="fe578-118">Konfigurációs adatok használatával megadhatók a fejlesztési és éles környezetben</span><span class="sxs-lookup"><span data-stu-id="fe578-118">Using configuration data to define development and production environments</span></span>
 
-<span data-ttu-id="1d80b-119">Vizsgáljuk meg egy teljes példa, amely egyetlen konfigurációja használja fejlesztési és éles környezetben is webhely beállításához.</span><span class="sxs-lookup"><span data-stu-id="1d80b-119">Let's look at a complete example that uses a single configuration to set up both development and production environments of a website.</span></span> <span data-ttu-id="1d80b-120">A fejlesztési környezetet az IIS és az SQL Server egyetlen csomópontján telepítve.</span><span class="sxs-lookup"><span data-stu-id="1d80b-120">In the development environment, both IIS and SQL Server are installed on a single nodes.</span></span> <span data-ttu-id="1d80b-121">Az éles környezetben az IIS és az SQL Server telepítve vannak az önálló csomópontra.</span><span class="sxs-lookup"><span data-stu-id="1d80b-121">In the production environment, IIS and SQL Server are installed on separate nodes.</span></span> <span data-ttu-id="1d80b-122">Adja meg az adatokat a két különböző környezetek használjuk .psd1 konfigurációs adatfájlt.</span><span class="sxs-lookup"><span data-stu-id="1d80b-122">We'll use a configuration data .psd1 file to specify the data for the two different environments.</span></span>
+<span data-ttu-id="fe578-119">Vizsgáljuk meg egy teljes példa, amely egyetlen konfigurációja használja fejlesztési és éles környezetben is webhely beállításához.</span><span class="sxs-lookup"><span data-stu-id="fe578-119">Let's look at a complete example that uses a single configuration to set up both development and production environments of a website.</span></span> <span data-ttu-id="fe578-120">A fejlesztési környezetet az IIS és az SQL Server egyetlen csomópontján telepítve.</span><span class="sxs-lookup"><span data-stu-id="fe578-120">In the development environment, both IIS and SQL Server are installed on a single nodes.</span></span> <span data-ttu-id="fe578-121">Az éles környezetben az IIS és az SQL Server telepítve vannak az önálló csomópontra.</span><span class="sxs-lookup"><span data-stu-id="fe578-121">In the production environment, IIS and SQL Server are installed on separate nodes.</span></span> <span data-ttu-id="fe578-122">Adja meg az adatokat a két különböző környezetek használjuk .psd1 konfigurációs adatfájlt.</span><span class="sxs-lookup"><span data-stu-id="fe578-122">We'll use a configuration data .psd1 file to specify the data for the two different environments.</span></span>
 
- ### <a name="configuration-data-file"></a><span data-ttu-id="1d80b-123">Konfigurációs adatok fájl</span><span class="sxs-lookup"><span data-stu-id="1d80b-123">Configuration data file</span></span>
+ ### <a name="configuration-data-file"></a><span data-ttu-id="fe578-123">Konfigurációs adatok fájl</span><span class="sxs-lookup"><span data-stu-id="fe578-123">Configuration data file</span></span>
 
-<span data-ttu-id="1d80b-124">A fejlesztési és éles környezeti adatok fogunk meghatározni a egy fájl namd `DevProdEnvData.psd1` az alábbiak szerint:</span><span class="sxs-lookup"><span data-stu-id="1d80b-124">We'll define the development and production environment data in a file namd `DevProdEnvData.psd1` as follows:</span></span>
+<span data-ttu-id="fe578-124">A fejlesztési és éles környezeti adatok fogunk meghatározni a egy fájl namd `DevProdEnvData.psd1` az alábbiak szerint:</span><span class="sxs-lookup"><span data-stu-id="fe578-124">We'll define the development and production environment data in a file namd `DevProdEnvData.psd1` as follows:</span></span>
 
 ```powershell
 @{
@@ -126,15 +126,15 @@ Mode                LastWriteTime         Length Name
 }
 ```
 
-### <a name="configuration-script-file"></a><span data-ttu-id="1d80b-125">Konfigurációs parancsfájl</span><span class="sxs-lookup"><span data-stu-id="1d80b-125">Configuration script file</span></span>
+### <a name="configuration-script-file"></a><span data-ttu-id="fe578-125">Konfigurációs parancsfájl</span><span class="sxs-lookup"><span data-stu-id="fe578-125">Configuration script file</span></span>
 
-<span data-ttu-id="1d80b-126">Most, a konfigurációban, amelyhez definiálva van egy `.ps1` fájl, azt a csomópontok a meghatározott szűrése `DevProdEnvData.psd1` szerepe (`MSSQL`, `Dev`, vagy mindkettőt), és ennek megfelelően konfigurálja.</span><span class="sxs-lookup"><span data-stu-id="1d80b-126">Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly.</span></span> <span data-ttu-id="1d80b-127">A fejlesztési környezet rendelkezik az SQL Server és az IIS egy csomóponton, míg az éles környezetben őket két különböző csomópontokon.</span><span class="sxs-lookup"><span data-stu-id="1d80b-127">The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes.</span></span> <span data-ttu-id="1d80b-128">A webhely teljes tartalmát is nem egyezik, leírtak szerint a `SiteContents` tulajdonságok.</span><span class="sxs-lookup"><span data-stu-id="1d80b-128">The site contents is also different, as specified by the `SiteContents` properties.</span></span>
+<span data-ttu-id="fe578-126">Most, a konfigurációban, amelyhez definiálva van egy `.ps1` fájl, azt a csomópontok a meghatározott szűrése `DevProdEnvData.psd1` szerepe (`MSSQL`, `Dev`, vagy mindkettőt), és ennek megfelelően konfigurálja.</span><span class="sxs-lookup"><span data-stu-id="fe578-126">Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly.</span></span> <span data-ttu-id="fe578-127">A fejlesztési környezet rendelkezik az SQL Server és az IIS egy csomóponton, míg az éles környezetben őket két különböző csomópontokon.</span><span class="sxs-lookup"><span data-stu-id="fe578-127">The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes.</span></span> <span data-ttu-id="fe578-128">A webhely teljes tartalmát is nem egyezik, leírtak szerint a `SiteContents` tulajdonságok.</span><span class="sxs-lookup"><span data-stu-id="fe578-128">The site contents is also different, as specified by the `SiteContents` properties.</span></span>
 
-<span data-ttu-id="1d80b-129">A konfigurációs parancsfájl végén a konfigurációs nevezzük (lefordítani a MOF-dokumentumba), adja `DevProdEnvData.psd1` , a `$ConfigurationData` paraméter.</span><span class="sxs-lookup"><span data-stu-id="1d80b-129">At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.</span></span>
+<span data-ttu-id="fe578-129">A konfigurációs parancsfájl végén a konfigurációs nevezzük (lefordítani a MOF-dokumentumba), adja `DevProdEnvData.psd1` , a `$ConfigurationData` paraméter.</span><span class="sxs-lookup"><span data-stu-id="fe578-129">At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.</span></span>
 
-><span data-ttu-id="1d80b-130">**Megjegyzés:** ebben a konfigurációban kell a modulok `xSqlPs` és `xWebAdministration` célcsomóponton kell telepíteni.</span><span class="sxs-lookup"><span data-stu-id="1d80b-130">**Note:** This configuration requires the modules `xSqlPs` and `xWebAdministration` to be installed on the target node.</span></span>
+><span data-ttu-id="fe578-130">**Megjegyzés:** ebben a konfigurációban kell a modulok `xSqlPs` és `xWebAdministration` célcsomóponton kell telepíteni.</span><span class="sxs-lookup"><span data-stu-id="fe578-130">**Note:** This configuration requires the modules `xSqlPs` and `xWebAdministration` to be installed on the target node.</span></span>
 
-<span data-ttu-id="1d80b-131">Is határozza meg a konfigurációs nevű fájlba `MyWebApp.ps1`:</span><span class="sxs-lookup"><span data-stu-id="1d80b-131">Let's define the configuration in a file named `MyWebApp.ps1`:</span></span>
+<span data-ttu-id="fe578-131">Is határozza meg a konfigurációs nevű fájlba `MyWebApp.ps1`:</span><span class="sxs-lookup"><span data-stu-id="fe578-131">Let's define the configuration in a file named `MyWebApp.ps1`:</span></span>
 
 ```powershell
 Configuration MyWebApp
@@ -143,7 +143,7 @@ Configuration MyWebApp
     Import-DscResource -Module xSqlPs
     Import-DscResource -Module xWebAdministration
 
-    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.Nodename
+    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.NodeName
    {
         # Install prerequisites
         WindowsFeature installdotNet35
@@ -226,7 +226,7 @@ Configuration MyWebApp
 MyWebApp -ConfigurationData DevProdEnvData.psd1
 ```
 
-<span data-ttu-id="1d80b-132">Ez a konfiguráció futtatásakor három MOF-fájlok jönnek létre (egy mindegyik nevű bejegyzést a **AllNodes** tömb):</span><span class="sxs-lookup"><span data-stu-id="1d80b-132">When you run this configuration, three MOF files are created (one for each named entry in the **AllNodes** array):</span></span>
+<span data-ttu-id="fe578-132">Ez a konfiguráció futtatásakor három MOF-fájlok jönnek létre (egy mindegyik nevű bejegyzést a **AllNodes** tömb):</span><span class="sxs-lookup"><span data-stu-id="fe578-132">When you run this configuration, three MOF files are created (one for each named entry in the **AllNodes** array):</span></span>
 
 ```
     Directory: C:\DscTests\MyWebApp
@@ -239,21 +239,21 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
-## <a name="using-non-node-data"></a><span data-ttu-id="1d80b-133">Nem-csomópont adatok használata</span><span class="sxs-lookup"><span data-stu-id="1d80b-133">Using non-node data</span></span>
+## <a name="using-non-node-data"></a><span data-ttu-id="fe578-133">Nem-csomópont adatok használata</span><span class="sxs-lookup"><span data-stu-id="fe578-133">Using non-node data</span></span>
 
-<span data-ttu-id="1d80b-134">További kulcsokat is hozzáadhat a **ConfigurationData** kivonattábla, amely nem egy csomópont vonatkozó adatok.</span><span class="sxs-lookup"><span data-stu-id="1d80b-134">You can add additional keys to the **ConfigurationData** hashtable for data that is not specific to a node.</span></span>
-<span data-ttu-id="1d80b-135">A következő konfigurációs két webhely jelenléte biztosítja.</span><span class="sxs-lookup"><span data-stu-id="1d80b-135">The following configuration ensures the presence of two websites.</span></span>
-<span data-ttu-id="1d80b-136">Minden webhelyre vonatkozóan adatok definiálják a **AllNodes** tömb.</span><span class="sxs-lookup"><span data-stu-id="1d80b-136">Data for each website are defined in the **AllNodes** array.</span></span>
-<span data-ttu-id="1d80b-137">A fájl `Config.xml` mindkét webhely szolgál, ezért azt meg nevű kulcsot `NonNodeData`.</span><span class="sxs-lookup"><span data-stu-id="1d80b-137">The file `Config.xml` is used for both websites, so we define it in an additional key with the name `NonNodeData`.</span></span>
-<span data-ttu-id="1d80b-138">Ne feledje, hogy akkor is, mint, akkor a fájl nevét bármilyen tetszőleges számú további kulcsok.</span><span class="sxs-lookup"><span data-stu-id="1d80b-138">Note that you can have as many additional keys as you want, and you can name them anything you want.</span></span>
-<span data-ttu-id="1d80b-139">`NonNodeData`egy fenntartott szó, nincs csak mi döntöttünk a további kulcs neve.</span><span class="sxs-lookup"><span data-stu-id="1d80b-139">`NonNodeData` is not a reserved word, it is just what we decided to name the additional key.</span></span>
+<span data-ttu-id="fe578-134">További kulcsokat is hozzáadhat a **ConfigurationData** kivonattábla, amely nem egy csomópont vonatkozó adatok.</span><span class="sxs-lookup"><span data-stu-id="fe578-134">You can add additional keys to the **ConfigurationData** hashtable for data that is not specific to a node.</span></span>
+<span data-ttu-id="fe578-135">A következő konfigurációs két webhely jelenléte biztosítja.</span><span class="sxs-lookup"><span data-stu-id="fe578-135">The following configuration ensures the presence of two websites.</span></span>
+<span data-ttu-id="fe578-136">Minden webhelyre vonatkozóan adatok definiálják a **AllNodes** tömb.</span><span class="sxs-lookup"><span data-stu-id="fe578-136">Data for each website are defined in the **AllNodes** array.</span></span>
+<span data-ttu-id="fe578-137">A fájl `Config.xml` mindkét webhely szolgál, ezért azt meg nevű kulcsot `NonNodeData`.</span><span class="sxs-lookup"><span data-stu-id="fe578-137">The file `Config.xml` is used for both websites, so we define it in an additional key with the name `NonNodeData`.</span></span>
+<span data-ttu-id="fe578-138">Ne feledje, hogy akkor is, mint, akkor a fájl nevét bármilyen tetszőleges számú további kulcsok.</span><span class="sxs-lookup"><span data-stu-id="fe578-138">Note that you can have as many additional keys as you want, and you can name them anything you want.</span></span>
+<span data-ttu-id="fe578-139">`NonNodeData` egy fenntartott szó, nincs csak mi döntöttünk a további kulcs neve.</span><span class="sxs-lookup"><span data-stu-id="fe578-139">`NonNodeData` is not a reserved word, it is just what we decided to name the additional key.</span></span>
 
-<span data-ttu-id="1d80b-140">A speciális változó használatával éri el további kulcsok **$ConfigurationData**.</span><span class="sxs-lookup"><span data-stu-id="1d80b-140">You access additional keys by using the special variable **$ConfigurationData**.</span></span>
-<span data-ttu-id="1d80b-141">Ebben a példában `ConfigFileContents` a sor segítségével érhető el:</span><span class="sxs-lookup"><span data-stu-id="1d80b-141">In this example, `ConfigFileContents` is accessed with the line:</span></span>
+<span data-ttu-id="fe578-140">A speciális változó használatával éri el további kulcsok **$ConfigurationData**.</span><span class="sxs-lookup"><span data-stu-id="fe578-140">You access additional keys by using the special variable **$ConfigurationData**.</span></span>
+<span data-ttu-id="fe578-141">Ebben a példában `ConfigFileContents` a sor segítségével érhető el:</span><span class="sxs-lookup"><span data-stu-id="fe578-141">In this example, `ConfigFileContents` is accessed with the line:</span></span>
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- <span data-ttu-id="1d80b-142">az a `File` erőforrás blokkot.</span><span class="sxs-lookup"><span data-stu-id="1d80b-142">in the `File` resource block.</span></span>
+ <span data-ttu-id="fe578-142">az a `File` erőforrás blokkot.</span><span class="sxs-lookup"><span data-stu-id="fe578-142">in the `File` resource block.</span></span>
 
 
 ```powershell
@@ -309,8 +309,8 @@ configuration WebsiteConfig
 ```
 
 
-## <a name="see-also"></a><span data-ttu-id="1d80b-143">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="1d80b-143">See Also</span></span>
-- [<span data-ttu-id="1d80b-144">Konfigurációs adatok használata</span><span class="sxs-lookup"><span data-stu-id="1d80b-144">Using configuration data</span></span>](configData.md)
-- [<span data-ttu-id="1d80b-145">Konfigurációs adatokat a hitelesítő adatok beállításai</span><span class="sxs-lookup"><span data-stu-id="1d80b-145">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
-- [<span data-ttu-id="1d80b-146">A DSC-konfigurációk</span><span class="sxs-lookup"><span data-stu-id="1d80b-146">DSC Configurations</span></span>](configurations.md)
+## <a name="see-also"></a><span data-ttu-id="fe578-143">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="fe578-143">See Also</span></span>
+- [<span data-ttu-id="fe578-144">Konfigurációs adatok használata</span><span class="sxs-lookup"><span data-stu-id="fe578-144">Using configuration data</span></span>](configData.md)
+- [<span data-ttu-id="fe578-145">Konfigurációs adatokat a hitelesítő adatok beállításai</span><span class="sxs-lookup"><span data-stu-id="fe578-145">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
+- [<span data-ttu-id="fe578-146">A DSC-konfigurációk</span><span class="sxs-lookup"><span data-stu-id="fe578-146">DSC Configurations</span></span>](configurations.md)
 

@@ -3,19 +3,19 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
 title: "A DSC-konfigurációk súgó írása"
-ms.openlocfilehash: c868fa0565baff833423db090a5d62824ab4cad8
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c5d499ec887829c864c0f63f64af2d0a7738220b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="33a2e-103">A DSC-konfigurációk súgó írása</span><span class="sxs-lookup"><span data-stu-id="33a2e-103">Writing help for DSC configurations</span></span>
+# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="b04df-103">A DSC-konfigurációk súgó írása</span><span class="sxs-lookup"><span data-stu-id="b04df-103">Writing help for DSC configurations</span></span>
 
-><span data-ttu-id="33a2e-104">Vonatkozik: Windows Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="33a2e-104">Applies To: Windows Windows PowerShell 5.0</span></span>
+><span data-ttu-id="b04df-104">Vonatkozik: Windows Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="b04df-104">Applies To: Windows Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="33a2e-105">A DSC-konfigurációk Megjegyzés-alapú súgó használható.</span><span class="sxs-lookup"><span data-stu-id="33a2e-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="33a2e-106">Felhasználók férhetnek hozzá a Súgó a konfigurációs függvény meghívásával `-?`, vagy a [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) parancsmag.</span><span class="sxs-lookup"><span data-stu-id="33a2e-106">Users can access the help by calling the configuration function with `-?`, or by using the [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet.</span></span> <span data-ttu-id="33a2e-107">További információ a PowerShell Megjegyzés-alapú súgó: [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).</span><span class="sxs-lookup"><span data-stu-id="33a2e-107">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).</span></span>
+<span data-ttu-id="b04df-105">A DSC-konfigurációk Megjegyzés-alapú súgó használható.</span><span class="sxs-lookup"><span data-stu-id="b04df-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="b04df-106">Felhasználók férhetnek hozzá a Súgó a konfigurációs függvény meghívásával `-?`, vagy a [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) parancsmag.</span><span class="sxs-lookup"><span data-stu-id="b04df-106">Users can access the help by calling the configuration function with `-?`, or by using the [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet.</span></span> <span data-ttu-id="b04df-107">További információ a PowerShell Megjegyzés-alapú súgó: [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).</span><span class="sxs-lookup"><span data-stu-id="b04df-107">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).</span></span>
 
-<span data-ttu-id="33a2e-108">A következő példa bemutatja egy parancsfájlt, amely tartalmazza a konfigurációs és a Megjegyzés-alapú súgó hozzá:</span><span class="sxs-lookup"><span data-stu-id="33a2e-108">The following example shows a script that contains a configuration and comment-based help for it:</span></span>
+<span data-ttu-id="b04df-108">A következő példa bemutatja egy parancsfájlt, amely tartalmazza a konfigurációs és a Megjegyzés-alapú súgó hozzá:</span><span class="sxs-lookup"><span data-stu-id="b04df-108">The following example shows a script that contains a configuration and comment-based help for it:</span></span>
 
 ```powershell
 <#
@@ -59,9 +59,9 @@ configuration HelpSample1
 }
 ```
 
-## <a name="viewing-configuration-help"></a><span data-ttu-id="33a2e-109">Konfigurációs súgó megtekintése</span><span class="sxs-lookup"><span data-stu-id="33a2e-109">Viewing configuration help</span></span>
+## <a name="viewing-configuration-help"></a><span data-ttu-id="b04df-109">Konfigurációs súgó megtekintése</span><span class="sxs-lookup"><span data-stu-id="b04df-109">Viewing configuration help</span></span>
 
-<span data-ttu-id="33a2e-110">A Súgó gombra a konfiguráció megtekintéséhez használja a **Get-Help** parancsmagot típus vagy függvény nevével, amelyre a függvény neve követ `-?`.</span><span class="sxs-lookup"><span data-stu-id="33a2e-110">To view the help for a configuration, use the **Get-Help** cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="33a2e-111">Az alábbiakban található a korábbi függvény átadott kimenete **Get-Help**:</span><span class="sxs-lookup"><span data-stu-id="33a2e-111">The following is the output of the previous function when passed to **Get-Help**:</span></span>
+<span data-ttu-id="b04df-110">A Súgó gombra a konfiguráció megtekintéséhez használja a **Get-Help** parancsmagot típus vagy függvény nevével, amelyre a függvény neve követ `-?`.</span><span class="sxs-lookup"><span data-stu-id="b04df-110">To view the help for a configuration, use the **Get-Help** cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="b04df-111">Az alábbiakban található a korábbi függvény átadott kimenete **Get-Help**:</span><span class="sxs-lookup"><span data-stu-id="b04df-111">The following is the output of the previous function when passed to **Get-Help**:</span></span>
 
 ```powershell
 PS C:\> Get-Help HelpSample1
@@ -90,6 +90,6 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-## <a name="see-also"></a><span data-ttu-id="33a2e-112">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="33a2e-112">See Also</span></span>
-* [<span data-ttu-id="33a2e-113">A DSC-konfigurációk</span><span class="sxs-lookup"><span data-stu-id="33a2e-113">DSC Configurations</span></span>](configurations.md)
+## <a name="see-also"></a><span data-ttu-id="b04df-112">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="b04df-112">See Also</span></span>
+* [<span data-ttu-id="b04df-113">A DSC-konfigurációk</span><span class="sxs-lookup"><span data-stu-id="b04df-113">DSC Configurations</span></span>](configurations.md)
 
