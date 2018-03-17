@@ -1,0 +1,209 @@
+- name: Windows Management Framework (WMF) – áttekintés
+  href: README.md
+- name: WMF 5.1
+  href: 5.1/release-notes.md
+  items:
+    - name: Új forgatókönyvek és funkciók
+      href: 5.1/scenarios-features.md
+      items:
+        - name: A célállapot-konfiguráló (DSC) szolgáltatás javításai
+          href: 5.1/DSC-improvements.md
+        - name: A PowerShell-konzol fejlesztései
+          href: 5.1/console-improvements.md
+        - name: A PowerShell motor fejlesztései
+          href: 5.1/engine-improvements.md
+        - name: A csomagkezelés fejlesztései
+          href: 5.1/package-management-improvements.md
+        - name: A JEA fejlesztései
+          href: 5.1/jea-improvements.md
+        - name: Katalógusbeli parancsmagok
+          href: 5.1/catalog-cmdlets.md
+        - name: A WMF 5.1-es verziójában javított hibák
+          href: 5.1/bugfixes.md
+    - name: Telepítés és konfigurálás
+      href: 5.1/install-configure.md
+    - name: Ismert problémák
+      href: 5.1/known-issues.md
+    - name: Kompatibilitás
+      href: 5.1/Compatibility.md
+    - name: Termékkompatibilitás
+      href: 5.1/productincompat.md
+- name: WMF 5.0
+  href: 5.0/releasenotes.md
+  items:
+    - name: A telepítés részletei
+      href: 5.0/requirements.md
+    - name: Ismert problémák és korlátozások
+      href: 5.0/limitation_overview.md
+      items:
+        - name: A célállapot-konfiguráló (DSC) szolgáltatás ismert problémái
+          href: 5.0/limitation_dsc.md
+    - name: Termékkompatibilitási állapot
+      href: 5.0/productincompat.md
+    - name: A WMF 5.0 által lehetővé tett forgatókönyvek
+      href: ''
+      items:
+        - name: Just Enough Administration (JEA)
+          href: 5.0/jea_overview.md
+          items:
+            - name: JEA-végpont létrehozása és csatlakozás a végponthoz
+              href: 5.0/jea_endpoint.md
+            - name: JEA-jelentések
+              href: 5.0/jea_report.md
+        - name: Egyéni típusok létrehozása PowerShell-osztályokkal
+          href: 5.0/class_overview.md
+          items:
+            - name: Egyéni típusok definiálása
+              href: 5.0/class_newtype.md
+            - name: Alaposztály deklarálása
+              href: 5.0/class_base.md
+            - name: Megvalósított interfész deklarálása
+              href: 5.0/class_interface.md
+            - name: Alaposztály konstruktorának hívása
+              href: 5.0/class_baseconstructor.md
+            - name: Alaposztály metódusának hívása
+              href: 5.0/class_basemethod.md
+        - name: A PowerShell parancsfájlokban végzett hibakeresésének javításai
+          href: 5.0/debug_overview.md
+        - name: A célállapot-konfiguráló (DSC) szolgáltatás javításai
+          href: 5.0/dsc_improvements.md
+          items:
+            - name: Konfigurációk
+              href: ''
+              items:
+                - name: Csomópontok közötti függőségek megadása
+                  href: 5.0/dsc_waitfor.md
+                - name: Titkosított MOF-fájlok
+                  href: 5.0/dsc_encryptedmof.md
+                - name: A DSC-konfiguráció súgótámogatása
+                  href: 5.0/dsc_confighelp.md
+                - name: A PowerShell ISE-vel való szerkesztés javításai
+                  href: 5.0/dsc_authoring.md
+                - name: Azonos ismétlődő erőforrások engedélyezése konfigurációkban
+                  href: 5.0/dsc_identicalduplicate.md
+                - name: Az Import-DscResource kulcsszó támogatja a -ModuleVersion paramétert
+                  href: 5.0/dsc_importdscresource.md
+                - name: A konfigurációs kulcsszó WOW64-támogatása
+                  href: 5.0/dsc_wow64.md
+            - name: Erőforrások
+              href: ''
+              items:
+                - name: Osztályalapú DSC-erőforrások
+                  href: 5.0/dsc_classbasedresource.md
+                - name: DSC-erőforrásparancsfájlokban végzett hibakeresés
+                  href: 5.0/dsc_resourcedebugging.md
+                - name: Automatikus futtatófiók-támogatás a DSC-erőforrásokhoz
+                  href: 5.0/dsc_runas.md
+                - name: Párhuzamos verziószámozás támogatása a DSC-erőforrásokhoz
+                  href: 5.0/dsc_sxsresource.md
+                - name: Új beépített erőforrások
+                  href: 5.0/dsc_newresources.md
+            - name: Local Configuration Manager
+              href: ''
+              items:
+                - name: Több konfigurációs töredékkel rendelkező csomópontok konfigurálása
+                  href: 5.0/dsc_partialconfig.md
+                  items:
+                    - name: Vegyes RefreshMode üzemmódok támogatása
+                      href: 5.0/dsc_partialconfig_mixedmode.md
+                - name: A DSC motor konfigurálása új attribútummal
+                  href: 5.0/dsc_metaconfiguration.md
+                - name: Az LCM állapotának részletes adatai
+                  href: 5.0/dsc_lcmstate.md
+                - name: A RefreshMode és a ConfigurationMode időközeinek nem kell egymás szorzatainak lennie
+                  href: 5.0/dsc_freqnomultiple.md
+                - name: További értékek a RefreshMode tulajdonságban
+                  href: 5.0/dsc_refreshmode.md
+            - name: Parancsmagok
+              href: ''
+              items:
+                - name: A konfigurációs állapot részletes adatai
+                  href: 5.0/dsc_getconfigurationstatus.md
+                - name: A Test-DscConfiguration parancsmag támogatja a referencia-konfigurációkat
+                  href: 5.0/dsc_testconfiguration.md
+                - name: Közvetlen hozzáférés a DSC-erőforrások metódusaihoz
+                  href: 5.0/dsc_directaccess.md
+                - name: A konfigurációs dokumentum leadása alkalmazás nélkül
+                  href: 5.0/dsc_publishconfig.md
+                - name: DSC-dokumentumok eltávolítása
+                  href: 5.0/dsc_removeconfigdoc.md
+                - name: Egyesített és konzisztens állapotreprezentáció
+                  href: 5.0/dsc_statestatus.md
+                - name: A Set-DscLocalConfigurationManager parancsmag támogatja a -Force paramétert
+                  href: 5.0/dsc_setdsclcm.md
+            - name: Lekérési mód
+              href: ''
+              items:
+                - name: DSC-konfigurációk igény szerinti lekérése
+                  href: 5.0/dsc_updateconfig.md
+                - name: Csomópont- és konfigurációazonosítók szétválasztása
+                  href: 5.0/dsc_nodeid.md
+                - name: 'Konfigurációs, erőforrás- és jelentéstárházak szétválasztása'
+                  href: 5.0/dsc_repository.md
+                - name: Konfigurációs állapot jelentése egy központi helynek
+                  href: 5.0/dsc_reporting.md
+        - name: A PowerShell használatának vizsgálata átírással és naplózással
+          href: 5.0/audit_overview.md
+          items:
+            - name: Bővített átírási beállítások
+              href: 5.0/audit_transcript.md
+            - name: Parancsfájlok nyomkövetése és naplózása
+              href: 5.0/audit_script.md
+            - name: Cryptographic Message Syntax- (CMS-) parancsmagok
+              href: 5.0/audit_cms.md
+        - name: 'Szoftverek felderítése, telepítése és leltárazása a PackageManagementtel'
+          href: 5.0/oneget_overview.md
+          items:
+            - name: PackageManagement-parancsmagok
+              href: 5.0/oneget_cmdlets.md
+        - name: 'PowerShell-modulok felderítése, telepítése és leltárazása a PowerShellGettel'
+          href: 5.0/psget_module_overview.md
+          items:
+            - name: PowerShell-tárház regisztrálása
+              href: 5.0/psget_psrepository.md
+            - name: Párhuzamos verziótámogatás a PowerShell 5.0-s és újabb verzióiban
+              href: 5.0/psget_modulesxsinstall.md
+            - name: Modulfüggőségek telepítése
+              href: 5.0/psget_moduledependency.md
+            - name: PowerShellGet-parancsmagok modulkezeléshez
+              href: 5.0/psget_modulecmdlets.md
+        - name: 'PowerShell-parancsfájlok felderítése, telepítése és kezelése a PowerShellGettel'
+          href: 5.0/psget_script_overview.md
+          items:
+            - name: PowerShellGet-parancsmagok parancsfájlkezeléshez
+              href: 5.0/psget_scriptcmdlets.md
+        - name: A közösségi visszajelzések alapján megjelent új és frissített parancsmagok
+          href: 5.0/feedback_cmdlets.md
+          items:
+            - name: Szimbolikus hivatkozások használata az Item-parancsmagokkal
+              href: 5.0/feedback_symbolic.md
+            - name: Archív parancsmagok
+              href: 5.0/feedback_archive.md
+            - name: Vágólap-parancsmagok
+              href: 5.0/feedback_clipboard.md
+            - name: Convert-String
+              href: 5.0/feedback_convertstring.md
+            - name: Strukturált objektumok karakterláncokból való kibontása és elemzése
+              href: 5.0/feedback_convertfromString.md
+            - name: Format-Hex
+              href: 5.0/feedback_formathex.md
+            - name: NoNewLine paraméter
+              href: 5.0/feedback_nonewline.md
+            - name: New-TemporaryFile
+              href: 5.0/feedback_tempfile.md
+            - name: New-Guid
+              href: 5.0/feedback_newguid.md
+            - name: Get-ChildItem a -Depth paraméterrel
+              href: 5.0/feedback_getchilditem.md
+            - name: A FileInfo objektum frissítései
+              href: 5.0/feedback_fileinfo.md
+            - name: Modultámogatás a verziótartományok deklarálásához (1.* stb.)
+              href: 5.0/feedback_moduleversionranges.md
+        - name: Információfolyam
+          href: 5.0/informationstream_overview.md
+        - name: PowerShell-parancsmagok létrehozása OData-végpont alapján
+          href: 5.0/odata_overview.md
+        - name: Hálózati kapcsolók kezelése a PowerShell-lel
+          href: 5.0/networkswitch_overview.md
+        - name: Szoftverleltár-naplózás (SIL)
+          href: 5.0/sil_overview.md
