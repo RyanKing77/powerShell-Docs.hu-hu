@@ -2,14 +2,14 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
+keywords: "WMF, powershell, beállítás"
 ms.openlocfilehash: 32f8e20889ddc526def4b925e8d0761a2e851e19
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/20/2018
 ---
-# <a name="unified-and-consistent-state-and-status-representation"></a>Egyesített és konzisztens állapotban és állapotának megjelenítése
+# <a name="unified-and-consistent-state-and-status-representation"></a>Egyesített és konzisztens állapotreprezentáció
 
 Fejlesztésen végzett ebben a kiadásban a beépített LCM állapotát és DSC állapot automatizálása. Ezek közé tartozik a egyesített és konzisztens állapotban és állapot formátumban, az állapot objektumok kezelhető dátum/idő tulajdonság Get-DscConfigurationStatus parancsmag által visszaadott és fokozott LCM állapot részletei tulajdonság Get-DscLocalConfigurationManager által visszaadott parancsmag.
 
@@ -23,20 +23,20 @@ LCM állapot és a DSC műveleti állapotának ábrázolása javított változat
 
 Az alábbi táblázat szemlélteti a eredő állapot kapcsolódó tulajdonságok néhány jellemző forgatókönyvek alapján.
 
-| **A forgatókönyv**                    | **LCMState\***       | **Állapot** | **A kért újraindítás**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| **Scenario**                    | **LCMState\***       | **Status** | **A kért újraindítás**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Üresjárati                 | Siker    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Hiba    | $false        | $null                        | F                              |
-| S, F                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
-| F, S                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
+| S,F                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
+| F,S                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Hiba    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
 | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Hiba    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-| S, r                            | PendingReboot        | Siker    | $true         | S                            | R                              |
+| S, r                            | PendingReboot        | Siker    | $true         | S                            | r                              |
 | F, r                            | PendingReboot        | Hiba    | $true         | $null                        | F, r                           |
-| r, S                            | PendingReboot        | Siker    | $true         | $null                        | R                              |
-| r, F                            | PendingReboot        | Siker    | $true         | $null                        | R                              |
+| r, S                            | PendingReboot        | Siker    | $true         | $null                        | r                              |
+| r, F                            | PendingReboot        | Siker    | $true         | $null                        | r                              |
 
-^ S<sub>i</sub>: erőforrásokat, a rendszer sikeresen alkalmazta F sorozata<sub>i</sub>: a rendszer újraindítását igénylő r: A erőforrás sikertelenül telepített erőforrások több\*
+^ S<sub>i</sub>: erőforrásokat, a rendszer sikeresen alkalmazta F sorozata<sub>i</sub>: a rendszer újraindítását igénylő r: A erőforrás sikertelenül telepített erőforrások több \*
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState
