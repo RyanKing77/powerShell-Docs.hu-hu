@@ -10,7 +10,7 @@ ms.contentlocale: hu-HU
 ms.lasthandoff: 03/20/2018
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Modulok támogatása deklaráló verzió tartományok (1.*, stb.)
-Együtt **- MinimumVersion**, **- MaximumVersion** mostantól lehetővé teszi a felhasználónak az adott tartományon belüli get/importálás modul. A paraméter is támogatja. **. x. A következő példa bemutatja, hogyan működik:
+Együtt **- MinimumVersion**, **- MaximumVersion** mostantól lehetővé teszi a felhasználónak az adott tartományon belüli get/importálás modul. A paraméter is támogatja. **.**\*. A következő példa bemutatja, hogyan működik:
 
 ```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
