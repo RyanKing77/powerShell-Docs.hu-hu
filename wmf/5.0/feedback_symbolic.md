@@ -1,28 +1,28 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: fbc537cacb8dd58ab989a0bb71cd942cedae844c
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: 01de08e8c9c2cf18ce481b44f3ca2211462e532b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a><span data-ttu-id="fa66d-102">Szimbolikus hivatkozásokat továbbfejlesztett elem-parancsmagok használatával kommunikál</span><span class="sxs-lookup"><span data-stu-id="fa66d-102">Interact with Symbolic links using improved Item cmdlets</span></span>
+# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a><span data-ttu-id="0e624-102">Szimbolikus hivatkozásokat továbbfejlesztett elem-parancsmagok használatával kommunikál</span><span class="sxs-lookup"><span data-stu-id="0e624-102">Interact with Symbolic links using improved Item cmdlets</span></span>
 
-<span data-ttu-id="fa66d-103">Támogatja a szimbolikus csatolást, hogy  **\*-cikk** és néhány kapcsolódó parancsmagok bővültek.</span><span class="sxs-lookup"><span data-stu-id="fa66d-103">To support symbolic links, **\*-Item** and a few related cmdlets have been extended.</span></span> <span data-ttu-id="fa66d-104">Most szimbolikus hivatkozásokat hozhat létre egyszerű soronként **új elem**.</span><span class="sxs-lookup"><span data-stu-id="fa66d-104">Now you can create symbolic links in a single, simple line with **New-Item**.</span></span> <span data-ttu-id="fa66d-105">Láthatja, hogy a cikk kapcsolódó parancsmagok (**Remove-cikk, a Get-ChildItem**) hasonlóan viselkednek a nagyon előtt.</span><span class="sxs-lookup"><span data-stu-id="fa66d-105">You’ll notice that the Item-related cmdlets (**Remove-Item, Get-ChildItem**) behave very similarly to before.</span></span>
+<span data-ttu-id="0e624-103">Támogatja a szimbolikus csatolást, hogy  **\*-cikk** és néhány kapcsolódó parancsmagok bővültek.</span><span class="sxs-lookup"><span data-stu-id="0e624-103">To support symbolic links, **\*-Item** and a few related cmdlets have been extended.</span></span> <span data-ttu-id="0e624-104">Most szimbolikus hivatkozásokat hozhat létre egyszerű soronként **új elem**.</span><span class="sxs-lookup"><span data-stu-id="0e624-104">Now you can create symbolic links in a single, simple line with **New-Item**.</span></span> <span data-ttu-id="0e624-105">Láthatja, hogy a cikk kapcsolódó parancsmagok (**Remove-cikk, a Get-ChildItem**) hasonlóan viselkednek a nagyon előtt.</span><span class="sxs-lookup"><span data-stu-id="0e624-105">You’ll notice that the Item-related cmdlets (**Remove-Item, Get-ChildItem**) behave very similarly to before.</span></span>
 
-<span data-ttu-id="fa66d-106">Az alábbi példában látható, néhány új képessége esetekben használja:</span><span class="sxs-lookup"><span data-stu-id="fa66d-106">The following shows some use cases of the new capabilities:</span></span>
+<span data-ttu-id="0e624-106">Az alábbi példában látható, néhány új képessége esetekben használja:</span><span class="sxs-lookup"><span data-stu-id="0e624-106">The following shows some use cases of the new capabilities:</span></span>
 
-## <a name="new-item"></a><span data-ttu-id="fa66d-107">ÚJ ELEM</span><span class="sxs-lookup"><span data-stu-id="fa66d-107">NEW-ITEM</span></span>
+## <a name="new-item"></a><span data-ttu-id="0e624-107">ÚJ ELEM</span><span class="sxs-lookup"><span data-stu-id="0e624-107">NEW-ITEM</span></span>
 
-### <a name="symbolic-link-files"></a><span data-ttu-id="fa66d-108">SZIMBOLIKUS HIVATKOZÁST FÁJLOK</span><span class="sxs-lookup"><span data-stu-id="fa66d-108">SYMBOLIC LINK FILES</span></span>
+### <a name="symbolic-link-files"></a><span data-ttu-id="0e624-108">SZIMBOLIKUS HIVATKOZÁST FÁJLOK</span><span class="sxs-lookup"><span data-stu-id="0e624-108">SYMBOLIC LINK FILES</span></span>
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
 cd C:\Temp
-New-Item -ItemType SymbolicLink -Name MySymLinkFile.txt -Target $pshome\profile.ps1 
+New-Item -ItemType SymbolicLink -Name MySymLinkFile.txt -Target $pshome\profile.ps1
 
 # Target is an alias to the Value parameter
 # All 3 commands below are equivalent to above
@@ -31,13 +31,13 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-### <a name="symbolic-link-directories"></a><span data-ttu-id="fa66d-109">SZIMBOLIKUS HIVATKOZÁST KÖNYVTÁRAK</span><span class="sxs-lookup"><span data-stu-id="fa66d-109">SYMBOLIC LINK DIRECTORIES</span></span>
+### <a name="symbolic-link-directories"></a><span data-ttu-id="0e624-109">SZIMBOLIKUS HIVATKOZÁST KÖNYVTÁRAK</span><span class="sxs-lookup"><span data-stu-id="0e624-109">SYMBOLIC LINK DIRECTORIES</span></span>
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
 # ItemType is the same for files and directories - autodetect based on specified target
 cd C:\Temp
-New-Item -ItemType SymbolicLink -Name MySymLinkDir -Target $pshome 
+New-Item -ItemType SymbolicLink -Name MySymLinkDir -Target $pshome
 
 # Target is an alias to the Value parameter
 # Similar to above, any combination of Path and Name also works
@@ -46,21 +46,21 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-### <a name="hard-links"></a><span data-ttu-id="fa66d-110">A RÖGZÍTETT HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="fa66d-110">HARD LINKS</span></span>
+### <a name="hard-links"></a><span data-ttu-id="0e624-110">A RÖGZÍTETT HIVATKOZÁSOK</span><span class="sxs-lookup"><span data-stu-id="0e624-110">HARD LINKS</span></span>
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
 # Same combinations of Path and Name allowed as described above
 ```
 
-### <a name="directory-junctions"></a><span data-ttu-id="fa66d-111">DIRECTORY ELHELYEZNI PONTOKRA</span><span class="sxs-lookup"><span data-stu-id="fa66d-111">DIRECTORY JUNCTIONS</span></span>
+### <a name="directory-junctions"></a><span data-ttu-id="0e624-111">DIRECTORY ELHELYEZNI PONTOKRA</span><span class="sxs-lookup"><span data-stu-id="0e624-111">DIRECTORY JUNCTIONS</span></span>
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-## <a name="get-childitem"></a><span data-ttu-id="fa66d-112">GET-CHILDITEM</span><span class="sxs-lookup"><span data-stu-id="fa66d-112">GET-CHILDITEM</span></span>
+## <a name="get-childitem"></a><span data-ttu-id="0e624-112">GET-CHILDITEM</span><span class="sxs-lookup"><span data-stu-id="0e624-112">GET-CHILDITEM</span></span>
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem
@@ -111,7 +111,7 @@ SpecialBuild: False
 Language:
 ```
 
-## <a name="remove-item"></a><span data-ttu-id="fa66d-113">ELEM ELTÁVOLÍTÁSA</span><span class="sxs-lookup"><span data-stu-id="fa66d-113">REMOVE-ITEM</span></span>
+## <a name="remove-item"></a><span data-ttu-id="0e624-113">REMOVE-ITEM</span><span class="sxs-lookup"><span data-stu-id="0e624-113">REMOVE-ITEM</span></span>
 
 ```powershell
 # Works like any other item type
@@ -124,4 +124,3 @@ Remove-Item C:\Temp\MySymLinkDir
 # Removes the files in the target directory and MySymLinkDir
 Remove-Item C:\Temp\MySymLinkDir -Force
 ```
-
