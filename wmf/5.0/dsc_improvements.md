@@ -1,23 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: 6419d45617a76b2e3a8a244d7194c96cb02e6445
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: b2f50b9cbab792390dae8f37163873c5bf759089
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="improvements-in-desired-state-configuration-dsc"></a>A célállapot-konfiguráció (DSC) fejlesztései
+# <a name="improvements-in-desired-state-configuration-dsc"></a>A célállapot-konfiguráló (DSC) szolgáltatás javításai
 
-## <a name="dsc-feedback-survey"></a>A DSC-visszajelzés felmérés   
+## <a name="dsc-feedback-survey"></a>A DSC-visszajelzés felmérés
 
-Miután egy ideig, az új PowerShell célállapot-konfiguráció szolgáltatásai és funkciói ebben a kiadásban bevezetett használandó korábban, kérjük, segítsen folytassa a termék jobb alapul véve egy gyors [WMF 5.0 RTM felmérés](https://www.surveymonkey.com/r/SGLQM5W). A felmérés lehetővé teszi megosztani az alábbi új szolgáltatásokkal és funkciókkal kapcsolatos visszajelzését. 
+Miután egy ideig, az új PowerShell célállapot-konfiguráció szolgáltatásai és funkciói ebben a kiadásban bevezetett használandó korábban, kérjük, segítsen folytassa a termék jobb alapul véve egy gyors [WMF 5.0 RTM felmérés](https://www.surveymonkey.com/r/SGLQM5W). A felmérés lehetővé teszi megosztani az alábbi új szolgáltatásokkal és funkciókkal kapcsolatos visszajelzését.
 
-Köszönjük, hogy részt vesz a felmérés! Visszajelzése nagyon fontos a számunkra.  
+Köszönjük, hogy részt vesz a felmérés! Visszajelzése nagyon fontos a számunkra.
 
 **1.1 a frissített PSDesiredStateConfiguration verziója**
 
-1.1 környezetébe PsDesiredStateConfiguration modul verziója. A DSC-konfigurációk a WMF 5.0 Preview-ban 2015. február lefordított vagy korábbi PowerShell vagy WMF 5.0 nem fog működni. 
-
+1.1 környezetébe PsDesiredStateConfiguration modul verziója. A DSC-konfigurációk a WMF 5.0 Preview-ban 2015. február lefordított vagy korábbi PowerShell vagy WMF 5.0 nem fog működni.

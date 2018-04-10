@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: c3645a6ba83081bd5ac31a13af0f67f6538db22a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: 9065315ef39129e6a28234d972fe350fd5e7e11d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="creating-and-connecting-to-a-jea-endpoint"></a>Hoz létre és csatlakoztatja a JEA-végpont
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a>JEA-végpont létrehozása és csatlakozás a végponthoz
 JEA-végpont létrehozása kell létrehozni és regisztrálni egy kifejezetten konfigurált PowerShell munkamenet konfigurációs fájlt, amely a hozhatók létre a **New-PSSessionConfigurationFile** parancsmag.
 
 ```powershell
-New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc" 
+New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-Ezzel létrehoz egy munkamenet-konfigurációs fájlt, amely a következőképpen néz ki: 
+Ezzel létrehoz egy munkamenet-konfigurációs fájlt, amely a következőképpen néz ki:
 ```powershell
 @{
 
@@ -52,10 +52,10 @@ RoleDefinitions = @{
     'CONTOSO\NonAdmin_Operators' = @{
         'RoleCapabilities' = 'Maintenance' } }
 
-} 
+}
 ```
 A JEA-végpont létrehozása, ha a parancs (és a fájlban tartozó kulcsok) a következő paramétereket kell beállítani:
-1.  A RestrictedRemoteServer SessionType
+1.  SessionType to RestrictedRemoteServer
 2.  A RunAsVirtualAccount **$true**
 3.  A könyvtár "keresztül a képernyőre pillant" ki szeretné menteni után minden munkamenet TranscriptPath
 4.  RoleDefinitions való egy kivonattáblát, amely meghatározza, hogy mely csoportok rendelkezzenek hozzáféréssel a "Szerepkör képességeit."  Ez a mező határozza **ki** teheti **mi** ezen a végponton.   Szerepkör képességek olyan különleges, amelyeket hamarosan részletesen.
@@ -64,7 +64,7 @@ A JEA-végpont létrehozása, ha a parancs (és a fájlban tartozó kulcsok) a k
 A RoleDefinitions mező határozza meg, hogy mely csoportok hozzáfért mely szerepkör-szolgáltatásait.  Egy szerepkör, amely meghatározza, hogy elérhetővé tehető képességek egy készletét, csatlakozó felhasználók fájl.  Szerepkör képességeket is létrehozhat a **New-PSRoleCapabilityFile** parancsot.
 
 ```powershell
-New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc" 
+New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
 Ezzel létrejön egy sablon szerepkör képesség, amely a következőképpen néz ki:
@@ -128,7 +128,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # Assemblies to load when applied to a session
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
-} 
+}
 
 ```
 A JEA munkamenet-konfiguráció által használandó szerepkör képességek kell menteni, egy érvényes PowerShell-modul egy "RoleCapabilities" nevű könyvtár. A modul rendelkezhet több szerepkör szolgáltatásfájlokban, ha szükséges.
@@ -138,7 +138,7 @@ Indul el, hogy mely parancsmagok, függvények, aliasok és a felhasználók el�
 Végül, miután befejezte a munkamenet-konfiguráció és a kapcsolódó szerepkör-képességek testreszabása, regisztrálja a munkamenet-konfiguráció és a végpont létrehozásához futtassa a **Register-PSSessionConfiguration**.
 
 ```powershell
-Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
+Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>A JEA végponthoz kapcsolódni
@@ -148,4 +148,3 @@ A JEA végpont csatlakozik működik, mint bármely más PowerShell végpont mű
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 A JEA munkamenethez való csatlakozás után lesz korlátozva futó szerepkör funkciója, amelyek rendelkezik hozzáféréssel a parancsok szerepel az engedélyezési listán. Ha a parancs nem engedélyezett az adott szerepkörhöz, akkor hibaüzenetet kap.
-

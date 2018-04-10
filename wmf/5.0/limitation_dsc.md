@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, beállítás"
-ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: 66ceea383b78b2654caa4f1de16a30beea0e7fd3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Célállapot-konfiguráció (DSC) ismert problémák és korlátozások
 
@@ -30,7 +30,7 @@ Start-DscConfiguration és egyéb DSC-parancsmagokkal meghiúsulhat, miután tel
 ```
 
 **Megoldás:** DSCEngineCache.mof törlése a következő parancs futtatásával egy rendszergazda jogú PowerShell-munkamenetben (Futtatás rendszergazdaként):
-    
+
 ```powershell
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
@@ -151,7 +151,7 @@ A DSC-erőforrások osztály-alapú hibakeresés nem támogatott ebben a kiadás
 **Megoldás:** nincs.
 
 
-<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Változók & DSC osztály-alapú erőforrás $script hatókörben megadott függvények nem maradnak meg több hívások DSC-erőforrás között 
+<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Változók & DSC osztály-alapú erőforrás $script hatókörben megadott függvények nem maradnak meg több hívások DSC-erőforrás között
 -------------------------------------------------------------------------------------------------------------------------------------
 
 Start-DSCConfiguration több egymást követő hívások sikertelen lesz, ha a configuration osztály-alapú erőforrás, változók vagy $script hatókörben megadott funkciók használ.
@@ -184,7 +184,7 @@ Get-DscResource-szintaxis nem tükrözi PsDscRunAsCredential megfelelően erőfo
 
 A WindowsOptionalFeature DSC-erőforrás nem érhető el a Windows 7. Ehhez az erőforráshoz van szükség, a DISM-modulját, és a DISM-parancsmagok érhetők el a Windows 8 és újabb verziókban a Windows operációs rendszer elindítása.
 
-<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Osztály-alapú DSC erőforrások importálás-DscResource - ModuleVersion előfordulhat, hogy nem működik megfelelően   
+<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Osztály-alapú DSC erőforrások importálás-DscResource - ModuleVersion előfordulhat, hogy nem működik megfelelően
 ------------------------------------------------------------------------------------------
 Ha a fordítás fürtcsomópont egy osztály-alapú DSC erőforrásmodul, több verziójának `Import-DscResource -ModuleVersion` nem veszi a megadott verzióját, és annak az eredménye a következő fordítási hiba.
 
@@ -198,16 +198,16 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 ```
 
 **Megoldás:** importálja a szükséges verziót megadásával a *ModuleSpecification* az objektum a `-ModuleName` a `RequiredVersion` kulcs van megadva az alábbiak szerint:
-``` PowerShell  
-Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}  
-```  
+``` PowerShell
+Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
+```
 
 <a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Néhány DSC-erőforrásokhoz, mint a beállításjegyzék erőforrás indítsa el a kérelem feldolgozása hosszú ideig tarthat.
 --------------------------------------------------------------------------------------------------------------------------------
 
 **Resolution1:** hozzon létre egy ütemezett feladat, amely a szükségtelenné vált a következő mappa rendszeres időközönként.
-``` PowerShell 
-$env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis 
+``` PowerShell
+$env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
 **Resolution2:** karbantartása a DSC-konfiguráció módosítása a *CommandAnalysis* végén található a konfigurációs mappát.
@@ -226,7 +226,7 @@ Configuration $configName
         ValueData = $Node.RegisteredOwnerData
     }
     #
-    # Script to delete the config 
+    # Script to delete the config
     #
     script DeleteCommandAnalysisCache
     {
@@ -237,4 +237,3 @@ Configuration $configName
     }
 }
 ```
-

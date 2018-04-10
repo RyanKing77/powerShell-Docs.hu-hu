@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: 4ccbdcc0eb3cd07b46ab51b63689fe21873cdd7e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: 41a676939cb45e780b572b8e718ae315d641d4f8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="information-stream"></a>Információk az adatfolyam
+# <a name="information-stream"></a>Információfolyam
 
 Egy új strukturált adatokat adatfolyam már használható parancsfájl és a gazdagép közötti strukturált adatok átviteléhez. **Write-Host** is frissült az adatfolyamot, ahol most rögzítése, és azt csend kimenete hozható létre. Az új **írási-információk** parancsmag (valamint a megfelelő WriteInformation API) használt **- InformationVariable** és **- InformationAction** általános paraméterek lehetővé teszi a nagyobb rugalmasságot és funkció.
 
@@ -91,7 +91,7 @@ WARNING: Some important logging information
 PS C:\Users\demo>
 PS C:\Users\demo> ## All output includes useful properties that you would expect
 PS C:\Users\demo> ## of a generic event stream
-PS C:\Users\demo> $ivOutput.Process 
+PS C:\Users\demo> $ivOutput.Process
 MessageData     : System.Diagnostics.Process (powershell)
 Source          : c:\temp\OutputGusher.ps1
 TimeGenerated   : 2/9/2015 5:08:52 PM
@@ -104,7 +104,7 @@ ManagedThreadId : 8
 
 PS C:\Users\demo> ## And of course, this works from hosting applications.
 PS C:\Users\demo> $ps = [PowerShell]::Create()
-PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke() 
+PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke()
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -123,4 +123,3 @@ ProcessId       : 4008
 NativeThreadId  : 2276
 ManagedThreadId : 14
 ```
-

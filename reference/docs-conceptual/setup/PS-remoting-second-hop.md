@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A kétugrásos létrehozása a PowerShell-távelérés"
-ms.openlocfilehash: 726b4d1b7a41e9e344347543ecde26da6547bcf3
-ms.sourcegitcommit: fff6c0522508eeb408cb055ba4c9337a2759b392
+title: A kétugrásos létrehozása a PowerShell-távelérés
+ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>A kétugrásos létrehozása a PowerShell-távelérés
 
@@ -55,7 +55,7 @@ Nem korlátozott Kerberos-delegálás a kétugrásos végrehajtásához is haszn
 
 ## <a name="kerberos-constrained-delegation"></a>Kerberos által korlátozott delegálás
 
-(Nem erőforrás-alapú) régebbi a korlátozott delegálás segítségével ellenőrizze a kétugrásos. 
+(Nem erőforrás-alapú) régebbi a korlátozott delegálás segítségével ellenőrizze a kétugrásos.
 
 >**Megjegyzés:** Active Directory-fiókokat, amelyek rendelkeznek a **fiók bizalmas és nem delegálható** tulajdonságkészlet nem delegálható. További információkért lásd: [biztonsági fókusz: "Fiók bizalmas és nem delegálható" kiemelt jogosultságokkal rendelkező fiókok elemzése](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) és [Kerberos hitelesítési eszközök és beállítások](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
@@ -89,7 +89,7 @@ A második ugrásos forgatókönyvet a fent leírt konfigurálja _ServerC_ megad
 
 - Windows Server 2012 vagy újabb szükséges.
 - A WinRM nem támogatja a második Ugrás.
-- Objektumok és az egyszerű szolgáltatásnevek (SPN) frissítése jogosultságra van szükség. 
+- Objektumok és az egyszerű szolgáltatásnevek (SPN) frissítése jogosultságra van szükség.
 
 ### <a name="example"></a>Példa
 
@@ -108,8 +108,8 @@ Számos elérhető parancsmagok most már rendelkezik egy **PrincipalsAllowedToD
 ```powershell
 PS C:\> Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
 
-CommandType Name                 ModuleName     
------------ ----                 ----------     
+CommandType Name                 ModuleName
+----------- ----                 ----------
 Cmdlet      New-ADComputer       ActiveDirectory
 Cmdlet      New-ADServiceAccount ActiveDirectory
 Cmdlet      New-ADUser           ActiveDirectory
@@ -123,10 +123,10 @@ A **PrincipalsAllowedToDelegateToAccount** paraméter állandóként állítja b
 Most már a kiszolgálókat képviselő fogjuk használni a változók beállítása:
 
 ```powershell
-# Set up variables for reuse            
-$ServerA = $env:COMPUTERNAME            
-$ServerB = Get-ADComputer -Identity ServerB            
-$ServerC = Get-ADComputer -Identity ServerC            
+# Set up variables for reuse
+$ServerA = $env:COMPUTERNAME
+$ServerB = Get-ADComputer -Identity ServerB
+$ServerC = Get-ADComputer -Identity ServerC
 ```
 
 A Rendszerfelügyeleti webszolgáltatások (és ezért a PowerShell-távelérést) fiókként fut, a számítógép alapértelmezés szerint. Ez bármikor megtekintheti a **StartName** tulajdonsága a `winrm` szolgáltatás:
@@ -140,22 +140,22 @@ StartName : NT AUTHORITY\NetworkService
 A _ServerC_ engedélyezni a PowerShell távelérése munkamenetből a _ServerB_, azt fogja hozzáférést úgy, hogy a **PrincipalsAllowedToDelegateToAccount** a paraméter _ServerC_ a számítógép-objektuma _ServerB_:
 
 ```powershell
-# Grant resource-based Kerberos constrained delegation            
-Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB            
-            
-# Check the value of the attribute directly            
-$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity            
-$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access            
-            
-# Check the value of the attribute indirectly            
+# Grant resource-based Kerberos constrained delegation
+Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
+
+# Check the value of the attribute directly
+$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity
+$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
+
+# Check the value of the attribute indirectly
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
 A Kerberos [kulcsszolgáltató (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) gyorsítótárak megtagadta a hozzáférést kísérletek (negatív gyorsítótárral) 15 percig. Ha _ServerB_ korábban kísérelt meg hozzáférni _ServerC_, szüksége lesz a gyorsítótárat kiürítheti a _ServerB_ figyelőn a következő parancsot:
 
 ```powershell
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    klist purge -li 0x3e7            
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    klist purge -li 0x3e7
 }
 ```
 
@@ -164,14 +164,14 @@ Sikerült továbbá indítsa újra a számítógépet, vagy várjon, amíg a gyo
 A gyorsítótár kiürítése, miután sikeresen futtathatja kódot _ServerA_ keresztül _ServerB_ való _ServerC_:
 
 ```powershell
-# Capture a credential            
-$cred = Get-Credential Contoso\Alice            
-            
-# Test kerberos double hop            
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    Test-Path \\$($using:ServerC.Name)\C$            
-    Get-Process lsass -ComputerName $($using:ServerC.Name)            
-    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)            
+# Capture a credential
+$cred = Get-Credential Contoso\Alice
+
+# Test kerberos double hop
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    Test-Path \\$($using:ServerC.Name)\C$
+    Get-Process lsass -ComputerName $($using:ServerC.Name)
+    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)
 }
 ```
 
@@ -180,13 +180,13 @@ Ebben a példában a `$using` változó segítségével ellenőrizze a `$ServerC
 A több kiszolgálót hitelesítő adatok delegálásának engedélyezése _ServerC_, állítsa be a a **PrincipalsAllowedToDelegateToAccount** paraméter _ServerC_ tömbhöz:
 
 ```powershell
-# Set up variables for each server            
-$ServerB1 = Get-ADComputer -Identity ServerB1            
-$ServerB2 = Get-ADComputer -Identity ServerB2            
-$ServerB3 = Get-ADComputer -Identity ServerB3            
-$ServerC  = Get-ADComputer -Identity ServerC            
-            
-# Grant resource-based Kerberos constrained delegation            
+# Set up variables for each server
+$ServerB1 = Get-ADComputer -Identity ServerB1
+$ServerB2 = Get-ADComputer -Identity ServerB2
+$ServerB3 = Get-ADComputer -Identity ServerB3
+$ServerC  = Get-ADComputer -Identity ServerC
+
+# Grant resource-based Kerberos constrained delegation
 Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
@@ -194,9 +194,9 @@ Set-ADComputer -Identity $ServerC `
 Ha engedélyezni szeretné a kétugrásos tartományokban, vegye fel teljesen minősített tartománynevét (FQDN) a tartományvezérlő a tartomány, amelyhez _ServerB_ tartozik:
 
 ```powershell
-# For ServerC in Contoso domain and ServerB in other domain            
-$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com            
-$ServerC = Get-ADComputer -Identity ServerC            
+# For ServerC in Contoso domain and ServerB in other domain
+$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com
+$ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
@@ -232,7 +232,7 @@ A második Ugrás probléma megoldására PSSessionConfiguration és RunAs haszn
 - A konfigurációt igényel **PSSessionConfiguration** és **RunAs** az összes köztes kiszolgálón (_ServerB_).
 - Tartomány használata esetén van szükség a jelszó karbantartási **RunAs** fiók
 
-## <a name="just-enough-administration-jea"></a>Éppen elég felügyelettel (JEA)
+## <a name="just-enough-administration-jea"></a>Just Enough Administration (JEA)
 
 JEA lehetővé teszi, hogy milyen parancsokat rendszergazdaként futtathatja egy PowerShell-munkamenetben korlátozhatja. A második Ugrás probléma megoldásához használható.
 
@@ -266,24 +266,15 @@ Hitelesítő adatok belül átadhatók a **ScriptBlock** hívásakor paramétere
 A következő példa bemutatja, hogyan a hitelesítő adatok továbbítása egy **Invoke-Command** parancsfájlblokk:
 
 ```powershell
-# This works without delegation, passing fresh creds            
-# Note $Using:Cred in nested request            
-$cred = Get-Credential Contoso\Administrator            
-Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {            
-    hostname            
-    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}            
+# This works without delegation, passing fresh creds
+# Note $Using:Cred in nested request
+$cred = Get-Credential Contoso\Administrator
+Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
+    hostname
+    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}
 }
 ```
 
 ## <a name="see-also"></a>Lásd még:
 
 [PowerShell távoli eljáráshívásainak biztonsági megfontolásai](WinRMSecurity.md)
-
-
-
-
-
-
-
-
- 

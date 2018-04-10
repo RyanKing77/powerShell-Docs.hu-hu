@@ -1,17 +1,17 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell parancsmag
-ms.date: 2016-12-12
-title: "pswaauthorizationrule hozzáadása"
+ms.date: 12/12/2016
+title: pswaauthorizationrule hozzáadása
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -62,7 +62,7 @@ Az engedélyezési szabályok kiértékelése elsődleges bejelentkezési hitele
 
 Adja meg egy számítógépcsoport nevét, amelyhez ez a szabály engedélyezi a hozzáférést az Active Directory tartományi szolgáltatások (AD DS) vagy helyi csoportot.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | Igaz                                 |
@@ -75,7 +75,7 @@ Adja meg egy számítógépcsoport nevét, amelyhez ez a szabály engedélyezi a
 
 A számítógép neve, amelyhez ez a szabály engedélyezi a hozzáférést.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | Igaz                                 |
@@ -88,7 +88,7 @@ A számítógép neve, amelyhez ez a szabály engedélyezi a hozzáférést.
 
 Megadja a nevét, a Windows PowerShell munkamenet-konfiguráció, más néven futási térből, amelyhez ez a szabály engedélyezi a hozzáférést.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | Igaz                                 |
@@ -101,7 +101,7 @@ Megadja a nevét, a Windows PowerShell munkamenet-konfiguráció, más néven fu
 
 Megadja a **PSCredential** objektum, amely a Windows PowerShell Web Access engedélyezési szabályok módosítása használni kívánt felhasználói fiók. Ha nem adja hozzá ezt a paramétert, a parancsmag használja az aktuálisan bejelentkezett felhasználói fiók. A beolvasandó egy **PSCredential** objektum, amely pedig szükséges, adja hozzá az engedélyezési szabályok távolról, futtassa a [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) parancsmag.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -115,7 +115,7 @@ Megadja a **PSCredential** objektum, amely a Windows PowerShell Web Access enged
 A felhasználó jóváhagyásának kérése nélkül futtatja a parancsot. \
 Ezenkívül rendszer is kérni fogja a megerősítő egy egyszerű vagy rövid számítógép nevét (például a nevet, amely nem egy tartománynevet vagy nincs teljesen minősített) beírásakor. Jóváhagyás biztonsági okokból van szükség, hogy az egyszerű név segítségével adja hozzá a számítógépet, csak ha a számítógép egy munkacsoport.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -128,7 +128,7 @@ Ezenkívül rendszer is kérni fogja a megerősítő egy egyszerű vagy rövid s
 
 Megadja a szabály rövid nevét.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -141,7 +141,7 @@ Megadja a szabály rövid nevét.
 
 Megadja egy vagy több felhasználói csoport nevét az AD DS vagy helyi csoportot, amelyhez ez a szabály engedélyezi a hozzáférést.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | Igaz                                 |
@@ -155,7 +155,7 @@ Megadja egy vagy több felhasználói csoport nevét az AD DS vagy helyi csoport
 Itt adhatja meg, amelyhez ez a szabály engedélyezi a hozzáférést egy vagy több felhasználó. A felhasználónév lehet egy helyi felhasználói fiók az átjáró számítógépre vagy egy felhasználót az Active Directory tartományi Szolgáltatásokban.
 A formátum `domain\user` vagy `computer\user`.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | Igaz                                 |
@@ -217,9 +217,9 @@ Ez a példa bemutatja, hogyan a felhasználótól, felhasználói név értékek
 Ez a példa bemutatja, hogyan minden paraméter láncból értékek tegye meg a tulajdonság nevét.
 
 ````PowerShell
-$o = New-Object -TypeName PSObject | 
-    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
-    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+$o = New-Object -TypeName PSObject |
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
     Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell

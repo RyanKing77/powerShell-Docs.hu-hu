@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, beállítás"
-ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: cedda61241df4965fe5db723f03e3497f046fa44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="extract-and-parse-structured-objects-out-of-string"></a>Bontsa ki és Structured objektumok kívül karakterlánc elemzése
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>Strukturált objektumok karakterláncokból való kibontása és elemzése
 Az azzal a ConvertFrom-karakterlánc parancsmag további funkciókkal is:
 
 -   Alapértelmezés szerint eltávolítja a mértékben text tulajdonságához. Megadhatja a - IncludeExtent paraméterrel.
@@ -67,7 +67,7 @@ Néhány példa átmásolja a fájlt, amely a sablont használhatja:
 
     Renton, WA
 
-   
+
 
 Helyezze a kinyerési, kívánt adatok körül kapcsos zárójelek adjon neki egy nevet, azt megteheti. Mivel a **neve** tulajdonság (és a kapcsolódó egyéb tulajdonságok) is többször jelenik meg, használja a csillag (\*) jelzi, hogy az eredmény több rekordot (helyett álló, lemezcsoport típusú tulajdonságok csomagolja ki egy rekord):
 
@@ -90,4 +90,3 @@ Példák, a készletből **ConvertFrom-karakterlánc** mostantól automatikusan 
 > Ana Trujillo...                Ana Trujillo Redmond WA Antonio Moreno...              Antonio Moreno Renton WA Thomas Zsigmond...                Thomas Zsigmond Seattle WA lengyel Berglund...          Lengyel Berglund Redmond WA Hanna Moos...                  Hanna Moos Puyallup WA
 
 További adatok módosítását. a kibontott szöveg, amelyet ehhez a **ExtentText** tulajdonság rögzíti a raw szöveg, amelyből a rekordot ki lett olvasni. Visszajelzés a szolgáltatást, vagy amelynek nehézségei vannak példák írása tartalmak megosztása, írjon e-mailt <psdmfb@microsoft.com>.
-

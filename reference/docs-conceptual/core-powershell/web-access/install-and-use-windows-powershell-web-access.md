@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell parancsmag
-title: "telepítheti és használhatja a windows powershell web access"
-ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: telepítheti és használhatja a windows powershell web access
+ms.openlocfilehash: 8f140e73ce833fd1cfadbe1d8ee0fe0bb2d08873
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Webes Windows PowerShell-elérés telepítése és használata
 
@@ -96,7 +96,7 @@ A Windows PowerShell Web Access átjárót telepítheti a Windows Server 2012 R2
    >**![Megjegyzés:](images/note.jpeg) Megjegyzés**
    >
    >A Windows PowerShell-parancsmagok használatával történő telepítése a Windows PowerShell Web Access nem ad hozzá webkiszolgáló (IIS) felügyeleti eszközök alapértelmezés szerint. Ha szeretné telepíteni a kezelőeszközöket ugyanarra a kiszolgálóra, mint a Windows PowerShell Web Access-átjáró, vegye fel a `-IncludeManagementTools` paramétert a telepítési parancshoz (ebben a lépésben ismertetett). Ha a Windows PowerShell Web Access webhely távoli számítógépről kezeli, telepítse az IIS-kezelő beépülő modul telepítésével [távoli kiszolgáló felügyeleti Toolsfor Windows 8.1](http://go.microsoft.com/fwlink/?LinkID=304145) vagy [távoli kiszolgáló felügyelete Windows 8-eszközök](http://go.microsoft.com/fwlink/p/?LinkID=238560) , amelyből az átjáró kezelni kívánt számítógépen.
-   
+
    Szerepkörök és szolgáltatások offline virtuális merevlemezen történő telepítéséhez hozzá kell adnia a `-ComputerName` és a `-VHD` paramétert is. A(z) `-ComputerName` paraméter a kiszolgáló nevét tartalmazza, amelyhez a VHD-t csatlakoztatni kívánja, a(z) `-VHD` paraméter pedig a VHD-fájl elérési útvonalát tartalmazza a megadott kiszolgálón.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
@@ -113,8 +113,8 @@ A rendszergazdák kicserélhetik a tesztcélú tanúsítványt az IIS-kezelő ko
 A Windows PowerShell Web Access webes alkalmazás konfigurálását hajthatja végre a `Install-PswaWebApplication` parancsmag vagy az IIS-kezelőben GUI-alapú konfigurációs lépések elvégzésével. Alapértelmezés szerint a parancsmag telepíti a webes alkalmazás **pswa** (és egy alkalmazáskészletet, **pswa_pool**), a a **Default Web Site** tároló, ahogy az IIS-kezelőben; Ha szükség esetén utasíthatja a parancsmagot a webalkalmazás alapértelmezett helytárolójának módosítására. Az IIS-kezelő webalkalmazásokhoz elérhető konfigurációs beállításokat kínál, például a portszám vagy az SSL-tanúsítvány módosítását.
 
 >**![Biztonsági megjegyzés](images/securitynote.jpeg) biztonsági Megjegyzés**
-> 
->Erősen ajánlott, hogy a rendszergazdák az átjárót egy érvényes, hitelesítésszolgáltató által aláírt tanúsítvány használatára konfigurálják. 
+>
+>Erősen ajánlott, hogy a rendszergazdák az átjárót egy érvényes, hitelesítésszolgáltató által aláírt tanúsítvány használatára konfigurálják.
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>A Webes Windows PowerShell-elérési átjáró konfigurálása egy tesztcélú tanúsítvánnyal az Install-PswaWebApplication használatával
 
@@ -145,8 +145,8 @@ A következő beállítások a parancsmag futtatásával konfigurálhatók. Ezek
 
 Ebben a példában az eredményül kapott webhelye a Windows PowerShell Web Access https://\<*kiszolgáló_neve*\>/myWebApp.
 
->**![Megjegyzés:](images/note.jpeg) Megjegyzés** 
-> 
+>**![Megjegyzés:](images/note.jpeg) Megjegyzés**
+>
 >Addig nem jelentkezhet be, amíg engedélyezési szabályok hozzáadásával nem biztosít hozzáférést a felhasználók számára a webhelyhez. További információkért lásd: [korlátozó engedélyezési szabály konfigurálása](#configure-a-restrictive-authorization-rule) és [engedélyezési szabályai és biztonsági szolgáltatások a Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>A Webes Windows PowerShell-elérési átjáró konfigurálása egy eredeti tanúsítvánnyal az Install-PswaWebApplication parancsmag és az IIS-kezelő használatával
@@ -193,9 +193,9 @@ Ebben a példában az eredményül kapott webhelye a Windows PowerShell Web Acce
 
     A Windows PowerShell Web Access férhetnek megnyitása **https://\<kiszolgáló_neve\>/pswa** egy böngészőablakban.
 
->**![Megjegyzés:](images/note.jpeg) Megjegyzés** 
-> 
->Addig nem jelentkezhet be, amíg engedélyezési szabályok hozzáadásával nem biztosít hozzáférést a felhasználók számára a webhelyhez. 
+>**![Megjegyzés:](images/note.jpeg) Megjegyzés**
+>
+>Addig nem jelentkezhet be, amíg engedélyezési szabályok hozzáadásával nem biztosít hozzáférést a felhasználók számára a webhelyhez.
 >További információkért lásd: [korlátozó engedélyezési szabály konfigurálása](#configure-a-restrictive-authorization-rule), ebben a témakörben és [engedélyezési szabályai és biztonsági szolgáltatások a Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Korlátozó engedélyezési szabály konfigurálása
@@ -219,7 +219,7 @@ További információt a Windows PowerShell Web Access engedélyezési szabálya
    `Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>`
 
    Ez az engedélyezési szabály lehetővé teszi, hogy egy adott felhasználó hozzáférést egy számítógéphez a hálózaton, amelyhez általában hozzáférhetnek, hozzáférést egy adott munkamenet-konfiguráció, ami a felhasználó szokásos parancsfájl-kezelési és parancsmag-igényeihez.
-   
+
    A következő példában a `Contoso` tartomány `JSmith` nevű felhasználója hozzáférést kap a `Contoso_214` számítógép kezeléséhez, és egy `NewAdminsOnly` nevű munkamenet-konfiguráció használatához.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
@@ -254,7 +254,7 @@ A szerepkörök hozzáadása és szolgáltatások varázsló a Kiszolgálókezel
 
 6. A rendszer a szükséges szolgáltatások, például a .NET keretrendszer 4.5-ös verziójának és a Webkiszolgáló (IIS) szerepkör-szolgáltatásainak hozzáadását kéri. Adja hozzá a szükséges szolgáltatásokat, és lépjen tovább.
 
-    >**![Megjegyzés:](images/note.jpeg) Megjegyzés** 
+    >**![Megjegyzés:](images/note.jpeg) Megjegyzés**
     >
     >Is Windows PowerShell Web Access telepítése a szerepkörök hozzáadása és szolgáltatások varázsló használatával telepíti a webkiszolgáló (IIS), beleértve az IIS-kezelő beépülő modul. A beépülő modul és egyéb IIS felügyeleti eszközök alapértelmezés szerint telepítendő hozzáadása szerepkörök és szolgáltatások varázsló használatakor. Ha a Windows PowerShell Web Access telepítése Windows PowerShell-parancsmagok használatával, a következő eljárásban leírtak szerint, a felügyeleti eszközök nem lettek hozzáadva alapértelmezés szerint.
 
@@ -292,7 +292,10 @@ Ebben a szakaszban található utasítások szolgálnak a Windows PowerShell Web
 
 10. ![](images/SecurityNote.jpeg) Nem kötelező biztonsági lépés:
 
-    A webhelyet a fát megjelenítő ablaktáblán kattintson duplán a **SSL-beállítások** a tartalompanelen. Válassza ki **SSL megkövetelése**, majd a **műveletek** ablaktáblában kattintson **alkalmaz**. Nem kötelező a **SSL-beállítások** ablaktáblán megkövetelheti, hogy a Windows PowerShell Web Access webhely csatlakozó felhasználók rendelkezzenek ügyféltanúsítványokkal. Az ügyféltanúsítványok segítségével ellenőrizheti az ügyféleszközök felhasználóinak identitását. Hogyan Ügyféltanúsítványok megkövetelése hogy növelni a Windows PowerShell Web Access biztonsági kapcsolatos további információkért lásd: [engedélyezési szabályai és biztonsági szolgáltatások a Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) az útmutatóban.
+    A webhelyet a fát megjelenítő ablaktáblán kattintson duplán a **SSL-beállítások** a tartalompanelen.
+Válassza ki **SSL megkövetelése**, majd a **műveletek** ablaktáblában kattintson **alkalmaz**.
+Nem kötelező a **SSL-beállítások** ablaktáblán megkövetelheti, hogy a Windows PowerShell Web Access webhely csatlakozó felhasználók rendelkezzenek ügyféltanúsítványokkal. Az ügyféltanúsítványok segítségével ellenőrizheti az ügyféleszközök felhasználóinak identitását.
+Hogyan Ügyféltanúsítványok megkövetelése hogy növelni a Windows PowerShell Web Access biztonsági kapcsolatos további információkért lásd: [engedélyezési szabályai és biztonsági szolgáltatások a Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) az útmutatóban.
 
 11. Nyisson meg egy böngésző-munkamenetet egy ügyféleszközön. Támogatott böngészőkkel és eszközökkel kapcsolatos további információkért lásd: [böngészőből, és támogatja az ügyféleszközön](#browser-and-client-device-support) ebben a témakörben.
 
@@ -300,9 +303,9 @@ Ebben a szakaszban található utasítások szolgálnak a Windows PowerShell Web
 
     A böngésző megjelenjen-e a Windows PowerShell Web Access konzol bejelentkezési oldal.
 
-    >**![Megjegyzés:](images/note.jpeg) Megjegyzés** 
-    > 
-    >Addig nem jelentkezhet be, amíg engedélyezési szabályok hozzáadásával nem biztosít hozzáférést a felhasználók számára a webhelyhez. 
+    >**![Megjegyzés:](images/note.jpeg) Megjegyzés**
+    >
+    >Addig nem jelentkezhet be, amíg engedélyezési szabályok hozzáadásával nem biztosít hozzáférést a felhasználók számára a webhelyhez.
     >További információkért lásd: [korlátozó engedélyezési szabály konfigurálása](#configure-a-restrictive-authorization-rule), ebben a témakörben és [engedélyezési szabályai és biztonsági szolgáltatások a Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 13. Egy emelt szintű felhasználói jogosultságokkal (Futtatás rendszergazdaként) megnyitott Windows PowerShell-munkamenetben futtassa a következő parancsfájlt, amelyben *application_pool_name* a 3. lépésben létrehozott alkalmazáskészlet nevét jelöli a adjon az alkalmazáskészletnek a hitelesítési fájlhoz hozzáférési jogosultsága.
@@ -363,9 +366,9 @@ Ebben a szakaszban található utasítások szolgálnak a Windows PowerShell Web
 
     Mivel a gyökérwebhely a Windows PowerShell Web Access mappába, a böngésző megjelenjen-e a Windows PowerShell Web Access bejelentkezési oldal, megnyitásakor **https://\<*átjárókiszolgáló_neve* \>**. Nem kell hozzáadni **/pswa** URL-címét.
 
-    >**![Megjegyzés:](images/note.jpeg) Megjegyzés** 
-    > 
-    >Addig nem jelentkezhet be, amíg engedélyezési szabályok hozzáadásával nem biztosít hozzáférést a felhasználók számára a webhelyhez. 
+    >**![Megjegyzés:](images/note.jpeg) Megjegyzés**
+    >
+    >Addig nem jelentkezhet be, amíg engedélyezési szabályok hozzáadásával nem biztosít hozzáférést a felhasználók számára a webhelyhez.
     >További információkért lásd: [korlátozó engedélyezési szabály konfigurálása](#configure-a-restrictive-authorization-rule), ebben a témakörben és [engedélyezési szabályai és biztonsági szolgáltatások a Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Korlátozó engedélyezési szabály konfigurálása
@@ -390,13 +393,13 @@ További információt a Windows PowerShell Web Access engedélyezési szabálya
 
         Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    Ez az engedélyezési szabály lehetővé teszi, hogy a számítógépek egy adott felhasználó hozzáférését a hálózaton, amelyhez általában hozzáférhetnek, egy adott munkamenet-konfiguráció, ami a felhasználó hozzáférést "™ s szokásos parancsfájl-kezelési és parancsmag igényeinek. 
-    
+    Ez az engedélyezési szabály lehetővé teszi, hogy a számítógépek egy adott felhasználó hozzáférését a hálózaton, amelyhez általában hozzáférhetnek, egy adott munkamenet-konfiguráció, ami a felhasználó hozzáférést "™ s szokásos parancsfájl-kezelési és parancsmag igényeinek.
+
     A következő példában a `Contoso` tartomány `JSmith` nevű felhasználója hozzáférést kap a `Contoso_214` számítógép kezeléséhez, és egy `NewAdminsOnly` nevű munkamenet-konfiguráció használatához.
 
         Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. Győződjön meg arról, hogy létrejött-e a szabály futtatásával a `Get-PswaAuthorizationRule` parancsmagot, vagy `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`. 
+4. Győződjön meg arról, hogy létrejött-e a szabály futtatásával a `Get-PswaAuthorizationRule` parancsmagot, vagy `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
     Például: `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
