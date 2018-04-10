@@ -1,28 +1,28 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A DSC-erőforrás a C# készítése"
-ms.openlocfilehash: 4d276edf1180573df61b62d18a9f90cfa1cd4112
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A DSC-erőforrás a C# készítése
+ms.openlocfilehash: 112b2ae3eb7ecbccc4ae04cd71e06ea43f5e9249
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="bc447-103">A DSC-erőforrás a C# készítése</span><span class="sxs-lookup"><span data-stu-id="bc447-103">Authoring a DSC resource in C#</span></span>
+# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="02724-103">A DSC-erőforrás a C# készítése</span><span class="sxs-lookup"><span data-stu-id="02724-103">Authoring a DSC resource in C#</span></span>
 
-> <span data-ttu-id="bc447-104">Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="bc447-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="02724-104">Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="02724-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="bc447-105">Általában a Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) egyéni erőforrás vezettek be egy PowerShell-parancsfájlt.</span><span class="sxs-lookup"><span data-stu-id="bc447-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="bc447-106">Azonban is valósíthatja meg egyéni DSC-erőforrás funkcióinak parancsmagok írása C# nyelven íródtak.</span><span class="sxs-lookup"><span data-stu-id="bc447-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="bc447-107">Témakörben megismerkedhet a parancsmagok írása C# nyelven íródtak, [írása egy Windows PowerShell-parancsmag](https://technet.microsoft.com/library/dd878294.aspx).</span><span class="sxs-lookup"><span data-stu-id="bc447-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](https://technet.microsoft.com/library/dd878294.aspx).</span></span>
+<span data-ttu-id="02724-105">Általában a Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) egyéni erőforrás vezettek be egy PowerShell-parancsfájlt.</span><span class="sxs-lookup"><span data-stu-id="02724-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="02724-106">Azonban is valósíthatja meg egyéni DSC-erőforrás funkcióinak parancsmagok írása C# nyelven íródtak.</span><span class="sxs-lookup"><span data-stu-id="02724-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="02724-107">Témakörben megismerkedhet a parancsmagok írása C# nyelven íródtak, [írása egy Windows PowerShell-parancsmag](https://technet.microsoft.com/library/dd878294.aspx).</span><span class="sxs-lookup"><span data-stu-id="02724-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](https://technet.microsoft.com/library/dd878294.aspx).</span></span>
 
-<span data-ttu-id="bc447-108">Vezérelt végrehajtási az erőforrás a C#, parancsmagok, a folyamat a MOF-séma létrehozása, a gyökérmappa-szerkezetében létrehozása, importálása és az egyéni DSC erőforrás használatával megegyeznek a [MOFegyéniDSCerőforrásírása](authoringResourceMOF.md).</span><span class="sxs-lookup"><span data-stu-id="bc447-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
+<span data-ttu-id="02724-108">Vezérelt végrehajtási az erőforrás a C#, parancsmagok, a folyamat a MOF-séma létrehozása, a gyökérmappa-szerkezetében létrehozása, importálása és az egyéni DSC erőforrás használatával megegyeznek a [MOFegyéniDSCerőforrásírása](authoringResourceMOF.md).</span><span class="sxs-lookup"><span data-stu-id="02724-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
 
-## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="bc447-109">Egy parancsmag-alapú erőforrás írása</span><span class="sxs-lookup"><span data-stu-id="bc447-109">Writing a cmdlet-based resource</span></span>
-<span data-ttu-id="bc447-110">Ehhez a példához fog megvalósítása egyszerű erőforrás kezelő szövegfájlba és annak tartalmát.</span><span class="sxs-lookup"><span data-stu-id="bc447-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
+## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="02724-109">Egy parancsmag-alapú erőforrás írása</span><span class="sxs-lookup"><span data-stu-id="02724-109">Writing a cmdlet-based resource</span></span>
+<span data-ttu-id="02724-110">Ehhez a példához fog megvalósítása egyszerű erőforrás kezelő szövegfájlba és annak tartalmát.</span><span class="sxs-lookup"><span data-stu-id="02724-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
 
-### <a name="writing-the-mof-schema"></a><span data-ttu-id="bc447-111">A MOF-séma írása</span><span class="sxs-lookup"><span data-stu-id="bc447-111">Writing the MOF schema</span></span>
+### <a name="writing-the-mof-schema"></a><span data-ttu-id="02724-111">A MOF-séma írása</span><span class="sxs-lookup"><span data-stu-id="02724-111">Writing the MOF schema</span></span>
 
-<span data-ttu-id="bc447-112">Az alábbiakban áttekintjük a MOF erőforrás-definícióban.</span><span class="sxs-lookup"><span data-stu-id="bc447-112">The following is the MOF resource definition.</span></span>
+<span data-ttu-id="02724-112">Az alábbiakban áttekintjük a MOF erőforrás-definícióban.</span><span class="sxs-lookup"><span data-stu-id="02724-112">The following is the MOF resource definition.</span></span>
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("xDemoFile")]
@@ -30,23 +30,23 @@ class MSFT_XDemoFile : OMI_BaseResource
 {
                 [Key, Description("path")] String Path;
                 [Write, Description("Should the file be present"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
-                [Write, Description("Contentof file.")] String Content;                   
+                [Write, Description("Contentof file.")] String Content;
 };
 ```
 
-### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="bc447-113">A Visual Studio-projekt létrehozása</span><span class="sxs-lookup"><span data-stu-id="bc447-113">Setting up the Visual Studio project</span></span>
-#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="bc447-114">Egy parancsmag-projekt létrehozása</span><span class="sxs-lookup"><span data-stu-id="bc447-114">Setting up a cmdlet project</span></span>
+### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="02724-113">A Visual Studio-projekt létrehozása</span><span class="sxs-lookup"><span data-stu-id="02724-113">Setting up the Visual Studio project</span></span>
+#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="02724-114">Egy parancsmag-projekt létrehozása</span><span class="sxs-lookup"><span data-stu-id="02724-114">Setting up a cmdlet project</span></span>
 
-1. <span data-ttu-id="bc447-115">Nyissa meg a Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="bc447-115">Open Visual Studio.</span></span>
-1. <span data-ttu-id="bc447-116">Hozzon létre egy C#-projektet, és adja meg a nevét.</span><span class="sxs-lookup"><span data-stu-id="bc447-116">Create a C# project and provide the name.</span></span>
-1. <span data-ttu-id="bc447-117">Válassza ki **Class Library** az elérhető sablonok alapján.</span><span class="sxs-lookup"><span data-stu-id="bc447-117">Select **Class Library** from the available project templates.</span></span>
-1. <span data-ttu-id="bc447-118">Kattintson a **Ok**.</span><span class="sxs-lookup"><span data-stu-id="bc447-118">Click **Ok**.</span></span>
-1. <span data-ttu-id="bc447-119">A System.Automation.Management.dll egy szerelvényre mutató hivatkozás hozzáadása a projekthez.</span><span class="sxs-lookup"><span data-stu-id="bc447-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
-1. <span data-ttu-id="bc447-120">Módosítsa az erőforrás-névre a szerelvény nevét.</span><span class="sxs-lookup"><span data-stu-id="bc447-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="bc447-121">Ebben az esetben a szerelvény neve lehet **MSFT_XDemoFile**.</span><span class="sxs-lookup"><span data-stu-id="bc447-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
+1. <span data-ttu-id="02724-115">Nyissa meg a Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="02724-115">Open Visual Studio.</span></span>
+1. <span data-ttu-id="02724-116">Hozzon létre egy C#-projektet, és adja meg a nevét.</span><span class="sxs-lookup"><span data-stu-id="02724-116">Create a C# project and provide the name.</span></span>
+1. <span data-ttu-id="02724-117">Válassza ki **Class Library** az elérhető sablonok alapján.</span><span class="sxs-lookup"><span data-stu-id="02724-117">Select **Class Library** from the available project templates.</span></span>
+1. <span data-ttu-id="02724-118">Kattintson a **Ok**.</span><span class="sxs-lookup"><span data-stu-id="02724-118">Click **Ok**.</span></span>
+1. <span data-ttu-id="02724-119">A System.Automation.Management.dll egy szerelvényre mutató hivatkozás hozzáadása a projekthez.</span><span class="sxs-lookup"><span data-stu-id="02724-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
+1. <span data-ttu-id="02724-120">Módosítsa az erőforrás-névre a szerelvény nevét.</span><span class="sxs-lookup"><span data-stu-id="02724-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="02724-121">Ebben az esetben a szerelvény neve lehet **MSFT_XDemoFile**.</span><span class="sxs-lookup"><span data-stu-id="02724-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
 
-### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="bc447-122">A parancsmag programozás</span><span class="sxs-lookup"><span data-stu-id="bc447-122">Writing the cmdlet code</span></span>
+### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="02724-122">A parancsmag programozás</span><span class="sxs-lookup"><span data-stu-id="02724-122">Writing the cmdlet code</span></span>
 
-<span data-ttu-id="bc447-123">A következő C#-kódban valósítja meg a **Get-TargetResource**, **Set-TargetResource**, és **teszt-TargetResource** parancsmagok.</span><span class="sxs-lookup"><span data-stu-id="bc447-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
+<span data-ttu-id="02724-123">A következő C#-kódban valósítja meg a **Get-TargetResource**, **Set-TargetResource**, és **teszt-TargetResource** parancsmagok.</span><span class="sxs-lookup"><span data-stu-id="02724-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
 
 ```C#
 
@@ -68,7 +68,7 @@ namespace cSharpDSCResourceExample
         public string Path { get; set; }
 
         /// <summary>
-        /// Implement the logic to return the current state of the resource as a hashtable with keys being the resource properties 
+        /// Implement the logic to return the current state of the resource as a hashtable with keys being the resource properties
         /// and the values are the corresponding current value on the machine.
         /// </summary>
         protected override void ProcessRecord()
@@ -78,7 +78,7 @@ namespace cSharpDSCResourceExample
             {
                 currentResourceState.Add("Ensure", "Present");
 
-                // read current content 
+                // read current content
                 string CurrentContent = "";
                 using (var reader = new StreamReader(Path))
                 {
@@ -95,7 +95,7 @@ namespace cSharpDSCResourceExample
             WriteObject(currentResourceState);
         }
     }
-    
+
     # endregion
 
     #region Set-TargetResource
@@ -107,7 +107,7 @@ namespace cSharpDSCResourceExample
         public string Path { get; set; }
 
         [Parameter(Mandatory = false)]
-        
+
         [ValidateSet("Present", "Absent", IgnoreCase = true)]
         public string Ensure {
             get
@@ -152,7 +152,7 @@ namespace cSharpDSCResourceExample
                         {
                             existingContent = reader.ReadToEnd();
                         }
-                        // check if the content of the file mathes the content passed 
+                        // check if the content of the file mathes the content passed
                         if (!existingContent.Equals(Content, StringComparison.InvariantCultureIgnoreCase))
                         {
                             WriteVerbose("Existing content did not match with desired content updating the content of the file");
@@ -179,11 +179,11 @@ namespace cSharpDSCResourceExample
                 }
 
             }
-            
+
             /* if you need to reboot the VM. please add the following two line of code.
             PSVariable DscMachineStatus = new PSVariable("DSCMachineStatus", 1, ScopedItemOptions.AllScope);
             this.SessionState.PSVariable.Set(DscMachineStatus);
-             */     
+             */
 
         }
 
@@ -196,7 +196,7 @@ namespace cSharpDSCResourceExample
     [Cmdlet("Test", "TargetResource")]
     [OutputType(typeof(Boolean))]
     public class TestTargetResource : PSCmdlet
-    {   
+    {
         [Parameter(Mandatory = true)]
         public string Path { get; set; }
 
@@ -231,7 +231,7 @@ namespace cSharpDSCResourceExample
         /// </summary>
         protected override void ProcessRecord()
         {
-            if (File.Exists(Path)) 
+            if (File.Exists(Path))
             {
                 if( Ensure.Equals("absent", StringComparison.InvariantCultureIgnoreCase))
                 {
@@ -254,7 +254,7 @@ namespace cSharpDSCResourceExample
             {
                 WriteObject(Ensure.Equals("Absent", StringComparison.InvariantCultureIgnoreCase));
             }
-        }        
+        }
     }
 
     # endregion
@@ -262,14 +262,14 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### <a name="deploying-the-resource"></a><span data-ttu-id="bc447-124">Az erőforrás üzembe helyezése</span><span class="sxs-lookup"><span data-stu-id="bc447-124">Deploying the resource</span></span>
+### <a name="deploying-the-resource"></a><span data-ttu-id="02724-124">Az erőforrás üzembe helyezése</span><span class="sxs-lookup"><span data-stu-id="02724-124">Deploying the resource</span></span>
 
-<span data-ttu-id="bc447-125">A lefordított dll-fájl mentéséhez egy parancsprogram-alapú erőforrás hasonló fájlstruktúrájával.</span><span class="sxs-lookup"><span data-stu-id="bc447-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="bc447-126">Ehhez az erőforráshoz a mappastruktúra a következő:</span><span class="sxs-lookup"><span data-stu-id="bc447-126">The following is the folder structure for this resource.</span></span>
+<span data-ttu-id="02724-125">A lefordított dll-fájl mentéséhez egy parancsprogram-alapú erőforrás hasonló fájlstruktúrájával.</span><span class="sxs-lookup"><span data-stu-id="02724-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="02724-126">Ehhez az erőforráshoz a mappastruktúra a következő:</span><span class="sxs-lookup"><span data-stu-id="02724-126">The following is the folder structure for this resource.</span></span>
 
 ```
 $env: psmodulepath (folder)
     |- MyDscResources (folder)
-        |- MyDscResources.psd1 (file, required)     
+        |- MyDscResources.psd1 (file, required)
         |- DSCResources (folder)
             |- MSFT_XDemoFile (folder)
                 |- MSFT_XDemoFile.psd1 (file, optional)
@@ -277,9 +277,8 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### <a name="see-also"></a><span data-ttu-id="bc447-127">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="bc447-127">See Also</span></span>
-#### <a name="concepts"></a><span data-ttu-id="bc447-128">Fogalmak</span><span class="sxs-lookup"><span data-stu-id="bc447-128">Concepts</span></span>
-[<span data-ttu-id="bc447-129">Egyéni DSC-erőforrás MOF írása</span><span class="sxs-lookup"><span data-stu-id="bc447-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
-#### <a name="other-resources"></a><span data-ttu-id="bc447-130">Egyéb források</span><span class="sxs-lookup"><span data-stu-id="bc447-130">Other Resources</span></span>
-[<span data-ttu-id="bc447-131">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="bc447-131">Writing a Windows PowerShell Cmdlet</span></span>](https://msdn.microsoft.com/library/dd878294.aspx)
-
+### <a name="see-also"></a><span data-ttu-id="02724-127">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="02724-127">See Also</span></span>
+#### <a name="concepts"></a><span data-ttu-id="02724-128">Fogalmak</span><span class="sxs-lookup"><span data-stu-id="02724-128">Concepts</span></span>
+[<span data-ttu-id="02724-129">Egyéni DSC-erőforrás MOF írása</span><span class="sxs-lookup"><span data-stu-id="02724-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+#### <a name="other-resources"></a><span data-ttu-id="02724-130">Egyéb források</span><span class="sxs-lookup"><span data-stu-id="02724-130">Other Resources</span></span>
+[<span data-ttu-id="02724-131">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="02724-131">Writing a Windows PowerShell Cmdlet</span></span>](https://msdn.microsoft.com/library/dd878294.aspx)

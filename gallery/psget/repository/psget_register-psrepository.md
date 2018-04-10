@@ -1,39 +1,40 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
 title: Register-PSRepository
-ms.openlocfilehash: badac5dc1157bbfa79058630c5c2f260d2151bd8
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7a7d1bf56a87161f6ec735399b15b19f317282b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="register-psrepository"></a><span data-ttu-id="d20fd-103">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="d20fd-103">Register-PSRepository</span></span>
+# <a name="register-psrepository"></a><span data-ttu-id="713ff-103">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="713ff-103">Register-PSRepository</span></span>
 
-<span data-ttu-id="d20fd-104">Lekérdezi a regisztrált tárházak találhatók a számítógépen.</span><span class="sxs-lookup"><span data-stu-id="d20fd-104">Gets the registered repositories on a computer.</span></span>
+<span data-ttu-id="713ff-104">Lekérdezi a regisztrált tárházak találhatók a számítógépen.</span><span class="sxs-lookup"><span data-stu-id="713ff-104">Gets the registered repositories on a computer.</span></span>
 
-## <a name="description"></a><span data-ttu-id="d20fd-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="d20fd-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="713ff-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="713ff-105">Description</span></span>
 
-<span data-ttu-id="d20fd-106">A Register-PSRepository parancsmag regisztrálja a PowerShell-modulok az online tárházba.</span><span class="sxs-lookup"><span data-stu-id="d20fd-106">The Register-PSRepository cmdlet registers the online repository for PowerShell modules.</span></span> <span data-ttu-id="d20fd-107">A tárház regisztrálása után hivatkozhasson rá a keresés-modulból, Install-modul, és a közzététel-modul parancsmagokkal.</span><span class="sxs-lookup"><span data-stu-id="d20fd-107">After a repository is registered, you can reference it from the Find-Module, Install-Module, and Publish-Module cmdlets.</span></span> <span data-ttu-id="d20fd-108">A regisztrált tárház lesz az alapértelmezett tárház keresési- és telepítési-modul.</span><span class="sxs-lookup"><span data-stu-id="d20fd-108">The registered repository becomes the default repository in Find-Module and Install-Module.</span></span> 
+<span data-ttu-id="713ff-106">A Register-PSRepository parancsmag regisztrálja a PowerShell-modulok az online tárházba.</span><span class="sxs-lookup"><span data-stu-id="713ff-106">The Register-PSRepository cmdlet registers the online repository for PowerShell modules.</span></span> <span data-ttu-id="713ff-107">A tárház regisztrálása után hivatkozhasson rá a keresés-modulból, Install-modul, és a közzététel-modul parancsmagokkal.</span><span class="sxs-lookup"><span data-stu-id="713ff-107">After a repository is registered, you can reference it from the Find-Module, Install-Module, and Publish-Module cmdlets.</span></span> <span data-ttu-id="713ff-108">A regisztrált tárház lesz az alapértelmezett tárház keresési- és telepítési-modul.</span><span class="sxs-lookup"><span data-stu-id="713ff-108">The registered repository becomes the default repository in Find-Module and Install-Module.</span></span>
 
-<span data-ttu-id="d20fd-109">Regisztrált adattárak felhasználóspecifikus.</span><span class="sxs-lookup"><span data-stu-id="d20fd-109">Registered repositories are user-specific.</span></span> <span data-ttu-id="d20fd-110">Egy rendszerszintű környezetben nincsenek regisztrálva.</span><span class="sxs-lookup"><span data-stu-id="d20fd-110">They are not registered in a system-wide context.</span></span>
+<span data-ttu-id="713ff-109">Regisztrált adattárak felhasználóspecifikus.</span><span class="sxs-lookup"><span data-stu-id="713ff-109">Registered repositories are user-specific.</span></span> <span data-ttu-id="713ff-110">Egy rendszerszintű környezetben nincsenek regisztrálva.</span><span class="sxs-lookup"><span data-stu-id="713ff-110">They are not registered in a system-wide context.</span></span>
 
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="d20fd-111">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="d20fd-111">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="713ff-111">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="713ff-111">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="d20fd-112">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="d20fd-112">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="713ff-112">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="713ff-112">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="d20fd-113">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="d20fd-113">Register-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517129)
+[<span data-ttu-id="713ff-113">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="713ff-113">Register-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517129)
 
-## <a name="example-commands"></a><span data-ttu-id="d20fd-114">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="d20fd-114">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="713ff-114">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="713ff-114">Example commands</span></span>
 
-### <a name="register-a-powershell-repository"></a><span data-ttu-id="d20fd-115">Egy PowerShell-tárházat regisztrálása</span><span class="sxs-lookup"><span data-stu-id="d20fd-115">Register a PowerShell Repository</span></span>
-<span data-ttu-id="d20fd-116">A belső adattárak dolgozhat PowerShellGet konfigurálhatja.</span><span class="sxs-lookup"><span data-stu-id="d20fd-116">You can configure PowerShellGet to work against internal repositories.</span></span> <span data-ttu-id="d20fd-117">A tárház regisztrálása után keresés- és telepítési-modul segítségével használható.</span><span class="sxs-lookup"><span data-stu-id="d20fd-117">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
+### <a name="register-a-powershell-repository"></a><span data-ttu-id="713ff-115">PowerShell-tárház regisztrálása</span><span class="sxs-lookup"><span data-stu-id="713ff-115">Register a PowerShell Repository</span></span>
+<span data-ttu-id="713ff-116">A belső adattárak dolgozhat PowerShellGet konfigurálhatja.</span><span class="sxs-lookup"><span data-stu-id="713ff-116">You can configure PowerShellGet to work against internal repositories.</span></span>
+<span data-ttu-id="713ff-117">A tárház regisztrálása után keresés- és telepítési-modul segítségével használható.</span><span class="sxs-lookup"><span data-stu-id="713ff-117">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
 
 ```powershell
 # Register a default repository
@@ -62,9 +63,9 @@ Unregister-PSRepository DemoRepo
 ```
 
 
-### <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="d20fd-118">Register-PSRepository és a Set-PSRepository parancsmagot megosztása támogatási parancsfájl</span><span class="sxs-lookup"><span data-stu-id="d20fd-118">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
+### <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="713ff-118">Register-PSRepository és a Set-PSRepository parancsmagot megosztása támogatási parancsfájl</span><span class="sxs-lookup"><span data-stu-id="713ff-118">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
 
-<span data-ttu-id="d20fd-119">Adja hozzá a Register-PSRepository parancsmag segítségével a **ScriptSourceLocation** és **ScriptPublishLocation** a PSRepository számára.</span><span class="sxs-lookup"><span data-stu-id="d20fd-119">Use Register-PSRepository cmdlet to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
+<span data-ttu-id="713ff-119">Adja hozzá a Register-PSRepository parancsmag segítségével a **ScriptSourceLocation** és **ScriptPublishLocation** a PSRepository számára.</span><span class="sxs-lookup"><span data-stu-id="713ff-119">Use Register-PSRepository cmdlet to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 
 ```powershell
 
@@ -114,4 +115,3 @@ ScriptPublishLocation : https://customgallery.cloudapp.net/api/v2/package/
 ProviderOptions : {}
 
 ```
-

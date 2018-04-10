@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
-title: "Frissítés-parancsfájl"
-ms.openlocfilehash: 8067a502e4ecfa61c5a4347d4e9f74c7437f6502
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
+title: Update-Script
+ms.openlocfilehash: 23e558a063689d263f68d34ec3b154be1c77ae89
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="update-script"></a><span data-ttu-id="e4d40-103">Frissítés-parancsfájl</span><span class="sxs-lookup"><span data-stu-id="e4d40-103">Update-Script</span></span>
+# <a name="update-script"></a><span data-ttu-id="162f9-103">Update-Script</span><span class="sxs-lookup"><span data-stu-id="162f9-103">Update-Script</span></span>
 
-<span data-ttu-id="e4d40-104">Frissítés-parancsfájl parancsmag lehetővé teszi az helybeni frissítése a parancsfájlok, amelyek megtörtént-e telepítési parancsfájl-parancsmag használatával.</span><span class="sxs-lookup"><span data-stu-id="e4d40-104">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
+<span data-ttu-id="162f9-104">Frissítés-parancsfájl parancsmag lehetővé teszi az helybeni frissítése a parancsfájlok, amelyek megtörtént-e telepítési parancsfájl-parancsmag használatával.</span><span class="sxs-lookup"><span data-stu-id="162f9-104">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 
-## <a name="description"></a><span data-ttu-id="e4d40-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="e4d40-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="162f9-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="162f9-105">Description</span></span>
 
-<span data-ttu-id="e4d40-106">A frissítés-parancsfájl parancsmag frissíti a megadott parancsfájl, amelyen korábban telepítették a tárházból.</span><span class="sxs-lookup"><span data-stu-id="e4d40-106">The Update-Script cmdlet updates the specified script from the repository from which it was previously installed.</span></span>
+<span data-ttu-id="162f9-106">A frissítés-parancsfájl parancsmag frissíti a megadott parancsfájl, amelyen korábban telepítették a tárházból.</span><span class="sxs-lookup"><span data-stu-id="162f9-106">The Update-Script cmdlet updates the specified script from the repository from which it was previously installed.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="e4d40-107">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="e4d40-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="162f9-107">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="162f9-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Update-Script -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="e4d40-108">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="e4d40-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="162f9-108">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="162f9-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="e4d40-109">Frissítés-parancsfájl</span><span class="sxs-lookup"><span data-stu-id="e4d40-109">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619787)
+[<span data-ttu-id="162f9-109">Update-Script</span><span class="sxs-lookup"><span data-stu-id="162f9-109">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619787)
 
-## <a name="example-commands"></a><span data-ttu-id="e4d40-110">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="e4d40-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="162f9-110">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="162f9-110">Example commands</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -74,4 +74,3 @@ Version Name Type Repository Description
 2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
-

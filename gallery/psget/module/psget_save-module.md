@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
-title: "Mentés-modul"
-ms.openlocfilehash: acea38b0eebc58dafda0ab58b91dc6a70ffffd3b
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
+title: Save-Module
+ms.openlocfilehash: c9078afb03dc074ee3831c2c395c0f1e6c4ffa38
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="save-module"></a><span data-ttu-id="5ecda-103">Mentés-modul</span><span class="sxs-lookup"><span data-stu-id="5ecda-103">Save-Module</span></span>
+# <a name="save-module"></a><span data-ttu-id="e31b1-103">Save-Module</span><span class="sxs-lookup"><span data-stu-id="e31b1-103">Save-Module</span></span>
 
-<span data-ttu-id="5ecda-104">Menti a modul helyi telepítés nélküli.</span><span class="sxs-lookup"><span data-stu-id="5ecda-104">Saves a module locally without installing it.</span></span>
+<span data-ttu-id="e31b1-104">Menti a modul helyi telepítés nélküli.</span><span class="sxs-lookup"><span data-stu-id="e31b1-104">Saves a module locally without installing it.</span></span>
 
-## <a name="description"></a><span data-ttu-id="5ecda-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="5ecda-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="e31b1-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="e31b1-105">Description</span></span>
 
-<span data-ttu-id="5ecda-106">A Save-modul a parancsmag egy modult a hálózatfelügyeleti megadott tárháza helyileg menti.</span><span class="sxs-lookup"><span data-stu-id="5ecda-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="5ecda-107">A modul nincs telepítve.</span><span class="sxs-lookup"><span data-stu-id="5ecda-107">The module is not installed.</span></span>
+<span data-ttu-id="e31b1-106">A Save-modul a parancsmag egy modult a hálózatfelügyeleti megadott tárháza helyileg menti.</span><span class="sxs-lookup"><span data-stu-id="e31b1-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="e31b1-107">A modul nincs telepítve.</span><span class="sxs-lookup"><span data-stu-id="e31b1-107">The module is not installed.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="5ecda-108">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="5ecda-108">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="e31b1-108">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="e31b1-108">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="5ecda-109">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="5ecda-109">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="e31b1-109">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="e31b1-109">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="5ecda-110">Mentés-modul</span><span class="sxs-lookup"><span data-stu-id="5ecda-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
+[<span data-ttu-id="e31b1-110">Save-Module</span><span class="sxs-lookup"><span data-stu-id="e31b1-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-## <a name="example-commands"></a><span data-ttu-id="5ecda-111">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="5ecda-111">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="e31b1-111">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="e31b1-111">Example commands</span></span>
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
@@ -64,4 +64,3 @@ Install-Module -Name ContosoServer -Path C:\MySavedModuleLocation -AllowPrerelea
 
 
 ```
-

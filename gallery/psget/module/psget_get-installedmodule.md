@@ -1,42 +1,42 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
 title: Get-InstalledModule
-ms.openlocfilehash: 6f485d04503ea6d9a51a68ae7ec3d0dc2e6facab
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f82d8f3b6b6a9283deef44c2705b97d4717b634c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="get-installedmodule"></a><span data-ttu-id="e18f4-103">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="e18f4-103">Get-InstalledModule</span></span>
+# <a name="get-installedmodule"></a><span data-ttu-id="ecf3f-103">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="ecf3f-103">Get-InstalledModule</span></span>
 
-<span data-ttu-id="e18f4-104">Lekérdezi a számítógépen telepített modulok.</span><span class="sxs-lookup"><span data-stu-id="e18f4-104">Gets installed modules on a computer.</span></span>
+<span data-ttu-id="ecf3f-104">Lekérdezi a számítógépen telepített modulok.</span><span class="sxs-lookup"><span data-stu-id="ecf3f-104">Gets installed modules on a computer.</span></span>
 
-## <a name="description"></a><span data-ttu-id="e18f4-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="e18f4-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="ecf3f-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="ecf3f-105">Description</span></span>
 
-<span data-ttu-id="e18f4-106">A Get-InstalledModule parancsmag lekéri a telepített PowerShell moduloknál számítógépen telepített Install-modul a parancsmag használatával.</span><span class="sxs-lookup"><span data-stu-id="e18f4-106">The Get-InstalledModule cmdlet gets installed PowerShell modules on a computer which were installed using Install-Module cmdlet.</span></span>
+<span data-ttu-id="ecf3f-106">A Get-InstalledModule parancsmag lekéri a telepített PowerShell moduloknál számítógépen telepített Install-modul a parancsmag használatával.</span><span class="sxs-lookup"><span data-stu-id="ecf3f-106">The Get-InstalledModule cmdlet gets installed PowerShell modules on a computer which were installed using Install-Module cmdlet.</span></span>
 
-<span data-ttu-id="e18f4-107">Minden telepített modul Get-InstalledModule ad vissza egy nem kötelezően átirányítható PSRepositoryItemInfo objektum eltávolítás-modul a telepített modulok eltávolításához.</span><span class="sxs-lookup"><span data-stu-id="e18f4-107">For each installed module, Get-InstalledModule returns a PSRepositoryItemInfo object which can optionally be piped to Uninstall-Module for uninstalling the installed modules.</span></span>
+<span data-ttu-id="ecf3f-107">Minden telepített modul Get-InstalledModule ad vissza egy nem kötelezően átirányítható PSRepositoryItemInfo objektum eltávolítás-modul a telepített modulok eltávolításához.</span><span class="sxs-lookup"><span data-stu-id="ecf3f-107">For each installed module, Get-InstalledModule returns a PSRepositoryItemInfo object which can optionally be piped to Uninstall-Module for uninstalling the installed modules.</span></span>
 
-- <span data-ttu-id="e18f4-108">Get-InstalledModule telepített modulokban neve, verziója paraméterek alapján szűrhetők.</span><span class="sxs-lookup"><span data-stu-id="e18f4-108">Get-InstalledModule can filter installed modules based on name, version parameters.</span></span>
-- <span data-ttu-id="e18f4-109">Get-InstalledModule verzió paraméterekkel szűrheti: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="e18f4-109">Get-InstalledModule can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
-  - <span data-ttu-id="e18f4-110">Ezek a paraméterek kölcsönösen kizárják egymást, kivéve a MinmimumVersion és MaximumVersion.</span><span class="sxs-lookup"><span data-stu-id="e18f4-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
-  - <span data-ttu-id="e18f4-111">Ezen verzió paraméterek csak nevű egy modul nélkül a helyettesítő karakterek megengedettek.</span><span class="sxs-lookup"><span data-stu-id="e18f4-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
-  - <span data-ttu-id="e18f4-112">Ha a RequiredVersion paraméter nincs megadva, a Get-InstalledModule egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a modul esetén nincs minimális verzió van megadva a telepített modul legújabb verzióját adja vissza.</span><span class="sxs-lookup"><span data-stu-id="e18f4-112">If the RequiredVersion parameter is not specified, Get-InstalledModule returns the latest version of the installed module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span> 
-  - <span data-ttu-id="e18f4-113">A RequiredVersion paraméter van megadva, az Get-InstalledModule csak adja vissza a telepített modul, amely pontosan megegyezik a megadott version verzióját.</span><span class="sxs-lookup"><span data-stu-id="e18f4-113">If the RequiredVersion parameter is specified, Get-InstalledModule only returns the version of installed module that exactly matches the specified version.</span></span>
+- <span data-ttu-id="ecf3f-108">Get-InstalledModule telepített modulokban neve, verziója paraméterek alapján szűrhetők.</span><span class="sxs-lookup"><span data-stu-id="ecf3f-108">Get-InstalledModule can filter installed modules based on name, version parameters.</span></span>
+- <span data-ttu-id="ecf3f-109">Get-InstalledModule verzió paraméterekkel szűrheti: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="ecf3f-109">Get-InstalledModule can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="ecf3f-110">Ezek a paraméterek kölcsönösen kizárják egymást, kivéve a MinmimumVersion és MaximumVersion.</span><span class="sxs-lookup"><span data-stu-id="ecf3f-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="ecf3f-111">Ezen verzió paraméterek csak nevű egy modul nélkül a helyettesítő karakterek megengedettek.</span><span class="sxs-lookup"><span data-stu-id="ecf3f-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
+  - <span data-ttu-id="ecf3f-112">Ha a RequiredVersion paraméter nincs megadva, a Get-InstalledModule egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a modul esetén nincs minimális verzió van megadva a telepített modul legújabb verzióját adja vissza.</span><span class="sxs-lookup"><span data-stu-id="ecf3f-112">If the RequiredVersion parameter is not specified, Get-InstalledModule returns the latest version of the installed module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span>
+  - <span data-ttu-id="ecf3f-113">A RequiredVersion paraméter van megadva, az Get-InstalledModule csak adja vissza a telepített modul, amely pontosan megegyezik a megadott version verzióját.</span><span class="sxs-lookup"><span data-stu-id="ecf3f-113">If the RequiredVersion parameter is specified, Get-InstalledModule only returns the version of installed module that exactly matches the specified version.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="e18f4-114">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="e18f4-114">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="ecf3f-114">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="ecf3f-114">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Get-InstalledModule -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="e18f4-115">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="e18f4-115">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="ecf3f-115">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="ecf3f-115">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="e18f4-116">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="e18f4-116">Get-InstalledModule</span></span>](http://go.microsoft.com/fwlink/?LinkId=526863)
+[<span data-ttu-id="ecf3f-116">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="ecf3f-116">Get-InstalledModule</span></span>](http://go.microsoft.com/fwlink/?LinkId=526863)
 
-## <a name="example-commands"></a><span data-ttu-id="e18f4-117">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="e18f4-117">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="ecf3f-117">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="ecf3f-117">Example commands</span></span>
 
 ```powershell
 
@@ -100,7 +100,7 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Modules\DJoin\1.
 
 
 
-## <a name="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object"></a><span data-ttu-id="e18f4-118">InstalledDate és UpdatedDate PSGetRepositoryItemInfo objektum tulajdonságai</span><span class="sxs-lookup"><span data-stu-id="e18f4-118">InstalledDate and UpdatedDate properties in PSGetRepositoryItemInfo object</span></span>
+## <a name="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object"></a><span data-ttu-id="ecf3f-118">InstalledDate és UpdatedDate PSGetRepositoryItemInfo objektum tulajdonságai</span><span class="sxs-lookup"><span data-stu-id="ecf3f-118">InstalledDate and UpdatedDate properties in PSGetRepositoryItemInfo object</span></span>
 
     During the install operation:
         InstalledDate: current DateTime (Get-Date) value
@@ -126,4 +126,3 @@ Name          InstalledDate         UpdatedDate
 ----          -------------         -----------
 ContosoServer 2/29/2016 11:59:14 AM 2/29/2016 12:00:15 PM
 ```
-

@@ -1,43 +1,43 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
 title: Get-InstalledScript
-ms.openlocfilehash: f35e57cdadd1448bd9032ab007d692003c4cf4a2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 668327905b0dab40119940a3134b674c452f538d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="get-installedscript"></a><span data-ttu-id="4dcad-103">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="4dcad-103">Get-InstalledScript</span></span>
+# <a name="get-installedscript"></a><span data-ttu-id="a5ae8-103">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="a5ae8-103">Get-InstalledScript</span></span>
 
-<span data-ttu-id="4dcad-104">Lekérdezi a számítógépen telepített parancsfájlok.</span><span class="sxs-lookup"><span data-stu-id="4dcad-104">Gets installed scripts on a computer.</span></span>
+<span data-ttu-id="a5ae8-104">Lekérdezi a számítógépen telepített parancsfájlok.</span><span class="sxs-lookup"><span data-stu-id="a5ae8-104">Gets installed scripts on a computer.</span></span>
 
-## <a name="description"></a><span data-ttu-id="4dcad-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="4dcad-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="a5ae8-105">Leírás</span><span class="sxs-lookup"><span data-stu-id="a5ae8-105">Description</span></span>
 
-<span data-ttu-id="4dcad-106">A Get-InstalledScript parancsmag lekéri a telepített PowerShell-parancsfájlok a számítógépen.</span><span class="sxs-lookup"><span data-stu-id="4dcad-106">The Get-InstalledScript cmdlet gets installed PowerShell scripts on a computer.</span></span>
+<span data-ttu-id="a5ae8-106">A Get-InstalledScript parancsmag lekéri a telepített PowerShell-parancsfájlok a számítógépen.</span><span class="sxs-lookup"><span data-stu-id="a5ae8-106">The Get-InstalledScript cmdlet gets installed PowerShell scripts on a computer.</span></span>
 
-<span data-ttu-id="4dcad-107">Minden telepített parancsprogram Get-InstalledScript ad vissza egy PSRepositoryItemInfo objektumon, amelynek opcionálisan átirányítható eltávolítás-parancsfájl a telepített parancsfájlok eltávolításához.</span><span class="sxs-lookup"><span data-stu-id="4dcad-107">For each installed script, Get-InstalledScript returns a PSRepositoryItemInfo object which can optionally be piped to Uninstall-Script for uninstalling the installed scripts.</span></span>
+<span data-ttu-id="a5ae8-107">Minden telepített parancsprogram Get-InstalledScript ad vissza egy PSRepositoryItemInfo objektumon, amelynek opcionálisan átirányítható eltávolítás-parancsfájl a telepített parancsfájlok eltávolításához.</span><span class="sxs-lookup"><span data-stu-id="a5ae8-107">For each installed script, Get-InstalledScript returns a PSRepositoryItemInfo object which can optionally be piped to Uninstall-Script for uninstalling the installed scripts.</span></span>
 
-- <span data-ttu-id="4dcad-108">Get-InstalledScript telepített parancsfájlok neve, verziója paraméterek alapján szűrhetők.</span><span class="sxs-lookup"><span data-stu-id="4dcad-108">Get-InstalledScript can filter installed scripts based on name, version parameters.</span></span>
-- <span data-ttu-id="4dcad-109">Get-InstalledScript verzió paraméterekkel szűrheti: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="4dcad-109">Get-InstalledScript can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
-  - <span data-ttu-id="4dcad-110">Ezek a paraméterek kölcsönösen kizárják egymást, kivéve a MinmimumVersion és MaximumVersion.</span><span class="sxs-lookup"><span data-stu-id="4dcad-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
-  - <span data-ttu-id="4dcad-111">Ezen verzió paraméterek csak nevű egyetlen parancsfájllal bármely helyettesítő karakterek nem engedélyezettek.</span><span class="sxs-lookup"><span data-stu-id="4dcad-111">These version parameters are allowed only with the single script name without any wildcards.</span></span>
-  - <span data-ttu-id="4dcad-112">Ha a RequiredVersion paraméter nincs megadva, a Get-InstalledScript a legújabb verzióját a telepített parancsfájl, amely egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a parancsfájl nincs minimális verzió megadása adja vissza.</span><span class="sxs-lookup"><span data-stu-id="4dcad-112">If the RequiredVersion parameter is not specified, Get-InstalledScript returns the latest version of the installed script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.</span></span> 
-  - <span data-ttu-id="4dcad-113">A RequiredVersion paraméter van megadva, az Get-InstalledScript csak adja vissza a telepített parancsfájl, amely pontosan megegyezik a megadott version verzióját.</span><span class="sxs-lookup"><span data-stu-id="4dcad-113">If the RequiredVersion parameter is specified, Get-InstalledScript only returns the version of installed script that exactly matches the specified version.</span></span>
+- <span data-ttu-id="a5ae8-108">Get-InstalledScript telepített parancsfájlok neve, verziója paraméterek alapján szűrhetők.</span><span class="sxs-lookup"><span data-stu-id="a5ae8-108">Get-InstalledScript can filter installed scripts based on name, version parameters.</span></span>
+- <span data-ttu-id="a5ae8-109">Get-InstalledScript verzió paraméterekkel szűrheti: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="a5ae8-109">Get-InstalledScript can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="a5ae8-110">Ezek a paraméterek kölcsönösen kizárják egymást, kivéve a MinmimumVersion és MaximumVersion.</span><span class="sxs-lookup"><span data-stu-id="a5ae8-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="a5ae8-111">Ezen verzió paraméterek csak nevű egyetlen parancsfájllal bármely helyettesítő karakterek nem engedélyezettek.</span><span class="sxs-lookup"><span data-stu-id="a5ae8-111">These version parameters are allowed only with the single script name without any wildcards.</span></span>
+  - <span data-ttu-id="a5ae8-112">Ha a RequiredVersion paraméter nincs megadva, a Get-InstalledScript a legújabb verzióját a telepített parancsfájl, amely egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a parancsfájl nincs minimális verzió megadása adja vissza.</span><span class="sxs-lookup"><span data-stu-id="a5ae8-112">If the RequiredVersion parameter is not specified, Get-InstalledScript returns the latest version of the installed script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.</span></span>
+  - <span data-ttu-id="a5ae8-113">A RequiredVersion paraméter van megadva, az Get-InstalledScript csak adja vissza a telepített parancsfájl, amely pontosan megegyezik a megadott version verzióját.</span><span class="sxs-lookup"><span data-stu-id="a5ae8-113">If the RequiredVersion parameter is specified, Get-InstalledScript only returns the version of installed script that exactly matches the specified version.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="4dcad-114">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="4dcad-114">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="a5ae8-114">A parancsmag szintaxisa</span><span class="sxs-lookup"><span data-stu-id="a5ae8-114">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Get-InstalledScript -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="4dcad-115">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="4dcad-115">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="a5ae8-115">A parancsmag online Súgó-hivatkozás</span><span class="sxs-lookup"><span data-stu-id="a5ae8-115">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="4dcad-116">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="4dcad-116">Get-InstalledScript</span></span>](http://go.microsoft.com/fwlink/?LinkId=619790)
+[<span data-ttu-id="a5ae8-116">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="a5ae8-116">Get-InstalledScript</span></span>](http://go.microsoft.com/fwlink/?LinkId=619790)
 
-## <a name="example-commands"></a><span data-ttu-id="4dcad-117">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="4dcad-117">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="a5ae8-117">Példa parancsok</span><span class="sxs-lookup"><span data-stu-id="a5ae8-117">Example commands</span></span>
 
 ```powershell
 
@@ -98,4 +98,3 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Scripts
 
 
 ```
-

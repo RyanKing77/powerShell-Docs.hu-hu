@@ -1,19 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A MSFT_DSCLocalConfigurationManager osztály SendConfigurationApplyAsync módszer"
-ms.openlocfilehash: e680d510aaac097f4f0de80660274230e028ed45
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Az MSFT_DSCLocalConfigurationManager osztály SendConfigurationApplyAsync metódusa
+ms.openlocfilehash: 7ff821a277a548869862741551ee9897e417ea45
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="dc8c4-103">A MSFT_DSCLocalConfigurationManager osztály SendConfigurationApplyAsync módszer</span><span class="sxs-lookup"><span data-stu-id="dc8c4-103">SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="d1eff-103">Az MSFT_DSCLocalConfigurationManager osztály SendConfigurationApplyAsync metódusa</span><span class="sxs-lookup"><span data-stu-id="d1eff-103">SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-<span data-ttu-id="dc8c4-104">A konfigurációs dokumentum aszinkron módon küld a felügyelt csomóponthoz, és a konfigurációs ügynök segítségével a konfiguráció alkalmazásához.</span><span class="sxs-lookup"><span data-stu-id="dc8c4-104">Sends the configuration document asynchronously to the managed node and uses the Configuration Agent to apply the configuration.</span></span>
+<span data-ttu-id="d1eff-104">A konfigurációs dokumentum aszinkron módon küld a felügyelt csomóponthoz, és a konfigurációs ügynök segítségével a konfiguráció alkalmazásához.</span><span class="sxs-lookup"><span data-stu-id="d1eff-104">Sends the configuration document asynchronously to the managed node and uses the Configuration Agent to apply the configuration.</span></span>
 
-<a name="syntax"></a><span data-ttu-id="dc8c4-105">Szintaxis</span><span class="sxs-lookup"><span data-stu-id="dc8c4-105">Syntax</span></span>
+<a name="syntax"></a><span data-ttu-id="d1eff-105">Szintaxis</span><span class="sxs-lookup"><span data-stu-id="d1eff-105">Syntax</span></span>
 ------
 
 ```mof
@@ -24,43 +24,32 @@ uint32 SendConfigurationApplyAsync(
 );
 ```
 
-<a name="parameters"></a><span data-ttu-id="dc8c4-106">Paraméterek</span><span class="sxs-lookup"><span data-stu-id="dc8c4-106">Parameters</span></span>
+<a name="parameters"></a><span data-ttu-id="d1eff-106">Paraméterek</span><span class="sxs-lookup"><span data-stu-id="d1eff-106">Parameters</span></span>
 ----------
 
-<span data-ttu-id="dc8c4-107">*ConfigurationData* \[a\]</span><span class="sxs-lookup"><span data-stu-id="dc8c4-107">*ConfigurationData* \[in\]</span></span>  
-<span data-ttu-id="dc8c4-108">A környezet konfigurációjának adatait.</span><span class="sxs-lookup"><span data-stu-id="dc8c4-108">The environment data for the configuration.</span></span>
+<span data-ttu-id="d1eff-107">*ConfigurationData* \[a\] konfigurációjának a környezet adatait.</span><span class="sxs-lookup"><span data-stu-id="d1eff-107">*ConfigurationData* \[in\] The environment data for the configuration.</span></span>
 
-<span data-ttu-id="dc8c4-109">*kényszerített* \[a\]</span><span class="sxs-lookup"><span data-stu-id="dc8c4-109">*force* \[in\]</span></span>  
-<span data-ttu-id="dc8c4-110">**Igaz** kényszerítése a konfigurációját, és állítsa le.</span><span class="sxs-lookup"><span data-stu-id="dc8c4-110">**true** to force the configuration to stop.</span></span>
+<span data-ttu-id="d1eff-108">*kényszerített* \[a\] **igaz** kényszerítése a konfigurációját, és állítsa le.</span><span class="sxs-lookup"><span data-stu-id="d1eff-108">*force* \[in\] **true** to force the configuration to stop.</span></span>
 
-<span data-ttu-id="dc8c4-111">*a JobId értékének* \[a\]</span><span class="sxs-lookup"><span data-stu-id="dc8c4-111">*jobId* \[in\]</span></span>  
-<span data-ttu-id="dc8c4-112">A konfigurációs küldési feladat Azonosítóját.</span><span class="sxs-lookup"><span data-stu-id="dc8c4-112">The ID of the job for which to send the configuration.</span></span>
+<span data-ttu-id="d1eff-109">*a JobId értékének* \[a\] küldési a konfigurációs feladat az azonosító.</span><span class="sxs-lookup"><span data-stu-id="d1eff-109">*jobId* \[in\] The ID of the job for which to send the configuration.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="dc8c4-113">Visszatérési érték</span><span class="sxs-lookup"><span data-stu-id="dc8c4-113">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="d1eff-110">Visszatérési érték</span><span class="sxs-lookup"><span data-stu-id="d1eff-110">Return value</span></span>
 ------------
 
-<span data-ttu-id="dc8c4-114">Sikeres művelet; nulla értéket ad vissza Ellenkező esetben hibakódot.</span><span class="sxs-lookup"><span data-stu-id="dc8c4-114">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="d1eff-111">Sikeres művelet; nulla értéket ad vissza Ellenkező esetben hibakódot.</span><span class="sxs-lookup"><span data-stu-id="d1eff-111">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="dc8c4-115">Megjegyzések</span><span class="sxs-lookup"><span data-stu-id="dc8c4-115">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="d1eff-112">Megjegyzések</span><span class="sxs-lookup"><span data-stu-id="d1eff-112">Remarks</span></span>
 
-<span data-ttu-id="dc8c4-116">Ez a statikus módszer.</span><span class="sxs-lookup"><span data-stu-id="dc8c4-116">This is a static method.</span></span>
+<span data-ttu-id="d1eff-113">Ez a statikus módszer.</span><span class="sxs-lookup"><span data-stu-id="d1eff-113">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="dc8c4-117">Követelmények</span><span class="sxs-lookup"><span data-stu-id="dc8c4-117">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="d1eff-114">Követelmények</span><span class="sxs-lookup"><span data-stu-id="d1eff-114">Requirements</span></span>
 ------------
-><span data-ttu-id="dc8c4-118">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="dc8c4-118">**MOF:** DscCore.mof</span></span>
+><span data-ttu-id="d1eff-115">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="d1eff-115">**MOF:** DscCore.mof</span></span>
 
-><span data-ttu-id="dc8c4-119">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="dc8c4-119">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
-
-
-## <a name="see-also"></a><span data-ttu-id="dc8c4-120">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="dc8c4-120">See also</span></span>
+><span data-ttu-id="d1eff-116">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="d1eff-116">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[<span data-ttu-id="dc8c4-121">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="dc8c4-121">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="d1eff-117">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="d1eff-117">See also</span></span>
 
 
- 
-
- 
-
-
-
+[<span data-ttu-id="d1eff-118">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="d1eff-118">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
