@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A beágyazási konfigurációk"
-ms.openlocfilehash: 89badda86707a129909b1c3cc3f79afa0b5f5df6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Konfigurációs adatok beágyazása
+ms.openlocfilehash: 9c6dbce462f7481e5714039a95ae85f85be0072e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="nesting-dsc-configurations"></a>Kényszerítsen a DSC-konfigurációk
 
@@ -17,7 +17,7 @@ Mindkét konfigurációjában ugyanabban a fájlban definiálni kell.
 Egy egyszerű példa vizsgáljuk meg:
 
 ```powershell
-Configuration FileConfig 
+Configuration FileConfig
 {
     param (
         [Parameter(Mandatory = $true)]
@@ -35,7 +35,7 @@ Configuration FileConfig
            DestinationPath = $CopyTo
            Ensure = 'Present'
        }
-    
+
 }
 
 Configuration NestedFileConfig
@@ -51,10 +51,10 @@ Configuration NestedFileConfig
 }
 ```
 
-Ebben a példában `FileConfig` két kötelező paraméterei, **CopyFrom** és **CopyTo**, a értékei használt a **SourcePath** és  **DestinationPath** tulajdonságokat a `File` erőforrás blokkot. A `NestedConfig` konfigurációs hívások `FileConfig` , mintha egy erőforrást.
+Ebben a példában `FileConfig` két kötelező paraméterei, **CopyFrom** és **CopyTo**, a értékei használt a **SourcePath** és  **DestinationPath** tulajdonságokat a `File` erőforrás blokkot.
+A `NestedConfig` konfigurációs hívások `FileConfig` , mintha egy erőforrást.
 A tulajdonságok a `NestedConfig` erőforrás blokk (**CopyFrom** és **CopyTo**) paraméterei vannak a `FileConfig` konfigurációs.
 
 ## <a name="see-also"></a>Lásd még:
 
 - [Összetett erőforrásai erőforrásként a DSC-konfiguráció használata](authoringResourceComposite.md)
-

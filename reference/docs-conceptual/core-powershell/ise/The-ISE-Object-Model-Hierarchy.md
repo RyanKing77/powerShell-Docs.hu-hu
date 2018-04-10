@@ -1,15 +1,18 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: A ISE objektum modell hierarchia
-ms.openlocfilehash: 2df6d40f39dbe14bd3f46a6400cde4a6e91052ef
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+title: Az ISE objektummodell-hierarchiája
+ms.openlocfilehash: 0159707b1050c412a74da3d3ca02a46cea982556
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="the-ise-object-model-hierarchy"></a>A ISE objektum modell hierarchia
-Ez a témakör bemutatja a Windows PowerShell integrált parancsfájlkezelési környezet (ISE) részét képező objektumok hierarchiáját. A Windows PowerShell ISE megtalálható a Windows PowerShell 3.0 és a Windows PowerShell 4.0-s verzióját. Kattintson egy objektumot léphet vissza az osztály, amely meghatározza az objektum dokumentációját.
+# <a name="the-ise-object-model-hierarchy"></a>Az ISE objektummodell-hierarchiája
+
+Ez a témakör bemutatja a Windows PowerShell integrált parancsfájlkezelési környezet (ISE) részét képező objektumok hierarchiáját.
+A Windows PowerShell ISE megtalálható a Windows PowerShell 3.0 és a Windows PowerShell 4.0-s verzióját.
+Kattintson egy objektumot léphet vissza az osztály, amely meghatározza az objektum dokumentációját.
 
 ## <a name="psise-object"></a>$psISE objektum
 
@@ -43,8 +46,10 @@ A Microsoft.PowerShell.Host.ISE.ISEOptions osztály példánya.
 ## <a name="psisepowershelltabsthe-powershelltabcollection-objectmd"></a>[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
 
 A **$psISE.PowerShellTabs** objektum példánya a [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) osztály.
-Minden a jelenleg megnyitott PowerShell lapok, amelyek megfelelnek az elérhető Windows PowerShell környezetben futtatni, a helyi számítógépen vagy a csatlakoztatott távoli számítógépeken lévő gyűjteménye. A gyűjtemény minden tagja egy példányát a [PowerShellTab](The-PowerShellTab-Object.md) osztály.
+Minden a jelenleg megnyitott PowerShell lapok, amelyek megfelelnek az elérhető Windows PowerShell környezetben futtatni, a helyi számítógépen vagy a csatlakoztatott távoli számítógépeken lévő gyűjteménye.
+A gyűjtemény minden tagja egy példányát a [PowerShellTab](The-PowerShellTab-Object.md) osztály.
 
 ## <a name="see-also"></a>Lásd még:
-- [A Windows PowerShell ISE Scripting Hálózatiobjektum-modellje](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [A Windows PowerShell ISE objektumhivatkozás modell](Windows-PowerShell-ISE-Object-Model-Reference.md)
+
+- [A Windows PowerShell ISE objektummodell Scripting célja](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Az ISE objektummodell-hierarchiája](The-ISE-Object-Model-Hierarchy.md)

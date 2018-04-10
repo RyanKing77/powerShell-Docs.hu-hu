@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: c7318552969c44f3b79f82efd71e6a72bfabef6b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: 85e9206ffef76fb4bd7714d847888e6e5bbcc4ec
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 nyelvi újdonságai 
+# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 nyelvi újdonságai
 
 PowerShell 5.0 vezet be a következő új nyelvi elemek a Windows PowerShellben:
 
 ## <a name="class-keyword"></a>Osztály kulcsszó
 
-A **osztály** kulcsszó egy új osztályt határoz meg. Ez a .NET-keretrendszer típus igaz értékű. A osztályelemen nyilvános, de csak nyilvános modul hatókörében.
+A **osztály** kulcsszó egy új osztályt határoz meg. Ez a .NET-keretrendszer típus igaz értékű.
+A osztályelemen nyilvános, de csak nyilvános modul hatókörében.
 Nem lehet hivatkozni a következő típusnév karakterláncként (például `New-Object` nem működik), és ebben a kiadásban szövegkonstans típus nem használható (például `[MyClass]`) kívül a parancsfájl/modul fájlt, amelyben az osztály definiálva van.
 
 ```powershell
@@ -57,18 +58,18 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Importálás – DscResource
+## <a name="import-dscresource"></a>Import-DscResource
 
 **Importálás – DscResource** mostantól egy igaz dinamikus kulcsszóval.
 PowerShell elemzi a megadott modul gyökérmodult, tartalmazó osztályok keresése a **DscResource** attribútum.
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-Új mező **ImplementingAssembly**, ModuleInfo hozzá lett adva. A dinamikus szerelvény egy szkriptmodulba készült, ha a parancsfájl osztályok határozza meg, vagy a bináris modulok betöltött szerelvény érték. Nincs beállítva mikor ModuleType jegyzékfájl =. 
+Új mező **ImplementingAssembly**, ModuleInfo hozzá lett adva. A dinamikus szerelvény egy szkriptmodulba készült, ha a parancsfájl osztályok határozza meg, vagy a bináris modulok betöltött szerelvény érték. Nincs beállítva mikor ModuleType jegyzékfájl =.
 
 A reflexió a **ImplementingAssembly** mező a modulokban lévő erőforrások felderítésére szolgál. Ez azt jelenti, hogy is felderítheti, PowerShell vagy más felügyelt nyelvek erőforrásokat.
 
-Az inicializálók mezők:      
+Az inicializálók mezők:
 
 ```powershell
 [int] $i = 5
@@ -86,11 +87,11 @@ A típus nem kötelező megadni.
 $s = "hello"
 ```
 
-Minden tagjai nyilvános. 
+Minden tagjai nyilvános.
 
 ## <a name="constructors-and-instantiation"></a>Konstruktorok és a példánylétrehozás
 
-A Windows PowerShell-osztályokat lehet konstruktorok; az osztály megegyező névvel rendelkeznek. Konstruktorok is túlterhelt. Statikus konstruktorok támogatottak. Inicializálási kifejezések értékkel rendelkező tulajdonságok a rendszer konstruktorban kód futtatása előtt inicializálja. A statikus tulajdonságok inicializálása előtt statikus konstruktorban törzsét, és objektumpéldány tulajdonságai inicializálása előtt nem statikus konstruktorban törzsét. Jelenleg nincs konstruktor a másik konstruktor hívásakor szintaxis (például a C\# szintaxis ": this()"). Kerülő megoldás lehet egy közös Init metódus meghatározásához. 
+A Windows PowerShell-osztályokat lehet konstruktorok; az osztály megegyező névvel rendelkeznek. Konstruktorok is túlterhelt. Statikus konstruktorok támogatottak. Inicializálási kifejezések értékkel rendelkező tulajdonságok a rendszer konstruktorban kód futtatása előtt inicializálja. A statikus tulajdonságok inicializálása előtt statikus konstruktorban törzsét, és objektumpéldány tulajdonságai inicializálása előtt nem statikus konstruktorban törzsét. Jelenleg nincs konstruktor a másik konstruktor hívásakor szintaxis (például a C\# szintaxis ": this()"). Kerülő megoldás lehet egy közös Init metódus meghatározásához.
 
 A következő módon példányának osztályok ebben a kiadásban.
 
@@ -113,7 +114,7 @@ $c = [MyClass]::new(@(42,43,44), "Hello")
 
 Ebben a kiadásban a New-Object nem működik a Windows PowerShell-ben definiált osztályokkal. Ebben a kiadásban a következő típusnév is csak látható lexically, ami azt jelenti, nem látható a modul vagy a parancsfájl az osztályt definiáló kívül. Funkciók Windows PowerShell meghatározott osztály példányainak lépjen vissza, és példányok működik jól kívül a modul vagy a parancsfájlhoz.
 
-`Get-Member -Static`konstruktorok, sorolja fel, mint bármely más módszerrel túlterhelések szeretné megjeleníteni. Az ezen szintakszist teljesítménye is jelentősen gyorsabb, mint a New-Object.
+`Get-Member -Static` konstruktorok, sorolja fel, mint bármely más módszerrel túlterhelések szeretné megjeleníteni. Az ezen szintakszist teljesítménye is jelentősen gyorsabb, mint a New-Object.
 
 A pszeudo statikus metódus nevű **új** .NET tárolóhelytípussal működik, a következő példában látható módon.
 
@@ -151,12 +152,12 @@ A metódushívás:
 
 ```powershell
 $b = [MyClass]::new()
-$b.DoSomething(42) 
+$b.DoSomething(42)
 ```
 
 Túlterhelt metódusok – Ez azt jelenti, hogy a meglévő metódus azonos nevű, de a megadott értékek--szerint megkülönböztetett is támogatott.
 
-## <a name="properties"></a>Tulajdonságok 
+## <a name="properties"></a>Tulajdonságok
 
 Az összes tulajdonság olyan nyilvános. Tulajdonságok szükség soremelés vagy pontosvesszővel válassza el. Ha nincs objektum típusaként van megadva, a a tulajdonság típusa nem objektum.
 
@@ -210,7 +211,8 @@ $v -eq $d # true
 
 ## <a name="end-to-end-example"></a>Végpontok – példa
 
-Az alábbi példa létrehoz egy HTML dinamikus stílus lap nyelvi (DSL) megvalósításának számos új, egyéni osztályok. Ezt követően a példa ad segédfüggvények találhatók, az elem osztályt, például címsorok és táblák, részeként meghatározott elemtípus létrehozásához, mert típusok nem használhatók a modulok hatókörén kívül.
+Az alábbi példa létrehoz egy HTML dinamikus stílus lap nyelvi (DSL) megvalósításának számos új, egyéni osztályok.
+Ezt követően a példa ad segédfüggvények találhatók, az elem osztályt, például címsorok és táblák, részeként meghatározott elemtípus létrehozásához, mert típusok nem használhatók a modulok hatókörén kívül.
 
 ```powershell
 # Classes that define the structure of the document
@@ -220,7 +222,7 @@ class Html
     [string] $docType
     [HtmlHead] $Head
     [Element[]] $Body
-    
+
     [string] Render()
     {
         $text = "<html>`n<head>`n"
@@ -334,4 +336,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-

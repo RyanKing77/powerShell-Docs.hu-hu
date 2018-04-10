@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: 2d56df459a4e09a16ab16c02f7ca2744c779206f
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: 505ff4ebef2d0b063edacbdfa465616890be1001
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="powershellget-cmdlets-for-script-management"></a>Parancsfájl-kezelési PowerShellGet-parancsmagjai
+# <a name="powershellget-cmdlets-for-script-management"></a>PowerShellGet-parancsmagok parancsfájlkezeléshez
 
 ## <a name="find-script-cmdlet"></a>Keresés parancsfájl-parancsmag
 Keresés-parancsfájl parancsmag lehetővé teszi a parancsfájlok, például a neve, címke, szűrő, utasítás neve, verziója tartományon, pontos verziót, összes verzió és annak függőségeit és az adott vagy regisztrált összes adattárak különböző keresési feltételekkel felderítéséhez.
@@ -575,7 +575,7 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## <a name="update-scriptfileinfo-cmdlet"></a>Frissítés-ScriptFileInfo parancsmag
+## <a name="update-scriptfileinfo-cmdlet"></a>Update-ScriptFileInfo cmdlet
 Frissítés-ScriptFileInfo parancsmag lehetővé teszi a meglévő parancsfájl fájl metaadatok frissítésére.
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
@@ -686,4 +686,3 @@ Repository : GalleryINT
 PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 ```
-

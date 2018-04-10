@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell parancsmag
-ms.date: 2016-12-12
-title: "pswawebapplication telepítése"
+ms.date: 12/12/2016
+title: pswawebapplication telepítése
 ms.technology: powershell
-ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c7f7768a41b6784d8c29afa1fccf0b855160b777
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
@@ -35,7 +35,7 @@ A **Install-PswaWebApplication** parancsmag konfigurálja a Windows PowerShell W
 
 Meghatározza, hogy létrejött-e egy teszttanúsítványt. Ha a paraméter értéke igaz, akkor ez a parancsmag létrehoz egy tesztelési tanúsítványt, és konfigurálja a Windows PowerShell Web Access webalkalmazás használhassa a tanúsítványt a HTTPS-kéréseket. Ha ez a paraméter false értékre van beállítva, akkor nincs tanúsítvány vagy a kötés jön létre. Állítsa be ezt az értéket az hamis, ha a Windows PowerShell Web Access egy másik tanúsítvánnyal.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -48,7 +48,7 @@ Meghatározza, hogy létrejött-e egy teszttanúsítványt. Ha a paraméter ért
 
 Megadja a webalkalmazás nevét. Ez a Windows PowerShell Web Access URL-cím utolsó részeként jelenik meg.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -61,7 +61,7 @@ Megadja a webalkalmazás nevét. Ez a Windows PowerShell Web Access URL-cím uto
 
 Adja meg a webkiszolgáló (IIS) webhely telepítéséhez a Windows PowerShell Web Access webes alkalmazás neve.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -74,7 +74,7 @@ Adja meg a webkiszolgáló (IIS) webhely telepítéséhez a Windows PowerShell W
 
 Jóváhagyást kér a parancsmag futtatása előtt.
 
-|||  
+|||
 |-|-|
 | Kötelező?                            | hamis                                |
 | Pozíció?                            | nevű                                |
@@ -87,7 +87,7 @@ Jóváhagyást kér a parancsmag futtatása előtt.
 Bemutatja, mi történne a parancsmag futtatásakor.
 A parancsmag nem fut.
 
-|||  
+|||
 |-|-|
 | Kötelező?                            | hamis                                |
 | Pozíció?                            | nevű                                |

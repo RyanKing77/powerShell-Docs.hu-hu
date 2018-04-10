@@ -1,23 +1,23 @@
 ---
-ms.date: 2017-06-09
+ms.date: 06/09/2017
 schema: 2.0.0
-keywords: PowerShell
+keywords: powershell
 title: RequireLicenseAcceptance
-ms.openlocfilehash: 260ccc1ee52d09a640e88203c5644f20f9723d6f
-ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
+ms.openlocfilehash: d78f8cb7f84869880e9a88a0f0407d18dc5c64cb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="modules-requiring-license-acceptance"></a>Licenc elfogadása igénylő modulok
+# <a name="modules-requiring-license-acceptance"></a>Licencfeltételek elfogadását igénylő modulok
 
-## <a name="synopsis"></a>ÖSSZEGZÉST
+## <a name="synopsis"></a>SYNOPSIS
 Az egyes modul közzétevők jogi részlegek szükséges, hogy az ügyfelek kell explicit módon fogadnia a licencfeltételeket a modul PowerShell-galériából telepítése előtt. Ha a felhasználó telepíti, frissítéseket, vagy egy modul segítségével PowerShellGet, közvetlenül vagy egy másik elem függőségei menti, és a modult a felhasználónak kell vállalja, hogy a licenc, a felhasználó jeleznie kell, a licenc elfogadja őket, vagy a művelet sikertelen lesz.
 
 ## <a name="publish-requirements-for-modules"></a>Modulok követelményei közzététele
 
 Modulok, amelyeket szeretne felhasználótól megkövetelje-licenc szükséges következő követelményeknek kell teljesítéséhez:
-    
+
 - Moduljegyzék PSData szakasza tartalmaznia kell RequireLicenseAcceptance = $True.
 - Modul gyökérkönyvtárában license.txt fájl tartalmazza.
 - Moduljegyzék licenc Uri kell tartalmaznia.
@@ -28,16 +28,16 @@ Modulok, amelyeket szeretne felhasználótól megkövetelje-licenc szükséges k
 - Telepítés/Save/frissítési parancsmagok fogja támogatni egy új paraméter, amely fog viselkedni, mintha a felhasználói licenc látott – AcceptLicense.
 - Ha RequiredLicenseAcceptance tulajdonság igaz értékű, és – AcceptLicense nincs megadva, a felhasználó a license.txt, és megjelenítendő jelenik meg: &quot;elfogadja ezeket a licencfeltételeket (Yes/No/YesToAll/NoToAll)&quot;.
   - Ha elfogadja a licencfeltételeket
-    - **Mentés-modul:** a modul a program a felhasználó &#39; s rendszer
-    - **Install-modul:** a modul a program a felhasználó &#39; s rendszer a megfelelő mappába (hatókör alapján)
+    - **Mentés-modul:** fogja másolni. a modul a felhasználó&#39;s rendszer
+    - **Install-modul:** fogja másolni. a modul a felhasználó&#39;s rendszer a megfelelő mappába (hatókör alapján)
     - **Frissítés-modul:** a modul frissülni fog.
-  - Ha a rendszer elutasította, a licenc. 
+  - Ha a rendszer elutasította, a licenc.
     - A művelet megszakad.
 - Az összes parancsmag rákeres a metaadatok (requireLicenseAcceptance és adatformátum-verzió), amely szerint a licencszerződés elfogadását szükség
   - Formátum az ügyfél verziója régebbi, mint 2,0, a művelet sikertelen, és kérje meg, hogy frissítse az ügyfelet.
   - Ha a modul lett közzétéve, hogy a régebbi, mint a 2.0-s verziójú adatformátum, requireLicenseAcceptance jelző figyelmen kívül hagyja.
 
-    
+
  ## <a name="module-dependencies"></a>A modul függőségek
 - Telepítés/Save/frissítése közben. a művelet, ha egy függő modul (valami mással függ a modul) igényel licenc elfogadása, akkor a licenc elfogadása viselkedését (fent) lesz szükség.
 - A modul verzió már szerepel a helyi katalógus telepítését a rendszer, ha azt szeretné szülőkönyvtár a licenc.
@@ -47,7 +47,7 @@ Modulok, amelyeket szeretne felhasználótól megkövetelje-licenc szükséges k
 
 Megadásával – kényszerített nincs elegendő fogadnia a licencfeltételeket. – AcceptLicense jogosultsága a telepítéséhez szükség. Ha – Force meg van adva, RequiredLicenseAcceptance tulajdonság igaz értékű, és – AcceptLicense nincs megadva, a művelet sikertelen lesz.
 
-## <a name="examples"></a>PÉLDÁK
+## <a name="examples"></a>EXAMPLES
 
 ### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>1. példa: Frissítés modul Alkalmazásjegyzéket licencszerződés elfogadására van szükség
 ```PowerShell
@@ -59,7 +59,7 @@ PrivateData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
     } # End of PSData hashtable
-    
+
  } # End of PrivateData hashtable
 ```
 Ez a parancs frissíti a jegyzékfájlt és a RequireLicenseAcceptance jelző IGAZ értékűre állítja be.
@@ -78,7 +78,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
 ```
 Ez a parancs megjeleníti a licenc license.txt fájlból, és megkérdezi a felhasználót, hogy elfogadja a licencfeltételeket.
@@ -117,7 +117,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>6. példa: Telepítés modul licenc elfogadása és - AcceptLicense függőségekkel rendelkező
@@ -147,7 +147,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 Ez a parancs megjeleníti a licenc license.txt fájlból, és megkérdezi a felhasználót, hogy elfogadja a licencfeltételeket.
 
@@ -172,7 +172,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 Ez a parancs megjeleníti a licenc license.txt fájlból, és megkérdezi a felhasználót, hogy elfogadja a licencfeltételeket.
 
@@ -183,8 +183,8 @@ PS C:\> Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 Modul frissül bármely prompt licenc elfogadása nélkül.
 
 ## <a name="more-details"></a>További részletekért
-### <a name="require-license-acceptance-for-scriptsscriptscriptrequirelicenseacceptancemd"></a>[Parancsfájlok licencszerződés elfogadására van szükség](../script/script_RequireLicenseAcceptance.md)
+### <a name="require-license-acceptance-for-scriptsscriptscriptrequirelicenseacceptancemd"></a>[Licencfeltételek elfogadásának megkövetelése a parancsfájlokhoz](../script/script_RequireLicenseAcceptance.md)
 
 ### <a name="require-license-acceptance-support-on-powershellgallerypsgallerypsgalleryrequireslicenseacceptancemd"></a>[A PowerShellGallery licenc elfogadása támogatásra van szüksége](../../psgallery/psgallery_requires_license_acceptance.md)
 
-### <a name="require-license-acceptance-on-deploy-to-azure-automationpsgallerypsgallerydeploytoazureautomationrequirelicenseacceptancemd"></a>[Licenc elfogadására van szükség az Azure Automation szolgáltatásbeli központi telepítése](../../psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
+### <a name="require-license-acceptance-on-deploy-to-azure-automationpsgallerypsgallerydeploytoazureautomationrequirelicenseacceptancemd"></a>[Licencfeltételek elfogadásának kérése az Azure Automation szolgáltatásban való üzembe helyezéshez](../../psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell 2.0 motor telepítése"
+title: A Windows PowerShell 2.0 motor telepítése
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: ff6c2b52b8948472ace3ee35cd4c6aa2dbf46c25
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0b3282a1a67886509e749af0f499c47fe7a99411
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>A Windows PowerShell 2.0 motor telepítése
 Ez a témakör ismerteti, hogyan telepítheti a Windows PowerShell 2.0 motor.
@@ -77,5 +77,4 @@ A Windows Management Framework 3.0-csomagot, amely a Windows 7, Windows Server 2
 - [Windows PowerShell rendszerkövetelményei](Windows-PowerShell-System-Requirements.md)
 - [Windows PowerShell telepítése](Installing-Windows-PowerShell.md)
 - [A Windows PowerShell indítása](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-- [A Windows PowerShell 2.0 motor](Starting-the-Windows-PowerShell-2.0-Engine.md)
-
+- [A Windows PowerShell 2.0 motor indítása](Starting-the-Windows-PowerShell-2.0-Engine.md)

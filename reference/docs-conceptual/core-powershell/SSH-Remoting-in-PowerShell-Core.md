@@ -1,4 +1,4 @@
-# <a name="powershell-remoting-over-ssh"></a>PowerShell távvezérlése SSH-n keresztül
+# <a name="powershell-remoting-over-ssh"></a>PowerShell távoli eljáráshívás SSH-n keresztül
 
 ## <a name="overview"></a>Áttekintés
 
@@ -59,7 +59,7 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
     Restart-Service sshd
     ```
 1. Az elérési utat, ahol OpenSSH van telepítve az elérési út Env változó hozzáadása
-    - Ez a témakörgyűjtemény legyen`C:\Program Files\OpenSSH\`
+    - Ez a témakörgyűjtemény legyen `C:\Program Files\OpenSSH\`
     - Ez lehetővé teszi a keresett ssh.exe
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) gépen beállítása
@@ -92,11 +92,11 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
 
 1. Telepítse a legújabb [PowerShell MacOS] összeállítása
     - Ellenőrizze, hogy engedélyezve van a SSH távelérése az alábbiak szerint:
-      - Nyissa meg`System Preferences`
-      - Kattintson a`Sharing`
-      - Ellenőrizze `Remote Login` -üzenetnek kell megjelennie`Remote Login: On`
+      - Nyissa meg `System Preferences`
+      - Kattintson a `Sharing`
+      - Ellenőrizze `Remote Login` -üzenetnek kell megjelennie `Remote Login: On`
       - Megfelelő felhasználók hozzáférésének engedélyezése
-1. Szerkessze a `sshd_config` fájl a következő helyen:`/private/etc/ssh/sshd_config`
+1. Szerkessze a `sshd_config` fájl a következő helyen: `/private/etc/ssh/sshd_config`
     - A kedvenc szerkesztővel vagy
     ```bash
     sudo nano /private/etc/ssh/sshd_config

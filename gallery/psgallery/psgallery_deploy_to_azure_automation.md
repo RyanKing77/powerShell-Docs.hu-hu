@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "gyűjtemény, a powershell, a parancsmag, a psgallery"
+keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
 title: psgallery_deploy_to_azure_automation
-ms.openlocfilehash: 223acbcc2f6cd4f15e1ee55d3f2f68df851cd902
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 8da4eabead6a419dc0c01c74335c06bf8be25d0c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-<a name="deploy-to-azure-automation"></a>Azure Automation szolgáltatásbeli telepítése
+<a name="deploy-to-azure-automation"></a>Üzembe helyezés az Azure Automation szolgáltatásban
 ===========================
 
 Azure Automation gomb elem részleteit megjelenítő oldalon a telepítés telepíti az Azure Automation a PowerShell-galériából elemet.
@@ -27,4 +27,3 @@ Ha egy modult telepít, akkor jelenik meg az Azure Automation modulok szakaszáb
 Azure Automation gombra a telepítés az elem metaadatok AzureAutomationNotSupported címke hozzáadásával lehet letiltani.
 
 Azure Automation kapcsolatos további tudnivalókért tekintse meg az Azure Automation-webhely [Azure Automation-webhely](http://azure.microsoft.com/services/automation/).
-

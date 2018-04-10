@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
-title: "PowerShellGet modul beolvasása"
-ms.openlocfilehash: 7224cf5d71b98d51ca22c47a00ca382d34864bfb
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
+title: A PowerShellGet modul beolvasása
+ms.openlocfilehash: a392f795d8c065ff881bc6cc113e63a1f18bcb44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-<a name="get-powershellget-module"></a>PowerShellGet modul beolvasása
+<a name="get-powershellget-module"></a>A PowerShellGet modul beolvasása
 ========================
 
 ### <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a>PowerShellGet az egy beépített modul, a következő kiadásokban
@@ -20,7 +20,7 @@ ms.lasthandoff: 03/15/2018
 - [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
 ### <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>PowerShell-verziók 3.0 és 4.0 PowerShellGet modul beolvasása
-- [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409) 
+- [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
 
 ### <a name="get-the-latest-version-from-powershell-gallery"></a>A legújabb verzió letöltéséhez a PowerShell-galériából
 
@@ -30,7 +30,7 @@ Install-PackageProvider Nuget –Force
 Exit
 ```
 
-#### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>A legújabb PowerShellGet telepítése rendszerekhez PowerShell 5.0 (vagy újabb) 
+#### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>A legújabb PowerShellGet telepítése rendszerekhez PowerShell 5.0 (vagy újabb)
 - Ehhez a Windows 10, Windows Server 2016, a rendszer WMF 5.0 vagy telepített 5.1 vagy 6-os PowerShell, a rendszer a következő parancsokat egy rendszergazda jogú PowerShell-munkamenetben.
 ```powershell
 Install-Module –Name PowerShellGet –Force
@@ -59,3 +59,4 @@ Exit
 ```powershell
 Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
 Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+```

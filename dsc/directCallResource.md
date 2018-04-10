@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Közvetlenül a DSC-erőforrás metódusok meghívása"
-ms.openlocfilehash: 68344d1be5c41e5ce4660e0a62019fa0a52c2541
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: DSC-erőforrások metódusainak közvetlen hívása
+ms.openlocfilehash: dbf0a4ada4c6cc2e7d65698b87a5a29a2ea84781
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="calling-dsc-resource-methods-directly"></a>Közvetlenül a DSC-erőforrás metódusok meghívása
+# <a name="calling-dsc-resource-methods-directly"></a>DSC-erőforrások metódusainak közvetlen hívása
 
 >Vonatkozik: A Windows PowerShell 5.0
 
-Használhatja a [Invoke-DscResource](https://technet.microsoft.com/library/mt517869.aspx) parancsmagot hívja közvetlenül a funkciók vagy DSC erőforrás módszerek (a **Get-TargetResource**, **Set-TargetResource**, és  **Test-TargetResource** funkciók MOF-alapú erőforrás, vagy a **beolvasása**, **beállítása**, és **teszt** osztály-alapú erőforrás módszerek). Ez használható DSC erőforrások használni kívánt harmadik felek által vagy hasznos eszközként erőforrások fejlesztése során. 
+Használhatja a [Invoke-DscResource](https://technet.microsoft.com/library/mt517869.aspx) parancsmagot hívja közvetlenül a funkciók vagy DSC erőforrás módszerek (a **Get-TargetResource**, **Set-TargetResource**, és  **Test-TargetResource** funkciók MOF-alapú erőforrás, vagy a **beolvasása**, **beállítása**, és **teszt** osztály-alapú erőforrás módszerek).
+Ez használható DSC erőforrások használni kívánt harmadik felek által vagy hasznos eszközként erőforrások fejlesztése során.
 
 Ez a parancsmag jellemzően metakonfigurációját tulajdonsággal együtt `refreshMode = 'Disabled'`, függetlenül attól, hogy mi is használható, de **refreshMode** értékre van állítva.
 
@@ -51,7 +52,6 @@ $result.ItemValue | fl
 >**Megjegyzés:** közvetlen összetett erőforrás metódusok meghívása nem támogatott. Ehelyett hívása az alapul szolgáló erőforrások, az összetett erőforrás alkotó módszerek.
 
 ## <a name="see-also"></a>Lásd még:
-- [Egyéni DSC-erőforrás MOF írása](authoringResourceMOF.md) 
+- [Egyéni DSC-erőforrás MOF írása](authoringResourceMOF.md)
 - [A PowerShell osztályok egyéni DSC-erőforrás írása](authoringResourceClass.md)
 - [ DSC-erőforrások hibakeresése](debugResource.md)
-

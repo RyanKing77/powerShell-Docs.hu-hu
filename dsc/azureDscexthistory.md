@@ -1,22 +1,22 @@
 ---
-description: "Az Azure-ban a kívánt állapot konfigurációs szolgáltatása (DSC) bővítmény korábbi verzióinak megismerése."
-ms.date: 2018-03-14
+description: Az Azure-ban a kívánt állapot konfigurációs szolgáltatása (DSC) bővítmény korábbi verzióinak megismerése.
+ms.date: 03/14/2018
 ms.topic: conceptual
-keywords: "a DSC, az azure powershell-bővítmény"
-title: "Azure DSC-bővítményt verziójának előzményei"
+keywords: a DSC, az azure powershell-bővítmény
+title: Azure DSC-bővítményt verziójának előzményei
 author: DCtheGeek
 ms.author: dacoulte
-ms.openlocfilehash: e324ff9db2aff36a7e13c3a222e3c50f6f1c5d39
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: a183137dde302811874bd5466c35bccebca5d128
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure kívánt állapot konfigurációs bővítmény verziójának előzményei
 
 Az Azure kívánt állapot konfigurációs szolgáltatása (DSC) Virtuálisgép-bővítmény frissül, szükség szerint fejlesztéseket és új képességek érhetők el Azure, a Windows Server és a Windows Management Framework (WMF), amely tartalmazza a Windows PowerShell támogatása.
 
-Ez a cikk nyújt az Azure DSC Virtuálisgép-bővítmény, amit a rendszergazda minden verziójáról azt támogatja, és a megjegyzések, és új szolgáltatásokat vagy módosításokat megjegyzések környezetekben.
+Ez a cikk az Azure DSC Virtuálisgép-bővítmény, az egyes verziójával kapcsolatos tájékoztatást fogunk adni azt támogatja, és a megjegyzések, és új szolgáltatásokat vagy módosításokat megjegyzések milyen környezetekben.
 
 ## <a name="latest-versions"></a>Legújabb verzió
 
@@ -38,9 +38,9 @@ Ez a cikk nyújt az Azure DSC Virtuálisgép-bővítmény, amit a rendszergazda 
   - WMF 4.0
 - **Rendelkező környezetben:**
   - Azure
-- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano a DSC szerepkör telepítve van a virtuális Gépen.
+- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano Server a DSC szerepkör telepítve van a virtuális Gépen.
 - **Új funkciók:**
-  - Github legutóbbi helyezze át a TLS 1.2, után bevezetésében Azure Automation DSC Azure piactéren elérhető DIY Resource Manager-sablonok használatával egy virtuális Gépet nem, vagy DSC-bővítményt használja a konfiguráció a Githubon található. A bővítmény telepítése során a következőhöz hasonló hiba jelenik meg:
+  - GitHub legutóbbi helyezze át a TLS 1.2, után bevezetésében Azure Automation DSC Azure piactéren elérhető DIY Resource Manager-sablonok használatával egy virtuális Gépet nem, vagy DSC-bővítményt használja a konfiguráció a Githubon található. A bővítmény telepítése során a következőhöz hasonló hiba jelenik meg:
 
     ```json
     {
@@ -101,7 +101,7 @@ Ez a cikk nyújt az Azure DSC Virtuálisgép-bővítmény, amit a rendszergazda 
 - **Az operációs rendszer támogatási:** Windows Server 2016-os, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows ügyfél 7/8.1/10, Nano Server
 - **WMF támogatási:** WMF 5.1, a WMF 5.0 RTM-re, a WMF 4.0 frissítést, a WMF 4.0
 - **Környezet:** Azure
-- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano a DSC szerepkör telepítve van a virtuális Gépen.
+- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano Server a DSC szerepkör telepítve van a virtuális Gépen.
 - **Új funkciók:**
   - Programhiba javítások & fejlesztései, amely leegyszerűsíti az Azure Automation DSC a a felhasználói felület portálon keresztül, valamint a Resource Manager-sablon használatával.  További információkért lásd: [alapértelmezett konfigurációs parancsfájl](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/extensions-dsc-overview#default-configuration-script) a DSC-bővítményt dokumentációjában.
 
@@ -111,7 +111,7 @@ Ez a cikk nyújt az Azure DSC Virtuálisgép-bővítmény, amit a rendszergazda 
 - **Az operációs rendszer támogatási:** Windows Server 2016-os, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows ügyfél 7/8.1/10, Nano Server
 - **WMF támogatási:** WMF 5.1, a WMF 5.0 RTM-re, a WMF 4.0 frissítést, a WMF 4.0
 - **Környezet:** Azure
-- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano a DSC szerepkör telepítve van a virtuális Gépen.
+- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano Server a DSC szerepkör telepítve van a virtuális Gépen.
 - **Új funkciók:**
   - Továbbfejlesztett telemetria.
 
@@ -121,7 +121,7 @@ Ez a cikk nyújt az Azure DSC Virtuálisgép-bővítmény, amit a rendszergazda 
 - **Az operációs rendszer támogatási:** Windows Server 2016-os, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows ügyfél 7/8.1/10, Nano Server
 - **WMF támogatási:** WMF 5.1, a WMF 5.0 RTM-re, a WMF 4.0 frissítést, a WMF 4.0
 - **Környezet:** Azure
-- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano a DSC szerepkör telepítve van a virtuális Gépen.
+- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano Server a DSC szerepkör telepítve van a virtuális Gépen.
 - **Új funkciók:**
   - Számos hibajavítást és egyéb kisebb fejlesztések lettek hozzáadva.
 
@@ -131,7 +131,7 @@ Ez a cikk nyújt az Azure DSC Virtuálisgép-bővítmény, amit a rendszergazda 
 - **Az operációs rendszer támogatási:** Windows Server 2016-ot, a Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
 - **WMF támogatási:** WMF 5.1, a WMF 5.0 RTM-re, a WMF 4.0 frissítést, a WMF 4.0
 - **Környezet:** Azure
-- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano a DSC szerepkör telepítve van a virtuális Gépen.
+- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano Server a DSC szerepkör telepítve van a virtuális Gépen.
 - **Új funkciók:**
   - Virtuális gép UUID & DSC ügynök azonosító bővítmény metaadatok mutatja. Egyéb kisebb fejlesztések lettek hozzáadva.
 
@@ -141,7 +141,7 @@ Ez a cikk nyújt az Azure DSC Virtuálisgép-bővítmény, amit a rendszergazda 
 - **Az operációs rendszer támogatási:** Windows Server 2016-ot, a Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
 - **WMF támogatási:** WMF 5.1, a WMF 5.0 RTM-re, a WMF 4.0 frissítést, a WMF 4.0
 - **Környezet:** Azure
-- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano a DSC szerepkör telepítve van a virtuális Gépen.
+- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano Server a DSC szerepkör telepítve van a virtuális Gépen.
 - **Új funkciók:**
   - Nagy mennyiségű hibajavításokat és egyéb fejlesztések lettek hozzáadva.
 
@@ -151,7 +151,7 @@ Ez a cikk nyújt az Azure DSC Virtuálisgép-bővítmény, amit a rendszergazda 
 - **Az operációs rendszer támogatási:** Windows Server 2016-ot, a Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
 - **WMF támogatási:** WMF 5.1, a WMF 5.0 RTM-re, a WMF 4.0 frissítést, a WMF 4.0
 - **Környezet:** Azure
-- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano a DSC szerepkör telepítve van a virtuális Gépen.
+- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano Server a DSC szerepkör telepítve van a virtuális Gépen.
 - **Új funkciók:**
   - A DSC-bővítmény most már a WMF 5.1 támogatása.
   - Kisebb egyéb fejlesztések lettek hozzáadva.
@@ -162,9 +162,9 @@ Ez a cikk nyújt az Azure DSC Virtuálisgép-bővítmény, amit a rendszergazda 
 - **Az operációs rendszer támogatási:** Windows Server 2016-ot, a Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Nano Server
 - **WMF támogatási:** WMF 5.1 Preview, a WMF 5.0 RTM-re, a WMF 4.0 frissítést, a WMF 4.0
 - **Környezet:** Azure
-- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (újraindítást igényel WMF telepítése). A Nano a DSC szerepkör telepítve van a virtuális Gépen.
+- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (újraindítást igényel WMF telepítése). A Nano Server a DSC szerepkör telepítve van a virtuális Gépen.
 - **Új funkciók:**
-  - A DSC-bővítményt a Nano Server most érhető el. Ebben a verzióban elsősorban a bővítmény futtatása Nano server kódmódosításokat tartalmazza.
+  - A DSC-bővítményt a Nano Server most érhető el. Ebben a verzióban elsősorban a bővítmény futtatása Nano Server kódmódosításokat tartalmazza.
   - Kisebb egyéb fejlesztések lettek hozzáadva.
 
 ### <a name="version-220"></a>Verzió 2.20.
@@ -186,7 +186,7 @@ Ez a cikk nyújt az Azure DSC Virtuálisgép-bővítmény, amit a rendszergazda 
 - **Környezet:** Azure Government Azure, az Azure Kínában
 - **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016 Technical Preview; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (újraindítást igényel WMF telepítése).
 - **Új funkciók:**
-  - A DSC-bővítményt van most az előre telepített Azure Kína felé. Ebben a verzióban elsősorban a bővítmény futtatása Azure Kína javításait tartalmazzák.
+  - A DSC-bővítmény már Azure Kína felé előkészítve. Ebben a verzióban elsősorban a bővítmény futtatása Azure Kína javításait tartalmazzák.
 
 ### <a name="version-218"></a>Verzió 2.18.
 
@@ -219,7 +219,7 @@ Ez a cikk nyújt az Azure DSC Virtuálisgép-bővítmény, amit a rendszergazda 
 - **Környezet:** Azure
 - **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016 Technical Preview; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (újraindítást igényel WMF telepítése).
 - **Új funkciók:**
-  - Hiba kezelése és egyéb kisebb hibák javításával javításához.
+  - Hibakezelés és egyéb kisebb hibák javításával javításához.
   - A DSC-bővítmény beállításai új tulajdonság. AdvancedOptions "ForcePullAndApply" hozzáadódik a DSC-bővítmény engedélyezése a DSC-konfigurációk kihirdeti, ha a frissítési mód lekéréses (nem az alapértelmezett leküldéses üzemmód). További információkért tekintse meg [ebben a blogban](https://blogs.msdn.microsoft.com/powershell/2016/02/26/arm-dsc-extension-settings/) további információkat a DSC-bővítmény beállításai.
 
 ### <a name="version-215"></a>2.15 verziója

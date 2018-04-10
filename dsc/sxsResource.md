@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Erőforrások használatát több verziója"
-ms.openlocfilehash: 5ca4eadfe23a4675e1b81b86d4274d7f113228fe
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Eltérő verziójú erőforrások használata
+ms.openlocfilehash: 9e5b989be3f33fb9151f76cecb6d5f700b1e36c9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-resources-with-multiple-versions"></a>Erőforrások használatát több verziója
+# <a name="using-resources-with-multiple-versions"></a>Eltérő verziójú erőforrások használata
 
 > Vonatkozik: A Windows PowerShell 5.0
 
@@ -62,7 +62,7 @@ configuration VersionTest
             DomainAdministratorCredential = Get-Credential
         }
      }
-}     
+}
 ```
 
 >Megjegyzés: Az Import-DscResource ModuleVersion paramétere nem érhető el a PowerShell 4.0. A PowerShell 4.0-s adjon meg egy modul verziót úgy, hogy egy modul specification objektum importálási-DscResource ModuleName paraméterének. A modul specification objektum egy kivonattáblát a modulnév és RequiredVersion kulcsot tartalmazó. Például:
@@ -81,7 +81,7 @@ configuration VersionTest
             DomainAdministratorCredential = Get-Credential
         }
      }
-}     
+}
 ```
 
 Ez is PowerShell 5.0 fog működni, de javasoljuk, hogy használja a **ModuleVersion** paraméter.
@@ -89,4 +89,3 @@ Ez is PowerShell 5.0 fog működni, de javasoljuk, hogy használja a **ModuleVer
 ## <a name="see-also"></a>Lásd még:
 * [A DSC-konfigurációk](configurations.md)
 * [A DSC-erőforrások](resources.md)
-

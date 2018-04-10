@@ -1,6 +1,8 @@
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Elem jegyzék értékek, amelyek hatással van a PowerShell-Galériabeli felhasználói felület
 
-Ez a témakör összefoglaló információkat a közzétevők hogyan lehet módosítani a PowerShell-galériában kiadványokat jegyzékfájljának, hogy az érintett szolgáltatások PowerShellGet parancsmagok és a PowerShell-Galériabeli felhasználói felületén. Ez a tartalom ahol a változás megjelenik, kezdve a középen, akkor az a bal oldali navigációs területen van rendezve. Nincs olyan részletei című szakaszban fedi le címkék azonosítja az fontos címkék, valamint a gyakrabban általánosan használt címkék. Számos jegyzékszakaszban példákat biztosítanak két témakörök. 
+Ez a témakör összefoglaló információkat a közzétevők hogyan lehet módosítani a PowerShell-galériában kiadványokat jegyzékfájljának, hogy az érintett szolgáltatások PowerShellGet parancsmagok és a PowerShell-Galériabeli felhasználói felületén.
+Ez a tartalom ahol a változás megjelenik, kezdve a középen, akkor az a bal oldali navigációs területen van rendezve. Nincs olyan részletei című szakaszban fedi le címkék azonosítja az fontos címkék, valamint a gyakrabban általánosan használt címkék.
+Számos jegyzékszakaszban példákat biztosítanak két témakörök.
 
 * A modulok, lásd: [frissítés modul Manifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
 * Parancsfájlok, lásd: [metaadatokkal parancsfájl létrehozása](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
@@ -10,7 +12,7 @@ Ez a témakör összefoglaló információkat a közzétevők hogyan lehet módo
 Az alábbi táblázat bemutatja a közzétevő által vezérelt a PowerShell-galériában elem lap felhasználói felületi elemei.
 Minden elem azt jelzi, ha azt is kell vezérelnie a modul vagy parancsfájl jegyzékfájlt.
 
-| Felhasználói felületi elem | Leírás | Modul | Parancsfájl | 
+| Felhasználói felületi elem | Leírás | Modul | Parancsfájl |
 | --- | --- | --- | --- |
 | **Cím** | A cikk a katalógusban közzétett neve  | Nem | Nem |
 | **Verzió** | A verzió jelenik meg a verzió-karakterlánca a metaadatok, és egy előzetes Ha meg van adva. Egy moduljegyzék a verzióját elsődleges része a ModuleVersion. Egy olyan parancsfájlt azonosított. VERZIÓ. Egy előzetes verziójának karakterlánc esetén, azt fogja a modulok ModuleVersion fűzött, vagy részeként megadott. Parancsprogramok verziója. Nincs előzetes tartalmazó karakterlánc megadása dokumentációja [modulok](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule), majd a [parancsfájlok](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) | Igen | Igen |
@@ -49,18 +51,26 @@ A PowerShell-tár szerkesztése elem lap lehetővé teszi, hogy a közzétevők 
 * Kibocsátási megjegyzések
 * Licenchez
 
-Ez a módszer nem általában javasolt, kivéve, ha a szükséges javítsa ki, milyen egy modul egy régebbi verziója nem jelenik meg. Felhasználók, akik szereznek a modul jelenik meg a metaadatok nem felel meg a PowerShell-galériában, amely kiváltja a cikk kétségei meg. Ez gyakran a cikk tulajdonosait, hogy a módosítás megerősítéséhez Ugrás lekérdezések eredményez. Erősen ajánlott, hogy ezt a módszert használja, amikor a elem egy új verziója közzé kell tenni a ugyanazon módosításokat. 
+Ez a módszer nem általában javasolt, kivéve, ha a szükséges javítsa ki, milyen egy modul egy régebbi verziója nem jelenik meg.
+Felhasználók, akik szereznek a modul jelenik meg a metaadatok nem felel meg a PowerShell-galériában, amely kiváltja a cikk kétségei meg.
+Ez gyakran a cikk tulajdonosait, hogy a módosítás megerősítéséhez Ugrás lekérdezések eredményez.
+Erősen ajánlott, hogy ezt a módszert használja, amikor a elem egy új verziója közzé kell tenni a ugyanazon módosításokat.
 
 ## <a name="tag-details"></a>Címke részletei
 
-Címke található egyszerű karakterláncok fogyasztók használatával megkeresheti az elemeket. Címke található a legértékesebb, használatukról egységesen ugyanazon a témakörhöz kapcsolódó elemek között. Több változatban is elkészíti a word (például adatbázis és adatbázis, vagy teszt- és tesztelése) általában használatának kevés juttatásra. Címkék egyszavas nem betűérzékeny karakterláncok, és nem tartalmazhat üres értékeket. Ha úgy gondolja, hogy a felhasználók meg fogja keresni egy kifejezést, adja hozzá, amelyek a leírása és a keresési eredmények között található. Használja a Pascal kis-és nagybetűk, kötőjelet, aláhúzásjellel vagy ponttal, ha a kívánt olvashatóságának javítása érdekében. Legyen a hosszú összetett és szokatlan címkék létrehozása elővigyázatos, mivel azok gyakran lett beírva. 
+Címke található egyszerű karakterláncok fogyasztók használatával megkeresheti az elemeket.
+Címke található a legértékesebb, használatukról egységesen ugyanazon a témakörhöz kapcsolódó elemek között. Több változatban is elkészíti a word (például adatbázis és adatbázis, vagy teszt- és tesztelése) általában használatának kevés juttatásra.
+Címkék egyszavas nem betűérzékeny karakterláncok, és nem tartalmazhat üres értékeket. Ha úgy gondolja, hogy a felhasználók meg fogja keresni egy kifejezést, adja hozzá, amelyek a leírása és a keresési eredmények között található. Használja a Pascal kis-és nagybetűk, kötőjelet, aláhúzásjellel vagy ponttal, ha a kívánt olvashatóságának javítása érdekében. Legyen a hosszú összetett és szokatlan címkék létrehozása elővigyázatos, mivel azok gyakran lett beírva.
 
-Nincs címkék fontos megjegyezni, hogy a PowerShell-galériában és PowerShellGet parancsmagok kezeli őket egyedi. PSEdition_Desktop PSEdition_Core az adott példák és fenti. 
+Nincs címkék fontos megjegyezni, hogy a PowerShell-galériában és PowerShellGet parancsmagok kezeli őket egyedi. PSEdition_Desktop PSEdition_Core az adott példák és fenti.
 
-A fentieknek megfelelően a címkék a legtöbb értéket adjon meg, ha adott és használt következetesen elemek között. Közzétevőként a legjobb címkék megkeresésére tett kísérlet használatára a legegyszerűbb megoldás, a PowerShell-galériában tervezi címkék kereséséhez. Ideális esetben lesz, hogy hány elemet adott vissza, és a cikk leírások megfelelően igazodnak a kulcs szó használatára. 
+A fentieknek megfelelően a címkék a legtöbb értéket adjon meg, ha adott és használt következetesen elemek között.
+Közzétevőként a legjobb címkék megkeresésére tett kísérlet használatára a legegyszerűbb megoldás, a PowerShell-galériában tervezi címkék kereséséhez.
+Ideális esetben lesz, hogy hány elemet adott vissza, és a cikk leírások megfelelően igazodnak a kulcs szó használatára.
 
-Összehasonlításul az alábbiakban néhány leggyakrabban használt címkék frissítésétől 12/14/2017. Bizonyos esetekben nincsenek hasonló, de lehet, hogy kevesebb ideális beállítások mellett a címke szerepel.
-Ajánlott eljárás az előnyben részesített címke használják, amelyek kevesebb zaj eredményez, és jobban találatok a fogyasztók számára is. 
+Összehasonlításul az alábbiakban néhány leggyakrabban használt címkék frissítésétől 12/14/2017.
+Bizonyos esetekben nincsenek hasonló, de lehet, hogy kevesebb ideális beállítások mellett a címke szerepel.
+Ajánlott eljárás az előnyben részesített címke használják, amelyek kevesebb zaj eredményez, és jobban találatok a fogyasztók számára is.
 
 
 | **Előnyben részesített címke** | **Alternatívák és megjegyzések** |
@@ -125,5 +135,3 @@ Ajánlott eljárás az előnyben részesített címke használják, amelyek keve
 | **MSI** |  |
 | **Mac** |  |
 | **PoshBot** |  |
-
-

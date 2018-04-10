@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell parancsmag
-ms.date: 2016-12-12
-title: "Távolítsa el a pswaauthorizationrule"
+ms.date: 12/12/2016
+title: Távolítsa el a pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: 4d039e7e00f87bc7aebb89217251edbbb5c3f5be
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 28dbfe84827d6ccb99dce1ebb520cae66dc8c50e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
 
@@ -40,7 +40,7 @@ A megadott engedélyezési szabály eltávolítása a Windows PowerShell Web Acc
 
 A parancsmagot futtatja a jóváhagyás kérése nélkül. Alapértelmezés szerint a parancsmag a folytatás előtt megerősítést kér.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -53,7 +53,7 @@ A parancsmagot futtatja a jóváhagyás kérése nélkül. Alapértelmezés szer
 
 Megadja a azonosítói (azonosítók) egy vagy több szabály eltávolításához.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | Igaz                                 |
@@ -66,7 +66,7 @@ Megadja a azonosítói (azonosítók) egy vagy több szabály eltávolításáho
 
 Megadja a szabály eltávolítása.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | Igaz                                 |
@@ -79,7 +79,7 @@ Megadja a szabály eltávolítása.
 
 Jóváhagyást kér a parancsmag futtatása előtt.
 
-|||  
+|||
 |-|-|
 | Kötelező?                            | hamis                                |
 | Pozíció?                            | nevű                                |
@@ -91,7 +91,7 @@ Jóváhagyást kér a parancsmag futtatása előtt.
 
 Bemutatja, mi történne a parancsmag futtatásakor. A parancsmag nem fut.
 
-|||  
+|||
 |-|-|
 | Kötelező?                            | hamis                                |
 | Pozíció?                            | nevű                                |

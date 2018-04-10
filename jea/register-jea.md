@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, a powershell, a biztonsági"
-title: "Regisztrálja a JEA-konfigurációk"
-ms.openlocfilehash: d6b007fed97be6470bfe4cf4d42f72cb4edc3a45
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea, a powershell, a biztonsági
+title: Regisztrálja a JEA-konfigurációk
+ms.openlocfilehash: 7b0a3f0bac26bf62989fecdf60388bbebd6fa756
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="registering-jea-configurations"></a>Regisztrálja a JEA-konfigurációk
 
@@ -135,4 +135,3 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 ## <a name="next-steps"></a>További lépések
 
 - [A JEA végpont tesztelése](using-jea.md)
-

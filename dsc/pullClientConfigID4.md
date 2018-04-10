@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A PowerShell 4.0 konfigurációs azonosítójával lekéréses ügyfél beállítása"
-ms.openlocfilehash: 2449a4ddfea5c0ee7096ad7478e80166eb095bbe
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A PowerShell 4.0 konfigurációs azonosítójával lekéréses ügyfél beállítása
+ms.openlocfilehash: 7074d842b7b99ef3fb6498b6dbc1e561b14caf16
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>A PowerShell 4.0 konfigurációs azonosítójával lekéréses ügyfél beállítása
 
@@ -18,28 +18,28 @@ Minden egyes célcsomóponttal lekéréses módban a rendszergazda és az URL-c�
 Az alábbi parancsfájl a LCM konfigurálja az lekéréses konfigurációk "PullServer" nevű kiszolgálóról:
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-A parancsfájl **DownloadManagerCustomData** cserél az URL-címet a lekérési kiszolgálójával és (ebben a példában), lehetővé teszi egy nem biztonságos kapcsolatot. 
+A parancsfájl **DownloadManagerCustomData** cserél az URL-címet a lekérési kiszolgálójával és (ebben a példában), lehetővé teszi egy nem biztonságos kapcsolatot.
 
 Ez a parancsfájl futtatása után az új mappát hoz létre kimeneti nevű **SimpleMetaConfigurationForPull** , és nincs helyezi metakonfigurációját MOF-fájlt.
 
-A konfiguráció segítségével **Set-DscLocalConfigurationManager** a paraméterekkel **számítógépnév** (használja a "localhost") és **elérési** (helyének elérési útvonalát a cél csomópont localhost.meta.mof fájl). Például: 
+A konfiguráció segítségével **Set-DscLocalConfigurationManager** a paraméterekkel **számítógépnév** (használja a "localhost") és **elérési** (helyének elérési útvonalát a cél csomópont localhost.meta.mof fájl). Például:
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
@@ -53,20 +53,20 @@ Ha a lekérési kiszolgálón be van állítva egy SMB-fájlmegosztás, nem pedi
 A **DscFileDownloadManager** tart egy **SourcePath** tulajdonság helyett **ServerUrl**. A következő parancsfájl való lekérésére konfigurációi az SMB-megosztáson "SmbDscShare" nevű "CONTOSO-kiszolgáló" nevű kiszolgálóra LCM konfigurálja:
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
@@ -74,4 +74,3 @@ SimpleMetaConfigurationForPull -Output "."
 
 - [A DSC lekérési webkiszolgáló beállítása](pullServer.md)
 - [A DSC SMB-lekérési kiszolgálójának beállítása](pullServerSMB.md)
-

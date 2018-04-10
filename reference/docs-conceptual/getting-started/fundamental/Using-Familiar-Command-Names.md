@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "Jól ismert parancs nevek használata"
+title: Jól ismert parancsnevek használata
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 5e72e721bdb9d48684092344a0169907e7e25d40
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-familiar-command-names"></a>Jól ismert parancs nevek használata
+# <a name="using-familiar-command-names"></a>Jól ismert parancsnevek használata
 Egy olyan mechanizmus használatával nevű *aliasképző*, a Windows PowerShell segítségével a felhasználók alternatív névvel parancsok hivatkozik. Aliasképző élmény a felhasználók közös parancs nevét, amely már ismerik a Windows PowerShell hasonló műveletek végrehajtásához újból más ismertetése lehetővé teszi. Bár nem ismertetjük részletesen Windows PowerShell-aliasokat, továbbra is használhatja őket, a Windows PowerShell-lel használatának első lépéseit.
 
 Aliasképző beírt parancsnév társít egy másik parancsba is. Például a Windows PowerShell rendelkezik egy belső függvény **Clear-állomás** , amely törli a kimeneti ablakban. Ha akár a **cls** vagy **törölje** parancsot egy parancssorba, a Windows PowerShell parancs értelmezi, hogy ez az alias a **Clear-állomás** funkciót, és futtatja a  **Törölje az állomás** függvény.
@@ -20,13 +20,13 @@ A következő a közös Cmd.exe és UNIX-parancsok Windows PowerShell belül has
 
 |||||
 |-|-|-|-|
-|cat|Dir|csatlakoztatása|erőforrás-kezelő|
-|CD-ről|echo|Helyezze át|rmdir|
+|cat|Dir|csatlakoztatása|rm|
+|cd|echo|move|rmdir|
 |chdir|tartalmának végleges törlése|popd|alvó állapot|
-|Törölje a jelet|H|PS|Rendezés|
-|CLS|Előzmények|pushd|TEE|
+|Törölje a jelet|h|PS|sort|
+|cls|Előzmények|pushd|TEE|
 |Másolás|Kill|pwd|típus|
-|del|LP|R|írási|
+|del|LP|r|írási|
 |diff|Ls|ren||
 
 Ha ezek egyike segítségével reflexively parancsokat, és szeretné megtanulni a natív Windows PowerShell-paranccsal valódi nevét, használja a **Get-Alias** parancs:
@@ -67,4 +67,3 @@ Set-Alias : Alias is not writeable because alias gi is read-only or constant and
 At line:1 char:10
 + Set-Alias  <<<< -Name gi -Value Get-Item
 ```
-

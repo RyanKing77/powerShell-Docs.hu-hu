@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-10-13
+ms.date: 10/13/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Szükségeskonfiguráció-State konfigurálása – áttekintés döntéshozók számára"
-ms.openlocfilehash: ae545ead0718def44d5a17708d254b872691e1d3
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A célállapot-konfiguráció áttekintése döntéshozók számára
+ms.openlocfilehash: 3d2d4b7e09fb699751151d7af641410bae3b38a4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="desired-state-configuration-overview-for-engineers"></a>A mérnökök szükségeskonfiguráció-State konfigurálása – áttekintés
+# <a name="desired-state-configuration-overview-for-engineers"></a>A célállapot-konfiguráció áttekintése mérnökök számára
 
 Ez a dokumentum célja a fejlesztői és a műveletek a csapatok tájékozódjon a PowerShell szükséges konfiguráló (DSC).
 A DSC értéke magasabb szintű nézetét biztosítja, lásd: [kívánt állapot beállítása – áttekintés döntéshozók számára](decisionMaker.md)

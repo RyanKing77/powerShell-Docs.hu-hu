@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja"
+title: A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja
 ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
-ms.openlocfilehash: 714e8c90d74272f42e872e63799377c1471359c0
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: fd5ac2c34b173d4eba7636bb5760b1ac9abb4277
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja
 
@@ -50,4 +50,5 @@ Csak akkor használhatja a objektum javítása érdekében a Windows PowerShell 
 A parancsfájl-kezelési hálózatiobjektum-modellt hozhat létre a billentyűparancsok, gyakori műveletekhez.
 
 ## <a name="see-also"></a>Lásd még:
+
 - [Az ISE objektummodell-hierarchiája](The-ISE-Object-Model-Hierarchy.md)

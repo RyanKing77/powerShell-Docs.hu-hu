@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell használatának alapjai"
+title: A Windows PowerShell használatának alapjai
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: bd17786d2d8690b89a2d107e0da98ee45f5b2ff7
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b21c6cd84ea29d5e8085ccf8df2a5a9199e1d859
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-basics"></a>A Windows PowerShell használatának alapjai
 Grafikus felhasználói felületeket bizonyos alapvető fogalmakkal, amelyek a jól ismert, hogy a számítógép-felhasználók használja. Felhasználók ezek a feladatok végrehajtásához felületek szoftverben támaszkodnak. Operációs rendszer jelenlegi felhasználók tallózható, általában az adott funkciót és a helyi menük környezetfüggő funkció eléréséhez eléréséhez legördülő menükben elemekre grafikus ábrázolása.

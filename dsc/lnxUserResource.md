@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A Linux nxUser erőforrás DSC"
-ms.openlocfilehash: 93e2b12af076fce687e045e3043c94fa82d61861
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A Linux nxUser erőforrás DSC
+ms.openlocfilehash: 222bd2191cf5c5f0a90ba947275ffde47d22ec86
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>A Linux nxUser erőforrás DSC
 
@@ -34,25 +34,25 @@ nxUser <string> #ResourceName
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság |  Azt jelzi, hogy a fiók nevét, amelyekhez egy adott állapot biztosításához. | 
+|  Tulajdonság |  Azt jelzi, hogy a fiók nevét, amelyekhez egy adott állapot biztosításához. |
 |---|---|
-| UserName| Adja meg a helyet, ahol szeretne biztosítani egy fájl vagy könyvtár állapotát.| 
-| Győződjön meg arról| Meghatározza, hogy a fiók létezik-e. Állítsa be ezt a tulajdonságot "Elérhető" Győződjön meg arról, hogy a fiók létezik-e, és állítsa az értékét "Hiányzik", annak érdekében, hogy a fiók nem létezik.| 
-| FullName| A felhasználói fiók teljes nevét tartalmazó karakterlánc.| 
-| Leírás| A felhasználói fiók leírása.| 
-| Jelszó| A jelszó kivonatát a a felhasználók a megfelelő képernyőn a Linux-számítógép. Ez általában egy sózott SHA-256 algoritmust, vagy SHA-512 kivonat. Debian és Ubuntu Linux ezt az értéket a mkpasswd paranccsal hozhatók létre. Az egyéb Linux disztribúciókkal Python meg a titkosítási könyvtárban a titkosítási módszer használható a kivonat létrehozásához.| 
-| Letiltva| Azt jelzi, hogy engedélyezve van-e a fiókot. Ez a tulajdonság beállítása **$true** annak érdekében, hogy ez a fiók le van tiltva, és állítsa az értékét **$false** annak érdekében, hogy engedélyezve van.| 
-| PasswordChangeRequired| Azt jelzi, hogy a felhasználók módosíthatják-e a jelszó. Ez a tulajdonság beállítása **$true** annak érdekében, hogy a felhasználó nem tudja módosítani a jelszavát, és állítsa az értékét **$false** a felhasználó módosíthatja a jelszót. Az alapértelmezett érték **$false**. Ez a tulajdonság csak akkor értékeli ki, ha a felhasználói fiók korábban már nem létezik, és létrehozása folyamatban van.| 
-| Kezdő_könyvtár| A kezdőkönyvtár az felhasználó számára.| 
-| Csoportazonosító| A felhasználó elsődleges csoportos azonosítója.| 
-| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például ha a típus: "ResourceType" erőforrás konfigurációs parancsprogram-blokk futtatni kívánt azonosító először "ResourceName", az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.| 
+| UserName| Adja meg a helyet, ahol szeretne biztosítani egy fájl vagy könyvtár állapotát.|
+| Győződjön meg arról| Meghatározza, hogy a fiók létezik-e. Állítsa be ezt a tulajdonságot "Elérhető" Győződjön meg arról, hogy a fiók létezik-e, és állítsa az értékét "Hiányzik", annak érdekében, hogy a fiók nem létezik.|
+| FullName| A felhasználói fiók teljes nevét tartalmazó karakterlánc.|
+| Leírás| A felhasználói fiók leírása.|
+| Jelszó| A jelszó kivonatát a a felhasználók a megfelelő képernyőn a Linux-számítógép. Ez általában egy sózott SHA-256 algoritmust, vagy SHA-512 kivonat. Debian és Ubuntu Linux ezt az értéket a mkpasswd paranccsal hozhatók létre. Az egyéb Linux disztribúciókkal Python meg a titkosítási könyvtárban a titkosítási módszer használható a kivonat létrehozásához.|
+| Letiltva| Azt jelzi, hogy engedélyezve van-e a fiókot. Ez a tulajdonság beállítása **$true** annak érdekében, hogy ez a fiók le van tiltva, és állítsa az értékét **$false** annak érdekében, hogy engedélyezve van.|
+| PasswordChangeRequired| Azt jelzi, hogy a felhasználók módosíthatják-e a jelszó. Ez a tulajdonság beállítása **$true** annak érdekében, hogy a felhasználó nem tudja módosítani a jelszavát, és állítsa az értékét **$false** a felhasználó módosíthatja a jelszót. Az alapértelmezett érték **$false**. Ez a tulajdonság csak akkor értékeli ki, ha a felhasználói fiók korábban már nem létezik, és létrehozása folyamatban van.|
+| Kezdő_könyvtár| A kezdőkönyvtár az felhasználó számára.|
+| Csoportazonosító| A felhasználó elsődleges csoportos azonosítója.|
+| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például ha a típus: "ResourceType" erőforrás konfigurációs parancsprogram-blokk futtatni kívánt azonosító először "ResourceName", az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Példa
 
 Az alábbi példa biztosítja, hogy a felhasználó "monuser" létezik, és a "DBusers" csoport tagja.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 nxUser UserExample{
@@ -62,13 +62,12 @@ nxUser UserExample{
    Ensure = "Present"
    HomeDirectory = "/home/monuser"
 }
- 
+
 nxGroup GroupExample{
    GroupName = "DBusers"
    Ensure = "Present"
    MembersToInclude = "monuser"
-   DependsOn = "[nxUser]UserExample"            
+   DependsOn = "[nxUser]UserExample"
 }
 }
 ```
-

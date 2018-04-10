@@ -1,19 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: DSC PackageManagementSource Resource
-ms.openlocfilehash: 1c904c70369a75802484c3c0520df63602760361
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 8c0cb5a3b0a019ddb5ed995406f499298103b07c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource Resource
 
 > Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
 
-A **PackageManagementSource** erőforrás a Windows PowerShell szükséges konfiguráló (DSC) regisztrálni vagy regisztrációt törölni egy célcsomóponttal Package Management források mechanizmust biztosít. **Ily módon regisztrált csomag felügyeleti adatforrások regisztrálva van a rendszer környezetben, a rendszer fiók vagy a DSC-motor használható.** Ehhez az erőforráshoz van szükség a **PackageManagement** modul http://PowerShellGallery.com elérhető.
+A **PackageManagementSource** erőforrás a Windows PowerShell szükséges konfiguráló (DSC) regisztrálni vagy regisztrációt törölni egy célcsomóponttal Package Management források mechanizmust biztosít. **Ily módon regisztrált csomag felügyeleti adatforrások regisztrálva van a rendszer környezetben, a rendszer fiók vagy a DSC-motor használható.** Ehhez az erőforráshoz van szükség a **PackageManagement** modul, a rendelkezésre álló http://PowerShellGallery.com.
 
 ## <a name="syntax"></a>Szintaxis
 
@@ -30,30 +30,29 @@ PSModule [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Tulajdonságok
-|  Tulajdonság  |  Leírás   | 
-|---|---| 
-| Név| Megadja a nevét, a csomag forrás-regisztrálva vagy nem regisztrált a rendszeren.| 
-| Győződjön meg arról| Meghatározza, hogy a csomag forrásához regisztrálva vagy nem regisztrált.| 
-| InstallationPolicy| Meghatározza, hogy megbízható-e a csomag forrásához. One of: "Untrusted", "Trusted".| 
-| ProviderName| Megadja a OneGet szolgáltató, amelyen keresztül a csomag forrás együttműködési is nevét.| 
-| SourceUri| Adja meg a csomag forrás URI.| 
-| SourceCredential| A csomag hozzáférést biztosít a távoli adatforráson.| 
+|  Tulajdonság  |  Leírás   |
+|---|---|
+| Név| Megadja a nevét, a csomag forrás-regisztrálva vagy nem regisztrált a rendszeren.|
+| Győződjön meg arról| Meghatározza, hogy a csomag forrásához regisztrálva vagy nem regisztrált.|
+| InstallationPolicy| Meghatározza, hogy megbízható-e a csomag forrásához. One of: "Untrusted", "Trusted".|
+| ProviderName| Megadja a OneGet szolgáltató, amelyen keresztül a csomag forrás együttműködési is nevét.|
+| SourceUri| Adja meg a csomag forrás URI.|
+| SourceCredential| A csomag hozzáférést biztosít a távoli adatforráson.|
 
 ## <a name="example"></a>Példa
 
-Ez a példa regisztrálja a http://nuget.org csomag forrás használ a **PackageManagementSource** DSC-erőforrás.
+Ez a példa a http://nuget.org forrás használatával a **PackageManagementSource** DSC-erőforrás.
 
 ```powershell
 Configuration PackageManagementSourceTest
-{    
+{
     PackageManagementSource SourceRepository
     {
-        Ensure      = "Present" 
-        Name        = "MyNuget" 
-        ProviderName= "Nuget" 
-        SourceUri   = "http://nuget.org/api/v2/"   
-        InstallationPolicy ="Trusted" 
+        Ensure      = "Present"
+        Name        = "MyNuget"
+        ProviderName= "Nuget"
+        SourceUri   = "http://nuget.org/api/v2/"
+        InstallationPolicy ="Trusted"
     }
 }
 ```
-

@@ -1,18 +1,18 @@
-# <a name="installing-powershell-core-on-windows"></a>A Windows PowerShell központi telepítése
+# <a name="installing-powershell-core-on-windows"></a>A PowerShell Core telepítése Windows rendszerre
 
-## <a name="msi"></a>MSI-FÁJL
+## <a name="msi"></a>MSI
 
 PowerShell telepítsen egy Windows ügyfél vagy a Windows Server (működik a Windows 7 SP1, Server 2008 R2 és újabb verziók), az MSI-csomag letölthető a GitHub [feloldja a][] lap.
 
-Az MSI-fájl néz ki-`PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+Az MSI-fájl néz ki- `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Miután letöltötte, kattintson duplán a telepítő, és kövesse az utasításokat.
 
 A telepítés után a Start menü helyezett helyi van.
 
-* Alapértelmezés szerint a csomag telepítés`$env:ProgramFiles\PowerShell\`
-* PowerShell keresztül a Start menüből indíthatja el vagy`$env:ProgramFiles\PowerShell\pwsh.exe`
+* Alapértelmezés szerint a csomag telepítés `$env:ProgramFiles\PowerShell\`
+* PowerShell keresztül a Start menüből indíthatja el vagy `$env:ProgramFiles\PowerShell\pwsh.exe`
 
 ### <a name="prerequisites"></a>Előfeltételek
 
@@ -23,7 +23,7 @@ A PowerShell-távelérés engedélyezése WSMan keresztül, a következő előfe
   Teljes lett (beleértve a csomagok nem kötelező), a támogatott rendszerek már rendelkezik a telepített.
 * Telepítse a Windows Management Framework (WMF) [4.0](https://www.microsoft.com/download/details.aspx?id=40855) vagy újabb ([5.1](https://www.microsoft.com/download/details.aspx?id=54616)) Windows 7 és Windows Server 2008 R2.
 
-## <a name="zip"></a>A ZIP-
+## <a name="zip"></a>ZIP
 
 PowerShell bináris ZIP-archívum biztosított speciális telepítési forgatókönyvek engedélyezéséhez.
 Megjegyzendő, hogy a ZIP-archívum használata esetén nem jelenik meg az előfeltételek ellenőrzésének, mint az MSI-csomagot.

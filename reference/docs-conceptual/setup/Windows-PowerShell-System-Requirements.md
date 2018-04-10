@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "Windows PowerShell rendszerkövetelményei"
+title: A Windows PowerShell rendszerkövetelményei
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 33824eac4de28de97990ffa1ea2500e61e03e847
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: a15b5b33b5296befae833e520cfdfbd41a07b122
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="windows-powershell-system-requirements"></a>Windows PowerShell rendszerkövetelményei
+# <a name="windows-powershell-system-requirements"></a>A Windows PowerShell rendszerkövetelményei
 Ez a témakör a Windows PowerShell 3.0, a Windows PowerShell 4.0-s verzióját és a Windows PowerShell 5.0, valamint a speciális funkciók, például a Windows PowerShell integrált parancsfájlkezelési környezet (ISE), a CIM-parancsok és a munkafolyamatok rendszerkövetelményeit ismerteti.
 
 Windows® 8.1 és Windows Server® 2012 R2 tartalmazzák az összes szükséges programokat. Ez a témakör célja a felhasználók számára a Windows korábbi verzióiban.
@@ -83,13 +83,13 @@ Azonban egyes elemek, például a következő kötelező, grafikus felhasználó
 
 - Parancsmagok
 
-    1.  [A GridView nézet out](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
+    1.  [Out-GridView](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
 
     2.  [A parancs megjelenítése](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
-    3.  [Megjelenítése-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
+    3.  [Show-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
-    4.  [Az eseménynaplóban megjelenítése](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
+    4.  [Show-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
 - Paraméterek
 
@@ -111,9 +111,9 @@ A Windows PowerShell 2.0, a Windows PowerShell 3.0 és a Windows PowerShell 4.0 
 
 - [Háttérben futó intelligens átviteli szolgáltatás (BITS) parancsmagok](http://go.microsoft.com/fwlink/?LinkId=257514)
 
-- [Get-Eseménynapló](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
+- [Get-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
-- [Get-WinEvent parancsmaggal](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
+- [Get-WinEvent](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
 - [Save-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
 
@@ -125,4 +125,3 @@ Emellett a **WinRM** szolgáltatás nincs jelen a Windows PE környezetben.
 - [Bevezetés a Windows PowerShell használatával](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 - [Windows PowerShell telepítése](Installing-Windows-PowerShell.md)
 - [A Windows PowerShell indítása](Starting-Windows-PowerShell.md)
-

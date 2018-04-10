@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell szószedet"
+title: A Windows PowerShell szószedet
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-glossary"></a>A Windows PowerShell szószedet
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 02/19/2018
 |főnév|A word, amelyeket a kötőjel egy Windows PowerShell-parancsmag neve követ. A főnév ismerteti az erőforrásokat, amelyre a parancsmag működik.|
 |A paraméterhalmaz|Egy csoport, amely ugyanezt a parancsot egy adott művelet végrehajtására használható paraméterek.|
 |Az adatcsatorna|A Windows PowerShellben, az előző parancs küldése a következő parancsot az adatcsatorna számára.|
-|Adatcsatorna|Parancsokat csővezeték operátorral egymáshoz csatolt (&#124;) csatlakoztatva (ASCII 124). Minden egyes csővezeték-kezelőt az előző parancs küldése a következő parancs számára.|
+|Adatcsatorna|Csatlakoztatott csővezeték operátorral egymáshoz csatolt parancsokat (&#124;) (ASCII 124). Minden egyes csővezeték-kezelőt az előző parancs küldése a következő parancs számára.|
 |PSSession|Egy Windows PowerShell-munkamenetben létrehozott, felügyelt, és a felhasználó által lezárt típusú.|
 |legfelső szintű modul|Egy moduljegyzék RootModule kulcsában a megadott modul.|
 |Futási térben|A Windows PowerShell, a működési környezetben, amelyben a folyamat minden parancs végrehajtása.|
@@ -55,4 +55,3 @@ ms.lasthandoff: 02/19/2018
 |A Windows PowerShell-parancsfájl|A .ps1 kiterjesztéssel rendelkező és a Windows PowerShell nyelven írt parancsfájlt tartalmazó fájl.|
 |Windows PowerShell snap-in|Meghatározza a parancsmagok, a szolgáltatók és a Microsoft .NET-keretrendszer típusok a Windows PowerShell környezethez adható hozzá egy készletét erőforrás.|
 |A Windows PowerShell munkafolyamat|A munkafolyamat olyan programozott, összekapcsolódó lépések sora, amik hosszan futó feladatokat végeznek el vagy több eszközön vagy felügyelt csomóponton keresztül végrehajtandó, több lépés koordinációját igénylik. A Windows PowerShell munkafolyamat lehetővé teszi, hogy az informatikai szakemberek és fejlesztők hozhatnak létre Többeszközös felügyeleti tevékenységek, vagy egy munkafolyamaton belül egyetlen feladatok munkafolyamatként. A Windows PowerShell munkafolyamat lehetővé teszi a igazítja, és futtassa a Windows PowerShell-parancsfájlok és a XAML-fájlokkal munkafolyamatként.|
-

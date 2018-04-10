@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A MSFT_DSCLocalConfigurationManager osztály DisableDebugConfiguration módszer"
-ms.openlocfilehash: 9d1a0b4fd42753c438734e0228028fa89b927b1d
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Az MSFT_DSCLocalConfigurationManager osztály DisableDebugConfiguration metódusa
+ms.openlocfilehash: 9392a721a542c89be8794882a800b374f11ca5fd
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="disabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>A MSFT_DSCLocalConfigurationManager osztály DisableDebugConfiguration módszer
+# <a name="disabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály DisableDebugConfiguration metódusa
 
 Letiltja a DSC-erőforrás hibakeresés.
 
@@ -45,10 +45,3 @@ Ez a statikus módszer.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

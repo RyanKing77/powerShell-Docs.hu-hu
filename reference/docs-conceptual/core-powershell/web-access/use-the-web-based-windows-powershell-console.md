@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell parancsmag
-title: "a web alapú windows powershell konzol használata"
-ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: a web alapú windows powershell konzol használata
+ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>A webalapú Windows PowerShell konzol használata
 
@@ -18,15 +18,18 @@ A Windows PowerShell Web Access lehetővé teszi, hogy a felhasználók jelentke
 
 Mivel a Windows PowerShell konzol webböngészőben fut, akkor nyitható számos különféle ügyféleszközről; egy webböngészővel rendelkező szinte minden eszköz működik.
 
-A webes Windows PowerShell-konzolban a távoli számítógép, amely a bejelentkezési folyamat részeként a felhasználó által megadott célja. 
+A webes Windows PowerShell-konzolban a távoli számítógép, amely a bejelentkezési folyamat részeként a felhasználó által megadott célja.
 
 Ez a témakör ismerteti, hogyan jelentkezzen be, és a Windows PowerShell Web Access webalapú konzol használatának megkezdéséhez.
 
-Ez a témakör nem ismerteti a Windows PowerShell használatával, vagy parancsmagok vagy parancsfájlok futtatásának. Windows PowerShell és a parancsfájl-kezelési erőforrások használatával kapcsolatos információkért lásd: a [lásd még](#see-also) szakasz Ez a témakör végén.
+Ez a témakör nem ismerteti a Windows PowerShell használatával, vagy parancsmagok vagy parancsfájlok futtatásának.
+Windows PowerShell és a parancsfájl-kezelési erőforrások használatával kapcsolatos információkért lásd: a [lásd még](#see-also) szakasz Ez a témakör végén.
 
 ## <a name="supported-browsers-and-client-devices"></a>Támogatott böngészők és ügyféleszközök
 
-A Windows PowerShell Web Access a következő webböngészőket támogatja. Bár a mobilböngészők hivatalosan nem támogatottak, számos mobilböngésző képes a webalapú Windows PowerShell konzol futtatásához. Egyéb, cookie-kat elfogadó, JavaScriptet és HTTPS-webhelyeket futtató böngészők valószínűleg képesek a konzol használatára, de hivatalosan még nem lettek tesztelve.
+A Windows PowerShell Web Access a következő webböngészőket támogatja.
+Bár a mobilböngészők hivatalosan nem támogatottak, számos mobilböngésző képes a webalapú Windows PowerShell konzol futtatásához.
+Egyéb, cookie-kat elfogadó, JavaScriptet és HTTPS-webhelyeket futtató böngészők valószínűleg képesek a konzol használatára, de hivatalosan még nem lettek tesztelve.
 
 ### <a name="supported-desktop-computer-browsers"></a>Támogatott asztali számítógépes böngészők
 

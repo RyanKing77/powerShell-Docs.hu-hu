@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell indítása"
+title: A Windows PowerShell indítása
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-ms.openlocfilehash: 90f6992f47e62c1775cae216b4012f630e07558f
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: b56ddc2f577225646729b99f3a2abcb8cc60d307
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="starting-windows-powershell"></a>A Windows PowerShell indítása
 PowerShell egy parancsfájl-kezelési motor dll, amely több gazdagép be van ágyazva.  A leggyakrabban használt állomás hozzákezdhet a következők: interaktív parancssori PowerShell.exe és parancsfájl-kezelési környezet interaktív PowerShell_ISE.exe.
@@ -93,14 +93,14 @@ Egy 32 bites Windows PowerShell indításához használja az alábbi eljárások
 - Az a **Start** írja be **Windows PowerShell (x86)**. Kattintson a **Windows PowerShell x86** csempére.
 - A **Kiszolgálókezelő**, az a **eszközök** menüjében válassza **Windows PowerShell (x86)**.
 - Az asztalon vigye a mutatót a jobb felső sarokban, kattintson a **keresési**, típus **PowerShell x86** majd **Windows PowerShell (x86)**.
-- A parancssorból írja be:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+- A parancssorból írja be: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-server-2012"></a>In Windows Server® 2012
 
 - Az a **Start** írja be **PowerShell** majd **Windows PowerShell (x86)**.
 - A **Kiszolgálókezelő**, az a **eszközök** menüjében válassza **Windows PowerShell (x86)**.
 - Az asztalon vigye a mutatót a jobb felső sarokban, kattintson a **keresési**, típus **PowerShell** majd **Windows PowerShell (x86)**.
-- A parancssorból írja be:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+- A parancssorból írja be: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-81"></a>A Windows® 8.1
 
@@ -108,11 +108,11 @@ Egy 32 bites Windows PowerShell indításához használja az alábbi eljárások
 - Ha futtatja [távoli kiszolgálófelügyelet eszközei](http://go.microsoft.com/fwlink/?LinkID=304145) a Windows 8.1, nyissa meg a Windows PowerShell x86 a a **Server ManagerTools** menü.
   Válassza ki **Windows PowerShell (x86)**.
 - Az asztalon vigye a mutatót a jobb felső sarokban, kattintson a **keresési**, típus **PowerShell x86** majd **Windows PowerShell (x86)**.
-- A parancssorból írja be:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+- A parancssorból írja be: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 #### <a name="in-windows-8"></a>In Windows® 8
 
 - A a **Start** képernyőn, a kurzor jobb felső sarokban, kattintson a **beállítások**, kattintson a **Csempék**, és anélkül helyezhet át a **felügyeleti eszközök megjelenítése** Igen csúszkát. Írja be, **PowerShell** kattintson **Windows PowerShell (x86)**.
 - Ha futtatja [távoli kiszolgálófelügyelet eszközei](http://www.microsoft.com/download/details.aspx?id=28972) a Windows 8, nyissa meg a Windows PowerShell x86 a a **Server ManagerTools** menü. Válassza ki **Windows PowerShell (x86)**.
 - A a **Start** képernyő vagy az asztal, írja be a **PowerShell (x86)** , majd **Windows PowerShell (x86)**.
-- A parancssorból írja be:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+- A parancssorból írja be: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`

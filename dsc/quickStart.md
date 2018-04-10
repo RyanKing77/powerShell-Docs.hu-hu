@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Szükségeskonfiguráció-State Configuration – első lépések"
-ms.openlocfilehash: e21017f24db8c90229063895c1a7e4c6f0546d0c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Szükségeskonfiguráció-State Configuration – első lépések
+ms.openlocfilehash: 25bcd46bbf62a6ebb727519a65732377363e68c0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 > Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
 
@@ -37,7 +37,7 @@ Egy szövegszerkesztőben írja be a következőket:
 </body>
 ```
 
-Mentse ezt `index.htm` a a `test` korábban létrehozott mappába. 
+Mentse ezt `index.htm` a a `test` korábban létrehozott mappába.
 
 ## <a name="write-the-configuration"></a>A konfiguráció írásakor
 
@@ -122,7 +122,7 @@ Start-DscConfiguration .\WebsiteTest
 
 ## <a name="test-the-configuration"></a>Tesztelje a konfigurációt
 
-Hívása a [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) parancsmag használatával ellenőrizheti, hogy a konfiguráció sikeres volt. 
+Hívása a [Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) parancsmag használatával ellenőrizheti, hogy a konfiguráció sikeres volt.
 
 Is tesztelheti az eredmények közvetlenül, ebben az esetben tallózással `http://localhost/` egy webböngészőben.
 Ez a példa első lépéseként meg kell jelennie a létrehozott "Hello World" HTML-lapon.
@@ -132,6 +132,3 @@ Ez a példa első lépéseként meg kell jelennie a létrehozott "Hello World" H
 - További információk a DSC-konfigurációk [a DSC-konfigurációk](configurations.md).
 - Milyen DSC erőforrások elérhetők, és egyéni DSC erőforrások létrehozása [DSC erőforrások](resources.md).
 - A DSC-konfigurációk és az erőforrások megkeresése a [PowerShell-galériában](https://www.powershellgallery.com/).
-
-
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A MSFT_DSCLocalConfigurationManager osztály RemoveConfiguration módszer"
-ms.openlocfilehash: fed45836293adedbce18f01cfe53cdfa1a474975
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Az MSFT_DSCLocalConfigurationManager osztály RemoveConfiguration metódusa
+ms.openlocfilehash: e0ae8a50212b70841d210d7b2d666a2855218d1a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>A MSFT_DSCLocalConfigurationManager osztály RemoveConfiguration módszer
+# <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály RemoveConfiguration metódusa
 
 Eltávolítja a konfigurációs fájlok.
 
@@ -26,8 +26,7 @@ uint32 RemoveConfiguration(
 <a name="parameters"></a>Paraméterek
 ----------
 
-*Szakasz* \[a\]  
-Itt adhatja meg, melyik konfigurációs dokumentum eltávolítása. A következő értékek érvényesek:
+*Szakasz* \[a\] határozza meg, melyik konfigurációs dokumentum eltávolítása. A következő értékek érvényesek:
 
 |Érték |Leírás |
 |:--- |:---|
@@ -35,8 +34,7 @@ Itt adhatja meg, melyik konfigurációs dokumentum eltávolítása. A következ�
 |**2** | A **függőben lévő** konfigurációs dokumentum (pending.mof).  |
 |**4** | A **előző** konfigurációs dokumentum (previous.mof). |
 
-*Kényszerített* \[a\]  
-**Igaz** a konfiguráció eltávolításának kényszerítése.
+*Kényszerített* \[a\] **igaz** a konfiguráció eltávolításának kényszerítése.
 
 ## <a name="return-value"></a>Visszatérési érték
 ------------
@@ -58,11 +56,3 @@ Ez a statikus módszer.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell ISE bemutatása"
-ms.openlocfilehash: 7b529c9da7c91c6ca699c70f2674c8bc8734dd33
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+title: A Windows PowerShell ISE bemutatása
+ms.openlocfilehash: b09e64d0258d11f1f16f96b319ef232ebdfa0c49
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>A Windows PowerShell ISE bemutatása
 
@@ -20,13 +20,13 @@ Ismételje meg ezeket a szolgáltatásokat a Windows PowerShell ISE.
 
 A Windows PowerShell ISE testreszabhatja az megjelenésében az egyes funkcióit. Azt is a saját Windows PowerShell-profilt, ahol tárolhatja funkciók, aliasok, változók és parancsok használata a Windows PowerShell ISE.
 
-### <a name="to-start-the-windows-powershell-ise"></a>A Windows PowerShell ISE elejéig
+## <a name="to-start-the-windows-powershell-ise"></a>A Windows PowerShell ISE elejéig
 
 Tegye a következők egyikét:
 
 - Kattintson a **Start**, mutasson a **minden program**, mutasson a **Windows PowerShell V2**, és kattintson a **Windows PowerShell ISE**.
 - A Windows PowerShell-konzolban a Cmd.exe vagy a Futtatás párbeszédpanelen típusa, **powershell_ise.exe**.
 
-### <a name="to-get-help-in-the-windows-powershell-ise"></a>Ha segítséget szeretne kérni a Windows PowerShell ISE
+## <a name="to-get-help-in-the-windows-powershell-ise"></a>Ha segítséget szeretne kérni a Windows PowerShell ISE
 
 Az a **súgó** menüben kattintson a **Windows PowerShell súgójára**. Vagy az F1 billentyűt. A fájlt, amely megnyitja a Windows PowerShell ISE és a Windows PowerShell, például az összes elérhető a Get-Help parancsmag súgó ismerteti.

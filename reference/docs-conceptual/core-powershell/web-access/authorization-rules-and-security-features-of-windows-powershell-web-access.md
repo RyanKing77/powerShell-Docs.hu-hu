@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-27
+ms.date: 06/27/2017
 keywords: PowerShell parancsmag
-title: "A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói"
-ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói
+ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói
 
@@ -186,7 +186,7 @@ Az alábbiakban bemutatunk néhány példát erre a témakörre.
 - Néhány rendszergazda bizonyos felhasználóknak több hozzáférést biztosít, mint a többieknek. Például a rendszergazda létrehoz két felhasználói csoportot **rendszergazdák** és **BasicSupport**. A rendszergazda létrehoz továbbá egy korlátozott futási térrel rendelkező **PswaEndpoint**, és a következő két szabályt definiálja: **rendszergazdák\*,\***  és  **BasicSupport,\*, PswaEndpoint**. Az első szabály lévő összes felhasználó számára biztosít a **Admin** az összes számítógép és a második szabály csoport hozzáférést biztosít a lévő összes felhasználó számára a **BasicSupport** csak hozzáféréssel rendelkező számítógépek csoport  **PswaEndpoint**.
 
 - A rendszergazda beállított egy privát tesztkörnyezetet, és szeretné engedélyezni az összes jogosult hálózati felhasználó számára a hozzáférést a hálózaton található összes olyan számítógéphez, amelyhez általában hozzáférhetnek, az összes olyan munkamenet-konfigurációhoz való hozzáféréssel, amelyhez általában hozzáférhetnek. Mivel ez egy privát tesztkörnyezet, a rendszergazda egy nem biztonságos engedélyezési szabályt hoz létre.
-  - A rendszergazda futtatja a parancsmagot `Add-PswaAuthorizationRule * * *`, amely használja, a helyettesítő karakter  **\***  minden felhasználó, az összes számítógép és az összes konfiguráció képviseletére.
+  - A rendszergazda futtatja a parancsmagot `Add-PswaAuthorizationRule * * *`, amely használja, a helyettesítő karakter **\*** minden felhasználó, az összes számítógép és az összes konfiguráció képviseletére.
   - Ez a szabály megegyezik a következővel: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
   >**Megjegyzés:**:

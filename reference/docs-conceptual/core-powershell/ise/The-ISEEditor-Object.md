@@ -1,22 +1,24 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: A ISEEditor objektum
-ms.openlocfilehash: c593eeebf0b9a94769841efd2aa78f84a3829ca5
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: Az ISEEditor objektum
+ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="the-iseeditor-object"></a>A ISEEditor objektum
-  Egy **ISEEditor** célja a Microsoft.PowerShell.Host.ISE.ISEEditor osztály egy példányát. A konzol ablaktáblában van egy **ISEEditor** objektum. Minden egyes [ISEFile](The-ISEFile-Object.md) objektum tartozik egy **ISEEditor** objektum. Az alábbi szakaszok tartalmazzák a metódusok és tulajdonságait egy **ISEEditor** objektum.
+# <a name="the-iseeditor-object"></a>Az ISEEditor objektum
+
+Egy **ISEEditor** célja a Microsoft.PowerShell.Host.ISE.ISEEditor osztály egy példányát. A konzol ablaktáblában van egy **ISEEditor** objektum. Minden egyes [ISEFile](The-ISEFile-Object.md) objektum tartozik egy **ISEEditor** objektum. Az alábbi szakaszok tartalmazzák a metódusok és tulajdonságait egy **ISEEditor** objektum.
 
 ## <a name="methods"></a>Metódusok
 
 ### <a name="clear"></a>Törölje a jelet\(\)
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
 
- Törli a szerkesztő szövege.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
+
+Törli a szerkesztő szövege.
 
 ```powershell
 # Clears the text in the Console pane.
@@ -24,94 +26,103 @@ $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 ```
 
 ### <a name="ensurevisibleint-linenumber"></a>EnsureVisible\(int és a lineNumber\)
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
 
- A szerkesztő görget, hogy a sor, amely megfelel a megadott **és a lineNumber** paraméter értéke látható. Az kivételt jelez, ha a megadott sorszámot: 1, utolsó sor száma, amely meghatározza az érvényes sorszámok tartományon kívül esik.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
 
- **és a lineNumber** tehető láthatóvá, hogy a sor számát.
+A szerkesztő görget, hogy a sor, amely megfelel a megadott **és a lineNumber** paraméter értéke látható. Az kivételt jelez, ha a megadott sorszámot: 1, utolsó sor száma, amely meghatározza az érvényes sorszámok tartományon kívül esik.
+
+**és a lineNumber** tehető láthatóvá, hogy a sor számát.
 
 ```powershell
-# Scrolls the text in the Script pane so that the fifth line is in view. 
+# Scrolls the text in the Script pane so that the fifth line is in view.
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
 
 ### <a name="focus"></a>Fókusz\(\)
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
 
- A fókusz állítja be a szerkesztőt.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
+
+A fókusz állítja be a szerkesztőt.
 
 ```powershell
-# Sets focus to the Console pane. 
+# Sets focus to the Console pane.
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
-### <a name="getlinelengthint-linenumber-"></a>GetLineLength\(int és a lineNumber\)
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
+### <a name="getlinelengthint-linenumber-"></a>GetLineLength\(int és a lineNumber \)
 
- Lekérdezi a hossza egészként sor száma által meghatározott sor.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
 
- **és a lineNumber** , amelynek hossza beolvasandó sor.
+Lekérdezi a hossza egészként sor száma által meghatározott sor.
 
- **Vissza** a, a megadott sor: a sor hossza.
+**és a lineNumber** , amelynek hossza beolvasandó sor.
+
+**Vissza** a, a megadott sor: a sor hossza.
 
 ```powershell
-# Gets the length of the first line in the text of the Command pane. 
+# Gets the length of the first line in the text of the Command pane.
 $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
 
 ### <a name="gotomatch"></a>GoToMatch\(\)
-  Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók. 
 
- A beszúrási jel áthelyezése a megfelelő karaktert, ha a **CanGoToMatch** a szerkesztő objektum tulajdonsága **$true**, amely előtt következik be a billentyűzettel közvetlenül egy nyitó zárójelet, a szögletes zárójel, vagy a zárójel - előtt \(,\[, {- vagy közvetlenül a záró zárójel, a szögletes zárójel, illetve a zárójel után - \),\],}.  A beszúrási jel kerül egy nyitó karakter előtt vagy után egy záró karakter. Ha a **CanGoToMatch** tulajdonság **$false**, akkor ez a metódus nincs semmi hatása.
+Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók.
+
+A beszúrási jel áthelyezése a megfelelő karaktert, ha a **CanGoToMatch** a szerkesztő objektum tulajdonsága **$true**, amely előtt következik be a billentyűzettel közvetlenül egy nyitó zárójelet, a szögletes zárójel, vagy a zárójel - előtt \(,\[, {- vagy közvetlenül a záró zárójel, a szögletes zárójel, illetve a zárójel után - \),\],}.  A beszúrási jel kerül egy nyitó karakter előtt vagy után egy záró karakter. Ha a **CanGoToMatch** tulajdonság **$false**, akkor ez a metódus nincs semmi hatása.
 
 ```powershell
-# Test to see if the caret is next to a parenthesis, bracket, or brace.
+# Goes to the matching character if CanGoToMatch() is $true
+$psISE.CurrentPowerShellTab.ConsolePane.GoToMatch()
 ```
 
-### <a name="inserttext-text-"></a>InsertText\( szöveg\)
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
+### <a name="inserttext-text-"></a>InsertText\( szöveg \)
 
- A kijelölés lecseréli a szöveget, vagy szúrja be a szöveget a jelenlegi pozíciójában álló kalap jel.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
 
- **szöveg** -beszúrása szöveges karakterlánc.
+A kijelölés lecseréli a szöveget, vagy szúrja be a szöveget a jelenlegi pozíciójában álló kalap jel.
 
- Tekintse meg a [Scripting példa](#scripting-example) a témakör későbbi részében.
+**szöveg** -beszúrása szöveges karakterlánc.
 
-### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Válassza ki\( startLine, startColumn, tulajdonság endline értéke, az endcolumn érték\)
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
+Tekintse meg a [Scripting példa](#scripting-example) a témakör későbbi részében.
 
- Kiválasztja a szöveget a **startLine**, **startColumn**, **tulajdonság endline értéke**, és **endcolumn érték** paraméterek.
+### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Válassza ki\( startLine, startColumn, tulajdonság endline értéke, az endcolumn érték \)
 
- **startLine** -egész a sor, ha a kijelölt indítja el.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
 
- **startColumn** -egész belül a Kezdő sor, ha indítja el a kijelölt oszlop.
+Kiválasztja a szöveget a **startLine**, **startColumn**, **tulajdonság endline értéke**, és **endcolumn érték** paraméterek.
 
- **tulajdonság endline értéke** -egész a sort, ahol a kijelölt véget ér.
+**startLine** -egész a sor, ha a kijelölt indítja el.
 
- **az endcolumn érték** -egész az oszlop, ahol véget ér a kijelölt sor végén belül.
+**startColumn** -egész belül a Kezdő sor, ha indítja el a kijelölt oszlop.
 
- Tekintse meg a [Scripting példa](#scripting-example) a témakör későbbi részében.
+**tulajdonság endline értéke** -egész a sort, ahol a kijelölt véget ér.
+
+**az endcolumn érték** -egész az oszlop, ahol véget ér a kijelölt sor végén belül.
+
+Tekintse meg a [Scripting példa](#scripting-example) a témakör későbbi részében.
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
 
- Kiválasztja a teljes sor a beszúrási jel jelenleg tartalmazó szöveg.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
+
+Kiválasztja a teljes sor a beszúrási jel jelenleg tartalmazó szöveg.
 
 ```powershell
 # First, set the caret position on line 5.
-$psISE.CurrentFile.Editor.SetCaretPosition(5,1) 
+$psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 # Now select that entire line of text
 $psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
-### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( és a lineNumber, columnNumber\)
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
+### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( és a lineNumber, columnNumber \)
 
- Beállítja a beszúrási pozíciója a sor számát és az oszlop számát. Az kivételt jelez, ha a beszúrási jel sorszámot vagy a billentyűzettel oszlopszám kívül esnek a a megfelelő, érvényes tartományt.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
 
- **és a lineNumber** -egész kalap sor száma.
+Beállítja a beszúrási pozíciója a sor számát és az oszlop számát. Az kivételt jelez, ha a beszúrási jel sorszámot vagy a billentyűzettel oszlopszám kívül esnek a a megfelelő, érvényes tartományt.
 
- **columnNumber** -egész a beszúrási jel oszlopszám.
+**és a lineNumber** -egész kalap sor száma.
+
+**columnNumber** -egész a beszúrási jel oszlopszám.
 
 ```powershell
 # Set the CaretPosition.
@@ -119,9 +130,10 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
 
 ### <a name="toggleoutliningexpansion"></a>ToggleOutliningExpansion\(\)
-  Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók. 
 
- Minden Vázlat szakasz kibontásához vagy összecsukásához okoz.
+Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók.
+
+Minden Vázlat szakasz kibontásához vagy összecsukásához okoz.
 
 ```powershell
 # Toggle the outlining expansion
@@ -131,9 +143,10 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ## <a name="properties"></a>Tulajdonságok
 
 ### <a name="cangotomatch"></a>CanGoToMatch
-  Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók. 
 
- A csak olvasható logikai tulajdonság jelzi, hogy a beszúrási jel mellett a zárójel, a szögletes zárójel, illetve a zárójel - \( \), \[ \], {}. Ha a beszúrási jel nyitó karakter elé vagy közvetlenül a záró karakter pár után, akkor ez a tulajdonság értéke **$true**. Egyéb esetben **$false**.
+Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók.
+
+A csak olvasható logikai tulajdonság jelzi, hogy a beszúrási jel mellett a zárójel, a szögletes zárójel, illetve a zárójel - \( \), \[ \], {}. Ha a beszúrási jel nyitó karakter elé vagy közvetlenül a záró karakter pár után, akkor ez a tulajdonság értéke **$true**. Egyéb esetben **$false**.
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -141,9 +154,10 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
 ### <a name="caretcolumn"></a>CaretColumn
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
 
- A csak olvasható tulajdonság, amely lekérdezi az oszlopnak a számát, amely megfelel a beszúrási pozíciója.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
+
+A csak olvasható tulajdonság, amely lekérdezi az oszlopnak a számát, amely megfelel a beszúrási pozíciója.
 
 ```powershell
 # Get the CaretColumn.
@@ -151,9 +165,10 @@ $psISE.CurrentFile.Editor.CaretColumn
 ```
 
 ### <a name="caretline"></a>CaretLine
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
 
- A csak olvasható tulajdonság, amely lekérdezi a sor számát, amely tartalmazza a beszúrási jel.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
+
+A csak olvasható tulajdonság, amely lekérdezi a sor számát, amely tartalmazza a beszúrási jel.
 
 ```powershell
 # Get the CaretLine.
@@ -161,9 +176,10 @@ $psISE.CurrentFile.Editor.CaretLine
 ```
 
 ### <a name="caretlinetext"></a>CaretLineText
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
 
- A csak olvasható tulajdonság, amely lekérdezi a szöveg, amely tartalmazza a billentyűzettel teljes sort.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
+
+A csak olvasható tulajdonság, amely lekérdezi a szöveg, amely tartalmazza a billentyűzettel teljes sort.
 
 ```powershell
 # Get all of the text on the line that contains the caret.
@@ -171,9 +187,10 @@ $psISE.CurrentFile.Editor.CaretLineText
 ```
 
 ### <a name="linecount"></a>LineCount
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
 
- A csak olvasható tulajdonság, amely a sor számának lekérése a szerkesztőt.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
+
+A csak olvasható tulajdonság, amely a sor számának lekérése a szerkesztőt.
 
 ```powershell
 # Get the LineCount.
@@ -181,24 +198,26 @@ $psISE.CurrentFile.Editor.LineCount
 ```
 
 ### <a name="selectedtext"></a>SelectedText
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
 
- A csak olvasható tulajdonság, amely lekérdezi a kijelölt szöveg szerkesztő.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
 
- Tekintse meg a [Scripting példa](#scripting-example) a témakör későbbi részében.
+A csak olvasható tulajdonság, amely lekérdezi a kijelölt szöveg szerkesztő.
+
+Tekintse meg a [Scripting példa](#scripting-example) a témakör későbbi részében.
 
 ### <a name="text"></a>Szöveg
-  A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott. 
 
- Az olvasási/írási tulajdonság, amely lekérdezi vagy beállítja a szöveg a szerkesztőben.
+A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
 
- Tekintse meg a [Scripting példa](#scripting-example) a témakör későbbi részében.
+Az olvasási/írási tulajdonság, amely lekérdezi vagy beállítja a szöveg a szerkesztőben.
+
+Tekintse meg a [Scripting példa](#scripting-example) a témakör későbbi részében.
 
 ## <a name="scripting-example"></a>Parancsfájl-kezelési – példa
 
 ```powershell
 # This illustrates how you can use the length of a line to
-# select the entire line and shows how you can make it lowercase. 
+# select the entire line and shows how you can make it lowercase.
 # You must run this in the Console pane. It will not run in the Script pane.
 # Begin by getting a variable that points to the editor.
 $myEditor = $psISE.CurrentFile.Editor
@@ -212,10 +231,10 @@ $myEditor.InsertText("LINE3 `n")
 $myEditor.InsertText("LINE4 `n")
 $myEditor.InsertText("LINE5 `n")
 
-# Use the GetLineLength method to get the length of the third line. 
-$endColumn= $myEditor.GetLineLength(3)
+# Use the GetLineLength method to get the length of the third line.
+$endColumn = $myEditor.GetLineLength(3)
 # Select the text in the first three lines.
-$myEditor.Select(1,1,3,$endColumn + 1)
+$myEditor.Select(1, 1, 3, $endColumn + 1)
 $selection = $myEditor.SelectedText
 # Clear all the text in the editor.
 $myEditor.Clear()
@@ -224,10 +243,8 @@ $myEditor.InsertText($selection.ToLower())
 ```
 
 ## <a name="see-also"></a>Lásd még:
-- [A ISEFile objektum](The-ISEFile-Object.md) 
-- [A PowerShellTab objektum](The-PowerShellTab-Object.md) 
-- [A Windows PowerShell ISE Scripting Hálózatiobjektum-modellje](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [A Windows PowerShell ISE objektumhivatkozás modell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
-- [A ISE objektum modell hierarchia](The-ISE-Object-Model-Hierarchy.md)
 
-  
+- [A ISEFile objektum](The-ISEFile-Object.md)
+- [The PowerShellTab Object](The-PowerShellTab-Object.md)
+- [A Windows PowerShell ISE objektummodell Scripting célja](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Az ISE objektummodell-hierarchiája](The-ISE-Object-Model-Hierarchy.md)

@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "ApplyConfiguration metódust a MSFT_DSCLocalConfigurationManager osztály"
-ms.openlocfilehash: 72fbedf30e5058d8003ed620400d6b443d50dff6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Az MSFT_DSCLocalConfigurationManager osztály ApplyConfiguration metódusa
+ms.openlocfilehash: 2844e354e0d054b13b92267ce314536d88a1c33e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>ApplyConfiguration metódust a MSFT_DSCLocalConfigurationManager osztály
+# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály ApplyConfiguration metódusa
 
-A konfigurációs ügynök használja a beállítások, amelyek függőben van. 
+A konfigurációs ügynök használja a beállítások, amelyek függőben van.
 
 Nincs függőben lévő konfiguráció, ha ez a módszer az aktuális konfigurációt újra alkalmazza.
 
@@ -28,8 +28,7 @@ uint32 ApplyConfiguration(
 ## <a name="parameters"></a>Paraméterek
 ----------
 
-*kényszerített* \[a\]  
-Ha ez **igaz**, a jelenlegi konfiguráció megváltoztatni, még akkor is, ha egy konfigurációjának kiszámítása függőben van.
+*kényszerített* \[a\] ebben **igaz**, a jelenlegi konfiguráció megváltoztatni, még akkor is, ha egy konfigurációjának kiszámítása függőben van.
 
 ## <a name="return-value"></a>Visszatérési érték
 ------------
@@ -51,10 +50,3 @@ Ez a statikus módszer.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

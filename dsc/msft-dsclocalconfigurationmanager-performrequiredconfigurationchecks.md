@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A MSFT_DSCLocalConfigurationManager osztály PerformRequiredConfigurationChecks módszer"
-ms.openlocfilehash: 687c92f2dac5e8855731713e81390ac67615231e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Az MSFT_DSCLocalConfigurationManager osztály PerformRequiredConfigurationChecks metódusa
+ms.openlocfilehash: 9cc4384088fcc39b09979b8ae4d023fc46307b13
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>A MSFT_DSCLocalConfigurationManager osztály PerformRequiredConfigurationChecks módszer
+# <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály PerformRequiredConfigurationChecks metódusa
 
 A Feladatütemező használatával egy konzisztencia-ellenőrzés indítása.
 
@@ -25,8 +25,7 @@ uint32 PerformRequiredConfigurationChecks(
 <a name="parameters"></a>Paraméterek
 ----------
 
-*Jelzők* \[a\]  
-Bitmaszk, amely határozza meg a konzisztencia-ellenőrzés futtatásához. A következő értékek érvényesek, és egy bitenkénti használatával egyesíthetők **vagy** műveletet:
+*Jelzők* \[a\] bitmaszk, amely határozza meg a konzisztencia-ellenőrzés futtatásához. A következő értékek érvényesek, és egy bitenkénti használatával egyesíthetők **vagy** műveletet:
 
 |Érték |Leírás |
 |:--- |:---|
@@ -55,11 +54,3 @@ Ez a statikus módszer.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

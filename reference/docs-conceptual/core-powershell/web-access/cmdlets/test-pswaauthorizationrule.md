@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell parancsmag
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: test-pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: fb2937397616160c70b056e412e42fb8ff4c2f27
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ed6d56b2f3c4ee4ac410cdaadda312bffe506ee9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
 
@@ -47,7 +47,7 @@ Ez a parancsmag paramétereit felel meg a Windows PowerShell® Web Access bejele
 
 Adja meg a vizsgálandó számítógép nevét.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | Igaz                                 |
@@ -60,7 +60,7 @@ Adja meg a vizsgálandó számítógép nevét.
 
 Megadja a nevét, a Windows PowerShell munkamenet-konfiguráció, más néven a végpont vagy a futási térből, teszteléséhez.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -73,7 +73,7 @@ Megadja a nevét, a Windows PowerShell munkamenet-konfiguráció, más néven a 
 
 Megadja a kapcsolat tesztelése URI.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | Igaz                                 |
@@ -86,7 +86,7 @@ Megadja a kapcsolat tesztelése URI.
 
 Megadja a **PSCredential** egy felhasználói fiókot, amely a Windows PowerShell Web Access engedélyezési szabályok teszteléséhez használni kívánt objektumot. Ha nem adja hozzá ezt a paramétert, a parancsmag használja az aktuálisan bejelentkezett felhasználói fiók. A beolvasandó egy **PSCredential** objektum, amely pedig szükséges engedélyezési szabályok távolról tesztelése, futtassa a [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936) parancsmag.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -99,7 +99,7 @@ Megadja a **PSCredential** egy felhasználói fiókot, amely a Windows PowerShel
 
 Megadja a teszteléséhez szabályok részhalmazát. Ha ez a paraméter nincs megadva, majd a teszteli, szemben az összes engedélyezési szabályt.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -112,7 +112,7 @@ Megadja a teszteléséhez szabályok részhalmazát. Ha ez a paraméter nincs me
 
 Megadja a tesztelni kívánt felhasználó nevét.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | Igaz                                 |

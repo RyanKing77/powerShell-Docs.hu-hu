@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A MSFT_DSCLocalConfigurationManager osztály GetMetaConfiguration módszer"
-ms.openlocfilehash: 695be4ee6490567295fda0cc44635870362d24b8
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Az MSFT_DSCLocalConfigurationManager osztály GetMetaConfiguration metódusa
+ms.openlocfilehash: ddc016402239bcdea060a717fbac9ab7ea42698c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>A MSFT_DSCLocalConfigurationManager osztály GetMetaConfiguration módszer
+# <a name="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály GetMetaConfiguration metódusa
 
 A helyi Configuration Manager-beállításainak konfigurálása ügynök használt beolvasása.
 
@@ -25,8 +25,7 @@ uint32 GetMetaConfiguration(
 <a name="parameters"></a>Paraméterek
 ----------
 
-*Metakonfigurációját* \[kimenő\]  
-A visszatérési, tartalmazza a beágyazott példányának a **MSFT_DSCMetaConfiguration** osztály, amely meghatározza a beállításokat.
+*Metakonfigurációját* \[kimenő\] return tartalmaz beágyazott példányának a **MSFT_DSCMetaConfiguration** osztály, amely meghatározza a beállításokat.
 
 ## <a name="return-value"></a>Visszatérési érték
 ------------
@@ -48,11 +47,3 @@ Ez a statikus módszer.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

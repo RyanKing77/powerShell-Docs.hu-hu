@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
-title: "PSRepository regisztrációjának törlése"
-ms.openlocfilehash: 91380210f262208fce39d596bd6c2ad05a819fbf
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
+title: PSRepository regisztrációjának törlése
+ms.openlocfilehash: 7847e223ae7edd9ec2417d104e5e8130f92a59cf
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="unregister-psrepository"></a>PSRepository regisztrációjának törlése
 
@@ -18,7 +18,7 @@ A tárház regisztrációjának törlése.
 
 A Unregister-PSRepository parancsmag az aktuális felhasználó tára regisztrációjának törlése.
 - Regisztrációjának megszüntetése és az Újraregisztrálás PSGallery tárház vállalati számára engedélyezve van, és forgatókönyvek leválasztása.
-- A felhasználók újra regisztrálhatják a PSGallery egyszerűen futtatásával`Register-PSRepository -Default`
+- A felhasználók újra regisztrálhatják a PSGallery egyszerűen futtatásával `Register-PSRepository -Default`
 - Mivel PSGallery az alapértelmezett tárház közzététele a Publish-modul és a közzététel-parancsfájl-parancsmagok, hibát fog jelezni, ha PSGallery regisztrált tárház listájában nem érhető el.
 
 ## <a name="cmdlet-syntax"></a>A parancsmag szintaxisa
@@ -56,4 +56,3 @@ At line:1 char:1
 # Re-register PSGallery repository
 Register-PSRepository -Default
 ```
-

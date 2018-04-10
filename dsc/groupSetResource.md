@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-description: "Lehetővé teszi a célcsomóponton helyi csoportok kezelése."
-title: "A DSC GroupSet erőforrás"
-ms.openlocfilehash: 158cb28747c5fe1987eb62b2cc0f6d6f6fb14332
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+description: Lehetővé teszi a célcsomóponton helyi csoportok kezelése.
+title: A DSC GroupSet erőforrás
+ms.openlocfilehash: 4f8fc21806fdb4eb06e0d915d5b6ca229357a210
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-groupset-resource"></a>A DSC GroupSet erőforrás
 
@@ -33,19 +33,19 @@ Group [string] #ResourceName
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   | 
-|---|---| 
-| Csoportnév| A csoportokat, amelyekhez egy adott állapot biztosításához nevei.| 
-| MembersToExclude| Ez a tulajdonság segítségével távolítsa el a meglévő a csoportok tagságának tagot. Ez a tulajdonság értéke a következő formában karakterláncok *tartomány*\\*felhasználónév*. Ha ez a tulajdonság konfigurációban, ne használja a **tagok** tulajdonság. Ennek során hibát adnak.| 
+|  Tulajdonság  |  Leírás   |
+|---|---|
+| Csoportnév| A csoportokat, amelyekhez egy adott állapot biztosításához nevei.|
+| MembersToExclude| Ez a tulajdonság segítségével távolítsa el a meglévő a csoportok tagságának tagot. Ez a tulajdonság értéke a következő formában karakterláncok *tartomány*\\*felhasználónév*. Ha ez a tulajdonság konfigurációban, ne használja a **tagok** tulajdonság. Ennek során hibát adnak.|
 | hitelesítő adatok| A távoli erőforrások eléréséhez szükséges hitelesítő adatokat. **Megjegyzés:**: ennek a fióknak rendelkeznie kell a megfelelő Active Directory-engedélyek minden nem helyi fiók hozzáadása a csoporthoz; ellenkező esetben hiba történik.
-| Győződjön meg arról| Azt jelzi, hogy a csoportok is léteznek. Állítsa be ezt a tulajdonságot "Hiányzik", annak érdekében, hogy a csoportok nem léteznek. Azt, hogy "" (az alapértelmezett érték) beállítást biztosítja, hogy a csoportok is léteznek.| 
-| Tagok| Ez a tulajdonság használatával az aktuális csoporttagság cserélje le a megadott tagot. Ez a tulajdonság értéke a következő formában karakterláncok *tartomány*\\*felhasználónév*. Ha ez a tulajdonság konfigurációban, nem használja a **MembersToExclude** vagy **MembersToInclude** tulajdonság. Ennek során hibát adnak.| 
-| MembersToInclude| Ez a tulajdonság használatával tagok hozzáadása a meglévő csoport tagságát. Ez a tulajdonság értéke a következő formában karakterláncok *tartomány*\\*felhasználónév*. Ha ez a tulajdonság konfigurációban, ne használja a **tagok** tulajdonság. Ennek során hibát adnak.| 
-| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, szintaxisa a következő e tulajdonság használatával "DependsOn ="[ A ResourceType] ResourceName"".| 
+| Győződjön meg arról| Azt jelzi, hogy a csoportok is léteznek. Állítsa be ezt a tulajdonságot "Hiányzik", annak érdekében, hogy a csoportok nem léteznek. Azt, hogy "" (az alapértelmezett érték) beállítást biztosítja, hogy a csoportok is léteznek.|
+| Tagok| Ez a tulajdonság használatával az aktuális csoporttagság cserélje le a megadott tagot. Ez a tulajdonság értéke a következő formában karakterláncok *tartomány*\\*felhasználónév*. Ha ez a tulajdonság konfigurációban, nem használja a **MembersToExclude** vagy **MembersToInclude** tulajdonság. Ennek során hibát adnak.|
+| MembersToInclude| Ez a tulajdonság használatával tagok hozzáadása a meglévő csoport tagságát. Ez a tulajdonság értéke a következő formában karakterláncok *tartomány*\\*felhasználónév*. Ha ez a tulajdonság konfigurációban, ne használja a **tagok** tulajdonság. Ennek során hibát adnak.|
+| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, szintaxisa a következő e tulajdonság használatával "DependsOn ="[ A ResourceType] ResourceName"".|
 
 ## <a name="example-1"></a>1. példa
 
-A következő példa bemutatja, hogyan annak érdekében, hogy jelen-e "myGroup" és "myOtherGroup" két csoportot. 
+A következő példa bemutatja, hogyan annak érdekében, hogy jelen-e "myGroup" és "myOtherGroup" két csoportot.
 
 ```powershell
 configuration GroupSetTest
@@ -78,5 +78,3 @@ GroupSetTest -ConfigurationData $cd
 ```
 
 >**Megjegyzés:** ebben a példában egyszerű szöveges hitelesítő adatokat használja az egyszerűség érdekében. A konfigurációs MOF-fájlt a hitelesítő adatok titkosításához kapcsolatos információkért lásd: [biztonságossá tétele a MOF-fájlt](secureMOF.md).
-
-

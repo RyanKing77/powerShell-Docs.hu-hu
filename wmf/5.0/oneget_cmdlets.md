@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, powershell, beállítás"
-ms.openlocfilehash: 134c22efe4fb86045ffb326e109dfbcc741bcf2f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: a282ba375c9ee796c1f3d7923f7478e200cd3b19
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="packagemanagement-cmdlets"></a>PackageManagement parancsmagok
+# <a name="packagemanagement-cmdlets"></a>PackageManagement-parancsmagok
 Ez a szoftver felderítés, telepítés és a készlet (SDII) támogatásához PackageManagement részében. Próbálja ki ezeket a műveleteket a parancsmagokat:
 -   Keresés-csomag
 -   Find-PackageProvider
@@ -52,7 +52,7 @@ Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nug
 ```
 
 ## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomlibrarymt676544aspx"></a>[Keresés – PackageProvider parancsmag](https://technet.microsoft.com/library/mt676544.aspx)
-A keresés-PackageProvider parancsmag egyező PackageManagement szolgáltatók csomag adatforrások regisztrálva PowerShellGet a rendelkezésre álló talál. Ezek a csomag szolgáltatók telepíthetők az Install-PackageProvider parancsmaggal. Alapértelmezés szerint ez a "PackageManagement" és "Provider" címkék a PowerShell-galériában modullistából magában foglalja. 
+A keresés-PackageProvider parancsmag egyező PackageManagement szolgáltatók csomag adatforrások regisztrálva PowerShellGet a rendelkezésre álló talál. Ezek a csomag szolgáltatók telepíthetők az Install-PackageProvider parancsmaggal. Alapértelmezés szerint ez a "PackageManagement" és "Provider" címkék a PowerShell-galériában modullistából magában foglalja.
 
 Keresés – PackageProvider is talál megfelelő PackageManagement szolgáltatók által biztosított a PackageManagement azure blob a tárolóban, ahol használjuk a PackageManagement boostrapper szolgáltató kereséséhez és telepíteni kell őket.
 ```powershell
@@ -170,10 +170,10 @@ Find-Package -source c:\test
 ```
 
 ## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Set-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890710.aspx)
-Ez a parancsmag módosítja egy meglévő csomag forrása kapcsolatos információkat. 
+Ez a parancsmag módosítja egy meglévő csomag forrása kapcsolatos információkat.
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
-Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2 
+Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2
 ```
 
 ## <a name="uninstall-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890702aspx"></a>[Távolítsa el csomag parancsmag](https://technet.microsoft.com/en-us/library/dn890702.aspx)
@@ -191,4 +191,3 @@ Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Pack
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"
 ```
-

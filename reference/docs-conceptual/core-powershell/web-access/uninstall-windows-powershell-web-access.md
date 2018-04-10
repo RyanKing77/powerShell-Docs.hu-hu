@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell parancsmag
-title: "a windows powershell webes elérés eltávolítása"
-ms.openlocfilehash: b6e6a2374e6b4b2be8742019c5f1e4d5b5d1abe3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: a windows powershell webes elérés eltávolítása
+ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Webes Windows PowerShell-elérés eltávolítása
 
@@ -29,7 +29,7 @@ Ebben a szakaszban ismertetett eljárások segítségével távolíthatja el:
 
 - a Windows PowerShell Web Access webalkalmazás és
 - a Windows PowerShell Web Access szolgáltatás
- 
+
 a Windows PowerShell-parancsmagok használatával.
 
 ### <a name="step-1-delete-the-web-application-using-cmdlets"></a>1. lépés: A webalkalmazás-parancsmagok használatával törlése
@@ -96,9 +96,9 @@ Ebben a szakaszban ismertetett eljárások segítségével távolítsa el a Wind
 
 > ![Figyelmeztetés megjegyzés](images/SecurityNote.jpeg)**Megjegyzés**:
 >
-> Az eltávolítás során a rendszer nem törli a tanúsítványt. 
+> Az eltávolítás során a rendszer nem törli a tanúsítványt.
 >
-> Ha önaláírt tanúsítványt hozott létre, vagy a használt teszttanúsítványt el kívánja távolítani, törölje a tanúsítványt az IIS-kezelőben. 
+> Ha önaláírt tanúsítványt hozott létre, vagy a használt teszttanúsítványt el kívánja távolítani, törölje a tanúsítványt az IIS-kezelőben.
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>2. lépés: Távolítsa el a Windows PowerShell Web Access szerepkörök és szolgáltatások varázsló segítségével
 

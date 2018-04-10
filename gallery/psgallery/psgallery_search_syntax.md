@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "gyűjtemény, a powershell, a parancsmag, a psgallery"
+keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
 title: psgallery_search_syntax
-ms.openlocfilehash: 409ae607557af760f9cec4e3c54f39e51b5fac18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 337b4b1e702994fcbc456eb31a2d8632f5220d09
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="gallery-search-syntax"></a>Gyűjteményelem keresési szintaxisának
 
@@ -49,7 +49,7 @@ egy másik módja az azonosító mezőben "AzureRM.Profile" elemek kereséséhez
 Az "Id" szűrő karakterláncrész egyeznek, így ha a a következő:
 
     Id:"azure"
-    
+
 Például a "AzureRM.Profile" és "Azure.Storage" eredmények lesz.
 
 Egy mező több kulcsszavak is kereshet. Vagy kombinációs mezőket.
@@ -71,7 +71,7 @@ A megadott függvény összes elemek kereséséhez.
     Functions:"Update-AzureRM"
 
 A megadott parancsmaggal minden elem kereséséhez.
-    
+
     Cmdlets:"Get-AzureRmEnvironment"
 
 A megadott nevű DSC erőforrás minden elem kereséséhez.
@@ -88,8 +88,7 @@ A megadott PowerShellVersion tartalmazó összes elemek kereséséhez
 Végül egy mező nem támogatottak, például a "parancs" használata azt fogja csak figyelmen kívül hagyja, és keresse a mezőket. Ezért a következő lekérdezés
 
     commands:blobs storage
-    
+
 Az értelmezett pontosan ugyanaz, mint ez a lekérdezés:
 
     blobs storage
-

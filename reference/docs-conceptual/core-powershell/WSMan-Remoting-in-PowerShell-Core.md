@@ -1,4 +1,4 @@
-# <a name="ws-management-wsman-remoting-in-powershell-core"></a>A PowerShell Core a WS-Management (WSMan) távoli eljáráshívási 
+# <a name="ws-management-wsman-remoting-in-powershell-core"></a>WS-Management (WSMan) távoli eljáráshívás a PowerShell Core-ban
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>Utasítások a távoli eljáráshívás-végpont létrehozása
 
@@ -28,19 +28,19 @@ A parancsfájl egy rendszergazdai szintű PowerShell-munkamenetet, és két mód
 
 #### <a name="executed-by-the-instance-of-powershell-that-it-will-register"></a>Végrehajtja az, hogy regisztrálja PowerShell példánya
 
-``` powershell
+```powershell
 Install-PowerShellRemoting.ps1
 ```
 
 #### <a name="executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register"></a>Hajtja végre a nevében a példányon, amely regisztrálja a PowerShell egy másik példánya
 
-``` powershell
+```powershell
 <path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>"
 ```
 
 Példa:
 
-``` powershell
+```powershell
 Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
@@ -51,7 +51,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 
 Hozza létre az új PowerShell-végpont PowerShell munkamenetet megadásával `-ConfigurationName "some endpoint name"`. Ha csatlakozni szeretne a PowerShell-példány a fenti példa, használja:
 
-``` powershell
+```powershell
 New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```

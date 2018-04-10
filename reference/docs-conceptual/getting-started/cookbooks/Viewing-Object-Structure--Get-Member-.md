@@ -1,28 +1,29 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "Megtekintés objektum struktúra Get tag"
+title: Megtekintés objektum struktúra Get tag
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-ms.openlocfilehash: 618f34bca7bfb76ce5d48ada642a687e279c8aad
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: cc93e45e4306b3d623c1d3d1096dd20c1afc59c8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="viewing-object-structure-get-member"></a>Objektum struktúra (Get-tag) megtekintése
+
 Objektumok ilyen központi szerepet játszik a Windows PowerShell, mert nincsenek több natív parancsok tetszőleges objektumtípusokat működik. A legfontosabb az egyik a **Get-tag** parancsot.
 
 A legegyszerűbb módszer a parancs visszaadja az objektumok elemzéséhez, hogy irányítsa a kimenetét a parancsnak a **Get-tag** parancsmag. A **Get-tag** parancsmag elsajátíthatja, hogy az objektum típusának formális nevét és annak tagjait teljes listáját. Visszaadott elemek száma néha túlságosan is lehet. Például egy folyamat objektumot rendelkezhet több mint 100 tagokat.
 
 A Process objektum és a kimeneti oldal összes tagját szeretné megjeleníteni az összes parancsot kell beírnia:
 
-```
-PS> Get-Process | Get-Member | Out-Host -Paging
+```powershell
+Get-Process | Get-Member | Out-Host -Paging
 ```
 
 A parancs kimenete következőhöz hasonlóan fog kinézni:
 
-```
+```output
 TypeName: System.Diagnostics.Process
 
 Name                           MemberType     Definition
@@ -68,4 +69,3 @@ A folyamat több mint 60 tulajdonságok van. A Windows PowerShell gyakran látha
 > A Windows PowerShell egy objektum típusának megjelenítése a végződése nevű XML-fájlokban tárolt információk segítségével határozza meg. format.ps1xml. A folyamat objektumok, amelyek .NET System.Diagnostics.Process objektumok, formázási adatai DotNetTypes.format.ps1xml tárolja.
 
 Alapértelmezés szerint megjeleníti a Windows PowerShell tulajdonságokat meg kell, ha szüksége lesz a kimeneti adatok formázásához saját maga. Ezt megteheti a formátum-parancsmagok használatával.
-

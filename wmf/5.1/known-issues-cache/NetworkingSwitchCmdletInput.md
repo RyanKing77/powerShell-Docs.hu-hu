@@ -1,21 +1,24 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
+keywords: WMF, powershell, beállítás
 contributor: vaibch
-title: "Hálózati kapcsolók kezelője parancsmagok hiba"
-ms.openlocfilehash: d9fcdedbfc7d0c3f68624ed1db6259e04c3d06d1
-ms.sourcegitcommit: fee03bb9802222078c8d5f6c8efb0698024406ed
+title: Hálózati kapcsolók kezelője parancsmagok hiba
+ms.openlocfilehash: 626809513e7a8f1aa2c47a48c74e69ca4077f598
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/27/2017
+ms.lasthandoff: 04/09/2018
 ---
-A hálózati kapcsolók kezelője parancsmagok segítségével kezelheti a hálózati kapcsolók WSMAN keresztül. Ehhez a modul néhány parancsmagok képesek a folyamatok értékek elfogadásával. WMF 5.1 Preview a parancsmagok láncból értéket fogad el nem hajtható végre, ha az értékek nem továbbítja a rendszer folyamatok.
+A hálózati kapcsolók kezelője parancsmagok segítségével kezelheti a hálózati kapcsolók WSMAN keresztül.
+Ehhez a modul néhány parancsmagok képesek a folyamatok értékek elfogadásával.
+WMF 5.1 Preview a parancsmagok láncból értéket fogad el nem hajtható végre, ha az értékek nem továbbítja a rendszer folyamatok.
 
 Ha nem használja a "InputObject" paramétert, a parancsmag továbbra is hibák nélkül.
 
-Ez a lista érintett parancsmagok azaz ezeket a parancsmagokat fogadhat láncból "InputObject" paraméter értékét. Ha ez az érték nem kerül át, a csővezeték-parancsmag végrehajtása sikertelen lesz.
+Ez a lista érintett parancsmagok azaz ezeket a parancsmagokat fogadhat láncból "InputObject" paraméter értékét.
+Ha ez az érték nem kerül át, a csővezeték-parancsmag végrehajtása sikertelen lesz.
 
 - Disable-NetworkSwitchEthernetPort
 - Enable-NetworkSwitchEthernetPort
@@ -82,4 +85,3 @@ $properties = @{Caption = "New Caption"}
 $vlan = Get-CimInstance -ClassName CIM_NetworkVlan -Namespace root/interop -CimSession $cimSession | Select-Object -First 1
 $vlan | Set-NetworkSwitchVlanProperty -Property $properties -CimSession $cimSession
 ```
-

@@ -1,25 +1,28 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "Szoftvertelepítés használata"
+title: Szoftvertelepítések használata
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: 2078376a8be19c9ff8ecc44183eb89f14bc388ed
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="working-with-software-installations"></a>Szoftvertelepítés használata
+# <a name="working-with-software-installations"></a>Szoftvertelepítések használata
+
 Alkalmazások, amelyek a Windows telepítővel WMI segítségével érhető el **Win32_Product** osztály, de nem minden alkalmazás használatban ma használható a Windows Installer. A Windows Installer szabványos módszerek legszélesebb biztosít telepíthető alkalmazások használata, mert tárgyaljuk elsősorban ezeket az alkalmazásokat. Másik telepítés rutinok használó alkalmazások általában nem felügyeli majd a Windows Installer. A telepítő szoftver- és az alkalmazás fejlesztőjének döntéseit működik-e az alkalmazások adott technikákat függ.
 
 > [!NOTE]
 > Az alkalmazásfájlok általában másolja arra a számítógépre telepített alkalmazások nem kezelhető itt tárgyalt technikák használatával. A "Működik-e a fájlok és mappák" szakaszban ismertetett módszerek használatával kezelheti ezeket az alkalmazásokat, fájlok és mappák.
 
 ### <a name="listing-windows-installer-applications"></a>Windows Installer-alkalmazások felsorolása
+
 A helyi vagy távoli rendszeren a Windows Installer telepített alkalmazások listájában, használja a következő egyszerű WMI-lekérdezést:
 
 ```
 PS> Get-WmiObject -Class Win32_Product -ComputerName .
+
 IdentifyingNumber : {7131646D-CD3C-40F4-97B9-CD9E4E6262EF}
 Name              : Microsoft .NET Framework 2.0
 Vendor            : Microsoft Corporation
@@ -31,6 +34,7 @@ Az összes Win32_Product objektum tulajdonságainak megjelenítéséhez a képer
 
 ```
 PS> Get-WmiObject -Class Win32_Product -ComputerName . | Where-Object -FilterScript {$_.Name -eq "Microsoft .NET Framework 2.0"} | Format-List -Property *
+
 Name              : Microsoft .NET Framework 2.0
 Version           : 2.0.50727
 InstallState      : 5
@@ -47,13 +51,13 @@ Vendor            : Microsoft Corporation
 
 Másik lehetőségként használhatja a **Get-WmiObject szűrő** paraméter csak a Microsoft .NET-keretrendszer 2.0-s kiválasztásához. Mivel ebben a parancsban használt szűrő WMI-szűrő, az szintaxissal WMI Query Language (WQL), nem a Windows PowerShell-szintaxis. Ehelyett:
 
-```
+```powershell
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='Microsoft .NET Framework 2.0'"| Format-List -Property *
 ```
 
 Vegye figyelembe, hogy WQL-lekérdezések gyakran karakterek használata, például a tárolóhelyek vagy egyenlőségjelet, amely egy speciális jelentéssel bírnak az Windows PowerShell. Emiatt tanácsos mindig tegye idézőjelek közé a szűrő paraméter értékét. Használhatja a Windows PowerShell escape-karakter, egy backtick (\`), bár előfordulhat, hogy az olvashatóság nem javítása. A következő parancsot az előző parancs egyenértékű és ugyanazt az eredményt adja vissza, de a backtick használja a különleges karaktereket, a teljes szűrési karakterláncot álló idézőjeleként helyett karaktert.
 
-```
+```powershell
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter Name`=`'Microsoft` .NET` Framework` 2.0`' | Format-List -Property *
 ```
 
@@ -74,13 +78,14 @@ IdentifyingNumber : {FCE65C4E-B0E8-4FBD-AD16-EDCBE6CD591F}
 
 Végül, csak a neve található telepített alkalmazásokat, egy egyszerű **formátum kiterjedő** utasítás egyszerűbbé teszi a kimeneti:
 
-```
+```powershell
 Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 ```
 
 Bár számos módon történő telepítéshez a Windows Installer használt alkalmazások most tudunk jelenleg nem tekintette más alkalmazások. Legtöbb szabványos alkalmazások a Windows az eltávolítóprogram regisztrálása, mert a is dolgozunk, az azok által helyileg megkeresése azokat a Windows beállításjegyzékében.
 
 ### <a name="listing-all-uninstallable-applications"></a>Minden távolíthatónak alkalmazások listázása
+
 Nincs a rendszer minden egyes alkalmazás kereséséhez garantált mód, bár is lehet található összes programot a Programok telepítése és törlése párbeszédpanelen látható listaelemek. Adja hozzá, vagy a Programok telepítése és törlése megtalálja ezeket az alkalmazásokat a következő beállításkulcsot:
 
 **HKEY_LOCAL_MACHINE\\szoftver\\Microsoft\\Windows\\CurrentVersion\\eltávolítása**.
@@ -88,7 +93,7 @@ Nincs a rendszer minden egyes alkalmazás kereséséhez garantált mód, bár is
 Azt is ellenőrizze, hogy ezt a kulcsot olyan alkalmazás megkeresése. Tekintse meg az Eltávolítás kulcsot megkönnyítése azt egy Windows PowerShell meghajtót leképezheti a beállításjegyzék-helyhez:
 
 ```
-PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall    
+PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
@@ -107,7 +112,7 @@ PS> (Get-ChildItem -Path Uninstall:).Count
 
 Azt úgy keresheti meg a további alkalmazások listája segítségével számos különféle módszereket, kezdve **Get-ChildItem**. Az alkalmazások listáját, és mentse azokat a **$UninstallableApplications** változó, használja a következő parancsot:
 
-```
+```powershell
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
@@ -118,8 +123,8 @@ A GetValue metódus a beállításkulcsok segítségével az Uninstall a beáll�
 
 Például az Uninstall kulcs alkalmazások megjelenítési nevének megkereséséhez használja a következő parancsot:
 
-```
-PS> Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue("DisplayName") }
+```powershell
+Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('DisplayName') }
 ```
 
 Nincs nem garantálja, hogy ezek az értékek egyediek. A következő példában két telepített elemek "A Windows Media Encoder 9 Series" jelennek meg:
@@ -137,6 +142,7 @@ SKC  VC Name                           Property
 ```
 
 ### <a name="installing-applications"></a>Alkalmazások telepítése
+
 Használhatja a **Win32_Product** osztály telepítése a Windows Installer-csomagokat, helyileg vagy távolról.
 
 > [!NOTE]
@@ -144,37 +150,38 @@ Használhatja a **Win32_Product** osztály telepítése a Windows Installer-csom
 
 Amikor távoli telepítése esetén használatával egy univerzális elnevezési konvenció (UNC) hálózati elérési út adja meg a kívánt csomag elérési útját .msi, mert a WMI-alrendszer nem értelmezi a Windows PowerShell-elérési utak. Például a NewPackage.msi telepítéséhez a hálózati megosztásban található \\ \\AppServ\\dsp PC01, a távoli számítógépen a Windows PowerShell parancssorába írja be a következő parancsot:
 
-```
-(Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq "Win32_Product"}).Install(\\AppSrv\dsp\NewPackage.msi)
+```powershell
+(Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq 'Win32_Product'}).Install(\\AppSrv\dsp\NewPackage.msi)
 ```
 
 Előfordulhat, hogy az alkalmazásokat, amelyek nem használják a Windows Installer technológia alkalmazásspecifikus módszer áll rendelkezésre az automatikus központi telepítés. Annak megállapításához, hogy van-e a központi telepítés automation módszere, olvassa el az alkalmazás dokumentációját, vagy tekintse meg az alkalmazás gyártójának támogatási rendszer. Bizonyos esetekben akkor is, ha az alkalmazás gyártójának nem volt kifejezetten tervezése az alkalmazás telepítési automatizálásra a telepítő szoftver gyártójához előfordulhat néhány technikák automatizálásra.
 
 ### <a name="removing-applications"></a>Alkalmazások eltávolítása
+
 Körülbelül ugyanúgy, mint a csomag telepítése a Windows Installer-csomag eltávolítása Windows PowerShell használatával működik. Íme egy példa, ami a csomag eltávolítása az nevét; alapján bizonyos esetekben szűrhet könnyebben lehet a **IdentifyingNumber**:
 
-```
+```powershell
 (Get-WmiObject -Class Win32_Product -Filter "Name='ILMerge'" -ComputerName . ).Uninstall()
 ```
 
 Más alkalmazások eltávolítása nincs így meglehetősen egyszerű, akkor is, ha helyben történik. Azt találhatja meg a parancssor az Eltávolítás karakterláncokat az alkalmazás kibontása a **UninstallString** tulajdonság. Ez a módszer Windows Installer-alkalmazások és az Eltávolítás kulcs alatt megjelenő régebbi alkalmazásokhoz:
 
-```
-Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue("UninstallString") }
+```powershell
+Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('UninstallString') }
 ```
 
 A kimeneti szerint szűrheti a megjelenített név, ha szeretné:
 
-```
-Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("DisplayName") -like "Win*"} | ForEach-Object -Process { $_.GetValue("UninstallString") }
+```powershell
+Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('DisplayName') -like 'Win*'} | ForEach-Object -Process { $_.GetValue('UninstallString') }
 ```
 
 Ezek a karakterláncok azonban nem lehet közvetlenül a Windows PowerShell parancssorból néhány módosítás nélkül használható.
 
 ### <a name="upgrading-windows-installer-applications"></a>Windows Installer-alkalmazások frissítése
+
 Alkalmazások frissítése, az alkalmazás frissítési csomag ismeri az alkalmazás és az elérési út nevét kell. Ezzel az információval frissítheti az alkalmazás egyetlen Windows PowerShell-parancsot:
 
-```
+```powershell
 (Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='OldAppName'").Upgrade(\\AppSrv\dsp\OldAppUpgrade.msi)
 ```
-

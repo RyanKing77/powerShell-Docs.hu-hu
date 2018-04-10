@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell 5.0 újdonságai"
-ms.openlocfilehash: 3a412b35c593c99fb8ea8307b12ccc05871863f4
-ms.sourcegitcommit: e2360ac94fe4deb0ed0f5c8c8d9b293551ec8030
+title: A Windows PowerShell 5.0 újdonságai
+ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>A Windows PowerShell 5.0 újdonságai
 A Windows PowerShell 5.0 jelentős új szolgáltatásokkal, amelyek kibővítik annak használati, javítják használhatóságát, és felügyelete és kezelése Windows-alapú környezetek egyszerűbb és átfogóbb.
 
 A Windows PowerShell 5.0 visszamenőlegesen kompatibilis. Parancsmagok, szolgáltatók, modulok, beépülő modulok, parancsfájlok, Funkciók, és a profilok a Windows PowerShell 4.0-s verzióját, a Windows PowerShell 3.0 és a Windows PowerShell 2.0 általában tervezett működnek a Windows PowerShell 5.0 változtatás nélkül.
 
-# <a name="installing-windows-powershell"></a>Windows PowerShell telepítése
-Windows Server 2016 Technical Preview és a Windows 10 rendszeren alapértelmezés szerint telepítve van a Windows PowerShell 5.0. 
+# <a name="installing-windows-powershell"></a>A Windows PowerShell telepítése
+Windows Server 2016 Technical Preview és a Windows 10 rendszeren alapértelmezés szerint telepítve van a Windows PowerShell 5.0.
 
 A Windows PowerShell 5.0 telepítése a Windows Server 2012 R2, Windows 8.1 Enterprise vagy Windows 8.1 Pro, töltse le és telepítse [Windows Management Framework 5.0](http://aka.ms/wmf5download). Mindenképpen olvassa el a letöltési részletes adatait, és rendszerkövetelményeknek minden, a Windows Management Framework 5.0 telepítése előtt.
 
@@ -184,7 +184,7 @@ Sok frissítések és fejlesztések a Windows PowerShell szükséges konfigurál
 
 - A New-Guid-parancsmaggal hozzon létre egy GUID Azonosítót, akkor hasznos, ha a parancsfájlok vagy DSC erőforrások ír a .NET-keretrendszer Guid osztályt használja.
 
-- Mivel a fájlverzió-információkat félrevezető, különösen, miután egy fájlt van telepítve, FileInfo objektumok új FileVersionRaw és ProductVersionRaw parancsfájl tulajdonságok érhetők el. Például futtathatja a következő parancsot az ezeket a tulajdonságokat a powershell.exe értékek megjelenítése ahol $pid tartalmaz egy futó Windows PowerShell-munkamenethez a Folyamatazonosító:```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- Mivel a fájlverzió-információkat félrevezető, különösen, miután egy fájlt van telepítve, FileInfo objektumok új FileVersionRaw és ProductVersionRaw parancsfájl tulajdonságok érhetők el. Például futtathatja a következő parancsot az ezeket a tulajdonságokat a powershell.exe értékek megjelenítése ahol $pid tartalmaz egy futó Windows PowerShell-munkamenethez a Folyamatazonosító:  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 
 - Új parancsmagok Enter-PSHostProcess és kilépési-PSHostProcess lehetővé teszik, hogy a folyamatok elkülönül az aktuális folyamat, amely a Windows PowerShell-konzolt futtatja a Windows PowerShell-parancsfájlok hibakeresése. Futtassa a Enter-PSHostProcess adja meg, vagy csatlakoztatása egy adott folyamat azonosítója, és futtassa a Get-futási térben vissza az aktív futási terek a folyamaton belül. Futtassa a kilépési-PSHostProcess leválasztása a a folyamat, amikor elkészült, a parancsfájl a folyamaton belüli hibakeresés.
 
@@ -228,19 +228,19 @@ Sok frissítések és fejlesztések a Windows PowerShell szükséges konfigurál
 
     -   Get-DscLocalConfigurationManager
 
-    -   Visszaállítás-DscConfiguration
+    -   Restore-DscConfiguration
 
-    -   Teszt-DscConfiguration
+    -   Test-DscConfiguration
 
     -   Hasonlítsa össze-DscConfiguration
 
-    -   Közzététel DscConfiguration
+    -   Publish-DscConfiguration
 
     -   Set-DscLocalConfigurationManager
 
     -   Start-DscConfiguration
 
-    -   Frissítés-DscConfiguration
+    -   Update-DscConfiguration
 
 - Központosított DSC hibajelentés, a hibával kapcsolatos részletes információk nem csak a rendszer naplózza abban az esetben, ha napló, de elküldhetők egy központi helyen újabb elemzés céljából. A központi hely hozhat tárolása bármely olyan kiszolgáló a környezetben bekövetkezett DSC konfigurációs hibák. Után a metaadat-konfiguráció a jelentéskészítő kiszolgáló megadva, az összes hiba esetén a jelentéskészítő kiszolgálón, majd adatbázisban tárolja, hogy. A lekérési kiszolgálójáról konfigurációk le tudja ezt a funkciót, függetlenül attól,-e a célcsomóponton van konfigurálva állíthat be.
 
@@ -352,7 +352,7 @@ A Windows PowerShell 4.0 a következő új szolgáltatásokat tartalmazza.
 
 - Értékének **$PSVersionTable.PSVersion** 4.0 környezetébe.
 
-- **WHERE()** operátor viselkedés megváltozott. `Collection.Where('property -match name')`a formátumú karakterlánc-kifejezés elfogadása `"Property -CompareOperator Value"` már nem támogatott. Azonban a **Where()** operátor elfogadja a scriptblock kulcsszót, formátumú karakterlánc-kifejezés; ez továbbra is támogatott.
+- **WHERE()** operátor viselkedés megváltozott. `Collection.Where('property -match name')` a formátumú karakterlánc-kifejezés elfogadása `"Property -CompareOperator Value"` már nem támogatott. Azonban a **Where()** operátor elfogadja a scriptblock kulcsszót, formátumú karakterlánc-kifejezés; ez továbbra is támogatott.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Új funkciók a Windows PowerShell integrált parancsfájlkezelési környezet (ISE)
 
@@ -604,14 +604,14 @@ A Windows PowerShell 3.0 szolgáltatásai számos nyújtanak a nyelvi egyszerűb
 
 |||
 |-|-|
-|-JobTrigger|Új-JobTrigger|
-|Connect-PSSession|Új PSSessionConfigurationFile|
+|Add-JobTrigger|New-JobTrigger|
+|Connect-PSSession|New-PSSessionConfigurationFile|
 |ConvertFrom-Json|New-PSTransportOption|
 |ConvertTo-Json|Új PSWorkflowExecutionOption|
-|Disable-JobTrigger|Új PSWorkflowSession|
+|Disable-JobTrigger|New-PSWorkflowSession|
 |Disable-ScheduledJob|Új ScheduledJobOption|
-|Kapcsolat bontása-PSSession|Új WinEvent|
-|Enable-JobTrigger|Fogadási-PSSession|
+|Disconnect-PSSession|New-WinEvent|
+|Enable-JobTrigger|Receive-PSSession|
 |Enable-ScheduledJob|Register-CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
 |Get-CimClass|Remove-CimInstance|
@@ -623,15 +623,15 @@ A Windows PowerShell 3.0 szolgáltatásai számos nyújtanak a nyelvi egyszerűb
 |Get-ScheduledJob|Set-CimInstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
-|Importálás – IseSnippet|Set-ScheduledJobOption|
+|Import-IseSnippet|Set-ScheduledJobOption|
 |Invoke-AsWorkflow|A parancs megjelenítése|
-|Invoke-CimMethod|Megjelenítése-ControlPanelItem|
+|Invoke-CimMethod|Show-ControlPanelItem|
 |Invoke-RestMethod|Suspend-Job|
-|Invoke-WebRequest|Teszt-PSSessionConfigurationFile|
-|Új CimInstance|Fájl feloldása|
-|Új-CimSession|Unregister-ScheduledJob|
-|Új CimSessionOption|Update-Help|
-|Új IseSnippet||
+|Invoke-WebRequest|Test-PSSessionConfigurationFile|
+|New-CimInstance|Unblock-File|
+|New-CimSession|Unregister-ScheduledJob|
+|New-CimSessionOption|Update-Help|
+|New-IseSnippet||
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Meglévő Core parancsmagok és szolgáltatók fejlesztései
 Windows PowerShell 3.0 meglévő parancsmagok, beleértve a egyszerűsített szintaxist használhat, és a következő parancsmag új paramétereinek új szolgáltatásokat tartalmazza: számítógép-parancsmagjai, a CSV-parancsmag, a Get-ChildItem, Get-Command, a Get-tartalmat, Get-előzmények Mértékobjektumot, biztonsági parancsmagok, Select-Object, válasszon-karakterlánc, megosztott elérési útja, folyamat, Tee-objektum, a Test-Connection, Add-tag, és a WMI-parancsmagokat.
@@ -712,5 +712,4 @@ A lehetőségét, a Windows PowerShell 3.0 értelmezi, és megfelelően kezeli a
 
 ## <a name="see-also"></a>Lásd még:
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
-- [A Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
-
+- [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)

@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A PowerShell lap létrehozása a Windows PowerShell ISE"
+title: PowerShell-lap létrehozása a Windows PowerShell ISE-ben
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-ms.openlocfilehash: 3cfeb18babe6b63f0e02da8cf0fd460950f1afce
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 4d4388d889f2178b2cd24cb0f3350aee37327625
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>A PowerShell lap létrehozása a Windows PowerShell ISE
+# <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>PowerShell-lap létrehozása a Windows PowerShell ISE-ben
+
 Lapok a a Windows PowerShell integrált parancsfájlkezelési környezet (ISE) lehetővé teszi, hogy egyszerre hozzon létre, és ugyanahhoz az alkalmazáshoz belül több végrehajtási környezetet használja.
 PowerShell lapokon megfelel egy külön végrehajtási környezet vagy a munkamenet.
 
@@ -53,6 +54,5 @@ A parancsfájl mentése kapcsolatos további információkért lásd: [a parancs
 
 ## <a name="see-also"></a>Lásd még:
 
-- [A Windows PowerShell ISE használatával](Using-the-Windows-PowerShell-ISE.md)
+- [A Windows PowerShell ISE bemutatása](Introducing-the-Windows-PowerShell-ISE.md)
 - [A konzol ablaktáblában a Windows PowerShell ISE használata](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
-

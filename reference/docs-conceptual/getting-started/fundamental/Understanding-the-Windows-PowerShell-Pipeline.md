@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell kimenetátirányítási mechanizmusával ismertetése"
+title: A Windows PowerShell-adatcsatorna megismerése
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 6d152e52d2fcfb9dd592eb9ac40500615f2186cb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: c3f1d17432cf3a77c0f5ecae137a4233a28a19d7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="understanding-the-windows-powershell-pipeline"></a>A Windows PowerShell kimenetátirányítási mechanizmusával ismertetése
+# <a name="understanding-the-windows-powershell-pipeline"></a>A Windows PowerShell-adatcsatorna megismerése
 Átirányítás gyakorlatilag tetszőleges helyszínről a Windows PowerShell működik. Bár a képernyőn látható szöveg, a Windows PowerShell a szöveges parancsok között nem csövön keresztüli. Ehelyett azt kiszolgálókészletéhez objektumok.
 
 A notation szállítására hasonlít más ismertetése a használt, így első ránézésre nem lehet nyilvánvaló, hogy a Windows PowerShell bevezet egy új. Például, ha használja a **kimenő gazdagép** lap-lap megjeleníti a kimeneti csak egy másik parancsba is, a kimeneti keresi a force parancsmagot, például a normál szöveget a képernyőn látható, lapok lebontva:
@@ -61,4 +61,3 @@ Valójában a fejlécadatokat kimenetét az a **Get-hely** parancsmag csak a fol
 Fényében, hogy előfordulhat, hogy egy parancs, mint mi látható ablakban jelenik meg a konzolon, hogyan lehet Windows PowerShell kimenete további információk lekérése az nem látható elemek? Miként jelenjenek meg a további adatokat? És mi történik, ha azt szeretné, az adatok megtekintéséhez eltér a egy Windows PowerShell formátuma általában?
 
 A többi Ez a fejezet ismerteti, hogyan felderítené az adott Windows PowerShell objektumok szerkezete meghatározott elemek kijelölése és formázási azokat könnyebben megjelenítési, és ezek az információk küldése az alternatív kimeneti helyekre, mint a fájlok és nyomtatók.
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A MSFT_DSCLocalConfigurationManager osztály SendConfiguration módszer"
-ms.openlocfilehash: 72c59b5aad293fa561146e5ad6822f27f40f321f
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Az MSFT_DSCLocalConfigurationManager osztály SendConfiguration metódusa
+ms.openlocfilehash: 07ae48dd456e68be4ad0b09127ba9801359fd101
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>A MSFT_DSCLocalConfigurationManager osztály SendConfiguration módszer
+# <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály SendConfiguration metódusa
 
 A konfigurációs dokumentum küld a felügyelt csomóponthoz, és menti a függőben lévő módosítása.
 
@@ -26,11 +26,9 @@ uint32 SendConfiguration(
 <a name="parameters"></a>Paraméterek
 ----------
 
-*ConfigurationData* \[a\]  
-A környezet konfigurációjának adatait.
+*ConfigurationData* \[a\] konfigurációjának a környezet adatait.
 
-*kényszerített* \[a\]  
-**Igaz** kényszerítése a konfigurációját, és állítsa le.
+*kényszerített* \[a\] **igaz** kényszerítése a konfigurációját, és állítsa le.
 
 ## <a name="return-value"></a>Visszatérési érték
 ------------
@@ -52,11 +50,3 @@ Ez a statikus módszer.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

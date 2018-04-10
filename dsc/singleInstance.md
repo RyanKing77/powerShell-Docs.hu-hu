@@ -1,54 +1,55 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Írás az Egypéldányos DSC erőforrás (ajánlott)"
-ms.openlocfilehash: 4510bec5b4600334b845831ec6700da01e1a110c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Egypéldányos DSC-erőforrás írása (ajánlott eljárás)
+ms.openlocfilehash: fc118fd8b0d91d2001030769ac7e3c6321972905
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Írás az Egypéldányos DSC erőforrás (ajánlott)
+# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Egypéldányos DSC-erőforrás írása (ajánlott eljárás)
 
 >**Megjegyzés:** Ez a témakör ismerteti a DSC erőforrása, amely lehetővé teszi, hogy csak egy példányban konfiguráció meghatározása esetén ajánlott eljárás. Jelenleg nincs ehhez beépített DSC szolgáltatás. Amely a későbbiekben változhat.
 
 Vannak olyan helyzetek, ahol nem is engedélyezni szeretné egy erőforrást egy konfigurációja többször használható. Például a egy előző megvalósításában a [xTimeZone](https://github.com/PowerShell/xTimeZone) erőforrás, a konfiguráció sikerült hívja az erőforrás többször, az időzóna beállítása minden erőforrás blokkban különböző beállítását:
 
 ```powershell
-Configuration SetTimeZone 
-{ 
-    Param 
-    ( 
-        [String[]]$NodeName = $env:COMPUTERNAME 
+Configuration SetTimeZone
+{
+    Param
+    (
+        [String[]]$NodeName = $env:COMPUTERNAME
 
-    ) 
+    )
 
-    Import-DSCResource -ModuleName xTimeZone 
- 
- 
-    Node $NodeName 
-    { 
-         xTimeZone TimeZoneExample 
-         { 
-        
-            TimeZone = 'Eastern Standard Time' 
-         } 
+    Import-DSCResource -ModuleName xTimeZone
+
+
+    Node $NodeName
+    {
+         xTimeZone TimeZoneExample
+         {
+
+            TimeZone = 'Eastern Standard Time'
+         }
 
          xTimeZone TimeZoneExample2
          {
 
             TimeZone = 'Pacific Standard Time'
 
-         }        
+         }
 
-    } 
-} 
+    }
+}
 ```
 
 Ez a DSC-erőforrás kulcsok működik módjával. Egy erőforrás rendelkeznie kell legalább egy kulcstulajdonságot. Egy erőforrás-példány egyedi, ha az érték az összes kulcstulajdonságait egyedi minősül. Előző végrehajtása során a [xTimeZone](https://github.com/PowerShell/xTimeZone) erőforrás volt csak egy tulajdonságot--**időzóna**, amely szükséges kulcsként. Ebből kifolyólag például a fenti konfigurációt volna fordítási és figyelmeztetés nélkül futtatja. Egyes a **xTimeZone** erőforrás blokkok egyedinek számít. Ez a csomópont oda-vissza az időzóna váltás ismételten alkalmazni kívánt konfigurációs okozna.
 
-Annak biztosítása érdekében, hogy egy konfigurációs sikerült egy célcsomóponttal időzónáját csak egyszer, az erőforrás frissült a második tulajdonság, **IsSingleInstance**, amely a kulcstulajdonság vált. A **IsSingleInstance** korlátozódott egyetlen érték "Yes" használatával egy **ValueMap**. Az erőforrás a régi MOF-séma a következő volt:
+Annak biztosítása érdekében, hogy egy konfigurációs sikerült egy célcsomóponttal időzónáját csak egyszer, az erőforrás frissült a második tulajdonság, **IsSingleInstance**, amely a kulcstulajdonság vált.
+A **IsSingleInstance** korlátozódott egyetlen érték "Yes" használatával egy **ValueMap**. Az erőforrás a régi MOF-séma a következő volt:
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -117,10 +118,10 @@ function Set-TargetResource
         [String]
         $TimeZone
     )
-    
+
     #Output the result of Get-TargetResource function.
     $CurrentTimeZone = Get-TimeZone
-    
+
     if($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
     {
         try
@@ -152,7 +153,7 @@ function Test-TargetResource
         [parameter(Mandatory = $true)]
         [ValidateSet('Yes')]
         [String]
-        $IsSingleInstance, 
+        $IsSingleInstance,
 
         [parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
@@ -205,9 +206,9 @@ Export-ModuleMember -Function *-TargetResource
 Figyelje meg, hogy a **időzóna** tulajdonság már nincs egy kulcsot. Most, ha egy konfigurációs megpróbálja kétszer időzónájának beállítása (használatával két különböző **xTimeZone** másik blokkok **időzóna** értékek), megpróbálja a konfiguráció-fordítási hiba következtében:
 
 ```powershell
-Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and 
-'[xTimeZone]TimeZoneExample2 (::22::10::xTimeZone)' in node 'CONTOSO-CLIENT'. Resources have identical key properties but there are differences in the 
-following non-key properties: 'TimeZone'. Values 'Eastern Standard Time' don't match values 'Pacific Standard Time'. Please update these property 
+Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and
+'[xTimeZone]TimeZoneExample2 (::22::10::xTimeZone)' in node 'CONTOSO-CLIENT'. Resources have identical key properties but there are differences in the
+following non-key properties: 'TimeZone'. Values 'Eastern Standard Time' don't match values 'Pacific Standard Time'. Please update these property
 values so that they are identical in both cases.
 At line:271 char:9
 +         Test-ConflictingResources $keywordName $canonicalizedValue $k ...
@@ -221,4 +222,3 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + CategoryInfo          : InvalidOperation: (SetTimeZone:String) [], InvalidOperationException
     + FullyQualifiedErrorId : FailToProcessConfiguration
 ```
-   

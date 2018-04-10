@@ -58,7 +58,7 @@ Ha szeretne egy adott telepítés a PowerShell használata a Visual Studio Code,
 
 1. Kattintson a **fájl -> Beállítások -> Beállítások**
 1. Két szerkesztő ablaktábla jelenik meg.
-   A jobb szélső ablaktáblán (`settings.json`), helyezze be az alábbi beállításoknak megfelelő az operációs rendszer, a két kapcsos zárójelek között (`{` és `}`), és cserélje le  *<version>*  és a telepített PowerShell-verzió:
+   A jobb szélső ablaktáblán (`settings.json`), helyezze be az alábbi beállításoknak megfelelő az operációs rendszer, a két kapcsos zárójelek között (`{` és `}`), és cserélje le *<version>* és a telepített PowerShell-verzió:
 
   ```json
     // On Windows:

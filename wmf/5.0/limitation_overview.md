@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: e8620cdeb90792e86d091d3e19a169f9dfa690f9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: 306241bc5ec854c0e2ed835009a79b21fc249f14
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="known-issues-and-limitations"></a>Ismert problémák és korlátozások
 
@@ -63,23 +63,23 @@ Két lehetséges megoldások a Windows Server futtatott verziójától függően
 **Megoldás:**
 - Operációs rendszer **Windows Server 2008 R2**
   1. Nyissa meg a Powershellt rendszergazdaként
-  2. A következő parancsot 
-  
+  2. A következő parancsot
+
   ```powershell
     Set-SilLogging –TargetUri https://BlankTarget –CertificateThumbprint 0123456789
   ```
   3. Futtassa a parancsot, és a hiba figyelmen kívül hagyja a rendszer megfelelően.
-  
+
   ```powershell
     Publish-SilData
    ```
   4. A \Windows\System32\Logfiles\SIL\ könyvtárban található fájlok törlése
-  
+
   ```powershell
     Remove-Item -Recurse $env:SystemRoot\System32\Logfiles\SIL\
   ```
   5. Az összes rendelkezésre álló fontos Windows-frissítések telepítéséhez, és a Sysyprep művelet általában megkezdéséhez.
-  
+
 - Operációs rendszer **Windows Server 2012-ben**
   1.    Miután telepítette a WMF 5.0 kell lennie a kiszolgálón a Sysprep d, rendszergazdaként jelentkezzen be.
   2.    Másolása Generize.xml directory \Windows\System32\Sysprep\ActionFiles\ kívül a Windows könyvtárban, a C:\ helyre például.
@@ -96,24 +96,23 @@ Két lehetséges megoldások a Windows Server futtatott verziójától függően
   7.    A következő parancsot a Generalize.xml fájl kihasználva saját tulajdonába vesz a system32 mappába:
 
     ```
-    Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
     ```
 
   8.    A következő paranccsal állítsa be a megfelelő engedéllyel a fájlra:
 
     ```
-    Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F 
+    Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F
     ```
-      * A parancssorba igennel válaszol megerősítést kér. 
+      * A parancssorba igennel válaszol megerősítést kér.
       * Vegye figyelembe, hogy `<AdministratorUserName>` a felhasználónév, a számítógépen rendszergazdai jogosultságokkal kell helyettesíteni. Például "Rendszergazda".
-      
+
   9.    Másolja a fájlt, szerkeszteni és felülírta a Sysprep szolgáltatás segítségével a következő parancsot:
 
     ```
-    xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
     ```
       * Igen választja, felülírja (vegye figyelembe, hogy ha felülírja, kérdés nélkül ellenőrizheti a megadott elérési).
       * Azt feltételezi, hogy a módosított tartalom Generalize.xml a C:\ lett másolva.
 
   10.   A megoldás generalize.XML most frissül. Futtassa a Sysprep a generalize beállítás engedélyezve van.
-

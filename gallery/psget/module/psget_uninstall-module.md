@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
-title: "Távolítsa el modul"
-ms.openlocfilehash: 3c4d8faa63aba6b4434d42a19a219baf84122591
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
+title: Távolítsa el modul
+ms.openlocfilehash: 90f26e64a8a6bc95faf444b1d3ce82a8e3bbefc1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-module"></a>Távolítsa el modul
 
@@ -16,7 +16,8 @@ Eltávolítja a modult, amely PowerShellGet-parancsmagok használatával lett te
 
 ## <a name="description"></a>Leírás
 
-Az Uninstall-modul a parancsmag eltávolítja a megadott modult a helyi számítógépről. A modul nem távolítható el, ha néhány más modulok függőség van rajta.
+Az Uninstall-modul a parancsmag eltávolítja a megadott modult a helyi számítógépről.
+A modul nem távolítható el, ha néhány más modulok függőség van rajta.
 Az Uninstall-modul parancsmagokkal azt is ellenőrzi, ha a modul eltávolítása folyamatban használatban, vagy nem. Hibát fog jelezni, ha a modul használatban van.
 
 ## <a name="cmdlet-syntax"></a>A parancsmag szintaxisa
@@ -126,4 +127,3 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    , Exception
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A Linux nxEnvironment erőforrás DSC"
-ms.openlocfilehash: 61e0c7e77e486cea878351f1929d73f1f80710d8
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A Linux nxEnvironment erőforrás DSC
+ms.openlocfilehash: 6d1d5e578e9a7ddda0e70063f86867de2e87a52e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>A Linux nxEnvironment erőforrás DSC
 
@@ -29,13 +29,13 @@ nxEnvironment <string> #ResourceName
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság |  Leírás | 
+|  Tulajdonság |  Leírás |
 |---|---|
-| Név| A környezeti változó, amelyekhez egy adott állapot biztosításához nevét jelöli.| 
-| Érték| A környezeti változóhoz rendelhető érték.| 
-| Győződjön meg arról| Ellenőrizze, hogy létezik-e a változó határozza meg. A tulajdonság "Elérhető" annak érdekében, hogy létezik-e a változó értéke. Állítsa az értékét "Hiányzik", annak érdekében, a változó nem létezik. Az alapértelmezett érték: "Elérhető".| 
-| Elérési út| Határozza meg a konfigurálni kívánt környezeti változó. Ez a tulajdonság beállítása **$true** Ha a változó a **elérési** változó; ellenkező esetben állítsa **$false**. Az alapértelmezett érték **$false**. Ha a konfigurálni kívánt változó a **elérési** változó, a megadott érték keresztül a **érték** tulajdonság hozzáfűzi a meglévő értéket.| 
-| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például ha a **azonosító** az erőforrás konfigurációs futtatni kívánt először parancsprogramblokkja **ResourceName** és annak típusa **ResourceType**, ez a szintaxis a tulajdonság `DependsOn = "[ResourceType]ResourceName"`.| 
+| Név| A környezeti változó, amelyekhez egy adott állapot biztosításához nevét jelöli.|
+| Érték| A környezeti változóhoz rendelhető érték.|
+| Győződjön meg arról| Ellenőrizze, hogy létezik-e a változó határozza meg. A tulajdonság "Elérhető" annak érdekében, hogy létezik-e a változó értéke. Állítsa az értékét "Hiányzik", annak érdekében, a változó nem létezik. Az alapértelmezett érték: "Elérhető".|
+| Elérési út| Határozza meg a konfigurálni kívánt környezeti változó. Ez a tulajdonság beállítása **$true** Ha a változó a **elérési** változó; ellenkező esetben állítsa **$false**. Az alapértelmezett érték **$false**. Ha a konfigurálni kívánt változó a **elérési** változó, a megadott érték keresztül a **érték** tulajdonság hozzáfűzi a meglévő értéket.|
+| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például ha a **azonosító** az erőforrás konfigurációs futtatni kívánt először parancsprogramblokkja **ResourceName** és annak típusa **ResourceType**, ez a szintaxis a tulajdonság `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>További információ
 
@@ -47,7 +47,7 @@ nxEnvironment <string> #ResourceName
 A következő példa bemutatja, hogyan használható a **nxEnvironment** annak érdekében, hogy erőforrás **TestEnvironmentVariable** jelen, és a "Test-érték" értékkel rendelkezik. Ha **TestEnvironmentVariable** van nincs jelen, a rendszer automatikusan létrehozza.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 
 nxEnvironment EnvironmentExample
@@ -57,5 +57,3 @@ nxEnvironment EnvironmentExample
     Value = “TestValue”
 }
 ```
-
-

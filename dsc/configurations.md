@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A DSC-konfigurációk"
-ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A DSC-konfigurációk
+ms.openlocfilehash: 8b44fd9a715c217ee198ea343cdffbfab1193625
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-configurations"></a>A DSC-konfigurációk
 
 >Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
 
-A DSC-konfigurációk olyan PowerShell-parancsfájlok, amelyek meghatározzák a függvény futásakor. A konfiguráció megadásához használja a PowerShell kulcsszó **konfigurációs**.
+A DSC-konfigurációk olyan PowerShell-parancsfájlok, amelyek meghatározzák a függvény futásakor.
+A konfiguráció megadásához használja a PowerShell kulcsszó **konfigurációs**.
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -70,21 +71,22 @@ Ebben a példában, akkor adja meg a csomópont neve úgy, hogy azt a **számít
 
 ## <a name="compiling-the-configuration"></a>A konfiguráció fordítása
 
-Egy konfigurációs is kihirdeti, mielőtt, hogy a MOF-dokumentumba van. Ehhez a konfigurációs hívja meg, mint egy olyan PowerShell függvényt.  
+Egy konfigurációs is kihirdeti, mielőtt, hogy a MOF-dokumentumba van.
+Ehhez a konfigurációs hívja meg, mint egy olyan PowerShell függvényt.
 A példában csak a konfiguráció nevét tartalmazó utolsó sora meghívja a konfiguráció.
 
->**Megjegyzés:** hívni egy konfigurációt, a függvény hatókörében kell lennie globális (úgy, mint bármely más PowerShell függvény). 
->A hiba akkor fordulhat elő vagy az "rögzítési" a parancsfájlt, hogy vagy a konfigurációs parancsfájl futtatásával F5 használatával, vagy kattintson a a **-parancsfájl futtatása** az ISE gombjára. 
+>**Megjegyzés:** hívni egy konfigurációt, a függvény hatókörében kell lennie globális (úgy, mint bármely más PowerShell függvény).
+>A hiba akkor fordulhat elő vagy az "rögzítési" a parancsfájlt, hogy vagy a konfigurációs parancsfájl futtatásával F5 használatával, vagy kattintson a a **-parancsfájl futtatása** az ISE gombjára.
 >A parancsfájl pont-forrás, futtassa a parancsot `. .\myConfig.ps1` ahol `myConfig.ps1` a parancsfájlt, amely tartalmazza a konfiguráció neve.
 
 A konfigurációs hívásakor azt:
 
-- Oldja fel az összes változó 
+- Oldja fel az összes változó
 - Létrejön egy mappa neve megegyezik a konfiguráció az aktuális könyvtár.
-- Létrehoz egy nevű fájlt _csomópontnév_.mof új könyvtárban, ahol _csomópontnév_ a célcsomópont a konfiguráció neve. 
+- Létrehoz egy nevű fájlt _csomópontnév_.mof új könyvtárban, ahol _csomópontnév_ a célcsomópont a konfiguráció neve.
     Ha egynél több csomópont, a MOF-fájlt az egyes csomópontok létrejön.
 
->**Megjegyzés:**: A MOF-fájl tartalmazza az összes célcsomóponton vonatkozó konfigurációs adatokat. Ezért fontos biztonságának megőrzése. 
+>**Megjegyzés:**: A MOF-fájl tartalmazza az összes célcsomóponton vonatkozó konfigurációs adatokat. Ezért fontos biztonságának megőrzése.
 >További információkért lásd: [biztonságossá tétele a MOF-fájlt](secureMOF.md).
 
 A következő gyökérmappa-szerkezetében lévő eredmények felett első konfiguráció fordítása:
@@ -96,10 +98,10 @@ MyDscConfiguration
 
 ```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
-Mode                LastWriteTime         Length Name                                                                                              
-----                -------------         ------ ----                                                                                         
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----       10/23/2015   4:32 PM           2842 localhost.mof
-```  
+```
 
 Ha a konfigurációs paramétert egy, a második példában látható módon, amelynek meg kell adni a fordítás során. Hogyan lenne, amely itt található:
 
@@ -110,14 +112,16 @@ MyDscConfiguration -ComputerName 'MyTestNode'
 
 ```
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
-Mode                LastWriteTime         Length Name                                                                                              
-----                -------------         ------ ----                                                                                         
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
-```      
+```
 
 ## <a name="using-dependson"></a>DependsOn tulajdonság használatával
 
-A hasznos DSC kulcsszót **DependsOn**. Általában (azonban nem feltétlenül mindig), DSC alkalmazza a megjelenési sorrendjükben belül a konfigurációs lévő erőforrásokat. Azonban **DependsOn** Megadja, hogy erőforrások más erőforrások függenek, és a LCM biztosítja, hogy lesznek alkalmazva a megfelelő sorrendben, függetlenül attól, amelyben az erőforrások példányok meghatározásának sorrendje. Például egy konfigurációban előfordulhat, hogy adja meg, amely egy példányát a **felhasználói** erőforrás létezik-e függ a **csoport** példány:
+A hasznos DSC kulcsszót **DependsOn**. Általában (azonban nem feltétlenül mindig), DSC alkalmazza a megjelenési sorrendjükben belül a konfigurációs lévő erőforrásokat.
+Azonban **DependsOn** Megadja, hogy erőforrások más erőforrások függenek, és a LCM biztosítja, hogy lesznek alkalmazva a megfelelő sorrendben, függetlenül attól, amelyben az erőforrások példányok meghatározásának sorrendje.
+Például egy konfigurációban előfordulhat, hogy adja meg, amely egy példányát a **felhasználói** erőforrás létezik-e függ a **csoport** példány:
 
 ```powershell
 Configuration DependsOnExample {
@@ -141,14 +145,16 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>A konfiguráció új erőforrások használata
 
 Ha az előző példákban futtatta, akkor előfordulhat, hogy észrevette, hogy akkor is figyelmezteti, hogy egy erőforrás használta explicit importálása nélkül.
-A DSC ma, 12-erőforrásokkal érhető el, a PSDesiredStateConfiguration modulja részét. Egyéb erőforrások külső modulban kell helyezni `$env:PSModulePath` ahhoz, hogy ismeri fel a LCM. Egy új parancsmagot [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), annak meghatározására, hogy milyen erőforrásokat telepítve a rendszeren, és használható a LCM által használható. Ha ezek a modulok lettek helyezve `$env:PSModulePath` megfelelően ismeri fel és [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), betöltését belül a konfigurációs továbbra is szükséges. 
-**Import-DscResource** belül csak érzékelt dinamikus kulcsszó egy **konfigurációs** blokk (azaz nincs parancsmag). 
+A DSC ma, 12-erőforrásokkal érhető el, a PSDesiredStateConfiguration modulja részét.
+Egyéb erőforrások külső modulban kell helyezni `$env:PSModulePath` ahhoz, hogy ismeri fel a LCM.
+Egy új parancsmagot [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), annak meghatározására, hogy milyen erőforrásokat telepítve a rendszeren, és használható a LCM által használható.
+Ha ezek a modulok lettek helyezve `$env:PSModulePath` megfelelően ismeri fel és [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), betöltését belül a konfigurációs továbbra is szükséges.
+**Import-DscResource** belül csak érzékelt dinamikus kulcsszó egy **konfigurációs** blokk (azaz nincs parancsmag).
 **Importálás – DscResource** két paramétereket támogatja:
-- **Modulnév** használatának ajánlott módja **Import-DscResource**. A modul, amely tartalmazza az erőforrásokat, importálandók (valamint a karakterlánc tömbje modulneveket) neve fogad. 
-- **Név** neve, az erőforrás importálásához. Ez nem a rövid név, mint a "Name" által visszaadott [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), de az osztály nevét, ha használt meghatározása az erőforrás-séma (adja vissza a **ResourceType** által [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)). 
+- **Modulnév** használatának ajánlott módja **Import-DscResource**. A modul, amely tartalmazza az erőforrásokat, importálandók (valamint a karakterlánc tömbje modulneveket) neve fogad.
+- **Név** neve, az erőforrás importálásához. Ez nem a rövid név, mint a "Name" által visszaadott [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), de az osztály nevét, ha használt meghatározása az erőforrás-séma (adja vissza a **ResourceType** által [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)).
 
 ## <a name="see-also"></a>Lásd még:
 * [A Windows PowerShell célállapot-konfiguráló áttekintése](overview.md)
 * [A DSC-erőforrások](resources.md)
 * [A helyi Configuration Manager konfigurálása](metaConfig.md)
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A MSFT_DSCLocalConfigurationManager osztály ResourceSet módszer"
-ms.openlocfilehash: 3486ef559102929f8d05994a4bf6e45d49a0c140
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Az MSFT_DSCLocalConfigurationManager osztály ResourceSet metódusa
+ms.openlocfilehash: b5f437a123bd38df21f30d11e71d2c3b36bc9f3a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>A MSFT_DSCLocalConfigurationManager osztály ResourceSet módszer
+# <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály ResourceSet metódusa
 
 Közvetlenül meghívja a **beállítása** DSC erőforrás metódust.
 
@@ -28,17 +28,13 @@ uint32 ResourceSet(
 <a name="parameters"></a>Paraméterek
 ----------
 
-*A ResourceType* \[a\]  
-Hívása az erőforrás neve.
+*A ResourceType* \[a\] hívni az erőforrás nevét.
 
-*Modulnév* \[a\]  
-A modul, amely tartalmazza a hívni az erőforrás neve.
+*Modulnév* \[a\] az azt tartalmazó hívni a modul nevét.
 
-*resourceProperty* \[a\]  
-Adja meg az erőforrás-tulajdonság neve és értéke egy kivonattáblát a kulcs-érték, illetve. Használja a [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) parancsmag az erőforrás-tulajdonságok és azok típusát.
+*resourceProperty* \[a\] határozza meg az erőforrás-tulajdonság neve és értéke egy kivonattáblát a kulcs-érték, illetve. Használja a [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) parancsmag az erőforrás-tulajdonságok és azok típusát.
 
-*RebootRequired* \[kimenő\]  
-A return, ez a tulajdonság értéke **igaz** Ha célcsomóponton újra kell indítani.
+*RebootRequired* \[kimenő\] a return, ez a tulajdonság értéke **igaz** Ha célcsomóponton újra kell indítani.
 
 ## <a name="return-value"></a>Visszatérési érték
 ------------
@@ -60,10 +56,3 @@ Ez a statikus módszer.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

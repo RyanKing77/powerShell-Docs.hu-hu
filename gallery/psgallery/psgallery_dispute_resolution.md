@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "gyűjtemény, a powershell, a parancsmag, a psgallery"
+keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
 title: psgallery_dispute_resolution
-ms.openlocfilehash: 640d20371a51b08a5627b9beff1bb0ada4f06dd8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 424013229418efddeb0fe56828aece418630d91b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dispute-resolution"></a>Jogviták megoldása
 
@@ -39,4 +39,3 @@ Kód közzététele és induláshoz vagy enged a nevét, aki rendelkezik-e a ter
 Ha egy elem, amely megsértése miatt ezek az elemek bármelyikét, elem részleteit megjelenítő oldalon a "Jelentés visszaélés" hivatkozásra, és jelentést.
 
 **Ez a házirend van a PowerShell-galériában belátása szerint változhatnak.**
-

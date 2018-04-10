@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Visszaállítás metódus MSFT_DSCLocalConfigurationManager osztály"
-ms.openlocfilehash: a219703389405c0dd457d0b2e0b1c54b9c28f559
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Az MSFT_DSCLocalConfigurationManager osztály RollBack metódusa
+ms.openlocfilehash: c0a801c4037921e700e447d1434e246df0a63a4f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="rollback-method-of-the-msftdsclocalconfigurationmanager-class"></a>Visszaállítás metódus MSFT_DSCLocalConfigurationManager osztály
+# <a name="rollback-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály RollBack metódusa
 
 Visszaállítja a konfigurációt egy korábbi verzióját.
 
@@ -25,8 +25,7 @@ uint32 RollBack(
 <a name="parameters"></a>Paraméterek
 ----------
 
-*configurationNumber* \[a\]  
-Adja meg a kívánt konfigurációját. 
+*configurationNumber* \[a\] kért konfigurációját.
 
 ## <a name="return-value"></a>Visszatérési érték
 ------------
@@ -48,11 +47,3 @@ Ez a statikus módszer.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell parancsmag
-ms.date: 2016-12-12
-title: "Távolítsa el a pswawebapplication"
+ms.date: 12/12/2016
+title: Távolítsa el a pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Távolítsa el PswaWebApplication
 
@@ -36,7 +36,7 @@ A **Uninstall-PswaWebApplication** parancsmag eltávolítja a Windows PowerShell
 Azt jelzi, hogy a teszt tanúsítványok által a **telepítése\_PswaWebApplication** parancsmag (az a **UseTestCertificate** paraméter) törlődik.
 Csak a tanúsítvány azonos nevű megegyezik a hozta létre a **Install-PswaWebApplication** parancsmag törlődik.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -49,7 +49,7 @@ Csak a tanúsítvány azonos nevű megegyezik a hozta létre a **Install-PswaWeb
 
 A webes alkalmazás eltávolítása a nevét adja meg.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -62,7 +62,7 @@ A webes alkalmazás eltávolítása a nevét adja meg.
 
 Megadja a nevét, a webhely, ahol a webes alkalmazás telepítve van.
 
-|||  
+|||
 |-|-|
 | Aliasok                              | nincs                                 |
 | Kötelező?                            | hamis                                |
@@ -75,7 +75,7 @@ Megadja a nevét, a webhely, ahol a webes alkalmazás telepítve van.
 
 Jóváhagyást kér a parancsmag futtatása előtt.
 
-|||  
+|||
 |-|-|
 | Kötelező?                            | hamis                                |
 | Pozíció?                            | nevű                                |
@@ -88,7 +88,7 @@ Jóváhagyást kér a parancsmag futtatása előtt.
 Bemutatja, mi történne a parancsmag futtatásakor.
 A parancsmag nem fut.
 
-|||  
+|||
 |-|-|
 | Kötelező?                            | hamis                                |
 | Pozíció?                            | nevű                                |

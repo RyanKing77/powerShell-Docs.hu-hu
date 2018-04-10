@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "Parancsok kapcsolatos információk beolvasásakor"
+title: Információk kérése a parancsokról
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: 98e449110860ea81939d6ec0b7b1a8534a2da2aa
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 1426c171d74afc87751f7d31d46571b9c98fa47e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getting-information-about-commands"></a>Parancsok kapcsolatos információk beolvasásakor
+# <a name="getting-information-about-commands"></a>Információk kérése a parancsokról
 A Windows PowerShell **Get-Command** parancsmag lekéri az aktuális munkamenetben rendelkezésre álló összes parancsot. Amikor beírja **Get-Command** egy Windows PowerShell parancssorába, a következőhöz hasonló kimenetet fog látni:
 
 ```
@@ -77,4 +77,3 @@ A Windows PowerShell keresési út parancsfájlok megjelenítéséhez írja be:
 ```
 Get-Command -CommandType Script
 ```
-

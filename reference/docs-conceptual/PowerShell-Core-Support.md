@@ -1,4 +1,4 @@
-# <a name="powershell-core-support-lifecycle"></a>PowerShell Core támogatási életciklusa
+# <a name="powershell-core-support-lifecycle"></a>A PowerShell Core támogatási életciklusa
 
 PowerShell Core egy meghatározott készletét eszközök és összetevők rendszerrel szállított, telepített, és a Windows PowerShell külön kell beállítani.
 Ezért a PowerShell Core nem szerepel a Windows 7/8.1/10 vagy Windows Server licencelési szerződést.
@@ -34,7 +34,7 @@ Végül várhatóan PowerShell Core fogad el, a "hosszú távú karbantartási" 
 PowerShell Core hivatalosan a következő platformokon támogatott:
 
 * Windows 7, 8.1 és 10
-* Windows Server 2008 R2, 2012 R2-ben 2016
+* Windows Server 2008 R2, 2012 R2, 2016
 * [Windows Server pontosvesszővel éves csatorna][semi-annual]
 * Ubuntu 14.04, 16.04 és 17.04
 * Debian 8.7 + és 9
@@ -62,12 +62,12 @@ Támogatja a PowerShell Core nem terjed ki a más termék modulok kivéve, ha az
 Használata esetén például a `ActiveDirectory` modul részét képező, mert a Windows Server részét egy nem támogatott forgatókönyvet.
 
 Előfordulhat azonban, modulokat, amelyek kifejezetten nem támogatják a PowerShell Core kompatibilis bizonyos esetekben.
-Telepítse a [ `WindowsPSModulePath`][] modul, fűzze hozzá a Windows PowerShell `PSModulePath` a PowerShell képességének `PSModulePath`.
+Telepítse a [ `WindowsPSModulePath` ][] modul, fűzze hozzá a Windows PowerShell `PSModulePath` a PowerShell képességének `PSModulePath`.
 
 Először telepítse a `WindowsPSModulePath` a PowerShell-galériából modul:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -89,4 +89,4 @@ Add-WindowsPSModulePath
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT licenccel]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-["WindowsPSModulePath"]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/

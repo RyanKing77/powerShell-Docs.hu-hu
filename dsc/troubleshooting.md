@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Hibaelhárítási DSC"
-ms.openlocfilehash: cdb11a80daecec0e0d01071752612663ac69ac6d
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A DSC hibaelhárítása
+ms.openlocfilehash: 6bb639febc3f413e909c3e61559059adb5c96389
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="troubleshooting-dsc"></a>Hibaelhárítási DSC
+# <a name="troubleshooting-dsc"></a>A DSC hibaelhárítása
 
 >Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
 
@@ -21,7 +21,8 @@ Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) attó
 
 ## <a name="using-get-dscconfigurationstatus"></a>Get-DscConfigurationStatus használatával
 
-A [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) parancsmag konfiguráció állapota információ lekérése a cél-csomópont. Gazdag objektumot ad vissza, amely tartalmazza-e a konfiguráció futtatása sikeres volt-e magas szintű információkat. Akkor is elmerülne a rendszer a objektumba felderítéséhez futtassa, mint a konfigurációs adatait:
+A [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) parancsmag konfiguráció állapota információ lekérése a cél-csomópont.
+Gazdag objektumot ad vissza, amely tartalmazza-e a konfiguráció futtatása sikeres volt-e magas szintű információkat. Akkor is elmerülne a rendszer a objektumba felderítéséhez futtassa, mint a konfigurációs adatait:
 
 * Az erőforrásokat, melyeknél nem sikerült
 * Minden erőforrás újraindítást kérő
@@ -31,25 +32,25 @@ A [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.as
 A következő paraméterhalmaz adja vissza az utolsó futtatása konfigurációra vonatkozó információk:
 
 ```powershell
-Get-DscConfigurationStatus  [-CimSession <CimSession[]>] 
-                            [-ThrottleLimit <int>] 
-                            [-AsJob] 
+Get-DscConfigurationStatus  [-CimSession <CimSession[]>]
+                            [-ThrottleLimit <int>]
+                            [-AsJob]
                             [<CommonParameters>]
 ```
 A következő paraméterhalmaz adja vissza az összes korábbi konfigurációs futás esetén:
 
 ```powershell
-Get-DscConfigurationStatus  -All 
-                            [-CimSession <CimSession[]>] 
-                            [-ThrottleLimit <int>] 
-                            [-AsJob] 
+Get-DscConfigurationStatus  -All
+                            [-CimSession <CimSession[]>]
+                            [-ThrottleLimit <int>]
+                            [-AsJob]
                             [<CommonParameters>]
 ```
 
 ## <a name="example"></a>Példa
 
 ```powershell
-PS C:\> $Status = Get-DscConfigurationStatus 
+PS C:\> $Status = Get-DscConfigurationStatus
 
 PS C:\> $Status
 
@@ -60,18 +61,18 @@ Failure     11/24/2015  3:44:56     Consistency     Push    True                
 PS C:\> $Status.ResourcesNotInDesiredState
 
 ConfigurationName       :   MyService
-DependsOn               :   
+DependsOn               :
 ModuleName              :   PSDesiredStateConfiguration
 ModuleVersion           :   1.1
-PsDscRunAsCredential    :   
+PsDscRunAsCredential    :
 ResourceID              :   [File]ServiceDll
 SourceInfo              :   c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
 DurationInSeconds       :   0.19
 Error                   :   SourcePath must be accessible for current configuration. The related file/directory is:
                             \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
-FinalState              :   
+FinalState              :
 InDesiredState          :   False
-InitialState            :   
+InitialState            :
 InstanceName            :   ServiceDll
 RebootRequested         :   False
 ReosurceName            :   File
@@ -92,9 +93,9 @@ A megfelelő PowerShell-parancsmag [Get-WinEvent](https://technet.microsoft.com/
 ```
 PS C:\> Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
    ProviderName: Microsoft-Windows-DSC
-TimeCreated                     Id LevelDisplayName Message                                                                                                  
------------                     -- ---------------- -------                                                                                                  
-11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} : 
+TimeCreated                     Id LevelDisplayName Message
+-----------                     -- ---------------- -------
+11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
 A fentiek van-e DSC elsődleges napló neve **Microsoft -> Windows -> DSC** (a Windows egyéb napló nevek nem itt látható kivonatosan mutatja). Az elsődleges neve van hozzáfűzve csatornát létrehozni a teljes nevét. A DSC-motor ír főként a naplók három típusa: [működési, elemzési és hibakeresési naplók](https://technet.microsoft.com/library/cc722404.aspx). Mivel az elemzési és hibakeresési naplók alapértelmezés szerint ki van kapcsolva, engedélyezze a őket az eseménynaplóban. Ehhez nyissa meg az eseménynaplót az eseménynaplóban megjelenítése írja be a Windows PowerShell; vagy kattintson a **Start** gombra, majd **Vezérlőpult**, kattintson a **felügyeleti eszközök**, és kattintson a **Eseménynapló**. Az a **nézet** az eseménynaplóban, menüjében kattintson **elemzési és hibakeresési naplók megjelenítése**. A naplófájl neve a analytic channel bejegyzést **elemzési Microsoft-Windows-Dsc**, és a hibakeresési csatorna **Microsoft-Windows-Dsc/Debug**. Is használhatja a [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) segédprogram a naplók engedélyezéséhez az alábbi példában látható módon.
@@ -111,8 +112,8 @@ A DSC-naplók keresztül a három naplózási csatornák, az üzenet fontosság�
 PS C:\> $AllDscOpEvents = Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
 PS C:\> $FirstOperationalEvent = $AllDscOpEvents[0]
 PS C:\> $FirstOperationalEvent.Message
-Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} : 
-Consistency engine was run successfully. 
+Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
+Consistency engine was run successfully.
 ```
 
 Egy adott struktúra, amely lehetővé teszi a felhasználó az összegyűjtött eseményeket egy DSC feladatból DSC események naplózása. A struktúra a következőképpen történik:
@@ -128,59 +129,59 @@ A DSC-eseménynaplók különböző DSC műveletei által előállított esemén
 <##########################################################################
  Step 1 : Enable analytic and debug DSC channels (Operational channel is enabled by default)
 ###########################################################################>
- 
+
 wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
 wevtutil.exe set-log “Microsoft-Windows-Dsc/Debug” /q:True /e:true
- 
+
 <##########################################################################
  Step 2 : Perform the required DSC operation (Below is an example, you could run any DSC operation instead)
 ###########################################################################>
- 
+
 Get-DscLocalConfigurationManager
- 
+
 <##########################################################################
 Step 3 : Collect all DSC Logs, from the Analytic, Debug and Operational channels
 ###########################################################################>
- 
+
 $DscEvents=[System.Array](Get-WinEvent "Microsoft-Windows-Dsc/Operational") `
          + [System.Array](Get-WinEvent "Microsoft-Windows-Dsc/Analytic" -Oldest) `
          + [System.Array](Get-WinEvent "Microsoft-Windows-Dsc/Debug" -Oldest)
- 
- 
+
+
 <##########################################################################
  Step 4 : Group all logs based on the job ID
 ###########################################################################>
-$SeparateDscOperations = $DscEvents | Group {$_.Properties[0].value}  
+$SeparateDscOperations = $DscEvents | Group {$_.Properties[0].value}
 ```
 
 Itt, a változó `$SeparateDscOperations` tartalmazza a naplók a feladat-azonosítók szerint csoportosítva. A változó minden tömbelem másik DSC műveletet, amely hozzáférést biztosít a naplókat további információt által naplózott eseményeket csoportja.
 
 ```
 PS C:\> $SeparateDscOperations
- 
-Count Name                      Group                                                                     
------ ----                      -----                                                                     
+
+Count Name                      Group
+----- ----                      -----
    48 {1A776B6A-5BAC-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
    40 {E557E999-5BA8-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
 PS C:\> $SeparateDscOperations[0].Group
    ProviderName: Microsoft-Windows-DSC
-TimeCreated                     Id LevelDisplayName Message                                               
------------                     -- ---------------- -------                                               
-12/2/2013 3:47:29 PM          4115 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4198 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4114 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4102 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4098 Warning          Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4098 Warning          Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4176 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...      
-12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...       
+TimeCreated                     Id LevelDisplayName Message
+-----------                     -- ---------------- -------
+12/2/2013 3:47:29 PM          4115 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4198 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4114 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4102 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4098 Warning          Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4098 Warning          Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4176 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
+12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
 ```
 
 Az adatok a változóban kibonthatja `$SeparateDscOperations` használatával [Where-Object](https://technet.microsoft.com/library/ee177028.aspx). Az alábbiakban öt forgatókönyvek, amelyekben érdemes DSC hibaelhárítási adatokat nyerhet ki:
@@ -191,8 +192,8 @@ Minden eseményhez [súlyossági szintek](https://msdn.microsoft.com/library/dd9
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
-Count Name                      Group                                                                     
------ ----                      -----                                                                     
+Count Name                      Group
+----- ----                      -----
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
 ```
 
@@ -203,9 +204,9 @@ Count Name                      Group
 ```powershell
 PS C:\> $DateLatest = (Get-Date).AddMinutes(-30)
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.TimeCreated -gt $DateLatest}
-Count Name                      Group                                                                     
------ ----                      -----                                                                     
-    1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}   
+Count Name                      Group
+----- ----                      -----
+    1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}
 ```
 
 ### <a name="3-messages-from-the-latest-operation"></a>3: a legutóbbi művelet üzenetek
@@ -214,20 +215,20 @@ A legutóbbi művelet tárolja az első index a tömb csoport `$SeparateDscOpera
 
 ```powershelll
 PS C:\> $SeparateDscOperations[0].Group.Message
-Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} : 
+Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 Running consistency engine.
-Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : 
+Job {1A776B6A-5BAC-11E3-BF41-00155D553612} :
 Configuration is sent from computer NULL by user sid S-1-5-18.
-Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : 
+Job {1A776B6A-5BAC-11E3-BF41-00155D553612} :
 Displaying messages from built-in DSC resources:
- WMI channel 1 
- ResourceID:  
+ WMI channel 1
+ ResourceID:
  Message : [INCH-VM]:                            [] Starting consistency engine.
-Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : 
+Job {1A776B6A-5BAC-11E3-BF41-00155D553612} :
 Displaying messages from built-in DSC resources:
- WMI channel 1 
- ResourceID:  
- Message : [INCH-VM]:                            [] Consistency check completed. 
+ WMI channel 1
+ ResourceID:
+ Message : [INCH-VM]:                            [] Consistency check completed.
 ```
 
 ### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4: legutóbbi meghiúsult műveletek a naplóba hibaüzenetek
@@ -236,13 +237,13 @@ Displaying messages from built-in DSC resources:
 
 ```powershell
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
- 
+
 PS C:\> $myFailedEvent.Message
-Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} : 
-DSC Engine Error : 
+Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
+DSC Engine Error :
  Error Message Current configuration does not exist. Execute Start-DscConfiguration command with -Path pa
-rameter to specify a configuration file and create a current configuration first. 
-Error Code : 1 
+rameter to specify a configuration file and create a current configuration first.
+Error Code : 1
 ```
 
 ### <a name="5-all-events-generated-for-a-particular-job-id"></a>5: összes eseményt hoz létre egy adott feladat.
@@ -253,28 +254,30 @@ Error Code : 1
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
 
    ProviderName: Microsoft-Windows-DSC
- 
-TimeCreated                     Id LevelDisplayName Message                                               
------------                     -- ---------------- -------                                               
-12/2/2013 4:33:24 PM          4102 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...      
-12/2/2013 4:33:24 PM          4168 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...      
-12/2/2013 4:33:24 PM          4146 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...      
-12/2/2013 4:33:24 PM          4120 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...  
+
+TimeCreated                     Id LevelDisplayName Message
+-----------                     -- ---------------- -------
+12/2/2013 4:33:24 PM          4102 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...
+12/2/2013 4:33:24 PM          4168 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...
+12/2/2013 4:33:24 PM          4146 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...
+12/2/2013 4:33:24 PM          4120 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...
 ```
 
 ## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>Naplók segítségével xDscDiagnostics DSC elemzése
 
-**xDscDiagnostics** egy PowerShell-modul, amely számos funkcióval segíti a számítógépre a DSC-hibák elemzése áll. Ezek a funkciók segítségével azonosítja az összes helyi események az elmúlt DSC műveletek vagy DSC események távoli számítógépeken (az érvényes hitelesítő adatok). Itt a DSC-művelet kifejezés egy egyetlen egyedi DSC végrehajtási a kezdetektől végéhez meghatározásához. Például `Test-DscConfiguration` egy külön DSC művelet lenne. Hasonlóképpen, minden más parancsmag DSC (például `Get-DscConfiguration`, `Start-DscConfiguration`stb) minden azonosítható DSC külön műveletként. A függvények van arra a [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics). Súgó áll rendelkezésre futtatásával `Get-Help <cmdlet name>`.
+**xDscDiagnostics** egy PowerShell-modul, amely számos funkcióval segíti a számítógépre a DSC-hibák elemzése áll. Ezek a funkciók segítségével azonosítja az összes helyi események az elmúlt DSC műveletek vagy DSC események távoli számítógépeken (az érvényes hitelesítő adatok). Itt a DSC-művelet kifejezés egy egyetlen egyedi DSC végrehajtási a kezdetektől végéhez meghatározásához. Például `Test-DscConfiguration` egy külön DSC művelet lenne. Hasonlóképpen, minden más parancsmag DSC (például `Get-DscConfiguration`, `Start-DscConfiguration`stb) minden azonosítható DSC külön műveletként. A függvények van arra a [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics).
+Súgó áll rendelkezésre futtatásával `Get-Help <cmdlet name>`.
 
-### <a name="getting-details-of-dsc-operations"></a>A DSC-műveletek-információk lekérdezése 
+### <a name="getting-details-of-dsc-operations"></a>A DSC-műveletek-információk lekérdezése
 
-A `Get-xDscOperation` funkció lehetővé teszi, hogy az eredmények, amelyek egy vagy több számítógépen futnak a DSC-műveletek található, és visszahelyezi a minden egyes DSC művelet által létrehozott olyan objektum, amely az események gyűjteményét tartalmazza. Például a következő kimenet három parancsot futtatná. Az átadott, és két, a másik nem. Ezekkel az eredményekkel foglalja össze a kimenetét `Get-xDscOperation`.
+A `Get-xDscOperation` funkció lehetővé teszi, hogy az eredmények, amelyek egy vagy több számítógépen futnak a DSC-műveletek található, és visszahelyezi a minden egyes DSC művelet által létrehozott olyan objektum, amely az események gyűjteményét tartalmazza.
+Például a következő kimenet három parancsot futtatná. Az átadott, és két, a másik nem. Ezekkel az eredményekkel foglalja össze a kimenetét `Get-xDscOperation`.
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation
 
-ComputerName   SequenceId TimeCreated           Result   JobID                                 AllEvents            
-------------   ---------- -----------           ------   -----                                 ---------            
+ComputerName   SequenceId TimeCreated           Result   JobID                                 AllEvents
+------------   ---------- -----------           ------   -----                                 ---------
 SRV1   1          6/23/2016 9:37:52 AM  Failure  9701aadf-395e-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   2          6/23/2016 9:36:54 AM  Failure  7e8e2d6e-395c-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   3          6/23/2016 9:36:54 AM  Success  af72c6aa-3960-11e6-9165-00155d390509  {@{Message=Operati...
@@ -285,8 +288,8 @@ Megadhatja, amelyet csak a legutóbbi művelet használatával a `Newest` param�
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation -Newest 5
-ComputerName   SequenceId TimeCreated           Result   JobID                                 AllEvents            
-------------   ---------- -----------           ------   -----                                 ---------            
+ComputerName   SequenceId TimeCreated           Result   JobID                                 AllEvents
+------------   ---------- -----------           ------   -----                                 ---------
 SRV1   1          6/23/2016 4:36:54 PM  Success                                        {@{Message=; TimeC...
 SRV1   2          6/23/2016 4:36:54 PM  Success  5c06402b-399b-11e6-9165-00155d390509  {@{Message=Operati...
 SRV1   3          6/23/2016 4:36:54 PM  Success                                        {@{Message=; TimeC...
@@ -303,15 +306,15 @@ Használja a `SequenceID` paraméter használatával beolvassa az eseményeket e
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -SequenceID 9
 
-ComputerName   EventType    TimeCreated           Message                                                                                             
-------------   ---------    -----------           -------                                                                                             
-SRV1   OPERATIONAL  6/24/2016 10:51:52 AM Operation Consistency Check or Pull started by user sid S-1-5-20 from computer NULL.                
-SRV1   OPERATIONAL  6/24/2016 10:51:52 AM Running consistency engine.                                                                         
+ComputerName   EventType    TimeCreated           Message
+------------   ---------    -----------           -------
+SRV1   OPERATIONAL  6/24/2016 10:51:52 AM Operation Consistency Check or Pull started by user sid S-1-5-20 from computer NULL.
+SRV1   OPERATIONAL  6/24/2016 10:51:52 AM Running consistency engine.
 SRV1   OPERATIONAL  6/24/2016 10:51:52 AM The local configuration manager is updating the PSModulePath to WindowsPowerShell\Modules;C:\Prog...
-SRV1   OPERATIONAL  6/24/2016 10:51:53 AM  Resource execution sequence :: [WindowsFeature]DSCServiceFeature, [xDSCWebService]PSDSCPullServer. 
-SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Consistency engine was run successfully.                                                            
-SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Job runs under the following LCM setting. ...                                                       
-SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Operation Consistency Check or Pull completed successfully. 
+SRV1   OPERATIONAL  6/24/2016 10:51:53 AM  Resource execution sequence :: [WindowsFeature]DSCServiceFeature, [xDSCWebService]PSDSCPullServer.
+SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Consistency engine was run successfully.
+SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Job runs under the following LCM setting. ...
+SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Operation Consistency Check or Pull completed successfully.
 ```
 
 Adja át a **GUID** adott DSC művelethez hozzárendelt (amelyet a `Get-xDscOperation` cmldet) az esemény részleteinek lekérése DSC művelet:
@@ -319,37 +322,37 @@ Adja át a **GUID** adott DSC művelethez hozzárendelt (amelyet a `Get-xDscOper
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -JobID 9e0bfb6b-3a3a-11e6-9165-00155d390509
 
-ComputerName   EventType    TimeCreated           Message                                                                                             
-------------   ---------    -----------           -------                                                                                             
-SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull started by user sid S-1-5-20 from computer NULL.                
-SRV1   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCache.mof                             
-SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Running consistency engine.                                                                         
-SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [] Starting consistency engine.                          
-SRV1   ANALYTIC     6/24/2016 11:36:56 AM Applying configuration from C:\Windows\System32\Configuration\Current.mof.                          
-SRV1   ANALYTIC     6/24/2016 11:36:56 AM Parsing the configuration to apply.                                                                 
-SRV1   OPERATIONAL  6/24/2016 11:36:56 AM  Resource execution sequence :: [WindowsFeature]DSCServiceFeature, [xDSCWebService]PSDSCPullServer. 
-SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ Start  Resource ]  [[WindowsFeature]DSCServiceFeature]                      
+ComputerName   EventType    TimeCreated           Message
+------------   ---------    -----------           -------
+SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull started by user sid S-1-5-20 from computer NULL.
+SRV1   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCache.mof
+SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Running consistency engine.
+SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [] Starting consistency engine.
+SRV1   ANALYTIC     6/24/2016 11:36:56 AM Applying configuration from C:\Windows\System32\Configuration\Current.mof.
+SRV1   ANALYTIC     6/24/2016 11:36:56 AM Parsing the configuration to apply.
+SRV1   OPERATIONAL  6/24/2016 11:36:56 AM  Resource execution sequence :: [WindowsFeature]DSCServiceFeature, [xDSCWebService]PSDSCPullServer.
+SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ Start  Resource ]  [[WindowsFeature]DSCServiceFeature]
 SRV1   ANALYTIC     6/24/2016 11:36:56 AM Executing operations for PS DSC resource MSFT_RoleResource with resource name [WindowsFeature]DSC...
-SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ Start  Test     ]  [[WindowsFeature]DSCServiceFeature]                      
+SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ Start  Test     ]  [[WindowsFeature]DSCServiceFeature]
 SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [[WindowsFeature]DSCServiceFeature] The operation 'Get...
 SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [[WindowsFeature]DSCServiceFeature] The operation 'Get...
 SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ End    Test     ]  [[WindowsFeature]DSCServiceFeature] True in 0.3130 sec...
-SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ End    Resource ]  [[WindowsFeature]DSCServiceFeature]                      
-SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ Start  Resource ]  [[xDSCWebService]PSDSCPullServer]                        
+SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ End    Resource ]  [[WindowsFeature]DSCServiceFeature]
+SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ Start  Resource ]  [[xDSCWebService]PSDSCPullServer]
 SRV1   ANALYTIC     6/24/2016 11:36:56 AM Executing operations for PS DSC resource MSFT_xDSCWebService with resource name [xDSCWebService]P...
-SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ Start  Test     ]  [[xDSCWebService]PSDSCPullServer]                        
-SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [[xDSCWebService]PSDSCPullServer] Check Ensure           
-SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [[xDSCWebService]PSDSCPullServer] Check Port             
+SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ Start  Test     ]  [[xDSCWebService]PSDSCPullServer]
+SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [[xDSCWebService]PSDSCPullServer] Check Ensure
+SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [[xDSCWebService]PSDSCPullServer] Check Port
 SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [[xDSCWebService]PSDSCPullServer] Check Physical Path ...
-SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [[xDSCWebService]PSDSCPullServer] Check State            
+SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [[xDSCWebService]PSDSCPullServer] Check State
 SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [[xDSCWebService]PSDSCPullServer] Get Full Path for We...
 SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ End    Test     ]  [[xDSCWebService]PSDSCPullServer] True in 0.0160 seconds.
-SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ End    Resource ]  [[xDSCWebService]PSDSCPullServer]                        
-SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [] Consistency check completed.                          
-SRV1   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCache.mof                             
-SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Consistency engine was run successfully.                                                            
-SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Job runs under the following LCM setting. ...                                                       
-SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull completed successfully.                                         
+SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]: LCM:  [ End    Resource ]  [[xDSCWebService]PSDSCPullServer]
+SRV1   VERBOSE      6/24/2016 11:36:56 AM [SRV1]:                            [] Consistency check completed.
+SRV1   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCache.mof
+SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Consistency engine was run successfully.
+SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Job runs under the following LCM setting. ...
+SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull completed successfully.
 SRV1   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCache.mof
 ```
 
@@ -368,34 +371,34 @@ Megjelenik az azonos a `Get-WinEvent` parancsmag, például az alábbi kimenetbe
 ```powershell
    ProviderName: Microsoft-Windows-DSC
 
-TimeCreated                     Id LevelDisplayName Message                                                                                           
------------                     -- ---------------- -------                                                                                           
-6/23/2016 1:36:53 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 1:36:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 2:07:00 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 2:07:01 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 2:36:55 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 2:36:56 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 3:06:55 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 3:06:55 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 3:36:55 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 3:36:55 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 4:06:53 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 4:06:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 4:36:52 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 4:36:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 5:06:52 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 5:06:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 5:36:54 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 5:36:54 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 6:06:52 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 6:06:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 6:36:56 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 6:36:57 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 7:06:52 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 7:06:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
-6/23/2016 7:36:53 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.     
-6/23/2016 7:36:54 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.      
+TimeCreated                     Id LevelDisplayName Message
+-----------                     -- ---------------- -------
+6/23/2016 1:36:53 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 1:36:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 2:07:00 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 2:07:01 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 2:36:55 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 2:36:56 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 3:06:55 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 3:06:55 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 3:36:55 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 3:36:55 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 4:06:53 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 4:06:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 4:36:52 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 4:36:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 5:06:52 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 5:06:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 5:36:54 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 5:36:54 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 6:06:52 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 6:06:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 6:36:56 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 6:36:57 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 7:06:52 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 7:06:53 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
+6/23/2016 7:36:53 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
+6/23/2016 7:36:54 AM          4343 Information      The DscTimer has successfully run LCM method PerformRequiredConfigurationChecks with flag 5.
 6/23/2016 8:06:54 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
 ```
 
@@ -461,9 +464,9 @@ Azonosíthatja, melyik folyamat üzemelteti a DSC-motor, és állítsa le a / p�
 ###
 ### find the process that is hosting the DSC engine
 ###
-$dscProcessID = Get-WmiObject msft_providers | 
-Where-Object {$_.provider -like 'dsccore'} | 
-Select-Object -ExpandProperty HostProcessIdentifier 
+$dscProcessID = Get-WmiObject msft_providers |
+Where-Object {$_.provider -like 'dsccore'} |
+Select-Object -ExpandProperty HostProcessIdentifier
 
 ###
 ### Stop the process
@@ -479,22 +482,22 @@ Az alábbiakban látható egy bemutató megjelenítendő hogyan `DebugMode` auto
 
 ```
 PS C:\> Get-DscLocalConfigurationManager
- 
- 
+
+
 AllowModuleOverwrite           : False
-CertificateID                  : 
-ConfigurationID                : 
+CertificateID                  :
+ConfigurationID                :
 ConfigurationMode              : ApplyAndMonitor
 ConfigurationModeFrequencyMins : 30
-Credential                     : 
+Credential                     :
 DebugMode                      : False
-DownloadManagerCustomData      : 
-DownloadManagerName            : 
+DownloadManagerCustomData      :
+DownloadManagerName            :
 LocalConfigurationManagerState : Ready
 RebootNodeIfNeeded             : False
 RefreshFrequencyMins           : 15
 RefreshMode                    : PUSH
-PSComputerName                 :  
+PSComputerName                 :
 ```
 
 Láthatja, hogy `DebugMode` értéke **hamis**.
@@ -528,7 +531,7 @@ function Test-TargetResource
         $onlyProperty
     )
     return $false
-} 
+}
 ```
 
 Most, szerzői egy konfigurációval, a fenti erőforrás neve `TestProviderDebugMode`:
@@ -593,22 +596,22 @@ Most, `DebugMode` való **igaz** konfigurációs parancsfájlban:
 LocalConfigurationManager
 {
     DebugMode = $true
-} 
+}
 ```
 
 Ha a fenti szkript újra futtatja, látni fogja, hogy a fájl tartalma különböző minden alkalommal. (Futtatása `Get-DscConfiguration` , hogy). Az alábbiakban oka két további fut (a eredmény lehetnek a parancsfájl futtatásakor):
 
 ```powershell
 PS C:\> Get-DscConfiguration -CimSession (New-CimSession localhost)
- 
-onlyProperty                            PSComputerName                         
-------------                            --------------                         
-20                                      localhost                              
- 
+
+onlyProperty                            PSComputerName
+------------                            --------------
+20                                      localhost
+
 PS C:\> Get-DscConfiguration -CimSession (New-CimSession localhost)
- 
-onlyProperty                            PSComputerName                         
-------------                            --------------                         
+
+onlyProperty                            PSComputerName
+------------                            --------------
 14                                      localhost
 ```
 
@@ -622,4 +625,3 @@ onlyProperty                            PSComputerName
 
 ### <a name="other-resources"></a>Egyéb források
 * [A Windows PowerShell célállapot-konfiguráló parancsmagok](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
-

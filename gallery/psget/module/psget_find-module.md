@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
-title: "A modul keresése"
-ms.openlocfilehash: 65c466909c007ed08c3fa978f78483983b00ba73
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
+title: A modul keresése
+ms.openlocfilehash: 03dff4454a31638df564568ef51eec158685c8e9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="find-module"></a>A modul keresése
 Megkeresi a megadott feltételeknek megfelelő modulok egy online katalógusból.
@@ -21,7 +21,7 @@ Minden modul található, keresés-modul egy objektumot ad vissza PSRepositoryIt
 - Keresés-modul verzió paraméterekkel szűrheti: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - Ezek a paraméterek kölcsönösen kizárják egymást, kivéve a MinmimumVersion és MaximumVersion.
   - Ezen verzió paraméterek csak nevű egy modul nélkül a helyettesítő karakterek megengedettek.
-  - A RequiredVersion paraméter nincs megadva, ha a keresés-modul a modult, amely egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a modul esetén nincs minimális verzió van megadva a legújabb verzióját adja vissza. 
+  - A RequiredVersion paraméter nincs megadva, ha a keresés-modul a modult, amely egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a modul esetén nincs minimális verzió van megadva a legújabb verzióját adja vissza.
   - A RequiredVersion paraméter van megadva, az keresés-modul csak adja vissza a modult, amely pontosan megegyezik a megadott version verzióját.
 - Keresés-modul a modul metaadatai szűrheti az a – Tag paraméter
 - Keresés-modul a tárház vonatkozó keresést nyelvi szűrheti az - szűrő paraméterrel.
@@ -54,7 +54,7 @@ Find-Module -Name AzureRM*
 # Find all versions of a module
 Find-Module -Name PSReadline -AllVersions
 
-# Find a module with -MinimumVersion. 
+# Find a module with -MinimumVersion.
 # With MinimumVersion we can find a module whose version is greate than or equal to the specified MinimumVersion value.
 Find-Module -Name PSReadline -MinimumVersion 1.0.0.12
 
@@ -142,4 +142,3 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
-

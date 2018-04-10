@@ -1,106 +1,112 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Konfigurációs adatok használata"
-ms.openlocfilehash: b56a3f970b0b5121585dc4ed2f32da3243b980bd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Konfigurációs adatok használata
+ms.openlocfilehash: 19544494a547a06d87701b38585844cb11d03e33
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>A DSC konfigurációs adatok használata
 
 >Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
 
-A beépített DSC használatával **ConfigurationData** paraméter, használhatja a konfigurációs adatok definiálhat. Ez lehetővé teszi több csomópont vagy különböző környezetekben használható egyetlen konfiguráció létrehozásához. Például ha alkalmazást fejleszt, után egy konfigurációt használja a fejlesztési és éles környezetben is, is minden környezet adatainak megadása a konfigurációs adatok használatával.
+A beépített DSC használatával **ConfigurationData** paraméter, használhatja a konfigurációs adatok definiálhat.
+Ez lehetővé teszi több csomópont vagy különböző környezetekben használható egyetlen konfiguráció létrehozásához.
+Például ha alkalmazást fejleszt, után egy konfigurációt használja a fejlesztési és éles környezetben is, is minden környezet adatainak megadása a konfigurációs adatok használatával.
 
-Ez a témakör ismerteti a szerkezete a **ConfigurationData** hibás. Konfigurációs adatok használatára, tekintse meg a [konfigurációs és környezeti adatok elválasztó](separatingEnvData.md).
+Ez a témakör ismerteti a szerkezete a **ConfigurationData** hibás.
+Konfigurációs adatok használatára, tekintse meg a [konfigurációs és környezeti adatok elválasztó](separatingEnvData.md).
 
 ## <a name="the-configurationdata-common-parameter"></a>A ConfigurationData általános paraméter
 
-A DSC-konfiguráció egy közös paramétert fogad, **ConfigurationData**, meg kell adnia a konfiguráció-fordítási mikor. További információ a konfiguráció fordítása: [a DSC-konfigurációk](configurations.md).
+A DSC-konfiguráció egy közös paramétert fogad, **ConfigurationData**, meg kell adnia a konfiguráció-fordítási mikor.
+További információ a konfiguráció fordítása: [a DSC-konfigurációk](configurations.md).
 
-A **ConfigurationData** paraméter egy hasthtable, rendelkeznie kell legalább egy nevű kulcs **AllNodes**. Egy vagy több kulcsot is rendelkezhet.
+A **ConfigurationData** paraméter egy hasthtable, rendelkeznie kell legalább egy nevű kulcs **AllNodes**.
+Egy vagy több kulcsot is rendelkezhet.
 
 >**Megjegyzés:** ebben a témakörben szereplő példák egyetlen további kulcs használata (csak a megnevezett **AllNodes** kulcs) nevű `NonNodeData`, de további kulcsok tetszőleges számú, és nevezze függetlenül szeretné.
 
 ```powershell
-$MyData = 
+$MyData =
 @{
     AllNodes = @()
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 Értékét a **AllNodes** kulcs egy tömb. A tömb egyes elemei egyben rendelkeznie kell legalább egy nevű kulcs kivonattáblát **csomópontnév**:
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
         },
 
- 
+
         @{
             NodeName = "VM-2"
         },
 
- 
+
         @{
             NodeName = "VM-3"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 Más kulcsok minden egyes kivonattáblát is hozzáadhat:
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
             Role     = "WebServer"
         },
 
- 
+
         @{
             NodeName = "VM-2"
             Role     = "SQLServer"
         },
 
- 
+
         @{
             NodeName = "VM-3"
             Role     = "WebServer"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
-Az összes csomópontra érvényes tulajdonság, tagja hozhat létre a **AllNodes** tömb, amely rendelkezik egy **csomópontnév** a `*`. Például, hogy minden csomópont egy `LogPath` tulajdonság, sikerült ehhez:
+Az összes csomópontra érvényes tulajdonság, tagja hozhat létre a **AllNodes** tömb, amely rendelkezik egy **csomópontnév** a `*`.
+Például, hogy minden csomópont egy `LogPath` tulajdonság, sikerült ehhez:
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName     = "*"
             LogPath      = "C:\Logs"
         },
 
- 
+
         @{
             NodeName     = "VM-1"
             Role         = "WebServer"
@@ -108,13 +114,13 @@ $MyData =
             SiteName     = "Website1"
         },
 
- 
+
         @{
             NodeName     = "VM-2"
             Role         = "SQLServer"
         },
 
- 
+
         @{
             NodeName     = "VM-3"
             Role         = "WebServer"
@@ -129,7 +135,8 @@ Ez megfelel a nevű tulajdonság hozzáadása `LogPath` értékkel rendelkező `
 
 ## <a name="defining-the-configurationdata-hashtable"></a>A ConfigurationData szórótáblájában meghatározása
 
-Megadhat **ConfigurationData** vagy belül (ahogy az előző példák) egy konfigurációs parancsfájl fájlt változóként vagy külön `.psd1` fájlt. Meghatározásához **ConfigurationData** a egy `.psd1` fájlt, hozzon létre egy fájlt, amely csak a kivonattábla a konfigurációs adatok jelölő tartalmazza.
+Megadhat **ConfigurationData** vagy belül (ahogy az előző példák) egy konfigurációs parancsfájl fájlt változóként vagy külön `.psd1` fájlt.
+Meghatározásához **ConfigurationData** a egy `.psd1` fájlt, hozzon létre egy fájlt, amely csak a kivonattábla a konfigurációs adatok jelölő tartalmazza.
 
 Például létrehozhat egy fájlt `MyData.psd1` a következő tartalommal:
 
@@ -186,11 +193,11 @@ DSC nyújt három néhány speciális változó, amely egy konfigurációs paran
 ## <a name="using-non-node-data"></a>Nem-csomópont adatok használata
 
 Mivel az előző példákban is láttuk a **ConfigurationData** hashtable rendelkezhet egy vagy több kulcsot mellett a szükséges **AllNodes** kulcs.
-Ebben a témakörben a példákban azt egyetlen további csomópont használja, és azt nevű `NonNodeData`. Azonban minden további kulcsok számának megadása, és bármilyen kívánt nevet őket.
+Ebben a témakörben a példákban azt egyetlen további csomópont használja, és azt nevű `NonNodeData`.
+Azonban minden további kulcsok számának megadása, és bármilyen kívánt nevet őket.
 
 Például egy nem csomópont adatok használatával, lásd: [konfigurációs és környezeti adatok elválasztó](separatingEnvData.md).
 
 ## <a name="see-also"></a>Lásd még:
 - [Konfigurációs adatokat a hitelesítő adatok beállításai](configDataCredentials.md)
 - [A DSC-konfigurációk](configurations.md)
-

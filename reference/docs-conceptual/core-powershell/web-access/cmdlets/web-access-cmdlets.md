@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: PowerShell parancsmag
-ms.date: 2016-12-12
-title: "webes elérés parancsmagjai"
+ms.date: 12/12/2016
+title: webes elérés parancsmagjai
 ms.technology: powershell
-ms.openlocfilehash: 54821c318b165461ec613678a39c4e3b500dfd0e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6930fd6a08de69078576fb0d0fbabb04e05d0814
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>A Webes Windows PowerShell-elérés parancsmagjai
 
@@ -44,21 +44,18 @@ Eltávolítja a Windows PowerShell webalkalmazás IIS-ből.
 >
 >A rendelkezésre álló parancsmagok kilistázhatja a:
 >
-> `Get-Command –Module PowerShellWebAccess`parancsmag.
+> `Get-Command –Module PowerShellWebAccess` parancsmag.
 
-További információt, vagy szintaxisának a parancsmagokat használja:  
-`Get-Help `*&lt;parancsmag neve&gt;*  
-Ha  *&lt;parancsmag neve&gt;*  neve, a parancsmag, hogy meg szeretné vizsgálni.
+További információt, vagy szintaxisának, a parancsmagokat használja: `Get-Help ` *&lt;parancsmag neve&gt;* ahol *&lt;parancsmag neve&gt;* az a név a parancsmagot, hogy meg szeretné vizsgálni.
 
 Részletesebb információk megismeréséhez ezeket a parancsmagokat futtathatja:
 
-- `Get-Help `*&lt;parancsmag neve&gt;*` -Detailed`
-- `Get-Help `*&lt;parancsmag neve&gt;*` -Examples`
-- `Get-Help `*&lt;parancsmag neve&gt;*` -Full`
+- `Get-Help `*&lt;Parancsmag neve&gt;*` -Detailed`
+- `Get-Help `*&lt;Parancsmag neve&gt;*` -Examples`
+- `Get-Help `*&lt;Parancsmag neve&gt;*` -Full`
 
 ### <a name="more-information"></a>További információ
 
 PowerShell Web Access kapcsolatos további információkért tekintse meg a következőket:
 
 - [Telepítheti és használhatja a Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md)
-

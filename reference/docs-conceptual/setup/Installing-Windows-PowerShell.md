@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-09
-keywords: "PowerShell, a parancsmag, letöltése, telepítése, beállításához, windows 10, windows 8.1, windows 8.0-s, windows 7"
-title: "A Windows PowerShell telepítése"
-ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.date: 08/09/2017
+keywords: PowerShell, a parancsmag, letöltése, telepítése, beállításához, windows 10, windows 8.1, windows 8.0-s, windows 7
+title: A Windows PowerShell telepítése
+ms.openlocfilehash: 320b271ce49768f8865c79c5c72749befe306fa4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installing-windows-powershell"></a>A Windows PowerShell telepítése
 A Windows PowerShell előre telepített alapértelmezés szerint a minden Windows, Windows 7 SP1 és Windows Server 2008 R2 SP1 kezdve.
@@ -45,7 +45,8 @@ Windows Server a grafikus felhasználói felület nélkül kiadásai megnevezett
 
 Az összes mag kiadásai amikor bejelentkezik a kiszolgáló kap egy Windows parancssori ablakban.
 
-Típus `powershell` nyomja le az ENTER **ENTER** PowerShell elindítása belül a parancssor-szakaszt. Típus `exit` állítsa le a PowerShell-parancssorba, majd a parancssorba való visszatéréshez.
+Típus `powershell` nyomja le az ENTER **ENTER** PowerShell elindítása belül a parancssor-szakaszt.
+Típus `exit` állítsa le a PowerShell-parancssorba, majd a parancssorba való visszatéréshez.
 
 ### <a name="windows-server-desktop-editions"></a>Windows Server asztali verziója esetén
 

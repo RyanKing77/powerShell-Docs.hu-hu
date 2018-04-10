@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "További powershell tanulás"
-ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: További powershell tanulás
+ms.openlocfilehash: bed263df0ff52ec687bc7a644470f0397d0106ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="more-powershell-learning"></a>További PowerShell tanulás
 
-További PowerShell más forrásokból  
+További PowerShell más forrásokból
 
 ## <a name="resources-for-windows-powershell-users"></a>A Windows PowerShell felhasználóinak erőforrások
 
@@ -26,17 +26,17 @@ Rendelkezésre álló parancssori súgó mellett az alábbi forrásokban tovább
 
 ## <a name="video-training"></a>Videó képzési
 
-### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy Oktatóanyaga
+### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
 - [Ismerkedés a PowerShell 3.0 Jump Start](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
 - [Speciális eszközök és parancsfájlok az telepítésébe PowerShell 3.0](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8231)
 
 ### <a name="script-center-learn"></a>Ismerje meg a Parancsprogramtárban
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>A Windows PowerShell Essentials foglalt Admin adatsor
-- [PowerShell "SmowerShell" – Miért érdemes ismerje meg a Windows PowerShell &#40; Rész 1 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Heard azt a feldolgozási folyamaton keresztül – útmutató a Windows PowerShell-parancsok összetett visszatöltött és nyereség &#40; Rész 2 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Egyetlen szolgáltató? Nem alig – tekintse meg a Windows PowerShell-szolgáltatók &#40; Rész 3 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [A fő esemény – Windows PowerShell Does eseménynaplók &#40; Rész 4 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Több mint távolról lehetséges – a távoli asztal &#40; kezelése a Windows PowerShell segítségével Rész 5 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell "SmowerShell" – Miért érdemes elsajátíthatja, hogy a Windows PowerShell &#40;1. rész&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [Heard azt a feldolgozási folyamaton keresztül – Windows PowerShell-parancsok összetett visszatöltött és nyereség hogyan &#40;2. rész&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [Egyetlen szolgáltató? Nem alig – tekintse meg a Windows PowerShell-szolgáltatók &#40;3. rész&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [A fő esemény – Windows PowerShell Does eseménynaplók &#40;4 része&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [Több mint távolról lehetséges – a távoli asztal kezelése a Windows PowerShell segítségével &#40;5 része&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>Ismerje meg, hogy most ahhoz, hogy vészhelyzet esetén
 - [Windows PowerShell: Megtudhatja, hogy most ahhoz, hogy vészhelyzet esetén – 1. rész](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
@@ -51,4 +51,3 @@ Az alábbi forrásokban források a fejlesztők számára a saját Windows Power
 
 - [A Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595). Referencia-tartalom biztosít.
 - [A Windows PowerShell – programozói kézikönyv](http://go.microsoft.com/fwlink/p/?LinkID=89596). Oktatóanyagok biztosít. Alapvető Windows PowerShell eljárásra vonatkozó információkat is tartalmaz.
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A DSC WindowsFeatureSet erőforrás"
-ms.openlocfilehash: a2bb008852ccfdc04998a57d3e64e08bf05e6433
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A DSC WindowsFeatureSet erőforrás
+ms.openlocfilehash: a6fecba0397b88ce39f6f1a1be6cc366c8a983a6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>A DSC WindowsFeatureSet erőforrás
 
@@ -23,28 +23,28 @@ Ehhez az erőforráshoz akkor használja, ha a Windows-szolgáltatások számos 
 ```
 WindowsFeatureSet [string] #ResourceName
 {
-    Name = [string[]] 
+    Name = [string[]]
     [ Ensure = [string] { Absent | Present }  ]
     [ Source = [string] ]
     [ IncludeAllSubFeature = [bool] ]
     [ Credential = [PSCredential] ]
     [ LogPath = [string] ]
     [ DependsOn = [string[]] ]
-    
+
 }
 ```
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   | 
-|---|---| 
-| Név| A szerepkörök vagy szolgáltatások biztosítása kívánt nevét hozzáadásakor vagy eltávolításakor. Ez megegyezik a **neve** tulajdonsága a [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) parancsmag, és nem a megjelenített név a szerepkörök vagy szolgáltatások.| 
-| hitelesítő adatok| A hitelesítő adatok hozzáadása vagy eltávolítása a szerepkörök vagy szolgáltatások használatára.| 
-| Győződjön meg arról| Azt jelzi, hogy a szerepkörök vagy szolgáltatások kerülnek. Ezzel biztosíthatja, hogy a szerepkörök vagy szolgáltatások hozzáadott, állítsa be ezt a tulajdonságot "Elérhető" Győződjön meg arról, hogy eltávolítja a szerepkörök vagy szolgáltatások, a tulajdonság értéke "Hiányzik".| 
-| IncludeAllSubFeature| Ez a tulajdonság beállítása **$true** tartalmazza a Funkciók, adja meg az összes szükséges alfunkció a **neve** tulajdonság.| 
-| LogPath| A naplófájl elérési útja a kívánt való bejelentkezéshez a műveletet az erőforrás-szolgáltató.| 
-| dependsOn| Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.| 
-| Forrás| Azt jelzi, használható a telepítéshez, a forrás-fájl helyét, ha szükséges.| 
+|  Tulajdonság  |  Leírás   |
+|---|---|
+| Név| A szerepkörök vagy szolgáltatások biztosítása kívánt nevét hozzáadásakor vagy eltávolításakor. Ez megegyezik a **neve** tulajdonsága a [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) parancsmag, és nem a megjelenített név a szerepkörök vagy szolgáltatások.|
+| hitelesítő adatok| A hitelesítő adatok hozzáadása vagy eltávolítása a szerepkörök vagy szolgáltatások használatára.|
+| Győződjön meg arról| Azt jelzi, hogy a szerepkörök vagy szolgáltatások kerülnek. Ezzel biztosíthatja, hogy a szerepkörök vagy szolgáltatások hozzáadott, állítsa be ezt a tulajdonságot "Elérhető" Győződjön meg arról, hogy eltávolítja a szerepkörök vagy szolgáltatások, a tulajdonság értéke "Hiányzik".|
+| IncludeAllSubFeature| Ez a tulajdonság beállítása **$true** tartalmazza a Funkciók, adja meg az összes szükséges alfunkció a **neve** tulajdonság.|
+| LogPath| A naplófájl elérési útja a kívánt való bejelentkezéshez a műveletet az erőforrás-szolgáltató.|
+| dependsOn| Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.|
+| Forrás| Azt jelzi, használható a telepítéshez, a forrás-fájl helyét, ha szükséges.|
 
 ## <a name="example"></a>Példa
 
@@ -62,8 +62,7 @@ configuration FeatureSetTest
             Name                    = @("SMTP-Server", "Web-Server")
             Ensure                  = 'Present'
             IncludeAllSubFeature    = $true
-        } 
+        }
     }
 }
 ```
-

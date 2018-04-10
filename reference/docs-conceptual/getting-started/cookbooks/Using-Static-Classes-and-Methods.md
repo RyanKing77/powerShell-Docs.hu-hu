@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "Statikus osztályok és módszerek használatával"
+title: Statikus osztályok és módszerek használata
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: fe41c7d6b45564e7b5bc2b922a18587c9745e26d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-static-classes-and-methods"></a>Statikus osztályok és módszerek használatával
+# <a name="using-static-classes-and-methods"></a>Statikus osztályok és módszerek használata
 Nem minden .NET-keretrendszer osztály használatával hozhatók létre **New-Object**. Például, ha megpróbál létrehozni egy **System.Environment** vagy egy **System.Math** rendelkező objektum **New-Object**, elérhetővé válik a következő hibaüzeneteket:
 
 ```
@@ -18,6 +18,7 @@ New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Environment.
 At line:1 char:11
 + New-Object  <<<< System.Environment
+
 PS> New-Object System.Math
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Math.
@@ -88,6 +89,7 @@ TickCount                               ExitCode
 A Microsoft immár tulajdonságok System.Environment a megtekintéséhez.
 
 #### <a name="displaying-static-properties-of-systemenvironment"></a>System.Environment statikus tulajdonságainak megjelenítése
+
 System.Environment tulajdonságainak is statikusak, és meg kell adni, mint a normál tulajdonságok eltérő módon. Használjuk **::** jelzi a Windows Powershellhez, amely azt szeretnénk, hogy egy statikus metódus vagy tulajdonság. A parancs, indítsa el a Windows Powershellt használt megtekintéséhez ellenőrizzük a **CommandLine** tulajdonság beírásával:
 
 ```
@@ -113,6 +115,7 @@ False
 ```
 
 ### <a name="doing-math-with-systemmath"></a>Ennek során a System.Math matematikai
+
 A System.Math statikus osztály néhány matematikai műveletet hajt végre. A fontos tagjai **System.Math** többnyire módszer, amelyek használatával is meg **Get-tag**.
 
 > [!NOTE]
@@ -181,4 +184,3 @@ PS> [System.Math]::Truncate(9.3)
 PS> [System.Math]::Truncate(-9.3)
 -9
 ```
-

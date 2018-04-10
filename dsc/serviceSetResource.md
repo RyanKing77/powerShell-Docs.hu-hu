@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A DSC ServiceSet erőforrás"
-ms.openlocfilehash: 2488dda5212ccb717f7fd5d59ad62ec135ad13d5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A DSC ServiceSet erőforrás
+ms.openlocfilehash: a7516120f0c4bc1c91031adc8aabf6a59b845246
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-serviceset-resource"></a>A DSC ServiceSet erőforrás
 
@@ -30,21 +30,21 @@ Service [string] #ResourceName
     [ Ensure = [string] { Absent | Present }  ]
     [ Credential = [PSCredential] ]
     [ DependsOn = [string[]] ]
-    
+
 }
 ```
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   | 
-|---|---| 
+|  Tulajdonság  |  Leírás   |
+|---|---|
 | Név| Azt jelzi, hogy a szolgáltatás nevét. Vegye figyelembe, hogy egyes esetekben ez eltér a megjelenített nevek. Kaphat a szolgáltatások és az aktuális állapotát listáját a [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) parancsmag.|
-| StartupType| Azt jelzi, hogy a szolgáltatás indítási típusa. Ez a tulajdonság számára engedélyezett az értékek a következők: **automatikus**, **letiltott**, és **manuális**|  
-| BuiltInAccount| Azt jelzi, hogy a bejelentkezési fiókot szeretné használni a szolgáltatásokat. Ez a tulajdonság számára engedélyezett az értékek a következők: **LocalService**, **LocalSystem**, és **NetworkService**.| 
-| Állapot| Szeretne biztosítani a szolgáltatások állapotát jelzi: **leállítva** vagy **futtató**.| 
+| StartupType| Azt jelzi, hogy a szolgáltatás indítási típusa. Ez a tulajdonság számára engedélyezett az értékek a következők: **automatikus**, **letiltott**, és **manuális**|
+| BuiltInAccount| Azt jelzi, hogy a bejelentkezési fiókot szeretné használni a szolgáltatásokat. Ez a tulajdonság számára engedélyezett az értékek a következők: **LocalService**, **LocalSystem**, és **NetworkService**.|
+| Állapot| Szeretne biztosítani a szolgáltatások állapotát jelzi: **leállítva** vagy **futtató**.|
 | Győződjön meg arról| Azt jelzi, hogy létezik-e a szolgáltatások a rendszeren. Ez a tulajdonság beállítása **távol** annak érdekében, hogy a szolgáltatások nem léteznek. Értékre állítaná **jelen** (az alapértelmezett érték) biztosítja, hogy létezik-e a cél szolgáltatások.|
-| hitelesítő adatok| Azt jelzi, hogy a szolgáltatás-erőforrást fog futni a fiók hitelesítő adatait. Ez a tulajdonság és a **BuiltinAccount** tulajdonság nem használható együtt.| 
-| dependsOn| Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az *ResourceName* és annak típusa *ResourceType*, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.| 
+| hitelesítő adatok| Azt jelzi, hogy a szolgáltatás-erőforrást fog futni a fiók hitelesítő adatait. Ez a tulajdonság és a **BuiltinAccount** tulajdonság nem használható együtt.|
+| dependsOn| Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az *ResourceName* és annak típusa *ResourceType*, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 
@@ -64,8 +64,7 @@ configuration ServiceSetTest
             Name        = @("TermService", "Audiosrv")
             StartupType = "Manual"
             State       = "Running"
-        } 
+        }
     }
 }
 ```
-

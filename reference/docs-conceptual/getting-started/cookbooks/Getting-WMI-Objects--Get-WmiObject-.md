@@ -1,20 +1,22 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "Első WMI-objektumok WmiObject beolvasása"
+title: Első WMI-objektumok WmiObject beolvasása
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-ms.openlocfilehash: fbaac2797dd62eb03a2be581b3b5f8be6dafc0ad
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 67922426ae3f13ef5f4c70bc70bb3ce1594d3d05
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>WMI-objektumok (Get-WmiObject) beolvasása
 
 ## <a name="getting-wmi-objects-get-wmiobject"></a>WMI-objektumok (Get-WmiObject) beolvasása
+
 A Windows Management Instrumentation (WMI) egy alapvető technológiák a Windows rendszer-felügyeleti oka egységes módon adatok széles skáláját teszi elérhetővé. Mennyi lehetővé teszi a WMI lehetséges, a Windows PowerShell-parancsmag WMI-objektumok eléréséhez miatt **Get-WmiObject**, a leghasznosabb egyike a valódi munkát. Fogjuk megvitatni a Get-WmiObject használata a WMI-objektumok eléréséhez és WMI-objektumok használata elvégzésére.
 
 ### <a name="listing-wmi-classes"></a>WMI-osztályok listázása
+
 A legtöbb WMI felhasználóknál első problémát próbál megtudhatja, mi teheti a WMI-ben. WMI-osztályokat, amelyek kezelhetők erőforrásokat leíró. WMI-osztályokat, tulajdonságok több tucatnyi tartalmaz, amelyek több száz van.
 
 **Get-WmiObject** kezeli ezt a problémát azáltal, hogy a WMI felderíthető. A rendelkezésre álló WMI-osztályok listáját kaphat a helyi számítógépen írja be:
@@ -48,7 +50,7 @@ A távoli számítógépek által visszaadott osztály listát az adott operáci
 
 A számítógépnév is tartalmazhatnak, amikor csatlakozik a helyi rendszer. Használhatja a helyi számítógép neve, az IP-címét (vagy a visszacsatolási cím 127.0.0.1), vagy a WMI-style "." karaktert a számítógép neveként. Ha futtatja a Windows PowerShell IP-cím 192.168.1.90 Rgazda01 nevű számítógépen, a következő parancsokat minden visszatér a WMI-osztály listázása az adott számítógépen:
 
-```
+```powershell
 Get-WmiObject -List
 Get-WmiObject -List -ComputerName .
 Get-WmiObject -List -ComputerName Admin01
@@ -68,6 +70,7 @@ __Provider                              __Win32Provider
 ```
 
 ### <a name="displaying-wmi-class-details"></a>WMI-osztály részletek megjelenítése
+
 Ha már ismeri a nevét, a WMI-osztályok, azonnal lekérése használhatja. Például a WMI-osztályokat, gyakran használják a számítógép adatainak lekérése egyik **Win32_OperatingSystem**.
 
 ```
@@ -83,7 +86,7 @@ Version         : 5.1.2600
 
 Bár azt összes paraméterének láthatók, a parancs több állapotára úgy lehet megadni. A **számítógépnév** paraméter nem szükséges a helyi rendszer történő csatlakozás során. A legtöbb általános esetben bemutatása és jelezve, az paraméterrel kapcsolatos megmutatjuk. A **Namespace** legfelső szintű/cimv2 az alapértelmezett, és is kihagyható. Végezetül legtöbb parancsmagok lehetővé teszik az általános paraméterek neve nincs megadva. A Get-WmiObject, ha nem adott meg az első paraméter, a Windows PowerShell úgy kezeli, mint a **osztály** paraméter. Ez azt jelenti, hogy az utolsó parancs beírásával kiadott sikerült:
 
-```
+```powershell
 Get-WmiObject Win32_OperatingSystem
 ```
 
@@ -105,6 +108,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ```
 
 #### <a name="displaying-non-default-properties-with-format-cmdlets"></a>A formátum-parancsmagokkal nem alapértelmezett tulajdonságok megjelenítése
+
 Ha azt szeretné, hogy a tárolt információ a **Win32_OperatingSystem** osztály, amely alapértelmezés szerint nem jelenik meg, meg lehet jeleníteni használatával a **formátum** parancsmagok. Ha meg szeretné jeleníteni a rendelkezésre álló memória adatok, például:
 
 ```
@@ -116,7 +120,7 @@ TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory F
 ```
 
 > [!NOTE]
-> Helyettesítő karakterek használata a tulajdonságnevek **Format-Table**, így csökkenthető a végső csővezeték elem  **Format-Table-tulajdonság teljes*, szabad*
+> Helyettesítő karakterek használata a tulajdonságnevek **Format-Table**, így a végső csővezeték elem csökkenthető, **Format-Table-tulajdonság teljes*, szabad *
 
 Lehet, hogy a memória adatok olvashatóbb, ha azt listaként beírásával:
 
@@ -129,4 +133,3 @@ FreePhysicalMemory     : 301876
 FreeVirtualMemory      : 2056724
 FreeSpaceInPagingFiles : 1556644
 ```
-

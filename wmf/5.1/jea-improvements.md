@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
+keywords: WMF, powershell, beállítás
 contributor: ryanpu
-title: "Éppen elég felügyelettel (JEA) fejlesztései"
-ms.openlocfilehash: 2811b4deb3f4fca513791c7389ee5f9f877dbfe8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Éppen elég felügyelettel (JEA) fejlesztései
+ms.openlocfilehash: c80472fa4372331bf2cf9ab0b7513021354d1408
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Éppen elég felügyelettel (JEA) fejlesztései
 
@@ -28,7 +28,7 @@ MountUserDrive = $true
 UserDriveMaximumSize = 10485760    # 10 MB
 ```
 
-A mappa biztonsági a felhasználó-meghajtó létrehozása`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
+A mappa biztonsági a felhasználó-meghajtó létrehozása `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
 A felhasználó meghajtó használatára, és másolja a fájlokat, egy teszi közzé a felhasználó meghajtó beállított JEA végpont onnan, használja a `-ToSession` és `-FromSession` elem paraméterek.
 
@@ -50,7 +50,7 @@ Majd írhat feldolgozni az adatokat, a felhasználó meghajtón tárolja, és el
 
 Bizonyos esetekben egy feladatot, a felhasználó számára szükséges-e a JEA-munkamenetben kell a helyi számítógép mögötti erőforrások eléréséhez.
 A JEA munkamenet virtuális fiók használatára van konfigurálva, amikor minden, az ilyen erőforrások eléréséhez az általa elérni a helyi gép identitása, nem a virtuális fiók vagy a csatlakoztatott felhasználói jelenik meg.
-A TP5 azt engedélyezte a JEA egy [csoportosan felügyelt szolgáltatásfiók] (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), így sokkal könnyebben hálózati erőforrások eléréséhez a tartomány környezetében futó támogatása identitás.
+A TP5, azt engedélyezte a JEA egy [csoportosan felügyelt szolgáltatásfiók] környezetében futó támogatása (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), így sokkal könnyebben hálózati erőforrások eléréséhez a tartomány identitásával.
 
 A csoportosan felügyelt szolgáltatásfiók alatt fut JEA munkamenet konfigurálásához használja a következő új kulcsot a FERB fájlban:
 
@@ -93,4 +93,3 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Rögzített: Virtuális fiókok mostantól támogatja a Windows Server 2008 R2 rendszeren
 A WMF 5.1 áll a virtuális fiókokat használhatják a Windows Server 2008 R2, engedélyezése konzisztens konfigurációk és szolgáltatásparitást keresztül Windows Server 2008 R2 – 2016.
 Virtuális fiókok továbbra is nem támogatott, ha a Windows 7 JEA használatával.
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Egyéni DSC-erőforrás MOF írása"
-ms.openlocfilehash: c416fd7cac80d37f1ca1393fa644b4bc15743724
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Egyéni DSC-erőforrás MOF írása
+ms.openlocfilehash: 4e336e837d2153fecab8325cb8714ffed85a6175
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Egyéni DSC-erőforrás MOF írása
 
@@ -56,12 +56,12 @@ class Demo_IISWebsite : OMI_BaseResource
 
 Vegye figyelembe az alábbiakat az előző kóddal:
 
-* `FriendlyName`Tekintse meg az egyéni erőforrást DSC konfigurációs parancsfájlok segítségével nevet határoz meg. Ebben a példában `Website` felel meg a rövid név `Archive` a beépített archív erőforrás.
+* `FriendlyName` Tekintse meg az egyéni erőforrást DSC konfigurációs parancsfájlok segítségével nevet határoz meg. Ebben a példában `Website` felel meg a rövid név `Archive` a beépített archív erőforrás.
 * Megadhatja az egyéni erőforrás kell származnia: az osztály `OMI_BaseResource`.
 * A típus minősítő `[Key]`, a tulajdonság azt jelzi, hogy ezt a tulajdonságot egyedileg azonosítja a erőforráspéldány. Legalább egy `[Key]` tulajdonság megadása kötelező.
 * A `[Required]` minősítő azt jelzi, hogy a tulajdonság szükséges (értéket kell megadni az összes konfigurációs parancsfájl, amely ezt az erőforrást használ).
 * A `[write]` minősítő azt jelzi, hogy ez a tulajdonság opcionális konfigurációs parancsfájl az egyéni erőforrás használatakor. A `[read]` minősítő azt jelzi, hogy a tulajdonság nem állítható be olyan konfigurációja, és csak jelentéskészítési célból van.
-* `Values`korlátozza az értékeket, amelyek a meghatározott értékek listájának tulajdonság hozzárendelhető `ValueMap`. További információkért lásd: [ValueMap és érték minősítők](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).
+* `Values` korlátozza az értékeket, amelyek a meghatározott értékek listájának tulajdonság hozzárendelhető `ValueMap`. További információkért lásd: [ValueMap és érték minősítők](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).
 * Például egy tulajdonság nevű `Ensure` értékekkel `Present` és `Absent` egyik módja egy beépített DSC-erőforrások egységes stílust karbantartása javasolt az erőforrás.
 * A fájl az egyéni erőforrás neve az alábbiak szerint: `classname.schema.mof`, ahol `classname` az azonosító, amelyet a következő a `class` a sémadefiníciót kulcsszót.
 
@@ -117,7 +117,7 @@ function Get-TargetResource
                                         Protocol = $Website.bindings.Collection.protocol;
                                         Binding = $Website.bindings.Collection.bindingInformation;
                                     }
-  
+
         $getTargetResourceResult;
 }
 ```
@@ -131,7 +131,7 @@ Attól függően, hogy az értékek, amelyek nincsenek megadva az erőforrás-tu
 A következő példa ezt mutatja be.
 
 ```powershell
-# The Set-TargetResource function is used to create, delete or configure a website on the target machine. 
+# The Set-TargetResource function is used to create, delete or configure a website on the target machine.
 function Set-TargetResource
 {
     [CmdletBinding(SupportsShouldProcess=$true)]
@@ -157,7 +157,7 @@ function Set-TargetResource
 
         [string[]]$Protocol
     )
- 
+
     <# If Ensure is set to "Present" and the website specified in the mandatory input parameters does not exist, then create it using the specified parameter values #>
     <# Else, if Ensure is set to "Present" and the website does exist, then update its properties to match the values provided in the non-mandatory parameter values #>
     <# Else, if Ensure is set to "Absent" and the website does not exist, then do nothing #>
@@ -207,15 +207,15 @@ $ApplicationPool
 #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
 
-#Include logic to 
+#Include logic to
 $result = [System.Boolean]
 #Add logic to test whether the website is present and its status mathes the supplied parameter values. If it does, return true. If it does not, return false.
 $result
 }
 ```
 
-**Megjegyzés:**: hibakereséshez egyszerűbb, használja a **Write-Verbose** parancsmag az előző három funkció megvalósítását. 
->Ez a parancsmag szöveg ír a részletes üzenet-adatfolyam. 
+**Megjegyzés:**: hibakereséshez egyszerűbb, használja a **Write-Verbose** parancsmag az előző három funkció megvalósítását.
+>Ez a parancsmag szöveg ír a részletes üzenet-adatfolyam.
 >Alapértelmezés szerint a részletes üzenet-adatfolyam nem jelenik meg, de értékének módosításával megjelenítheti a **$VerbosePreference** változó vagy használatával a **részletes** a DSC-parancsmagok paraméter = új.
 
 ### <a name="creating-the-module-manifest"></a>A modul jegyzékfájl létrehozása
@@ -290,7 +290,3 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
-
-
-
-

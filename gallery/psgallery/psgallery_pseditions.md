@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "gyűjtemény, a powershell, a parancsmag, a psgallery"
+keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
 title: psgallery_pseditions
-ms.openlocfilehash: 6634da5c2dadee9c0c6470b3d3e8883e6d02160f
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 0b30c1da53832a6b74be7aa14ed9331b1e9fe643
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="items-with-compatible-powershell-editions"></a>Elemek verzióval kompatibilis PowerShell
 Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhető el, amelyek különböző szolgáltatáskészleteket és platformkompatibilitást kínálnak.
@@ -31,6 +31,5 @@ Címkék használata: "PSEdition_Desktop" és a címkék: "PSEdition_Core" szűr
 ![Az asztali PSEdition kompatibilis elemek keresési eredmények](Images/SearchResultsWithPSEdition_Desktop.PNG)
 
 ## <a name="more-details-on-authoring-and-finding-the-items-with-compatible-powershell-editions"></a>További részleteket a jelentéskészítő és -verzióval kompatibilis PowerShell cikkek keresése
-### <a name="modules-with-pseditionspsgetmodulemodulewithpseditionsupportmd"></a>[PSEditions rendelkező modulok](../psget/module/modulewithpseditionsupport.md)
-### <a name="scripts-with-pseditionspsgetscriptscriptwithpseditionsupportmd"></a>[A PSEditions parancsfájlok](../psget/script/scriptwithpseditionsupport.md)
-
+### <a name="modules-with-pseditionspsgetmodulemodulewithpseditionsupportmd"></a>[PSEditions paraméterrel rendelkező modulok](../psget/module/modulewithpseditionsupport.md)
+### <a name="scripts-with-pseditionspsgetscriptscriptwithpseditionsupportmd"></a>[PSEditions paraméterrel rendelkező parancsfájlok](../psget/script/scriptwithpseditionsupport.md)

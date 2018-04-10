@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell parancsfájlok"
+title: Parancsfájlkezelés a Windows PowerShell-lel
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-ms.openlocfilehash: 693d1bb9329dbb280453fc16738eda63c466e156
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 9bb420a3d725d3fa925b79452bbbcc542bf9f4db
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="scripting-with-windows-powershell"></a>A Windows PowerShell parancsfájlok
+# <a name="scripting-with-windows-powershell"></a>Parancsfájlkezelés a Windows PowerShell-lel
 
 A Windows PowerShell® egy feladatalapú parancssori rendszerhéj és programozási nyelv, amelyet kifejezetten rendszergazdák számára terveztek. A .NET-keretrendszer épülő Windows PowerShell segítségével az informatikusok és kikapcsolás felhasználók és automatizálják a Windows operációs rendszer és a Windows rendszeren futó alkalmazások.
 
@@ -23,4 +23,3 @@ A Windows PowerShell az alábbi szolgáltatásokat tartalmazza:
 - Az operációs rendszer, amely lehetővé teszi, hogy a felhasználók egyszerű, a parancs-alapú navigálási, amelyekkel a fájlrendszerben navigálva meg ugyanazon módszerek használatával keresse meg a beállításjegyzék és az egyéb adattárakhoz.
 - Hatékony objektum adatkezelési lehetőségeket. Objektumok közvetlenül választéka sem más eszközök vagy adatbázisok küld.
 - Bővíthető felületet. Független szoftvergyártók és vállalati fejlesztők hozhat létre egyéni eszközöket és segédprogramokat, ha a szoftverfrissítések felügyeletéhez.
-

@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: 668a5b20add58ff5e23f35d6cebddc39c64ce926
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: 89f0deaece27e2d207dfb820d4df80e427c9cb94
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installation-instructions"></a>Telepítési utasításokat
 
 Töltse le az operációs rendszer és az architektúra a megfelelő csomag:
 
-| Operációs rendszer       | Architektúra | Csomag neve              | 
-|------------------------|--------------|---------------------------| 
-| Windows Server 2012 R2 | x64      | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) | 
-| Windows Server 2012    | x64      | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) | 
+| Operációs rendszer       | Architektúra | Csomag neve              |
+|------------------------|--------------|---------------------------|
+| Windows Server 2012 R2 | x64      | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
+| Windows Server 2012    | x64      | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
 | Windows Server 2008 R2 | x64      | [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504) |
 | A Windows 8.1            | x64          | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
 | A Windows 8.1            | x86          | [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963) |
@@ -30,7 +30,7 @@ Töltse le az operációs rendszer és az architektúra a megfelelő csomag:
 
 2. Kattintson duplán az MSU futtatni.
 
-**WMF 5.0 telepítése a parancssorból:** 
+**WMF 5.0 telepítése a parancssorból:**
 
 1. Az a számítógép architektúrájának megfelelő csomag a letöltés után nyissa meg egy parancssori ablakot emelt szintű felhasználói jogosultságokkal (Futtatás rendszergazdaként). A Server Core telepítési lehetőségekkel, a Windows Server 2012 R2 vagy Windows Server 2012 vagy Windows Server 2008 R2 SP1, a parancssort emelt szintű felhasználói jogosultságokkal alapértelmezés szerint megnyílik.
 
@@ -50,5 +50,3 @@ Győződjön meg arról, hogy teljesülnek a következő előfeltételek teljes�
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) telepítve van
 
 *A Rendszerfelügyeleti webszolgáltatások függőségi:* Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) WinRM függ. Rendszerfelügyeleti webszolgáltatások a Windows Server 2008 R2 és Windows 7 alapértelmezés szerint nincs engedélyezve. Ahhoz, hogy a Rendszerfelügyeleti webszolgáltatások, egy Windows PowerShell az emelt szintű munkamenet, futtassa **Set-WSManQuickConfig**.
-
-

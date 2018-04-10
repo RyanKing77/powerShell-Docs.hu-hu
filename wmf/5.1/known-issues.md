@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-title: "A WMF 5.1 ismert problémák"
-ms.openlocfilehash: bb8967a55ec32f0ce21812e065725985010bfc8e
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: WMF, powershell, beállítás
+title: A WMF 5.1 ismert problémák
+ms.openlocfilehash: 467a191f40d85bfca7c794915d6274a9a1b201e7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="known-issues-in-wmf-51"></a>A WMF 5.1 ismert problémák #
 
@@ -21,14 +21,14 @@ Nyissa meg a parancsikont nem rendszergazda, és most már működik a helyi ren
 ## <a name="pester"></a>Pester
 Ebben a kiadásban van két probléma kell ügyelnie, ha a Nano Server Pester használatával:
 
-* Tesztek futtatása ellen Pester maga okozhat egyes hibák teljes CLR és CORE CLR közötti különbségek miatt. A Validate metódus különösen XmlDocument típus nem érhető el. Hat tesztet, amely ellenőrzi a NUnit kimeneti naplók sémája ismert sikertelen lesz. 
+* Tesztek futtatása ellen Pester maga okozhat egyes hibák teljes CLR és CORE CLR közötti különbségek miatt. A Validate metódus különösen XmlDocument típus nem érhető el. Hat tesztet, amely ellenőrzi a NUnit kimeneti naplók sémája ismert sikertelen lesz.
 * Egy kód érvényességének teszt jelenleg sikertelen lesz, mivel a *WindowsFeature* DSC-erőforrás nem létezik a Nano Server. Azonban ezek a hibák általában jóindulatú és biztonságosan figyelmen kívül hagyható.
 
-## <a name="operation-validation"></a>Művelet érvényesítése 
+## <a name="operation-validation"></a>Művelet érvényesítése
 
 * Update-Help miatt nem működő Súgó URI Microsoft.PowerShell.Operation.Validation modul sikertelen
 
-## <a name="dsc-after-uninstall-wmf"></a>A DSC után távolítsa el a WMF 
+## <a name="dsc-after-uninstall-wmf"></a>A DSC után távolítsa el a WMF
 * WMF eltávolítása nem törölhető DSC MOF dokumentumok a következő konfigurációt tartalmazó mappa. A DSC-ből nem fog megfelelően működni, ha a MOF-dokumentumok újabb tulajdonságait, amelyek nem érhetők el a régebbi rendszerekre tartalmaznak. Ebben az esetben futtassa a következő parancsfájlt az emelt szintű PowerShell-konzolon a DSC-állapotok karbantartása.
  ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
@@ -38,7 +38,7 @@ Ebben a kiadásban van két probléma kell ügyelnie, ha a Nano Server Pester ha
            )
 
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
- ```  
+ ```
 
 ## <a name="jea-virtual-accounts"></a>JEA virtuális fiókok
 JEA végpontok és a WMF 5.0 virtuális fiókok használatára konfigurált munkamenet-konfigurációk nem teszi a virtuális fiók használata a WMF 5.1 a frissítés után.
@@ -61,4 +61,3 @@ Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
 # Ensure the access policies remain the same
 Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
 ```
-

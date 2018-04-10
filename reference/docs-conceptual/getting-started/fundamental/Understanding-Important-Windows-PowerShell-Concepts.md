@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "Fontos Windows PowerShell alapfogalmainak ismertetése"
+title: A Windows PowerShell legfontosabb fogalmainak megértése
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 1ffcfefcc7ffc7c98ba4d1e3ccc9a59cd9b0baac
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 07ceaa2f3e6a192c6281cb4c99aed4c3f66afc7e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="understanding-important-windows-powershell-concepts"></a>Fontos Windows PowerShell alapfogalmainak ismertetése
+# <a name="understanding-important-windows-powershell-concepts"></a>A Windows PowerShell legfontosabb fogalmainak megértése
 A Windows PowerShell-kialakítás számos különböző környezetek fogalom egyesíti. Ezek az adott parancskörnyezet vagy programozási környezetben révén személyek számára ismerős, de nagyon kevés személyek fogja tudni az összes. Ezek a fogalmak némelyike megnézi a rendszerhéj hasznos áttekintést nyújt.
 
 ### <a name="commands-are-not-text-based"></a>Parancsok nincsenek szöveges
@@ -30,7 +30,7 @@ A belső Windows PowerShell-parancsok speciális jellege miatt hivatkozik rájuk
 ### <a name="windows-powershell-handles-console-input-and-display"></a>A Windows PowerShell leírók konzol bemeneti és megjelenítése
 A parancs beírásakor a Windows PowerShell mindig dolgozza fel a parancssori bemenet közvetlenül. A Windows PowerShell is formázza a kimenete a a képernyőn látható. Ez azért fontos, mivel csökkenti a szükséges minden egyes parancsmag munka és biztosítja, hogy mindig műveleteket végezheti el a ugyanúgy, függetlenül attól, milyen parancsmag használatával. Egy példa hogyan élettartama Ez leegyszerűsíti a eszköz fejlesztők és a felhasználók, a parancssori súgó.
 
-Hagyományos parancssori eszközök rendelkeznek a saját sémákat és Súgó megjelenítése. Néhány parancssori eszközök használata **/?** a súgóablak; elindítása mások **-?**, **/H**, vagy akár  **//** . Súgó néhány jelenik meg a grafikus felhasználói Felülettel ablakban, nem pedig a konzolon megjelenített. Néhány bonyolult eszközöket, például az alkalmazás updaters belső fájlok a Súgó megjelenítése előtt csomagolja ki. A megfelelő paramétert használja, ha az eszköz lehet, hogy mi írt be, és a feladatütemezés végrehajtása automatikusan figyelmen kívül.
+Hagyományos parancssori eszközök rendelkeznek a saját sémákat és Súgó megjelenítése. Néhány parancssori eszközök használata **/?** a súgóablak; elindítása mások **-?**, **/H**, vagy akár **//**. Súgó néhány jelenik meg a grafikus felhasználói Felülettel ablakban, nem pedig a konzolon megjelenített. Néhány bonyolult eszközöket, például az alkalmazás updaters belső fájlok a Súgó megjelenítése előtt csomagolja ki. A megfelelő paramétert használja, ha az eszköz lehet, hogy mi írt be, és a feladatütemezés végrehajtása automatikusan figyelmen kívül.
 
 A parancs beírásakor a Windows PowerShell mindent meg automatikusan elemezni és előre dolgozza fel a Windows PowerShell. Ha használja a **-?** a paraméter egy Windows PowerShell-parancsmaggal, mindig jelent "megjelenítése Súgó a parancs". Parancsmag-fejlesztőknek nem kell elemezni a parancs; csak akkor kell adnia a súgószöveg.
 
@@ -43,4 +43,3 @@ Fontos megérteni, hogy a Súgó a Windows PowerShell számára elérhető a Win
 Windows PowerShell szintaxis funkciókat és nagyon hasonló a C# programozási nyelv, mert a Windows PowerShell-alapú a .NET-keretrendszer használtakon kulcsszavak rendelkezik. A Windows PowerShell könnyebben sokkal további C#, ha a nyelv érdekli.
 
 Ha nem egy C# programozói, a hasonlóság nem fontos. Azonban ha már ismeri a C#, a közös vonásai teheti a Windows PowerShell sokkal könnyebben.
-

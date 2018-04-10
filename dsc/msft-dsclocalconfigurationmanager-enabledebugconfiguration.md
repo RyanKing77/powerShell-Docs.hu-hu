@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A MSFT_DSCLocalConfigurationManager osztály EnableDebugConfiguration módszer"
-ms.openlocfilehash: fa34a583af7c3fd46d99307d582973410e4c0e31
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Az MSFT_DSCLocalConfigurationManager osztály EnableDebugConfiguration metódusa
+ms.openlocfilehash: 9fe41fa806a6abff1d36dadd0c041a5cf0e78caf
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="enabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>A MSFT_DSCLocalConfigurationManager osztály EnableDebugConfiguration módszer
+# <a name="enabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály EnableDebugConfiguration metódusa
 
 A DSC-erőforrás hibakeresésének engedélyezése.
 
@@ -25,8 +25,7 @@ uint32 EnableDebugConfiguration(
 <a name="parameters"></a>Paraméterek
 ----------
 
-*BreakAll* \[in\]  
-Beállítja a töréspont minden sor a erőforrás parancsfájlban.
+*BreakAll* \[a\] töréspont beállítja az erőforrást parancsprogram minden sorában.
 
 ## <a name="return-value"></a>Visszatérési érték
 ------------
@@ -48,9 +47,3 @@ Ez a statikus módszer.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
- 
-
- 
-
-
-

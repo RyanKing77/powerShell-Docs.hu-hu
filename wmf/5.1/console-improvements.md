@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-title: "A WMF 5.1 konzoljának fejlesztései"
-ms.openlocfilehash: b0859191ea310c9b73fe9f255d7f256a1cc1af1f
-ms.sourcegitcommit: fee03bb9802222078c8d5f6c8efb0698024406ed
+keywords: WMF, powershell, beállítás
+title: A WMF 5.1 konzoljának fejlesztései
+ms.openlocfilehash: 2abc02010c6c1d9f7fc617e9831b2d1243e0a3ee
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="console-improvements-in-wmf-51"></a>A WMF 5.1# konzoljának fejlesztései
 
@@ -21,7 +21,8 @@ A következő módosítások lettek bevezetve a WMF 5.1 PowerShell.exe konzol é
 Windows 10 támogatása az [VT100 escape-karaktersorozatokat](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx).
 PowerShell figyelmen kívül hagyja majd bizonyos VT100 formázási escape-karaktersorozatokat tábla vastagságok számításakor.
 
-PowerShell szintén hozzáadott egy olyan új API, amely használható a formázáshoz kódot, hogy ha VT100 támogatja-e. Például:
+PowerShell szintén hozzáadott egy olyan új API, amely használható a formázáshoz kódot, hogy ha VT100 támogatja-e.
+Például:
 
 ```
 if ($host.UI.SupportsVirtualTerminal)
@@ -37,17 +38,18 @@ else
 Ez egy teljes [példa](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) , amely megfelel a kiemeléséhez használható Select karakterláncból.
 A példa nevű fájlba mentése `MatchInfo.format.ps1xml`, majd, a profil vagy máshol futtatni `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
 
-Vegye figyelembe, hogy VT100 escape-karaktersorozatokat csak támogatott kezdődő, és a Windows 10 évforduló frissítés; Ezek nem támogatottak a korábbi rendszereken.   
+Vegye figyelembe, hogy VT100 escape-karaktersorozatokat csak támogatott kezdődő, és a Windows 10 évforduló frissítés; Ezek nem támogatottak a korábbi rendszereken.
 
 ### <a name="vi-mode-support-in-psreadline"></a>A PSReadline VI mód támogatása
 
 [PSReadline](https://github.com/lzybkr/PSReadLine) vi módot támogat. Vi módban kell futtatni `Set-PSReadlineOption -EditMode Vi`.
 
-### <a name="redirected-stdin-with-interactive-input"></a>Interaktív bevitellel átirányított stdin 
+### <a name="redirected-stdin-with-interactive-input"></a>Interaktív bevitellel átirányított stdin
 
 A korábbi verziókban a PowerShell indítása `powershell -File -` volt szükség, amikor stdin át lett irányítva, és adja meg interaktív módon parancsok szeretne.
 
-A WMF 5.1, ezen nehéz felderíteni a beállítás már nem szükséges. Megkezdheti PowerShell pl. kapcsolók nélkül `powershell`.
+A WMF 5.1, ezen nehéz felderíteni a beállítás már nem szükséges.
+Megkezdheti PowerShell pl. kapcsolók nélkül `powershell`.
 
-Vegye figyelembe, hogy PSReadline jelenleg nem támogatja a átirányítva stdin, és átirányított stdin a beépített parancssori szerkesztési élményt rendkívül korlátozott, például a nyílbillentyűk nem működnek. Egy későbbi kiadásban az PSReadline eleget kell tennie a probléma.   
-
+Vegye figyelembe, hogy PSReadline jelenleg nem támogatja a átirányítva stdin, és átirányított stdin a beépített parancssori szerkesztési élményt rendkívül korlátozott, például a nyílbillentyűk nem működnek.
+Egy későbbi kiadásban az PSReadline eleget kell tennie a probléma.

@@ -133,7 +133,7 @@ Telepítse a [ `WindowsPSModulePath` ] [ windowspsmodulepath] modul, használhat
 Először telepítse a `WindowsPSModulePath` a PowerShell-galériából modul:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -160,7 +160,7 @@ Meg kell nyitnia az összes PowerShell regisztrálható az OpenSSH-alapú SSH-ki
 
 Konfigurálásával és használatával SSH-alapú távelérési további információkért lásd: [PowerShell távvezérlése SSH-n keresztül][ssh-remoting].
 
-## <a name="default-encoding-is-utf-8-without-a-bom"></a>Alapértelmezett kódolás az UTF-8 AJ nélkül
+## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Alapértelmezett kódolás az UTF-8, kivéve a New-ModuleManifest AJ nélkül
 
 A múltban, például a Windows PowerShell-parancsmagok `Get-Content`, `Set-Content` használt eltérő, például az ASCII és UTF-16 kódolást.
 A varianciája, akkor az alapértelmezett problémák létrehozásakor parancsmagok keverése kódolással megadása nélkül.
@@ -176,10 +176,9 @@ Ez a változás által érintett a következő parancsmagokat:
 - Export-Clixml
 - Export-Csv
 - Export-PSSession
-- Hexadecimális formátumú
+- Format-Hex
 - Get-Content
 - Import-Csv
-- Új ModuleManifest
 - Out-File
 - SELECT-karakterlánc
 - Send-MailMessage
@@ -190,6 +189,8 @@ Ezeket a parancsmagokat is frissítve lett, hogy a `-Encoding` paraméter egysé
 Az alapértelmezett érték `$OutputEncoding` is UTF-8 megváltozott.
 
 Ajánlott eljárásként, explicit módon célszerű kódolások a parancsfájlok használata a `-Encoding` paraméter a különböző platformokon kiszámíthatóbb viselkedést eredményez.
+
+`New-ModuleManifest` a parancsmag nem rendelkezik **kódolás** paraméter. A modul jegyzékfájlt (.psd1) fájl kódolási létre `New-ModuleManifest` parancsmag környezettől függ: Ha PowerShell Core Linux rendszeren fut majd kódolás az UTF-8 (nincs AJ); ellenkező esetben kódolás az UTF-16 (a AJ). (#3940)
 
 ## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>Támogatja az adatcsatornák az és jel backgrounding (`&`) (#3360)
 
@@ -225,7 +226,7 @@ PowerShell feladatok kapcsolatos további információkért lásd: [about_Jobs](
   - `GitCommitId`: Ez az a Git commit azonosítója a Git fiók vagy a címke ahol PowerShell lett létrehozva.
     A kiadott buildek, azt valószínűleg találkozik majd olyan azonos `PSVersion`.
   - `OS`: Ez az az operációs rendszer által visszaadott verzió-karakterlánca `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
-  - `Platform`: A rendszer által visszaadott `[System.Environment]::OSVersion.Platform` érték `Win32NT` Windows, a `MacOSX` a macOS, és `Unix` Linux.
+  - `Platform`: A rendszer által visszaadott `[System.Environment]::OSVersion.Platform` érték `Win32NT` Windows, a `Unix` a macOS, és `Unix` Linux.
 - Eltávolítja a `BuildVersion` tulajdonságot `$PSVersionTable`.
   Ez a tulajdonság erősen volt kötve a Windows verzió buildszámával.
   Ehelyett azt javasoljuk, hogy használjon `GitCommitId` PowerShell Core pontos buildszámának beolvasása. (#3877) (Köszönet a következőknek @iSazonov!)

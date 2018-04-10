@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A DSC ProcessSet erőforrás"
-ms.openlocfilehash: ec1d6a04b5debc22fe2f3b4a4396c385514a3b0c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A DSC ProcessSet erőforrás
+ms.openlocfilehash: d3c7383da5fd10580612527465ab621004ee7269
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowsprocess-resource"></a>A DSC WindowsProcess erőforrás
 
@@ -26,22 +26,21 @@ WindowsProcess [string] #ResourceName
     [ Ensure = [string] { Absent | Present }  ]
     [ StandardOutputPath = [string] ]
     [ StandardErrorPath = [string] ]
-    [ StandardInputPath = [string] ]   
+    [ StandardInputPath = [string] ]
     [ WorkingDirectory = [string] ]
     [ DependsOn = [string[]] ]
 }
 ```
 
 ## <a name="properties"></a>Tulajdonságok
-|  Tulajdonság  |  Leírás   | 
-|---|---| 
-| Argumentumok| A folyamat, argumentumokat tartalmazó karakterlánc-értéke. Ha több argumentumot továbbítani kell, helyezze őket az összes ezt a karakterláncot.| 
-| Elérési út| A folyamat végrehajtható fájlok elérési útjait. Ha a végrehajtható fájlok (teljesen minősített elérési utak) nevét, a DSC-erőforrás keressen-e a környezet **elérési** változó (`$env:Path`) található a fájl. Ha ez a tulajdonság értékének teljesen minősített elérési utak, DSC nem fogja használni a **elérési** környezeti változó található a fájl, és kivételhibát hiba történt az elérési utak közül bármelyik nem léteznek. Relatív útvonalak nem engedélyezettek.| 
-| hitelesítő adatok| Azt jelzi, hogy a hitelesítő adatokat kell elindítania a telepítést.| 
-| Győződjön meg arról| Meghatározza, hogy létezik-e a folyamatokat. Állítsa be ezt a tulajdonságot "Elérhető" Győződjön meg arról, hogy létezik-e a folyamat. Egyéb esetben állítsa "Hiányzik". Az alapértelmezett érték az "Elérhető".| 
-| StandardErrorPath| Az elérési utat, amelyhez a folyamatok írási standard hiba. Felülírja a meglévő fájlt.| 
-| StandardInputPath| Az adatfolyam, ahonnan a folyamat szabványos bemeneti kapja.| 
-| StandardOutputPath| A fájl elérési útját a, amelyhez a folyamat szabványos kimeneti írása. Felülírja a meglévő fájlt.| 
-| WorkingDirectory| A folyamatok, az aktuális munkakönyvtárban használt helyet.| 
-| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az **ResourceName** és annak típusa **_ResourceType**, szintaxisa a következő e tulajdonság használatával "DependsOn ="[ A ResourceType] ResourceName"".| 
-
+|  Tulajdonság  |  Leírás   |
+|---|---|
+| Argumentumok| A folyamat, argumentumokat tartalmazó karakterlánc-értéke. Ha több argumentumot továbbítani kell, helyezze őket az összes ezt a karakterláncot.|
+| Elérési út| A folyamat végrehajtható fájlok elérési útjait. Ha a végrehajtható fájlok (teljesen minősített elérési utak) nevét, a DSC-erőforrás keressen-e a környezet **elérési** változó (`$env:Path`) található a fájl. Ha ez a tulajdonság értékének teljesen minősített elérési utak, DSC nem fogja használni a **elérési** környezeti változó található a fájl, és kivételhibát hiba történt az elérési utak közül bármelyik nem léteznek. Relatív útvonalak nem engedélyezettek.|
+| hitelesítő adatok| Azt jelzi, hogy a hitelesítő adatokat kell elindítania a telepítést.|
+| Győződjön meg arról| Meghatározza, hogy létezik-e a folyamatokat. Állítsa be ezt a tulajdonságot "Elérhető" Győződjön meg arról, hogy létezik-e a folyamat. Egyéb esetben állítsa "Hiányzik". Az alapértelmezett érték az "Elérhető".|
+| StandardErrorPath| Az elérési utat, amelyhez a folyamatok írási standard hiba. Felülírja a meglévő fájlt.|
+| StandardInputPath| Az adatfolyam, ahonnan a folyamat szabványos bemeneti kapja.|
+| StandardOutputPath| A fájl elérési útját a, amelyhez a folyamat szabványos kimeneti írása. Felülírja a meglévő fájlt.|
+| WorkingDirectory| A folyamatok, az aktuális munkakönyvtárban használt helyet.|
+| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az **ResourceName** és annak típusa **_ResourceType**, szintaxisa a következő e tulajdonság használatával "DependsOn ="[ A ResourceType] ResourceName"".|

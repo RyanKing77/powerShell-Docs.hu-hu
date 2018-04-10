@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A DSC szolgáltatás erőforrás"
-ms.openlocfilehash: a549530edc19496a68c036fecbd18b0072cc6d74
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A DSC szolgáltatás erőforrás
+ms.openlocfilehash: 59d7c0c7147bf28b92d64a25c0d67c277e0bb210
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-service-resource"></a>A DSC szolgáltatás erőforrás
 
@@ -36,18 +36,18 @@ Service [string] #ResourceName
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   | 
-|---|---| 
-| Név| Azt jelzi, hogy a szolgáltatás nevét. Vegye figyelembe, hogy egyes esetekben ez eltér a megjelenített név. A szolgáltatások és a jelenlegi állapotában a Get-Service parancsmaggal kaphat.| 
-| BuiltInAccount| Azt jelzi, hogy a bejelentkezési fiókot szeretné használni a szolgáltatáshoz. Ez a tulajdonság számára engedélyezett az értékek a következők: **LocalService**, **LocalSystem**, és **NetworkService**.| 
-| hitelesítő adatok| Azt jelzi, hogy a szolgáltatás fog futni a fiók hitelesítő adatait. Ez a tulajdonság és a __BuiltinAccount__ tulajdonság nem használható együtt.| 
-| dependsOn| Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.| 
-| StartupType| Azt jelzi, hogy a szolgáltatás indítási típusa. Ez a tulajdonság számára engedélyezett az értékek a következők: **automatikus**, **letiltott**, és **manuális**| 
-| Állapot| Szeretne biztosítani a szolgáltatás állapotát jelzi.| 
-| Leírás | Azt jelzi, hogy a célként megadott szolgáltatás leírását.| 
-| DisplayName | Azt jelzi, hogy a célként megadott szolgáltatás megjelenített neve.| 
+|  Tulajdonság  |  Leírás   |
+|---|---|
+| Név| Azt jelzi, hogy a szolgáltatás nevét. Vegye figyelembe, hogy egyes esetekben ez eltér a megjelenített név. A szolgáltatások és a jelenlegi állapotában a Get-Service parancsmaggal kaphat.|
+| BuiltInAccount| Azt jelzi, hogy a bejelentkezési fiókot szeretné használni a szolgáltatáshoz. Ez a tulajdonság számára engedélyezett az értékek a következők: **LocalService**, **LocalSystem**, és **NetworkService**.|
+| hitelesítő adatok| Azt jelzi, hogy a szolgáltatás fog futni a fiók hitelesítő adatait. Ez a tulajdonság és a __BuiltinAccount__ tulajdonság nem használható együtt.|
+| dependsOn| Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.|
+| StartupType| Azt jelzi, hogy a szolgáltatás indítási típusa. Ez a tulajdonság számára engedélyezett az értékek a következők: **automatikus**, **letiltott**, és **manuális**|
+| Állapot| Szeretne biztosítani a szolgáltatás állapotát jelzi.|
+| Leírás | Azt jelzi, hogy a célként megadott szolgáltatás leírását.|
+| DisplayName | Azt jelzi, hogy a célként megadott szolgáltatás megjelenített neve.|
 | Győződjön meg arról | Azt jelzi, hogy a célként megadott szolgáltatás létezik-e a rendszeren. Ez a tulajdonság beállítása **távol** annak érdekében, hogy a célként megadott szolgáltatás nem létezik. Értékre állítaná **jelen** (az alapértelmezett érték) biztosítja, hogy létezik-e a célként megadott szolgáltatás.|
-| Elérési út | Azt jelzi, hogy egy új szolgáltatás a bináris fájl elérési útját.| 
+| Elérési út | Azt jelzi, hogy egy új szolgáltatás a bináris fájl elérési útját.|
 
 ## <a name="example"></a>Példa
 
@@ -63,8 +63,7 @@ configuration ServiceTest
             Name        = "TermService"
             StartupType = "Manual"
             State       = "Running"
-        } 
+        }
     }
 }
 ```
-

@@ -1,23 +1,25 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "gyűjtemény, a powershell, a parancsmag, a psgallery"
-title: "Tulajdonosainak kezelése"
-ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
+title: Tulajdonosainak kezelése
+ms.openlocfilehash: e550b74ebde00cfbb154dbf4fb1fa4ae0582e029
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-item-owners"></a>Tulajdonosainak kezelése
 
 A PowerShell-galériában elemének tulajdonjogát ki az elemet a katalógusban közzétett határozzák meg.
 Egyes esetekben a metaadatok kell lennie az első elem közzétételét, ami azt jelenti, hogy a tulajdonos metaadatok kell lennie változtatható, amíg az elemet nem túl.
 
-Az összes elem tulajdonosok társak. Ez azt jelenti, hogy bármely tulajdonosa közzététele egy elemet egy új verziója. Azt is jelenti, hogy bármely tulajdonosa távolíthatja bármely más tulajdonosa. Nincs a tulajdonosnak további hatóság, mint más tulajdonosai.  
+Az összes elem tulajdonosok társak.
+Ez azt jelenti, hogy bármely tulajdonosa közzététele egy elemet egy új verziója. Azt is jelenti, hogy bármely tulajdonosa távolíthatja bármely más tulajdonosa.
+Nincs a tulajdonosnak további hatóság, mint más tulajdonosai.
 
-## <a name="setting-an-items-initial-owner"></a>Egy elem kezdeti tulajdonos beállítása 
+## <a name="setting-an-items-initial-owner"></a>Egy elem kezdeti tulajdonos beállítása
 
 PowerShell-galériában egy új elemet tesznek közzé, ha a felhasználót, hogy az elem közzétett határozza meg a kezdeti tulajdonosa. Ez határozza meg, amelynek API által a Publish-modul a parancsmag a kulcs lett megadva.
 
@@ -78,4 +80,3 @@ Azt fogja majd végrehajtásával ellenőrizze a cikk a tulajdonjogát.
 Meg kell határozni egy olyan tulajdonost, az elem el, ha rendszer használja a "Tulajdonosok kezelése" hivatkozást a cikkhez ragozott formáival és küldeni a meghívás tulajdonosa lesz.
 Műveleteket végezzük el csak ezt követően ellenőrzi, hogy egy olyan tulajdonost kell lennie, és ez a folyamat függ a körülmények között.
 Gyakran, az elem projekt URL-cím segítségével tudja lépjen kapcsolatba a projekt tulajdonosa szorosa is használhatunk, Twitter, e-mailek vagy más módon való kapcsolódáshoz a projekt tulajdonosa.
-

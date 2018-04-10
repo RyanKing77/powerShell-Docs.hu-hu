@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
 title: modulewithpseditionsupport
-ms.openlocfilehash: 8a762ddf307f47ecec8d2a63098e75cde97c391f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: cc4ab8d41d4c6aace72cbeeabcf510fab6d3a999
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Verzióval kompatibilis PowerShell modulok
 Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhető el, amelyek különböző szolgáltatáskészleteket és platformkompatibilitást kínálnak.
@@ -68,7 +68,7 @@ Core
 
 ```
 
-## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>A modul szerzők tehet közzé egy egy modul a célcsoport-kezelési egyik vagy mindkét PowerShell-kiadások (asztali és mag) 
+## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>A modul szerzők tehet közzé egy egy modul a célcsoport-kezelési egyik vagy mindkét PowerShell-kiadások (asztali és mag)
 
 Egy modul asztal és a Core kiadásában használható, az adott modul Szerző szükséges logika hozzáadása vagy RootModule vagy a moduljegyzékben $PSEdition változóval rendelkezik.
 Modulok rendelkezhet lefordított DLL-ek CoreCLR és a FullCLR célzó két csoportja.
@@ -77,18 +77,18 @@ Az alábbiakban a néhány lehetőségek kiválasztásával becsomagolhatja a mo
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>1. lehetőség: Csomagolására hajthatja végre a több verziói és több a PowerShell modul
 
 #### <a name="module-folder-contents"></a>A modul mappa tartalma
-- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - PSScriptAnalyzer.psd1
 - PSScriptAnalyzer.psm1
 - ScriptAnalyzer.format.ps1xml
 - ScriptAnalyzer.types.ps1xml
-- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - en-US\about_PSScriptAnalyzer.help.txt
 - en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml
-- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - Settings\CmdletDesign.psd1
 - Settings\DSC.psd1
 - Settings\ScriptFunctions.psd1
@@ -99,7 +99,7 @@ Az alábbiakban a néhány lehetőségek kiválasztásával becsomagolhatja a mo
 
 ```powershell
 @{
- 
+
 # Author of this module
 Author = 'Microsoft Corporation'
 
@@ -137,7 +137,7 @@ else
 {
     if ($PSVersionTable.PSVersion -lt [Version]'5.0') {
         $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
-    }    
+    }
 }
 
 $binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
@@ -146,14 +146,14 @@ $binaryModule = Import-Module -Name $binaryModulePath -PassThru
 # When the module is unloaded, remove the nested binary module that was loaded with it
 $PSModule.OnRemove = {
     Remove-Module -ModuleInfo $binaryModule
-} 
+}
 
 ```
 
 ### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>2. lehetőség: A psd1 kiterjesztésű fájl $PSEdition változót használja a megfelelő DLL-EK és a beágyazott/szükséges modulok betöltése
 
 PS 5.1-es vagy újabb a modul jegyzékfájl $PSEdition globális változó használata engedélyezett.
-Használja ezt a változót, modul Szerző értékeket adhat meg a feltételes modul jegyzékfájl. Korlátozott nyelvi módban, vagy egy adatszakasz $PSEdition változó lehet hivatkozni. 
+Használja ezt a változót, modul Szerző értékeket adhat meg a feltételes modul jegyzékfájl. Korlátozott nyelvi módban, vagy egy adatszakasz $PSEdition változó lehet hivatkozni.
 
 *Megjegyzés:* után egy moduljegyzék CompatiblePSEditions a kulccsal van megadva, vagy használja $PSEdition változót, akkor nem importálható PowerShell korábbi verzióiban.
 
@@ -161,9 +161,9 @@ Használja ezt a változót, modul Szerző értékeket adhat meg a feltételes m
 #### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>Minta modul jegyzékfájl CompatiblePSEditions kulccsal
 
 ```powershell
-@{ 
+@{
 # - - -
- 
+
 # Script module or binary module file associated with this manifest.
 RootModule = if($PSEdition -eq 'Core')
 {
@@ -173,10 +173,10 @@ else # Desktop
 {
 'clr\MyFullClrRM.dll'
 }
- 
+
 # Supported PSEditions
 CompatiblePSEditions = 'Desktop', 'Core'
- 
+
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 NestedModules = if($PSEdition -eq 'Core')
 {
@@ -188,7 +188,7 @@ else # Desktop
 'clr\MyFullClrNM1.dll',
 'clr\MyFullClrNM2.dll'
 }
- 
+
 # -- - -
 }
 ```
@@ -198,30 +198,30 @@ else # Desktop
 ```powershell
 
 PS C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions> dir -Recurse
- 
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
-d-----         7/5/2016   1:37 PM                clr                                                                                 
-d-----         7/5/2016   1:36 PM                coreclr                                                                             
--a----         7/5/2016   1:34 PM           4906 ModuleWithEditions.psd1                                                             
- 
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         7/5/2016   1:37 PM                clr
+d-----         7/5/2016   1:36 PM                coreclr
+-a----         7/5/2016   1:34 PM           4906 ModuleWithEditions.psd1
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\clr
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
--a----         7/5/2016   1:35 PM              0 MyFullClrNM1.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyFullClrNM2.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyFullClrRM.dl                                                                      
- 
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         7/5/2016   1:35 PM              0 MyFullClrNM1.dll
+-a----         7/5/2016   1:35 PM              0 MyFullClrNM2.dll
+-a----         7/5/2016   1:35 PM              0 MyFullClrRM.dl
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\coreclr
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
--a----         7/5/2016   1:35 PM              0 MyCoreClrNM1.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyCoreClrNM2.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         7/5/2016   1:35 PM              0 MyCoreClrNM1.dll
+-a----         7/5/2016   1:35 PM              0 MyCoreClrNM2.dll
+-a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl
 ```
 
 ## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>PowerShell-galériában felhasználói is megtalálhassák egy adott kiadásán PowerShell támogatott listájához PSEdition_Desktop és PSEdition_Core címkék használatával.
@@ -242,4 +242,3 @@ Find-Module -Tag PSEditon_Core
 ### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[PSEditions paraméterrel rendelkező parancsfájlok](../script/scriptwithpseditionsupport.md)
 ### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[Támogatja a PSEditions PowerShellGallery](../../psgallery/psgallery_pseditions.md)
 ### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a>[Frissítési moduljegyzék] (./psget_update-modulemanifest.md)
-

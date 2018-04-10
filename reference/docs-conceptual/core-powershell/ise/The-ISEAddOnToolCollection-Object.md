@@ -1,42 +1,31 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: A ISEAddOnToolCollection objektum
+title: Az ISEAddOnToolCollection objektum
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
-ms.openlocfilehash: ba8b4e0e3952226407f00dea8b32785633256089
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: ff4f19d1a85a592f2f4f09c62caa0971751bdff7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="the-iseaddontoolcollection-object"></a>A ISEAddOnToolCollection objektum
-  A **ISEAddOnToolCollection** objektum gyűjteménye **ISEAddOnTool** objektumok. Példa: a **$psISE.CurrentPowerShellTab.VerticalAddOnTools** objektum.
+# <a name="the-iseaddontoolcollection-object"></a>Az ISEAddOnToolCollection objektum
+
+A **ISEAddOnToolCollection** objektum gyűjteménye **ISEAddOnTool** objektumok. Példa: a **$psISE.CurrentPowerShellTab.VerticalAddOnTools** objektum.
 
 ## <a name="methods"></a>Metódusok
 
-### <a name="add-name-controltype-isvisible-"></a>Adja hozzá\( nevét, ControlType, \[IsVisible\]\)
-  Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók. 
+### <a name="add-name-controltype-isvisible-"></a>Adja hozzá\( nevét, ControlType, \[IsVisible\] \)
 
- Egy új bővítménye, amellyel hozzáadja a gyűjteményben. Az újonnan hozzáadott bővítmény eszközt ad vissza. Ez a parancs futtatása előtt telepítse a bővítmény eszközt a helyi számítógépen, és a szerelvény betöltése.
+Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók.
 
- **Név** -karakterláncot határozza meg a Windows PowerShell ISE hozzáadott bővítmény eszköz megjelenítési neve.
+Egy új bővítménye, amellyel hozzáadja a gyűjteményben. Az újonnan hozzáadott bővítmény eszközt ad vissza. Ez a parancs futtatása előtt telepítse a bővítmény eszközt a helyi számítógépen, és a szerelvény betöltése.
 
- **ControlType** – azt adja meg a hozzáadott vezérlő.
+**Név** -karakterláncot határozza meg a Windows PowerShell ISE hozzáadott bővítmény eszköz megjelenítési neve.
 
- **\[IsVisible\]**  -választható logikai Ha **$true**, a bővítmény eszköz azonnal látható, a kapcsolódó eszköz panelen.
+**ControlType** – azt adja meg a hozzáadott vezérlő.
 
-```powershell
-# Load a DLL with an add-on and then add it to the ISE
-[reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
-$psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
-```
-
-### <a name="remove-item-"></a>Távolítsa el\( elem\)
-  Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók. 
-
- A megadott bővítmény eszköz eltávolítása a gyűjteményben.
-
- **Elem** -Microsoft.PowerShell.Host.ISE.ISEAddOnTool eltávolítsa őket a Windows PowerShell ISE-objektumot adja meg.
+**\[IsVisible\]**  -választható logikai Ha **$true**, a bővítmény eszköz azonnal látható, a kapcsolódó eszköz panelen.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE
@@ -44,38 +33,52 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### <a name="setselectedpowershelltab-pstab-"></a>SetSelectedPowerShellTab\( psTab\)
-  Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók. 
+### <a name="remove-item-"></a>Távolítsa el\( elem \)
 
- Kiválasztja a PowerShell lap, amely a **psTab** paraméter határozza meg.
+Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók.
 
- **psTab** -Microsoft.PowerShell.Host.ISE.PowerShellTab a PowerShell fülre kattintva válassza ki.
+A megadott bővítmény eszköz eltávolítása a gyűjteményben.
+
+**Elem** -Microsoft.PowerShell.Host.ISE.ISEAddOnTool eltávolítsa őket a Windows PowerShell ISE-objektumot adja meg.
 
 ```powershell
-      $newTab = $psISE.PowerShellTabs.Add()
-# Change the DisplayName of the new PowerShell tab. 
-$newTab.DisplayName="Brand New Tab"
+# Load a DLL with an add-on and then add it to the ISE
+[reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
+$psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### <a name="remove-pstab-"></a>Távolítsa el\( psTab\)
-  Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók. 
+### <a name="setselectedpowershelltab-pstab-"></a>SetSelectedPowerShellTab\( psTab \)
 
- Eltávolítja a PowerShell lap, amely a **psTab** paraméter határozza meg.
+Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók.
 
- **psTab** -Microsoft.PowerShell.Host.ISE.PowerShellTab a PowerShell fülre, és távolítsa el.
+Kiválasztja a PowerShell lap, amely a **psTab** paraméter határozza meg.
+
+**psTab** -Microsoft.PowerShell.Host.ISE.PowerShellTab a PowerShell fülre kattintva válassza ki.
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
-Change the DisplayName of the new PowerShell tab. 
-$newTab.DisplayName="This tab will go away in 5 seconds" 
-sleep 5 
+# Change the DisplayName of the new PowerShell tab.
+$newTab.DisplayName = 'Brand New Tab'
+```
+
+### <a name="remove-pstab-"></a>Távolítsa el\( psTab \)
+
+Támogatja a Windows PowerShell ISE 3.0-s és újabb verziók, és nem található meg a korábbi verziók.
+
+Eltávolítja a PowerShell lap, amely a **psTab** paraméter határozza meg.
+
+**psTab** -Microsoft.PowerShell.Host.ISE.PowerShellTab a PowerShell fülre, és távolítsa el.
+
+```powershell
+$newTab = $psISE.PowerShellTabs.Add()
+Change the DisplayName of the new PowerShell tab.
+$newTab.DisplayName = 'This tab will go away in 5 seconds'
+sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
 ## <a name="see-also"></a>Lásd még:
-- [A PowerShellTab objektum](The-PowerShellTab-Object.md) 
-- [A Windows PowerShell ISE Scripting Hálózatiobjektum-modellje](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [A Windows PowerShell ISE objektumhivatkozás modell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
-- [A ISE objektum modell hierarchia](The-ISE-Object-Model-Hierarchy.md)
 
-  
+- [The PowerShellTab Object](The-PowerShellTab-Object.md)
+- [A Windows PowerShell ISE objektummodell Scripting célja](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Az ISE objektummodell-hierarchiája](The-ISE-Object-Model-Hierarchy.md)

@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat létrehozása"
-ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat létrehozása
+ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat létrehozása
 
 Ez a példa bemutatja, hogyan folyamatos integráció/Continuous Deployment (CI/CD) folyamat létrehozása a PowerShell DSC, Pester és a Visual Studio Team Foundation Server (TFS) használatával.
 
-A feldolgozási sor összeállítása és konfigurálva, után teljes telepítéséhez, konfigurálásához, és DNS-kiszolgáló tesztelése alkalmazhat, és állomásrekordokat társított. Ez a folyamat első része egy folyamatot, amely fejlesztői környezetben használni szimulálja.
+A feldolgozási sor összeállítása és konfigurálva, után teljes telepítéséhez, konfigurálásához, és DNS-kiszolgáló tesztelése alkalmazhat, és állomásrekordokat társított.
+Ez a folyamat első része egy folyamatot, amely fejlesztői környezetben használni szimulálja.
 
 Egy automatizált CI/CD folyamat segít a gyorsabb frissítse a szoftvert, és megbízhatóbb, győződjön meg arról, hogy az összes kód szolgáltatás tesztelése, és hogy a kód aktuális build mindenkor.
 
@@ -36,7 +37,7 @@ Ez az a számítógépen, ahol el kell végeznie összes beállíthatja és futt
 
 Az ügyfélszámítógép kell lennie a Windows rendszerű számítógépeken telepítve a következőre:
 - [Git](https://git-scm.com/)
-- egy helyi git-tárház https://github.com/PowerShell/Demo_CI alapján klónozták
+- egy helyi git-tárház alapján klónozták https://github.com/PowerShell/Demo_CI
 - egy szövegszerkesztőben, például a [Visual Studio Code](https://code.visualstudio.com/)
 
 ### <a name="tfssrv1"></a>TFSSrv1
@@ -60,7 +61,7 @@ A számítógépen futnia kell [Windows Server 2016](https://www.microsoft.com/e
 ### <a name="testagent2"></a>TestAgent2
 
 Ez az a számítógép, amelyen a webhely a példa.
-A számítógépen futnia kell [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). 
+A számítógépen futnia kell [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
 
 ## <a name="add-the-code-to-tfs"></a>Adja hozzá a kódot TFS
 
@@ -156,7 +157,8 @@ Ez azoknak a fürtöknek, egyik szerepköre rendelkezőként meghatározott tal�
 
 Konfigurációs adatok segítségével határozza meg a csomópontok fontos CI során, mert a csomópont információk valószínűleg változik a különböző környezetek között, és a konfigurációs adatok használatával lehetővé teszi, könnyen módosíthatja csomópont adatokat a konfigurációs kódjának módosítása nélkül.
 
-Az első erőforrás blokkban, a konfiguráció meghívja a [WindowsFeature](windowsFeatureResource.md) annak érdekében, hogy a DNS szolgáltatás engedélyezve van-e. A hívás erőforrások a következő erőforrás blokkolja a [xDnsServer](https://github.com/PowerShell/xDnsServer) modul elsődleges zóna és a DNS-rekordok konfigurálása.
+Az első erőforrás blokkban, a konfiguráció meghívja a [WindowsFeature](windowsFeatureResource.md) annak érdekében, hogy a DNS szolgáltatás engedélyezve van-e.
+A hívás erőforrások a következő erőforrás blokkolja a [xDnsServer](https://github.com/PowerShell/xDnsServer) modul elsődleges zóna és a DNS-rekordok konfigurálása.
 
 Figyelje meg, hogy a két `xDnsRecord` blokkok csomagolni vannak `foreach` , amely a konfigurációs adatokat a tömbök iterációt hurkok.
 Ebben az esetben a konfigurációs adatok hozta létre a `DevEnv.ps1` parancsfájl, amely megnézzük, a Tovább gombra.
@@ -199,7 +201,8 @@ Ebben az esetben csak a `RawEnvData` paraméterrel.
 ### <a name="the-psake-build-script"></a>A psake build script
 
 A [psake](https://github.com/psake/psake) definiált parancsfájl összeállítása `Build.ps1` (Demo_CI tárház gyökérkönyvtárában `./InfraDNS/Build.ps1`) határozza meg a build feladatainak.
-Minden tevékenység attól függ, milyen egyéb feladatokat is meghatározza. Meghívásakor, a psake parancsfájl biztosítja, hogy a megadott feladat (vagy nevű feladat `Default` Ha nincs megadva) fut, és, hogy az összes függősége is futtathatnak (rekurzív, azt, hogy a függőségek függőségek, és így tovább).
+Minden tevékenység attól függ, milyen egyéb feladatokat is meghatározza.
+Meghívásakor, a psake parancsfájl biztosítja, hogy a megadott feladat (vagy nevű feladat `Default` Ha nincs megadva) fut, és, hogy az összes függősége is futtathatnak (rekurzív, azt, hogy a függőségek függőségek, és így tovább).
 
 Ebben a példában a `Default` feladat típusúként van definiálva:
 
@@ -263,7 +266,7 @@ A például szolgáló mappákat hoz létre, és a vizsgálati eredmények, a ko
 
 A [psake](https://github.com/psake/psake) meghatározott telepítési parancsfájl `Deploy.ps1` (Demo_CI tárház gyökérkönyvtárában `./InfraDNS/Deploy.ps1`) telepítése, és futtassa a konfigurációs feladatokat, határozza meg.
 
-`Deploy.ps1`Meghatározza, hogy a következő feladatokat:
+`Deploy.ps1` Meghatározza, hogy a következő feladatokat:
 
 #### <a name="deploymodules"></a>DeployModules
 
@@ -334,8 +337,8 @@ Ez a lépés build a `initiate.ps1` fájlt, amely meghívja a psake build paranc
 
 ### <a name="publish-test-results"></a>Vizsgálati eredmények közzététele
 
-1. Állítsa be **Eredményformátum tesztelése** számára`NUnit`
-1. Állítsa be **teszteredményei fájlok** számára`InfraDNS/Tests/Results/*.xml`
+1. Állítsa be **Eredményformátum tesztelése** számára `NUnit`
+1. Állítsa be **teszteredményei fájlok** számára `InfraDNS/Tests/Results/*.xml`
 1. Állítsa be **futtatási cím tesztelése** való `Unit`.
 1. Győződjön meg arról, hogy **beállítások** **engedélyezve** és **mindig fusson** biztosan mindkét kiválasztott.
 
@@ -352,15 +355,15 @@ A build lépés a egység tesztek fut a Microsoft megvizsgálta a korábbi Peste
     **\Integration\**
     ```
 
-1. Állítsa be **TargetFolder** számára`$(Build.ArtifactStagingDirectory)\`
+1. Állítsa be **TargetFolder** számára `$(Build.ArtifactStagingDirectory)\`
 
 Ezt a lépést, másolja át a összeállítása és tesztelése a parancsfájlok az átmeneti könyvtárhoz úgy, hogy a tehetők közzé, az összetevők létrehozása a következő lépésben.
 
 ### <a name="publish-artifact"></a>Összetevő közzététele
 
-1. Állítsa be **közzététele elérési út** számára`$(Build.ArtifactStagingDirectory)\`
-1. Állítsa be **Adatösszetevőt nevét** számára`Deploy`
-1. Állítsa be **összetevő típus** számára`Server`
+1. Állítsa be **közzététele elérési út** számára `$(Build.ArtifactStagingDirectory)\`
+1. Állítsa be **Adatösszetevőt nevét** számára `Deploy`
+1. Állítsa be **összetevő típus** számára `Server`
 1. Válassza ki `Enabled` a **beállításokat**
 
 ## <a name="enable-continuous-integration"></a>Folyamatos integráció engedélyezése
@@ -393,21 +396,21 @@ A lépések az alábbiak szerint szerkesztése:
 
 ### <a name="powershell-script"></a>PowerShell Script
 
-1. Állítsa be a **parancsfájl elérési útján** mezőről`$(Build.DefinitionName)\Deploy\initiate.ps1"`
-1. Állítsa be a **argumentumok** mezőről`-fileName Deploy`
+1. Állítsa be a **parancsfájl elérési útján** mezőről `$(Build.DefinitionName)\Deploy\initiate.ps1"`
+1. Állítsa be a **argumentumok** mezőről `-fileName Deploy`
 
 ### <a name="first-publish-test-results"></a>Először a vizsgálati eredmények közzététele
 
 1. Válassza ki `NUnit` a a **teszt Eredményformátum** mező
-1. Állítsa be a **vizsgálati eredményeket tartalmazó fájlokat** mezőről`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
-1. Állítsa be a **futtatási cím tesztelése** számára`Integration`
+1. Állítsa be a **vizsgálati eredményeket tartalmazó fájlokat** mezőről `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
+1. Állítsa be a **futtatási cím tesztelése** számára `Integration`
 1. A **beállítások**, ellenőrizze **mindig futtatása**
 
 ### <a name="second-publish-test-results"></a>Vizsgálati eredmények második közzététele
 
 1. Válassza ki `NUnit` a a **teszt Eredményformátum** mező
-1. Állítsa be a **vizsgálati eredményeket tartalmazó fájlokat** mezőről`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
-1. Állítsa be a **futtatási cím tesztelése** számára`Acceptance`
+1. Állítsa be a **vizsgálati eredményeket tartalmazó fájlokat** mezőről `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
+1. Állítsa be a **futtatási cím tesztelése** számára `Acceptance`
 1. A **beállítások**, ellenőrizze **mindig futtatása**
 
 ## <a name="verify-your-results"></a>Az eredmények ellenőrzése
@@ -422,10 +425,3 @@ Ellenőrizheti a telepítés eredményét, nyisson meg egy böngészőt, az ügy
 Ebben a példában a DNS-kiszolgáló konfigurálása `TestAgent1` , hogy az URL-cím `www.contoso.com` oldja fel `TestAgent2`, de nem telepítheti valójában a webhely.
 A vázat úgy valósul meg a tárházban alatt a `WebApp` mappát.
 A kódcsonkok psake parancsfájlok, Pester a és a DSC-konfigurációk létrehozásához megadott segítségével telepítheti a saját webhelyén.
-
-
-
-
-
-
-

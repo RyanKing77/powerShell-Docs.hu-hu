@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, a powershell, a biztonsági"
-title: "JEA Előfeltételek"
-ms.openlocfilehash: e6ee16e34eb9f1f0b2f3601c1aa9e90ab4f785f1
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea, a powershell, a biztonsági
+title: JEA Előfeltételek
+ms.openlocfilehash: 92a74d89a0e982e9f45e69d92b261756de33c038
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="prerequisites"></a>Előfeltételek
 
@@ -111,4 +111,3 @@ Rendszerszintű PowerShell írjanak elő csoportházirenden keresztül is enged�
 
 - [PowerShell távvezérlése és a Rendszerfelügyeleti webszolgáltatások biztonsággal kapcsolatos további információk](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ a kék Team* a biztonsági által írt blogbejegyzés](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A kívánt állapot konfigurációs szolgáltatása (DSC) első lépései Linux rendszeren"
-ms.openlocfilehash: 4fd8460bc5d2564cab291904b60a1a0c26c3e5a7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A kívánt állapot konfigurációs szolgáltatása (DSC) első lépései Linux rendszeren
+ms.openlocfilehash: b2f35ebe84dfd9f68ca07e7630534be59f8a1aa3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>A kívánt állapot konfigurációs szolgáltatása (DSC) első lépései Linux rendszeren
 
@@ -25,14 +25,14 @@ A következő Linux operációsrendszer-verziók DSC Linux támogatottak.
 
 A következő táblázat ismerteti a szükséges csomagfüggőségek Linux a DSC-ből.
 
-|  Szükséges csomag |  Leírás |  Minimális verzió | 
+|  Szükséges csomag |  Leírás |  Minimális verzió |
 |---|---|---|
-| glibc| GNU könyvtár| 2…4 – 31.30| 
-| python| Python| 2.4 – 3.4| 
-| omiserver| Nyílt kezelési infrastruktúra| 1.0.8.1| 
-| Openssl| OpenSSL-függvénytárak| 0.9.8-as vagy 1.0| 
-| ctypes| Python CTypes könyvtár| Meg kell egyeznie a Python-verzió| 
-| libcurl| cURL http ügyféloldali kódtár| 7.15.1| 
+| glibc| GNU könyvtár| 2…4 – 31.30|
+| python| Python| 2.4 – 3.4|
+| omiserver| Nyílt kezelési infrastruktúra| 1.0.8.1|
+| Openssl| OpenSSL-függvénytárak| 0.9.8-as vagy 1.0|
+| ctypes| Python CTypes könyvtár| Meg kell egyeznie a Python-verzió|
+| libcurl| cURL http ügyféloldali kódtár| 7.15.1|
 
 ## <a name="installing-dsc-for-linux"></a>A Linux DSC telepítése
 
@@ -52,12 +52,12 @@ A következő paranccsal telepíthető OMI CentOS 7 x64 rendszeren.
 
 ### <a name="installing-dsc"></a>A DSC telepítése
 
-Linux DSC érhető el a letöltési [Itt](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest). 
+Linux DSC érhető el a letöltési [Itt](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest).
 
 A DSC telepítéséhez telepítse a csomagot, amely megfelel a Linux rendszer (.rpm vagy .deb) és a OpenSSL-verzió (ssl_098 vagy ssl_100) és az architektúra (x64/x86). RPM csomagok CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server és Oracle Linux alkalmasak. DEB-csomagokat a Debian GNU/Linux és Ubuntu Server alkalmasak. A ssl_098 csomagok megfelelőek OpenSSL telepítve, miközben az OpenSSL 1.0 telepítve olyan számítógépek a ssl_100 csomagok 0.9.8-as rendelkező számítógépek.
 
 > **Megjegyzés:**: annak meghatározásához, a telepített OpenSSL-verzió, a parancs openssl verzióját futtatják.
- 
+
 A következő paranccsal telepíthető DSC CentOS 7 x64 rendszeren.
 
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
@@ -74,10 +74,10 @@ A Windows PowerShell-konfiguráció kulcsszó létrehozásához használt Linux 
 1. A nx modul importálása. Nx Windows PowerShell-modul tartalmaz az a séma beépített erőforrások DSC Linux, és telepítve legyen a helyi számítógépen, és importálja a konfigurációban.
 
     -A nx modul telepítése, másolja a nx modulkönyvtárat vagy `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` vagy `$PSHOME\Modules`. A nx modul tartalmazza a DSC Linux-telepítési csomag (MSI). A nx moduljának a konfiguráció importálásához használja a __Import-DSCResource__ parancs:
-    
+
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DSCResource -Module nx
 
 }
@@ -86,9 +86,9 @@ Configuration ExampleConfiguration{
 
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DscResource -Module nx
- 
+
     Node  "linuxhost.contoso.com"{
     nxFile ExampleFile {
 
@@ -100,7 +100,7 @@ Configuration ExampleConfiguration{
 
     }
 }
-ExampleConfiguration -OutputPath:"C:\temp" 
+ExampleConfiguration -OutputPath:"C:\temp"
 ```
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>A konfigurációs leküldése a Linux rendszerű számítógép
@@ -117,15 +117,15 @@ $Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
 #$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true 
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90 
+$opt = New-CimSessionOption -UseSsl:$true
+$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
 ```
 
 > **Megjegyzés:**:
 * Az "Push" módban a felhasználó hitelesítő adatainak a gyökér szintű felhasználó a Linux rendszerű számítógépen kell lennie.
 * A Linux, a New-CimSession együtt kell használni a – UseSSL paraméter $true DSC csak SSL/TLS kapcsolatok támogatottak.
 * Az SSL-tanúsítvány által használt OMI (DSC) a fájlban megadott: `/opt/omi/etc/omiserver.conf` a tulajdonságokkal: pemfile és keyfile.
-Ha ez a tanúsítvány nem megbízható által a Windows-számítógép, amely futtatja a [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) parancsmagot, ha szeretné, figyelmen kívül hagyja a CIMSession beállításokkal tanúsítvány érvényesítése:`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+Ha ez a tanúsítvány nem megbízható által a Windows-számítógép, amely futtatja a [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) parancsmagot, ha szeretné, figyelmen kívül hagyja a CIMSession beállításokkal tanúsítvány érvényesítése: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
 A következő parancsot a DSC-konfiguráció leküldése a Linux-csomópont.
 
@@ -162,7 +162,7 @@ Linux DSC tartalmaz a helyi Linux számítógép-konfiguráció használható pa
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* StartDscLocalConfigurationManager.py 
+* StartDscLocalConfigurationManager.py
 
  A számítógép érvényes konfigurációs MOF-fájlt. Hasonló a [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) parancsmag. A konfiguráció alkalmazásához MOF elérési igényel.
 
@@ -182,4 +182,3 @@ A következő naplófájlokba Linux üzenetek DSC jön létre.
 |---|---|---|
 |omiserver.log|/var/OPT/OMI/log|Az OMI a CIM-kiszolgáló működésével kapcsolatos üzeneteket.|
 |dsc.log|/var/OPT/OMI/log|A helyi Configuration Manager (LCM) és a DSC erőforrás műveletek működésével kapcsolatos üzeneteket.|
-

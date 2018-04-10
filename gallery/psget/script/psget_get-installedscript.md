@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
 title: Get-InstalledScript
-ms.openlocfilehash: f35e57cdadd1448bd9032ab007d692003c4cf4a2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 668327905b0dab40119940a3134b674c452f538d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-installedscript"></a>Get-InstalledScript
 
@@ -24,7 +24,7 @@ Minden telepített parancsprogram Get-InstalledScript ad vissza egy PSRepository
 - Get-InstalledScript verzió paraméterekkel szűrheti: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - Ezek a paraméterek kölcsönösen kizárják egymást, kivéve a MinmimumVersion és MaximumVersion.
   - Ezen verzió paraméterek csak nevű egyetlen parancsfájllal bármely helyettesítő karakterek nem engedélyezettek.
-  - Ha a RequiredVersion paraméter nincs megadva, a Get-InstalledScript a legújabb verzióját a telepített parancsfájl, amely egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a parancsfájl nincs minimális verzió megadása adja vissza. 
+  - Ha a RequiredVersion paraméter nincs megadva, a Get-InstalledScript a legújabb verzióját a telepített parancsfájl, amely egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a parancsfájl nincs minimális verzió megadása adja vissza.
   - A RequiredVersion paraméter van megadva, az Get-InstalledScript csak adja vissza a telepített parancsfájl, amely pontosan megegyezik a megadott version verzióját.
 
 ## <a name="cmdlet-syntax"></a>A parancsmag szintaxisa
@@ -98,4 +98,3 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Scripts
 
 
 ```
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: aaf1809277f072c82e5a1a862ea64b75586e32d1
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: dee5e8206c61d79faadf8573a82c74d4ac0fb8e0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="improvements-in-powershell-script-debugging"></a>A PowerShell-parancsprogram-hibakeresés fejlesztései
+# <a name="improvements-in-powershell-script-debugging"></a>A PowerShell parancsfájlokban végzett hibakeresésének javításai
 
 Számos fejlesztéssel PowerShell 5.0 került sor a hibakeresési élmény javítása érdekében:
 
@@ -41,8 +41,8 @@ Nincsenek új, speciális hibakeresési szolgáltatásokat, amelyek lehetővé t
 
 Új parancsmagokkal bővült, amelyek lehetővé teszik, hogy a folyamat az aktuális futási terek listában, és a Windows PowerShell-konzolt vagy az ISE hibakereső csatlakoztatni, hogy futási térben a parancsprogram-hibakeresés engedélyezése:
 
--   Get-futási térben
--   Hibakeresési-futási térben
+-   Get-Runspace
+-   Debug-Runspace
 -   Enable-RunspaceDebug
 -   Disable-RunspaceDebug
 -   Get-RunspaceDebug
@@ -51,6 +51,5 @@ Nincsenek új, speciális hibakeresési szolgáltatásokat, amelyek lehetővé t
 
 E számítógép folyamat, amely rendelkezik a Windows PowerShell betöltött most csatlakoztatni. Ehhez a folyamathoz hasonló módon, hogy miként meg interaktív távoli munkamenetbe a Enter-PSSession parancsmag futtatásával egy interaktív munkamenet megadva:
 
--   Adja meg PSHostProcess
--   Kilépés-PSHostProcess
-
+-   Enter-PSHostProcess
+-   Exit-PSHostProcess

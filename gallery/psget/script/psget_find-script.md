@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
-title: "Keresés – parancsprogram"
-ms.openlocfilehash: df62a9934d8013d37bd0083c03f90fa7fa05ac0c
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
+title: Keresés – parancsprogram
+ms.openlocfilehash: 1f5076d94015c0b1041591144f1f0fe36819204b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="find-script"></a>Keresés – parancsprogram
 
@@ -24,7 +24,7 @@ Keresés-parancsfájl parancsmag lehetővé teszi a parancsfájlok, például a 
 - Keresés-parancsfájl verziója paraméterekkel szűrheti: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - Ezek a paraméterek kölcsönösen kizárják egymást, kivéve a MinmimumVersion és MaximumVersion.
   - Ezen verzió paraméterek csak nevű egyetlen parancsfájllal bármely helyettesítő karakterek nem engedélyezettek.
-  - A RequiredVersion paraméter nincs megadva, ha a keresés-parancsfájl a legújabb verzióját a parancsfájlt, amely egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a parancsfájl nincs minimális verzió megadása adja vissza. 
+  - A RequiredVersion paraméter nincs megadva, ha a keresés-parancsfájl a legújabb verzióját a parancsfájlt, amely egyenlő vagy nagyobb, mint a minimális verzió van megadva, vagy a legújabb verzióját a parancsfájl nincs minimális verzió megadása adja vissza.
   - A RequiredVersion paraméter van megadva, az keresés-parancsfájl csak adja vissza a parancsfájlt, amely pontosan megegyezik a megadott version verzióját.
 - Keresés-parancsfájl szűrést végezhet a parancsprogram-metaadatait az a – Tag paraméter.
 - Keresés parancsfájl-tárház vonatkozó keresést nyelvével szűrheti az - szűrő paraméterrel.
@@ -40,7 +40,7 @@ Get-Command -Name Find-Script -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>A parancsmag online Súgó-hivatkozás
 
-[Keresés – parancsprogram](http://go.microsoft.com/fwlink/?LinkId=619785)
+[Find-Script](http://go.microsoft.com/fwlink/?LinkId=619785)
 
 ## <a name="example-commands"></a>Példa parancsok
 
@@ -61,7 +61,7 @@ Find-Script -Name *Azure*
 # Find all versions of a script
 Find-Script -Name Connect-O365 -AllVersions
 
-# Find a script with -MinimumVersion. 
+# Find a script with -MinimumVersion.
 # With MinimumVersion we can find a script whose version is greate than or equal to the specified MinimumVersion value.
 Find-Script Connect-O365 -MinimumVersion 1.4
 
@@ -155,4 +155,3 @@ Cmdlet                         {}
 
 
 ```
-

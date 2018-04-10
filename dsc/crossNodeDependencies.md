@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Kereszt-csomópont függőségeinek megadása"
-ms.openlocfilehash: f4411161d819d96803f57600646409d5bfe827b9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Csomópontok közötti függőségek megadása
+ms.openlocfilehash: c563563118c4df8aeee442d3b30b79f7b7700fc7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="specifying-cross-node-dependencies"></a>Kereszt-csomópont függőségeinek megadása
+# <a name="specifying-cross-node-dependencies"></a>Csomópontok közötti függőségek megadása
 
 > Vonatkozik: A Windows PowerShell 5.0
 
@@ -17,7 +17,7 @@ A DSC különleges forrásanyagokat biztosít az **WaitForAll**, **WaitForAny**,
 
 * **WaitForAll**: sikeres lesz, ha a megadott erőforrás definiált összes cél csomóponton megfelelő állapotban a **csomópontnév** tulajdonság.
 * **WaitForAny**: sikeres lesz, ha a megadott erőforrás a célcsomópontokat definiált legalább egyikének megfelelő állapotban a **csomópontnév** tulajdonság.
-* **WaitForSome**: Adja meg a **NodeCount** kívül tulajdonságának egy **csomópontnév** tulajdonság. Az erőforrás sikeres lesz, ha az erőforrás a megfelelő állapotban a csomópontok minimális száma (által megadott **NodeCount**) határozzák meg a **csomópontnév** tulajdonság. 
+* **WaitForSome**: Adja meg a **NodeCount** kívül tulajdonságának egy **csomópontnév** tulajdonság. Az erőforrás sikeres lesz, ha az erőforrás a megfelelő állapotban a csomópontok minimális száma (által megadott **NodeCount**) határozzák meg a **csomópontnév** tulajdonság.
 
 ## <a name="using-waitforxxxx-resources"></a>WaitForXXXX erőforrások használata
 
@@ -35,13 +35,13 @@ Configuration JoinDomain
     {
         WindowsFeature InstallAD
         {
-            Ensure = 'Present' 
-            Name = 'AD-Domain-Services' 
+            Ensure = 'Present'
+            Name = 'AD-Domain-Services'
         }
 
-        xADDomain NewDomain 
-        { 
-            DomainName = 'Contoso.com'            
+        xADDomain NewDomain
+        {
+            DomainName = 'Contoso.com'
             DomainAdministratorCredential = (Get-Credential)
             SafemodeAdministratorPassword = (Get-Credential)
             DatabasePath = "C:\Windows\NTDS"
@@ -79,4 +79,3 @@ Configuration JoinDomain
 * [A DSC-konfigurációk](configurations.md)
 * [A DSC-erőforrások](resources.md)
 * [A helyi Configuration Manager konfigurálása](metaConfig.md)
-

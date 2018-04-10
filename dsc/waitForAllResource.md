@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A DSC WaitForAll erőforrás"
-ms.openlocfilehash: 2b6d9e11acd429eecb30926316d1033331524edc
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A DSC WaitForAll erőforrás
+ms.openlocfilehash: 7cb2fc134f4391de0e5df2cd719902097bf2ebf5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-waitforall-resource"></a>A DSC WaitForAll erőforrás
 
@@ -26,7 +26,7 @@ WaitForAll [string] #ResourceName
     ResourceName = [string]
     NodeName = [string]
     [ RetryIntervalSec = [Uint64] ]
-    [ RetryCount = [Uint32] ] 
+    [ RetryCount = [Uint32] ]
     [ ThrottleLimit = [Uint32]]
     [ DependsOn = [string[]] ]
 }
@@ -34,17 +34,16 @@ WaitForAll [string] #ResourceName
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   | 
-|---|---| 
-| resourceName| Az erőforrásnév függ. Ha egy másik konfigurációs ehhez az erőforráshoz tartozik, a neve, ahogyan formázása "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "| 
-| Csomópontnév| Az erőforrás függ a célcsomópontokat.| 
-| RetryIntervalSec| Másodpercig az újrapróbálkozás előtt száma. Minimális érték 1.| 
-| a retryCount| A próbálkozások maximális számát.| 
-| ThrottleLimit| Az egyidejű csatlakozást a gépek számát. Alapértelmezés szerint új-cimsession alapértelmezett.| 
+|  Tulajdonság  |  Leírás   |
+|---|---|
+| resourceName| Az erőforrásnév függ. Ha egy másik konfigurációs ehhez az erőforráshoz tartozik, a neve, ahogyan formázása "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "|
+| Csomópontnév| Az erőforrás függ a célcsomópontokat.|
+| RetryIntervalSec| Másodpercig az újrapróbálkozás előtt száma. Minimális érték 1.|
+| a retryCount| A próbálkozások maximális számát.|
+| ThrottleLimit| Az egyidejű csatlakozást a gépek számát. Alapértelmezés szerint új-cimsession alapértelmezett.|
 | dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 ## <a name="example"></a>Példa
 
 Példa bemutatja, hogyan az erőforrás, lásd: [cross-csomópont függőségeinek megadása](crossNodeDependencies.md)
-

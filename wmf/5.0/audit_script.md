@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: 2c3cc6d5d226daf22c7ee83a1b7068d6a08b7f45
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="script-tracing-and-logging"></a>Parancsfájl- naplózását
+# <a name="script-tracing-and-logging"></a>Parancsfájlok nyomkövetése és naplózása
 
 Amíg a Windows PowerShell már rendelkezik a **LogPipelineExecutionDetails** csoportházirend beállítás parancsmagok meghívását bejelentkezni, PowerShell programozási nyelv bőven van, amelyeket érdemes naplózni és/vagy a naplózási szolgáltatások. Az új részletes parancsfájl követés funkcióját lehetővé teheti, hogy részletes nyomon követését és a Windows PowerShell parancsfájl-kezelési a rendszerben használt elemzését. Részletes parancsfájl nyomkövetésének engedélyezése után a Windows PowerShell naplózza az összes parancsfájl-blokkokban ETW Eseménynapló **Microsoft-Windows-PowerShell/műveleti**. Parancsprogram-blokkot egy másik parancsfájlblokk (például egy parancsfájlt, amely meghívja az Invoke-Expression parancsmag egy karakterlánc) hoz létre, ha adott eredményül kapott parancsfájlblokk is naplózza.
 
@@ -23,7 +23,7 @@ Az események a következők:
 | Műveleti kód  | Létrehozás                                      |
 | Művelet    | CommandStart                                |
 | Kulcsszó | Futási térben                                    |
-| Eseményazonosító | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
+| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
 | Üzenet | A parancsprogram-blokk szöveg (%1 % 2) létrehozása: </br> %3 </br> A parancsprogram-blokk azonosítója: %4 |
 
 
@@ -37,7 +37,7 @@ Ha engedélyezi a részletes naplózást, a záró jelölők, és a szolgáltat�
 | Műveleti kód  | Nyissa meg a (/ bezárása)                                         |
 | Művelet    | CommandStart (/ CommandStop)                           |
 | Kulcsszó | Futási térben                                               |
-| Eseményazonosító | A parancsprogram-blokk\_meghívása\_Start\_(0x1009 = 4105) részletei / </br> A parancsprogram-blokk\_meghívása\_teljes\_részletei (0x100A Határolók = 4106) |
+| EventId | A parancsprogram-blokk\_meghívása\_Start\_(0x1009 = 4105) részletei / </br> A parancsprogram-blokk\_meghívása\_teljes\_részletei (0x100A Határolók = 4106) |
 | Üzenet | Elindítva (/ befejezett) hívása nem volt a parancsprogram-blokk-azonosító: %1 </br> Futási térben azonosítója: %2 |
 
 Az azonosító a script blokkból (amelyek is egyeztetés szükséges eseményazonosító 0x1008) képviselő GUID, és a futási teret ID jelöli, amelyben a parancsfájl-blokkban futtatták futási térben.
@@ -52,7 +52,7 @@ function SuperDecrypt
 {
     param($script)
     $bytes = [Convert]::FromBase64String($script)
-             
+
     ## XOR “encryption”
     $xorKey = 0x42
     for($counter = 0; $counter -lt $bytes.Length; $counter++)
@@ -107,4 +107,3 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 Összes naplózási rendszerekhez, amelyek rendelkeznek egy korlátozott megőrzési puffer (azaz ETW-naplók), egy az infrastruktúra elleni, mindig a naplófájl korábbi bizonyító adatok elrejtése jelezhet események kéréssekkel. Saját kezűleg a támadások elleni védelméhez, győződjön meg arról, hogy rendelkezik-e valamilyen esemény naplógyűjtést beállítása (például Windows-Eseménytovábbítással, [a Windows Eseménynapló figyelési ellenfél gyorsabban](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) eseménynaplók ki a számítógépre, nem helyezhető át a lehető leghamarabb.
-

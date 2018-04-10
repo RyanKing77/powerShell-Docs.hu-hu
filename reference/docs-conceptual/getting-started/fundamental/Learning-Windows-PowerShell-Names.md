@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: Learning Windows PowerShell-nevek
+title: A Windows PowerShell-nevek elsajátítása
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 28c821c4a617b6ac775dbdda8ade3d15c3f218c3
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 381aa619a41ccacb2ff3a4cdbc2b75b7f04282d1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="learning-windows-powershell-names"></a>Learning Windows PowerShell-nevek
+# <a name="learning-windows-powershell-names"></a>A Windows PowerShell-nevek elsajátítása
 Learning nevek a parancsok és a parancs paraméterei a legtöbb parancssori felületen jelentős mennyiségű időt befektetés. A probléma oka, hogy nincsenek nagyon kevés kombinációját, így az egyetlen lehetőség további megjegyzésével minden parancs és az egyes paramétereket, amelyek rendszeresen szüksége van.
 
 Új parancsot vagy paraméter használata esetén nem általában használható már tapasztalatai; ki kell található, és ismerje meg, egy új nevet. Hogyan felületek nő a növekményes kiegészítésekkel eszközök egy kis készletét a működést tekinti meg, akkor egyszerűen miért nem szabványos van-e a struktúra. Parancs nevű különösen ez lehetséges, hogy hangkártya logikai mivel minden parancs egy olyan önálló eszköz, de nincs a parancsnév kezelésére fejlettebb módszert.
@@ -57,7 +57,7 @@ Cmdlet          Resume-Service                  Resume-Service [-Name] <Stri...
 Cmdlet          Set-Service                     Set-Service [-Name] <String>...
 Cmdlet          Start-Service                   Start-Service [-Name] <Strin...
 Cmdlet          Stop-Service                    Stop-Service [-Name] <String...
-Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str... 
+Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str...
 ...
 ```
 
@@ -91,4 +91,3 @@ A Windows PowerShell néven több paraméterrel rendelkezik *közös paramétere
 A Windows PowerShell fő parancsmagjainak hasonló paraméterek szabványos neveket használja. Bár a paraméterneveknek használatát nem kényszeríti ki, nincs explicit útmutatás szabványosítás bátorítva használat.
 
 Például az útmutató azt javasolja, hogy egy paraméter megnevezés vonatkozik a számítógép neve, mint amelyet **számítógépnév**, ahelyett, hogy a kiszolgáló, Host, rendszer, csomópont vagy egyéb gyakori alternatív szavakat. A fontos javasolt paraméter között a következők **kényszerített**, **kizárása**, **Include**, **PassThru**, **elérésiútja**, és **CaseSensitive**.
-

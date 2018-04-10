@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A lapon bővítése használatával"
+title: A parancssorbővítés használata
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
-ms.openlocfilehash: 8412bd97a95719f07b16c6671d3b8801bbfab8e3
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 3d047bf0691c8a304d7637aa50fba6ae99709a82
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-tab-expansion"></a>A lapon bővítése használatával
+# <a name="using-tab-expansion"></a>A parancssorbővítés használata
+
 Parancssori ismertetése gyakran hardvermódosításainak végezze el automatikusan, a hosszú fájlok és parancsok nevében parancs bejegyzés felgyorsítása és kezeléséről. Windows PowerShell lehetővé teszi a fájlok és parancsmag nevének billentyűkombináció lenyomásával töltse ki a **lapon** kulcs.
 
 > [!NOTE]
@@ -45,4 +46,3 @@ PS> Get-Content C:\windows\actsetup.log
 
 > [!NOTE]
 > A lap bővítése folyamat egy korlátozása, hogy lapok értelmezi szót befejezése megkísérli. Ha másolja, és parancspéldákban illessze be a PowerShell-konzolban, győződjön meg arról, hogy a minta nem tartalmaz-e lapok; Ha igen, az eredmények előre nem látható lesz, és szinte biztosan nem lesz szándékainak.
-

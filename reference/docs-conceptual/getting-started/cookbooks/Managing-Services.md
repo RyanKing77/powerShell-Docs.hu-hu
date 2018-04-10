@@ -1,22 +1,25 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "Szolgáltatások kezelése"
+title: Szolgáltatások kezelése
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: 1e83566b1cb3c0c9c3c78a5877e52552ee51b0e9
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: f3231d1922568e552534f3d3face3864d1610d65
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-services"></a>Szolgáltatások kezelése
+
 Nincsenek nyolc core szolgáltatás parancsmagkészleteket, a szolgáltatás feladatok széles köre. Követően áttekintjük csak listázása, és válassza a szolgáltatások elindítva, de kaphat a parancsmagok listáját a **Get-Help \&#42;-szolgáltatás**, és minden egyes szolgáltatás parancsmag további információt talál a használatával**Get-Help < parancsmag neve >**, például a **Get-Help új szolgáltatás**.
 
 ## <a name="getting-services"></a>Első szolgáltatások
+
 Kaphat a szolgáltatások helyi vagy távoli számítógépen használja a **Get-Service** parancsmag. A **Get-Process**használatával a **Get-Service** paraméterek nélkül parancs visszaadja az összes szolgáltatás. Név szerint szűrheti, még akkor is használja a csillag helyettesítő karakterként:
 
 ```
 PS> Get-Service -Name se*
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  seclogon           Secondary Logon
@@ -28,6 +31,7 @@ Mivel nem mindig nyilvánvaló a szolgáltatás valódi neve van, azt tapasztalh
 
 ```
 PS> Get-Service -DisplayName se*
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  lanmanserver       Server
@@ -35,7 +39,9 @@ Running  SamSs              Security Accounts Manager
 Running  seclogon           Secondary Logon
 Stopped  ServiceLayer       ServiceLayer
 Running  wscsvc             Security Center
+
 PS> Get-Service -DisplayName ServiceLayer,Server
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  lanmanserver       Server
@@ -44,11 +50,12 @@ Stopped  ServiceLayer       ServiceLayer
 
 A számítógépnév paramétert a Get-Service parancsmag segítségével távoli számítógépeken a szolgáltatások beolvasása. A ComputerName paraméterre fogad el helyettesítő karaktereket, és több értékek nézze meg a szolgáltatások egyetlen paranccsal több számítógépen. Például a következő parancsot a szolgáltatás lekérdezi a kiszolgalo01 távoli számítógépen.
 
-```
+```powershell
 Get-Service -ComputerName Server01
 ```
 
 ## <a name="getting-required-and-dependent-services"></a>Első szükséges, és a függő szolgáltatások
+
 A Get-Service parancsmag, amelyek nagyon hasznos a szolgáltatás felügyeleti két paraméterrel rendelkezik. A DependentServices paraméter szerzi meg, hogy a szolgáltatástól függő szolgáltatások. A RequiredServices paraméter szerzi meg szolgáltatások, amelyektől Ez a szolgáltatás függ.
 
 Ezek a paraméterek megjelenítése a DependentServices és ServicesDependedOn (alias = RequiredServices) a System.ServiceProcess.ServiceController objektum, amelyek megkönnyítik a Get-Service értéket ad vissza, de a tulajdonságok a parancsokat és első Ezt az információt jóval egyszerűbbé válik.
@@ -57,6 +64,7 @@ A következő parancsot a szolgáltatások a LanmanWorkstation szolgáltatást i
 
 ```
 PS> Get-Service -Name LanmanWorkstation -RequiredServices
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  MRxSmb20           SMB 2.0 MiniRedirector
@@ -69,6 +77,7 @@ A következő parancsot a szolgáltatások a LanmanWorkstation szolgáltatást i
 
 ```
 PS> Get-Service -Name LanmanWorkstation -DependentServices
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  SessionEnv         Terminal Services Configuration
@@ -79,26 +88,26 @@ Running  BITS               Background Intelligent Transfer Ser...
 
 Minden szolgáltatás olyan függőségekkel rendelkeznek, még akkor is kaphat. A következő parancs nem éppen ez, és majd a Format-Table parancsmagot használja a számítógépen a szolgáltatások állapotát, a nevét, a RequiredServices és DependentServices tulajdonságainak megjelenítéséhez.
 
-```
-Get-Service -Name * | where {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
+```powershell
+Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>Leállítása, elindítása, felfüggesztésével, és a szolgáltatások újraindítása
 Az összes parancsmagok rendelkezik az általános űrlapon. Szolgáltatások közös neve vagy a megjelenítési név is megadható, és listák és a helyettesítő karakterek értékként. A nyomtatási várólista leállításához használja:
 
-```
+```powershell
 Stop-Service -Name spooler
 ```
 
 Miután leállt a nyomtatási várólista elindításához használja:
 
-```
+```powershell
 Start-Service -Name spooler
 ```
 
 A nyomtatási várólista felfüggesztéséhez használja:
 
-```
+```powershell
 Suspend-Service -Name spooler
 ```
 
@@ -106,6 +115,7 @@ A **Restart-Service** parancsmag a más parancsmagok az azonos módon működik,
 
 ```
 PS> Restart-Service -Name spooler
+
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 PS>
@@ -117,6 +127,7 @@ Ha azt szeretné, több szolgáltatás újraindítását, a szolgáltatások lis
 
 ```
 PS> Get-Service | Where-Object -FilterScript {$_.CanStop} | Restart-Service
+
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
 Restart-Service : Cannot stop service 'Logical Disk Manager (dmserver)' because
@@ -129,11 +140,12 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 
 Ezen parancsmagok nem rendelkezik a ComputerName paraméterre, de futtathatja őket egy távoli számítógépen az Invoke-Command parancsmaggal. A következő parancs például a kiszolgalo01 távoli számítógépen a nyomtatásisor-kezelő szolgáltatás újraindul.
 
-```
+```powershell
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
 ## <a name="setting-service-properties"></a>A beállítás szolgáltatás tulajdonságai
+
 A szolgáltatás beállítása parancsmag módosítja a tulajdonságait egy helyi vagy távoli számítógépen. A szolgáltatás állapota tulajdonság, mert ez a parancsmag segítségével indítása, leállítása és a szolgáltatás felfüggesztése. A szolgáltatás beállítása parancsmag, amely lehetővé teszi, hogy a szolgáltatás indítási típusának módosítása StartupType paraméterrel is rendelkezik.
 
 A Set-szolgáltatás használata a Windows Vista és újabb verziók, Windows, Windows PowerShell megnyitása a "Futtatás rendszergazdaként" lehetőséggel.
@@ -141,8 +153,8 @@ A Set-szolgáltatás használata a Windows Vista és újabb verziók, Windows, W
 További információkért lásd: [[m2] Set-szolgáltatás](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 
 ## <a name="see-also"></a>Lásd még:
+
 - [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
 - [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 - [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
 - [[M2] suspend-szolgáltatás](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
-

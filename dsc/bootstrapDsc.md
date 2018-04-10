@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Konfigurálhatja a virtuális gépek kezdeti állítja DSC használatával"
-ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Konfigurálhatja a virtuális gépek kezdeti állítja DSC használatával
+ms.openlocfilehash: e6ff83b9a09f93277904c80e8e52f3db5e818739
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 >Vonatkozik: A Windows PowerShell 5.0
 
@@ -90,7 +90,8 @@ Nevezze át, és helyezze át a fájlt a megfelelő helyre a virtuális Merevlem
     Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
     ```
 
-7. Hozzon létre egy virtuális Gépet a virtuális Merevlemezt, amelyre telepítette a DSC MOF-dokumentum. Kezdeti állítja, és az operációs rendszer telepítése után az IIS lesz telepítve.
+7. Hozzon létre egy virtuális Gépet a virtuális Merevlemezt, amelyre telepítette a DSC MOF-dokumentum.
+Kezdeti állítja, és az operációs rendszer telepítése után az IIS lesz telepítve.
 Ezt ellenőrizheti meghívásával a [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) parancsmag.
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>A DSC metakonfigurációját szúrjon be egy virtuális merevlemez
@@ -203,4 +204,3 @@ Alapértelmezés szerint a értékének a **HKEY_LOCAL_MACHINE\SOFTWARE\Microsof
 - [DSCAutomationHostEnabled beállításkulcs](DSCAutomationHostEnabled.md)
 - [A Local Configuration Manager (LCM) konfigurálása](metaConfig.md)
 - [A DSC lekérési webkiszolgáló beállítása](pullServer.md)
-

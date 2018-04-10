@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "Konfigurációs és környezeti adatok elkülönítése"
-ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Konfigurációs és környezeti adatok szétválasztása
+ms.openlocfilehash: c89e26105611eae59a926be1432079913c40671f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="separating-configuration-and-environment-data"></a>Konfigurációs és környezeti adatok elkülönítése
+# <a name="separating-configuration-and-environment-data"></a>Konfigurációs és környezeti adatok szétválasztása
 
 >Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
 
@@ -26,18 +26,19 @@ Részletes leírása a **ConfigurationData** hashtable, lásd: [konfigurációs 
 
 ## <a name="a-simple-example"></a>Egy egyszerű példa
 
-Egy nagyon egyszerű példa megtekintéséhez, ennek működéséről vizsgáljuk meg. Hozzon létre, amely biztosítja, hogy egyetlen konfigurációja **IIS** -e egyes csomópontok, és hogy a **Hyper-V** -e a többi: 
+Egy nagyon egyszerű példa megtekintéséhez, ennek működéséről vizsgáljuk meg.
+Hozzon létre, amely biztosítja, hogy egyetlen konfigurációja **IIS** -e egyes csomópontok, és hogy a **Hyper-V** -e a többi:
 
 ```powershell
 Configuration MyDscConfiguration {
-    
+
     Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
         WindowsFeature IISInstall {
             Ensure = 'Present'
             Name   = 'Web-Server'
         }
-        
+
     }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
@@ -48,7 +49,7 @@ Configuration MyDscConfiguration {
     }
 }
 
-$MyData = 
+$MyData =
 @{
     AllNodes =
     @(
@@ -75,12 +76,12 @@ Az eredménye, hogy két MOF-fájlok jönnek létre:
     Directory: C:\DscTests\MyDscConfiguration
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:09 PM           1968 VM-1.mof                                                                                                                
--a----        3/31/2017   5:09 PM           1970 VM-2.mof  
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:09 PM           1968 VM-1.mof
+-a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
- 
+
 `$MyData` Adja meg a két másik csomópont, saját `NodeName` és `Role`. A konfigurációs dinamikusan létrehoz **csomópont** blokkok azt lekérése csomópontok gyűjteménye megtételével `$MyData` (pontosabban `$AllNodes`) és elleni gyűjteménynek szűrése a `Role` tulajdonság...
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Konfigurációs adatok használatával megadhatók a fejlesztési és éles környezetben
@@ -128,7 +129,9 @@ A fejlesztési és éles környezeti adatok fogunk meghatározni a egy fájl nam
 
 ### <a name="configuration-script-file"></a>Konfigurációs parancsfájl
 
-Most, a konfigurációban, amelyhez definiálva van egy `.ps1` fájl, azt a csomópontok a meghatározott szűrése `DevProdEnvData.psd1` szerepe (`MSSQL`, `Dev`, vagy mindkettőt), és ennek megfelelően konfigurálja. A fejlesztési környezet rendelkezik az SQL Server és az IIS egy csomóponton, míg az éles környezetben őket két különböző csomópontokon. A webhely teljes tartalmát is nem egyezik, leírtak szerint a `SiteContents` tulajdonságok.
+Most, a konfigurációban, amelyhez definiálva van egy `.ps1` fájl, azt a csomópontok a meghatározott szűrése `DevProdEnvData.psd1` szerepe (`MSSQL`, `Dev`, vagy mindkettőt), és ennek megfelelően konfigurálja.
+A fejlesztési környezet rendelkezik az SQL Server és az IIS egy csomóponton, míg az éles környezetben őket két különböző csomópontokon.
+A webhely teljes tartalmát is nem egyezik, leírtak szerint a `SiteContents` tulajdonságok.
 
 A konfigurációs parancsfájl végén a konfigurációs nevezzük (lefordítani a MOF-dokumentumba), adja `DevProdEnvData.psd1` , a `$ConfigurationData` paraméter.
 
@@ -147,7 +150,7 @@ Configuration MyWebApp
    {
         # Install prerequisites
         WindowsFeature installdotNet35
-        {            
+        {
             Ensure      = "Present"
             Name        = "Net-Framework-Core"
             Source      = "c:\software\sxs"
@@ -182,7 +185,7 @@ Configuration MyWebApp
         }
 
         # Stop the default website
-        xWebsite DefaultSite 
+        xWebsite DefaultSite
         {
             Ensure       = 'Present'
             Name         = 'Default Web Site'
@@ -203,7 +206,7 @@ Configuration MyWebApp
             Type            = 'Directory'
             DependsOn       = '[WindowsFeature]AspNet45'
 
-        }       
+        }
 
 
         # Create the new Website
@@ -232,10 +235,10 @@ Ez a konfiguráció futtatásakor három MOF-fájlok jönnek létre (egy mindegy
     Directory: C:\DscTests\MyWebApp
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof                                                                                                            
--a----        3/31/2017   5:47 PM           6994 Dev.mof                                                                                                                 
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof
+-a----        3/31/2017   5:47 PM           6994 Dev.mof
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
@@ -257,39 +260,39 @@ Ebben a példában `ConfigFileContents` a sor segítségével érhető el:
 
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName           = “*”
             LogPath            = “C:\Logs”
         },
- 
+
         @{
             NodeName = “VM-1”
             SiteContents = “C:\Site1”
             SiteName = “Website1”
         },
- 
-        
+
+
         @{
             NodeName = “VM-2”;
             SiteContents = “C:\Site2”
             SiteName = “Website2”
         }
     );
- 
-    NonNodeData = 
+
+    NonNodeData =
     @{
         ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }   
-} 
- 
+     }
+}
+
 configuration WebsiteConfig
 {
     Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
- 
+
     node $AllNodes.NodeName
     {
         xWebsite Site
@@ -298,14 +301,14 @@ configuration WebsiteConfig
             PhysicalPath = $Node.SiteContents
             Ensure       = “Present”
         }
- 
+
         File ConfigFile
         {
             DestinationPath = $Node.SiteContents + “\\config.xml”
             Contents = $ConfigurationData.NonNodeData.ConfigFileContents
         }
     }
-} 
+}
 ```
 
 
@@ -313,4 +316,3 @@ configuration WebsiteConfig
 - [Konfigurációs adatok használata](configData.md)
 - [Konfigurációs adatokat a hitelesítő adatok beállításai](configDataCredentials.md)
 - [A DSC-konfigurációk](configurations.md)
-

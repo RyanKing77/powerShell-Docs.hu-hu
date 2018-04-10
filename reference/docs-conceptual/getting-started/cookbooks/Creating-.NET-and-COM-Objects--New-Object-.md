@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "Új objektum .NET és a COM-objektumok létrehozása"
+title: Új objektum .NET és a COM-objektumok létrehozása
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-ms.openlocfilehash: 534e1a9a759d67cfc62ce658a7abddf02f767212
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 1ffd8d4afa419ec0c24321e44aa4a2f41a9bee44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>.NET és a COM-objektumok (új objektum) létrehozása
+
 Nincsenek szoftverösszetevőket. a .NET-keretrendszer és a COM-felületek, amelyek lehetővé teszik több rendszer felügyeleti feladatok elvégzéséhez. A Windows PowerShell lehetővé teszi ezeket az összetevőket, így a felhasználó a parancsmagokkal végrehajtható feladatok korlátozott. A parancsmagok a Windows PowerShell eredeti kiadását számos nem működik, távoli számítógépekről. Ismerteti az elkerülése érdekében ez a korlátozás eseménynaplók kezeléséhez, a .NET-keretrendszer használatával **System.Diagnostics.EventLog** közvetlenül a Windows PowerShell osztály.
 
 ### <a name="using-new-object-for-event-log-access"></a>Új objektum használatát az Eseménynapló hozzáférésének
+
 A .NET-keretrendszer Class Library tartalmaz egy osztályt **System.Diagnostics.EventLog** , amely eseménynaplók kezelésére használható. A .NET-keretrendszer osztály új példánya segítségével létrehozható a **New-Object** parancsmagot a **TypeName** paraméter. Például a következő parancs létrehoz egy eseménynapló-hivatkozást:
 
 ```
@@ -25,6 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 Bár a parancs hozott létre az EventLog osztály egy példányát, a példány nem tartalmaz adatokat. Ennek oka az, hogy nem adott meg adott eseménynaplónál. Hogyan be egy valós eseménynaplóba?
 
 #### <a name="using-constructors-with-new-object"></a>Új objektum konstruktorok használata
+
 Egy adott eseménynaplóból hivatkozunk, meg kell adnia a napló nevét. **Új objektum** rendelkezik egy **ArgumentList** paraméter. Az argumentumok át értékként ennek a paraméternek egy különleges indítási metódus az objektum által használt. A metódus lehívásra kerül egy *konstruktor* mert létrehozni az objektumot használja. Ahhoz, hogy az alkalmazásnaplóba hivatkozást, akkor adja meg például az "Alkalmazás" karakterlánc argumentumként:
 
 ```
@@ -39,6 +42,7 @@ Max(K) Retain OverflowAction        Entries Name
 > A .NET Framework core osztályok többsége tartalmazza a rendszer egyik névtere, mivel Windows PowerShell automatikusan kísérli meg meghatározni a rendszer egyik névtere, ha nem találja a megadott typename megfelelő osztályok kereséséhez. Ez azt jelenti, hogy Diagnostics.EventLog helyett System.Diagnostics.EventLog is megadhat.
 
 #### <a name="storing-objects-in-variables"></a>Objektumok tárolása változók
+
 Előfordulhat, hogy szeretne tárolni egy objektumra mutató hivatkozás, hogy használhassa az aktuális rendszerhéjban. Bár a Windows PowerShell lehetővé teszi nagy mennyiségű munkahelyi kimenetátirányítási mechanizmusát használó műveletekről, a változók szükségességét csökkentését, változók néha tárolni objektumokra való hivatkozások megkönnyíti a kezelheti azokat az objektumokat.
 
 A Windows PowerShell lehetővé teszi objektumok lényegében nevű változókat létrehozni. Bármilyen érvényes Windows PowerShell-parancs kimenetében tárolható egy változóban. Változónevek kezdő $ mindig. Ha azt szeretné, hogy az alkalmazás naplózása tárolható egy változóban nevű $AppLog, írja be a változó egy egyenlőségjellel követni, és írja be a parancsot az alkalmazási napló objektum létrehozásához használt:
@@ -58,6 +62,7 @@ PS> $AppLog
 ```
 
 #### <a name="accessing-a-remote-event-log-with-new-object"></a>Új objektum a Távoli Eseménynapló elérése
+
 Az előző szakaszban leírt használt parancsok megcélozni a helyi számítógépen; a **Get-eseménynaplóban** parancsmaggal teheti meg. Az alkalmazásnaplóba egy távoli számítógépen szeretne használni, adjon meg mind a napló nevét és a számítógép nevét (vagy IP-cím) argumentumként.
 
 ```
@@ -72,6 +77,7 @@ PS> $RemoteAppLog
 Most, hogy egy eseménynapló a $RemoteAppLog változó tárolja egy hivatkozást, milyen feladatokat lehet végezzük rajta?
 
 #### <a name="clearing-an-event-log-with-object-methods"></a>Egy objektum metódusával Eseménynapló tartalmának törlése
+
 Az objektumok gyakran lehet módszereket, amelyek a feladatok elvégzéséhez hívható. Használhat **Get-tag** társított módszerek megjelenítéséhez. A következő parancsot, és a megadott kimeneti megjelenítése néhány EventLog osztály módszerek:
 
 ```
@@ -118,7 +124,7 @@ Használhat **New-Object** Component Object Model (COM) összetevők együttműk
 
 A WSH objektumok ezek ProgID megadásával hozhat létre: **WScript.Shell**, **WScript.Network**, **Scripting.Dictionary**, és  **Scripting.FileSystemObject**. A következő parancsok ezen objektumok létrehozása:
 
-```
+```powershell
 New-Object -ComObject WScript.Shell
 New-Object -ComObject WScript.Network
 New-Object -ComObject Scripting.Dictionary
@@ -128,9 +134,10 @@ New-Object -ComObject Scripting.FileSystemObject
 Bár a legtöbb ezeket az osztályokat funkciója a Windows PowerShell érhető el, egyéb módon történik, néhány feladatokat, mint a parancsikon létrehozása még könnyebben tegye a WSH osztályokat is.
 
 ### <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>A parancsikon létrehozása WScript.Shell
+
 Egy COM-objektum gyorsan elvégezhető feladat hoz létre egy parancsikont. Tegyük fel, hozzon létre egy parancsikont az asztalon a kezdőmappa mutató Windows PowerShell. Először hozzon létre egy hivatkozást **WScript.Shell**, amely nevű változóban tároljuk fog **$WshShell**:
 
-```
+```powershell
 $WshShell = New-Object -ComObject WScript.Shell
 ```
 
@@ -150,7 +157,6 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 
 **Get-tag** van egy nem kötelező **InputObject** helyett kimenetátirányításával segítségével adja meg a bemeneti paraméter **Get-tag**. Ahogy fent látható, ha inkább használt a parancs kimenetét azonos számíthat **Get-tag - InputObject $WshShell**. Ha **InputObject**, azt csak egy elemet az argumentumát kezeli. Ez azt jelenti, hogy ha több objektumot egy változóban **Get-tag** kezeli őket, egy objektumokból álló tömb. Például:
 
-
 ```
 PS> $a = 1,2,"three"
 PS> Get-Member -InputObject $a
@@ -163,7 +169,7 @@ Count              AliasProperty Count = Length
 
 A **WScript.Shell CreateShortcut** metódus egyetlen argumentuma, a fájl elérési útját a helyi létrehozásához fogad el. Azt írja be a teljes elérési útját az asztalon, de egy egyszerűbb. Az asztal általában az aktuális felhasználó otthoni mappában mappájában asztali jelképezi. A Windows PowerShell rendelkezik egy változó **$Home** , amely tartalmazza a mappa elérési útját. Azt adja meg a mappa elérési útját az otthoni változó használatával, és adja meg a mappa nevét, mely az asztali és a helyi létrehozásához írja be a nevet:
 
-```
+```powershell
 $lnk = $WshShell.CreateShortcut("$Home\Desktop\PSHome.lnk")
 ```
 
@@ -191,17 +197,18 @@ TargetPath       Property     string TargetPath () {get} {set}
 
 Adja meg kell a **Cél_elérési_útja**, vagyis az alkalmazás mappájában, a Windows PowerShell környezethez, majd mentse a helyi **$lnk** meghívásával a **mentése** metódus. A változó tárolja a Windows PowerShell alkalmazást mappa elérési útja **$PSHome**, így azt ehhez írja be:
 
-```
+```powershell
 $lnk.TargetPath = $PSHome
 $lnk.Save()
 ```
 
 ### <a name="using-internet-explorer-from-windows-powershell"></a>Internet Explorer, a Windows PowerShell használatával
+
 Számos alkalmazás (beleértve a Microsoft Office-alkalmazások és az Internet Explorer család) automatizálható a COM-környezetbe. Az Internet Explorer néhány tipikus technikák és COM-alapú alkalmazások használata során felmerülő kérdésekkel mutatja be.
 
 Az Internet Explorer példányt hoz létre az Internet Explorer ProgId, megadásával **InternetExplorer.Application**:
 
-```
+```powershell
 $ie = New-Object -ComObject InternetExplorer.Application
 ```
 
@@ -212,25 +219,25 @@ Ez a parancs az Internet Explorer elindul, de nem láthatóvá tegye azt. Írja 
 
 Írja be a **$ie |} Get-tag**, tekintse meg a tulajdonságokat és metódusokat az Internet Explorer. Tekintse meg az Internet Explorer-ablakban, állítsa be a Visible tulajdonság $true beírásával:
 
-```
+```powershell
 $ie.Visible = $true
 ```
 
 Ezután lépjen egy adott webcímet Navigálás módszer használatával:
 
-```
+```powershell
 $ie.Navigate("http://www.microsoft.com/technet/scriptcenter/default.mspx")
 ```
 
 Más tagjai az Internet Explorer hálózatiobjektum-modellt használ, akkor lehet szöveg tartalmat lekérjen a weblap. A következő paranccsal jelenítse meg a HTML az aktuális weblap törzse:
 
-```
+```powershell
 $ie.Document.Body.InnerText
 ```
 
 Az Internet Explorer hozzáférését belül PowerShell bezárásához hívja meg az Quit() metódust:
 
-```
+```powershell
 $ie.Quit()
 ```
 
@@ -247,7 +254,7 @@ At line:1 char:16
 
 Eltávolíthat a fennmaradó hivatkozást egy parancs például $ie = $null, vagy a teljes eltávolításához írja be a változó:
 
-```
+```powershell
 Remove-Variable ie
 ```
 
@@ -255,6 +262,7 @@ Remove-Variable ie
 > Nincs nem általános szabvány e ActiveX végrehajtható fájlok zárja be, és folytatja a futtatását, amikor egy mutató hivatkozás eltávolítása. Körülmények között például látható-e az alkalmazás, egy dokumentum szerkesztett fut-e azt, és akár a Windows PowerShell továbbra is fut-e, attól függően, hogy az alkalmazás esetleg, vagy nem kiléphet. Ezért tesztelje a végrehajtható, a Windows PowerShell használni kívánt egyes ActiveX miként viselkedjenek.
 
 ### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>.NET-keretrendszer becsomagolt COM-objektumok kapcsolatos figyelmeztetés
+
 Bizonyos esetekben egy COM-objektum lehet társított .NET-keretrendszer *futásidejű hívható burkoló* vagy RCW, és a rendszer által használt **New-Object**. Mivel az RCW viselkedését eltérhet a normál COM-objektum viselkedését **New-Object** rendelkezik egy **Strict** figyelmeztetni RCW hozzáférés paraméter. Ha megadja a **Strict** paraméter, és ezután hozzon létre egy COM-objektum használatban levő RCW használó, egy figyelmeztetés jelenik meg:
 
 ```
@@ -269,4 +277,3 @@ At line:1 char:17
 ```
 
 Bár továbbra is létrejön az objektum, figyelmeztetést kap, hogy nincs egy szabványos COM-objektum.
-

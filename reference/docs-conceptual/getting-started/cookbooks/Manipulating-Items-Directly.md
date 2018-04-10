@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "Elemek közvetlenül módosítása"
+title: Elemek közvetlen módosítása
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: d9aa95dcb0da2e8203cbe32d64b95bf33d914166
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 688f9194bd16793331325999c69e88df3e94c976
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="manipulating-items-directly"></a>Elemek közvetlenül módosítása
+# <a name="manipulating-items-directly"></a>Elemek közvetlen módosítása
+
 A Windows PowerShell-meghajtók, például a fájlok és mappák a fájl rendszer meghajtókon és a beállításkulcsok a Windows PowerShell beállításjegyzék meghajtókon látható elemek nevezzük *elemek* a Windows PowerShellben. A parancsmag szolgálja a őket elem van a főnév **elem** a név.
 
 A kimenetét a **Get-Command - főnév elem** parancs megjeleníti, hogy vannak-e kilenc cikk Windows PowerShell-parancsmagokat.
@@ -31,6 +32,7 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
 ### <a name="creating-new-items-new-item"></a>Új elemek (új elem) létrehozása
+
 A fájlrendszer új elem létrehozásához használja a **új elem** parancsmag. Tartalmazza a **elérési** paraméter a következő elem elérési útja és a **ItemType** paraméter, a "file" vagy "directory" értékű.
 
 Például, hogy hozzon létre egy új könyvtárat neve "New.Directory"in a C:\\Temp könyvtárba, írja be:
@@ -73,6 +75,7 @@ SKC  VC Name                           Property
 Amikor beírja a beállításjegyzékbeli elérési út, ne felejtse el feltüntetni a kettőspont (**:**) a Windows PowerShell a meghajtó nevét, HKLM: és HKCU:. A kettőspont nélkül Windows PowerShell nem ismeri fel a meghajtó nevét, az elérési út.
 
 ### <a name="why-registry-values-are-not-items"></a>Miért beállításjegyzék-értékek nincsenek elemek
+
 Ha a **Get-ChildItem** elemek kereséséhez egy beállításkulcsot, a parancsmag tényleges beállításjegyzékbeli bejegyzést, és azok értékeit soha nem jelenik.
 
 Például a beállításkulcs **HKEY_LOCAL_MACHINE\\szoftver\\Microsoft\\Windows\\CurrentVersion\\futtatása** általában tartalmaz a több beállításjegyzék-bejegyzések a rendszer indításakor futtatott alkalmazásokat, amelyek jelölik.
@@ -81,6 +84,7 @@ Azonban használatakor **Get-ChildItem** látni fogja az összes van a gyermekin
 
 ```
 PS> Get-ChildItem HKLM:\Software\Microsoft\Windows\CurrentVersion\Run
+
    Hive: Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\Micros
 oft\Windows\CurrentVersion\Run
 SKC  VC Name                           Property
@@ -91,10 +95,11 @@ SKC  VC Name                           Property
 Annak ellenére, hogy szeretné kezelni a beállításjegyzék-bejegyzések elemek kényelmes, oly módon, amely biztosítja, hogy az egyedi nem adható meg a egy beállításjegyzékbeli bejegyzést elérési útját. Az elérési út notation nem különbözteti meg a beállításkulcsot, nevű **futtatása** és a **(alapértelmezett)** beállításjegyzékbeli bejegyzést a **futtatása** alkulcs. Továbbá mert a beállításjegyzék-bejegyzések neve tartalmazhat fordított perjellel (**\\**), ha rendszerleíró bejegyzések elemeket, majd segítségével különböztetheti meg egymástól a nevű beállításjegyzék-bejegyzés nem használhatja az elérési út notation  **Windows\\CurrentVersion\\futtatása** az adott elérési úton található alkulcsot.
 
 ### <a name="renaming-existing-items-rename-item"></a>Meglévő elemek (Elemátnevezés) átnevezése
+
 A fájl vagy mappa neve módosításához használja a **Elemátnevezés** parancsmag. A következő parancs módosítja a nevét a **file1.txt** fájl **fileOne.txt**.
 
-```
-PS> Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
+```powershell
+Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
 ```
 
 A **Elemátnevezés** parancsmaggal módosíthatja egy fájl vagy mappa nevét, de az elem nem helyezhető át. A következő parancsot sikertelen lesz, mivel a rendszer megkísérli a New.Directory könyvtárból a fájl áthelyezéséhez a Temp könyvtárba.
@@ -107,6 +112,7 @@ At line:1 char:12
 ```
 
 ### <a name="moving-items-move-item"></a>Elemek (elem áthelyezése)
+
 A fájl vagy mappa áthelyezéséhez használja a **elem áthelyezése** parancsmag.
 
 A következő parancs például a New.Directory directory helyez a C:\\ideiglenes könyvtárat a c meghajtó gyökérkönyvtárában. Győződjön meg arról, hogy az elem lett áthelyezve, közé tartozik a **PassThru** paramétere a **elem áthelyezése** parancsmag. Nélkül **Passthru**, a **elem áthelyezése** parancsmag, eredmények nem jelennek meg.
@@ -122,12 +128,13 @@ d----        2006-05-18  12:14 PM            New.Directory
 ```
 
 ### <a name="copying-items-copy-item"></a>Másolás elem (elem)
+
 Ha jártas a másolási műveletek a más ismertetése, bizonyára hasznosnak találja a működését a **elem** szokatlan Windows PowerShell-parancsmagot. Másolásakor elem egyik helyről egy másikra, elem nem másolja át a tartalmát alapértelmezés szerint.
 
 Például, ha másolja a **New.Directory** a C: meghajtó a könyvtárból a C:\\ideiglenes könyvtárat, a parancs végrehajtása sikeres, de nem kerülnek a New.Directory könyvtár.
 
-```
-PS> Copy-Item -Path C:\New.Directory -Destination C:\temp
+```powershell
+Copy-Item -Path C:\New.Directory -Destination C:\temp
 ```
 
 Ha tartalmának megjelenítése **C:\\temp\\New.Directory**, látni fogja, hogy egyetlen fájlt tartalmaz:
@@ -145,6 +152,7 @@ Tartalmazza az összes egy mappa tartalmát, a **Recurse** paramétere a **elem*
 
 ```
 PS> Copy-Item -Path C:\New.Directory -Destination C:\temp -Recurse -Force -Passthru
+
     Directory: Microsoft.Windows PowerShell.Core\FileSystem::C:\temp
 
 Mode                LastWriteTime     Length Name
@@ -159,6 +167,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 ### <a name="deleting-items-remove-item"></a>Elemek (Remove-cikk) törlése
+
 Fájlok és mappák törléséhez használja a **Remove-cikk** parancsmag. A Windows PowerShell-parancsmagok, például a **Remove-cikk**, amely jelentős tehet, végleges változtatások gyakran felkéri megerősítést kér a parancs beírásakor. Például, ha el szeretné távolítani a **New.Directory** mappa, kérni fogja a parancs, mert a mappa fájlokat tartalmazza:
 
 ```
@@ -174,26 +183,26 @@ specified. If you continue, all children will be removed with the item. Are you
 
 Mivel **Igen** az alapértelmezett válasz, törölje a mappát és annak fájljait, nyomja meg a **Enter** kulcs. A következő mappa eltávolítása nélkül erősítse meg, használja a **-Recurse** paraméter.
 
-```
-PS> Remove-Item C:\temp\New.Directory -Recurse
+```powershell
+Remove-Item C:\temp\New.Directory -Recurse
 ```
 
 ### <a name="executing-items-invoke-item"></a>Végrehajtás alatt álló elemek (Invoke-elem)
+
 A Windows PowerShell használja a **Invoke-cikk** parancsmag egy fájl vagy mappa egy alapértelmezett műveletet végrehajtani. Ez az alapértelmezett művelet határozza meg az alapértelmezett alkalmazás kezelő a beállításjegyzékben; a hatás ugyanúgy történik, ha duplán kattint a cikk a Fájlkezelőben is.
 
 Tegyük fel, hogy a következő parancsot:
 
-```
-PS> Invoke-Item C:\WINDOWS
+```powershell
+Invoke-Item C:\WINDOWS
 ```
 
 Egy ablak, amely C: található\\Windows jelenik meg, csak ha rendelkezett duplán kattint a C:\\Windows mappa.
 
 Ha indít a **Boot.ini** fájl előtt a Windows Vista rendszeren:
 
-```
-PS> Invoke-Item C:\boot.ini
+```powershell
+Invoke-Item C:\boot.ini
 ```
 
 Ha a .ini fájl típusa nem Jegyzettömb társítva, a boot.ini fájl Jegyzettömbben nyílik meg.
-

@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "gyűjtemény, a powershell, a parancsmag, a psget"
-title: "Frissítés-ModuleManifest"
-ms.openlocfilehash: ce3f6f173535d98648eb51adb1dbf84764e4f434
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
+title: Update-ModuleManifest
+ms.openlocfilehash: 45f40f753af17e82c83dbf57dea13749ba626503
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="update-modulemanifest"></a>Frissítés-ModuleManifest
+# <a name="update-modulemanifest"></a>Update-ModuleManifest
 Egy modul jegyzékfájl frissíti.
 
 ## <a name="description"></a>Leírás
@@ -27,7 +27,7 @@ Get-Command -Name Update-ModuleManifest -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>A parancsmag online Súgó-hivatkozás
 
-[Frissítés-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
+[Update-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
 
 ## <a name="example-commands"></a>Példa parancsok
 
@@ -101,19 +101,18 @@ PrivateData = @{
 
         # A URL to the license for this module.
         # LicenseUri = ''
-    
+
         # A URL to the main website for this project.
         # ProjectUri = ''
-        
+
         # A URL to an icon representing this module.
         # IconUri = ''
-        
+
         # ReleaseNotes of this module
         # ReleaseNotes = ''
-        
+
         # External dependent modules of this module
         # ExternalModuleDependencies = ''
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-

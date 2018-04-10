@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A DSC használata a Nano Server"
-ms.openlocfilehash: c8f3669ee9c2ed6107c14ba9f4460d82276e1932
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A DSC használata a Nano Serveren
+ms.openlocfilehash: 9ebc1f046893c360538009b5ecbcfb6456f92bbb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-dsc-on-nano-server"></a>A DSC használata a Nano Server
+# <a name="using-dsc-on-nano-server"></a>A DSC használata a Nano Serveren
 
 > Vonatkozik: A Windows PowerShell 5.0
 
@@ -25,22 +25,22 @@ További információ a telepítéséről és használatáról a Nano Server, va
 ## <a name="dsc-features-available-on-nano-server"></a>A DSC szolgáltatás Nano Server
 
  Mivel a Nano Server támogatja a Windows Server teljes verzióját képest API-kat csak korlátozott számú, a Nano Server DSC nem rendelkezik teljes funkciói egyenértékűek teljes termékváltozatok jelenleg futó DSC. A Nano Server DSC aktív fejlesztés, és még nincs kész szolgáltatás.
- 
- A következő DSC-funkciók érhetők el jelenleg a Nano Server: 
+
+ A következő DSC-funkciók érhetők el jelenleg a Nano Server:
 
 
 * Mind eseménylekérési és eseményküldési módban
 
-* Minden DSC-parancsmag a teljes verzióját a Windows Server, beleértve a következőket: 
+* Minden DSC-parancsmag a teljes verzióját a Windows Server, beleértve a következőket:
   * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
-  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)     
+  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)
   * [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
-  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)       
+  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)
   * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
   * [Stop-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
   * [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
-  * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)      
-  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx) 
+  * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)
+  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx)
   * [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
   * [Restore-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
   * [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
@@ -48,7 +48,7 @@ További információ a telepítéséről és használatáról a Nano Server, va
   * [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
   * [Keresés – DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
   * [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)
-  * [Új DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)    
+  * [Új DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)
 
 * Konfiguráció fordítása (lásd: [a DSC-konfigurációk](configurations.md))
 
@@ -61,10 +61,10 @@ További információ a telepítéséről és használatáról a Nano Server, va
 * Az osztály-alapú erőforrások (lásd: [PowerShell osztályokra egyéni DSC-erőforrás írása](authoringResourceClass.md))
 
 * A DSC-erőforrások hibakeresés (lásd: [hibakeresés DSC erőforrások](debugresource.md))
-  
+
   **Probléma:** nem működik, ha egy erőforrás PsDscRunAsCredential használ (lásd: [felhasználói hitelesítő adatokkal rendelkező futtató DSC](runAsUser.md))
 
-* [Csomópontok közötti függőségek megadása](crossNodeDependencies.md) 
+* [Csomópontok közötti függőségek megadása](crossNodeDependencies.md)
 
 * [Erőforrás versioning](sxsResource.md)
 
@@ -72,7 +72,7 @@ További információ a telepítéséről és használatáról a Nano Server, va
 
 * [Részleges konfigurációk (lekéréses & leküldéses)](partialConfigs.md)
 
-* [A lekérési kiszolgálójával Reporting](reportServer.md) 
+* [A lekérési kiszolgálójával Reporting](reportServer.md)
 
 * MOF-titkosítás
 
@@ -97,32 +97,32 @@ További információ a telepítéséről és használatáról a Nano Server, va
 * Részlegesen működési erőforrásokhoz
   * [Csoport](groupResource.md)
   * GroupSet
-  
+
   **Probléma:** felett erőforrást sikertelen, ha a példány neve kétszer (kétszer azonos konfigurációval fut)
-  
+
   * [Service](serviceResource.md)
   * ServiceSet
-  
+
   **Probléma:** csak akkor működik, a (állapot): a szolgáltatás indítása/leállítása. Nem sikerül, ha egy próbál módosítani más szolgáltatás tulajdonságai, például a startuptype, a hitelesítő adatokat, a leírás stb... A hiba lépett fel hasonlít:
-  
+
   *[Management.managementobject] típus nem található: Győződjön meg arról, hogy a típust tartalmazó szerelvény be töltve.*
-  
+
 * Erőforrások, amelyek nem működik
   * [Felhasználó](userResource.md)
-  
+
 
 ## <a name="dsc-features-not-available-on-nano-server"></a>A DSC-szolgáltatások Nano Server rendszeren nem érhető el
 
 A következő DSC-szolgáltatások nem érhetők el jelenleg a Nano Server:
 
-* MOF dokumentum titkosított egy visszafejtése 
+* MOF dokumentum titkosított egy visszafejtése
 * Lekérési kiszolgálójával--nem jelenleg állítható be a lekérési kiszolgálón Nano
 * Mindent, ami nem funkció akkor működik a listájában
 
 ## <a name="using-custom-dsc-resources-on-nano-server"></a>Egyéni DSC-erőforrások Nano Server segítségével
- 
-Windows API-k és a CLR-könyvtárak érhető el a Nano Server korlátozott készleteinek miatt a teljes CLR-verzió Windows működő DSC erőforrások feltétlenül működik a Nano Server. Fejezze be a végpontok közötti tesztelése előtt DSC egyéni erőforrások telepítése éles környezetben.
+
+Windows API-k és a CLR-könyvtárak érhető el a Nano Server korlátozott készleteinek miatt a teljes CLR-verzió Windows működő DSC erőforrások feltétlenül működik a Nano Server.
+Fejezze be a végpontok közötti tesztelése előtt DSC egyéni erőforrások telepítése éles környezetben.
 
 ## <a name="see-also"></a>Lásd még:
 - [Ismerkedés a Nano Server](https://technet.microsoft.com/library/mt126167.aspx)
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "gyűjtemény, a powershell, a parancsmag, a psgallery"
+keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 599b148e141ba4205a7c774581e737a5d54bfae1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>Ismerkedjen meg a PowerShell-galériában
 
@@ -33,7 +33,7 @@ PowerShellGet is szükséges a [NuGet szolgáltató](http://go.microsoft.com/fwl
 
 Vagy futtassa `Install-PackageProvider -Name NuGet -Force` letöltését és telepítését a NuGet-szolgáltató automatizálásához.
 
-  
+
 Ha egy régebbi, mint a NuGet 2.8.5.201 verziójával rendelkezik, szüksége lesz hívása a következő PowerShell-parancsmagok telepítéséhez és a legújabb NuGet váltani.
 
 1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
@@ -42,7 +42,7 @@ Ha egy régebbi, mint a NuGet 2.8.5.201 verziójával rendelkezik, szüksége le
 
 További információkért lásd: <http://oneget.org/> .
 
-  
+
 Megjegyzés: Végrehajtott módosítás csomagolási formátumban, miatt javasoljuk PowerShellGet és PackageManagement nemrég frissített elemeket telepíteni a legújabb verzióra frissíti. PowerShellGet megtalálható a Windows 10, amely meg többet is megtudhat [Itt](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409).
 PowerShellGet, letöltheti a a Windows Management Framework (WMF) 5.0, részben [Itt](http://go.microsoft.com/fwlink/?LinkId=398175).
 
@@ -118,4 +118,3 @@ Parancsfájlok szelektív frissítéséhez vegye fel a `-Name` paraméter.
 Szeretné tudni, melyik modulokat a PowerShell-galériából telepítette, futtassa a [Get-InstalledModule](https://go.microsoft.com/fwlink/?LinkId=526863) parancsmag. Ez a parancs megjeleníti a modulok, a rendszeren, hogy közvetlenül a PowerShell-galériából telepített.
 
 Hasonlóképpen, a PowerShell-galériából telepítése parancsfájlok tudni, futtassa a [Get-InstalledScript](https://go.microsoft.com/fwlink/?LinkId=619790) parancsmag. Ez a parancs felsorolja az összes parancsfájlját a rendszeren, hogy közvetlenül a PowerShell-galériából telepített.
-

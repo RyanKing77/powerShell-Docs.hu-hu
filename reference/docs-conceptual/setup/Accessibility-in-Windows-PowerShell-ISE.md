@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell ISE kisegítő lehetőségei"
+title: A Windows PowerShell ISE kisegítő lehetőségei
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>A Windows PowerShell ISE kisegítő lehetőségei
+
 Ez a témakör a Windows PowerShell integrált parancsfájlkezelési környezet (ISE), előfordulhat, hogy a hasznos kisegítő lehetőségeinek ismertetése.
 
 * [A méret és a konzol és a parancsfájl ablaktáblák helyének módosítása](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
@@ -31,6 +32,7 @@ A Windows PowerShell ISE kontrasztos módot támogatja. A gyengén látó, a tö
 - Szöveg méretének módosítása
 
 ## <a name="how-to-change-the-size-and-location-of-the-console-and-script-panes"></a>A méret és a konzol és a parancsfájl ablaktáblák helyének módosítása
+
 Az alábbi lépések segítségével a méret és a konzol és a parancsfájl ablaktábla helyének módosítása. Ha újra megnyitja a Windows PowerShell ISE, a méret és elhelyezkedés módosítások megmaradnak.
 
 ### <a name="to-resize-the-script-pane-and-console-pane"></a>A parancsfájl és konzol ablaktábla átméretezéséhez
@@ -40,6 +42,7 @@ Az alábbi lépések segítségével a méret és a konzol és a parancsfájl ab
 2. Amikor az egérmutató egy kétirányú nyíl, húzza a szegély ablaktábla méretének módosításához.
 
 ### <a name="to-move-the-script-pane-and-console-pane"></a>A parancsfájl és a konzol ablaktáblában áthelyezése
+
 Tegye a következők egyikét:
 
 - Helyezze át a parancssori panelbe fent a konzol ablaktáblában, nyomja meg az **CTRL + 1** vagy az eszköztáron kattintson a **megjelenítése parancsfájl ablaktábla felső** ikonra, vagy a a **nézet** menüben kattintson a **megjelenítése Parancsfájl-ablaktábla felső**.
@@ -53,6 +56,7 @@ Tegye a következők egyikét:
 - A parancsfájl ablaktábla megjelenítése, amikor a konzol ablaktáblában teljes méretű, lapján sorára jobb szélén kattintson a **parancsfájl ablaktábla megjelenítése** ikonra, vagy a **nézet** menüben kattintással jelölje ki a **parancsfájl megjelenítése Ablaktábla** menüjét.
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Billentyűparancsok szöveg szerkesztése
+
 A következő billentyűparancsokat használhatja szöveg szerkesztésekor.
 
 |Művelet|Billentyűparancsok|A használatára|
@@ -70,6 +74,7 @@ A következő billentyűparancsokat használhatja szöveg szerkesztésekor.
 |**Undo**|CTRL+Z|Parancsfájl ablaktáblán, a konzol ablaktábla|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>A parancsfájlok futtatásához használható billentyűparancsok
+
 A következő billentyűparancsokat használhatja a parancssori panelbe parancsfájlok futtatásakor.
 
 |Művelet|Billentyűparancs|
@@ -83,6 +88,7 @@ A következő billentyűparancsokat használhatja a parancssori panelbe parancsf
 |**A lapon** (az előző parancsfájl)|CTRL + SHIFT + TAB **Megjegyzés:** előző parancsfájl lapon működik, ha csak egy PowerShell lapon nyissa meg, vagy ha egynél több PowerShell lap van megnyitva, és a parancssori panelbe célja.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>A nézet testreszabására használható billentyűparancsok
+
 A következő billentyűparancsokat segítségével testre szabhatja a Windows PowerShell ISE nézetet. Az alkalmazás ablaktábláinak a elérhetők legyenek.
 
 |Művelet|Billentyűparancs|
@@ -99,6 +105,7 @@ A következő billentyűparancsokat segítségével testre szabhatja a Windows P
 |**Kicsinyítés**|CTRL + MÍNUSZJEL|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>A parancsfájlok hibakereséshez használható billentyűparancsok
+
 A következő billentyűparancsokat használhatja a parancsfájlok hibakeresése.
 
 |Művelet|Billentyűparancs|A használatára|
@@ -130,6 +137,7 @@ A következő billentyűparancsokat használhatja a parancsfájlok hibakeresése
 |**A konzol parancsok hibakeresés megjelenítése**|H vagy?|Konzol ablaktáblában, ha a parancsprogram-hibakeresés|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>A Windows PowerShell lapok használható billentyűparancsok
+
 A következő billentyűparancsokat használhatja lapok Windows PowerShell használatakor.
 
 |Művelet|Billentyűparancs|
@@ -140,6 +148,7 @@ A következő billentyűparancsokat használhatja lapok Windows PowerShell haszn
 |**Következő Windows PowerShell lap**|CTRL+TAB. Ezzel a billentyűparanccsal csak működik, ha nincs fájl megnyitva, a PowerShell lapon.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Billentyűparancsok indítása és leállítása
+
 A következő billentyűparancsokat használhatja a Windows PowerShell konzol indítása (PowerShell.exe) vagy a kilépéshez a Windows PowerShell ISE.
 
 |Művelet|Billentyűparancs|
@@ -148,5 +157,5 @@ A következő billentyűparancsokat használhatja a Windows PowerShell konzol in
 |**Indítsa el a PowerShell.exe** (a Windows PowerShell konzol)|CTRL+SHIFT+P|
 
 ## <a name="see-also"></a>Lásd még:
-- [A Windows PowerShell ISE használata](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+- [A Windows PowerShell ISE bemutatása](../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)

@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, a powershell, a biztonsági"
-title: "JEA használatával"
-ms.openlocfilehash: f0c22bf0f823b9fafa203e7f98049a6a6b3b7c05
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea, a powershell, a biztonsági
+title: A JEA használata
+ms.openlocfilehash: 8a6fb2682cf82de8dd20a8699178d4abde4954c2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-jea"></a>JEA használatával
+# <a name="using-jea"></a>A JEA használata
 
 > A következőkre vonatkozik: a Windows PowerShell 5.0
 
@@ -103,7 +103,7 @@ $jeaDefaultCmdlets = 'Clear-Host', 'Exit-PSSession', 'Get-Command', 'Get-FormatD
 $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notcontains $_ }
 
 # Import only commands explicitly added in role capabilities and prefix each imported cmdlet with "JEA"
-Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands 
+Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
 Megőrizni a implicit távoli eljáráshívás segítségével a proxy parancsmagjait [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
@@ -189,4 +189,3 @@ Erősen ajánlott, hogy hozzon létre egy dedikált helyi felhasználói jogosul
 Ne feledje, hogy még nem rendszerjogosultságú felhasználói továbbra is be tud jelentkezni egy Windows-számítógép alapértelmezés, beleértve a korlátozás nélküli PowerShell használatával.
 Amely lehetővé teszi (néhány) keresse meg a fájlrendszer és a további tudnivalók az operációs rendszer környezetében.
 A Hyper-V rendszergazdák is képesek csak akkor férhessenek hozzá a virtuális gépek PowerShell közvetlenül a JEA zárolását, szüksége lesz a Hyper-V rendszergazdai JEA fiókot a helyi bejelentkezési jogokkal megtagadása.
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-10-31
+ms.date: 10/31/2017
 ms.topic: conceptual
-keywords: "a DSC, a powershell, a konfiguráció, a beállítása"
-title: "A MOF-fájl védelme"
-ms.openlocfilehash: 1bb257f3237344f32c9035f3836dd317b75eef0a
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: A MOF-fájl védelme
+ms.openlocfilehash: 80ef37ef1bdcb0a8b0ad343b4eab99f1bc66e116
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="securing-the-mof-file"></a>A MOF-fájl védelme
 
@@ -56,9 +56,9 @@ A nyilvános kulcsú tanúsítvány virtualizálásra konkrét követelmények v
    - Kell _nem_ tartalmaz: ügyfél-hitelesítés (1.3.6.1.5.5.7.3.2) és a kiszolgálói hitelesítés (1.3.6.1.5.5.7.3.1).
  3. A tanúsítvány titkos kulcsa megtalálható a * cél Node_.
  4. A **szolgáltató** a tanúsítványt nem lehet "Microsoft RSA SChannel Cryptographic Provider".
- 
+
 >**Ajánlott eljárás:** tanúsítvány használata a kulcshasználat "Digitális aláírás" vagy a kiszolgálóhitelesítési EKU egyikét tartalmazó, bár ez lehetővé teszi a titkosítási kulcs, hogy könnyebben hibásan használt és ki van téve a támadás. Ezért ajánlott kihagyja ezen kulcshasználat és az EKU-kat kifejezetten DSC hitelesítő adatok védelme céljából létrehozott tanúsítvány használatát is.
-  
+
 A meglévő tanúsítványt a _Célcsomóponttal_ , hogy megfelel-e ezek a feltételek segítségével biztonságos DSC hitelesítő adatokat.
 
 ## <a name="certificate-creation"></a>Tanúsítvány létrehozása
@@ -213,23 +213,23 @@ A hitelesítő adatok titkosítás kapcsolódó, az egyes csomópontok konfigur�
 Ez a példa bemutatja egy konfigurációs adatblokk meghatározza, hogy a célcsomóponton való működésre elnevezett célcsomópont, a nyilvános kulcs tanúsítványfájljából (nevű targetNode.cer), és az ujjlenyomat a nyilvános kulcs elérési útja.
 
 ```powershell
-$ConfigData= @{ 
-    AllNodes = @(     
-            @{  
-                # The name of the node we are describing 
-                NodeName = "targetNode" 
+$ConfigData= @{
+    AllNodes = @(
+            @{
+                # The name of the node we are describing
+                NodeName = "targetNode"
 
-                # The path to the .cer file containing the 
-                # public key of the Encryption Certificate 
-                # used to encrypt credentials for this node 
-                CertificateFile = "C:\publicKeys\targetNode.cer" 
+                # The path to the .cer file containing the
+                # public key of the Encryption Certificate
+                # used to encrypt credentials for this node
+                CertificateFile = "C:\publicKeys\targetNode.cer"
 
-         
-                # The thumbprint of the Encryption Certificate 
-                # used to decrypt the credentials on target node 
-                Thumbprint = "AC23EA3A9E291A75757A556D0B71CBBF8C4F6FD8" 
-            }; 
-        );    
+
+                # The thumbprint of the Encryption Certificate
+                # used to decrypt the credentials on target node
+                Thumbprint = "AC23EA3A9E291A75757A556D0B71CBBF8C4F6FD8"
+            };
+        );
     }
 ```
 
@@ -239,24 +239,24 @@ $ConfigData= @{
 A konfigurációs parancsfájl önmagában, használja a `PsCredential` győződjön meg arról, hogy a hitelesítő adatokat kell tárolni a lehető legrövidebb idő alatt a paramétert. A megadott példa futtatásakor DSC kéri a hitelesítő adatokat, és majd titkosíthatja a MOF-fájlt, a társított konfigurációs adatblokk a célcsomóponton CertificateFile használatával. Ez a Kódpélda másolja át a fájl egy védett megosztást egy felhasználó számára.
 
 ```
-configuration CredentialEncryptionExample 
-{ 
-    param( 
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
-        [PsCredential] $credential 
-        ) 
-    
+configuration CredentialEncryptionExample
+{
+    param(
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
+        [PsCredential] $credential
+        )
 
-    Node $AllNodes.NodeName 
-    { 
-        File exampleFile 
-        { 
-            SourcePath = "\\Server\share\path\file.ext" 
-            DestinationPath = "C:\destinationPath" 
-            Credential = $credential 
-        } 
-    } 
+
+    Node $AllNodes.NodeName
+    {
+        File exampleFile
+        {
+            SourcePath = "\\Server\share\path\file.ext"
+            DestinationPath = "C:\destinationPath"
+            Credential = $credential
+        }
+    }
 }
 ```
 
@@ -265,45 +265,45 @@ configuration CredentialEncryptionExample
 Mielőtt [ `Start-DscConfiguration` ](https://technet.microsoft.com/library/dn521623.aspx) is működik, hogy mely tanúsítványokat használja a hitelesítő adatok visszafejtése közölje a helyi Configuration Manager minden egyes cél csomóponton a CertificateID erőforrás ellenőrzése a tanúsítvány ujjlenyomata segítségével. Ez a példa funkció megkeresi a megfelelő helyi tanúsítvány (lehetséges, hogy testre szabhatja, így a pontos használni kívánt tanúsítványt keres, megtalálja a):
 
 ```powershell
-# Get the certificate that works for encryption 
-function Get-LocalEncryptionCertificateThumbprint 
-{ 
+# Get the certificate that works for encryption
+function Get-LocalEncryptionCertificateThumbprint
+{
     (dir Cert:\LocalMachine\my) | %{
-        # Verify the certificate is for Encryption and valid 
-        if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify()) 
-        { 
-            return $_.Thumbprint 
-        } 
-    } 
+        # Verify the certificate is for Encryption and valid
+        if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify())
+        {
+            return $_.Thumbprint
+        }
+    }
 }
 ```
 
 A tanúsítvány annak ujjlenyomata által azonosított a konfigurációs parancsfájl frissíthető értéket használja:
 
 ```powershell
-configuration CredentialEncryptionExample 
-{ 
-    param( 
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
-        [PsCredential] $credential 
-        ) 
-    
+configuration CredentialEncryptionExample
+{
+    param(
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
+        [PsCredential] $credential
+        )
 
-    Node $AllNodes.NodeName 
-    { 
-        File exampleFile 
-        { 
-            SourcePath = "\\Server\share\path\file.ext" 
-            DestinationPath = "C:\destinationPath" 
-            Credential = $credential 
-        } 
-        
-        LocalConfigurationManager 
-        { 
-             CertificateId = $node.Thumbprint 
-        } 
-    } 
+
+    Node $AllNodes.NodeName
+    {
+        File exampleFile
+        {
+            SourcePath = "\\Server\share\path\file.ext"
+            DestinationPath = "C:\destinationPath"
+            Credential = $credential
+        }
+
+        LocalConfigurationManager
+        {
+             CertificateId = $node.Thumbprint
+        }
+    }
 }
 ```
 
@@ -321,8 +321,8 @@ Write-Host "Generate DSC Configuration..."
 CredentialEncryptionExample -ConfigurationData $ConfigData -OutputPath .\CredentialEncryptionExample
 
 Write-Host "Setting up LCM to decrypt credentials..."
-Set-DscLocalConfigurationManager .\CredentialEncryptionExample -Verbose 
- 
+Set-DscLocalConfigurationManager .\CredentialEncryptionExample -Verbose
+
 Write-Host "Starting Configuration..."
 Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 ```
@@ -345,7 +345,7 @@ configuration CredentialEncryptionExample
         [ValidateNotNullorEmpty()]
         [PsCredential] $credential
         )
-    
+
 
     Node $AllNodes.NodeName
     {
@@ -355,7 +355,7 @@ configuration CredentialEncryptionExample
             DestinationPath = "C:\Users\user"
             Credential = $credential
         }
-        
+
         LocalConfigurationManager
         {
             CertificateId = $node.Thumbprint
@@ -363,7 +363,7 @@ configuration CredentialEncryptionExample
     }
 }
 
-# A Helper to invoke the configuration, with the correct public key 
+# A Helper to invoke the configuration, with the correct public key
 # To encrypt the configuration credentials
 function Start-CredentialEncryptionExample
 {
@@ -374,11 +374,11 @@ function Start-CredentialEncryptionExample
     [string] $thumbprint = Get-EncryptionCertificate -computerName $computerName -Verbose
     Write-Verbose "using cert: $thumbprint"
 
-    $certificatePath = join-path -Path "$env:SystemDrive\$script:publicKeyFolder" -childPath "$computername.EncryptionCertificate.cer"         
+    $certificatePath = join-path -Path "$env:SystemDrive\$script:publicKeyFolder" -childPath "$computername.EncryptionCertificate.cer"
 
     $ConfigData=    @{
-        AllNodes = @(     
-                        @{  
+        AllNodes = @(
+                        @{
                             # The name of the node we are describing
                             NodeName = "$computerName"
 
@@ -390,15 +390,15 @@ function Start-CredentialEncryptionExample
                             # used to decrypt the credentials
                             Thumbprint = $thumbprint
                         };
-                    );    
+                    );
     }
 
     Write-Verbose "Generate DSC Configuration..."
     CredentialEncryptionExample -ConfigurationData $ConfigData -OutputPath .\CredentialEncryptionExample `
-        -credential (Get-Credential -UserName "$env:USERDOMAIN\$env:USERNAME" -Message "Enter credentials for configuration") 
+        -credential (Get-Credential -UserName "$env:USERDOMAIN\$env:USERNAME" -Message "Enter credentials for configuration")
 
     Write-Verbose "Setting up LCM to decrypt credentials..."
-    Set-DscLocalConfigurationManager .\CredentialEncryptionExample -Verbose 
+    Set-DscLocalConfigurationManager .\CredentialEncryptionExample -Verbose
 
     Write-Verbose "Starting Configuration..."
     Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
@@ -431,7 +431,7 @@ function Get-EncryptionCertificate
                         }
 
                         # Export the public key to a well known location
-                        $certPath = Export-Certificate -Cert $_ -FilePath (Join-Path -path $folder -childPath "EncryptionCertificate.cer") 
+                        $certPath = Export-Certificate -Cert $_ -FilePath (Join-Path -path $folder -childPath "EncryptionCertificate.cer")
 
                         # Return the thumbprint, and exported certificate path
                         return @($_.Thumbprint,$certPath);
@@ -449,4 +449,3 @@ function Get-EncryptionCertificate
 
 Start-CredentialEncryptionExample
 ```
-

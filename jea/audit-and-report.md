@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, a powershell, a biztonsági"
-title: "Naplózási és jelentéskészítési összetevője JEA"
-ms.openlocfilehash: 57148bc3753bdd751bfa21fc3198aca3f8654849
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea, a powershell, a biztonsági
+title: Naplózási és jelentéskészítési összetevője JEA
+ms.openlocfilehash: 7fc670c77b5fbf9bce8fb55dd99a2f9a984100d2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Naplózási és jelentéskészítési összetevője JEA
 
@@ -144,11 +144,11 @@ Az egyes parancsok egy felhasználó futtatja a "CommandInvocation" sor kerülne
 ParameterBindings hajtsa végre az egyes CommandInvocation, amely közli, minden paraméter és érték, amely a parancs lett megadva.
 A fenti példában láthatja, hogy a paraméter "Name" lett megadva az érték "Dns" a "Get-szolgáltatás" parancsmaghoz.
 
-Minden parancs is elindítja egy CommandInvocation általában az alapértelmezett kimenő irányú. A Out-Default InputObject egy, a parancs által visszaadott PowerShell-objektum.
+Minden parancs is elindítja egy CommandInvocation általában az alapértelmezett kimenő irányú.
+A Out-Default InputObject egy, a parancs által visszaadott PowerShell-objektum.
 Lista tartalmazza az objektumokat, amelyek részleteit az alábbi szorosan mimicking Mi a felhasználó akkor amint láthatta néhány sor.
 
 ## <a name="see-also"></a>Lásd még:
 
 - [A JEA-munkamenetben felhasználói műveletek naplózása](audit-and-report.md)
 - [*PowerShell ♥ a kék Team* a biztonsági által írt blogbejegyzés](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: "A Windows PowerShell kezelése meghajtók"
+title: Windows PowerShell-meghajtók kezelése
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: e2908246bb584291f04b67dc8635caec93d3b72e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="managing-windows-powershell-drives"></a>A Windows PowerShell kezelése meghajtók
+# <a name="managing-windows-powershell-drives"></a>Windows PowerShell-meghajtók kezelése
+
 A *Windows PowerShell meghajtót* hasonlóan a Windows PowerShellben a fájlrendszer meghajtóján keresztül elérhető adatok tárolási helyen található. A Windows PowerShell-szolgáltatók néhány meghajtó hozza létre, mint például a fájl-meghajtók (beleértve a C: és D:), a beállításjegyzék meghajtók (HKCU: és HKLM:), és a tanúsítvány meghajtó (Cert:), és létrehozhat saját Windows PowerShell-meghajtókat. Ezek a meghajtók nagyon hasznosak, de csak a Windows PowerShell belül elérhetők. Nem érhetők el azokat a Windows más eszközeit, például a Fájlkezelőben vagy a Cmd.exe.
 
 A Windows PowerShell használja a főnév **PSDrive**, a Windows PowerShell paranccsal meghajtók. Az a Windows PowerShell listáját a Windows PowerShell-munkamenetben meghajtók, használja a **Get-PSDrive** parancsmag.
@@ -39,6 +40,7 @@ Fájl rendszermeghajtók megtalálhatók a Windows PowerShell meghajtót. Azonos
 
 ```
 PS> Get-Command -Name Get-PSDrive -Syntax
+
 Get-PSDrive [[-Name] <String[]>] [-Scope <String>] [-PSProvider <String[]>] [-V
 erbose] [-Debug] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-
 OutVariable <String>] [-OutBuffer <Int32>]
@@ -58,26 +60,34 @@ D          FileSystem    D:\
 
 A Windows PowerShell-meghajtókat, amelyek megfelelnek a beállításjegyzék-struktúra megtekintéséhez használja a **PSProvider** paraméter csak a Windows PowerShell-meghajtók jelenik meg, hogy a Windows PowerShell beállításjegyzék-szolgáltató által támogatott:
 
-<pre>PS> Get-PSDrive -PSProvider Registry
+```
+PS> Get-PSDrive -PSProvider Registry
+
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 HKCU       Registry      HKEY_CURRENT_USER
-HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
+HKLM       Registry      HKEY_LOCAL_MACHINE
+```
 
 A Windows PowerShell-meghajtókon is használhatja a szabványos hely parancsmagokat:
 
-<pre>PS> Set-Location HKLM:\SOFTWARE
+```
+PS> Set-Location HKLM:\SOFTWARE
 PS> Push-Location .\Microsoft
 PS> Get-Location
+
 Path
 ----
-HKLM:\SOFTWARE\Microsoft</pre>
+HKLM:\SOFTWARE\Microsoft
+```
 
 ### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Hozzáadása az új Windows PowerShell-meghajtók (új PSDrive)
+
 A Windows PowerShell meghajtót használatával adhat hozzá a **New-PSDrive** parancsot. A szintaxisának lekérése a **New-PSDrive** parancsot, írja be a **Get-Command** parancsot a **szintaxis** paraméter:
 
 ```
 PS> Get-Command -Name New-PSDrive -Syntax
+
 New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String> [-Descript
 ion <String>] [-Scope <String>] [-Credential <PSCredential>] [-Verbose] [-Debug
 ] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-OutVariable <St
@@ -110,11 +120,14 @@ Az új Windows PowerShell meghajtót az összes Windows PowerShell-meghajtó –
 
 A Windows PowerShell meghajtót számos feladatot tehet jóval egyszerűbbé válik. Például a Windows beállításjegyzékében legfontosabb kulcsok rendelkeznek rendkívül hosszú elérési utak, nehézkes lehet hozzáférési és nehéz megjegyezni minősítené. Fontos konfigurációs adatok alatt található **HKEY_LOCAL_MACHINE\\szoftver\\Microsoft\\Windows\\CurrentVersion**. - És CurrentVersion beállításkulcs, létrehozhat egy Windows PowerShell meghajtót, feltörték a kulcs írja be:
 
-<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
+```
+PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
 indows\CurrentVersion
+
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
-cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
+cvkey      Registry      HKLM\Software\Microsoft\Windows\...
+```
 
 Módosíthatja a helyet, a **cvkey:** meghajtó, mint bármilyen más meghajtóról: "
 
@@ -122,26 +135,30 @@ Módosíthatja a helyet, a **cvkey:** meghajtó, mint bármilyen más meghajtór
 
 vagy:
 
-<pre>PS> Set-Location cvkey: -PassThru
+```
+PS> Set-Location cvkey: -PassThru
+
 Path
 ----
-cvkey:\</pre>
+cvkey:\
+```
 
 A New-PsDrive parancsmag ad hozzá az új meghajtó csak az aktuális Windows PowerShell-munkamenetben. Ha bezárja a Windows PowerShell-ablakot, az új meghajtó elveszik. Ha a Windows PowerShell-meghajtót, az Export-konzol parancsmag segítségével exportálhatja az aktuális Windows PowerShell-munkamenetet, és használja a PowerShell.exe **PSConsoleFile** paraméter importálnia. Vagy az új meghajtó hozzáadása a Windows PowerShell-profilhoz.
 
 ### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Törli a Windows PowerShell-meghajtók (Remove-PSDrive)
+
 Ön meghajtókat a Windows PowerShell használatával törölheti a **Remove-PSDrive** parancsmag. A **Remove-PSDrive** parancsmag könnyen használható, egy adott Windows PowerShell meghajtót törölni, csak meg a Windows PowerShell meghajtót nevet.
 
 Például, ha hozzáadta a **Office:** Windows PowerShell meghajtót, ahogy az a **New-PSDrive** témakör, törölheti a beírásával:
 
-```
-PS> Remove-PSDrive -Name Office
+```powershell
+Remove-PSDrive -Name Office
 ```
 
 Törli a **cvkey:** Windows PowerShell meghajtót, is látható a **New-PSDrive** témakör, használja a következő parancsot:
 
-```
-PS> Remove-PSDrive -Name cvkey
+```powershell
+Remove-PSDrive -Name cvkey
 ```
 
 A Windows PowerShell meghajtót törölheti, de nem törölhető, amíg a meghajtó. Például:
@@ -155,5 +172,5 @@ At line:1 char:15
 ```
 
 ### <a name="adding-and-removing-drives-outside-windows-powershell"></a>-Meghajtók kívül a Windows PowerShell hozzáadása és eltávolítása
-A Windows PowerShell hozzáadásakor vagy eltávolításakor a Windowsban, beleértve a csatlakoztatott hálózati meghajtók, a csatlakoztatott USB-meghajtók és a meghajtók használatával vagy törölt fájl rendszermeghajtók észleli a **használata net** parancs vagy a  **WScript.NetworkMapNetworkDrive** és **RemoveNetworkDrive** módszerek a Windows Script Host (WSH) parancsfájlt.
 
+A Windows PowerShell hozzáadásakor vagy eltávolításakor a Windowsban, beleértve a csatlakoztatott hálózati meghajtók, a csatlakoztatott USB-meghajtók és a meghajtók használatával vagy törölt fájl rendszermeghajtók észleli a **használata net** parancs vagy a  **WScript.NetworkMapNetworkDrive** és **RemoveNetworkDrive** módszerek a Windows Script Host (WSH) parancsfájlt.

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, a powershell, a biztonsági"
-title: "JEA biztonsági megfontolások"
-ms.openlocfilehash: 69bbe50fb1a7580c32d657a0f084cc80c28825c7
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea, a powershell, a biztonsági
+title: JEA biztonsági megfontolások
+ms.openlocfilehash: 1b83a73c047b056a4cc094d7e4b0bbf31f75f53a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="jea-security-considerations"></a>JEA biztonsági megfontolások
 
@@ -153,4 +153,3 @@ Ezért fontos a JEA felhasználók kiterjesztett engedéllyel, ha van-e más mó
 
 Egy általános gyakorlat az, hogy rendszeres napi karbantartás JEA használnak, és egy "csak az idő" emelt szintű hozzáférés-kezelési megoldás engedélyezése a felhasználók ideiglenesen a helyi rendszergazdák vészhelyzetben válik.
 Ez biztosítja a felhasználók nem állandó rendszergazdák, a rendszer, de ezeket a jogokat kaphat, ha, és csak olyan munkafolyamatot, amely ezeket az engedélyeket a használatukat dokumentumok művelet befejeződik.
-

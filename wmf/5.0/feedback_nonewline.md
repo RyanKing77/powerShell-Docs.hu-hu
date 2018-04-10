@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, a powershell, a beállítása"
-ms.openlocfilehash: 4d32ced8e75042f494477408424b97be8958854e
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: WMF, powershell, beállítás
+ms.openlocfilehash: 1f165afbcd8fe8dc5f72cc7ea557d21ce2884e91
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="nonewline-parameter"></a>NoNewLine paraméter
 **Out-File**, **Add-tartalom**, és **Set-tartalom** most már rendelkezik egy új **– NoNewline** kapcsolót, amely egyszerűen kihagyja a kimenet után egy új sort.
@@ -38,4 +38,3 @@ a single
 
 sentence.
 ```
-
