@@ -3,18 +3,18 @@ ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 12c47d3583274e58edbd2171fef50c779aac9fce
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 89e908969641afd9ad9541dcfedcc8eb6315d07c
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="66d96-102">Modulok támogatása deklaráló verzió tartományok (1.\*, stb.)</span><span class="sxs-lookup"><span data-stu-id="66d96-102">Modules support for declaring version ranges (1.\*, etc)</span></span>
-<span data-ttu-id="66d96-103">Együtt **- MinimumVersion**, **- MaximumVersion** mostantól lehetővé teszi a felhasználónak az adott tartományon belüli get/importálás modul.</span><span class="sxs-lookup"><span data-stu-id="66d96-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="66d96-104">A paraméter is támogatja a **.** \*.</span><span class="sxs-lookup"><span data-stu-id="66d96-104">The parameter also support **.**\*.</span></span> <span data-ttu-id="66d96-105">A következő példa bemutatja, hogyan működik:</span><span class="sxs-lookup"><span data-stu-id="66d96-105">The following example shows how it works:</span></span>
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="fe0d7-102">Modulok támogatása deklaráló verzió tartományok (1.\*, stb.)</span><span class="sxs-lookup"><span data-stu-id="fe0d7-102">Modules support for declaring version ranges (1.\*, etc)</span></span>
+<span data-ttu-id="fe0d7-103">Együtt **- MinimumVersion**, **- MaximumVersion** mostantól lehetővé teszi a felhasználónak az adott tartományon belüli get/importálás modul.</span><span class="sxs-lookup"><span data-stu-id="fe0d7-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="fe0d7-104">A paraméter is támogatja a **.** \*.</span><span class="sxs-lookup"><span data-stu-id="fe0d7-104">The parameter also support **.**\*.</span></span> <span data-ttu-id="fe0d7-105">A következő példa bemutatja, hogyan működik:</span><span class="sxs-lookup"><span data-stu-id="fe0d7-105">The following example shows how it works:</span></span>
+
+<span data-ttu-id="fe0d7-106">Most, kombinálhatja **- MinimumVersion** és **- MaximumVersion** adott tartományon belüli modul importálásához:</span><span class="sxs-lookup"><span data-stu-id="fe0d7-106">Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:</span></span>
 
 ```powershell
-Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
-
 PS C:\> Import-Module psreadline -Verbose -MinimumVersion 1.0 -MaximumVersion 1.2.*
 
 VERBOSE: Loading module from path 'C:\Program Files\WindowsPowerShell\Modules\psreadline\1.1\psreadline.psd1'.
