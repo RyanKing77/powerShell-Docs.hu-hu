@@ -588,10 +588,10 @@ PowerShell új verzióinak kiadásakor egyszerűen Homebrew tartozó képletek f
 
 ```sh
 brew update
-brew cask reinstall powershell
+brew cask upgrade powershell
 ```
 
-> Megjegyzés: miatt: [ezt a problémát Cask](https://github.com/caskroom/homebrew-cask/issues/29301), jelenleg van, hogy egy reinstall frissítéséhez.
+> Megjegyzés: A fenti parancsokat is hívható meg egy PowerShell (pwsh) állomás, de majd a PowerShell rendszerhéjban kell kilépett, és végezze el a frissítést, és frissítse a $PSVersionTable látható értékek újból belépett.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/

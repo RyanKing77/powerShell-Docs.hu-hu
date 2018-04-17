@@ -1,17 +1,20 @@
 ---
-ms.date: 06/12/2017
+ms.date: 04/11/2018
 ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: A DSC SMB-lekérési kiszolgálójának beállítása
-ms.openlocfilehash: e9228c050d6f496e30e94404a564ed2e425a5412
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e4e313746e95af86c5d17a8de0549451b1399b6c
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>A DSC SMB-lekérési kiszolgálójának beállítása
 
 >Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> A lekéréses kiszolgáló (Windows-szolgáltatás *DSC-szolgáltatás*), Windows Server támogatott összetevője létezik azonban a következők: nem tervezi, hogy új funkciók és képességek kínálnak. Javasoljuk, hogy kezdje a Váltás felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (tartalmazza a Windows Server-kiszolgáló lekéréses is) vagy a közösségi megoldásoknak a valamelyikét felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
 
 A DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) lekéréses kiszolgáló egy olyan DSC konfigurációs fájlokat és a DSC-erőforrások számára elérhetővé tenni célcsomópontokat, ha azokat a csomópontokat, kérje meg őket az SMB-fájlmegosztások futtató számítógép.
 

@@ -3,28 +3,28 @@ ms.date: 06/05/2017
 keywords: PowerShell parancsmag
 title: Fájlok és mappák használata
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: e47ea00c9d90d7e04a7af0cb1348849410a6e357
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6b1fcd438570c8708aa87e4b213f33474921d5f8
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-files-and-folders"></a>Fájlok és mappák használata
 
-Windows PowerShell-meghajtókat nézetre lépne, és azokat az elemeket kezelése hasonlít a fájlok és mappák Windows fizikai merevlemezeken kezelésére. Meghatározott fájlok és mappák adatkezelési feladatok ebben a szakaszban kezelése ismertetik.
+Windows PowerShell-meghajtókat nézetre lépne, és azokat az elemeket kezelése hasonlít a fájlok és mappák Windows fizikai merevlemezeken kezelésére. Ez a szakasz ismerteti, amelyek adott fájlok és mappák adatkezelési feladatok PowerShell-lel kezelése.
 
 ### <a name="listing-all-the-files-and-folders-within-a-folder"></a>A fájlok és mappák egy mappában listázása
 
 A közvetlenül az egyes mappákban lévő összes elemet is ki **Get-ChildItem**. Adja hozzá a választható **kényszerített** rejtett megjelenítése vagy rendszer elemek paraméter. A parancs például a Windows PowerShell meghajtót C (Ez ugyanaz, mint a Windows fizikai C meghajtó) közvetlen tartalmát jeleníti meg:
 
 ```powershell
-Get-ChildItem -Force C:\
+Get-ChildItem -Path C:\ -Force
 ```
 
 A parancs csak közvetlenül a benne lévő elemeket tartalmazza, hasonlóan a Cmd.exe tartozó **DIR** parancs vagy **ls** egy UNIX rendszerhéj. Ahhoz, hogy a benne lévő elemek megjelenítése, meg kell adnia a **-Recurse** paramétert is. (Ez egy nagyon hosszú ideig eltarthat.) Minden, a C meghajtó listázásához:
 
 ```powershell
-Get-ChildItem -Force C:\ -Recurse
+Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
 **Get-ChildItem** elemek szűrheti a **elérési**, **szűrő**, **Include**, és **kizárása** paraméterek, de azokat, amelyek általában csak a neve alapján. Összetett szűrés használatával-elemek egyéb tulajdonságok alapján hajthat végre **Where-Object**.
@@ -40,33 +40,33 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 Másolás történik a **elem**. A következő parancs készít biztonsági másolatot C:\\c: boot.ini\\boot.bak:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-Ha a célfájl már létezik, a másolási kísérlet meghiúsul. Egy már meglévő cél felülírásához használja a Force paramétert:
+Ha a célfájl már létezik, a másolási kísérlet meghiúsul. Egy már meglévő cél felülírásához használja az **kényszerített** paraméter:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
 Ez a parancs is működik, ha a cél csak olvasható.
 
-Mappa másolása ugyanúgy működik. Ez a parancs, másolja át a mappát a C:\\temp\\az új mappa c: Teszt1\\temp\\DeleteMe rekurzív módon:
+Mappa másolása ugyanúgy működik. Ez a parancs, másolja át a mappát a C:\\temp\\az új mappába C: Teszt1\\temp\\DeleteMe rekurzív módon:
 
 ```powershell
-Copy-Item C:\temp\test1 -Recurse c:\temp\DeleteMe
+Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
 A kijelölt elemek is másolhatja. A következő parancsot a c: bármely részén lévő összes .txt fájlt másolja át\\c: adatok\\temp\\szöveg:
 
 ```powershell
-Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
+Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
 Más eszközök hajtható végre rendszer továbbra is használhatja. XCOPY, a ROBOCOPY és a COM-objektumok, például a **Scripting.FileSystemObject,** összes működik a Windows PowerShellben. Például használhatja a Windows Script Host **Scripting.FileSystem COM** osztály biztonsági mentése C:\\c: boot.ini\\boot.bak:
 
 ```powershell
-(New-Object -ComObject Scripting.FileSystemObject).CopyFile('c:\boot.ini', 'c:\boot.bak')
+(New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
 ### <a name="creating-files-and-folders"></a>Fájlok és mappák létrehozása
@@ -90,7 +90,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 Eltávolíthatja a benne lévő elemek használata **Remove-cikk**, de kérni fogja az eltávolítás megerősítéséhez, ha az elem tartalmaz dolgozott. Például, ha törli a mappát a C: próbál\\temp\\további elemeket tartalmazó DeleteMe, a Windows PowerShell jóváhagyást kér a mappa törlése előtt:
 
 ```
-Remove-Item C:\temp\DeleteMe
+Remove-Item -Path C:\temp\DeleteMe
 
 Confirm
 The item at C:\temp\DeleteMe has children and the -recurse parameter was not
@@ -103,7 +103,7 @@ sure you want to continue?
 Ha nem szeretné, hogy minden benne lévő elemhez kéri, adja meg a **Recurse** paraméter:
 
 ```powershell
-Remove-Item C:\temp\DeleteMe -Recurse
+Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
 ### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Egy helyi mappába elérhető Windows meghajtóként leképezése

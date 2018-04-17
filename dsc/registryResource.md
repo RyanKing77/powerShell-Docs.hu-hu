@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: A DSC-beállításjegyzék erőforrás
-ms.openlocfilehash: fcd24b1dd729dbb0abd697a4a628dce01fdd5422
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 98e9a6251cb4e55443498bd770b4c563c25c7509
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="dsc-registry-resource"></a>A DSC-beállításjegyzék erőforrás
 
@@ -22,7 +22,7 @@ Registry [string] #ResourceName
 {
     Key = [string]
     ValueName = [string]
-    [ Ensure = [string] { Enable | Disable }  ]
+    [ Ensure = [string] { Present | Absent }  ]
     [ Force =  [bool]   ]
     [ Hex = [bool] ]
     [ DependsOn = [string[]] ]
@@ -38,9 +38,9 @@ Registry [string] #ResourceName
 | ValueName| A beállításazonosító nevét jelöli. Hozzáadni vagy eltávolítani egy beállításkulcsot, adja meg ennek a tulajdonságnak egy üres karakterlánccal ValueType vagy értékadat megadása nélkül. Vagy távolítsa el az alapértelmezett érték a beállításkulcsok módosításához adja meg ezt a tulajdonságot is meg ValueType vagy értékadat egy üres karakterlánccal.|
 | Győződjön meg arról| Azt jelzi, ha a kulcs és az érték szerepel. Győződjön meg arról, hogy így tesznek, állítsa ezt a tulajdonságot "Elérhető". Győződjön meg arról, hogy azok nem léteznek, hogy a "Hiányzik" tulajdonság értéke. Az alapértelmezett érték: "Elérhető".|
 | Force| Ha a megadott beállításkulcs megtalálható, __kényszerített__ felülírja az új értékkel. Ha a beállításkulcs törlése az alkulcsok, ez kell lennie __$true__|
-| Hex| Azt jelzi, ha adatokat hexadecimális formátumban kell megadni. Ha meg van adva, a DWORD/Négyszó érték hexadecimális formátumban jelenik meg. Más esetén nem érvényes. Az alapértelmezett érték __$false__.|
+| Hexadecimális| Azt jelzi, ha adatokat hexadecimális formátumban kell megadni. Ha meg van adva, a DWORD/Négyszó érték hexadecimális formátumban jelenik meg. Más esetén nem érvényes. Az alapértelmezett érték __$false__.|
 | dependsOn| Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.|
-| ValueData| A beállításjegyzék-értékben adatai.|
+| Értékadat| A beállításjegyzék-értékben adatai.|
 | ÉrtékTípusa| Azt jelzi, hogy az érték típusa. A támogatott típusok a következők:
 <ul><li>Karakterlánc (REG_SZ)</li>
 

@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: Lekérési ügyfél beállítása konfigurációs nevekkel
-ms.openlocfilehash: dd0526b118b404854b1e9b445ca50bdaafdd01c7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7c8f204cc646e52ad5e953d6c7ad9e4e906d8a5b
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-names"></a>Lekérési ügyfél beállítása konfigurációs nevekkel
 
 > Vonatkozik: A Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> A lekéréses kiszolgáló (Windows-szolgáltatás *DSC-szolgáltatás*), Windows Server támogatott összetevője létezik azonban a következők: nem tervezi, hogy új funkciók és képességek kínálnak. Javasoljuk, hogy kezdje a Váltás felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (tartalmazza a Windows Server-kiszolgáló lekéréses is) vagy a közösségi megoldásoknak a valamelyikét felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
 
 Minden egyes célcsomóponttal lekéréses módban a rendszergazda és az URL-címet kap, ahol lépjen kapcsolatba a lekérési kiszolgálójával konfigurációt beolvasandó ki.
 Ehhez az szükséges, hogy a helyi Configuration Manager (LCM) konfigurálnia a szükséges adatokat.

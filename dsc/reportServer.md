@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: A DSC jelentéskészítő kiszolgálójának használata
-ms.openlocfilehash: e239414dc30c7458c509392792d4775d04f2311a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 49e022d3c3c1e117eac4cb3c874ca8dcfe628237
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="using-a-dsc-report-server"></a>A DSC jelentéskészítő kiszolgálójának használata
 
 > Vonatkozik: A Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> A lekéréses kiszolgáló (Windows-szolgáltatás *DSC-szolgáltatás*), Windows Server támogatott összetevője létezik azonban a következők: nem tervezi, hogy új funkciók és képességek kínálnak. Javasoljuk, hogy kezdje a Váltás felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (tartalmazza a Windows Server-kiszolgáló lekéréses is) vagy a közösségi megoldásoknak a valamelyikét felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
 
 >**Megjegyzés:** a jelentéskészítő kiszolgáló, a jelen témakörben ismertetett PowerShell 4.0 nem érhető el.
 

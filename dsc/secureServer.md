@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: Lekérési kiszolgáló – ajánlott eljárások
-ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d8d8667e2fc608e0c5948a0b5046bf92801b49db
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="pull-server-best-practices"></a>Lekérési kiszolgáló – ajánlott eljárások
 
 >Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> A lekéréses kiszolgáló (Windows-szolgáltatás *DSC-szolgáltatás*), Windows Server támogatott összetevője létezik azonban a következők: nem tervezi, hogy új funkciók és képességek kínálnak. Javasoljuk, hogy kezdje a Váltás felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (tartalmazza a Windows Server-kiszolgáló lekéréses is) vagy a közösségi megoldásoknak a valamelyikét felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
 
 Összefoglalás: Ez a dokumentum célja, hogy folyamata, és segít a mérnökök számára készül a megoldás bővítési tartalmazza. Részletek kell ajánlott eljárások nyújtása a felhasználók által meghatározott, és a termék csapatától javaslatok jövőbeli számára is elérhető, és figyelembe veendő stabil majd érvényesíteni.
 
@@ -135,7 +138,7 @@ A tervezési feladat|
 ---|
 Tudja Megadja annak a személynek a DNS-rekordok létrehozott és módosított?|
 Újdonságok a DNS-rekord a kérelmek átlagos esetenként?|
-Do you need to request static Hostname (A) records for servers?|
+Meg kell igényelnie a kiszolgálók statikus állomásnév (A) rekordot?|
 Mit fog kér, egy olyan CNAME REKORDOT?|
 Ha szükséges, terheléselosztás megoldás fog használhatja a? (című terheléselosztás részletekért lásd:)|
 
