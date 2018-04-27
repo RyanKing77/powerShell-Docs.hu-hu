@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: A DSC-konfigurációk
-ms.openlocfilehash: 8b44fd9a715c217ee198ea343cdffbfab1193625
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ffeb953048c0a65352618d2ab141ee10ead4c663
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dsc-configurations"></a>A DSC-konfigurációk
 
@@ -72,7 +72,7 @@ Ebben a példában, akkor adja meg a csomópont neve úgy, hogy azt a **számít
 ## <a name="compiling-the-configuration"></a>A konfiguráció fordítása
 
 Egy konfigurációs is kihirdeti, mielőtt, hogy a MOF-dokumentumba van.
-Ehhez a konfigurációs hívja meg, mint egy olyan PowerShell függvényt.
+Ehhez a konfigurációs hívja, például akkor hívja meg a PowerShell függvényt.
 A példában csak a konfiguráció nevét tartalmazó utolsó sora meghívja a konfiguráció.
 
 >**Megjegyzés:** hívni egy konfigurációt, a függvény hatókörében kell lennie globális (úgy, mint bármely más PowerShell függvény).

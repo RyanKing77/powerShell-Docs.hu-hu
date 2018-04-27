@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell parancsmag
 title: Első WMI-objektumok WmiObject beolvasása
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-ms.openlocfilehash: 67922426ae3f13ef5f4c70bc70bb3ce1594d3d05
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 279e656b4affd27450be71015a5d6bd21af9f7ad
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>WMI-objektumok (Get-WmiObject) beolvasása
 
@@ -120,7 +120,7 @@ TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory F
 ```
 
 > [!NOTE]
-> Helyettesítő karakterek használata a tulajdonságnevek **Format-Table**, így a végső csővezeték elem csökkenthető, **Format-Table-tulajdonság teljes*, szabad *
+> Helyettesítő karakterek használata a tulajdonságnevek **Format-Table**, így csökkenthető a végső csővezeték elem `Format-Table -Property Total,Free`
 
 Lehet, hogy a memória adatok olvashatóbb, ha azt listaként beírásával:
 

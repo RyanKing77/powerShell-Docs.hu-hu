@@ -8,7 +8,8 @@ Használhatja a Visual Studio Code a Windows PowerShell használatával 5-ös ve
 Az megkezdése előtt ellenőrizze, hogy PowerShell létezik a rendszeren.
 A Windows, a macOS és a Linux modern munkaterhelések esetén lásd:
 
-- [MacOS és Linux PowerShell központi telepítése][install-pscore-linux]
+- [PowerShell központi telepítése Linux rendszeren][install-pscore-linux]
+- [MacOS PowerShell központi telepítése][install-pscore-macos]
 - [A Windows PowerShell központi telepítése][install-pscore-windows]
 
 A hagyományos Windows PowerShell-munkaterhelésekhez, lásd: [Windows PowerShell telepítése][install-winps].
@@ -171,7 +172,8 @@ Van néhány olyan rendszerek, amelyek segíthetnek az első lépésekhez, a Vis
 - [Hibakeresési PowerShell-parancsfájlt a Visual Studio Code – 2. rész][debugging-part2]
 
 [ise]: ../ise-guide.md
-[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
+[install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
 [ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
