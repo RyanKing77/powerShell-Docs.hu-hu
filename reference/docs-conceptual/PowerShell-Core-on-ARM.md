@@ -1,4 +1,4 @@
-# <a name="powershell-core-on-arm"></a>Az ARM PowerShell Core
+# <a name="powershell-core-on-arm"></a>ARM-alapú PowerShell Core
 
 Napjainkban PowerShell Core működik-e az egyes ARM eszközök, beleértve a Windows 10 ARM32/ARM64 és Raspbian, kísérleti, nem támogatott állapotban.
 

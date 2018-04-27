@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: gyűjtemény, a powershell, a parancsmag, a psget
 title: modulewithpseditionsupport
-ms.openlocfilehash: cc4ab8d41d4c6aace72cbeeabcf510fab6d3a999
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: eb55359bfd8e50e8e318698b59048756095b6ff7
+ms.sourcegitcommit: ffc1198312033945151d6619479cb8144da14ae6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Verzióval kompatibilis PowerShell modulok
 Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhető el, amelyek különböző szolgáltatáskészleteket és platformkompatibilitást kínálnak.
@@ -113,7 +113,7 @@ ModuleVersion = '1.6.1'
 }
 ```
 
-#### <a name="contents-of-psscriptanalyzerpsm1-file"></a>Contents of PSScriptAnalyzer.psm1 file
+#### <a name="contents-of-psscriptanalyzerpsm1-file"></a>PSScriptAnalyzer.psm1 fájl tartalma
 Alább logika betölti a szükséges szerelvényeket, attól függően, hogy a jelenlegi kiadása vagy verziója.
 
 ```powershell
@@ -230,10 +230,10 @@ Modulok PSEdition_Desktop és PSEdition_Core címkék nélkül minősülnek Powe
 ```powershell
 
 # Find modules supported on PowerShell Desktop edition
-Find-Module -Tag PSEditon_Desktop
+Find-Module -Tag PSEdition_Desktop
 
 # Find modules supported on PowerShell Core editions
-Find-Module -Tag PSEditon_Core
+Find-Module -Tag PSEdition_Core
 
 ```
 
