@@ -4,19 +4,19 @@ contributor: manikb
 ms.topic: reference
 keywords: gyűjtemény, a powershell, a parancsmag, a psget
 title: modulewithpseditionsupport
-ms.openlocfilehash: cc4ab8d41d4c6aace72cbeeabcf510fab6d3a999
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: eb55359bfd8e50e8e318698b59048756095b6ff7
+ms.sourcegitcommit: ffc1198312033945151d6619479cb8144da14ae6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="modules-with-compatible-powershell-editions"></a><span data-ttu-id="afc87-103">Verzióval kompatibilis PowerShell modulok</span><span class="sxs-lookup"><span data-stu-id="afc87-103">Modules with compatible PowerShell Editions</span></span>
-<span data-ttu-id="afc87-104">Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhető el, amelyek különböző szolgáltatáskészleteket és platformkompatibilitást kínálnak.</span><span class="sxs-lookup"><span data-stu-id="afc87-104">Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.</span></span>
+# <a name="modules-with-compatible-powershell-editions"></a><span data-ttu-id="5d076-103">Verzióval kompatibilis PowerShell modulok</span><span class="sxs-lookup"><span data-stu-id="5d076-103">Modules with compatible PowerShell Editions</span></span>
+<span data-ttu-id="5d076-104">Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhető el, amelyek különböző szolgáltatáskészleteket és platformkompatibilitást kínálnak.</span><span class="sxs-lookup"><span data-stu-id="5d076-104">Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.</span></span>
 
-- <span data-ttu-id="afc87-105">**Desktop kiadás:** A .NET-keretrendszeren alapul, és a Windows teljes erőforrás-igényű kiadásain, például a Server Core és a Windows asztali kiadásain futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít kompatibilitást.</span><span class="sxs-lookup"><span data-stu-id="afc87-105">**Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.</span></span>
-- <span data-ttu-id="afc87-106">**Core kiadás:** .NET Core-on alapul, és a Windows csökkentett erőforrás-igényű kiadásain, például a Nano Serveren és a Windows IoT kiadásokon futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít kompatibilitást.</span><span class="sxs-lookup"><span data-stu-id="afc87-106">**Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.</span></span>
+- <span data-ttu-id="5d076-105">**Desktop kiadás:** A .NET-keretrendszeren alapul, és a Windows teljes erőforrás-igényű kiadásain, például a Server Core és a Windows asztali kiadásain futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít kompatibilitást.</span><span class="sxs-lookup"><span data-stu-id="5d076-105">**Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.</span></span>
+- <span data-ttu-id="5d076-106">**Core kiadás:** .NET Core-on alapul, és a Windows csökkentett erőforrás-igényű kiadásain, például a Nano Serveren és a Windows IoT kiadásokon futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít kompatibilitást.</span><span class="sxs-lookup"><span data-stu-id="5d076-106">**Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.</span></span>
 
-## <a name="the-running-edition-of-powershell-is-shown-in-the-psedition-property-of-psversiontable"></a><span data-ttu-id="afc87-107">A futtatott PowerShell-verzió a $PSVersionTable PSEdition tulajdonságában jelenik meg.</span><span class="sxs-lookup"><span data-stu-id="afc87-107">The running edition of PowerShell is shown in the PSEdition property of $PSVersionTable.</span></span>
+## <a name="the-running-edition-of-powershell-is-shown-in-the-psedition-property-of-psversiontable"></a><span data-ttu-id="5d076-107">A futtatott PowerShell-verzió a $PSVersionTable PSEdition tulajdonságában jelenik meg.</span><span class="sxs-lookup"><span data-stu-id="5d076-107">The running edition of PowerShell is shown in the PSEdition property of $PSVersionTable.</span></span>
 ```powershell
 $PSVersionTable
 
@@ -32,8 +32,8 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a><span data-ttu-id="afc87-108">A modulkészítők a CompatiblePSEditions moduljegyzékkulcs segítségével deklarálhatják, hogy a moduljaik mely PowerShell-kiadással vagy -kiadásokkal kompatibilisek.</span><span class="sxs-lookup"><span data-stu-id="afc87-108">Module authors can declare their modules to be compatible with one or more PowerShell editions using the CompatiblePSEditions module manifest key.</span></span> <span data-ttu-id="afc87-109">Ez a kulcs csak a PowerShell 5.1-es vagy újabb verzióin támogatott.</span><span class="sxs-lookup"><span data-stu-id="afc87-109">This key is only supported on PowerShell 5.1 or later.</span></span>
-<span data-ttu-id="afc87-110">*Megjegyzés:* után egy moduljegyzék CompatiblePSEditions a kulccsal van megadva, nem importálható-e a PowerShell korábbi verzióiban.</span><span class="sxs-lookup"><span data-stu-id="afc87-110">*NOTE* Once a module manifest is specified with the CompatiblePSEditions key, it can not be imported on lower versions of PowerShell.</span></span>
+## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a><span data-ttu-id="5d076-108">A modulkészítők a CompatiblePSEditions moduljegyzékkulcs segítségével deklarálhatják, hogy a moduljaik mely PowerShell-kiadással vagy -kiadásokkal kompatibilisek.</span><span class="sxs-lookup"><span data-stu-id="5d076-108">Module authors can declare their modules to be compatible with one or more PowerShell editions using the CompatiblePSEditions module manifest key.</span></span> <span data-ttu-id="5d076-109">Ez a kulcs csak a PowerShell 5.1-es vagy újabb verzióin támogatott.</span><span class="sxs-lookup"><span data-stu-id="5d076-109">This key is only supported on PowerShell 5.1 or later.</span></span>
+<span data-ttu-id="5d076-110">*Megjegyzés:* után egy moduljegyzék CompatiblePSEditions a kulccsal van megadva, nem importálható-e a PowerShell korábbi verzióiban.</span><span class="sxs-lookup"><span data-stu-id="5d076-110">*NOTE* Once a module manifest is specified with the CompatiblePSEditions key, it can not be imported on lower versions of PowerShell.</span></span>
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -51,7 +51,7 @@ Name                 MemberType Definition
 CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] CompatiblePSEditions {get;}
 
 ```
-<span data-ttu-id="afc87-111">Az elérhető modulok listáját szűrheti a PowerShell-kiadás alapján.</span><span class="sxs-lookup"><span data-stu-id="afc87-111">When getting a list of available modules, you can filter the list by PowerShell edition.</span></span>
+<span data-ttu-id="5d076-111">Az elérhető modulok listáját szűrheti a PowerShell-kiadás alapján.</span><span class="sxs-lookup"><span data-stu-id="5d076-111">When getting a list of available modules, you can filter the list by PowerShell edition.</span></span>
 ```powershell
 Get-Module -ListAvailable -PSEdition Desktop
 
@@ -68,34 +68,34 @@ Core
 
 ```
 
-## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a><span data-ttu-id="afc87-112">A modul szerzők tehet közzé egy egy modul a célcsoport-kezelési egyik vagy mindkét PowerShell-kiadások (asztali és mag)</span><span class="sxs-lookup"><span data-stu-id="afc87-112">Module authors can publish a single module targeting to either or both PowerShell editions (Desktop and Core)</span></span>
+## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a><span data-ttu-id="5d076-112">A modul szerzők tehet közzé egy egy modul a célcsoport-kezelési egyik vagy mindkét PowerShell-kiadások (asztali és mag)</span><span class="sxs-lookup"><span data-stu-id="5d076-112">Module authors can publish a single module targeting to either or both PowerShell editions (Desktop and Core)</span></span>
 
-<span data-ttu-id="afc87-113">Egy modul asztal és a Core kiadásában használható, az adott modul Szerző szükséges logika hozzáadása vagy RootModule vagy a moduljegyzékben $PSEdition változóval rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="afc87-113">A single module can work on both Desktop and Core editions, in that module author has to add required logic in either RootModule or in the module manifest using $PSEdition variable.</span></span>
-<span data-ttu-id="afc87-114">Modulok rendelkezhet lefordított DLL-ek CoreCLR és a FullCLR célzó két csoportja.</span><span class="sxs-lookup"><span data-stu-id="afc87-114">Modules can have two sets of compiled DLLs targeting both CoreCLR and FullCLR.</span></span>
-<span data-ttu-id="afc87-115">Az alábbiakban a néhány lehetőségek kiválasztásával becsomagolhatja a modul logikával megfelelő DLL-fájlok feltöltését.</span><span class="sxs-lookup"><span data-stu-id="afc87-115">Here are the couple of options to package your module with logic for loading proper dlls.</span></span>
+<span data-ttu-id="5d076-113">Egy modul asztal és a Core kiadásában használható, az adott modul Szerző szükséges logika hozzáadása vagy RootModule vagy a moduljegyzékben $PSEdition változóval rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="5d076-113">A single module can work on both Desktop and Core editions, in that module author has to add required logic in either RootModule or in the module manifest using $PSEdition variable.</span></span>
+<span data-ttu-id="5d076-114">Modulok rendelkezhet lefordított DLL-ek CoreCLR és a FullCLR célzó két csoportja.</span><span class="sxs-lookup"><span data-stu-id="5d076-114">Modules can have two sets of compiled DLLs targeting both CoreCLR and FullCLR.</span></span>
+<span data-ttu-id="5d076-115">Az alábbiakban a néhány lehetőségek kiválasztásával becsomagolhatja a modul logikával megfelelő DLL-fájlok feltöltését.</span><span class="sxs-lookup"><span data-stu-id="5d076-115">Here are the couple of options to package your module with logic for loading proper dlls.</span></span>
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a><span data-ttu-id="afc87-116">1. lehetőség: Csomagolására hajthatja végre a több verziói és több a PowerShell modul</span><span class="sxs-lookup"><span data-stu-id="afc87-116">Option 1: Packaging a module for targeting multiple versions and multiple editions of PowerShell</span></span>
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a><span data-ttu-id="5d076-116">1. lehetőség: Csomagolására hajthatja végre a több verziói és több a PowerShell modul</span><span class="sxs-lookup"><span data-stu-id="5d076-116">Option 1: Packaging a module for targeting multiple versions and multiple editions of PowerShell</span></span>
 
-#### <a name="module-folder-contents"></a><span data-ttu-id="afc87-117">A modul mappa tartalma</span><span class="sxs-lookup"><span data-stu-id="afc87-117">Module folder contents</span></span>
-- <span data-ttu-id="afc87-118">Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span><span class="sxs-lookup"><span data-stu-id="afc87-118">Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span></span>
-- <span data-ttu-id="afc87-119">Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span><span class="sxs-lookup"><span data-stu-id="afc87-119">Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span></span>
-- <span data-ttu-id="afc87-120">PSScriptAnalyzer.psd1</span><span class="sxs-lookup"><span data-stu-id="afc87-120">PSScriptAnalyzer.psd1</span></span>
-- <span data-ttu-id="afc87-121">PSScriptAnalyzer.psm1</span><span class="sxs-lookup"><span data-stu-id="afc87-121">PSScriptAnalyzer.psm1</span></span>
-- <span data-ttu-id="afc87-122">ScriptAnalyzer.format.ps1xml</span><span class="sxs-lookup"><span data-stu-id="afc87-122">ScriptAnalyzer.format.ps1xml</span></span>
-- <span data-ttu-id="afc87-123">ScriptAnalyzer.types.ps1xml</span><span class="sxs-lookup"><span data-stu-id="afc87-123">ScriptAnalyzer.types.ps1xml</span></span>
-- <span data-ttu-id="afc87-124">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span><span class="sxs-lookup"><span data-stu-id="afc87-124">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span></span>
-- <span data-ttu-id="afc87-125">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span><span class="sxs-lookup"><span data-stu-id="afc87-125">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span></span>
-- <span data-ttu-id="afc87-126">en-US\about_PSScriptAnalyzer.help.txt</span><span class="sxs-lookup"><span data-stu-id="afc87-126">en-US\about_PSScriptAnalyzer.help.txt</span></span>
-- <span data-ttu-id="afc87-127">en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml</span><span class="sxs-lookup"><span data-stu-id="afc87-127">en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml</span></span>
-- <span data-ttu-id="afc87-128">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span><span class="sxs-lookup"><span data-stu-id="afc87-128">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span></span>
-- <span data-ttu-id="afc87-129">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span><span class="sxs-lookup"><span data-stu-id="afc87-129">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span></span>
-- <span data-ttu-id="afc87-130">Settings\CmdletDesign.psd1</span><span class="sxs-lookup"><span data-stu-id="afc87-130">Settings\CmdletDesign.psd1</span></span>
-- <span data-ttu-id="afc87-131">Settings\DSC.psd1</span><span class="sxs-lookup"><span data-stu-id="afc87-131">Settings\DSC.psd1</span></span>
-- <span data-ttu-id="afc87-132">Settings\ScriptFunctions.psd1</span><span class="sxs-lookup"><span data-stu-id="afc87-132">Settings\ScriptFunctions.psd1</span></span>
-- <span data-ttu-id="afc87-133">Settings\ScriptingStyle.psd1</span><span class="sxs-lookup"><span data-stu-id="afc87-133">Settings\ScriptingStyle.psd1</span></span>
-- <span data-ttu-id="afc87-134">Settings\ScriptSecurity.psd1</span><span class="sxs-lookup"><span data-stu-id="afc87-134">Settings\ScriptSecurity.psd1</span></span>
+#### <a name="module-folder-contents"></a><span data-ttu-id="5d076-117">A modul mappa tartalma</span><span class="sxs-lookup"><span data-stu-id="5d076-117">Module folder contents</span></span>
+- <span data-ttu-id="5d076-118">Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span><span class="sxs-lookup"><span data-stu-id="5d076-118">Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span></span>
+- <span data-ttu-id="5d076-119">Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span><span class="sxs-lookup"><span data-stu-id="5d076-119">Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span></span>
+- <span data-ttu-id="5d076-120">PSScriptAnalyzer.psd1</span><span class="sxs-lookup"><span data-stu-id="5d076-120">PSScriptAnalyzer.psd1</span></span>
+- <span data-ttu-id="5d076-121">PSScriptAnalyzer.psm1</span><span class="sxs-lookup"><span data-stu-id="5d076-121">PSScriptAnalyzer.psm1</span></span>
+- <span data-ttu-id="5d076-122">ScriptAnalyzer.format.ps1xml</span><span class="sxs-lookup"><span data-stu-id="5d076-122">ScriptAnalyzer.format.ps1xml</span></span>
+- <span data-ttu-id="5d076-123">ScriptAnalyzer.types.ps1xml</span><span class="sxs-lookup"><span data-stu-id="5d076-123">ScriptAnalyzer.types.ps1xml</span></span>
+- <span data-ttu-id="5d076-124">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span><span class="sxs-lookup"><span data-stu-id="5d076-124">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span></span>
+- <span data-ttu-id="5d076-125">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span><span class="sxs-lookup"><span data-stu-id="5d076-125">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span></span>
+- <span data-ttu-id="5d076-126">en-US\about_PSScriptAnalyzer.help.txt</span><span class="sxs-lookup"><span data-stu-id="5d076-126">en-US\about_PSScriptAnalyzer.help.txt</span></span>
+- <span data-ttu-id="5d076-127">en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml</span><span class="sxs-lookup"><span data-stu-id="5d076-127">en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml</span></span>
+- <span data-ttu-id="5d076-128">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span><span class="sxs-lookup"><span data-stu-id="5d076-128">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span></span>
+- <span data-ttu-id="5d076-129">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span><span class="sxs-lookup"><span data-stu-id="5d076-129">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span></span>
+- <span data-ttu-id="5d076-130">Settings\CmdletDesign.psd1</span><span class="sxs-lookup"><span data-stu-id="5d076-130">Settings\CmdletDesign.psd1</span></span>
+- <span data-ttu-id="5d076-131">Settings\DSC.psd1</span><span class="sxs-lookup"><span data-stu-id="5d076-131">Settings\DSC.psd1</span></span>
+- <span data-ttu-id="5d076-132">Settings\ScriptFunctions.psd1</span><span class="sxs-lookup"><span data-stu-id="5d076-132">Settings\ScriptFunctions.psd1</span></span>
+- <span data-ttu-id="5d076-133">Settings\ScriptingStyle.psd1</span><span class="sxs-lookup"><span data-stu-id="5d076-133">Settings\ScriptingStyle.psd1</span></span>
+- <span data-ttu-id="5d076-134">Settings\ScriptSecurity.psd1</span><span class="sxs-lookup"><span data-stu-id="5d076-134">Settings\ScriptSecurity.psd1</span></span>
 
-#### <a name="contents-of-psscriptanalyzerpsd1-file"></a><span data-ttu-id="afc87-135">Contents of PSScriptAnalyzer.psd1 file</span><span class="sxs-lookup"><span data-stu-id="afc87-135">Contents of PSScriptAnalyzer.psd1 file</span></span>
+#### <a name="contents-of-psscriptanalyzerpsd1-file"></a><span data-ttu-id="5d076-135">Contents of PSScriptAnalyzer.psd1 file</span><span class="sxs-lookup"><span data-stu-id="5d076-135">Contents of PSScriptAnalyzer.psd1 file</span></span>
 
 ```powershell
 @{
@@ -113,8 +113,8 @@ ModuleVersion = '1.6.1'
 }
 ```
 
-#### <a name="contents-of-psscriptanalyzerpsm1-file"></a><span data-ttu-id="afc87-136">Contents of PSScriptAnalyzer.psm1 file</span><span class="sxs-lookup"><span data-stu-id="afc87-136">Contents of PSScriptAnalyzer.psm1 file</span></span>
-<span data-ttu-id="afc87-137">Alább logika betölti a szükséges szerelvényeket, attól függően, hogy a jelenlegi kiadása vagy verziója.</span><span class="sxs-lookup"><span data-stu-id="afc87-137">Below logic loads the required assemblies depending on the current edition or version.</span></span>
+#### <a name="contents-of-psscriptanalyzerpsm1-file"></a><span data-ttu-id="5d076-136">PSScriptAnalyzer.psm1 fájl tartalma</span><span class="sxs-lookup"><span data-stu-id="5d076-136">Contents of PSScriptAnalyzer.psm1 file</span></span>
+<span data-ttu-id="5d076-137">Alább logika betölti a szükséges szerelvényeket, attól függően, hogy a jelenlegi kiadása vagy verziója.</span><span class="sxs-lookup"><span data-stu-id="5d076-137">Below logic loads the required assemblies depending on the current edition or version.</span></span>
 
 ```powershell
 #
@@ -150,15 +150,15 @@ $PSModule.OnRemove = {
 
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a><span data-ttu-id="afc87-138">2. lehetőség: A psd1 kiterjesztésű fájl $PSEdition változót használja a megfelelő DLL-EK és a beágyazott/szükséges modulok betöltése</span><span class="sxs-lookup"><span data-stu-id="afc87-138">Option 2: Use $PSEdition variable in the PSD1 file to load the proper DLLs and Nested/Required modules</span></span>
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a><span data-ttu-id="5d076-138">2. lehetőség: A psd1 kiterjesztésű fájl $PSEdition változót használja a megfelelő DLL-EK és a beágyazott/szükséges modulok betöltése</span><span class="sxs-lookup"><span data-stu-id="5d076-138">Option 2: Use $PSEdition variable in the PSD1 file to load the proper DLLs and Nested/Required modules</span></span>
 
-<span data-ttu-id="afc87-139">PS 5.1-es vagy újabb a modul jegyzékfájl $PSEdition globális változó használata engedélyezett.</span><span class="sxs-lookup"><span data-stu-id="afc87-139">In PS 5.1 or newer, $PSEdition global variable is allowed in the module manifest file.</span></span>
-<span data-ttu-id="afc87-140">Használja ezt a változót, modul Szerző értékeket adhat meg a feltételes modul jegyzékfájl.</span><span class="sxs-lookup"><span data-stu-id="afc87-140">Using this variable, module author can specify the conditional values in the module manifest file.</span></span> <span data-ttu-id="afc87-141">Korlátozott nyelvi módban, vagy egy adatszakasz $PSEdition változó lehet hivatkozni.</span><span class="sxs-lookup"><span data-stu-id="afc87-141">$PSEdition variable can be referenced in restricted language mode or a Data section.</span></span>
+<span data-ttu-id="5d076-139">PS 5.1-es vagy újabb a modul jegyzékfájl $PSEdition globális változó használata engedélyezett.</span><span class="sxs-lookup"><span data-stu-id="5d076-139">In PS 5.1 or newer, $PSEdition global variable is allowed in the module manifest file.</span></span>
+<span data-ttu-id="5d076-140">Használja ezt a változót, modul Szerző értékeket adhat meg a feltételes modul jegyzékfájl.</span><span class="sxs-lookup"><span data-stu-id="5d076-140">Using this variable, module author can specify the conditional values in the module manifest file.</span></span> <span data-ttu-id="5d076-141">Korlátozott nyelvi módban, vagy egy adatszakasz $PSEdition változó lehet hivatkozni.</span><span class="sxs-lookup"><span data-stu-id="5d076-141">$PSEdition variable can be referenced in restricted language mode or a Data section.</span></span>
 
-<span data-ttu-id="afc87-142">*Megjegyzés:* után egy moduljegyzék CompatiblePSEditions a kulccsal van megadva, vagy használja $PSEdition változót, akkor nem importálható PowerShell korábbi verzióiban.</span><span class="sxs-lookup"><span data-stu-id="afc87-142">*NOTE* Once a module manifest is specified with the CompatiblePSEditions key or uses $PSEdition variable, it can not be imported on lower versions of PowerShell.</span></span>
+<span data-ttu-id="5d076-142">*Megjegyzés:* után egy moduljegyzék CompatiblePSEditions a kulccsal van megadva, vagy használja $PSEdition változót, akkor nem importálható PowerShell korábbi verzióiban.</span><span class="sxs-lookup"><span data-stu-id="5d076-142">*NOTE* Once a module manifest is specified with the CompatiblePSEditions key or uses $PSEdition variable, it can not be imported on lower versions of PowerShell.</span></span>
 
 
-#### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a><span data-ttu-id="afc87-143">Minta modul jegyzékfájl CompatiblePSEditions kulccsal</span><span class="sxs-lookup"><span data-stu-id="afc87-143">Sample module manifest file with CompatiblePSEditions key</span></span>
+#### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a><span data-ttu-id="5d076-143">Minta modul jegyzékfájl CompatiblePSEditions kulccsal</span><span class="sxs-lookup"><span data-stu-id="5d076-143">Sample module manifest file with CompatiblePSEditions key</span></span>
 
 ```powershell
 @{
@@ -193,7 +193,7 @@ else # Desktop
 }
 ```
 
-#### <a name="module-contents"></a><span data-ttu-id="afc87-144">A modul tartalma</span><span class="sxs-lookup"><span data-stu-id="afc87-144">Module contents</span></span>
+#### <a name="module-contents"></a><span data-ttu-id="5d076-144">A modul tartalma</span><span class="sxs-lookup"><span data-stu-id="5d076-144">Module contents</span></span>
 
 ```powershell
 
@@ -224,21 +224,21 @@ Mode                LastWriteTime         Length Name
 -a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl
 ```
 
-## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a><span data-ttu-id="afc87-145">PowerShell-galériában felhasználói is megtalálhassák egy adott kiadásán PowerShell támogatott listájához PSEdition_Desktop és PSEdition_Core címkék használatával.</span><span class="sxs-lookup"><span data-stu-id="afc87-145">PowerShell Gallery users can find the list of modules supported on a specific PowerShell Edition using tags PSEdition_Desktop and PSEdition_Core.</span></span>
-<span data-ttu-id="afc87-146">Modulok PSEdition_Desktop és PSEdition_Core címkék nélkül minősülnek PowerShell asztali változatában működnek.</span><span class="sxs-lookup"><span data-stu-id="afc87-146">Modules without PSEdition_Desktop and PSEdition_Core tags are considered to work fine on PowerShell Desktop editions.</span></span>
+## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a><span data-ttu-id="5d076-145">PowerShell-galériában felhasználói is megtalálhassák egy adott kiadásán PowerShell támogatott listájához PSEdition_Desktop és PSEdition_Core címkék használatával.</span><span class="sxs-lookup"><span data-stu-id="5d076-145">PowerShell Gallery users can find the list of modules supported on a specific PowerShell Edition using tags PSEdition_Desktop and PSEdition_Core.</span></span>
+<span data-ttu-id="5d076-146">Modulok PSEdition_Desktop és PSEdition_Core címkék nélkül minősülnek PowerShell asztali változatában működnek.</span><span class="sxs-lookup"><span data-stu-id="5d076-146">Modules without PSEdition_Desktop and PSEdition_Core tags are considered to work fine on PowerShell Desktop editions.</span></span>
 
 ```powershell
 
 # Find modules supported on PowerShell Desktop edition
-Find-Module -Tag PSEditon_Desktop
+Find-Module -Tag PSEdition_Desktop
 
 # Find modules supported on PowerShell Core editions
-Find-Module -Tag PSEditon_Core
+Find-Module -Tag PSEdition_Core
 
 ```
 
 
-## <a name="more-details"></a><span data-ttu-id="afc87-147">További részletekért</span><span class="sxs-lookup"><span data-stu-id="afc87-147">More details</span></span>
-### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[<span data-ttu-id="afc87-148">PSEditions paraméterrel rendelkező parancsfájlok</span><span class="sxs-lookup"><span data-stu-id="afc87-148">Scripts with PSEditions</span></span>](../script/scriptwithpseditionsupport.md)
-### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[<span data-ttu-id="afc87-149">Támogatja a PSEditions PowerShellGallery</span><span class="sxs-lookup"><span data-stu-id="afc87-149">PSEditions support on PowerShellGallery</span></span>](../../psgallery/psgallery_pseditions.md)
-### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a><span data-ttu-id="afc87-150">[Frissítési moduljegyzék] (./psget_update-modulemanifest.md)</span><span class="sxs-lookup"><span data-stu-id="afc87-150">[Update module manifest] (./psget_update-modulemanifest.md)</span></span>
+## <a name="more-details"></a><span data-ttu-id="5d076-147">További részletekért</span><span class="sxs-lookup"><span data-stu-id="5d076-147">More details</span></span>
+### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[<span data-ttu-id="5d076-148">PSEditions paraméterrel rendelkező parancsfájlok</span><span class="sxs-lookup"><span data-stu-id="5d076-148">Scripts with PSEditions</span></span>](../script/scriptwithpseditionsupport.md)
+### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[<span data-ttu-id="5d076-149">Támogatja a PSEditions PowerShellGallery</span><span class="sxs-lookup"><span data-stu-id="5d076-149">PSEditions support on PowerShellGallery</span></span>](../../psgallery/psgallery_pseditions.md)
+### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a><span data-ttu-id="5d076-150">[Frissítési moduljegyzék] (./psget_update-modulemanifest.md)</span><span class="sxs-lookup"><span data-stu-id="5d076-150">[Update module manifest] (./psget_update-modulemanifest.md)</span></span>
