@@ -34,30 +34,40 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
 
 ## <a name="setup-on-windows-machine"></a>A telepítő a Windows-gépen
 
-1. [A Windows PowerShell-Core legújabb verziójának telepítéséhez] []
+1. Telepítse a legújabb verzióját [a Windows PowerShell központ]
     - Állapítható meg, ha az SSH-távelérésének jobb támogatása megnézzük a paraméter állandóként állítja be a New-PSSession
+
     ```powershell
     PS> Get-Command New-PSSession -syntax
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
+
 1. Telepítse a legújabb [Win32 OpenSSH] GitHub használatával felépíteni a [telepítési] utasításokat
 1. A Win32 OpenSSH telepítési helyére sshd_config fájl szerkesztése
     - Győződjön meg arról, hogy a jelszó-hitelesítés engedélyezve van
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - PowerShell alrendszer bejegyzés hozzáadása, cseréje `c:/program files/powershell/6.0.0/pwsh.exe` a helyes elérési útját a használni kívánt verzióra
-    ```none
+
+    ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+
     - Opcionálisan a hitelesítés engedélyezése
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Indítsa újra a sshd szolgáltatást
+
     ```powershell
     Restart-Service sshd
     ```
+
 1. Az elérési utat, ahol OpenSSH van telepítve az elérési út Env változó hozzáadása
     - Ez a témakörgyűjtemény legyen `C:\Program Files\OpenSSH\`
     - Ez lehetővé teszi a keresett ssh.exe
@@ -66,24 +76,33 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
 
 1. Telepítse a legújabb [Linux PowerShell] a Githubról összeállítása
 1. Telepítés [Ubuntu SSH] igény szerint
+
     ```bash
     sudo apt install openssh-client
     sudo apt install openssh-server
     ```
+
 1. A sshd_config fájlban a következő helyen /etc/ssh szerkesztése
     - Győződjön meg arról, hogy a jelszó-hitelesítés engedélyezve van
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - PowerShell alrendszer bejegyzés hozzáadása
-    ```none
+
+    ```
     Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
     ```
+
     - Opcionálisan a hitelesítés engedélyezése
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Indítsa újra a sshd szolgáltatást
+
     ```bash
     sudo service sshd restart
     ```
@@ -98,22 +117,31 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
       - Megfelelő felhasználók hozzáférésének engedélyezése
 1. Szerkessze a `sshd_config` fájl a következő helyen: `/private/etc/ssh/sshd_config`
     - A kedvenc szerkesztővel vagy
+
     ```bash
     sudo nano /private/etc/ssh/sshd_config
     ```
+
     - Győződjön meg arról, hogy a jelszó-hitelesítés engedélyezve van
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - PowerShell alrendszer bejegyzés hozzáadása
-    ```none
+
+    ```
     Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
     ```
+
     - Opcionálisan a hitelesítés engedélyezése
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Indítsa újra a sshd szolgáltatást
+
     ```bash
     sudo launchctl stop com.openssh.sshd
     sudo launchctl start com.openssh.sshd
@@ -213,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo parancs nem működik a távoli munkamenet Linux-számítógép.
 
-[PowerShell for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
-[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
+[a Windows PowerShell központ]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [telepítési]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [Linux PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012
+[PowerShell MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
