@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: A MOF-fájl védelme
-ms.openlocfilehash: 80ef37ef1bdcb0a8b0ad343b4eab99f1bc66e116
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 00a33a5d628921bcd04aa904a1aa8ee4345af48f
+ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-the-mof-file"></a>A MOF-fájl védelme
 
@@ -137,7 +137,7 @@ Az alábbi példa:
  1. az olyan tanúsítványt hoz létre a **szerzői műveletek munkaterület**.
  2. exportálja a tanúsítványt a titkos kulcs is a **szerzői műveletek munkaterület**.
  3. eltávolítja a titkos kulcsot a **szerzői műveletek munkaterület**, tartja a nyilvános kulcsú tanúsítvány, de a **a** tárolja.
- 4. a titkos kulcsú tanúsítvány importálása a gyökértanúsítvány-tárolójából a a **célcsomóponttal**.
+ 4. a titkos kulcsú tanúsítvány importálása a My(Personal) tanúsítványtároló a a **célcsomóponttal**.
    - akkor kell felvenni a gyökérszintű tárolóban. így az megbízható által a **célcsomóponttal**.
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>A szerzői műveletek csomóponton: hozzon létre, és a tanúsítvány exportálása

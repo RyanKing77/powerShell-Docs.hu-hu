@@ -25,7 +25,7 @@ A hagyományos Windows PowerShell-munkaterhelésekhez, lásd: [Windows PowerShel
 > [!IMPORTANT]
 > MacOS telepítenie kell a PowerShell-bővítmény OpenSSL megfelelő működéséhez.
 > Ehhez a legegyszerűbb módja a telepítendő [Homebrew](http://brew.sh/) , majd futtassa `brew install openssl`.
-> A PowerShell-bővítmény most már tudnak sikeres betöltése.
+> Visual STUDIO Code most betöltheti az a PowerShell-bővítmény sikeresen megtörtént.
 
 - **Windows**: a telepítési utasításokat kövesse a [VS kódot futtató Windows](https://code.visualstudio.com/docs/setup/windows) lap
 
@@ -38,8 +38,8 @@ A hagyományos Windows PowerShell-munkaterhelésekhez, lásd: [Windows PowerShel
 
 - Indítsa el **gyors nyitott** billentyűkombináció lenyomásával **Ctrl + P** (**Cmd + P** Mac gépen).
 - Írja be a nyitott gyors `ext install powershell` és találati **Enter**.
-- A **bővítmények** nézet megnyílik az oldalsó sáv. Jelölje ki a PowerShell-bővítményt a Microsofttól.
-  Valami megjelenik alá, például:
+- A **bővítmények** nézet az oldalsó sáv megnyitása. Jelölje ki a PowerShell-bővítményt a Microsofttól.
+  Valami kell megjelennie alatt, például:
 
   ![VSCode](../../images/vscode.png)
 
@@ -55,10 +55,10 @@ A Visual Studio Code kilépéshez **fájl -> kilépési**.
 
 #### <a name="using-a-specific-installed-version-of-powershell"></a>Egy adott telepített verziójához PowerShell használatával
 
-Ha szeretne egy adott telepítés a PowerShell használata a Visual Studio Code, szüksége lesz egy új változó hozzáadása a felhasználói beállítások fájlhoz.
+Ha szeretne egy adott telepítés a PowerShell használata a Visual Studio Code, akkor új változó hozzáadása a felhasználói beállítások fájl.
 
 1. Kattintson a **fájl -> Beállítások -> Beállítások**
-1. Két szerkesztő ablaktábla jelenik meg.
+1. Két szerkesztő ablaktábla jelennek meg.
    A jobb szélső ablaktáblán (`settings.json`), helyezze be az alábbi beállításoknak megfelelő az operációs rendszer, a két kapcsos zárójelek között (`{` és `}`), és cserélje le *<version>* és a telepített PowerShell-verzió:
 
   ```json
@@ -96,7 +96,7 @@ Azt javasoljuk, hogy a Visual Studio Code a következő beállításokat:
 
 1.9 Visual Studio Code verzió frissítésétől a PowerShell-parancsfájlok hibakeresése is a PowerShell-parancsfájlt tartalmazó mappa megnyitása nélkül.
 Nyissa meg a PowerShell parancsfájl a **fájl nyissa meg a fájl ->...** , állítson be egy töréspontot a sor (nyomja meg a F9), és nyomja le az F5 billentyűt a hibakeresés elindításához.
-Látni fogja a hibakeresési műveletek ablaktáblán jelennek meg, amelyik lehetővé teszi, hogy megszakítással belépjen a hibakeresőbe, lépés, folytatása, állítsa le a hibakeresést.
+Meg kell jelennie a hibakeresési műveletek ablaktáblán jelennek meg, amelyik lehetővé teszi, hogy megszakítással belépjen a hibakeresőbe, lépés, folytatása, állítsa le a hibakeresést.
 
 ### <a name="workspace-debugging"></a>Munkaterület-hibakeresés
 
@@ -116,11 +116,11 @@ Kövesse az alábbi lépéseket a hibakeresési konfigurációs fájl létrehoz�
 
 1. Nyissa meg a **Debug** billentyűkombináció lenyomásával nézet **Ctrl + Shift + D** (**Cmd + Shift + D** Mac gépen).
 1. Nyomja meg a **konfigurálása** fogaskerék ikonra az eszköztárban.
-1. A Visual Studio Code felszólítja a **válasszon környezet**.
+1. A Visual Studio Code kéri, hogy **válasszon környezet**.
    Válasszon **PowerShell**.
 
    Ha így tesz, a Visual Studio Code a munkaterület mappa gyökeréhez hoz létre a könyvtár és a ".vscode\launch.json" fájl.
-   Ez az a hibakeresési konfigurációs tárolására. Ha a fájlok egy Git-tárházban, általában érdemes a launch.json fájl véglegesítése.
+   Ez az a hibakeresési konfigurációs tárolására. Ha a fájlok egy Git-tárházban, általában kívánt véglegesíti a launch.json fájl.
    A launch.json fájl tartalma:
 
 ```json
