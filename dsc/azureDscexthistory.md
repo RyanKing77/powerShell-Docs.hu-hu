@@ -1,16 +1,16 @@
 ---
 description: Az Azure-ban a kívánt állapot konfigurációs szolgáltatása (DSC) bővítmény korábbi verzióinak megismerése.
-ms.date: 03/14/2018
+ms.date: 05/09/2018
 ms.topic: conceptual
 keywords: a DSC, az azure powershell-bővítmény
 title: Azure DSC-bővítményt verziójának előzményei
 author: DCtheGeek
 ms.author: dacoulte
-ms.openlocfilehash: a183137dde302811874bd5466c35bccebca5d128
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 59c014b4b169a589561f57c1ee2a5e861137aee5
+ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure kívánt állapot konfigurációs bővítmény verziójának előzményei
 
@@ -20,10 +20,10 @@ Ez a cikk az Azure DSC Virtuálisgép-bővítmény, az egyes verziójával kapcs
 
 ## <a name="latest-versions"></a>Legújabb verzió
 
-### <a name="version-275"></a>2.75 verziója
+### <a name="version-276"></a>2.76 verziója
 
 - **Kiadás dátuma:**
-  - 2018. március 5.
+  - 2018. május 9.
 - **Az operációs rendszer támogatása:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -38,6 +38,42 @@ Ez a cikk az Azure DSC Virtuálisgép-bővítmény, az egyes verziójával kapcs
   - WMF 4.0
 - **Rendelkező környezetben:**
   - Azure
+- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano Server a DSC szerepkör telepítve van a virtuális Gépen.
+- **Új funkciók:**
+  - A részállapot és egyéb kisebb hibák javításával bővítmény metaadatait javítása.
+
+### <a name="version-219"></a>2.19 verziója
+
+- **Kiadás dátuma:**
+  - 2016. június 3.
+- **Az operációs rendszer támogatása:**
+  - Windows Server 2016 Technical Preview
+  - Windows Server 2012 R2
+  - Windows Server 2012
+  - Windows Server 2008 R2 SP1
+- **WMF támogatják:**
+  - WMF 5.0 RTM
+  - WMF 4.0 frissítése
+  - WMF 4.0
+- **Rendelkező környezetben:**
+  - Azure
+  - Azure China
+  - Az Azure Government
+- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016 Technical Preview; más operációs rendszerei között, az telepíti a [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (újraindítást igényel WMF telepítése).
+- **Új funkciók:**
+  - A DSC-bővítményt van most az előre telepített Azure Kína felé. Ebben a verzióban elsősorban a bővítmény futtatása Azure Kína javításait tartalmazzák.
+
+## <a name="supported-versions"></a>Támogatott verziók
+
+> [!WARNING]
+> 2.4 keresztül 2.13 verziók WMF 5.0 Public Preview amelyek aláíró tanúsítványa lejárt 2016 augusztusában használja.  A problémával kapcsolatos további információkért lásd: [blogbejegyzés](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/).
+
+### <a name="version-275"></a>2.75 verziója
+
+- **Kiadás dátuma:** 2018. március 5.
+- **Az operációs rendszer támogatási:** Windows Server 2016-os, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows ügyfél 7/8.1/10, Nano Server
+- **WMF támogatási:** WMF 5.1, a WMF 5.0 RTM-re, a WMF 4.0 frissítést, a WMF 4.0
+- **Környezet:** Azure
 - **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano Server a DSC szerepkör telepítve van a virtuális Gépen.
 - **Új funkciók:**
   - GitHub legutóbbi helyezze át a TLS 1.2, után bevezetésében Azure Automation DSC Azure piactéren elérhető DIY Resource Manager-sablonok használatával egy virtuális Gépet nem, vagy DSC-bővítményt használja a konfiguráció a Githubon található. A bővítmény telepítése során a következőhöz hasonló hiba jelenik meg:
@@ -68,32 +104,6 @@ Ez a cikk az Azure DSC Virtuálisgép-bővítmény, az egyes verziójával kapcs
     ```
 
   - A bővítmény új verziójában a TLS 1.2 kényszerítése megtörtént. A bővítmény telepítésekor, ha már a AutoUpgradeMinorVersion = true a Resource Manager-sablon, majd a bővítmény a 2.75 autoupgraded fogja kapni. A manuális frissítéseket, adja meg `TypeHandlerVersion = 2.75` az erőforrás-kezelő sablonban.
-
-### <a name="version-219"></a>2.19 verziója
-
-- **Kiadás dátuma:**
-  - 2016. június 3.
-- **Az operációs rendszer támogatása:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **WMF támogatják:**
-  - WMF 5.0 RTM
-  - WMF 4.0 frissítése
-  - WMF 4.0
-- **Rendelkező környezetben:**
-  - Azure
-  - Azure China
-  - Azure Government
-- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016 Technical Preview; más operációs rendszerei között, az telepíti a [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (újraindítást igényel WMF telepítése).
-- **Új funkciók:**
-  - A DSC-bővítményt van most az előre telepített Azure Kína felé. Ebben a verzióban elsősorban a bővítmény futtatása Azure Kína javításait tartalmazzák.
-
-## <a name="supported-versions"></a>Támogatott verziók
-
-> [!WARNING]
-> 2.4 keresztül 2.13 verziók WMF 5.0 Public Preview amelyek aláíró tanúsítványa lejárt 2016 augusztusában használja.  A problémával kapcsolatos további információkért lásd: [blogbejegyzés](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/).
 
 ### <a name="version-270---272"></a>2.70. bekezdés-2.72 verziója
 

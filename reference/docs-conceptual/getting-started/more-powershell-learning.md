@@ -1,14 +1,14 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: További powershell tanulás
-ms.openlocfilehash: bed263df0ff52ec687bc7a644470f0397d0106ff
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: További PowerShell-oktatóanyagok
+ms.openlocfilehash: b0e17a6894468696365e5a553e6ffccfaa8eb499
+ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="more-powershell-learning"></a>További PowerShell tanulás
+# <a name="more-powershell-learning"></a>További PowerShell-oktatóanyagok
 
 További PowerShell más forrásokból
 
@@ -26,7 +26,7 @@ Rendelkezésre álló parancssori súgó mellett az alábbi forrásokban tovább
 
 ## <a name="video-training"></a>Videó képzési
 
-### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
+### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy Oktatóanyaga
 - [Ismerkedés a PowerShell 3.0 Jump Start](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
 - [Speciális eszközök és parancsfájlok az telepítésébe PowerShell 3.0](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8231)
 
