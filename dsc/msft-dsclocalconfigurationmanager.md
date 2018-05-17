@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: MSFT_DSCLocalConfigurationManager osztály
-ms.openlocfilehash: 598bd7490043975d9d965c12a7337fb3475b3ded
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 615f2998b11a0a927d3868d852e0d408f500c86d
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager osztály
 
@@ -48,9 +47,9 @@ A **MSFT_DSCLocalConfigurationManager** osztály rendelkezik, ezek a módszerek.
 | [PerformRequiredConfigurationChecks](msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)| A konzisztencia-ellenőrzés indítása.|
 | [RemoveConfiguration](msft-dsclocalconfigurationmanager-removeconfiguration.md)| Eltávolítja a konfigurációs fájlok.|
 | [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| Közvetlenül meghívja a **beolvasása** DSC erőforrás metódust.|
-| [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Közvetlenül meghívja a **beállítása** DSC erőforrás metódust.|
+| [erőforráskészlete](msft-dsclocalconfigurationmanager-resourceset.md)| Közvetlenül meghívja a **beállítása** DSC erőforrás metódust.|
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Közvetlenül meghívja a **teszt** DSC erőforrás metódust.|
-| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| Vissza az előző konfigurációt összesíti.|
+| [Visszaállítás](msft-dsclocalconfigurationmanager-rollback.md)| Vissza az előző konfigurációt összesíti.|
 | [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| A konfigurációs dokumentum küld a felügyelt csomóponthoz, és menti a függőben lévő módosítása.|
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| A konfigurációs dokumentum küld a felügyelt csomóponthoz, és a konfigurációs ügynök segítségével a konfiguráció alkalmazásához.|
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| A konfigurációs dokumentum küldeni a felügyelt csomóponthoz, és indítsa el a beállítások a konfigurációs ügynök használatával. Használható GetConfigurationResultOutput eredmény kimeneti beolvasásához.|

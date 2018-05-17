@@ -1,12 +1,12 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell parancsmag
-title: PowerShell Scripting
-ms.openlocfilehash: 3304ecc3129b710a003725715803a03b68f79b45
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: PowerShell-parancsprogramok
+ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -25,18 +25,18 @@ A Windows PowerShell szolgáltatást javítására készült, a parancssori és 
 ### <a name="discoverability"></a>Felderíthetőségét
 Windows PowerShell megkönnyíti, hogy annak funkció felderítéséhez. Például található megtekintése és módosítása a központi Windows-szolgáltatások parancsmagjainak listáját, írja be:
 
-```
+```powershell
 Get-Command *-Service
 ```
 
 Miután értesült, mely parancsmag éri el a feladat, hogy többet is megtudhat a parancsmag a Get-Help parancsmag használatával. Például a Get-Service parancsmag súgójának megjelenítéséhez írja be:
 
-```
+```powershell
 Get-Help Get-Service
 ```
 A legtöbb parancsmagok hozható létre az objektumokat, amely nem kezelhetők, és majd nyújtott be a megjelenítendő szöveg. Teljes megértéséhez, hogy a parancsmag kimenete, átadhatja a Get-tag parancsmag kimenete. Például a következő parancsot a Get-Service parancsmaggal a objektum kimeneti tagjai információkat jelenít meg.
 
-```
+```powershell
 Get-Service | Get-Member
 ```
 

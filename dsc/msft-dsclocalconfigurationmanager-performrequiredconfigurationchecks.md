@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: Az MSFT_DSCLocalConfigurationManager osztály PerformRequiredConfigurationChecks metódusa
-ms.openlocfilehash: 9cc4384088fcc39b09979b8ae4d023fc46307b13
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c3fdaa23875815b1cf5cbf0b6e21c633e00664aa
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály PerformRequiredConfigurationChecks metódusa
 
@@ -30,7 +29,7 @@ uint32 PerformRequiredConfigurationChecks(
 |Érték |Leírás |
 |:--- |:---|
 |**1** | Normál konzisztencia-ellenőrzést. |
-|**2** | A rendszer újraindítása után konzisztencia-ellenőrzést fenntartása. Ezt az értéket nem használható együtt más értékekkel. |
+|**2. régiója** | A rendszer újraindítása után konzisztencia-ellenőrzést fenntartása. Ezt az értéket nem használható együtt más értékekkel. |
 |**4** | A konfigurációs kell kell húzni a csomópont metakonfigurációját megadott lekérési kiszolgálójáról. Ez az érték mindig használható együtt **1**, az érték **5**. |
 |**8** | A jelentéskészítő kiszolgáló állapota küldeni. |
 

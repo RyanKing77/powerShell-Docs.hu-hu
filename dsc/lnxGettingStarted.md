@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: A kívánt állapot konfigurációs szolgáltatása (DSC) első lépései Linux rendszeren
-ms.openlocfilehash: b2f35ebe84dfd9f68ca07e7630534be59f8a1aa3
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 0534cede979eb2917adb608dba622539fe4bdc45
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>A kívánt állapot konfigurációs szolgáltatása (DSC) első lépései Linux rendszeren
 
@@ -27,8 +26,8 @@ A következő táblázat ismerteti a szükséges csomagfüggőségek Linux a DSC
 
 |  Szükséges csomag |  Leírás |  Minimális verzió |
 |---|---|---|
-| glibc| GNU könyvtár| 2…4 – 31.30|
-| python| Python| 2.4 – 3.4|
+| Glibc| GNU könyvtár| 2... 4 – 31.30|
+| Python| Python| 2.4 – 3.4|
 | omiserver| Nyílt kezelési infrastruktúra| 1.0.8.1|
 | Openssl| OpenSSL-függvénytárak| 0.9.8-as vagy 1.0|
 | ctypes| Python CTypes könyvtár| Meg kell egyeznie a Python-verzió|
@@ -181,4 +180,4 @@ A következő naplófájlokba Linux üzenetek DSC jön létre.
 |Naplófájl|Könyvtár|Leírás|
 |---|---|---|
 |omiserver.log|/var/OPT/OMI/log|Az OMI a CIM-kiszolgáló működésével kapcsolatos üzeneteket.|
-|dsc.log|/var/OPT/OMI/log|A helyi Configuration Manager (LCM) és a DSC erőforrás műveletek működésével kapcsolatos üzeneteket.|
+|DSC.log|/var/OPT/OMI/log|A helyi Configuration Manager (LCM) és a DSC erőforrás műveletek működésével kapcsolatos üzeneteket.|

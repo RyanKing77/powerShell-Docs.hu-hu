@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: A Linux nxPackage erőforrás DSC
-ms.openlocfilehash: 0a62bb01c2daa57bd5d6f1ef131ec8ae6d6f81ee
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 64bb89a95bd6cbaea4e74b8a9979de52428fef3f
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>A Linux nxPackage erőforrás DSC
 
@@ -37,7 +36,7 @@ nxPackage <string> #ResourceName
 | Név| A csomag, amelyekhez egy adott állapot biztosításához neve.|
 | Győződjön meg arról| Meghatározza, hogy ellenőrizze, hogy a csomag létezik-e. Állítsa be ezt a tulajdonságot "Elérhető" annak érdekében, hogy a csomag létezik-e. Állítsa az értékét "Hiányzik", annak érdekében, hogy a csomag nem létezik. Az alapértelmezett érték: "Elérhető".|
 | PackageManager| Támogatott értékei a "yum", "apt" és "zypper". Adja meg a package manager csomagok telepítése során használja. Ha **FilePath** van megadva, a megadott elérési út fogja használni a csomag telepítéséhez. Ellenkező esetben a Csomagkezelő használható előre konfigurált tárházból a csomag telepítéséhez. Ha sem **PackageManager** sem **FilePath** biztosított, az alapértelmezett Csomagkezelőt a rendszer lesz használható.|
-| FilePath| A fájl elérési útját, ahol a csomag található|
+| fájl elérési útja| A fájl elérési útját, ahol a csomag található|
 | PackageGroup| Ha **$true**, a **neve** kellene lennie a használathoz egy csomag csoport nevét a **PackageManager**. **PacakgeGroup** érvénytelen nyújtásakor a **FilePath**.|
 | Argumentumok| Az átadott csomag pontosan megegyezik a megadott argumentumok karakterlánc.|
 | Visszatérési kód:| A várt visszatérési kód. Ha a tényleges visszatérési kód nem egyezik a várt érték megadva itt, a konfigurációs hibát adnak vissza.|

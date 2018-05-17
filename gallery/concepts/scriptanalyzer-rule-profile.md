@@ -3,14 +3,14 @@ ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
-title: ScriptAnazlyer szabály profil galéria
-ms.openlocfilehash: 74eab49e4c4a546655451ef21b30cfcafaeb9584
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
-ms.translationtype: MT
+title: ScriptAnalyzer szabály profil galéria
+ms.openlocfilehash: 22b95f0901fe95d5ad79df0e23e675ab52313fee
+ms.sourcegitcommit: f8a37df92db22b9368469fb07378399b2ab90cea
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/14/2018
 ---
-# <a name="scriptanazlyer-rule-profile-for-gallery"></a>ScriptAnazlyer szabály profil galéria
+# <a name="scriptanalyzer-rule-profile-for-gallery"></a>ScriptAnalyzer szabály profil galéria
 
 PowerShell-galériában közzétett cikkek minőségének biztosítása érdekében Futtatás [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) szabályok használatával határozza meg, hogy van-e elküldve parancsfájlokban felmerülő szabálysértéseket.
 

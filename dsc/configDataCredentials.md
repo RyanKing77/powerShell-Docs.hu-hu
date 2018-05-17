@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: Konfigurációs adatokat a hitelesítő adatok beállításai
-ms.openlocfilehash: 3f1c75c65b357220856dd8e50694eb77808dee41
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Konfigurációs adatokat a hitelesítő adatok beállításai
 >Vonatkozik: A Windows PowerShell 5.0
@@ -276,7 +275,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 Kivétel lenne az Azure Automation DSC szolgáltatással, ha csak, mivel az adatokat a rendszer mindig titkosítva tárolja (az átvitel során, a szolgáltatás aktívan, és a csomóponton aktívan).
 
-## <a name="domain-credentials"></a>Domain Credentials
+## <a name="domain-credentials"></a>Tartományi hitelesítő adatok
 
 A példa konfigurációs parancsprogram újra fut (a vagy titkosítás nélkül), továbbra is a figyelmeztetést, hogy egy tartomány használata nem ajánlott a fiókhoz tartozó hitelesítő adatokat állít elő.
 Helyi fiók használatával nem tartományi hitelesítő adatok, amelyek felhasználhatók a többi kiszolgáló azok elérhetővé tegyék.

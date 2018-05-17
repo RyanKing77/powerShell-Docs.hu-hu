@@ -1,16 +1,14 @@
 ---
 ms.date: 06/12/2017
-author: rpsqrd
-ms.topic: conceptual
 keywords: jea, a powershell, a biztonsági
-title: JEA Session Configurations
-ms.openlocfilehash: 317a549ed20b5800d5bafdabd266e93ba7cd321c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: JEA munkamenet-konfigurációk
+ms.openlocfilehash: 3e5a663be8e7aba09a2592c278224cd892c89a20
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="jea-session-configurations"></a>JEA Session Configurations
+# <a name="jea-session-configurations"></a>JEA munkamenet-konfigurációk
 
 > A következőkre vonatkozik: a Windows PowerShell 5.0
 

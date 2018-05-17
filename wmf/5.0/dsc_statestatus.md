@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 9a8c261c01a7970f2e7f89172007768b63295673
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 272843efb68c42105af6eb88ad6a95b581da47ae
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Egyesített és konzisztens állapotreprezentáció
 
@@ -23,11 +21,11 @@ LCM állapot és a DSC műveleti állapotának ábrázolása javított változat
 
 Az alábbi táblázat szemlélteti a eredő állapot kapcsolódó tulajdonságok néhány jellemző forgatókönyvek alapján.
 
-| **Scenario**                    | **LCMState\***       | **Status** | **A kért újraindítás**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| **A forgatókönyv**                    | **LCMState\***       | **Állapot** | **A kért újraindítás**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Üresjárati                 | Siker    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Hiba    | $false        | $null                        | F                              |
-| S,F                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
+| S, F                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
 | F,S                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Hiba    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
 | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Hiba    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |

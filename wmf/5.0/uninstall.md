@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 78ae7ecd40b4d8ad0a6750f43002986483ab18a7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 64a29aa87507e65a182837df538c5e695c420cb3
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="uninstallation-instructions"></a>Az eltávolítás utasításokat
 
@@ -19,7 +17,7 @@ A Windows Server 2012 R2 és Windows 8.1:
 ```powershell
 wusa /uninstall /kb:3134758
 ```
-On Windows Server 2012:
+A Windows Server 2012:
 ```powershell
 wusa /uninstall /kb:3134759
 ```

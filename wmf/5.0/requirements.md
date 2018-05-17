@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 7e24bb4ee4d0658b0619f7f008e3740f647f124f
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ce68bc57a5da049cf895165420ba7c4e21b3e63b
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="system-requirements"></a>Rendszerkövetelmények
 
@@ -19,8 +17,8 @@ ms.lasthandoff: 04/09/2018
     | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
     | Windows Server 2012    |  |  | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
     | Windows Server 2008 R2 SP1 | Összes IA64 kivételével | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) és [.NET-keretrendszer 4.5 vagy újabb](https://msdn.microsoft.com/library/5a4x27ek.aspx) telepítve van| [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
-    | A Windows 8.1 | Pro, Enterprise | | **x64:**  [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:**  [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
-    | Windows 7 SP1 | Összes | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) és [.NET-keretrendszer 4.5 vagy újabb](https://msdn.microsoft.com/library/5a4x27ek.aspx) telepítve van | **x64:**  [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:**  [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
+    | A Windows 8.1 | Pro, Enterprise | | **x64:**  [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:**[Win8.1-KB3134758-x86.msu  ](http://go.microsoft.com/fwlink/?LinkID=717963)|
+    | Windows 7 SP1 | Összes | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) és [.NET-keretrendszer 4.5 vagy újabb](https://msdn.microsoft.com/library/5a4x27ek.aspx) telepítve van | **x64:**[Win7AndW2K8R2-KB3134760-x64.msu  ](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:**[Win7-KB3134760-x86.msu  ](http://go.microsoft.com/fwlink/?LinkID=717962)|
 
 # <a name="installation-instructions"></a>Telepítési utasításokat
 
@@ -54,7 +52,7 @@ Győződjön meg arról, hogy teljesülnek a következő előfeltételek teljes�
 
 Windows Server 2008 R2 SP1 és a Windows 7 SP1 rendszer beépített PowerShell 2.0, WinRM és WMI rendelkezik. A WMF 3.0 és a WMF 4.0 csomagok, beépített összetevők frissül, a Windows Server 2008 R2 SP1 és Windows 7 SP1 kiadásában után kiadott. A WMF 3.0 telepítése/eltávolítása és WMF 4.0 csomagok nem sikerült felfedezni kapcsolatos néhány problémát ismertetünk, a következő frissítési elérési úton:
 
-- Built-in --> WMF 4.0
+- Beépített WMF 4.0-->
 - Beépített--> a WMF 3.0 WMF4.0-->.
 
 A WMF 4.0 csomagok azt rögzített ezeket a problémákat. Emiatt nincs WMF 4.0 előfeltétele a WMF 5.0 telepítése a Windows Server 2008 R2 SP1 és Windows 7 SP1. Az alábbiakban a konkrét problémák léphetnek fel, ha nem telepíti a WMF 4.0 WMF 5.0 való frissítés előtt:
@@ -78,7 +76,7 @@ A Windows Server 2012 R2 és Windows 8.1:
 ```powershell
 wusa /uninstall /kb:3134758
 ```
-On Windows Server 2012:
+A Windows Server 2012:
 ```powershell
 wusa /uninstall /kb:3134759
 ```

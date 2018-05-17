@@ -1,23 +1,21 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: a282ba375c9ee796c1f3d7923f7478e200cd3b19
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f545461fd325049d0de4c651d7aa7d50d475eaca
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement-parancsmagok
 Ez a szoftver felderítés, telepítés és a készlet (SDII) támogatásához PackageManagement részében. Próbálja ki ezeket a műveleteket a parancsmagokat:
 -   Keresés-csomag
 -   Find-PackageProvider
--   Get-Package
+-   Get-csomag
 -   Get-PackageProvider
 -   Get-PackageSource
 -   Import-PackageProvider
--   Install-Package
+-   Install-csomag
 -   Install-PackageProvider
 -   Register-PackageSource
 -   Save-Package
@@ -87,7 +85,7 @@ Get-PackageProvider
 Get-PackageProvider -ListAvailable
 ```
 
-## <a name="get-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890705aspx"></a>[Get-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890705.aspx)
+## <a name="get-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890705aspx"></a>[Get-PackageSource parancsmag](https://technet.microsoft.com/en-us/library/dn890705.aspx)
 Ez a parancsmag egy csomag szolgáltató regisztrált adatforrások csomag listájának lekérése.
 ```powershelll
 # Get all package sources
@@ -150,7 +148,7 @@ Find-PackageProvider –Name "Gistprovider" | Install-PackageProvider -Verbose
 Install-PackageProvider –Name Gistprovider –Verbose –Scope CurrentUser
 ```
 
-## <a name="register-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890701aspx"></a>[Register-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890701.aspx)
+## <a name="register-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890701aspx"></a>[Register-PackageSource parancsmag](https://technet.microsoft.com/en-us/library/dn890701.aspx)
 Ez a parancsmag egy csomagforrást meghatározott csomag-szolgáltató hozzáadása.
 Előfordulhat, hogy mindegyik PackageManagement-szolgáltató egy vagy több szoftverfrissítési forrásból, vagy tárházak találhatók. PackageManagement a forrás hozzáadása/eltávolítása/lekérdezés PowerShell-parancsmagokat kínál. Például a csomag forrásához regisztrálhatja a NuGet-szolgáltató:
 ```powershell
@@ -169,7 +167,7 @@ Find-Package -Name jquery -Source http://www.nuget.org/api/v2/ | Save-Package -P
 Find-Package -source c:\test
 ```
 
-## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Set-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890710.aspx)
+## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Set-PackageSource parancsmag](https://technet.microsoft.com/en-us/library/dn890710.aspx)
 Ez a parancsmag módosítja egy meglévő csomag forrása kapcsolatos információkat.
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
@@ -186,7 +184,7 @@ Uninstall-Package -Name jquery –Provider NuGet -Destination c:\test
 Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Package
 ```
 
-## <a name="unregister-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890707aspx"></a>[Unregister-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890707.aspx)
+## <a name="unregister-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890707aspx"></a>[Unregister-PackageSource parancsmag](https://technet.microsoft.com/en-us/library/dn890707.aspx)
 ```powershell
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"

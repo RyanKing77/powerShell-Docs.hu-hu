@@ -1,16 +1,13 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: PowerShell parancsmag
 ms.date: 12/12/2016
-title: pswawebapplication telepítése
-ms.technology: powershell
-ms.openlocfilehash: c7f7768a41b6784d8c29afa1fccf0b855160b777
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: Install-PswaWebApplication
+ms.openlocfilehash: 68455d9490f7d5c33c1a928ac262a76a78ad7128
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
@@ -44,7 +41,7 @@ Meghatározza, hogy létrejött-e egy teszttanúsítványt. Ha a paraméter ért
 | Láncbemenet fogadása?               | hamis                                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;String&gt;
+### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;karakterlánc&gt;
 
 Megadja a webalkalmazás nevét. Ez a Windows PowerShell Web Access URL-cím utolsó részeként jelenik meg.
 
@@ -57,7 +54,7 @@ Megadja a webalkalmazás nevét. Ez a Windows PowerShell Web Access URL-cím uto
 | Láncbemenet fogadása?               | hamis                                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;String&gt;
+### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;karakterlánc&gt;
 
 Adja meg a webkiszolgáló (IIS) webhely telepítéséhez a Windows PowerShell Web Access webes alkalmazás neve.
 
@@ -108,7 +105,7 @@ Ez a parancsmag nem bemenetből fogad adatokat.
 
 Ez a parancsmag nem kimenetet hoz létre.
 
-## <a name="examples"></a>EXAMPLES
+## <a name="examples"></a>PÉLDÁK
 
 ### <a name="example-1"></a>1. PÉLDA
 

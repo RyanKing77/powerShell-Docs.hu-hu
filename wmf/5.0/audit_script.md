@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2627b9d02788bd31a5384587406df533faf2cfaf
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="script-tracing-and-logging"></a>Parancsfájlok nyomkövetése és naplózása
 
@@ -23,7 +21,7 @@ Az események a következők:
 | Műveleti kód  | Létrehozás                                      |
 | Művelet    | CommandStart                                |
 | Kulcsszó | Futási térben                                    |
-| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
+| Eseményazonosító | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
 | Üzenet | A parancsprogram-blokk szöveg (%1 % 2) létrehozása: </br> %3 </br> A parancsprogram-blokk azonosítója: %4 |
 
 
@@ -37,7 +35,7 @@ Ha engedélyezi a részletes naplózást, a záró jelölők, és a szolgáltat�
 | Műveleti kód  | Nyissa meg a (/ bezárása)                                         |
 | Művelet    | CommandStart (/ CommandStop)                           |
 | Kulcsszó | Futási térben                                               |
-| EventId | A parancsprogram-blokk\_meghívása\_Start\_(0x1009 = 4105) részletei / </br> A parancsprogram-blokk\_meghívása\_teljes\_részletei (0x100A Határolók = 4106) |
+| Eseményazonosító | A parancsprogram-blokk\_meghívása\_Start\_(0x1009 = 4105) részletei / </br> A parancsprogram-blokk\_meghívása\_teljes\_részletei (0x100A Határolók = 4106) |
 | Üzenet | Elindítva (/ befejezett) hívása nem volt a parancsprogram-blokk-azonosító: %1 </br> Futási térben azonosítója: %2 |
 
 Az azonosító a script blokkból (amelyek is egyeztetés szükséges eseményazonosító 0x1008) képviselő GUID, és a futási teret ID jelöli, amelyben a parancsfájl-blokkban futtatták futási térben.

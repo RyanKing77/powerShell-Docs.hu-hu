@@ -1,21 +1,18 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: PowerShell parancsmag
 ms.date: 12/12/2016
-title: pswaauthorizationrule hozzáadása
-ms.technology: powershell
+title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: b8020f8b034ab24d79a96da3908e9b63bf017cd9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
-## <a name="synopsis"></a>SYNOPSIS
+## <a name="synopsis"></a>ÖSSZEGZÉST
 
 Új engedélyezési szabály hozzáadása a Windows PowerShell® Web Access engedélyezési szabályok készletéhez.
 
@@ -58,7 +55,7 @@ Az engedélyezési szabályok kiértékelése elsődleges bejelentkezési hitele
 
 ## <a name="parameters"></a>Paraméterek
 
-### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;String&gt;
+### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;karakterlánc&gt;
 
 Adja meg egy számítógépcsoport nevét, amelyhez ez a szabály engedélyezi a hozzáférést az Active Directory tartományi szolgáltatások (AD DS) vagy helyi csoportot.
 
@@ -150,7 +147,7 @@ Megadja egy vagy több felhasználói csoport nevét az AD DS vagy helyi csoport
 | Láncbemenet fogadása?               | Igaz (ByPropertyName)                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-usernameltstringgt"></a>-UserName&lt;String\[\]&gt;
+### <a name="-usernameltstringgt"></a>-UserName&lt;karakterlánc\[\]&gt;
 
 Itt adhatja meg, amelyhez ez a szabály engedélyezi a hozzáférést egy vagy több felhasználó. A felhasználónév lehet egy helyi felhasználói fiók az átjáró számítógépre vagy egy felhasználót az Active Directory tartományi Szolgáltatásokban.
 A formátum `domain\user` vagy `computer\user`.
@@ -185,7 +182,7 @@ Ez a parancsmag egy karakterláncot vagy karakterláncok fogad el bemenetként.
 
 Ez a parancsmag adja vissza az engedélyezési szabály objektum.
 
-## <a name="examples"></a>EXAMPLES
+## <a name="examples"></a>PÉLDÁK
 
 ### <a name="example-1"></a>1. PÉLDA
 
@@ -212,7 +209,7 @@ Ez a példa bemutatja, hogyan a felhasználótól, felhasználói név értékek
 "contoso\user1","contoso\user2" | Add-pswaAuthorizationRule –ComputerName srv2.contoso.com –ConfigurationName Microsoft.PowerShell
 ```
 
-### <a name="example-4"></a>EXAMPLE 4
+### <a name="example-4"></a>4. PÉLDA
 
 Ez a példa bemutatja, hogyan minden paraméter láncból értékek tegye meg a tulajdonság nevét.
 

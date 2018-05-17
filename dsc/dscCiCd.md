@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat létrehozása
-ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat létrehozása
 
@@ -36,7 +35,7 @@ Ez a példa használatához ismernie kell a következőkkel:
 Ez az a számítógépen, ahol el kell végeznie összes beállíthatja és futtathatja a példa a munkát.
 
 Az ügyfélszámítógép kell lennie a Windows rendszerű számítógépeken telepítve a következőre:
-- [Git](https://git-scm.com/)
+- [git](https://git-scm.com/)
 - egy helyi git-tárház alapján klónozták https://github.com/PowerShell/Demo_CI
 - egy szövegszerkesztőben, például a [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -320,14 +319,14 @@ Itt azt érintünk csak a fogja hozzáadni a buildre build lépéseket. Build de
 Hozzon létre egy új build definition (válassza ki a **üres** sablon) "InfraDNS" nevű.
 Adja hozzá az alábbi lépések végrehajtásával meg build definíciója:
 
-- PowerShell Script
+- PowerShell-parancsfájl
 - Vizsgálati eredmények közzététele
 - Fájlok másolása
 - Összetevő közzététele
 
 Ezek lépések felépítéséhez, az alábbiak szerint minden lépés tulajdonságainak szerkesztése hozzáadása után:
 
-### <a name="powershell-script"></a>PowerShell Script
+### <a name="powershell-script"></a>PowerShell-parancsfájl
 
 1. Állítsa be a **típus** tulajdonságot `File Path`.
 1. Állítsa be a **parancsfájl elérési útján** tulajdonságot `initiate.ps1`.
@@ -388,13 +387,13 @@ Ehhez az szükséges, hozzáadása új kiadási társított a `InfraDNS` korább
 
 A kiadási definition vegye fel az alábbi lépéseket:
 
-- PowerShell Script
+- PowerShell-parancsfájl
 - Vizsgálati eredmények közzététele
 - Vizsgálati eredmények közzététele
 
 A lépések az alábbiak szerint szerkesztése:
 
-### <a name="powershell-script"></a>PowerShell Script
+### <a name="powershell-script"></a>PowerShell-parancsfájl
 
 1. Állítsa be a **parancsfájl elérési útján** mezőről `$(Build.DefinitionName)\Deploy\initiate.ps1"`
 1. Állítsa be a **argumentumok** mezőről `-fileName Deploy`

@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: A DSC használata a Nano Serveren
-ms.openlocfilehash: 9ebc1f046893c360538009b5ecbcfb6456f92bbb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9e26c525b48e8656a3479db9c0a760eaeb8cf58a
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>A DSC használata a Nano Serveren
 
@@ -83,11 +82,11 @@ További információ a telepítéséről és használatáról a Nano Server, va
 * Teljes körűen működőképes erőforrások
   * [Archív](archiveResource.md)
   * [Környezet](environmentResource.md)
-  * [File](fileResource.md)
+  * [Fájl](fileResource.md)
   * [Log](logResource.md)
   * ProcessSet
   * [Registry](registryResource.md)
-  * [Script](scriptResource.md)
+  * [Parancsfájl](scriptResource.md)
   * WindowsPackageCab
   * [WindowsProcess](windowsProcessResource.md)
   * WaitForAll (lásd: [cross-csomópont függőségek megadását](crossNodeDependencies.md))

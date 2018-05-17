@@ -1,16 +1,13 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: PowerShell parancsmag
 ms.date: 12/12/2016
-title: Get-pswaauthorizationrule
-ms.technology: powershell
-ms.openlocfilehash: 74c044c329d8b6a305b86c9056a7041fb5fd046b
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: Get-PswaAuthorizationRule
+ms.openlocfilehash: d61dce18e87311d7d815a689ba675db44aaec3cb
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
@@ -50,7 +47,7 @@ Adja meg a szabályokat, amelyek ennek a parancsmagnak kell kapnia a azonosító
 | Láncbemenet fogadása?               | Igaz (ByValue, ByPropertyName)       |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-rulenameltstringgt"></a>-RuleName&lt;String\[\]&gt;
+### <a name="-rulenameltstringgt"></a>-RuleName&lt;karakterlánc\[\]&gt;
 
 Meghatározza az engedélyezési szabályok beolvasása nevét. Ez a paraméter a szabály a tömb karakterláncok szabály nevének pontosan egyeznie adja vissza.
 
@@ -85,7 +82,7 @@ Ez a parancsmag egy számokból álló tömb vagy karakterlánc-értékek tömbj
 Ez a parancsmag kimeneteként hoz létre egy PswaAuthorizationRule objektum.
 
 
-## <a name="examples"></a>EXAMPLES
+## <a name="examples"></a>PÉLDÁK
 
 ### <a name="example-1"></a>1. PÉLDA
 

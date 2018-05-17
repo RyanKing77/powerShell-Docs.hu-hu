@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 9065315ef39129e6a28234d972fe350fd5e7e11d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>JEA-végpont létrehozása és csatlakozás a végponthoz
 JEA-végpont létrehozása kell létrehozni és regisztrálni egy kifejezetten konfigurált PowerShell munkamenet konfigurációs fájlt, amely a hozhatók létre a **New-PSSessionConfigurationFile** parancsmag.
@@ -55,7 +53,7 @@ RoleDefinitions = @{
 }
 ```
 A JEA-végpont létrehozása, ha a parancs (és a fájlban tartozó kulcsok) a következő paramétereket kell beállítani:
-1.  SessionType to RestrictedRemoteServer
+1.  A RestrictedRemoteServer SessionType
 2.  A RunAsVirtualAccount **$true**
 3.  A könyvtár "keresztül a képernyőre pillant" ki szeretné menteni után minden munkamenet TranscriptPath
 4.  RoleDefinitions való egy kivonattáblát, amely meghatározza, hogy mely csoportok rendelkezzenek hozzáféréssel a "Szerepkör képességeit."  Ez a mező határozza **ki** teheti **mi** ezen a végponton.   Szerepkör képességek olyan különleges, amelyeket hamarosan részletesen.

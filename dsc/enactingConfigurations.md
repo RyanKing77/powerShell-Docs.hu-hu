@@ -1,13 +1,12 @@
 ---
 ms.date: 10/16/2017
-ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: Konfigurációk életbe léptetése
-ms.openlocfilehash: 28ca852eb00298c229be8104ecdfeabc47a10abc
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3d938d14a4da645bbea7ba30ab41e0af72c4b94e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="enacting-configurations"></a>Konfigurációk életbe léptetése
 

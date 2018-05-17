@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: A DSC PackageManagement erőforrás
-ms.openlocfilehash: e6eea9f0bae42e131976dacb9813da759ff31239
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f850c389214fe5adf139c3bd01fb60addc5ec238
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-packagemanagement-resource"></a>A DSC PackageManagement erőforrás
 
@@ -50,7 +49,7 @@ A következő táblázat felsorolja a AdditionalParameters tulajdonság lehetős
 |  Paraméter  | Leírás   |
 |---|---|
 | DestinationPath| Például a beépített Nuget-szolgáltatót a szolgáltatók használják. A csomagot a telepíteni kívánt fájl helyének megadása.|
-| InstallationPolicy| Például a beépített Nuget-szolgáltatót a szolgáltatók használják. Meghatározza, hogy megbízható-e a csomag forrásához. One of: "Untrusted", "Trusted".|
+| InstallationPolicy| Például a beépített Nuget-szolgáltatót a szolgáltatók használják. Meghatározza, hogy megbízható-e a csomag forrásához. Egyik: "Nem megbízható", "Megbízható".|
 
 ## <a name="example"></a>Példa
 

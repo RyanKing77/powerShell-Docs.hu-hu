@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
 title: Visszajelzés küldése keresztül a közösségi média és megjegyzések
-ms.openlocfilehash: 79f1450337b9ed5bb0687494fe1ed7c2d87f1bb5
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: a8e6097de4a565b504189b0b0488c45b6d78a8b6
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Visszajelzés küldése keresztül a közösségi média és megjegyzések
 
