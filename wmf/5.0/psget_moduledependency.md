@@ -1,20 +1,18 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 5b9253d4fd6bf2898a93615d5d3462b9c659eb91
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 77e09a853324e703a4a96c5887a66df538fc711c
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="installation-of-module-dependencies"></a><span data-ttu-id="421b9-102">Modulfüggőségek telepítése</span><span class="sxs-lookup"><span data-stu-id="421b9-102">Installation of Module Dependencies</span></span>
+# <a name="installation-of-module-dependencies"></a><span data-ttu-id="528ff-102">Modulfüggőségek telepítése</span><span class="sxs-lookup"><span data-stu-id="528ff-102">Installation of Module Dependencies</span></span>
 
-<span data-ttu-id="421b9-103">Most már van egymás melletti (SxS) modul által támogatott verzió a telepítés-modulban frissítés-modul, és a közzététel-modul parancsmagjai a Windows PowerShell 5.0-s vagy újabb rendszerű.</span><span class="sxs-lookup"><span data-stu-id="421b9-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
-<span data-ttu-id="421b9-104">Emellett jelentek meg - RequiredVersion paraméter a Publish-modul parancsmagnak közzé kell tenni a verzió megadásához.</span><span class="sxs-lookup"><span data-stu-id="421b9-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="421b9-105">Az elérési út paraméter mostantól támogatja a modul alap útvonalat a mappát.</span><span class="sxs-lookup"><span data-stu-id="421b9-105">The Path parameter now supports the module base path with the version folder.</span></span>
+<span data-ttu-id="528ff-103">Most már van egymás melletti (SxS) modul által támogatott verzió a telepítés-modulban frissítés-modul, és a közzététel-modul parancsmagjai a Windows PowerShell 5.0-s vagy újabb rendszerű.</span><span class="sxs-lookup"><span data-stu-id="528ff-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
+<span data-ttu-id="528ff-104">Emellett jelentek meg - RequiredVersion paraméter a Publish-modul parancsmagnak közzé kell tenni a verzió megadásához.</span><span class="sxs-lookup"><span data-stu-id="528ff-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="528ff-105">Az elérési út paraméter mostantól támogatja a modul alap útvonalat a mappát.</span><span class="sxs-lookup"><span data-stu-id="528ff-105">The Path parameter now supports the module base path with the version folder.</span></span>
 
-<span data-ttu-id="421b9-106">**Install-modul példák:**</span><span class="sxs-lookup"><span data-stu-id="421b9-106">**Install-Module examples:**</span></span>
+<span data-ttu-id="528ff-106">**Install-modul példák:**</span><span class="sxs-lookup"><span data-stu-id="528ff-106">**Install-Module examples:**</span></span>
 ```powershell
 PS C:\\windows\\system32&gt; Install-Module -Name ContosoServer -RequiredVersion 1.0 -Repository MSPSGallery
 PS C:\\windows\\system32&gt; Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
@@ -36,7 +34,7 @@ Version Name Repository Description
 2.0 ContosoServer MSPSGallery ContosoServer module
 ```
 
-<span data-ttu-id="421b9-107">**A modul telepítése a függőségek:**</span><span class="sxs-lookup"><span data-stu-id="421b9-107">**Install a module with dependencies:**</span></span>
+<span data-ttu-id="528ff-107">**A modul telepítése a függőségek:**</span><span class="sxs-lookup"><span data-stu-id="528ff-107">**Install a module with dependencies:**</span></span>
 ```powershell
 PS C:\\windows\\system32&gt; Get-InstalledModule
 PS C:\\windows\\system32&gt; Find-Module -Repository GalleryINT -Name ModuleWithDependencies2 -IncludeDependencies
@@ -78,7 +76,7 @@ ModuleType Version Name ExportedCommands
 Manifest 2.0 ModuleWithDependencies2 {Get-NestedRequiredModule1, Get-NestedRequiredModule2, Get-NestedRequiredModule3, Get-NestedRequiredModule4...}
 ```
 
-<span data-ttu-id="421b9-108">**ModuleWithDependencies2 modul tartalmát manifest fájlt:**</span><span class="sxs-lookup"><span data-stu-id="421b9-108">**Contents of ModuleWithDependencies2 module manifest file:**</span></span>
+<span data-ttu-id="528ff-108">**ModuleWithDependencies2 modul tartalmát manifest fájlt:**</span><span class="sxs-lookup"><span data-stu-id="528ff-108">**Contents of ModuleWithDependencies2 module manifest file:**</span></span>
 ```powershell
 @{
 \# Version number of this module.
@@ -131,7 +129,7 @@ ReleaseNotes = 'ModuleWithDependencies2 release notes'
 }
 ```
 
-<span data-ttu-id="421b9-109">**Frissítés-modul példák:**</span><span class="sxs-lookup"><span data-stu-id="421b9-109">**Update-Module examples:**</span></span>
+<span data-ttu-id="528ff-109">**Frissítés-modul példák:**</span><span class="sxs-lookup"><span data-stu-id="528ff-109">**Update-Module examples:**</span></span>
 ```powershell
 PS C:\\windows\\system32&gt; Update-Module -Name ContosoServer -RequiredVersion 1.5
 PS C:\\windows\\system32&gt; Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
@@ -173,7 +171,7 @@ Version Name Repository Description
 2.8.1 ContosoServer MSPSGallery ContosoServer module
 ```
 
-<span data-ttu-id="421b9-110">**Közzététel modul példák:**</span><span class="sxs-lookup"><span data-stu-id="421b9-110">**Publish-Module examples:**</span></span>
+<span data-ttu-id="528ff-110">**Közzététel modul példák:**</span><span class="sxs-lookup"><span data-stu-id="528ff-110">**Publish-Module examples:**</span></span>
 ```powershell
 ContosoServer module with different versions to be published.
 PS C:\\windows\\system32&gt; Get-Module -Name ContosoServer -ListAvailable

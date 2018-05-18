@@ -1,20 +1,18 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 505ff4ebef2d0b063edacbdfa465616890be1001
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: be53ebbfceefdbaabb76ccefa84aaa7746fee1f4
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="powershellget-cmdlets-for-script-management"></a><span data-ttu-id="bd172-102">PowerShellGet-parancsmagok parancsfájlkezeléshez</span><span class="sxs-lookup"><span data-stu-id="bd172-102">PowerShellGet Cmdlets for Script Management</span></span>
+# <a name="powershellget-cmdlets-for-script-management"></a><span data-ttu-id="4cee5-102">PowerShellGet-parancsmagok parancsfájlkezeléshez</span><span class="sxs-lookup"><span data-stu-id="4cee5-102">PowerShellGet Cmdlets for Script Management</span></span>
 
-## <a name="find-script-cmdlet"></a><span data-ttu-id="bd172-103">Keresés parancsfájl-parancsmag</span><span class="sxs-lookup"><span data-stu-id="bd172-103">Find-Script cmdlet</span></span>
-<span data-ttu-id="bd172-104">Keresés-parancsfájl parancsmag lehetővé teszi a parancsfájlok, például a neve, címke, szűrő, utasítás neve, verziója tartományon, pontos verziót, összes verzió és annak függőségeit és az adott vagy regisztrált összes adattárak különböző keresési feltételekkel felderítéséhez.</span><span class="sxs-lookup"><span data-stu-id="bd172-104">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
+## <a name="find-script-cmdlet"></a><span data-ttu-id="4cee5-103">Keresés parancsfájl-parancsmag</span><span class="sxs-lookup"><span data-stu-id="4cee5-103">Find-Script cmdlet</span></span>
+<span data-ttu-id="4cee5-104">Keresés-parancsfájl parancsmag lehetővé teszi a parancsfájlok, például a neve, címke, szűrő, utasítás neve, verziója tartományon, pontos verziót, összes verzió és annak függőségeit és az adott vagy regisztrált összes adattárak különböző keresési feltételekkel felderítéséhez.</span><span class="sxs-lookup"><span data-stu-id="4cee5-104">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
 
-<span data-ttu-id="bd172-105">Példa használati:</span><span class="sxs-lookup"><span data-stu-id="bd172-105">Example usage:</span></span>
+<span data-ttu-id="4cee5-105">Példa használati:</span><span class="sxs-lookup"><span data-stu-id="4cee5-105">Example usage:</span></span>
 ```powershell
 \# Find a script from the registered repository with ScriptSourceLocation
 Find-Script -Repository GalleryINT -Name Required-Script2
@@ -150,8 +148,8 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## <a name="save-script-cmdlet"></a><span data-ttu-id="bd172-106">Mentés parancsfájl-parancsmag</span><span class="sxs-lookup"><span data-stu-id="bd172-106">Save-Script cmdlet</span></span>
-<span data-ttu-id="bd172-107">Mentés-parancsfájl parancsmag lehetővé teszi, hogy tekintse át a parancsfájl által megadott helyre való mentése.</span><span class="sxs-lookup"><span data-stu-id="bd172-107">Save-Script cmdlet lets you to review the script file by saving it to a specified location.</span></span>
+## <a name="save-script-cmdlet"></a><span data-ttu-id="4cee5-106">Mentés parancsfájl-parancsmag</span><span class="sxs-lookup"><span data-stu-id="4cee5-106">Save-Script cmdlet</span></span>
+<span data-ttu-id="4cee5-107">Mentés-parancsfájl parancsmag lehetővé teszi, hogy tekintse át a parancsfájl által megadott helyre való mentése.</span><span class="sxs-lookup"><span data-stu-id="4cee5-107">Save-Script cmdlet lets you to review the script file by saving it to a specified location.</span></span>
 ```powershell
 \# Save a script file to the specified location for the script analysis
 \# Piping the Find-Script output to Save-Script cmdlet
@@ -163,10 +161,10 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="bd172-108">Telepítési-parancsfájlt és a Get-InstalledScript parancsmagok</span><span class="sxs-lookup"><span data-stu-id="bd172-108">Install-Script and Get-InstalledScript cmdlets</span></span>
-<span data-ttu-id="bd172-109">Install-parancsfájl parancsmag lehetővé teszi egy adott parancsfájl és függőségeinek telepítése a megadott hatókörben.</span><span class="sxs-lookup"><span data-stu-id="bd172-109">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="bd172-110">Alapértelmezés szerint a parancsfájlok telepítve vannak az AllUsers hatókörre.</span><span class="sxs-lookup"><span data-stu-id="bd172-110">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="bd172-111">Get-InstalledScript parancsmag lehetővé teszi a parancsprogramok, amely a telepítési parancsfájl-parancsmag használatával telepített listájának lekérdezése.</span><span class="sxs-lookup"><span data-stu-id="bd172-111">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
+## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="4cee5-108">Telepítési-parancsfájlt és a Get-InstalledScript parancsmagok</span><span class="sxs-lookup"><span data-stu-id="4cee5-108">Install-Script and Get-InstalledScript cmdlets</span></span>
+<span data-ttu-id="4cee5-109">Install-parancsfájl parancsmag lehetővé teszi egy adott parancsfájl és függőségeinek telepítése a megadott hatókörben.</span><span class="sxs-lookup"><span data-stu-id="4cee5-109">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="4cee5-110">Alapértelmezés szerint a parancsfájlok telepítve vannak az AllUsers hatókörre.</span><span class="sxs-lookup"><span data-stu-id="4cee5-110">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="4cee5-111">Get-InstalledScript parancsmag lehetővé teszi a parancsprogramok, amely a telepítési parancsfájl-parancsmag használatával telepített listájának lekérdezése.</span><span class="sxs-lookup"><span data-stu-id="4cee5-111">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
 
-<span data-ttu-id="bd172-112">Használjon Megjegyzés: ahhoz, hogy a felügyeleti és parancsfájlok megkeresése, ha telepítve vannak, Install parancsprogramot fog hozzon létre egy $home\Documents\WindowsPowerShell\Scripts scripts tárolására szolgáló alapértelmezett mappát, és mappában hozzáadni az elérési út környezethez.</span><span class="sxs-lookup"><span data-stu-id="bd172-112">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="bd172-113">Az elérési út fontos, ha az Install-parancsfájl helyett Mentés-parancsfájl használatával.</span><span class="sxs-lookup"><span data-stu-id="bd172-113">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="bd172-114">Get-InstalledScripts és eltávolítás parancsfájl-csak együttműködhet parancsfájl helyezve a rendszer telepítse-parancsfájl használatával.</span><span class="sxs-lookup"><span data-stu-id="bd172-114">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
+<span data-ttu-id="4cee5-112">Használjon Megjegyzés: ahhoz, hogy a felügyeleti és parancsfájlok megkeresése, ha telepítve vannak, Install parancsprogramot fog hozzon létre egy $home\Documents\WindowsPowerShell\Scripts scripts tárolására szolgáló alapértelmezett mappát, és mappában hozzáadni az elérési út környezethez.</span><span class="sxs-lookup"><span data-stu-id="4cee5-112">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="4cee5-113">Az elérési út fontos, ha az Install-parancsfájl helyett Mentés-parancsfájl használatával.</span><span class="sxs-lookup"><span data-stu-id="4cee5-113">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="4cee5-114">Get-InstalledScripts és eltávolítás parancsfájl-csak együttműködhet parancsfájl helyezve a rendszer telepítse-parancsfájl használatával.</span><span class="sxs-lookup"><span data-stu-id="4cee5-114">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
 ```powershell
 \# Install locations for scripts:
 \# Default scope is AllUsers.
@@ -222,7 +220,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-<span data-ttu-id="bd172-115">Get-parancs is használható – Name &lt;InstalledScriptFileName&gt; Letöltés helye.</span><span class="sxs-lookup"><span data-stu-id="bd172-115">You can also use Get-Command –Name &lt;InstalledScriptFileName&gt; to get it.</span></span> <span data-ttu-id="bd172-116">A PATH környezeti változóba első használatát egy adott hatókör két telepítési helyek kerülnek.</span><span class="sxs-lookup"><span data-stu-id="bd172-116">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
+<span data-ttu-id="4cee5-115">Get-parancs is használható – Name &lt;InstalledScriptFileName&gt; Letöltés helye.</span><span class="sxs-lookup"><span data-stu-id="4cee5-115">You can also use Get-Command –Name &lt;InstalledScriptFileName&gt; to get it.</span></span> <span data-ttu-id="4cee5-116">A PATH környezeti változóba első használatát egy adott hatókör két telepítési helyek kerülnek.</span><span class="sxs-lookup"><span data-stu-id="4cee5-116">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -344,8 +342,8 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## <a name="update-script-cmdlet"></a><span data-ttu-id="bd172-117">Frissítés parancsfájl-parancsmag</span><span class="sxs-lookup"><span data-stu-id="bd172-117">Update-Script cmdlet</span></span>
-<span data-ttu-id="bd172-118">Frissítés-parancsfájl parancsmag lehetővé teszi az helybeni frissítése a parancsfájlok, amelyek megtörtént-e telepítési parancsfájl-parancsmag használatával.</span><span class="sxs-lookup"><span data-stu-id="bd172-118">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
+## <a name="update-script-cmdlet"></a><span data-ttu-id="4cee5-117">Frissítés parancsfájl-parancsmag</span><span class="sxs-lookup"><span data-stu-id="4cee5-117">Update-Script cmdlet</span></span>
+<span data-ttu-id="4cee5-118">Frissítés-parancsfájl parancsmag lehetővé teszi az helybeni frissítése a parancsfájlok, amelyek megtörtént-e telepítési parancsfájl-parancsmag használatával.</span><span class="sxs-lookup"><span data-stu-id="4cee5-118">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -386,7 +384,7 @@ Version Name Type Repository Description
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
 
-## <a name="uninstall-script-cmdlet"></a><span data-ttu-id="bd172-119">Távolítsa el parancsfájl parancsmag</span><span class="sxs-lookup"><span data-stu-id="bd172-119">Uninstall-Script cmdlet</span></span>
+## <a name="uninstall-script-cmdlet"></a><span data-ttu-id="4cee5-119">Távolítsa el parancsfájl parancsmag</span><span class="sxs-lookup"><span data-stu-id="4cee5-119">Uninstall-Script cmdlet</span></span>
 ```powershell
 Uninstall-Script cmdlet lets you to uninstall the installed script files.
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -423,8 +421,8 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a><span data-ttu-id="bd172-120">Új ScriptFileInfo és a teszt-ScriptFileInfo parancsmagok</span><span class="sxs-lookup"><span data-stu-id="bd172-120">New-ScriptFileInfo and Test-ScriptFileInfo cmdlets</span></span>
-<span data-ttu-id="bd172-121">Új ScriptFileInfo parancsmag segítségével hozzon létre egy új parancsfájlt metaadatok verzióját, Guid, Szerző és leírását, például stb. Teszt-ScriptFileInfo parancsmag lehetővé teszi, hogy a parancsfájl fájl metaadatot beszerezni és ellenőrizheti.</span><span class="sxs-lookup"><span data-stu-id="bd172-121">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc. Test-ScriptFileInfo cmdlet lets you to validate and get the script file metadata.</span></span>
+## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a><span data-ttu-id="4cee5-120">Új ScriptFileInfo és a teszt-ScriptFileInfo parancsmagok</span><span class="sxs-lookup"><span data-stu-id="4cee5-120">New-ScriptFileInfo and Test-ScriptFileInfo cmdlets</span></span>
+<span data-ttu-id="4cee5-121">Új ScriptFileInfo parancsmag segítségével hozzon létre egy új parancsfájlt metaadatok verzióját, Guid, Szerző és leírását, például stb. Teszt-ScriptFileInfo parancsmag lehetővé teszi, hogy a parancsfájl fájl metaadatot beszerezni és ellenőrizheti.</span><span class="sxs-lookup"><span data-stu-id="4cee5-121">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc. Test-ScriptFileInfo cmdlet lets you to validate and get the script file metadata.</span></span>
 ```powershell
 \# Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Description "Script file description goes here"
@@ -575,8 +573,8 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## <a name="update-scriptfileinfo-cmdlet"></a><span data-ttu-id="bd172-122">Update-ScriptFileInfo cmdlet</span><span class="sxs-lookup"><span data-stu-id="bd172-122">Update-ScriptFileInfo cmdlet</span></span>
-<span data-ttu-id="bd172-123">Frissítés-ScriptFileInfo parancsmag lehetővé teszi a meglévő parancsfájl fájl metaadatok frissítésére.</span><span class="sxs-lookup"><span data-stu-id="bd172-123">Update-ScriptFileInfo cmdlet lets you to update the existing script file metadata.</span></span>
+## <a name="update-scriptfileinfo-cmdlet"></a><span data-ttu-id="4cee5-122">Frissítés-ScriptFileInfo parancsmag</span><span class="sxs-lookup"><span data-stu-id="4cee5-122">Update-ScriptFileInfo cmdlet</span></span>
+<span data-ttu-id="4cee5-123">Frissítés-ScriptFileInfo parancsmag lehetővé teszi a meglévő parancsfájl fájl metaadatok frissítésére.</span><span class="sxs-lookup"><span data-stu-id="4cee5-123">Update-ScriptFileInfo cmdlet lets you to update the existing script file metadata.</span></span>
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
 Update-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-ScriptWithCompletePSScriptInfo.ps1 -Version 2.0
@@ -586,8 +584,8 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="bd172-124">Register-PSRepository és a Set-PSRepository parancsmagot megosztása támogatási parancsfájl</span><span class="sxs-lookup"><span data-stu-id="bd172-124">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
-<span data-ttu-id="bd172-125">Adja hozzá a Register-PSRepository/Set-PSRepository-parancsmagok használatával a **ScriptSourceLocation** és **ScriptPublishLocation** a PSRepository számára.</span><span class="sxs-lookup"><span data-stu-id="bd172-125">Use Register-PSRepository/Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
+## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="4cee5-124">Register-PSRepository és a Set-PSRepository parancsmagot megosztása támogatási parancsfájl</span><span class="sxs-lookup"><span data-stu-id="4cee5-124">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
+<span data-ttu-id="4cee5-125">Adja hozzá a Register-PSRepository/Set-PSRepository-parancsmagok használatával a **ScriptSourceLocation** és **ScriptPublishLocation** a PSRepository számára.</span><span class="sxs-lookup"><span data-stu-id="4cee5-125">Use Register-PSRepository/Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
 Register-PSRepository -Name GalleryINT \`
@@ -644,8 +642,8 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-## <a name="publish-script-cmdlet"></a><span data-ttu-id="bd172-126">Közzététel parancsfájl parancsmag</span><span class="sxs-lookup"><span data-stu-id="bd172-126">Publish-Script cmdlet</span></span>
-<span data-ttu-id="bd172-127">Közzététel parancsfájl parancsmag lehetővé teszi, hogy a parancsfájl verziója, Guid, Szerző és leírását, például érvényes metaadatok közzététele stb.</span><span class="sxs-lookup"><span data-stu-id="bd172-127">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc.</span></span>
+## <a name="publish-script-cmdlet"></a><span data-ttu-id="4cee5-126">Közzététel parancsfájl parancsmag</span><span class="sxs-lookup"><span data-stu-id="4cee5-126">Publish-Script cmdlet</span></span>
+<span data-ttu-id="4cee5-127">Közzététel parancsfájl parancsmag lehetővé teszi, hogy a parancsfájl verziója, Guid, Szerző és leírását, például érvényes metaadatok közzététele stb.</span><span class="sxs-lookup"><span data-stu-id="4cee5-127">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc.</span></span>
 ```powershell
 \# Publish the really basic script file with required metadata
 Publish-Script -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Repository GalleryINT -NuGetApiKey cad91af7-a49c-4026-9570-a4c16564e785 -Verbose

@@ -1,130 +1,84 @@
 - name: Áttekintés
   href: readme.md
+- name: A PowerShellGet telepítése
+  href: installing-psget.md
+- name: Bevezetés
+  href: getting-started.md
+- name: Útmutató
   items:
-    - name: Katalógus
+    - name: Elemek keresése a katalógusban
       items:
-        - name: Első lépések
-          href: psgallery/psgallery_gettingstarted.md
-        - name: Állapotadatok
-          href: psgallery/psgallery_status.md
-        - name: Katalógus – gyakori kérdések
-          href: psgallery/psgallery_faqs.md
-        - name: Katalóguselemek lap
-          href: psgallery/psgallery_items_tab.md
-        - name: Katalóguskeresési szintaxis
-          href: psgallery/psgallery_search_syntax.md
-        - name: Kompatibilis PSEdition paraméterrel rendelkező elemek
-          href: psgallery/psgallery_pseditions.md
-        - name: Fájllistanézet
-          href: psgallery/psgallery_filelist_feature.md
-        - name: Üzembe helyezés az Azure Automation szolgáltatásban
-          href: psgallery/psgallery_deploy_to_azure_automation.md
-        - name: PowerShell-galériabeli fiók létrehozása
-          href: psgallery/psgallery_creating_an_account.md
+        - name: Elemek keresése
+          href: how-to/finding-items/search-syntax.md
+        - name: Keresés a PSEdition paraméter értéke szerint
+          href: how-to/finding-items/searching-by-psedition.md
+        - name: Keresési találatok szűrése
+          href: how-to/finding-items/filtering-items.md
+    - name: Közzététel a katalógusban
+      items:
         - name: Elemek létrehozása és közzététele
-          href: psgallery/Creating-and-Publishing-an-item.md
-        - name: A közzététellel kapcsolatos irányelvek és gyakorlati tanácsok
-          href: psgallery/psgallery-PublishingGuidelines.md
-        - name: Elemek jegyzéke és a galéria felhasználói felülete
-          href: psgallery/psgallery_ItemManifestAffectingUI.md
+          href: how-to/publishing-items/publishing-an-item.md
+        - name: PowerShell-galériabeli fiók létrehozása
+          href: how-to/publishing-items/creating-an-account.md
         - name: Elemek listázásának megszüntetése
-          href: psgallery/psgallery_unlist_items.md
+          href: how-to/publishing-items/unlisting-items.md
         - name: Elemek törlése
-          href: psgallery/Deleting-Items.md
+          href: how-to/publishing-items/deleting-items.md
         - name: Elemtulajdonosok kezelése
-          href: psgallery/Managing-Item-Owners.md
-        - name: Visszaélés jelentése
-          href: psgallery/psgallery_report_abuse.md
-        - name: A jogviták rendezése
-          href: psgallery/psgallery_dispute_resolution.md
+          href: how-to/publishing-items/managing-item-owners.md
+    - name: Elemek használata
+      items:
+        - name: Fájllistanézet
+          href: how-to/working-with-items/filelist-view.md
+        - name: Üzembe helyezés az Azure Automation szolgáltatásban
+          href: how-to/working-with-items/deploy-to-azure-automation.md
+        - name: Licencfeltételek elfogadását megkövetelő elemek
+          href: how-to/working-with-items/items-that-require-license-acceptance.md
         - name: Elemtulajdonosok felkeresése
-          href: psgallery/psgallery_contacting_item_owners.md
-        - name: Rendszergazdák felkeresése
-          href: psgallery/psgallery_contacting_administrators.md
+          href: how-to/working-with-items/contacting-item-owners.md
         - name: Visszajelzés küldése a közösségi médiában vagy megjegyzésekkel
-          href: psgallery/psgallery-SocialMediaFeedback.md
-        - name: Licencfeltételek elfogadásának kérése az elemrészletekhez
-          href: psgallery/psgallery_requires_license_acceptance.md
-        - name: Licencfeltételek elfogadásának kérése az Azure Automation szolgáltatásban való üzembe helyezéshez
-          href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
-        - name: A PowerShell-galéria GDPR-megfelelősége
-          href: psgallery/psgallery_gdpr_dsr.md
-- name: PowerShellGet
-  href: psget/overview.md
+          href: how-to/working-with-items/social-media-feedback.md
+- name: Fogalmak
   items:
-    - name: A PowerShellGet modul beolvasása
-      href: psget/get_psget_module.md
-    - name: Modul
+    - name: A közzététellel kapcsolatos irányelvek és gyakorlati tanácsok
+      href: concepts/publishing-guidelines.md
+    - name: Elemek jegyzéke és a galéria felhasználói felülete
+      href: concepts/item-manifest-affecting-ui.md
+    - name: Meghatározott PSEdition kiadások használatának megkövetelése
       items:
-        - name: Modulok keresése
-          href: psget/module/psget_find-module.md
-        - name: DSC-erőforrások keresése
-          href: psget/module/psget_find-dscresource.md
-        - name: Szerepköri funkciók keresése
-          href: psget/module/psget_find-rolecapability.md
-        - name: Parancsok keresése
-          href: psget/module/psget_find-command.md
-        - name: Mentés
-          href: psget/module/psget_save-module.md
-        - name: Telepítés
-          href: psget/module/psget_install-module.md
-        - name: Frissítés
-          href: psget/module/psget_update-module.md
-        - name: Eltávolítás
-          href: psget/module/psget_uninstall-module.md
-        - name: Telepített modulok beolvasása
-          href: psget/module/psget_get-installedmodule.md
-        - name: Moduljegyzék frissítése
-          href: psget/module/psget_update-modulemanifest.md
-        - name: Közzététel
-          href: psget/module/psget_publish-module.md
-        - name: PSEditions paraméterrel rendelkező modulok
-          href: psget/module/modulewithpseditionsupport.md
-        - name: Licencfeltételek elfogadását igénylő modulok
-          href: psget/module/RequireLicenseAcceptance.md
-        - name: Előzetes verziók
-          href: psget/module/PreReleaseModule.md
-        - name: Hibaelhárítás
-          href: psget/psget_cmdlets_troubleshooting.md
-    - name: Parancsfájl
+        - name: PSEdition-támogatást biztosító szkriptek írása
+          href: concepts/script-psedition-support.md
+        - name: PSEdition-támogatást biztosító modulok írása
+          href: concepts/module-psedition-support.md
+    - name: Licencfeltételek elfogadásának megkövetelése
       items:
-        - name: Keresés
-          href: psget/script/psget_find-script.md
-        - name: Mentés
-          href: psget/script/psget_save-script.md
-        - name: Telepítés
-          href: psget/script/psget_install-script.md
-        - name: Frissítés
-          href: psget/script/psget_update-script.md
-        - name: Eltávolítás
-          href: psget/script/psget_uninstall-script.md
-        - name: Telepített parancsfájlok beolvasása
-          href: psget/script/psget_get-installedscript.md
-        - name: Metaadatokat tartalmazó parancsfájl létrehozása
-          href: psget/script/psget_new-scriptfileinfo.md
-        - name: Parancsfájl metaadatainak tesztelése
-          href: psget/script/psget_test-scriptfileinfo.md
-        - name: Parancsfájl metaadaainak frissítése
-          href: psget/script/psget_update-scriptfileinfo.md
-        - name: Közzététel
-          href: psget/script/psget_publish-script.md
-        - name: PSEditions paraméterrel rendelkező parancsfájlok
-          href: psget/script/scriptwithpseditionsupport.md
-        - name: Licencfeltételek elfogadásának megkövetelése a parancsfájlokhoz
-          href: psget/script/script_RequireLicenseAcceptance.md
-        - name: Előzetes verziók
-          href: psget/script/PreReleaseScript.md
-    - name: Tárházkezelés
+        - name: Licencfeltételek elfogadásának megkövetelése szkriptek esetén
+          href: concepts/script-license-acceptance.md
+        - name: Licencfeltételek elfogadásának megkövetelése modulok esetén
+          href: concepts/module-license-acceptance.md
+    - name: Elemek definiálása előzetes kiadásúként
       items:
-        - name: A NuGet-szolgáltató és a NuGet.exe rendszerindítása
-          href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
-        - name: Tárház regisztrálása
-          href: psget/repository/psget_register-psrepository.md
-        - name: Regisztrált tárház listázása
-          href: psget/repository/psget_get-psrepository.md
-        - name: Regisztrált tárház módosítása
-          href: psget/repository/psget_set-psrepository.md
-        - name: Tárház regisztrálásának megszüntetése
-          href: psget/repository/psget_unregister-psrepository.md
-    - name: PackageManagement-parancsmagok
-      href: psget/oneget/PackageManagement_cmdlets.md
+        - name: Modulok definiálása előzetes kiadásúként
+          href: concepts/module-prerelease-support.md
+        - name: Szkriptek definiálása előzetes kiadásúként
+          href: concepts/script-prerelease-support.md
+    - name: A PSScriptAnalyzer szabályprofil
+      href: concepts/scriptanalyzer-rule-profile.md
+- name: Támogatás kérése
+  items:
+    - name: Visszaélés jelentése
+      href: how-to/getting-support/report-abuse.md
+    - name: A jogviták rendezése
+      href: how-to/getting-support/dispute-resolution.md
+    - name: Rendszergazdák felkeresése
+      href: how-to/getting-support/contacting-administrators.md
+    - name: Hibaelhárítás
+      href: how-to/getting-support/troubleshooting-cmdlets.md
+    - name: A NuGet-szolgáltató és a NuGet.exe rendszerindítása
+      href: how-to/getting-support/bootstrapping-nuget.md
+    - name: GDPR-megfelelőség
+      href: how-to/getting-support/gdpr-dsr-policy.md
+- name: Katalógus – gyakori kérdések
+  href: faqs.md
+- name: PowerShellGet-parancsmagok
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
