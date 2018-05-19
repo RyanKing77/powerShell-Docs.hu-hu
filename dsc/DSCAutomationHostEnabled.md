@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: DSCAutomationHostEnabled beállításkulcs
-ms.openlocfilehash: 9fd71120b4959a7b14094922b453b05b217f3736
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 0cecbadc6802938cadb4ffb9745a23e6b98544be
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 >A következőkre vonatkozik: a Windows PowerShell 5.0
 
@@ -16,7 +15,7 @@ ms.lasthandoff: 04/09/2018
 DSC használja a **DSCAutomationHostEnabled** kulcs alatt **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** ahhoz, hogy a kezdeti állítja a gép konfigurációját.
 DSCAutomationHostEnabled három módot támogat:
 
-|  DSCAutomationHostEnabled Value  |  Leírás   |
+|  DSCAutomationHostEnabled érték  |  Leírás   |
 |---|---|
 0 | Tiltsa le a gép konfigurál állítja. |
 1 | Engedélyezze a gép konfigurál állítja. |

@@ -1,6 +1,13 @@
-
 ---
-MS.Date: 06/12/2017 közreműködői: manikb ms.topic: kulcsszavak hivatkozni: gyűjtemény, a powershell, a parancsmag, a psget cím: NuGet rendszerindítása
+ms.date: 06/12/2017
+contributor: manikb
+keywords: gyűjtemény, a powershell, a parancsmag, a psget
+title: NuGet rendszerindítása
+ms.openlocfilehash: f707e23737361ee7f82a16150402c9e719ee0ae1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>A NuGet-szolgáltató és NuGet.exe bootstrap
 
