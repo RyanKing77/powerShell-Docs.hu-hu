@@ -1,13 +1,4 @@
----
-ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gyűjtemény, powershell, a parancsmag, psgallery, psget
-title: A PowerShell-galériában
-ms.openlocfilehash: 65e0c427310ac20621109a6620e926a7894cf8f8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: MT
-ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
+ és---ms.date: 06/12/2017 közreműködői: JKeithB kulcsszavak: gyűjtemény, a powershell, a parancsmag, a psgallery, a psget cím: A PowerShell-galériában
 ---
 # <a name="the-powershell-gallery"></a>A PowerShell-galériában
 
@@ -27,9 +18,9 @@ Tekintse meg a [bevezetés](getting-started.md) oldalon olvashat PowerShellGet p
 
 ## <a name="supported-operating-systems"></a>Támogatott operációs rendszerek
 
-A **PowerShellGet** module használatához **PowerShell 3.0-s vagy újabb**.
+A **PowerShellGet** module használatához **Windows PowerShell 3.0-s vagy újabb**, vagy **PowerShell Core 6.0-s vagy újabb**.
 
-Ezért **PowerShellGet** a következő operációs rendszerek egyike szükséges:
+Egy megfelelő verziója **Windows PowerShell** érhető el a fenti operációs rendszerek:
 
 - Windows-10
 - Windows 8.1 Pro
@@ -40,6 +31,10 @@ Ezért **PowerShellGet** a következő operációs rendszerek egyike szükséges
 - Windows Server 2008 R2 SP1
 
 **PowerShellGet** is szükséges a .NET-keretrendszer 4.5 vagy újabb. Telepítheti a .NET-keretrendszer 4.5 vagy újabb a [Itt](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+
+**PowerShell Core** sok operációs rendszereket támogatja. Lásd: [Ez a cikk](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/) teljes listáját.
+
+Számos modult a dokumentumtárban tárolt támogatják a különböző operációs rendszerei között, és további követelmények. További információ a modulokat dokumentációjában tájékozódhat.
 
 ## <a name="got-a-question-have-feedback"></a>A kapott a következő kérdést? Van?
 

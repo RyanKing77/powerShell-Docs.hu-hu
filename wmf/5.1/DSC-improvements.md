@@ -3,34 +3,36 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: A WMF 5.1 DSC fejlesztései
-ms.openlocfilehash: 76cfb1a1e8908fbb751562c1d5081c116368a8f6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 32bdde6d43d17cc76c454fe10b00097753a9eebe
+ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>A célállapot-konfiguráció (DSC) a WMF 5.1 fejlesztései
 
 ## <a name="dsc-class-resource-improvements"></a>A DSC osztály erőforrás fejlesztései
 
 A WMF 5.1 rögzített azt az alábbi ismert problémák:
-* Ha egy osztály-alapú DSC erőforrás Get() függvény által visszaadott komplex/kivonat táblatípust Get-DscConfiguration üres értékek (null) vagy hibákat adhat vissza.
-* Get-DscConfiguration RunAs hitelesítő adatok használata a DSC-konfiguráció hibaüzenetet adja vissza.
-* Az osztály-alapú erőforrás összetett konfigurációban nem használható.
-* Start-DscConfiguration lefagy, ha az osztály-alapú erőforrás rendelkezik saját típusú tulajdonság.
-* Az osztály-alapú erőforrás kizárólagos erőforrásként nem használható.
 
+- Ha egy osztály-alapú DSC erőforrás Get() függvény által visszaadott komplex/kivonat táblatípust Get-DscConfiguration üres értékek (null) vagy hibákat adhat vissza.
+- Get-DscConfiguration RunAs hitelesítő adatok használata a DSC-konfiguráció hibaüzenetet adja vissza.
+- Az osztály-alapú erőforrás összetett konfigurációban nem használható.
+- Start-DscConfiguration lefagy, ha az osztály-alapú erőforrás rendelkezik saját típusú tulajdonság.
+- Az osztály-alapú erőforrás kizárólagos erőforrásként nem használható.
 
 ## <a name="dsc-resource-debugging-improvements"></a>A DSC erőforrás hibakeresési fejlesztései
+
 A WMF 5.0-s a PowerShell hibakereső nem állt le a erőforrás osztály-alapú módszer (Get és Set/tesztelési célú) közvetlenül.
 WMF 5.1 a hibakereső nem osztály-alapú erőforrás metódust. a MOF-alapú erőforrások módszerek ugyanúgy.
 
 ## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>DSC lekérési ügyfél támogatja a TLS 1.1 és TLS 1.2-es
+
 Korábban a DSC lekérési ügyfél csak támogatott SSL3.0 és TLS1.0 HTTPS-kapcsolatokon keresztül.
 Kényszerítetten biztonságosabb protokollt használják, amikor a leküldéses ügyfél volna működését.
 WMF 5.1 a DSC lekérési ügyfél már nem támogatja az SSL 3.0, és a biztonságosabb a TLS 1.1 és TLS 1.2 protokoll támogatása.
 
-## <a name="improved-pull-server-registration"></a>Továbbfejlesztett lekéréses kiszolgáló regisztrálása ##
+## <a name="improved-pull-server-registration"></a>Továbbfejlesztett lekéréses kiszolgáló regisztrálása
 
 WMF korábbi verzióiban egyidejű regisztrációk/reporting kérelmek egy DSC lekérési kiszolgálójával a ESENT adatbázis használatakor regisztrálni és/vagy a jelentést sikerült LCM vezetne.
 Ezekben az esetekben az eseménynaplók a lekérési kiszolgálón hibát a "Példány neve már használatban van."
@@ -40,7 +42,9 @@ Egyidejű regisztrációk vagy reporting (ESENT adatbázist érintő) szolgálta
 A probléma csak a ESENT adatbázis használható, és nem vonatkozik az OLEDB-adatbázisban.
 
 ## <a name="enable-circular-log-on-esent-database-instance"></a>Körkörös napló ESENT adatbázispéldányhoz engedélyezése
+
 A DSC-PullServer eariler verzióban ESENT adatbázis naplófájlokat a szabad lemezterület a körkörös naplózás nélkül létrehozásakor az adatbázispéldány fölött pullserver becouse volt betelőben. Ebben a kiadásban lehetősége van a körkörös naplózás működését a példányhoz, a pullserver web.config használatával. Alapértelmezés szerint CircularLogging igaz értékre van beállítva.
+
 ```
 <appSettings>
     <add key="dbprovider" value="ESENT" />
@@ -49,16 +53,18 @@ A DSC-PullServer eariler verzióban ESENT adatbázis naplófájlokat a szabad le
     <add key="UseCircularESENTLogs" value="TRUE" />
   </appSettings>
 ```
+
 ## <a name="pull-partial-configuration-naming-convention"></a>Lekéréses részleges konfigurációs elnevezési egyezmény
+
 A korábbi változatban az elnevezési részleges-konfiguráció lett, hogy a MOF-fájl neve, a lekéréses/szolgáltatás meg kell felelnie a helyi configuration manager-beállításait, amely pedig meg kell egyeznie a részleges konfiguráció nevét a a beágyazott konfiguráció neve a MOF-fájlban.
 
 Tekintse meg az alábbi pillanatképeket:
 
-• Helyi konfigurációs beállításokat, hogy egy csomópont kap részleges konfiguráció meghatározó.
+- Helyi konfigurációs beállításokat, amely meghatározza, hogy egy csomópont kap részleges konfiguráció.
 
 ![A minta metakonfigurációját](../images/MetaConfigPartialOne.png)
 
-• A minta részleges konfiguráció definíciója
+- A minta részleges konfiguráció definíciója
 
 ```powershell
 Configuration PartialOne
@@ -75,11 +81,11 @@ Configuration PartialOne
 PartialOne
 ```
 
-• A (ConfigurationName) beágyazott a generált MOF-fájlban.
+- A generált MOF-fájlnak a beágyazott (ConfigurationName).
 
 ![A minta létrehozott mof-fájlt](../images/PartialGeneratedMof.png)
 
-• A lekéréses konfigurációs tárházban fájlnév
+- A lekéréses konfigurációs tárházban fájlnév
 
 ![A konfigurációs tárházban fájlnév](../images/PartialInConfigRepository.png)
 
@@ -110,42 +116,42 @@ Erre a rugalmasságra elnevezési kezelését teszi a csomópontok részben Azur
 Alább állítja be egy csomópont lehet metakonfigurációját felügyelt mindkét helyileg, valamint által az Azure Automation szolgáltatás.
 
 ```powershell
-  [DscLocalConfigurationManager()]
-   Configuration RegistrationMetaConfig
-   {
-        Settings
-        {
-            RefreshFrequencyMins = 30
-            RefreshMode = "PULL"
-        }
+[DscLocalConfigurationManager()]
+Configuration RegistrationMetaConfig
+{
+    Settings
+    {
+        RefreshFrequencyMins = 30
+        RefreshMode = "PULL"
+    }
 
-        ConfigurationRepositoryWeb web
-        {
-            ServerURL =  $endPoint
-            RegistrationKey = $registrationKey
-            ConfigurationNames = $configurationName
-        }
+    ConfigurationRepositoryWeb web
+    {
+        ServerURL =  $endPoint
+        RegistrationKey = $registrationKey
+        ConfigurationNames = $configurationName
+    }
 
-        # Partial configuration managed by Azure Automation service.
-        PartialConfiguration PartialConfigurationManagedByAzureAutomation
-        {
-            ConfigurationSource = "[ConfigurationRepositoryWeb]Web"
-        }
+    # Partial configuration managed by Azure Automation service.
+    PartialConfiguration PartialConfigurationManagedByAzureAutomation
+    {
+        ConfigurationSource = "[ConfigurationRepositoryWeb]Web"
+    }
 
-        # This partial configuration is managed locally.
-        PartialConfiguration OnPremisesConfig
-        {
-            RefreshMode = "PUSH"
-            ExclusiveResources = @("Script")
-        }
+    # This partial configuration is managed locally.
+    PartialConfiguration OnPremisesConfig
+    {
+        RefreshMode = "PUSH"
+        ExclusiveResources = @("Script")
+    }
 
-   }
+}
 
-   RegistrationMetaConfig
-   Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
- ```
+RegistrationMetaConfig
+Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
+```
 
-# <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>PsDscRunAsCredential használata DSC összetett erőforrások
+## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>PsDscRunAsCredential használata DSC összetett erőforrások
 
 Támogatja az [ *PsDscRunAsCredential* ](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) a DSC [összetett](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) erőforrásokat.
 
@@ -157,10 +163,7 @@ Ha bármilyen olyan erőforrás összetett erőforrás belül PsDscRunAsCredenti
 
 Ez a példa bemutatja a használati [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) összetett erőforrás PSDesiredStateConfiguration modulban.
 
-
-
 ```powershell
-
 Configuration InstallWindowsFeature
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
@@ -175,7 +178,6 @@ Configuration InstallWindowsFeature
             PsDscRunAsCredential = Get-Credential
         }
     }
-
 }
 
 $configData = @{
@@ -189,21 +191,19 @@ $configData = @{
     )
 }
 
-
 InstallWindowsFeature -ConfigurationData $configData
-
 ```
 
-##<a name="dsc-module-and-configuration-signing-validations"></a>DSC modul és a konfigurációs ellenőrzések aláírása
+## <a name="dsc-module-and-configuration-signing-validations"></a>DSC modul és a konfigurációs ellenőrzések aláírása
+
 A DSC konfiguráció és a modulok terjesztése a kezelt számítógépek számára a lekérési kiszolgálójáról.
 Ha a lekérési kiszolgálójával biztonsága sérül, a támadó potenciálisan módosíthatja a konfigurációkat és a modulok a lekérési kiszolgálón és kell terjeszteni az összes felügyelt csomóponthoz, az összes veszélyeztetése.
 
- A WMF 5.1 DSC támogatja a katalógus és konfigurációs digitális aláírások ellenőrzése (. MOF) formátumú fájlok.
+A WMF 5.1 DSC támogatja a katalógus és konfigurációs digitális aláírások ellenőrzése (. MOF) formátumú fájlok.
 Ez a szolgáltatás megakadályozza, hogy a csomópontok a konfigurációk vagy fájlok modul, amely nem egy megbízható aláíró aláírásával, vagy amely illetéktelenül után megbízható aláíró által aláírt végrehajtása.
 
+### <a name="how-to-sign-configuration-and-module"></a>Csatlakozás a konfigurációs és modul
 
-
-###<a name="how-to-sign-configuration-and-module"></a>Csatlakozás a konfigurációs és modul
 ***
 * Konfigurációs fájlok (. MOF-ot): A meglévő PowerShell-parancsmag [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) ki van bővítve a MOF-fájlok aláírása támogatásához.
 * Modulok: Ha bejelentkezik a megfelelő modul katalógus az alábbi lépéseket követve modulok aláírása történik:
@@ -214,9 +214,10 @@ Ez a szolgáltatás megakadályozza, hogy a csomópontok a konfigurációk vagy 
     3. Helyezze a katalógus fájlt a modul mappában található.
 Szabály szerint modul katalógusfájlt a modul neve megegyezik a modul a mappában kell helyezni.
 
-###<a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>LocalConfigurationManager beállítások aláíró érvényesítést engedélyezése
+### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>LocalConfigurationManager beállítások aláíró érvényesítést engedélyezése
 
-####<a name="pull"></a>Lekéréses
+#### <a name="pull"></a>Lekéréses
+
 A csomópont LocalConfigurationManager modulok és a jelenlegi beállításai alapján a konfigurációk aláírási érvényesítést végez.
 Az aláírás érvényesítése alapértelmezés szerint le van tiltva.
 Az aláírás érvényesítése a "SignatureValidation" blokk hozzáadásával a csomópont látható az alábbi meta-konfiguráció definíciójának engedélyezhető:
@@ -237,7 +238,7 @@ Configuration EnableSignatureValidation
       RegistrationKey = 'd6750ff1-d8dd-49f7-8caf-7471ea9793fc' # Replace this with correct registration key.
     }
     SignatureValidation validations{
-        # By default, LCM uses the default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM uses this custom store for retrieving the trusted publishers to validate the content.
+        # If the TrustedStorePath property is provided then LCM will use the custom path. Otherwise, the LCM will use default trusted store path (Cert:\LocalMachine\DSCStore) to find the signing certificate.
         TrustedStorePath = 'Cert:\LocalMachine\DSCStore'
         SignedItemType = 'Configuration','Module'         # This is a list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.
     }
@@ -245,7 +246,7 @@ Configuration EnableSignatureValidation
 }
 EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
- ```
+```
 
 A fenti metakonfigurációját beállítása a csomópont lehetővé teszi, hogy a letöltött konfigurációk és a modulok aláírás érvényesítése.
 A helyi Configuration Manager végrehajtja a következő lépéseket a digitális aláírások ellenőrzése.
@@ -271,12 +272,13 @@ Hasonlóképpen húzza egy modult, amelynek a katalógus nem aláírt eredménye
 
 ![A minta hiba kimenetigyorsítótár-modul](../images/PullUnisgnedCatalog.png)
 
-####<a name="push"></a>Leküldéses
+#### <a name="push"></a>Leküldéses
+
 Egy leküldéses keresztül konfigurációs előfordulhat, hogy lehessen illetéktelenül módosítani a forrásnál, mielőtt azt a csomópont.
 A helyi Configuration Manager hasonló aláírás érvényesítése lépéseket megnyomott vagy közzétett beállítás(ok) hajt végre.
 Alább van az aláírás érvényesítése leküldéses átfogó példát.
 
-* A csomópont aláírás-ellenőrzés engedélyezése.
+- A csomópont aláírás-ellenőrzés engedélyezése.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -295,7 +297,8 @@ Configuration EnableSignatureValidation
 EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ```
-* Hozzon létre egy minta konfigurációs fájlt.
+
+- Hozzon létre egy minta konfigurációs fájlt.
 
 ```powershell
 # Sample configuration
@@ -311,17 +314,18 @@ Configuration Test
 Test
 ```
 
-* Próbálja meg a nem aláírt konfigurációs fájl küldését csomóponthoz.
+- Próbálja meg a nem aláírt konfigurációs fájl küldését csomóponthoz.
 
 ```powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 ```
+
 ![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)
 
-* A konfigurációs fájl kódaláíró tanúsítvánnyal aláírásához.
+- A konfigurációs fájl kódaláíró tanúsítvánnyal aláírásához.
 
 ![SignMofFile](../images/SignMofFile.png)
 
-* Próbálja küldését a MOF-fájlját.
+- Próbálja küldését a MOF-fájlját.
 
 ![SignMofFile](../images/PushSignedMof.png)
