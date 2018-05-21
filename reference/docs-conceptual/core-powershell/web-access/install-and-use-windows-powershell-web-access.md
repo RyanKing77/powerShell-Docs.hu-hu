@@ -342,7 +342,7 @@ Hogyan Ügyféltanúsítványok megkövetelése hogy növelni a Windows PowerShe
 
     Módosítsa az alapértelmezett portot, ha egy másik webhely már használja a 443-ast, vagy ha egyéb biztonsági okokból módosítani szeretné a portszámot. Ha az átjárókiszolgálón egy másik webhely használja a kiválasztott portot, figyelmeztetés jelenik meg kattintva **OK** a a **webhely hozzáadása** párbeszédpanel megnyitásához. A Windows PowerShell Web Access futtatásához egy nem használt portot kell használnia.
 
-9. Ha a szervezet számára szükséges, megadhat egy állomásnevet, amely a szervezet és a felhasználók, például a **www.contoso.com**. Kattintson az OK gombra.
+9. Ha a szervezet számára szükséges, megadhat egy állomásnevet, amely a szervezet és a felhasználók, például a **www.contoso.com**. Kattintson az **OK** gombra.
 
 10. A biztonságosabb éles környezet érdekében határozottan javasoljuk egy érvényes, hitelesítésszolgáltató által aláírt tanúsítványt biztosítását. Meg kell adnia egy SSL-tanúsítvány, mert a felhasználók kapcsolódhatnak a Windows PowerShell Web Access csak egy HTTPS-webhelyen. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
 
