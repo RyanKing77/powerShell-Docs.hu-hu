@@ -59,7 +59,7 @@ Mások csak jelen, vagy a nem Windows PowerShell Core telepítései alkalmazhat�
 MacOS, a PowerShell szolgáltatás használ a natív `os_log` API-k bejelentkezni az Apple [egyesített naplózási rendszer][os_log].
 Linux, PowerShell használ [Syslog][], a széles körű naplózás megoldást.
 
-### <a name="filesystem"></a>Filesystem
+### <a name="filesystem"></a>Fájlrendszer
 
 Módosításokat végzett macOS és Linux hagyományosan nem támogatott a Windows fájlnévkarakterekkel támogatásához:
 
@@ -181,7 +181,7 @@ Ez a változás által érintett a következő parancsmagokat:
 - Import-Csv
 - Out-File
 - SELECT-karakterlánc
-- Send-MailMessage
+- Küldési-levélüzenet
 - Set-Content
 
 Ezeket a parancsmagokat is frissítve lett, hogy a `-Encoding` paraméter egységesen fogad el `System.Text.Encoding`.
@@ -373,16 +373,16 @@ További információk a hogyan ezen az adatok felhasználási található [blog
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[breaking-changes]: https://github.com/PowerShell/PowerShell/tree/master/docs/BREAKINGCHANGES.md
+[breaking-changes]: breaking-changes-ps6.md
 [változásnaplója]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
-[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET-szabvány]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [gyakran ismételt kérdések]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
-[docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
+[Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
