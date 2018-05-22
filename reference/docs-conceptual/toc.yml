@@ -154,14 +154,20 @@
     - name: Újdonságok
       href: ''
       items:
-        - name: A PowerShell újdonságai
-          href: whats-new/what-s-new-with-powershell.md
-        - name: A Windows PowerShell 5.0 újdonságai
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: A PowerShell 5.0 ISE újdonságai
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
         - name: A PowerShell Core 6.0 újdonságai
           href: whats-new/what-s-new-in-powershell-core-60.md
+          items:
+            - name: Meghibásodást okozó változások a PowerShell Core 6.0-ban
+              href: whats-new/breaking-changes-ps6.md
+            - name: A PowerShell Core 6.0 ismert problémái
+              href: whats-new/known-issues-ps6.md
+        - name: A PowerShell 5.0 újdonságai
+          href: whats-new/what-s-new-with-powershell.md
+          items:
+            - name: A Windows PowerShell 5.0 újdonságai
+              href: whats-new/what-s-new-in-windows-powershell-50.md
+            - name: A PowerShell 5.0 ISE újdonságai
+              href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: A PowerShell Core támogatási életciklusa
       href: PowerShell-Core-Support.md
     - name: További információ
