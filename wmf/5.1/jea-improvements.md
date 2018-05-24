@@ -49,7 +49,7 @@ Majd írhat feldolgozni az adatokat, a felhasználó meghajtón tárolja, és el
 
 Bizonyos esetekben egy feladatot, a felhasználó számára szükséges-e a JEA-munkamenetben kell a helyi számítógép mögötti erőforrások eléréséhez.
 A JEA munkamenet virtuális fiók használatára van konfigurálva, amikor minden, az ilyen erőforrások eléréséhez az általa elérni a helyi gép identitása, nem a virtuális fiók vagy a csatlakoztatott felhasználói jelenik meg.
-A TP5, azt engedélyezte a JEA egy [csoportosan felügyelt szolgáltatásfiók] környezetében futó támogatása (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), így sokkal könnyebben hálózati erőforrások eléréséhez a tartomány identitásával.
+A TP5, azt engedélyezte a JEA egy [csoportosan felügyelt szolgáltatásfiók](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx) környezetében futó támogatása , így sokkal könnyebben hálózati erőforrások eléréséhez a tartomány identitásával.
 
 A csoportosan felügyelt szolgáltatásfiók alatt fut JEA munkamenet konfigurálásához használja a következő új kulcsot a FERB fájlban:
 

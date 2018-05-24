@@ -37,4 +37,4 @@ Az alábbi eljárás ismerteti, hogy a program számos kényelmes testre szabott
 
 11. Ha el szeretné helyezni a konzol adott helyen az asztalon, ha meg van nyitva, törölje a **a rendszer helyezi** jelölőnégyzetet a **ablak pozícióját** szakaszt, és módosítsa az értékeket a a **Balra** és **felső** mezőkben az a **ablak pozícióját** szakasz.
 
-12. Kattintson az OK** gombra.
+12. Kattintson az **OK** gombra.

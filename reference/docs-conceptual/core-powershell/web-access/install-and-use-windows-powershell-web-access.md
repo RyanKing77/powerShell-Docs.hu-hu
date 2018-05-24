@@ -187,7 +187,7 @@ Ebben a példában az eredményül kapott webhelye a Windows PowerShell Web Acce
 
 7. Az a **hely kötésének hozzáadása** párbeszédpanel a **típus** mezőben válassza **https**.
 
-8. Az a **SSL-tanúsítvány** mező mellett válassza ki a megfelelő aláírt tanúsítványt a legördülő menüből. Kattintson az OK** gombra. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
+8. Az a **SSL-tanúsítvány** mező mellett válassza ki a megfelelő aláírt tanúsítványt a legördülő menüből. Kattintson az **OK** gombra. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
 
     A Windows PowerShell Web Access webalkalmazás az aláírt SSL-tanúsítvány használatára konfigurálta.
 
@@ -276,7 +276,7 @@ Ebben a szakaszban található utasítások szolgálnak a Windows PowerShell Web
 
 2. Új alkalmazáskészlet létrehozása a Windows PowerShell Web Access. Bontsa ki az átjárókiszolgáló, az IIS-kezelő fát megjelenítő ablaktáblán válassza ki a csomópontot **alkalmazáskészletek**, és kattintson a **alkalmazáskészlet hozzáadása** a a **műveletek** ablaktáblán.
 
-3. Nevű új alkalmazáskészlet hozzáadása **pswa_pool**, vagy adjon meg egy másik nevet. Kattintson az OK** gombra.
+3. Nevű új alkalmazáskészlet hozzáadása **pswa_pool**, vagy adjon meg egy másik nevet. Kattintson az **OK** gombra.
 
 4. Az IIS-kezelő fát megjelenítő ablaktáblán, bontsa ki a csomópontot, a kiszolgáló, amelyen a Windows PowerShell Web Access telepítve van, amíg a **helyek** mappa meg nem jelenik. Válassza ki a **helyek** mappát.
 
@@ -286,7 +286,7 @@ Ebben a szakaszban található utasítások szolgálnak a Windows PowerShell Web
 
 7. Az a **alkalmazáskészlet** mező mellett válassza ki a 3. lépésben létrehozott alkalmazáskészletet.
 
-8. Az a **fizikai elérési út** mezőben tallózással keresse meg az alkalmazás helyét. Használhatja az alapértelmezett helyet: %windir%/Web/PowerShellWebAccess/wwwroot. Kattintson az OK** gombra.
+8. Az a **fizikai elérési út** mezőben tallózással keresse meg az alkalmazás helyét. Használhatja az alapértelmezett helyet: %windir%/Web/PowerShellWebAccess/wwwroot. Kattintson az **OK** gombra.
 
 9. Az SSL-tanúsítvány konfigurálása IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager) ebben a témakörben szereplő eljárás lépéseit kövesse.
 
