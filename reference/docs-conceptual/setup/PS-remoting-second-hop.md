@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell parancsmag
 title: A kétugrásos létrehozása a PowerShell-távelérés
-ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1d24473178bc50321a81ebf1115a20f17078844f
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>A kétugrásos létrehozása a PowerShell-távelérés
 
@@ -21,7 +21,7 @@ Többféleképpen is a probléma megoldása. Ebben a témakörben megnézzük, a
 
 ## <a name="credssp"></a>CredSSP
 
-Használhatja a [hitelesítőadat-szolgáltató (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) hitelesítéshez. A CredSSP gyorsítótárazza a hitelesítő adatok a távoli kiszolgálón (_ServerB_), így használja megnyílik, akár hitelesítő adatokkal való visszaéléseket támadások. A távoli számítógép sérült is, ha a támadó megszerezte a felhasználó hitelesítő adatait. CredSSP-alapú ügyfél és kiszolgáló egyaránt számítógépeken alapértelmezés szerint le van tiltva. Csak a legmegbízhatóbb környezetben engedélyeznie kell a CredSSP-alapú. Például a tartományi rendszergazda tartományvezérlő csatlakozik, mert a tartományvezérlő nagymértékben megbízható.
+Használhatja a [hitelesítőadat-szolgáltató (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) hitelesítéshez. A CredSSP gyorsítótárazza a hitelesítő adatok a távoli kiszolgálón (_ServerB_), így használja megnyílik, akár hitelesítő adatokkal való visszaéléseket támadások. A távoli számítógép sérült is, ha a támadó megszerezte a felhasználó hitelesítő adatait. CredSSP-alapú ügyfél és kiszolgáló egyaránt számítógépeken alapértelmezés szerint le van tiltva. Csak a legmegbízhatóbb környezetben engedélyeznie kell a CredSSP-alapú. Például a tartományi rendszergazda tartományvezérlő csatlakozik, mert a tartományvezérlő nagymértékben megbízható.
 
 További információ a biztonsági szempontok a PowerShell távelérése a CredSSP protokoll használatakor: [véletlen megtámadása: Ne feledje, a CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
@@ -175,7 +175,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-Ebben a példában a `$using` változó segítségével ellenőrizze a `$ServerC` változó számára látható _ServerB_. További információ a `$using` változó, lásd: [about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx).
+Ebben a példában a `$using` változó segítségével ellenőrizze a `$ServerC` változó számára látható _ServerB_. További információ a `$using` változó, lásd: [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
 A több kiszolgálót hitelesítő adatok delegálásának engedélyezése _ServerC_, állítsa be a a **PrincipalsAllowedToDelegateToAccount** paraméter _ServerC_ tömbhöz:
 
@@ -212,8 +212,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [Hogyan Windows Server 2012 használatának egyszerűbbé tétele a problémás a Kerberos által korlátozott delegálást, 1. rész](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Hogyan Windows Server 2012 használatának egyszerűbbé tétele a problémás a Kerberos által korlátozott delegálást, 2. rész](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Understanding Kerberos által korlátozott delegálás Proxy alkalmazástelepítésekhez az Azure Active Directory integrált Windows-hitelesítés](http://aka.ms/kcdpaper)
-- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)
-- [[MS-SFU]: Kerberos Protocol Extensions: Service, a felhasználó- és a korlátozott delegálás protokoll 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx)
+- [[MS-ADA2]: az Active Directory séma attribútumok M2.210 attribútum az msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
+- [[MS-SFU]: Kerberos Protocol Extensions: Service, a felhasználó- és a korlátozott delegálás protokoll 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [Erőforrás-alapú Kerberos által korlátozott delegálás](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Távoli felügyelet nélkül PrincipalsAllowedToDelegateToAccount használatával korlátozott delegálás](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
@@ -236,7 +236,7 @@ A második Ugrás probléma megoldására PSSessionConfiguration és RunAs haszn
 
 JEA lehetővé teszi, hogy milyen parancsokat rendszergazdaként futtathatja egy PowerShell-munkamenetben korlátozhatja. A második Ugrás probléma megoldásához használható.
 
-A JEA kapcsolatos információkért lásd: [csak elég felügyeleti](https://docs.microsoft.com/en-us/powershell/jea/overview).
+A JEA kapcsolatos információkért lásd: [csak elég felügyeleti](https://docs.microsoft.com/powershell/jea/overview).
 
 ### <a name="pros"></a>Előnyök
 
@@ -249,7 +249,7 @@ A JEA kapcsolatos információkért lásd: [csak elég felügyeleti](https://doc
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Az Invoke-Command parancsprogramblokkba berakni hitelesítő adatok továbbítása
 
-Hitelesítő adatok belül átadhatók a **ScriptBlock** hívásakor paramétere a [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) parancsmag.
+Hitelesítő adatok belül átadhatók a **ScriptBlock** hívásakor paramétere a [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) parancsmag.
 
 ### <a name="pros"></a>Előnyök
 

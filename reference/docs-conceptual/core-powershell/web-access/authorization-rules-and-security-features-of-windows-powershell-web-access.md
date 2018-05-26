@@ -2,11 +2,11 @@
 ms.date: 06/27/2017
 keywords: PowerShell parancsmag
 title: A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói
-ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1b4d4339efda78a5cb719921a9cb06881d119930
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói
 
@@ -112,7 +112,7 @@ Ha a felhasználó nem ad meg más hitelesítő adatokat, az elsődleges felhasz
 Az engedélyezési szabályok segítségével engedélyezhető a felhasználók számára, hogy hozzáférjenek egy adott munkamenet-konfigurációhoz.
 Létrehozhat _korlátozott futási terekben engedélyezze_ vagy munkamenet-konfigurációk Windows PowerShell Web Access, és meghatározott felhasználók csak a meghatározott munkamenet-konfigurációk csatlakozni, amikor bejelentkeznek a Windows PowerShell Web Access.
 Hozzáférés-vezérlési listák (ACL) segítségével határozza meg, mely felhasználók férhessenek hozzá a meghatározott végpontokhoz, és további való hozzáférés korlátozása a felhasználók adott csoportja számára a végpont ebben a szakaszban ismertetett engedélyezési szabályok segítségével.
-Korlátozott futtatóterek kapcsolatos további információkért lásd: [létrehozása egy korlátozott futási térrel](https://msdn.microsoft.com/en-us/library/dn614668).
+Korlátozott futtatóterek kapcsolatos további információkért lásd: [létrehozása egy korlátozott futási térrel](https://msdn.microsoft.com/library/dn614668).
 
 ### <a name="configuring-authorization-rules"></a>Az engedélyezési szabályok konfigurálása
 
@@ -122,7 +122,7 @@ A második eljárás egy olyan engedélyezési szabály eltávolítását ismert
 
 Ha tervezi olyan egyéni munkamenet-konfigurációk használatával meghatározott felhasználók számára csak a Windows PowerShell Web Access korlátozott futtatóterek belül működik, a rájuk hivatkozó engedélyezési szabályok hozzáadása előtt hozzon létre az egyéni munkamenet-konfigurációk.
 A Windows PowerShell Web Access parancsmagok nem hozhat létre egyéni munkamenet-konfigurációk.
-Egyéni munkamenet-konfigurációk létrehozásával kapcsolatos további információkért lásd: [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Egyéni munkamenet-konfigurációk létrehozásával kapcsolatos további információkért lásd: [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 Windows PowerShell Web Access-parancsmagokat támogatja egy helyettesítő karaktert, a csillagot ( \* ).
 A helyettesítő karakterek nem használhatók a karakterláncokon belül; tulajdonságonként (felhasználók, számítógépek vagy munkamenet-konfigurációk) egyetlen csillag használható.
@@ -142,7 +142,7 @@ A helyettesítő karakterek nem használhatók a karakterláncokon belül; tulaj
 2. **Nem kötelező lépés** felhasználói hozzáférés korlátozására munkamenet-konfigurációk használatával:
 
     Győződjön meg arról, hogy a munkamenet-konfigurációk, szeretné használni, már léteznek a szabályokban.
-Azok rendelkezik még nem jött létre, ha a munkamenet-konfigurációk létrehozásához használja utasításokat [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Azok rendelkezik még nem jött létre, ha a munkamenet-konfigurációk létrehozásához használja utasításokat [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 3. Ez az engedélyezési szabály lehetővé teszi, hogy a számítógépek egy adott felhasználó hozzáférését a hálózaton, amelyhez általában hozzáférhetnek, egy adott munkamenet-konfiguráció, ami a felhasználó hozzáférést "™ s szokásos parancsfájl-kezelési és parancsmag igényeinek. Írja be a következőt, és nyomja le az **Enter**.
 
@@ -253,6 +253,6 @@ Ha az átjárókiszolgáló fut a Windows Server 2012 R2, Windows PowerShell Web
 
 ## <a name="see-also"></a>Lásd még:
 
-- [Telepítheti és használhatja a Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+- [Telepítheti és használhatja a Windows PowerShell Web Access](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [A Windows PowerShell webes elérés parancsmagjai](cmdlets/web-access-cmdlets.md)

@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell parancsmag
 title: WinRMSecurity
-ms.openlocfilehash: e390a84b6f7a1932afdad84c7b09ce7da2ec5370
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell távoli eljáráshívás biztonsági megfontolások
 
@@ -71,7 +71,7 @@ Ehelyett érdemes lehet a TrustedHosts beállítás, amelynek a hibát, hogy a k
 
 ### <a name="ongoing-communication"></a>A folyamatban lévő kommunikáció
 
-Ha a kezdeti hitelesítési befejeződött, a [PowerShell távoli eljáráshívás protokoll](https://msdn.microsoft.com/en-us/library/dd357801.aspx) titkosítja az összes folyamatban lévő kommunikációs munkamenet-AES-256 szimmetrikus kulcsot.
+Ha a kezdeti hitelesítési befejeződött, a [PowerShell távoli eljáráshívás protokoll](https://msdn.microsoft.com/library/dd357801.aspx) titkosítja az összes folyamatban lévő kommunikációs munkamenet-AES-256 szimmetrikus kulcsot.
 
 
 ## <a name="making-the-second-hop"></a>A kétugrásos elvégzése

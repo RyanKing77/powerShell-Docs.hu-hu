@@ -2,11 +2,11 @@
 ms.date: 08/23/2017
 keywords: PowerShell parancsmag
 title: a web alapú windows powershell konzol használata
-ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>A webalapú Windows PowerShell konzol használata
 
@@ -81,7 +81,7 @@ A legegyszerűbben úgy konfigurálhatja a számítógép távoli felügyelet en
 
     Általában a Windows PowerShell Web Access-átjárón keresztül használt hitelesítő adatok megegyeznek a kezelni kívánt távoli számítógép által elfogadottakkal. Azonban ha azt szeretné, hogy különböző hitelesítő adatot használnak a távoli számítógép kezeléséhez, amelyet a 2. lépés, bontsa ki a **választható kapcsolati beállítások** szakaszt, és adja meg a másodlagos hitelesítő adatokat. Egyéb esetben folytassa a 6. lépéssel.
 
-1. Ha a Windows PowerShell Web Access rendszergazdája létrehozta a Windows PowerShell Web Access felhasználók egyéni munkamenet-konfigurációt, írja be a munkamenet-konfiguráció nevét a nevét a **konfigurációnévvel** mező. Munkamenet-konfigurációkkal kapcsolatos további információkért lásd: [about_session_configuration_files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+1. Ha a Windows PowerShell Web Access rendszergazdája létrehozta a Windows PowerShell Web Access felhasználók egyéni munkamenet-konfigurációt, írja be a munkamenet-konfiguráció nevét a nevét a **konfigurációnévvel** mező. Munkamenet-konfigurációkkal kapcsolatos további információkért lásd: [about_session_configuration_files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 1. Tartsa a **hitelesítési típus** beállítása **alapértelmezett** kivéve, ha egyéb ehhez a Windows PowerShell Web Access-rendszergazda által kapott utasítást.
 

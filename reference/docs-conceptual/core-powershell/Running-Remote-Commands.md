@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell parancsmag
 title: Távoli parancsok futtatása
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: eb9f0ce0102de13d4fcd1d51f0e9174e9d5c340c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d21d1def1e25895f65b3578bf2892d56f14cc150
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="running-remote-commands"></a>Távoli parancsok futtatása
 
@@ -31,7 +31,7 @@ Ezek a parancsmagok a következők:
 
 * [Indítsa újra a számítógépet](https://go.microsoft.com/fwlink/?LinkId=821625)
 * [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
-* [Clear-EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
+* [Az eseménynaplóban törlése](https://go.microsoft.com/fwlink/?LinkId=821568)
 * [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
 * [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
 * [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
@@ -134,29 +134,29 @@ Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}
 A Windows PowerShell távoli felügyeleti csak itt kezdődik. A telepített Windows PowerShell parancsmagok segítségével létrehozása és konfigurálása mindkét távoli munkamenetek a helyi és távoli véget ér, a testre szabott és korlátozott-munkameneteket hozzon létre engedélyezése a felhasználók parancsok importálása egy távoli munkamenetet, amely futtatja ténylegesen implicit módon adja meg a távoli munkamenet azt a távoli munkamenetet, és még sok más biztonságát.
 
 Lehetővé teszi a távoli konfiguráció, a Windows PowerShell a WSMan-szolgáltató foglal magában. A WSMAN: a meghajtó a szolgáltató által létrehozott lehetővé teszi haladjon végig a konfigurációs beállításokat a helyi számítógépen és a távoli számítógépek hierarchiáját.
-A WSMan-szolgáltató kapcsolatos további információkért lásd: [WSMan szolgáltató](https://technet.microsoft.com/en-us/library/dd819476.aspx) és [WS-Management parancsmagok](https://technet.microsoft.com/en-us/library/dd819481.aspx), vagy a Windows PowerShell-konzolban, írja be a "Get-Help wsman".
+A WSMan-szolgáltató kapcsolatos további információkért lásd: [WSMan szolgáltató](https://technet.microsoft.com/library/dd819476.aspx) és [WS-Management parancsmagok](https://technet.microsoft.com/library/dd819481.aspx), vagy a Windows PowerShell-konzolban, írja be a "Get-Help wsman".
 
 További információ:
 
-- [Kapcsolatos távoli – gyakori kérdések](https://technet.microsoft.com/en-us/library/dd315359.aspx)
+- [Kapcsolatos távoli – gyakori kérdések](https://technet.microsoft.com/library/dd315359.aspx)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 
-Távoli eljáráshívás hibákkal kapcsolatban lásd: [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx).
+Távoli eljáráshívás hibákkal kapcsolatban lásd: [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
 
 ## <a name="see-also"></a>Lásd még:
 
-- [about_Remote](https://technet.microsoft.com/en-us/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-- [about_Remote_FAQ](https://technet.microsoft.com/en-us/library/e23702fd-9415-4a98-9975-390a4d3adc42)
-- [about_Remote_Requirements](https://technet.microsoft.com/en-us/library/da213949-134c-4741-b307-81f4492ba1bd)
-- [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/2f890148-8578-49ed-85ea-79a489dd6317)
-- [about_PSSessions](https://technet.microsoft.com/en-us/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-- [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
+- [about_Remote](https://technet.microsoft.com/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
+- [about_Remote_FAQ](https://technet.microsoft.com/library/e23702fd-9415-4a98-9975-390a4d3adc42)
+- [about_Remote_Requirements](https://technet.microsoft.com/library/da213949-134c-4741-b307-81f4492ba1bd)
+- [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
+- [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
+- [about_WS-Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 - [Invoke-Command parancsot](https://go.microsoft.com/fwlink/?LinkId=821493)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 - [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [A WSMan-szolgáltató](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [A WSMan-szolgáltató](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 
 [wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
 [ssh-remoting]: SSH-Remoting-in-PowerShell-Core.md

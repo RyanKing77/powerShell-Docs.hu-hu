@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell parancsmag
 title: A Windows PowerShell 2.0 motor indítása
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 585e1003554362d11fe99414bd3e80c497799a88
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 618745ff4865dd046acf46487e87c3ca0e324f95
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>A Windows PowerShell 2.0 motor indítása
 
@@ -37,13 +37,13 @@ Futtassa a Windows PowerShell 2.0 motor egy távoli munkamenetben, a távoli sz�
 
 Ez az egy speciális feladat általában a rendszergazda által végrehajtott műveletek.
 
-A következő eljárás használja a **PSVersion** paramétere a [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) parancsmaggal hozzon létre egy munkamenet-konfiguráció, amely a Windows PowerShell 2.0 motor használja. Használhatja a **PowerShellVersion** paramétere a [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) parancsmaggal hozzon létre egy munkamenet-konfigurációs fájlt egy munkamenet esetében, amelyek a Windows PowerShell 2.0 motor betölti és használhatja a **PSVersion** paramétere a [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) paraméter használata a Windows PowerShell 2.0 motor egy munkamenet-konfiguráció módosításához.
+A következő eljárás használja a **PSVersion** paramétere a [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) parancsmaggal hozzon létre egy munkamenet-konfiguráció, amely a Windows PowerShell 2.0 motor használja. Használhatja a **PowerShellVersion** paramétere a [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) parancsmaggal hozzon létre egy munkamenet-konfigurációs fájlt egy munkamenet esetében, amelyek a Windows PowerShell 2.0 motor betölti és használhatja a **PSVersion** paramétere a [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) paraméter használata a Windows PowerShell 2.0 motor egy munkamenet-konfiguráció módosításához.
 
-Munkamenet-konfiguráció fájlokkal kapcsolatos további információkért lásd: [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8). További információ a munkamenet-konfigurációkkal, például a telepítési és a biztonság érdekében: [about_session_configuration_files [v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
+Munkamenet-konfiguráció fájlokkal kapcsolatos további információkért lásd: [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8). További információ a munkamenet-konfigurációkkal, például a telepítési és a biztonság érdekében: [about_session_configuration_files [v4]](https://technet.microsoft.com/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
 
 #### <a name="to-start-a-remote-windows-powershell-20-session"></a>A Windows PowerShell 2.0 távoli munkamenet indításához
 
-1. A munkamenet-konfiguráció, amelyhez a Windows PowerShell 2.0 motor létrehozásához használja a **PSVersion** paramétere a [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) parancsmag "2.0" értékű. Ez a parancs futtatása a számítógépen a "server side" vagy a fogadó oldalon a kapcsolat.
+1. A munkamenet-konfiguráció, amelyhez a Windows PowerShell 2.0 motor létrehozásához használja a **PSVersion** paramétere a [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) parancsmag "2.0" értékű. Ez a parancs futtatása a számítógépen a "server side" vagy a fogadó oldalon a kapcsolat.
 
    A következő minta parancs PS2 munkamenet-konfigurációt a kiszolgalo01 számítógépen hoz létre. A parancs futtatásához, indítsa el a Windows PowerShell 4.0-s vagy Windows PowerShell 3.0 a **Futtatás rendszergazdaként** lehetőséget.
 
@@ -51,7 +51,7 @@ Munkamenet-konfiguráció fájlokkal kapcsolatos további információkért lás
    Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
    ```
 
-2. A munkamenet létrehozásához a kiszolgalo01 számítógépen, amely a PS2 munkamenet-konfigurációt használ, használja a **ConfigurationName** parancsmag-készlettel hozzon létre például egy távoli munkamenet paraméter a [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) parancsmag.
+2. A munkamenet létrehozásához a kiszolgalo01 számítógépen, amely a PS2 munkamenet-konfigurációt használ, használja a **ConfigurationName** parancsmag-készlettel hozzon létre például egy távoli munkamenet paraméter a [New-PSSession](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) parancsmag.
 
    A munkamenet-konfigurációt használó munkamenet akkor kezdődik, amikor a Windows PowerShell 2.0 motor automatikusan betöltődik abba a munkamenetbe.
 
@@ -63,7 +63,7 @@ Munkamenet-konfiguráció fájlokkal kapcsolatos további információkért lás
 
 ## <a name="how-to-start-a-background-job-with-the-windows-powershell-20-engine"></a>A háttérben futó feladat indítása a Windows PowerShell 2.0 motor
 
-A Windows PowerShell 2.0 motor egy háttérben történő feldolgozás indításához használja a **PSVersion** paramétere a [indítási-feladat](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) parancsmag.
+A Windows PowerShell 2.0 motor egy háttérben történő feldolgozás indításához használja a **PSVersion** paramétere a [indítási-feladat](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) parancsmag.
 
 A következő parancsot egy háttérben történő feldolgozás kezdődik-e a Windows PowerShell 2.0 motor
 

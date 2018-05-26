@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell parancsmag
 title: A Windows PowerShell 5.0 újdonságai
-ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>A Windows PowerShell 5.0 újdonságai
 A Windows PowerShell 5.0 jelentős új szolgáltatásokkal, amelyek kibővítik annak használati, javítják használhatóságát, és felügyelete és kezelése Windows-alapú környezetek egyszerűbb és átfogóbb.
@@ -228,19 +228,19 @@ Sok frissítések és fejlesztések a Windows PowerShell szükséges konfigurál
 
     -   Get-DscLocalConfigurationManager
 
-    -   Restore-DscConfiguration
+    -   Visszaállítás-DscConfiguration
 
-    -   Test-DscConfiguration
+    -   Teszt-DscConfiguration
 
     -   Hasonlítsa össze-DscConfiguration
 
-    -   Publish-DscConfiguration
+    -   Közzététel DscConfiguration
 
     -   Set-DscLocalConfigurationManager
 
     -   Start-DscConfiguration
 
-    -   Update-DscConfiguration
+    -   Frissítés-DscConfiguration
 
 - Központosított DSC hibajelentés, a hibával kapcsolatos részletes információk nem csak a rendszer naplózza abban az esetben, ha napló, de elküldhetők egy központi helyen újabb elemzés céljából. A központi hely hozhat tárolása bármely olyan kiszolgáló a környezetben bekövetkezett DSC konfigurációs hibák. Után a metaadat-konfiguráció a jelentéskészítő kiszolgáló megadva, az összes hiba esetén a jelentéskészítő kiszolgálón, majd adatbázisban tárolja, hogy. A lekérési kiszolgálójáról konfigurációk le tudja ezt a funkciót, függetlenül attól,-e a célcsomóponton van konfigurálva állíthat be.
 
@@ -316,7 +316,7 @@ A Windows PowerShell 4.0 a következő új szolgáltatásokat tartalmazza.
 
 ### <a name="new-features-in-windows-powershell"></a>A Windows PowerShell újdonságai
 
-- **A Windows PowerShell célállapot-konfiguráció** (DSC) egy olyan új felügyeleti rendszer, a Windows PowerShell 4.0-s verzióját, amely lehetővé teszi a központi telepítési és konfigurációs adatokat a szoftver szolgáltatások és a környezet, amelyben a szolgáltatások futnak kezelését. A DSC kapcsolatos további információkért lásd: [Ismerkedés a Windows PowerShell célállapot-konfiguráció](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0).
+- **A Windows PowerShell célállapot-konfiguráció** (DSC) egy olyan új felügyeleti rendszer, a Windows PowerShell 4.0-s verzióját, amely lehetővé teszi a központi telepítési és konfigurációs adatokat a szoftver szolgáltatások és a környezet, amelyben a szolgáltatások futnak kezelését. A DSC kapcsolatos további információkért lásd: [Ismerkedés a Windows PowerShell célállapot-konfiguráció](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
 
 - **Save-Help** mostantól lehetővé teszi a távoli számítógépekre telepített modulok súgóját menti. Save-Help segítségével egy internethez csatlakozó ügyfél (amely nem az összes kívánt súgó modulok telepítve van a feltétlenül) modul súgó letöltését, és másolja egy távoli megosztott mappa vagy egy távoli számítógépen, amely nem rendelkezik Internet mentett Súgó a hozzáférés.
 
@@ -472,7 +472,7 @@ A Windows PowerShell 3.0 a következő új szolgáltatásokat tartalmazza.
 - [Speciális karakterek kezelési fejlesztések](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>A Windows PowerShell munkafolyamat
-A Windows PowerShell munkafolyamat immár a Windows Workflow Foundation Windows PowerShell. Munkafolyamatok írása XAML vagy a Windows PowerShell nyelven, és futtatni azokat, mint egy parancsmaghoz kell futtatni. A [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) parancsmag lekéri workflw parancsok és a [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) parancsmag lekéri a munkafolyamatok súgóját.
+A Windows PowerShell munkafolyamat immár a Windows Workflow Foundation Windows PowerShell. Munkafolyamatok írása XAML vagy a Windows PowerShell nyelven, és futtatni azokat, mint egy parancsmaghoz kell futtatni. A [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) parancsmag lekéri workflw parancsok és a [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) parancsmag lekéri a munkafolyamatok súgóját.
 
 Munkafolyamatok, amelyek hosszú futású, ismételhető, gyakori, párhuzamosítható, megszakítható, suspendable és újraindítható folyamatok multicomputer felügyeleti tevékenységek sorozatát. A munkafolyamatok a szándékos vagy véletlen megzavarná, például egy hálózati kimaradás, a Windows újraindítása vagy áramkimaradás folytathatók.
 
@@ -504,7 +504,7 @@ A Windows PowerShell Web Access egy Windows Server 2012 szolgáltatás, amely le
 További információkért lásd: [központi telepítése Windows PowerShell Web Access](http://go.microsoft.com/fwlink/p/?LinkID=221050).
 
 ### <a name="new-windows-powershell-ise-features"></a>Új Windows PowerShell ISE-szolgáltatások
-A Windows PowerShell 3.0, a Windows PowerShell integrált parancsfájlkezelési környezet (ISE) van számos új funkciója, beleértve az IntelliSense megjelenítése-parancsablakot, egy egységesített konzolpanelen kódtöredékek, zárójel egyező, bontsa ki összecsukása szakaszok, az automatikus mentés, a legutóbbi elemek lista, gazdag másolása, blokk másolása és teljes támogatást nyújt a Windows PowerShell parancsfájl-munkafolyamatok írása. További információkért lásd: [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
+A Windows PowerShell 3.0, a Windows PowerShell integrált parancsfájlkezelési környezet (ISE) van számos új funkciója, beleértve az IntelliSense megjelenítése-parancsablakot, egy egységesített konzolpanelen kódtöredékek, zárójel egyező, bontsa ki összecsukása szakaszok, az automatikus mentés, a legutóbbi elemek lista, gazdag másolása, blokk másolása és teljes támogatást nyújt a Windows PowerShell parancsfájl-munkafolyamatok írása. További információkért lásd: [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
 
 ### <a name="support-for-microsoft-net-framework-4"></a>A Microsoft .NET-keretrendszer 4 támogatása
 A Windows PowerShell buildje a közös nyelvi futtatókörnyezet 4.0-s verzióját. Parancsmag, parancsfájl és a munkafolyamat-szerzők használhatja az új Microsoft .NET-keretrendszer 4-osztályok a Windows PowerShellben, szolgáltatásokkal, amely tartalmazza az alkalmazáskompatibilitás és a központi telepítés, bővítési keretrendszer felügyelt, párhuzamos számítási, hálózati, a Windows Kommunikációs alaprendszer és a Windows folyamatkövető alaprendszer.
@@ -517,9 +517,9 @@ A Windows PowerShell 3.0 verziótól kezdve állandó felhasználó által felü
 
 Most már leválaszthatja a munkamenetből a parancsok futnak a munkamenet megszakítása nélkül. Zárja be a munkamenetét, és állítsa le a számítógépet. Később akkor csatlakozhat a munkamenet egy másik munkamenetben ugyanazon vagy egy másik számítógépre.
 
-A **számítógépnév** paramétere a [Get-PSSession](https://technet.microsoft.com/en-us/library/b2b10531-d0df-4746-b877-e75c09955cb6) parancsmag most lekérdezi az összes kapcsolódni a számítógéphez, a felhasználói munkamenetek akkor is, ha azok egy másik munkamenetben egy másik számítógépre lett elindítva. A munkamenetek kapcsolódni, parancsok eredményeinek lekérése, indítsa el az új parancsokat, és majd a munkamenet leválasztása.
+A **számítógépnév** paramétere a [Get-PSSession](https://technet.microsoft.com/library/b2b10531-d0df-4746-b877-e75c09955cb6) parancsmag most lekérdezi az összes kapcsolódni a számítógéphez, a felhasználói munkamenetek akkor is, ha azok egy másik munkamenetben egy másik számítógépre lett elindítva. A munkamenetek kapcsolódni, parancsok eredményeinek lekérése, indítsa el az új parancsokat, és majd a munkamenet leválasztása.
 
-Új parancsmagokkal bővült a munkamenet leválasztása szolgáltatást támogató beleértve [Disconnect-PSSession](https://technet.microsoft.com/en-us/library/f8f95111-612f-4cba-9098-77904b0473d8), [Connect-PSSession](https://technet.microsoft.com/en-us/library/b803dd29-f208-4079-80d4-db04d778f060), és a fogadási-PSSession, és új paraméterek lettek hozzáadva parancsmag-készlettel PSSession, például kezelheti a **InDisconnectedSession** paramétere a [Invoke-Command](https://technet.microsoft.com/en-us/library/906b4b41-7da8-4330-9363-e7164e5e6970) parancsmag.
+Új parancsmagokkal bővült a munkamenet leválasztása szolgáltatást támogató beleértve [Disconnect-PSSession](https://technet.microsoft.com/library/f8f95111-612f-4cba-9098-77904b0473d8), [Connect-PSSession](https://technet.microsoft.com/library/b803dd29-f208-4079-80d4-db04d778f060), és a fogadási-PSSession, és új paraméterek lettek hozzáadva parancsmag-készlettel PSSession, például kezelheti a **InDisconnectedSession** paramétere a [Invoke-Command](https://technet.microsoft.com/library/906b4b41-7da8-4330-9363-e7164e5e6970) parancsmag.
 
 A munkamenet leválasztása támogatja csak akkor, ha a számítógépen is származó ("ügyfél"), és leállítja a kapcsolat vége ("kiszolgáló") fut a Windows PowerShell 3.0.
 
@@ -531,17 +531,17 @@ Ha a kapcsolat nélküli munkamenet indítása a InvokeCommand, a Windows PowerS
 Ezek a funkciók megbízhatóbb és helyreállítható távoli eljáráshívási környezetet biztosítson, és engedélyezése a felhasználók hatékony munkamenetek, például a munkafolyamatok igénylő hosszú ideig futó feladatok elvégzéséhez.
 
 ### <a name="updatable-help-system"></a>Frissíthető Súgó
-A modulok a parancsmagokhoz tartozó frissített Súgó-fájlok is letölthető. A [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) parancsmag azonosítja a legújabb súgófájlokat, letölti azokat az internetről, kicsomagolja őket, érvényesíti azokat, és telepíti azokat a megfelelő nyelvspecifikus könyvtárban, a modul.
+A modulok a parancsmagokhoz tartozó frissített Súgó-fájlok is letölthető. A [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) parancsmag azonosítja a legújabb súgófájlokat, letölti azokat az internetről, kicsomagolja őket, érvényesíti azokat, és telepíti azokat a megfelelő nyelvspecifikus könyvtárban, a modul.
 
 A frissített Súgó-fájlokat használja, csak gépelje `Get-Help`. Nem kell újraindítania a Windows vagy a Windows PowerShell használatával. A modulok a $pshome könyvtárban súgójának frissítéséhez indítsa el a Windows PowerShell a "Futtatás rendszergazdaként" lehetőséggel.
 
-Felhasználók, akik nem rendelkeznek Internet-hozzáférés és a tűzfal mögött elhelyezkedő felhasználók, az új támogatásához [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) parancsmag tölti le a súgófájlokat, a rendszer könyvtárába, például fájlmegosztáson. Felhasználók ezután használhatja a [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) parancsmag frissített súgófájlok lekérése a fájlmegosztáshoz.
+Felhasználók, akik nem rendelkeznek Internet-hozzáférés és a tűzfal mögött elhelyezkedő felhasználók, az új támogatásához [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) parancsmag tölti le a súgófájlokat, a rendszer könyvtárába, például fájlmegosztáson. Felhasználók ezután használhatja a [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) parancsmag frissített súgófájlok lekérése a fájlmegosztáshoz.
 
-Használhatja a [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) parancsmaggal frissítsen Súgó fájlok összes vagy adott modult az összes támogatott felhasználói felület honosítása. Akkor helyezheti egy [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) parancsot a Windows PowerShell-profilt. Alapértelmezés szerint a Windows PowerShell fájlokat tölti le a súgó egy modul legfeljebb naponta egyszer.
+Használhatja a [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) parancsmaggal frissítsen Súgó fájlok összes vagy adott modult az összes támogatott felhasználói felület honosítása. Akkor helyezheti egy [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) parancsot a Windows PowerShell-profilt. Alapértelmezés szerint a Windows PowerShell fájlokat tölti le a súgó egy modul legfeljebb naponta egyszer.
 
-Windows 8 és Windows Server 2012 modulok nem tartalmazzák a súgófájlok. Töltse le a legújabb súgófájlokat, írja be a következőt `Update-Help`. További információért gépelje be `Get-Help` (paraméterek) nélkül, vagy keresse meg [about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
+Windows 8 és Windows Server 2012 modulok nem tartalmazzák a súgófájlok. Töltse le a legújabb súgófájlokat, írja be a következőt `Update-Help`. További információért gépelje be `Get-Help` (paraméterek) nélkül, vagy keresse meg [about_Updatable_Help](https://technet.microsoft.com/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
 
-Ha a parancsmag súgóját nincsenek telepítve a számítógépen a [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) parancsmag mostantól automatikusan létrehozott súgó jeleníti meg. Az automatikusan létrehozott súgó a parancs szintaxisát és használatára vonatkozó utasításokat tartalmaz a [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) parancsmag Súgó-fájlok letöltéséhez.
+Ha a parancsmag súgóját nincsenek telepítve a számítógépen a [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) parancsmag mostantól automatikusan létrehozott súgó jeleníti meg. Az automatikusan létrehozott súgó a parancs szintaxisát és használatára vonatkozó utasításokat tartalmaz a [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) parancsmag Súgó-fájlok letöltéséhez.
 
 Bármely modul Szerző támogathatja a frissített súgó a modulhoz. A modul olyan súgófájlok, és használja a frissíthető súgó frissítheti vagy hagyja ki ezt a súgófájlokat, illetve frissített súgó telepítéséhez használja azokat. Frissített súgó támogatásával kapcsolatos további információkért lásd: [frissíthető súgó támogatása](http://go.microsoft.com/FWLink/?LinkID=242129) az MSDN Webhelyén.
 
@@ -579,22 +579,22 @@ Megtervezheti, amelyben felhasználók csak futtatni tudják a parancsmagok egy 
 
 Korábbi verzióiban a Windows PowerShell ezen a szinten vezérlő volt elérhető csak azok, akik egy C# programban vagy összetett indítási parancsfájl volt-e írási. Most bármely a számítógépen a Rendszergazdák csoport tagja, a munkamenet-konfiguráció a konfigurációs fájl segítségével szabhatja.
 
-Egy munkamenet-konfigurációs fájl létrehozásához használja a [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) parancsmag. A munkamenet-konfigurációs fájl egy munkamenet-konfigurációjához segítségével a [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) vagy [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) parancsmagok.
+Egy munkamenet-konfigurációs fájl létrehozásához használja a [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) parancsmag. A munkamenet-konfigurációs fájl egy munkamenet-konfigurációjához segítségével a [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) vagy [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) parancsmagok.
 
-További információkért lásd: [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) és [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
+További információkért lásd: [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) és [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>Ütemezett feladatok és a feladat ütemezési integráció
 Mostantól a Windows PowerShell háttér feladatok ütemezése és kezelheti azokat a Windows PowerShell és a Feladatütemező.
 
 A Windows PowerShell ütemezett feladatok olyan hasznos hibrid feladatok a háttérben Windows PowerShell és a Feladatütemező feladatait.
 
-Például a Windows PowerShell feladatok a háttérben, ütemezett feladatok aszinkron módon történik a háttérben futnak. A feladat parancsmagok használatával kezelheti ütemezett feladatokat elvégző példányai [indítási-feladat](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) és [Get-Job](https://technet.microsoft.com/en-us/library/1352c534-7193-46ca-9ab1-0c5219a661ad).
+Például a Windows PowerShell feladatok a háttérben, ütemezett feladatok aszinkron módon történik a háttérben futnak. A feladat parancsmagok használatával kezelheti ütemezett feladatokat elvégző példányai [indítási-feladat](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) és [Get-Job](https://technet.microsoft.com/library/1352c534-7193-46ca-9ab1-0c5219a661ad).
 
 Például a Feladatütemező feladatait ütemezett feladatok egyszeri vagy ismétlődő ütemezés szerint, vagy művelet vagy esemény válaszul is futtathatja. Megtekintése és kezelése az ütemezett feladatok a Feladatütemezőben, engedélyezése és letiltása őket, igény szerint futtatni azokat vagy sablonként használhatja őket, és állítsa be a feltételeket, amelyek alapján a feladatok megkezdése.
 
 Ütemezett feladatok továbbá azok kezelésére szolgáló parancsmagok csoportjának nyomtatásához rendelkeznek. A parancsmag lehetővé teszi a létrehozása, szerkesztése, kezelése, tiltsa le, és engedélyezze újra az ütemezett feladatok, ütemezett feladat eseményindítók létrehozása és ütemezett feladat beállítások megadása.
 
-Ütemezett feladatok kapcsolatos további információkért lásd: [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92).
+Ütemezett feladatok kapcsolatos további információkért lásd: [about_Scheduled_Jobs](https://technet.microsoft.com/library/3b546629-703c-4939-b44f-52dd567bce92).
 
 ### <a name="windows-powershell-language-enhancements"></a>A Windows PowerShell nyelvi fejlesztései
 A Windows PowerShell 3.0 szolgáltatásai számos nyújtanak a nyelvi egyszerűbb és könnyebben használatára, és a gyakori hibák elkerülése érdekében. A fejlesztések közé tartoznak a tulajdonság számbavételi, count és adott hosszúságú tulajdonságok skaláris objektumok, új átirányító operátorok, a $Using hatókör-módosító, PSItem automatikus változó, rugalmas parancsfájl formázás, változókat, egyszerűsített attribútum attribútumai argumentumok, numerikus parancs nevét, a Stop-elemzés operátort, nagyobb a tömb a felosztás, új bit operátorok, rendezett szótárak, PSCustomObject adattípusokról és továbbfejlesztett Megjegyzés-alapú súgó.
@@ -604,14 +604,14 @@ A Windows PowerShell 3.0 szolgáltatásai számos nyújtanak a nyelvi egyszerűb
 
 |||
 |-|-|
-|Add-JobTrigger|New-JobTrigger|
-|Connect-PSSession|New-PSSessionConfigurationFile|
+|-JobTrigger|Új-JobTrigger|
+|Connect-PSSession|Új PSSessionConfigurationFile|
 |ConvertFrom-Json|New-PSTransportOption|
 |ConvertTo-Json|Új PSWorkflowExecutionOption|
-|Disable-JobTrigger|New-PSWorkflowSession|
+|Disable-JobTrigger|Új PSWorkflowSession|
 |Disable-ScheduledJob|Új ScheduledJobOption|
-|Disconnect-PSSession|New-WinEvent|
-|Enable-JobTrigger|Receive-PSSession|
+|Kapcsolat bontása-PSSession|Új WinEvent|
+|Enable-JobTrigger|Fogadási-PSSession|
 |Enable-ScheduledJob|Register-CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
 |Get-CimClass|Remove-CimInstance|
@@ -623,15 +623,15 @@ A Windows PowerShell 3.0 szolgáltatásai számos nyújtanak a nyelvi egyszerűb
 |Get-ScheduledJob|Set-CimInstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
-|Import-IseSnippet|Set-ScheduledJobOption|
+|Importálás – IseSnippet|Set-ScheduledJobOption|
 |Invoke-AsWorkflow|A parancs megjelenítése|
-|Invoke-CimMethod|Show-ControlPanelItem|
+|Invoke-CimMethod|Megjelenítése-ControlPanelItem|
 |Invoke-RestMethod|Suspend-Job|
-|Invoke-WebRequest|Test-PSSessionConfigurationFile|
-|New-CimInstance|Unblock-File|
-|New-CimSession|Unregister-ScheduledJob|
-|New-CimSessionOption|Update-Help|
-|New-IseSnippet||
+|Invoke-WebRequest|Teszt-PSSessionConfigurationFile|
+|Új CimInstance|Fájl feloldása|
+|Új-CimSession|Unregister-ScheduledJob|
+|Új CimSessionOption|Update-Help|
+|Új IseSnippet||
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Meglévő Core parancsmagok és szolgáltatók fejlesztései
 Windows PowerShell 3.0 meglévő parancsmagok, beleértve a egyszerűsített szintaxist használhat, és a következő parancsmag új paramétereinek új szolgáltatásokat tartalmazza: számítógép-parancsmagjai, a CSV-parancsmag, a Get-ChildItem, Get-Command, a Get-tartalmat, Get-előzmények Mértékobjektumot, biztonsági parancsmagok, Select-Object, válasszon-karakterlánc, megosztott elérési útja, folyamat, Tee-objektum, a Test-Connection, Add-tag, és a WMI-parancsmagokat.
@@ -641,21 +641,21 @@ A Windows PowerShell-szolgáltatókat is kifejlesztett jelentősen, többek köz
 ### <a name="remote-module-import-and-discovery"></a>Távoli modul importálását és felderítés
 Windows PowerShell 3.0 kiterjeszti a felderítési modul importálása és implicit távoli eljáráshívási szolgáltatása a távoli számítógépek. A modul parancsmagjai modulok lekérni a távoli számítógépeken, és a modulok importálása a helyi vagy távoli számítógépen a Windows PowerShell távoli eljáráshívás segítségével. Új CIM munkamenet támogatása lehetővé teszi a CIM és a WMI használatát parancsok importálja a helyi számítógépen, amely implicit módon a távoli számítógépen futó-Windows számítógépek felügyeletére.
 
-További információkért tekintse meg a Súgó-témaköröket a [Get-Module](https://technet.microsoft.com/en-us/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) és [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) parancsmagok.
+További információkért tekintse meg a Súgó-témaköröket a [Get-Module](https://technet.microsoft.com/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) és [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) parancsmagok.
 
 ### <a name="enhanced-tab-completion"></a>Továbbfejlesztett kiegészítést
 Kiegészítés a Windows PowerShell-konzolban most befejeződött parancsmagok, paraméterek, paraméterértékeket, enumerálások, .NET-keretrendszert típusok, COM objektumok, rejtett könyvtár, és több. A lap kiegészítési funkció teljesen van írni egy új elemzési és további forgatókönyvek, köztük a memórián belüli elemzési fák és középvonal kiegészítést támogatásához absztrakt szintaxis fa alapján.
 
 ### <a name="module-auto-loading"></a>Automatikus telepítési modulja
-A [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) parancsmag most lekérése az összes parancsmag és funkció a számítógépen telepített összes modul még akkor is, ha a modul nem importálta az aktuális munkamenet.
+A [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) parancsmag most lekérése az összes parancsmag és funkció a számítógépen telepített összes modul még akkor is, ha a modul nem importálta az aktuális munkamenet.
 
 Amikor a parancsmag, amelyekre szüksége van, használhatja azonnal modul importálása nélkül. Windows PowerShell-modulok importálása mostantól automatikusan bármely parancsmag használatakor a modulban. Már nincs szüksége a modul keresheti ki és importálja azt a parancsmagok használatával.
 
-Modulok automatikus importálása akkor váltódik ki, a parancsmag használatával a parancsban futó **Get-Command** nem helyettesítő karaktereket, illetve fut a parancsmag [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) parancsmag helyettesítő karakterek nélkül.
+Modulok automatikus importálása akkor váltódik ki, a parancsmag használatával a parancsban futó **Get-Command** nem helyettesítő karaktereket, illetve fut a parancsmag [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) parancsmag helyettesítő karakterek nélkül.
 
 Engedélyezése, letiltása, és automatikus importálása modulja segítségével konfigurálhatja a **$PSModuleAutoLoadingPreference** preferenciaváltozót.
 
-További információkért lásd: [felügyelhető [v4]](https://technet.microsoft.com/en-us/library/94f57429-a539-4aee-bb0d-205cd7e801f9), [about_Preference_Variables [v4]](https://technet.microsoft.com/en-us/library/31344314-be29-4286-b039-afa5460cbe8b), és a Súgó-témaköröket a [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) és [Import-Module ](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) parancsmagok.
+További információkért lásd: [felügyelhető [v4]](https://technet.microsoft.com/library/94f57429-a539-4aee-bb0d-205cd7e801f9), [about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b), és a Súgó-témaköröket a [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) és [Import-Module ](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) parancsmagok.
 
 ### <a name="module-experience-improvements"></a>A modul élmény fejlesztései
 Windows PowerShell 3.0 biztosítható a speciális szolgáltatások támogatásáról az modulok, többek között az alábbi új szolgáltatásokkal.
@@ -672,16 +672,16 @@ Windows PowerShell 3.0 biztosítható a speciális szolgáltatások támogatás�
 
 6. Továbbfejlesztett modul követelményeket, ideértve a teljesen minősített szükséges modulokat a verziót és a GUID Azonosítót és a szükséges modulokat automatikus importálása
 
-7. Csendesebb, zökkenőmentes működését a [New-ModuleManifest](https://technet.microsoft.com/en-us/library/512adced-f42f-4e88-ba7c-834fc9e5d047) parancsmag.
+7. Csendesebb, zökkenőmentes működését a [New-ModuleManifest](https://technet.microsoft.com/library/512adced-f42f-4e88-ba7c-834fc9e5d047) parancsmag.
 
 8. Új **modul** a(z) #Requires
 
-9. Továbbfejlesztett [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) mindkét parancsmag **MinimumVersion** és **RequiredVersion** paraméterek.
+9. Továbbfejlesztett [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) mindkét parancsmag **MinimumVersion** és **RequiredVersion** paraméterek.
 
 ### <a name="simplified-command-discovery"></a>Egyszerűsített parancs felderítése
-Már nem szeretné felderíteni a parancsok a munkamenet számára elérhető összes modul importálása. A Windows PowerShell 3.0 a [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) parancsmag minden parancs lekéri az összes telepített modulokban. És a paranccsal, ha a modul, a parancs által automatikusan importálja a munkamenetbe.
+Már nem szeretné felderíteni a parancsok a munkamenet számára elérhető összes modul importálása. A Windows PowerShell 3.0 a [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) parancsmag minden parancs lekéri az összes telepített modulokban. És a paranccsal, ha a modul, a parancs által automatikusan importálja a munkamenetbe.
 
-Az új [megjelenítése-parancs](https://technet.microsoft.com/en-us/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) parancsmag kifejezetten a kezdők tervezték. Kereshet egy ablakban parancsokat. Minden parancs megtekintése vagy modul szűrés, modul importálása a gombra kattintva, szöveg- és legördülő listák segítségével hozható létre egy érvényes parancsot, és másolja, vagy futtassa a parancsot az ablak alkalmazáson.
+Az új [megjelenítése-parancs](https://technet.microsoft.com/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) parancsmag kifejezetten a kezdők tervezték. Kereshet egy ablakban parancsokat. Minden parancs megtekintése vagy modul szűrés, modul importálása a gombra kattintva, szöveg- és legördülő listák segítségével hozható létre egy érvényes parancsot, és másolja, vagy futtassa a parancsot az ablak alkalmazáson.
 
 ### <a name="improved-logging-diagnostics-and-group-policy-support"></a>Továbbfejlesztett naplózás, a diagnosztikát és a csoport csoportházirend támogatás
 Windows PowerShell 3.0 fokozza a naplózás és a nyomkövetési esemény-nyomkövetés Windows (ETW)-naplókban, egy szerkeszthető támogatása a parancsok és a modulok támogatását **LogPipelineExecutionDetails** modulok, és a "kapcsolja be a modul tulajdonsága Naplózás"csoport házirend-beállítást. Most már letölthető paraméterértékek napló részleteit a napló tulajdonságainak megjelenítésével jelzi ezt.
@@ -692,13 +692,13 @@ Windows PowerShell 3.0 fokozza a naplózás és a nyomkövetési esemény-nyomk�
 ### <a name="enhanced-console-host-experience"></a>Továbbfejlesztett konzol állomás élmény
 A Windows PowerShell-konzol gazdagép program Windows PowerShell 3.0 többek között az egyszálas apartmanszálaknak alapértelmezés szerint az új szolgáltatásokkal rendelkezik. Az új "Futtatás a PowerShell" lehetőséget a Fájlkezelőben lehetővé teszi a korlátozás nélküli munkamenet található parancsfájlok futtatásának csak kattint. Új konzol állomás indítási logika elindítja a Windows PowerShell gyorsabban, és új betűtípusok lehetővé teszik a megszokott konzol ablakának élmény személyre.
 
-További információkért lásd: [about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb).
+További információkért lásd: [about_Run_With_PowerShell](https://technet.microsoft.com/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb).
 
 ### <a name="new-cmdlet-and-hosting-apis"></a>Új parancsmag és az API-k üzemeltetéséhez
 Az új parancsmag API és üzemeltetési API tartalmazza a nyilvános speciális szintaktikai fa (AST-t) API-k és API-k csővezeték lapozás, beágyazott folyamatok, futási térben készletek kiegészítést, Windows RT, a elavult parancsmag attribútum és művelet és főnév FunctionInfo objektum tulajdonságainak.
 
 ### <a name="performance-improvements"></a>Teljesítménnyel kapcsolatos fejlesztések
-Az új nyelvi elemző, a dinamikus futásidejű nyelvi (DLR) a .NET-keretrendszer 4 beépített származhat jelentős teljesítménybeli fejlesztések a Windows PowerShellben., futásidejű parancsfájl összeállítása, motor-megbízhatóság fejlesztései és módosításainak együtt a az algoritmus a [Get-ChildItem](https://technet.microsoft.com/en-us/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) , hogy a teljesítmény javítása érdekében különösen akkor, ha a Keresés a hálózati megosztások.
+Az új nyelvi elemző, a dinamikus futásidejű nyelvi (DLR) a .NET-keretrendszer 4 beépített származhat jelentős teljesítménybeli fejlesztések a Windows PowerShellben., futásidejű parancsfájl összeállítása, motor-megbízhatóság fejlesztései és módosításainak együtt a az algoritmus a [Get-ChildItem](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) , hogy a teljesítmény javítása érdekében különösen akkor, ha a Keresés a hálózati megosztások.
 
 ### <a name="runas-and-shared-host-support"></a>A futtató és a megosztott Host támogatás
 A Windows PowerShell 3.0 futtató és a gazdagép megosztott szolgáltatások támogatását is magában foglalja.
@@ -708,8 +708,8 @@ A *RunAs* készült Windows PowerShell munkafolyamat, a szolgáltatás lehetőv�
 A **SharedHost** funkció lehetővé teszi, hogy a több felhasználó több számítógépen egyszerre egy munkafolyamat-munkamenet és a munkafolyamat előrehaladásának figyeléséhez. A felhasználók elindítsanak egy munkafolyamatot egy számítógépen, és csatlakozzon a munkafolyamat-munkamenetet egy másik számítógépen a munkamenet leválasztása az eredeti számítógép nélkül. A felhasználók ugyanazokkal az engedélyekkel kell rendelkeznie, és ugyanazt a munkamenet-konfigurációt használja. További információkért lásd: "Fut egy Windows PowerShell Workflow" első lépések a Windows PowerShell munkafolyamat.
 
 ### <a name="special-character-handling-improvements"></a>Speciális karakterek kezelési fejlesztések
-A lehetőségét, a Windows PowerShell 3.0 értelmezi, és megfelelően kezeli a különleges karaktereket javításához a **LiteralPath** paraméter, amely kezeli a különleges karakterek az elérési utak, kulcsszó használható, amelyek szinte minden parancsmagok egy  **Elérési út** paramétert, beleértve az új [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) és [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) parancsmagok. Az elemző is magában foglalja a backtick karakter kezelésének javítása érdekében speciális logikát (\`) és a fájl neve és elérési utak szögletes zárójelben.
+A lehetőségét, a Windows PowerShell 3.0 értelmezi, és megfelelően kezeli a különleges karaktereket javításához a **LiteralPath** paraméter, amely kezeli a különleges karakterek az elérési utak, kulcsszó használható, amelyek szinte minden parancsmagok egy  **Elérési út** paramétert, beleértve az új [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) és [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) parancsmagok. Az elemző is magában foglalja a backtick karakter kezelésének javítása érdekében speciális logikát (\`) és a fájl neve és elérési utak szögletes zárójelben.
 
 ## <a name="see-also"></a>Lásd még:
-- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
-- [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
+- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
+- [A Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)

@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell parancsmag
 title: A Windows PowerShell ISE kisegítő lehetőségei
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 272dd502ff9d220e82236c93cbffaf4e12054cfe
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>A Windows PowerShell ISE kisegítő lehetőségei
 
@@ -27,7 +27,7 @@ A Windows PowerShell ISE kontrasztos módot támogatja. A gyengén látó, a tö
 
 - Billentyűparancsok
 
-- Szintaxis színezése tábla és módosítását, több más szín beállításainak a [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting objektum.
+- Szintaxis színezése tábla és módosítását, több más szín beállításainak a [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting objektum.
 
 - Szöveg méretének módosítása
 
@@ -70,8 +70,8 @@ A következő billentyűparancsokat használhatja szöveg szerkesztésekor.
 |**Ismét:**|CTRL+Y|Parancsfájl ablaktáblán, a konzol ablaktábla|
 |**Cserélje le a parancsfájl**|CTRL+H|A parancssori panelbe|
 |**Mentés**|CTRL+S|A parancssori panelbe|
-|**Select All**|CTRL+A|Parancsfájl ablaktáblán, a konzol ablaktábla|
-|**Undo**|CTRL+Z|Parancsfájl ablaktáblán, a konzol ablaktábla|
+|**Az összes kijelölése**|CTRL+A|Parancsfájl ablaktáblán, a konzol ablaktábla|
+|**Visszavonása**|CTRL+Z|Parancsfájl ablaktáblán, a konzol ablaktábla|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>A parancsfájlok futtatásához használható billentyűparancsok
 
@@ -81,7 +81,7 @@ A következő billentyűparancsokat használhatja a parancssori panelbe parancsf
 |----------|---------------------|
 |**új**|CTRL+N|
 |**Open**|CTRL+O|
-|**Run**|F5|
+|**Futtatás**|F5|
 |**Kijelölés futtatása**|F8|
 |**Állítsa le a végrehajtás**|CTRL + BREAK BILLENTYŰKOMBINÁCIÓT. CTRL + C is használható, ha a környezet egyértelműen (Ha nincs kijelölt szöveg).|
 |**A lapon** (a következő parancsfájl)|CTRL + TAB **Megjegyzés:** lapon a következő parancsfájl csak működik, ha Ön egy egyetlen PowerShell lap van megnyitva, amikor meg egynél több PowerShell lap van megnyitva, de a parancssori panelbe célja.|
@@ -95,8 +95,8 @@ A következő billentyűparancsokat segítségével testre szabhatja a Windows P
 |----------|---------------------|
 |**Ugrás a konzol ablaktáblában**|CTRL+D|
 |**Nyissa meg a parancssori panelbe**|CTRL+I|
-|**Parancsfájl ablaktábla megjelenítése**|CTRL+R|
-|**Parancsfájl ablaktábla elrejtése**|CTRL+R|
+|**Parancsfájl ablaktábla megjelenítése**|CTRL + R|
+|**Parancsfájl ablaktábla elrejtése**|CTRL + R|
 ||
 |**A parancssori panelbe mozgatása felfelé**|CTRL+1|
 |**A parancssori panelbe mozgatása jobbra**|CTRL+2|
@@ -110,11 +110,11 @@ A következő billentyűparancsokat használhatja a parancsfájlok hibakeresése
 
 |Művelet|Billentyűparancs|A használatára|
 |----------|---------------------|----------|
-|**Run/Continue**|F5|Parancsfájl ablaktáblán, ha a parancsprogram-hibakeresés|
+|**Futtatás/folytatása**|F5|Parancsfájl ablaktáblán, ha a parancsprogram-hibakeresés|
 |**Lépjen be**|F11|Parancsfájl ablaktáblán, ha a parancsprogram-hibakeresés|
 |**Átlépés**|F10|Parancsfájl ablaktáblán, ha a parancsprogram-hibakeresés|
 |**Kilépés**|SHIFT+F11|Parancsfájl ablaktáblán, ha a parancsprogram-hibakeresés|
-|**Megjelenítési hívási verem**|CTRL+SHIFT+D|Parancsfájl ablaktáblán, ha a parancsprogram-hibakeresés|
+|**Megjelenítési hívási verem**|CTRL + SHIFT + D|Parancsfájl ablaktáblán, ha a parancsprogram-hibakeresés|
 |**Lista töréspontok**|CTRL+SHIFT+L|Parancsfájl ablaktáblán, ha a parancsprogram-hibakeresés|
 |**Toggle Breakpoint**|F9|Parancsfájl ablaktáblán, ha a parancsprogram-hibakeresés|
 |**Törölje a töréspontokat**|CTRL+SHIFT+F9|Parancsfájl ablaktáblán, ha a parancsprogram-hibakeresés|
@@ -132,7 +132,7 @@ A következő billentyűparancsokat használhatja a parancsfájlok hibakeresése
 |**Kilépés**|O|Konzol ablaktáblában, ha a parancsprogram-hibakeresés|
 |**Ismételje meg az utolsó parancs** (a lépésben azokat vagy Átlépés)|ENTER|Konzol ablaktáblában, ha a parancsprogram-hibakeresés|
 |**Megjelenítési hívási verem**|K|Konzol ablaktáblában, ha a parancsprogram-hibakeresés|
-|**Állítsa le a hibakeresést**|Q|Konzol ablaktáblában, ha a parancsprogram-hibakeresés|
+|**Állítsa le a hibakeresést**|A Q|Konzol ablaktáblában, ha a parancsprogram-hibakeresés|
 |**A parancsfájl felsorolása**|L|Konzol ablaktáblában, ha a parancsprogram-hibakeresés|
 |**A konzol parancsok hibakeresés megjelenítése**|H vagy?|Konzol ablaktáblában, ha a parancsprogram-hibakeresés|
 
@@ -144,7 +144,7 @@ A következő billentyűparancsokat használhatja lapok Windows PowerShell haszn
 |----------|---------------------|
 |**Zárja be a PowerShell lap**|CTRL+W|
 |**Új PowerShell lap**|CTRL+T|
-|**Előző PowerShell lap**|CTRL+SHIFT+TAB. Ezzel a billentyűparanccsal csak működik, ha nincs fájl megnyitva, a PowerShell lapon.|
+|**Előző PowerShell lap**|CTRL + SHIFT + TAB. Ezzel a billentyűparanccsal csak működik, ha nincs fájl megnyitva, a PowerShell lapon.|
 |**Következő Windows PowerShell lap**|CTRL+TAB. Ezzel a billentyűparanccsal csak működik, ha nincs fájl megnyitva, a PowerShell lapon.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Billentyűparancsok indítása és leállítása

@@ -1,4 +1,13 @@
- és---ms.date: 06/12/2017 közreműködői: JKeithB kulcsszavak: gyűjtemény, a powershell, a parancsmag, a psgallery, a psget cím: A PowerShell-galériában
+---
+ms.date: 06/12/2017
+contributor: JKeithB
+keywords: gyűjtemény, powershell, a parancsmag, psgallery, psget
+title: A PowerShell-galériában
+ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="the-powershell-gallery"></a>A PowerShell-galériában
 

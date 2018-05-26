@@ -2,11 +2,11 @@
 ms.date: 08/09/2017
 keywords: PowerShell, a parancsmag, letöltése, telepítése, beállításához, windows 10, windows 8.1, windows 8.0-s, windows 7
 title: A Windows PowerShell telepítése
-ms.openlocfilehash: 320b271ce49768f8865c79c5c72749befe306fa4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 89f0f689ebfcd34dd4c8ec3824ec8ab4bddc34d9
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="installing-windows-powershell"></a>A Windows PowerShell telepítése
 A Windows PowerShell előre telepített alapértelmezés szerint a minden Windows, Windows 7 SP1 és Windows Server 2008 R2 SP1 kezdve.
@@ -66,7 +66,7 @@ A WMF installer verziójának ugyanolyan verziójúak, mint a PowerShell; nem ö
 
 Ha frissítenie kell a meglévő PowerShell, a Windows rendszerben segítségével az alábbi táblázatban keresse meg a telepítő frissíti a PowerShell-verziójának.
 
-Windows | PS 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
+Windows | POWERSHELL 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
 --|--|--|--|--|
 Windows 10 (lásd a Note1)<br/>Windows Server 2016 | - | - | - | telepítve
 A Windows 8.1<br/>Windows Server 2012 R2 | - | telepítve | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
@@ -81,9 +81,9 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [A WMF 3.0](https://www.microsoft
 
 ## <a name="need-azure-powershell"></a>Az Azure PowerShell kell
 
-Ha a keresett **Azure PowerShell**, sikerült a kiindulási pont [áttekintés az Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure).
+Ha a keresett **Azure PowerShell**, sikerült a kiindulási pont [áttekintés az Azure PowerShell](https://docs.microsoft.com/powershell/azure).
 
-Ellenkező esetben előfordulhat, hogy teendők van [telepítése és konfigurálása az Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps)
+Ellenkező esetben előfordulhat, hogy teendők van [telepítése és konfigurálása az Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps)
 
 ## <a name="see-also"></a>Lásd még:
 
