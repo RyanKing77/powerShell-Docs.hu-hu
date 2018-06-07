@@ -42,7 +42,7 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
 
-1. Telepítse a legújabb [Win32 OpenSSH] GitHub használatával felépíteni a [telepítési] utasításokat
+1. Telepítse a legújabb [Win32 OpenSSH] GitHub használatával felépíteni a [Telepítés] utasításokat
 1. A Win32 OpenSSH telepítési helyére sshd_config fájl szerkesztése
     - Győződjön meg arról, hogy a jelszó-hitelesítés engedélyezve van
 
@@ -109,7 +109,7 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
 
 ## <a name="setup-on-macos-machine"></a>MacOS gépen beállítása
 
-1. Telepítse a legújabb [PowerShell MacOS] összeállítása
+1. Telepítse a legújabb [MacOS PowerShell] összeállítása
     - Ellenőrizze, hogy engedélyezve van a SSH távelérése az alábbiak szerint:
       - Nyissa meg `System Preferences`
       - Kattintson a `Sharing`
@@ -131,7 +131,7 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
     - PowerShell alrendszer bejegyzés hozzáadása
 
     ```
-    Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
+    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
     ```
 
     - Opcionálisan a hitelesítés engedélyezése
@@ -241,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo parancs nem működik a távoli munkamenet Linux-számítógép.
 
-[a Windows PowerShell központ]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[A Windows PowerShell központ]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
-[telepítési]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
+[Telepítés]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [Linux PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
+[MacOS PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
