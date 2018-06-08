@@ -4,10 +4,11 @@ keywords: PowerShell parancsmag
 title: Információk kérése a parancsokról
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ms.openlocfilehash: c51579fe2cdf4f2a0d3248d1aaf3f1f9cac83868
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482726"
 ---
 # <a name="getting-information-about-commands"></a>Információk kérése a parancsokról
 A Windows PowerShell `Get-Command` parancsmag lekéri az aktuális munkamenetben rendelkezésre álló összes parancsot. Amikor beírja `Get-Command` egy PowerShell-parancssorba, a következőhöz hasonló kimenetet fog látni:

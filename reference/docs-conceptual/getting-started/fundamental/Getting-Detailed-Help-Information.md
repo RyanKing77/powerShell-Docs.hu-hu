@@ -4,10 +4,11 @@ keywords: PowerShell parancsmag
 title: Részletes súgóinformációk kérése
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483032"
 ---
 # <a name="getting-detailed-help-information"></a>Részletes súgóinformációk kérése
 Windows PowerShell Windows PowerShell fogalmak és a Windows PowerShell nyelvi részletes súgó-témaköröket tartalmazza. Megtalálhatók az egyes parancsmag és a szolgáltató Súgó-témaköröket és sok függvények és parancsfájlok Súgó-témaköröket.
