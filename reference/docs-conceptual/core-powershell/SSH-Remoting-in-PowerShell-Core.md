@@ -74,7 +74,7 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) gépen beállítása
 
-1. Telepítse a legújabb [Linux PowerShell] a Githubról összeállítása
+1. Telepítse a legújabb [PowerShell Core Linux] a Githubról összeállítása
 1. Telepítés [Ubuntu SSH] igény szerint
 
     ```bash
@@ -109,7 +109,7 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
 
 ## <a name="setup-on-macos-machine"></a>MacOS gépen beállítása
 
-1. Telepítse a legújabb [MacOS PowerShell] összeállítása
+1. Telepítse a legújabb [MacOS a PowerShell Core] összeállítása
     - Ellenőrizze, hogy engedélyezve van a SSH távelérése az alábbiak szerint:
       - Nyissa meg `System Preferences`
       - Kattintson a `Sharing`
@@ -241,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo parancs nem működik a távoli munkamenet Linux-számítógép.
 
-[A Windows PowerShell központ]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[A Windows PowerShell központ]: ../setup/installing-powershell-core-on-windows.md#msi
+[PowerShell Core Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[MacOS a PowerShell Core]: ../setup/installing-powershell-core-on-macos.md
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [Telepítés]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[Linux PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[MacOS PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
