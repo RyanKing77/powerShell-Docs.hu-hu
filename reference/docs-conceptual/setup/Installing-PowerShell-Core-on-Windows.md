@@ -2,17 +2,17 @@
 
 ## <a name="msi"></a>MSI-FÁJL
 
-PowerShell telepítsen egy Windows ügyfél vagy a Windows Server (működik a Windows 7 SP1, Server 2008 R2 és újabb verziók), az MSI-csomag letölthető a GitHub [feloldja a][] lap.
+PowerShell telepítsen egy Windows ügyfél vagy a Windows Server (működik a Windows 7 SP1, Server 2008 R2 és újabb verziók), az MSI-csomag letölthető a GitHub [kiadásokban]-[] oldalon.
 
-Az MSI-fájl néz ki- `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+Az MSI-fájl néz ki- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Miután letöltötte, kattintson duplán a telepítő, és kövesse az utasításokat.
 
 A telepítés után a Start menü helyezett helyi van.
 
-- Alapértelmezés szerint a csomag telepítés `$env:ProgramFiles\PowerShell\`
-- PowerShell keresztül a Start menüből indíthatja el vagy `$env:ProgramFiles\PowerShell\pwsh.exe`
+- Alapértelmezés szerint a csomag telepítés `$env:ProgramFiles\PowerShell\<version>`
+- PowerShell keresztül a Start menüből indíthatja el vagy `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 ### <a name="prerequisites"></a>Előfeltételek
 
@@ -126,12 +126,12 @@ A következő lépések végigvezetik PowerShell központi telepítését a Nano
 PowerShell Core WSMan és az SSH a PowerShell távelérése protokoll (PSRP) támogatja.
 További információ:
 
-- [SSH PowerShell Core a távoli eljáráshívás][ssh-remoting]
-- [A PowerShell Core WSMan távelérése][wsman-remoting]
+- [SSH PowerShell Core a távoli eljáráshívás] [ssh-távoli eljáráshívási]
+- [A PowerShell Core WSMan távoli eljáráshívási] [a wsman-távelérése]
 
 ## <a name="artifact-installation-instructions"></a>Összetevő telepítési utasításokat
 
-CoreCLR bitként a minden CI build az archívumban közzétesszük [AppVeyor][].
+A minden CI build [AppVeyor] szögletes CoreCLR bites archiválhatja közzétesszük.
 
 PowerShell Core CoreCLR összetevő telepítését:
 
@@ -140,8 +140,4 @@ PowerShell Core CoreCLR összetevő telepítését:
 3. Bontsa ki a zip-fájlt `bin` könyvtár
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO -->
-[feloldja a]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO --> [kiadott]: https://github.com/PowerShell/PowerShell/releases [ssh-távoli eljáráshívási]:... [a wsman-távelérése] /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.md:... [AppVeyor] /Core-PowerShell/WSMan-Remoting-in-PowerShell-Core.md: https://ci.appveyor.com/project/PowerShell/powershell
