@@ -7,7 +7,7 @@ Azonban esetében támogatott a PowerShell Core hagyományos a Microsoft támoga
 Is is kell fizetnie [tanácsadással][] a PowerShell Core által tervátalakítási a problémára vonatkozó támogatási kérelmet.
 
 Is kínál [közösségi támogatás][] a Githubon, ahol egy problémát, a hiba, vagy a szolgáltatás kérése fájlt is.
-Azt is megteheti, előfordulhat, hogy talál segítséget a Közösség más tagjai az általános [Microsoft Community][] vagy a Microsoft [PowerShell műszaki közösségi][].
+Azt is megteheti, előfordulhat, hogy talál segítséget a Közösség más tagjai az általános [Microsoft közösségi][] vagy a Microsoft [PowerShell műszaki Közösség][].
 Azt garanciát nem létezik, hogy a probléma címzett vagy időben feloldva.
 Ha a probléma azonnali figyelmet igénylő, használja a hagyományos fizetős támogatási lehetőségeket.
 
@@ -41,7 +41,7 @@ PowerShell Core hivatalosan a következő platformokon támogatott:
 * CentOS 7
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42.2
-* Fedora 25, 26
+* Fedora 27, 28
 * macOS 10.12 +
 
 A Közösség emellett hozzájárult csomagok a következő platformokat, de nem hivatalosan suppported:
@@ -62,7 +62,7 @@ Támogatja a PowerShell Core nem terjed ki a más termék modulok kivéve, ha az
 Használata esetén például a `ActiveDirectory` modul részét képező, mert a Windows Server részét egy nem támogatott forgatókönyvet.
 
 Előfordulhat azonban, modulokat, amelyek kifejezetten nem támogatják a PowerShell Core kompatibilis bizonyos esetekben.
-Telepítse a [`WindowsPSModulePath`][] modul, fűzze hozzá a Windows PowerShell `PSModulePath` a PowerShell képességének `PSModulePath`.
+Telepítse a [ `WindowsPSModulePath` ][] modul, fűzze hozzá a Windows PowerShell `PSModulePath` a PowerShell képességének `PSModulePath`.
 
 Először telepítse a `WindowsPSModulePath` a PowerShell-galériából modul:
 
@@ -82,11 +82,11 @@ Add-WindowsPSModulePath
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [közösségi támogatás]: https://github.com/powershell/powershell/issues
-[Microsoft Community]: https://answers.microsoft.com/
-[PowerShell műszaki közösségi]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[Microsoft közösségi]: https://answers.microsoft.com/
+[PowerShell műszaki Közösség]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [tanácsadással]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT licenccel]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+["WindowsPSModulePath"]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
