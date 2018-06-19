@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189516"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Verzióval kompatibilis PowerShell modulok
 
@@ -249,4 +250,4 @@ Find-Module -Tag PSEdition_Core
 
 - [PSEditions paraméterrel rendelkező parancsfájlok](script-psedition-support.md)
 - [Támogatja a PSEditions PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
-- [Frissítési moduljegyzék] (/ powershell/modul/powershellget/frissítés-modulemanifest)
+- [Frissítési moduljegyzék] (/powershell/module/powershellget/update-modulemanifest)
