@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952953"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a><span data-ttu-id="fcf84-103">Webes Windows PowerShell-elérés eltávolítása</span><span class="sxs-lookup"><span data-stu-id="fcf84-103">Uninstall Windows PowerShell Web Access</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189907"
 ---
 # <a name="cryptographic-message-syntax-cms-cmdlets"></a><span data-ttu-id="d6d45-102">Kriptográfiai szintaxisú (CMS) parancsmagok</span><span class="sxs-lookup"><span data-stu-id="d6d45-102">Cryptographic Message Syntax (CMS) cmdlets</span></span>
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/27/2018
+ms.locfileid: "32018059"
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a><span data-ttu-id="8e69d-103">WMI-objektumok (Get-WmiObject) beolvasása</span><span class="sxs-lookup"><span data-stu-id="8e69d-103">Getting WMI Objects (Get-WmiObject)</span></span>
 

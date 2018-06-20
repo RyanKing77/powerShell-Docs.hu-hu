@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949400"
 ---
 # <a name="scripting-with-windows-powershell"></a><span data-ttu-id="b08ef-103">Parancsfájlkezelés a Windows PowerShell-lel</span><span class="sxs-lookup"><span data-stu-id="b08ef-103">Scripting with Windows PowerShell</span></span>
 

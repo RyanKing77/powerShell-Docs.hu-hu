@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188428"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="9d0ec-102">JEA-végpont létrehozása és csatlakozás a végponthoz</span><span class="sxs-lookup"><span data-stu-id="9d0ec-102">Creating and Connecting to a JEA Endpoint</span></span>
 <span data-ttu-id="9d0ec-103">JEA-végpont létrehozása kell létrehozni és regisztrálni egy kifejezetten konfigurált PowerShell munkamenet konfigurációs fájlt, amely a hozhatók létre a **New-PSSessionConfigurationFile** parancsmag.</span><span class="sxs-lookup"><span data-stu-id="9d0ec-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>

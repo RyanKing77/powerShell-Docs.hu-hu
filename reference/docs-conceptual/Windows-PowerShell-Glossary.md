@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951018"
 ---
 # <a name="windows-powershell-glossary"></a><span data-ttu-id="6f49e-103">A Windows PowerShell szószedet</span><span class="sxs-lookup"><span data-stu-id="6f49e-103">Windows PowerShell Glossary</span></span>
 

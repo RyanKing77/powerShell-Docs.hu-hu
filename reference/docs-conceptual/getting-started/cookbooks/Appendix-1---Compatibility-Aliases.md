@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954636"
 ---
 # <a name="appendix-1---compatibility-aliases"></a><span data-ttu-id="10448-103">Függelék: 1 - kompatibilitási aliasok</span><span class="sxs-lookup"><span data-stu-id="10448-103">Appendix 1 - Compatibility Aliases</span></span>
 

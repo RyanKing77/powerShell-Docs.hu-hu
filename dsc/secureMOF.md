@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190196"
 ---
 # <a name="securing-the-mof-file"></a><span data-ttu-id="84167-103">A MOF-fájl védelme</span><span class="sxs-lookup"><span data-stu-id="84167-103">Securing the MOF File</span></span>
 

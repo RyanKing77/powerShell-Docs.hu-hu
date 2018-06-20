@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219531"
 ---
 # <a name="register-a-powershell-repository"></a><span data-ttu-id="3ea9e-102">PowerShell-tárház regisztrálása</span><span class="sxs-lookup"><span data-stu-id="3ea9e-102">Register a PowerShell Repository</span></span>
 <span data-ttu-id="3ea9e-103">Beállíthatja, hogy PowerShellGet belső adattárak ellen.</span><span class="sxs-lookup"><span data-stu-id="3ea9e-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="3ea9e-104">Ehhez használja az alábbi kiegészítésekkel:</span><span class="sxs-lookup"><span data-stu-id="3ea9e-104">This is done by using the following additions:</span></span>

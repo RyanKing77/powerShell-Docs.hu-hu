@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218350"
 ---
 # <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="c56b9-102">Egymás melletti verzióinak támogatása PowerShell 5.0-s vagy újabb</span><span class="sxs-lookup"><span data-stu-id="c56b9-102">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
 

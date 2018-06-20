@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188091"
 ---
 # <a name="setting-up-a-pull-client-using-configuration-names"></a><span data-ttu-id="af6fe-103">Lekérési ügyfél beállítása konfigurációs nevekkel</span><span class="sxs-lookup"><span data-stu-id="af6fe-103">Setting up a pull client using configuration names</span></span>
 

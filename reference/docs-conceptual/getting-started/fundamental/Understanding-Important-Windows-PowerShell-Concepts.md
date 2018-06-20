@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951086"
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a><span data-ttu-id="b7191-103">A Windows PowerShell legfontosabb fogalmainak megértése</span><span class="sxs-lookup"><span data-stu-id="b7191-103">Understanding Important Windows PowerShell Concepts</span></span>
 <span data-ttu-id="b7191-104">A Windows PowerShell-kialakítás számos különböző környezetek fogalom egyesíti.</span><span class="sxs-lookup"><span data-stu-id="b7191-104">The Windows PowerShell design integrates concepts from many different environments.</span></span> <span data-ttu-id="b7191-105">Ezek az adott parancskörnyezet vagy programozási környezetben révén személyek számára ismerős, de nagyon kevés személyek fogja tudni az összes.</span><span class="sxs-lookup"><span data-stu-id="b7191-105">Several of them are familiar to people with experience in specific shells or programming environments, but very few people will know about all of them.</span></span> <span data-ttu-id="b7191-106">Ezek a fogalmak némelyike megnézi a rendszerhéj hasznos áttekintést nyújt.</span><span class="sxs-lookup"><span data-stu-id="b7191-106">Looking at some of these concepts provides a useful overview of the shell.</span></span>

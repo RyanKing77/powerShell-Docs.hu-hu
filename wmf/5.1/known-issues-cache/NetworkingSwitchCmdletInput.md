@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188683"
 ---
 <span data-ttu-id="848ec-103">A hálózati kapcsolók kezelője parancsmagok segítségével kezelheti a hálózati kapcsolók WSMAN keresztül.</span><span class="sxs-lookup"><span data-stu-id="848ec-103">The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.</span></span>
 <span data-ttu-id="848ec-104">Ehhez a modul néhány parancsmagok képesek a folyamatok értékek elfogadásával.</span><span class="sxs-lookup"><span data-stu-id="848ec-104">A few cmdlets of this module are capable of accepting values from pipelines.</span></span>

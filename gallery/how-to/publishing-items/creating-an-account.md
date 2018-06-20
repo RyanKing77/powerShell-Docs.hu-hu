@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219565"
 ---
 ## <a name="creating-a-powershell-gallery-account"></a><span data-ttu-id="02afd-103">PowerShell-galériában fiók létrehozása</span><span class="sxs-lookup"><span data-stu-id="02afd-103">Creating a PowerShell Gallery account</span></span>
 

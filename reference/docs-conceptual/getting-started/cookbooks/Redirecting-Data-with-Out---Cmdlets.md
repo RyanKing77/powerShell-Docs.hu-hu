@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952120"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a><span data-ttu-id="af2c4-103">Az Out - adatok átirányítása \* parancsmagok</span><span class="sxs-lookup"><span data-stu-id="af2c4-103">Redirecting Data with Out-\* Cmdlets</span></span>
 

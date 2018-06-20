@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951681"
 ---
 # <a name="selecting-items-from-a-list-box"></a><span data-ttu-id="ce840-103">Elemek kiválasztása egy listából</span><span class="sxs-lookup"><span data-stu-id="ce840-103">Selecting Items from a List Box</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190230"
 ---
 # <a name="dsc-waitforsome-resource"></a><span data-ttu-id="9841b-103">A DSC WaitForSome erőforrás</span><span class="sxs-lookup"><span data-stu-id="9841b-103">DSC WaitForSome Resource</span></span>
 

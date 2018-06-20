@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187766"
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a><span data-ttu-id="fc4c6-103">A PowerShell 4.0 konfigurációs azonosítójával lekéréses ügyfél beállítása</span><span class="sxs-lookup"><span data-stu-id="fc4c6-103">Setting up a pull client using configuration ID in PowerShell 4.0</span></span>
 

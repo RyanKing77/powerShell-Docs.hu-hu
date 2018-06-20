@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951851"
 ---
 # <a name="using-static-classes-and-methods"></a><span data-ttu-id="addaf-103">Statikus osztályok és módszerek használata</span><span class="sxs-lookup"><span data-stu-id="addaf-103">Using Static Classes and Methods</span></span>
 <span data-ttu-id="addaf-104">Nem minden .NET-keretrendszer osztály használatával hozhatók létre **New-Object**.</span><span class="sxs-lookup"><span data-stu-id="addaf-104">Not all .NET Framework classes can be created by using **New-Object**.</span></span> <span data-ttu-id="addaf-105">Például, ha megpróbál létrehozni egy **System.Environment** vagy egy **System.Math** rendelkező objektum **New-Object**, elérhetővé válik a következő hibaüzeneteket:</span><span class="sxs-lookup"><span data-stu-id="addaf-105">For example, if you try to create a **System.Environment** or a **System.Math** object with **New-Object**, you will get the following error messages:</span></span>

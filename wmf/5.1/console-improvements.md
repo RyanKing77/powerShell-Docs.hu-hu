@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189312"
 ---
 # <a name="console-improvements-in-wmf-51"></a><span data-ttu-id="e4db5-103">A WMF 5.1# konzoljának fejlesztései</span><span class="sxs-lookup"><span data-stu-id="e4db5-103">Console Improvements in WMF 5.1#</span></span>
 

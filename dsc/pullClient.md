@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34186660"
 ---
 # <a name="setting-up-a-dsc-pull-client"></a><span data-ttu-id="c779c-103">A DSC lekérési ügyfél beállítása</span><span class="sxs-lookup"><span data-stu-id="c779c-103">Setting up a DSC pull client</span></span>
 

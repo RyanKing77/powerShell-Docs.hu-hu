@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225640"
 ---
 # <a name="updates-to-fileinfo-object"></a><span data-ttu-id="e2627-102">A FileInfo objektum frissítései</span><span class="sxs-lookup"><span data-stu-id="e2627-102">Updates to FileInfo object</span></span>
 <span data-ttu-id="e2627-103">Fájlverzió-információkat is lehet félrevezető, különösen olyan esetekben, ahol a fájl telepítve lett.</span><span class="sxs-lookup"><span data-stu-id="e2627-103">File version information can be misleading, particularly in cases where the file was patched.</span></span> <span data-ttu-id="e2627-104">Ebben a kiadásban a WMF 5.0 hozzáadja az új **FileVersionRaw** és **ProductVersionRaw** parancsfájl-FileInfo objektumok tulajdonságai.</span><span class="sxs-lookup"><span data-stu-id="e2627-104">This release of WMF 5.0 adds new **FileVersionRaw** and **ProductVersionRaw** script properties to FileInfo objects.</span></span> <span data-ttu-id="e2627-105">A powershell.exe (feltéve, hogy $pid a PowerShell folyamat azonosítója) jelenik meg, az alábbiakban a tulajdonságok:</span><span class="sxs-lookup"><span data-stu-id="e2627-105">Here are the properties as displayed for powershell.exe (assuming $pid is the ID of the PowerShell process):</span></span>

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222122"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="a7a3b-103">A DSC-erőforrás a C# készítése</span><span class="sxs-lookup"><span data-stu-id="a7a3b-103">Authoring a DSC resource in C#</span></span>
 

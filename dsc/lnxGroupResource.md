@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221986"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a><span data-ttu-id="d8a5d-103">A Linux nxGroup erőforrás DSC</span><span class="sxs-lookup"><span data-stu-id="d8a5d-103">DSC for Linux nxGroup Resource</span></span>
 

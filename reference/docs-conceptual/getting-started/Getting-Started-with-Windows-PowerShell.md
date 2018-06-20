@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949485"
 ---
 # <a name="getting-started-with-windows-powershell"></a><span data-ttu-id="14a96-103">A Windows PowerShell használatának első lépései</span><span class="sxs-lookup"><span data-stu-id="14a96-103">Getting Started with Windows PowerShell</span></span>
 <span data-ttu-id="14a96-104">A Windows PowerShell egy Windows parancssori rendszerhéj, kifejezetten rendszergazdák számára tervezett.</span><span class="sxs-lookup"><span data-stu-id="14a96-104">Windows PowerShell is a Windows command-line shell designed especially for system administrators.</span></span> <span data-ttu-id="14a96-105">A Windows PowerShell tartalmaz egy interaktív kérdés és a parancsfájl-kezelési környezet, amely külön vagy együtt használható.</span><span class="sxs-lookup"><span data-stu-id="14a96-105">Windows PowerShell includes an interactive prompt and a scripting environment that can be used independently or in combination.</span></span>

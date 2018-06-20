@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218399"
 ---
 # <a name="require-license-acceptance"></a><span data-ttu-id="cb57b-103">Licenc elfogadására van szükség</span><span class="sxs-lookup"><span data-stu-id="cb57b-103">Require license acceptance</span></span>
 

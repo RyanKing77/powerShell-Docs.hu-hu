@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189380"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a><span data-ttu-id="e6a73-103">A Windows PowerShell korábbi verzióiban a helyi Configuration Manager konfigurálása</span><span class="sxs-lookup"><span data-stu-id="e6a73-103">Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell</span></span>
 

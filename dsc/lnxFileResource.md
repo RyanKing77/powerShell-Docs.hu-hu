@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189856"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a><span data-ttu-id="60b6d-103">A Linux nxFile erőforrás DSC</span><span class="sxs-lookup"><span data-stu-id="60b6d-103">DSC for Linux nxFile Resource</span></span>
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954755"
 ---
 # <a name="creating-a-custom-input-box"></a><span data-ttu-id="19db6-103">Egyéni beviteli mező létrehozása</span><span class="sxs-lookup"><span data-stu-id="19db6-103">Creating a Custom Input Box</span></span>
 

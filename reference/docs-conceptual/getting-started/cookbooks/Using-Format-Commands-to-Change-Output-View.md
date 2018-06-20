@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952783"
 ---
 # <a name="using-format-commands-to-change-output-view"></a><span data-ttu-id="f8fb9-103">A kimeneti nézet módosítása formázási parancsokkal</span><span class="sxs-lookup"><span data-stu-id="f8fb9-103">Using Format Commands to Change Output View</span></span>
 

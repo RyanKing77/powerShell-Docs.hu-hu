@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34220342"
 ---
 # <a name="on-demand-pull-of-dsc-configurations"></a><span data-ttu-id="e6358-102">DSC-konfigurációk igény szerinti lekérése</span><span class="sxs-lookup"><span data-stu-id="e6358-102">On-demand PULL of DSC Configurations</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34482913"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a><span data-ttu-id="a289c-102">Egyesített és konzisztens állapotreprezentáció</span><span class="sxs-lookup"><span data-stu-id="a289c-102">Unified and Consistent State and Status Representation</span></span>
 

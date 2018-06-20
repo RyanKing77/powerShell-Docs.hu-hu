@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951069"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a><span data-ttu-id="94076-103">A Windows PowerShell-adatcsatorna megismerése</span><span class="sxs-lookup"><span data-stu-id="94076-103">Understanding the Windows PowerShell Pipeline</span></span>
 <span data-ttu-id="94076-104">Átirányítás gyakorlatilag tetszőleges helyszínről a Windows PowerShell működik.</span><span class="sxs-lookup"><span data-stu-id="94076-104">Piping works virtually everywhere in Windows PowerShell.</span></span> <span data-ttu-id="94076-105">Bár a képernyőn látható szöveg, a Windows PowerShell a szöveges parancsok között nem csövön keresztüli.</span><span class="sxs-lookup"><span data-stu-id="94076-105">Although you see text on the screen, Windows PowerShell does not pipe text between commands.</span></span> <span data-ttu-id="94076-106">Ehelyett azt kiszolgálókészletéhez objektumok.</span><span class="sxs-lookup"><span data-stu-id="94076-106">Instead, it pipes objects.</span></span>

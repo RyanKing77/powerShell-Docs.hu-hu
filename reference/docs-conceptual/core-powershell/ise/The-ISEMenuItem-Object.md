@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950709"
 ---
 # <a name="the-isemenuitem-object"></a><span data-ttu-id="14296-103">Az ISEMenuItem objektum</span><span class="sxs-lookup"><span data-stu-id="14296-103">The ISEMenuItem Object</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221850"
 ---
 # <a name="class-based-dsc-resources"></a><span data-ttu-id="8e582-102">Osztályalapú DSC-erőforrások</span><span class="sxs-lookup"><span data-stu-id="8e582-102">Class-based DSC Resources</span></span>
 

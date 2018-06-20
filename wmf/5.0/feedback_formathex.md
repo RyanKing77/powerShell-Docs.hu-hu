@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218212"
 ---
 # <a name="format-hex"></a><span data-ttu-id="c9914-102">Format-Hex</span><span class="sxs-lookup"><span data-stu-id="c9914-102">Format-Hex</span></span>
 <span data-ttu-id="c9914-103">**Hexadecimális formátumú** lehetővé teszi, hogy a szöveges vagy bináris adatok megtekintéséhez hexadecimális formátumban, tanulmányozza a [hexadecimális formátumban](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span><span class="sxs-lookup"><span data-stu-id="c9914-103">**Format-Hex** lets you view text or binary data in hexadecimal format; see [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span></span>

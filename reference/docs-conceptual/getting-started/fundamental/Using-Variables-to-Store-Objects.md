@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953327"
 ---
 # <a name="using-variables-to-store-objects"></a><span data-ttu-id="ac7b8-103">Objektumok tárolása változókban</span><span class="sxs-lookup"><span data-stu-id="ac7b8-103">Using Variables to Store Objects</span></span>
 <span data-ttu-id="ac7b8-104">PowerShell objektumok működik.</span><span class="sxs-lookup"><span data-stu-id="ac7b8-104">PowerShell works with objects.</span></span> <span data-ttu-id="ac7b8-105">PowerShell lehetővé teszi változók, alapvetően az objektumok megőrizni későbbi felhasználásra kimeneti nevű létrehozását.</span><span class="sxs-lookup"><span data-stu-id="ac7b8-105">PowerShell lets you create variables, essentially named objects, to preserve output for later use.</span></span> <span data-ttu-id="ac7b8-106">Más változók használata esetén ismertetése ne feledje, hogy PowerShell változók objektumokat, nem szöveges.</span><span class="sxs-lookup"><span data-stu-id="ac7b8-106">If you are used to working with variables in other shells remember that PowerShell variables are objects, not text.</span></span>

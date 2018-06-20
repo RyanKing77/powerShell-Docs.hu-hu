@@ -5,8 +5,10 @@ keywords: PowerShell
 title: Licencfeltételek elfogadását igénylő modulok
 ms.openlocfilehash: fe197ea271e18580a221ad4d5245b685bd81775b
 ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048936"
 ---
 # <a name="modules-requiring-license-acceptance"></a><span data-ttu-id="6152a-103">Licencfeltételek elfogadását igénylő modulok</span><span class="sxs-lookup"><span data-stu-id="6152a-103">Modules Requiring License Acceptance</span></span>
 

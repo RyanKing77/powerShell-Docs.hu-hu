@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190400"
 ---
 # <a name="configuring-the-local-configuration-manager"></a><span data-ttu-id="a6c95-103">A helyi Configuration Manager konfigurálása</span><span class="sxs-lookup"><span data-stu-id="a6c95-103">Configuring the Local Configuration Manager</span></span>
 

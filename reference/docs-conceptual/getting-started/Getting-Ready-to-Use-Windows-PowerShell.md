@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950967"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a><span data-ttu-id="bec5a-103">Előkészületek a Windows PowerShell használatához</span><span class="sxs-lookup"><span data-stu-id="bec5a-103">Getting Ready to Use Windows PowerShell</span></span>
 <span data-ttu-id="bec5a-104">A Windows PowerShell telepítése és elindítása, vegye figyelembe a következő telepítési lehetőségekkel.</span><span class="sxs-lookup"><span data-stu-id="bec5a-104">When Windows PowerShell is installed and started, consider the following setup options.</span></span> <span data-ttu-id="bec5a-105">Ezek a feladatok tetszőleges időpontban végezheti el.</span><span class="sxs-lookup"><span data-stu-id="bec5a-105">You can perform these tasks at any time.</span></span>

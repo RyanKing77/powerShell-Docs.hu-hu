@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952222"
 ---
 # <a name="managing-current-location"></a><span data-ttu-id="8a3a4-103">Aktuális hely kezelése</span><span class="sxs-lookup"><span data-stu-id="8a3a4-103">Managing Current Location</span></span>
 

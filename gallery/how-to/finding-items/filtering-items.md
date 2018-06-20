@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188808"
 ---
 # <a name="filtering-search-results"></a><span data-ttu-id="a59fb-103">Keresési eredmények szűréséhez</span><span class="sxs-lookup"><span data-stu-id="a59fb-103">Filtering search results</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222020"
 ---
 # <a name="wow64-support-for-configuration-keyword"></a><span data-ttu-id="e8fad-102">Konfigurációs kulcsszó WOW64-támogatás</span><span class="sxs-lookup"><span data-stu-id="e8fad-102">WOW64 support for Configuration Keyword</span></span>
 

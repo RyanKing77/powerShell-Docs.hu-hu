@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225674"
 ---
 # <a name="deliver-a-configuration-document-without-applying"></a><span data-ttu-id="744b5-102">Egy konfigurációs dokumentum fájlmegosztásba alkalmazása nélkül</span><span class="sxs-lookup"><span data-stu-id="744b5-102">Deliver a configuration document without applying</span></span>
 

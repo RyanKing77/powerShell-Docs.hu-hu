@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225538"
 ---
 # <a name="details-about-configuration-status"></a><span data-ttu-id="45562-102">A konfigurációs állapot részletes adatai</span><span class="sxs-lookup"><span data-stu-id="45562-102">Details about Configuration Status</span></span>
 
