@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218212"
 ---
 # <a name="format-hex"></a>Format-Hex
 **Hexadecimális formátumú** lehetővé teszi, hogy a szöveges vagy bináris adatok megtekintéséhez hexadecimális formátumban, tanulmányozza a [hexadecimális formátumban](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)

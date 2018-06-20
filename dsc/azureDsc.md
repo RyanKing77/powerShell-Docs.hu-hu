@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221884"
 ---
 # <a name="using-dsc-on-microsoft-azure"></a>A DSC használata a Microsoft Azure-ban
 

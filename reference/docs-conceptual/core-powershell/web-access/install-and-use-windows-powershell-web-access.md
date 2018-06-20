@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953922"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Webes Windows PowerShell-elérés telepítése és használata
 

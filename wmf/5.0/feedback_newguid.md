@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225589"
 ---
 # <a name="new-guid"></a>New-Guid
 Gyakran parancsfájl (vagy lehet, hogy a DSC-erőforrás írása), az egyedi azonosító szükséges. GUID azonosítók működőképesek, és hívni a .NET-keretrendszer Guid osztályt hozhat létre egy egyszerű, de munkája parancsmag válik, ez több felderíthető végfelhasználók számára, akik még nem ismeri a .NET-keretrendszer osztály:

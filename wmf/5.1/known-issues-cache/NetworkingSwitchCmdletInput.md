@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188683"
 ---
 A hálózati kapcsolók kezelője parancsmagok segítségével kezelheti a hálózati kapcsolók WSMAN keresztül.
 Ehhez a modul néhány parancsmagok képesek a folyamatok értékek elfogadásával.

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948210"
 ---
 # <a name="object-pipeline"></a>Objektumfolyamat
 Folyamatok működni, mint egy láncolata csatlakoztatott cső. A feldolgozási sor mentén cikkek továbbítása minden szegmensben. Folyamatokat létrehozni a Windows PowerShellben, csatlakozzon a parancsok és az adatcsatorna operátor "|}". Minden parancs a következő parancs kimenete szolgál.

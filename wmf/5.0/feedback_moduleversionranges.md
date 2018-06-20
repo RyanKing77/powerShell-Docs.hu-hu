@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225691"
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Modulok támogatása deklaráló verzió tartományok (1.*, stb.)
 Együtt **- MinimumVersion**, **- MaximumVersion** mostantól lehetővé teszi a felhasználónak az adott tartományon belüli get/importálás modul. A paraméter is támogatja a **.** \*. A következő példa bemutatja, hogyan működik:

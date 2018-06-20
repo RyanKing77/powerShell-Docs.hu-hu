@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187476"
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>A Windows PowerShell célállapot-konfiguráló áttekintése
 

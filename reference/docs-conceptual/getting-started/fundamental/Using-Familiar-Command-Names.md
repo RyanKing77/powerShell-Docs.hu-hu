@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952681"
 ---
 # <a name="using-familiar-command-names"></a>Jól ismert parancsnevek használata
 Egy olyan mechanizmus használatával nevű *aliasképző*, a Windows PowerShell segítségével a felhasználók alternatív névvel parancsok hivatkozik. Aliasképző élmény a felhasználók közös parancs nevét, amely már ismerik a Windows PowerShell hasonló műveletek végrehajtásához újból más ismertetése lehetővé teszi. Bár nem ismertetjük részletesen Windows PowerShell-aliasokat, továbbra is használhatja őket, a Windows PowerShell-lel használatának első lépéseit.

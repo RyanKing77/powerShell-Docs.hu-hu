@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949485"
 ---
 # <a name="getting-started-with-windows-powershell"></a>A Windows PowerShell használatának első lépései
 A Windows PowerShell egy Windows parancssori rendszerhéj, kifejezetten rendszergazdák számára tervezett. A Windows PowerShell tartalmaz egy interaktív kérdés és a parancsfájl-kezelési környezet, amely külön vagy együtt használható.

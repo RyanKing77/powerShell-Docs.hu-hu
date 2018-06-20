@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188496"
 ---
 # <a name="just-enough-administration-jea"></a>Just Enough Administration (JEA)
 Csak elég felügyeleti az új szolgáltatása, amely lehetővé teszi, hogy a szerepkör alapú felügyelet PowerShell távoli eljáráshívás keresztül WMF 5.0.  Az kiterjeszti a meglévő korlátozott végpont infrastruktúra azáltal, hogy a nem rendszergazda konkrét parancsok, parancsfájlok és végrehajtható fájlok futtassa rendszergazdaként.  Ez lehetővé teszi a környezetében teljes rendszergazdák számának csökkentése és a biztonság növelése.  JEA működik minden kezelheti a PowerShell segítségével; Ha valaminek a PowerShell használatával kezelheti, JEA is segítséget nyújthat így biztonságosabban.  Csak elég felügyeleti részletes vizsgálja meg, tekintse meg a [útmutató élmény](http://aka.ms/JEA).

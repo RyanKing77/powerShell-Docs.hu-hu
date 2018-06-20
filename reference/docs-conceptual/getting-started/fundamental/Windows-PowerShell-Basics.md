@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950533"
 ---
 # <a name="windows-powershell-basics"></a>A Windows PowerShell használatának alapjai
 Grafikus felhasználói felületeket bizonyos alapvető fogalmakkal, amelyek a jól ismert, hogy a számítógép-felhasználók használja. Felhasználók ezek a feladatok végrehajtásához felületek szoftverben támaszkodnak. Operációs rendszer jelenlegi felhasználók tallózható, általában az adott funkciót és a helyi menük környezetfüggő funkció eléréséhez eléréséhez legördülő menükben elemekre grafikus ábrázolása.

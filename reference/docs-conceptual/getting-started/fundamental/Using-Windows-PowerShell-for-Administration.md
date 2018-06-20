@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954330"
 ---
 # <a name="using-windows-powershell-for-administration"></a>A Windows PowerShell használata adminisztrációhoz
 Windows PowerShell alapvető célja szolgáltató jobban, egyszerűbb felügyeleti szabályozhatják, rendszerek, interaktív vagy parancsfájlból. Ez a fejezet felügyelete a Windows PowerShell használatával Windows rendszerek sok konkrét problémák végigvezeti a megoldásokat. Parancsfájlok és a Windows PowerShell felhasználói útmutatója a funkciók nem rendelkezik megtartásról, bár a megoldások szolgáló parancsfájlok vagy funkciók. Bemutatjuk a példák, amelyek közé tartozik a funkciók problémák megoldására megoldás részeként.

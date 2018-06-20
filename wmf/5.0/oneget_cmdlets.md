@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221953"
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement-parancsmagok
 Ez a szoftver felderítés, telepítés és a készlet (SDII) támogatásához PackageManagement részében. Próbálja ki ezeket a műveleteket a parancsmagokat:

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953123"
 ---
 # <a name="starting-windows-powershell"></a>A Windows PowerShell indítása
 PowerShell egy parancsfájl-kezelési motor dll, amely több gazdagép be van ágyazva.  A leggyakrabban használt állomás hozzákezdhet a következők: interaktív parancssori PowerShell.exe és parancsfájl-kezelési környezet interaktív PowerShell_ISE.exe.

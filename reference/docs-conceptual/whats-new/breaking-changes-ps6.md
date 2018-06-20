@@ -7,6 +7,7 @@ ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/19/2018
+ms.locfileid: "34309578"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Módosítások megtörje PowerShell 6.0
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953327"
 ---
 # <a name="using-variables-to-store-objects"></a>Objektumok tárolása változókban
 PowerShell objektumok működik. PowerShell lehetővé teszi változók, alapvetően az objektumok megőrizni későbbi felhasználásra kimeneti nevű létrehozását. Más változók használata esetén ismertetése ne feledje, hogy PowerShell változók objektumokat, nem szöveges.

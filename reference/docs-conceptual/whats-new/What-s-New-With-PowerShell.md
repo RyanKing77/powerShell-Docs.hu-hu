@@ -7,6 +7,7 @@ ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33677246"
 ---
 # <a name="whats-new-with-powershell-50"></a>PowerShell 5.0 újdonságai
 A Windows PowerShell® 5.0 jelentős új szolgáltatásokkal, amelyek kibővítik annak használati, javítják használhatóságát, és felügyelete és kezelése Windows-alapú környezetek egyszerűbb és átfogóbb.  A jelentős fejlesztéseket területein célállapot-konfiguráció, a biztonsági, a teljesítmény, a távoli eljáráshívás és a nyelvi továbbfejlesztett vannak.

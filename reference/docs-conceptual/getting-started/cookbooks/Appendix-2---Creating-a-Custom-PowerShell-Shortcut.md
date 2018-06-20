@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949264"
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>Függelék: 2 - egyéni PowerShell parancsikon létrehozása
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951086"
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>A Windows PowerShell legfontosabb fogalmainak megértése
 A Windows PowerShell-kialakítás számos különböző környezetek fogalom egyesíti. Ezek az adott parancskörnyezet vagy programozási környezetben révén személyek számára ismerős, de nagyon kevés személyek fogja tudni az összes. Ezek a fogalmak némelyike megnézi a rendszerhéj hasznos áttekintést nyújt.

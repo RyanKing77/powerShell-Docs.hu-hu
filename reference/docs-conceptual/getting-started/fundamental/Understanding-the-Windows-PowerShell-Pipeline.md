@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951069"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a>A Windows PowerShell-adatcsatorna megismerése
 Átirányítás gyakorlatilag tetszőleges helyszínről a Windows PowerShell működik. Bár a képernyőn látható szöveg, a Windows PowerShell a szöveges parancsok között nem csövön keresztüli. Ehelyett azt kiszolgálókészletéhez objektumok.

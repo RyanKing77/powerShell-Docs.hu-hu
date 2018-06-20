@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953473"
 ---
 # <a name="learning-windows-powershell-names"></a>A Windows PowerShell-nevek elsajátítása
 Learning nevek a parancsok és a parancs paraméterei a legtöbb parancssori felületen jelentős mennyiségű időt befektetés. A probléma oka, hogy nincsenek nagyon kevés kombinációját, így az egyetlen lehetőség további megjegyzésével minden parancs és az egyes paramétereket, amelyek rendszeresen szüksége van.
