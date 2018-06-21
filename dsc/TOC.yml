@@ -161,6 +161,8 @@
           href: lnxGroupResource.md
         - name: nxPackage erőforrás
           href: lnxPackageResource.md
+        - name: nxScript erőforrás
+          href: lnxScriptResource.md
         - name: nxService erőforrás
           href: lnxServiceResource.md
         - name: nxSshAuthorizedKeys erőforrás
