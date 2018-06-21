@@ -1,11 +1,11 @@
-# <a name="installing-powershell-core-on-linux"></a>PowerShell központi telepítése Linux rendszeren
+# <a name="installing-powershell-core-on-linux"></a>A PowerShell Core telepítése Linux rendszerre
 
-Támogatja a [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.04] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 25 ] [ fed25], [Fedora 26][fed26], és [architektúrája Linux][arch].
+Supports <bpt id="p1">[</bpt>Ubuntu 14.04<ept id="p1">]</ept><bpt id="p2">[</bpt><ept id="p2">u14]</ept>, <bpt id="p3">[</bpt>Ubuntu 16.04<ept id="p3">]</ept><bpt id="p4">[</bpt><ept id="p4">u16]</ept>, <bpt id="p5">[</bpt>Ubuntu 17.04<ept id="p5">]</ept><bpt id="p6">[</bpt><ept id="p6">u17]</ept>, <bpt id="p7">[</bpt>Debian 8<ept id="p7">]</ept><bpt id="p8">[</bpt><ept id="p8">deb8]</ept>, <bpt id="p9">[</bpt>Debian 9<ept id="p9">]</ept><bpt id="p10">[</bpt><ept id="p10">deb9]</ept>, <bpt id="p11">[</bpt>CentOS 7<ept id="p11">]</ept><bpt id="p12">[</bpt><ept id="p12">cos]</ept>, <bpt id="p13">[</bpt>Red Hat Enterprise Linux (RHEL) 7<ept id="p13">]</ept><bpt id="p14">[</bpt><ept id="p14">rhel7]</ept>, <bpt id="p15">[</bpt>OpenSUSE 42.2<ept id="p15">]</ept><bpt id="p16">[</bpt><ept id="p16">opensuse]</ept>, <bpt id="p17">[</bpt>Fedora 27<ept id="p17">]</ept><bpt id="p18">[</bpt><ept id="p18">fedora]</ept>, <bpt id="p19">[</bpt>Fedora 28<ept id="p19">]</ept><bpt id="p20">[</bpt><ept id="p20">fedora]</ept>, and <bpt id="p21">[</bpt>Arch Linux<ept id="p21">]</ept><bpt id="p22">[</bpt><ept id="p22">arch]</ept>.
 
 A Linux terjesztéseket, amelyek hivatalosan nem támogatottak, próbálkozhat a [PowerShell AppImage][lai].
 Közvetlenül a Linux-használat PowerShell bináris fájljainak telepítéséhez is megpróbálhatja [ `tar.gz` archív][tar], de állítsa be a szükséges függőségek az operációs rendszer, a különálló lépések alapján kell.
 
-Minden csomagok érhetők el a githubon [kiadott][] lap.
+Minden csomagok érhetők el a githubon [Kiadások][] lap.
 A csomag telepítése után futtassa `pwsh` terminálról.
 
 [u14]: #ubuntu-1404
@@ -16,8 +16,7 @@ A csomag telepítése után futtassa `pwsh` terminálról.
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse-422
-[fed25]: #fedora-25
-[fed26]: #fedora-26
+[fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
 [tar]: #binary-archives
@@ -51,7 +50,7 @@ Ettől kezdve csak kell használnia `sudo apt-get upgrade powershell` a telepít
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Közvetlen letöltése – Ubuntu 14.04 történő telepítést
 
-A Debian csomag `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` a a [kiadott][] lap települ az Ubuntu gépre.
+A Debian csomag `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` a a [Kiadások][] lap települ az Ubuntu gépre.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -96,7 +95,7 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Közvetlen letöltése – Ubuntu 16.04 történő telepítést
 
-A Debian csomag `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` a a [kiadott][] lap települ az Ubuntu gépre.
+A Debian csomag `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` a a [Kiadások][] lap települ az Ubuntu gépre.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -141,7 +140,7 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---ubuntu-1704"></a>Közvetlen letöltése – Ubuntu 17.04 történő telepítést
 
-A Debian csomag `powershell_6.0.2-1.ubuntu.17.04_amd64.deb` a a [kiadott][] lap települ az Ubuntu gépre.
+A Debian csomag `powershell_6.0.2-1.ubuntu.17.04_amd64.deb` a a [Kiadások][] lap települ az Ubuntu gépre.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -190,7 +189,7 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---debian-8"></a>Keresztül közvetlen letöltése – Debian 8 telepítése
 
-A Debian csomag `powershell_6.0.2-1.debian.8_amd64.deb` a a [kiadott][] a Debian gép oldalon.
+A Debian csomag `powershell_6.0.2-1.debian.8_amd64.deb` a a [Kiadások][] a Debian gép oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -241,7 +240,7 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---debian-9"></a>Közvetlen letöltése – Debian 9 történő telepítést
 
-A Debian csomag `powershell_6.0.2-1.debian.9_amd64.deb` a a [kiadott][] a Debian gép oldalon.
+A Debian csomag `powershell_6.0.2-1.debian.9_amd64.deb` a a [Kiadások][] a Debian gép oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -283,7 +282,7 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ugyanúgy kell 
 
 ### <a name="installation-via-direct-download---centos-7"></a>Közvetlen letöltése – CentOS 7 történő telepítést
 
-Használatával [CentOS 7][], a RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [kiadott][] a CentOS gép oldalon.
+Használatával [CentOS 7][], a RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [Kiadások][] a CentOS gép oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -326,7 +325,7 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ugyanúgy kell 
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Közvetlen letöltése – Red Hat Enterprise Linux (RHEL) 7 történő telepítést
 
-A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [kiadott][] a Red Hat Enterprise Linux-gép oldalon.
+A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [Kiadások][] a Red Hat Enterprise Linux-gép oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -388,7 +387,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---opensuse-422"></a>Közvetlen letöltése – OpenSUSE 42.2 történő telepítést
 
-A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [kiadott][] a OpenSUSE gép oldalon.
+A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [Kiadások][] a OpenSUSE gép oldalon.
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -408,58 +407,9 @@ sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v
 sudo zypper remove powershell
 ```
 
-## <a name="fedora-25"></a>Fedora 25
+## <a name="fedora"></a>Fedora
 
-### <a name="installation-via-package-repository-preferred---fedora-25"></a>Telepítési csomag tárház (ajánlott) - Fedora 25 keresztül
-
-Egyszerű telepítés (és a frissítések) hivatalos Microsoft tárolóhelyekkel PowerShell Core Linux van közzétéve.
-
-```sh
-# Register the Microsoft signature key
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-
-# Register the Microsoft RedHat repository
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
-
-# Update the list of products
-sudo dnf update
-
-# Install PowerShell
-sudo dnf install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-### <a name="installation-via-direct-download---fedora-25"></a>Közvetlen letöltése – Fedora 25 történő telepítést
-
-A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [kiadott][] a Fedora gép oldalon.
-
-```sh
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
-```
-
-A terminálban majd hajtsa végre az alábbiakat:
-
-```sh
-sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-A RPM nélkül letölti a köztes lépés is telepíthet:
-
-```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-### <a name="uninstallation---fedora-25"></a>Az Eltávolítás - Fedora 25
-
-```sh
-sudo dnf remove powershell
-```
-
-## <a name="fedora-26"></a>Fedora 26
-
-### <a name="installation-via-package-repository-preferred---fedora-26"></a>Telepítési csomag tárház (ajánlott) - Fedora 26 keresztül
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Telepítési csomag tárház (ajánlott) - Fedora 27 Fedora 28 keresztül
 
 Egyszerű telepítés (és a frissítések) hivatalos Microsoft tárolóhelyekkel PowerShell Core Linux van közzétéve.
 
@@ -483,14 +433,13 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-26"></a>Közvetlen letöltése – Fedora 26 történő telepítést
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Közvetlen letöltése – Fedora 27, Fedora 28 történő telepítést
 
-A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [kiadott][] a Fedora gép oldalon.
+A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [Kiadások][] a Fedora gép oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
@@ -498,12 +447,11 @@ sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 A RPM nélkül letölti a köztes lépés is telepíthet:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-26"></a>Az Eltávolítás - Fedora 26
+### <a name="uninstallation---fedora-27-fedora-28"></a>Az Eltávolítás - Fedora 27, Fedora 28
 
 ```sh
 sudo dnf remove powershell
@@ -511,7 +459,7 @@ sudo dnf remove powershell
 
 ## <a name="arch-linux"></a>Linux architektúrája
 
-PowerShell érhető el a [architektúrája Linux][] felhasználói tárház (AUR).
+PowerShell érhető el a [Linux architektúrája][] felhasználói tárház (AUR).
 
 * Az összeállítható a [legújabb címkézett kiadás][arch-release]
 * Az összeállítható a [fő legújabb véglegesítési][arch-git]
@@ -521,14 +469,14 @@ A AUR csomagok karbantartása közösségi – nincs hivatalos támogatás.
 
 A csomagok telepítése a AUR a további információkért lásd: a [architektúrája Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) vagy a közösségi [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[architektúrája Linux]: https://www.archlinux.org/download/
+[Linux architektúrája]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
 ## <a name="linux-appimage"></a>Linux AppImage
 
-A legutóbbi Linux-eloszlás használatával töltse le a AppImage `powershell-6.0.1-x86_64.AppImage` a a [kiadott][] a Linux-gépek oldalon.
+A legutóbbi Linux-eloszlás használatával töltse le a AppImage `powershell-6.0.1-x86_64.AppImage` a a [Kiadások][] a Linux-gépek oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -642,8 +590,8 @@ Az alábbi ábra mutatja a .NET Core 2.0 függőségek hivatalosan által támog
 | Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind, libcurl, openssl-függvénytárak, libicu |
-| Fedora 26          | libunwind, libcurl, openssl-függvénytárak, libicu, / compat-openssl10 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, openssl-függvénytárak, libicu |
+| 27 Fedora <br> 28 Fedora | libunwind, libcurl, openssl-függvénytárak, libicu, / compat-openssl10 |
 
 Az telepítéséhez PowerShell bináris fájljait, a Linux terjesztéseket, amelyek hivatalosan nem támogatottak, kell telepíteni a cél operációs rendszer szükséges függőségek külön lépéseket.
 Például a [Amazon Linux dockerfile] [ amazon-dockerfile] függőségek először telepíti, és kinyeri a Linux `tar.gz` archív.
@@ -691,5 +639,5 @@ A profilok tiszteletben PowerShell gazdagép konfiguráció, így az alapértelm
 
 PowerShell tiszteletben tartja a [XDG Base könyvtár megadása] [ xdg-bds] Linux rendszeren.
 
-[kiadott]: https://github.com/PowerShell/PowerShell/releases/latest
+[Kiadások]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
