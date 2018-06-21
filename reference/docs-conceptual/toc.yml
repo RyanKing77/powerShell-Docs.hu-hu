@@ -13,7 +13,7 @@
               href: setup/Installing-PowerShell-Core-on-Linux.md
             - name: A PowerShell Core telepítése macOS rendszerre
               href: setup/Installing-PowerShell-Core-on-macOS.md
-            - name: ARM-alapú PowerShell Core
+            - name: A PowerShell Core telepítése ARM rendszerre
               href: setup/PowerShell-Core-on-ARM.md
         - name: Windows PowerShell
           href: ''
