@@ -1,7 +1,7 @@
-# <a name="installing-powershell-core-on-macos"></a>MacOS PowerShell központi telepítése
+# <a name="installing-powershell-core-on-macos"></a>A PowerShell Core telepítése macOS rendszerre
 
 PowerShell Core macOS 10.12 vagy újabb verziókat támogatja.
-Minden csomagok érhetők el a githubon [kiadott][] lap.
+Minden csomagok érhetők el a githubon [Kiadások][] lap.
 A csomag telepítése után futtassa `pwsh` terminálról.
 
 ### <a name="installation-via-homebrew-on-macos-1012"></a>MacOS 10.12 keresztül Homebrew telepítése
@@ -36,15 +36,14 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> A fenti parancsokat is hívható meg egy PowerShell (pwsh) állomás, de majd a PowerShell rendszerhéjban kell kilépett és újraindul a frissítés befejezéséhez.
-> és frissítse a $PSVersionTable megjelenő értékeket.
+> A fenti parancsokat is hívható meg egy PowerShell (pwsh) állomás, de majd a PowerShell rendszerhéjban kell kilépett és indítani, hogy végezze el a frissítést, és frissítse a $PSVersionTable megjelenő értékeket.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
 
 ### <a name="installation-via-direct-download"></a>Telepítési keresztül közvetlen letöltése
 
-A PKG csomag `powershell-6.0.2-osx.10.12-x64.pkg` a a [kiadott][] lap a macOS számítógépre.
+A PKG csomag `powershell-6.0.2-osx.10.12-x64.pkg` a a [Kiadások][] lap a macOS számítógépre.
 
 Kattintson duplán a fájlra, és kövesse az utasításokat, vagy telepítse azt a Terminálszolgáltatások:
 
@@ -98,7 +97,7 @@ Távolítsa el a további PowerShell elérési utak, tekintse meg a [elérési u
 
 ## <a name="paths"></a>Elérési utak
 
-* `$PSHOME` van `/opt/microsoft/powershell/6.0.0/`
+* `$PSHOME` van `/usr/local/microsoft/powershell/6.0.2/`
 * Felhasználói profilok rendszer nem olvas be `~/.config/powershell/profile.ps1`
 * Alapértelmezett profilok rendszer nem olvas be `$PSHOME/profile.ps1`
 * Modulok felhasználói rendszer nem olvas be `~/.local/share/powershell/Modules`
@@ -112,7 +111,7 @@ A profilok tiszteletben PowerShell gazdagép konfiguráció.
 PowerShell tiszteletben tartja a [XDG Base könyvtár megadása] [ xdg-bds] macOS meg.
 
 Mivel macOS BSD, az előtag származtatott `/usr/local` helyett használt `/opt`.
-Ebből kifolyólag `$PSHOME` van `/usr/local/microsoft/powershell/6.0.0/`, és a symlink van elhelyezve `/usr/local/bin/pwsh`.
+Ebből kifolyólag `$PSHOME` van `/usr/local/microsoft/powershell/6.0.2/`, és a symlink van elhelyezve `/usr/local/bin/pwsh`.
 
-[kiadott]: https://github.com/PowerShell/PowerShell/releases/latest
+[Kiadások]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
