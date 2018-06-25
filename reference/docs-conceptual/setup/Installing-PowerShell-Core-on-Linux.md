@@ -1,16 +1,16 @@
 # <a name="installing-powershell-core-on-linux"></a>A PowerShell Core telepítése Linux rendszerre
 
-Supports <bpt id="p1">[</bpt>Ubuntu 14.04<ept id="p1">]</ept><bpt id="p2">[</bpt><ept id="p2">u14]</ept>, <bpt id="p3">[</bpt>Ubuntu 16.04<ept id="p3">]</ept><bpt id="p4">[</bpt><ept id="p4">u16]</ept>, <bpt id="p5">[</bpt>Ubuntu 17.04<ept id="p5">]</ept><bpt id="p6">[</bpt><ept id="p6">u17]</ept>, <bpt id="p7">[</bpt>Debian 8<ept id="p7">]</ept><bpt id="p8">[</bpt><ept id="p8">deb8]</ept>, <bpt id="p9">[</bpt>Debian 9<ept id="p9">]</ept><bpt id="p10">[</bpt><ept id="p10">deb9]</ept>, <bpt id="p11">[</bpt>CentOS 7<ept id="p11">]</ept><bpt id="p12">[</bpt><ept id="p12">cos]</ept>, <bpt id="p13">[</bpt>Red Hat Enterprise Linux (RHEL) 7<ept id="p13">]</ept><bpt id="p14">[</bpt><ept id="p14">rhel7]</ept>, <bpt id="p15">[</bpt>OpenSUSE 42.2<ept id="p15">]</ept><bpt id="p16">[</bpt><ept id="p16">opensuse]</ept>, <bpt id="p17">[</bpt>Fedora 27<ept id="p17">]</ept><bpt id="p18">[</bpt><ept id="p18">fedora]</ept>, <bpt id="p19">[</bpt>Fedora 28<ept id="p19">]</ept><bpt id="p20">[</bpt><ept id="p20">fedora]</ept>, and <bpt id="p21">[</bpt>Arch Linux<ept id="p21">]</ept><bpt id="p22">[</bpt><ept id="p22">arch]</ept>.
+Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].
 
 A Linux terjesztéseket, amelyek hivatalosan nem támogatottak, próbálkozhat a [PowerShell AppImage][lai].
 Közvetlenül a Linux-használat PowerShell bináris fájljainak telepítéséhez is megpróbálhatja [ `tar.gz` archív][tar], de állítsa be a szükséges függőségek az operációs rendszer, a különálló lépések alapján kell.
 
-Minden csomagok érhetők el a githubon [Kiadások][] lap.
+Minden csomagok érhetők el a githubon [kiadott][] lap.
 A csomag telepítése után futtassa `pwsh` terminálról.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u17]: #ubuntu-1704
+[u17]: #ubuntu-1710
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
@@ -50,7 +50,7 @@ Ettől kezdve csak kell használnia `sudo apt-get upgrade powershell` a telepít
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Közvetlen letöltése – Ubuntu 14.04 történő telepítést
 
-A Debian csomag `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` a a [Kiadások][] lap települ az Ubuntu gépre.
+A Debian csomag `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` a a [kiadott][] lap települ az Ubuntu gépre.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -95,7 +95,7 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Közvetlen letöltése – Ubuntu 16.04 történő telepítést
 
-A Debian csomag `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` a a [Kiadások][] lap települ az Ubuntu gépre.
+A Debian csomag `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` a a [kiadott][] lap települ az Ubuntu gépre.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -112,9 +112,11 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1704"></a>Ubuntu 17.04
+## <a name="ubuntu-1710"></a>Ubuntu 17.10
 
-### <a name="installation-via-package-repository---ubuntu-1704"></a>Telepítési csomag tárház - Ubuntu 17.04 keresztül
+> Megjegyzés: Az Ubuntu 18.04 támogatást kaptak után `6.1.0-preview.2`
+
+### <a name="installation-via-package-repository---ubuntu-1710"></a>Telepítési csomag tárház - Ubuntu 17.10 keresztül
 
 PowerShell-Core, Linux, közzétett csomag tárolóhelyekkel egyszerű telepítés (és a frissítések).
 Ez az elsődleges módszer.
@@ -124,7 +126,7 @@ Ez az elsődleges módszer.
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
 # Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.04/prod.list
+sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.10/prod.list
 
 # Update the list of products
 sudo apt-get update
@@ -138,20 +140,67 @@ pwsh
 
 A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúgy kell használnia `sudo apt-get upgrade powershell` frissíti.
 
-### <a name="installation-via-direct-download---ubuntu-1704"></a>Közvetlen letöltése – Ubuntu 17.04 történő telepítést
+### <a name="installation-via-direct-download---ubuntu-1710"></a>Közvetlen letöltése – Ubuntu 17.10 történő telepítést
 
-A Debian csomag `powershell_6.0.2-1.ubuntu.17.04_amd64.deb` a a [Kiadások][] lap települ az Ubuntu gépre.
+A Debian csomag `powershell_6.0.2-1.ubuntu.17.10_amd64.deb` a a [kiadott][] lap települ az Ubuntu gépre.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.17.04_amd64.deb
+sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
 sudo apt-get install -f
 ```
 
 > Ne feledje, hogy `dpkg -i` sikertelen lesz, és unmet függőségek; a következő parancs `apt-get install -f` megoldja-e, és majd befejezi a PowerShell-csomag konfigurálása.
 
-### <a name="uninstallation---ubuntu-1704"></a>Az Eltávolítás - Ubuntu 17.04
+### <a name="uninstallation---ubuntu-1710"></a>Az Eltávolítás - Ubuntu 17.10
+
+```sh
+sudo apt-get remove powershell
+```
+
+## <a name="ubuntu-1804"></a>Ubuntu 18.04
+
+> Megjegyzés: Az Ubuntu 18.04 támogatást kaptak után `6.1.0-preview.2`
+
+### <a name="installation-via-package-repository---ubuntu-1804"></a>Telepítési csomag tárház - Ubuntu 18.04 keresztül
+
+PowerShell-Core, Linux, közzétett csomag tárolóhelyekkel egyszerű telepítés (és a frissítések).
+Ez az elsődleges módszer.
+
+```sh
+# Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+# Register the Microsoft Ubuntu repository
+sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/18.04/prod.list
+
+# Update the list of products
+sudo apt-get update
+
+# Install PowerShell
+sudo apt-get install -y powershell
+
+# Start PowerShell
+pwsh
+```
+
+A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúgy kell használnia `sudo apt-get upgrade powershell` frissíti.
+
+### <a name="installation-via-direct-download---ubuntu-1804"></a>Közvetlen letöltése – Ubuntu 18.04 történő telepítést
+
+A Debian csomag `powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb` a a [kiadott][] lap települ az Ubuntu gépre.
+
+A terminálban majd hajtsa végre az alábbiakat:
+
+```sh
+sudo dpkg -i powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb
+sudo apt-get install -f
+```
+
+> Ne feledje, hogy `dpkg -i` sikertelen lesz, és unmet függőségek; a következő parancs `apt-get install -f` megoldja-e, és majd befejezi a PowerShell-csomag konfigurálása.
+
+### <a name="uninstallation---ubuntu-1710"></a>Az Eltávolítás - Ubuntu 17.10
 
 ```sh
 sudo apt-get remove powershell
@@ -189,7 +238,7 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---debian-8"></a>Keresztül közvetlen letöltése – Debian 8 telepítése
 
-A Debian csomag `powershell_6.0.2-1.debian.8_amd64.deb` a a [Kiadások][] a Debian gép oldalon.
+A Debian csomag `powershell_6.0.2-1.debian.8_amd64.deb` a a [kiadott][] a Debian gép oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -240,7 +289,7 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ettől ugyanúg
 
 ### <a name="installation-via-direct-download---debian-9"></a>Közvetlen letöltése – Debian 9 történő telepítést
 
-A Debian csomag `powershell_6.0.2-1.debian.9_amd64.deb` a a [Kiadások][] a Debian gép oldalon.
+A Debian csomag `powershell_6.0.2-1.debian.9_amd64.deb` a a [kiadott][] a Debian gép oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -282,7 +331,7 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ugyanúgy kell 
 
 ### <a name="installation-via-direct-download---centos-7"></a>Közvetlen letöltése – CentOS 7 történő telepítést
 
-Használatával [CentOS 7][], a RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [Kiadások][] a CentOS gép oldalon.
+Használatával [CentOS 7][], a RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [kiadott][] a CentOS gép oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -325,7 +374,7 @@ A Microsoft-tárház a felügyelő, egyszer regisztrálás után ugyanúgy kell 
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Közvetlen letöltése – Red Hat Enterprise Linux (RHEL) 7 történő telepítést
 
-A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [Kiadások][] a Red Hat Enterprise Linux-gép oldalon.
+A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [kiadott][] a Red Hat Enterprise Linux-gép oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -387,7 +436,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---opensuse-422"></a>Közvetlen letöltése – OpenSUSE 42.2 történő telepítést
 
-A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [Kiadások][] a OpenSUSE gép oldalon.
+A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [kiadott][] a OpenSUSE gép oldalon.
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -408,6 +457,8 @@ sudo zypper remove powershell
 ```
 
 ## <a name="fedora"></a>Fedora
+
+> Vegye figyelembe, Fedora 28 csak PowerShell Core 6.1-es és újabb támogatott.
 
 ### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Telepítési csomag tárház (ajánlott) - Fedora 27 Fedora 28 keresztül
 
@@ -435,7 +486,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Közvetlen letöltése – Fedora 27, Fedora 28 történő telepítést
 
-A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [Kiadások][] a Fedora gép oldalon.
+A RPM csomag `powershell-6.0.2-1.rhel.7.x86_64.rpm` a a [kiadott][] a Fedora gép oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -476,7 +527,7 @@ A csomagok telepítése a AUR a további információkért lásd: a [architektú
 
 ## <a name="linux-appimage"></a>Linux AppImage
 
-A legutóbbi Linux-eloszlás használatával töltse le a AppImage `powershell-6.0.1-x86_64.AppImage` a a [Kiadások][] a Linux-gépek oldalon.
+A legutóbbi Linux-eloszlás használatával töltse le a AppImage `powershell-6.0.1-x86_64.AppImage` a a [kiadott][] a Linux-gépek oldalon.
 
 A terminálban majd hajtsa végre az alábbiakat:
 
@@ -587,7 +638,8 @@ Az alábbi ábra mutatja a .NET Core 2.0 függőségek hivatalosan által támog
 | ------------------ | ------------ |
 | Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, openssl-függvénytárak, libicu |
@@ -639,5 +691,5 @@ A profilok tiszteletben PowerShell gazdagép konfiguráció, így az alapértelm
 
 PowerShell tiszteletben tartja a [XDG Base könyvtár megadása] [ xdg-bds] Linux rendszeren.
 
-[Kiadások]: https://github.com/PowerShell/PowerShell/releases/latest
+[kiadott]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
