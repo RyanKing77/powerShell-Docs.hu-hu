@@ -1,14 +1,14 @@
 ---
 description: Az Azure-ban a kívánt állapot konfigurációs szolgáltatása (DSC) bővítmény korábbi verzióinak megismerése.
-ms.date: 05/09/2018
+ms.date: 06/21/2018
 keywords: a DSC, az azure powershell-bővítmény
 title: Azure DSC-bővítményt verziójának előzményei
-ms.openlocfilehash: 81dfcf81bd8f8685a0c8c81cd07bc5447e1abf94
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 25248288291b9bf8efe6ce1eef203a552cd17736
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189941"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940327"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure kívánt állapot konfigurációs bővítmény verziójának előzményei
 
@@ -16,12 +16,12 @@ Az Azure kívánt állapot konfigurációs szolgáltatása (DSC) Virtuálisgép-
 
 Ez a cikk az Azure DSC Virtuálisgép-bővítmény, az egyes verziójával kapcsolatos tájékoztatást fogunk adni azt támogatja, és a megjegyzések, és új szolgáltatásokat vagy módosításokat megjegyzések milyen környezetekben.
 
-## <a name="latest-versions"></a>Legújabb verzió
+## <a name="latest-version"></a>Legújabb verzió
 
 ### <a name="version-276"></a>2.76 verziója
 
 - **Kiadás dátuma:**
-  - 2018. május 9.
+  - 2018 előfordulhat, hogy 9 (Azure) |} Június 21, 2018 (Azure Kína, Azure kormányzati)
 - **Az operációs rendszer támogatása:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -36,30 +36,11 @@ Ez a cikk az Azure DSC Virtuálisgép-bővítmény, az egyes verziójával kapcs
   - WMF 4.0
 - **Rendelkező környezetben:**
   - Azure
+  - Azure China
+  - Az Azure Government
 - **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016; az egyéb Windows operációs rendszer telepítése a [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (újraindítást igényel WMF telepítése). A Nano Server a DSC szerepkör telepítve van a virtuális Gépen.
 - **Új funkciók:**
   - A részállapot és egyéb kisebb hibák javításával bővítmény metaadatait javítása.
-
-### <a name="version-219"></a>2.19 verziója
-
-- **Kiadás dátuma:**
-  - 2016. június 3.
-- **Az operációs rendszer támogatása:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **WMF támogatják:**
-  - WMF 5.0 RTM
-  - WMF 4.0 frissítése
-  - WMF 4.0
-- **Rendelkező környezetben:**
-  - Azure
-  - Azure China
-  - Az Azure Government
-- **Megjegyzés:** ebben a verzióban DSC használ, a csomag részeként a Windows Server 2016 Technical Preview; más operációs rendszerei között, az telepíti a [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (újraindítást igényel WMF telepítése).
-- **Új funkciók:**
-  - A DSC-bővítményt van most az előre telepített Azure Kína felé. Ebben a verzióban elsősorban a bővítmény futtatása Azure Kína javításait tartalmazzák.
 
 ## <a name="supported-versions"></a>Támogatott verziók
 

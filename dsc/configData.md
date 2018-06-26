@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: Konfigurációs adatok használata
-ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189686"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940378"
 ---
 # <a name="using-configuration-data-in-dsc"></a>A DSC konfigurációs adatok használata
 
->Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
+> Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
 
 A beépített DSC használatával **ConfigurationData** paraméter, használhatja a konfigurációs adatok definiálhat.
 Ez lehetővé teszi több csomópont vagy különböző környezetekben használható egyetlen konfiguráció létrehozásához.
@@ -25,10 +25,11 @@ Konfigurációs adatok használatára, tekintse meg a [konfigurációs és körn
 A DSC-konfiguráció egy közös paramétert fogad, **ConfigurationData**, meg kell adnia a konfiguráció-fordítási mikor.
 További információ a konfiguráció fordítása: [a DSC-konfigurációk](configurations.md).
 
-A **ConfigurationData** paraméter egy hasthtable, rendelkeznie kell legalább egy nevű kulcs **AllNodes**.
+A **ConfigurationData** paraméter egy kivonattáblát, rendelkeznie kell legalább egy nevű kulcs **AllNodes**.
 Egy vagy több kulcsot is rendelkezhet.
 
->**Megjegyzés:** ebben a témakörben szereplő példák egyetlen további kulcs használata (csak a megnevezett **AllNodes** kulcs) nevű `NonNodeData`, de további kulcsok tetszőleges számú, és nevezze függetlenül szeretné.
+> [!NOTE]
+> Ebben a témakörben szereplő példák egyetlen további kulcs használata (csak a megnevezett **AllNodes** kulcs) nevű `NonNodeData`, de további kulcsok tetszőleges számú, és nevezze függetlenül szeretné.
 
 ```powershell
 $MyData =
@@ -188,6 +189,7 @@ DSC nyújt három néhány speciális változó, amely egy konfigurációs paran
 
 - **$AllNodes** hivatkozik a teljes gyűjteményt a meghatározott csomópontok **ConfigurationData**. Szűrheti a **AllNodes** gyűjtemény segítségével **. WHERE()** és **. ForEach()**.
 - **Csomópont** egy adott bejegyzés hivatkozik a **AllNodes** gyűjtemény után a szűrt **. WHERE()** vagy **. ForEach()**.
+  - További ezekről az eljárásokról a [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 - **ConfigurationData** hivatkozik a teljes kivonattábla a konfiguráció fordítása során átadott paraméterként.
 
 ## <a name="using-non-node-data"></a>Nem-csomópont adatok használata
@@ -199,5 +201,6 @@ Azonban minden további kulcsok számának megadása, és bármilyen kívánt ne
 Például egy nem csomópont adatok használatával, lásd: [konfigurációs és környezeti adatok elválasztó](separatingEnvData.md).
 
 ## <a name="see-also"></a>Lásd még:
+
 - [Konfigurációs adatokat a hitelesítő adatok beállításai](configDataCredentials.md)
 - [A DSC-konfigurációk](configurations.md)

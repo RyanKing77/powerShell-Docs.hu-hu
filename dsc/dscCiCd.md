@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: a DSC, a powershell, a konfiguráció, a beállítása
 title: A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat létrehozása
-ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: faeef5022cbd984cab0620b69db19de8b84cca0e
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190553"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940344"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat létrehozása
 
@@ -36,7 +36,8 @@ Ez a példa használatához ismernie kell a következőkkel:
 Ez az a számítógépen, ahol el kell végeznie összes beállíthatja és futtathatja a példa a munkát.
 
 Az ügyfélszámítógép kell lennie a Windows rendszerű számítógépeken telepítve a következőre:
-- [git](https://git-scm.com/)
+
+- [Git](https://git-scm.com/)
 - egy helyi git-tárház alapján klónozták https://github.com/PowerShell/Demo_CI
 - egy szövegszerkesztőben, például a [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -73,21 +74,22 @@ Ha nem rendelkezik már klónozni a Demo_CI tárház az ügyfélszámítógépre
 1. Az ügyfélszámítógépen navigáljon a TFS-kiszolgáló egy webböngészőben.
 1. A TFS rendszerben [hozzon létre egy új csapatprojektbe](https://www.visualstudio.com/en-us/docs/setup-admin/create-team-project) Demo_CI nevű.
 
-    Győződjön meg arról, hogy **verziókezelést** értéke **Git**.
+   Győződjön meg arról, hogy **verziókezelést** értéke **Git**.
 1. Az ügyfélszámítógépen a most létrehozott a TFS-ben a következő paranccsal tárház távoli hozzáadása:
 
-    `git remote add tfs <YourTFSRepoURL>`
+   `git remote add tfs <YourTFSRepoURL>`
 
-    Ha `<YourTFSRepoURL>` a klón URL-címét az előző lépésben létrehozott TFS-tárházba.
+   Ha `<YourTFSRepoURL>` a klón URL-címét az előző lépésben létrehozott TFS-tárházba.
 
-    Ha nem tudja, hol található az URL-cím, lásd: [egy meglévő Git-tárház klónozása](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
+   Ha nem tudja, hol található az URL-cím, lásd: [egy meglévő Git-tárház klónozása](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
 1. A kód a helyi tárházból a TFS tárház leküldése a következő paranccsal:
 
-    `git push tfs --all`
+   `git push tfs --all`
 1. A TFS-tárház tölti fel a Demo_CI kódot.
 
->**Megjegyzés:** ebben a példában a kódot használja a `ci-cd-example` a Git-tárház főágába.
->Ügyeljen arra, hogy az ág az alapértelmezett ágat a TFS-projekt adja meg, és a CI/CD eseményindítók hoz létre.
+> [!NOTE]
+> Ebben a példában a kódot használja a `ci-cd-example` a Git-tárház főágába.
+> Ügyeljen arra, hogy az ág az alapértelmezett ágat a TFS-projekt adja meg, és a CI/CD eseményindítók hoz létre.
 
 ## <a name="understanding-the-code"></a>A kód ismertetése
 
@@ -154,6 +156,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
 Ez azoknak a fürtöknek, egyik szerepköre rendelkezőként meghatározott talál `DNSServer` a a [konfigurációs adatok](configData.md), által létrehozott a `DevEnv.ps1` parancsfájl.
+
+További információ a `Where` metódus a [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 
 Konfigurációs adatok segítségével határozza meg a csomópontok fontos CI során, mert a csomópont információk valószínűleg változik a különböző környezetek között, és a konfigurációs adatok használatával lehetővé teszi, könnyen módosíthatja csomópont adatokat a konfigurációs kódjának módosítása nélkül.
 
@@ -348,12 +352,12 @@ A build lépés a egység tesztek fut a Microsoft megvizsgálta a korábbi Peste
 
 1. Adja hozzá a következő sorok **tartalma**:
 
-    ```
-    initiate.ps1
-    **\deploy.ps1
-    **\Acceptance\**
-    **\Integration\**
-    ```
+   ```
+   initiate.ps1
+   **\deploy.ps1
+   **\Acceptance\**
+   **\Integration\**
+   ```
 
 1. Állítsa be **TargetFolder** számára `$(Build.ArtifactStagingDirectory)\`
 
