@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: Új forgatókönyvek és funkciók a WMF 5.1
-ms.openlocfilehash: 77b439e61c5802f8ddbc4a0f39923cc8c0c36fe9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
+ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190315"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090363"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Új forgatókönyvek és funkciók a WMF 5.1
 
@@ -25,12 +25,12 @@ Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhet
 
 - [Határozza meg a PowerShell használatával $PSVersionTable futó kiadása](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Get-Module eredmény által PSEdition paraméter használatával CompatiblePSEditions szűrése](/powershell/module/microsoft.powershell.core/get-module)
-- [Megakadályozza a parancsfájl végrehajtása, kivéve, ha egy kompatibilis PowerShell kiadásán futtatása](/powershell/gallery/psget/script/scriptwithpseditionsupport)
-- [A modul kompatibilitási adott PowerShell verziókra deklarálható](/powershell/gallery/psget/module/modulewithpseditionsupport)
+- [Megakadályozza a parancsfájl végrehajtása, kivéve, ha egy kompatibilis PowerShell kiadásán futtatása](/powershell/gallery/concepts/script-psedition-support)
+- [A modul kompatibilitási adott PowerShell verziókra deklarálható](/powershell/gallery/concepts/module-psedition-support)
 
 ## <a name="catalog-cmdlets"></a>Katalógus-parancsmagok
 
-Két új parancsmagokkal bővült a a [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) modul; ezek létrehozása és a Windows katalógusban fájlok érvényesítése.
+Két új parancsmagokkal bővült a a [Microsoft.PowerShell.Security](/powershell/module/microsoft.powershell.security) modul; ezek létrehozása és a Windows katalógusban fájlok érvényesítése.
 
 ### <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
@@ -57,7 +57,7 @@ Ez a katalógus fájlt hoz létre.
 
 ![](../images/CatalogFile2.jpg)
 
-Katalógusfájlt (Pester.cat a fenti példában) sértetlenségének ellenőrzéséhez használatával írja alá [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) parancsmag.
+Katalógusfájlt (Pester.cat a fenti példában) sértetlenségének ellenőrzéséhez használatával írja alá [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) parancsmag.
 
 ### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
@@ -73,7 +73,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 Ez a parancsmag összehasonlítja a fájlok kivonatok és azok relatív elérési utak található *katalógus* az azokat a *lemez*.
 Ha a fájlkivonat és elérési utak bármely eltérést észlel a állapotának adja vissza *ValidationFailed*.
 Felhasználók használatával kérheti le ezt az információt a *-részletes* paraméter.
-Azt is állapotát jeleníti meg az aláíró katalógust a *aláírás* tulajdonság, amely egyenértékű hívása [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) parancsmag a katalógus fájlra.
+Azt is állapotát jeleníti meg az aláíró katalógust a *aláírás* tulajdonság, amely egyenértékű hívása [Get-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Get-AuthenticodeSignature) parancsmag a katalógus fájlra.
 Felhasználók is hagyhatja a fájl ellenőrzésekor használatával a *- FilesToSkip* paraméter.
 
 ## <a name="module-analysis-cache"></a>A modul elemzés gyorsítótár
@@ -115,7 +115,7 @@ Adjon meg egy adott modulban verziót; semmilyen módon nem volt korábban Ha t�
 
 A WMF 5.1:
 
-- Használhat [ModuleSpecification konstruktor (hibás)](https://msdn.microsoft.com/library/jj136290).
+- Használhat [ModuleSpecification konstruktor (hibás)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 A kivonattábla formátuma, `Get-Module -FullyQualifiedName`.
 
 **Példa:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
