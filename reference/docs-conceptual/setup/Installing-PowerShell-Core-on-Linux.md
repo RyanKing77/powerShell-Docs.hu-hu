@@ -21,6 +21,21 @@ A csomag telepítése után futtassa `pwsh` terminálról.
 [lai]: #linux-appimage
 [tar]: #binary-archives
 
+## <a name="installing-preview-releases"></a>Előzetes kiadások telepítése
+
+PowerShell Core előzetes kiadás egy csomag tárház keresztül Linux telepítésekor a csomag nevét a változik `powershell` való `powershell-preview`.
+
+Közvetlen letöltési keresztül telepítése nem változik, a fájl neve eltérő.
+
+Íme egy tábla a parancsok a különböző csomag-kezelők használatával stabil és preview-csomagok:
+
+|Distrobution(s)|Stabil parancs | Előzetes parancs |
+|---------------|---------------|-----------------|
+| Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| openSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
+| Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+
 ## <a name="ubuntu-1404"></a>Ubuntu 14.04
 
 ### <a name="installation-via-package-repository---ubuntu-1404"></a>Telepítési csomag tárház - Ubuntu 14.04 keresztül
@@ -59,7 +74,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Ne feledje, hogy `dpkg -i` sikertelen lesz, és unmet függőségek; a következő parancs `apt-get install -f` megoldja-e, és majd befejezi a PowerShell-csomag konfigurálása.
+> [!NOTE]
+> A `dpkg -i` unmet függőségekkel rendelkező parancs meghiúsul.
+> A következő parancs `apt-get install -f` megoldja a problémát, majd a PowerShell-csomag konfigurálása befejeződik.
 
 ### <a name="uninstallation---ubuntu-1404"></a>Az Eltávolítás - Ubuntu 14.04
 
@@ -104,7 +121,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Ne feledje, hogy `dpkg -i` sikertelen lesz, és unmet függőségek; a következő parancs `apt-get install -f` megoldja-e, és majd befejezi a PowerShell-csomag konfigurálása.
+> [!NOTE]
+> A `dpkg -i` unmet függőségekkel rendelkező parancs meghiúsul.
+> A következő parancs `apt-get install -f` megoldja a problémát, majd a PowerShell-csomag konfigurálása befejeződik.
 
 ### <a name="uninstallation---ubuntu-1604"></a>Az Eltávolítás - Ubuntu 16.04
 
@@ -114,7 +133,8 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1710"></a>Ubuntu 17.10
 
-> Megjegyzés: Az Ubuntu 18.04 támogatást kaptak után `6.1.0-preview.2`
+> [!NOTE]
+> Ubuntu 17.04 támogatása után lett hozzáadva. `6.1.0-preview.2`
 
 ### <a name="installation-via-package-repository---ubuntu-1710"></a>Telepítési csomag tárház - Ubuntu 17.10 keresztül
 
@@ -151,7 +171,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
 sudo apt-get install -f
 ```
 
-> Ne feledje, hogy `dpkg -i` sikertelen lesz, és unmet függőségek; a következő parancs `apt-get install -f` megoldja-e, és majd befejezi a PowerShell-csomag konfigurálása.
+> [!NOTE]
+> A `dpkg -i` unmet függőségekkel rendelkező parancs meghiúsul.
+> A következő parancs `apt-get install -f` megoldja a problémát, majd a PowerShell-csomag konfigurálása befejeződik.
 
 ### <a name="uninstallation---ubuntu-1710"></a>Az Eltávolítás - Ubuntu 17.10
 
@@ -161,7 +183,8 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
-> Megjegyzés: Az Ubuntu 18.04 támogatást kaptak után `6.1.0-preview.2`
+> [!NOTE]
+> Ubuntu 18.04 támogatása után lett hozzáadva. `6.1.0-preview.2`
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Telepítési csomag tárház - Ubuntu 18.04 keresztül
 
@@ -198,7 +221,9 @@ sudo dpkg -i powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> Ne feledje, hogy `dpkg -i` sikertelen lesz, és unmet függőségek; a következő parancs `apt-get install -f` megoldja-e, és majd befejezi a PowerShell-csomag konfigurálása.
+> [!NOTE]
+> A `dpkg -i` unmet függőségekkel rendelkező parancs meghiúsul.
+> A következő parancs `apt-get install -f` megoldja a problémát, majd a PowerShell-csomag konfigurálása befejeződik.
 
 ### <a name="uninstallation---ubuntu-1710"></a>Az Eltávolítás - Ubuntu 17.10
 
@@ -248,8 +273,8 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> Ne feledje, hogy `dpkg -i` unmet függőségekkel rendelkező sikertelen lesz.
-> A következő parancs `apt-get install -f` megoldja-e, és majd befejezi a PowerShell-csomag konfigurálása.
+> A `dpkg -i` unmet függőségekkel rendelkező parancs meghiúsul.
+> A következő parancs `apt-get install -f` megoldja a problémát, majd a PowerShell-csomag konfigurálása befejeződik.
 
 ### <a name="uninstallation---debian-8"></a>Az Eltávolítás - Debian 8
 
@@ -298,10 +323,6 @@ sudo dpkg -i powershell_6.0.2-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-> [!NOTE]
-> Ne feledje, hogy `dpkg -i` unmet függőségekkel rendelkező sikertelen lesz.
-> A következő parancs `apt-get install -f` megoldja-e, és majd befejezi a PowerShell-csomag konfigurálása.
-
 ### <a name="uninstallation---debian-9"></a>Az Eltávolítás - Debian 9
 
 ```sh
@@ -310,6 +331,7 @@ sudo apt-get remove powershell
 
 ## <a name="centos-7"></a>CentOS 7
 
+> [!NOTE]
 > Ez a csomag is működik-e az Oracle Linux 7.
 
 ### <a name="installation-via-package-repository-preferred---centos-7"></a>Telepítési csomag tárház (ajánlott) – CentOS 7 keresztül
@@ -396,22 +418,21 @@ sudo yum remove powershell
 
 ## <a name="opensuse-422"></a>OpenSUSE 42.2
 
-> [!NOTE]
-> PowerShell központ telepítésekor `zypper` előfordulhat, hogy a következő hiba jelentését:
->
-> ```Output
-> Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
->  Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
->  Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
-> ```
->
-> Ebben az esetben ellenőrizze, hogy a kompatibilis `libcurl` könyvtár megtalálható úgy, hogy a következő parancsot a jeleníti meg a `libcurl4` csomag telepítve:
->
-> ```sh
-> zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
-> ```
->
-> Válassza ki a `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` megoldás a PowerShell csomag telepítésekor.
+PowerShell központ telepítésekor `zypper` előfordulhat, hogy a következő hiba jelentését:
+
+```Output
+Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
+ Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
+ Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+```
+
+Ebben az esetben ellenőrizze, hogy a kompatibilis `libcurl` könyvtár megtalálható úgy, hogy a következő parancsot a jeleníti meg a `libcurl4` csomag telepítve:
+
+```sh
+zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
+```
+
+Válassza ki a `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` megoldás a PowerShell csomag telepítésekor.
 
 ### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Telepítési csomag tárház (ajánlott) - OpenSUSE 42.2 keresztül
 
@@ -458,7 +479,8 @@ sudo zypper remove powershell
 
 ## <a name="fedora"></a>Fedora
 
-> Vegye figyelembe, Fedora 28 csak PowerShell Core 6.1-es és újabb támogatott.
+> [!NOTE]
+> Fedora 28 csak akkor támogatott, a PowerShell Core 6.1 vagy újabb.
 
 ### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Telepítési csomag tárház (ajánlott) - Fedora 27 Fedora 28 keresztül
 
@@ -510,7 +532,10 @@ sudo dnf remove powershell
 
 ## <a name="arch-linux"></a>Linux architektúrája
 
-PowerShell érhető el a [Linux architektúrája][] felhasználói tárház (AUR).
+> [!NOTE]
+> Emelőkaros funkció kísérleti.
+
+PowerShell érhető el a [architektúrája Linux][] felhasználói tárház (AUR).
 
 * Az összeállítható a [legújabb címkézett kiadás][arch-release]
 * Az összeállítható a [fő legújabb véglegesítési][arch-git]
@@ -520,12 +545,15 @@ A AUR csomagok karbantartása közösségi – nincs hivatalos támogatás.
 
 A csomagok telepítése a AUR a további információkért lásd: a [architektúrája Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) vagy a közösségi [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Linux architektúrája]: https://www.archlinux.org/download/
+[architektúrája Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
 ## <a name="linux-appimage"></a>Linux AppImage
+
+> [!NOTE]
+> AppImage funkció kísérleti
 
 A legutóbbi Linux-eloszlás használatával töltse le a AppImage `powershell-6.0.1-x86_64.AppImage` a a [kiadott][] a Linux-gépek oldalon.
 
@@ -543,6 +571,9 @@ Ez a csomag, amely a felhasználó a Linux-disztribúció függetlenül működi
 [appimage]: http://appimage.org/
 
 ## <a name="kali"></a>Kali
+
+> [!NOTE]
+> Kali funkció kísérleti.
 
 ### <a name="installation"></a>Telepítés
 
@@ -579,6 +610,9 @@ sudo dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 ```
 
 ## <a name="raspbian"></a>Raspbian
+
+> [!NOTE]
+> Raspbian funkció kísérleti.
 
 PowerShell jelenleg csak Raspbian Stretch támogatott.
 

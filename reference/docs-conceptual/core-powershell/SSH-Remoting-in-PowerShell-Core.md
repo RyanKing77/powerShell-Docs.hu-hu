@@ -42,7 +42,7 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
 
-1. Telepítse a legújabb [Win32 OpenSSH] GitHub használatával felépíteni a [Telepítés] utasításokat
+1. Telepítse a legújabb [Win32 OpenSSH] GitHub használatával felépíteni a [telepítési] utasításokat
 1. A Win32 OpenSSH telepítési helyére sshd_config fájl szerkesztése
     - Győződjön meg arról, hogy a jelszó-hitelesítés engedélyezve van
 
@@ -54,6 +54,22 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
 
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+    ```
+    
+    > [!NOTE]
+    Hogy programhiba van a protokoll OpenSSH for Windows, amely megakadályozza, hogy a tárolóhelyek alrendszer végrehajtható elérési utak használata.
+    Lásd: [további információt a Githubon probléma](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    
+    Egy megoldás létrehozása a Powershell telepítési könyvtárába, amely nem tartalmaz szóközöket egy symlink:
+    
+    ```powershell
+    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    és alrendszerben írja be:
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
     ```
 
     - Opcionálisan a hitelesítés engedélyezése
@@ -111,7 +127,7 @@ Továbbá szüksége lesz jelszóalapú hitelesítés, illetve opcionálisan kul
 
 1. Telepítse a legújabb [MacOS a PowerShell Core] összeállítása
     - Ellenőrizze, hogy engedélyezve van a SSH távelérése az alábbiak szerint:
-      - Nyissa meg `System Preferences`
+      - Nyissa meg a `System Preferences`
       - Kattintson a `Sharing`
       - Ellenőrizze `Remote Login` -üzenetnek kell megjelennie `Remote Login: On`
       - Megfelelő felhasználók hozzáférésének engedélyezése
@@ -245,5 +261,5 @@ GitCommitId                    v6.0.0-alpha.17
 [PowerShell Core Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
 [MacOS a PowerShell Core]: ../setup/installing-powershell-core-on-macos.md
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
-[Telepítés]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
+[telepítési]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
