@@ -1,5 +1,5 @@
 - name: Windows Management Framework (WMF) – áttekintés
-  href: README.md
+  href: overview.md
 - name: WMF 5.1
   href: 5.1/release-notes.md
   items:
@@ -183,7 +183,7 @@
               href: 5.0/feedback_clipboard.md
             - name: Convert-String
               href: 5.0/feedback_convertstring.md
-            - name: Strukturált objektumok karakterláncokból való kibontása és elemzése
+            - name: Strukturált objektumok sztringekből való kibontása és elemzése
               href: 5.0/feedback_convertfromString.md
             - name: Format-Hex
               href: 5.0/feedback_formathex.md
