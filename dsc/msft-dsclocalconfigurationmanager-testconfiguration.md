@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Az MSFT_DSCLocalConfigurationManager osztály TestConfiguration metódusa
-ms.openlocfilehash: 2df04d317bd5e7a5c2a713d92be57c5c9a9f5e8c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d746832b01310f43a7aae33dd0fa70c0928bb3e0
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219011"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893926"
 ---
 # <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály TestConfiguration metódusa
 
-A konfigurációs dokumentum küld a felügyelt csomóponthoz, és a jelenlegi konfiguráció alapján a dokumentum ellenőrzi.
+A konfigurációs dokumentum a felügyelt csomópont küld, és ellenőrzi az aktuális konfiguráció ellen a dokumentumot.
 
-<a name="syntax"></a>Szintaxis
-------
+## <a name="syntax"></a>Szintaxis
 
 ```mof
 uint32 TestConfiguration(
@@ -25,34 +24,30 @@ uint32 TestConfiguration(
 );
 ```
 
-<a name="parameters"></a>Paraméterek
-----------
+## <a name="parameters"></a>Paraméterek
 
-*configurationData* \[a\] a confuguration környezet adatait.
+*configurationData* \[a\] confuguration a környezet adatait.
 
-*InDesiredState* \[kimenő\] a return határozza meg, hogy a felügyelt csomóponthoz a konfigurációs dokumentum által meghatározott állapotban.
+*InDesiredState* \[ki\] lépjen vissza, a Megadja, hogy a kezelt csomópontok a konfigurációs dokumentum által meghatározott állapotban van-e.
 
-*ResourcesInDesiredState* \[kimenő\] return tartalmaz beágyazott példányának a **MSFT_ResourceInDesiredState** osztály, amely meghatározza a kívánt állapot-erőforrást.
+*ResourcesInDesiredState* \[ki\] return tartalmaz egy beágyazott példányát a **MSFT_ResourceInDesiredState** osztály, amely meghatározza az erőforrást, amely a kívánt állapotban.
 
-*ResourcesNotInDesiredState* \[kimenő\] return tartalmaz beágyazott példányának a **MSFT_ResourceNotInDesiredState** osztály, amely meghatározza az erőforrásokat, amelyek nem a megfelelő állapotban van.
+*ResourcesNotInDesiredState* \[ki\] return tartalmaz egy beágyazott példányát a **MSFT_ResourceNotInDesiredState** osztály, amely megadja az erőforrások, amelyek nem a kívánt állapotban.
 
-## <a name="return-value"></a>Visszatérési érték
-------------
+## <a name="return-value"></a>Vrácená hodnota
 
-Sikeres művelet; nulla értéket ad vissza Ellenkező esetben hibakódot.
+Sikeres; a nulla értéket ad vissza egyéb esetben egy hibakódot ad vissza.
 
 ## <a name="remarks"></a>Megjegyzések
 
-Ez a statikus módszer.
+Ez a statická metoda.
 
 ## <a name="requirements"></a>Követelmények
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Lásd még:
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

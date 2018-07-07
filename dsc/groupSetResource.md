@@ -1,24 +1,25 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 description: Lehetővé teszi a célcsomóponton helyi csoportok kezelése.
-title: A DSC GroupSet erőforrás
-ms.openlocfilehash: 3d6fdcaef6053964d3fb3b709a5263d291a7c840
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: DSC GroupSet erőforrás
+ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222353"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892426"
 ---
-# <a name="dsc-groupset-resource"></a>A DSC GroupSet erőforrás
+# <a name="dsc-groupset-resource"></a>DSC GroupSet erőforrás
 
-> Vonatkozik: Windows Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows Windows PowerShell 5.0
 
-A **GroupSet** erőforrás a Windows PowerShell szükséges konfiguráló (DSC) lehetővé teszi a célcsomóponton helyi csoportok kezelése. Az erőforrás egy [összetett erőforrás](authoringResourceComposite.md) , amely meghívja a [erőforrás csoport](groupResource.md) minden egyes megadott csoport számára a `GroupName` paraméter.
+A **GroupSet** erőforrás a Windows PowerShell Desired State Configuration (DSC) lehetővé teszi a célcsomóponton helyi csoportok kezelése. Ez az erőforrás egy [összetett erőforrás](authoringResourceComposite.md) , amely meghívja a [erőforrás csoport](groupResource.md) minden egyes megadott csoport számára a `GroupName` paraméter.
 
-Adja hozzá és/vagy távolítsa el a egynél több csoport tagjai ugyanazt a listát, egynél több csoport eltávolítása vagy vegyen fel egy tagok ugyanazt a listát egynél több csoportot használni ehhez az erőforráshoz.
+Akkor használja ezt az erőforrást, ha hozzáadása és/vagy távolítsa el a több csoport tagjai ugyanazt a listát, egynél több csoport eltávolítása, vagy adja hozzá ugyanazt a listát egynél több csoport tagjai.
 
-##<a name="syntax"></a>Szintaxis ##
+## <a name="syntax"></a>Szintaxis
+
 ```
 Group [string] #ResourceName
 {
@@ -35,17 +36,17 @@ Group [string] #ResourceName
 
 |  Tulajdonság  |  Leírás   |
 |---|---|
-| Csoportnév| A csoportokat, amelyekhez egy adott állapot biztosításához nevei.|
-| MembersToExclude| Ez a tulajdonság segítségével távolítsa el a meglévő a csoportok tagságának tagot. Ez a tulajdonság értéke a következő formában karakterláncok *tartomány*\\*felhasználónév*. Ha ez a tulajdonság konfigurációban, ne használja a **tagok** tulajdonság. Ennek során hibát adnak.|
-| hitelesítő adatok| A távoli erőforrások eléréséhez szükséges hitelesítő adatokat. **Megjegyzés:**: ennek a fióknak rendelkeznie kell a megfelelő Active Directory-engedélyek minden nem helyi fiók hozzáadása a csoporthoz; ellenkező esetben hiba történik.
-| Győződjön meg arról| Azt jelzi, hogy a csoportok is léteznek. Állítsa be ezt a tulajdonságot "Hiányzik", annak érdekében, hogy a csoportok nem léteznek. Azt, hogy "" (az alapértelmezett érték) beállítást biztosítja, hogy a csoportok is léteznek.|
-| Tagok| Ez a tulajdonság használatával az aktuális csoporttagság cserélje le a megadott tagot. Ez a tulajdonság értéke a következő formában karakterláncok *tartomány*\\*felhasználónév*. Ha ez a tulajdonság konfigurációban, nem használja a **MembersToExclude** vagy **MembersToInclude** tulajdonság. Ennek során hibát adnak.|
-| MembersToInclude| Ez a tulajdonság használatával tagok hozzáadása a meglévő csoport tagságát. Ez a tulajdonság értéke a következő formában karakterláncok *tartomány*\\*felhasználónév*. Ha ez a tulajdonság konfigurációban, ne használja a **tagok** tulajdonság. Ennek során hibát adnak.|
-| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, szintaxisa a következő e tulajdonság használatával "DependsOn ="[ A ResourceType] ResourceName"".|
+| Csoportnév| A csoportok, amelyhez szeretne biztosítani adott állapotú nevei.|
+| MembersToExclude| Ez a tulajdonság használatával a meglévő tagság a csoportok tagjainak eltávolítását. Ez a tulajdonság értéke az űrlap karakterláncok tömbje *tartomány*\\*felhasználónév*. Ha ezzel a tulajdonsággal konfigurációban, ne használja a **tagok** tulajdonság. Így generál hibát.|
+| Hitelesítő adatok| A távoli erőforrások eléréséhez szükséges hitelesítő adatokat. **Megjegyzés:**: ennek a fióknak rendelkeznie kell a megfelelő Active Directory-engedélyek minden nem helyi fiók hozzáadása a csoporthoz; ellenkező esetben a rendszer hibát fog jelezni.
+| Győződjön meg, hogy| Azt jelzi, hogy a csoport létezik. Állítsa be ezt a tulajdonságot a "Hiányzó", győződjön meg arról, hogy a csoportok nem létezik. Azt, hogy "" (az alapértelmezett érték) beállítás biztosítja, hogy létezik-e a csoportok.|
+| Tagok| Ez a tulajdonság használatával az aktuális csoport tagságának cserélje le a meghatározott tagokat. Ez a tulajdonság értéke az űrlap karakterláncok tömbje *tartomány*\\*felhasználónév*. Ezzel a tulajdonsággal konfigurációban, ha nem használja a **MembersToExclude** vagy **MembersToInclude** tulajdonság. Így generál hibát.|
+| MembersToInclude| Ez a tulajdonság használatával tagok hozzáadása a meglévő tagság a csoport. Ez a tulajdonság értéke az űrlap karakterláncok tömbje *tartomány*\\*felhasználónév*. Ha ezzel a tulajdonsággal konfigurációban, ne használja a **tagok** tulajdonság. Így generál hibát.|
+| DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója parancsfájl-blokk futtatni kívánt első az __ResourceName__ és a típusa __ResourceType__, esetén ez a tulajdonság használatával "DependsOn"[a = Erőforrástípus] ResourceName"s".|
 
-## <a name="example-1"></a>1. példa
+## <a name="example-1-ensuring-groups-are-present"></a>1. példa: Biztosítása csoportok találhatók
 
-A következő példa bemutatja, hogyan annak érdekében, hogy jelen-e "myGroup" és "myOtherGroup" két csoportot.
+Az alábbi példa bemutatja, hogyan győződjön meg arról, hogy telepítve-e két "myGroup" és "myOtherGroup" csoportot.
 
 ```powershell
 configuration GroupSetTest
@@ -73,8 +74,8 @@ $cd = @{
     )
 }
 
-
 GroupSetTest -ConfigurationData $cd
 ```
 
->**Megjegyzés:** ebben a példában egyszerű szöveges hitelesítő adatokat használja az egyszerűség érdekében. A konfigurációs MOF-fájlt a hitelesítő adatok titkosításához kapcsolatos információkért lásd: [biztonságossá tétele a MOF-fájlt](secureMOF.md).
+> [!NOTE] 
+> Ebben a példában az egyszerűség kedvéért egy egyszerű szöveges hitelesítő adatokat használ. A konfigurációs MOF-fájlban található hitelesítő adatainak titkosítása kapcsolatos információkért lásd: [a MOF-fájl biztonságossá tétele](secureMOF.md).

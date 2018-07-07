@@ -1,23 +1,21 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Az MSFT_DSCLocalConfigurationManager osztály ApplyConfiguration metódusa
-ms.openlocfilehash: ef8488246b2c8614452d32009e45535f0ff2e184
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 559ff1793a18e28dad2f176bdb20eb53bc08630d
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222139"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892612"
 ---
 # <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály ApplyConfiguration metódusa
 
-A konfigurációs ügynök használja a beállítások, amelyek függőben van.
+A konfigurációs ügynök használja a alkalmazni a konfigurációt, amely függőben van.
 
-Nincs függőben lévő konfiguráció, ha ez a módszer az aktuális konfigurációt újra alkalmazza.
-
+Ha nem tartozik függőben lévő konfiguráció, ezt a módszert a jelenlegi konfiguráció újra alkalmazza.
 
 ## <a name="syntax"></a>Szintaxis
-------
 
 ```mof
 uint32 ApplyConfiguration(
@@ -26,27 +24,23 @@ uint32 ApplyConfiguration(
 ```
 
 ## <a name="parameters"></a>Paraméterek
-----------
 
-*kényszerített* \[a\] ebben **igaz**, a jelenlegi konfiguráció megváltoztatni, még akkor is, ha egy konfigurációjának kiszámítása függőben van.
+*kényszerített* \[a\] -e az **igaz**, a jelenlegi konfiguráció vissza, akkor is, ha egy függőben lévő konfigurációs van.
 
-## <a name="return-value"></a>Visszatérési érték
-------------
+## <a name="return-value"></a>Vrácená hodnota
 
-Sikeres művelet; nulla értéket ad vissza Ellenkező esetben hibakódot.
+Sikeres; a nulla értéket ad vissza egyéb esetben egy hibakódot ad vissza.
 
 ## <a name="remarks"></a>Megjegyzések
 
-Ez a statikus módszer.
+Ez a statická metoda.
 
 ## <a name="requirements"></a>Követelmények
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Lásd még:
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

@@ -1,67 +1,67 @@
 ---
 ms.date: 06/12/2017
 contributor: manikb
-keywords: gyűjtemény, a powershell, a parancsmag, a psget
+keywords: katalógus, powershell, a parancsmag, psget
 title: A PowerShellGet telepítése
-ms.openlocfilehash: 35be7d02ea856ea39218f05d32b43c60fa1bd53e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c385f7fbf6b688a11face9c3ebf4e6475a7b4c33
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219351"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893960"
 ---
 # <a name="installing-powershellget"></a>A PowerShellGet telepítése
 
-## <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a>PowerShellGet az egy beépített modul, a következő kiadásokban
+## <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a>A PowerShellGet a következő kiadásokban a beépített modul létrehozása
 
-- [Windows 10](https://www.microsoft.com/windows/get-windows-10) vagy újabb verzió
-- [Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/windows-server-2016) vagy újabb verzió
-- [A Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) vagy újabb verzió
-- [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
+- [Windows 10-es](https://www.microsoft.com/en-us/windows) vagy újabb
+- [A Windows Server 2016](/windows-server/windows-server) vagy újabb
+- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) vagy újabb
+- [PowerShell 6-os](https://github.com/PowerShell/PowerShell/releases)
 
-## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>PowerShell-verziók 3.0 és 4.0 PowerShellGet modul beolvasása
+## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>PowerShell-verziók 3.0 és 4.0-s verzióját a PowerShellGet modul beolvasása
 
-- [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
+- [PackageManagement MSI](https://www.microsoft.com/en-us/download/details.aspx?id=51451)
 
-## <a name="get-the-latest-version-from-powershell-gallery"></a>A legújabb verzió letöltéséhez a PowerShell-galériából
+## <a name="get-the-latest-version-from-powershell-gallery"></a>PowerShell-galériából a legújabb verzió letöltése
 
-- PowerShellGet frissítés előtti mindig telepítse a legújabb Nuget-szolgáltató. Ehhez futtassa a következő egy rendszergazda jogú PowerShell-munkamenetben.
+- A PowerShellGet-frissítése előtt mindig a legújabb Nuget-szolgáltató kell telepítenie. Ehhez futtassa a következőt egy emelt szintű PowerShell-munkamenetet.
 
-```powershell
-Install-PackageProvider Nuget –Force
-Exit
-```
+  ```powershell
+  Install-PackageProvider Nuget –Force
+  Exit
+  ```
 
-### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>A legújabb PowerShellGet telepítése rendszerekhez PowerShell 5.0 (vagy újabb)
+### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>A legújabb PowerShellGet telepítése a PowerShell 5.0-s (vagy újabb) rendszerekhez
 
-- Ehhez a Windows 10, Windows Server 2016, a rendszer WMF 5.0 vagy telepített 5.1 vagy 6-os PowerShell, a rendszer a következő parancsokat egy rendszergazda jogú PowerShell-munkamenetben.
+- Ehhez a Windows 10, Windows Server 2016, bármilyen rendszer WMF 5.0-s vagy 5.1 telepítve vagy bármely PowerShell 6-os, a rendszer a következő parancsokat egy emelt szintű PowerShell-munkamenetből.
 
-```powershell
-Install-Module –Name PowerShellGet –Force
-Exit
-```
+  ```powershell
+  Install-Module –Name PowerShellGet –Force
+  Exit
+  ```
 
-- Újabb verziókra frissítés-modul használható.
+- Használat `Update-Module` beolvasni az újabb verziók.
 
-```powershell
-Update-Module -Name PowerShellGet
-Exit
-```
+  ```powershell
+  Update-Module -Name PowerShellGet
+  Exit
+  ```
 
-### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpgomicrosoftcomfwlinklinkid746217clcid0x409"></a>PowerShell 3 vagy PowerShell 4 operációs rendszer, hogy telepítette a [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
+### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpswwwmicrosoftcomen-usdownloaddetailsaspxid51451"></a>PowerShell 3 vagy 4 operációs rendszer, hogy telepítette a [PackageManagement MSI](https://www.microsoft.com/en-us/download/details.aspx?id=51451)
 
-- Alább PowerShellGet parancsmagot egy rendszergazda jogú PowerShell-munkamenetben egy helyi könyvtárba menti a modulok használata
+- Használja a PowerShellGet parancsmagot egy emelt szintű PowerShell-munkamenetből a modulok egy helyi könyvtárba menteni
 
-```powershell
-Save-Module PowerShellGet -Path C:\LocalFolder
-Exit
-```
+  ```powershell
+  Save-Module PowerShellGet -Path C:\LocalFolder
+  Exit
+  ```
 
-- Győződjön meg arról, hogy PowerShellGet és PackageManagment modulok nem töltődnek egyéb folyamatok.
-- Törli a tartalmát `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` és `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` mappák.
-- Nyissa meg újra a PS-konzolt emelt szintű engedélyekkel, majd futtassa a következő parancsokat.
+- Győződjön meg arról, hogy a PowerShellGet és PackageManagment modulok nem töltődnek be más folyamatokban.
+- Törli a tartalmát `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` és `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` mappákat.
+- Nyissa meg újra a PS-konzol emelt szintű engedélyekkel, majd futtassa a következő parancsokat.
 
-```powershell
-Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
-Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
-```
+  ```powershell
+  Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
+  Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+  ```

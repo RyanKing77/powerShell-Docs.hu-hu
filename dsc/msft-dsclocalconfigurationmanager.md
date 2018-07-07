@@ -1,24 +1,23 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: MSFT_DSCLocalConfigurationManager osztály
-ms.openlocfilehash: 615f2998b11a0a927d3868d852e0d408f500c86d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188835"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892273"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager osztály
 
-A helyi Configuration Manager (LCM), amely a konfigurációs fájlok állapotát vezérli, és a konfigurációs ügynök használja a beállítások alkalmazásához.
+A helyi Configuration Manager (LCM) Konfigurálása, amely az államok konfigurációs fájlja vezérli, és a konfiguráció alkalmazása a konfigurációs ügynök használatával.
 
-A következő szintaxist az egyszerűsített Managed Object Format (MOF) kódból, és tartalmazza az összes örökölt tulajdonságait.
+A következő szintaxist Managed Object Format (MOF) kódból egyszerűsödött, és tartalmazza az összes örökölt tulajdonságait.
 
 ## <a name="syntax"></a>Szintaxis
-------
 
-``` syntax
+```
 [ClassVersion("1.0.0"), dynamic, provider("dsccore"), AMENDMENT]
 class MSFT_DSCLocalConfigurationManager
 {
@@ -26,11 +25,10 @@ class MSFT_DSCLocalConfigurationManager
 ```
 
 ## <a name="members"></a>Tagok
--------
 
-A **MSFT_DSCLocalConfigurationManager** osztály a következő tagokkal rendelkezik:
+A **MSFT_DSCLocalConfigurationManager** osztályt a következő tagja van:
 
--   [Módszerek] []
+- [Módszerek] []
 
 ### <a name="methods"></a>Metódusok
 
@@ -38,32 +36,28 @@ A **MSFT_DSCLocalConfigurationManager** osztály rendelkezik, ezek a módszerek.
 
 |Módszer |Leírás |
 |:--- |:---|
-| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| A konfigurációs ügynök használja a beállítások, amelyek függőben van.|
+| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| A konfigurációs ügynök használja a alkalmazni a konfigurációt, amely függőben van.|
 | [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Letiltja a DSC-erőforrás hibakeresés.|
-| [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| A DSC-erőforrás hibakeresésének engedélyezése.|
-| [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| A konfigurációs dokumentum küld a felügyelt csomóponthoz, és használja a **beolvasása** módszert a beállítások a konfigurációs ügynök.|
-| [GetConfigurationResultOutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| Egy adott feladat vonatkozó konfigurációs ügynök kimenetének beolvasása.|
-| [GetConfigurationStatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| A konfigurációs állapotának előzménye beolvasása.|
-| [GetMetaConfiguration](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)| Lekérdezi a megadott konfigurációs ügynök szabályozzák, hogy LCM beállításokat.|
+| [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Lehetővé teszi a DSC-erőforrás hibakeresés.|
+| [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| A konfigurációs dokumentum küldése a felügyelt csomóponthoz, és használja a **első** metódus a alkalmazni a konfigurációt a konfigurációs ügynök.|
+| [GetConfigurationResultOutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| Lekéri egy adott feladat vonatkozó konfigurációs ügynök kimenetét.|
+| [GetConfigurationStatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| A konfigurációs ügyfélállapot előzményeinek lekérése.|
+| [GetMetaConfiguration](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)| Szabályozhatja a konfigurációs ügynök LCM beállítások beolvasása.|
 | [PerformRequiredConfigurationChecks](msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)| A konzisztencia-ellenőrzés indítása.|
-| [RemoveConfiguration](msft-dsclocalconfigurationmanager-removeconfiguration.md)| Eltávolítja a konfigurációs fájlok.|
-| [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| Közvetlenül meghívja a **beolvasása** DSC erőforrás metódust.|
-| [erőforráskészlete](msft-dsclocalconfigurationmanager-resourceset.md)| Közvetlenül meghívja a **beállítása** DSC erőforrás metódust.|
-| [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Közvetlenül meghívja a **teszt** DSC erőforrás metódust.|
-| [Visszaállítás](msft-dsclocalconfigurationmanager-rollback.md)| Vissza az előző konfigurációt összesíti.|
-| [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| A konfigurációs dokumentum küld a felügyelt csomóponthoz, és menti a függőben lévő módosítása.|
-| [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| A konfigurációs dokumentum küld a felügyelt csomóponthoz, és a konfigurációs ügynök segítségével a konfiguráció alkalmazásához.|
-| [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| A konfigurációs dokumentum küldeni a felügyelt csomóponthoz, és indítsa el a beállítások a konfigurációs ügynök használatával. Használható GetConfigurationResultOutput eredmény kimeneti beolvasásához.|
-| [SendMetaConfigurationApply](msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)| Beállítja a LCM beállítások konfigurációs ügynök használt.|
-| [StopConfiguration](msft-dsclocalconfigurationmanager-stopconfiguration.md)| A folyamatban lévő konfigurációs leáll.|
-| [TestConfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| A konfigurációs dokumentum küld a felügyelt csomóponthoz, és a jelenlegi konfiguráció alapján a dokumentum ellenőrzi.|
-
-
-
-
+| [RemoveConfiguration](msft-dsclocalconfigurationmanager-removeconfiguration.md)| Eltávolítja a konfigurációs fájlokat.|
+| [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| Közvetlenül meghívja a **első** metódus a DSC-erőforrás.|
+| [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Közvetlenül meghívja a **beállítása** metódus a DSC-erőforrás.|
+| [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Közvetlenül meghívja a **teszt** metódus a DSC-erőforrás.|
+| [Visszaállítás](msft-dsclocalconfigurationmanager-rollback.md)| Vissza az előző konfigurációs tekercsben.|
+| [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| A konfigurációs dokumentum a felügyelt csomópont küld, és menti azt egy függőben lévő módosítást.|
+| [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| A konfigurációs dokumentum a felügyelt csomópont küld, és a konfigurációs ügynök használja a alkalmazni a konfigurációt.|
+| [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| A konfigurációs dokumentum küldése a felügyelt csomóponthoz, és indítsa el a alkalmazni a konfigurációt a konfigurációs ügynök használatával. GetConfigurationResultOutput használatával lekérheti az eredmény kimeneti.|
+| [SendMetaConfigurationApply](msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)| Az LCM beállítások, amelyek segítségével szabályozhatja a konfigurációs ügynök beállítása.|
+| [StopConfiguration](msft-dsclocalconfigurationmanager-stopconfiguration.md)| Leállítja a konfigurációt, hogy folyamatban van.|
+| [TestConfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| A konfigurációs dokumentum a felügyelt csomópont küld, és ellenőrzi az aktuális konfiguráció ellen a dokumentumot.|
 
 ## <a name="requirements"></a>Követelmények
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
+
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration

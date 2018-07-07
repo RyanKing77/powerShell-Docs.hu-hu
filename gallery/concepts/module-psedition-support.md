@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 contributor: manikb
-keywords: gyűjtemény, a powershell, a parancsmag, a psget
-title: Verzióval kompatibilis PowerShell modulok
-ms.openlocfilehash: fbbfda2f913d54c3e69c0724fea4d977923279c1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: katalógus, powershell, a parancsmag, psget
+title: Kompatibilis PowerShell-kiadások rendelkező modulok
+ms.openlocfilehash: 653cfa82be9d0150da8d8765c96e35be99497262
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189516"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892321"
 ---
-# <a name="modules-with-compatible-powershell-editions"></a>Verzióval kompatibilis PowerShell modulok
+# <a name="modules-with-compatible-powershell-editions"></a>Kompatibilis PowerShell-kiadások rendelkező modulok
 
 Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhető el, amelyek különböző szolgáltatáskészleteket és platformkompatibilitást kínálnak.
 
@@ -21,7 +21,9 @@ Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhet
 
 ```powershell
 $PSVersionTable
+```
 
+```output
 Name                           Value
 ----                           -----
 PSVersion                      5.1.14300.1000
@@ -36,48 +38,61 @@ SerializationVersion           1.1.0.1
 
 ## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a>A modulkészítők a CompatiblePSEditions moduljegyzékkulcs segítségével deklarálhatják, hogy a moduljaik mely PowerShell-kiadással vagy -kiadásokkal kompatibilisek. Ez a kulcs csak a PowerShell 5.1-es vagy újabb verzióin támogatott.
 
-*Megjegyzés:* után egy moduljegyzék CompatiblePSEditions a kulccsal van megadva, nem importálható-e a PowerShell korábbi verzióiban.
+> [!NOTE]
+> Miután egy moduljegyzék CompatiblePSEditions a kulccsal van megadva, nem importálható lesz PowerShell alacsonyabb verzióiban.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
 $ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
 $ModuleInfo.CompatiblePSEditions
+```
+
+```output
 Desktop
 Core
+```
 
+```powershell
 $ModuleInfo | Get-Member CompatiblePSEditions
+```
 
+```output
    TypeName: System.Management.Automation.PSModuleInfo
 
 Name                 MemberType Definition
 ----                 ---------- ----------
 CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] CompatiblePSEditions {get;}
-
 ```
 
 Az elérhető modulok listáját szűrheti a PowerShell-kiadás alapján.
 
 ```powershell
 Get-Module -ListAvailable -PSEdition Desktop
+```
 
+```output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
-
-Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
-Desktop
-Core
-
 ```
 
-## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>A modul szerzők tehet közzé egy egy modul a célcsoport-kezelési egyik vagy mindkét PowerShell-kiadások (asztali és mag)
+```powershell
+Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
+```
 
-Egy modul asztal és a Core kiadásában használható, az adott modul Szerző szükséges logika hozzáadása vagy RootModule vagy a moduljegyzékben $PSEdition változóval rendelkezik.
-Modulok rendelkezhet lefordított DLL-ek CoreCLR és a FullCLR célzó két csoportja.
-Az alábbiakban a néhány lehetőségek kiválasztásával becsomagolhatja a modul logikával megfelelő DLL-fájlok feltöltését.
+```output
+Desktop
+Core
+```
+
+## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>A modul szerzők teheti közzé egy egy modul a célcsoport-kezelési egyik vagy mindkét PowerShell-kiadások (asztalon és mag)
+
+Egy modul dolgozhat asztali és a Core kiadás, az adott modul Szerző hozzáadásához szükséges logikát, vagy a RootModule, vagy a moduljegyzékben $PSEdition változóval rendelkezik.
+Modulok lefordított DLL-ek CoreCLR-és FullCLR két készletnyi is rendelkezhet.
+Az alábbiakban a több, a modul megfelelő DLL betöltésére szolgáló logikai csomag lehetőség közül választhat.
 
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>1. lehetőség: Csomagolására hajthatja végre a több verziói és több a PowerShell modul
 
@@ -121,7 +136,7 @@ ModuleVersion = '1.6.1'
 
 #### <a name="contents-of-psscriptanalyzerpsm1-file"></a>PSScriptAnalyzer.psm1 fájl tartalma
 
-Alább logika betölti a szükséges szerelvényeket, attól függően, hogy a jelenlegi kiadása vagy verziója.
+Alább logikai betölti a szükséges szerelvényeket, attól függően, a jelenlegi kiadása vagy verziója.
 
 ```powershell
 #
@@ -159,11 +174,11 @@ $PSModule.OnRemove = {
 
 ### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>2. lehetőség: A psd1 kiterjesztésű fájl $PSEdition változót használja a megfelelő DLL-EK és a beágyazott/szükséges modulok betöltése
 
-PS 5.1-es vagy újabb a modul jegyzékfájl $PSEdition globális változó használata engedélyezett.
-Használja ezt a változót, modul Szerző értékeket adhat meg a feltételes modul jegyzékfájl. Korlátozott nyelvi módban, vagy egy adatszakasz $PSEdition változó lehet hivatkozni.
+A PS 5.1-es vagy újabb a modul jegyzékfájl $PSEdition globális változó használata engedélyezett.
+Használja ezt a változót, a modul Szerző értékeket adhat meg a feltételes modul jegyzékfájl. A korlátozott nyelvmód vagy adatok szakasz $PSEdition változó lehet hivatkozni.
 
-*Megjegyzés:* után egy moduljegyzék CompatiblePSEditions a kulccsal van megadva, vagy használja $PSEdition változót, akkor nem importálható PowerShell korábbi verzióiban.
-
+> [!NOTE]
+> Miután egy moduljegyzék a CompatiblePSEditions kulcs meg van adva, vagy $PSEdition változót használ, nem importálható lesz PowerShell alacsonyabb verzióiban.
 
 #### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>Minta modul jegyzékfájl CompatiblePSEditions kulccsal
 
@@ -203,9 +218,10 @@ else # Desktop
 #### <a name="module-contents"></a>A modul tartalma
 
 ```powershell
+dir -Recurse
+```
 
-PS C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions> dir -Recurse
-
+```output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
 Mode                LastWriteTime         Length Name
@@ -231,9 +247,9 @@ Mode                LastWriteTime         Length Name
 -a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl
 ```
 
-## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>PowerShell-galériában felhasználói is megtalálhassák egy adott kiadásán PowerShell támogatott listájához PSEdition_Desktop és PSEdition_Core címkék használatával.
+## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>PowerShell-galériából felhasználók egy adott PowerShell kiadás támogatott modulok listáját megtalálhatja, PSEdition_Desktop és PSEdition_Core címkék használatával.
 
-Modulok PSEdition_Desktop és PSEdition_Core címkék nélkül minősülnek PowerShell asztali változatában működnek.
+Modulok PSEdition_Desktop és PSEdition_Core címkék nélküli minősülnek jól működnek az PowerShell asztali verziója esetén.
 
 ```powershell
 
@@ -245,9 +261,10 @@ Find-Module -Tag PSEdition_Core
 
 ```
 
+## <a name="more-details"></a>További részletek
 
-## <a name="more-details"></a>További részletekért
+[PSEditions paraméterrel rendelkező parancsfájlok](script-psedition-support.md)
 
-- [PSEditions paraméterrel rendelkező parancsfájlok](script-psedition-support.md)
-- [Támogatja a PSEditions PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
-- [Frissítési moduljegyzék] (/powershell/module/powershellget/update-modulemanifest)
+[Pseditions paraméterrel támogatja a PowerShell-Galériabeli](../how-to/finding-items/searching-by-psedition.md)
+
+[Moduljegyzék frissítése](/powershell/module/powershellget/update-modulemanifest)

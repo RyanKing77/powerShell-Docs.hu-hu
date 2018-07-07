@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A Linux nxFileLine erőforrás DSC
-ms.openlocfilehash: 6b927839c23478aa9916a5d23836b31fccc58484
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: DSC, a Linux nxFileLine erőforrás
+ms.openlocfilehash: f2a989dd3a6746948e09ba94e279c02be8ebe2de
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219633"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893297"
 ---
-# <a name="dsc-for-linux-nxfileline-resource"></a>A Linux nxFileLine erőforrás DSC
+# <a name="dsc-for-linux-nxfileline-resource"></a>DSC, a Linux nxFileLine erőforrás
 
-A **nxFileLine** erőforrás a PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) gombra a konfigurációs fájlban lévő Linux csomópont sorait mechanizmust biztosít.
+A **nxFileLine** erőforrás a PowerShell Desired State Configuration (DSC) használatával kezelheti egy konfigurációs fájl egy Linux-csomóponton belül sorok mechanizmust biztosít.
 
 ## <a name="syntax"></a>Szintaxis
 
@@ -30,17 +30,17 @@ nxFileLine <string> #ResourceName
 
 |  Tulajdonság |  Leírás |
 |---|---|
-| fájl elérési útja| A fájl teljes elérési útja a célcsomóponton sorainak kezeléséhez.|
-| ContainsLine| Győződjön meg arról, hogy egy sort a fájl létezik. Ezt a sort a fájl is bővül, ha a fájl nem létezik. **ContainsLine** kötelező, de állítható be üres karakterlánc ("ContainsLine =" ") nincs szükség esetén.|
-| DoesNotContainPattern| A fájl nem létezhet sorok Reguláriskifejezés-mintának. Olyan sort, amely létezik a fájlban a reguláris kifejezésnek megfelelő a sort a fájl törlődik.|
-| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például ha a **azonosító** az erőforrás konfigurációs futtatni kívánt először parancsprogramblokkja **ResourceName** és annak típusa **ResourceType**, ez a szintaxis a tulajdonság `DependsOn = "[ResourceType]ResourceName"`.|
+| Fájl elérési útja| A fájl teljes elérési útja a célcsomóponton lévő sorok kezeléséhez.|
+| ContainsLine| Győződjön meg arról, hogy egy sort a fájl létezik. Ezt a sort a fájl is bővül, ha nem létezik a fájlban. **ContainsLine** kötelező, de egy üres karakterláncra állítható (`ContainsLine = ""`) Ha már nincs szükség.|
+| DoesNotContainPattern| A sorokat, amelyek a fájl nem létezhet Reguláriskifejezés-mintának. Olyan sort, amely létezik a fájlban a reguláris kifejezésnek megfelelő a sort a fájl törlődik.|
+| DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például ha a **azonosító** az erőforrás, amely a futtatni kívánt konfigurációs parancsprogram-blokkot első az **ResourceName** és a típusa **ResourceType**, ezzel esetén a tulajdonság `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Példa
 
-A példa bemutatja, hogyan használja a **nxFileLine** erőforrás konfigurálása a `/etc/sudoers` fájl, ezzel biztosítható, hogy a felhasználó: nem requiretty monuser van konfigurálva.
+Ebben a példában használatát mutatja be a **nxFileLine** erőforrás konfigurálása az `/etc/sudoers` fájl, biztosítva, hogy a felhasználó: monuser nem requiretty van konfigurálva.
 
-```
-Import-DSCResource -Module nx
+```powershell
+Import-DscResource -Module nx
 
 nxFileLine DoNotRequireTTY
 {

@@ -1,113 +1,117 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A kívánt állapot konfigurációs szolgáltatása (DSC) első lépései Linux rendszeren
-ms.openlocfilehash: 0534cede979eb2917adb608dba622539fe4bdc45
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: Ismerkedés a Desired State Configuration (DSC) rétegen a Linux rendszeren
+ms.openlocfilehash: d5a4a17fbcffbbbd6df3dd902dbd104769b7d17e
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189431"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893596"
 ---
-# <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>A kívánt állapot konfigurációs szolgáltatása (DSC) első lépései Linux rendszeren
+# <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Ismerkedés a Desired State Configuration (DSC) rétegen a Linux rendszeren
 
-Ez a témakör ismerteti, hogyan Linux PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) az első lépéseiben. A DSC kapcsolatos általános információkért lásd: [Ismerkedés a Windows PowerShell célállapot-konfiguráció](overview.md).
+Ez a témakör ismerteti, hogyan kezdheti el a PowerShell Desired State Configuration (DSC) használatával Linux rendszeren. DSC kapcsolatos általános információkért lásd: [Ismerkedés a Windows PowerShell Desired State Configuration](overview.md).
 
-## <a name="supported-linux-operation-system-versions"></a>Támogatott Linux művelet-verziók
+## <a name="supported-linux-operation-system-versions"></a>Támogatott Linux-művelet rendszerekről
 
-A következő Linux operációsrendszer-verziók DSC Linux támogatottak.
+A következő Linux operációsrendszer-verziók Linuxhoz készült DSC támogatottak.
+
 - CentOS 5, 6 és 7 (x86/x64)
 - Debian GNU/Linux 6, 7, 8 (x86/x64)
-- Oracle Linux 5, 6, 7 (x86/x64)
-- Red Hat Enterprise Linux Server 5, 6, 7 (x86/x64)
+- Oracle Linux 5, 6 és 7 (x86/x64)
+- Red Hat Enterprise Linux Server 5, 6 és 7 (x86/x64)
 - SUSE Linux Enterprise Server 10, 11, 12 (x86/x64)
 - Ubuntu Server 12.04 LTS, 14.04 LTS és 16.04 LTS (x86/x64)
 
-A következő táblázat ismerteti a szükséges csomagfüggőségek Linux a DSC-ből.
+A következő táblázat ismerteti a szükséges csomag függőségeit a DSC Linux rendszeren.
 
-|  Szükséges csomag |  Leírás |  Minimális verzió |
+|  Szükséges csomag |  Leírás |  Minimális verziója |
 |---|---|---|
-| Glibc| GNU könyvtár| 2... 4 – 31.30|
+| glibc| GNU könyvtár| 2... 4 – 31.30|
 | Python| Python| 2.4 – 3.4|
 | omiserver| Nyílt kezelési infrastruktúra| 1.0.8.1|
-| Openssl| OpenSSL-függvénytárak| 0.9.8-as vagy 1.0|
+| openssl| OpenSSL-függvénytárak| 0.9.8-as vagy 1.0|
 | ctypes| Python CTypes könyvtár| Meg kell egyeznie a Python-verzió|
-| libcurl| cURL http ügyféloldali kódtár| 7.15.1|
+| libcurl| a cURL http-klienskódtár| 7.15.1|
 
-## <a name="installing-dsc-for-linux"></a>A Linux DSC telepítése
+## <a name="installing-dsc-for-linux"></a>Linuxhoz készült DSC telepítése
 
-Telepítenie kell a [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) Linux DSC telepítése előtt.
+Telepítenie kell a [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) Linuxhoz készült DSC telepítése előtt.
 
 ### <a name="installing-omi"></a>OMI telepítése
 
-Állapotkonfiguráció szükséges Linux ír elő az Open Management Infrastructure (OMI) CIM-kiszolgáló, 1.0.8.1 verzió vagy újabb. OMI tölthető le: az Open Group: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi).
+Desired State Configuration for Linux számára az Open Management Infrastructure (OMI) CIM-kiszolgáló, 1.0.8.1 verzió vagy újabb. Az Open Group letölthető OMI: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi).
 
-OMI telepítéséhez telepítse a csomagot, amely megfelel a Linux rendszer (.rpm vagy .deb) és a OpenSSL-verzió (ssl_098 vagy ssl_100) és az architektúra (x64/x86). RPM csomagok CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server és Oracle Linux alkalmasak. DEB-csomagokat a Debian GNU/Linux és Ubuntu Server alkalmasak. A ssl_098 csomagok megfelelőek OpenSSL telepítve, miközben az OpenSSL 1.0 telepítve olyan számítógépek a ssl_100 csomagok 0.9.8-as rendelkező számítógépek.
+OMI telepítéséhez telepítse a csomagot, amely megfelelő a Linux rendszer (.rpm vagy .deb) és az OpenSSL-verzió (ssl_098 vagy ssl_100) és az architektúra (x64/x86). RPM-csomagot a CentOS, a Red Hat Enterprise Linux, a SUSE Linux Enterprise Server és az Oracle Linux alkalmasak. A Debian GNU/Linux és Ubuntu Server megfelelőek-DEB-csomag. A ssl_098 csomagok megfelelők OpenSSL 0.9.8-as telepítve van, miközben telepítve OpenSSL 1.0 megfelelő számítógépek a ssl_100 csomagok számítógépeken.
 
-> **Megjegyzés:**: a parancs futtatásával határozza meg a telepített OpenSSL-verzió, `openssl version`.
+> [!NOTE]
+> A telepített OpenSSL-verzió azonosításához futtassa a parancsot `openssl version`.
 
-A következő paranccsal telepíthető OMI CentOS 7 x64 rendszeren.
+A következő paranccsal telepítse az OMI CentOS 7 x64 rendszerre.
 
 `# sudo rpm -Uvh omiserver-1.0.8.ssl_100.rpm`
 
-### <a name="installing-dsc"></a>A DSC telepítése
+### <a name="installing-dsc"></a>DSC telepítése
 
-Linux DSC érhető el a letöltési [Itt](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest).
+Linuxhoz készült DSC érhető el letöltésre [Itt](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-294).
 
-A DSC telepítéséhez telepítse a csomagot, amely megfelel a Linux rendszer (.rpm vagy .deb) és a OpenSSL-verzió (ssl_098 vagy ssl_100) és az architektúra (x64/x86). RPM csomagok CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server és Oracle Linux alkalmasak. DEB-csomagokat a Debian GNU/Linux és Ubuntu Server alkalmasak. A ssl_098 csomagok megfelelőek OpenSSL telepítve, miközben az OpenSSL 1.0 telepítve olyan számítógépek a ssl_100 csomagok 0.9.8-as rendelkező számítógépek.
+DSC telepítéséhez telepítse a csomagot, amely megfelelő a Linux rendszer (.rpm vagy .deb) és az OpenSSL-verzió (ssl_098 vagy ssl_100) és az architektúra (x64/x86). RPM-csomagot a CentOS, a Red Hat Enterprise Linux, a SUSE Linux Enterprise Server és az Oracle Linux alkalmasak. A Debian GNU/Linux és Ubuntu Server megfelelőek-DEB-csomag. A ssl_098 csomagok megfelelők OpenSSL 0.9.8-as telepítve van, miközben telepítve OpenSSL 1.0 megfelelő számítógépek a ssl_100 csomagok számítógépeken.
 
-> **Megjegyzés:**: annak meghatározásához, a telepített OpenSSL-verzió, a parancs openssl verzióját futtatják.
+> [!NOTE]
+> A telepített OpenSSL-verzió azonosításához futtassa a parancs openssl-verziót.
 
-A következő paranccsal telepíthető DSC CentOS 7 x64 rendszeren.
+Futtassa a következő parancsot, DSC CentOS 7 x64 rendszer telepítése.
 
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
 
+## <a name="using-dsc-for-linux"></a>Linuxhoz készült DSC használatával
 
-## <a name="using-dsc-for-linux"></a>A DSC használata Linux rendszeren
+Az alábbi szakaszok azt ismertetik, hogyan hozhat létre és futtathat a DSC-konfigurációk Linux-számítógépeken.
 
-Az alábbi szakaszok ismertetik, hogyan hozhat létre és futtathat a DSC-konfigurációk a Linux rendszerű számítógépeken.
+### <a name="creating-a-configuration-mof-document"></a>A konfigurációs MOF-dokumentum létrehozása
 
-### <a name="creating-a-configuration-mof-document"></a>Konfigurációs MOF dokumentumok létrehozása
+A Windows PowerShell a konfigurációs kulcsszó a Linux rendszerű számítógépek esetében konfiguráció létrehozásához csakúgy, mint a Windows-számítógépek esetében használatos. A következő lépések írják le a konfigurációs dokumentum egy Windows PowerShell használatával egy Linux-számítógép létrehozása.
 
-A Windows PowerShell-konfiguráció kulcsszó létrehozásához használt Linux rendszerű számítógépek konfigurációját hasonlóan a Windows rendszerű számítógépeken. A következő lépések azt mutatják be, a Windows PowerShell használatával Linux számítógép konfigurációs dokumentum létrehozása.
+1. Az nx modul importálásához. Az nx Windows PowerShell-modul tartalmaz beépített erőforrások sémáját DSC Linux rendszeren, és telepítve legyen a helyi számítógépen, és importálja a konfigurációban.
 
-1. A nx modul importálása. Nx Windows PowerShell-modul tartalmaz az a séma beépített erőforrások DSC Linux, és telepítve legyen a helyi számítógépen, és importálja a konfigurációban.
+   - Nx-modul telepítéséhez, másolni vagy nx modulkönyvtárat `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` vagy `$PSHOME\Modules`. Az nx modul tartalmazza a DSC Linux-telepítési csomag (MSI). A konfigurációban az nx modul importálásához használja a `Import-DSCResource` parancsot:
 
-    -A nx modul telepítése, másolja a nx modulkönyvtárat vagy `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` vagy `$PSHOME\Modules`. A nx modul tartalmazza a DSC Linux-telepítési csomag (MSI). A nx moduljának a konfiguráció importálásához használja a __Import-DSCResource__ parancs:
-
-```powershell
-Configuration ExampleConfiguration{
+   ```powershell
+   Configuration ExampleConfiguration{
 
     Import-DSCResource -Module nx
 
-}
-```
-2. A konfiguráció és a konfigurációs dokumentum létrehozása:
+   }
+   ```
 
-```powershell
-Configuration ExampleConfiguration{
+2. A konfiguráció meghatározása és a konfigurációs dokumentum létrehozása:
 
-    Import-DscResource -Module nx
+   ```powershell
+   Configuration ExampleConfiguration
+   {
+        Import-DscResource -Module nx
 
-    Node  "linuxhost.contoso.com"{
-    nxFile ExampleFile {
+        Node  "linuxhost.contoso.com"
+        {
+            nxFile ExampleFile 
+            {
+                DestinationPath = "/tmp/example"
+                Contents = "hello world `n"
+                Ensure = "Present"
+                Type = "File"
+            }
+        }
+   }
 
-        DestinationPath = "/tmp/example"
-        Contents = "hello world `n"
-        Ensure = "Present"
-        Type = "File"
-    }
+   ExampleConfiguration -OutputPath:"C:\temp"
+   ```
 
-    }
-}
-ExampleConfiguration -OutputPath:"C:\temp"
-```
+### <a name="push-the-configuration-to-the-linux-computer"></a>A konfiguráció leküldése a Linux-számítógép
 
-### <a name="push-the-configuration-to-the-linux-computer"></a>A konfigurációs leküldése a Linux rendszerű számítógép
+Konfigurációs dokumentumok (MOF-fájlok) a Linux rendszerű számítógépen történő lehet leküldeni a [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration) parancsmagot. Ez a parancsmag használatához az a [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration), vagy [a Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) parancsmagok távolról egy Linux rendszerű számítógépre kell használnia a CIMSession. A [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) parancsmag segítségével hozzon létre egy Linux rendszerű számítógép CIMSession.
 
-Konfigurációs dokumentumok (MOF-fájlok) a Linux rendszerű számítógépen történő továbbíthatja a [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) parancsmag. Ahhoz, hogy ez a parancsmag, valamint a [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx), vagy [teszt-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) parancsmagok távolról a Linux-számítógép segítségével kell egy CIMSession. A [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) parancsmag segítségével hozzon létre egy CIMSession Linux rendszerű számítógép.
-
-A következő kód bemutatja, hogyan hozzon létre egy CIMSession DSC Linux.
+A következő kód bemutatja a DSC-CIMSession létrehozása Linux rendszeren.
 
 ```powershell
 $Node = "ostc-dsc-01"
@@ -121,64 +125,65 @@ $opt = New-CimSessionOption -UseSsl:$true
 $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
 ```
 
-> **Megjegyzés:**:
-* Az "Push" módban a felhasználó hitelesítő adatainak a gyökér szintű felhasználó a Linux rendszerű számítógépen kell lennie.
-* A Linux, a New-CimSession együtt kell használni a – UseSSL paraméter $true DSC csak SSL/TLS kapcsolatok támogatottak.
-* Az SSL-tanúsítvány által használt OMI (DSC) a fájlban megadott: `/opt/omi/etc/omiserver.conf` a tulajdonságokkal: pemfile és keyfile.
-Ha ez a tanúsítvány nem megbízható által a Windows-számítógép, amely futtatja a [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) parancsmagot, ha szeretné, figyelmen kívül hagyja a CIMSession beállításokkal tanúsítvány érvényesítése: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+> [!NOTE]
+> "Push" mód a felhasználó hitelesítő adatait a gyökér szintű felhasználó a Linux rendszerű számítógépen kell lennie.
+> Csak az SSL/TLS-kapcsolatok támogatottak DSC Linux rendszeren a `New-CimSession` – UseSSL paraméter $true értékűre kell használni.
+> Az SSL-tanúsítvány által használt OMI (DSC) a fájlban megadott: `/opt/omi/etc/omiserver.conf` a tulajdonságokkal: pemfile és kulcsfájl.
+> Ha ez a tanúsítvány nem megbízható által a Windows-számítógép, amely futtatja a [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) parancsmagot, ha szeretné, figyelmen kívül hagyja a tanúsítványok ellenőrzését a CIMSession beállításokkal: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
-A következő parancsot a DSC-konfiguráció leküldése a Linux-csomópont.
+A következő paranccsal küldje le a DSC-konfiguráció a Linux-csomópont.
 
 `Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
 
-### <a name="distribute-the-configuration-with-a-pull-server"></a>A lekérési kiszolgálójával a konfiguráció terjesztése
+### <a name="distribute-the-configuration-with-a-pull-server"></a>A konfigurációt egy pull-kiszolgálóval
 
-Konfigurációk is terjeszthetők a Linux-számítógép lekéréses kiszolgálóval, csakúgy, mint a Windows rendszerű számítógépeken. A lekérési kiszolgálójával használatával útmutatóért lásd: [Windows PowerShell kívánt állapot konfigurációs lekéréses kiszolgálók](pullServer.md). További információért és Linux számítógépeket használ egy lekéréses-kiszolgálóval kapcsolatos korlátozások tekintse meg a kibocsátási megjegyzéseket a célállapot-konfiguráció Linux.
+Konfigurációk lehetnek elosztva egy Linux-számítógép egy pull-kiszolgálóval, csakúgy, mint a Windows-számítógépek. Egy lekéréses kiszolgálót használ, tekintse át [Windows PowerShell Desired State Configuration lekéréses kiszolgálók](pullServer.md). További információt és Linux rendszerű számítógépek egy pull-kiszolgálóval kapcsolatos korlátozások: a kibocsátási megjegyzések a Desired State Configuration Linux rendszeren.
 
-### <a name="working-with-configurations-locally"></a>Helyileg konfigurációk használata
+### <a name="working-with-configurations-locally"></a>Helyi konfigurációk használata
 
-Linux DSC tartalmaz a helyi Linux számítógép-konfiguráció használható parancsfájlokat. Ezek a parancsfájlok keresse meg `/opt/microsoft/dsc/Scripts` és adja meg a következőket:
-* GetDscConfiguration.py
+Linuxhoz készült DSC-szkriptek a helyi számítógépről Linux-konfigurációval is tartalmaz. Ezek a szkriptek keresse meg `/opt/microsoft/dsc/Scripts` és a következőket tartalmazzák:
 
- A jelenlegi konfiguráció a számítógépen alkalmazott adja vissza. Hasonló a Windows PowerShell-parancsmag Get-DscConfiguration parancsmagnak.
+- GetDscConfiguration.py
+
+Visszaadja az aktuális konfigurációt alkalmazta a számítógépre. A Windows PowerShell-parancsmag hasonló `Get-DscConfiguration` parancsmagot.
 
 `# sudo ./GetDscConfiguration.py`
 
-* GetDscLocalConfigurationManager.py
+- GetDscLocalConfigurationManager.py
 
- Visszaadja a jelenlegi metaadat-konfiguráció alkalmazni a számítógépen. A parancsmag hasonló [Get-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) parancsmag.
+Az aktuális meta-konfiguráció a számítógépen alkalmazott adja vissza. A parancsmag hasonló [Get-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) parancsmagot.
 
 `# sudo ./GetDscLocalConfigurationManager.py`
 
-* InstallModule.py
+- InstallModule.py
 
- Egy egyéni DSC erőforrás modult telepít. A modul megosztott objektumtár tartalmazó .zip fájl és a séma MOF-fájlok elérési útja van szükség.
+Egy egyéni DSC-resource modul telepítése. A modul megosztott objektumtár tartalmazó .zip fájl és a séma MOF-fájlok elérési útja szükséges.
 
 `# sudo ./InstallModule.py /tmp/cnx_Resource.zip`
 
-* RemoveModule.py
+- RemoveModule.py
 
- Eltávolít egy egyéni DSC erőforrás modult. Eltávolítja a modul neve igényel.
+Eltávolít egy egyéni DSC-erőforrás modult. A név egyben a modul eltávolítása szükséges.
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* StartDscLocalConfigurationManager.py
+- StartDscLocalConfigurationManager.py
 
- A számítógép érvényes konfigurációs MOF-fájlt. Hasonló a [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) parancsmag. A konfiguráció alkalmazásához MOF elérési igényel.
+A konfigurációs MOF-fájlt a számítógépre vonatkozik. Hasonló a [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration) parancsmagot. A konfiguráció alkalmazásához MOF elérési útja szükséges.
 
 `# sudo ./StartDscLocalConfigurationManager.py –configurationmof /tmp/localhost.mof`
 
-* SetDscLocalConfigurationManager.py
+- SetDscLocalConfigurationManager.py
 
- A számítógép érvényes Meta konfigurációs MOF-fájlt. Hasonló a [Set-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) parancsmag. Elérési útját a Meta konfigurációs MOF alkalmazásához szükséges.
+Meta konfigurációs MOF-fájlt a számítógépre vonatkozik. Hasonló a [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) parancsmagot. A alkalmazni Meta konfigurációs MOF elérési útja szükséges.
 
 `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
-## <a name="powershell-desired-state-configuration-for-linux-log-files"></a>PowerShell kívánt állapot konfigurációs Linux-naplófájlok
+## <a name="powershell-desired-state-configuration-for-linux-log-files"></a>PowerShell Desired State Configuration for Linux-naplófájlok
 
-A következő naplófájlokba Linux üzenetek DSC jön létre.
+A következő naplófájlokat Linux üzenetek DSC jön létre.
 
 |Naplófájl|Könyvtár|Leírás|
 |---|---|---|
-|omiserver.log|/var/OPT/OMI/log|Az OMI a CIM-kiszolgáló működésével kapcsolatos üzeneteket.|
-|DSC.log|/var/OPT/OMI/log|A helyi Configuration Manager (LCM) és a DSC erőforrás műveletek működésével kapcsolatos üzeneteket.|
+|**omiserver.log**|`/var/opt/omi/log`|Az OMI a CIM-kiszolgáló működésével kapcsolatos üzenetek.|
+|**DSC.log**|`/var/opt/omi/log`|A helyi Configuration Manager (LCM) Konfigurálása és a DSC-erőforrás műveletek működésével kapcsolatos üzenetek.|

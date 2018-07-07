@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Az MSFT_DSCLocalConfigurationManager osztály GetConfigurationResultOutput metódusa
-ms.openlocfilehash: 73d10a8b44e5056e3fce1598518630a84aff6ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ea572a4a66befd4e4b8d83e2957632b1b5ed7d93
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186806"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893943"
 ---
 # <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály GetConfigurationResultOutput metódusa
 
-Egy adott feladattal társított konfigurációs ügynök kimenetének beolvasása.
+Lekéri egy adott feladathoz társított konfigurációs ügynök kimenetét.
 
-<a name="syntax"></a>Szintaxis
-------
+## <a name="syntax"></a>Szintaxis
 
 ```mof
 uint32 GetConfigurationResultOutput(
@@ -24,32 +23,28 @@ uint32 GetConfigurationResultOutput(
 );
 ```
 
-<a name="parameters"></a>Paraméterek
-----------
+## <a name="parameters"></a>Paraméterek
 
-*a JobId értékének* \[a\] a feladatot, amelynek a kimeneti adatok beolvasása a azonosítója.
+*jobId* \[a\] az azonosító a feladat kimeneti adatok betöltéséhez.
 
-*resumeOutputBookmark* \[a\] megadhatja, hogy a kimenet az előző könyvjelző folytatása.
+*resumeOutputBookmark* \[a\] Megadja, hogy a kimenet legyen-e az előző könyvjelző folytatása.
 
-*kimeneti* \[kimenő\] a feladat kimenetét.
+*kimeneti* \[ki\] a megadott feladat kimenetét.
 
-## <a name="return-value"></a>Visszatérési érték
-------------
+## <a name="return-value"></a>Vrácená hodnota
 
-Sikeres művelet; nulla értéket ad vissza Ellenkező esetben hibakódot.
+Sikeres; a nulla értéket ad vissza egyéb esetben egy hibakódot ad vissza.
 
 ## <a name="remarks"></a>Megjegyzések
 
-Ez a statikus módszer.
+Ez a statická metoda.
 
 ## <a name="requirements"></a>Követelmények
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Lásd még:
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

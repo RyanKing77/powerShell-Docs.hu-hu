@@ -1,264 +1,269 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Lekérési kiszolgáló – ajánlott eljárások
-ms.openlocfilehash: 1efc016df6882fa962f59dfd3e53eaa6d6b0c121
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 04ad6940f443bc23d5e2347952b2d173aceac408
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190298"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893450"
 ---
 # <a name="pull-server-best-practices"></a>Lekérési kiszolgáló – ajánlott eljárások
 
->Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
+A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> A lekéréses kiszolgáló (Windows-szolgáltatás *DSC-szolgáltatás*), Windows Server támogatott összetevője létezik azonban a következők: nem tervezi, hogy új funkciók és képességek kínálnak. Javasoljuk, hogy kezdje a Váltás felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (tartalmazza a Windows Server-kiszolgáló lekéréses is) vagy a közösségi megoldásoknak a valamelyikét felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
+> A lekéréses kiszolgálón (Windows-szolgáltatás *DSC-szolgáltatás*), a Windows Server támogatott összetevője létezik azonban tervekben sem funkciókat és képességeket kínálnak. Javasoljuk, hogy helyeződnek felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (beleértve a lekéréses kiszolgálón a Windows Server csomagban) vagy a közösségi megoldások felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
 
-Összefoglalás: Ez a dokumentum célja, hogy folyamata, és segít a mérnökök számára készül a megoldás bővítési tartalmazza. Részletek kell ajánlott eljárások nyújtása a felhasználók által meghatározott, és a termék csapatától javaslatok jövőbeli számára is elérhető, és figyelembe veendő stabil majd érvényesíteni.
+Összefoglalás: Ez a dokumentum célja, hogy tartalmazza a folyamatot és bővíthetőség felhőkarrierre készítik megoldás-mérnökök segítségét. Részletek ajánlott eljárásokat kell biztosítania, ügyfél által azonosított, és a termék csapatától javaslatok jövőbeli irányuló és stabil tekinthető majd érvényesíteni.
 
-| |DOC adatai|
+| |Dokumentum adatai|
 |:---|:---|
 Szerző | Michael Greene
-Lektorok | Ben Gelens, Ravikanth Chaganti Aleksandar Nikolic
+Lektorok | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic
 Közzétett | 2015. április
 
 ## <a name="abstract"></a>Absztrakt
 
-Jelen dokumentum célja, hogy bárki a Windows PowerShell célállapot-konfiguráció lekéréses kiszolgáló megvalósításának tervezési hivatalos útmutatást. A lekérési kiszolgálójával egy olyan egyszerű szolgáltatás, hajtson végre központi telepítéséhez csak perc. Bár ez a dokumentum műszaki útmutató útmutatást, amelyek a központi telepítés is használható lesz kínálnak, ez a dokumentum értéke az ajánlott eljárásokat, és milyen üzembe helyezése előtt gondolja hivatkozásként.
-Olvasók kell rendelkeznie a DSC alapszintű ismeretét, és az összetevők leíró feltételeket, amelyek központi telepítésben lévő egy DSC. További információkért lásd: a [Windows PowerShell kívánt állapot beállítása – áttekintés](https://technet.microsoft.com/library/dn249912.aspx) témakör.
-DSC elvárt azt fejleszteni a felhő ütemben történik az alapul szolgáló technológiát, beleértve a lekérési kiszolgálón is várt fejlődnek, és amelyek új lehetőségeket biztosítanak. Ez a dokumentum egy verzió táblázatot, amely korábbi kiadásokban mutató hivatkozásokat és előretekintő tervek bátorítva jövőbeli kinézetű megoldások mutató hivatkozásokat biztosít a függelékben tartalmaz.
+Jelen dokumentum célja, hogy mindenkinek, aki egy Windows PowerShell Desired State Configuration lekéréses kiszolgálón megvalósítás hivatalos útmutatást. Egy lekéréses kiszolgálót az egyszerű szolgáltatás csak perc alatt üzembe helyezéséhez. Bár ez a dokumentum műszaki útmutatókról, a központi telepítés használható tartalmazni fogja, ez a dokumentum értéke az ajánlott eljárásokat, és milyen üzembe helyezése előtt gondolja át hivatkozásként.
+Olvasói rendelkeznie kell a DSC alapszintű ismeretét, és az összetevők leírására szolgáló a feltételeket, amelyek központi telepítésben lévő a DSC. További információkért lásd: a [Windows PowerShell Desired State Configuration áttekintése](/powershell/dsc/overview) témakör.
+DSC elvárt való összpontosításnak köszönhetően felhőalapú kiadása ütemben történik, az alapul szolgáló technológiát, beleértve a lekéréses kiszolgálón is várható fejlődnek, és új lehetőségeket biztosítanak. Ez a dokumentum egy verzió tábla tartalmaz, amely a korábbi kiadásokban mutató hivatkozások és a jövőbeli akik megoldások előretekintő tervek ösztönzése mutató hivatkozásokat biztosít a függelékben.
 
 A két fő szakasz ebben a dokumentumban:
 
- - Konfiguráció tervezése
- - A telepítési útmutató
+- Konfiguráció tervezése
+- Telepítési útmutató
 
-### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework verziói
-A jelen dokumentumban szereplő információk alkalmazása a Windows Management Framework 5.0-ra készült. WMF 5.0 nincs szükség, telepítéséhez és működtetéséhez egy lekérési kiszolgálójával, amíg a 5.0-s verziója a fókusz ezen dokumentum.
+### <a name="versions-of-the-windows-management-framework"></a>A Windows Management Framework verziói
 
-### <a name="windows-powershell-desired-state-configuration"></a>A Windows PowerShell célállapot konfiguráló
-A keresett konfiguráló (DSC) az olyan felügyeleti platform, amely lehetővé teszi a konfigurációs adatok telepítését és kezelését ismertetik a Common Information Model (CIM) egy iparági szintaxis a Managed Object Format (MOF) nevű használatával. Ezeknek a szabványoknak fejlesztésének tovább a különböző platformokon, beleértve a Linux és a hálózati hardver operációs rendszerek van nyílt forráskódú projektként, nyissa meg a Management Infrastructure (OMI). További információkért lásd: a [MOF specifikációk csatolása DMTF lap](http://dmtf.org/standards/cim), és [OMI dokumentumokat és a forrás](https://collaboration.opengroup.org/omi/documents.php).
+A jelen dokumentumban lévő információk célja a alkalmazni a Windows Management Framework 5.0. Bár a WMF 5.0 nem kötelező központi telepítésére és a egy lekéréses kiszolgálót működő, a 5.0-s verzió a lépéseknek az ismertetése, ez a dokumentum.
 
-A Windows PowerShell célállapot-konfiguráció, amely hozhat létre és kezelhet deklaratív konfigurációk biztosít a a nyelvi kiterjesztés-készlet.
+### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration
 
-### <a name="pull-server-role"></a>Lekéréses kiszolgálói szerepkör
-A lekérési kiszolgálójával hozzáférhető a célcsomópontokat konfigurációk tárolásához egy központosított szolgáltatást biztosít.
+Desired State Configuration (DSC) egy felügyeleti platform, amely lehetővé teszi a konfigurációs adatokat, üzembe helyezése és felügyelete egy ipar szintaxisa a Managed Object Format (MOF) nevű leíró a Common Information Model (CIM) használatával. Egy nyílt forráskódú projekt, nyissa meg a Management Infrastructure (OMI) további ezeknek a szabványoknak a fejlesztés különböző platformokon, beleértve a Linux és a hálózati hardverek, operációs rendszerek létezik. További információkért lásd: a [összekapcsolása a MOF-specifikációk DMTF lap](https://www.dmtf.org/standards/cim), és [OMI a következő dokumentumok és a forrás](https://collaboration.opengroup.org/omi/documents.php).
 
-A lekéréses kiszolgálói szerepkör vagy a Web Server-példányt, vagy SMB-fájlmegosztásra is telepíthető. A webes képesség OData illesztőfelület tartalmazza, és visszaküldi megerősítése sikeres vagy sikertelen volt, a konfiguráció alkalmazása a célcsomópontokat képességeket választhatóan is. Ez a funkció olyan környezetben hasznos, ahol nagyszámú célcsomópontokat.
-Egy célcsomóponttal (más néven ügyfél) konfigurálását, hogy a lekéréses kiszolgálóra mutasson a legfrissebb konfigurációt követő adatok és a szükséges parancsfájlokat vannak letöltésére és alkalmazására. Ez akkor fordulhat elő, egy egyszeri központi telepítést, vagy egy újra előforduló is lehetővé teszi a lekérési kiszolgálójával lényeges módosítása a méretezés kezelésére szolgáló feladat. További információkért lásd: [Windows PowerShell kívánt állapot konfigurációs lekéréses kiszolgálók](https://technet.microsoft.com/library/dn249913.aspx) és [leküldéses és lekéréses konfigurációs módjai](https://technet.microsoft.com/library/dn249913.aspx).
+Windows PowerShell egy nyelvet bővítménycsomag biztosít a Desired State Configuration, amellyel létrehozása és kezelése a deklaratív konfigurációkat.
+
+### <a name="pull-server-role"></a>Kérje le a kiszolgálói szerepkör
+
+Egy lekéréses kiszolgálót biztosít lesznek elérhetőek a célcsomópontokat konfigurációk tárolásához egy központosított szolgáltatásba.
+
+A pull-kiszolgálói szerepkör egy Web Server-példányt vagy SMB-fájlmegosztásra is telepíthető. A web server funkció OData illesztőfelületet tartalmazza, és szükség esetén belefoglalhatja vissza erősítse meg a sikeres vagy sikertelen jelentés, mivel a beállítások vannak érvényben a célcsomópontokat képességeit. Ez a funkció olyan környezetben hasznos, ahol sok célcsomópontokat.
+Egy célcsomóponttal (más néven ügyfél) konfigurálását, hogy a lekéréses kiszolgálóra mutasson a legújabb konfigurációt követő adatokat, és minden szükséges szkriptek vannak letöltésére és alkalmazására. Ez akkor fordulhat elő, egy egyszeri központi telepítést, vagy egy újra előforduló feladatot, amely is lehetővé teszi a lekéréses kiszolgálón fontos eszközt nagy mennyiségű módosítás kezeléséhez. További információkért lásd: [Windows PowerShell Desired State Configuration lekéréses kiszolgálók](/powershell/dsc/pullServer) és
+
+[Leküldéses és lekéréses konfigurációs módjai](/powershell/dsc/pullServer).
 
 ## <a name="configuration-planning"></a>Konfiguráció tervezése
 
-Az összes vállalati szoftver központi telepítése nincs információ előre gyűjtendő megtervezheti a megfelelő architektúra és elő kell készíteni a központi telepítés befejezéséhez szükséges lépéseket a. A következő szakaszokban előkészítése és a szervezeti kapcsolatok, valószínűleg létre fordulhat elő, előre kell vonatkozó információk.
+Minden vállalati szoftverek központi telepítéséhez nincs információ előre gyűjtött a megfelelő architektúra tervezésének segítéséhez és elő kell készíteni a a telepítés befejezéséhez szükséges lépéseket. A következő szakaszok előkészítése és a szervezeti kapcsolatokat, amelyek valószínűleg fordulhat elő, előre kell kapcsolatos információkat.
 
 ### <a name="software-requirements"></a>Szoftverkövetelmények
 
-A lekéréses kiszolgáló telepítéséhez a DSC szolgáltatás a Windows Server szükséges. Ez a funkció a Windows Server 2012-ben bevezetett, és folyamatban lévő kiadásokban Windows Management Framework (WMF) keresztül frissítve lett.
+Egy lekéréses kiszolgálót telepítése a DSC szolgáltatás Windows Server igényel. Ez a funkció a Windows Server 2012-ben jelent meg, és folyamatban lévő verziók Windows Management Framework (WMF) keresztül frissítve lett.
 
-### <a name="software-downloads"></a>Szoftver letöltése
+### <a name="software-downloads"></a>Az ügyfélszoftver-letöltési
 
-Telepíti a legújabb tartalom a Windows Update-ről, kívül ajánlott eljárás a DSC lekérési kiszolgálójával telepítése két letöltések: A legújabb Windows Management Framework, és a DSC-modulok lekéréses kiszolgáló kiépítés automatizálásához.
+Telepíti a legújabb tartalom a Windows Update, kívül üzembe helyezése egy DSC lekéréses kiszolgálót célszerű figyelembe venni két letöltések: A legújabb Windows Management Framework, és a DSC-modul a pull-kiszolgáló üzembe helyezésének automatizálása.
 
-### <a name="wmf"></a>WMF
+### <a name="wmf"></a>A WMF
 
-Windows Server 2012 R2 magában foglalja a DSC szolgáltatás nevű szolgáltatás. A DSC szolgáltatás lekéréses kiszolgáló funkciókat, beleértve a bináris fájlok, amelyek támogatják az OData-végpont biztosítja.
-WMF része a Windows Server, és egy, a Windows Server között gyors ütemben történik frissül. [WMF 5.0 új verzióit](http://aka.ms/wmf5latest) tartalmazhatják a DSC szolgáltatás számára. Ezért ajánlott letölteni a WMF legújabb kiadása, és tekintse át a kibocsátási megjegyzéseket határozza meg, ha a kiadás egy frissítést adunk ki a DSC szolgáltatás is. Emellett tekintse át a kibocsátási megjegyzéseket, amely jelzi, hogy a frissítés vagy forgatókönyv tervezési állapottal jelenik meg stabil vagy kísérleti szakasza.
-Szeretné engedélyezni az Agilis kiadási ciklus egyes szolgáltatások stabil deklarálható, ami azt jelenti, hogy a szolgáltatás készen áll a WMF felszabadul Preview közben is az éles környezetben használható.
-Egyéb szolgáltatások hagyományosan frissített által WMF kiadások (lásd a további részletek a WMF kibocsátási megjegyzései):
+A Windows Server 2012 R2 tartalmaz egy a DSC szolgáltatás nevű funkciót. A DSC szolgáltatás lekéréses server funkciókat, beleértve a bináris fájlokat, amelyek támogatják az OData-végpont biztosítja.
+A WMF része a Windows Server, és a egy Agilis kiadása ütemben történik a Windows Server-kiadások között frissül. [A WMF 5.0 új verzióinak](https://www.microsoft.com/en-us/download/details.aspx?id=54616) a DSC szolgáltatás frissítéseket is tartalmaz. Emiatt tanácsos egy töltse le a WMF legújabb kiadását, és tekintse át a kibocsátási megjegyzéseket határozza meg, ha a kiadás a DSC szolgáltatás frissítését tartalmazza. Emellett tekintse át a kibocsátási megjegyzések a szakaszában, amely azt jelzi-e egy update vagy a forgatókönyv tervezési állapota stabil vagy kísérleti szerepel a listán.
+Ahhoz, hogy egy Agilis kiadási ciklus egyes funkciókat is deklarálni stabil, ami azt jelenti, hogy a szolgáltatás készen áll az előzetes verzióban jelent meg a WMF közben is az éles környezetben használható.
+Egyéb szolgáltatások hagyományosan frissítve lett-e a WMF-verziók (lásd a további részletek a WMF kibocsátási megjegyzései):
 
- - A Windows PowerShell Windows PowerShell integrált parancsfájlkezelési
- - Környezet (ISE) a Windows PowerShell webszolgáltatások (felügyeleti OData
- - IIS-bővítmény) a Windows PowerShell célállapot konfiguráló (DSC)
- - Windows Rendszerfelügyeleti (webszolgáltatások WinRM) a Windows Management Instrumentation (WMI)
+- Windows PowerShell Windows PowerShell integrált parancsfájlkezelési
+- Környezet (ISE) Windows PowerShell webszolgáltatások (Management OData
+- IIS-bővítmény) Windows PowerShell Desired State Configuration (DSC)
+- Windows Rendszerfelügyeleti (webszolgáltatások WinRM) Windows Management Instrumentation (WMI)
 
-### <a name="dsc-resource"></a>A DSC-erőforrás
+### <a name="dsc-resource"></a>DSC-erőforrás
 
-A lekéréses kiszolgálói telepítése által DSC konfigurációs parancsfájl használata a szolgáltatás kiépítését egyszerűsíthető. Ez a dokumentum tartalmaz, amelyek segítségével központi telepítése az üzemi kiszolgáló készen áll a csomópont konfigurációs parancsfájlokat. A konfigurációs parancsfájlok használatához egy DSC modulra lenne szükség, amely nem a Windows Serverben megtalálható. A szükséges modulnév **xPSDesiredStateConfiguration**, mely tartalmazza a DSC-erőforrás **xDscWebService**. A xPSDesiredStateConfiguration modul letölthető [Itt](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
+Egy lekéréses kiszolgálót üzembe helyezési is egyszerűbb legyen a létesítési DSC konfigurációs parancsfájl használata a szolgáltatás által. Ez a dokumentum tartalmaz egy éles készen áll a kiszolgáló-csomóponton üzembe helyezéséhez használható konfigurációs parancsfájlokat. A konfigurációs parancsfájlokat használ, a DSC-modul szükség, amely nem tartalmazza a Windows Server. A szükséges modulnév **xPSDesiredStateConfiguration**, amely tartalmazza a DSC-erőforrás **xDscWebService**. A xPSDesiredStateConfiguration modul letölthető [Itt](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
 
-Használja a **Install-modul** parancsmag a **PowerShellGet** modul.
+Használja a `Install-Module` parancsmagot a **PowerShellGet** modul.
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
 ```
 
-A **PowerShellGet** modul modul tölti le:
+A **PowerShellGet** modul tölti le a modult:
 
 `C:\Program Files\Windows PowerShell\Modules`
 
 A tervezési feladat|
 ---|
-Rendelkezik hozzáféréssel a telepítési fájlok a Windows Server 2012 R2 rendszerben?|
-A telepítési környezet kell WMF és a modul letöltése az online katalógusból Internet-hozzáférés?|
+Rendelkezik hozzáféréssel a telepítési fájlok, Windows Server 2012 R2?|
+Töltse le a WMF és a modul az online katalógusból internetes hozzáférést kap az üzembehelyezési környezetet?|
 Hogyan telepíti az operációs rendszer telepítése után a legújabb biztonsági frissítéseket?|
-A frissítések letöltése érdekében Internet-hozzáféréssel kell a környezetben, vagy fog rendelkezni a helyi Windows Server Update Services (WSUS) kiszolgáló?|
-Rendelkezik hozzáféréssel, amely már tartalmazza az offline injektálási a frissítéseket a Windows Server telepítési fájlok?|
+A környezet van Internet-hozzáférés frissítések beszerzésére, vagy fog rendelkezni a helyi Windows Server Update Services (WSUS) kiszolgáló?|
+Rendelkeznek hozzáféréssel a Windows Server telepítési fájlok, amelyek már tartalmazzák az offline injektálási frissítéseit?|
 
 ### <a name="hardware-requirements"></a>Hardverkövetelmények
 
-Lekérési telepítések támogatottak a virtuális és fizikai kiszolgálón. A méretezési követelmények lekérési kiszolgálójával összhangba kerüljenek a Windows Server 2012 R2 követelményei.
+Kérje le a telepítések támogatottak a fizikai és virtuális kiszolgáló. A lekéréses kiszolgálón méretezési követelményei összhangba kerüljenek a Windows Server 2012 R2 követelményei.
 
-CPU: 1,4 GHz-es 64 bites processzor memória: 512 MB szabad lemezterület: 32 GB-os hálózati: Gigabit Ethernet-Adapter
+Processzor: 1,4 GHz-es 64 bites processzor memória: 512 MB szabad lemezterület: 32 GB-os hálózati: Gigabit Ethernet-Adapter
 
 A tervezési feladat|
 ---|
-Telepíti a fizikai hardverek vagy olyan virtualizációs platformon?|
-Mi az a folyamatot követve kérjen a a célkörnyezet új kiszolgálót?|
+Telepíti a fizikai hardver- vagy virtualizációs platformon?|
+Mi az a folyamat egy új kiszolgálót a célkörnyezethez kéréséhez?|
 Mi az a kiszolgáló elérhető legyen, az átlagos válaszidő?|
-Milyen mérete server kérés?|
+Milyen méretű server kérés?|
 
 ### <a name="accounts"></a>Fiókok
 
-Nincsenek service fiókot egy lekéréses server-példány telepítése.
-Vannak azonban forgatókönyvek, ahol a webhely egy helyi felhasználói fiók kontextusában futtathat.
-Például ha egy szükséges hozzáférését a storage-megosztásban webhelytartalmat és a Windows Server vagy az eszköz a storage-megosztás üzemeltetési nincsenek tartományhoz.
+Nem vonatkoznak szolgáltatási fiók követelmények egy lekéréses kiszolgálót példány üzembe helyezéséhez.
+Vannak azonban forgatókönyvek, ahol a webhely futhat egy helyi felhasználói fiók kontextusában.
+Például ha egy szükséges hozzáférést egy storage-megosztásban webhely tartalmát, és a Windows Server vagy az eszköz, a storage-megosztás üzemeltetési nem lesznek tartományhoz.
 
 ### <a name="dns-records"></a>DNS records
 
-Szüksége lesz a kiszolgáló nevét használja, ha az ügyfelek egy lekéréses kiszolgálói környezetben használható.
-Tesztelési környezetben jellemzően akkor alkalmazzák a kiszolgáló állomásneve, vagy a kiszolgáló IP-címe használható, ha a DNS-név feloldása nem érhető el.
-Éles környezetben, amely az éles környezet jelöl laborkörnyezetben, az ajánlott eljárás akkor DNS CNAME rekordot kell létrehozni.
+Szüksége lesz a kívánt kiszolgáló nevét használja, ha az ügyfelek egy lekéréses kiszolgálót környezetben dolgozhat.
+A tesztelési jellemzően a kiszolgáló állomásnevét vagy a kiszolgáló IP-címét is használható, ha a DNS-névfeloldás nem érhető el.
+Az éles környezetben, vagy egy laborkörnyezetben, amelyek célja, hogy az éles környezet jelölik az ajánlott eljárás az hozzon létre egy DNS CNAME-rekordot.
 
-DNS CNAME rekord lehet hivatkozni az állomás (A) rekordot alias létrehozását teszi lehetővé.
-A további rekordhoz célja rugalmasabb kell változás szükség lehet a jövőben.
-Egy olyan CNAME REKORDOT segít elkülöníteni az ügyfél-konfigurációt, hogy a kiszolgáló környezet, például egy lekéréses kiszolgáló cseréje vagy lekéréses további kiszolgálók hozzáadásával módosításai nem kell az ügyfél-konfigurációhoz megfelelő megváltoztatása.
+Egy DNS CNAME rekord lehetővé teszi, hogy hozzon létre egy alias tekintse meg a gazdagép (A) rekordot.
+A további rekordhoz célja egy módosítást kell kérni a jövőben rugalmasság növelésére.
+Egy olyan CNAME REKORDOT segít elkülöníteni az ügyfél-konfiguráció, így, például kicserél egy lekéréses kiszolgálót, vagy további pull-kiszolgálók hozzáadása a kiszolgálói környezet módosításai nem követeli meg az ügyfél-konfiguráció megfelelő módosítása.
 
-A DNS-rekord nevét kiválasztásakor tartsa szem előtt a megoldás architektúrája.
-Ha használatával terheléselosztás, a tanúsítvány használatával teszi biztonságossá a HTTPS-KAPCSOLATON keresztül a forgalom kell neve megegyezik a DNS-rekord.
+Egy nevet a DNS-rekord kiválasztásakor tartsa szem előtt a megoldásarchitektúra.
+Ha használ terheléselosztási funkciók, a HTTPS-kapcsolaton keresztül a forgalom védelmére használt tanúsítvány neve megegyezik a DNS-rekord kell.
 
 Forgatókönyv |Ajánlott eljárás
 :---|:---
-Tesztkörnyezet |Ha lehetséges Reprodukálja a tervezett éles környezetben. A kiszolgáló állomásneve egyszerű konfigurációk alkalmas. Ha a DNS nem érhető el, IP-címet az állomásnév helyett használható.|
-Egyetlen csomópont telepítése |A kiszolgáló állomásneve mutató DNS CNAME rekordot kell létrehozni.|
+Tesztkörnyezet |Reprodukálja a tervezett éles környezetben, ha lehetséges. A kiszolgáló állomásnevét egyszerű konfigurációk esetén ideális választás. DNS nem érhető el, ha egy IP-címet egy állomásnév helyett használhatók.|
+Egy csomópontos központi telepítés |Hozzon létre egy DNS CNAME-rekordot, amely a kiszolgáló állomásnevét.|
 
-További információkért lásd: [DNS ciklikus multiplexelés konfigurálása a Windows Server](https://technet.microsoft.com/en-us/library/cc787484(v=ws.10).aspx).
+További információkért lásd: [DNS ciklikus időszeletelés konfigurálása a Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
 
 A tervezési feladat|
 ---|
-Tudja Megadja annak a személynek a DNS-rekordok létrehozott és módosított?|
-Újdonságok a DNS-rekord a kérelmek átlagos esetenként?|
-Meg kell igényelnie a kiszolgálók statikus állomásnév (A) rekordot?|
-Mit fog kér, egy olyan CNAME REKORDOT?|
-Ha szükséges, terheléselosztás megoldás fog használhatja a? (című terheléselosztás részletekért lásd:)|
+Tudta, hogy kihez kell fordulnia, hogy a DNS-rekordok létrehozott és módosított?|
+Mi a DNS-rekordra vonatkozó kérelmek átlagos felülvizsgálatának?|
+Szükséges a kiszolgálók statikus állomásnevet (A) rekordok kérelem?|
+Mit fog kér, egy CNAME rekord?|
+Ha szükséges, hogy milyen típusú terheléselosztási megoldás, felhasznál? (lásd a részre terheléselosztás részletekért)|
 
 ### <a name="public-key-infrastructure"></a>Nyilvános kulcsokra épülő infrastruktúra
 
-A legtöbb szervezet ma igényelnek, hálózati forgalom, különösen az, hogy a kiszolgálók konfigurálva vannak, például bizalmas adatokat tartalmazó forgalom ellenőrizni kell, illetve átvitel során titkosítva.
-Bár a lekéréses kiszolgáló, amely elősegíti a HTTP-n keresztül telepítéséhez az ügyfélkérelmek törölje a szöveget, a HTTPS protokoll használatával biztonságos forgalom ajánlott. A szolgáltatás beállítható úgy, hogy használja a HTTPS-kapcsolaton paraméterek a DSC-erőforrás **xPSDesiredStateConfiguration**.
+A legtöbb szervezet ma szükséges, hogy hálózati forgalmat, különösen olyan forgalmat, hogy hogyan kiszolgálók konfigurálva vannak, például bizalmas adatokat tartalmazó ellenőrizni kell, illetve átvitel során titkosítva vannak.
+Bár egy lekéréses kiszolgálót, amely elősegíti a HTTP-n keresztül telepíthető az ügyfélkérelmek törölje a szöveget, hogy az ajánlott eljárás a HTTPS PROTOKOLLT használó biztonságos forgalom. A szolgáltatás beállítható úgy, hogy a különböző paraméterek használatával a DSC-erőforrás a HTTPS használatára **xPSDesiredStateConfiguration**.
 
-A tanúsítványokkal szemben támasztott követelmények biztonságossá a HTTPS-forgalmat a lekérési kiszolgálójával nincsenek különböző, mint bármely más HTTPS webhely biztonságossá tételéhez. A **webkiszolgáló** egy Windows Server tanúsítványszolgáltatási sablon megfelel a szükséges képességek.
+A tanúsítványokra vonatkozó követelményeket a biztonságos HTTPS-forgalmat a lekéréses kiszolgálón eltérése nem mint bármely más HTTPS webhely biztonságossá tételéhez. A **webkiszolgáló** egy Windows Server tanúsítványszolgáltatási sablon megfelel a szükséges képességek.
 
 A tervezési feladat|
 ---|
-Ha tanúsítványkérelmek nem automatizált, ki kell a kérelmekre, forduljon a tanúsítványt?|
-Mi az a kérelem esetenként átlagosan?|
-Hogyan a Tanúsítványfájl használatával lesz áthelyezve meg?|
-Hogyan a tanúsítvány titkos kulcsa használatával lesz áthelyezve meg?|
-Milyen hosszú legyen az alapértelmezett lejárati idő?|
-Rendelkezik elszámolása meg egy DNS-nevet az lekéréses kiszolgáló környezetben, használhatja a tanúsítvány neve?|
+Ha eszköztanúsítvány-kérelmeket a rendszer nem automatikus, akik szükség lesz egy tanúsítványt a kérelmekre kapcsolódni?|
+Mi az a kérelem az átlagos válaszidejű, optimalizált?|
+Hogyan fogja a tanúsítványfájl adni az Ön számára?|
+Hogyan fogja a tanúsítvány titkos kulcsa adni az Ön számára?|
+Mennyi ideig tart az alapértelmezett lejárati idő?|
+Rendelkezik, a DNS-nevet a pull-kiszolgálói környezet, a tanúsítvány neve használható elszámolása?|
 
-### <a name="choosing-an-architecture"></a>Az architektúrát kiválasztása
+### <a name="choosing-an-architecture"></a>Az architektúra kiválasztása
 
-A lekérési kiszolgálójával vagy webszolgáltatás IIS vagy SMB-fájlmegosztásra is telepíthető. A legtöbb esetben a webes szolgáltatás lehetőség nagyobb rugalmasságot biztosítja. Nincs ritka, hogy HTTPS-forgalom haladnak át a hálózati határok, mivel SMB-forgalom gyakran szűrt vagy letiltott hálózatok között. A webszolgáltatás is biztosít, a megfelelési kiszolgáló vagy a webes Reporting Manager (mindkét figyelembe venni a jelen dokumentum egy jövőbeli verziójában témakörök), amely egy olyan mechanizmus biztosítása az ügyfelek egy kiszolgálóra a központi látható az állapot jelentése érdekében lehetősége.
-SMB környezetekben, ahol házirend szerint, hogy a webkiszolgáló nem állítható be, és más környezeti követelmények, amelyek a webkiszolgálói szerepkör nemkívánatos lehetőséget biztosít.
-Mindkét esetben ne felejtse el az aláíráshoz és a forgalom titkosításának követelmények kiértékeléséhez. IPSEC-házirendek, HTTPS és SMB-aláírást érdemes fontolóra veheti, hogy minden opció.
+Egy lekéréses kiszolgálót is telepíthető, vagy egy webes üzemeltetett szolgáltatás az IIS- vagy SMB-fájlmegosztás segítségével. A legtöbb esetben nagyobb rugalmasságot biztosít a web service lehetőséget. Már nem ritka, hogy HTTPS-forgalmat haladnak át a hálózati határok, mivel az SMB-forgalom gyakran szűrt vagy letiltott hálózatok között. A web service is lehetősége a megfelelési kiszolgáló vagy a webes Reporting Manager (mindkét ezeket egy jövőbeli verziójában ez a dokumentum az témakörök), amely az ügyfelek állapot jelentése egy központi látható-e a kiszolgálóra egy olyan mechanizmust kínál.
+SMB környezetekben, ahol házirend előírja, hogy a webkiszolgáló nem használhatók fel, és az egyéb környezeti követelményeket, amelyek elérhetőbbé teszik a webkiszolgálói szerepkör nemkívánatos lehetőséget biztosít.
+Mindkét esetben ne felejtse el a követelményeknek, az aláíráshoz és a forgalom titkosítása értékelheti ki. IPSEC-házirendek, HTTPS és SMB-aláírást mellett szóló érvek összes módon.
 
 #### <a name="load-balancing"></a>Terheléselosztás
-A webszolgáltatáshoz való interakció ügyfelek egyetlen válaszként visszaküldött adatokat kérhet. Szekvenciális kérelmek nem szükségesek, így nincs szükség a terheléselosztási platform munkamenetek karbantartása bármikor egy kiszolgálón az idő biztosításához.
+
+A web service kommunikáló ügyfelek indítson egy információt, amely egy választ adott vissza. Nem egymást követő kéréseket szükségesek, így nem szükséges a terheléselosztási platform munkamenetek karbantartása bármikor egyetlen kiszolgálón az idő biztosítása érdekében.
 
 A tervezési feladat|
 ---|
-Melyik megoldás a kiszolgálók közötti terheléselosztás forgalom fog használni?|
-Ha használja a hardveres terheléselosztót, aki a kérést vegyen fel új konfigurációt az eszközön érvénybe?|
-Mi az, hogy egy új terheléselosztási konfigurálja a kérelmek átlagos esetenként elosztott terhelésű webszolgáltatás?|
-Milyen információkat kell a kérelem?|
-Meg kell kérnie olyan további IP-címet, vagy a terheléselosztás felelős csapat kezelnek, amelyek?|
+Milyen megoldás elosztja a forgalmat kiszolgálók használható?|
+Ha hardveres terheléselosztót, akik tart egy új konfiguráció hozzáadása az eszközre irányuló kérelem használatával?|
+Mi az a konfigurálása egy új betöltés kérelmek átlagos felülvizsgálatának elosztott terhelésű webszolgáltatást?|
+Milyen információt szükséges a kérelem lesz?|
+Meg kell kérnie egy további IP-cím, vagy a terheléselosztás felelős csapat kezeli, amely?|
 Rendelkezik a szükséges DNS-rekordokat, és ez szükség lesz a terheléselosztási megoldás konfigurálása felelős csapat?|
-A betöltési terheléselosztási megoldást igényel, hogy a nyilvános kulcsokra épülő infrastruktúra elvégezhető-e az eszköz vagy is azt a terhelést HTTPS forgalmat, mindaddig, amíg nincsenek munkamenet követelmények?|
+A teherelosztási szolgáltatás nem követeli meg, hogy a nyilvános kulcsokra épülő infrastruktúra kell kezelnie a az eszközt, vagy tudja azt terheléselosztása HTTPS-forgalmat, mindaddig, amíg nem vonatkoznak munkamenet követelmények?|
 
 ### <a name="staging-configurations-and-modules-on-the-pull-server"></a>Átmeneti konfigurációk és a modulok a lekérési kiszolgálón
 
-A konfiguráció tervezése részeként szüksége lesz gondolja, hogy melyik DSC kapcsolatos modulok és konfigurációk tárolható a lekérési kiszolgálójával. Céljából konfigurációs tervezési fontos, hogy alapszinten megértse, hogyan lehet előkészíteni és telepítse központilag a tartalmakat egy lekérési kiszolgálójával.
+A konfiguráció tervezése részeként szüksége lesz úgy gondolja, hogy mely DSC kapcsolatos modulok és konfigurációk üzemeltetett a lekéréses kiszolgálón. Konfiguráció tervezése szempontjából fontos alapfokon bemutatja, hogyan készítheti elő és a egy lekéréses kiszolgálót telepít tartalmat.
 
-A jövőben ez a szakasz kibontva lesz, és az üzemeltetési útmutatóban DSC lekéréses kiszolgáló tartalmazza.  Az útmutatóban modulok és konfigurációk kezelése az Automation szolgáltatásban, időbeli napi folyamatát ismertetik.
+A jövőben ez a szakasz kiterjesztett lesz, és az DSC lekéréses kiszolgálón található az üzemeltetési útmutatóban.  Útmutató a modulok és konfigurációk kezelése az automation idővel napi folyamatát ismertetik.
 
-#### <a name="dsc-modules"></a>A DSC-modulok
-Egy konfigurációs kérő ügyfelek kell a szükséges DSC-modulokat. A lekéréses kiszolgáló egy funkciójának automatizálhatja a DSC-modulokat az ügyfelek számára az igény szerinti terjesztési. Ha telepít egy lekérési kiszolgálójával először, lehet, hogy egy laboratóriumi vagy a koncepció igazolása, valószínűleg fog függ, például a PowerShell-galériában nyilvános adattárak vagy a DSC-modulok PowerShell.org GitHub-adattárak rendelkezésre álló DSC-modulok .
+#### <a name="dsc-modules"></a>DSC-modulok
 
-Nagyon fontos megjegyezni, hogy még a megbízható online források, például a PowerShell-galériában, bármely modul, egy nyilvános tárházból letöltött felül kell vizsgálni valaki PowerShell élmény és a környezetben, ahol a modulok fog ismerete éles környezetben használt előtt használt. Ez a feladat végrehajtása közben, akkor egy időben semmilyen további hasznos a modul, például a dokumentáció és például parancsfájlok eltávolítható kereséséhez. Ez csökkenti a hálózati sávszélesség az első kérelem ügyfelenként, amikor modulok letölti az ügyfél-kiszolgálóról a hálózaton keresztül.
+Egy konfigurációs kérő ügyfelek kell a szükséges modulok DSC. A lekéréses kiszolgálón egy funkciója, automatizálhatja a DSC-modulok az ügyfelek igény szerinti eloszlása. Ha helyez üzembe egy lekéréses kiszolgálót az első alkalommal esetleg labor vagy a koncepció igazolása, valószínűleg fog függenek a DSC-modulok által biztosított nyilvános adattár, például a PowerShell-Galériával vagy a modulok DSC PowerShell.org GitHub-adattárak .
 
-Minden modul be kell csomagolni, egy meghatározott formátumban, nevű ModuleName_Version.zip, a modul forgalma tartalmazó ZIP-fájl. Miután a rendszer átmásolja a fájlt a kiszolgálóra egy ellenőrzőösszeg-fájl jön létre. Ha az ügyfelek csatlakoznak a kiszolgálóhoz, győződjön meg arról közzététele óta a DSC-modul tartalma nem módosult. az ellenőrzőösszeg szolgál.
+Fontos megjegyezni, hogy még a megbízható online forrásokból, például a PowerShell-galériából, egy nyilvános-tárházból letölti modulok át kell tekintenie valaki a PowerShell és a környezetben, ahol a modulok lesz ismerete éles környezetben használt előtt használt. Ez a feladat végrehajtása során, egy jó ideje a modul, amely például a dokumentáció és szkriptek eltávolítható minden olyan további hasznos kereséséhez. Ez csökkenti a hálózati sávszélesség, az első kérelem ügyfelenként amikor modulok letölti az ügyfél-kiszolgálóról a hálózaton keresztül.
+
+Minden modul be kell csomagolni, egy meghatározott formátumban, egy ZIP-fájlt, amely tartalmazza a modul hasznos ModuleName_Version.zip nevű. Miután a kiszolgálóra, létre kell hozni egy ellenőrzőösszeg fájlt másolja a fájlt. Amikor az ügyfelek csatlakoznak a kiszolgálóhoz, ellenőrizze, hogy a tartalom a DSC-modul közzététele óta nem módosult az ellenőrzőösszeg szolgál.
 
 ```powershell
-New-DscCheckSum -ConfigurationPath .\ -OutPath .\
+New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
 A tervezési feladat|
 ---|
-Ha azt tervezi, a vizsgálat vagy a laboratóriumi környezet változatok kulcsával ellenőrzi?|
-Vannak-e nyilvánosan elérhető, amelyek minden szükséges erőforrásokat tartalmazó modulok, vagy meg kell ahhoz, hogy saját erőforrásokat?|
-A környezet lesz nyilvános modulok beolvasása Internet-hozzáférést?|
-Ki kell konfigurálnia a DSC-modulok áttekintése?|
-Ha azt tervezi, éles környezetben mi fog használni, a helyi tárház DSC modulok tárolása?|
-Egy központi munkacsoport elfogadja a DSC-modulok az alkalmazásokat fejlesztő csapatoknak együtt? Mi lesz a folyamatot?|
-Csomagolására, másolása és éles használatra kész DSC modulok ellenőrzőösszeg létrehozása a kiszolgálón, a forrás tárházból fog automatizálni?|
-A csapat felelős kezelése, valamint az automatizálási platform?|
+Ha azt tervezi, milyen forgatókönyvekre kulcsával ellenőrzi egy teszt vagy a labor környezetben?|
+Vannak-e, amit fedezésére erőforrásait tartalmazó nyilvánosan elérhető modulok vagy lesz szüksége ahhoz, hogy saját erőforrásokat?|
+Nyilvános modulok beolvasása internetes hozzáférést kap a környezet?|
+Ki legyen a felelős a DSC-modulok áttekintése?|
+Ha azt tervezi, hogy éles környezetben mit fog használni mint egy helyi tárház tárolására a modulok DSC?|
+A központi csapat elfogadja a alkalmazásfejlesztő csapatok dolgoznak a DSC-modulok? Mi lesz a folyamat?|
+Csomagolás, a másolás és a egy éles használatra kész DSC modulok ellenőrzőösszeg létrehozása a kiszolgálóra, a forrás-adattárból fogja automatizálni?|
+A csapat lesz az automatizálási platform, valamint kezeléséért?|
 
-#### <a name="dsc-configurations"></a>A DSC-konfigurációk
+#### <a name="dsc-configurations"></a>DSC-konfigurációk
 
-A lekérési kiszolgálójával célja ügyfél csomópontokhoz DSC-konfigurációk kiosztása során egy olyan központi mechanizmus biztosítása. A konfigurációk MOF-dokumentumokként tárolása a kiszolgálón.
-Egyes dokumentumok egyedi GUID azonosítója lesznek elnevezve. Ha az ügyfelek csatlakozhatnak a lekérési kiszolgálójával vannak beállítva, is számukra a globálisan egyedi Azonosítót a konfiguráció kérelmeznie kell. A rendszer a konfigurációk GUID alapján hivatkozik biztosítja, hogy a globális egyediségi és rugalmas úgy, hogy egy konfiguráció alkalmazható lépésköz csomópontonként, vagy egy szerepkör-konfigurációja is sok kiszolgálók, amelyek azonos beállításokkal kell rendelkeznie.
+Egy lekéréses kiszolgálót az a célja, hogy központi DSC-konfigurációk ügyfél csomópontokra terjesztése mechanizmus biztosítására. A konfigurációk tárolása a kiszolgálón a MOF-dokumentumok formájában.
+Egy egyedi GUID Azonosítóval rendelkező összes dokumentum neve lesz. Ha az ügyfelek csatlakozni egy lekérési kiszolgálóval van konfigurálva, azokat is kapnak a GUID kérelmeznie kell a konfiguráció. Konfigurációk GUID alapján hivatkozik, a rendszer garantálja a globális egyedi-e, és rendkívül rugalmas, úgy, hogy egy konfiguráció alkalmazható granularitással csomópontonként, vagy pedig egy szerepkör-konfigurációt is kell azonos konfigurációkkal rendelkező kiszolgálók számát.
 
-#### <a name="guids"></a>GUID azonosítók
+#### <a name="guids"></a>GUID-azonosítói
 
-Konfigurációs GUID tervezése ér további figyelmet egy lekéréses server központi végezni. Nincs olyan GUID kezelését az adott követelmény, és a folyamat valószínű környezetben egyedinek kell lennie. A folyamat egyszerű és közötti összetett: központilag tárolt CSV-fájl, egyszerű SQL táblázat, a CMDB vagy egy másik eszközt vagy a szoftver megoldással való integráció igénylő összetett megoldás. Kétféleképpen általános:
+Érdemes további figyelmet tervezése a configuration GUID akkor, ha egy lekéréses kiszolgálót fejlesztésig felhőmegoldásokat. Nem követelmény, amelyek adott GUID azonosítók kezelésének módját, és a folyamat valószínű oka az, hogy az egyes környezetekhez egyedi legyen. A folyamat között lehet egyszerű egészen az összetettekig: központilag tárolt CSV-fájlba, egy egyszerű SQL-táblára, a CMDB vagy egy másik eszköz vagy szoftver megoldás integrációt igénylő összetett megoldás. Kétféleképpen általános:
 
- - **GUID azonosítók hozzárendelése kiszolgálónként** – biztosítása, hogy minden kiszolgáló konfigurációs egyénileg szabályozott biztosítékot nyújt. Ez biztosít, a pontosság frissítések körül, és néhány kiszolgálókkal környezetekben is használhatók.
- - **GUID azonosítók hozzárendelése egy kiszolgálói szerepkör** – minden kiszolgálón, amely ugyanazt a funkciót, például a webkiszolgálók, ugyanaz a GUID segítségével a szükséges konfigurációs adatokra hivatkoztak.  Vegye figyelembe, hogy sok kiszolgálók megosztják a ugyanaz a GUID azonosítója, ha az összes kellene frissítésekor egyidejűleg a konfiguráció módosításait.
+- **GUID-ok hozzárendelése kiszolgálónként** – mérhető, hogy minden kiszolgáló konfigurációs külön-külön szabályozott alkalmazunk. Ez pontosság körül frissítéseket biztosít, és jól néhány kiszolgálókkal környezetben is működik.
+- **GUID-ok hozzárendelése egy kiszolgálói szerepkör** – minden kiszolgálón, amely ugyanazt a funkciót, például a webkiszolgálók, ugyanaz a GUID azonosító használatával a szükséges konfigurációs adatokra hivatkoznak.  Vegye figyelembe, hogy ha ugyanaz a GUID kiszolgálók számát, ezek mindegyike frissülnek egyszerre a konfiguráció módosításakor.
 
-A GUID-azonosító, amelyet érdemes figyelembe venni bizalmas adatokat, mert valaki rosszindulatú ahhoz, hogy a kiszolgálók telepítve és konfigurálva a környezetben az eszközintelligencia sikerült javítható. További információkért lásd: [biztonságosan a PowerShell kívánt állapot konfigurációs módban lekéréses GUID azonosítók lefoglalásával](http://blogs.msdn.com/b/powershell/archive/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode.aspx).
+  A globálisan egyedi Azonosítót a bizalmas adatok tekintendők, mert sikerült adatbáziscsoportok próbál a jeggyel intelligencia kiszolgálók üzembe helyezve és konfigurálva a környezetben az illető ártó szándékkal rendelkező bármely személy. További információkért lásd: [biztonságosan lefoglalása a PowerShell Desired State Configuration lekéréses módban GUID](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
 
 A tervezési feladat|
 ---|
-Ki kell konfigurálnia a konfigurációk másolása a lekérési kiszolgálón mappába, amikor azok készen állnak?|
-Ha egy alkalmazás csapat konfigurációk hoztak létre, mely a folyamat kell kiosztják azokat a?|
-Kihasználhatja a tárház konfigurációk tárolja az azok alatt hoztak létre, csapatok?|
-Automatizálható a folyamat-konfigurációk másolása a kiszolgálóra, és ellenőrzőösszeg létrehozása, amikor azok készen állnak?|
-Hogyan fogja leképez GUID kiszolgálók vagy szerepkörök, és ez tárolására szolgáló?|
-Mi használatával folyamatként ügyfél gépet állíthat be, és hogyan fogja azt integrálása a folyamat létrehozása és tárolása konfigurációs GUID?|
+Ki legyen a felelős, amikor készen állnak a konfigurációk a másolási a lekéréses kiszolgálón mappát?|
+Ha konfigurációk egy alkalmazás csapat munkafolyamatokba(n), mi a folyamat lesz kiosztják őket?|
+Kihasználhatja a tárház konfigurációk tárolását azok alatt munkafolyamatokba(n), különböző csapatokkal?|
+Automatizálhatja a folyamat konfigurációk másolása a kiszolgálóhoz és a egy ellenőrzőösszeg létrehozása, ha készen áll?|
+Hogyan fogja leképez GUID szerverek és szerepkörök, és ez helyét?|
+Mit fog használni egy folyamatot, az ügyfélgépek konfigurálása, és hogyan fogja azt integrálása a folyamat létrehozása és tárolása a konfigurációs GUID?|
 
-## <a name="installation-guide"></a>A telepítési útmutató
+## <a name="installation-guide"></a>Telepítési útmutató
 
-*Ebben a dokumentumban megadott parancsfájlok példák stabil. Mindig parancsfájlok célszerű gondosan felülvizsgálni őket éles környezetben végrehajtása előtt.*
+*Ebben a dokumentumban megadott parancsfájlok használata a stabil példákat. Mindig tekintse át parancsfájl alaposan azokat éles környezetben a végrehajtása előtt.*
 
 ### <a name="prerequisites"></a>Előfeltételek
 
-Győződjön meg arról, hogy a PowerShell verzióját a kiszolgálón a következő paranccsal.
+A következő parancs használatával ellenőrizze a PowerShell verzióját a kiszolgálón.
 
 ```powershell
 $PSVersionTable.PSVersion
 ```
 
-Ha lehetséges frissítsen a legújabb Windows Management Framework.
-Ezt követően töltse le a `xPsDesiredStateConfiguration` modul a következő parancsot.
-
+Ha lehetséges frissítse a legújabb Windows Management Framework.
+Ezután töltse le a `xPsDesiredStateConfiguration` modul a következő paranccsal.
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
 ```
 
-A parancs a modul letöltése előtt jóváhagyásra fogja kérni.
+A parancs a modul letöltése előtt a jóváhagyását kéri.
 
-### <a name="installation-and-configuration-scripts"></a>Telepítési és konfigurációs parancsfájlokat
--
+### <a name="installation-and-configuration-scripts"></a>Telepítés és konfigurálás parancsfájlok
 
-A legjobb módszere a DSC lekérési kiszolgálójával, hogy a DSC-konfigurációs parancsprogram használja. Ez a dokumentum bemutatja a parancsfájlok mindkét alapszintű beállításokat, amelyek csak a DSC-webszolgáltatás kell konfigurálni, és speciális kell konfigurálni a Windows Server-végpontok közötti többek között a következőket DSC webszolgáltatás beállításokat is beleértve.
+A DSC lekéréses kiszolgálón telepítendő a legjobb módszer, hogy a DSC-konfigurációs parancsprogram használata. Ez a dokumentum bemutatja a parancsfájlok, beleértve a két alapszintű beállítás, amely csak a DSC-webszolgáltatás konfigurálására és a speciális beállításokat, amelyeket szeretne egy Windows Server teljes körű többek között DSC webszolgáltatás konfigurálása.
 
-Megjegyzés: Jelenleg a `xPSDesiredStateConfiguation` DSC module használatához a kiszolgálónak EN-US területi beállítás.
+Megjegyzés: Jelenleg a `xPSDesiredStateConfiguation` DSC modulnak szüksége van a kiszolgálóra, hogy EN-US területi beállítás.
 
-### <a name="basic-configuration-for-windows-server-2012"></a>A Windows Server 2012 alapvető konfiguráció
--------------------------------------------
+### <a name="basic-configuration-for-windows-server-2012"></a>A Windows Server 2012 alapvető konfigurációs
+
 ```powershell
 # This is a very basic Configuration to deploy a pull server instance in a lab environment on Windows Server 2012.
 
@@ -290,7 +295,7 @@ PullServer -OutputPath 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 ```
 
-### <a name="advanced-configuration-for-windows-server-2012-r2"></a>A Windows Server 2012 R2 rendszerben speciális konfiguráció
+### <a name="advanced-configuration-for-windows-server-2012-r2"></a>A Windows Server 2012 R2 speciális konfiguráció
 
 ```powershell
 # This is an advanced Configuration example for Pull Server production deployments on Windows Server 2012 R2.
@@ -355,6 +360,7 @@ Configuration PullServer {
             ValueData = 1
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ServerDisabledByDefault
         {
             Ensure = 'Present'
@@ -363,6 +369,7 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ClientEnabled
         {
             Ensure = 'Present'
@@ -371,6 +378,7 @@ Configuration PullServer {
             ValueData = 1
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ClientDisabledByDefault
         {
             Ensure = 'Present'
@@ -379,6 +387,7 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
+
         Registry SSL2ServerDisabled
         {
             Ensure = 'Present'
@@ -449,6 +458,7 @@ Configuration PullServer {
         }
     }
 }
+
 $configData = @{
     AllNodes = @(
         @{
@@ -467,6 +477,7 @@ $configData = @{
             }
         )
     }
+
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
@@ -474,16 +485,18 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 # .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
-
 ### <a name="verify-pull-server-functionality"></a>Lekéréses kiszolgálói funkciók ellenőrzése
 
 ```powershell
 # This function is meant to simplify a check against a DSC pull server. If you do not use the default service URL, you will need to adjust accordingly.
 function Verify-DSCPullServer ($fqdn) {
-    ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
+    ([xml](Invoke-WebRequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN'
 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
+```
+
+```output
 Expected Result:
 Action
 Module
@@ -511,28 +524,28 @@ Configuration PullClient {
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
 }
+
 PullClient -ID 'INSERTGUID' -Server 'INSERTSERVER' -Output 'C:\DSCConfig\'
 Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\' -Verbose
 ```
 
+## <a name="additional-references-snippets-and-examples"></a>További hivatkozások kódrészletek és példák
 
-## <a name="additional-references-snippets-and-examples"></a>További hivatkozások kódtöredékek és példák
-
-Ez a példa bemutatja, hogyan manuálisan (WMF5 igényel) ügyfél kapcsolatot kezdeményez teszteléshez.
+Ez a példa bemutatja, hogyan manuálisan (WMF5 igényel) ügyfél kapcsolatot kezdeményez teszteléséhez.
 
 ```powershell
-Update-DSCConfiguration –Wait -Verbose
+Update-DscConfiguration –Wait -Verbose
 ```
 
-A [Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) parancsmag segítségével egy típus CNAME rekord hozzáadása a DNS-zónából.
+A [Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) parancsmag segítségével adjon hozzá egy CNAME-rekord típust a DNS-zónához.
 
-A PowerShell függvényt [hozzon létre egy ellenőrzőösszeg és DSC MOF közzététele a SMB lekérési kiszolgálójával](http://bit.ly/1E46BhI) , és automatikusan létrehozza a szükséges ellenőrzőösszeg, majd másolja az SMB-lekérési kiszolgálójával MOF-konfigurációt és ellenőrzőösszeg-fájlok.
+A PowerShell-függvény, amely [ellenőrzőösszeg és DSC MOF közzététele az SMB-lekérési kiszolgálójának létrehozása](https://gallery.technet.microsoft.com/scriptcenter/PowerShell-Function-to-3bc4b7f0) automatikusan létrehozza a szükséges ellenőrzőösszeg, és ezután átmásolja az SMB-lekérési kiszolgálójának MOF-konfigurációt és ellenőrzőösszeg-fájlokat.
 
-## <a name="appendix---understanding-odata-service-data-file-types"></a>Függelék – ismertetése ODATA szolgáltatás adatainak fájltípusok
+## <a name="appendix---understanding-odata-service-data-file-types"></a>A függelék – ismertetése ODATA szolgáltatás adatainak fájltípusok
 
-Egy adatfájlt létrehozása, amely tartalmazza az OData webszolgáltatást lekéréses kiszolgáló üzembe helyezése során információkat tárolja. A fájl típusát attól függ, az operációs rendszer az alább ismertetett.
+Egy adatfájlt egy lekéréses kiszolgálót, amely tartalmazza az OData webszolgáltatást üzembe helyezése során az adatok létrehozásához tárolódik. A fájl típusa attól függ, az operációs rendszer, az alább ismertetett.
 
- - **Windows Server 2012** mindig lesz a fájltípus .mdb
- - **Windows Server 2012 R2** a fájl típusa alapértelmezett .edb egy .mdb Ha nincs megadva a konfigurációban
+- **A Windows Server 2012** a fájl típusa mindig lesz .mdb
+- **A Windows Server 2012 R2** a fájl típusa alapértelmezett .edb-.mdb Ha nincs megadva a konfigurációban
 
-Az a [példa parancsfájl speciális](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) egy lekéréses kiszolgáló telepítésekor is talál arról, hogyan automatikusan vezérlőket a web.config fájl bármely fájltípus által okozott hiba esélyét megelőzése érdekében.
+Az a [példa parancsfájl komplex](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) egy lekéréses kiszolgálót telepíti, a is talál egy példát automatikusan kezelheti a web.config fájl beállításait, hogy bármilyen fájltípus által okozott hiba esélyét.

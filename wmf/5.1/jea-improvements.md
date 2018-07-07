@@ -4,33 +4,33 @@ ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 contributor: ryanpu
 title: Éppen elég felügyelettel (JEA) fejlesztései
-ms.openlocfilehash: 47a58a6fae9f3a41ec527ec1f77ac1c196336669
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222417"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892719"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Éppen elég felügyelettel (JEA) fejlesztései
 
-## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>JEA végpontok és a korlátozott fájl másolása
+## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>Korlátozott fájlmásolási és-tárolókról a JEA-végpont
 
-Mostantól távolról másolhatja a fájlokat/egy JEA a többi pedig a végpont biztosítva, hogy a csatlakozó felhasználó nem lehet másolni az imént *bármely* fájl a rendszeren.
-Ezen nem lehetséges a felhasználók csatlakozni felhasználói meghajtó csatlakoztatása FERB fájl konfigurálása.
-A felhasználó egy új PSDrive, amely az egyes csatlakozó felhasználók egyedi, és továbbra is fennáll, munkamenetei között.
-Amikor elem használatával másolja a fájlokat, vagy a JEA munkamenetből, hogy csak a felhasználó meghajtót által korlátozott.
-Fájlok másolása bármely más PSDrive kísérletek sikertelenek lesznek.
+Most már távolról másolhat fájlokat/a JEA-végpont és a rest biztosítani, hogy a kapcsolódó felhasználó nem lehet másolni az imént *bármely* fájlt a rendszer.
+Ez akkor lehetséges, a felhasználók kapcsolódás felhasználói meghajtó csatlakoztatása FERB fájl konfigurálásával.
+A felhasználó meghajtó nem egy új PSDrive, amely minden csatlakozó felhasználó egyedi, és továbbra is fennáll, munkamenetek között.
+Amikor `Copy-Item` van segítségével másolja a fájlokat, vagy a JEA-munkamenetből, azt korlátozza a kizárólag a felhasználó meghajtót.
+Fájlok másolása a bármely más PSDrive tett kísérletek sikertelenek lesznek.
 
-A JEA munkamenet konfigurációs fájlban beállítása a felhasználó merevlemezén, használja a következő új mezők:
+A felhasználó meghajtó a JEA munkamenet konfigurációs fájlban, használja a következő új mezőket:
 
 ```powershell
 MountUserDrive = $true
 UserDriveMaximumSize = 10485760    # 10 MB
 ```
 
-A mappa biztonsági a felhasználó-meghajtó létrehozása `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
+A mappa, a felhasználó meghajtó biztonsági jön létre: `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
-A felhasználó meghajtó használatára, és másolja a fájlokat, egy teszi közzé a felhasználó meghajtó beállított JEA végpont onnan, használja a `-ToSession` és `-FromSession` elem paraméterek.
+A felhasználó meghajtót, és a fájlok másolása és- tárolókról a JEA végpont elérhetővé a felhasználói meghajtót konfigurálni, használja a `-ToSession` és `-FromSession` paramétereket lévő `Copy-Item`.
 
 ```powershell
 # Connect to the JEA endpoint
@@ -44,15 +44,15 @@ Copy-Item -Path .\SampleFile.txt -Destination User: -ToSession $jeasession
 Copy-Item -Path User:\SampleFile.txt -Destination . -FromSession $jeasession
 ```
 
-Majd írhat feldolgozni az adatokat, a felhasználó meghajtón tárolja, és elérhetővé a felhasználóknak a szerepkör funkció fájlban egyéni függvényekhez.
+Majd írhat fel az adatokat a felhasználó meghajtón tárolja, és azokat a szerepkör képesség fájlt a felhasználók számára elérhetővé tenni az egyéni függvényekhez.
 
-## <a name="support-for-group-managed-service-accounts"></a>A felügyelt támogatási csoport fiókok
+## <a name="support-for-group-managed-service-accounts"></a>Támogatási csoport számára a felügyelt fiókok
 
-Bizonyos esetekben egy feladatot, a felhasználó számára szükséges-e a JEA-munkamenetben kell a helyi számítógép mögötti erőforrások eléréséhez.
-A JEA munkamenet virtuális fiók használatára van konfigurálva, amikor minden, az ilyen erőforrások eléréséhez az általa elérni a helyi gép identitása, nem a virtuális fiók vagy a csatlakoztatott felhasználói jelenik meg.
-A TP5, azt engedélyezte a JEA egy [csoportosan felügyelt szolgáltatásfiók](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx) környezetében futó támogatása , így sokkal könnyebben hálózati erőforrások eléréséhez a tartomány identitásával.
+Bizonyos esetekben a JEA munkamenet egy felhasználó számára szükséges feladat kell előfordulhat, hogy a helyi gép erőforrások eléréséhez.
+A JEA-munkamenet virtuális fiók használatára van konfigurálva, amikor eléri az ilyen erőforrások tett bármilyen kísérlet kell meghatároznia a helyi gép identitása, nem a virtuális vagy csatlakoztatott felhasználói fiókot fog megjelenni.
+A TP5, engedélyeztük a jea-t futtató egy [csoportosan felügyelt szolgáltatásfiók] környezetében támogatása (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), ami nagyban megkönnyíti a tartomány identitás használatával hálózati erőforrások eléréséhez.
 
-A csoportosan felügyelt szolgáltatásfiók alatt fut JEA munkamenet konfigurálásához használja a következő új kulcsot a FERB fájlban:
+A JEA-munkamenet futtatásához a csoportosan felügyelt szolgáltatásfiókok konfigurálásához használja a következő új kulcs a FERB fájlban:
 
 ```powershell
 # Provide the name of your gMSA account here (don't include a trailing $)
@@ -64,19 +64,20 @@ GroupManagedServiceAccount = 'myGMSAforJEA'
 RunAsVirtualAccount = $false
 ```
 
-> **Megjegyzés:** csoportosan felügyelt szolgáltatásfiókok nem biztosít a elkülönítés vagy a virtuális fiókokat korlátozott körét.
-> Minden csatlakozó felhasználó megosztja szükségszerűen rendelkezik engedéllyel a teljes vállalat azonos csoportosan felügyelt szolgáltatásfiók-identitást.
-> Legyen körültekintő, lehetőséget választva a csoportosan felügyelt szolgáltatásfiókot, és mindig előnyben részesítik a virtuális fiókokat, amelyek csak a helyi számítógépen, ha lehetséges.
+> [!NOTE]
+> Csoportosan felügyelt szolgáltatásfiókok nem elfogadható, az elkülönítés vagy a virtuális fiókok korlátozott körét.
+> Minden csatlakozó felhasználó megosztja szükségszerűen rendelkezik engedéllyel a teljes vállalaton belül azonos csoportosan felügyelt szolgáltatásfiók-identitást.
+> Legyen körültekintő, amikor kiválasztja a csoportosan felügyelt szolgáltatásfiók használatára, és mindig igény szerint virtuális fiók, amely csak a helyi számítógépre, amikor csak lehetséges.
 
-## <a name="conditional-access-policies"></a>Feltételes hozzáférési házirendek
+## <a name="conditional-access-policies"></a>Feltételes hozzáférési szabályzatok
 
-Nagyszerű, hogy milyen valaki lehet elvégezni, ha már kapcsolódik egy rendszer kezeléséhez, de milyen Ha akkor is korlátozni szeretné az JEA *amikor* JEA segítségével bárki?
-Lehetővé teszi, hogy a felhasználó kell tartozniuk ahhoz, hogy a JEA-munkamenetet létrehozni a biztonsági csoportokat adja meg a munkamenet-konfigurációs fájlok (.pssc) a konfigurációs beállítások jelentek meg.
-Ez különösen hasznos lehet, ha egy csak az idő szerinti (JIT) rendszer környezetében, és szeretné, hogy a magas jogosultsági szintű JEA végpont elérése előtt függesztheti a felhasználót.
+A JEA kiválóan korlátozza, hogy valaki mire képes, ha már kapcsolódik egy rendszerhez való, de Lehetőségelemzési meg is szeretné korlátozni, *amikor* valaki használhatja a JEA?
+Hozzáadtuk a konfigurációs beállításokat, a munkamenet-konfigurációs fájlok (.pssc) lehetővé teszi, hogy adja meg a felhasználó kell tartozniuk ahhoz, hogy a JEA-munkamenetet létrehozni a biztonsági csoportokat.
+Ez különösen hasznos lehet, ha csak az idő szerinti (JIT) rendszert a környezetben, és győződjön meg a felhasználók jogosultságai kibővítésére a magas jogosultsági szintű JEA-végpont elérése előtt.
 
-Az új *RequiredGroups* a FERB mezőjének lehetővé teszi annak meghatározásához, ha egy felhasználó csatlakozhat JEA logikát.
-Olyan karakterekből áll, egy kivonattáblát (ha szükséges a beágyazott) használó megadása a "És" és "Vagy" kulcsok készítse el szabályait.
-Íme néhány példa bemutatja, hogyan használhatók ki ebben a mezőben:
+Az új *RequiredGroups* a FERB fájlban mező lehetővé teszi a logikát meghatározni, ha egy felhasználó csatlakozhat a JEA megadását.
+Adjon meg egy kivonattáblát (szükség esetén a beágyazott) használó áll a "És" és "Vagy" kulcsok a szabályok létrehozásához.
+Íme néhány példa bemutatja, hogyan használhatja ezt a mezőt:
 
 ```powershell
 # Example 1: Connecting users must belong to a security group called "elevated-jea"
@@ -90,6 +91,7 @@ RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
-## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Rögzített: Virtuális fiókok mostantól támogatja a Windows Server 2008 R2 rendszeren
-A WMF 5.1 áll a virtuális fiókokat használhatják a Windows Server 2008 R2, engedélyezése konzisztens konfigurációk és szolgáltatásparitást keresztül Windows Server 2008 R2 – 2016.
-Virtuális fiókok továbbra is nem támogatott, ha a Windows 7 JEA használatával.
+## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Kijavítva: A virtuális fiókok mostantól támogatja a Windows Server 2008 R2 rendszeren
+
+A WMF 5.1 áll a virtuális fiókok használhatják a Windows Server 2008 R2, teszi lehetővé a konzisztens konfigurációk és funkcióparitás Windows Server 2008 R2 – 2016.
+A JEA használata a Windows 7-es virtuális fiókok továbbra is nem támogatott.

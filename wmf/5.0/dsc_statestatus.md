@@ -1,59 +1,61 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 7b4e4dbeaf9c3c48e7b2dfc74435dfa2cd9c7ea7
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.openlocfilehash: 0e8d0cb1e4afa7bc791d45bfb0b981654cb09ed5
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "34482913"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892569"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Egyesített és konzisztens állapotreprezentáció
 
-Fejlesztésen végzett ebben a kiadásban a beépített LCM állapotát és DSC állapot automatizálása. Ezek közé tartozik a egyesített és konzisztens állapotban és állapot formátumban, az állapot objektumok kezelhető dátum/idő tulajdonság Get-DscConfigurationStatus parancsmag által visszaadott és fokozott LCM állapot részletei tulajdonság Get-DscLocalConfigurationManager által visszaadott parancsmag.
+Ebben a kiadásban az LCM állapotának és a DSC-állapot automatizálását a fejlesztésen került sor. Ezek közé tartozik a egyesített és konzisztens állapot reprezentációinak, kezelhető dátum/idő tulajdonság által visszaadott állapot objektumok `Get-DscConfigurationStatus` parancsmag és a továbbfejlesztett LCM állapot részletei tulajdonság által visszaadott `Get-DscLocalConfigurationManager` parancsmagot.
 
-LCM állapot és a DSC műveleti állapotának ábrázolása javított változat, és a következő szabályok szerint egyesített:
-1.  Notprocessed erőforrás nem befolyásolja a LCM állapotot és a DSC-állapota.
-2.  További erőforrások feldolgozásának, miután újraindítást kérő erőforrás ütközik LCM leállítása.
-3.  Egy erőforrás újraindítást kérő nincs megfelelő állapotban amíg újraindítást ténylegesen történik.
-4.  Amikor egy erőforrást, amely nem sikerül, LCM tartja a feldolgozás után további erőforrások mindaddig, amíg azok nem függ a hiba egyik.
-5.  A Get-DscConfigurationStatus parancsmag által visszaadott összesített állapotát az összes erőforrás állapotának super összessége.
-6.  A PendingReboot állapota felülbírálja a PendingConfiguration állapotát.
+Leképezése az LCM állapotának és a DSC műveleti állapotának javított változat, és a következő szabályok szerint egyesített:
 
-Az alábbi táblázat szemlélteti a eredő állapot kapcsolódó tulajdonságok néhány jellemző forgatókönyvek alapján.
+1. Az LCM állapotának és a DSC-állapot Notprocessed erőforrás nincs hatással.
+2. Az LCM stop további erőforrások feldolgozása, miután újraindítást kérő erőforrás tapasztal.
+3. Egy újraindítást kérő erőforrás nem áll a szükséges állapotban, amíg újraindítást ténylegesen történik.
+4. Hajt végre, amikor egy erőforrást, amelyet nem sikerül, LCM tartja a feldolgozás után további erőforrásokat, amíg azok nem függnek a hiba egyik.
+5. A törlés összesített állapotát által visszaadott `Get-DscConfigurationStatus` parancsmag az összes erőforrás állapotának a felügyelői készlete.
+6. A PendingReboot állapota felülbírálja a PendingConfiguration állapota.
 
-| Forgatókönyv                    | LCMState       | Állapot | A kért újraindítás  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
-|---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-| S**^**                          | Üresjárati                 | Siker    | $false        | S                            | $null                          |
-| F**^**                          | PendingConfiguration | Hiba    | $false        | $null                        | F                              |
-| S, F                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
-| F,S                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
-| S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Hiba    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
-| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Hiba    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-| S, r                            | PendingReboot        | Siker    | $true         | S                            | r                              |
-| F, r                            | PendingReboot        | Hiba    | $true         | $null                        | F, r                           |
-| r, S                            | PendingReboot        | Siker    | $true         | $null                        | r                              |
-| r, F                            | PendingReboot        | Siker    | $true         | $null                        | r                              |
+   Az alábbi táblázatban látható a létrejövő állapot kapcsolódó tulajdonságok alapján néhány gyakori forgatókönyveket.
 
-^ S<sub>i</sub>: erőforrásokat, a rendszer sikeresen alkalmazta F sorozata<sub>i</sub>: a rendszer újraindítását igénylő r: A erőforrás sikertelenül telepített erőforrások több \*
+   | Forgatókönyv                    | LCMState       | Állapot | A kért újraindítási  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
+   |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
+   | S**^**                          | Inaktív                 | Siker    | $false        | S                            | $null                          |
+   | F**^**                          | PendingConfiguration | Hiba    | $false        | $null                        | F                              |
+   | S, F                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
+   | F,S                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
+   | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Hiba    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
+   | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Hiba    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
+   | S-, r                            | PendingReboot        | Siker    | $true         | S                            | r                              |
+   | F, r                            | PendingReboot        | Hiba    | $true         | $null                        | F, r                           |
+   | r, S                            | PendingReboot        | Siker    | $true         | $null                        | r                              |
+   | r, F                            | PendingReboot        | Siker    | $true         | $null                        | r                              |
+
+   ^
+   S<sub>i</sub>: erőforrások, amelyek sikeresen alkalmazva F sorozata<sub>i</sub>: egy sorozat erőforrásokat, amelyeket a alkalmazni sikertelenül r: egy erőforrás, amelyhez újraindítás szükséges \*
+
+   ```powershell
+   $LCMState = (Get-DscLocalConfigurationManager).LCMState
+   $Status = (Get-DscConfigurationStatus).Status
+
+   $RebootRequested = (Get-DscConfigurationStatus).RebootRequested
+
+   $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
+
+   $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
+   ```
+
+## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Fejlesztés a Get-DscConfigurationStatus parancsmagban
+
+Néhány kiegészítésre került sor a `Get-DscConfigurationStatus` parancsmag ebben a kiadásban. Korábban a StartDate a parancsmag által visszaadott objektumok tulajdonság karakterlánc típusú. Eljött a Datetime típusú, amely lehetővé teszi az összetett kiválasztása és szűrése a belső tulajdonságok egy dátum és idő objektum egyszerűbb alapján.
 
 ```powershell
-$LCMState = (Get-DscLocalConfigurationManager).LCMState
-$Status = (Get-DscConfigurationStatus).Status
-
-$RebootRequested = (Get-DscConfigurationStatus).RebootRequested
-
-$ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
-
-$ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
-```
-
-## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>A Get-DscConfigurationStatus parancsmag továbbfejlesztése
-
-Ebben a kiadásban a Get-DscConfigurationStatus parancsmagnak néhány kiegészítésre került sor. Korábban a Kezdődátum a parancsmag által visszaadott objektumok tulajdonsága karakterlánc típusú. Most már dátum/idő típusú, amely lehetővé teszi összetett, válassza ki, majd a szűrési beállítások könnyebb a belső tulajdonságok egy DateTime típusú objektum.
-
-```powershell
-(Get-DscConfigurationStatus).StartDate | fl *
+(Get-DscConfigurationStatus).StartDate | Format-List *
 DateTime : Friday, November 13, 2015 1:39:44 PM
 Date : 11/13/2015 12:00:00 AM
 Day : 13
@@ -70,18 +72,18 @@ TimeOfDay : 13:39:44.8860000
 Year : 2015
 ```
 
-Az alábbiakban látható egy példa, amely ugyanarra a napra esnek ennek ma hét történt a DSC-művelet az összes rekord visszaadása.
+Következő egy példa, amely visszaadja az összes DSC műveleti rekordok történt a hét ma is ugyanazon a napon.
 
 ```powershell
-(Get-DscConfigurationStatus –All) | where { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
+(Get-DscConfigurationStatus –All) | Where-Object { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
-Ne módosítsa a csomópont konfigurációs (vagyis olvasási csak műveletek) műveletkészlet rekordok szűrni. Ezért teszt-DscConfiguration, Get-DscConfiguration műveletek vannak már nem tiltott a Get-DscConfigurationStatus parancsmag objektumot sem adott vissza.
-Meta konfigurációs beállítás művelet rögzíti a Get-DscConfigurationStatus parancsmag visszatérési kerül.
+Kiküszöbölhetők azok a rekordok műveletek, amelyek a csomópont-konfiguráció (azaz olvasási csak műveletek), ne módosítsa. Ezért `Test-DscConfiguration`, `Get-DscConfiguration` műveletek már nem a visszaadott objektumok a rendszer tiltott `Get-DscConfigurationStatus` parancsmagot.
+Meta konfigurációs beállítás művelet rekordok kerül, a visszatérési `Get-DscConfigurationStatus` parancsmagot.
 
-Az alábbiakban látható egy példa a Get-DscConfigurationStatus visszaadott eredmény – az összes parancsmag.
+Az alábbiakban egy példát eredményt adott vissza a `Get-DscConfigurationStatus` – minden parancsmagot.
 
-```powershell
+```output
 All configuration operations:
 
 Status StartDate Type RebootRequested
@@ -93,17 +95,17 @@ Success 11/13/2015 11:20:44 AM Initial True
 Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
-## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>A Get-DscLocalConfigurationManager parancsmag továbbfejlesztése
+## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>A Get-DscLocalConfigurationManager parancsmag a fejlesztés
 
-Egy új mezőt a LCMStateDetail hozzáadódik a Get-DscLocalConfigurationManager parancsmag által visszaadott objektum. Ebben a mezőben van feltöltve, ha LCMState "Foglalt". Lekérhető által a következő parancsmagot:
+Egy új mezőt LCMStateDetail a visszaadott objektum hozzáadódik `Get-DscLocalConfigurationManager` parancsmagot. Ez a mező kitöltése LCMState "Foglalt" esetén. A következő parancsmaggal kérhető:
 
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
 ```
 
-Az alábbiakban látható egy példa a kimenetre végzett folyamatos figyelés a olyan konfigurációt, amely a távoli csomóponton levő két újraindításra van szükség.
+Következő egy példa a kimenetre végzett folyamatos figyelés a olyan konfigurációt, amely a távoli csomóponton két újraindításra van szükség.
 
-```powershell
+```output
 Start a configuration that requires two reboots
 
 Monitor LCM State:

@@ -1,48 +1,51 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: Konfigurálhatja a virtuális gépek kezdeti állítja DSC használatával
-ms.openlocfilehash: d6dd997e607152d09d24b55370bb2f85810b333e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: Konfigurálása a virtuális gépek első indításkor DSC használatával
+ms.openlocfilehash: 2f228a38379d1e65b31c03594e876f7226474fc3
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190264"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893352"
 ---
->Vonatkozik: A Windows PowerShell 5.0
+# <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurálása a virtuális gépek első indításkor DSC használatával
 
->**Megjegyzés:** a **DSCAutomationHostEnabled** a jelen témakörben ismertetett beállításkulcs nem érhető el a PowerShell 4.0-s verzióját.
-A kezdeti állítja a PowerShell 4.0 új virtuális gépek konfigurálásával kapcsolatos további információkért lásd: [szeretné automatikusan konfigurálni a gépek használatával DSC, kezdeti állítja?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
-
-# <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurálhatja a virtuális gépek kezdeti állítja DSC használatával
+> [!IMPORTANT]
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
 ## <a name="requirements"></a>Követelmények
 
-Futtassa az alábbi példák, szüksége lesz:
+> [!NOTE] 
+> A **DSCAutomationHostEnabled** ebben a témakörben ismertetett beállításkulcs nem érhető el a PowerShell 4.0-s verzióját.
+> Új virtuális gépek konfigurálásának első rendszerindítás a PowerShell 4.0-s, további információkért lásd: [automatikusan konfigurálja a gépek használatával DSC, kezdeti rendszerindítás szeretne?] > ()https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
-- A rendszerindító virtuális merevlemez történő együttműködésre. ISO-fájlt a Windows Server 2016: próbaverziója letölthető [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). Az ISO-lemezképek, a virtuális merevlemez létrehozásához találhat útmutatót [létrehozása rendszerindításra alkalmas virtuális merevlemezek](https://technet.microsoft.com/library/gg318049.aspx).
-- Hyper-V engedélyezve van egy állomására. További információ: [Hyper-V – áttekintés](https://technet.microsoft.com/library/hh831531.aspx).
+Ezekben a példákban futtatásához szüksége lesz:
 
-A DSC használata automatizálható, Szoftvertelepítés és a kezdeti állítja: számítógép konfigurációja.
-Ehhez vagy hogy a konfigurációs MOF dokumentum vagy egy metakonfigurációját rendszerindításra alkalmas adathordozót (például egy VHD-k), hogy futnak a kezdeti rendszerindító létrehozása során.
-Ez a viselkedés határozza meg a [DSCAutomationHostEnabled beállításkulcs](DSCAutomationHostEnabled.md) kulcs alatt **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies**.
-Alapértelmezés szerint ez a kulcs értéke 2, lehetővé teszi a rendszerindítás futtatásához DSC.
+- Egy rendszerindító virtuális Merevlemezre dolgozhat. Letöltheti a Windows Server 2016, a próbaverziója ISO [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Hogyan hozhat létre egy VHD, ISO-lemezképének talál útmutatást [létrehozása rendszerindító virtuális merevlemezek](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
+- Egy gazdagép-számítógép, amely rendelkezik Hyper-V engedélyezve van. További információ: [Hyper-V áttekintése](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 
-Ha nem szeretné, hogy a rendszerindítás futtatásához DSC, állítsa a [DSCAutomationHostEnabled beállításkulcs](DSCAutomationHostEnabled.md) 0 beállításkulcsot.
+  DSC használatával automatizálhatja a szoftverfrissítési telepítés és konfigurálás első számítógép számára.
+  Ehhez vagy a konfigurációs MOF-dokumentum, vagy egy metaconfiguration való injektálása (például egy VHD-KET) a rendszerindító adathordozó, hogy az első rendszerindítás során futnak.
+  Ez a viselkedés úgy van megadva a [DSCAutomationHostEnabled beállításkulcs](DSCAutomationHostEnabled.md) beállításkulcs alatt `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies`.
+  Alapértelmezés szerint ennek a kulcsnak értéke 2, amely lehetővé teszi, hogy a DSC futtatása rendszerindítás közben.
 
-- Egy konfigurációs MOF dokumentum szúrjon be egy virtuális merevlemez
-- A DSC metakonfigurációját szúrjon be egy virtuális merevlemez
-- A DSC rendszerindítás letiltása
+  Ha nem szeretné a DSC futtatása rendszerindítás közben, az értékét állítsa be a [DSCAutomationHostEnabled beállításkulcs](DSCAutomationHostEnabled.md) 0 beállításkulcsot.
 
->**Megjegyzés:** is megváltoztathatják `Pending.mof` és `MetaConfig.mof` egyszerre egy számítógépbe.
-Ha mindkét fájlok léteznek, a megadott beállítások `MetaConfig.mof` elsőbbséget.
+- A konfigurációs MOF-dokumentum behelyezése egy virtuális merevlemez
+- A DSC metaconfiguration behelyezése egy virtuális merevlemez
+- Tiltsa le a DSC rendszerindítás közben
 
-## <a name="inject-a-configuration-mof-document-into-a-vhd"></a>Egy konfigurációs MOF dokumentum szúrjon be egy virtuális merevlemez
+> [!NOTE]
+> Mindkét megváltoztathatják `Pending.mof` és `MetaConfig.mof` egyszerre egy számítógépbe.
+> Ha mindkét fájl megadva, a megadott beállítások `MetaConfig.mof` elsőbbséget.
 
-Kihirdeti kezdeti állítja a konfigurációját, hogy a lefordított konfigurációs MOF dokumentum is behelyezése a virtuális Merevlemezt a `Pending.mof` fájlt.
-Ha a **DSCAutomationHostEnabled** beállításkulcs értéke 2 (az alapértelmezett érték), DSC érvényes definiált beállítások `Pending.mof` amikor a számítógép indul el, az első alkalommal szolgáltatáshoz.
+## <a name="inject-a-configuration-mof-document-into-a-vhd"></a>A konfigurációs MOF-dokumentum behelyezése egy virtuális merevlemez
 
-A jelen példában használjuk a következő konfiguráció, amely telepíti az IIS az új számítógépen:
+Életbe léptetni egy első konfigurációjában, egy összeállított konfigurációt MOF dokumentumot is behelyezése a VHD-t, mint a `Pending.mof` fájlt.
+Ha a **DSCAutomationHostEnabled** beállításkulcs értéke 2 (az alapértelmezett érték), DSC érvényes lesz a konfiguráció által meghatározott `Pending.mof` mikor indul el a számítógép először regisztrálásához.
+
+Ebben a példában a következő konfigurációt, amely az új számítógépre telepíti az IIS használjuk:
 
 ```powershell
 Configuration SampleIISInstall
@@ -60,48 +63,51 @@ Configuration SampleIISInstall
 }
 ```
 
-### <a name="to-inject-the-configuration-mof-document-on-the-vhd"></a>A virtuális merevlemezen a konfigurációs MOF dokumentum szúrjon
+### <a name="to-inject-the-configuration-mof-document-on-the-vhd"></a>Az a virtuális merevlemezen a konfigurációs MOF dokumentum beszúrása
 
-1. A konfigurációs szúrjon meghívásával szeretné a VHD csatlakoztatására a [virtuális merevlemez csatlakoztatása](https://technet.microsoft.com/library/hh848551.aspx) parancsmag. Például:
+1. Csatlakoztassa a VHD-t, amelybe a konfiguráció betöltése meghívásával szeretné a [virtuális merevlemez csatlakoztatása](/powershell/module/hyper-v/mount-vhd) parancsmagot. Például:
 
-    ```powershell
-    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
-    ```
-2. Rendszert futtató számítógép PowerShell 5.0-s vagy újabb, mentse a fenti konfigurációban (**SampleIISInstall**), a PowerShell-parancsfájl (.ps1).
+   ```powershell
+   Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
+   ```
 
-3. PowerShell-konzolban keresse meg a mappát, amelybe a .ps1 fájlt mentette.
+2. Egy számítógépen futó PowerShell 5.0-s vagy újabb, mentse a fenti konfigurációs (**SampleIISInstall**) PowerShell-parancsprogramnak (.ps1) fájlként.
 
-4. Futtassa a következő PowerShell-parancsokat a MOF-dokumentum összeállításához (információ fordítása a DSC-konfigurációk: [a DSC-konfigurációk](configurations.md):
+3. A PowerShell-konzolt lépjen a mappába, ahová mentette a .ps1 fájlt.
 
-    ```powershell
-    . .\SampleIISInstall.ps1
-    SampleIISInstall
-    ```
+4. Futtassa a következő PowerShell-parancsokat fordítása a MOF-dokumentum (További információ a DSC-konfigurációk fordítása: [DSC-konfigurációk](configurations.md):
 
-5. Ezzel létrehoz egy `localhost.mof` fájl egy új mappát a `SampleIISInstall`.
-Nevezze át, és helyezze át a fájlt a megfelelő helyre a virtuális Merevlemezt a `Pending.mof` használatával a [elem áthelyezése](https://technet.microsoft.comlibrary/hh849852.aspx) parancsmag. Például:
+   ```powershell
+   . .\SampleIISInstall.ps1
+   SampleIISInstall
+   ```
 
-    ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
-    ```
-6. Válassza le a virtuális merevlemez meghívásával a [Dismount-VHD](https://technet.microsoft.com/library/hh848562.aspx) parancsmag. Például:
+5. Ezzel létrehoz egy `localhost.mof` fájlt egy új mappát a `SampleIISInstall`.
+   Nevezze át, és helyezze át ezt a fájlt a megfelelő helyre a VHD-t, mint a `Pending.mof` használatával a [elem áthelyezése](https://technet.microsoft.comlibrary/hh849852.aspx) parancsmagot. Például:
 
-    ```powershell
-    Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
-    ```
+   ```powershell
+       Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
+   ```
 
-7. Hozzon létre egy virtuális Gépet a virtuális Merevlemezt, amelyre telepítette a DSC MOF-dokumentum.
-Kezdeti állítja, és az operációs rendszer telepítése után az IIS lesz telepítve.
-Ezt ellenőrizheti meghívásával a [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) parancsmag.
+6. Leválasztja a virtuális merevlemez meghívásával a [Dismount-VHD](/powershell/module/hyper-v/dismount-vhd) parancsmagot. Például:
 
-## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>A DSC metakonfigurációját szúrjon be egy virtuális merevlemez
+   ```powershell
+   Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
+   ```
 
-Beállíthatja úgy is egy számítógépen, hogy a konfigurációs lekéréses kezdeti állítja, úgy, hogy egy metakonfigurációját (lásd: [konfigurálása a helyi Configuration Manager (LCM)](metaConfig.md)), a VHD-be a `MetaConfig.mof` fájlt.
-Ha a **DSCAutomationHostEnabled** beállításkulcs értéke 2 (az alapértelmezett érték), DSC alkalmazza a metakonfigurációját által meghatározott `MetaConfig.mof` számára a LCM az első alkalommal szolgáltatáshoz a számítógép indításakor.
-A metakonfigurációját határozza meg, hogy a LCM kell lekéréses konfigurációk a lekérési kiszolgálójáról, ha a számítógép megkísérli egy, a lekéréses kiszolgáló konfigurációs lekéréses kezdeti állítja a.
-A DSC lekérési kiszolgálójával beállításával kapcsolatos információkért lásd: [DSC lekérési webkiszolgáló beállítása](pullServer.md).
+7. Hozzon létre egy virtuális Gépet a virtuális Merevlemezt, amelyre telepítve van a DSC MOF-dokumentumot.
 
-A jelen példában használjuk az előző szakaszban leírt konfigurációját (**SampleIISInstall**), és a következő metakonfigurációját:
+Kezdeti rendszerindítás és az operációs rendszer telepítése után az IIS lesz telepítve.
+Ezt ellenőrizheti meghívásával a [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) parancsmagot.
+
+## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>A DSC metaconfiguration behelyezése egy virtuális merevlemez
+
+Beállíthatja egy számítógépen, hogy a konfigurációs lekérési kezdeti rendszerindítás, úgy, hogy egy metaconfiguration (lásd: [a helyi Configuration Manager (LCM) konfigurálása](metaConfig.md)), a VHD-be a `MetaConfig.mof` fájlt.
+Ha a **DSCAutomationHostEnabled** beállításkulcs értéke 2 (az alapértelmezett érték), DSC érvényes lesz a által meghatározott metaconfiguration `MetaConfig.mof` való regisztrálásához először a számítógép indításakor a LCM.
+Ha a metaconfiguration határozza meg, hogy az LCM kérje le a konfigurációkat egy lekéréses kiszolgálóról, a számítógép megkísérli lekérni egy konfigurációt az adott lekéréses kiszolgálón található első.
+A DSC lekéréses kiszolgálón beállításával kapcsolatos további információkért lásd: [DSC lekérési kiszolgáló beállítása](pullServer.md).
+
+Ebben a példában mind az előző szakaszban leírt konfiguráció használjuk (**SampleIISInstall**), és a következő metaconfiguration:
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -125,82 +131,86 @@ configuration PullClientBootstrap
 }
 ```
 
-### <a name="to-inject-the-metaconfiguration-mof-document-on-the-vhd"></a>A virtuális merevlemezen a metakonfigurációját MOF dokumentum szúrjon
+### <a name="to-inject-the-metaconfiguration-mof-document-on-the-vhd"></a>Az a virtuális merevlemezen a metaconfiguration MOF dokumentum beszúrása
 
-1. A VHD-t a metakonfigurációját szúrjon meghívásával szeretné csatlakoztatni a [virtuális merevlemez csatlakoztatása](https://technet.microsoft.com/library/hh848551.aspx) parancsmag. Például:
+1. Csatlakoztassa a VHD-t, amelybe a metaconfiguration beszúrása meghívásával szeretné a [virtuális merevlemez csatlakoztatása](/powershell/module/hyper-v/mount-vhd) parancsmagot. Például:
 
-    ```powershell
-    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
-    ```
+   ```powershell
+   Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
+   ```
 
-2. [Állítson be egy webes DSC lekérési kiszolgálójával](pullServer.md), és mentse a **SampleIISInistall** konfigurációját, és a megfelelő mappát.
+2. [DSC lekérési kiszolgáló beállítása](pullServer.md), és mentse a **SampleIISInistall** konfigurációját, és a megfelelő mappát.
 
-3. Rendszert futtató számítógép PowerShell 5.0-s vagy újabb, mentse a fenti metakonfigurációját (**PullClientBootstrap**), a PowerShell-parancsfájl (.ps1).
+3. A számítógépen futó PowerShell 5.0-s vagy újabb, mentse a fenti metaconfiguration (**PullClientBootstrap**) PowerShell-parancsprogramnak (.ps1) fájlként.
 
-4. PowerShell-konzolban keresse meg a mappát, amelybe a .ps1 fájlt mentette.
+4. A PowerShell-konzolt lépjen a mappába, ahová mentette a .ps1 fájlt.
 
-5. Futtassa a következő PowerShell-parancsokat a metakonfigurációját MOF dokumentum összeállításához (információ fordítása a DSC-konfigurációk: [a DSC-konfigurációk](configurations.md):
+5. Futtassa a következő PowerShell-parancsokat a metaconfiguration MOF dokumentum fordítása (További információ a DSC-konfigurációk fordítása: [DSC-konfigurációk](configurations.md):
 
-    ```powershell
-    . .\PullClientBootstrap.ps1
-    PullClientBootstrap
-    ```
+   ```powershell
+   . .\PullClientBootstrap.ps1
+   PullClientBootstrap
+   ```
 
-6. Ezzel létrehoz egy `localhost.meta.mof` fájl egy új mappát a `PullClientBootstrap`.
-Nevezze át, és helyezze át a fájlt a megfelelő helyre a virtuális Merevlemezt a `MetaConfig.mof` használatával a [elem áthelyezése](https://technet.microsoft.comlibrary/hh849852.aspx) parancsmag.
+6. Ezzel létrehoz egy `localhost.meta.mof` fájlt egy új mappát a `PullClientBootstrap`.
+   Nevezze át, és helyezze át ezt a fájlt a megfelelő helyre a VHD-t, mint a `MetaConfig.mof` használatával a [elem áthelyezése](https://technet.microsoft.comlibrary/hh849852.aspx) parancsmagot.
 
-    ```powershell
-    Move-Item -Path C:\DSCTest\PullClientBootstrap\localhost.meta.mof -Destination E:\Windows\Sytem32\Configuration\MetaConfig.mof
-    ```
+   ```powershell
+   Move-Item -Path C:\DSCTest\PullClientBootstrap\localhost.meta.mof -Destination E:\Windows\System32\Configuration\MetaConfig.mof
+   ```
 
-7. Válassza le a virtuális merevlemez meghívásával a [Dismount-VHD](https://technet.microsoft.com/library/hh848562.aspx) parancsmag. Például:
+7. Leválasztja a virtuális merevlemez meghívásával a [Dismount-VHD](/powershell/module/hyper-v/dismount-vhd) parancsmagot. Például:
 
-    ```powershell
-    Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
-    ```
+   ```powershell
+   Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
+   ```
 
-8. Hozzon létre egy virtuális Gépet a virtuális Merevlemezt, amelyre telepítette a DSC MOF-dokumentum.
-Kezdeti állítja, és az operációs rendszer telepítése után DSC fogja lekérni a konfiguráció a lekérési kiszolgálójáról, és IIS lesz telepítve.
-Ezt ellenőrizheti meghívásával a [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) parancsmag.
+8. Hozzon létre egy virtuális Gépet a virtuális Merevlemezt, amelyre telepítve van a DSC MOF-dokumentumot.
 
-## <a name="disable-dsc-at-boot-time"></a>A DSC rendszerindítás letiltása
+Kezdeti rendszerindítás és az operációs rendszer telepítése után fogja lekérni a DSC lekéréses kiszolgálóról az a konfiguráció, és az IIS lesz telepítve.
+Ezt ellenőrizheti meghívásával a [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) parancsmagot.
 
-Alapértelmezés szerint a értékének a **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled** kulcs értéke 2, amely lehetővé teszi, hogy a DSC-konfiguráció futtatásához, ha a számítógép a folyamatban lévő vagy a jelenlegi állapot. Ha nem szeretné, hogy a konfigurációs futtatását, hogy a kezdeti állítja, úgy kell beállítani a kulcsnak az értéke 0:
+## <a name="disable-dsc-at-boot-time"></a>Tiltsa le a DSC rendszerindítás közben
 
-1. A VHD csatlakoztatására meghívásával a [virtuális merevlemez csatlakoztatása](https://technet.microsoft.com/library/hh848551.aspx) parancsmag. Például:
+Az érték alapértelmezés szerint a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled` kulcs értéke 2, amely lehetővé teszi a DSC-konfiguráció, ha a számítógép nem függőben lévő vagy a jelenlegi állapotban. Ha nem szeretné a futtatását, hogy az első konfiguráció, így kell beállítása a kulcsnak az értéke 0-ra:
 
-    ```powershell
-    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
-    ```
+1. A VHD csatlakoztatására meghívásával a [virtuális merevlemez csatlakoztatása](/powershell/module/hyper-v/mount-vhd) parancsmagot. Például:
 
-2. Betölteni a beállításjegyzéket **HKLM\Software** alkulcs meghívásával virtuális merevlemezről `reg load`.
+   ```powershell
+   Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
+   ```
 
-    ```
-    reg load HKLM\Vhd E:\Windows\System32\Config\Software`
-    ```
+2. A beállításjegyzék betöltése `HKLM\Software` alkulcsainak a VHD-vel meghívásával `reg load`.
 
-3. Keresse meg a **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\***  a PowerShell beállításjegyzék-szolgáltatójának használatával.
+   ```powershell
+   reg load HKLM\Vhd E:\Windows\System32\Config\Software`
+   ```
 
-    ```powershell
-    Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
-    ```
+3. Keresse meg a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*` a PowerShell-beállításjegyzék-szolgáltatójának használatával.
+
+   ```powershell
+   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
+   ```
 
 4. Módosítsa az értéket a `DSCAutomationHostEnabled` 0-ra.
 
-    ```powershell
-    Set-ItemProperty -Path . -Name DSCAutomationHostEnabled -Value 0
-    ```
+   ```powershell
+   Set-ItemProperty -Path . -Name DSCAutomationHostEnabled -Value 0
+   ```
 
 5. Távolítsa el a beállításjegyzékben a következő parancsok futtatásával:
 
-    ```powershell
-    [gc]::Collect()
-    reg unload HKLM\Vhd
-    ```
+   ```powershell
+   [gc]::Collect()
+   reg unload HKLM\Vhd
+   ```
 
 ## <a name="see-also"></a>Lásd még:
 
-- [A DSC-konfigurációk](configurations.md)
-- [DSCAutomationHostEnabled beállításkulcs](DSCAutomationHostEnabled.md)
-- [A Local Configuration Manager (LCM) konfigurálása](metaConfig.md)
-- [A DSC lekérési webkiszolgáló beállítása](pullServer.md)
+[DSC-konfigurációk](configurations.md)
+
+[DSCAutomationHostEnabled beállításkulcs](DSCAutomationHostEnabled.md)
+
+[A Local Configuration Manager (LCM) konfigurálása](metaConfig.md)
+
+[DSC lekérési kiszolgáló beállítása](pullServer.md)

@@ -1,41 +1,46 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: e4588e8c69efb965cd33c273ad09a8bef8e9bf16
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: fcf2adf67f36edb534df3e2a849459fb20e1c2de
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189567"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892362"
 ---
-# <a name="extract-and-parse-structured-objects-out-of-string"></a>Strukturált objektumok karakterláncokból való kibontása és elemzése
-Az azzal a ConvertFrom-karakterlánc parancsmag további funkciókkal is:
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>Strukturált objektumok sztringekből való kibontása és elemzése
 
--   Alapértelmezés szerint eltávolítja a mértékben text tulajdonságához. Megadhatja a - IncludeExtent paraméterrel.
+Néhány további funkciókat is azzal az `ConvertFrom-String` parancsmagot:
 
--   Sok tanulási algoritmus hibajavításokat tartalmaz az MVP és közösségi visszajelzését.
+- Eltávolítja a mértékben a text tulajdonság alapértelmezés szerint. Megadhatja a - IncludeExtent paraméterrel.
 
--   Új - UpdateTemplate paramétere a tanulási algoritmus-eredményeket menteni a sablonfájl megjegyzést. Így a tanulási (a leglassabb szakasza) feldolgozása egy egyszeri költség. A sablont, amely tartalmazza a kódolt tanulási algoritmus Convert-karakterlánc fut már szinte azonnali.
+- Számos tanulási algoritmus hibajavítások az MVP és a közösségi visszajelzések.
 
+- Új - UpdateTemplate paraméter a tanulási algoritmus-eredményeket menteni a sablonfájlt megjegyzést. Ez lehetővé teszi a learning feldolgozásához (a leglassabb fázis) egy egyszeri költség. Futó Convert-karakterlánc, amely tartalmazza a kódolt tanulási algoritmus-sablonnal már szinte azonnali.
 
-<a name="extract-and-parse-structured-objects-out-of-string-content"></a>Bontsa ki és értelmezni a karakterlánc tartalmakhoz strukturált objektumok
-----------------------------------------------------------
+## <a name="extract-and-parse-structured-objects-out-of-string-content"></a>Strukturált objektumok karakterlánc tartalmakhoz kibontása és elemzése
 
-Együttműködve [Microsoft Research](http://research.microsoft.com/), egy új **ConvertFrom-karakterlánc** parancsmaggal hozzá lett adva.
+Együttműködve [a Microsoft Research](https://www.microsoft.com/en-us/research/?from=http%3A%2F%2Fresearch.microsoft.com%2F), egy új `ConvertFrom-String` parancsmaggal hozzá lett adva.
 
-Ez a parancsmag két módot támogat: basic tagolt elemzése, és automatikusan létrejön példa adatvezérelt elemzésekor.
+Ez a parancsmag két módot támogat: alapszintű tagolt elemzés, és automatikusan létrehozott példa adatvezérelt elemzése.
 
-Tagolt elemzése, alapértelmezés szerint felosztja a bemeneti: szóköz, és a tulajdonságnevek rendel az eredményül kapott csoportok. Testre szabhatja az elválasztó karakter:
+Tagolt elemzés, alapértelmezés szerint bontja a bemenet üres helyet, és a tulajdonságnevek rendel az eredményül kapott csoportok. Testre szabhatja az elválasztó karakter:
 
-> 1 \[C:\\temp\] &gt; &gt; "Hello, World" |} ConvertFrom-karakterlánc |} Táblázat formázása-automatikus
+```powershell
+"Hello World" | ConvertFrom-String | Format-Table -Auto
+```
 
-P1    P2
---    --
+```output
+P1     P2
+--     --
+Hello  World
+```
 
-A parancsmag is támogatja a alapján automatikusan létrehozott példa adatvezérelt elemzése a [FlashExtract](http://research.microsoft.com/en-us/um/people/sumitg/flashextract.html) munka kutatás [Microsoft Research](http://research.microsoft.com).
+A parancsmag is támogatja a alapján automatikusan létrehozott példa adatvezérelt elemzés a [FlashExtract](https://www.microsoft.com/en-us/research/publication/flashextract-framework-data-extraction-examples/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fum%2Fpeople%2Fsumitg%2Fflashextract.html) kutatási munka [a Microsoft Research](https://www.microsoft.com/en-us/research/?from=http%3A%2F%2Fresearch.microsoft.com%2F).
 
-A kezdéshez, fontolja meg a szöveges címjegyzék:
+Első lépésként fontolja meg egy szöveges alapú címjegyzék:
 
+```
     Ana Trujillo
 
     Redmond, WA
@@ -55,9 +60,11 @@ A kezdéshez, fontolja meg a szöveges címjegyzék:
     Hanna Moos
 
     Puyallup, WA
+```
 
-Néhány példa átmásolja a fájlt, amely a sablont használhatja:
+Néhány példa másolja egy fájlba, melyiket fogja használni a sablont:
 
+```
     Ana Trujillo
 
     Redmond, WA
@@ -65,11 +72,11 @@ Néhány példa átmásolja a fájlt, amely a sablont használhatja:
     Antonio Moreno
 
     Renton, WA
+```
 
+Nevezi el, hogy ehhez kapcsos zárójelek körül adatokat szeretne kinyerni, helyezze el. Mivel a **neve** tulajdonság (és a kapcsolódó egyéb tulajdonságok) is többször jelenik meg, egy csillag (\*) jelzi, hogy ennek hatására a több rekord (nem pedig a tulajdonságok többféle csomagolja ki az egyik rekord):
 
-
-Helyezze a kinyerési, kívánt adatok körül kapcsos zárójelek adjon neki egy nevet, azt megteheti. Mivel a **neve** tulajdonság (és a kapcsolódó egyéb tulajdonságok) is többször jelenik meg, használja a csillag (\*) jelzi, hogy az eredmény több rekordot (helyett álló, lemezcsoport típusú tulajdonságok csomagolja ki egy rekord):
-
+```
     {Name\*:Ana Trujillo}
 
     {City:Redmond}, {State:WA}
@@ -77,15 +84,22 @@ Helyezze a kinyerési, kívánt adatok körül kapcsos zárójelek adjon neki eg
     {Name\*:Antonio Moreno}
 
     {City:Renton}, {State:WA}
+```
 
-Példák, a készletből **ConvertFrom-karakterlánc** mostantól automatikusan nyerhet objektum alapú kimeneti hasonló struktúrájú bemeneti fájlokból.
+A példákban egy készlete `ConvertFrom-String` most már automatikusan kinyerheti az objektum alapú kimeneti bemeneti fájlok hasonló struktúrával.
 
-> 2 \[C:\\temp\]
->
-> &gt;&gt; Get-tartalom. \\addresses.output.txt |} ConvertFrom-karakterlánc - TemplateFile. \\addresses.template.txt |} &gt; &gt; &gt; Format-Table-automatikus
->
-> ExtentText neve város állapota
-> ----------                     ----               ----     -----
-> Ana Trujillo...                Ana Trujillo Redmond WA Antonio Moreno...              Antonio Moreno Renton WA Thomas Zsigmond...                Thomas Zsigmond Seattle WA lengyel Berglund...          Lengyel Berglund Redmond WA Hanna Moos...                  Hanna Moos Puyallup WA
+```powershell
+Get-Content .\addresses.output.txt | ConvertFrom-String -TemplateFile .\addresses.template.txt | Format-Table -Auto
+```
 
-További adatok módosítását. a kibontott szöveg, amelyet ehhez a **ExtentText** tulajdonság rögzíti a raw szöveg, amelyből a rekordot ki lett olvasni. Visszajelzés a szolgáltatást, vagy amelynek nehézségei vannak példák írása tartalmak megosztása, írjon e-mailt <psdmfb@microsoft.com>.
+```output
+ExtentText                     Name               City     State
+----------                     ----               ----     -----
+Ana Trujillo...                Ana Trujillo       Redmond  WA
+Antonio Moreno...              Antonio Moreno     Renton   WA
+Thomas Hardy...                Thomas Hardy       Seattle  WA
+Christina Berglund...          Christina Berglund Redmond  WA
+Hanna Moos...                  Hanna Moos         Puyallup WA
+```
+
+Ehhez a kinyert szöveg további adatkezelés a **ExtentText** tulajdonság a nyers szöveg, amelyből a rekordot kinyert rögzíti. Szeretne visszajelzést adni ezt a szolgáltatást, vagy oszthat meg tartalmakat, amelyhez problémái vannak példák írása, írjon e-mailt <psdmfb@microsoft.com>.

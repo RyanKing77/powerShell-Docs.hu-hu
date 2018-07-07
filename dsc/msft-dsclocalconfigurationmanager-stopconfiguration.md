@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Az MSFT_DSCLocalConfigurationManager osztály StopConfiguration metódusa
-ms.openlocfilehash: aaed29cb81e2079c4673b621b81c52e109aa7b48
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1cd887d205967c3d282143df4e6199027639230e
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218875"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893875"
 ---
 # <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály StopConfiguration metódusa
 
-Leállítja a folyamatban lévő konfigurációs módosítást.
+Leállítja a módosítás folyamatban van.
 
-<a name="syntax"></a>Szintaxis
-------
+## <a name="syntax"></a>Szintaxis
 
 ```mof
 uint32 StopConfiguration(
@@ -22,28 +21,24 @@ uint32 StopConfiguration(
 );
 ```
 
-<a name="parameters"></a>Paraméterek
-----------
+## <a name="parameters"></a>Paraméterek
 
-*kényszerített* \[a\] **igaz** kényszerítése a konfigurációját, és állítsa le.
+*kényszerített* \[a\] **igaz** kényszerített leállítása a konfigurációt.
 
-## <a name="return-value"></a>Visszatérési érték
-------------
+## <a name="return-value"></a>Vrácená hodnota
 
-Sikeres művelet; nulla értéket ad vissza Ellenkező esetben hibakódot.
+Sikeres; a nulla értéket ad vissza egyéb esetben egy hibakódot ad vissza.
 
 ## <a name="remarks"></a>Megjegyzések
 
-Ez a statikus módszer.
+Ez a statická metoda.
 
 ## <a name="requirements"></a>Követelmények
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Lásd még:
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

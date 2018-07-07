@@ -3,47 +3,52 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: A WMF 5.1 ismert problémák
-ms.openlocfilehash: d53031bea978087c68fcb22989c7cd2e2cf2d9fa
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219453"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892137"
 ---
-# <a name="known-issues-in-wmf-51"></a>A WMF 5.1 ismert problémák #
+# <a name="known-issues-in-wmf-51"></a>A WMF 5.1 ismert problémák
 
-> Megjegyzés: Ez az információ van változhat.
+> [!Note]
+> Ez az információ a változhat.
 
-## <a name="starting-powershell-shortcut-as-administrator"></a>PowerShell helyi rendszergazdaként indítása
-WMF telepítésekor, ha megpróbálja indítsa el a Powershellt rendszergazdaként a parancsikonnal, előfordulhat, hogy "Ismeretlen hiba" üzenetet kap.
-Nyissa meg a parancsikont nem rendszergazda, és most már működik a helyi rendszergazdaként akkor is.
+## <a name="starting-powershell-shortcut-as-administrator"></a>Kezdődően a PowerShell helyi rendszergazdaként
+
+A WMF telepítésekor, ha megpróbálja indítsa el a Powershellt rendszergazdaként, a helyi "Ismeretlen" hibaüzenetet kaphat.
+Nyissa meg újra a helyi, nem rendszergazda, és most már működik a helyi rendszergazdaként akkor is.
 
 ## <a name="pester"></a>Pester
-Ebben a kiadásban van két probléma kell ügyelnie, ha a Nano Server Pester használatával:
 
-* Tesztek futtatása ellen Pester maga okozhat egyes hibák teljes CLR és CORE CLR közötti különbségek miatt. A Validate metódus különösen XmlDocument típus nem érhető el. Hat tesztet, amely ellenőrzi a NUnit kimeneti naplók sémája ismert sikertelen lesz.
-* Egy kód érvényességének teszt jelenleg sikertelen lesz, mivel a *WindowsFeature* DSC-erőforrás nem létezik a Nano Server. Azonban ezek a hibák általában jóindulatú és biztonságosan figyelmen kívül hagyható.
+Ebben a kiadásban két problémák vannak, célszerű tisztában lennie a Pester és a Nano Server használatánál:
+
+- Tesztek futtatása ellen maga Pester eredményez bizonyos hibák CLR-beli teljes és CORE CLR-beli közötti különbségek miatt. Az érvényesítés módszer különösen XmlDocument attribútummal hívja típus nem érhető el. Hat teszteket, amelyek érvényesítse a NUnit kimeneti naplók sémája ismert, hogy sikertelen lesz.
+- Egy kódot lefedettség teszt jelenleg sikertelen lesz, mivel a *WindowsFeature* DSC-erőforrás nem létezik a Nano Serveren. Azonban ezek a hibák általában jóindulatú és biztonságosan figyelmen kívül hagyható.
 
 ## <a name="operation-validation"></a>Művelet érvényesítése
 
-* Update-Help miatt nem működő Súgó URI Microsoft.PowerShell.Operation.Validation modul sikertelen
+- `Update-Help` Microsoft.PowerShell.Operation.Validation modul munkaidőn kívüli súgó URI miatt meghiúsul
 
-## <a name="dsc-after-uninstall-wmf"></a>A DSC után távolítsa el a WMF
-* WMF eltávolítása nem törölhető DSC MOF dokumentumok a következő konfigurációt tartalmazó mappa. A DSC-ből nem fog megfelelően működni, ha a MOF-dokumentumok újabb tulajdonságait, amelyek nem érhetők el a régebbi rendszerekre tartalmaznak. Ebben az esetben futtassa a következő parancsfájlt az emelt szintű PowerShell-konzolon a DSC-állapotok karbantartása.
- ```powershell
+## <a name="dsc-after-uninstall-wmf"></a>DSC után távolítsa el a WMF
+
+- A WMF eltávolítása nem törli DSC MOF dokumentumok a konfigurációs mappából. DSC nem fog megfelelően működni, ha a MOF-dokumentumok tartalmaznak újabb tulajdonságok, amelyek nem érhetők el a régebbi rendszerekre. Ebben az esetben futtassa a következő szkriptet az emelt szintű PowerShell-konzolon a DSC-állapotok karbantartása.
+
+  ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
             "$env:windir\system32\configuration\*.mof.checksum",
             "$env:windir\system32\configuration\PartialConfiguration\*.mof",
             "$env:windir\system32\configuration\PartialConfiguration\*.mof.checksum"
            )
-
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
- ```
+  ```
 
-## <a name="jea-virtual-accounts"></a>JEA virtuális fiókok
-JEA végpontok és a WMF 5.0 virtuális fiókok használatára konfigurált munkamenet-konfigurációk nem teszi a virtuális fiók használata a WMF 5.1 a frissítés után.
-Ez azt jelenti, hogy a parancsok JEA-munkamenetekben futtathatják a csatlakozó felhasználó identitásának helyett egy ideiglenes rendszergazdai fiók, potenciálisan akadályozza meg, hogy a felhasználó az emelt szintű jogosultságokat igénylő parancsok futtatásával fognak futni.
-A virtuális fiókokat visszaállításához szükség regisztrációt megszüntetni, majd regisztrálja újra a munkamenet-konfigurációk, használja a virtuális fiókokat.
+## <a name="jea-virtual-accounts"></a>Jea-t a virtuális fiókok
+
+A JEA-végpont és WMF 5.0-s virtuális fiókok használatára konfigurált munkamenet-konfigurációk nem lehet virtuális fiók használatára a WMF 5.1 verziófrissítés utáni teendők konfigurálva.
+Ez azt jelenti, hogy a JEA-munkamenetekben futó parancsok helyett egy ideiglenes rendszergazdai fiók, potenciálisan meggátolja, hogy a felhasználó emelt szintű jogosultságokat igénylő parancsok futtatása a csatlakozó felhasználó identitása alatt fog futni.
+A virtuális fiókok helyreállítása, szüksége regisztrációját, és regisztrálja újra az minden olyan munkamenet-konfigurációk, amelyek a virtuális fiókokat kell használni.
 
 ```powershell
 # Find the JEA endpoint by its name

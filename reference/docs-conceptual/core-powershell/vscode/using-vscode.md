@@ -1,67 +1,67 @@
-# <a name="using-visual-studio-code-for-powershell-development"></a>A Visual Studio Code fejlesztési PowerShell használatával
+# <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell-fejlesztéshez a Visual Studio Code használatával
 
-Kívül a [PowerShell ISE][ise], PowerShell egyben a Visual Studio Code jól támogatott.
-Ezenkívül az ISE használata nem támogatott PowerShell mag, amíg a Visual Studio Code PowerShell Core támogatott platformon (a Windows, a macOS és a Linux)
+Mellett a [PowerShell ISE-ben][ise], PowerShell egyben a Visual Studio Code jól támogatott.
+Ezenkívül az ISE-ben nem támogatott a PowerShell Core, a Visual Studio Code-ot minden platformon (Windows, macOS és Linux) a PowerShell Core támogatott
 
-Használhatja a Visual Studio Code a Windows PowerShell használatával 5-ös verzióját a Windows 10 vagy telepítésével [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) a régebbi verziójú Windows OSs (Windows 8.1, stb.).
+Használhatja a Visual Studio Code Windows PowerShell 5-ös verzió Windows 10-es vagy telepítésével [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) a régebbi verziójú Windows nyílt forráskódú (pl. Windows 8.1, stb.).
 
-Az megkezdése előtt ellenőrizze, hogy PowerShell létezik a rendszeren.
-A Windows, a macOS és a Linux modern munkaterhelések esetén lásd:
+Mielőtt hozzákezdene, ellenőrizze, hogy PowerShell létezik a rendszerben.
+Számítási feladatok Windows, macOS és Linux rendszereken lásd:
 
-- [PowerShell központi telepítése Linux rendszeren][install-pscore-linux]
-- [MacOS PowerShell központi telepítése][install-pscore-macos]
-- [A Windows PowerShell központi telepítése][install-pscore-windows]
+- [A PowerShell Core telepítése Linux rendszeren][install-pscore-linux]
+- [A PowerShell Core telepítése macOS rendszeren][install-pscore-macos]
+- [Windows PowerShell Core telepítése][install-pscore-windows]
 
-A hagyományos Windows PowerShell-munkaterhelésekhez, lásd: [Windows PowerShell telepítése][install-winps].
+Windows PowerShell hagyományos számítási feladatok esetén tekintse meg a [Windows PowerShell telepítése][install-winps].
 
-## <a name="editing-with-visual-studio-code"></a>Szerkesztés a Visual Studio Code
+## <a name="editing-with-visual-studio-code"></a>A Visual Studio Code-dal szerkesztése
 
 ### <a name="1-installing-visual-studio-codehttpscodevisualstudiocomdocssetupsetup-overview"></a>[1. A Visual Studio Code telepítése](https://code.visualstudio.com/Docs/setup/setup-overview)
 
-- **Linux**: a telepítési utasításokat kövesse a [VS kódot futtató Linux](https://code.visualstudio.com/docs/setup/linux) lap
+- **Linux**: kövesse a telepítési utasításokat a [Linux rendszeren futó VS Code](https://code.visualstudio.com/docs/setup/linux) lap
 
-- **macOS**: a telepítési utasításokat kövesse a [VS kódot futtató macOS](https://code.visualstudio.com/docs/setup/mac) lap
+- **macOS**: kövesse a telepítési utasításokat a [macOS rendszeren futó VS Code](https://code.visualstudio.com/docs/setup/mac) lap
 
-> [!IMPORTANT]
-> MacOS telepítenie kell a PowerShell-bővítmény OpenSSL megfelelő működéséhez.
-> Ehhez a legegyszerűbb módja a telepítendő [Homebrew](http://brew.sh/) , majd futtassa `brew install openssl`.
-> Visual STUDIO Code most betöltheti az a PowerShell-bővítmény sikeresen megtörtént.
+  > [!IMPORTANT]
+  > MacOS-gépeken telepítenie kell a PowerShell-bővítmény OpenSSL megfelelő működéséhez.
+  > Ennek legegyszerűbb módja az, hogy telepítése [Homebrew](http://brew.sh/) , majd futtassa `brew install openssl`.
+  > A VS Code most már betöltheti a a PowerShell-bővítmény sikeresen megtörtént.
 
-- **Windows**: a telepítési utasításokat kövesse a [VS kódot futtató Windows](https://code.visualstudio.com/docs/setup/windows) lap
+- **Windows**: kövesse a telepítési utasításokat a [VS Code fut a Windows](https://code.visualstudio.com/docs/setup/windows) lap
 
 ### <a name="2-installing-powershell-extension"></a>2. PowerShell-bővítmény telepítése
 
-- A Visual Studio Code-alkalmazások indítása:
-    - **Windows**: írja be `code` a PowerShell-munkamenetben
-    - **Linux**: írja be `code` a terminálon
-    - **macOS**: írja be `code` a terminálon
+- Indítsa el a Visual Studio Code az alkalmazás által:
+  - **Windows**: beírni `code` a PowerShell-munkamenetben
+  - **Linux**: beírni `code` a terminálban
+  - **macOS**: beírni `code` a terminálban
 
-- Indítsa el **gyors nyitott** billentyűkombináció lenyomásával **Ctrl + P** (**Cmd + P** Mac gépen).
-- Írja be a nyitott gyors `ext install powershell` és találati **Enter**.
-- A **bővítmények** nézet az oldalsó sáv megnyitása. Jelölje ki a PowerShell-bővítményt a Microsofttól.
-  Valami kell megjelennie alatt, például:
+- Indítsa el a **jelenítse meg a Gyorsmegnyitási** lenyomásával **Ctrl + P** (**Cmd + P** Mac gépen).
+- Írja be a Megnyitás gyors `ext install powershell` kattintok **Enter**.
+- A **bővítmények** nézet nyílik az oldalsó sáv. Válassza ki a PowerShell-bővítmény a Microsoft.
+  Megjelennie alábbi módon:
 
   ![VSCode](../../images/vscode.png)
 
 - Kattintson a **telepítése** a PowerShell-bővítmény a Microsoft gombjára.
-- A telepítést követően megjelenik az **telepítése** gomb bekapcsolja **Újrabetöltés**.
+- A telepítést követően megjelenik a **telepítése** gomb kerül, **Újrabetöltés**.
   Kattintson a **Újrabetöltés**.
-- Miután a Visual Studio Code betöltésére tartalmaz, készen áll szerkesztésre.
+- Miután a Visual Studio Code újbóli betöltése rendelkezik, készen áll szerkesztésre.
 
 Például hozzon létre egy új fájlt, kattintson a **fájl -> új**.
-Mentse, kattintson a **fájl -> Mentés** és adja meg a fájl nevét, most mondja ki `HelloWorld.ps1`.
-Zárja be a fájlt, kattintson a "x" a fájl neve mellett.
-A Visual Studio Code kilépéshez **fájl -> kilépési**.
+A mentéshez kattintson **File -> Mentés** adja meg a fájl nevét, most tegyük fel, és `HelloWorld.ps1`.
+Zárja be a fájlt, kattintson a "x", a fájl neve mellett.
+Lépjen ki a Visual Studio Code-ban való **File -> kilépési**.
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a>Egy adott telepített verziójához PowerShell használatával
+#### <a name="using-a-specific-installed-version-of-powershell"></a>Egy adott PowerShell telepített verziójának használatával
 
-Ha szeretne egy adott telepítés a PowerShell használata a Visual Studio Code, akkor új változó hozzáadása a felhasználói beállítások fájl.
+Ha szeretne egy adott telepítési PowerShell használata a Visual Studio Code, kell új változó hozzáadása a felhasználói beállításokat fájlt.
 
 1. Kattintson a **fájl -> Beállítások -> Beállítások**
-1. Két szerkesztő ablaktábla jelennek meg.
-   A jobb szélső ablaktáblán (`settings.json`), helyezze be az alábbi beállításoknak megfelelő az operációs rendszer, a két kapcsos zárójelek között (`{` és `}`), és cserélje le *<version>* és a telepített PowerShell-verzió:
+2. Két Jelentésszerkesztő paneljei jelennek meg.
+   A jobb szélső ablaktáblán (`settings.json`), helyezze be az alábbi beállítást az operációs rendszer, a két kapcsos zárójelek között megfelelő (`{` és `}`), és cserélje le *<version>* és a telepített PowerShell-verzió:
 
-  ```json
+   ```json
     // On Windows:
     "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
 
@@ -70,13 +70,14 @@ Ha szeretne egy adott telepítés a PowerShell használata a Visual Studio Code,
 
     // On macOS:
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-  ```
-1. Cserélje le a beállítás a kívánt PowerShell végrehajtható fájl elérési útja
-1. A beállítások mentéséhez, és indítsa újra a Visual Studio Code
+   ```
 
-#### <a name="configuration-settings-for-visual-studio-code"></a>A Visual Studio Code beállításait
+3. Cserélje le a beállítás a kívánt PowerShell végrehajtható fájl elérési útja
+4. Mentse a beállításokat fájlt, és indítsa újra a Visual Studio Code
 
-Az előző bekezdésben szereplő esetekben lépések segítségével is hozzáadhat konfigurációs beállításai a `settings.json`.
+#### <a name="configuration-settings-for-visual-studio-code"></a>A Visual Studio Code-konfigurációs beállítások
+
+Az előző bekezdésben leírt lépések végrehajtásával adja hozzá a konfigurációs beállítások `settings.json`.
 
 Azt javasoljuk, hogy a Visual Studio Code a következő beállításokat:
 
@@ -90,41 +91,41 @@ Azt javasoljuk, hogy a Visual Studio Code a következő beállításokat:
 }
 ```
 
-## <a name="debugging-with-visual-studio-code"></a>A Visual Studio Code-hibakeresés
+## <a name="debugging-with-visual-studio-code"></a>Hibakeresés a Visual Studio Code-dal
 
-### <a name="no-workspace-debugging"></a>Nem-munkaterület hibakeresés
+### <a name="no-workspace-debugging"></a>Nem-munkaterület-hibakeresés
 
-1.9 Visual Studio Code verzió frissítésétől a PowerShell-parancsfájlok hibakeresése is a PowerShell-parancsfájlt tartalmazó mappa megnyitása nélkül.
-Nyissa meg a PowerShell parancsfájl a **fájl nyissa meg a fájl ->...** , állítson be egy töréspontot a sor (nyomja meg a F9), és nyomja le az F5 billentyűt a hibakeresés elindításához.
-Meg kell jelennie a hibakeresési műveletek ablaktáblán jelennek meg, amelyik lehetővé teszi, hogy megszakítással belépjen a hibakeresőbe, lépés, folytatása, állítsa le a hibakeresést.
+1.9-es verziója a Visual Studio Code-tól a PowerShell-parancsfájlok hibakeresése is a PowerShell-parancsfájlt tartalmazó mappa megnyitása nélkül.
+Nyissa meg a PowerShell-parancsfájl tárolásához a **File -> fájl megnyitása...** , állítson be egy töréspontot sorban (F9 lenyomás), és nyomja le az F5 billentyűt a hibakeresés elindításához.
+A hibakeresési műveletek panelen jelennek meg, amely lehetővé teszi, hogy a hibakeresőt, lépés, folytatása és stop-hibakeresés felosztása kell megjelennie.
 
 ### <a name="workspace-debugging"></a>Munkaterület-hibakeresés
 
-Munkaterület-hibakeresés hivatkozik egy mappát, a Visual Studio Code használatával megnyitott környezetében hibakeresés **mappa megnyitása...**  a a **fájl** menü.
-A megnyitott mappák általában, a PowerShell-projekt mappát és/vagy a Git-tárház gyökérkönyvtárában.
+Munkaterület hibakeresés hivatkozik egy mappát a Visual Studio Code használatával megnyitott kontextusában hibakeresés **mappa megnyitása...**  származó a **fájl** menü.
+A mappát, nyissa meg a PowerShell projektmappába és/vagy a Git-tárház gyökérkönyvtárában általában.
 
-Ebben a módban, még akkor is, megkezdheti a jelenleg kijelölt PowerShell-parancsfájl hibakeresés egyszerűen az F5 billentyű lenyomásával.
-Azonban munkaterület hibakeresés lehetővé teszi a jelenleg megnyitott fájl csak hibakeresési eltérő több hibakeresési konfigurációk meghatározását.
-Például egy konfigurációt is hozzáadhat:
+Ebben a módban, még akkor is, elindíthatja a jelenleg kijelölt PowerShell-parancsprogram-hibakeresés egyszerűen az F5 billentyű lenyomásával.
+Azonban munkaterület hibakeresés lehetővé teszi több hibakeresési konfiguráció eltérő csak hibakeresés a jelenleg megnyitott fájl határozza meg.
+Például egy konfigurációkat adhat hozzá:
 
-- Indítsa el a hibakeresőben Pester tesztek
-- Egy adott fájlt a hibakeresőben argumentumokkal indítása
-- A hibakeresőben egy interaktív munkamenet indítása
-- A hibakereső csatolása a PowerShell gazdafolyamatokon
+- Indítsa el a hibakeresőt a Pester tesztek
+- Indítsa el egy adott fájlra a hibakeresőt a argumentumokkal
+- A hibakereső egy interaktív munkamenet indítása
+- Csatolja a hibakeresőt a PowerShell gazdafolyamatokon
 
-Kövesse az alábbi lépéseket a hibakeresési konfigurációs fájl létrehozása céljából:
+  Kövesse az alábbi lépéseket a hibakeresési konfigurációs fájl létrehozása céljából:
 
-1. Nyissa meg a **Debug** billentyűkombináció lenyomásával nézet **Ctrl + Shift + D** (**Cmd + Shift + D** Mac gépen).
-1. Nyomja meg a **konfigurálása** fogaskerék ikonra az eszköztárban.
-1. A Visual Studio Code kéri, hogy **válasszon környezet**.
-   Válasszon **PowerShell**.
+  1. Nyissa meg a **Debug** lenyomásával nézet **Ctrl + Shift + D** (**Cmd + Shift + D** Mac gépen).
+  2. Nyomja le az **konfigurálása** fogaskerék ikont, az eszköztáron.
+  3. A Visual Studio Code felszólítja, hogy **környezet kiválasztása**.
+  Válasszon **PowerShell**.
 
-   Ha így tesz, a Visual Studio Code a munkaterület mappa gyökeréhez hoz létre a könyvtár és a ".vscode\launch.json" fájl.
-   Ez az a hibakeresési konfigurációs tárolására. Ha a fájlok egy Git-tárházban, általában kívánt véglegesíti a launch.json fájl.
-   A launch.json fájl tartalma:
+  Ha így tesz, a Visual Studio Code létrehoz egy könyvtárat és a egy ".vscode\launch.json" fájlt a munkaterület gyökérkönyvtárába.
+  Ez az a hibakeresési konfigurációs tárolására. Ha a fájlok egy Git-tárházban, általában a launch.json fájl véglegesíteni kívánja.
+  A launch.json fájl tartalma:
 
-```json
-{
+  ```json
+  {
     "version": "0.2.0",
     "configurations": [
         {
@@ -149,43 +150,45 @@ Kövesse az alábbi lépéseket a hibakeresési konfigurációs fájl létrehoz�
             "cwd": "${workspaceRoot}"
         }
     ]
-}
-```
+  }
+  ```
 
-A hibakeresési szabhatják jelképez.
-Azonban a fájl megnyitásakor a szerkesztőben, megjelenik egy **konfigurációs hozzáadása...**  gombra.
-A gombra kattintva további PowerShell hibakeresési konfigurációkat. Egy kényelmes konfiguráció hozzáadása **PowerShell: Indítsa el parancsfájl**.
-Ezzel a konfigurációval a megadott fájlt nem kötelező argumentum, el kell indítani, amikor lenyomja az F5 függetlenül attól, hogy mely fájl jelenleg aktív, a szerkesztőben is megadhat.
+  Ez a hibakeresési gyakori helyzetek jelöli.
+  Azonban ez a fájl megnyitásakor a szerkesztőben megjelenik egy **konfiguráció hozzáadása...**  gombra.
+  A gombra kattintva további PowerShell hibakeresési konfigurációk hozzáadása. Hozzáadása egy praktikus konfigurációs van **PowerShell: Indítsa el a szkript**.
+  Ebben a konfigurációban is megadhat egy adott fájlt, amikor, nyomja le az F5 nincs függetlenül attól, hogy melyik fájlt a szerkesztőben a jelenleg aktív indítható választható argumentumokat.
 
-Miután létrejött a hibakeresési konfigurációt, mely egy, a hibakeresési konfigurációból legördülő a hibakeresési munkamenetben használni kívánt konfigurációs kiválaszthatja a **Debug** nézet eszköztár.
+  Ha a hibakeresési konfigurációs létrejött, melyik konfiguráció, ha kiválaszt egy, a hibakeresési konfigurációjából legördülő a hibakeresési munkamenet során használni kívánt kiválaszthatja a **Debug** nézet eszköztárán.
 
-Van néhány olyan rendszerek, amelyek segíthetnek az első lépésekhez, a Visual Studio Code PowerShell bővítmény használatával
+  Van néhány hasznos az első lépésekhez a PowerShell-bővítmény használata a Visual Studio Code-blogok
 
-- A Visual Studio Code: [PowerShell bővítmény][ps-extension]
-- [Írási és a Visual Studio Code PowerShell-parancsfájlok hibakeresése][debug]
-- [A Visual Studio Code útmutatást hibakeresés][vscode-guide]
-- [A Visual Studio Code hibakeresési PowerShell][ps-vscode]
-- [Ismerkedés a Visual Studio Code PowerShell-fejlesztésbe.][getting-started]
-- [A Visual Studio Code szerkesztési képességeket PowerShell fejlesztési – 1. rész][editing-part1]
-- [A Visual Studio Code szerkesztési képességeket PowerShell fejlesztési – 2. rész][editing-part2]
-- [Hibakeresési PowerShell-parancsfájlt a Visual Studio Code – 1. rész][debugging-part1]
-- [Hibakeresési PowerShell-parancsfájlt a Visual Studio Code – 2. rész][debugging-part2]
+A Visual Studio Code-ot:
+
+- [PowerShell-bővítmény][ps-extension]
+- [Írási és hibakeresése a Visual Studio Code-ban a PowerShell-parancsprogramok][debug]
+- [Hibakeresés a Visual Studio Code-útmutató][vscode-guide]
+- [Hibakeresés a PowerShell, a Visual Studio Code-ban][ps-vscode]
+- [PowerShell-fejlesztés a Visual Studio Code-ban – első lépések][getting-started]
+- [PowerShell-fejlesztéshez – 1. rész funkciók szerkesztése a Visual Studio Code][editing-part1]
+- [PowerShell-fejlesztéshez – 2. rész funkciók szerkesztése a Visual Studio Code][editing-part2]
+- [Hibakeresés a PowerShell-parancsfájlt a Visual Studio Code – 1. rész][debugging-part1]
+- [Hibakeresés a PowerShell-parancsfájlt a Visual Studio Code – 2. rész][debugging-part2]
 
 [ise]: ../ise-guide.md
 [install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
 [install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
-[ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
-[debug]:https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
-[vscode-guide]:https://johnpapa.net/debugging-with-visual-studio-code/
-[ps-vscode]:https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[getting-started]:https://blogs.technet.microsoft.com/heyscriptingguy/2016/12/05/get-started-with-powershell-development-in-visual-studio-code/
-[editing-part1]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/11/visual-studio-code-editing-features-for-powershell-development-part-1/
-[editing-part2]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/12/visual-studio-code-editing-features-for-powershell-development-part-2/
-[debugging-part1]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
-[debugging-part2]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
+[ps-extension]: https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
+[debug]: https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
+[vscode-guide]: https://johnpapa.net/debugging-with-visual-studio-code/
+[ps-vscode]: https://github.com/PowerShell/vscode-powershell/tree/master/examples
+[getting-started]: https://blogs.technet.microsoft.com/heyscriptingguy/2016/12/05/get-started-with-powershell-development-in-visual-studio-code/
+[editing-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/11/visual-studio-code-editing-features-for-powershell-development-part-1/
+[editing-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/12/visual-studio-code-editing-features-for-powershell-development-part-2/
+[debugging-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
+[debugging-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
 
-## <a name="powershell-extension-for-visual-studio-code"></a>A Visual Studio Code PowerShell kiterjesztése
+## <a name="powershell-extension-for-visual-studio-code"></a>PowerShell-bővítmény a Visual Studio Code
 
-A PowerShell bővítmény forráskód található [GitHub](https://github.com/PowerShell/vscode-powershell).
+A PowerShell-bővítmény forráskód találhatók [GitHub](https://github.com/PowerShell/vscode-powershell).

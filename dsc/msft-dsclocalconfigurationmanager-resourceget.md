@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Az MSFT_DSCLocalConfigurationManager osztály ResourceGet metódusa
-ms.openlocfilehash: 30cbaa907d4dc3a921c9e5fe61ffddc5d61c2347
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1b74adf2327af2e0f9416f1d00eac4e3b75e9013
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187867"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893205"
 ---
 # <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály ResourceGet metódusa
 
-Közvetlenül meghívja a **beolvasása** DSC erőforrás metódust.
+Közvetlenül meghívja a **első** metódus a DSC-erőforrás.
 
-<a name="syntax"></a>Szintaxis
-------
+## <a name="syntax"></a>Szintaxis
 
 ```mof
 uint32 ResourceGet(
@@ -25,34 +24,30 @@ uint32 ResourceGet(
 );
 ```
 
-<a name="parameters"></a>Paraméterek
-----------
+## <a name="parameters"></a>Paraméterek
 
-*A ResourceType* \[a\] hívni az erőforrás nevét.
+*Erőforrástípus* \[a\] hívja az erőforrás nevét.
 
-*Modulnév* \[a\] az azt tartalmazó hívni a modul nevét.
+*ModuleName* \[a\] neve a modul, amely tartalmazza az erőforrás meghívásához.
 
-*resourceProperty* \[a\] határozza meg az erőforrás-tulajdonság neve és értéke egy kivonattáblát a kulcs-érték, illetve. Használja a [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) parancsmag az erőforrás-tulajdonságok és azok típusát.
+*resourceProperty* \[a\] határozza meg az erőforrás-tulajdonság neve és értéke egy kivonattáblát a kulcs-érték, illetve. Használja a [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) parancsmaggal a erőforrás-tulajdonságok és azok típusát.
 
-*konfigurációk* \[kimenő\] vissza, tartalmazza a konfigurációk beágyazott példánya.
+*konfigurációk* \[ki\] lépjen vissza, tartalmazza a konfigurációkat egy beágyazott példányát.
 
-## <a name="return-value"></a>Visszatérési érték
-------------
+## <a name="return-value"></a>Vrácená hodnota
 
-Sikeres művelet; nulla értéket ad vissza Ellenkező esetben hibakódot.
+Sikeres; a nulla értéket ad vissza egyéb esetben egy hibakódot ad vissza.
 
 ## <a name="remarks"></a>Megjegyzések
 
-Ez a statikus módszer.
+Ez a statická metoda.
 
 ## <a name="requirements"></a>Követelmények
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Lásd még:
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

@@ -2,28 +2,28 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 title: A WMF 5.1 konzoljának fejlesztései
-ms.openlocfilehash: fb689002caf42203d760f11acc64e52cfa681069
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a8e82e2f973916c2ed5007eba90ee6f2b7a9a769
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189312"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892926"
 ---
-# <a name="console-improvements-in-wmf-51"></a>A WMF 5.1# konzoljának fejlesztései
+# <a name="console-improvements-in-wmf-51"></a>A WMF 5.1 konzoljának fejlesztései
 
-## <a name="powershell-console-improvements"></a>PowerShell konzoljának fejlesztései
+## <a name="powershell-console-improvements"></a>PowerShell-konzol fejlesztései
 
-A következő módosítások lettek bevezetve a WMF 5.1 PowerShell.exe konzol élményének növelése érdekében:
+A következő módosításokat végzett változtatások a WMF 5.1 PowerShell.exe a konzol élmény javítása érdekében:
 
-###<a name="vt100-support"></a>VT100 támogatása
+### <a name="vt100-support"></a>VT100 támogatása
 
-Windows 10 támogatása az [VT100 escape-karaktersorozatokat](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx).
-PowerShell figyelmen kívül hagyja majd bizonyos VT100 formázási escape-karaktersorozatokat tábla vastagságok számításakor.
+Windows 10-es támogatása [VT100 escape-karaktersorozatokat](/windows/console/console-virtual-terminal-sequences).
+PowerShell bizonyos formázási escape-karaktersorozatokat VT100 figyelmen kívül tábla vastagságok kiszámítása során.
 
-PowerShell szintén hozzáadott egy olyan új API, amely használható a formázáshoz kódot, hogy ha VT100 támogatja-e.
+PowerShell is hozzá egy új API-t, amely segítségével a formázáshoz meghatározza, hogy VT100 támogatott.
 Például:
 
-```
+```powershell
 if ($host.UI.SupportsVirtualTerminal)
 {
     $esc = [char]0x1b
@@ -34,21 +34,22 @@ else
     "A default hello"
 }
 ```
-Ez egy teljes [példa](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) , amely megfelel a kiemeléséhez használható Select karakterláncból.
-A példa nevű fájlba mentése `MatchInfo.format.ps1xml`, majd, a profil vagy máshol futtatni `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
 
-Vegye figyelembe, hogy VT100 escape-karaktersorozatokat csak támogatott kezdődő, és a Windows 10 évforduló frissítés; Ezek nem támogatottak a korábbi rendszereken.
+Íme egy teljes [példa](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) találatok kiemelése, amely használható a `Select-String`.
+A példában mentse egy nevű fájl `MatchInfo.format.ps1xml`, majd, a profilban vagy máshol kell futtatni `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
+
+Vegye figyelembe, hogy VT100 escape-karaktersorozatokat csak a Windows 10 Évfordulós frissítés; kezdve támogatott Ezek nem támogatottak a korábbi rendszerek.
 
 ### <a name="vi-mode-support-in-psreadline"></a>A PSReadline VI mód támogatása
 
-[PSReadline](https://github.com/lzybkr/PSReadLine) vi módot támogat. Vi módban kell futtatni `Set-PSReadlineOption -EditMode Vi`.
+[PSReadline](https://github.com/lzybkr/PSReadLine) vi módot támogat. Vi módot használja, futtassa `Set-PSReadlineOption -EditMode Vi`.
 
-### <a name="redirected-stdin-with-interactive-input"></a>Interaktív bevitellel átirányított stdin
+### <a name="redirected-stdin-with-interactive-input"></a>Interaktív bemenettel átirányított stdin
 
-A korábbi verziókban a PowerShell indítása `powershell -File -` volt szükség, amikor stdin át lett irányítva, és adja meg interaktív módon parancsok szeretne.
+A korábbi verziókban a PowerShell indítása `powershell -File -` volt szükség, amikor stdin át lett irányítva, és adja meg a parancsok interaktív módon szeretne.
 
-A WMF 5.1, ezen nehéz felderíteni a beállítás már nem szükséges.
-Megkezdheti PowerShell pl. kapcsolók nélkül `powershell`.
+A WMF 5.1, ezen nehéz felderíteni, a beállítás már nem szükséges.
+Elkezdheti PowerShell például kapcsolók nélkül `powershell`.
 
-Vegye figyelembe, hogy PSReadline jelenleg nem támogatja a átirányítva stdin, és átirányított stdin a beépített parancssori szerkesztési élményt rendkívül korlátozott, például a nyílbillentyűk nem működnek.
-Egy későbbi kiadásban az PSReadline eleget kell tennie a probléma.
+Vegye figyelembe, hogy PSReadline jelenleg nem támogatja az átirányított stdin, és a beépített parancssori Profilszerkesztési élmény az átirányított stdin rendkívül korlátozott, például a nyíl billentyűk nem működnek.
+PSReadline egy jövőbeli verziójában meg a probléma megoldására.

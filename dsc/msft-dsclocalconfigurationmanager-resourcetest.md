@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Az MSFT_DSCLocalConfigurationManager osztály ResourceTest metódusa
-ms.openlocfilehash: 714bbb286ebbe4ed0f1faa15e03ac4b51a3ee87f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e7645b0c6b93b96cb01f72c1c92d468f7642ea13
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218858"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893076"
 ---
 # <a name="resourcetest-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály ResourceTest metódusa
 
-Közvetlenül meghívja a **teszt** DSC erőforrás metódust.
+Közvetlenül meghívja a **teszt** metódus a DSC-erőforrás.
 
-<a name="syntax"></a>Szintaxis
-------
+## <a name="syntax"></a>Szintaxis
 
 ```mof
 uint32 ResourceTest(
@@ -25,34 +24,30 @@ uint32 ResourceTest(
 );
 ```
 
-<a name="parameters"></a>Paraméterek
-----------
+## <a name="parameters"></a>Paraméterek
 
-*A ResourceType* \[a\] hívni az erőforrás nevét.
+*Erőforrástípus* \[a\] hívja az erőforrás nevét.
 
-*Modulnév* \[a\] az azt tartalmazó hívni a modul nevét.
+*ModuleName* \[a\] neve a modul, amely tartalmazza az erőforrás meghívásához.
 
-*resourceProperty* \[a\] határozza meg az erőforrás-tulajdonság neve és értéke egy kivonattáblát a kulcs-érték, illetve. Használja a [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) parancsmag az erőforrás-tulajdonságok és azok típusát.
+*resourceProperty* \[a\] határozza meg az erőforrás-tulajdonság neve és értéke egy kivonattáblát a kulcs-érték, illetve. Használja a [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) parancsmaggal a erőforrás-tulajdonságok és azok típusát.
 
-*InDesiredState* \[kimenő\] a return, ez a tulajdonság értéke **igaz** Ha a célcsomópont a megfelelő állapotban van.
+*InDesiredState* \[ki\] a visszaadandó, ez a tulajdonság értéke **igaz** Ha a célcsomópont a kívánt állapotban van.
 
-## <a name="return-value"></a>Visszatérési érték
-------------
+## <a name="return-value"></a>Vrácená hodnota
 
-Sikeres művelet; nulla értéket ad vissza Ellenkező esetben hibakódot.
+Sikeres; a nulla értéket ad vissza egyéb esetben egy hibakódot ad vissza.
 
 ## <a name="remarks"></a>Megjegyzések
 
-Ez a statikus módszer.
+Ez a statická metoda.
 
 ## <a name="requirements"></a>Követelmények
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Lásd még:
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

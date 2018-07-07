@@ -1,143 +1,114 @@
 ---
 ms.date: 05/17/2018
-keywords: PowerShell-core
+keywords: PowerShell, a core
 title: PowerShell 6.0 kapcsolatos ismert problémák
-ms.openlocfilehash: 6ad1bcaf1de06f204b57eb8ce23b3053ba4a5b38
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
+ms.openlocfilehash: 7fa6b9935ae75b62df72609b8a9ec16246b1c610
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309575"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893688"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 kapcsolatos ismert problémák
 
-## <a name="known-issues-for-powershell-on-non-windows-platforms"></a>A nem Windows platformokon PowerShell kapcsolatos ismert problémák
+## <a name="known-issues-for-powershell-on-non-windows-platforms"></a>Ismert problémák PowerShell nem Windows platformokon
 
-A Linux és macOS PowerShell alfa kiadásaiban többnyire működési, de néhány jelentős korlátozások és meghatározhatnak olyan használati problémákat rendelkezik. Linux PowerShell feloldja a béta és macOS működik, és alfa kiadások, mint stabil, de továbbra is lehetséges, hogy nem kell rendelkező egyes szolgáltatások készlete, és tartalmazhatnak hibák. Néhány esetben ezek a problémák egyszerűen a még nem lett még rögzített hibák. Más esetekben (például az alapértelmezett aliasok ls, cp, stb.), azt keres visszajelzés a Közösségtől kapcsolatban a választási lehetőségek biztosítjuk.
+PowerShell a Linux és MacOS rendszeren alfa kiadásaiban többnyire működési, de rendelkezik néhány jelentős korlátozások és a használati problémákkal kapcsolatban. Béta verzióinak PowerShell Linux és macOS működési és alfa kiadások, mint stabil azonban továbbra is kell, hiányoznak bizonyos funkciók készletét, és a hibák is tartalmazhat. Bizonyos esetekben ezek olyan problémák, egyszerűen, amelyek még nem javított hibák. Más esetekben (mint az alapértelmezett aliasok ls, cp, stb.), a Microsoft által keresett visszajelzést kapcsolatban a választási lehetőségek arra a Közösségtől.
 
-Megjegyzés: Több alapul szolgáló alrendszereket Hasonlóságok, mert a Linux és macOS PowerShell általában megosztani a lejárat, a szolgáltatások és a hibák azonos szinten. Kivéve az alábbi esetekben ebben a szakaszban a problémák mindkét típusú operációs rendszerekre vonatkozik.
+Megjegyzés: Miatt számos mögöttes alrendszerek Hasonlóságok, Linux és macOS PowerShell általában azonos szintű szolgáltatásai és a hibákat a lejárat megosztása. Kivéve az alábbi esetekben ebben a szakaszban a problémák mindkét típusú operációs rendszerekre vonatkozik.
 
-### <a name="case-sensitivity-in-powershell"></a>A PowerShell Kisbetű/nagybetű megkülönböztetése
+### <a name="case-sensitivity-in-powershell"></a>Kisbetű/nagybetű megkülönböztetése a PowerShellben
 
-Hagyományosan PowerShell lett egységesen nem betűérzékeny, néhány kivétellel. A UNIX-operációs rendszerrel a fájlrendszer túlnyomórészt kis-és nagybetűket, és PowerShell megfelelő normál a fájlrendszer; Ez többféleképpen, nyilvánvaló, és nem egyértelmű keresztül kommunikál.
+PowerShell hagyományosan le lett egységesen kis-és nagybetűket, néhány kivétellel. A UNIX-hoz hasonló operációs rendszerek esetében a fájlrendszer az túlnyomórészt kis-és nagybetűket, és a PowerShell betartja a szabványt, a fájlrendszer; Ez számos módon, nyilvánvaló, és nem nyilvánvaló-n keresztül teszi közzé.
 
-#### <a name="directly"></a>közvetlenül
+#### <a name="directly"></a>Közvetlenül
 
-- A fájl a PowerShellben megadásakor a kis-és nagybetűk kell használni.
+- Adjon meg egy fájlt a PowerShell, ha az megfelelő esetben kell használni.
 
-#### <a name="indirectly"></a>Közvetve
+#### <a name="indirectly"></a>Közvetett módon
 
-- Ha a parancsfájl megpróbál egy modul betöltéséhez, és a modul neve nem cased megfelelően, akkor a modul betöltése sikertelen lesz. Ez meglévő parancsfájlok probléma okozhatja, ha a neve, amely szerint a modul hivatkozott nem egyezik a tényleges fájlnév.
-- Kiegészítést rendszer nem automatikusan hajthat végre, ha a fájl neve eset nem megfelelő. A töredéke befejezéséhez cased megfelelően kell lennie. (A létrehozása után a típus neve és típusa tag befejezésekhez azonban nem.)
+- Ha a parancsfájl megpróbál betölt egy modult, és a modul neve nem kisbetűsek megfelelően, akkor a modul betöltése sikertelen lesz. Emiatt előfordulhat, hogy meglévő parancsfájlok probléma, ha a neve, amely hivatkozik a modul nem felel meg a tényleges fájlnév.
+- Kiegészítés – a rendszer nem automatikus kiegészítés, ha a fájl neve szerepel. Fejezze be a kódrészletet megfelelően kell lennie kisbetűsek. (A befejezési a kis-és a típus neve és típusa tag befejezésekhez.)
 
 ### <a name="ps1-file-extensions"></a>. PS1 Fájlkiterjesztések
 
-PowerShell-parancsfájlok kell végződnie `.ps1` a értelmező hogyan tölthető be, és futtassa azokat az aktuális folyamat számára. A várt szokásos működése PowerShell parancsfájlok futtatásához a jelenlegi folyamatban. A `#!` varázsszáma fel az olyan parancsfájlt, amely nem rendelkezik egy `.ps1` bővítményt, de ez eredményezi a parancsfájl futtatásához megakadályozza a parancsfájl működő megfelelően Ha jelzések felcserélése objektumok új PowerShell-példányban. (Megjegyzés: Ez lehet a kívánt viselkedés, a PowerShell-parancsfájl végrehajtása közben `bash` vagy egy másik rendszerhéj.)
+PowerShell-parancsfájlok végződése `.ps1` a értelmezője számára készült, megtudhatja, hogyan tölthet be és futtassa őket az aktuális folyamat számára. A várt szokásos működése PowerShell parancsfájlok futtatásához a jelenlegi folyamatban. A `#!` Magic Quadrant szám adható hozzá egy szkript, amely nem rendelkezik egy `.ps1` bővítményt, de ez a parancsfájl futtatásához egy új PowerShell-példányban meggátolja, hogy a parancsfájl működő megfelelően Ha objektumok felcserélésének okoz. (Megjegyzés: Ez lehet a kívánatos viselkedését, egy PowerShell-szkript végrehajtása közben `bash` vagy egy másik rendszerhéj.)
 
-### <a name="missing-command-aliases"></a>Hiányzó parancs aliast
+### <a name="missing-command-aliases"></a>Hiányzó parancsaliasok
 
-A Linux/macOS, az alapvető parancsok "kényelmi"-aliasok `ls`, `cp`, `mv`, `rm`, `cat`, `man`, `mount`, `ps` el lettek távolítva. A Windows PowerShell biztosít aliasok, amelyek a Linux parancs nevek felhasználó kényelmét szolgálja. Ezek aliasok a Linux/macOS azokat a terjesztéseket, így a natív végrehajtható fájl futtatását nélkül elérési út az alapértelmezett PowerShell el lettek távolítva.
+Linux/MacOS-gépeken, az alapszintű parancsokat "csoportosított"-aliasok `ls`, `cp`, `mv`, `rm`, `cat`, `man`, `mount`, `ps` el lettek távolítva. Windows, a PowerShell biztosít aliasról, amelyek leképezése Linux parancsnevek felhasználói kényelmi célokat szolgál. Ezek az aliasok el lettek távolítva az alapértelmezett PowerShell Linux/MacOS rendszeren disztribúciókon, lehetővé téve a natív végrehajtható fájl futtatásához egy elérési út megadása nélkül.
 
-Vannak előnyei és hátrányai ez tevékenységéhez. Az alias eltávolítása a PowerShell-felhasználó a natív parancs kezelését mutatja, de csökkenti a rendszerhéj funkciót, mert a natív parancsok visszaadnia az objektumok helyett.
+Vannak, és ennek a hátrányai. Az aliasok tesz elérhetővé a natív parancs kezelését a PowerShell-felhasználó, de csökkenti a funkció a rendszerhéj, mert a natív parancsok karakterláncok helyett objektumokat adja vissza.
 
 > [!NOTE]
-> Ez az egy olyan területre, ahol a PowerShell csapatának visszajelzés keres.
-> Mi az az előnyben részesített megoldás? A Microsoft hagyja, vagy adja hozzá a kényelem aliasok vissza? Lásd: [#929 ki](https://github.com/PowerShell/PowerShell/issues/929).
+> Ez az egy adott területre, ahol a PowerShell csapatának visszajelzést keres.
+> Mi az az előnyben részesített megoldás? Hagyja, hogy azt, vagy adja hozzá a felhasználók kényelme érdekében aliasok vissza? Lásd: [#929 kiadása](https://github.com/PowerShell/PowerShell/issues/929).
 
 ### <a name="missing-wildcard-globbing-support"></a>Hiányzik a helyettesítő karakter (helyettesítés) támogatása
 
-Jelenleg PowerShell csak nem helyettesítő bővítése (helyettesítés) beépített parancsmagok a Windows, és a külső parancsok vagy bináris fájljait és a Linux parancsmagok. Ez azt jelenti, hogy egy parancs hasonlóan `ls
-*.txt` sikertelen lesz, mert a csillag a program nem bontja ki fájlnevek kereséséhez. Ön ezt úgy kerülheti ezzel `ls (gci *.txt | % name)` vagy egyszerűbb, `gci *.txt` a PowerShell beépített megfelelője használja `ls`.
+Jelenleg PowerShell csak hajtja végre helyettesítő bővítése (helyettesítés) a Windows beépített parancsmagokra, valamint a külső parancsok vagy bináris fájljainak, valamint parancsmagok Linux rendszeren. Ez azt jelenti, hogy egy parancs hasonlóan `ls
+*.txt` sikertelen lesz, mert a csillag megfelelően fájlnevek nem lesznek kibontva. Megkerülheti a foglalkozások `ls (gci *.txt | % name)` vagy egyszerűbben `gci *.txt` használata a PowerShell beépített megfelelője `ls`.
 
-Lásd: [#954](https://github.com/PowerShell/PowerShell/issues/954) visszajelzését a helyettesítés élmény, a Linux/macOS javítására.
+Lásd: [#954](https://github.com/PowerShell/PowerShell/issues/954) visszajelzését Linux/MacOS rendszeren a helyettesítés élmény fejlesztéséhez.
 
-### <a name="net-framework-vs-net-core-framework"></a>.NET-keretrendszer Visual Studio .NET Core-keretrendszer
+### <a name="net-framework-vs-net-core-framework"></a>.NET-keretrendszer vagy Core .NET-keretrendszer
 
-A Linux/macOS PowerShell használja a .NET Core, amely a teljes .NET-keretrendszer Microsoft Windows részhalmaza. Ez azért fontos, mert a PowerShell közvetlen hozzáférést biztosít az alapul szolgáló keretrendszer típusok, módszerek, stb. Ennek eredményeképpen Windows rendszeren futó parancsfájlok futása nem nem Windows platformokon a keretrendszereket különbségek miatt. További információ a .NET Core-keretrendszer: <https://dotnetfoundation.org/net-core>
+PowerShell a Linux/MacOS rendszeren használja a .NET Core, amely a teljes .NET-keretrendszer Microsoft Windows részhalmaza. Ez azért fontos, mert a PowerShell közvetlen hozzáférést biztosít az alapul szolgáló keretrendszer típusok, módszerekkel, stb. Ennek eredményeképpen Windows futtatott parancsfájlok, előfordulhat, hogy fut a nem Windows platformokon a keretrendszereket különbségek miatt. További információ a .NET Core-keretrendszer: <https://dotnetfoundation.org/net-core>
 
-A megjelenésével [.NET-szabvány 2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/), .NET Core 2.0 be fogja hozni a hagyományos típusok és módszerek a teljes .NET-keretrendszer jelen vissza. Ez azt jelenti, hogy PowerShell Core tudják betölteni sok hagyományos Windows PowerShell-modulok módosítás nélkül. A .NET szabványos 2.0 kapcsolódó munkaelem követésével [Itt](https://github.com/PowerShell/PowerShell/projects/4).
+Létrejöttével [.NET Standard2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/), .NET Core 2.0 tartalomtérkép vissza számos hagyományos típusok és módszerek a teljes .NET-keretrendszer szerepelnek. Ez azt jelenti, hogy a PowerShell Core tudják betölteni a sok hagyományos Windows PowerShell-modul módosítás nélkül. Kövesse a .NET Standard 2.0-s kapcsolódó munkahelyi [Itt](https://github.com/PowerShell/PowerShell/projects/4).
 
-### <a name="redirection-issues"></a>Problémákat is
+### <a name="redirection-issues"></a>Átirányítási hibáinak
 
-Bemeneti átirányítása bármilyen platformon nem támogatott a PowerShellben.
-[A probléma #1629](https://github.com/PowerShell/PowerShell/issues/1629)
+A bemeneti átirányítás nem támogatott a PowerShellben bármilyen platformon.
+[#1629 probléma](https://github.com/PowerShell/PowerShell/issues/1629)
 
-Használjon `Get-Content` fájl tartalmának írása bele a folyamatba.
+Használat `Get-Content` egy fájl tartalmának írása a folyamatba.
 
-Kimenet fogja tartalmazni az Unicode bájtsorrend (AJ), amikor az alapértelmezett UTF-8 kódolással szolgál. Az Anyagjegyzék problémákat okozhat, amelyek nem várt segédprogramok használatakor, vagy ha egy fájl hozzáfűzése. Használjon `-Encoding Ascii` (amelynek, nem lesznek Unicode, nem AJ) ASCII-szöveget írni. (Megjegyzés: lásd: [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) visszajelzését a PowerShell Core minden platformon kódolási élményének javítása. Azt az UTF-8 támogatás nélkül AJ működik, és potenciálisan módosítása a különböző parancsmagok kódolási alapértelmezései különböző platformokon.)
+Kimenet fogja tartalmazni a Unicode bájtsorrendjelző (AJ), amikor az alapértelmezett UTF-8 kódolást szolgál. Az Anyagjegyzék problémákat okozhat az nem várt segédprogramok használatakor, vagy ha egy fájl hozzáfűzése. Használat `-Encoding Ascii` ASCII szöveget (amely, nem a Unicode használatát, hogy nem kell AJ) írására.
 
-### <a name="job-control"></a>Feladat-vezérlő
+> [!Note]
+> Lásd: [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) visszajelzését minden platformon a PowerShell Core a kódolási élmény javításáról. Hogy dolgozunk azon, hogy támogatja az UTF-8 AJ nélkül és potenciálisan módosítása a különböző parancsmagok kódolási alapértelmezései különböző platformokon.
 
-Nincs a PowerShellben Linux/macOS a feladat-vezérlő támogatás.
+### <a name="job-control"></a>Ellenőrzési feladat
+
+A rendszer nem feladat-vezérlő támogatja, a Linux/MacOS rendszeren a PowerShellben.
 A `fg` és `bg` parancsok nem érhetők el.
 
-Jelenleg, használhatja a [PowerShell feladatok](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_jobs) amelyek működnek a minden platformon.
+Jelenleg használhatja [PowerShell-feladatok](/powershell/module/microsoft.powershell.core/about/about_jobs) amely minden platformon működnek.
 
 ### <a name="remoting-support"></a>Távelérésének jobb támogatása
 
-Jelenleg PowerShell Core támogatja a PowerShell távoli eljáráshívás (PSRP) keresztül WSMan az egyszerű hitelesítéssel macOS és a Linux és a Linux NTLM-alapú hitelesítéssel. (Kerberos-alapú hitelesítés nem támogatott.)
+Jelenleg a PowerShell Core támogatja a PowerShell távoli eljáráshívás (PSRP) WSMan keresztül az alapszintű hitelesítés, macOS és Linux rendszeren és Linux rendszeren az NTLM-alapú hitelesítéssel. (A Kerberos-alapú hitelesítés nem támogatott.)
 
-A WSMan-alapú távoli eléréshez dolgozott a [psl-omi-szolgáltató](https://github.com/PowerShell/psl-omi-provider) tárházban.
+A WSMan-alapú távelérése alatt végezhető el a [psl omi-szolgáltató](https://github.com/PowerShell/psl-omi-provider) adattárat.
 
-PowerShell Core is támogatja a PowerShell távoli eljáráshívás (PSRP) SSH-n keresztül (a Windows, a macOS és a Linux) minden platformon. Amíg ez nem jelenleg támogatott éles környezetben, többet is megtudhat a beállításával kapcsolatos [Itt](../core-powershell/ssh-remoting-in-powershell-core.md).
+A PowerShell Core is támogatja a PowerShell távoli eljáráshívás (PSRP) ssh-n keresztül minden platformon (Windows, macOS és Linux). Miközben jelenleg nem támogatott éles környezetben, ez további információ a beállításra [Itt](../core-powershell/ssh-remoting-in-powershell-core.md).
 
-### <a name="just-enough-administration-jea-support"></a>Most-elegendő-felügyeleti (JEA) támogatása
+### <a name="just-enough-administration-jea-support"></a>Csak-elegendő-felügyelet (JEA) támogatása
 
-Korlátozott felügyelet (JEA) távoli eljáráshívási végpontok létrehozásának jelenleg nem áll rendelkezésre a Linux/macOS a PowerShellben. Ez a funkció jelenleg nem 6.0 hatókörébe, és valamit a Microsoft úgy tekinti, hogy post 6.0 mivel az jelentős tervezési munka.
+Korlátozott felügyelet (JEA) távoli eljáráshívás végpontok létrehozása jelenleg nem áll rendelkezésre a PowerShellben a Linux/MacOS rendszeren. Ez a funkció jelenleg nem terjed ki 6.0-s és valami azt fogja megfontolnia a post 6.0 kialakítása jelentős munkát igényel.
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`, és a PowerShell használatával
 
-PowerShell használt parancsok többsége a memóriában fut (például a Python vagy Ruby), mert a sudo közvetlenül a PowerShell built-ins nem használhat. (Természetesen futtathatjuk `powershell` a sudo.) Ha a sudo, például a PowerShell belül egy PowerShell-parancsmag futtatásához szükséges `sudo Set-Date 8/18/2016`, akkor teheti meg `sudo powershell Set-Date 8/18/2016`. Hasonlóképpen nem lehet egy beépített PowerShell exec közvetlenül. Ehelyett kellene lennie ehhez `exec powershell item_to_exec`.
+Mivel a PowerShell parancsok többsége a memóriában (például Python vagy Ruby), a sudo közvetlenül a PowerShell built-ins nem használhat. (Természetesen futtathatjuk `powershell` a sudo.) Sudo, például a Powershellen belülről egy PowerShell-parancsmag futtatásához szükség esetén `sudo `Set-Date` 8/18/2016`, majd kellene tennie `sudo powershell `Set-Date` 8/18/2016`. Hasonlóképpen nem egy beépített PowerShell exec közvetlenül. Ehelyett meg kell tegye `exec powershell item_to_exec`.
 
 A probléma jelenleg követett #3232 részeként.
 
 ### <a name="missing-cmdlets"></a>Hiányzó parancsmagok
 
-Nagyszámú általában használható a PowerShell parancsok (parancsmagok) a Linux/macOS nem érhetők el. Sok esetben ezek a parancsok célszerű nem ezek a rendszerek (például Windows-specifikus szolgáltatások, mint a beállításjegyzék). Egyéb parancsok, például a szolgáltatás parancsokat (Get/kezdő/Stop-Service) találhatók, de nem működik. Ezek a problémák kijavítása a nem működő parancsmagok és idővel újakat ad hozzá későbbi kiadásokban javíthatja ki.
+Nagy számú rendszerint elérhető PowerShell parancsai (parancsmagok) a Linux/MacOS rendszeren nem érhetők el. Sok esetben ezek a parancsok van értelme nincs ezeken a platformokon (például Windows-specifikus szolgáltatások, mint például a beállításjegyzék). Egyéb parancsok, például a szolgáltatás parancsok (Get/Start/Stop-Service) találhatók, de nem működik. Jövőbeli kiadások fog kijavítani a hibákat, a nem működő parancsmagok javítása, és idővel újakat ad hozzá.
 
 ### <a name="command-availability"></a>A parancs rendelkezésre állása
 
-Az alábbi táblázat a parancsok, amelyek nem fog működni a Linux/macOS PowerShell ismert.
+A következő táblázat felsorolja az ismert, hogy nem működik a Linux/MacOS-gépeken a PowerShell-parancsok.
 
-<table>
-<th>Parancsok</th><th>Működési állapot</th><th>Megjegyzések</th>
-<tr>
-<td>Get-szolgáltatás, új szolgáltatás, indítsa újra a szolgáltatást, Resume-szolgáltatás, szolgáltatás beállítása, Start-Service, szolgáltatás leállítása, Suspend-szolgáltatás
-<td>Nem érhető el.
-<td>Ezek a parancsok nem azonosítható. Ez egy későbbi kiadásban javítani kell.
-</tr>
-<tr>
-<td>Get-Acl, a Set-hozzáférés-vezérlési lista
-<td>Nem érhető el.
-<td>Ezek a parancsok nem azonosítható. Ez egy későbbi kiadásban javítani kell.
-</tr>
-<tr>
-<td>Get-AuthenticodeSignature, a Set-AuthenticodeSignature
-<td>Nem érhető el.
-<td>Ezek a parancsok nem azonosítható. Ez egy későbbi kiadásban javítani kell.
-</tr>
-<tr>
-<td>Várjon, amíg-folyamat
-<td>Elérhető, nem működik megfelelően. <td>Például `Start-Process gvim -PassThru | Wait-Process` nem működik; várja meg a folyamat nem sikerül.
-</tr>
-<tr>
-<td>Register-PSSessionConfiguration, Unregister-PSSessionConfiguration, Get-PSSessionConfiguration
-<td>Rendelkezésre álló azonban nem működik.
-<td>Ír egy hiba üzenet arról, hogy a parancsok nem működnek. Ezek az egy későbbi kiadásban javítani kell.
-</tr>
-<tr>
-<td>Get-esemény, új esemény, a Register-EngineEvent, a Register-WmiEvent, Remove-esemény, Unregister-esemény
-<td>Elérhető, de nincs eseményforrások érhetők el.
-<td>A PowerShell esemény parancsok jelen van, de a parancsok (például System.Timers.Timer) használt eseményforrások többsége nem érhető el, így a parancsok a Alpha kiadásban használhatatlan Linux rendszeren.
-</tr>
-<tr>
-<td>Set-ExecutionPolicy
-<td>Rendelkezésre álló azonban nem működik.
-<td>Visszaadja egy üzenetet megkapta ezen a platformon nem támogatott. Végrehajtási házirend a felhasználói tárgyalt "biztonsági", amely segítségével megakadályozhatja, hogy a felhasználó költséges vét. A biztonsági határ nincs.
-</tr>
-<tr>
-<td>Új-PSSessionOption, új PSTransportOption
-<td>Elérhető, de a New-PSSession nem működik.
-<td>Új-PSSessionOption és a New-PSTransportOption jelenleg nem ellenőrzése működéséhez most, hogy a New-PSSession működik.
-</tr>
-</table>
+|Parancsok |Működési állapot | Megjegyzések|
+|---------|------------------|------|
+|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Nem érhető el.|Ezeket a parancsokat a rendszer nem ismeri. Ez egy későbbi kiadásban rögzíteni kell.|
+|`Get-Acl` és `Set-Acl` esetén|Nem érhető el.|Ezeket a parancsokat a rendszer nem ismeri. Ez egy későbbi kiadásban rögzíteni kell.|
+|`Get-AuthenticodeSignature` és `Set-AuthenticodeSignature` esetén|Nem érhető el.|Ezeket a parancsokat a rendszer nem ismeri. Ez egy későbbi kiadásban rögzíteni kell.|
+|`Wait-Process`|Elérhető, nem működik megfelelően. |Például "folyamatának elindítása gvim - PassThru | Nem működik a wait-Process'; Várjon, amíg a folyamat nem.|
+|`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Elérhető, de nem működik.|Ír, egy üzenet, miszerint a parancsok nem működnek. Ezek egy későbbi kiadásban rögzíteni kell.|
+|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Elérhető, de nincs eseményforrások érhetők el.|A PowerShell-parancsok eseménykezelési jelen van, de a parancsok (például System.Timers.Timer) együttes eseményforrások többsége nem érhetők el Linux rendszerre, így a parancsok a Alpha kiadásban használhatatlan.|
+|`Set-ExecutionPolicy`|Elérhető, de nem működik.|Ezen a platformon nem támogatott üzenetnek adja vissza. Végrehajtási házirend egy felhasználó témájú "biztonsági", amely segítségével megakadályozható, hogy a felhasználó költséges hibák. Akkor sem biztonsági határként.|
+|`New-PSSessionOption` és `New-PSTransportOption` esetén|Rendelkezésre álló de `New-PSSession` nem működik.|`New-PSSessionOption` és `New-PSTransportOption` jelenleg nem ellenőrzi, hogy már működik `New-PSSession` működik.|

@@ -1,20 +1,22 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Erőforrás-készítési ellenőrzőlista
-ms.openlocfilehash: 76d9fecca8618fcc178975465f45cda0d0e04064
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 91942a174bc6f38fa77c1925dc3c690ecf2ab34b
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189958"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893555"
 ---
 # <a name="resource-authoring-checklist"></a>Erőforrás-készítési ellenőrzőlista
-Az alábbi ellenőrzőlista gyakorlati tanácsok listája esetén egy új DSC-erőforrások szerzői.
-## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>Erőforrás-modul .psd1 fájl és minden erőforráshoz schema.mof tartalmazza
-Ellenőrizze, hogy az erőforrás helyes struktúrával rendelkezik-e, és minden szükséges fájlokat tartalmazza. Minden erőforrás modul tartalmaznia kell egy .psd1 fájlt, és minden nem összetett erőforrás schema.mof fájl kell rendelkeznie. Erőforrásokat, amelyek nem tartalmaznak a séma nem jelenik meg által **Get-DscResource** és a felhasználók nem fognak tudni használni az intellisense ilyen modulokhoz kódot ISE írásakor.
-A könyvtárstruktúra xRemoteFile-erőforráshoz tartozik, a [xPSDesiredStateConfiguration erőforrásmodul](https://github.com/PowerShell/xPSDesiredStateConfiguration), a következőképpen néz ki:
 
+Ezzel az ellenőrzőlistával az ajánlott eljárások listája, amikor új DSC-erőforrások szerzői.
+
+## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>Resource modul .psd1 fájlban, és minden erőforráshoz schema.mof tartalmaz
+
+Ellenőrizze, hogy az erőforrás megfelelő szerkezetéről, és minden szükséges fájlokat tartalmazza. Minden erőforrás modul esetleg tartalmaz egy .psd1 fájlban, és minden nem összetett erőforrás schema.mof fájlt kell rendelkeznie. Erőforrások, amelyek nem rendelkeznek a séma szerint nem lesznek felsorolva `Get-DscResource` és a felhasználók nem fognak tudni használni az intellisense ISE-ben ilyen modulokhoz elleni használt kód írásakor.
+A könyvtárstruktúra xRemoteFile erőforrás, amely részét képezi, a [xPSDesiredStateConfiguration resource modul](https://github.com/PowerShell/xPSDesiredStateConfiguration), a következőképpen néz ki:
 
 ```
 xPSDesiredStateConfiguration
@@ -31,42 +33,48 @@ xPSDesiredStateConfiguration
     xPSDesiredStateConfiguration.psd1
 ```
 
-## <a name="resource-and-schema-are-correct"></a>Erőforrás és a séma helyességéről ##
-Ellenőrizze az erőforrás-séma (*. schema.mof) fájl. Használhatja a [DSC erőforrás Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/) fejlesztéséhez és teszteléséhez a séma segítségével.
+## <a name="resource-and-schema-are-correct"></a>Erőforrás és a séma helyességét
+
+Ellenőrizze az erőforrás-séma (*. schema.mof) fájlt. Használhatja a [DSC erőforrás Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner) fejlesztése és tesztelése a séma segítségével.
 Győződjön meg arról, hogy:
-- Helyesek a Tulajdonságok típusa (pl. nem karakterlánc azokhoz a tulajdonságokhoz, amelyek elfogadják a numerikus érték, kell használni: UInt32 vagy más numerikus helyette)
-- Tulajdonság attribútumok vannak megadva megfelelően: ([kulcs], [szükséges], [írási], [olvasható])
-- A séma legalább egy paramétert kell megjelölni a [kulcsként] rendelkezik
-- [olvasható] tulajdonság nem használható együtt: [szükséges], [key], [írási]
-- Ha több minősítők [olvasható] kivéve van adva, majd [kulcs] elsőbbséget
-- Ha [írási] és [szükséges] van megadva, az elsőbbséget élvez [szükséges]
-- ValueMap szükség van megadva.
 
-Példa:
-```
-[Read, ValueMap{"Present", "Absent"}, Values{"Present", "Absent"}, Description("Says whether DestinationPath exists on the machine")] String Ensure;
-```
+- Tulajdonságtípusok megengedettek helyes-e (pl. ne használjon karakterlánc azokhoz a tulajdonságokhoz, amelyek elfogadják a numerikus értékek, akkor érdemes használni UInt32 más numerikus típusok)
+- Tulajdonság attribútumok helyesen van megadva: ([kulcs], [kötelező], [írási], [olvasási])
+- Legalább egy paramétert a sémában rendelkezik kell megjelölni, [key]
+- [olvasható] tulajdonság nem létezhet együtt bármelyik: [kötelező], [key], [írási]
+- Ha több minősítők meg van adva, [olvasási] kivételével, [key] lép érvénybe
+- Ha [írási] és [kötelező] van megadva, majd [kötelező] elsőbbséget élvez
+- ValueMap megadott adott esetben az a példában:
 
-- Felhasználóbarát név van megadva, és megerősíti, hogy a DSC-elnevezési konvenciók
+  ```
+  [Read, ValueMap{"Present", "Absent"}, Values{"Present", "Absent"}, Description("Says whether DestinationPath exists on the machine")] String Ensure;
+  ```
 
-Példa: ```[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]```
+- Felhasználóbarát név van megadva, és megerősíti, hogy elnevezési konvencióinak DSC
 
-- Minden mezőnek van beszédes leírást. A PowerShell GitHub-tárházban rendelkezik jó példa, például a [a. a xRemoteFile schema.mof](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof)
+  Példa: `[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]`
 
-Ezen felül kell használnia **teszt-xDscResource** és **teszt-xDscSchema** parancsmagjait [DSC erőforrás Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/) erőforrás és séma automatikusan ellenőrzéséhez:
+- Minden mező rendelkezik kifejező leírást. A PowerShell GitHub-adattár tartozik jó példa, például [a. a xRemoteFile schema.mof](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof)
+
+Ezenkívül használjon **Test-xDscResource** és **Test-xDscSchema** parancsmagjait [DSC erőforrás Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner) automatikusan ellenőrizhető, hogy az erőforrások és a séma:
+
 ```
 Test-xDscResource <Resource_folder>
 Test-xDscSchema <Path_to_resource_schema_file>
 ```
+
 Például:
+
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="resource-loads-without-errors"></a>Erőforrás-terhelés hibák nélkül ##
-Ellenőrizze, hogy az erőforrás-modul sikeresen betölthető legyen.
-Ez elérhető manuálisan, futtatásával `Import-Module <resource_module> -force ` erősítse meg, hogy nincs hiba történt, az írása és tesztelési automation. Az utóbbi esetén hajtsa végre ezt a struktúrát a Teszteset a:
+## <a name="resource-loads-without-errors"></a>Hiba nélkül betölt erőforrás
+
+Ellenőrizze, hogy az erőforrás-modul sikeresen tölthetők be.
+Ez a érhető el manuálisan a futó `Import-Module <resource_module> -force` , hogy nem lépett megerősíti, a írása és automatizált tesztelést. Az utóbbi esetén ez a struktúra a Teszteset a követheti:
+
 ```powershell
 $error = $null
 Import-Module <resource_module> –force
@@ -74,62 +82,79 @@ If ($error.count –ne 0) {
     Throw “Module was not imported correctly. Errors returned: $error”
 }
 ```
-## <a name="resource-is-idempotent-in-the-positive-case"></a>Erőforrás idempotent pozitív esetben
-A DSC-erőforrások alapvető jellemzői egyik azonosítója lesz. Azt jelenti, hogy egy adott erőforrás többször tartalmazó DSC-konfiguráció alkalmazása mindig érhető el ugyanazt az eredményt. Ha például azt, amely tartalmazza a következő fájl erőforrás-konfiguráció létrehozása:
+
+## <a name="resource-is-idempotent-in-the-positive-case"></a>Erőforrás áll a pozitív esetben idempotens
+
+A DSC-erőforrások alapvető jellemzői egyik idempotencia lehet. Ez azt jelenti, hogy egy adott erőforrást tartalmazó többször DSC-konfiguráció alkalmazása mindig éri el a ugyanazt az eredményt. Például, ha létrehozunk egy konfigurációt, amely tartalmazza a következő fájl erőforrás:
+
 ```powershell
 File file {
     DestinationPath = "C:\test\test.txt"
     Contents = "Sample text"
 }
 ```
-Alkalmazás első indításakor, utáni fájl teszt.txt C:\test mappában kell megjelennie. Azonban későbbi frissítési kísérletei során ugyanaz a konfiguráció nem szükséges módosítani a (pl. nincs másolatot készíteni a teszt.txt fájlról kell létrehozni) a gép állapotát.
-Az idempotent ismételten hívása erőforrás biztosításához **Set-TargetResource** az erőforrás ellenőrzése közvetlenül, vagy hívja **Start-DscConfiguration** többször esetén a következőnek teljes körű tesztelés. Az eredmény azonosnak kell lennie minden futtatása után.
 
+Alkalmazás először, utáni fájl teszt.txt meg kell jelennie `C:\test` mappát. Utólagosan ugyanazt a konfigurációt, azonban ne módosítsa a gép állapota (pl. nincs másolatait a `test.txt` fájlt kell létrehozni).
+Annak biztosítása érdekében erőforrás többször is meghívhat idempotens `Set-TargetResource` közvetlenül az erőforrás ellenőrzése, vagy hívja `Start-DscConfiguration` Ha ezt többször is feldolgozza, teljes körű tesztelés. Az eredmény azonosnak kell lennie minden futtatása után.
 
-## <a name="test-user-modification-scenario"></a>Tesztkörnyezet felhasználó módosítása ##
-A gép állapotának módosítása, majd ezután futtassa újból a DSC, ellenőrizheti, hogy **Set-TargetResource** és **teszt-TargetResource** működnek majd megfelelően. Az alábbiakban a lépéseket kell tennie:
-1.  Az erőforrás nem a kívánt állapot kezdődik.
-2.  Futtassa az erőforrás-konfiguráció
-3.  Győződjön meg arról **teszt-DscConfiguration** igaz értéket ad vissza
-4.  A konfigurált elem nem a kívánt állapot módosítása
-5.  Győződjön meg arról **teszt-DscConfiguration** adja vissza hamis, a beállításjegyzék használata konkrétabb példa:
-1.  Indítsa el a beállításkulcs nem található a kívánt állapot
-2.  Futtatás **Start-DscConfiguration** elhelyezi a megfelelő állapotban, és győződjön meg arról, hogy a konfiguráció megfelel.
-3.  Futtatás **teszt-DscConfiguration** , és ellenőrizze, hogy igaz értéket ad vissza
-4.  A kulcs értékének módosítása, hogy nem a megfelelő állapotban van
-5.  Futtatás **teszt-DscConfiguration** , és ellenőrizze a hamis értéket ad vissza
-6.  Get-TargetResource funkciókat használja a Get-DscConfiguration ellenőrzés
+## <a name="test-user-modification-scenario"></a>Tesztkörnyezet felhasználói módosítása
 
-Get-TargetResource térjen vissza az erőforrás jelenlegi állapotával részleteit. Ügyeljen arra, hogy kipróbálja a Get-DscConfiguration hívása után a konfiguráció alkalmazásához, és ellenőrzi, hogy a kimeneti megfelelően tükrözi a gép aktuális állapotát. Fontos, ha kipróbálja külön-külön, mivel ez a terület esetleg felmerülő problémákat nem jelenik meg, Start-DscConfiguration hívásakor.
+A gép állapotát, és majd újbóli DSC, ellenőrizheti, hogy `Set-TargetResource` és `Test-TargetResource` megfelelő működéséhez. Az alábbiakban a lépéseket kell tennie:
 
-## <a name="call-getsettest-targetresource-functions-directly"></a>Hívás **Get vagy Set/Test-TargetResource** közvetlenül működik ##
+1. Indítsa el az erőforrás nem a kívánt állapotban.
+2. Futtassa az erőforrás-konfiguráció
+3. Győződjön meg arról `Test-DscConfiguration` igaz értéket ad vissza
+4. Módosítsa a kívánt állapotban a konfigurált cikk
+5. Győződjön meg arról `Test-DscConfiguration` false értéket adja vissza
 
-Győződjön meg arról, hogy tesztelje a **Get vagy Set/Test-TargetResource** funkciók valósítják meg az erőforrás őket közvetlenül hívó, valamint annak ellenőrzését, vártnak megfelelően működnek.
+Íme egy beállításjegyzék-erőforrást használ több konkrét példa:
 
-## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Ellenőrizze a végpontok közötti használatával **Start-DscConfiguration** ##
+1. Indítsa el a rendszerleíró kulcsot nem a kívánt állapotban
+2. Futtatás `Start-DscConfiguration` konfigurációval, a kívánt állapotban és ellenőrzi, hogy adja át.
+3. Futtatás `Test-DscConfiguration` , és ellenőrizze, hogy igaz értéket ad vissza
+4. A kulcsnak az értéke módosíthatja, hogy nem szerepel a kívánt állapot
+5. Futtatás `Test-DscConfiguration` , és ellenőrizze a hamis értéket ad vissza
+6. `Get-TargetResource` funkciók a rendszer ellenőrizte használatával `Get-DscConfiguration`
 
-Tesztelési **Get vagy Set/Test-TargetResource** azokat közvetlenül meghívásával funkciók azért fontos, de nem minden probléma így fog történni. A tesztelés használatával jelentős részét irányul **Start-DscConfiguration** vagy a lekérési kiszolgálójával. Ez valójában a felhasználók hogyan használják az erőforrás, így nem alulbecsülheti vizsgálatok az ilyen típusú jelentőségét.
+`Get-TargetResource` az aktuális állapotát az erőforrás részleteit adja vissza. Győződjön meg arról, hogy kipróbáljuk meghívásával `Get-DscConfiguration` a konfiguráció alkalmazásához, és a gép aktuális állapotát tükröző, amely a megfelelő kimeneti ellenőrzése után. Fontos, hogy külön-külön tesztelni, mivel ez a terület esetleg felmerülő problémákat többé nem jelenik meg, hívásakor `Start-DscConfiguration`.
+
+## <a name="call-getsettest-targetresource-functions-directly"></a>Hívás **Get/Set/Test-TargetResource** közvetlenül függvények
+
+Ellenőrizze, hogy tesztelje a **Get/Set/Test-TargetResource** közvetlen hívása és annak ellenőrzésére, hogy azok a várt módon működik az erőforrásban implementált függvények.
+
+## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Ellenőrizze a teljes körű használatával **Start-DscConfiguration**
+
+Tesztelés **Get/Set/Test-TargetResource** őket közvetlenül meghívásával függvények azért fontos, de ezzel a módszerrel nem minden problémák lesz felderítve. Irányul, hogy a tesztelés használatával jelentős része `Start-DscConfiguration` vagy a lekéréses kiszolgálón. Sőt ez a felhasználók hogyan használja az erőforrást, ezért nem alábecsülni tesztet hajt végre ilyen típusú a jelentősége.
 Problémák lehetséges típusait:
-- Hitelesítő adatok/munkamenet is eltérően viselkednek, mivel szolgáltatásként fut a DSC-ügynök.  Mindenképpen próbálja ki a szolgáltatásokat itt végpont.
-- Hibák kimenetét az **Start-DscConfiguration** jelenik meg, ha hívása házirendektől eltérő lehet a **Set-TargetResource** közvetlenül működik.
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Teszt kompatibilitási összes DSC a támogatott platformok ##
-Erőforrás kell működnie az összes DSC támogatott platformon (Windows Server 2008 R2 és újabb). A WMF legújabb Verziójára (a Windows Management Framework) telepítse az operációs rendszer DSC legújabb verziójának. Ha az erőforrás nem működik az egyes ezekről a platformokról úgy lett kialakítva, vissza kell egy specifikus hibaüzenet. Ellenőrizze azt is, az erőforrás ellenőrzi, hogy hívott parancsmagok megtalálható az adott számítógépet. Windows Server 2012 új parancsmagokat, amelyek nem állnak rendelkezésre a Windows Server 2008R2, még akkor is a WMF telepítése számos hozzá.
+- Hitelesítő adat/munkamenet előfordulhat, hogy eltérően viselkednek, mivel szolgáltatásként fut a DSC-ügynök.  Mindenképp tesztelje a szolgáltatásokat itt teljes körű.
+- Hibák kimenetét `Start-DscConfiguration` jelenik meg, ha a hívó eltérő lehet a `Set-TargetResource` függvényt közvetlenül.
 
-## <a name="verify-on-windows-client-if-applicable"></a>Ellenőrizze a Windows-ügyfelén (ha van ilyen) ##
-Egy nagyon gyakori teszt résnek ellenőrzi az erőforrás csak a Windows server-verziók. Sok erőforrást is tervezték az ügyfél-SKU, így ha, abban az esetben, ha igaz, ne feledje, tesztelje azokat platformokon.
-## <a name="get-dscresource-lists-the-resource"></a>Get-DSCResource sorolja fel az erőforrás ##
-A modul való telepítése után hívja a Get-DscResource szerepelnie kell többek között az erőforrás eredményeképpen. Ha az erőforrás nem található a listában, győződjön meg arról, hogy schema.mof fájl erőforrás létezik.
-## <a name="resource-module-contains-examples"></a>Erőforrás-modul példákat tartalmaz ##
-Létrehozása, amely segíteni fog másoknak minőségi példák megtudhatja, hogyan használják. Ez különösen fontos, különösen, mivel számos felhasználó mintakód tekinti dokumentációját.
-- Először azt kell meghatározni a példákat is fog szerepelni a modulja – minimum, ki kell terjednie az erőforrás legfontosabb használati esetek:
-- Ha a modul több olyan erőforrásokat tartalmaz, működjön együtt egy végpont forgatókönyvhöz szükséges, az alapszintű végpont példa ideális esetben első.
-- A kezdeti példák nagyon egyszerű--kell lennie az erőforrásokhoz (pl. a új virtuális merevlemez létrehozása) kis kezelhető csoportokká az első lépések
-- További példák kell létrehozása az adott példák (pl. a virtuális gép létrehozása a virtuális Merevlemezek, virtuális gép, módosítja a virtuális gép eltávolításakor) kiszolgálón, és speciális funkciók (például egy virtuális gép létrehozása a dinamikus memória) megjelenítése
-- Példa konfigurációk kell paraméteres (összes értéket kell átadni a konfigurációs paraméterek, és nem változtatható értékek lehetnek):
-```powershell
-configuration Sample_xRemoteFile_DownloadFile
-{
+## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Teszt kompatibilitási minden DSC a támogatott platformok
+
+Erőforrás működnie kell az összes DSC támogatott platformon (Windows Server 2008 R2 és újabb). Telepítse a WMF legújabb Verziójára (a Windows Management Framework) az operációs rendszer DSC legújabb verziójának beszerzéséhez. Ha az erőforrás nem működik egyes ezekről a platformokról elvárt, vissza kell egy adott hibaüzenetet. Ügyeljen arra, hogy az erőforrás ellenőrzi, hogy az adott gép jelen-e parancsmagok hívja meg. A Windows Server 2012 új parancsmagok, amelyek nem érhetők el a Windows Server 2008R2, a WMF telepítése mellett is nagy számú hozzá.
+
+## <a name="verify-on-windows-client-if-applicable"></a>Ellenőrizze a Windows ügyfél (ha van)
+
+Egy nagyon gyakori teszt gap ellenőrzi az erőforrás csak a Windows server verzióit. Sok erőforrást is tervezték, hogy működik az ügyfél SKU-k, ezért ha ez az Ön esetében igaz, ne felejtse el platformokhoz is tesztelni.
+
+## <a name="get-dscresource-lists-the-resource"></a>Get-DSCResource listázza az erőforrás
+
+A modul telepítése után hívása `Get-DscResource` többek között az erőforrás ezért felsorolásban szerepelnie kell. Ha az erőforrás nem található a listában, ellenőrizze, hogy a schema.mof fájlt a erőforrás létezik.
+
+## <a name="resource-module-contains-examples"></a>Erőforrás-modul példákat tartalmaz
+
+Mező segít másoknak létrehozása minőség példákat megtudhatja, hogyan használhatja azt. Ez különösen fontos, különösen, mivel sok felhasználó mintakód gyökérkönyvtárral dokumentációját.
+
+- Először döntse el, hogy a modul – legalább tartalmazni fogja a bemutatott példákat, ki kell terjednie az erőforrás legfontosabb alkalmazási helyzetek:
+- Ha a modul számos olyan erőforrásokat tartalmaz, egy végpontok közötti forgatókönyv működjön együtt van szükség, az alapszintű teljes körű ideális esetben lehet például első.
+- Lehet, hogy a kezdeti példák nagyon egyszerű – az erőforrások (pl. létrehozásakor egy új virtuális merevlemez) kis méretű kezelhető tömbökben az első lépések
+- További példák kell, ezek példák (például egy virtuális gép létrehozása virtuális merevlemezből, eltávolítja a virtuális gép, virtuális gép módosítása) buildet, és összetettebb funkciók (például egy virtuális gép létrehozása a dinamikus memória) megjelenítése
+- Érdemes lehet paraméterezni, például konfigurációk (összes értéket kell átadni a konfigurációhoz meg paraméterként, és nincsenek nem változtatható értékek kell lennie):
+
+  ```powershell
+  configuration Sample_xRemoteFile_DownloadFile
+  {
     param
     (
         [string[]] $nodeName = 'localhost',
@@ -159,38 +184,47 @@ configuration Sample_xRemoteFile_DownloadFile
             Headers = $headers
         }
     }
-}
-```
-- Ajánlott (megjegyzésként, kimenő), hogyan hívhatja meg a konfigurációs folyamat végén a példaként megadott parancsfájlt a tényleges értékeket tartalmaznak.
-Például a fenti konfigurációban nem feltétlenül nyilvánvaló, hogy a legjobb adja meg a felhasználói ügynök módja:
+  }
+  ```
 
-`UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` Ebben az esetben a Megjegyzés szolgálhatnak a konfiguráció kívánt végrehajtása:
-```
-<#
-Sample use (parameter values need to be changed according to your scenario):
+- Tanácsos hogyan hívhat meg a konfiguráció a példa parancsfájl végén található tényleges értékkel (megjegyzésekkel ki) példa tartalmazza.
+  Ha például a fenti konfigurációban nem feltétlenül nyilvánvaló, hogy van-e a legjobb módszer UserAgent adja meg:
 
-Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
+  `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` Ebben az esetben egy megjegyzést a konfiguráció a tervezett végrehajtási jól átláthatók:
 
-Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
--userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
-#>
-```
-- Minden egyes például egy rövid leírást, amelyből megtudhatja, hogyan kezeli, és a paraméterek szerinti írni.
-- Ellenőrizze, hogy példák az erőforrás legtöbb fontos forgatókönyvekhez, és ha nincs szükség hiányzik, ellenőrizze, hogy az összes hajtható végre, és a gép be a kívánt állapot.
+  ```powershell
+  <#
+  Sample use (parameter values need to be changed according to your scenario):
 
-## <a name="error-messages-are-easy-to-understand-and-help-users-solve-problems"></a>Hibaüzenetek a következők megismeréséhez és problémák megoldására felhasználók könnyen ##
-Jó hibaüzenetek kell lennie:
-- : A legnagyobb hibaüzenetek probléma, hogy azok gyakran nem létezik, ezért győződjön meg arról, hogy vannak-e.
-- Megértse: emberi olvasható, nem homályos hibakódok
-- Pontos: Mi az, hogy pontosan a hiba leírása
-- Vélelmezett: A Tanácsot a probléma megoldásához
-- Udvarias: Nem vétkesség felhasználói vagy azok érzi, hogy rossz gondoskodjon győződjön meg arról, ellenőrizze, hogy teljes körű forgatókönyvekben hibákat (használatával **Start-DscConfiguration**), mert közvetlenül erőforrás funkciók futtatásakor visszaadott azoktól eltérő lehet.
+  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
 
-## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>Naplóüzenetek: megértse és informatív (beleértve – részletes, – hibakeresési és ETW-naplók) ##
-Gondoskodjon arról, hogy az erőforrás által outputted naplók könnyen megértéséhez, és adjon meg értéket a felhasználóhoz. Erőforrások kell kimeneti minden információt, amely a felhasználó számára hasznos lehet, de további naplók nem mindig jobb. Inkább elkerülése érdekében a redundancia és szerint kiírta volna az adatokat, amelyek nem további értéket adjon meg – nem jelöl valaki halad át több száz naplóbejegyzések ahhoz, hogy mi keresnek található. Természetesen naplókat nincs az elfogadható megoldás a probléma vagy.
+  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
+  -userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
+  #>
+  ```
 
-Vizsgálatakor kell is részletes elemzéséhez és hibakeresési naplókat (futtatásával **Start-DscConfiguration** a-verbose és – megfelelően debug kapcsolók), illetve mint ETW-naplók. DSC ETW naplók megtekintéséhez nyissa meg az eseménynaplót, és nyissa meg a következő mappát: alkalmazások és szolgáltatások - Microsoft - Windows - célállapot-konfiguráció.  Alapértelmezés szerint nem fog működési csatornát kell, de ellenőrizze, hogy engedélyezi a elemzési és hibakeresési csatornák a konfiguráció futtatása előtt.
-Ahhoz, hogy az elemző/Debug csatornák, az alábbi parancsfájl hajthat végre:
+- Minden egyes például írjon egy rövid leírást, amely bemutatja, mire használható, és a paraméterek jelentése.
+- Ellenőrizze, hogy az erőforrás fontos a legtöbb forgatókönyvre példákat, és ha semmit nem hiányzik, ellenőrizze, hogy az összes végrehajtás, és helyezze a gép a kívánt állapotban.
+
+## <a name="error-messages-are-easy-to-understand-and-help-users-solve-problems"></a>Hibaüzenetek a következők így könnyen megismerhető és segítség a felhasználóknak a problémák megoldása
+
+Lesz helyes hibaüzenetek:
+
+- : A legnagyobb problémát hibaüzenetek, hogy azok milyen gyakran nem létezik, ezért ügyeljen arra, hogy vannak-e.
+- Könnyen áttekinthető: emberi olvasható, nem homályos hibakódok
+- Pontos: Mi az, hogy pontosan a probléma leírása
+- Vélelmezett: Tanácsokat a probléma megoldása
+- Udvarias: Nem blame felhasználói, vagy azt gondolja hibás
+
+Győződjön meg arról, ellenőrizze, hogy a végpontok közötti forgatókönyvek hibákat (használatával `Start-DscConfiguration`), mert előfordulhat, hogy különböznek azoktól, akik közvetlenül erőforrásfüggvények futtatásakor kapott.
+
+## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>Naplóüzenetek, könnyen érthető és informatív (beleértve a – részletes, – hibakeresési és ETW-naplók)
+
+Győződjön meg arról, hogy az erőforrás által használt kimeneti adattípus naplók elsajátítása, és adjon meg értéket a felhasználóhoz. Erőforrások jeleníti meg minden olyan információt, amely a felhasználó számára hasznos lehet, de további naplók nem mindig jobb. Érdemes elkerülése érdekében a redundancia és a ad ki adatokat, amelyek nem adja meg a további értékek – ne valaki naplóbejegyzések több száz hajtania annak érdekében, hogy találja, amit keresnek. Természetesen nincs napló nem az elfogadható megoldás a probléma vagy.
+
+Tesztelésekor, emellett részletes elemzését és hibakeresési naplók (futtatásával `Start-DscConfiguration` a `–Verbose` és `–Debug` vált megfelelően), illetve ETW-naplók formájában. DSC ETW-naplók megtekintéséhez nyissa meg az eseménynaplót, és nyissa meg a következő mappát: alkalmazások és szolgáltatások – Microsoft - Windows - Desired State Configuration.  Alapértelmezés szerint nincs fog műveleti csatorna lehet, de ellenőrizze, hogy engedélyezi a elemzési és hibakeresési csatornák a konfiguráció futtatása előtt.
+Engedélyezi az elemzési és hibakeresési csatornák, hajtsa végre az alábbi parancsfájlt:
+
 ```powershell
 $statusEnabled = $true
 # Use "Analytic" to enable Analytic channel
@@ -204,47 +238,66 @@ if($statusEnabled -eq $log.IsEnabled)
 }
 Invoke-Expression $commandToExecute
 ```
-## <a name="resource-implementation-does-not-contain-hardcoded-paths"></a>Erőforrás-implementáció nem tartalmaz szoftveresen kötött elérési utak ##
-Ellenőrizze, hogy nincsenek nincsenek szoftveresen kötött elérési utak erőforrás végrehajtásában, különösen akkor, ha azok feltételezik, hogy nyelvi (en-us), vagy ha az rendszerváltozók használható.
-Ha az erőforrás kell egyedi elérési utak, a környezeti változók hardcoding helyett a útvonalat használja, mivel más számítógépeken eltérőek lehetnek.
+
+## <a name="resource-implementation-does-not-contain-hardcoded-paths"></a>Erőforrás-implementáció nem tartalmaz szoftveresen kötött elérési utak
+
+Győződjön meg, hogy nincsenek szoftveresen kötött elérési utak erőforrás végrehajtásában, különösen akkor, ha a nyelvi azt feltételezik (en-us), vagy ha rendszerváltozók használható.
+Ha az erőforrás eléréséhez egyedi elérési utak, a környezeti változók használata helyett hardcoding kell az elérési út, ahogy más gépeken eltérő lehet.
 
 Példa:
 
 ahelyett, hogy:
-```
+
+```powershell
 $tempPath = "C:\Users\kkaczma\AppData\Local\Temp\MyResource"
 $programFilesPath = "C:\Program Files (x86)"
- ```
-Írhat:
 ```
+
+Írhat:
+
+```powershell
 $tempPath = Join-Path $env:temp "MyResource"
 $programFilesPath = ${env:ProgramFiles(x86)}
 ```
-## <a name="resource-implementation-does-not-contain-user-information"></a>Erőforrás-implementáció nem tartalmaz felhasználói adatokat ##
-Győződjön meg arról, hogy nincsenek e-mail nevek, fiók adatait, vagy a kód nevek.
-## <a name="resource-was-tested-with-validinvalid-credentials"></a>Erőforrás teszteltük, érvényes érvénytelen hitelesítő adatokkal ##
-Ha az erőforrás hitelesítő adatokat fogad paraméterként:
-- Az erőforrás works ellenőrizze, ha a helyi rendszer (vagy a távoli erőforrásokhoz tartozó számítógépfiók) nem rendelkezik hozzáféréssel.
-- Ellenőrizze az erőforrás működik a megadott hitelesítő adatok beszerzéséhez beállítva, és tesztelése
-- Ha az erőforrás megosztások fér hozzá, tesztelése a támogatandó, például a Variant típusú adatok:
+
+## <a name="resource-implementation-does-not-contain-user-information"></a>Erőforrás-implementáció nem tartalmaz felhasználói adatokat
+
+Ellenőrizze, hogy nincsenek e-mail neveket, fiók adatait, vagy a kódban személyek nevét.
+
+## <a name="resource-was-tested-with-validinvalid-credentials"></a>Erőforrás teszteltük érvényes/érvénytelen hitelesítő adatok
+
+Ha az erőforrás paraméterként vesz igénybe egy hitelesítő adatot:
+
+- Ellenőrizze az erőforrás működését, amikor a helyi rendszer (vagy távoli erőforrásokhoz tartozó számítógépfiók) nem rendelkezik hozzáféréssel.
+- Ellenőrizze az erőforrás működik a megadott hitelesítő adatok Get, Set és tesztelése
+- Ha az erőforráshoz fér hozzá a megosztásokat, teszteléséhez szüksége támogatásra, mint például variantní hodnoty:
   - Szabványos windows-megosztásokat.
   - Elosztott fájlrendszer-megosztásokat.
-  - SAMBA megosztások (Ha a támogatni kívánt Linux.)
+  - SAMBA megosztások (Ha szeretne Linux támogatja.)
 
-## <a name="resource-does-not-require-interactive-input"></a>Az erőforrásnál nincs szükség interaktív bemeneti ##
-**GET vagy Set/Test-TargetResource** funkciók automatikusan hajtható végre, és nem kell várnia, a felhasználó bármely szakaszában végrehajtási bemeneti (pl. ne használjon **Get-Credential** ezeket a funkciókat belül). Meg kell adnia a felhasználótól, ha meg kell adja át a konfigurációs paramétere a fordítási fázis során.
-## <a name="resource-functionality-was-thoroughly-tested"></a>Erőforrás-funkcióit alaposan teszteltük. ##
-Ezt az ellenőrző listát tartalmaz elemeket, amelyek fontosak, tesztelése és/vagy gyakran nem talált. Tesztet hajt végre, főleg működési néhányat a meglévők közül ez az éppen tesztel, és itt nem szerepelnek az erőforráshoz adott bunch lesz. Ne feledje kapcsolatos negatív teszteseteket is tartalmaz.
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Az ajánlott eljárás: erőforrásmodul tartalmaz tesztek mappát ResourceDesignerTests.ps1-parancsfájllal ##
-Jó gyakorlat mappa "teszt" create erőforrásmodul hozzon létre ResourceDesignerTests.ps1 fájlt, és adja hozzá a teszteket **teszt-xDscResource** és **teszt-xDscSchema** lévő összes erőforrás a megadott a modul.
-Ezzel a módszerrel gyorsan ellenőrizheti az adott modulok és egy megerősítést a közzététel előtt ellenőrizze az összes erőforrás sémák.
-XRemoteFile ResourceTests.ps1 egyszerűen sikerült meg:
+## <a name="resource-does-not-require-interactive-input"></a>Erőforrás nem igényel interaktív bemenet
+
+**Get/Set/Test-TargetResource** függvények automatikusan hajtható végre, és nem kell megvárja, hogy felhasználói bevitel végrehajtási bármely szakaszában (pl. ne használjon `Get-Credential` ezek a függvények belül). Ha meg kell adnia a felhasználói bevitel, meg kell adja át azt a konfigurációs paraméterként a fordítási fázis során.
+
+## <a name="resource-functionality-was-thoroughly-tested"></a>Erőforrás-funkciókat alaposan tesztelés
+
+Ezzel az ellenőrzőlistával elemek, amelyek fontosak, tesztelését és/vagy gyakran vannak-e elmulasztott tartalmazza. Többféle teszteket, elsősorban olyan működési azokat, amely jellemző az erőforrás éppen tesztel, és nem szerepelnek itt lesz. Ne felejtse el kapcsolatos negatív vizsgálati eset.
+
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Ajánlott eljárás: Resource modul tesztek mappát ResourceDesignerTests.ps1 szkript tartalmaz
+
+A mappa "teszt" resource modul belül létrehozásához hozzon létre egy célszerű `ResourceDesignerTests.ps1` fájlt, és adja hozzá a tesztek segítségével **Test-xDscResource** és **Test-xDscSchema** található összes erőforrást a megadott modul.
+Így gyorsan ellenőrizheti az adott modulok és a megerősítést a közzététel előtt ellenőrizze az összes erőforrás sémák.
+A xRemoteFile `ResourceTests.ps1` rákeresve beállítható:
+
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
-##<a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Az ajánlott eljárás: erőforrásmappa tartalmaz erőforrás-tervező parancsfájl létrehozásának séma ##
-Az egyes erőforrások tartalmaznia kell egy erőforrás tervező parancsfájlt, amely állít elő, az erőforrás mof séma. Ezt a fájlt kell helyezni <ResourceName>\ResourceDesignerScripts és Generate neve lehet<ResourceName>xRemoteFile erőforrás Schema.ps1 esetében a fájl volna hívni GenerateXRemoteFileSchema.ps1 és tartalmaz:
+
+## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Ajánlott eljárás: erőforrás mappa tartalmazza az erőforrás a Tervező parancsfájlját a séma generálásához
+
+Az egyes erőforrások tartalmaznia kell egy erőforrás tervező parancsfájlt, amely az erőforrás mof sémát hoz létre. Ezt a fájlt kell elhelyezni a `<ResourceName>\ResourceDesignerScripts` Generate neve lehet, és `<ResourceName>Schema.ps1` xRemoteFile erőforrás ezt a fájlt hívható `GenerateXRemoteFileSchema.ps1` és tartalmaznak:
+
 ```powershell
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
 $Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
@@ -256,10 +309,13 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
 ```
-## <a name="best-practice-resource-supports--whatif"></a>Az ajánlott eljárás: erőforrás - whatif támogatja ##
-Az erőforrás "veszélyes" műveleteket hajt végre, ajánlott a - whatif funkcióinak végrehajtásához. Miután elkészült, győződjön meg arról, hogy whatif kimeneti műveleteket, amelyek történne a parancs végrehajtása történt whatif kapcsoló nélkül helyesen írja le.
-Azt is ellenőrizze, hogy a művelet nem futtatható (nem a csomópont állapota módosul) Ha szerepel – whatif paraméter.
-Például tételezzük fel, hogy azt fájl erőforrás teszteli. Alább hoz létre a fájl "teszt.txt" tartalom "teszt" egyszerű konfiguráció van:
+
+## <a name="best-practice-resource-supports--whatif"></a>Ajánlott eljárás: erőforrás - WhatIf támogatja
+
+Az erőforrás "veszélyes" műveleteket hajt végre, ha tanácsos megvalósítása `-WhatIf` funkciót. Miután elkészült, győződjön meg arról, hogy `-WhatIf` kimeneti megfelelően leírja a műveleteit, amely történne a parancs végrehajtása történt nélkül `-WhatIf` váltani.
+Azt is ellenőrizze, hogy a művelet nem futtatható (nem az a csomópont állapota módosul) Ha `–WhatIf` kapcsoló használata.
+Például tegyük fel, File erőforrás azt teszteli. Az alábbi, az egyszerű konfigurációs fájlt hoz létre, amely `test.txt` "test" tartalma:
+
 ```powershell
 configuration config
 {
@@ -274,9 +330,14 @@ configuration config
 }
 config
 ```
-Ha azt fordítási, majd futtassa a konfiguráció a – whatif kapcsolóval a kimeneti ezzel azt jelzi, pontosan mi történne azt a konfigurációs futtatásakor. Maga a konfiguráció azonban nem történt meg (teszt.txt fájl nem jött létre).
+
+Ha azt fordítsa le és majd futtassa a konfiguráció a `-WhatIf` kapcsoló, a kimeneti eredménytelen pontosan mi lenne fordulhat elő, ha futtatjuk a konfigurációt. Maga a konfiguráció azonban nem lett végrehajtva (`test.txt` fájl nem jött létre).
+
 ```powershell
-Start-DscConfiguration -path .\config -ComputerName localhost -wait -verbose -whatif
+Start-DscConfiguration -Path .\config -ComputerName localhost -Wait -Verbose -WhatIf
+```
+
+```output
 VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' =
 SendConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' =
 root/Microsoft/Windows/DesiredStateConfiguration'.
@@ -299,4 +360,4 @@ VERBOSE: [X]: LCM:  [ End    Set      ]    in  0.1050 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 ```
 
-A lista nem teljes körű, de számos fontos problémák tervezési, fejlesztés és tesztelés DSC erőforrások is történt, amely magában foglalja.
+Ez a lista tehát nem tekinthető teljesnek, de számos fontos problémák megtervezése, fejlesztése és tesztelése a DSC-erőforrások is történt, amely lefedi.

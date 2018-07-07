@@ -1,86 +1,90 @@
 ---
 ms.date: 10/31/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A MOF-fájl védelme
-ms.openlocfilehash: d6f213e497838192ca6ce8d537cc291ee3811e79
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: A MOF-fájl biztonságossá tétele
+ms.openlocfilehash: f17c95c951151c0c11057ac0bce172c4ec73c91d
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190196"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893263"
 ---
-# <a name="securing-the-mof-file"></a>A MOF-fájl védelme
+# <a name="securing-the-mof-file"></a>A MOF-fájl biztonságossá tétele
 
->Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
-A DSC csomópontok konfigurációját úgy, hogy alkalmazza a MOF-fájlt, ahol a helyi Configuration Manager (LCM) valósítja meg a kívánt cél állapot tárolt információk kezeli.
-Ez a fájl tartalmazza a konfiguráció részletes adatait, mert fontos biztonságának megőrzése.
-Ez a témakör ismerteti a célcsomópont a fájl van titkosítva.
+DSC MOF-fájlt, ahol a helyi Configuration Manager (LCM) valósítja meg a kívánt cél állapot tárolt adatokat alkalmazása a konfigurációs kiszolgáló-csomópontok kezeli.
+Ez a fájl tartalmazza a konfigurációs részleteit, mivel fontos tárolja biztonságos helyen.
+Ez a témakör ismerteti, hogyan ellenőrizhető a célcsomópont a fájl titkosított.
 
-PowerShell 5.0-s verziójának kezdve a teljes MOF-fájl titkosítva van alapértelmezés szerint a csomópont történő alkalmazásakor a **Start-DSCConfiguration** parancsmag.
-A cikkben leírt eljárás esetén szükséges csak egy megoldás, ha a tanúsítványok nem kezelt, annak érdekében, tölti le a célcsomópont konfigurációk visszafejteni, és olvassa el a rendszer, mielőtt a rendszer alkalmazza azokat a lekéréses szolgáltatás protokoll használatával (például a Windows Server rendszerben elérhető lekéréses szolgáltatás).
-Csomópontok regisztrálva [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) lesz automatikusan tanúsítványok telepítése és kezeli a szolgáltatást, amely nem felügyeleti terheket szükséges.
+PowerShell 5.0-s verzió verziótól kezdve a teljes MOF-fájl titkosítva van alapértelmezés szerint a csomópontra történő alkalmazásakor a `Start-DSCConfiguration` parancsmagot.
+Ebben a cikkben ismertetett folyamatot kötelező, csak akkor, ha a lekéréses szolgáltatás protokoll használatával, ha a tanúsítványok nem felügyeli, a célcsomópont a letöltött konfigurációk visszafejteni, valamint lépésük előtt olvassa el a rendszer megoldás megvalósítása (például a Windows Server rendszerben elérhető lekéréses szolgáltatás).
+Regisztrált csomópontok [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) automatikusan rendelkezik tanúsítványok telepítve van, és nincs adminisztrációs terhelést és a szolgáltatás által kezelt szükséges.
 
->**Megjegyzés:** Ez a témakör ismerteti a titkosításhoz használt tanúsítvány.
->A titkosításhoz önaláírt tanúsítványt is elegendő, mert a titkos kulcsot mindig tartják a titkos kulcs és a titkosítás nem feltétlenül jelenti a dokumentum megbízhatósági.
->Önaláírt tanúsítványokat kell *nem* hitelesítési célokra lehetne felhasználni.
->Hitelesítési célú tanúsítványt a egy megbízható hitelesítésszolgáltató (CA) kell használnia.
+> [!NOTE]
+> Ez a témakör ismerteti a titkosításhoz használt tanúsítvány.
+> A titkosításhoz önaláírt tanúsítvány elegendő, mert a titkos kulcs titkos kulcs és a titkosítás mindig adatért nem jelenti azt, a dokumentum megbízhatósági.
+> Önaláírt tanúsítványokat kell *nem* hitelesítési célokra használhatók.
+> Hitelesítési célú tanúsítványt a megbízható hitelesítésszolgáltató (CA) kell használnia.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-Sikeresen titkosítsa a hitelesítő adatok használatával teszi biztonságossá a DSC-konfiguráció, győződjön meg arról, hogy a következő:
+Sikerült titkosítani a DSC-konfiguráció védelmére használt hitelesítő adatokat, győződjön meg arról, hogy rendelkezik az alábbiakkal:
 
-* **Néhány azt jelenti, hogy kiállító és tanúsítványok terjesztésére**. Ez a témakör és a példák azt feltételezik, Active Directory-hitelesítésszolgáltatót használ. Az Active Directory tanúsítványszolgáltatások további háttérinformációkat, lásd: [Active Directory tanúsítványszolgáltatások áttekintése](https://technet.microsoft.com/library/hh831740.aspx) és [a Windows Server 2008 Active Directory tanúsítványszolgáltatások](https://technet.microsoft.com/windowsserver/dd448615.aspx).
-* **A cél csomópont egy vagy több felügyeleti hozzáférés**.
-* **Minden cél fürtcsomópont egy titkosítási-kompatibilis tanúsítványt a személyes tárolójába mentett**. A Windows PowerShell a tároló elérési útja a Cert: \LocalMachine\My. Ebben a témakörben szereplő példák használhatja a "munkaállomás-hitelesítési" sablont, amely (együtt más tanúsítványsablonokat) található [alapértelmezett tanúsítványsablonokat](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
-* Ha a célcsomóponton eltérő számítógépen található ebben a konfigurációban futtatni **a tanúsítvány nyilvános kulcsának exportálásához**, majd importálja a konfigurációt fogja futtatni a számítógépen. Győződjön meg arról, hogy exportálás csak a **nyilvános** kulcs; a titkos kulcs biztonsága.
+- **Néhány azt jelenti, hogy kiállító és tanúsítványok terjesztésére**. Ez a témakör és a példák azt feltételezik, az Active Directory-hitelesítésszolgáltatót használ. Az Active Directory tanúsítványszolgáltatások további háttér információ: [Active Directory tanúsítványszolgáltatások áttekintése](https://technet.microsoft.com/library/hh831740.aspx) és [Active Directory tanúsítványszolgáltatások a Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).
+- **A cél-csomóponthoz vagy csomópontokhoz a rendszergazdai hozzáférést**.
+- **Minden egyes célcsomóponttal rendelkezik egy titkosítási képességgel tanúsítványt a személyes Store mentett**. A Windows PowerShell a tároló elérési útja a Cert: \LocalMachine\My. Ebben a témakörben szereplő példák az "munkaállomás-hitelesítési" sablon, amely annak (és más tanúsítványsablonokat) használatát [alapértelmezett tanúsítványsablonokat](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
+- Ha fog futni a konfiguráció a célcsomópont webkiszolgálótól eltérő számítógépen található **a tanúsítvány nyilvános kulcsának exportálásához**, majd importálja a számítógépen, a konfigurációt az futtatni fogja. Győződjön meg arról, hogy exportálja csak a **nyilvános** kulcs; a titkos kulcs biztonságának megőrzése.
 
-## <a name="overall-process"></a>Teljes folyamata
+## <a name="overall-process"></a>Általános folyamata
 
- 1. A tanúsítványok, a kulcsok és a ujjlenyomatok, annak biztosítása, hogy minden célcsomóponttal a tanúsítvány másolatát, és a konfigurációs számítógépen van, a nyilvános kulcs és az ujjlenyomat beállítása.
- 2. Hozzon létre egy konfigurációs adatblokkot, amely tartalmazza az elérési út és a nyilvános kulcs ujjlenyomata.
- 3. Hozzon létre egy konfigurációs parancsfájl, amely határozza meg a kívánt konfiguráció célcsomóponton a és a célcsomópontokat visszafejtése beállítása szerint a helyi konfigurációs commanding a kezelő a tanúsítványt és annak ujjlenyomata a konfigurációs adatok visszafejtéséhez.
- 4. Futtassa a konfigurációt, amely a helyi Configuration Manager beállításait, és indítsa el a DSC-konfiguráció.
+ 1. Állítsa be a tanúsítványok, kulcsok és ujjlenyomatok, így arról, hogy minden cél csomópont van a tanúsítvány másolatát, és konfigurációs van-e a nyilvános kulcs és ujjlenyomatát.
+ 2. Hozzon létre egy konfigurációs adatblokk, amely tartalmazza az elérési út és a nyilvános kulcs ujjlenyomata.
+ 3. Hozzon létre egy konfigurációs parancsfájl, amely határozza meg a célcsomópont kívánt konfigurációját, és úgy, mint a helyi konfigurációs visszafejtési a cél-csomópontokon beállít manager visszafejteni a konfigurációs adatokat, a tanúsítvány és az ujjlenyomat használatával.
+ 4. Futtassa a konfiguráció, amely a helyi Configuration Manager beállításait, és indítsa el a DSC-konfiguráció.
 
 ![Diagram1](images/CredentialEncryptionDiagram1.png)
 
 ## <a name="certificate-requirements"></a>Tanúsítványkövetelmények
 
-Hitelesítő adatok titkosításához kihirdeti, hogy a nyilvános kulcsú tanúsítvány rendelkezésre kell állnia a _Célcsomóponttal_ , amely **megbízható** a számítógép a DSC-konfiguráció létrehozásához használt.
-A nyilvános kulcsú tanúsítvány virtualizálásra konkrét követelmények vonatkoznak, amíg a DSC-hitelesítő adatok titkosításához használható:
- 1. **Kulcshasználat**:
+Hitelesítő adatok titkosításához kihirdeti, hogy a nyilvános kulcsú tanúsítvány elérhetőnek kell lennie a _Célcsomóponttal_ , amely **megbízható** a DSC-konfiguráció létrehozásához használja a számítógép által.
+A nyilvános kulcsú tanúsítvány ahhoz, hogy a DSC-hitelesítő adatok titkosításához használni meghatározott követelményekkel rendelkezik:
+
+1. **Kulcshasználat**:
    - Tartalmaznia kell: "KeyEncipherment" és "DataEncipherment".
-   - Kell _nem_ tartalmaz: "Digitális aláírás".
- 2. **Kibővített kulcshasználat**:
-   - Tartalmaznia kell: dokumentum titkosítás (1.3.6.1.4.1.311.80.1).
-   - Kell _nem_ tartalmaz: ügyfél-hitelesítés (1.3.6.1.5.5.7.3.2) és a kiszolgálói hitelesítés (1.3.6.1.5.5.7.3.1).
- 3. A tanúsítvány titkos kulcsa megtalálható a * cél Node_.
- 4. A **szolgáltató** a tanúsítványt nem lehet "Microsoft RSA SChannel Cryptographic Provider".
+   - Érdemes _nem_ tartalmaz: "A digitális aláírás".
+2. **Kibővített kulcshasználat**:
+   - Tartalmaznia kell: dokumentum titkosítása (1.3.6.1.4.1.311.80.1).
+   - Érdemes _nem_ tartalmaznak: ügyfél-hitelesítés (1.3.6.1.5.5.7.3.2) és a kiszolgálói hitelesítés (1.3.6.1.5.5.7.3.1).
+3. A tanúsítvány titkos kulcsa megtalálható a * cél Node_.
+4. A **szolgáltató** a tanúsítványt a "Microsoft RSA SChannel Cryptographic Provider" kell lennie.
 
->**Ajánlott eljárás:** tanúsítvány használata a kulcshasználat "Digitális aláírás" vagy a kiszolgálóhitelesítési EKU egyikét tartalmazó, bár ez lehetővé teszi a titkosítási kulcs, hogy könnyebben hibásan használt és ki van téve a támadás. Ezért ajánlott kihagyja ezen kulcshasználat és az EKU-kat kifejezetten DSC hitelesítő adatok védelme céljából létrehozott tanúsítvány használatát is.
+> [!IMPORTANT]
+> Bár a kulcs használatát "Digitális aláírás" vagy a hitelesítési EKU valamelyik tartalmazó tanúsítványt is használ, ez lehetővé teszi a titkosítási kulcsot hibásan használt és téve a támadás könnyebben törhetők fel. Ezért ajánlott ezek kulcshasználat és az EKU-k az áttekinthetőség kedvéért kihagyja kifejezetten a DSC-hitelesítő adatok védelme céljából létrehozott tanúsítványt használjon.
 
-A meglévő tanúsítványt a _Célcsomóponttal_ , hogy megfelel-e ezek a feltételek segítségével biztonságos DSC hitelesítő adatokat.
+Minden meglévő tanúsítványt a _Célcsomóponttal_ , hogy megfelel-e ezek a feltételek segítségével biztonságos DSC hitelesítő adatokat.
 
 ## <a name="certificate-creation"></a>Tanúsítvány létrehozása
 
-Kétféleképpen történő létrehozásáról és használatáról a szükséges titkosítási tanúsítványt (nyilvános-titkos kulcsból álló kulcspárt) is igénybe vehet.
+Kétféleképpen hozhat létre és használhat a szükséges titkosítási tanúsítvány (nyilvános-titkos kulcspárt) is igénybe vehet.
 
-1. Hozza létre a **Célcsomóponttal** és csak a nyilvános kulcsának exportálásához a **szerzői csomópont**
-2. Hozza létre a **szerzői csomópont** és a teljes kulcspár exportálása az **Célcsomóponttal**
+1. Hozza létre a **Célcsomóponttal** , és csak a nyilvános kulcsának exportálásához a **szerzői csomópont**
+2. Hozza létre a **szerzői csomópont** és a teljes kulcspár, exportálhatja a **Célcsomóponttal**
 
-1. módszer ajánlott, mert mindig célcsomóponton marad a titkos kulcs használatával fejti vissza a MOF-felhasználó hitelesítő adatait.
+1. módszer használata javasolt, mert mindig célcsomóponton marad a titkos kulcs használatával fejti vissza az MOF hitelesítő adatait.
 
+### <a name="creating-the-certificate-on-the-target-node"></a>A tanúsítvány létrehozásakor a célcsomóponton
 
-### <a name="creating-the-certificate-on-the-target-node"></a>A tanúsítvány létrehozása a célcsomóponton
+A titkos kulcs titkos, mert fejti vissza az MOF meg kell tartani a **Célcsomóponttal** ennek legegyszerűbb módja az, hogy a titkos kulcsú tanúsítvány létrehozása a a **Célcsomóponttal**, és másolja a  **nyilvános kulcsú tanúsítvány** a MOF-fájlba a DSC-konfiguráció létrehozásához használt számítógépre.
+Az alábbi példában:
 
-A titkos kulcs titkos, mert a megadott MOF visszafejt a kell tartani a **Célcsomóponttal** a legegyszerűbb, amely módja a titkos kulcsú tanúsítvány létrehozásához a **Célcsomóponttal**, és másolja a  **nyilvános kulcsú tanúsítvány** arra a számítógépre ahhoz, hogy a DSC-konfiguráció a MOF-fájlt használja.
-Az alábbi példa:
- 1. az olyan tanúsítványt hoz létre a **célcsomóponttal**
- 2. a nyilvános kulcsú tanúsítvány exportálása a **célcsomóponttal**.
- 3. a nyilvános kulcsú tanúsítvány importálása a **a** tanúsítványtárolójába a **szerzői műveletek munkaterület**.
+1. a tanúsítványt hoz létre a **célcsomóponttal**
+2. a nyilvános kulcsú tanúsítvány exportálása a **célcsomóponttal**.
+3. a nyilvános kulcsú tanúsítványt importál a **saját** tanúsítványtárolójába a **szerzői műveletek csomópont**.
 
-#### <a name="on-the-target-node-create-and-export-the-certificate"></a>Célcsomóponton: hozzon létre, és a tanúsítvány exportálása
->Célcsomóponttal: Windows Server 2016 és Windows 10
+#### <a name="on-the-target-node-create-and-export-the-certificate"></a>A cél csomóponton: hozzon létre, és exportálja a tanúsítványt
+
+> Célcsomópont: Windows Server 2016 és Windows 10-es
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -88,14 +92,17 @@ $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName
 # export the public key certificate
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
-Egyszer exportált, a ```DscPublicKey.cer``` kell átmásolni a **szerzői csomópont**.
 
->Célcsomóponttal: Windows Server 2012 R2 vagy Windows 8.1 és korábbi
+Az exportált egyszer, a `DscPublicKey.cer` kellene kell másolni a **szerzői csomópont**.
 
-Mivel a New-SelfSignedCertificate parancsmag a Windows operációs rendszer Windows 10 és Windows Server 2016 előtti nem támogatják a **típus** paraméter, a tanúsítvány létrehozása alternatív módszert ezek megadása szükséges operációs rendszerek.
-Ebben az esetben használhatja ```makecert.exe``` vagy ```certutil.exe``` a tanúsítvány létrehozásához.
+> Célcsomópont: Windows Server 2012 R2 vagy Windows 8.1 és korábbi
+> [!WARNING]
+> Mivel a `New-SelfSignedCertificate` nem támogatják a parancsmag a Windows operációs rendszerek a Windows 10 és Windows Server 2016 előtt a **típus** paraméter, ez a tanúsítvány létrehozása egy alternatív módszer megadása szükséges. az említett operációs rendszerektől.
+>
+> Ebben az esetben használhatja `makecert.exe` vagy `certutil.exe` a tanúsítvány létrehozásához.
+>
+>Egy alternatív módszer [a New-SelfSignedCertificateEx.ps1 szkript letöltése a Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) , és ezzel hozzon létre helyette a tanúsítványt:
 
-Egy másik módszer [a New-SelfSignedCertificateEx.ps1 parancsprogram letöltése a Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) , és hozzon létre helyette a tanúsítványt:
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
 # and in the folder that contains New-SelfSignedCertificateEx.ps1
@@ -113,35 +120,38 @@ New-SelfsignedCertificateEx `
     -AlgorithmName 'RSA' `
     -SignatureAlgorithm 'SHA256'
 # Locate the newly created certificate
-$Cert = Get-ChildItem -Path cert:\LocalMachine\My `
-    | Where-Object {
-        ($_.FriendlyName -eq 'DSC Credential Encryption certificate') `
-        -and ($_.Subject -eq "CN=${ENV:ComputerName}")
+$Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {
+        ($_.FriendlyName -eq 'DSC Credential Encryption certificate') -and ($_.Subject -eq "CN=${ENV:ComputerName}")
     } | Select-Object -First 1
 # export the public key certificate
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
-Egyszer exportált, a ```DscPublicKey.cer``` kell átmásolni a **szerzői csomópont**.
 
-#### <a name="on-the-authoring-node-import-the-certs-public-key"></a>A szerzői műveletek csomóponton: a tanúsítvány nyilvános kulcsát importálnia
+Az exportált egyszer, a ```DscPublicKey.cer``` kellene kell másolni a **szerzői csomópont**.
+
+#### <a name="on-the-authoring-node-import-the-certs-public-key"></a>A szerzői műveletek csomóponton: importálja a tanúsítvány nyilvános kulcsa
+
 ```powershell
 # Import to the my store
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-### <a name="creating-the-certificate-on-the-authoring-node"></a>A tanúsítvány létrehozása a szerzői műveletekhez csomóponton
-Alternatív megoldásként a titkosítási tanúsítványhoz hozható létre a **szerzői csomópont**, az exportált a **titkos kulcs** , a PFX fájlt, és ezután importálja a **Célcsomóponttal**.
-Ez a DSC-hitelesítő adatok titkosításához megvalósításához a jelenlegi mód _Nano Server_.
-Bár a PFX jelszóval védett kell álljon biztonságos átvitel során.
-Az alábbi példa:
- 1. az olyan tanúsítványt hoz létre a **szerzői műveletek munkaterület**.
- 2. exportálja a tanúsítványt a titkos kulcs is a **szerzői műveletek munkaterület**.
- 3. eltávolítja a titkos kulcsot a **szerzői műveletek munkaterület**, tartja a nyilvános kulcsú tanúsítvány, de a **a** tárolja.
- 4. a titkos kulcsú tanúsítvány importálása a My(Personal) tanúsítványtároló a a **célcsomóponttal**.
-   - akkor kell felvenni a gyökérszintű tárolóban. így az megbízható által a **célcsomóponttal**.
+### <a name="creating-the-certificate-on-the-authoring-node"></a>A tanúsítvány létrehozása az Authoring Tool csomóponton
 
-#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>A szerzői műveletek csomóponton: hozzon létre, és a tanúsítvány exportálása
->Célcsomóponttal: Windows Server 2016 és Windows 10
+Azt is megteheti, a titkosítási tanúsítvány hozható létre a a **szerzői csomópont**, az exportált a **titkos kulcs** , egy PFX fájlt, és ezután importálja, amelyen a **Célcsomóponttal**.
+Ez a végrehajtási DSC hitelesítő adatok titkosításához az aktuális mód _Nano Server_.
+Bár a PFX-jelszó védi, meg kell őrizni biztonságos átvitel során.
+Az alábbi példában:
+
+1. a tanúsítványt hoz létre a **szerzői műveletek csomópont**.
+2. exportálja a tanúsítványt a titkos kulcs is a **szerzői műveletek csomópont**.
+3. eltávolítja a titkos kulcsot a a **szerzői műveletek csomópont**, de megőrzi a nyilvános kulcsú tanúsítvány a **saját** tárolásához.
+4. importálja a titkos kulcsú tanúsítványt a My(Personal) tanúsítványtárolójába a a **célcsomóponttal**.
+   - azt hozzá kell adni a legfelső szintű tárolójában, hogy a rendszer megbízható a **célcsomóponttal**.
+
+#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>A szerzői műveletek csomóponton: hozzon létre, és exportálja a tanúsítványt
+
+> Célcsomópont: Windows Server 2016 és Windows 10-es
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -154,14 +164,17 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
-Egyszer exportált, a ```DscPrivateKey.pfx``` kell átmásolni a **Célcsomóponttal**.
 
->Célcsomóponttal: Windows Server 2012 R2 vagy Windows 8.1 és korábbi
+Az exportált egyszer, a `DscPrivateKey.pfx` kell átmásolni a **Célcsomóponttal**.
 
-Mivel a New-SelfSignedCertificate parancsmag a Windows operációs rendszer Windows 10 és Windows Server 2016 előtti nem támogatják a **típus** paraméter, a tanúsítvány létrehozása alternatív módszert ezek megadása szükséges operációs rendszerek.
-Ebben az esetben használhatja ```makecert.exe``` vagy ```certutil.exe``` a tanúsítvány létrehozásához.
+> Célcsomópont: Windows Server 2012 R2 vagy Windows 8.1 és korábbi
+> [!WARNING]
+> Mivel a `New-SelfSignedCertificate` nem támogatják a parancsmag a Windows operációs rendszerek a Windows 10 és Windows Server 2016 előtt a **típus** paraméter, ez a tanúsítvány létrehozása egy alternatív módszer megadása szükséges. az említett operációs rendszerektől.
+>
+> Ebben az esetben használhatja `makecert.exe` vagy `certutil.exe` a tanúsítvány létrehozásához.
+>
+> Egy alternatív módszer [a New-SelfSignedCertificateEx.ps1 szkript letöltése a Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) , és ezzel hozzon létre helyette a tanúsítványt:
 
-Egy másik módszer [a New-SelfSignedCertificateEx.ps1 parancsprogram letöltése a Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) , és hozzon létre helyette a tanúsítványt:
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
 # and in the folder that contains New-SelfSignedCertificateEx.ps1
@@ -179,10 +192,8 @@ New-SelfsignedCertificateEx `
     -AlgorithmName 'RSA' `
     -SignatureAlgorithm 'SHA256'
 # Locate the newly created certificate
-$Cert = Get-ChildItem -Path cert:\LocalMachine\My `
-    | Where-Object {
-        ($_.FriendlyName -eq 'DSC Credential Encryption certificate') `
-        -and ($_.Subject -eq "CN=${ENV:ComputerName}")
+$Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {
+        ($_.FriendlyName -eq 'DSC Credential Encryption certificate') -and ($_.Subject -eq "CN=${ENV:ComputerName}")
     } | Select-Object -First 1
 # export the public key certificate
 $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
@@ -193,7 +204,8 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a>Célcsomóponton: a tanúsítvány titkos kulcsot a megbízható legfelső szintű importálása
+#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a>A cél csomóponton: importálja a tanúsítványt a titkos kulcsot a megbízható legfelső szintű
+
 ```powershell
 # Import to the root store so that it is trusted
 $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
@@ -202,15 +214,16 @@ Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation
 
 ## <a name="configuration-data"></a>Konfigurációs adatok
 
-A konfigurációs adatok blokk határozza meg, mely célcsomópontokat működik, hogy-e, vagy nem a hitelesítő adatokat, az azt jelenti, hogy a titkosítás és egyéb információk titkosítására. A konfigurációs adatok blokk további információkért lásd: [elválasztó konfigurációs és környezeti adatok](configData.md).
+A konfigurációs adatok blokk határozza meg, melyik célcsomópontok alapján, hogy e, vagy nem a hitelesítő adatokat, az azt jelenti, hogy a titkosítás és egyéb információk titkosítására. A konfigurációs adatok blokk további információkért lásd: [szétválasztása konfigurációs és környezeti adatok](configData.md).
 
-A hitelesítő adatok titkosítás kapcsolódó, az egyes csomópontok konfigurálható elemek a következők:
-* **Csomópontnév** -a célcsomópont a hitelesítő adatok titkosításához a konfigurálni kívánt nevét.
-* **PsDscAllowPlainTextPassword** - e a titkosított hitelesítő adatokat kell átadni ebben a csomópontban engedélyezve lesz. Ez az **nem ajánlott**.
-* **Ujjlenyomat** – a felhasználó hitelesítő adatait a DSC-konfiguráció visszafejtése a használt tanúsítvány ujjlenyomata a _Célcsomóponttal_. **Ezt a tanúsítványt a helyi számítógép tanúsítványtárolójába a léteznie kell.**
-* **CertificateFile** – a Tanúsítványfájl (csak a nyilvános kulcsot tartalmazó), amely a hitelesítő adatok titkosításához használandó a _Célcsomóponttal_. Ez lehet akár egy DER kódolású bináris X.509 vagy Base-64 kódolású X.509 formátum tanúsítványfájlt.
+Hitelesítőadat-titkosítás kapcsolatos, az egyes csomópontok konfigurálható elemek a következők:
 
-Ez a példa bemutatja egy konfigurációs adatblokk meghatározza, hogy a célcsomóponton való működésre elnevezett célcsomópont, a nyilvános kulcs tanúsítványfájljából (nevű targetNode.cer), és az ujjlenyomat a nyilvános kulcs elérési útja.
+- **NodeName** – a célcsomópont a hitelesítő adatok titkosításához a konfigurálni kívánt nevét.
+- **PsDscAllowPlainTextPassword** - e a titkosítatlan hitelesítő adatok adható át ezen a csomóponton engedélyezni. Ez a **nem ajánlott**.
+- **Ujjlenyomat** -a a DSC-konfiguráció a hitelesítő adatok visszafejtése a használt tanúsítvány ujjlenyomatát a _Célcsomóponttal_. **Ezt a tanúsítványt a helyi számítógép tanúsítványtárolójába a léteznie kell.**
+- **CertificateFile** – a tanúsítványfájlt (csak a nyilvános kulcsot tartalmazó), amely a hitelesítő adatok titkosításához használandó a _Célcsomóponttal_. Ez lehet akár egy DER kódolású bináris X.509 vagy Base-64 kódolású X.509 formátumú tanúsítványfájlt.
+
+Ez a példa bemutatja egy konfigurációs adatblokk, amely meghatározza egy célcsomóponttal való működésre az elnevezett targetNode, a nyilvános kulcsú tanúsítványfájlra (nevű targetNode.cer), és az ujjlenyomatot a nyilvános kulcs elérési útját.
 
 ```powershell
 $ConfigData= @{
@@ -233,12 +246,11 @@ $ConfigData= @{
     }
 ```
 
-
 ## <a name="configuration-script"></a>Konfigurációs parancsfájl
 
-A konfigurációs parancsfájl önmagában, használja a `PsCredential` győződjön meg arról, hogy a hitelesítő adatokat kell tárolni a lehető legrövidebb idő alatt a paramétert. A megadott példa futtatásakor DSC kéri a hitelesítő adatokat, és majd titkosíthatja a MOF-fájlt, a társított konfigurációs adatblokk a célcsomóponton CertificateFile használatával. Ez a Kódpélda másolja át a fájl egy védett megosztást egy felhasználó számára.
+Magát a konfigurációs parancsfájlt, használja a `PsCredential` paraméter segítségével győződjön meg arról, hogy a lehető legrövidebb idő alatt a hitelesítő adatokat tárolja. A megadott példa futtatásakor DSC kéri a hitelesítő adatokat, és majd titkosíthatja a MOF-fájlt a CertificateFile társított a célcsomópont a konfigurációs adatok blokk használatával. Ez a Kódpélda másol egy fájlt egy felhasználó védett megosztásból.
 
-```
+```powershell
 configuration CredentialEncryptionExample
 {
     param(
@@ -260,9 +272,9 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## <a name="setting-up-decryption"></a>Visszafejtési beállítása
+## <a name="setting-up-decryption"></a>A visszafejtés beállítása
 
-Mielőtt [ `Start-DscConfiguration` ](https://technet.microsoft.com/library/dn521623.aspx) is működik, hogy mely tanúsítványokat használja a hitelesítő adatok visszafejtése közölje a helyi Configuration Manager minden egyes cél csomóponton a CertificateID erőforrás ellenőrzése a tanúsítvány ujjlenyomata segítségével. Ez a példa funkció megkeresi a megfelelő helyi tanúsítvány (lehetséges, hogy testre szabhatja, így a pontos használni kívánt tanúsítványt keres, megtalálja a):
+Mielőtt [ `Start-DscConfiguration` ](https://technet.microsoft.com/library/dn521623.aspx) is működik, meg kell mondanunk a helyi Configuration Manager a cél-csomópontokon melyik tanúsítványt használja a hitelesítő adatok visszafejtése a CertificateID erőforrás segítségével ellenőrizze a tanúsítvány ujjlenyomata. Ez a példa a függvény megkeresi a megfelelő helyi tanúsítvány (szükség lehet testre szabni, így megtalálja a pontos tanúsítványt használni kívánt):
 
 ```powershell
 # Get the certificate that works for encryption
@@ -278,7 +290,7 @@ function Get-LocalEncryptionCertificateThumbprint
 }
 ```
 
-A tanúsítvány annak ujjlenyomata által azonosított a konfigurációs parancsfájl frissíthető értéket használja:
+Az ujjlenyomat által azonosított tanúsítvánnyal a konfigurációs parancsfájl frissíthető értéket használja:
 
 ```powershell
 configuration CredentialEncryptionExample
@@ -309,10 +321,10 @@ configuration CredentialEncryptionExample
 
 ## <a name="running-the-configuration"></a>A konfiguráció futtatása
 
-Ezen a ponton a konfigurációt, amely kimeneteként két fájlt is futtathatja:
+Ezen a ponton a konfigurációt, mivel a két fájlt kimenete futtathatja:
 
- * A *. meta.mof fájl, amely a helyi Configuration Manager visszafejtése a hitelesítő adatokat, a tanúsítványt használ, amely a helyi számítógép tárolójában tárolja, és annak ujjlenyomata által azonosított konfigurálja. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) alkalmazza a *. meta.mof fájlt.
- * A MOF-fájlt, amely ténylegesen konfigurációjának alkalmazására szolgál. Start-DscConfiguration konfigurációjának alkalmazására szolgál.
+- A *. meta.mof fájlt, amely a hitelesítő adatok használatával, amely a helyi számítógép tárolóban tárolja, és azonosítja az ujjlenyomata a tanúsítvány visszafejtése a Local Configuration Manager konfigurálja. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) alkalmazza a *. meta.mof fájlt.
+- MOF-fájlt, amely ténylegesen konfigurációjának alkalmazására szolgál. Start-DscConfiguration konfigurációjának alkalmazására szolgál.
 
 Ezek a parancsok érnek el ezeket a lépéseket:
 
@@ -327,14 +339,14 @@ Write-Host "Starting Configuration..."
 Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 ```
 
-Ebben a példában a DSC-konfiguráció célcsomóponton való miatt.
-A DSC-konfiguráció alkalmazható DSC lekéréses kiszolgálót használ, ha elérhető ilyen.
+Ebben a példában a DSC-konfiguráció miatt a cél csomópontra.
+A DSC-konfiguráció használata a DSC lekéréses kiszolgálón, ha elérhető is alkalmazható.
 
-Lásd: [ügyféltelepítéshez DSC lekérési](pullClient.md) további információt a DSC-konfigurációk használata a DSC lekérési kiszolgálójával alkalmazása.
+Lásd: [DSC lekérési ügyfél beállítása](pullClient.md) további információt a DSC-konfigurációk DSC lekéréses kiszolgálót használ.
 
-## <a name="credential-encryption-module-example"></a>Hitelesítő adatok titkosítás modul – példa
+## <a name="credential-encryption-module-example"></a>Hitelesítő adatok titkosítási modul példa
 
-Íme egy teljes példa, amely magában foglalja a teljes ezeket a lépéseket, valamint segítő parancsmag exportálja, és másolja át a nyilvános kulcsok:
+Íme egy teljes példa, amely tartalmazza a teljes ezeket a lépéseket, valamint egy segítő parancsmag, amely exportálja, és másolja a nyilvános kulcsokat:
 
 ```powershell
 # A simple example of using credentials

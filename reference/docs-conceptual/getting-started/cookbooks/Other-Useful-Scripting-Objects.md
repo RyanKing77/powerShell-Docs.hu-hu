@@ -1,24 +1,24 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell parancsmag
+keywords: PowerShell, a parancsmag
 title: További hasznos parancsfájl-kezelési objektumok
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-ms.openlocfilehash: 0e87e9919199e011ab5abec5b07dccc8494ad64a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2ae9bc1864daedbcb0070c5f3862a6c98f8db2d4
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30949825"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893280"
 ---
 # <a name="other-useful-scripting-objects"></a>További hasznos parancsfájl-kezelési objektumok
 
-A következő objektumok nyújt további parancsfájl-kezelési szolgáltatásokat a Windows PowerShell ISE. Nem része a **$psISE** hierarchia.
+A következő objektumokat adja meg a Windows PowerShell ISE parancsfájl-kezelési funkciókat. Nem része a **$psISE** hierarchia.
 
-## <a name="useful-scripting-objects"></a>Hasznos Scripting objektum
+## <a name="useful-scripting-objects"></a>Hasznos parancsfájlkezelés objektumok
 
 ### <a name="psunsupportedconsoleapplications"></a>$psUnsupportedConsoleApplications
 
-A Windows PowerShell ISE konzolon alkalmazások és együttműködését bizonyos korlátozások is. Egy parancs vagy egy felhasználói beavatkozást igénylő automatizálási parancsfájl nem működik a Windows PowerShell-konzolon működési. Érdemes letiltása, hogy a parancsok vagy parancsfájlok futtatását, a Windows PowerShell ISE parancs ablaktáblán. A **$psUnsupportedConsoleApplications** objektum tartja az ilyen parancsok listáját. Futtassa a parancsokat a listában szereplő kísérli meg, ha azok nem támogatott üzenet jelenik meg. A következő parancsfájl egy bejegyzést ad hozzá a listához.
+Vannak bizonyos korlátai, a Windows PowerShell ISE-ben és konzolalkalmazással együttműködését. Egy parancs vagy egy automation-szkript, amely felhasználói beavatkozást igényel előfordulhat, hogy úgy működik, a Windows PowerShell-konzolon működik. Érdemes ezen parancsok vagy parancsfájlok futtatását, a Windows PowerShell ISE-parancs panelen letiltása. A **$psUnsupportedConsoleApplications** objektum tartja az ilyen parancsok listája. Futtassa a parancsokat a listában meg, ha azok nem támogatott üzenetet kap. A következő parancsfájl egy bejegyzés hozzáadása a listához.
 
 ```powershell
 # List the unsupported commands
@@ -33,21 +33,21 @@ $psUnsupportedConsoleApplications
 
 ### <a name="pslocalhelp"></a>$psLocalHelp
 
-Ez az egy dictionary objektum, amely a környezetfüggő Súgó-témaköröket és a kapcsolódó hivatkozások a helyi lefordított HTML-súgófájl közötti leképezéseket kezeli. Keresse meg a helyi súgó adott témakörre szolgál. Adja hozzá, vagy témakörök törlése a listáról. Az alábbi példakód mutatja néhány példa található kulcs-érték párok **$psLocalHelp**.
+Ez a Súgó-témaköröket és a kapcsolódó hivatkozásokat a helyi lefordított HTML-súgó fájlban közötti környezetfüggő leképezi egy szótár objektumot. Keresse meg a helyi súgó egy adott témakör szolgál. Adja hozzá, vagy a témakörök törlése a listából. Az alábbi példakód bemutatja néhány példa található kulcs-érték párok `$psLocalHelp`.
 
 ```powershell
 # See the local help map
 $psLocalHelp | Format-List
 ```
 
-### <a name="sample-output"></a>Kimenetminta
+### <a name="pslocalhelp-sample-output"></a>$psLocalHelp kimeneti példa
 
 |||
 |-|-|
-|Kulcs:-Számítógép hozzáadása|Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm|
-|Kulcs:-Tartalom|Value : WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm|
+|Kulcs:-Számítógép hozzáadása|Érték: WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm|
+|Kulcs:-Tartalom|Érték: WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm|
 
-A következő parancsfájl egy bejegyzést ad hozzá a listához.
+A következő parancsfájl egy bejegyzés hozzáadása a listához.
 
 ```powershell
 $psLocalHelp.Add("get-myNoun", "c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-57ae-aa0c-87b5e5a84712.htm")
@@ -55,20 +55,20 @@ $psLocalHelp.Add("get-myNoun", "c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-5
 
 ### <a name="psonlinehelp"></a>$psOnlineHelp
 
-Ez az egy dictionary objektum, amely egy környezetfüggő leképezése súgótémakörök címének és a hozzájuk társított külső URL-címeket tart fenn. Keresse meg a Súgó gombra egy adott témakör a weben szolgál. Adja hozzá, vagy témakörök törlése a listáról.
+Ez az egy szótárobjektum, amely a környezetfüggő leképezi a súgótémakörök címének és a kapcsolódó külső URL-címek között. Keresse meg az adott témakörre súgója a weben szolgál. Adja hozzá, vagy a témakörök törlése a listából.
 
 ```powershell
 $psOnlineHelp | Format-List
 ```
 
-### <a name="sample-output"></a>Kimenetminta
+## <a name="psonilnehelp-sample-output"></a>$psOnilneHelp kimeneti példa
 
 |||
 |-|-|
 |Kulcs:-Számítógép hozzáadása|Érték: http://go.microsoft.com/fwlink/p/?LinkID=135194|
 |Kulcs:-Tartalom|Érték: http://go.microsoft.com/fwlink/p/?LinkID=113278|
 
- A következő parancsfájl egy bejegyzést ad hozzá a listához.
+A következő parancsfájl egy bejegyzés hozzáadása a listához.
 
 ```powershell
 $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
@@ -76,4 +76,4 @@ $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
 
 ## <a name="see-also"></a>Lásd még:
 
-- [A Windows PowerShell ISE objektummodell Scripting célja](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

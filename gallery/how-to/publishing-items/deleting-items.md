@@ -1,23 +1,23 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
+keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Elemek törlése
-ms.openlocfilehash: 3f67f78d63e5cf797d00ce43f95fb3b4f62d6f7c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 454cd404437bf1c31b9a1b81cd9dd0ac81e6b0f6
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218229"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893093"
 ---
 # <a name="deleting-items"></a>Elemek törlése
 
-A PowerShell-galériában nem támogatja a cikkek, végleges törlését, mert, amely bárki, aki van attól függően, hogy fennmaradó rendelkezésre álló megszűnését.
+A PowerShell-galériából nem támogatja a végleges törlés elemek, bárki, aki attól függően, a fennmaradó rendelkezésre álló megtörnék, mert.
 
-A PowerShell-galériában ehelyett "unlist" elem, amely webhelyén, a cikk kezelése lapon végezhető módot támogatja.
-Ha egy elemet fel nem sorolt, akkor nem jelenik meg a keresési és bármelyik elem listázása, mind a PowerShell-galériában és PowerShellGet-parancsok használatával.
-Azonban a maradnak letölthető a pontos verziót, amely mi lehetővé teszi, hogy a munka folytatásához automatizált parancsfájlokat megadásával.
+Ehelyett a PowerShell-galériából támogatja egy elem, amely a konfigurációelem-kezelési oldalán a webhelyen végezhető "unlist" lehetőséget.
+Ha egy elemet fel nem sorolt, már nem megjelenik a keresési és a minden elem, listázása, a PowerShell-galériából egyaránt, és a PowerShellGet-parancsokkal.
+Azonban továbbra is letölthető a pontos verziót, amely a munka folytatásához automatizált parancsfájlokat teszi megadásával.
 
-Ha úgy gondolja, hogy az elemek törlése kivételes helyzet tapasztal, ha ez kezelhetik manuálisan a PowerShell-galériában csapatával.
-Például ha egy szerzői jogsértéssel kapcsolatos probléma vagy potenciálisan káros tartalom, amely lehet törli-e érvényes okát.
-Egy támogatási kérést [PowerShell-galériában] keresztül kell elküldeni (http://www.PowerShellGallery.com) ebben az esetben.
+Ha egy kivételes helyzet, ha úgy gondolja, hogy az elemek egyikét törölni kell, ez lehet kezelni, manuálisan a PowerShell-galériából csapat.
+Például ha a szerzői jogsértés probléma vagy potenciálisan káros tartalmat, amely lehet törli-e érvényes okát.
+Küldjön egy támogatási kérést [PowerShell-galériából](http://www.PowerShellGallery.com) ebben az esetben.

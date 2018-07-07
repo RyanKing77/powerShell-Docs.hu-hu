@@ -1,269 +1,271 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell parancsmag
+keywords: PowerShell, a parancsmag
 title: A Windows PowerShell SDK telepítése
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
-ms.openlocfilehash: 830b054c2cf2b49d935d3d96b79effa7131f6db2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: fa876bac0c1afac24f93d11dd2e7ecfb1165cf5f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953565"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893538"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>A Windows PowerShell SDK telepítése
 
-A következő témakör ismerteti a PowerShell SDK telepíthető a Windows különböző verzióiban.
+A következő témakör ismerteti a PowerShell SDK telepítése a Windows különböző verzióiban.
 
-## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>A Windows PowerShell 3.0 telepítése a Windows 8 és Windows Server 2012 SDK
+## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Windows PowerShell 3.0-s telepítése SDK for Windows 8 és Windows Server 2012-ben
 
-A Windows PowerShell 3.0 automatikusan telepítve van a Windows 8 és Windows Server 2012-ben.
-Emellett letöltheti és telepítheti a referencia szerelvényeket a Windows PowerShell 3.0 a Windows 8 SDK részeként.
-A szerelvények engedélyezi, hogy a parancsmagok, a szolgáltatók és a gazdagépre programok írni a Windows PowerShell 3.0.
-Amikor telepíti a Windows SDK a Windows 8, a Windows PowerShell-szerelvények automatikusan települnek a referencia szerelvény mappájában, \Program fájlok (x86) \Reference Assemblies\Microsoft\WindowsPowerShell\3.0.
-További információkért lásd: a [Windows 8 SDK letöltési hely](http://msdn.microsoft.com/windows/hardware/hh852363.aspx).
-Windows PowerShell-Kódminták is rendelkezésre állnak a fejlesztői központjában.
-További információkért lásd: a minta asztali kódlap a a [Dev center webhely](http://code.msdn.microsoft.com/windowsdesktop/).
+A Windows 8 és Windows Server 2012 automatikusan települ a Windows PowerShell 3.0.
+Emellett letöltheti és telepítheti a referenciaszerelvények a Windows PowerShell 3.0 a Windows 8 SDK részeként.
+Ezekkel a szerelvényekkel lehetővé teszik a parancsmagok, a szolgáltatók és a gazdagép programok írni a Windows PowerShell 3.0.
+Amikor telepíti a Windows SDK for Windows 8, a Windows PowerShell-szerelvények automatikusan települnek a referencia-szerelvény mappában, a `\Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`.
+További információkért lásd: a [Windows 8 SDK letöltési hely](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive).
+Windows PowerShell-Kódminták a fejlesztői központ is érhetők el.
+További információkért tekintse meg a mintául szolgáló asztali kódlapot az [Dev center webhely](https://code.msdn.microsoft.com:443/windowsdesktop/).
 
-Ezenkívül a Windows PowerShell 3.0 is visszafelé kompatibilis a Windows PowerShell 2.0 SDK-t, amely számos olyan mintakódok.
-A Windows PowerShell 2.0 SDK letöltési további információkért lásd az alábbi.
-(Vegye figyelembe, hogy a 2.0-s mintakódok kompatibilisek-e a Windows 8 és Windows PowerShell 3.0 összetevőt, amíg nem telepíthető Windows PowerShell 2.0 a Windows 8 platformra.)
+Emellett a Windows PowerShell 3.0 is visszafelé kompatibilis az Windows PowerShell 2.0 SDK-val, amely számos olyan Kódminták.
+A Windows PowerShell 2.0 SDK letöltése a további információkért lásd az alábbi.
+(Vegye figyelembe, hogy a Windows 8 és Windows PowerShell 3.0 kompatibilis a 2.0-s mintakódokat, amelyek nem telepíthető Windows PowerShell 2.0 a Windows 8 platform.)
 
-##<a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>A Windows PowerShell 3.0 telepítése a Windows 7 és Windows Server 2008 R2 SDK
+## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Windows PowerShell 3.0-s telepítése SDK for Windows 7 és Windows Server 2008 R2
 
-Windows 7 és Windows Server 2008 R2 automatikusan rendelkezik a PowerShell 2.0-s verziójával.
-A PowerShell 3.0 ezenkívül telepítheti a rendszerek óráit.
+Windows 7 és Windows Server 2008 R2 automatikusan rendelkezik a PowerShell 2.0 telepítve van.
+Ezenkívül telepítheti a PowerShell 3.0 ezen rendszerek.
 (További információkért lásd: [Windows PowerShell telepítése](Installing-Windows-PowerShell.md).).
-A fent leírtaknak megfelelően is telepíthet a Windows 8 SDK a Windows 7 és Windows Server 2008 R2.
+A fent leírtaknak megfelelően a Windows 7 és Windows Server 2008 R2 is telepítheti a Windows 8 SDK-t.
 
-## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>A Windows PowerShell 2.0 telepítése a Windows 7, Vista, XP, Server 2003 és a Server 2008 SDK
+## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>Windows PowerShell 2.0 telepítése a Windows 7, Vista, XP, Server 2003 és a Server 2008 SDK
 
-A Windows PowerShell 2.0 SDK biztosít a hivatkozási szerelvények parancsmagok, a szolgáltatók és az üzemeltetési alkalmazások írása szükséges, és C# mintakód programozás megkezdésekor a kiindulási pontként használható biztosít.
+A Windows PowerShell 2.0 SDK-t biztosít a referenciaszerelvények parancsmagok, a szolgáltatók és az üzemeltetési alkalmazások írása szükséges, és a C# minta-kódot, amely kiindulási pontként is használható, ha a kódírás megkezdése biztosít.
 
-Ez az SDK telepítéséhez tekintse át [Windows PowerShell 2.0 SDK](http://go.microsoft.com/fwlink/?LinkId=184611).
+Ez az SDK telepítése: [Windows PowerShell 2.0 SDK-t](http://www.microsoft.com/en-us/download/details.aspx?id=2560).
 
-## <a name="reference-assemblies"></a>A hivatkozási szerelvények
+## <a name="reference-assemblies"></a>Referencia-szerelvények
 
-Alapértelmezés szerint a következő helyen vannak telepítve a hivatkozási szerelvények: `c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0`.
+Referenciaszerelvények alapértelmezés szerint a következő helyen települnek: `c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
-> **Megjegyzés:**: a Windows PowerShell 2.0 szerelvények elleni lefordított kódot nem tölthetők be a Windows PowerShell 1.0 telepítések.
->Azonban a Windows PowerShell 1.0 szerelvények elleni lefordított kódot töltődnek be a Windows PowerShell 2.0 telepítése.
+> [!NOTE] 
+> A Windows PowerShell 2.0 szerelvényeket elleni lefordított kódot nem tölthetők be Windows PowerShell 1.0-s telepítésekre.
+> Azonban a Windows PowerShell 1.0-szerelvények elleni lefordított kódot töltődnek be a Windows PowerShell 2.0-s telepítésekre.
 
 ## <a name="samples"></a>Minták
 
-Kódminták alapértelmezés szerint telepítve a következő helyen: `C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`.
+Kódminták alapértelmezés szerint a következő helyen települnek: `C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`.
 
-A következő szakaszokban röviden minden egyes minta funkciója.
+A következő szakaszok rövid leírását tartalmazza minden egyes a minta működésével.
 
 ## <a name="cmdlet-samples"></a>Parancsmag-minták
-**GetProcessSample01**
 
-Bemutatja, hogyan írása egy egyszerű parancsmag, amely lekérdezi a folyamatokat a helyi számítógépen.
+### <a name="getprocesssample01"></a>GetProcessSample01
 
-**GetProcessSample02**
+Bemutatja, hogyan írhat egy egyszerű parancsmag, amely lekéri az összes folyamat a helyi számítógépen.
 
-Bemutatja, hogyan adja meg a parancsmag paramétereit.
-A parancsmag szükséges egy vagy több folyamat neve, és a megfelelő folyamatokat adja vissza.
+### <a name="getprocesssample02"></a>GetProcessSample02
 
-**GetProcessSample03**
+Bemutatja, hogyan paraméterek hozzáadása a parancsmaghoz.
+A parancsmag egy vagy több folyamat nevét fogadja, és a megfelelő folyamatokat adja vissza.
 
-Mutatja, amelyekben a feldolgozási sor paraméterek hozzáadása.
+### <a name="getprocesssample03"></a>GetProcessSample03
 
-**GetProcessSample04**
+Adja hozzá, amelyek fogadják az a folyamat bemeneti paramétereket ismerteti.
 
-Megjeleníti a nonterminating hibák kezelésének módját.
+### <a name="getprocesssample04"></a>GetProcessSample04
 
-**GetProcessSample05**
+Bemutatja, hogyan nonterminating hibáinak kezelése.
+
+### <a name="getprocesssample05"></a>GetProcessSample05
 
 Bemutatja, hogyan megadott folyamatok listájának megjelenítéséhez.
 
-**SelectObject**
+### <a name="selectobject"></a>ObjektumKijelölése
 
-Bemutatja, hogyan írhat egy szűrőt, amely csak bizonyos objektumok kijelölése.
+Bemutatja, hogyan írhat egy szűrőt, hogy csak bizonyos objektumok kiválasztása.
 
-**SelectString**
+### <a name="selectstring"></a>SelectString
 
-Bemutatja, hogyan megadott mintára fájlok kereséséhez.
+Bemutatja, hogyan fájlok megadott mintákat kereshet.
 
-**StopProcessSample01**
+### <a name="stopprocesssample01"></a>StopProcessSample01
 
-Bemutatja, hogyan végrehajtásához egy *PassThru* paraméter, és hogyan kérjen felhasználói visszajelzés hívásainak a [ShouldProcess](https://technet.microsoft.com/library/system.management.automation.cmdlet.shouldprocess.aspx) és [ShouldContinue](https://technet.microsoft.com/library/system.management.automation.cmdlet.shouldcontinue.aspx) módszerek.
-Adja meg a felhasználók a *PassThru* paraméter szeretne vissza objektumot, a parancsmag kényszerítése
+Bemutatja, hogyan valósíthat meg egy *PassThru* paramétert, és hogyan felé irányuló hívások szerinti felhasználói visszajelzés kérése a [ShouldProcess](/dotnet/api/system.management.automation.cmdlet.shouldprocess) és [ShouldContinue](/dotnet/api/system.management.automation.cmdlet.shouldcontinue) módszereket.
+A felhasználóknak megadniuk a *PassThru* paraméter szeretne egy objektumot ad vissza a parancsmag kényszerítése
 
-**StopProcessSample02**
+### <a name="stopprocesssample02"></a>StopProcessSample02
 
 Megjeleníti egy adott folyamat leállítása.
 
-**StopProcessSample03**
+### <a name="stopprocesssample03"></a>StopProcessSample03
 
-Bemutatja, hogyan deklarálható paraméter aliasok és a hogyan támogatja a helyettesítő karaktereket.
+Bemutatja, hogyan deklarálja paraméterek aliasok és a hogyan támogatja a helyettesítő karaktereket.
 
-**StopProcessSample04**
+### <a name="stopprocesssample04"></a>StopProcessSample04
 
-Bemutatja, hogyan deklarálható paraméterkészletei, az objektum, amely a parancsmag bemeneti és a használandó alapértelmezett paraméter megadása szükséges.
+Mutatja be jelentenie paraméterkészlettel, az objektum, amely a parancsmag kimenetként, és hogyan adja meg az alapértelmezett paramétert használja.
 
 ## <a name="remoting-samples"></a>Távoli eljáráshívás minták
 
-**RemoteRunspace01**
+### <a name="remoterunspace01"></a>RemoteRunspace01
 
-Bemutatja, hogyan hozzon létre egy távoli futási térből, amellyel távoli kapcsolatot létesíteni.
+Bemutatja, hogyan hozhat létre egy távoli futási teret, amely a távoli kapcsolat létesítésére szolgál.
 
-**RemoteRunspacePool01**
+### <a name="remoterunspacepool01"></a>RemoteRunspacePool01
 
-Egy távoli futási teret készlet létrehozásához és több parancs egyidejű futtatását a készlet használatával jeleníti meg.
+Bemutatja, hogyan hozható létre egy távoli futási teret készletet, és hogyan egyidejű futtatását több parancs a készlet használatával.
 
-**Serialization01**
+### <a name="serialization01"></a>Serialization01
 
-Bemutatja, hogyan tekintse meg egy meglévő .NET-osztályt, és győződjön meg arról, hogy ez az osztály a megadott nyilvános tulajdonságokat adatait megőrzi a szerializálás/deszerializálás között.
+Bemutatja, hogyan tekintse meg egy meglévő .NET-osztályt, és győződjön meg arról, hogy ez az osztály a kiválasztott nyilvános tulajdonságok alapján adatai megmaradnak szerializálás/deszerializálás között.
 
-**Serialization02**
+### <a name="serialization02"></a>Serialization02
 
-Bemutatja, hogyan tekintse meg egy meglévő .NET-osztályt, és győződjön meg arról, hogy ez az osztály példánya adatait megőrzi szerializálás/deszerializálás között, amikor az információ nem érhető el az osztály nyilvános tulajdonságai.
+Tekintse meg egy meglévő .NET-osztály, és győződjön meg arról, hogy ez az osztály példánya származó információk esetén is megőrződik szerializálás/deszerializálás között az információ nem érhető el a nyilvános tulajdonságok osztály mutatja.
 
-**Serialization03**
+### <a name="serialization03"></a>Serialization03
 
-Bemutatja, hogyan tekintse meg egy meglévő .NET-osztályt, és győződjön meg arról, hogy ez az osztály és származtatott osztályainak példányok deszerializálni van élő .NET-objektumokba (rehydrated).
+Bemutatja, hogyan tekintse meg egy meglévő .NET-osztályt, és győződjön meg arról, hogy ez az osztály és származtatott osztályainak példányok deszerializálni (rehydrated) élő .NET-objektumokká vannak.
 
-## <a name="event-samples"></a>Esemény minták
+## <a name="event-samples"></a>Esemény-minták
 
-**Event01**
+### <a name="event01"></a>Event01
 
-Bemutatja, hogyan hozhat létre a eseményregisztráció parancsmag ObjectEventRegistrationBase származó.
+Bemutatja, hogyan hozhat létre-eseményregisztráció parancsmag ObjectEventRegistrationBase kapcsolatból származtatott kapcsolatot.
 
-**Event02**
+### <a name="event02"></a>Event02
 
-Bemutatja, hogyan való jeleníti meg, amelyek akkor jönnek létre, a távoli számítógépeken lévő Windows PowerShell-események értesítést szeretne kapni.
-A PSEventReceived esemény keresztül közzétett használ a [futási térben](https://technet.microsoft.com/library/system.management.automation.runspaces.runspace.aspx) osztály.
+Bemutatja, hogyan jeleníti meg, amelyek akkor jönnek létre, a távoli számítógépeken lévő Windows PowerShell-események, értesítések fogadása.
+A PSEventReceived esemény keresztül használja a [futási térben](/dotnet/api/system.management.automation.runspaces.runspace) osztály.
 
-## <a name="hosting-application-samples"></a>Üzemeltetési alkalmazás minták
+## <a name="hosting-application-samples"></a>Üzemeltetési alkalmazásminták
 
-**Runspace01**
+### <a name="runspace01"></a>Runspace01
 
-Bemutatja, hogyan használható a [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) osztály futtatásához a [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) parancsmag szinkron módon történik.
-A [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) parancsmag visszaadja [folyamat](https://technet.microsoft.com/library/system.diagnostics.process.aspx) objektumokat az összes a helyi számítógépen futó folyamat.
+Bemutatja, hogyan használható a [PowerShell](/dotnet/api/system.management.automation.powershell) futtatásához az osztály a [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) parancsmag szinkron módon történik.
+A [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) parancsmag ad vissza [folyamat](https://technet.microsoft.com/library/system.diagnostics.process.aspx) objektumot a helyi számítógépen futó összes folyamat.
 
-**Runspace02**
+### <a name="runspace02"></a>Runspace02
 
-Bemutatja, hogyan használható a [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) osztály futtatásához a [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) és [rendezési-objektum](http://go.microsoft.com/fwlink/?LinkID=113403) parancsmagok szinkron módon történik.
-A [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) parancsmag visszaadja [folyamat](https://technet.microsoft.com/library/system.diagnostics.process.aspx) az egyes objektumok feldolgozásához, a helyi számítógépen fut, és a rendezés-objektum az objektumok alapján rendezi a [azonosító](https://technet.microsoft.com/library/system.diagnostics.process.id.aspx) tulajdonság.
-Az eredmények parancsok használatával megjelenik egy [DataGridView](https://technet.microsoft.com/library/system.windows.forms.datagridview.aspx) vezérlő.
+Bemutatja, hogyan használható a [PowerShell](/dotnet/api/system.management.automation.powershell) futtatásához az osztály a [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) és [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) parancsmagok szinkron módon történik.
+A [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) parancsmag ad vissza [folyamat](https://technet.microsoft.com/library/system.diagnostics.process.aspx) objektumot a helyi számítógépen futó összes folyamat és a `Sort-Object` az objektumok alapján rendezi a [azonosító](https://technet.microsoft.com/library/system.diagnostics.process.id.aspx) tulajdonság.
+Az eredmények az alábbi parancsok használatával jelenik meg egy [DataGridView](https://technet.microsoft.com/library/system.windows.forms.datagridview.aspx) vezérlő.
 
-**Runspace03**
+### <a name="runspace03"></a>Runspace03
 
-Bemutatja, hogyan használható a [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) osztály parancsfájllal szinkron módon történik, és nem okozó hibák kezelésének módját.
-A parancsfájl fogadása folyamat neveinek listáját, és ezután lekéri a folyamatok.
-A parancsfájl, beleértve a parancsprogram futtatása során létrehozott nem okozó hibákat is eredményeit a konzolablakban jelennek meg.
+Bemutatja, hogyan használható a [PowerShell](/dotnet/api/system.management.automation.powershell) osztály parancsfájllal szinkron módon történik, és nem megszakító hibáinak kezelése.
+A parancsfájl folyamat nevének listáját fogadja, és ezután lekéri a folyamatokat.
+A parancsfájl, beleértve a parancsfájl futtatásakor létrehozott megszakítást nem okozó hibákat is az eredményeket a konzolablakban jelennek meg.
 
-**Runspace04**
+### <a name="runspace04"></a>Runspace04
 
-Bemutatja, hogyan használható a [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) osztályt a parancsokat, és hogyan catch lezáró hibát okozott a parancsok futtatásakor.
-Két parancs futtatása, és az utolsó parancs átadása egy paraméter argumentum érvénytelen.
-Emiatt nem lesznek visszaadva, és a leállítási hibát vált ki.
+Bemutatja, hogyan használhatja a [PowerShell](/dotnet/api/system.management.automation.powershell) osztály parancsokat futtathat, és hogyan catch okozott a parancsok futtatásakor megszakítást hibák.
+Két parancsok futtatása, és az utolsó parancs, amely nem érvényes a paraméter argumentumként átadott.
+Ennek eredményeképpen nem lesznek visszaadva, és a megszakító hiba lépett fel.
 
-**Runspace05**
+### <a name="runspace05"></a>Runspace05
 
-Bemutatja, hogyan egy beépülő modul hozzáadása egy [InitialSessionState](https://technet.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.aspx) objektumot, hogy a beépülő modul a parancsmag akkor használható, ha a futási teret már meg van nyitva.
-A beépülő modul a Get-Proc parancsmag (határozzák meg a [GetProcessSample01 minta](https://technet.microsoft.com/library/ff602028.aspx)) használatával párhuzamosan futtatott egy [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) objektum.
+Bemutatja, hogyan adja hozzá a beépülő modul segítségével egy [InitialSessionState](/dotnet/api/system.management.automation.runspaces.initialsessionstate) objektumot, hogy a beépülő modul a parancsmag érhető el a futási térben megnyitásakor.
+A beépülő modult biztosít a Get-Proc parancsmag (határozzák meg a [GetProcessSample01 minta](https://technet.microsoft.com/library/ff602028.aspx)), amely a szinkron módon fut egy [PowerShell](/dotnet/api/system.management.automation.powershell) objektum.
 
-**Runspace06**
+### <a name="runspace06"></a>Runspace06
 
-Bemutatja, hogyan vehető fel a modul egy [InitialSessionState](https://technet.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.aspx) objektumot, hogy a modul be van töltve, a futási teret megnyitásakor.
-A modul adja meg a Get-Proc parancsmag (határozzák meg a [GetProcessSample02 minta](https://technet.microsoft.com/library/ff602027.aspx)) használatával párhuzamosan futtatott egy [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) objektum.
+Bemutatja, hogyan modulhoz hozzáadása egy [InitialSessionState](/dotnet/api/system.management.automation.runspaces.initialsessionstate) objektumot, hogy a modul betöltése a futási térben megnyitásakor.
+A modul adja meg a Get-Proc parancsmag (határozzák meg a [GetProcessSample02 minta](https://technet.microsoft.com/library/ff602027.aspx)), amely a szinkron módon fut egy [PowerShell](/dotnet/api/system.management.automation.powershell) objektum.
 
-**Runspace07**
+### <a name="runspace07"></a>Runspace07
 
-Bemutatja, hogyan hozzon létre egy futási teret, és, hogy futási térben segítségével két parancsmagok használatával szinkron módon futtassa egy [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) objektum.
+Bemutatja, hogyan hozhat létre egy futási teret, és a futási térben használatával két parancsmag használatával szinkron módon futnak a [PowerShell](/dotnet/api/system.management.automation.powershell) objektum.
 
-**Runspace08**
+### <a name="runspace08"></a>Runspace08
 
-Bemutatja, hogyan parancsok és argumentumok hozzáadása az adatcsatorna egy [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) objektum és a szinkron módon futtassa a parancsokat.
+Bemutatja, hogyan parancsokat és argumentumokat adhat hozzá, a folyamat egy [PowerShell](/dotnet/api/system.management.automation.powershell) objektum és a parancsok futtatása szinkron módon történik.
 
-**Runspace09**
+### <a name="runspace09"></a>Runspace09
 
-Bemutatja, hogyan a folyamat egy parancsfájl hozzáadása egy [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) objektum és az aszinkron módon futtassa a parancsfájlt.
-Események a parancsfájl kezelésére használhatók.
+Mutatja be, a folyamat egy parancsfájl hozzáadása egy [PowerShell](/dotnet/api/system.management.automation.powershell) objektum és a parancsfájl futtatása aszinkron módon történik.
+Események a szkript kimenetének kezelésére szolgálnak.
 
-**Runspace10**
+### <a name="runspace10"></a>Runspace10
 
-Bemutatja, hogyan hozzon létre egy alapértelmezett kezdeti munkamenet-állapot, a parancsmag hozzáadása a [InitialSessionState](https://technet.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.aspx), hozzon létre egy futási teret, amely a kezdeti munkamenet-állapotot használ, és a parancs futtatásához a egy [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx)objektum.
+Bemutatja, hogyan hozhat létre egy alapértelmezett kezdeti munkamenet-állapot, a parancsmag hozzáadása a [InitialSessionState](/dotnet/api/system.management.automation.runspaces.initialsessionstate), hogyan hozhat létre egy futási teret, amely a kezdeti munkamenet-állapotot használ, és annak használatával futtassa a parancsot egy [PowerShell](/dotnet/api/system.management.automation.powershell)objektum.
 
-**Runspace11**
+### <a name="runspace11"></a>Runspace11
 
-Bemutatja, hogyan használható a [ProxyCommand](https://technet.microsoft.com/library/system.management.automation.proxycommand.aspx) osztály, amely egy meglévő parancsmagot hívja, de korlátozza a rendelkezésre álló paraméterkészletet proxy-parancsot hozhat létre.
-A proxy paranccsal egy korlátozott futási térrel létrehozásához használt kezdeti munkamenet állapotba kerül.
-Ez azt jelenti, hogy a felhasználó hozzáférhet-e a funkció a parancsmag csak a proxy parancs használatával.
+Bemutatja, hogyan használható a [ProxyCommand](/dotnet/api/system.management.automation.proxycommand) osztállyal hoz létre, amely meghív egy meglévő parancsmagot, de korlátozza az elérhető paraméterek készletét proxy parancsot.
+A proxy parancsot, amellyel egy korlátozott futási térrel hozzon létre egy kezdeti munkamenet-állapothoz kerül.
+Ez azt jelenti, hogy a felhasználó hozzáférhet-e az a Funkciók, a parancsmag csak a proxy parancs keresztül.
 
-**PowerShell01**
+### <a name="powershell01"></a>PowerShell01
 
-Bemutatja, hogyan hozzon létre egy korlátozott futási teret használ egy [InitialSessionState](https://technet.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.aspx) objektum.
+Bemutatja, hogyan hozzon létre egy korlátozott futási térrel egy [InitialSessionState](/dotnet/api/system.management.automation.runspaces.initialsessionstate) objektum.
 
-**PowerShell02**
+### <a name="powershell02"></a>PowerShell02
 
-Bemutatja, hogyan használja a futási teret több parancs egyidejű futtatását.
+Bemutatja, hogyan egy futási térben készletet használja egyidejűleg több parancsok futtatásához.
 
-## <a name="host-samples"></a>Host minták
+## <a name="host-samples"></a>Gazdagép-minták
 
-**Host01**
+### <a name="host01"></a>Host01
 
-Bemutatja, hogyan egyéni állomást egy fogadó alkalmazás végrehajtásához.
-A mintában a futási teret jön létre, amely használja az egyéni állomást, majd a [PowerShell](https://technet.microsoft.com/library/system.management.automation.powershell.aspx) API olyan parancsfájlt, amely meghívja az "exit" futtatására szolgál.
-A fogadó alkalmazás majd ellenőrzi, hogy a parancsfájl, és megjeleníti az eredményeket.
+Bemutatja, hogyan valósíthat meg egy egyéni gazdagép használó gazdagép-alkalmazás.
+A mintában egy futási teret jön létre, amely az egyéni gazdagépet használ, majd a [PowerShell](/dotnet/api/system.management.automation.powershell) API, amely meghívja a "kilépéshez" parancsfájl futtatására szolgál.
+A gazdaalkalmazást majd megvizsgálja a szkript a kimenetét, és az eredményeket kiírja.
 
-**Host02**
+### <a name="host02"></a>Host02
 
-Bemutatja, hogyan egy fogadó alkalmazás, amely a Windows PowerShell futási idejű együtt egy egyéni állomást végrehajtása írni.
-A gazdaalkalmazást értékűre állítja be a gazdagép kulturális környezet német, futtatja a [Get-Process](http://go.microsoft.com/fwlink/?LinkId=113324) parancsmag és megjeleníti az eredményeket, ha Ön jelenik meg azokat a német pwrsh.exe, és az aktuális dátumát és időpontját majd kinyomtatása segítségével.
+Bemutatja, hogyan írhat egy gazdagép egy egyéni gazdagép megvalósítás mellett a Windows PowerShell modul használó alkalmazás.
+A gazdaalkalmazást állítja be a gazdagép kulturális környezet német, lefut a [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) parancsmagot, és megjeleníti az eredményeket, látnák őket a német pwrsh.exe, és ezután jelenít meg az aktuális dátumát és időpontját segítségével.
 
-**Host03**
+### <a name="host03"></a>Host03
 
-Bemutatja, hogyan hozhat létre egy interaktív Konzolalapú gazdaalkalmazást parancsok beolvassa a parancssorból, a parancsok végrehajtása és a eredményeit jeleníti meg a konzolon.
+Bemutatja, hogyan hozhat létre olyan interaktív konzol-alapú gazdagép alkalmazás, amely beolvassa a parancsok a parancssorból, a parancsok végrehajtása és az eredményeket a konzolon jeleníti meg.
 
-**Host04**
+### <a name="host04"></a>Host04
 
-Bemutatja, hogyan hozhat létre egy interaktív Konzolalapú gazdaalkalmazást parancsok beolvassa a parancssorból, a parancsok végrehajtása és a eredményeit jeleníti meg a konzolon.
-A fogadó alkalmazás megjelenítését megjelenő utasításokat, amelyek lehetővé teszik a felhasználó megadhatja a több lehetőség is támogatja.
+Bemutatja, hogyan hozhat létre olyan interaktív konzol-alapú gazdagép alkalmazás, amely beolvassa a parancsok a parancssorból, a parancsok végrehajtása és az eredményeket a konzolon jeleníti meg.
+A gazdaalkalmazást megjelenítésének utasításokat, amelyek lehetővé teszik a felhasználó megadhatja a több lehetőség is támogatja.
 
-**Host05**
+### <a name="host05"></a>Host05
 
-Bemutatja, hogyan hozhat létre egy interaktív Konzolalapú gazdaalkalmazást parancsok beolvassa a parancssorból, a parancsok végrehajtása és a eredményeit jeleníti meg a konzolon.
-A fogadó alkalmazás is támogatja a távoli számítógépek hívások a [Enter-PsSession](http://go.microsoft.com/fwlink/?LinkId=135210) és [kilépési-PsSession](http://go.microsoft.com/fwlink/?LinkId=135212) parancsmagok.
+Bemutatja, hogyan hozhat létre olyan interaktív konzol-alapú gazdagép alkalmazás, amely beolvassa a parancsok a parancssorból, a parancsok végrehajtása és az eredményeket a konzolon jeleníti meg.
+A gazdaalkalmazást is támogatja a távoli számítógépek hívásainak a [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) és [kilépési-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) parancsmagok.
 
-**Host06**
+### <a name="host06"></a>Host06
 
-Bemutatja, hogyan hozhat létre egy interaktív Konzolalapú gazdaalkalmazást parancsok beolvassa a parancssorból, a parancsok végrehajtása és a eredményeit jeleníti meg a konzolon.
-Emellett ez a minta használja a jogkivonatokat létrehozó API-k, a felhasználó által megadott szöveg színét.
+Bemutatja, hogyan hozhat létre olyan interaktív konzol-alapú gazdagép alkalmazás, amely beolvassa a parancsok a parancssorból, a parancsok végrehajtása és az eredményeket a konzolon jeleníti meg.
+Emellett ez a példa a jogkivonatokat létrehozó API-k segítségével adja meg a felhasználó által beírt szöveg színe.
 
 ## <a name="provider-samples"></a>Szolgáltató minták
 
-**AccessDBProviderSample01**
+### <a name="accessdbprovidersample01"></a>AccessDBProviderSample01
 
-Bemutatja, hogyan deklarál egy szolgáltatóosztállyal, amely közvetlenül a származik a [CmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.cmdletprovider.aspx) osztály.
-Szerepel itt csak a teljesség.
+Bemutatja, hogyan deklaráljon egy szolgáltató osztályt, amely közvetlenül a [CmdletProvider](/dotnet/api/system.management.automation.provider.cmdletprovider) osztály.
+Része Itt csak a teljesség.
 
-**AccessDBProviderSample02**
+### <a name="accessdbprovidersample02"></a>AccessDBProviderSample02
 
-Bemutatja, hogyan írhatja felül a [NewDrive](https://technet.microsoft.com/library/system.management.automation.provider.drivecmdletprovider.newdrive.aspx) és [RemoveDrive](https://technet.microsoft.com/library/system.management.automation.provider.drivecmdletprovider.removedrive.aspx) módszerek támogatásához a New-PSDrive és a Remove-PSDrive parancsmagok hívásokat.
-Ez a példa a Szolgáltatóosztály származik a [DriveCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.drivecmdletprovider.aspx) osztály.
+Bemutatja, hogyan felülírja a [NewDrive](/dotnet/api/system.management.automation.provider.drivecmdletprovider.newdrive) és [RemoveDrive](/dotnet/api/system.management.automation.provider.drivecmdletprovider.removedrive) módszereket támogatja a hívást a `New-PSDrive` és `Remove-PSDrive` parancsmagok.
+Ebben a példában a szolgáltató osztálya származik a [DriveCmdletProvider](/dotnet/api/system.management.automation.provider.drivecmdletprovider) osztály.
 
-**AccessDBProviderSample03**
+### <a name="accessdbprovidersample03"></a>AccessDBProviderSample03
 
-Bemutatja, hogyan írhatja felül a [GetItem](https://technet.microsoft.com/library/system.management.automation.provider.itemcmdletprovider.getitem.aspx) és [SetItem](https://technet.microsoft.com/library/system.management.automation.provider.itemcmdletprovider.setitem.aspx) módszerek támogatásához a Get-elem és a Set-cikk parancsmagok hívásokat.
-Ez a példa a Szolgáltatóosztály származik a [ItemCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.itemcmdletprovider.aspx) osztály.
+Bemutatja, hogyan felülírja a [GetItem](/dotnet/api/system.management.automation.provider.itemcmdletprovider.getitem) és [SetItem](/dotnet/api/system.management.automation.provider.itemcmdletprovider.setitem) módszereket támogatja a hívást a `Get-Item` és `Set-Item` parancsmagok.
+Ebben a példában a szolgáltató osztálya származik a [ItemCmdletProvider](/dotnet/api/system.management.automation.provider.itemcmdletprovider) osztály.
 
-**AccessDBProviderSample04**
+### <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
-Bemutatja, hogyan felülírja a tároló módszerek az elem, Get-ChildItem, hívások támogatásához új-elemen, illetve a Remove-cikk parancsmagok.
-Ezek a módszerek kell kell végrehajtani, ha az adattár tárolók elemeket tartalmaz.
-Egy tároló olyan alárendelt elemek egy közös szülő elem alatt.
-Ez a példa a Szolgáltatóosztály származik a [ItemCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.itemcmdletprovider.aspx) osztály.
+Bemutatja, hogyan tároló módszerek támogatásához a hívásokat írja felül a `Copy-Item`, `Get-ChildItem`, `New-Item`, és `Remove-Item` parancsmagok.
+Ezek a metódusok kell végrehajtani, ha az adattár tartalmaz, amelyek olyan tárolók elemek.
+A tároló egy olyan csoport gyermekelemek egy közös szülő elem alatt.
+Ebben a példában a szolgáltató osztálya származik a [ItemCmdletProvider](/dotnet/api/system.management.automation.provider.itemcmdletprovider) osztály.
 
-**AccessDBProviderSample05**
+### <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
-Bemutatja, hogyan tároló módszerek támogatásához az elem áthelyezése és Join-Path parancsmagok hívásainak felülírásához.
-Ezek a módszerek kell végrehajtani, ha a felhasználó nem a tárolóban lévő elemek áthelyezése, és az adattár tartalmaz beágyazott tárolók.
-Ez a példa a Szolgáltatóosztály származik a [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) osztály.
+Bemutatja, hogyan tároló módszerek támogatásához a hívásokat írja felül a `Move-Item` és `Join-Path` parancsmagok.
+Ezek a metódusok kell végrehajtani, amikor a felhasználónak szüksége van a tárolóban lévő elemek áthelyezése, és ha az adattár tartalmaz beágyazott tárolók.
+Ebben a példában a szolgáltató osztálya származik a [NavigationCmdletProvider](/dotnet/api/system.management.automation.provider.navigationcmdletprovider) osztály.
 
-**AccessDBProviderSample06**
+### <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
-Bemutatja, hogyan felülírja a tartalom módszerek támogatásához a tiszta tartalom hívásainak Get-tartalom és a Set-tartalom parancsmagok.
-Ezek a módszerek kell végrehajtani, ha a felhasználó nem szerepel az adattárban elemek tartalom kezelése.
-Ez a példa a Szolgáltatóosztály származik a [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) osztály, és megvalósítja az [IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx) felületet.
+Bemutatja, hogyan tartalom módszerek támogatásához a hívásokat írja felül a `Clear-Content`, `Get-Content`, és `Set-Content` parancsmagok.
+Ezek a metódusok kell végrehajtani, amikor a felhasználó az adattárban lévő cikkek a tartalom kezelésére kell.
+Ebben a példában a szolgáltató osztálya származik a [NavigationCmdletProvider](/dotnet/api/system.management.automation.provider.navigationcmdletprovider) osztály, és implementálja a [IContentCmdletProvider](/dotnet/api/system.management.automation.provider.icontentcmdletprovider) felületet.

@@ -1,58 +1,62 @@
 ---
 ms.date: 04/11/2018
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC SMB-lekérési kiszolgálójának beállítása
-ms.openlocfilehash: 92c03c99afd612fa2b5475e8c26991ff080584e9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1eac6c51aeca3ed573ba8fa27188103436004920
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189669"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892865"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>A DSC SMB-lekérési kiszolgálójának beállítása
 
->Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
+A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> A lekéréses kiszolgáló (Windows-szolgáltatás *DSC-szolgáltatás*), Windows Server támogatott összetevője létezik azonban a következők: nem tervezi, hogy új funkciók és képességek kínálnak. Javasoljuk, hogy kezdje a Váltás felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (tartalmazza a Windows Server-kiszolgáló lekéréses is) vagy a közösségi megoldásoknak a valamelyikét felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
+> A lekéréses kiszolgálón (Windows-szolgáltatás *DSC-szolgáltatás*), a Windows Server támogatott összetevője létezik azonban tervekben sem funkciókat és képességeket kínálnak. Javasoljuk, hogy helyeződnek felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (beleértve a lekéréses kiszolgálón a Windows Server csomagban) vagy a közösségi megoldások felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
 
-A DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) lekéréses kiszolgáló egy olyan DSC konfigurációs fájlokat és a DSC-erőforrások számára elérhetővé tenni célcsomópontokat, ha azokat a csomópontokat, kérje meg őket az SMB-fájlmegosztások futtató számítógép.
+A DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) lekéréses kiszolgálón DSC konfigurációs fájlokat és a DSC-erőforrások számára elérhetővé tenni célcsomópontokat, ha azokat a csomópontokat, kérje meg őket az SMB-fájlmegosztások futtató számítógépet.
 
-A DSC használandó lekéréses SMB-kiszolgálón, akkor kell:
-- Állítson be olyan kiszolgálón PowerShell 4.0-s vagy újabb SMB-fájlmegosztásra
-- Az adott SMB-megosztás lekéréses 4.0-s vagy újabb rendszerű a PowerShell ügyfél konfigurálása
+A DSC SMB-lekérési kiszolgálójának használatához meg kell:
 
-## <a name="using-the-xsmbshare-resource-to-create-an-smb-file-share"></a>SMB-fájlmegosztás létrehozása a xSmbShare erőforrás használatával
+- A kiszolgálón futó PowerShell 4.0-s vagy újabb SMB-fájlmegosztás beállítása
+- Kérje le az SMB-megosztáson lévő futó PowerShell 4.0-s vagy újabb ügyfél konfigurálása
 
-Nincsenek többféleképpen SMB-fájlmegosztás beállítása azonban nézzük hogyan ehhez DSC használatával.
+## <a name="using-the-xsmbshare-resource-to-create-an-smb-file-share"></a>A xSmbShare erőforrást használja az SMB-fájlmegosztás létrehozása
+
+Nincsenek számos módon állítsa be az SMB-fájlmegosztás, de nézzük, hogyan lehet ezt megteheti DSC használatával.
 
 ### <a name="install-the-xsmbshare-resource"></a>Telepítse a xSmbShare erőforrás
 
-Hívja a [Install-modul](https://technet.microsoft.com/library/dn807162.aspx) telepítésére szolgáló parancsmagot a **xSmbShare** modul.
->**Megjegyzés:**: **Install-modul** megtalálható a **PowerShellGet** modul, amely PowerShell 5.0 szerepel. Letöltheti a **PowerShellGet** modul a PowerShell 3.0 és 4.0-s verzióját, [PackageManagement PowerShell modulok előzetes](https://www.microsoft.com/en-us/download/details.aspx?id=49186). A **xSmbShare** tartalmazza a DSC-erőforrás **xSmbShare**, amelyek segítségével az SMB-fájlmegosztás létrehozása.
+Hívja a [Install-Module](/powershell/module/PowershellGet/Install-Module) telepítésére szolgáló parancsmagot a **xSmbShare** modul.
 
-### <a name="create-the-directory-and-file-share"></a>A könyvtár- és fájlmegosztás létrehozása
+> [!NOTE]
+> `Install-Module` tartalmazza a **PowerShellGet** modult, amely része a PowerShell 5.0-s. Letöltheti a **PowerShellGet** modul a PowerShell 3.0 és 4.0-s verzióját, [PackageManagement PowerShell modul előzetes](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+> A **xSmbShare** tartalmazza a DSC-erőforrás **xSmbShare**, SMB-fájlmegosztás létrehozásához használható.
 
-A következő konfigurációt használja a [fájl](fileResource.md) a megosztáshoz a következő könyvtár létrehozásakor erőforrás és a **xSmbShare** erőforrás az SMB-megosztás beállítása:
+### <a name="create-the-directory-and-file-share"></a>A könyvtár- és megosztás létrehozása
+
+Az alábbi konfigurációt használja a [fájl](fileResource.md) erőforrás a könyvtárban, a megosztás létrehozásához és a **xSmbShare** erőforrás az SMB-megosztás beállításához:
 
 ```powershell
-Configuration SmbShare {
+Configuration SmbShare
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName xSmbShare
 
-Import-DscResource -ModuleName PSDesiredStateConfiguration
-Import-DscResource -ModuleName xSmbShare
+    Node localhost
+    {
 
-    Node localhost {
-
-        File CreateFolder {
-
+        File CreateFolder
+        {
             DestinationPath = 'C:\DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
-
         }
 
-        xSMBShare CreateShare {
-
+        xSMBShare CreateShare
+        {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
             FullAccess = 'admininstrator'
@@ -60,40 +64,36 @@ Import-DscResource -ModuleName xSmbShare
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
-
         }
-
     }
-
 }
 ```
 
-A konfigurációs hoz létre a könyvtár `C:\DscSmbShare` Ha már nem létezik, és ezután könyvtárhoz, SMB-fájlmegosztásra. **FullAccess** biztosítani kell írni, vagy a fájlmegosztás törlése fiókoknak és **olvasási hozzáférés** esetlegesen konfigurációk és/vagy a DSC-erőforrások lekérése a megosztást (Ennek oka az ügyfél csomópontokon kell megadni A DSC fiókként fut, a rendszer alapértelmezés szerint így magát a számítógépet a megosztás eléréséhez).
+A konfiguráció hoz létre a könyvtár `C:\DscSmbShare` Ha már nem létezik, és ezután használja a könyvtárban, SMB-fájlmegosztásra. **FullAccess** olyan fiókot, amely írási, vagy törölje a fájlmegosztásból kell fordítani és **olvasási hozzáférés** bármely ügyfél csomópontok, a konfigurációk és/vagy DSC-erőforrások a megosztáson (ennek az az oka a kell megadni DSC fut, a rendszer fiók alapértelmezés szerint így magát a számítógépet a megosztás eléréséhez).
 
+### <a name="give-file-system-access-to-the-pull-client"></a>A fájlrendszer elérése adhat a pull-ügyfél
 
-### <a name="give-file-system-access-to-the-pull-client"></a>A fájlrendszer elérése adnak a leküldéses ügyfél
-
-Jogosultságot ad **olvasási hozzáférés** egy ügyfél csomópont lehetővé teszi, hogy az SMB-megosztáshoz hozzáférést, de nem fájlok vagy mappák belül, amely megosztási csomópont. Explicit módon az SMB-megosztás mappát és az almappák csomópontok elérésének engedélyezése az ügyfél rendelkezik. Azt is ugyanezt a műveletet a DSC használata hozzáadásával a **cNtfsPermissionEntry** erőforrás, amelyet a [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) modul. Az alábbi konfiguráció bővíti a **cNtfsPermissionEntry** , amely ReadAndExecute hozzáférést biztosít az lekéréses ügyfél letiltása:
+Így **olvasási hozzáférés** ügyfélnek csomópont lehetővé teszi a csomóponton, hogy az SMB-megosztás eléréséhez, de, fájlok vagy mappák belül, amely nem osztozik. Explicit módon az SMB-megosztás mappát és almappák csomópontok elérésének engedélyezése az ügyfél rendelkezik. A Microsoft ehhez a DSC használatával vesz fel a **cNtfsPermissionEntry** erőforrás, amely tartalmazza a [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) modul. A következő konfigurációt ad hozzá egy **cNtfsPermissionEntry** ReadAndExecute hozzáférést a lekérési ügyfél blokkolása:
 
 ```powershell
-Configuration DSCSMB {
+Configuration DSCSMB
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName xSmbShare
+    Import-DscResource -ModuleName cNtfsAccessControl
 
-Import-DscResource -ModuleName PSDesiredStateConfiguration
-Import-DscResource -ModuleName xSmbShare
-Import-DscResource -ModuleName cNtfsAccessControl
+    Node localhost
+    {
 
-    Node localhost {
-
-        File CreateFolder {
-
+        File CreateFolder
+        {
             DestinationPath = 'DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
-
         }
 
-        xSMBShare CreateShare {
-
+        xSMBShare CreateShare
+        {
             Name = 'DscSmbShare'
             Path = 'DscSmbShare'
             FullAccess = 'administrator'
@@ -101,61 +101,60 @@ Import-DscResource -ModuleName cNtfsAccessControl
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
-
         }
 
-        cNtfsPermissionEntry PermissionSet1 {
-
-        Ensure = 'Present'
-        Path = 'C:\DSCSMB'
-        Principal = 'myDomain\Contoso-Server$'
-        AccessControlInformation = @(
-            cNtfsAccessControlInformation
-            {
-                AccessControlType = 'Allow'
-                FileSystemRights = 'ReadAndExecute'
-                Inheritance = 'ThisFolderSubfoldersAndFiles'
-                NoPropagateInherit = $false
-            }
-        )
-        DependsOn = '[File]CreateFolder'
-
+        cNtfsPermissionEntry PermissionSet1
+        {
+            Ensure = 'Present'
+            Path = 'C:\DSCSMB'
+            Principal = 'myDomain\Contoso-Server$'
+            AccessControlInformation = @(
+                cNtfsAccessControlInformation
+                {
+                    AccessControlType = 'Allow'
+                    FileSystemRights = 'ReadAndExecute'
+                    Inheritance = 'ThisFolderSubfoldersAndFiles'
+                    NoPropagateInherit = $false
+                }
+            )
+            DependsOn = '[File]CreateFolder'
         }
-
-
     }
-
 }
 ```
 
-## <a name="placing-configurations-and-resources"></a>Konfigurációk és erőforrások
+## <a name="placing-configurations-and-resources"></a>Konfigurációkat és erőforrásokat elhelyezése
 
-Bármely konfiguráció MOF-fájlok és/vagy az SMB-megosztás mappát bekérésére ügyfél csomópontok használni kívánt DSC-erőforrások mentéséhez.
+Mentse a konfigurációs MOF-fájlok és/vagy ügyfél-csomópontok használatával kérhetők le az SMB-megosztás mappát használni kívánt DSC-erőforrások.
 
-Bármely konfiguráció MOF-fájlt névvel kell ellátni _ConfigurationID_.mof, ahol _ConfigurationID_ értéke a **ConfigurationID** a célcsomópont LCM tulajdonsága. Lekéréses ügyfelek beállításával kapcsolatos további információkért lásd: [ügyféltelepítéshez lekéréses konfigurációs azonosítójával](pullClientConfigID.md).
+Minden olyan konfigurációs MOF-fájl neve legyen *ConfigurationID*.mof, ahol *ConfigurationID* értéke a **ConfigurationID** a célcsomópont LCM tulajdonságát. Lekérési ügyfél beállításával kapcsolatos további információkért lásd: [konfigurációs azonosítóval lekérési ügyfél beállítása](pullClientConfigID.md).
 
->**Megjegyzés:** konfigurációs azonosítókat kell használnia, ha lekéréses SMB-kiszolgálón használja. Az SMB-a konfigurációs nevek nem támogatottak.
+> [!NOTE]
+> Ha használja az SMB-lekérési kiszolgálójának konfigurációazonosítók kell használnia. Konfigurációs nevek nem támogatottak az SMB.
 
-Minden erőforrás modul zip és nevű megfelelően kell a következő mintát `{Module Name}_{Module Version}.zip`. Például 3.1.2.0 modul verziójával xWebAdminstration nevű modul volna neve "xWebAdministration_3.2.1.0.zip". Egy modul verziói szerepelnie kell egy egyetlen zip-fájlt. Mivel a modul formátum szerepel a WMF 5.0 minden zip-fájlban szereplő erőforrás csak egyetlen verziója támogatása a egyetlen könyvtárban található több verziója nem támogatott. Ez azt jelenti, hogy csomagolási erőforrás modulok DSC lekérési kiszolgálójával való használatra mentése előtt meg kell győződnie egy kis módosítási könyvtárszerkezete. Az alapértelmezett DSC erőforrást a WMF 5.0 tartalmazó modulok formátuma "{modul mappa}\{verziója} \DscResources\{DSC Erőforrásmappa}\'. Előtt feliratkozott a lekérési kiszolgálójával csomagolás egyszerűen távolítsa el a **{verziója}** mappában, így az elérési útja bekerül a(z) {modul mappa} \DscResources\{DSC Erőforrásmappa}\'. A módosítás a mappát a zip-fent leírt módon, és helyezze el a zip-fájlok az SMB-megosztás mappát.
+Minden egyes erőforrás a modul zip és nevű megfelelően van szükség az a következő mintának `{Module Name}_{Module Version}.zip`. Ha például 3.1.2.0 modul verziójával xWebAdminstration modul neve "xWebAdministration_3.2.1.0.zip". Minden egyes modul verzióját tartalmaznia kell egy egyetlen zip-fájlt. Mivel csak egyetlen verziója is minden egyes zip-fájlt a WMF 5.0-s hozzá a modul formátum az erőforráshoz egyetlen címtárban több modul verziók támogatása nem támogatott. Ez azt jelenti, hogy előtt becsomagolást mentése erőforrás modulok DSC lekéréses kiszolgálón való használatra kell, hogy módosítsa a könyvtár struktúra. Az alapértelmezett formátum a modulok DSC-erőforrás a WMF 5.0 tartalmazó `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Előtt terveztük a lekérési kiszolgálón csomagolási egyszerűen távolítsa el a `{Module version}` mappát az elérési út válik, így `{Module Folder}\DscResources\{DSC Resource Folder}\`. Ezzel a mappa zip-fent leírtak szerint, és helyezze a zip-fájlok az SMB-megosztás mappát.
 
 ## <a name="creating-the-mof-checksum"></a>A MOF-ellenőrzőösszeg létrehozása
-Konfigurációs MOF-fájlt kell, hogy egy LCM a cél csomópont azt is ellenőrzi a konfigurációt az ellenőrzőösszeg-fájl megfeleltetni.
-Hozzon létre egy ellenőrzőösszeg, hívja meg a [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) parancsmag. A parancsmag tart egy **elérési** paraméter meghatározza, hogy a mappát, ahol a konfigurációs MOF található. A parancsmag létrehoz egy ellenőrzőösszeg nevű `ConfigurationMOFName.mof.checksum`, ahol `ConfigurationMOFName` a konfigurációs mof-fájl neve.
-Ha egynél több konfigurációs MOF-fájlok a megadott mappában, ellenőrzőösszeg minden konfigurációs a mappában létrejön.
 
-Az ellenőrzőösszeg-fájlnak kell lennie a konfigurációs MOF-fájlnak ugyanabban a könyvtárban (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` alapértelmezés szerint), és a neve megegyezik a `.checksum` fűz hozzá a kiterjesztést.
+A konfigurációs MOF-fájlt kell ellenőrzőösszeg fájl párosítani, hogy a cél csomópont egy LCM ellenőrizheti a konfigurációt.
+Ellenőrzőösszeg létrehozásához hívja a [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) parancsmagot. A parancsmag lép egy `Path` paraméter, amely a mappát, ahol a konfigurációs MOF található. A parancsmag létrehoz egy ellenőrzőösszeg-fájlt `ConfigurationMOFName.mof.checksum`, ahol `ConfigurationMOFName` a konfigurációs mof-fájl neve.
+Ha egynél több konfigurációs MOF-fájlok a megadott mappában, a mappában az egyes konfigurációkhoz egy ellenőrzőösszeg jön létre.
 
->**Megjegyzés:**: Ha megváltoztatja a konfigurációs MOF-fájl bármely olyan módon, az ellenőrzőösszeg-fájl is kell hozni.
+Az ellenőrzőösszeg-fájlnak kell lennie a konfigurációs MOF-fájl ugyanabban a címtárban (`$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration` alapértelmezés szerint), és a neve megegyezik a `.checksum` bővítmény hozzáfűzve.
 
-## <a name="setting-up-a-pull-client-for-smb"></a>Az SMB-lekéréses ügyfél beállítása
+> [!NOTE]
+> Ha módosítja a konfigurációs MOF-fájl bármilyen módon, az ellenőrzőösszeg-fájl is létre kell hoznia.
 
-Ügyfél, amely lekéri a konfigurációk és/vagy az SMB-megosztáson erőforrások beállításához konfigurálása az ügyfél helyi Configuration Manager (LCM) rendelkező **ConfigurationRepositoryShare** és **ResourceRepositoryShare** mutatnak adja meg a megosztást, amelyről való lekérésére konfigurációk és a DSC-erőforrásokat.
+## <a name="setting-up-a-pull-client-for-smb"></a>Az SMB-lekérési ügyfél beállítása
 
-A LCM konfigurálásával kapcsolatos további információkért lásd: [ügyféltelepítéshez lekéréses konfigurációs azonosítójával](pullClientConfigID.md).
+Ügyfél, amely lekéri a konfigurációk és/vagy az SMB-megosztáson erőforrások beállításához, konfigurálja az ügyfél helyi Configuration Manager (LCM) Konfigurálása a **ConfigurationRepositoryShare** és **ResourceRepositoryShare** adja meg a megosztást, amelyről a konfigurációkat és erőforrásokat DSC lekéréses blokkokat.
 
->**Megjegyzés:** az egyszerűség, a példában a **PSDscAllowPlainTextPassword** engedélyezi a titkosítatlan szöveges jelszó átadja a **Credential** paraméter. További információ a hitelesítő adatok biztonsága érdekében átadásakor: [konfigurációs adatokat a hitelesítő adatok beállítások](configDataCredentials.md).
+Az LCM konfigurálása kapcsolatos további információkért lásd: [konfigurációs azonosítóval lekérési ügyfél beállítása](pullClientConfigID.md).
 
->**Megjegyzés:** meg kell adnia egy **ConfigurationID** a a **beállítások** egy metakonfigurációját az SMB lekérési kiszolgálójával, még akkor is, ha csak akkor vannak húzza erőforrások blokkja.
+> [!NOTE]
+> Az egyszerűség kedvéért ez a példa a **PSDscAllowPlainTextPassword** a titkosítatlan szöveges jelszó átadásának engedélyezése a **Credential** paraméter. További információ a hitelesítő adatok biztonságosabb passing: [hitelesítő adatait a konfigurációs adatok beállításai](configDataCredentials.md).
+>
+> **Kell** adjon meg egy **ConfigurationID** a a **beállítások** egy metaconfiguration egy SMB-lekérési kiszolgálójának, akkor is, ha csak erőforrások hívásokat küldenek a kódblokkot.
 
 ```powershell
 $secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force
@@ -190,32 +189,26 @@ configuration SmbCredTest
 }
 
 $ConfigurationData = @{
-
     AllNodes = @(
-
         @{
-
             #the "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
-
             NodeName="localhost"
-
             PSDscAllowPlainTextPassword = $true
-
         })
-
-
-
 }
 ```
 
 ## <a name="acknowledgements"></a>Köszönetnyilvánítás
 
-Különleges környezetnek köszönhetően a következőket:
+Speciális köszönhetően a következőket:
 
-- Nagy F. Robbins, amelynek bejegyzéseket az SMB protokoll segítségével a DSC segített tájékoztatja a tartalom ebben a témakörben. Jelenleg a blog [nagy F Robbins](http://mikefrobbins.com/).
-- Serge Nikalaichyk, akik lett létrehozva a **cNtfsAccessControl** modul. Ez a modul forrásának jelenleg https://github.com/SNikalaichyk/cNtfsAccessControl.
+- Mike F. Robbins, amelynek a DSC SMB-vel bejegyzések segített ebben a témakörben a tartalom értesítse. Jelenleg a blogra [Mike F Robbins](http://mikefrobbins.com/).
+- Serge Nikalaichyk, akik készített a **cNtfsAccessControl** modul. Ez a modul a forrása a [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).
 
 ## <a name="see-also"></a>Lásd még:
-- [A Windows PowerShell célállapot-konfiguráló áttekintése](overview.md)
-- [Konfigurációk életbe léptetése](enactingConfigurations.md)
-- [Lekérési ügyfél beállítása konfigurációs azonosítóval](pullClientConfigID.md)
+
+[Windows PowerShell Desired State Configuration áttekintése](overview.md)
+
+[Konfigurációk életbe léptetése](enactingConfigurations.md)
+
+[Lekérési ügyfél beállítása konfigurációs azonosítóval](pullClientConfigID.md)

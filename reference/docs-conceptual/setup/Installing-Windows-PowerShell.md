@@ -1,92 +1,94 @@
 ---
 ms.date: 08/09/2017
-keywords: PowerShell, a parancsmag, letöltése, telepítése, beállításához, windows 10, windows 8.1, windows 8.0-s, windows 7
+keywords: PowerShell, parancsmag, letöltése, telepítése, a telepítő, windows 10, windows 8.1, windows 8.0-s, windows 7
 title: A Windows PowerShell telepítése
-ms.openlocfilehash: 89f0f689ebfcd34dd4c8ec3824ec8ab4bddc34d9
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: e703d3444b1d661c482b314781cf9a1cb16ef7ed
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482998"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893521"
 ---
 # <a name="installing-windows-powershell"></a>A Windows PowerShell telepítése
-A Windows PowerShell előre telepített alapértelmezés szerint a minden Windows, Windows 7 SP1 és Windows Server 2008 R2 SP1 kezdve.
 
-Ha érdekli PowerShell 6 és újabb verziók, telepítendő PowerShell alapvető Windows PowerShell helyett. Az adott, lásd: [PowerShell központi telepítése Windows](Installing-PowerShell-Core-on-Windows.md).
+Windows PowerShell előre telepített alapértelmezés szerint a minden Windows, Windows 7 SP1 és a Windows Server 2008 R2 SP1-től.
 
-## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>A Windows 10, 8.1, 8.0 és 7 PowerShell keresése
+Ha érdekli a PowerShell 6-os vagy újabb, a PowerShell Core helyett a Windows PowerShell telepíteni szeretné. Ehhez lásd [Windows-alapú PowerShell Core telepítése](Installing-PowerShell-Core-on-Windows.md).
 
-Néha a PowerShell keresése konzol vagy a ISE (integrált parancsfájlkezelési környezet) a Windows nehézségekbe ütközhet, helyének áthelyezése egyik verzióról a Windows a következő módon.
+## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>A Windows 10-es, 8.1, 8.0-s és 7 PowerShell keresése
 
-Az alábbi táblázatok segítséget PowerShell található a Windows-verzió.
-Az itt felsorolt összes verzió az eredeti verzió, amelyeket szabaddá, nincsenek frissítések.
+Néha keresése a PowerShell konzolt vagy az ISE-ben (integrált parancsfájl-kezelési környezet) a Windows nehézkes lehet, mint a Windows egyik verziójának helyét helyez át a következő.
 
-### <a name="for-console"></a>A konzol
+Az alábbi táblázatok segítséget PowerShell található Windows-verzióhoz.
+Az itt felsorolt összes verzió az eredeti verzió, mert a kiadott, sem a frissítés.
 
-Verzió | Hely
--- | --
-Windows-10 | Kattintson a bal alsó sarokban Windows ikon, kezdje el begépelni PowerShell
-Windows 8.1, 8.0 | Indítsa el a kezdőképernyőn írja be a PowerShell.<br/>Ha a számítógépen, kattintson a bal alsó sarokban Windows ikon kezdje el beírni PowerShell
-Windows 7 SP1 | Kattintson a bal alsó sarokban Windows ikonra, a keresési mezőbe írja be a PowerShell elindítása
-
-### <a name="for-ise"></a>Az ISE
+### <a name="for-console"></a>-Konzol
 
 Verzió | Hely
 -- | --
-Windows-10 | Kattintson a bal alsó sarokban Windows ikon, kezdje el begépelni az ISE
-Windows 8.1, 8.0 | A kezdőképernyőn írja be a **PowerShell ISE**.<br/>Ha az asztalon kattintson bal alsó sarokban Windows ikonra, írja be a **PowerShell ISE**
-Windows 7 SP1 | Kattintson a bal alsó sarokban Windows ikonra, a keresési mezőbe írja be a PowerShell elindítása
+Windows-10 | Kattintson a bal alsó sarokban Windows ikonjára, és kezdje el begépelni a PowerShell
+Windows 8.1, 8.0 | A kezdőképernyőn írja be a PowerShell indítása.<br/>Ha a számítógépen, kattintson a bal alsó sarokban Windows ikonjára, kezdje el begépelni a PowerShell
+Windows 7 SP1 | Kattintson a bal alsó sarokban található Windows ikont, a Keresés mezőbe írja be a PowerShell start
 
-## <a name="finding-powershell-in-windows-server-versions"></a>Windows Server-verziók PowerShell keresése
+### <a name="for-ise"></a>Az ISE-ben
 
-Windows Server 2008 R2 verziótól kezdődően a Windows operációs rendszer nélkül is telepíthetők a grafikus felhasználói felületen (GUI).
-Windows Server a grafikus felhasználói felület nélkül kiadásai megnevezett **Core** és a grafikus felhasználói Felülettel rendelkező kiadásához nevű **asztali**.
+Verzió | Hely
+-- | --
+Windows-10 | Kattintson a bal alsó sarokban Windows ikonjára, és kezdje el begépelni az ISE-ben
+Windows 8.1, 8.0 | A kezdőképernyőn írja be a **PowerShell ISE-ben**.<br/>Ha az asztalon kattintson bal alsó sarokban található Windows ikonra, írja be a **PowerShell ISE-ben**
+Windows 7 SP1 | Kattintson a bal alsó sarokban található Windows ikont, a Keresés mezőbe írja be a PowerShell start
 
-### <a name="windows-server-core-editions"></a>Windows Server Core kiadásokban
+## <a name="finding-powershell-in-windows-server-versions"></a>Keresés a PowerShell a Windows Server-verziók
 
-Az összes mag kiadásai amikor bejelentkezik a kiszolgáló kap egy Windows parancssori ablakban.
+A Windows Server 2008 R2 verziótól kezdődően Windows operációs rendszer nélkül is telepíthetők a grafikus felhasználói felületen (GUI).
+Windows Server a grafikus felhasználói felület nélkül kiadásai nevesített **Core** és kiadása a grafikus felhasználói Felülettel rendelkező nevű **asztali**.
 
-Típus `powershell` nyomja le az ENTER **ENTER** PowerShell elindítása belül a parancssor-szakaszt.
-Típus `exit` állítsa le a PowerShell-parancssorba, majd a parancssorba való visszatéréshez.
+### <a name="windows-server-core-editions"></a>A Windows Server Core kiadásokban
 
-### <a name="windows-server-desktop-editions"></a>Windows Server asztali verziója esetén
+A Core kiadásokban az összes a kiszolgálón való bejelentkezéskor kap egy Windows parancssori ablakban.
 
-Összes asztali kiadása kattintson a bal alsó sarokban Windows ikonra kezdje el beírni PowerShell.
-Mind a konzolon, és az ISE-beállítások kapják meg.
+Típus `powershell` nyomja le az ENTER **ENTER** PowerShell elindítása belül a parancssori munkamenetben.
+Típus `exit` leállítása a PowerShell-munkamenetet, és visszatérhet a parancssor használatával.
 
-Az egyetlen kivétel a fenti szabály, a Windows Server 2008 R2 SP1; ISE Ebben az esetben kattintson a bal alsó sarokban Windows ikonra, írja be a PowerShell ISE.
+### <a name="windows-server-desktop-editions"></a>A Windows Server asztali verziója esetén
 
-## <a name="how-to-check-the-version-of-powershell"></a>Hogyan PowerShell verziójának ellenőrzése
+Az összes asztali verzió kattintson a bal alsó sarokban található Windows ikonra, kezdje el begépelni a PowerShell.
+Konzol és az ISE-beállítások is kap.
 
-Található PowerShell verziójának telepítését, indítsa el a PowerShell-konzolban (vagy az ISE) és típus `$PSVersionTable` nyomja le az ENTER **ENTER**. Keresse meg a `PSVersion` érték.
+Az egyetlen kivétel a fenti szabály, a Windows Server 2008 R2 SP1; az ISE-ben Ebben az esetben kattintson a bal alsó sarokban található Windows ikonra, írja be a PowerShell ISE-ben.
+
+## <a name="how-to-check-the-version-of-powershell"></a>A PowerShell-verzió ellenőrzése
+
+Keresse meg a PowerShell-verzió van telepítve, indítsa el a PowerShell-konzolt (vagy az ISE-ben), és írja be `$PSVersionTable` nyomja le az ENTER **ENTER**. Keresse meg a `PSVersion` értéket.
 
 ## <a name="upgrading-existing-windows-powershell"></a>Meglévő Windows PowerShell frissítése
 
-A telepítőcsomag PowerShell belül egy WMF telepítő származnak.
-A WMF installer verziójának ugyanolyan verziójúak, mint a PowerShell; nem önálló telepítő Windows PowerShell van.
+A telepítőcsomag PowerShell belül a WMF-telepítési származnak.
+A WMF telepítő verzióegyezéseket PowerShell; verziója Nincs nincs önálló telepítő a Windows PowerShell környezethez.
 
-Ha frissítenie kell a meglévő PowerShell, a Windows rendszerben segítségével az alábbi táblázatban keresse meg a telepítő frissíti a PowerShell-verziójának.
+Ha a meglévő PowerShell-lel, frissítenie kell a Windows, segítségével az alábbi táblázatban keresse meg a frissíteni kívánt PowerShell verziójának telepítőjét.
 
-Windows | POWERSHELL 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
+Windows | POWERSHELL 3.0 | PS 4.0 | POWERSHELL 5.0 | POWERSHELL 5.1 |
 --|--|--|--|--|
-Windows 10 (lásd a Note1)<br/>Windows Server 2016 | - | - | - | telepítve
-A Windows 8.1<br/>Windows Server 2012 R2 | - | telepítve | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
-Windows 8<br/>Windows Server 2012 | telepítve | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
-Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [A WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+A Windows 10-es (lásd a Note1)<br/>Windows Server 2016 | - | - | - | telepítve van
+A Windows 8.1<br/>Windows Server 2012 R2 | - | telepítve van | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 8<br/>Windows Server 2012 | telepítve van | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
-> **Megjegyzés: 1**:
-  >>
-  >> PowerShell engedélyezve van, az automatikus frissítések szolgáltatással a Windows 10, a kezdeti verzióját a 5.1 5.0-s verziójáról frissíti az lekérdezi.
-  >>
-  >> Ha a Windows 10 eredeti verzióját nem frissül a Windows-frissítések, a PowerShell verziója 5.0.
+> [!NOTE]
+>
+> Az automatikus frissítések szolgáltatás engedélyezve van, a Windows 10, az eredeti kiadásban a PowerShell 5.0, 5.1-es verziójából származó frissül.
+>
+> Ha az eredeti verzió Windows 10-es nem frissül a Windows-frissítések, a PowerShell verziója 5.0-s.
 
-## <a name="need-azure-powershell"></a>Az Azure PowerShell kell
+## <a name="need-azure-powershell"></a>Az Azure PowerShell szükséges.
 
-Ha a keresett **Azure PowerShell**, sikerült a kiindulási pont [áttekintés az Azure PowerShell](https://docs.microsoft.com/powershell/azure).
+Ha a keresett **Azure PowerShell-lel**, kezdheti [áttekintése az Azure PowerShell](/powershell/azure/overview).
 
-Ellenkező esetben előfordulhat, hogy teendők van [telepítése és konfigurálása az Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps)
+Ellenkező esetben van, mit érdemes [telepítése és konfigurálása az Azure PowerShell-lel](/powershell/azure/install-azurerm-ps)
 
 ## <a name="see-also"></a>Lásd még:
 
-- [Windows PowerShell rendszerkövetelményei](Windows-PowerShell-System-Requirements.md)
-- [A Windows PowerShell indítása](Starting-Windows-PowerShell.md)
+[Windows PowerShell rendszerkövetelményei](Windows-PowerShell-System-Requirements.md)
+
+[Windows PowerShell indítása](Starting-Windows-PowerShell.md)

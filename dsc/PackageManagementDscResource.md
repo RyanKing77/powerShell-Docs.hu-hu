@@ -1,22 +1,22 @@
 ---
 ms.date: 06/20/2018
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A DSC PackageManagement erőforrás
-ms.openlocfilehash: 3d52934b130d59acee4d7f8a92da2c743c1eb305
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: DSC PackageManagement erőforrás
+ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753787"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892501"
 ---
-# <a name="dsc-packagemanagement-resource"></a>A DSC PackageManagement erőforrás
+# <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement erőforrás
 
-> Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0, 5.1 Windows PowerShell
+A következőkre vonatkozik: Windows PowerShell 4.0-s, Windows PowerShell 5.0, 5.1 Windows PowerShell
 
-A **PackageManagement** erőforrás a Windows PowerShell szükséges konfiguráló (DSC) telepítéséhez vagy eltávolításához egy célcsomóponttal csomag felügyeleti csomagok mechanizmust biztosít. Ehhez az erőforráshoz van szükség a **PackageManagement** modul, a rendelkezésre álló http://PowerShellGallery.com.
+A **PackageManagement** erőforrás a Windows PowerShell Desired State Configuration (DSC) telepítéséhez, vagy távolítsa el a felügyeleti csomagban csomagokat a egy célcsomóponttal mechanizmust biztosít. Ezt az erőforrást igényel a **PackageManagement** modulban elérhető [ http://PowerShellGallery.com ](http://PowerShellGallery.com).
 
 > [!IMPORTANT]
-> A **PackageManagement** modul kell lennie, mint a következő tulajdonság információk csak akkor lehet helyes 1.1.7.0 verziója.
+> A **PackageManagement** modul kell lennie, mint a következő tulajdonság információkat csak akkor lehet helyes 1.1.7.0 verzió.
 
 ## <a name="syntax"></a>Szintaxis
 
@@ -41,27 +41,27 @@ PackageManagement [string] #ResourceName
 
 |  Tulajdonság  |  Leírás   |
 |---|---|
-| Név| Megadja a telepítendő vagy eltávolítandó-csomag nevét.|
-| AdditionalParameters| Szolgáltató adott kivonattábla, amely átadandó paraméterek `Get-Package -AdditionalArguments`. Például NuGet-szolgáltató is át további paraméterek, például a DestinationPath.|
-| Győződjön meg arról| Meghatározza, hogy a csomag telepítendő vagy eltávolítandó.|
-| MaximumVersion|Adja meg a megengedett a csomagot, amely a keresett verzióját. Ha nem adja hozzá ezt a paramétert, az erőforrás megkeresése a csomag legmagasabb rendelkezésre álló verziója.|
-| MinimumVersion|Adja meg a minimális verziója a csomagot, amely a keresett engedélyezett. Ha nem adja hozzá ezt a paramétert, az erőforrás megkeresése a csomagot, amely megfelel minden maximális megadott verziója által megadott legmagasabb rendelkezésre álló verziója a _MaximumVersion_ paraméter.|
-| ProviderName| A csomag szolgáltató nevét, amelyhez a csomag keresés hatókörének megadása Csomag a szolgáltatói nevet lekéréséhez futtassa a `Get-PackageProvider` parancsmag.|
-| RequiredVersion| Adja meg a telepíteni kívánt csomag pontos verziójának. Ha ez a paraméter nincs megadva, a DSC-erőforrás telepíti-e a csomagot, amely megfelel a megadott maximális verziója elérhető legújabb verzióját a _MaximumVersion_ paraméter.|
-| Forrás| Megadja a nevét, a csomag forrás, ahol a csomag található. Ez lehet egy URI-t, vagy egy adatforrás regisztrálva a `Register-PackageSource` vagy PackageManagementSource DSC-erőforrást.|
-| SourceCredential | Adja meg egy felhasználói fiókot, amely a megadott csomag szolgáltató vagy a forrás csomag telepítéséhez jogosultsággal rendelkezik.|
+| Név| Megadja a telepítendő vagy eltávolítandó-csomag neve.|
+| AdditionalParameters| Szolgáltató paramétereket, amelyek számára az adott szórótábla `Get-Package -AdditionalArguments`. Például a NuGet-szolgáltató adhat át további paraméterek, például a DestinationPath.|
+| Győződjön meg, hogy| Meghatározza, hogy a csomag telepítése vagy eltávolítása.|
+| MaximumVersion|Adja meg a megengedett maximális verziója a csomagot, amelyet meg szeretne keresni. Ha nem adja hozzá ezt a paramétert, az erőforrás megkeresése a csomag legmagasabb rendelkezésre álló verziója.|
+| MinimumVersion|Adja meg a minimális verziója a csomagot, amelyet meg szeretne keresni. Ha nem adja hozzá ezt a paramétert, az erőforrás megkeresi a legmagasabb elérhető verziója a csomagot, amely bármely által megadott maximális megadott verziója is megfelel a _MaximumVersion_ paraméter.|
+| ProviderName| Adja meg, amelyhez a csomag keresést, egy szolgáltató nevét. Alkalmazáscsomagok szolgáltató nevének lekéréséhez futtassa a `Get-PackageProvider` parancsmagot.|
+| RequiredVersion| Adja meg a telepíteni kívánt csomag pontos verziójának. Ez a paraméter nincs megadva, a DSC-erőforrás telepíti a csomagot, amely bármely által megadott maximális verziója is megfelel a legújabb elérhető verziója a _MaximumVersion_ paraméter.|
+| Forrás| A neve, a csomag forrásához, ahol a csomag található. Ez lehet egy URI-t, vagy egy adatforrás regisztrálva `Register-PackageSource` vagy PackageManagementSource DSC-erőforrás.|
+| SourceCredential | Itt adható meg egy felhasználói fiókot, amely rendelkezik jogosultságokkal a megadott csomag szolgáltató vagy a forrás csomag telepítéséhez.|
 
 ## <a name="additional-parameters"></a>További paraméterek
 
 A következő táblázat felsorolja a AdditionalParameters tulajdonság lehetőségeit.
 |  Paraméter  | Leírás   |
 |---|---|
-| DestinationPath| Például a beépített Nuget-szolgáltatót a szolgáltatók használják. A csomagot a telepíteni kívánt fájl helyének megadása.|
-| InstallationPolicy| Például a beépített Nuget-szolgáltatót a szolgáltatók használják. Meghatározza, hogy megbízható-e a csomag forrásához. Egyik: "Nem megbízható", "Megbízható".|
+| DestinationPath| Szolgáltatók, például a beépített Nuget-szolgáltató által használt. A csomagot a telepíteni kívánt fájl helyének megadása.|
+| InstallationPolicy| Szolgáltatók, például a beépített Nuget-szolgáltató által használt. Azt határozza meg, hogy megbízható-e a csomag forrásához. Egyikét: "Nem megbízható", "Megbízható".|
 
 ## <a name="example"></a>Példa
 
-Ez a példa telepíti a **JQuery** NuGet-csomagot és **GistProvider** PowerShell modul használatával a **PackageManagement** DSC-erőforrás. Ez a példa első biztosítja a szükséges csomag források érhetők el, majd határozza meg a várt állapota a **JQuery** és **GistProvider** csomagok (NuGet és a PowerShell használatával, illetve).
+Ez a példa telepíti a **JQuery** NuGet-csomagot és **GistProvider** PowerShell modul használatával a **PackageManagement** DSC-erőforrás. Ebben a példában először biztosítja a szükséges csomag adatforrások érhetők el, majd határozza meg a várható állapotát a **JQuery** és **GistProvider** packages (NuGet és a PowerShell, jelölik).
 
 ```powershell
 Configuration PackageTest

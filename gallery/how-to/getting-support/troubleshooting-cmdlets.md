@@ -1,24 +1,24 @@
 ---
 ms.date: 06/12/2017
 contributor: manikb
-keywords: gyűjtemény, a powershell, a parancsmag, a psget
+keywords: katalógus, powershell, a parancsmag, psget
 title: Hibaelhárítási parancsmagok
-ms.openlocfilehash: e8890cb6bbe661b8524d83cabf91483acbde8095
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c0a1fbcafd8c4443dc9d628c54c4c525d9701861
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219827"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892474"
 ---
 # <a name="troubleshooting-cmdlets"></a>Hibaelhárítási parancsmagok
 
-## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Megoldását "Figyelmeztetés: nem sikerült letölteni a csomagot a csomag neve" probléma?
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>Megoldását "Figyelmeztetés: nem sikerült letölteni a csomagot a csomag neve" probléma
 
-Jelentette, hogy Install-modul vagy a frissítés-modul néha meghiúsul az egyes számítógépeken.
-A vizsgálat alapján, valami vele a kapcsolat.
-Nemrég NuGet-szolgáltató frissítése megtörtént, hogy azt megbízhatóan letölthető csomagok.
-Telepítse a NuGet-szolgáltató a legújabb buildjével és majd telepíteni vagy frissíteni a modul az alábbi útmutató követésével.
-Most használja az "Azure" modult az alábbi példa.
+Azt jelenti, hogy `Install-Module` vagy `Update-Module` időnként meghiúsul, az egyes gépek.
+Vizsgálatunk alapul, fontos, hogy a hálózati kapcsolattal.
+Nemrégiben frissítettük NuGet-szolgáltató úgy, hogy megbízhatóan letöltheti a csomagokat.
+Követheti, hogy telepítse a NuGet-szolgáltató legújabb buildjével és telepítheti őket, vagy a modulok frissítésére, az alábbi utasításokat.
+Az alábbi példa használjuk az "Azure" modul.
 
 ```powershell
 Install-PackageProvider NuGet -MinimumVersion 2.8.5.206 -Force
