@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Az MSFT_DSCLocalConfigurationManager osztály TestConfiguration metódusa
-ms.openlocfilehash: 2df04d317bd5e7a5c2a713d92be57c5c9a9f5e8c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d746832b01310f43a7aae33dd0fa70c0928bb3e0
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219011"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893926"
 ---
-# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="c0df2-103">Az MSFT_DSCLocalConfigurationManager osztály TestConfiguration metódusa</span><span class="sxs-lookup"><span data-stu-id="c0df2-103">TestConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="a3512-103">Az MSFT_DSCLocalConfigurationManager osztály TestConfiguration metódusa</span><span class="sxs-lookup"><span data-stu-id="a3512-103">TestConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-<span data-ttu-id="c0df2-104">A konfigurációs dokumentum küld a felügyelt csomóponthoz, és a jelenlegi konfiguráció alapján a dokumentum ellenőrzi.</span><span class="sxs-lookup"><span data-stu-id="c0df2-104">Sends the configuration document to the managed node and verifies the current configuration against the document.</span></span>
+<span data-ttu-id="a3512-104">A konfigurációs dokumentum a felügyelt csomópont küld, és ellenőrzi az aktuális konfiguráció ellen a dokumentumot.</span><span class="sxs-lookup"><span data-stu-id="a3512-104">Sends the configuration document to the managed node and verifies the current configuration against the document.</span></span>
 
-<a name="syntax"></a><span data-ttu-id="c0df2-105">Szintaxis</span><span class="sxs-lookup"><span data-stu-id="c0df2-105">Syntax</span></span>
-------
+## <a name="syntax"></a><span data-ttu-id="a3512-105">Szintaxis</span><span class="sxs-lookup"><span data-stu-id="a3512-105">Syntax</span></span>
 
 ```mof
 uint32 TestConfiguration(
@@ -25,34 +24,30 @@ uint32 TestConfiguration(
 );
 ```
 
-<a name="parameters"></a><span data-ttu-id="c0df2-106">Paraméterek</span><span class="sxs-lookup"><span data-stu-id="c0df2-106">Parameters</span></span>
-----------
+## <a name="parameters"></a><span data-ttu-id="a3512-106">Paraméterek</span><span class="sxs-lookup"><span data-stu-id="a3512-106">Parameters</span></span>
 
-<span data-ttu-id="c0df2-107">*configurationData* \[a\] a confuguration környezet adatait.</span><span class="sxs-lookup"><span data-stu-id="c0df2-107">*configurationData* \[in\] Environment data for the confuguration.</span></span>
+<span data-ttu-id="a3512-107">*configurationData* \[a\] confuguration a környezet adatait.</span><span class="sxs-lookup"><span data-stu-id="a3512-107">*configurationData* \[in\] Environment data for the confuguration.</span></span>
 
-<span data-ttu-id="c0df2-108">*InDesiredState* \[kimenő\] a return határozza meg, hogy a felügyelt csomóponthoz a konfigurációs dokumentum által meghatározott állapotban.</span><span class="sxs-lookup"><span data-stu-id="c0df2-108">*InDesiredState* \[out\] On return, specifies whether the managed node is in the state specified by the configuration document.</span></span>
+<span data-ttu-id="a3512-108">*InDesiredState* \[ki\] lépjen vissza, a Megadja, hogy a kezelt csomópontok a konfigurációs dokumentum által meghatározott állapotban van-e.</span><span class="sxs-lookup"><span data-stu-id="a3512-108">*InDesiredState* \[out\] On return, specifies whether the managed node is in the state specified by the configuration document.</span></span>
 
-<span data-ttu-id="c0df2-109">*ResourcesInDesiredState* \[kimenő\] return tartalmaz beágyazott példányának a **MSFT_ResourceInDesiredState** osztály, amely meghatározza a kívánt állapot-erőforrást.</span><span class="sxs-lookup"><span data-stu-id="c0df2-109">*ResourcesInDesiredState* \[out\] On return, contains an embedded instance of the **MSFT_ResourceInDesiredState** class that specifies resources that are in the desired state.</span></span>
+<span data-ttu-id="a3512-109">*ResourcesInDesiredState* \[ki\] return tartalmaz egy beágyazott példányát a **MSFT_ResourceInDesiredState** osztály, amely meghatározza az erőforrást, amely a kívánt állapotban.</span><span class="sxs-lookup"><span data-stu-id="a3512-109">*ResourcesInDesiredState* \[out\] On return, contains an embedded instance of the **MSFT_ResourceInDesiredState** class that specifies resources that are in the desired state.</span></span>
 
-<span data-ttu-id="c0df2-110">*ResourcesNotInDesiredState* \[kimenő\] return tartalmaz beágyazott példányának a **MSFT_ResourceNotInDesiredState** osztály, amely meghatározza az erőforrásokat, amelyek nem a megfelelő állapotban van.</span><span class="sxs-lookup"><span data-stu-id="c0df2-110">*ResourcesNotInDesiredState* \[out\] On return, contains an embedded instance of the **MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.</span></span>
+<span data-ttu-id="a3512-110">*ResourcesNotInDesiredState* \[ki\] return tartalmaz egy beágyazott példányát a **MSFT_ResourceNotInDesiredState** osztály, amely megadja az erőforrások, amelyek nem a kívánt állapotban.</span><span class="sxs-lookup"><span data-stu-id="a3512-110">*ResourcesNotInDesiredState* \[out\] On return, contains an embedded instance of the **MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="c0df2-111">Visszatérési érték</span><span class="sxs-lookup"><span data-stu-id="c0df2-111">Return value</span></span>
-------------
+## <a name="return-value"></a><span data-ttu-id="a3512-111">Vrácená hodnota</span><span class="sxs-lookup"><span data-stu-id="a3512-111">Return value</span></span>
 
-<span data-ttu-id="c0df2-112">Sikeres művelet; nulla értéket ad vissza Ellenkező esetben hibakódot.</span><span class="sxs-lookup"><span data-stu-id="c0df2-112">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="a3512-112">Sikeres; a nulla értéket ad vissza egyéb esetben egy hibakódot ad vissza.</span><span class="sxs-lookup"><span data-stu-id="a3512-112">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="c0df2-113">Megjegyzések</span><span class="sxs-lookup"><span data-stu-id="c0df2-113">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="a3512-113">Megjegyzések</span><span class="sxs-lookup"><span data-stu-id="a3512-113">Remarks</span></span>
 
-<span data-ttu-id="c0df2-114">Ez a statikus módszer.</span><span class="sxs-lookup"><span data-stu-id="c0df2-114">This is a static method.</span></span>
+<span data-ttu-id="a3512-114">Ez a statická metoda.</span><span class="sxs-lookup"><span data-stu-id="a3512-114">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="c0df2-115">Követelmények</span><span class="sxs-lookup"><span data-stu-id="c0df2-115">Requirements</span></span>
-------------
-><span data-ttu-id="c0df2-116">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="c0df2-116">**MOF:** DscCore.mof</span></span>
+## <a name="requirements"></a><span data-ttu-id="a3512-115">Követelmények</span><span class="sxs-lookup"><span data-stu-id="a3512-115">Requirements</span></span>
 
-><span data-ttu-id="c0df2-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="c0df2-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+<span data-ttu-id="a3512-116">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="a3512-116">**MOF:** DscCore.mof</span></span>
 
+<span data-ttu-id="a3512-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="a3512-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="c0df2-118">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="c0df2-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a3512-118">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="a3512-118">See also</span></span>
 
-
-[<span data-ttu-id="c0df2-119">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="c0df2-119">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+[<span data-ttu-id="a3512-119">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="a3512-119">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)

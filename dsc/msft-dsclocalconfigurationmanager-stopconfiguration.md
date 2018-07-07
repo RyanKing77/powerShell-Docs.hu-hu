@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Az MSFT_DSCLocalConfigurationManager osztály StopConfiguration metódusa
-ms.openlocfilehash: aaed29cb81e2079c4673b621b81c52e109aa7b48
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1cd887d205967c3d282143df4e6199027639230e
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218875"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893875"
 ---
-# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="c790d-103">Az MSFT_DSCLocalConfigurationManager osztály StopConfiguration metódusa</span><span class="sxs-lookup"><span data-stu-id="c790d-103">StopConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="06070-103">Az MSFT_DSCLocalConfigurationManager osztály StopConfiguration metódusa</span><span class="sxs-lookup"><span data-stu-id="06070-103">StopConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-<span data-ttu-id="c790d-104">Leállítja a folyamatban lévő konfigurációs módosítást.</span><span class="sxs-lookup"><span data-stu-id="c790d-104">Stops the configuration change that is in progress.</span></span>
+<span data-ttu-id="06070-104">Leállítja a módosítás folyamatban van.</span><span class="sxs-lookup"><span data-stu-id="06070-104">Stops the configuration change that is in progress.</span></span>
 
-<a name="syntax"></a><span data-ttu-id="c790d-105">Szintaxis</span><span class="sxs-lookup"><span data-stu-id="c790d-105">Syntax</span></span>
-------
+## <a name="syntax"></a><span data-ttu-id="06070-105">Szintaxis</span><span class="sxs-lookup"><span data-stu-id="06070-105">Syntax</span></span>
 
 ```mof
 uint32 StopConfiguration(
@@ -22,28 +21,24 @@ uint32 StopConfiguration(
 );
 ```
 
-<a name="parameters"></a><span data-ttu-id="c790d-106">Paraméterek</span><span class="sxs-lookup"><span data-stu-id="c790d-106">Parameters</span></span>
-----------
+## <a name="parameters"></a><span data-ttu-id="06070-106">Paraméterek</span><span class="sxs-lookup"><span data-stu-id="06070-106">Parameters</span></span>
 
-<span data-ttu-id="c790d-107">*kényszerített* \[a\] **igaz** kényszerítése a konfigurációját, és állítsa le.</span><span class="sxs-lookup"><span data-stu-id="c790d-107">*force* \[in\] **true** to force the configuration to stop.</span></span>
+<span data-ttu-id="06070-107">*kényszerített* \[a\] **igaz** kényszerített leállítása a konfigurációt.</span><span class="sxs-lookup"><span data-stu-id="06070-107">*force* \[in\] **true** to force the configuration to stop.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="c790d-108">Visszatérési érték</span><span class="sxs-lookup"><span data-stu-id="c790d-108">Return value</span></span>
-------------
+## <a name="return-value"></a><span data-ttu-id="06070-108">Vrácená hodnota</span><span class="sxs-lookup"><span data-stu-id="06070-108">Return value</span></span>
 
-<span data-ttu-id="c790d-109">Sikeres művelet; nulla értéket ad vissza Ellenkező esetben hibakódot.</span><span class="sxs-lookup"><span data-stu-id="c790d-109">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="06070-109">Sikeres; a nulla értéket ad vissza egyéb esetben egy hibakódot ad vissza.</span><span class="sxs-lookup"><span data-stu-id="06070-109">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="c790d-110">Megjegyzések</span><span class="sxs-lookup"><span data-stu-id="c790d-110">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="06070-110">Megjegyzések</span><span class="sxs-lookup"><span data-stu-id="06070-110">Remarks</span></span>
 
-<span data-ttu-id="c790d-111">Ez a statikus módszer.</span><span class="sxs-lookup"><span data-stu-id="c790d-111">This is a static method.</span></span>
+<span data-ttu-id="06070-111">Ez a statická metoda.</span><span class="sxs-lookup"><span data-stu-id="06070-111">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="c790d-112">Követelmények</span><span class="sxs-lookup"><span data-stu-id="c790d-112">Requirements</span></span>
-------------
-><span data-ttu-id="c790d-113">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="c790d-113">**MOF:** DscCore.mof</span></span>
+## <a name="requirements"></a><span data-ttu-id="06070-112">Követelmények</span><span class="sxs-lookup"><span data-stu-id="06070-112">Requirements</span></span>
 
-><span data-ttu-id="c790d-114">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="c790d-114">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+<span data-ttu-id="06070-113">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="06070-113">**MOF:** DscCore.mof</span></span>
 
+<span data-ttu-id="06070-114">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="06070-114">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="c790d-115">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="c790d-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="06070-115">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="06070-115">See also</span></span>
 
-
-[<span data-ttu-id="c790d-116">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="c790d-116">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+[<span data-ttu-id="06070-116">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="06070-116">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)

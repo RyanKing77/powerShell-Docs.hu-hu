@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Az MSFT_DSCLocalConfigurationManager osztály SendConfiguration metódusa
-ms.openlocfilehash: b4d4c901268344ba67d77e4dc982042bfc2abd78
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3529bc56ecba19ed0fbbf070a4e86d0692824d39
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222207"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892443"
 ---
-# <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="62bbd-103">Az MSFT_DSCLocalConfigurationManager osztály SendConfiguration metódusa</span><span class="sxs-lookup"><span data-stu-id="62bbd-103">SendConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="4b496-103">Az MSFT_DSCLocalConfigurationManager osztály SendConfiguration metódusa</span><span class="sxs-lookup"><span data-stu-id="4b496-103">SendConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-<span data-ttu-id="62bbd-104">A konfigurációs dokumentum küld a felügyelt csomóponthoz, és menti a függőben lévő módosítása.</span><span class="sxs-lookup"><span data-stu-id="62bbd-104">Sends the configuration document to the managed node and saves it as a pending change.</span></span>
+<span data-ttu-id="4b496-104">A konfigurációs dokumentum a felügyelt csomópont küld, és menti azt egy függőben lévő módosítást.</span><span class="sxs-lookup"><span data-stu-id="4b496-104">Sends the configuration document to the managed node and saves it as a pending change.</span></span>
 
-<a name="syntax"></a><span data-ttu-id="62bbd-105">Szintaxis</span><span class="sxs-lookup"><span data-stu-id="62bbd-105">Syntax</span></span>
-------
+## <a name="syntax"></a><span data-ttu-id="4b496-105">Szintaxis</span><span class="sxs-lookup"><span data-stu-id="4b496-105">Syntax</span></span>
 
 ```mof
 uint32 SendConfiguration(
@@ -23,30 +22,26 @@ uint32 SendConfiguration(
 );
 ```
 
-<a name="parameters"></a><span data-ttu-id="62bbd-106">Paraméterek</span><span class="sxs-lookup"><span data-stu-id="62bbd-106">Parameters</span></span>
-----------
+## <a name="parameters"></a><span data-ttu-id="4b496-106">Paraméterek</span><span class="sxs-lookup"><span data-stu-id="4b496-106">Parameters</span></span>
 
-<span data-ttu-id="62bbd-107">*ConfigurationData* \[a\] konfigurációjának a környezet adatait.</span><span class="sxs-lookup"><span data-stu-id="62bbd-107">*ConfigurationData* \[in\] The environment data for the configuration.</span></span>
+<span data-ttu-id="4b496-107">*ConfigurationData* \[a\] konfigurációjának a környezet adatait.</span><span class="sxs-lookup"><span data-stu-id="4b496-107">*ConfigurationData* \[in\] The environment data for the configuration.</span></span>
 
-<span data-ttu-id="62bbd-108">*kényszerített* \[a\] **igaz** kényszerítése a konfigurációját, és állítsa le.</span><span class="sxs-lookup"><span data-stu-id="62bbd-108">*force* \[in\] **true** to force the configuration to stop.</span></span>
+<span data-ttu-id="4b496-108">*kényszerített* \[a\] **igaz** kényszerített leállítása a konfigurációt.</span><span class="sxs-lookup"><span data-stu-id="4b496-108">*force* \[in\] **true** to force the configuration to stop.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="62bbd-109">Visszatérési érték</span><span class="sxs-lookup"><span data-stu-id="62bbd-109">Return value</span></span>
-------------
+## <a name="return-value"></a><span data-ttu-id="4b496-109">Vrácená hodnota</span><span class="sxs-lookup"><span data-stu-id="4b496-109">Return value</span></span>
 
-<span data-ttu-id="62bbd-110">Sikeres művelet; nulla értéket ad vissza Ellenkező esetben hibakódot.</span><span class="sxs-lookup"><span data-stu-id="62bbd-110">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="4b496-110">Sikeres; a nulla értéket ad vissza egyéb esetben egy hibakódot ad vissza.</span><span class="sxs-lookup"><span data-stu-id="4b496-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="62bbd-111">Megjegyzések</span><span class="sxs-lookup"><span data-stu-id="62bbd-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="4b496-111">Megjegyzések</span><span class="sxs-lookup"><span data-stu-id="4b496-111">Remarks</span></span>
 
-<span data-ttu-id="62bbd-112">Ez a statikus módszer.</span><span class="sxs-lookup"><span data-stu-id="62bbd-112">This is a static method.</span></span>
+<span data-ttu-id="4b496-112">Ez a statická metoda.</span><span class="sxs-lookup"><span data-stu-id="4b496-112">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="62bbd-113">Követelmények</span><span class="sxs-lookup"><span data-stu-id="62bbd-113">Requirements</span></span>
-------------
-><span data-ttu-id="62bbd-114">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="62bbd-114">**MOF:** DscCore.mof</span></span>
+## <a name="requirements"></a><span data-ttu-id="4b496-113">Követelmények</span><span class="sxs-lookup"><span data-stu-id="4b496-113">Requirements</span></span>
 
-><span data-ttu-id="62bbd-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="62bbd-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+<span data-ttu-id="4b496-114">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="4b496-114">**MOF:** DscCore.mof</span></span>
 
+<span data-ttu-id="4b496-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="4b496-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="62bbd-116">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="62bbd-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4b496-116">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="4b496-116">See also</span></span>
 
-
-[<span data-ttu-id="62bbd-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="62bbd-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+[<span data-ttu-id="4b496-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="4b496-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
