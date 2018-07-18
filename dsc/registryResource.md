@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A DSC-beállításjegyzék erőforrás
-ms.openlocfilehash: 8819b3704fa1a61d2be5ce11c974542f48177e09
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: DSC-Registry erőforrás
+ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188700"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093585"
 ---
-# <a name="dsc-registry-resource"></a>A DSC-beállításjegyzék erőforrás
+# <a name="dsc-registry-resource"></a>DSC-Registry erőforrás
 
-> Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
-A **beállításjegyzék** erőforrás a Windows PowerShell szükséges konfiguráló (DSC) lehetővé teszi a beállításkulcsok és a cél csomópont értékek kezeléséhez.
+A **beállításjegyzék** erőforrás a Windows PowerShell Desired State Configuration (DSC) kezelése a beállításkulcsok és a egy célcsomóponttal mechanizmust biztosít.
 
 ## <a name="syntax"></a>Szintaxis
 
@@ -32,35 +32,22 @@ Registry [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Tulajdonságok
+
 |  Tulajdonság  |  Leírás   |
 |---|---|
-| Billentyű| Azt jelzi, hogy a beállításkulcs, amelyekhez egy adott állapot biztosításához elérési útját. Ezt az elérési utat tartalmaznia kell a struktúra.|
-| ValueName| A beállításazonosító nevét jelöli. Hozzáadni vagy eltávolítani egy beállításkulcsot, adja meg ennek a tulajdonságnak egy üres karakterlánccal ValueType vagy értékadat megadása nélkül. Vagy távolítsa el az alapértelmezett érték a beállításkulcsok módosításához adja meg ezt a tulajdonságot is meg ValueType vagy értékadat egy üres karakterlánccal.|
-| Győződjön meg arról| Azt jelzi, ha a kulcs és az érték szerepel. Győződjön meg arról, hogy így tesznek, állítsa ezt a tulajdonságot "Elérhető". Győződjön meg arról, hogy azok nem léteznek, hogy a "Hiányzik" tulajdonság értéke. Az alapértelmezett érték: "Elérhető".|
-| Force| Ha a megadott beállításkulcs megtalálható, __kényszerített__ felülírja az új értékkel. Ha a beállításkulcs törlése az alkulcsok, ez kell lennie __$true__|
-| Hexadecimális| Azt jelzi, ha adatokat hexadecimális formátumban kell megadni. Ha meg van adva, a DWORD/Négyszó érték hexadecimális formátumban jelenik meg. Más esetén nem érvényes. Az alapértelmezett érték __$false__.|
-| dependsOn| Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.|
-| Értékadat| A beállításjegyzék-értékben adatai.|
-| ÉrtékTípusa| Azt jelzi, hogy az érték típusa. A támogatott típusok a következők:
-<ul><li>Karakterlánc (REG_SZ)</li>
-
-
-<li>Bináris (REG bináris)</li>
-
-
-<li>32 bites DWORD (REG_DWORD)</li>
-
-
-<li>Négyszó 64 bites (REG_QWORD)</li>
-
-
-<li>Karakterlánc (REG_MULTI_SZ)</li>
-
-
-<li>Bővíthető karakterlánc (REG_EXPAND_SZ)</li></ul>
+| Billentyű| Azt jelzi, hogy az elérési útját, amelyhez szeretne biztosítani adott állapotú beállításkulcs. Ezt az elérési utat tartalmaznia kell a struktúra.|
+| Értéknév| A beállításazonosító nevét jelzi. Hozzáadhat és eltávolíthat egy beállításkulcsot, adja meg a tulajdonság egy üres karakterlánccal ValueType vagy értékadat megadása nélkül. Módosíthatja, vagy távolítsa el az alapértelmezett érték egy beállításkulcs, adja meg, ez a tulajdonság egy üres karakterlánccal ValueType vagy értékadat megadása során.|
+| Győződjön meg, hogy| Azt jelzi, ha a kulcs-érték létezik-e. Annak érdekében, hogy tesznek, a "E" tulajdonság értéke. Győződjön meg arról, hogy azok nem léteznek, hogy a "Hiányzó" tulajdonság értéke. Az alapértelmezett érték: "E".|
+| Force| Ha a megadott beállításkulcs megtalálható, **kényszerített** felülírja azt az új értéket. Ha a beállításkulcs törlése az alkulcsok, ez kell lennie **$true** |
+| Hexadecimális| Azt jelzi, ha adatokat hexadecimális formátumban kell megadni. Ha meg van adva, a DWORD/Négyszó típusú érték hexadecimális formátumban jelenik meg. Más fájltípusok nem érvényes. Az alapértelmezett érték **$false**.|
+| DependsOn| Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója letiltása, a futtatni kívánt parancsfájl először van **ResourceName** és a típusa **ResourceType**, ez a tulajdonság használata esetén `DependsOn = "[ResourceType]ResourceName"`.|
+| Értékadat| A beállításazonosító adatait.|
+| ÉrtékTípusa| Az érték típusát jelzi. A támogatott típusok a következők: karakterlánc (REG_SZ), a bináris (REG-bináris), a Dword 32-bit-es (REG_DWORD), a Négyszó típusú 64 bites (REG_QWORD), a karakterláncsoros (REG_MULTI_SZ), bővíthető karakterlánc (REG_EXPAND_SZ) |
 
 ## <a name="example"></a>Példa
-Ez a példa biztosítja, hogy "ExampleKey" nevű kulcs megtalálható-e a **HKEY\_helyi\_gép** struktúra.
+
+Ebben a példában biztosítja, hogy "ExampleKey" nevű kulcs megtalálható az **HKEY\_helyi\_gép** hive.
+
 ```powershell
 Configuration RegistryTest
 {
@@ -74,5 +61,5 @@ Configuration RegistryTest
 }
 ```
 
->**Megjegyzés:** egy beállításjegyzék-beállítást, a módosítás a **HKEY\_aktuális\_felhasználói** hive megköveteli, hogy a konfigurációs felhasználói hitelesítő adatokkal, nem pedig a rendszer fut-e.
->Használhatja a **PsDscRunAsCredential** meg felhasználói hitelesítő adatok a konfigurációs tulajdonság. Egy vonatkozó példáért lásd: [DSC futtató felhasználó hitelesítő adataival](runAsUser.md)
+> [!NOTE]
+> Egy beállításjegyzékbeli beállítás módosításával a **HKEY\_aktuális\_felhasználói** hive megköveteli, hogy a konfigurációs felhasználói hitelesítő adatokkal, nem pedig a rendszer fut-e. Használhatja a **PsDscRunAsCredential** tulajdonságot adja meg a hitelesítő adatokat a konfigurációt. Egy vonatkozó példáért lásd: [DSC futtatása felhasználói hitelesítő adatokkal](runAsUser.md).

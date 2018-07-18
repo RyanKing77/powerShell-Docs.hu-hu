@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Jegyzékfájl értékek elem, amely hatással van a PowerShell-galéria felhasználói felülete
-ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893477"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093973"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Jegyzékfájl értékek elem, amely hatással van a PowerShell-galéria felhasználói felülete
 
@@ -84,65 +84,67 @@ Referenciaként itt található néhány leggyakrabban használt címkék 12/14/
 Bizonyos esetekben vannak hasonló, de talán kevésbé ideális lehetőségek mellett a címke szerepel.
 Ajánlott eljárás a javasolt címkét használják, amelyek kevesebb zaj eredményez, és jobb keresési eredmények a fogyasztók számára fontos.
 
-| **Előnyben részesített címke** | **Alternatívák és megjegyzések** |
+| Előnyben részesített címke | Alternatívák és megjegyzések |
 | --- | --- |
-| **Azure** |  |
-| **DSC** | Kevésbé kívánatosak DesiredStateConfiguration, túl hosszú |
-| **ResourceManager** | ARM feldolgozók csoportja leírására szolgál, és ne használja az Azure Resource Manager | **DSCResourceKit** |  |
-| **SQL** |  |
-| **AWS** |  |
-| **DSCResource** |  |
-| **Automation** |  |
-| **REST** |  |
-| **ActiveDirectory** | AD jelenleg nem használja önmagában  |
-| **SQLServer** |  |
-| **DBA** |  |
-| **Biztonság** | Defense rendszer kevésbé pontos |
-| **Adatbázis** | Kevésbé kívánatos (többes számú) adatbázisok |
-| **Fejlesztés és üzemeltetés** |  |
-| **Windows** |  |
-| **Build** |  |
-| **Üzembe helyezés** | Üzembe helyezése kevésbé gyakran használt |
-| **Felhő** |  |
-| **GIT** |  |
-| **Teszt** | Tesztelése kevésbé kívánatos |
-| **VersionControl** | Verzió: kevésbé pontos, bár a gyakrabban használt  |
-| **Logging** | Előnyben részesített műveletként naplózás használata |
-| **Log** | Egy dolog Log előnyben részesített használata |
-| **Biztonsági mentés** |  |
-| **IaaS** |  |
-| **Linux** |  |
-| **IIS** |  |
-| **AzureAutomation** |  |
-| **Storage** |  |
-| **GitHub** |  |
-| **Json** |  |
-| **Exchange** |  |
-| **Hálózati** | Hálózatkezelés hasonlóan, a kevésbé gyakran használt |
-| **SharePoint** |  |
-| **Jelentéskészítés** | Jelentési művelet, a jelentés egy dolog |
-| **A jelentés** | A jelentés azért is lehet |
-| **WinRM** |  |
-| **Figyelés** |  |
-| **VSTS** |  |
-| **Excel** |  |
-| **Google** |  |
-| **Szín** |  |
-| **DNS** |  |
-| **Office365** | Célszerű a helyesírás-ellenőrzés Office ki. Office 365 ritkább esetben használja, bár a rövidebb | **Gitlab** |  |
-| **Pester** |  |
-| **AzureAD** |  |
-| **HTML** |  |
-| **Hyper-V** | Hyper-v rendszer kevésbé gyakori címkeként |
-| **Konfiguráció** |  |
-| **ChatOps** |  |
-| **PackageManagement** |  |
-| **WMI** |  |
-| **Tűzfal** |  |
-| **Docker** |  |
-| **Appveyor** |  |
-| **AzureRm** | Elsősorban az AzureRM-modulok használják |
-| **Zip** |  |
-| **MSI** |  |
-| **Mac** |  |
-| **PoshBot** |  |
+| Azure |  |
+| DSC | Kevésbé kívánatosak DesiredStateConfiguration, túl hosszú |
+| Erőforrás-kezelő | ARM feldolgozók csoportja leírására szolgál, és ne használja az Azure Resource Manager |
+| DSCResourceKit |  |
+| AZ SQL |  |
+| AWS |  |
+| DSCResource |  |
+| Automatizálás |  |
+| REST |  |
+| ActiveDirectory | AD jelenleg nem használja önmagában  |
+| SQL Server |  |
+| DBA |  |
+| Biztonság | Defense rendszer kevésbé pontos |
+| Adatbázis | Kevésbé kívánatos (többes számú) adatbázisok |
+| Fejlesztés és üzemeltetés |  |
+| Windows |  |
+| Build |  |
+| Telepítés | Üzembe helyezése kevésbé gyakran használt |
+| Felhő |  |
+| A GIT |  |
+| Teszt | Tesztelése kevésbé kívánatos |
+| VersionControl | Verzió: kevésbé pontos, bár a gyakrabban használt  |
+| Naplózás | Előnyben részesített műveletként naplózás használata |
+| Napló | Egy dolog Log előnyben részesített használata |
+| Tartalék |  |
+| IaaS |  |
+| Linux |  |
+| IIS |  |
+| AzureAutomation |  |
+| Tárolás |  |
+| GitHub |  |
+| JSON-ban |  |
+| Exchange |  |
+| Hálózat | Hálózatkezelés hasonlóan, a kevésbé gyakran használt |
+| SharePoint |  |
+| Jelentés | Jelentési művelet, a jelentés egy dolog |
+| A jelentés | A jelentés azért is lehet |
+| A Rendszerfelügyeleti webszolgáltatások |  |
+| Figyelés |  |
+| VSTS-BEN |  |
+| Excel |  |
+| Google |  |
+| Szín |  |
+| DNS |  |
+| Office 365 | Célszerű a helyesírás-ellenőrzés Office ki. Office 365 ritkább esetben használja, bár a rövidebb |
+| Gitlab |  |
+| Pester |  |
+| Azure ad |  |
+| HTML |  |
+| Hyper-V | Hyper-v rendszer kevésbé gyakori címkeként |
+| Konfiguráció |  |
+| ChatOps |  |
+| A PackageManagement |  |
+| WMI |  |
+| Tűzfal |  |
+| Docker |  |
+| Appveyor |  |
+| AzureRm | Elsősorban az AzureRM-modulok használják |
+| Zip |  |
+| MSI |  |
+| Mac |  |
+| PoshBot |  |

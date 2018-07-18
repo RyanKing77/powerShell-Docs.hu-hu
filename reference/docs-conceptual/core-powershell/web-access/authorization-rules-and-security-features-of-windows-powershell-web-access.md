@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell, a parancsmag
 title: A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói
-ms.openlocfilehash: a3a743d83ae3e387ee51056042c98753104e925e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893722"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094245"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói
 
@@ -163,9 +163,8 @@ Az alábbiakban bemutatunk néhány példát erre a témakörre.
 
 - A rendszergazda beállított egy privát tesztkörnyezetet, és szeretné engedélyezni az összes jogosult hálózati felhasználó számára a hozzáférést a hálózaton található összes olyan számítógéphez, amelyhez általában hozzáférhetnek, az összes olyan munkamenet-konfigurációhoz való hozzáféréssel, amelyhez általában hozzáférhetnek. Mivel ez egy privát tesztkörnyezet, a rendszergazda egy nem biztonságos engedélyezési szabályt hoz létre. – A rendszergazda futtatja a parancsmagot `Add-PswaAuthorizationRule * * *`, helyettesítő karaktert használja, amely **\*** minden felhasználó, az összes számítógép és az összes konfiguráció képviseletére. – Ez a szabály megegyezik a következők közül: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
-  >[!NOTE]
-  >
-  >Ez a szabály biztonságos környezetben nem ajánlott, és figyelmen kívül hagyja a rétegre vonatkozó engedélyezési szabályt Windows PowerShell-elérés által biztosított biztonsági.
+  > [!NOTE]
+  > Ez a szabály biztonságos környezetben nem ajánlott, és figyelmen kívül hagyja a rétegre vonatkozó engedélyezési szabályt Windows PowerShell-elérés által biztosított biztonsági.
 
 - A rendszergazdának egy olyan környezetben kell engedélyeznie a felhasználók számára a célszámítógépekhez történő csatlakozást, amely egyaránt tartalmaz munkacsoportokat és tartományokat, ahol munkacsoportok számítógépeit alkalmanként a tartományokban lévő célszámítógépekhez való csatlakozáshoz használják, a tartományokban levő számítógépeket pedig alkalmanként a munkacsoportokban lévő célszámítógépekhez való csatlakozáshoz használják. A rendszergazda egy átjárókiszolgáló *PswaServer*, munkacsoportban; és a célszámítógép *srv1.contoso.com* tartományban van. Felhasználói *Chris* jogosult helyi felhasználója a munkacsoport átjárókiszolgálónak és a cél számítógépen is van. A munkacsoport-kiszolgálón a felhasználónév *chrisLocal*; a felhasználó neve, a célszámítógépen pedig *contoso\\chris*. Ahhoz, hogy engedélyezze Chris számára a srv1.contoso.com célszámítógéphez való hozzáférést, rendszergazda a következő szabályt adja hozzá.
 
@@ -180,10 +179,9 @@ Az előző esetben a Windows PowerShell-elérés a cél számítógéphez sikere
 
 1. Hitelesítés a munkacsoport átjárókiszolgálónak egy felhasználónevet a következő formátumban hozzáadásával *kiszolgáló_neve*\\*felhasználónév* az engedélyezési szabály
 
-2. Hitelesítés a célszámítógépen a bejelentkezési oldalon a megadott másodlagos hitelesítő adatok használatával a **választható csatlakozási beállítások** terület
+1. Hitelesítés a célszámítógépen a bejelentkezési oldalon a megadott másodlagos hitelesítő adatok használatával a **választható csatlakozási beállítások** terület
 
    > [!NOTE]
-   >
    > Ha az átjáró-számítógép és a célszámítógép különböző munkacsoportokban vagy tartományokban vannak, megbízhatósági kapcsolatot kell létrehozni a két munkacsoport-számítógép, a két tartomány vagy a munkacsoport és a tartomány között. Ez a kapcsolat nem konfigurálható a Windows PowerShell-elérés engedélyezési szabályokra vonatkozó parancsmagjainak használatával. Az engedélyezési szabályok nem határoznak meg megbízhatósági kapcsolatot a számítógépek között, csak a felhasználóknak engedélyezik, hogy az adott célszámítógépekhez és munkamenet-konfigurációkhoz csatlakozzanak. Különböző tartományok közötti megbízhatósági kapcsolat konfigurálásával kapcsolatos további információkért lásd: [létrehozása tartományi és erdőszintű Megbízhatóságok](https://technet.microsoft.com/library/cc794775.aspx").
    > További információ a munkacsoport-számítógépek hozzáadása a megbízható gazdagépek listájához: [távoli felügyelet a Kiszolgálókezelővel](https://technet.microsoft.com/library/dd759202.aspx)
 

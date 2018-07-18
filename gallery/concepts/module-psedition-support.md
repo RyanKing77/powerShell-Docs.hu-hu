@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: Kompatibilis PowerShell-kiadások rendelkező modulok
-ms.openlocfilehash: 653cfa82be9d0150da8d8765c96e35be99497262
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 2b11d833e7abc50f26b1581f678b9509a098c2c5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892321"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093524"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Kompatibilis PowerShell-kiadások rendelkező modulok
 
@@ -169,7 +169,6 @@ $binaryModule = Import-Module -Name $binaryModulePath -PassThru
 $PSModule.OnRemove = {
     Remove-Module -ModuleInfo $binaryModule
 }
-
 ```
 
 ### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>2. lehetőség: A psd1 kiterjesztésű fájl $PSEdition változót használja a megfelelő DLL-EK és a beágyazott/szükséges modulok betöltése
@@ -252,13 +251,11 @@ Mode                LastWriteTime         Length Name
 Modulok PSEdition_Desktop és PSEdition_Core címkék nélküli minősülnek jól működnek az PowerShell asztali verziója esetén.
 
 ```powershell
-
 # Find modules supported on PowerShell Desktop edition
 Find-Module -Tag PSEdition_Desktop
 
 # Find modules supported on PowerShell Core editions
 Find-Module -Tag PSEdition_Core
-
 ```
 
 ## <a name="more-details"></a>További részletek

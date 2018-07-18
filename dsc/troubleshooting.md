@@ -1,35 +1,35 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC hibaelhárítása
-ms.openlocfilehash: c08f91b514aae438578fa278228fe5ec879a4012
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1e8bfdf3540e65e3be94bf6a9b04e7d3b14ff044
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190009"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094068"
 ---
 # <a name="troubleshooting-dsc"></a>A DSC hibaelhárítása
 
->Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
+>A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
-Ez a témakör ismerteti azokat a módszereket DSC elhárításához, amikor probléma merül fel.
+Ez a témakör ismerteti azokat a módszereket a DSC elhárításához, ha problémák merülnek fel.
 
 ## <a name="winrm-dependency"></a>A WinRM-függőség
 
-Windows PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) attól függ, hogy a Rendszerfelügyeleti webszolgáltatások. Rendszerfelügyeleti webszolgáltatások a Windows Server 2008 R2 és Windows 7 alapértelmezés szerint nincs engedélyezve. Futtatás ```Set-WSManQuickConfig```, egy Windows PowerShell az emelt szintű ahhoz, hogy a WinRM-munkamenetben.
+Windows PowerShell Desired State Configuration (DSC) attól függ, hogy a Rendszerfelügyeleti webszolgáltatások. A Rendszerfelügyeleti webszolgáltatások a Windows Server 2008 R2 és Windows 7 alapértelmezés szerint nincs engedélyezve. Futtatás ```Set-WSManQuickConfig```, egy Windows PowerShell az emelt szintű ahhoz, hogy a WinRM-munkamenetben.
 
 ## <a name="using-get-dscconfigurationstatus"></a>Get-DscConfigurationStatus használatával
 
-A [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) parancsmag konfiguráció állapota információ lekérése a cél-csomópont.
-Gazdag objektumot ad vissza, amely tartalmazza-e a konfiguráció futtatása sikeres volt-e magas szintű információkat. Akkor is elmerülne a rendszer a objektumba felderítéséhez futtassa, mint a konfigurációs adatait:
+A [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) parancsmag konfigurációs állapotára vonatkozó információkat olvas be egy célcsomóponttal.
+Egy gazdag objektumot ad vissza, amely tartalmazza-e a konfigurációs Futtatás sikeres volt-e magas szintű információkat. Meg is tárja az objektum felderítését, például futtassa a konfiguráció részleteit:
 
-* Az erőforrásokat, melyeknél nem sikerült
-* Minden erőforrás újraindítást kérő
-* Futtassa a konfigurációs időpontjában meta-konfigurációs beállítások
-* Etc.
+- Az összes erőforrást, amely nem sikerült
+- Bármely erőforrás kért újraindítás
+- Meta-konfigurációs beállítások konfigurációs időpontjában futtatása
+- Etc.
 
-A következő paraméterhalmaz adja vissza az utolsó futtatása konfigurációra vonatkozó információk:
+A következő paraméterkészletet adja vissza a legutóbbi konfiguráció futtatása állapotinformációit:
 
 ```powershell
 Get-DscConfigurationStatus  [-CimSession <CimSession[]>]
@@ -37,7 +37,7 @@ Get-DscConfigurationStatus  [-CimSession <CimSession[]>]
                             [-AsJob]
                             [<CommonParameters>]
 ```
-A következő paraméterhalmaz adja vissza az összes korábbi konfigurációs futás esetén:
+A következő paraméterkészletet az összes korábbi konfigurációs futtatások állapotának adatait adja vissza:
 
 ```powershell
 Get-DscConfigurationStatus  -All
@@ -80,15 +80,15 @@ StartDate               :   11/24/2015  3:44:56
 PSComputerName          :
 ```
 
-## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>A parancsprogram nem futott: parancsfájl hibáinak diagnosztizálásához naplózza a DSC használata
+## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>A parancsfájl futtatásának megakadályozása: DSC használatával naplózza a parancsprogram-hibák diagnosztizálása
 
-Minden Windows szoftverek, például DSC rögzíti hibák és események [naplók](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx) , hogy megtekinthetők a [Eseménynapló](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer). Ezek a naplók vizsgálata azt segítenek megérteni miért egy adott művelethez nem sikerült, és a jövőben megakadályozása hiba. Konfigurációs parancsfájlok írása megkapni, hogy követési hibák könnyíti meg Szerző, a konfiguráció a DSC elemzési eseménynaplóban az előrehaladását úgy követheti nyomon a DSC-napló erőforrás segítségével.
+Minden Windows szoftverek, például DSC rögzíti a hibák és események [naplók](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx) tekinthetnek meg az a [Eseménynapló](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer). Ezek a naplók vizsgálata segítségével megtudhatja, miért nem sikerült egy adott művelet, és hogyan hibája megakadályozza a jövőben. Konfigurációs parancsfájlok írása lehet megkülönböztetni, ezért a követési hibákat egyszerűbb, Szerző, a konfiguráció a DSC elemzési eseménynaplójában az előrehaladását úgy követheti nyomon a DSC-Log erőforrás használatával.
 
 ## <a name="where-are-dsc-event-logs"></a>Hol találhatók a DSC-eseménynaplók?
 
-Az Eseménynapló DSC események szerepelnek: **alkalmazások és szolgáltatások Logs/Microsoft/Windows/kívánt állapot konfigurációs**
+Az Eseménynapló DSC események szerepelnek: **alkalmazások és szolgáltatások Logs/Microsoft/Windows/Desired State Configuration**
 
-A megfelelő PowerShell-parancsmag [Get-WinEvent](https://technet.microsoft.com/library/hh849682.aspx), is futtatható tekintse át az eseménynaplókat:
+A megfelelő PowerShell-parancsmag [Get-WinEvent](https://technet.microsoft.com/library/hh849682.aspx), tekintse meg az eseménynaplókat, is futtathatók:
 
 ```
 PS C:\> Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
@@ -98,15 +98,15 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-A fentiek van-e DSC elsődleges napló neve **Microsoft -> Windows -> DSC** (a Windows egyéb napló nevek nem itt látható kivonatosan mutatja). Az elsődleges neve van hozzáfűzve csatornát létrehozni a teljes nevét. A DSC-motor ír főként a naplók három típusa: [működési, elemzési és hibakeresési naplók](https://technet.microsoft.com/library/cc722404.aspx). Mivel az elemzési és hibakeresési naplók alapértelmezés szerint ki van kapcsolva, engedélyezze a őket az eseménynaplóban. Ehhez nyissa meg az eseménynaplót az eseménynaplóban megjelenítése írja be a Windows PowerShell; vagy kattintson a **Start** gombra, majd **Vezérlőpult**, kattintson a **felügyeleti eszközök**, és kattintson a **Eseménynapló**. Az a **nézet** az eseménynaplóban, menüjében kattintson **elemzési és hibakeresési naplók megjelenítése**. A naplófájl neve a analytic channel bejegyzést **elemzési Microsoft-Windows-Dsc**, és a hibakeresési csatorna **Microsoft-Windows-Dsc/Debug**. Is használhatja a [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) segédprogram a naplók engedélyezéséhez az alábbi példában látható módon.
+A fentiek DSC tartozó elsődleges naplófájl neve: **Microsoft -> Windows -> DSC** (a Windows más napló neve nem jelennek itt kivonatosan). Az elsődleges név a rendszer hozzáfűzi a csatorna neve hozhat létre a naplófájl teljes neve. A DSC motor elsősorban három típusú naplók írja: [Operational, elemzési és hibakeresési naplók](https://technet.microsoft.com/library/cc722404.aspx). Mivel az elemzési és hibakeresési naplók alapértelmezés szerint ki van kapcsolva, engedélyezze a őket az eseménynaplóban. Ehhez nyissa meg az eseménynaplót a Windows PowerShellben; Show-Eseménynapló beírásával vagy kattintson a **Start** gombra, majd **Vezérlőpult**, kattintson a **felügyeleti eszközök**, és kattintson a **Eseménynapló**. Az a **nézet** az eseménynaplóban menüjében kattintson **elemzési és hibakeresési naplók megjelenítése**. A naplófájl neve az elemzési csatorna **elemzési Microsoft-Windows-Dsc**, és a hibakeresési csatorna **Microsoft-Windows-Dsc/Debug**. Is használhatja a [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) segédprogram a naplók engedélyezéséhez az alábbi példában látható módon.
 
 ```powershell
 wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
 ```
 
-## <a name="what-do-dsc-logs-contain"></a>A DSC-naplók tartalmazzák
+## <a name="what-do-dsc-logs-contain"></a>Mi a DSC-naplók tartalmaznak?
 
-A DSC-naplók keresztül a három naplózási csatornák, az üzenet fontosságát alapján vannak osztva. A DSC műveleti napló az összes hibaüzenet tartalmazza, és a probléma azonosításához használható. Az elemzési naplóját nagyobb mennyiségű esemény rendelkezik, és azonosíthatja, ahol egy vagy több hiba történt. Ez a csatorna a részletes üzenetek is tartalmaz, (ha van ilyen). A hibakeresési napló tartalmazza a naplófájlokat, amelyek azt segítenek megérteni, hogyan a hibák fordultak elő. A DSC-eseményüzenetek felépítése úgy, hogy minden üzenet egy DSC művelet egyedileg jelölő feladatazonosítóval kezdődik. Az alábbi példa megkísérli az üzenet kérése az első esemény naplózása működési DSC naplóba.
+DSC-naplók alatt a három naplózási csatornák, az üzenet fontossága alapján vannak osztva. A DSC a műveleti napló az összes hibaüzenet tartalmazza, és a probléma meghatározásához használható. Az elemzési naplóját nagyobb mennyiségű esemény rendelkezik, és azonosíthatja, ahol a hiba lépett fel. Ez a csatorna is tartalmaz részletes üzenetek a (ha van). A hibakeresési napló tartalmazza, amelyek segítségével jobban megértheti, hogy a hiba történt a naplók. DSC-eseményüzenetek struktúrája úgy, hogy minden eseményüzenet kezdődik, amely egyedileg jelöli egy DSC művelet Feladatazonosítót. Az alábbi példa próbál meg az első esemény a műveleti napló DSC bejelentkezett szerezze be az üzenetet.
 
 ```powershell
 PS C:\> $AllDscOpEvents = Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
@@ -116,14 +116,14 @@ Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 Consistency engine was run successfully.
 ```
 
-Egy adott struktúra, amely lehetővé teszi a felhasználó az összegyűjtött eseményeket egy DSC feladatból DSC események naplózása. A struktúra a következőképpen történik:
+DSC-események egy adott struktúra, amely lehetővé teszi a felhasználó az egyik DSC-feladat eseményeket naplózza. A struktúra a következőképpen történik:
 
-**Feladat azonosítója: <Guid>**
-**<Event Message>**
+**Feladatazonosító: \<Guid\>**
+**\<eseményüzenet\>**
 
-## <a name="gathering-events-from-a-single-dsc-operation"></a>Egy DSC művelettel eseményeinek gyűjtése
+## <a name="gathering-events-from-a-single-dsc-operation"></a>DSC egyetlen műveletben eseményeinek gyűjtése
 
-A DSC-eseménynaplók különböző DSC műveletei által előállított eseményeket tartalmaz. Azonban általában lesz a részletességgel aggódik egy adott művelet. Összes DSC napló csoportosíthatók az egyedi minden DSC művelethez feladat-azonosító tulajdonsággal. Minden DSC események első tulajdonság értéke jelenik meg a Feladatazonosítót. Az alábbi lépések ismertetik időtartamok csoportosított tömb struktúrában összes esemény megjelenítése.
+DSC-eseménynaplók DSC különféle műveletek által előállított eseményeket tartalmaz. Azonban általában fogja fontos szempont a részletes csak egy adott műveletet. Minden DSC-naplók csoportosíthatók a feladat azonosító tulajdonság, amely minden DSC művelet esetében egyedi legyen. A feladat azonosítója első tulajdonság értékét minden DSC-esemény jelenik meg. A következő lépések azt ismertetik, hogyan gyűlnek szerkezetben vannak csoportosítva tömb összes eseményt.
 
 ```powershell
 <##########################################################################
@@ -154,7 +154,7 @@ $DscEvents=[System.Array](Get-WinEvent "Microsoft-Windows-Dsc/Operational") `
 $SeparateDscOperations = $DscEvents | Group {$_.Properties[0].value}
 ```
 
-Itt, a változó `$SeparateDscOperations` tartalmazza a naplók a feladat-azonosítók szerint csoportosítva. A változó minden tömbelem másik DSC műveletet, amely hozzáférést biztosít a naplókat további információt által naplózott eseményeket csoportja.
+Itt, a változó `$SeparateDscOperations` tartalmazza a naplók a feladat-azonosítók szerint csoportosítva. A változó egyes tömbelemeken különböző DSC művelet, engedélyezi a hozzáférést a naplók további információ a naplózott eseményeket egy csoportját jelöli.
 
 ```
 PS C:\> $SeparateDscOperations
@@ -184,11 +184,11 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
 ```
 
-Az adatok a változóban kibonthatja `$SeparateDscOperations` használatával [Where-Object](https://technet.microsoft.com/library/ee177028.aspx). Az alábbiakban öt forgatókönyvek, amelyekben érdemes DSC hibaelhárítási adatokat nyerhet ki:
+Az adatok a változóban kibonthatja `$SeparateDscOperations` használatával [Where-Object](https://technet.microsoft.com/library/ee177028.aspx). Öt forgatókönyvek, amelyben érdemes DSC hibaelhárítási adatokat nyerhet ki a következők:
 
-### <a name="1-operations-failures"></a>1: műveletek hibák
+### <a name="1-operations-failures"></a>1: sikertelen műveletek
 
-Minden eseményhez [súlyossági szintek](https://msdn.microsoft.com/library/dd996917(v=vs.85)). Ezek az információk segítségével azonosíthatja a hibaesemények:
+Az összes esemény rendelkezik [súlyossági szintek](https://msdn.microsoft.com/library/dd996917(v=vs.85)). Ezek az információk segítségével azonosíthatja a hibaesemények:
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
@@ -197,9 +197,9 @@ Count Name                      Group
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
 ```
 
-### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2: műveletek részleteit futtassa az utolsó fél óra
+### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2: a műveletek részletei futtassa az elmúlt fél órában
 
-`TimeCreated`, minden Windows-esemény tulajdonsága jelzi, amikor az esemény létrejött. Ezt a tulajdonságot, egy adott dátum/idő objektummal összehasonlításával összes esemény szűrésére használható:
+`TimeCreated`, minden Windows esemény-tulajdonságra állapotok a az esemény létrehozásának ideje. Ennek a tulajdonságnak egy adott dátum/idő objektum összehasonlítása az összes esemény szűrésére használható:
 
 ```powershell
 PS C:\> $DateLatest = (Get-Date).AddMinutes(-30)
@@ -209,9 +209,9 @@ Count Name                      Group
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}
 ```
 
-### <a name="3-messages-from-the-latest-operation"></a>3: a legutóbbi művelet üzenetek
+### <a name="3-messages-from-the-latest-operation"></a>3: a legutóbbi művelet üzeneteit
 
-A legutóbbi művelet tárolja az első index a tömb csoport `$SeparateDscOperations`. A csoport üzenetek 0. index lekérdezése adja vissza a legutóbbi művelet üzenetek:
+A legutóbbi művelet tárolja az első index a tömb csoport `$SeparateDscOperations`. A csoport üzenetek 0. index lekérdezése a legutóbbi műveletet üzenetek adja vissza:
 
 ```powershelll
 PS C:\> $SeparateDscOperations[0].Group.Message
@@ -231,9 +231,9 @@ Displaying messages from built-in DSC resources:
  Message : [INCH-VM]:                            [] Consistency check completed.
 ```
 
-### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4: legutóbbi meghiúsult műveletek a naplóba hibaüzenetek
+### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4: legutóbbi sikertelen műveletek a naplóba hibaüzenetek
 
-`$SeparateDscOperations[0].Group` a legutóbbi művelet eseményeket tartalmaz. Futtassa a `Where-Object` parancsmag használatával az események szűréséhez szintű megjelenítendő neve alapján. Eredmények tárolódnak a `$myFailedEvent` változó, amely lehet további minél esemény üzenet:
+`$SeparateDscOperations[0].Group` a legutóbbi művelet események egy meghatározott készletének tartalmazza. Futtassa a `Where-Object` parancsmag, amellyel az események szűréséhez állítsa szintű megjelenített név alapján. Az eredmények tárolása az `$myFailedEvent` változó, amely lehet további minél az eseményüzenet beolvasásához:
 
 ```powershell
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
@@ -248,7 +248,7 @@ Error Code : 1
 
 ### <a name="5-all-events-generated-for-a-particular-job-id"></a>5: összes eseményt hoz létre egy adott feladat.
 
-`$SeparateDscOperations` egy tömb csoportok, amelyek mindegyikének a neve megegyezik a feladat egyedi azonosítója. Futtassa a `Where-Object` parancsmag is kibonthat egy ezeket a csoportokat az eseményeket, amelyek egy adott feladat azonosítója:
+`$SeparateDscOperations` egy tömb, csoportok, amelyek mindegyike rendelkezik-e a neve megegyezik a feladat egyedi azonosítója. Futtassa a `Where-Object` parancsmagot, kibonthatja a ezeket a csoportokat az eseményeket, amelyek egy adott feladat azonosítója:
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -263,15 +263,15 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 4:33:24 PM          4120 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...
 ```
 
-## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>Naplók segítségével xDscDiagnostics DSC elemzése
+## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>Naplók elemzéséhez a DSC xDscDiagnostics segítségével
 
-**xDscDiagnostics** egy PowerShell-modul, amely számos funkcióval segíti a számítógépre a DSC-hibák elemzése áll. Ezek a funkciók segítségével azonosítja az összes helyi események az elmúlt DSC műveletek vagy DSC események távoli számítógépeken (az érvényes hitelesítő adatok). Itt a DSC-művelet kifejezés egy egyetlen egyedi DSC végrehajtási a kezdetektől végéhez meghatározásához. Például `Test-DscConfiguration` egy külön DSC művelet lenne. Hasonlóképpen, minden más parancsmag DSC (például `Get-DscConfiguration`, `Start-DscConfiguration`stb) minden azonosítható DSC külön műveletként. A függvények van arra a [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics).
-Súgó áll rendelkezésre futtatásával `Get-Help <cmdlet name>`.
+**xDscDiagnostics** egy PowerShell-modul, amely számos funkciót, amely segíthet a gépen a DSC hibák elemzése áll. Ezek a függvények is segít azonosítani az elmúlt DSC műveletek összes helyi esemény vagy a távoli számítógépeken lévő DSC események (érvénytelen hitelesítő adatok). Az előfizetési időszak DSC művelet itt, az egy egyetlen egyedi DSC végrehajtása a kezdetektől a teljes körű meghatározására szolgál. Ha például `Test-DscConfiguration` lenne egy külön DSC művelet. Ehhez hasonlóan más parancsmagjáról DSC (például `Get-DscConfiguration`, `Start-DscConfiguration`használatához és így tovább) minden azonosítható külön DSC műveletként. A függvények vannak írva [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics).
+Súgó áll rendelkezésre a futó `Get-Help <cmdlet name>`.
 
-### <a name="getting-details-of-dsc-operations"></a>A DSC-műveletek-információk lekérdezése
+### <a name="getting-details-of-dsc-operations"></a>DSC-műveletek részleteinek beolvasása közben
 
-A `Get-xDscOperation` funkció lehetővé teszi, hogy az eredmények, amelyek egy vagy több számítógépen futnak a DSC-műveletek található, és visszahelyezi a minden egyes DSC művelet által létrehozott olyan objektum, amely az események gyűjteményét tartalmazza.
-Például a következő kimenet három parancsot futtatná. Az átadott, és két, a másik nem. Ezekkel az eredményekkel foglalja össze a kimenetét `Get-xDscOperation`.
+A `Get-xDscOperation` funkció lehetővé teszi a keresse meg az eredményeket a DSC-műveletek, amelyek egy vagy több számítógépen futnak, és adja vissza minden egyes DSC művelet által létrehozott olyan objektum, amely az események gyűjteményét tartalmazza.
+Például az alábbi kimenet három parancs futtatná. Az elsőt átadva, és a másik két nem sikerült. Ezekkel az eredményekkel foglalja össze a kimenetét `Get-xDscOperation`.
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation
@@ -281,10 +281,9 @@ ComputerName   SequenceId TimeCreated           Result   JobID                  
 SRV1   1          6/23/2016 9:37:52 AM  Failure  9701aadf-395e-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   2          6/23/2016 9:36:54 AM  Failure  7e8e2d6e-395c-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   3          6/23/2016 9:36:54 AM  Success  af72c6aa-3960-11e6-9165-00155d390509  {@{Message=Operati...
-
 ```
 
-Megadhatja, amelyet csak a legutóbbi művelet használatával a `Newest` paraméter:
+Azt is beállíthatja, hogy eredményeket össze szeretné csak a legutóbbi műveletek használatával a `Newest` paramétert:
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation -Newest 5
@@ -297,11 +296,11 @@ SRV1   4          6/23/2016 4:36:54 PM  Success  5c06402a-399b-11e6-9165-00155d3
 SRV1   5          6/23/2016 4:36:51 PM  Success                                        {@{Message=; TimeC...
 ```
 
-### <a name="getting-details-of-dsc-events"></a>A DSC-események adatainak lekérdezése
+### <a name="getting-details-of-dsc-events"></a>DSC-esemény részleteinek beolvasása közben
 
-A `Trace-xDscOperation` parancsmag visszaad egy objektumot tartalmazó események, az esemény típusok gyűjteményét, és az üzenet kimeneti jön létre egy adott DSC-műveletből. Általában, amikor talált hiba használó műveletek `Get-xDscOperation`, szeretné nyomon követni Ez a művelet, ha szeretné tudni, amely az események hibáját okozta.
+A `Trace-xDscOperation` parancsmag események, az esemény típusok gyűjteményét tartalmazó objektumot ad vissza, és az üzenet kimeneti egy adott DSC műveletből létrehozott. Általában amikor talált hiba segítségével műveletek `Get-xDscOperation`, meg kellene nyomon követése a működést, és ismerje meg, amely az események hibáját okozta.
 
-Használja a `SequenceID` paraméter használatával beolvassa az eseményeket egy adott művelet egy adott számítógépen. Például, ha megad egy `SequenceID` a 9-es, `Trace-xDscOperaion` a nyomkövetési lekérése a DSC művelet, amely a legutóbbi művelet 9 volt:
+Használja a `SequenceID` paramétert az események beolvasása egy adott számítógép egy adott művelethez. Például, ha megad egy `SequenceID` , 9, `Trace-xDscOperaion` a DSC-műveletet, amely az utolsó művelet 9 volt a nyomkövetési adatok lekérése:
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -SequenceID 9
@@ -317,7 +316,7 @@ SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Job runs under the following LCM setti
 SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Operation Consistency Check or Pull completed successfully.
 ```
 
-Adja át a **GUID** adott DSC művelethez hozzárendelt (amelyet a `Get-xDscOperation` cmldet) az esemény részleteinek lekérése DSC művelet:
+Adja át a **GUID** egy adott DSC művelethez hozzárendelt (által visszaadott a `Get-xDscOperation` cmldet), az esemény részleteinek beolvasása a DSC-művelethez:
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -JobID 9e0bfb6b-3a3a-11e6-9165-00155d390509
@@ -356,9 +355,9 @@ SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull co
 SRV1   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCache.mof
 ```
 
-Vegye figyelembe a következőket, azóta `Trace-xDscOperation` események összesíti az elemző, a Debug és műveleti naplói, akkor arra fogja kérni, hogy ezek a naplók engedélyezése a fent leírt módon.
+Vegye figyelembe, hogy, mivel `Trace-xDscOperation` események összesíti az elemzési, a Debug és műveleti naplók, akkor arra fogja kérni, hogy ezek a naplók engedélyezése a fent leírtak szerint.
 
-Alternatív megoldásként adatokat gyűjthet a események kimenete mentésével `Trace-xDscOperation` egy változóba. A következő parancsok segítségével egy DSC művelethez tartozó összes esemény megjelenítése.
+Azt is megteheti, adatokat gyűjthet az események kimenete mentésével `Trace-xDscOperation` egy változóba. A következő parancsokat használhatja egy DSC művelethez tartozó összes esemény megjelenítéséhez.
 
 ```powershell
 PS C:\DiagnosticsTest> $Trace = Trace-xDscOperation -SequenceID 4
@@ -366,7 +365,7 @@ PS C:\DiagnosticsTest> $Trace = Trace-xDscOperation -SequenceID 4
 PS C:\DiagnosticsTest> $Trace.Event
 ```
 
-Megjelenik az azonos a `Get-WinEvent` parancsmag, például az alábbi kimenetben:
+Ez ugyanazokat az eredményeket, megjeleníti a `Get-WinEvent` parancsmagot, például az alábbi kimenetben:
 
 ```powershell
    ProviderName: Microsoft-Windows-DSC
@@ -402,16 +401,16 @@ TimeCreated                     Id LevelDisplayName Message
 6/23/2016 8:06:54 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
 ```
 
-Ideális esetben először használja `Get-xDscOperation` listázásához, az elmúlt néhány DSC konfigurációs a gépeken futtatja. Ezt követően ellenőrizheti bármely (a SequenceID vagy JobID használatával) egyetlen művelettel rendelkező `Trace-xDscOperation` felderítésére, mi ugyanúgy a háttérben.
+Ideális esetben először használja `Get-xDscOperation` sorolja az elmúlt néhány DSC konfigurációs futtatja a gépeken. Ezt követően tekintse meg minden olyan (a saját SequenceID vagy JobID) egyetlen művelettel rendelkező `Trace-xDscOperation` felderítheti, milyen zavartalanul a háttérben.
 
-### <a name="getting-events-for-a-remote-computer"></a>Egy távoli számítógépen eseményeinek beolvasása
+### <a name="getting-events-for-a-remote-computer"></a>Események beolvasása egy távoli számítógépen
 
-Használja a `ComputerName` paramétere a `Trace-xDscOperation` parancsmagot, hogy megkapja az esemény részleteit egy távoli számítógépen. Ezt megteheti, hogy kell hozzon létre egy tűzfalszabályt a távfelügyelet engedélyezéséhez a távoli számítógépen:
+Használja a `ComputerName` paraméterében a `Trace-xDscOperation` -parancsmaggal beolvasható az esemény részleteinek a távoli számítógépen. Előtt ezt megteheti, hogy hozzon létre egy tűzfalszabályt a távfelügyelet engedélyezéséhez a távoli számítógépen:
 
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow
 ```
-A hívás adhat meg, hogy a számítógép most `Trace-xDscOperation`:
+Most már megadhatja, hogy a számítógép a hívása `Trace-xDscOperation`:
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -ComputerName SRV2 -Credential Get-Credential -SequenceID 5
@@ -450,15 +449,15 @@ SRV2   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull co
 SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCach...
 ```
 
-## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>Az erőforrások nem frissíti: a gyorsítótár visszaállítása
+## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>Az erőforrások frissítése nem: a gyorsítótárának visszaállítása
 
-A DSC-motor valósul meg egy PowerShell-modul hatékonyságát célokra erőforrások gyorsítótárazza. Azonban ez problémát okozhat erőforrás szerzői és egyidejűleg tesztelése, mert DSC betölti a gyorsítótárazott verzió, a folyamat újraindításáig. Csak az újabb verzió betöltése DSC végrehajtásához, explicit módon leállítani a folyamatot a DSC-motor.
+A DSC motor megvalósítva, egy PowerShell-modul hatékonyság célokra erőforrások gyorsítótárazza. Azonban ez problémákat okozhat szerzői erőforrás és egyidejű tesztelése, mert DSC betölti a gyorsítótárazott verziót, amíg a folyamat újraindítása során. Győződjön meg arról, az újabb verzió betöltése DSC csak úgy, hogy explicit módon kill a DSC motor tartalmazó folyamat.
 
-Hasonlóképpen, ha futtatja `Start-DscConfiguration`, után, és egyéni erőforrás módosításának a módosítás lehet, hogy nem hajthatók végre, vagy, amíg a számítógép újraindítása után. Ennek az az oka DSC futtatja a WMI-szolgáltató gazdafolyamat (WmiPrvSE), és általában több példánya van WmiPrvSE fut egyszerre. Újraindításakor, a gazdagép folyamatot, és a gyorsítótár nincs bejelölve.
+Hasonlóképpen, ha futtatja `Start-DscConfiguration`, hozzáadásával és a egy egyéni erőforrás módosítása után a módosítás nem futhat, kivéve, ha vagy, amíg a számítógép újraindul. Ennek az az oka a DSC fut a WMI szolgáltató Gazdagépének folyamatánál (WmiPrvSE), és általában nincsenek WmiPrvSE fut egyszerre több példányát. Újraindítás, amikor a gazdagép-folyamat újraindítása, és a gyorsítótár nem lett kitörölve.
 
-Sikeres hasznosítsa újra a konfigurációt, és anélkül a gyorsítótárat kiürítheti, állítsa le és indítsa újra a gazdagép-folyamat. Ezt megteheti / példány alapon, amelynek során a folyamat azonosítására, állítsa le és indítsa újra. Másik lehetőségként használhatja `DebugMode`, ahogyan az alábbi töltse be újra a PowerShell DSC-erőforrás.
+Sikeres újrahasznosítása a konfigurációt, és a gyorsítótár ürítése újraindítás nélkül, állítsa le és indítsa újra a gazdagép-folyamat. Ez a példány történik, amelyek segítségével azonosíthatja a folyamat, állítsa le és indítsa újra a elvégezhető. Vagy használhat `DebugMode`, ahogyan az alábbi betölti a PowerShell DSC-erőforrás is.
 
-Azonosíthatja, melyik folyamat üzemelteti a DSC-motor, és állítsa le a / példány alapon, listázhatja a WmiPrvSE, amely üzemelteti a DSC-motor Folyamatazonosítója. Ezt követően frissítse a szolgáltatót, állítsa le a WmiPrvSE folyamatot az alábbi parancsok használatával, és futtassa **Start-DscConfiguration** újra.
+Azonosíthatja a folyamatok a DSC motor üzemelteti, és állítsa le a példány, listázhatja a WmiPrvSE, amely a DSC motor Folyamatazonosítója. Ezután frissítse a szolgáltatót, állítsa le a WmiPrvSE folyamatot az alábbi parancsok használatával, és futtassa **Start-DscConfiguration** újra.
 
 ```powershell
 ###
@@ -476,9 +475,9 @@ Get-Process -Id $dscProcessID | Stop-Process
 
 ## <a name="using-debugmode"></a>DebugMode használatával
 
-A DSC helyi Configuration Manager (LCM) használatára konfigurálhatja `DebugMode` mindig törölje a gyorsítótár, a gazdagép-folyamat újraindításakor. Ha beállítása **igaz**, azt eredményezi, hogy a motor mindig töltse be újra a PowerShell DSC-erőforrás. Miután a ír, az erőforrás, állíthatja vissza a **hamis** és a motor visszaállítja a modulok gyorsítótárazásának működése.
+A DSC helyi Configuration Manager (LCM) Konfigurálása használatára konfigurálhatja `DebugMode` mindig törölje a gyorsítótárban, a gazdagép-folyamat újraindításakor. Ha a beállítása **igaz**, azt eredményezi, hogy a motor, mindig töltse be újra a PowerShell DSC-erőforrás. Ha elkészült a-erőforrás írása állíthatja be, vissza **false (hamis)** és a motor visszaállítja a modulok gyorsítótárazásának működését.
 
-Az alábbiakban látható egy bemutató megjelenítendő hogyan `DebugMode` automatikusan is frissítheti a gyorsítótárban. Először az alapértelmezett konfiguráció vizsgáljuk meg:
+Az alábbiakban a megjeleníthető bemutatója hogyan `DebugMode` automatikusan frissítheti a gyorsítótárban. Először is lássuk az alapértelmezett konfiguráció:
 
 ```
 PS C:\> Get-DscLocalConfigurationManager
@@ -500,9 +499,9 @@ RefreshMode                    : PUSH
 PSComputerName                 :
 ```
 
-Láthatja, hogy `DebugMode` értéke **hamis**.
+Láthatja, hogy `DebugMode` értékre van állítva **hamis**.
 
-Beállítása a `DebugMode` bemutató, használja a következő PowerShell-erőforrás:
+Beállítása a `DebugMode` bemutató a következő PowerShell-erőforrásból:
 
 ```powershell
 function Get-TargetResource
@@ -534,7 +533,7 @@ function Test-TargetResource
 }
 ```
 
-Most, szerzői egy konfigurációval, a fenti erőforrás neve `TestProviderDebugMode`:
+Most hozhat létre egy konfigurációt a fenti erőforrás nevű `TestProviderDebugMode`:
 
 ```powershell
 Configuration ConfigTestDebugMode
@@ -553,7 +552,7 @@ ConfigTestDebugMode
 
 Látni fogja, hogy a fájl tartalmát: "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" van **1**.
 
-Most frissítse a szolgáltatót kódot használja a következő parancsfájlt:
+Most frissítse a szolgáltatót kódot az alábbi parancsfájl használatával:
 
 ```powershell
 $newResourceOutput = Get-Random -Minimum 5 -Maximum 30
@@ -588,7 +587,7 @@ function Test-TargetResource
 "@ | Out-File -FilePath "C:\Program Files\WindowsPowerShell\Modules\MyPowerShellModules\DSCResources\TestProviderDebugMode\TestProviderDebugMode.psm1
 ```
 
-Ezt a parancsfájlt hoz létre egy véletlenszerű számot, és ennek megfelelően frissíti a szolgáltató kódot. A `DebugMode` értéke HAMIS, a fájl tartalmát "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" soha nem módosulnak.
+Ez a szkript létrehoz egy véletlenszerű számot, és ennek megfelelően frissíti a szolgáltató kódot. A `DebugMode` hamis, a fájl tartalmát "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" soha nem módosulnak.
 
 Most, `DebugMode` való **igaz** konfigurációs parancsfájlban:
 
@@ -599,7 +598,7 @@ LocalConfigurationManager
 }
 ```
 
-Ha a fenti szkript újra futtatja, látni fogja, hogy a fájl tartalma különböző minden alkalommal. (Futtatása `Get-DscConfiguration` , hogy). Az alábbiakban oka két további fut (a eredmény lehetnek a parancsfájl futtatásakor):
+Ha újra futtatja a fenti szkript, látni fogja, hogy a fájl tartalma eltér minden alkalommal. (Futtathatja `Get-DscConfiguration` , hogy). Az alábbi, két további futtatásoknál (a találatok eltérő lehet a parancsfájl futtatásakor) eredménye:
 
 ```powershell
 PS C:\> Get-DscConfiguration -CimSession (New-CimSession localhost)
@@ -618,10 +617,13 @@ onlyProperty                            PSComputerName
 ## <a name="see-also"></a>Lásd még:
 
 ### <a name="reference"></a>Referencia
-* [A DSC-napló erőforrás](logResource.md)
+
+- [DSC-Log erőforrás](logResource.md)
 
 ### <a name="concepts"></a>Fogalmak
-* [Egyéni Windows PowerShell kívánt állapot konfigurációs erőforrások létrehozása](authoringResource.md)
+
+- [Egyéni Windows PowerShell Desired State Configuration erőforrások létrehozása](authoringResource.md)
 
 ### <a name="other-resources"></a>Egyéb források
-* [A Windows PowerShell célállapot-konfiguráló parancsmagok](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
+
+- [Windows PowerShell Desired State Configuration parancsmagok](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)

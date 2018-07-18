@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Részleges konfigurációk PowerShell Desired State Configuration
-ms.openlocfilehash: 1f5ec5bd5055ccc3d83a60712aebe635f2548828
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6d344b666421aba5745945f6148570e4c8229c1a
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893001"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093932"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Részleges konfigurációk PowerShell Desired State Configuration
 
@@ -217,7 +217,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Kiosztási és a konfigurációs dokumentum elhelyezése a lekérési kiszolgálón (ConfigurationID)
 
-A részleges konfigurációs dokumentumokat megadott mappába kell helyezni a **ConfigurationPath** a a `web.config` a lekéréses kiszolgálón fájlt (általában `C:\Program Files\WindowsPowerShell\DscService\Configuration`). A konfigurációs dokumentum a következő névvel kell rendelkeznie: *ConfigurationName*. * ConfigurationID8`.mof`, ahol *ConfigurationName* a részleges konfiguráció neve és *ConfigurationID* a konfiguráció azonosítója definiálva van az LCM célcsomóponton. A példánkban a konfigurációs dokumentumokat kell elnevezése a következő:
+A részleges konfigurációs dokumentumokat megadott mappába kell helyezni a **ConfigurationPath** a a `web.config` a lekéréses kiszolgálón fájlt (általában `C:\Program Files\WindowsPowerShell\DscService\Configuration`). A konfigurációs dokumentum a következő névvel kell rendelkeznie: _ConfigurationName_. * ConfigurationID8`.mof`, ahol _ConfigurationName_ a részleges konfiguráció neve és _ConfigurationID_ a konfiguráció azonosítója definiálva van az LCM célcsomóponton. A példánkban a konfigurációs dokumentumokat kell elnevezése a következő:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -330,7 +330,6 @@ Configuration ServiceAccountConfig
 
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
-
     Node localhost
     {
         Group LocalAdmins
@@ -340,7 +339,6 @@ Configuration ServiceAccountConfig
                                   'admins@example.domain'
             Ensure              = 'Present'
             Credential          = $Credential
-
         }
 
         WindowsFeature Telnet
@@ -351,7 +349,6 @@ Configuration ServiceAccountConfig
     }
 }
 ServiceAccountConfig
-
 ```
 
 ## <a name="example-sharepointconfig-partial-configuration"></a>Példa SharePointConfig részleges konfiguráció

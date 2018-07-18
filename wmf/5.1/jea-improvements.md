@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 contributor: ryanpu
 title: Éppen elég felügyelettel (JEA) fejlesztései
-ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a9a8a0fd2b726ded33aa07c205292efd7148f3f0
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892719"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093619"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Éppen elég felügyelettel (JEA) fejlesztései
 
@@ -50,7 +50,7 @@ Majd írhat fel az adatokat a felhasználó meghajtón tárolja, és azokat a sz
 
 Bizonyos esetekben a JEA munkamenet egy felhasználó számára szükséges feladat kell előfordulhat, hogy a helyi gép erőforrások eléréséhez.
 A JEA-munkamenet virtuális fiók használatára van konfigurálva, amikor eléri az ilyen erőforrások tett bármilyen kísérlet kell meghatároznia a helyi gép identitása, nem a virtuális vagy csatlakoztatott felhasználói fiókot fog megjelenni.
-A TP5, engedélyeztük a jea-t futtató egy [csoportosan felügyelt szolgáltatásfiók] környezetében támogatása (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), ami nagyban megkönnyíti a tartomány identitás használatával hálózati erőforrások eléréséhez.
+A TP5, engedélyeztük a jea-t futtató környezetében támogatása egy [csoportosan felügyelt szolgáltatásfiók](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431\(v=ws.11\)), ami nagyban megkönnyíti a tartomány identitás használatával hálózati erőforrások eléréséhez.
 
 A JEA-munkamenet futtatásához a csoportosan felügyelt szolgáltatásfiókok konfigurálásához használja a következő új kulcs a FERB fájlban:
 

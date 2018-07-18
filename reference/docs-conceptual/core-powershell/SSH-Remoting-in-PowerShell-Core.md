@@ -46,8 +46,8 @@ Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kul
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. A legújabb [Win32 OpenSSH] build telepítése [telepítés] utasításai a githubról
-3. A helyen, amelyre telepítve van a Win32-OpenSSH sshd_config fájlban szerkesztése
+1. A legújabb [Win32 OpenSSH] build telepítése [telepítés] utasításai a githubról
+1. A helyen, amelyre telepítve van a Win32-OpenSSH sshd_config fájlban szerkesztése
    - Győződjön meg arról, hogy engedélyezve van a jelszó-hitelesítés
 
    ```
@@ -59,8 +59,8 @@ Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kul
     ```
 
     > [!NOTE]
-    Az OpenSSH a Windows, amely megakadályozza, hogy a tárolóhelyek alrendszer végrehajtható elérési utak használata programhiba van.
-    Lásd: [további információt a problémát a Githubban](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    > Az OpenSSH a Windows, amely megakadályozza, hogy a tárolóhelyek alrendszer végrehajtható elérési utak használata programhiba van.
+    > Lásd: [további információt a problémát a Githubban](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
     Az egyik megoldás, a Powershell telepítési könyvtárát, amely nem tartalmaz szóközöket szimbolikus létrehozásához:
 
@@ -84,27 +84,27 @@ Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kul
    PubkeyAuthentication yes
    ```
 
-4. Indítsa újra az sshd szolgáltatást
+1. Indítsa újra az sshd szolgáltatást
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. Az OpenSSH helyéül az elérési út Env változó az elérési út hozzáadása
+1. Az OpenSSH helyéül az elérési út Env változó az elérési út hozzáadása
    - Ez a témakörgyűjtemény legyen `C:\Program Files\OpenSSH\`
    - Ez lehetővé teszi a ssh.exe találhatók
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Telepítés Linux (Ubuntu 14.04) gépen
 
 1. Telepítse a legújabb [a PowerShell Core for Linux] build a Githubról
-2. Telepítése [Ubuntu SSH] igény szerint
+1. Telepítése [Ubuntu SSH] igény szerint
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. Az sshd_config fájlban a következő helyen /etc/ssh szerkesztése
+1. Az sshd_config fájlban a következő helyen /etc/ssh szerkesztése
    - Győződjön meg arról, hogy engedélyezve van a jelszó-hitelesítés
 
    ```
@@ -123,7 +123,7 @@ Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kul
    PubkeyAuthentication yes
    ```
 
-4. Indítsa újra az sshd szolgáltatást
+1. Indítsa újra az sshd szolgáltatást
 
    ```bash
    sudo service sshd restart
@@ -137,7 +137,7 @@ Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kul
      - Kattintson a `Sharing`
      - Ellenőrizze `Remote Login` – a következő: `Remote Login: On`
      - Megfelelő felhasználók férhessenek hozzá
-2. Szerkessze a `sshd_config` helyen található fájl `/private/etc/ssh/sshd_config`
+1. Szerkessze a `sshd_config` helyen található fájl `/private/etc/ssh/sshd_config`
    - Használja kedvenc szerkesztőjében, vagy
 
      ```bash
@@ -162,7 +162,7 @@ Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kul
      PubkeyAuthentication yes
      ```
 
-3. Indítsa újra az sshd szolgáltatást
+1. Indítsa újra az sshd szolgáltatást
 
    ```bash
    sudo launchctl stop com.openssh.sshd

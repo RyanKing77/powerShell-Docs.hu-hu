@@ -1,19 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 7982acc111e95b4167f948314f176d53f39d3620
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2fb2e4b0c40322b5ec78fabede22a7e3ecbbd2aa
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218722"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093762"
 ---
 # <a name="reporting-on-jea"></a>JEA-jelentések
-Ahhoz, hogy a jelentés a JEA konfigurációs állapotát, használhatja:
-1.  **Get-PSSessionConfiguration** vissza az összes regisztrált végpontok az adott számítógépen.
-2.  **Get-PSSessionCapability** képességeit jelentés az adott felhasználó számára egy adott végpont.
+
+Annak érdekében, hogy a jelentést a JEA konfigurációs állapotát, használhatja:
+
+1. **Get-PSSessionConfiguration** regisztrálva végpontok az adott számítógépen az összes listáját adja vissza.
+1. **Get-PSSessionCapability** jelenti a képességekkel rendelkezik az adott felhasználó egy adott végpontnak.
 
 Íme egy példa **Get-PSSessionCapability**:
+
 ```powershell
 Get-PSSessionCapability -ConfigurationName Maintenance -Username "CONTOSO\JohnDoe"
 
@@ -35,10 +38,8 @@ Function        Measure-Object
 Function        Out-Default
 Function        Select-Object
 Cmdlet          Restart-Service                                    3.0.0.0 Microsof...
-
-
 ```
 
-A jelentés a _műveletek_ felhasználók tartott JEA munkamenet során, akkor is:
-1. Engedélyezze az "over-az-a képernyőre pillant" ki, hogy JEA végpont, és tekintse át a Beszélgetés szövegének könyvtár az egyes felhasználói műveletek teljes naplók
-2. PowerShell modul naplózás bekapcsolása, és vizsgálja meg a PowerShell eseménynaplóit.
+A jelentés a _műveletek_ felhasználók JEA munkamenet során vett igénybe, használhatja:
+1. Engedélyezze az "over-the-váll" átiratok a JEA-végpont, és tekintse meg a szöveges könyvtár minden egyes felhasználói műveletek teljes naplók
+2. Kapcsolja be a PowerShell-modul naplózást, és vizsgálja meg a PowerShell eseménynaplóit.

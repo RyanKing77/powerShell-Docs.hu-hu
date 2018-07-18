@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A DSC WindowsProcess erőforrás
-ms.openlocfilehash: 72668136a3a51c17c52f762c6f94bec3ed4597b0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: DSC WindowsProcess erőforrás
+ms.openlocfilehash: 3c4e6d8377c3dcbf4f1db87a603d5483b8caafb8
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187027"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093735"
 ---
-# <a name="dsc-windowsprocess-resource"></a>A DSC WindowsProcess erőforrás
+# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess erőforrás
 
-> Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
-A **WindowsProcess** erőforrás a Windows PowerShell szükséges konfiguráló (DSC) folyamatok konfigurálása egy célcsomóponttal mechanizmust biztosít.
+A **WindowsProcess** erőforrás a Windows PowerShell Desired State Configuration (DSC) cél csomóponton folyamatok konfigurálása mechanizmust biztosít.
 
 ## <a name="syntax"></a>Szintaxis
 
@@ -33,14 +33,15 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Tulajdonságok
+
 |  Tulajdonság  |  Leírás   |
 |---|---|
-| Argumentumok| Azt jelzi, a folyamat argumentumokat karakterlánc-értéke. Ha több argumentumot továbbítani kell, helyezze őket az összes ezt a karakterláncot.|
-| Elérési út| A folyamat végrehajtható fájl elérési útja. Ha ez a végrehajtható fájl (nem a teljes elérési útja), a DSC-erőforrás nevét átvizsgálja a környezet **elérési** változó (`$env:Path`) található a végrehajtható fájl. Ha ez a tulajdonság értéke egy teljesen minősített elérési útja, DSC nem fogja használni a **elérési** környezeti változót megtalálják a fájlt, és a rendszer hibaüzenetet küldjön, ha az elérési út nem létezik. Relatív útvonalak nem engedélyezettek.|
-| hitelesítő adatok| Azt jelzi, hogy a hitelesítő adatokat kell elindítania a telepítést.|
-| Győződjön meg arról| Azt jelzi, hogy létezik-e a folyamat. Állítsa be ezt a tulajdonságot "Elérhető" Győződjön meg arról, hogy létezik-e a folyamat. Egyéb esetben állítsa "Hiányzik". Az alapértelmezett érték az "Elérhető".|
-| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, szintaxisa a következő e tulajdonság használatával "DependsOn ="[ A ResourceType] ResourceName"".|
-| StandardErrorPath| Azt jelzi, hogy a könyvtár elérési útja a normál hiba írni. Felülírja a meglévő fájlt.|
+| Argumentumok| Azt jelzi, hogy egy karakterlánc, a folyamat argumentumokat-van. Ha több argumentumokat át van szüksége, helyezi őket az ezt a karakterláncot.|
+| Elérési út| A folyamat végrehajtható fájl elérési útja. Ha ez a végrehajtható fájl (nem teljes elérési útja), a DSC-erőforrás neve fog keresni a környezet **elérési** változó (`$env:Path`) található a végrehajtható fájl. Ha ez a tulajdonság értéke teljes elérési útja, DSC nem fogja használni a **elérési út** környezeti változót, keresse meg a fájlt, és hibát váltja, ha az elérési út nem létezik. Relatív elérési utakat nem engedélyezettek.|
+| Hitelesítő adatok| Azt jelzi, hogy a hitelesítő adatokat a folyamat indításához.|
+| Győződjön meg, hogy| Azt jelzi, hogy létezik-e a folyamat. Ezzel a tulajdonsággal, "E" Győződjön meg arról, hogy létezik-e a folyamat. Ellenkező esetben állítsa "Hiányzik". Az alapértelmezett érték "E".|
+| DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója parancsfájl-blokk futtatni kívánt első az **ResourceName** és a típusa **ResourceType**, esetén ez a tulajdonság használatával "DependsOn"[a = Erőforrástípus] ResourceName"s".|
+| StandardErrorPath| Azt jelzi, hogy a könyvtár elérési útja a normál hiba írni. Minden olyan meglévő fájl felül lesznek írva.|
 | StandardInputPath| A szabványos bemeneti helyét jelöli.|
-| StandardOutputPath| Azt jelzi, hogy a helyet, ahova kiírhatná a normál a kimenetbe. Felülírja a meglévő fájlt.|
-| WorkingDirectory| Azt jelzi, hogy a helyet, a folyamat az aktuális munkakönyvtárban lesz.|
+| StandardOutputPath| Azt jelzi, hogy a hely a normál a kimenetbe írhat. Minden olyan meglévő fájl felül lesznek írva.|
+| WorkingDirectory| Azt jelzi, hogy a helyre, amely a folyamat az aktuális munkakönyvtár lesz.|

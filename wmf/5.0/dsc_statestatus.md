@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 0e8d0cb1e4afa7bc791d45bfb0b981654cb09ed5
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892569"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093881"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Egyesített és konzisztens állapotreprezentáció
 
@@ -15,11 +15,11 @@ Ebben a kiadásban az LCM állapotának és a DSC-állapot automatizálását a 
 Leképezése az LCM állapotának és a DSC műveleti állapotának javított változat, és a következő szabályok szerint egyesített:
 
 1. Az LCM állapotának és a DSC-állapot Notprocessed erőforrás nincs hatással.
-2. Az LCM stop további erőforrások feldolgozása, miután újraindítást kérő erőforrás tapasztal.
-3. Egy újraindítást kérő erőforrás nem áll a szükséges állapotban, amíg újraindítást ténylegesen történik.
-4. Hajt végre, amikor egy erőforrást, amelyet nem sikerül, LCM tartja a feldolgozás után további erőforrásokat, amíg azok nem függnek a hiba egyik.
-5. A törlés összesített állapotát által visszaadott `Get-DscConfigurationStatus` parancsmag az összes erőforrás állapotának a felügyelői készlete.
-6. A PendingReboot állapota felülbírálja a PendingConfiguration állapota.
+1. Az LCM stop további erőforrások feldolgozása, miután újraindítást kérő erőforrás tapasztal.
+1. Egy újraindítást kérő erőforrás nem áll a szükséges állapotban, amíg újraindítást ténylegesen történik.
+1. Hajt végre, amikor egy erőforrást, amelyet nem sikerül, LCM tartja a feldolgozás után további erőforrásokat, amíg azok nem függnek a hiba egyik.
+1. A törlés összesített állapotát által visszaadott `Get-DscConfigurationStatus` parancsmag az összes erőforrás állapotának a felügyelői készlete.
+1. A PendingReboot állapota felülbírálja a PendingConfiguration állapota.
 
    Az alábbi táblázatban látható a létrejövő állapot kapcsolódó tulajdonságok alapján néhány gyakori forgatókönyveket.
 

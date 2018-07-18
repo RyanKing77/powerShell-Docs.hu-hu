@@ -58,8 +58,8 @@ Lépjen ki a Visual Studio Code-ban való **File -> kilépési**.
 Ha szeretne egy adott telepítési PowerShell használata a Visual Studio Code, kell új változó hozzáadása a felhasználói beállításokat fájlt.
 
 1. Kattintson a **fájl -> Beállítások -> Beállítások**
-2. Két Jelentésszerkesztő paneljei jelennek meg.
-   A jobb szélső ablaktáblán (`settings.json`), helyezze be az alábbi beállítást az operációs rendszer, a két kapcsos zárójelek között megfelelő (`{` és `}`), és cserélje le *<version>* és a telepített PowerShell-verzió:
+1. Két Jelentésszerkesztő paneljei jelennek meg.
+   A jobb szélső ablaktáblán (`settings.json`), helyezze be az alábbi beállítást az operációs rendszer, a két kapcsos zárójelek között megfelelő (`{` és `}`), és cserélje le **\<verzió\>** a PowerShell telepített verziója:
 
    ```json
     // On Windows:
@@ -72,8 +72,8 @@ Ha szeretne egy adott telepítési PowerShell használata a Visual Studio Code, 
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
    ```
 
-3. Cserélje le a beállítás a kívánt PowerShell végrehajtható fájl elérési útja
-4. Mentse a beállításokat fájlt, és indítsa újra a Visual Studio Code
+1. Cserélje le a beállítás a kívánt PowerShell végrehajtható fájl elérési útja
+1. Mentse a beállításokat fájlt, és indítsa újra a Visual Studio Code
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>A Visual Studio Code-konfigurációs beállítások
 

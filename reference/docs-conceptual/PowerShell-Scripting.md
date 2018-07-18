@@ -1,62 +1,78 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell parancsmag
+keywords: PowerShell, a parancsmag
 title: PowerShell-parancsprogramok
-ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c6ba3abc2544834e2cbec16a524f79399a1d2599
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222400"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094051"
 ---
 # <a name="powershell"></a>PowerShell
 
-A .NET-keretrendszer épülő PowerShell egy feladatalapú parancssori rendszerhéj és programozási nyelv; kifejezetten a rendszergazdák és a kiemelt-felhasználók, gyorsan automatizálják több operációs rendszer (Linux, macOS, Unix és a Windows) és a kapcsolódó ezen operációs rendszereken futó alkalmazások számára tervezték.
+A .NET-keretrendszer épülő PowerShell egy feladatalapú parancssori rendszerhéj és programozási nyelv; kifejezetten a rendszergazdák és kiemelt felhasználók felügyeletének részeként (Linux, macOS, Unix és Windows) több operációs rendszer és az operációs rendszereket futtató alkalmazásokhoz kapcsolódó folyamatok gyors automatizálása tervezték.
 
-## <a name="powershell-is-open-source"></a>PowerShell nyílt forráskódú
+## <a name="powershell-is-open-source"></a>PowerShell az nyílt forráskódú
 
-PowerShell alap forráskód mostantól elérhető a Githubon és közösségi hozzájárulások meg van nyitva. Lásd: [PowerShell forrás a Githubon](https://github.com/powershell/powershell).
+PowerShell alap forráskód már elérhető a Githubon, és nyissa meg a közösségi közreműködést.
+Lásd: [PowerShell forráskód a Githubon](https://github.com/powershell/powershell).
 
-Kezdésként használhatja az kell, a bits [get PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).
-Vagy esetleg a kalauz következő [első lépések](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)
+A bits szükséges kezdhet [a PowerShell első](https://github.com/PowerShell/PowerShell#get-powershell).
+Vagy esetleg a gyors bemutatót [első lépések](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)
 
-## <a name="powershell-design-goals"></a>PowerShell céljai
-A Windows PowerShell szolgáltatást javítására készült, a parancssori és parancsfájl-kezelési környezet kiküszöbölhetők azon régóta fennálló problémák, és vegye fel az új szolgáltatásokat.
+## <a name="powershell-design-goals"></a>PowerShell elérheti a céljait
+PowerShell régóta fennálló problémák, és új funkciók hozzáadásával a parancssori és parancsfájl-kezelési környezet javítására szolgál.
 
-### <a name="discoverability"></a>Felderíthetőségét
-Windows PowerShell megkönnyíti, hogy annak funkció felderítéséhez. Például található megtekintése és módosítása a központi Windows-szolgáltatások parancsmagjainak listáját, írja be:
+### <a name="discoverability"></a>Felderíthetőség
+PowerShell megkönnyíti a felderítését annak szolgáltatásait. Ha például megtekintése és módosítása a Windows-szolgáltatások parancsmagjainak listáját találja, írja be:
 
 ```powershell
 Get-Command *-Service
 ```
 
-Miután értesült, mely parancsmag éri el a feladat, hogy többet is megtudhat a parancsmag a Get-Help parancsmag használatával. Például a Get-Service parancsmag súgójának megjelenítéséhez írja be:
+Felfedezése, mely parancsmag feladatot el egy feladatot, miután további információ a parancsmag használatával a `Get-Help` parancsmagot.
+Például kapcsolatos súgó megjelenítése a `Get-Service` parancsmagot, írja be:
 
 ```powershell
 Get-Help Get-Service
 ```
-A legtöbb parancsmagok hozható létre az objektumokat, amely nem kezelhetők, és majd nyújtott be a megjelenítendő szöveg. Teljes megértéséhez, hogy a parancsmag kimenete, átadhatja a Get-tag parancsmag kimenete. Például a következő parancsot a Get-Service parancsmaggal a objektum kimeneti tagjai információkat jelenít meg.
+A legtöbb parancsmagok gridre bocsáthatja ki az objektumok, amelyek kezelhetők, és megjelenítendő szöveget, majd meg.
+Teljes mértékben megérteni, hogy a parancsmag kimenete, kanálu kimenete a `Get-Member` parancsmagot.
+Például a következő parancsot az objektum kimenete tagjainak információit jeleníti meg a `Get-Service` parancsmagot.
 
 ```powershell
 Get-Service | Get-Member
 ```
 
 ### <a name="consistency"></a>Consistency
-Rendszerek kezelése egy összetett feladat lehet, és szabályozására rejlő összetettségét súgó eszközt, amely egységes illesztőfelületet. Sajnos nem parancssori eszközök, és nem alkalmas parancsfájlok futtatására COM-objektumok az előzőekben azok konzisztencia.
+Rendszerek kezelése egy összetett feladat lehet, és eszközöket, amelyek egy egységes felületen segítségével szabályozhatja a járó összetettséget.
+Sajnos azonban nem parancssori eszközöket, és nem alkalmas parancsfájlok futtatására COM-objektumok az előzőekben a konzisztencia.
 
-A Windows PowerShell konzisztenciájának az egyik elsődleges eszközei. Például ha megtanulhatja a rendezési-Object parancsmag használatával, használhatja ezt az információt rendezéséhez bármely parancsmag kimenetét. Nincs a különböző rendezési rutinok minden parancsmag további.
+A PowerShell konzisztencia az egyik elsődleges eszközei.
+Például, ha megismerheti, hogyan használható a `Sort-Object` parancsmag használhatja arra, hogy bármely parancsmag kimenete rendezéséhez.
+További információt a különböző rendezési rutinok minden parancsmag nem rendelkezik.
 
-Parancsmag fejlesztők továbbá nem rendelkeznek a parancsmagok rendezési szolgáltatások tervezéséhez. A Windows PowerShell ad nekik a keretrendszer, amely az alapszintű funkciókat biztosítja, és kényszeríti a konzisztens interfész sok szempontból kapcsolatban. A keretrendszer nem néhány a lehetőségeket, amelyek általában a fejlesztők megmaradnak, de ismét, így hatékony és könnyen használható parancsmagok teljes körű fejlesztésével jóval egyszerűbb.
+A parancsmag a fejlesztők emellett nem rendelkezik a parancsmagok rendezési szolgáltatások tervezéséhez.
+PowerShell biztosít egy keretrendszer, amely olyan alapvető szolgáltatásokat nyújt, és újrainicializálására kényszeríti a kapcsolatos a felület számos szempontból konzisztens.
+A keretrendszer kiküszöböli néhány, a lehetőségek, amelyek általában a fejlesztők marad, de cserébe lehetővé teszi a hatékony és könnyen használható parancsmagok fejlesztését jóval egyszerűbb.
 
 ### <a name="interactive-and-scripting-environments"></a>Interaktív és parancsfájl-kezelési környezet
-A Windows PowerShell egy kombinált interaktív és parancsfájl-kezelési környezet, amely hozzáférést biztosít a parancssori eszközök és a COM-objektumok, és is lehetővé teszi a teljesítmény a .NET Framework Class Library (FCL) használatát.
+PowerShell az egy kombinált interaktív és parancsfájl-kezelési környezet, amely hozzáférést biztosít a parancssori eszközökkel és COM-objektumok, és lehetővé teszi, hogy a teljesítmény, a .NET Framework Class Library (FCL) használja.
 
-Ebben a környezetben, a Windows parancssor, amely több parancssori eszközökkel interaktív környezetet biztosít az javítja. Azt is javítja a Windows Script Host (WSH) parancsfájlok, amelyek lehetővé teszik több parancssori eszközök és a COM-automatizálási objektumok használata, de nem ad meg egy interaktív környezetben.
+Ebben a környezetben javítja esetén a Windows parancssor használatával, amely több parancssori eszközökkel interaktív környezetet biztosít.
+Azt is javítja Windows Script Host (WSH) parancsfájlokat, amelyek lehetővé teszik több parancssori eszközeivel és COM-automatizálási objektumok, de nem ad meg egy interaktív környezetet.
 
-Ezek a funkciók eléréséhez kombinálásával Windows PowerShell az interaktív felhasználó és a parancsfájl-író képességét, és rendszer-felügyeleti még kezelhetőbbé teszik.
+Minden ezek a szolgáltatások kombinálásával PowerShell terjeszti ki a lehetőséget, az interaktív felhasználó és a parancsfájl-író, és megkönnyíti a rendszerfelügyelet könnyebben kezelhető.
 
-### <a name="object-orientation"></a>Objektum tájolását
-Írja be a parancsok szöveg kommunikálni a Windows PowerShell, bár a Windows PowerShell objektumokat, nem szöveges alapul. A parancs eredménye egy objektumot. A kimeneti objektum bemenetként egy másik parancsba is küldhet. Ennek eredményeképpen Windows PowerShell felületet biztosít a megszokott új és hatékony parancssori paradigma bevezetése mellett egyéb ismertetése ismerő személyek számára. A parancs teszi objektumok, nem pedig szöveg küldése közötti adatküldés fogalma kiterjed.
+### <a name="object-orientation"></a>Objektum tájolása
+Bár a PowerShell dolgozhat parancsok beírásával a szöveg, PowerShell objektumokat, nem szöveg alapján történik.
+A parancs kimenete egy olyan objektum.
+A kimeneti objektum bemenetként küldhet egy másik parancsba.
+Ennek eredményeképpen PowerShell felületet biztosít a jól ismert egy új és hatékony parancssori paradigmát bevezetése mellett egyéb parancskörnyezet ismerő személyek számára.
+Ez a kiszolgálóvirtualizálás koncepcióján azáltal, hogy engedélyezi parancsokat küldhet az objektumokat, nem pedig szöveg közötti adatküldés.
 
-### <a name="easy-transition-to-scripting"></a>Egyszerű átmenet parancsfájlok
-A Windows PowerShell írjanak átmenet egyszerűen parancsok interaktív módon való létrehozása és futtatása a parancsfájlok elérhetővé válnak. A Windows PowerShell parancssorába felderítéséhez a parancsok, amelyek a feladat elvégzésére parancsok adhatja meg. Ezt követően mentheti azokat a parancsokat a Beszélgetés szövegének vagy előzményeit előtt másolja őket egy fájl, amely parancsfájlként.
+### <a name="easy-transition-to-scripting"></a>A parancsfájl-kezelési egyszerű Váltás
+Írja be az átállás egyszerűen parancsokat interaktív módon való létrehozásának és futtatásának parancsfájlok PowerShell teszi.
+Fedezze fel, amelyek egy feladatot hajtanak végre a parancsokat a PowerShell-parancssort, írja be az parancsokat.
+Ezután mentheti azokat a parancsokat egy szöveges vagy egy korábbi előtt egy fájl, amely egy parancsfájlt, hogy másolja őket.

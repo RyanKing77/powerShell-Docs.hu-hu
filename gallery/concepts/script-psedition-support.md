@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 contributor: manikb
-keywords: gyűjtemény, a powershell, a parancsmag, a psget
-title: Verzióval kompatibilis PowerShell parancsfájl
-ms.openlocfilehash: 27b50be4e99b6c6b8fa089d1d4a436a27eeb17c9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: katalógus, powershell, a parancsmag, psget
+title: Parancsfájl-kompatibilis PowerShell-kiadások
+ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219249"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093660"
 ---
-# <a name="script-with-compatible-powershell-editions"></a>Verzióval kompatibilis PowerShell parancsfájl
+# <a name="script-with-compatible-powershell-editions"></a>Parancsfájl-kompatibilis PowerShell-kiadások
 
 Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhető el, amelyek különböző szolgáltatáskészleteket és platformkompatibilitást kínálnak.
 
@@ -52,20 +52,18 @@ At line:1 char:1
     + FullyQualifiedErrorId : ScriptRequiresUnmatchedPSEdition
 ```
 
-PowerShell-galériában felhasználói is megtalálhassák a támogatott egy adott kiadásán PowerShell parancsfájlok listáját.
-Parancsfájlok nélkül PSEdition_Desktop és PSEditon_Core minősülnek PowerShell asztali változatában működnek.
+PowerShell-galériából felhasználók megtalálhassák a parancsfájlokat egy adott PowerShell kiadás támogatott listáját.
+Parancsfájlok PSEdition_Desktop és PSEditon_Core nélkül minősülnek jól működnek az PowerShell asztali verziója esetén.
 
 ```powershell
-
 # Find scripts supported on PowerShell Desktop edition
 Find-Script -Tag PSEditon_Desktop
 
 # Find scripts supported on PowerShell Core editions
 Find-Script -Tag PSEditon_Core
-
 ```
 
-## <a name="more-details"></a>További részletekért
+## <a name="more-details"></a>További részletek
 
 - [PSEditions paraméterrel rendelkező modulok](module-psedition-support.md)
-- [Támogatja a PSEditions PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
+- [Pseditions paraméterrel támogatja a PowerShell-Galériabeli](../how-to/finding-items/searching-by-psedition.md)

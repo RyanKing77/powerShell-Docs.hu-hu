@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A DSC-napló erőforrás
-ms.openlocfilehash: c7e1957540da2fd85a30f739e0f69bdb6975a4d8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: DSC-Log erőforrás
+ms.openlocfilehash: fade94efd8133ae0172737e4bb1aed89fc0f97d9
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219385"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093476"
 ---
-# <a name="dsc-log-resource"></a>A DSC-napló erőforrás
+# <a name="dsc-log-resource"></a>DSC-Log erőforrás
 
-> Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
-A __napló__ erőforrás a Windows PowerShell szükséges konfiguráló (DSC) üzeneteket írni a Microsoft-Windows-kívánt állapot konfigurációs/elemzési Eseménynapló mechanizmust biztosít.
+A __Log__ erőforrás a Windows PowerShell Desired State Configuration (DSC) biztosít olyan mechanizmus, amellyel üzeneteket írhat a Microsoft-Windows-Desired State Configuration / elemzési eseménynaplójában.
 
 ```
 Syntax
@@ -25,23 +25,22 @@ Log [string] #ResourceName
 }
 ```
 
-Megjegyzés: Alapértelmezés szerint csak a műveleti naplókat DSC engedélyezve van.
-Mielőtt a elemzési naplóját lesznek elérhetők, engedélyezni kell.
-Tekintse meg a következő cikket.
-
-[Hol találhatók a DSC-eseménynaplók?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
+> [!NOTE]
+> A DSC csak a műveleti naplókban alapértelmezés szerint engedélyezve van. Mielőtt az elemzési naplóját érhető el vagy látható lesz, azt engedélyezni kell. További információkért lásd: [hol vannak a DSC-eseménynaplók?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs).
 
 ## <a name="properties"></a>Tulajdonságok
+
 |  Tulajdonság  |  Leírás   |
 |---|---|
-| Üzenet| Azt jelzi, hogy a konfiguráció/elemzési Microsoft-Windows-Desired állapot eseménynaplójába írhatja kívánt üzenetet.|
-| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, a napló üzenet beolvasása előtt. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.|
+| Üzenet| Azt jelzi, hogy az üzenetet a konfigurációs és elemzési Microsoft-Windows-Desired állapot eseménynaplójába írhatja.|
+| DependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációját a naplófájlüzenetre lekérdezi írása előtt kell futtatni. Például, ha az erőforrás-konfiguráció azonosítója letiltása, a futtatni kívánt parancsfájl először van __ResourceName__ és a típusa __ResourceType__, ez a tulajdonság használata esetén `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## <a name="example"></a>Példa
 
-A következő példa bemutatja, hogyan üzenet tartalmazza a Microsoft-Windows-Desired állapot konfigurációs/elemzési eseménynaplójában.
+Az alábbi példa bemutatja, hogyan üzenet hozzáadása a konfigurációs és elemzési Microsoft-Windows-Desired állapot eseménynaplójában.
 
-> **Megjegyzés:**: futtatásakor [teszt-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) az ehhez az erőforráshoz konfigurált, akkor a rendszer mindig visszaküldi **$false**.
+> [!NOTE]
+> Ha [a Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) ehhez az erőforráshoz konfigurált, és mindig adja vissza **$false**.
 
 ```powershell
 Configuration logResourceTest
@@ -49,11 +48,10 @@ Configuration logResourceTest
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     Node localhost
-
     {
         Log LogExample
         {
-            Message = "This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log."
+            Message = 'This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log.'
         }
     }
 }

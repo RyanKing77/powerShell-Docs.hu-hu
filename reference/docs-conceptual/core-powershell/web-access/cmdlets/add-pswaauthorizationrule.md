@@ -4,12 +4,12 @@ keywords: PowerShell, a parancsmag
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a5e55611ac59ff5bfecee59ba2b7d7669d08f840
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893739"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094228"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -191,8 +191,10 @@ Ez a parancsmag adja vissza az engedélyezési szabály objektum.
 
 ### <a name="example-1"></a>1. PÉLDA
 
-Ebben a példában hozzáférést biztosít a munkamenet-konfiguráció *PSWAEndpoint*, amely egy korlátozott futási térrel, *srv2* lévő felhasználók számára a *SMAdmins* csoport. \
-**Megjegyzés:**: A számítógép nevét egy teljesen minősített tartománynevét (FQDN) kell lennie. A rendszergazdák egy korlátozott munkamenet-konfiguráció vagy a futási térből, amely a parancsmagok és a végfelhasználók futtatható feladatok korlátozott tartománya határozza meg. Korlátozott futási térrel definiálása megakadályozhatja a felhasználók más számítógépekhez, amelyek nem engedélyezett Windows PowerShell® a futási térben található, így több biztonságos kapcsolatot. A munkamenet-konfigurációk további információkért lásd: [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) vagy a [telepítése és használata Windows PowerShell-elérés](../install-and-use-windows-powershell-web-access.md).
+Ebben a példában hozzáférést biztosít a munkamenet-konfiguráció _PSWAEndpoint_, amely egy korlátozott futási térrel, _srv2_ lévő felhasználók számára a _SMAdmins_ csoport.
+
+> [!NOTE]
+> A számítógép nevét egy teljesen minősített tartománynevét (FQDN) kell lennie. A rendszergazdák egy korlátozott munkamenet-konfiguráció vagy a futási térből, amely a parancsmagok és a végfelhasználók futtatható feladatok korlátozott tartománya határozza meg. Korlátozott futási térrel definiálása megakadályozhatja a felhasználók más számítógépekhez, amelyek nem engedélyezett Windows PowerShell® a futási térben található, így több biztonságos kapcsolatot. A munkamenet-konfigurációk további információkért lásd: [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) vagy a [telepítése és használata Windows PowerShell-elérés](../install-and-use-windows-powershell-web-access.md).
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
@@ -240,8 +242,10 @@ Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1
 ### <a name="example-6"></a>6. PÉLDA
 
 Ebben a példában engedélyezi az összes felhasználó összes végponthoz való hozzáférést az összes számítógépen.
-Ez lényegében kikapcsolja az engedélyezési szabályok. \
-**Megjegyzés:**: használja a `*` helyettesítő karakter biztonsági szempontból kényes központi telepítések esetében nem javasolt, és csak tesztkörnyezetekhez tekinthető, vagy el kell telepítések esetén használják, ahol csökkenthető a biztonsági.
+Ez lényegében kikapcsolja az engedélyezési szabályok.
+
+> [!NOTE]
+> Használja a `*` helyettesítő karakter biztonsági szempontból kényes központi telepítések esetében nem javasolt, és csak tesztkörnyezetekhez tekinthető, vagy el kell telepítések esetén használják, ahol csökkenthető a biztonsági.
 
 ````PowerShell
 Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *

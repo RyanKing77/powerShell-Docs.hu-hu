@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A DSC ProcessSet erőforrás
-ms.openlocfilehash: 412cf1076996126f0d9b7a9a8ebbc9bdb7ecf377
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: DSC ProcessSet erőforrás
+ms.openlocfilehash: d18d2c96239abd83cea735e0fbce198d0456cea6
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189924"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093990"
 ---
-# <a name="dsc-windowsprocess-resource"></a>A DSC WindowsProcess erőforrás
+# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess erőforrás
 
-> Vonatkozik: A Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
-A **ProcessSet** erőforrás a Windows PowerShell szükséges konfiguráló (DSC) folyamatok konfigurálása egy célcsomóponttal mechanizmust biztosít. Az erőforrás egy [összetett erőforrás](authoringResourceComposite.md) , amely meghívja a [WindowsProcess erőforrás](windowsProcessResource.md) minden egyes megadott csoport számára a `GroupName` paraméter.
+A **ProcessSet** erőforrás a Windows PowerShell Desired State Configuration (DSC) cél csomóponton folyamatok konfigurálása mechanizmust biztosít. Ez az erőforrás egy [összetett erőforrás](authoringResourceComposite.md) , amely meghívja a [WindowsProcess erőforrás](windowsProcessResource.md) minden egyes megadott csoport számára a `GroupName` paraméter.
 
 ## <a name="syntax"></a>Szintaxis
 
@@ -33,14 +33,15 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Tulajdonságok
+
 |  Tulajdonság  |  Leírás   |
 |---|---|
-| Argumentumok| A folyamat, argumentumokat tartalmazó karakterlánc-értéke. Ha több argumentumot továbbítani kell, helyezze őket az összes ezt a karakterláncot.|
-| Elérési út| A folyamat végrehajtható fájlok elérési útjait. Ha a végrehajtható fájlok (teljesen minősített elérési utak) nevét, a DSC-erőforrás keressen-e a környezet **elérési** változó (`$env:Path`) található a fájl. Ha ez a tulajdonság értékének teljesen minősített elérési utak, DSC nem fogja használni a **elérési** környezeti változó található a fájl, és kivételhibát hiba történt az elérési utak közül bármelyik nem léteznek. Relatív útvonalak nem engedélyezettek.|
-| hitelesítő adatok| Azt jelzi, hogy a hitelesítő adatokat kell elindítania a telepítést.|
-| Győződjön meg arról| Meghatározza, hogy létezik-e a folyamatokat. Állítsa be ezt a tulajdonságot "Elérhető" Győződjön meg arról, hogy létezik-e a folyamat. Egyéb esetben állítsa "Hiányzik". Az alapértelmezett érték az "Elérhető".|
-| StandardErrorPath| Az elérési utat, amelyhez a folyamatok írási standard hiba. Felülírja a meglévő fájlt.|
-| StandardInputPath| Az adatfolyam, ahonnan a folyamat szabványos bemeneti kapja.|
-| StandardOutputPath| A fájl elérési útját a, amelyhez a folyamat szabványos kimeneti írása. Felülírja a meglévő fájlt.|
+| Argumentumok| A folyamat, argumentumokat tartalmazó karakterlánc-van. Ha több argumentumokat át van szüksége, helyezi őket az ezt a karakterláncot.|
+| Elérési út| A folyamat végrehajtható fájlok elérési útja. Ha tartoznak a végrehajtható fájlok (teljesen minősített elérési út) nevét, a DSC-erőforrás fog keresni a környezet **elérési útja** változó (`$env:Path`) található fájlokat. Ha ez a tulajdonság értékét teljesen minősített elérési utak, DSC nem fogja használni a **elérési útja** környezeti változót, keresse meg a fájlokat, és hibát váltja, ha bármely, az elérési utak nem léteznek. Relatív elérési utakat nem engedélyezettek.|
+| Hitelesítő adatok| Azt jelzi, hogy a hitelesítő adatokat a folyamat indításához.|
+| Győződjön meg, hogy| Itt adhatja meg, hogy létezik-e a folyamatokat. Ezzel a tulajdonsággal, "E" Győződjön meg arról, hogy létezik-e a folyamat. Ellenkező esetben állítsa "Hiányzik". Az alapértelmezett érték "E".|
+| StandardErrorPath| Az elérési út, amelyre a folyamatok írási standard hiba. Minden olyan meglévő fájl felül lesznek írva.|
+| StandardInputPath| A streamet, amelyből a folyamat megkapja a standard bemenetet.|
+| StandardOutputPath| A fájl, amelyre a folyamatok írási standard kimenet elérési útja. Minden olyan meglévő fájl felül lesznek írva.|
 | WorkingDirectory| A folyamatok, az aktuális munkakönyvtárban használt helyet.|
-| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az **ResourceName** és annak típusa **_ResourceType**, szintaxisa a következő e tulajdonság használatával "DependsOn ="[ A ResourceType] ResourceName"".|
+| DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója parancsfájl-blokk futtatni kívánt első az **ResourceName** és a típusa **_ResourceType**, esetén ez a tulajdonság használatával "DependsOn"[a = Erőforrástípus] ResourceName"s".|
