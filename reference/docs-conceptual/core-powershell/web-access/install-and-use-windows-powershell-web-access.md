@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell, a parancsmag
 title: telepítheti és használhatja a windows powershell-elérés
-ms.openlocfilehash: d60670954d6ab6998e905382383d60ead1129d31
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: c14da421e372f6c4c4f203b16bbd37f28a9ba255
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893756"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094262"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Webes Windows PowerShell-elérés telepítése és használata
 
@@ -329,29 +329,29 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
 
    - A Windows a **Start** írja be a nevének bármelyik részét **Internet Information Services (IIS) kezelője**. Kattintson a parancsikonra, amikor az megjelenik a **alkalmazások** eredményeket.
 
-2. Az IIS-kezelő fát megjelenítő ablaktábláján, bontsa ki a kiszolgáló, amelyen Windows PowerShell-elérés telepítve van, amíg a csomópont a **helyek** mappa megjelent-e. Válassza ki a **helyek** mappát.
+1. Az IIS-kezelő fát megjelenítő ablaktábláján, bontsa ki a kiszolgáló, amelyen Windows PowerShell-elérés telepítve van, amíg a csomópont a **helyek** mappa megjelent-e. Válassza ki a **helyek** mappát.
 
-3. Az a **műveletek** ablaktáblán kattintson a **webhely hozzáadása**.
+1. Az a **műveletek** ablaktáblán kattintson a **webhely hozzáadása**.
 
-4. Írja be például a webhely nevét **Windows PowerShell-elérés**.
+1. Írja be például a webhely nevét **Windows PowerShell-elérés**.
 
-5. A rendszer automatikusan létrehoz egy alkalmazáskészletet az új webhelyhez. Másik alkalmazáskészlet használatához kattintson **kiválasztása** az új webhelyhez társítandó alkalmazáskészlet kiválasztásához. Válassza ki a másik alkalmazáskészletet az a **alkalmazáskészlet kiválasztása** párbeszédpanel, és kattintson **OK**.
+1. A rendszer automatikusan létrehoz egy alkalmazáskészletet az új webhelyhez. Másik alkalmazáskészlet használatához kattintson **kiválasztása** az új webhelyhez társítandó alkalmazáskészlet kiválasztásához. Válassza ki a másik alkalmazáskészletet az a **alkalmazáskészlet kiválasztása** párbeszédpanel, és kattintson **OK**.
 
-6. Az a **fizikai elérési út** szöveg gombra, lépjen a %*windir*% / Web/PowerShellWebAccess/wwwroot.
+1. Az a **fizikai elérési út** szöveg gombra, lépjen a %*windir*% / Web/PowerShellWebAccess/wwwroot.
 
-7. Az a **típus** mezőjében a **kötés** területen válassza **https**.
+1. Az a **típus** mezőjében a **kötés** területen válassza **https**.
 
-8. Rendeljen hozzá egy más hely vagy alkalmazás által még nem használt portszámot a webhelyhez. Megnyitott portok megkereséséhez futtathatja a **netstat** parancsot egy parancssori ablakot. Az alapértelmezett portszám 443.
+1. Rendeljen hozzá egy más hely vagy alkalmazás által még nem használt portszámot a webhelyhez. Megnyitott portok megkereséséhez futtathatja a **netstat** parancsot egy parancssori ablakot. Az alapértelmezett portszám 443.
 
    Módosítsa az alapértelmezett portot, ha egy másik webhely már használja a 443-ast, vagy ha egyéb biztonsági okokból módosítani szeretné a portszámot. Ha az átjárókiszolgálón egy másik webhely használja a kiválasztott portot, figyelmeztetés jelenik meg kattintva **OK** a a **webhely hozzáadása** párbeszédpanel bezárásához. Windows PowerShell-elérés futtatásához egy nem használt portot kell használnia.
 
-9. Ha a szervezet számára szükséges, megadhat egy állomásnevet, amely logikus a szervezet és a felhasználó számára, mint például **www.contoso.com**. Kattintson az OK** gombra.
+1. Ha a szervezet számára szükséges, megadhat egy állomásnevet, amely logikus a szervezet és a felhasználó számára, mint például **www.contoso.com**. Kattintson az OK** gombra.
 
-10. A biztonságosabb éles környezet érdekében határozottan javasoljuk egy érvényes, hitelesítésszolgáltató által aláírt tanúsítványt biztosítását. SSL-tanúsítványt kell megadnia, mivel a felhasználók csak a Windows PowerShell-elérés keresztül kapcsolódhatnak egy HTTPS-webhelyen. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
+1. A biztonságosabb éles környezet érdekében határozottan javasoljuk egy érvényes, hitelesítésszolgáltató által aláírt tanúsítványt biztosítását. SSL-tanúsítványt kell megadnia, mivel a felhasználók csak a Windows PowerShell-elérés keresztül kapcsolódhatnak egy HTTPS-webhelyen. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
 
-11. Kattintson a **OK** gombra kattintva zárja be a **webhely hozzáadása** párbeszédpanel bezárásához.
+1. Kattintson a **OK** gombra kattintva zárja be a **webhely hozzáadása** párbeszédpanel bezárásához.
 
-12. Egy emelt szintű felhasználói jogosultságokkal (Futtatás rendszergazdaként) megnyitott Windows PowerShell-munkamenetben futtassa a következő parancsfájlt, amelyben *application_pool_name* a 4. lépésben létrehozott alkalmazáskészlet nevét jelöli hogy az alkalmazáskészlet hozzáférési jogokat a hitelesítési fájlhoz.
+1. Egy emelt szintű felhasználói jogosultságokkal (Futtatás rendszergazdaként) megnyitott Windows PowerShell-munkamenetben futtassa a következő parancsfájlt, amelyben _application_pool_name_ a 4. lépésben létrehozott alkalmazáskészlet nevét jelöli hogy az alkalmazáskészlet hozzáférési jogokat a hitelesítési fájlhoz.
 
     ```    
     $applicationPoolName = "<application_pool_name>"
@@ -365,11 +365,11 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
     c:\windows\system32\icacls.exe $authorizationFile
     ```
 
-13. Az új webhelyet az IIS-kezelő fát megjelenítő ablaktábláján kiválasztva, kattintson a **Start** a a **műveletek** ablaktáblán a webhely elindításához.
+1. Az új webhelyet az IIS-kezelő fát megjelenítő ablaktábláján kiválasztva, kattintson a **Start** a a **műveletek** ablaktáblán a webhely elindításához.
 
-14. Nyisson meg egy böngésző-munkamenetet egy ügyféleszközön. Támogatott böngészőkkel és eszközökkel kapcsolatos további információkért lásd: [böngészőt, és támogatja az ügyféleszközön](#browser-and-client-device-support) ebben a dokumentumban.
+1. Nyisson meg egy böngésző-munkamenetet egy ügyféleszközön. Támogatott böngészőkkel és eszközökkel kapcsolatos további információkért lásd: [böngészőt, és támogatja az ügyféleszközön](#browser-and-client-device-support) ebben a dokumentumban.
 
-15. Nyissa meg az új Windows PowerShell-elérés webhely.
+1. Nyissa meg az új Windows PowerShell-elérés webhely.
 
     Mivel a webhely a Windows PowerShell-elérés mappára mutat, a böngésző kell megjelenítenie a bejelentkezési oldal Windows PowerShell-elérés megnyitásakor **https://\<*átjárókiszolgáló_neve* \>**. Nem kell hozzáadni **/pswa** az URL-címre.
 
@@ -392,11 +392,11 @@ Windows PowerShell-elérés engedélyezési szabályai és biztonsági kapcsolat
 
    - A Windows a **Start** kattintson a jobb gombbal **Windows PowerShell**, és kattintson a **Futtatás rendszergazdaként**.
 
-2. ![Biztonsági Megjegyzés](images/SecurityNote.jpeg) Opcionális megoldás a felhasználói hozzáférés korlátozására munkamenet-konfigurációk használatával:
+1. ![Biztonsági Megjegyzés](images/SecurityNote.jpeg) Opcionális megoldás a felhasználói hozzáférés korlátozására munkamenet-konfigurációk használatával:
 
    Ellenőrizze, hogy léteznek-e már azok a munkamenet-konfigurációk, amelyeket használni szeretne a szabályokban. Ha azok még nem lett hozott, alkalmaznia munkamenet-konfigurációk létrehozására vonatkozó [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
-3. Írja be a következőt, majd nyomja le **Enter**.
+1. Írja be a következőt, majd nyomja le **Enter**.
 
    Add-PswaAuthorizationRule - UserName < tartomány\felhasználó |} számítógép\felhasználó > - ComputerName < számítógép_neve > - ConfigurationName < session_configuration_name >
 
@@ -406,7 +406,7 @@ Windows PowerShell-elérés engedélyezési szabályai és biztonsági kapcsolat
 
    Add-PswaAuthorizationRule - UserName "Contoso\JSmith" – ComputerName Contoso_214 - ConfigurationName NewAdminsOnly
 
-4. Győződjön meg arról, hogy az a szabály futtatásával hozták-e a `Get-PswaAuthorizationRule` parancsmagot, vagy `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
+1. Győződjön meg arról, hogy az a szabály futtatásával hozták-e a `Get-PswaAuthorizationRule` parancsmagot, vagy `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
    Például: `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
@@ -420,9 +420,9 @@ A biztonságos éles környezethez mindig érvényes, hitelesítésszolgáltató
 
 1. Az IIS-kezelő fát megjelenítő ablaktáblán válassza ki a kiszolgálót, amelyen telepítve van a Windows PowerShell-elérés.
 
-2. A tartalom ablaktáblában kattintson duplán a **kiszolgálói tanúsítványok**.
+1. A tartalom ablaktáblában kattintson duplán a **kiszolgálói tanúsítványok**.
 
-3. Az a **műveletek** ablaktáblán, tegye a következők egyikét. Kiszolgálótanúsítványok konfigurálása az IIS-ben kapcsolatos további információkért lásd: [Kiszolgálótanúsítványok konfigurálása az IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
+1. Az a **műveletek** ablaktáblán, tegye a következők egyikét. Kiszolgálótanúsítványok konfigurálása az IIS-ben kapcsolatos további információkért lásd: [Kiszolgálótanúsítványok konfigurálása az IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Kattintson a **importálása** egy meglévő, érvényes tanúsítvány importálásához a hálózat egy helyéről.
 
@@ -432,11 +432,11 @@ A biztonságos éles környezethez mindig érvényes, hitelesítésszolgáltató
 
    - Kattintson a **önaláírt tanúsítvány létrehozása** , hozzon létre egy tanúsítványt, hogy azonnal használható, és később aláírhat egy hitelesítésszolgáltató Ha szükséges. Adjon meg egy rövid nevet az önaláírt tanúsítvány, például **Windows PowerShell-elérés**. Ez a lehetőség nem tekinthető biztonságosnak, és csak privát tesztkörnyezetben ajánlott.
 
-4. Miután létrehozott vagy beszerzett egy tanúsítványt, válassza ki a webhelyet, amelyhez a tanúsítványt alkalmazni kívánja (például **Default Web Site**) az IIS-kezelő fát ablaktáblán, és kattintson a **kötések** a a**Műveletek** ablaktáblán.
+1. Miután létrehozott vagy beszerzett egy tanúsítványt, válassza ki a webhelyet, amelyhez a tanúsítványt alkalmazni kívánja (például **Default Web Site**) az IIS-kezelő fát ablaktáblán, és kattintson a **kötések** a a**Műveletek** ablaktáblán.
 
-5. Az a **hely kötésének hozzáadása** párbeszédpanelen adjon hozzá egy **https** kötést a helyhez, ha egy már nem jelenik meg. Ha nem önaláírt tanúsítványt használ, adja meg az eljárás 3. lépésében megadott állomás nevét. Ha önaláírt tanúsítványt használ, ez a lépés nem szükséges.
+1. Az a **hely kötésének hozzáadása** párbeszédpanelen adjon hozzá egy **https** kötést a helyhez, ha egy már nem jelenik meg. Ha nem önaláírt tanúsítványt használ, adja meg az eljárás 3. lépésében megadott állomás nevét. Ha önaláírt tanúsítványt használ, ez a lépés nem szükséges.
 
-6. Válassza ki a kapott, vagy ez az eljárás 3. lépésében létrehozott tanúsítványt, és kattintson **OK**.
+1. Válassza ki a kapott, vagy ez az eljárás 3. lépésében létrehozott tanúsítványt, és kattintson **OK**.
 
 ## <a name="using-the-web-based-windows-powershell-console"></a>A webalapú Windows PowerShell konzol használata
 
