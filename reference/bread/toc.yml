@@ -1,0 +1,10 @@
+- name: PowerShell
+  tocHref: /powershell/
+  topicHref: /powershell
+  items:
+    - name: Parancsprogramok használata
+      tocHref: /powershell/scripting/
+      topicHref: /powershell/scripting/index
+    - name: Parancsprogramok használata
+      tocHref: /powershell/module/
+      topicHref: /powershell/scripting/index
