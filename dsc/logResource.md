@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-Log erőforrás
-ms.openlocfilehash: fade94efd8133ae0172737e4bb1aed89fc0f97d9
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 50fd6cd31ba426108830fcf124a767318060a95d
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093476"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268432"
 ---
 # <a name="dsc-log-resource"></a>DSC-Log erőforrás
 
-> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+_A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0_
 
 A __Log__ erőforrás a Windows PowerShell Desired State Configuration (DSC) biztosít olyan mechanizmus, amellyel üzeneteket írhat a Microsoft-Windows-Desired State Configuration / elemzési eseménynaplójában.
 
@@ -26,14 +26,14 @@ Log [string] #ResourceName
 ```
 
 > [!NOTE]
-> A DSC csak a műveleti naplókban alapértelmezés szerint engedélyezve van. Mielőtt az elemzési naplóját érhető el vagy látható lesz, azt engedélyezni kell. További információkért lásd: [hol vannak a DSC-eseménynaplók?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs).
+> A DSC csak a műveleti naplókban alapértelmezés szerint engedélyezve van. Mielőtt az elemzési naplóját érhető el vagy látható lesz, azt engedélyezni kell. További információkért lásd: [hol vannak a DSC-eseménynaplók?](troubleshooting.md#where-are-dsc-event-logs).
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   |
-|---|---|
+| Tulajdonság | Leírás |
+| --- | --- |
 | Üzenet| Azt jelzi, hogy az üzenetet a konfigurációs és elemzési Microsoft-Windows-Desired állapot eseménynaplójába írhatja.|
-| DependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációját a naplófájlüzenetre lekérdezi írása előtt kell futtatni. Például, ha az erőforrás-konfiguráció azonosítója letiltása, a futtatni kívánt parancsfájl először van __ResourceName__ és a típusa __ResourceType__, ez a tulajdonság használata esetén `DependsOn = '[ResourceType]ResourceName'`.|
+| DependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációját a naplófájlüzenetre lekérdezi írása előtt kell futtatni. Például, ha az erőforrás-konfiguráció azonosítója letiltása, a futtatni kívánt parancsfájl először van **ResourceName** és a típusa **ResourceType**, ez a tulajdonság használata esetén `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## <a name="example"></a>Példa
 

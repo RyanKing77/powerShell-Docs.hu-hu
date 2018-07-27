@@ -3,24 +3,20 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: NuGet rendszerindítása
-ms.openlocfilehash: 2d321097fda201c0d8f843b2194a161eceabe4e1
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: e82fe7bec2e6b7a321fb173cdf9a54c5a97d5f18
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094017"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267847"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>A NuGet-szolgáltató és a NuGet.exe bootstrap
 
-A legújabb NuGet-szolgáltató nem szerepel a NuGet.exe.
-Közzé egy modul vagy a parancsfájl működésére, a PowerShellGet a bináris végrehajtható NuGet.exe igényel.
-Csak a NuGet-szolgáltató szükség minden egyéb művelet, beleértve a *található*, *telepítése*, *mentése*, és *eltávolítása*.
-A PowerShellGet kezeléséhez vagy logikát tartalmaz, egy kombinált rendszerindítási a NuGet-szolgáltató és a NuGet.exe vagy rendszerindítási a NuGet-szolgáltató.
-Mindkét esetben csak egy egyetlen azonnali üzenet jelenhet meg.
-Ha a gép nem csatlakozik az internethez, a felhasználó vagy rendszergazda kell másolnia a NuGet-szolgáltató és/vagy a NuGet.exe fájl egy megbízható példányát a leválasztott gép.
+A legújabb NuGet-szolgáltató nem szerepel a NuGet.exe. Közzé egy modul vagy a parancsfájl működésére, a PowerShellGet a bináris végrehajtható NuGet.exe igényel. Csak a NuGet-szolgáltató szükség minden egyéb művelet, beleértve a *található*, *telepítése*, *mentése*, és *eltávolítása*.
+A PowerShellGet kezeléséhez vagy logikát tartalmaz, egy kombinált rendszerindítási a NuGet-szolgáltató és a NuGet.exe vagy rendszerindítási a NuGet-szolgáltató. Mindkét esetben csak egy egyetlen azonnali üzenet jelenhet meg. Ha a gép nem csatlakozik az internethez, a felhasználó vagy rendszergazda kell másolnia a NuGet-szolgáltató és/vagy a NuGet.exe fájl egy megbízható példányát a leválasztott gép.
 
 > [!NOTE]
-> A NuGet-szolgáltató része 6-os verziótól kezdődően a PowerShell telepítése. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
+> A NuGet-szolgáltató része 6-os verziótól kezdődően a PowerShell telepítése.
 
 ## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>Kapcsolódó hiba feloldása, ha a NuGet-szolgáltató nincs telepítve olyan számítógépen, amelyen Internet
 
@@ -123,15 +119,11 @@ VERBOSE: Successfully published module 'Contoso' to the module publish location 
 
 ## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a>Manuálisan rendszerindítása a NuGet-szolgáltató olyan gépen, amely nem csatlakozik az internethez
 
-A fent bemutatott eljárások azt feltételezik, a gép csatlakozik az internethez, és fájlokat tölthet le egy nyilvános helye.
-Ha ez nem lehetséges, az egyetlen lehetősége egy gépen a fenti eljárások használatával elindíthat és manuális másolása a szolgáltató az elkülönített csomópont offline megbízható folyamatát.
-Ebben a forgatókönyvben a leggyakoribb használati eset akkor, ha a egy privát katalógust érhető el az elkülönített környezet támogatásához.
+A fent bemutatott eljárások azt feltételezik, a gép csatlakozik az internethez, és fájlokat tölthet le egy nyilvános helye. Ha ez nem lehetséges, az egyetlen lehetősége egy gépen a fenti eljárások használatával elindíthat és manuális másolása a szolgáltató az elkülönített csomópont offline megbízható folyamatát. Ebben a forgatókönyvben a leggyakoribb használati eset akkor, ha a egy privát katalógust érhető el az elkülönített környezet támogatásához.
 
 A fenti elindíthat egy internetkapcsolattal rendelkező gépen folyamat lépéseinek, található szolgáltató fájlok helyét:
 
-```
-C:\Program Files\PackageManagement\ProviderAssemblies\
-```
+`C:\Program Files\PackageManagement\ProviderAssemblies\`
 
 A NuGet-szolgáltató fájl/mappa szerkezete lesz (valószínűleg egy eltérő verziószámot):
 
@@ -147,11 +139,9 @@ Másolja ki ezeket a mappákat és -fájlt egy megbízható folyamatot, hogy a k
 
 A folyamat manuális elindíthat a NuGet-szolgáltató, ha a gép használandó modulok vagy parancsfájlok közzététele egy privát katalógust az mellett a `Publish-Module` vagy `Publish-Script` parancsmagok, a NuGet.exe bináris végrehajtható fájl lesz szükség.
 
-Ebben a forgatókönyvben a leggyakoribb használati eset akkor, ha a egy privát katalógust érhető el az elkülönített környezet támogatásához.
-Szerezze be a NuGet.exe fájlt a két lehetőség van.
+Ebben a forgatókönyvben a leggyakoribb használati eset akkor, ha a egy privát katalógust érhető el az elkülönített környezet támogatásához. Szerezze be a NuGet.exe fájlt a két lehetőség van.
 
-Az egyik lehetőség, hogy egy internetkapcsolattal rendelkező gépek elindíthat, és másolja a fájlokat a kapcsolat nélküli gépek, egy megbízható folyamattal.
-Az internetkapcsolattal rendelkező gépen rendszerindítása, miután a NuGet.exe bináris két mappák egyikében található:
+Az egyik lehetőség, hogy egy internetkapcsolattal rendelkező gépek elindíthat, és másolja a fájlokat a kapcsolat nélküli gépek, egy megbízható folyamattal. Az internetkapcsolattal rendelkező gépen rendszerindítása, miután a NuGet.exe bináris két mappák egyikében található:
 
 Ha a `Publish-Module` vagy `Publish-Script` parancsmagok végrehajtódtak emelt jogosultsági szintű (adminisztrátori):
 
@@ -165,9 +155,7 @@ Ha a parancsmagokat végrehajtódtak nem emelt szintű engedélyekkel rendelkez�
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-A második lehetőség a NuGet.Org webhelyen NuGet.exe töltheti le: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) egy éles gépek Nuget verziót kiválasztásakor róla, hogy újabb, mint a 2.8.5.208, és azonosítja a verzióját, amely rendelkezik címkével lett " ajánlott".
-Fontos, hogy a fájl feloldása, ha a böngésző segítségével lett letöltve.
-Ennek segítségével hajtható végre a `Unblock-File` parancsmagot.
+A második lehetőség a NuGet.Org webhelyen NuGet.exe töltheti le: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) egy éles gépek Nuget verziót kiválasztásakor róla, hogy újabb, mint a 2.8.5.208, és azonosítja a verzióját, amely rendelkezik címkével lett " ajánlott". Fontos, hogy a fájl feloldása, ha a böngésző segítségével lett letöltve. Ennek segítségével hajtható végre a `Unblock-File` parancsmagot.
 
 Mindkét esetben a NuGet.exe fájl átmásolható tetszőleges helyére `$env:path`, de a szabványos helyek:
 

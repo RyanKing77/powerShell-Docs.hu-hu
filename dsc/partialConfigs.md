@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Részleges konfigurációk PowerShell Desired State Configuration
-ms.openlocfilehash: 6d344b666421aba5745945f6148570e4c8229c1a
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 1b9ff8534f4c11d6859587830a04075be55a7d54
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093932"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268381"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Részleges konfigurációk PowerShell Desired State Configuration
 
-> A következőkre vonatkozik: Windows PowerShell 5.0-s és újabb verziók.
+_A következőkre vonatkozik: Windows PowerShell 5.0-s és újabb verziók._
 
-A PowerShell 5.0-s Desired State Configuration (DSC) lehetővé teszi a konfigurációkat a töredékeket, és a különböző forrásokból származó üzembe helyezhető. A helyi Configuration Manager (LCM) Konfigurálása a cél-csomóponton a szilánkok mielőtt alkalmazná őket, egyetlen konfigurációval együtt helyezi. Ez a funkció lehetővé teszi, hogy a döntés konfigurációról csapatok vagy személyek közötti megosztását.
-Például ha egy szolgáltatás a fejlesztők két vagy több csapat közreműködő, előfordulhat, hogy minden egyes szeretne létrehozni konfigurációk kezelésére, azok a szolgáltatás részét. Ezek a konfigurációk mindegyike sikerült le kell kérnie a különböző lekéréses kiszolgálót, és különböző szakaszaiban a fejlesztési adható. Részleges konfigurációk is lehetővé teszik különböző csapatok vagy személyek különböző aspektusa csomópontok konfigurálása koordinálására, egy egyetlen konfigurációs dokumentum szerkesztése nélkül. Például egy csapat felelős üzembe helyezése egy virtuális gép és az operációs rendszer, amíg egy másik csapat helyezhetők üzembe, más alkalmazások és szolgáltatások a virtuális gép lehet. Részleges konfigurációk minden egyes csapat hozhat létre a saját konfigurációs nélkül lehet őket szükségtelenül bonyolult folyamatban van.
+A PowerShell 5.0-s Desired State Configuration (DSC) lehetővé teszi a konfigurációkat a töredékeket, és a különböző forrásokból származó üzembe helyezhető. A helyi Configuration Manager (LCM) Konfigurálása a cél-csomóponton a szilánkok mielőtt alkalmazná őket, egyetlen konfigurációval együtt helyezi. Ez a funkció lehetővé teszi, hogy a döntés konfigurációról csapatok vagy személyek közötti megosztását. Például ha egy szolgáltatás a fejlesztők két vagy több csapat közreműködő, előfordulhat, hogy minden egyes szeretne létrehozni konfigurációk kezelésére, azok a szolgáltatás részét. Ezek a konfigurációk mindegyike sikerült le kell kérnie a különböző lekéréses kiszolgálót, és különböző szakaszaiban a fejlesztési adható. Részleges konfigurációk is lehetővé teszik különböző csapatok vagy személyek különböző aspektusa csomópontok konfigurálása koordinálására, egy egyetlen konfigurációs dokumentum szerkesztése nélkül. Például egy csapat felelős üzembe helyezése egy virtuális gép és az operációs rendszer, amíg egy másik csapat helyezhetők üzembe, más alkalmazások és szolgáltatások a virtuális gép lehet. Részleges konfigurációk minden egyes csapat hozhat létre a saját konfigurációs nélkül lehet őket szükségtelenül bonyolult folyamatban van.
 
 Részleges konfigurációk leküldéses módban, lekéréses mód vagy a kettő kombinációját is használhatja.
 
@@ -24,8 +23,7 @@ Részleges konfigurációk használata a leküldési módban, konfigurálhatók 
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Az LCM konfigurálása a leküldéses módú részleges konfigurációk
 
-Részleges konfigurációk esetén az LCM konfigurálása a leküldési módban, hozzon létre egy **DSCLocalConfigurationManager** egy konfigurációs **PartialConfiguration** az egyes részleges konfigurációk letiltása. Az LCM konfigurálása kapcsolatos további információkért lásd: [a Local Configuration Manager Windows](/powershell/dsc/metaConfig).
-Az alábbi példa bemutatja egy LCM konfigurációt, amely a két részleges konfigurációk vár –, amely telepíti az operációs rendszer, a másikat, amely telepíti és konfigurálja a SharePoint.
+Részleges konfigurációk esetén az LCM konfigurálása a leküldési módban, hozzon létre egy **DSCLocalConfigurationManager** egy konfigurációs **PartialConfiguration** az egyes részleges konfigurációk letiltása. Az LCM konfigurálása kapcsolatos további információkért lásd: [a Local Configuration Manager Windows](/powershell/dsc/metaConfig). Az alábbi példa bemutatja egy LCM konfigurációt, amely a két részleges konfigurációk vár –, amely telepíti az operációs rendszer, a másikat, amely telepíti és konfigurálja a SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -111,8 +109,7 @@ Részleges konfigurációk is le kell kérnie, egy vagy több lekéréses kiszol
 
 Részleges konfigurációk lekéréses kiszolgálóról lekérni az LCM konfigurálása, határozhat meg a lekéréses kiszolgálón vagy egy **ConfigurationRepositoryWeb** (a HTTP-lekéréses kiszolgálón) vagy **ConfigurationRepositoryShare** () az egy SMB-lekérési kiszolgálójának) letiltása. Ezután létre fog hozni **PartialConfiguration** hivatkozni, a lekéréses kiszolgálón használatával blokkolja a **ConfigurationSource** tulajdonság. Is szeretne létrehozni egy **beállítások** letiltása, hogy az LCM lekéréses módban használja-e, és adja meg a **ConfigurationNames** vagy **ConfigurationID** , amely a lekéréses kiszolgálón és a cél csomópont használata a felismerésében. A következő meta-konfiguráció a CONTOSO-PullSrv nevű HTTP-lekéréses kiszolgálón határozza meg, és két részleges konfigurációk, amelyek használják, amely a lekérési kiszolgálón.
 
-Az LCM használatával konfigurálásával kapcsolatos további információkat a **ConfigurationNames**, lásd: [konfigurációs nevek lekérési ügyfél beállítása](pullClientConfigNames.md).
-Az LCM használatával konfigurálásával kapcsolatos információkat **ConfigurationID**, lásd: [konfigurációs azonosítóval lekérési ügyfél beállítása](pullClientConfigID.md).
+Az LCM használatával konfigurálásával kapcsolatos további információkat a **ConfigurationNames**, lásd: [konfigurációs nevek lekérési ügyfél beállítása](pullClientConfigNames.md). Az LCM használatával konfigurálásával kapcsolatos információkat **ConfigurationID**, lásd: [konfigurációs azonosítóval lekérési ügyfél beállítása](pullClientConfigID.md).
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>Az LCM konfigurálása a lekérési mód konfigurációk konfigurációs nevekkel
 
@@ -196,13 +193,12 @@ Miután létrehozta a metaadat-konfiguráció, futtatnia kell, hogy hozzon létr
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>Kiosztási és a konfigurációs dokumentum elhelyezése a lekérési kiszolgálón (ConfigurationNames)
 
-A részleges konfigurációs dokumentumokat megadott mappába kell helyezni a **ConfigurationPath** a a `web.config` a lekéréses kiszolgálón fájlt (általában `C:\Program Files\WindowsPowerShell\DscService\Configuration`).
+A részleges konfigurációs dokumentumokat megadott mappába kell helyezni a **ConfigurationPath** a a `web.config` a lekéréses kiszolgálón fájlt (általában `C:\Program
+Files\WindowsPowerShell\DscService\Configuration`).
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>A lekérési kiszolgálón a PowerShell 5.1 elnevezési konfigurációs dokumentumok
 
-Egy különálló lekéréses kiszolgálóról csak egy részleges konfigurációs van lehetőség, ha a konfigurációs dokumentum rendelkezhet egy tetszőleges nevet.
-Egy lekéréses kiszolgálóról egynél több részleges konfigurációs van lehetőség, ha a konfigurációs dokumentum elnevezheti vagy `<ConfigurationName>.mof`, ahol *ConfigurationName* a részleges konfiguráció neve vagy `<ConfigurationName>.<NodeName>.mof`, ahol  *ConfigurationName* a részleges konfiguráció neve és *csomópontnév* a célcsomópont neve.
-Ez lehetővé teszi a pull-konfigurációk az Azure Automation DSC lekérési kiszolgálóról.
+Egy különálló lekéréses kiszolgálóról csak egy részleges konfigurációs van lehetőség, ha a konfigurációs dokumentum rendelkezhet egy tetszőleges nevet. Egy lekéréses kiszolgálóról egynél több részleges konfigurációs van lehetőség, ha a konfigurációs dokumentum elnevezheti vagy `<ConfigurationName>.mof`, ahol *ConfigurationName* a részleges konfiguráció neve vagy `<ConfigurationName>.<NodeName>.mof`, ahol *ConfigurationName* a részleges konfiguráció neve és *csomópontnév* a célcsomópont neve. Ez lehetővé teszi a pull-konfigurációk az Azure Automation DSC lekérési kiszolgálóról.
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>A lekérési kiszolgálón a PowerShell 5.0 elnevezési konfigurációs dokumentumok
 
@@ -217,7 +213,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Kiosztási és a konfigurációs dokumentum elhelyezése a lekérési kiszolgálón (ConfigurationID)
 
-A részleges konfigurációs dokumentumokat megadott mappába kell helyezni a **ConfigurationPath** a a `web.config` a lekéréses kiszolgálón fájlt (általában `C:\Program Files\WindowsPowerShell\DscService\Configuration`). A konfigurációs dokumentum a következő névvel kell rendelkeznie: _ConfigurationName_. * ConfigurationID8`.mof`, ahol _ConfigurationName_ a részleges konfiguráció neve és _ConfigurationID_ a konfiguráció azonosítója definiálva van az LCM célcsomóponton. A példánkban a konfigurációs dokumentumokat kell elnevezése a következő:
+A részleges konfigurációs dokumentumokat megadott mappába kell helyezni a **ConfigurationPath** a a `web.config` a lekéréses kiszolgálón fájlt (általában `C:\Program Files\WindowsPowerShell\DscService\Configuration`). A konfigurációs dokumentum a következő névvel kell rendelkeznie: `<ConfigurationName>.<ConfigurationID>.mof`, ahol _ConfigurationName_ a részleges konfiguráció neve és _ConfigurationID_ a konfiguráció azonosítója definiálva van a Az LCM célcsomóponton. A példánkban a konfigurációs dokumentumokat kell elnevezése a következő:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -232,8 +228,7 @@ Miután az LCM Konfigurálása a célként megadott csomóponton lett konfigurá
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>A vegyes eseménylekérési részleges konfigurációk
 
-Is kombinálhatók leküldéses és lekéréses részleges konfigurációk módban. Lehet, hogy egy részleges konfigurációval, amely lekéréses kiszolgálóról, miközben egy másik részleges konfigurációs leküldéssel kéri le. Adja meg az egyes részleges konfigurációs frissítési módot, a korábbi szakaszokban ismertetett módon.
-Például a következő meta-konfiguráció ismerteti az ugyanebben a példában a `ServiceAccountConfig` részleges konfigurációs lekéréses módban, és a `SharePointConfig` részleges konfigurációs leküldési módban.
+Is kombinálhatók leküldéses és lekéréses részleges konfigurációk módban. Lehet, hogy egy részleges konfigurációval, amely lekéréses kiszolgálóról, miközben egy másik részleges konfigurációs leküldéssel kéri le. Adja meg az egyes részleges konfigurációs frissítési módot, a korábbi szakaszokban ismertetett módon. Például a következő meta-konfiguráció ismerteti az ugyanebben a példában a `ServiceAccountConfig` részleges konfigurációs lekéréses módban, és a `SharePointConfig` részleges konfigurációs leküldési módban.
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>Vegyes eseménylekérési ConfigurationNames használatával
 
@@ -314,7 +309,8 @@ PartialConfigDemo
 
 Vegye figyelembe, hogy a **RefreshMode** "Lekérés" található a megadott van, de a **RefreshMode** számára a `SharePointConfig` részleges konfigurációs "Push".
 
-Nevezze el, és keresse meg a konfigurációs MOF-fájlok, a megfelelő frissítési módok esetében fentebb leírtakhoz hasonlóan. Hívás `Publish-DSCConfiguration` közzététele a `SharePointConfig` részleges konfigurációs, és vagy várjon, amíg a `ServiceAccountConfig` konfiguráció le kell kérnie a a lekéréses kiszolgálón, vagy frissítésének kényszerítése meghívásával [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
+Nevezze el, és keresse meg a konfigurációs MOF-fájlok, a megfelelő frissítési módok esetében fentebb leírtakhoz hasonlóan.
+Hívás `Publish-DSCConfiguration` közzététele a `SharePointConfig` részleges konfigurációs, és vagy várjon, amíg a `ServiceAccountConfig` konfiguráció le kell kérnie a a lekéréses kiszolgálón, vagy frissítésének kényszerítése meghívásával [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
 
 ## <a name="example-serviceaccountconfig-partial-configuration"></a>Példa ServiceAccountConfig részleges konfiguráció
 
@@ -381,4 +377,4 @@ SharePointConfig
 
 [Windows PowerShell Desired State Configuration lekéréses kiszolgálók](pullServer.md)
 
-[A helyi Configuration Manager Windows](/powershell/dsc/metaConfig)
+[A helyi Configuration Manager Windows](metaConfig.md)

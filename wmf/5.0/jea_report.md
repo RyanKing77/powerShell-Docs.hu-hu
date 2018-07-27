@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 2fb2e4b0c40322b5ec78fabede22a7e3ecbbd2aa
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: cd3338ae305896e282056a871974e5f899ef6ff5
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093762"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268578"
 ---
 # <a name="reporting-on-jea"></a>JEA-jelentések
 
 Annak érdekében, hogy a jelentést a JEA konfigurációs állapotát, használhatja:
 
 1. **Get-PSSessionConfiguration** regisztrálva végpontok az adott számítógépen az összes listáját adja vissza.
-1. **Get-PSSessionCapability** jelenti a képességekkel rendelkezik az adott felhasználó egy adott végpontnak.
+2. **Get-PSSessionCapability** jelenti a képességekkel rendelkezik az adott felhasználó egy adott végpontnak.
 
 Íme egy példa **Get-PSSessionCapability**:
 
@@ -41,5 +41,6 @@ Cmdlet          Restart-Service                                    3.0.0.0 Micro
 ```
 
 A jelentés a _műveletek_ felhasználók JEA munkamenet során vett igénybe, használhatja:
+
 1. Engedélyezze az "over-the-váll" átiratok a JEA-végpont, és tekintse meg a szöveges könyvtár minden egyes felhasználói műveletek teljes naplók
 2. Kapcsolja be a PowerShell-modul naplózást, és vizsgálja meg a PowerShell eseménynaplóit.

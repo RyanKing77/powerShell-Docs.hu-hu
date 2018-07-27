@@ -4,18 +4,18 @@ keywords: PowerShell, a parancsmag
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: bcf897730881551ec16ce970de6a1330961b67e6
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094228"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268265"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
 ## <a name="synopsis"></a>SYNOPSIS
 
-Új engedélyezési szabályt ad hozzá a Windows PowerShell®-elérés engedélyezési szabályok készletéhez.
+Új engedélyezési szabályt ad hozzá a Windows PowerShell-elérés engedélyezési szabályok készletéhez.
 
 ## <a name="syntax"></a>Szintaxis
 
@@ -45,12 +45,11 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 
 ## <a name="description"></a>LEÍRÁS
 
-A **Add-PswaAuthorizationRule** parancsmag új engedélyezési szabályt ad a Windows PowerShell®-elérés engedélyezési szabályok készletéhez.
+A **Add-PswaAuthorizationRule** parancsmag új engedélyezési szabályt ad a Windows PowerShell(r) webes elérés engedélyezési szabályok készletéhez.
 
 Adjon meg a felhasználók, számítógépek és Windows PowerShell-végpontok ehhez a szabályhoz. Megadhatja a felhasználók és a számítógépek vagy egyéni felhasználói fiókokhoz és a számítógépek nevét, vagy csoport megadásával.
 
-Az Active Directory-tartományhoz csatlakozó számítógépen a parancsmag használatával a számítógép biztonsági azonosítója (SID) hozza létre a szabályt.
-Ez lehetővé teszi, hogy egy rövid nevet, egy teljesen minősített tartománynevét (FQDN) vagy IP-címet a **számítógépnév** mezőt a bejelentkezési oldalon.
+Az Active Directory-tartományhoz csatlakozó számítógépen a parancsmag használatával a számítógép biztonsági azonosítója (SID) hozza létre a szabályt. Ez lehetővé teszi, hogy egy rövid nevet, egy teljesen minősített tartománynevét (FQDN) vagy IP-címet a **számítógépnév** mezőt a bejelentkezési oldalon.
 
 Az Active Directory-tartományhoz nem csatlakozó számítógépek esetében a parancsmag a szabály a számítógép nevét, a rendszergazda által biztosított használatával hoz létre. A sikeres csatlakozás a számítógéphez, a végfelhasználónak kell megadni a számítógép nevét, pontosan megegyezzen a szabályban.
 
@@ -66,12 +65,12 @@ Egy számítógépcsoport nevét adja meg az Active Directory Domain Services (A
 
 |||
 |-|-|
-| Aliasok                              | nincs                                 |
-| Kötelező?                            | Igaz                                 |
-| Pozíció?                            | nevű                                |
-| Alapértelmezett érték                        | nincs                                 |
-| Láncbemenet fogadása?               | Igaz (ByPropertyName)                |
-| Helyettesítő karakterek elfogadása?          | hamis                                |
+| Aliasok                     | nincs                  |
+| Kötelező?                   | Igaz                  |
+| Pozíció?                   | nevű                 |
+| Alapértelmezett érték               | nincs                  |
+| Láncbemenet fogadása?      | Igaz (ByPropertyName) |
+| Helyettesítő karakterek elfogadása? | hamis                 |
 
 ### <a name="-computername-string"></a>-ComputerName \<karakterlánc\>
 
@@ -79,12 +78,12 @@ A számítógép neve, amelyhez ez a szabály engedélyezi a hozzáférést.
 
 |||
 |-|-|
-| Aliasok                              | nincs                                 |
-| Kötelező?                            | Igaz                                 |
-| Pozíció?                            | nevű                                |
-| Alapértelmezett érték                        | nincs                                 |
-| Láncbemenet fogadása?               | Igaz (ByPropertyName)                |
-| Helyettesítő karakterek elfogadása?          | hamis                                |
+| Aliasok                     | nincs                  |
+| Kötelező?                   | Igaz                  |
+| Pozíció?                   | nevű                 |
+| Alapértelmezett érték               | nincs                  |
+| Láncbemenet fogadása?      | Igaz (ByPropertyName) |
+| Helyettesítő karakterek elfogadása? | hamis                 |
 
 ### <a name="-configurationname-string"></a>-ConfigurationName \<karakterlánc\>
 
@@ -92,12 +91,12 @@ A neve, a Windows PowerShell munkamenet-konfiguráció, más néven futási tér
 
 |||
 |-|-|
-| Aliasok                              | nincs                                 |
-| Kötelező?                            | Igaz                                 |
-| Pozíció?                            | nevű                                |
-| Alapértelmezett érték                        | nincs                                 |
-| Láncbemenet fogadása?               | Igaz (ByPropertyName)                |
-| Helyettesítő karakterek elfogadása?          | hamis                                |
+| Aliasok                     | nincs                  |
+| Kötelező?                   | Igaz                  |
+| Pozíció?                   | nevű                 |
+| Alapértelmezett érték               | nincs                  |
+| Láncbemenet fogadása?      | Igaz (ByPropertyName) |
+| Helyettesítő karakterek elfogadása? | hamis                 |
 
 ### <a name="-credential--pscredential"></a>-Credential \<PSCredential\>
 
@@ -105,17 +104,16 @@ Megadja egy **PSCredential** egy felhasználói fiók segítségével módosíth
 
 |||
 |-|-|
-| Aliasok                              | nincs                                 |
-| Kötelező?                            | hamis                                |
-| Pozíció?                            | nevű                                |
-| Alapértelmezett érték                        | nincs                                 |
-| Láncbemenet fogadása?               | hamis                                |
-| Helyettesítő karakterek elfogadása?          | hamis                                |
+| Aliasok                     | nincs  |
+| Kötelező?                   | hamis |
+| Pozíció?                   | nevű |
+| Alapértelmezett érték               | nincs  |
+| Láncbemenet fogadása?      | hamis |
+| Helyettesítő karakterek elfogadása? | hamis |
 
 ### <a name="-force"></a>-Force
 
-Arra kényszeríti a parancsot felhasználói jóváhagyás kérése nélkül fusson. \
-Emellett azt is kérni fogja megerősítő (például olyan nevet, amely nem egy tartomány nevét, vagy nem teljesen minősített) egyszerű vagy rövid számítógép nevének megadásakor. Megerősítő biztonsági okokból kérik, hogy a számítógép hozzáadása, csak ha a számítógép egy munkacsoporthoz tartozik, az egyszerű nevet használhat.
+Kikényszeríti a parancs futtatását a felhasználó jóváhagyásának kérése nélkül. Emellett azt is kérni fogja megerősítő (például olyan nevet, amely nem egy tartomány nevét, vagy nem teljesen minősített) egyszerű vagy rövid számítógép nevének megadásakor. Megerősítő biztonsági okokból kérik, hogy a számítógép hozzáadása, csak ha a számítógép egy munkacsoporthoz tartozik, az egyszerű nevet használhat.
 
 |||
 |-|-|
@@ -154,8 +152,7 @@ Adja meg egy vagy több felhasználói csoport neve az Active Directory tartomá
 
 ### <a name="-username-string"></a>-UserName \<karakterlánc\[\]\>
 
-Itt adhatja meg, amelyhez ez a szabály engedélyezi a hozzáférést egy vagy több felhasználó. A felhasználónév az átjáró-számítógép vagy az AD DS-ben a felhasználó helyi felhasználói fiók is lehet.
-A formátum `domain\user` vagy `computer\user`.
+Itt adhatja meg, amelyhez ez a szabály engedélyezi a hozzáférést egy vagy több felhasználó. A felhasználónév az átjáró-számítógép vagy az AD DS-ben a felhasználó helyi felhasználói fiók is lehet. A formátum `domain\user` vagy `computer\user`.
 
 |||
 |-|-|
@@ -168,7 +165,9 @@ A formátum `domain\user` vagy `computer\user`.
 
 ###  <a name="commonparameters"></a>\<CommonParameters\>
 
-Ez a parancsmag a következő általános paramétereket támogatja:-Verbose,-Debug, - ErrorAction, - ErrorVariable,-OutBuffer és - OutVariable.
+Ez a parancsmag a következő általános paramétereket támogatja:
+
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer és -OutVariable.
 További információkért lásd: [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
 
 ## <a name="inputs"></a>BEMENETEK
@@ -194,9 +193,9 @@ Ez a parancsmag adja vissza az engedélyezési szabály objektum.
 Ebben a példában hozzáférést biztosít a munkamenet-konfiguráció _PSWAEndpoint_, amely egy korlátozott futási térrel, _srv2_ lévő felhasználók számára a _SMAdmins_ csoport.
 
 > [!NOTE]
-> A számítógép nevét egy teljesen minősített tartománynevét (FQDN) kell lennie. A rendszergazdák egy korlátozott munkamenet-konfiguráció vagy a futási térből, amely a parancsmagok és a végfelhasználók futtatható feladatok korlátozott tartománya határozza meg. Korlátozott futási térrel definiálása megakadályozhatja a felhasználók más számítógépekhez, amelyek nem engedélyezett Windows PowerShell® a futási térben található, így több biztonságos kapcsolatot. A munkamenet-konfigurációk további információkért lásd: [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) vagy a [telepítése és használata Windows PowerShell-elérés](../install-and-use-windows-powershell-web-access.md).
+> A számítógép nevét egy teljesen minősített tartománynevét (FQDN) kell lennie. A rendszergazdák egy korlátozott munkamenet-konfiguráció vagy a futási térből, amely a parancsmagok és a végfelhasználók futtatható feladatok korlátozott tartománya határozza meg. Korlátozott futási térrel definiálása megakadályozhatja a felhasználók más számítógépekhez, amelyek nem engedélyezett Windows PowerShell(r) a futási térben található, így több biztonságos kapcsolatot. A munkamenet-konfigurációk további információkért lásd: [about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations) vagy [telepítése és használata Windows PowerShell-elérés](../install-and-use-windows-powershell-web-access.md).
 
-```PowerShell
+```powershell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
 ```
 
@@ -204,8 +203,8 @@ Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\
 
 Ebben a példában hozzáférést biztosít az alapértelmezett Windows PowerShell-munkamenet konfigurációk, `Microsoft.PowerShell`, a *srv2* a felhasználók számára az nevű felhasználók `contoso\user1`, `contoso\user2`, és `contoso\user3`. Ez a parancsmag három szabályokat (1 / személy) hoz létre.
 
-```PowerShell
-Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user3 –ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
+```powershell
+Add-PswaAuthorizationRule -UserName contoso\user1, contoso\user2, contoso\user3 -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
 ### <a name="example-3"></a>3. PÉLDA
@@ -213,18 +212,18 @@ Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user
 Ez a példa szemlélteti, hogyan bemeneti felhasználói név értékek keresztül a folyamat.
 
 ```powershell
-"contoso\user1","contoso\user2" | Add-pswaAuthorizationRule –ComputerName srv2.contoso.com –ConfigurationName Microsoft.PowerShell
+"contoso\user1","contoso\user2" | Add-pswaAuthorizationRule -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
 ### <a name="example-4"></a>4. PÉLDA
 
 Ez a példa bemutatja, hogy minden paraméter értékeit folyamat igénybe tulajdonság neve.
 
-````PowerShell
+````powershell
 $o = New-Object -TypeName PSObject |
     Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
     Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
-    Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
+    Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" -PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell
 ````
@@ -236,19 +235,18 @@ Ez a példa hozzáad egy szabályt, amely engedélyezi a helyi felhasználó nev
 Ebben a példában egy forgatókönyvet, ahol az átjáró egy munkacsoporthoz tartozik, és a célszámítógép egy tartományhoz tartozik mutatja be. Az átjáró a helyi felhasználók az engedélyezési szabály vonatkozik. A bejelentkezési lapon Windows PowerShell-elérés e sikeres hitelesítést végezni, a felhasználónak meg kell adnia a hitelesítő adatokat egy második együttesét a **választható csatlakozási beállítások** területen. Az átjáró-kiszolgálót a további hitelesítő adatokat használja a célszámítógépen, a kiszolgáló neve a felhasználó hitelesítésére *srv1.contoso.com*.
 
 ````powershell
-Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1.contoso.com –ConfigurationName Microsoft.PowerShell
+Add-PswaAuthorizationRule -UserName PswaServer\ChrisLocal -ComputerName srv1.contoso.com -ConfigurationName Microsoft.PowerShell
 ````
 
 ### <a name="example-6"></a>6. PÉLDA
 
-Ebben a példában engedélyezi az összes felhasználó összes végponthoz való hozzáférést az összes számítógépen.
-Ez lényegében kikapcsolja az engedélyezési szabályok.
+Ebben a példában engedélyezi az összes felhasználó összes végponthoz való hozzáférést az összes számítógépen. Ez lényegében kikapcsolja az engedélyezési szabályok.
 
 > [!NOTE]
 > Használja a `*` helyettesítő karakter biztonsági szempontból kényes központi telepítések esetében nem javasolt, és csak tesztkörnyezetekhez tekinthető, vagy el kell telepítések esetén használják, ahol csökkenthető a biztonsági.
 
-````PowerShell
-Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
+````powershell
+Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *
 ````
 
 ## <a name="see-also"></a>Lásd még:

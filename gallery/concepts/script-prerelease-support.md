@@ -3,12 +3,12 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: katalógus, powershell, a parancsmag, psget
 title: A parancsfájlok előzetes verziók
-ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093848"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268466"
 ---
 # <a name="prerelease-versions-of-scripts"></a>A parancsfájlok előzetes verziók
 
@@ -45,12 +45,12 @@ Előzetes utótag használata, a verzió-karakterlánc az alábbi követelménye
 - A kiadás előtti utótag csak akkor adható meg, ha a verzió a főverzió.alverzió.build formában 3 szegmenssel.
   Ez a SemVer v1.0.0 igazítása
 - Az előzetes utótag egy karakterlánc, amely kötőjellel kezdődik, és előfordulhat, hogy a ASCII és számokat tartalmazhat [0-pedig a 9A-Za - z-]
-- Csak SemVer v1.0.0 előzetes karakterláncok támogatott szerepkörönként, ezért az előzetes utótag __nem kell__ vagy időszak tartalmazhat vagy + [. +], SemVer 2.0 engedélyezettek, amelyek
+- Csak SemVer v1.0.0 előzetes karakterláncok támogatott szerepkörönként, ezért az előzetes utótag **nem kell** vagy időszak tartalmazhat vagy + [. +], SemVer 2.0 engedélyezettek, amelyek
 - Néhány példa a támogatott PrereleaseString karakterláncok:-alpha, - α1, – BÉTAVERZIÓ, - update20171020
 
-__Előzetes versioning hatása a rendezési sorrend és a telepítési mappa__
+### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>Előzetes versioning hatása a rendezési sorrend és a telepítési mappa
 
-Rendezési sorrend módosítja, ami fontos a PowerShell-galériából való közzétételkor, előzetes verziójának használata esetén, és a PowerShellGet-parancsokkal parancsfájlok telepítésekor. Ha két, parancsfájlok, a verziószámot a verziók találhatók, a rendezési sorrend alapján a kötőjelet a következő karakterlánc része. Tehát verzió 2.5.0-alpha kisebb, mint 2.5.0-beta, amely kisebb, mint 2.5.0-gamma. Ha két parancsfájlt kell ugyanazon a verziószámot, és csak az egyiket egy PrereleaseString, a parancsfájl __nélkül__ az előzetes utótag adatforrásmérete az éles használatra kész verziót, és nagyobb, mint az előzetes verzióként rendezése verzió. Tegyük fel, amikor 2.5.0 és 2.5.0-beta, a 2.5.0 összehasonlítása kiadások nagyobb, mint a két verzió akkor minősül.
+Rendezési sorrend módosítja, ami fontos a PowerShell-galériából való közzétételkor, előzetes verziójának használata esetén, és a PowerShellGet-parancsokkal parancsfájlok telepítésekor. Ha két, parancsfájlok, a verziószámot a verziók találhatók, a rendezési sorrend alapján a kötőjelet a következő karakterlánc része. Tehát verzió 2.5.0-alpha kisebb, mint 2.5.0-beta, amely kisebb, mint 2.5.0-gamma. Ha két parancsfájlt kell ugyanazon a verziószámot, és csak az egyiket egy PrereleaseString, a parancsfájl **nélkül** az előzetes utótag adatforrásmérete az éles használatra kész verziót, és nagyobb, mint az előzetes verzióként rendezése verzió. Tegyük fel, amikor 2.5.0 és 2.5.0-beta, a 2.5.0 összehasonlítása kiadások nagyobb, mint a két verzió akkor minősül.
 
 A PowerShell-galériából való közzétételkor alapértelmezés szerint a parancsfájl közzétett verzióját kell lennie a nagyobb, mint a korábban közzétett verzió, a PowerShell-galériában található. A kiadó. Előfordulhat, hogy frissítéssel verzió 2.5.0-alpha 2.5.0-beta vagy 2.5.0 (az előzetes utótag nélkül).
 
@@ -61,7 +61,7 @@ A PowerShellGet Find-Script, Install-Script, frissítési-parancsfájlt, az elő
 Alól kivételt csak a PowerShellGet parancsprogram-utasítások a a következők: Get-InstalledScript és bizonyos esetekben az eltávolítási-szkriptet.
 
 - Get-InstalledScript mindig automatikusan információk jelennek meg a kiadás előtti verzió-karakterlánca a telepítve, ha.
-- Eltávolítási Parancsprogramja lesz alapértelmezés szerint távolítsa el a legújabb verziót az adott parancsprogramot, ha __nincs verzió__ van megadva. Ezt a viselkedést nem változott. Azonban ha előzetes verziójának meg van adva, használja a - RequiredVersion, - AllowPrerelease lesz szükség.
+- Eltávolítási Parancsprogramja lesz alapértelmezés szerint távolítsa el a legújabb verziót az adott parancsprogramot, ha **nincs verzió** van megadva. Ezt a viselkedést nem változott. Azonban ha előzetes verziójának használatával van megadva `-RequiredVersion`, `-AllowPrerelease` lesz szükség.
 
 ## <a name="examples"></a>Példák
 
@@ -83,13 +83,13 @@ Version        Name                                Repository           Descript
 # To install a prerelease, you must specify -AllowPrerelease. Specifying a prerelease version string is not sufficient.
 
 C:\windows\system32> Install-Script TestPackage -RequiredVersion 1.9.0-alpha
+
 PackageManagement\Find-Package : No match was found for the specified search criteria and script name 'TestPackage'.
 Try Get-PSRepository to see all available registered script repositories.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:1455 char:3
 +         PackageManagement\Find-Package @PSBoundParameters | Microsoft ...
 +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage) [Find-Package], Exceptio
-   n
+    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage)[Find-Package], Exception
     + FullyQualifiedErrorId : NoMatchFoundForCriteria,Microsoft.PowerShell.PackageManagement.Cmdlets.FindPackage
 
 # The previous command failed because -AllowPrerelease was not specified.

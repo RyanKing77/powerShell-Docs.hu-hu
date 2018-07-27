@@ -3,18 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: Parancsfájl-kompatibilis PowerShell-kiadások
-ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 0ab655ff1c5dd0f48ec41a16ad394251b6c70748
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093660"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267813"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Parancsfájl-kompatibilis PowerShell-kiadások
 
 Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhető el, amelyek különböző szolgáltatáskészleteket és platformkompatibilitást kínálnak.
 
 - **Desktop kiadás:** A .NET-keretrendszeren alapul, és a Windows teljes erőforrás-igényű kiadásain, például a Server Core és a Windows asztali kiadásain futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít kompatibilitást.
+
 - **Core kiadás:** .NET Core-on alapul, és a Windows csökkentett erőforrás-igényű kiadásain, például a Nano Serveren és a Windows IoT kiadásokon futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít kompatibilitást.
 
 A futtatott PowerShell-verzió a $PSVersionTable PSEdition tulajdonságában jelenik meg.
@@ -34,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-A parancsfájlkészítők egy #requires utasításban a PSEdition paraméterrel megakadályozhatják a szkriptek nem kompatibilis PowerShell-kiadáson való futtatását.
+Szkriptkészítők megakadályozhatja a parancsfájl végrehajtása, ha a PowerShell használatával a PSEdition paraméterrel a kompatibilis kiadásán fut egy `#requires` utasítást.
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core

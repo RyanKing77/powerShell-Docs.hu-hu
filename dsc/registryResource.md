@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-Registry erőforrás
-ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 8d74473d167b70182c3a16c1d39d2a9e797afb1b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093585"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267721"
 ---
 # <a name="dsc-registry-resource"></a>DSC-Registry erőforrás
 
-> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+_A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0_
 
 A **beállításjegyzék** erőforrás a Windows PowerShell Desired State Configuration (DSC) kezelése a beállításkulcsok és a egy célcsomóponttal mechanizmust biztosít.
 
@@ -33,8 +33,8 @@ Registry [string] #ResourceName
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   |
-|---|---|
+| Tulajdonság | Leírás |
+| --- | --- |
 | Billentyű| Azt jelzi, hogy az elérési útját, amelyhez szeretne biztosítani adott állapotú beállításkulcs. Ezt az elérési utat tartalmaznia kell a struktúra.|
 | Értéknév| A beállításazonosító nevét jelzi. Hozzáadhat és eltávolíthat egy beállításkulcsot, adja meg a tulajdonság egy üres karakterlánccal ValueType vagy értékadat megadása nélkül. Módosíthatja, vagy távolítsa el az alapértelmezett érték egy beállításkulcs, adja meg, ez a tulajdonság egy üres karakterlánccal ValueType vagy értékadat megadása során.|
 | Győződjön meg, hogy| Azt jelzi, ha a kulcs-érték létezik-e. Annak érdekében, hogy tesznek, a "E" tulajdonság értéke. Győződjön meg arról, hogy azok nem léteznek, hogy a "Hiányzó" tulajdonság értéke. Az alapértelmezett érték: "E".|
@@ -62,4 +62,4 @@ Configuration RegistryTest
 ```
 
 > [!NOTE]
-> Egy beállításjegyzékbeli beállítás módosításával a **HKEY\_aktuális\_felhasználói** hive megköveteli, hogy a konfigurációs felhasználói hitelesítő adatokkal, nem pedig a rendszer fut-e. Használhatja a **PsDscRunAsCredential** tulajdonságot adja meg a hitelesítő adatokat a konfigurációt. Egy vonatkozó példáért lásd: [DSC futtatása felhasználói hitelesítő adatokkal](runAsUser.md).
+> Egy beállításjegyzékbeli beállítás módosításával a `HKEY\CURRENT\USER` hive megköveteli, hogy a konfigurációs felhasználói hitelesítő adatokkal, nem pedig a rendszer fut-e. Használhatja a **PsDscRunAsCredential** tulajdonságot adja meg a hitelesítő adatokat a konfigurációt. Egy vonatkozó példáért lásd: [DSC futtatása felhasználói hitelesítő adatokkal](runAsUser.md).

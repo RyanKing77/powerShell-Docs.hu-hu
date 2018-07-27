@@ -3,14 +3,9 @@
 
 ## <a name="overview"></a>Áttekintés
 
-PowerShell távoli eljáráshívás általában winrm funkciót használ a kapcsolat egyeztetési és adatátvitel.
-SSH a távoli eljáráshívás megvalósítási lett választva, mert már Linux és Windows platformokon elérhető, és lehetővé teszi, hogy igaz többplatformos PowerShell távoli eljáráshívás.
-Azonban a Rendszerfelügyeleti webszolgáltatások is biztosít egy robusztus üzemeltetési modell PowerShell távoli munkamenetek, amelyek ezt a megvalósítást még nem teszi.
-És ez azt jelenti, hogy PowerShell távoli végpont-konfiguráció és a JEA (Just Enough Administration) még nem támogatott a végrehajtása során.
+PowerShell távoli eljáráshívás általában winrm funkciót használ a kapcsolat egyeztetési és adatátvitel. SSH a távoli eljáráshívás megvalósítási lett választva, mert már Linux és Windows platformokon elérhető, és lehetővé teszi, hogy igaz többplatformos PowerShell távoli eljáráshívás. Azonban a Rendszerfelügyeleti webszolgáltatások is biztosít egy robusztus üzemeltetési modell PowerShell távoli munkamenetek, amelyek ezt a megvalósítást még nem teszi. És ez azt jelenti, hogy PowerShell távoli végpont-konfiguráció és a JEA (Just Enough Administration) még nem támogatott a végrehajtása során.
 
-PowerShell SSH távelérés lehetővé teszi egyszerű PowerShell-munkamenet távelérés Windows és Linux gép között.
-Ez történik, egy PowerShell-folyamat a célgépen, mint egy SSH-alrendszer üzemeltető létrehozásával.
-Végül ez fog módosítható, hasonlóan ahhoz, hogy támogatja a végpont-konfiguráció és a JEA WinRM működése általános üzemeltetési modell.
+PowerShell SSH távelérés lehetővé teszi egyszerű PowerShell-munkamenet távelérés Windows és Linux gép között. Ez történik, egy PowerShell-folyamat a célgépen, mint egy SSH-alrendszer üzemeltető létrehozásával. Végül ez fog módosítható, hasonlóan ahhoz, hogy támogatja a végpont-konfiguráció és a JEA WinRM működése általános üzemeltetési modell.
 
 A `New-PSSession`, `Enter-PSSession` és `Invoke-Command` parancsmagok most már rendelkezik egy új paraméter megkönnyítése érdekében a távoli eljáráshívás új kapcsolat beállítása
 
@@ -18,24 +13,18 @@ A `New-PSSession`, `Enter-PSSession` és `Invoke-Command` parancsmagok most már
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Az új paraméterkészlet valószínűleg változni fognak, de egyelőre lehetővé teszi, hogy hozzon létre SSH PSSessions, hogy kommunikáljanak a parancssorból, vagy a parancsok és szkriptek invoke.
-A HostName paraméter adja meg a célgépen, és adja meg a felhasználónevet a felhasználónévvel.
-Amikor interaktívan futtatja a parancsmagok a PowerShell-parancssorból, a rendszer kéri, a jelszót.
-De lehetősége is van az SSH-kulcsos hitelesítést, és adja meg a titkos kulcsfájl elérési útja a KeyFilePath paraméterrel.
+Az új paraméterkészlet valószínűleg változni fognak, de egyelőre lehetővé teszi, hogy hozzon létre SSH PSSessions, hogy kommunikáljanak a parancssorból, vagy a parancsok és szkriptek invoke. A HostName paraméter adja meg a célgépen, és adja meg a felhasználónevet a felhasználónévvel. Amikor interaktívan futtatja a parancsmagok a PowerShell-parancssorból, a rendszer kéri, a jelszót. De lehetősége is van az SSH-kulcsos hitelesítést, és adja meg a titkos kulcsfájl elérési útja a KeyFilePath paraméterrel.
 
 ## <a name="general-setup-information"></a>Általános beállítási adatok
 
-SSH szükség minden gépen telepíthető.
-Telepítenie kell a mindkét-ügyfelet (`ssh.exe`) és a kiszolgáló (`sshd.exe`), hogy a távoli eljáráshívás irányuló és onnan a gépek kísérletezhet.
-A Windows, telepítenie kell [a Githubról történő Win32-OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases).
-A Linux rendszerre, telepítenie kell a platformjának megfelelő (így sshd-kiszolgálót) SSH.
-A legújabb PowerShell-build vagy a csomag kellene a távoli eljáráshívás SSH szolgáltatás a githubból is kell.
-A távoli gépen egy PowerShell-folyamat létrehozásához használt SSH alrendszerek és az SSH-kiszolgálót kell konfigurálni, amely.
-Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kulcs alapú hitelesítés engedélyezéséhez.
+SSH szükség minden gépen telepíthető. Telepítenie kell a mindkét-ügyfelet (`ssh.exe`) és a kiszolgáló (`sshd.exe`), hogy a távoli eljáráshívás irányuló és onnan a gépek kísérletezhet. A Windows, telepítenie kell [a Githubról történő Win32-OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases).
+A Linux rendszerre, telepítenie kell a platformjának megfelelő (így sshd-kiszolgálót) SSH. A legújabb PowerShell-build vagy a csomag kellene a távoli eljáráshívás SSH szolgáltatás a githubból is kell.
+A távoli gépen egy PowerShell-folyamat létrehozásához használt SSH alrendszerek és az SSH-kiszolgálót kell konfigurálni, amely. Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kulcs alapú hitelesítés engedélyezéséhez.
 
 ## <a name="setup-on-windows-machine"></a>Windows-gépen beállítása
 
 1. Telepítse a legújabb verzióját, [a Windows PowerShell Core]
+
    - Is megadhatja, hogy a távoli eljáráshívás SSH-támogatás, ha megnézzük a paraméterkészletek számára `New-PSSession`
 
    ```powershell
@@ -46,65 +35,68 @@ Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kul
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-1. A legújabb [Win32 OpenSSH] build telepítése [telepítés] utasításai a githubról
-1. A helyen, amelyre telepítve van a Win32-OpenSSH sshd_config fájlban szerkesztése
+2. A legújabb [Win32 OpenSSH] build telepítése [telepítés] utasításai a githubról
+3. A helyen, amelyre telepítve van a Win32-OpenSSH sshd_config fájlban szerkesztése
+
    - Győződjön meg arról, hogy engedélyezve van a jelszó-hitelesítés
 
-   ```
-   PasswordAuthentication yes
-   ```
+     ```
+     PasswordAuthentication yes
+     ```
 
-    ```
-    Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
-    > [!NOTE]
-    > Az OpenSSH a Windows, amely megakadályozza, hogy a tárolóhelyek alrendszer végrehajtható elérési utak használata programhiba van.
-    > Lásd: [további információt a problémát a Githubban](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+     > [!NOTE]
+     > Az OpenSSH a Windows, amely megakadályozza, hogy a tárolóhelyek alrendszer végrehajtható elérési utak használata programhiba van.
+     > Lásd: [további információt a problémát a Githubban](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-    Az egyik megoldás, a Powershell telepítési könyvtárát, amely nem tartalmaz szóközöket szimbolikus létrehozásához:
+     Az egyik megoldás, a Powershell telepítési könyvtárát, amely nem tartalmaz szóközöket szimbolikus létrehozásához:
 
-    ```powershell
-    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
-    ```
+     ```powershell
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+     ```
 
-    és a alrendszer írja be:
+     és a alrendszer írja be:
 
-    ```
-    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
-   ```
-   Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-   ```
+     ```
+     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
    - Igény szerint a kulcs alapú hitelesítés engedélyezése
 
-   ```
-   PubkeyAuthentication yes
-   ```
+     ```
+     PubkeyAuthentication yes
+     ```
 
-1. Indítsa újra az sshd szolgáltatást
+4. Indítsa újra az sshd szolgáltatást
 
    ```powershell
    Restart-Service sshd
    ```
 
-1. Az OpenSSH helyéül az elérési út Env változó az elérési út hozzáadása
+5. Az OpenSSH helyéül az elérési út Env változó az elérési út hozzáadása
+
    - Ez a témakörgyűjtemény legyen `C:\Program Files\OpenSSH\`
    - Ez lehetővé teszi a ssh.exe találhatók
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Telepítés Linux (Ubuntu 14.04) gépen
 
 1. Telepítse a legújabb [a PowerShell Core for Linux] build a Githubról
-1. Telepítése [Ubuntu SSH] igény szerint
+2. Telepítése [Ubuntu SSH] igény szerint
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-1. Az sshd_config fájlban a következő helyen /etc/ssh szerkesztése
+3. Az sshd_config fájlban a következő helyen /etc/ssh szerkesztése
+
    - Győződjön meg arról, hogy engedélyezve van a jelszó-hitelesítés
 
    ```
@@ -123,7 +115,7 @@ Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kul
    PubkeyAuthentication yes
    ```
 
-1. Indítsa újra az sshd szolgáltatást
+4. Indítsa újra az sshd szolgáltatást
 
    ```bash
    sudo service sshd restart
@@ -132,12 +124,15 @@ Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kul
 ## <a name="setup-on-macos-machine"></a>A MacOS rendszerű gépén beállítása
 
 1. Telepítse a legújabb [PowerShell Core for MacOS keretrendszert]-build
+
    - Győződjön meg arról, hogy SSH-távelérés engedélyezve van az alábbi lépéseket:
      - Nyissa meg `System Preferences`
      - Kattintson a `Sharing`
      - Ellenőrizze `Remote Login` – a következő: `Remote Login: On`
      - Megfelelő felhasználók férhessenek hozzá
-1. Szerkessze a `sshd_config` helyen található fájl `/private/etc/ssh/sshd_config`
+
+2. Szerkessze a `sshd_config` helyen található fájl `/private/etc/ssh/sshd_config`
+
    - Használja kedvenc szerkesztőjében, vagy
 
      ```bash
@@ -162,7 +157,7 @@ Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kul
      PubkeyAuthentication yes
      ```
 
-1. Indítsa újra az sshd szolgáltatást
+3. Indítsa újra az sshd szolgáltatást
 
    ```bash
    sudo launchctl stop com.openssh.sshd
@@ -171,10 +166,7 @@ Szüksége lesz továbbá jelszóalapú hitelesítés, illetve opcionálisan kul
 
 ## <a name="powershell-remoting-example"></a>Távoli eljáráshívás a PowerShell-példa
 
-A legegyszerűbb módon távelérésének lehetővé tétele, hogy csak egyetlen gépen történő kipróbálására.
-Itt I hoz létre vissza ugyanarra a gépre a távoli munkamenetet egy Linux-be.
-Figyelje meg, hogy egy parancssorból a PowerShell-parancsmagok használom, így láthatjuk, hogy SSH ellenőrzése a gazdaszámítógépen, valamint a jelszót utasításokat kéri az utasításokat.
-Egy Windows gépre van működik a távoli eljáráshívás biztosításához és a gépek a gazdagép neve egyszerűen módosításával közötti majd távoli ugyanezt teheti meg.
+A legegyszerűbb módon távelérésének lehetővé tétele, hogy csak egyetlen gépen történő kipróbálására. Itt I hoz létre vissza ugyanarra a gépre a távoli munkamenetet egy Linux-be. Figyelje meg, hogy egy parancssorból a PowerShell-parancsmagok használom, így láthatjuk, hogy SSH ellenőrzése a gazdaszámítógépen, valamint a jelszót utasításokat kéri az utasításokat. Egy Windows gépre van működik a távoli eljáráshívás biztosításához és a gépek a gazdagép neve egyszerűen módosításával közötti majd távoli ugyanezt teheti meg.
 
 ```powershell
 #
@@ -301,7 +293,7 @@ GitCommitId                    v6.0.0-alpha.17
 
 ### <a name="known-issues"></a>Ismert problémák
 
-- sudo parancs nem működik a távoli munkamenetet Linux rendszerű gépen.
+A sudo parancs nem működik a távoli munkamenetet Linux rendszerű gépen.
 
 ## <a name="see-also"></a>Lásd még:
 

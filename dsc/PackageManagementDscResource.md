@@ -2,12 +2,12 @@
 ms.date: 06/20/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC PackageManagement erőforrás
-ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892501"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268092"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement erőforrás
 
@@ -39,8 +39,8 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   |
-|---|---|
+| Tulajdonság | Leírás |
+| --- | --- |
 | Név| Megadja a telepítendő vagy eltávolítandó-csomag neve.|
 | AdditionalParameters| Szolgáltató paramétereket, amelyek számára az adott szórótábla `Get-Package -AdditionalArguments`. Például a NuGet-szolgáltató adhat át további paraméterek, például a DestinationPath.|
 | Győződjön meg, hogy| Meghatározza, hogy a csomag telepítése vagy eltávolítása.|
@@ -54,10 +54,11 @@ PackageManagement [string] #ResourceName
 ## <a name="additional-parameters"></a>További paraméterek
 
 A következő táblázat felsorolja a AdditionalParameters tulajdonság lehetőségeit.
-|  Paraméter  | Leírás   |
-|---|---|
+
+| Paraméter | Leírás |
+| --- | --- |
 | DestinationPath| Szolgáltatók, például a beépített Nuget-szolgáltató által használt. A csomagot a telepíteni kívánt fájl helyének megadása.|
-| InstallationPolicy| Szolgáltatók, például a beépített Nuget-szolgáltató által használt. Azt határozza meg, hogy megbízható-e a csomag forrásához. Egyikét: "Nem megbízható", "Megbízható".|
+| InstallationPolicy| Szolgáltatók, például a beépített Nuget-szolgáltató által használt. Azt határozza meg, hogy megbízható-e a csomag forrásához. Egyik: `Untrusted`, `Trusted`.|
 
 ## <a name="example"></a>Példa
 

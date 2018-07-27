@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-Package erőforrás
-ms.openlocfilehash: 3046ba7d57776a996a0b917348a0e863db6cd0c8
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093803"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268670"
 ---
 # <a name="dsc-package-resource"></a>DSC-Package erőforrás
 
-> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+_A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0_
 
 A **csomag** erőforrás a Windows PowerShell Desired State Configuration (DSC) telepítéséhez vagy eltávolításához a csomagok, például a setup.exe és a Windows Installer csomagokat, a cél csomópont mechanizmust biztosít.
 
@@ -34,8 +34,8 @@ Package [string] #ResourceName
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   |
-|---|---|
+| Tulajdonság | Leírás |
+| --- | --- |
 | Név| Azt jelzi, hogy a csomag, amelyhez szeretne biztosítani egy adott állapot neve.|
 | Elérési út| Azt jelzi, hogy az elérési utat, ahol a csomag található.|
 | Termékazonosító| Azt jelzi, hogy a termék azonosítója, amely egyedileg azonosítja a csomagot.|
@@ -43,7 +43,7 @@ Package [string] #ResourceName
 | Hitelesítő adatok| A csomag hozzáférést biztosít a távoli forrás. Ez a tulajdonság nem használatos a csomag telepítéséhez. A csomag mindig telepítve van a helyi rendszeren.|
 | Győződjön meg, hogy| Azt jelzi, hogy telepítve van-e a csomag. Állítsa be ezt a tulajdonságot a "Hiányzó", győződjön meg arról, a csomag nincs telepítve (vagy távolítsa el a csomagot, ha telepítve van). Állítsa be azt, hogy "" (az alapértelmezett érték) annak érdekében, hogy a csomag telepítése.|
 | LogPath| Azt jelzi, hogy a teljes elérési útja, ahol azt szeretné, hogy a szolgáltató telepítéséhez, vagy távolítsa el a csomagot a naplófájl mentéséhez.|
-| DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója parancsfájl-blokk futtatni kívánt első az **ResourceName** és a típusa **ResourceType**, esetén ez a tulajdonság használatával "DependsOn"[a = Erőforrástípus] ResourceName"s".|
+| DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója letiltása, a futtatni kívánt parancsfájl először van **ResourceName** és a típusa **ResourceType**, ez a tulajdonság használata esetén `DependsOn = "[ResourceType]ResourceName"`.|
 | Visszatérési kód:| Azt jelzi, hogy a várt visszatérési kódot. Ha a tényleges visszatérési kód nem egyezik a várt értéknek. Itt, elérhető, a konfigurációs hibát adnak vissza.|
 
 ## <a name="example"></a>Példa

@@ -1,20 +1,20 @@
 ---
 ms.topic: reference
-keywords: PowerShell parancsmag
+keywords: PowerShell, a parancsmag
 ms.date: 12/12/2016
 title: Install-PswaWebApplication
-ms.openlocfilehash: 68455d9490f7d5c33c1a928ac262a76a78ad7128
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29e074b75eeb387640831229c63142e6dd5e991a
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189601"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268299"
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
 ## <a name="synopsis"></a>SYNOPSIS
 
-A Windows PowerShell® Web Access webalkalmazás konfigurálja az IIS-ben.
+Konfigurálja a Windows PowerShell-elérés webes alkalmazást az IIS-ben.
 
 ## <a name="syntax"></a>SZINTAXIS
 
@@ -25,13 +25,14 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 ## <a name="description"></a>LEÍRÁS
 
-A **Install-PswaWebApplication** parancsmag konfigurálja a Windows PowerShell Web Access webes alkalmazást. Ez a parancsmag telepíti a webalkalmazás, társítja azt egy webhely, és választhatóan egy teszt SSL tanúsítvány használata a **useTestCertificate** paraméter. Biztonsági okokból webes rendszergazdák ne használjon egy teszttanúsítványt éles környezetekben.
+A **Install-PswaWebApplication** parancsmag konfigurálja a Windows PowerShell-elérés webes alkalmazást.
+Ez a parancsmag telepíti a webalkalmazás, hozzárendeli egy webhely, és igény szerint létrehoz egy tesztelési SSL tanúsítvány használatával a **useTestCertificate** paraméter. Biztonsági okokból a webes rendszergazdák ne használjon egy tesztcélú tanúsítvánnyal az éles környezetekhez.
 
 ## <a name="parameters"></a>PARAMÉTEREK
 
 ### <a name="-usetestcertificate"></a>-UseTestCertificate
 
-Meghatározza, hogy létrejött-e egy teszttanúsítványt. Ha a paraméter értéke igaz, akkor ez a parancsmag létrehoz egy tesztelési tanúsítványt, és konfigurálja a Windows PowerShell Web Access webalkalmazás használhassa a tanúsítványt a HTTPS-kéréseket. Ha ez a paraméter false értékre van beállítva, akkor nincs tanúsítvány vagy a kötés jön létre. Állítsa be ezt az értéket az hamis, ha a Windows PowerShell Web Access egy másik tanúsítvánnyal.
+Megadja, hogy létrejött-e egy tesztcélú tanúsítvánnyal. Ha ez a paraméter értéke true, akkor ez a parancsmag létrehoz egy tesztcélú tanúsítvánnyal, és konfigurálja a tanúsítványt használja a HTTPS-kéréseket a Windows PowerShell-elérés webes alkalmazást. Ha ez a paraméter false értékre van állítva, akkor nincs tanúsítvány vagy kötési jön létre. Ha egy másik tanúsítványt használ a Windows PowerShell-elérés "false" értékűre ezt az értéket.
 
 |||
 |-|-|
@@ -42,9 +43,9 @@ Meghatározza, hogy létrejött-e egy teszttanúsítványt. Ha a paraméter ért
 | Láncbemenet fogadása?               | hamis                                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;karakterlánc&gt;
+### <a name="-webapplicationname"></a>-WebApplicationName
 
-Megadja a webalkalmazás nevét. Ez a Windows PowerShell Web Access URL-cím utolsó részeként jelenik meg.
+Megadja a webalkalmazás nevét. Ez a Windows PowerShell Web Access URL-cím utolsó része jelenik meg.
 
 |||
 |-|-|
@@ -55,9 +56,9 @@ Megadja a webalkalmazás nevét. Ez a Windows PowerShell Web Access URL-cím uto
 | Láncbemenet fogadása?               | hamis                                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;karakterlánc&gt;
+### <a name="-websitename"></a>-Webhelynév helyére írja be
 
-Adja meg a webkiszolgáló (IIS) webhely telepítéséhez a Windows PowerShell Web Access webes alkalmazás neve.
+Megadja a nevét a webkiszolgáló (IIS) webhely, amelyen a Windows PowerShell-elérés webes alkalmazás telepítéséhez.
 
 |||
 |-|-|
@@ -93,24 +94,23 @@ A parancsmag nem fut.
 | Láncbemenet fogadása?               | hamis                                |
 | Helyettesítő karakterek elfogadása?          | hamis                                |
 
-### <a name="ltcommonparametersgt"></a>&lt;Általánosparaméterek&gt;
+### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
-Ez a parancsmag a következő általános paramétereket támogatja:-Verbose,-Debug, - ErrorAction, - ErrorVariable,-OutBuffer és - OutVariable.
-További információkért lásd: [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
+Ez a parancsmag a következő általános paramétereket támogatja:-Verbose,-Debug, - ErrorAction, - ErrorVariable,-OutBuffer és - OutVariable. További információkért lásd: [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
 
 ## <a name="inputs"></a>BEMENETEK
 
-Ez a parancsmag nem bemenetből fogad adatokat.
+Ennél a parancsmagnál nincs bemenet.
 
 ## <a name="outputs"></a>KIMENETEK
 
-Ez a parancsmag nem kimenetet hoz létre.
+Ez a parancsmag nem hoz létre kimenetet.
 
 ## <a name="examples"></a>PÉLDÁK
 
 ### <a name="example-1"></a>1. PÉLDA
 
-Ebben a példában a PSWA webes alkalmazás alapértelmezett értékeinek használatával telepíti a **WebApplicationName** (*pswa*) és **WebSiteName** (*alapértelmezett webhelyen* ) paraméterek.
+Ebben a példában a PSWA webes alkalmazás alapértelmezett értékeinek használatával telepíti a **WebApplicationName** (*pswa*) és **Webhelynév helyére írja be** (*Default Web Site* ) paramétereket.
 
 ```
 Install-PswaWebApplication
@@ -118,7 +118,7 @@ Install-PswaWebApplication
 
 ### <a name="example-2"></a>2. PÉLDA
 
-Ebben a példában a PSWA webalkalmazás telepíti egy teszttanúsítványt, és az alapértelmezett értékeit használatával a **WebApplicationName** és **WebSiteName** paraméterek.
+Ebben a példában a PSWA webalkalmazás telepítése egy tesztcélú tanúsítvánnyal, és a tartozó alapértelmezett értékeket használ a **WebApplicationName** és **Webhelynév helyére írja be** paramétereket.
 
 ```
 Install-PswaWebApplication -UseTestCertificate

@@ -3,12 +3,12 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: katalógus, powershell, a parancsmag, psget
 title: Előzetes verziója
-ms.openlocfilehash: 371aae7eed4afe341755133c5ee2d356cd5876e0
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 9c3ddb623fbcb7f4b3453dd70cdc56a8dc2e9f6a
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093779"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268619"
 ---
 # <a name="prerelease-module-versions"></a>Előzetes verziója
 
@@ -17,8 +17,8 @@ ms.locfileid: "39093779"
 Magas szinten a modul előzetes funkciók a következők:
 
 - A modul előzetes karakterláncot ad hozzá a moduljegyzékben PSData szakaszában azonosítja az előzetes verzióként. Ha a modul a PowerShell-galériából tesznek közzé, ezeket az adatokat a jegyzékfájl kinyert, és előzetes elemek azonosításához használt.
-- Install-Module PowerShellGet parancsok Find-Module - AllowPrerelease jelző hozzáadása előzetes elemek beszerzése szükséges frissítés-modult, és a Save-Module. Ha nincs megadva a jelzőt, végleges elemek nem jelenik meg.
-- Find-Module, Get-InstalledModule, és a PowerShell-galériából a megjelenített modulverziók utótaggal, mint 2.5.0-alpha előzetes karakterlánccal egyetlen karakterlánc formájában jelenik meg.
+- Előzetes elemek beszerzéséhez szükséges hozzáadása `-AllowPrerelease` jelzőt a PowerShellGet-parancsokkal `Find-Module`, `Install-Module`, `Update-Module`, és `Save-Module`. Ha nincs megadva a jelzőt, végleges elemek nem jelenik meg.
+- Modulverziók által megjelenített `Find-Module`, `Get-InstalledModule`, és a PowerShell-galériából a jelenik meg egyetlen utótaggal, mint 2.5.0-alpha előzetes karakterláncot karakterláncként.
 
 Szolgáltatások részletei az alábbiakban találhatók.
 
@@ -52,10 +52,10 @@ A kiadás előtti karakterlánc részletes követelményei a következők:
 - Előzetes karakterlánc csak akkor adható meg, ha a ModuleVersion 3 szegmenssel főverzió.alverzió.build formában az. Ez SemVer v1.0.0 illeszkedik.
 - Egy kötőjel a kivonni kívánt a buildszám és a megjelenés előtti karakterlánc között. Egy kötőjel mint az első karakter, csak a kiadás előtti karakterlánc kell venni.
 - A kiadás előtti karakterlánc csak alfanumerikus ASCII-karaktereket tartalmazhat [0-pedig a 9A-Za - z-]. Ajánlott eljárás a Prerelease megkezdéséhez karakterlánc egy alfanumerikus karakter, könnyebben azonosíthatja, hogy ez a kiadás előtti verzióját, elemek listájának beolvasásakor.
-- Jelenleg csak SemVer v1.0.0 előzetes karakterláncok támogatott. Előzetes karakterlánc __nem kell__ vagy időszak tartalmazhat vagy + [. +], amely SemVer 2.0 használata engedélyezett.
+- Jelenleg csak SemVer v1.0.0 előzetes karakterláncok támogatott. Előzetes karakterlánc **nem kell** vagy időszak tartalmazhat vagy + [. +], amely SemVer 2.0 használata engedélyezett.
 - Néhány példa a támogatott előzetes karakterlánc:-alpha, - α1, – BÉTAVERZIÓ, - update20171020
 
-__Előzetes versioning hatása a rendezési sorrend és a telepítési mappa__
+### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>Előzetes versioning hatása a rendezési sorrend és a telepítési mappa
 
 Rendezési sorrend módosítja, ami fontos a PowerShell-galériából való közzétételkor, előzetes verziójának használata esetén, és ha a PowerShellGet-parancsokkal modulok telepítése. Ha az kiadás előtti karakterlánc két modul van megadva, a rendezési sorrendet a karakterlánc része a kötőjelet tartalmazhatja a következő alapul. Tehát verzió 2.5.0-alpha kisebb, mint 2.5.0-beta, amely kisebb, mint 2.5.0-gamma. Ha két modult az azonos ModuleVersion, és csak egy előzetes karakterlánccal rendelkezik, a kiadás előtti karakterlánc nélkül a modul adatforrásmérete az éles használatra kész verziót, és nagyobb, mint az előzetes verziót (amely tartalmazza az előzetes verzióként rendezése (karakterlánc). Tegyük fel, amikor 2.5.0 és 2.5.0-beta, a 2.5.0 összehasonlítása kiadások nagyobb, mint a két verzió akkor minősül.
 
@@ -72,69 +72,82 @@ Alól kivételt csak ehhez a PowerShellGet modul parancsok a következők: Get-I
 
 ## <a name="examples"></a>Példák
 
+Tegyük fel, a PowerShell-galériából TestPackage modulverziók 1.8.0-as és 1.9.0-alpha rendelkezik. Ha `-AllowPrerelease` van nincs megadva, csak 1.8.0-as verziót adja vissza.
+
 ```powershell
-# Assume the PowerShell Gallery has TestPackage module versions 1.8.0 and 1.9.0-alpha.
-# If -AllowPrerelease is not specified, only version 1.8.0 will be returned.
-C:\windows\system32> find-module TestPackage
+find-module TestPackage
+```
 
-Version        Name                                Repository           Description
--------        ----                                ----------           -----------
-1.8.0          TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
+```output
+Version        Name           Repository  Description
+-------        ----           ----------  -----------
+1.8.0          TestPackage    PSGallery   Package used to validate changes to the PowerShe...
+```
 
-C:\windows\system32> find-module TestPackage -AllowPrerelease
+```powershell
+find-module TestPackage -AllowPrerelease
+```
 
-Version        Name                                Repository           Description
--------        ----                                ----------           -----------
-1.9.0-alpha    TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
+```output
+Version        Name           Repository  Description
+-------        ----           ----------  -----------
+1.9.0-alpha    TestPackage    PSGallery   Package used to validate changes to the PowerShe...
+```
 
-# To install a prerelease, always specify -AllowPrerelease. Specifying a prerelease version string is not sufficient.
+Mindig adja meg a - AllowPrerelease egy előzetes verzióját kell telepíteni. Egy kiadás előtti verzió-karakterlánccal való megadása nem elegendő.
 
-C:\windows\system32> Install-module TestPackage -RequiredVersion 1.9.0-alpha
+```powershell
+Install-module TestPackage -RequiredVersion 1.9.0-alpha
+```
+
+```output
 PackageManagement\Find-Package : No match was found for the specified search criteria and module name 'TestPackage'.
 Try Get-PSRepository to see all available registered module repositories.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:1455 char:3
 +         PackageManagement\Find-Package @PSBoundParameters | Microsoft ...
 +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage) [Find-Package], Exceptio
-   n
+    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage) [Find-Package], Exception
     + FullyQualifiedErrorId : NoMatchFoundForCriteria,Microsoft.PowerShell.PackageManagement.Cmdlets.FindPackage
-
-# The previous command failed because -AllowPrerelease was not specified.
-# Adding -AllowPrerelease will result in success.
-
-C:\windows\system32> Install-module TestPackage -RequiredVersion 1.9.0-alpha -AllowPrerelease
-C:\windows\system32> Get-InstalledModule TestPackage
-
-Version         Name                                Repository           Description
--------         ----                                ----------           -----------
-1.9.0-alpha     TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
 ```
 
-Egymás melletti telepítés, amelyet csak a megadott prerelease miatt eltérő verziójú modulok nem támogatott. A PowerShellGet-modul telepítésekor ugyanazon modul különböző verzióinak egymás melletti telepített hoz létre a mappa nevét, a ModuleVersion használatával. A mappa nevét a ModuleVersion, a kiadás előtti karakterlánc nélkül használható. Ha egy felhasználó telepít MyModule verzió 2.5.0-alpha, azt a MyModule\2.5.0 mappába telepíti. Ha a felhasználó ezután 2.5.0-beta telepíti, a 2.5.0-beta verziót fog __túlzott írási__ a MyModule\2.5.0 mappa tartalmát. Egyik előnye az, hogy ez a módszer, hogy nincs szükség az eltávolítási az előzetes verziót az éles használatra kész verzió telepítése után. Az alábbi példa bemutatja, mi várható:
+Az előző parancs meghiúsult, mert a - AllowPrerelease nincs megadva. Hozzáadás `-AllowPrerelease` sikeres eredményez.
+
+```powershell
+Install-module TestPackage -RequiredVersion 1.9.0-alpha -AllowPrerelease
+Get-InstalledModule TestPackage
+```
+
+```output
+Version         Name          Repository  Description
+-------         ----          ----------  -----------
+1.9.0-alpha     TestPackage   PSGallery   Package used to validate changes to the PowerShe...
+```
+
+Egymás melletti telepítés, amelyet csak a megadott prerelease miatt eltérő verziójú modulok nem támogatott. A PowerShellGet-modul telepítésekor ugyanazon modul különböző verzióinak egymás melletti telepített hoz létre a mappa nevét, a ModuleVersion használatával. A mappa nevét a ModuleVersion, a kiadás előtti karakterlánc nélkül használható. Ha egy felhasználó MyModule verzió 2.5.0-alpha telepíti, akkor fog települni a `MyModule\2.5.0` mappát. Ha a felhasználó ezután 2.5.0-beta telepíti, a 2.5.0-beta verziót fog **felülírása** a mappa tartalmának `MyModule\2.5.0`. Egyik előnye az, hogy ez a módszer, hogy nincs szükség az eltávolítási az előzetes verziót az éles használatra kész verzió telepítése után. Az alábbi példa bemutatja, mi várható:
 
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
 
-Version         Name                                Repository           Description
--------         ----                                ----------           -----------
-1.9.0-alpha     TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-1.8.0           TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-1.1.3.2         TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
+Version         Name           Repository  Description
+-------         ----           ----------  -----------
+1.9.0-alpha     TestPackage    PSGallery   Package used to validate changes to the PowerShe...
+1.8.0           TestPackage    PSGallery   Package used to validate changes to the PowerShe...
+1.1.3.2         TestPackage    PSGallery   Package used to validate changes to the PowerShe...
 
 C:\windows\system32> find-module TestPackage -AllowPrerelease
 
-Version        Name                                Repository           Description
--------        ----                                ----------           -----------
-1.9.0-beta     TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
+Version        Name            Repository  Description
+-------        ----            ----------  -----------
+1.9.0-beta     TestPackage     PSGallery   Package used to validate changes to the PowerShe...
 
 C:\windows\system32> Update-Module TestPackage -AllowPrerelease
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
 
-Version         Name                                Repository           Description
--------         ----                                ----------           -----------
-1.9.0-beta      TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-1.8.0           TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-1.1.3.2         TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
+Version         Name           Repository  Description
+-------         ----           ----------  -----------
+1.9.0-beta      TestPackage    PSGallery   Package used to validate changes to the PowerShe...
+1.8.0           TestPackage    PSGallery   Package used to validate changes to the PowerShe...
+1.1.3.2         TestPackage    PSGallery   Package used to validate changes to the PowerShe...
 
 ```
 
@@ -144,14 +157,15 @@ Ha a - RequiredVersion van megadva, és egy előzetes verzióját, - AllowPrerel
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
 
-Version         Name                                Repository           Description
--------         ----                                ----------           -----------
-2.0.0-alpha1    TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-1.9.0-beta      TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-1.8.0           TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-1.1.3.2         TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
+Version         Name           Repository  Description
+-------         ----           ----------  -----------
+2.0.0-alpha1    TestPackage    PSGallery   Package used to validate changes to the PowerShe...
+1.9.0-beta      TestPackage    PSGallery   Package used to validate changes to the PowerShe...
+1.8.0           TestPackage    PSGallery   Package used to validate changes to the PowerShe...
+1.1.3.2         TestPackage    PSGallery   Package used to validate changes to the PowerShe...
 
 C:\windows\system32> Uninstall-Module TestPackage -RequiredVersion 1.9.0-beta
+
 Uninstall-Module : The '-AllowPrerelease' parameter must be specified when using the Prerelease string in
 MinimumVersion, MaximumVersion, or RequiredVersion.
 At line:1 char:1
@@ -160,26 +174,22 @@ At line:1 char:1
     + CategoryInfo          : InvalidArgument: (:) [Uninstall-Module], ArgumentException
     + FullyQualifiedErrorId : AllowPrereleaseRequiredToUsePrereleaseStringInVersion,Uninnstall-Module
 
-
-
 C:\windows\system32> Uninstall-Module TestPackage -RequiredVersion 1.9.0-beta -AllowPrerelease
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
 
-Version         Name                                Repository           Description
--------         ----                                ----------           -----------
-2.0.0-alpha1    TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-1.8.0           TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-1.1.3.2         TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
+Version         Name          Repository   Description
+-------         ----          ----------   -----------
+2.0.0-alpha1    TestPackage   PSGallery    Package used to validate changes to the PowerShe...
+1.8.0           TestPackage   PSGallery    Package used to validate changes to the PowerShe...
+1.1.3.2         TestPackage   PSGallery    Package used to validate changes to the PowerShe...
 
 C:\windows\system32> Uninstall-Module TestPackage
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
 
-Version         Name                                Repository           Description
--------         ----                                ----------           -----------
-1.8.0           TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-1.1.3.2         TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-
-
+Version         Name          Repository   Description
+-------         ----          ----------   -----------
+1.8.0           TestPackage   PSGallery    Package used to validate changes to the PowerShe...
+1.1.3.2         TestPackage   PSGallery    Package used to validate changes to the PowerShe...
 ```
 
 ## <a name="more-details"></a>További részletek
@@ -190,4 +200,4 @@ Version         Name                                Repository           Descrip
 - [Save-Module](/powershell/module/powershellget/save-module)
 - [Frissítés-modul](/powershell/module/powershellget/Update-Module)
 - [Get-InstalledModule](/powershell/module/powershellget/get-installedmodule)
-- [Távolítsa el modul](/powershell/gallery/psget/module/psget_uninstall-module)
+- [Távolítsa el modul](/powershell/module/powershellget/uninstall-module)
