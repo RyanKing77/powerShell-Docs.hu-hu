@@ -48,7 +48,7 @@ Felsorolt platformok `Experimental` hivatalosan nem támogatottak, de a Kísérl
 | Debian 8.7 + és 9                                | Támogatott   | Támogatott   |
 | CentOS 7                                          | Támogatott   | Támogatott   |
 | Red Hat Enterprise Linux 7                        | Támogatott   | Támogatott   |
-| OpenSUSE 42.2                                     | Támogatott   | Támogatott   |
+| OpenSUSE 42.3                                     | Támogatott   | Támogatott   |
 | Fedora 27                                         | Támogatott   | Támogatott   |
 | 28 Fedora                                         |             | Támogatott   |
 | macOS 10.12 +                                      | Támogatott   | Támogatott   |

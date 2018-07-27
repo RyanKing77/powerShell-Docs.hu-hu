@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, a core
 title: PowerShell 6.0 kapcsolatos ismert problémák
-ms.openlocfilehash: 7fa6b9935ae75b62df72609b8a9ec16246b1c610
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893688"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268002"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 kapcsolatos ismert problémák
 
@@ -102,8 +102,8 @@ Nagy számú rendszerint elérhető PowerShell parancsai (parancsmagok) a Linux/
 
 A következő táblázat felsorolja az ismert, hogy nem működik a Linux/MacOS-gépeken a PowerShell-parancsok.
 
-|Parancsok |Működési állapot | Megjegyzések|
-|---------|------------------|------|
+|Parancsok|Működési állapot|Megjegyzések|
+|--------|-----------------|-----|
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Nem érhető el.|Ezeket a parancsokat a rendszer nem ismeri. Ez egy későbbi kiadásban rögzíteni kell.|
 |`Get-Acl` és `Set-Acl` esetén|Nem érhető el.|Ezeket a parancsokat a rendszer nem ismeri. Ez egy későbbi kiadásban rögzíteni kell.|
 |`Get-AuthenticodeSignature` és `Set-AuthenticodeSignature` esetén|Nem érhető el.|Ezeket a parancsokat a rendszer nem ismeri. Ez egy későbbi kiadásban rögzíteni kell.|
