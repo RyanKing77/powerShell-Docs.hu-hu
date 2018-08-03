@@ -1,37 +1,37 @@
 # <a name="installing-powershell-core-on-windows"></a>A PowerShell Core telepítése Windows rendszerre
 
-## <a name="msi"></a>MSI-FÁJL
+## <a name="msi"></a>MSI
 
-PowerShell telepítsen egy Windows ügyfél vagy a Windows Server (működik a Windows 7 SP1, Server 2008 R2 és újabb verziók), az MSI-csomag letölthető a GitHub [kiadásokban]-[] oldalon.
+PowerShell telepíthető a Windows ügyfél vagy a Windows Server (a Windows 7 SP1, Server 2008 R2 esetében használható, és újabb verziók), töltse le az MSI-csomag github [kiadások][] lap.
 
-Az MSI-fájl néz ki- `PowerShell-<version>-win-<os-arch>.msi`
+Az MSI-fájlt a következőhöz hasonló- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
-Miután letöltötte, kattintson duplán a telepítő, és kövesse az utasításokat.
+A letöltést követően kattintson duplán a, és kövesse az utasításokat.
 
-A telepítés után a Start menü helyezett helyi van.
+Nincs egy helyi helyezi el a Start menüben a telepítés után.
 
-- Alapértelmezés szerint a csomag telepítés `$env:ProgramFiles\PowerShell\<version>`
-- PowerShell keresztül a Start menüből indíthatja el vagy `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+- Alapértelmezés szerint a csomag telepítése `$env:ProgramFiles\PowerShell\<version>`
+- PowerShell a Start menü használatával indíthatja el vagy `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 ### <a name="prerequisites"></a>Előfeltételek
 
-A PowerShell-távelérés engedélyezése WSMan keresztül, a következő előfeltételeket kell teljesíteni:
+PowerShell-távelérés engedélyezése a WSMan felett, a következő előfeltételeknek kell teljesülniük:
 
-- Telepítse a [Universal C futásidejű](https://www.microsoft.com/download/details.aspx?id=50410) Windows 10 előtti Windows-verziókban.
-  Érhető el közvetlen letöltési vagy a Windows Update segítségével.
-  Teljes lett (beleértve a csomagok nem kötelező), a támogatott rendszerek már rendelkezik a telepített.
+- Telepítse a [Universal C futásidejű](https://www.microsoft.com/download/details.aspx?id=50410) előtt a Windows 10-es Windows-verzión.
+  Közvetlen letöltésére vagy a Windows Update-n keresztül érhető el.
+  Teljes mértékben javítva (választható csomagot is beleértve), a támogatott rendszerek már rendelkezik a telepített.
 - Telepítse a Windows Management Framework (WMF) 4.0-s vagy újabb Windows 7 és Windows Server 2008 R2.
 
-## <a name="zip"></a>A ZIP-
+## <a name="zip"></a>ZIP
 
-PowerShell bináris ZIP-archívum biztosított speciális telepítési forgatókönyvek engedélyezéséhez.
-Megjegyzendő, hogy a ZIP-archívum használata esetén nem jelenik meg az előfeltételek ellenőrzésének, mint az MSI-csomagot.
-Így megfelelően működjön, a Windows verzió előtti Windows 10 távoli eljáráshívás keresztül WSMan érdekében győződjön meg arról, hogy kell a [Előfeltételek](#prerequisites) teljesülnek.
+PowerShell-bináris ZIP-archívumok állnak rendelkezésre a speciális telepítési forgatókönyvek megvalósítását teszik lehetővé.
+Fontos megjegyezni, hogy a ZIP-archívumot használata esetén nem jelenik meg az Előfeltételek ellenőrzése, mint az MSI-csomag.
+Ezért ahhoz a wsman által használt keresztül távelérése megfelelő működéséhez a Windows 10-es előtti Windows-verzión, győződjön meg arról, hogy kell a [Előfeltételek](#prerequisites) teljesülnek-e.
 
-## <a name="deploying-on-windows-iot"></a>A Windows IoT központi telepítése
+## <a name="deploying-on-windows-iot"></a>A Windows IoT üzembe helyezése
 
-Windows IoT már rendelkezik a Windows PowerShell használatával, amely PowerShell Core 6 telepítendő használjuk.
+A Windows PowerShell-lel történő üzembe helyezése a PowerShell Core 6-os használjuk, amely már van Windows IoT.
 
 1. Hozzon létre `PSSession` a céleszköz
 
@@ -39,7 +39,7 @@ Windows IoT már rendelkezik a Windows PowerShell használatával, amely PowerSh
    $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
-2. Másolja át a ZIP-csomagját az eszközre
+2. Másolja a ZIP-csomagját az eszközön
 
    ```powershell
    # change the destination to however you had partitioned it with sufficient
@@ -48,7 +48,7 @@ Windows IoT már rendelkezik a Windows PowerShell használatával, amely PowerSh
    Copy-Item .\PowerShell-6.0.2-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
-3. Az eszköz csatlakozhat, és bontsa ki az archívumban
+3. Az eszköz csatlakozik, és bontsa ki az archívum
 
    ```powershell
    Enter-PSSession $s
@@ -56,7 +56,7 @@ Windows IoT már rendelkezik a Windows PowerShell használatával, amely PowerSh
    Expand-Archive .\PowerShell-6.0.2-win-arm32.zip
    ```
 
-4. A telepítő a távelérés PowerShell Core 6
+4. A telepítő távoli eljáráshívás a PowerShell Core 6-os
 
    ```powershell
    cd .\PowerShell-6.0.2-win-arm32
@@ -66,41 +66,41 @@ Windows IoT már rendelkezik a Windows PowerShell használatával, amely PowerSh
    # You'll get an error message and will be disconnected from the device because it has to restart WinRM
    ```
 
-5. Hogy eszközön PowerShell Core 6 végponthoz kapcsolódjon.
+5. Csatlakozhat a PowerShell Core 6-os végpont az eszközön
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.0.2
    ```
 
-## <a name="deploying-on-nano-server"></a>A Nano Server telepítése
+## <a name="deploying-on-nano-server"></a>A Nano Server üzembe helyezése
 
-Ezek az utasítások azt feltételezik, hogy egy PowerShell verziója már fut a Nano Server lemezképet, és, hogy a létrehozott által a [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).
-Nano Server egy "távfelügyeleti" operációs rendszer. Core bináris két különböző módszerekkel telepítheti meg.
+Ezek az utasítások feltételezik, hogy egy PowerShell-verzió már fut a Nano Server-rendszerképet és, hogy a létrehozott által a [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).
+A nano Server egy "távfelügyelt" operációs rendszer. Az alapvető bináris fájlokat telepítheti két különböző módszer használatával.
 
-1. Kapcsolat nélküli - a Nano Server VHD csatlakoztatására, és csomagolja ki a zip-fájl a megadott helyre belül a csatlakoztatott lemezkép tartalmát.
+1. Offline – a Nano Server virtuális merevlemez csatlakoztatása, és csomagolja ki a zip-fájlt a kiválasztott helyen belül a csatlakoztatott lemezkép tartalmát.
 2. Online – a zip-fájl átvitel egy PowerShell-munkamenetet, és bontsa ki azt a kiválasztott helyen.
 
-Mindkét esetben szüksége lesz a Windows 10 x64 ZIP kiadást csomagba, és futtassa a parancsokat egy "Rendszergazda" PowerShell példányán belül kell.
+Mindkét esetben szüksége lesz a Windows 10-es x64 ZIP kiadási csomag és a egy "Rendszergazda" PowerShell-példány belül lévő parancsok futtatásával.
 
-### <a name="offline-deployment-of-powershell-core"></a>PowerShell Core offline központi telepítése
+### <a name="offline-deployment-of-powershell-core"></a>Offline állapotban van a PowerShell Core telepítése
 
-1. A kedvenc zip segédprogram használatával csomagolja ki a csomagot a csatlakoztatott Nano Server-lemezképben.
+1. A kedvenc zip segédprogrammal tömörítse ki a csomagot egy könyvtárba, a csatlakoztatott Nano Server-rendszerképben.
 2. Válassza le a lemezképet, és indítsa el azt.
-3. Csatlakozzon a Beérkezett üzenetek példányához a Windows PowerShell.
-4. Egy távoli eljáráshívás-végpontot a létrehozásához kövesse a ["egy másik példány technika"](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+3. Csatlakozzon a Windows PowerShell Beérkezett üzenetek példányához.
+4. Kövesse az utasításokat, hozzon létre egy távoli eljáráshívás végpont a ["egy másik példány technikával"](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-### <a name="online-deployment-of-powershell-core"></a>Online PowerShell központi telepítése
+### <a name="online-deployment-of-powershell-core"></a>Online-hoz a PowerShell Core telepítése
 
-A következő lépések végigvezetik PowerShell központi telepítését a Nano Server és a távoli végpont konfigurációja futó példányát.
+A következő lépések végigvezetik a PowerShell Core telepítése a Nano Server és a távoli végpont konfigurációját egy futó példányával.
 
-- Csatlakozzon a Beérkezett üzenetek példányához a Windows PowerShell
+- Csatlakozzon a Windows PowerShell Beérkezett üzenetek példányához
 
   ```powershell
   $session = New-PSSession -ComputerName <Nano Server IP address> -Credential <An Administrator account on the system>
   ```
 
-- A fájl átmásolása a Nano Server-példány
+- Másolja a fájlt a Nano Server-példány
 
   ```powershell
   Copy-Item <local PS Core download location>\powershell-<version>-win-x64.zip c:\ -ToSession $session
@@ -112,32 +112,37 @@ A következő lépések végigvezetik PowerShell központi telepítését a Nano
   Enter-PSSession $session
   ```
 
-- A ZIP-fájl kibontása
+- Bontsa ki a ZIP-fájl
 
   ```powershell
   # Insert the appropriate version.
   Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShellCore_<version>"
   ```
 
-- Ha azt szeretné, hogy a WSMan-alapú távoli eljáráshívás, kövesse az utasításokat, a távoli eljáráshívás-végpontot a létrehozásához a ["egy másik példány technika"](../core-powershell/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+- Ha azt szeretné, hogy a WSMan-alapú távoli eljáráshívás, kövesse az utasításokat hozzon létre egy távoli eljáráshívás végpont a ["egy másik példány technikával"](../core-powershell/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-## <a name="instructions-to-create-a-remoting-endpoint"></a>Utasítások a távoli eljáráshívás-végpont létrehozása
+## <a name="instructions-to-create-a-remoting-endpoint"></a>A távoli eljáráshívás végpont létrehozására vonatkozó utasításokat
 
-PowerShell Core WSMan és az SSH a PowerShell távelérése protokoll (PSRP) támogatja.
+A PowerShell Core a PowerShell távoli eljáráshívás protokoll (PSRP) támogatja a wsman által használt és az SSH keresztül.
 További információ:
 
-- [SSH PowerShell Core a távoli eljáráshívás] [ssh-távoli eljáráshívási]
-- [A PowerShell Core WSMan távoli eljáráshívási] [a wsman-távelérése]
+- [SSH távoli eljáráshívás a PowerShell Core][ssh-remoting]
+- [A PowerShell Core a wsman által használt távoli eljáráshívás][wsman-remoting]
 
 ## <a name="artifact-installation-instructions"></a>Összetevő telepítési utasításokat
 
-A minden CI build [AppVeyor] szögletes CoreCLR bites archiválhatja közzétesszük.
+Coreclr-nek bits minden CI-build-a az archívumot közzétesszük [AppVeyor][].
 
-PowerShell Core CoreCLR összetevő telepítését:
+A PowerShell Core telepítése a coreclr-nek összetevő:
 
-1. Töltse le a ZIP-csomagját **összetevők** az adott build fülre.
-2. ZIP-fájl feloldása: kattintson a jobb gombbal a Fájlkezelőben -> tulajdonságai -> jelölőnégyzet jelölését -> Unblock alkalmazása
+1. Töltse le a ZIP-csomagját **összetevők** az adott build lapján.
+2. Feloldása ZIP-fájl: kattintson a jobb gombbal a Fájlkezelőben -> Properties -> box -> feloldása a alkalmazni ellenőrzése
 3. Bontsa ki a zip-fájlt `bin` könyvtár
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO --> [kiadott]: https://github.com/PowerShell/PowerShell/releases [ssh-távoli eljáráshívási]:... [a wsman-távelérése] /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.md:... [AppVeyor] /Core-PowerShell/WSMan-Remoting-in-PowerShell-Core.md: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO -->
+
+[kiadások]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
