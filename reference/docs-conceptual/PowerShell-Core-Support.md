@@ -1,13 +1,24 @@
+---
+title: A PowerShell Core támogatási életciklusa
+description: A PowerShell Core támogatási szabályzatok betartatását
+ms.date: 08/06/2018
+ms.openlocfilehash: 2e0ca1b9c133e6f316a40aff13365d0489059165
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587159"
+---
 # <a name="powershell-core-support-lifecycle"></a>A PowerShell Core támogatási életciklusa
 
 A PowerShell Core a meghatározott készletét eszközök és -összetevők, amely tartalmazza a szükséges, telepítve van, és külön konfigurálni a Windows Powershellből.
 Ezért a PowerShell Core nem szerepel a Windows 7/8.1/10 vagy Windows Server licencelési megállapodások.
 
-Azonban a PowerShell Core a hagyományos Microsoft támogatási szerződés, beleértve a támogatott [A Premier szintű][], [Microsoft Enterprise-megállapodások][enterprise-agreement], és [Microsoft frissítési garanciával rendelkező][assurance].
+Azonban a PowerShell Core a hagyományos Microsoft támogatási szerződés, beleértve a támogatott [Premier][], [Microsoft Enterprise-megállapodások][enterprise-agreement], és [Microsoft frissítési garanciával rendelkező][assurance].
 Is fizethet a szolgáltatásért [tanácsadással][] a PowerShell Core ügyfélszolgálatunknak küldött támogatási kérelmet a problémát.
 
 Emellett [közösségi támogatás][] a Githubon, ahol egy problémát, programhiba vagy funkcióigénylés fájlt is.
-Is előfordulhat, hogy megtalálja a Közösség más tagjai segítséget az általános [A Microsoft Community][] vagy a Microsoft [PowerShell technikai Közösség][].
+Is előfordulhat, hogy megtalálja a Közösség más tagjai segítséget az általános [Microsoft Community][] vagy a Microsoft [PowerShell technikai Közösség][].
 Nem kínál nincs garancia van, hogy a probléma megoldásához címzett vagy időben fog állni.
 Ha azonnali figyelmet igénylő problémával rendelkezik, használja a hagyományos, fizetős támogatási lehetőségek.
 
@@ -44,7 +55,8 @@ Felsorolt platformok `Experimental` hivatalosan nem támogatottak, de a Kísérl
 | Windows Server 2008 R2, 2012 R2, 2016             | Támogatott   | Támogatott   |
 | [A Windows Server féléves csatorna][semi-annual] | Támogatott   | Támogatott   |
 | Ubuntu 14.04, és 16.04                           | Támogatott   | Támogatott   |
-| Ubuntu 17.10 és 18.04                           |             | Támogatott   |
+| Ubuntu 18.04                                      |             | Támogatott   |
+| Ubuntu 18.10 (keresztül Számértékekhez igazodnak, a csomag)                   |             | Közösség   |
 | Debian 8.7 + és 9                                | Támogatott   | Támogatott   |
 | CentOS 7                                          | Támogatott   | Támogatott   |
 | Red Hat Enterprise Linux 7                        | Támogatott   | Támogatott   |
@@ -56,6 +68,10 @@ Felsorolt platformok `Experimental` hivatalosan nem támogatottak, de a Kísérl
 | Raspbian                                          | Kísérleti| Közösség   |
 | Kali                                              | Közösség   | Közösség   |
 | AppImage (több Linux platformon működik)     | Közösség   | Közösség   |
+| [Oszlopokhoz illesztés csomag](https://snapcraft.io/powershell)   | Lásd a megjegyzést    | Lásd a megjegyzést    |
+
+> [!NOTE]
+> Az illesztési csomagok kísérleti lesz egy ideig.  Miután vagyunk abban, hogy a beépülő modul nem vezet be új támogatási problémák, a támogatási követi a futtatja, a csomag terjesztési.
 
 ## <a name="platform-which-are-out-of-support"></a>Platform, amely nem támogatott
 
@@ -65,13 +81,14 @@ Ezért támogatja a következő verziók által a terjesztési tulajdonosok befe
 
 | Operációs rendszer       | Verzió | Élettartam végéhez közeledik                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 26      | [2018. május](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| Fedora   | 25      | [2017. december](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 24      | [2017. augusztus](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| OpenSUSE | 42.2    | [2018. január](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Fedora   | 25      | [2017. december](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [2018. május](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | OpenSUSE | 42.1    | [2017. május](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| Ubuntu   | 17.04   | [2018. január](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| OpenSUSE | 42.2    | [2018. január](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16.10   | [2017. július](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17.04   | [2018. január](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [2018. július](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## <a name="notes-on-licensing"></a>Tudnivalók a licencelés
 
@@ -101,11 +118,11 @@ Ez a modul telepítése után futtassa a `Add-WindowsPSModulePath` adja hozzá a
 Add-WindowsPSModulePath
 ```
 
-[A Premier szintű]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
+[Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [közösségi támogatás]: https://github.com/powershell/powershell/issues
-[A Microsoft Community]: https://answers.microsoft.com/
+[Microsoft Community]: https://answers.microsoft.com/
 [PowerShell technikai Közösség]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [tanácsadással]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
