@@ -1,3 +1,14 @@
+---
+title: PowerShell-fejlesztéshez a Visual Studio Code használatával
+description: PowerShell-fejlesztéshez a Visual Studio Code használatával
+ms.date: 08/06/2018
+ms.openlocfilehash: f8e1e9af257037fc7bd74549e4197c9a1695e952
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587431"
+---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell-fejlesztéshez a Visual Studio Code használatával
 
 Mellett a [PowerShell ISE-ben][ise], PowerShell egyben a Visual Studio Code jól támogatott.

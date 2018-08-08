@@ -1,8 +1,19 @@
+---
+title: A PowerShell Core telepítése Linux rendszerre
+description: Információ a különböző Linux-disztribúciókon a PowerShell Core telepítése
+ms.date: 08/06/2018
+ms.openlocfilehash: a6b0e3003f84ea6dc99cffcc7edf1b5b6963aa21
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587448"
+---
 # <a name="installing-powershell-core-on-linux"></a>A PowerShell Core telepítése Linux rendszerre
 
-Támogatja a [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], és [Arch Linux][arch].
+Támogatja a [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.10] [ u18], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], és [Arch Linux][arch].
 
-A hivatalosan nem támogatott Linux-disztribúció, megpróbálhatja használatával a [PowerShell AppImage][lai].
+A hivatalosan nem támogatott Linux-disztribúció, megpróbálhatja használatával a [PowerShell beépülő modul csomag][snap].
 Üzembe helyezése a PowerShell bináris fájlokat közvetlenül a a Linux használatával is megpróbálhatja [ `tar.gz` archív][tar], de állítsa be a szükséges függőségek az operációs rendszer a különálló lépések alapján kell.
 
 A githubon érhető el az összes csomag [kiadások][] lapot.
@@ -10,7 +21,7 @@ A csomag telepítése után futtassa `pwsh` parancsot egy terminálról.
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u17]: #ubuntu-1710
+[u18]: #ubuntu-1810
 [u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
@@ -19,7 +30,7 @@ A csomag telepítése után futtassa `pwsh` parancsot egy terminálról.
 [opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
-[lai]: #linux-appimage
+[snap]: #snap-package
 [tar]: #binary-archives
 
 ## <a name="installing-preview-releases"></a>Előzetes verziók telepítése
@@ -132,56 +143,6 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1710"></a>Ubuntu 17.10
-
-> [!NOTE]
-> Miután Ubuntu 17.04 támogatása hozzáadva `6.1.0-preview.2`
-
-### <a name="installation-via-package-repository---ubuntu-1710"></a>Telepítési csomag tárház - Ubuntu 17.10-n keresztül
-
-A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.
-Ez az elsődleges módszer.
-
-```sh
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-# Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.10/prod.list
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` frissíteni.
-
-### <a name="installation-via-direct-download---ubuntu-1710"></a>Telepítési közvetlen letöltése – Ubuntu 17.10-n keresztül
-
-A Debian csomag `powershell_6.0.2-1.ubuntu.17.10_amd64.deb` származó a [kiadások][] az Ubuntu-gép oldalon.
-
-Ezután hajtsa végre a következő billentyűparancsot a terminálon:
-
-```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> A `dpkg -i` teljesítetlen függőségekkel parancs meghiúsul.
-> A következő parancsot, `apt-get install -f` oldja fel ezeket a problémákat, majd befejezi a PowerShell-csomag konfigurálása.
-
-### <a name="uninstallation---ubuntu-1710"></a>Eltávolítás – Ubuntu 17.10
-
-```sh
-sudo apt-get remove powershell
-```
-
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
 > [!NOTE]
@@ -231,6 +192,14 @@ sudo apt-get install -f
 ```sh
 sudo apt-get remove powershell
 ```
+
+## <a name="ubuntu-1810"></a>Ubuntu 18.10
+
+> [!NOTE]
+> Ubuntu 18.10 támogatása hozzáadva után `6.1.0-preview.3`.
+> Mivel 18.10 napi build, akkor csak a támogatott közösségi.
+
+Keresztül támogatott 18.10 telepítése `snapd`. Lásd: [beépülő csomag] [ snap] teljes útmutatás;
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -550,6 +519,33 @@ A AUR a csomagok telepítésével kapcsolatos további információkért lásd: 
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
+
+## <a name="snap-package"></a>Oszlopokhoz illesztés csomag
+
+### <a name="getting-snapd"></a>Első snapd
+
+`snapd` Illesztés futtatásához szükség.  Használat [ezek az utasítások](https://docs.snapcraft.io/core/install) , ellenőrizze, hogy `snapd` telepítve.
+
+### <a name="installation-via-snap"></a>Keresztül beépülő modul telepítése
+
+A PowerShell Core, Linux esetén a rendszer közzéteszi az [beépülő store](https://snapcraft.io/store) egyszerű telepítéshez (és frissítések).
+Ez az elsődleges módszer.
+
+```sh
+# Install PowerShell
+sudo snap install powershell-preview --classic
+
+# Start PowerShell
+pwsh-preview
+```
+
+Után automatikusan beépülő modul telepítését frissíti, de egy frissítési használatával aktiválhat `sudo snap refresh powershell-preview`.
+
+### <a name="uninstallation"></a>Az Eltávolítás
+
+```sh
+sudo snap remove powershell-preview
+```
 
 ## <a name="linux-appimage"></a>Linux AppImage
 

@@ -1,44 +1,44 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell parancsmag
-title: Objektumok eltávolítása a feldolgozási sor az adott objektum
+keywords: PowerShell, a parancsmag
+title: Objektumok eltávolítása az adatcsatornából Where-Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753838"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587142"
 ---
-# <a name="removing-objects-from-the-pipeline-where-object"></a>Objektumok eltávolítása a láncból (Where-Object)
+# <a name="removing-objects-from-the-pipeline-where-object"></a>Objektumok eltávolítása az adatcsatornából (Where-Object)
 
-A Windows PowerShellben Ön gyakran hozza létre és adják át a több objektumot egy folyamat szükségesnél. Megadhatja, hogy a megjelenített adott objektumoknak azon tulajdonságait a **formátum** parancsmagok, de ez nem segíthetnek a probléma által megjelenített teljes objektumokat eltávolításával. Érdemes lehet egy sorban, végéig-objektumok szűrése a így műveleteket tudják végrehajtani a kezdetben által létrehozott objektumok csak egy részét.
+A Windows PowerShellben Ön gyakran hozza létre és azt szeretné, hogy egy folyamat több objektum adják át. Adott lehetőségével szűkítheti a megjelenített objektumok tulajdonságait is megadhat a **formátum** parancsmagok, de ez nem segíthetnek a probléma, és a teljes objektumok eltávolítása. Érdemes a folyamat vége előtt-objektumok szűrése, így elvégezhető műveletek a kezdetben által létrehozott objektumok egy részhalmazára.
 
-A Windows PowerShell tartalmaz egy `Where-Object` parancsmag, amely lehetővé teszi az egyes objektumok tesztelése a folyamat, és csak adja át a feldolgozási sor mentén ha megfelel-e egy adott feltétel. A teszt nem továbbítja objektumok el lesznek távolítva a folyamatot. A feltétel értékeként adja meg a `Where-Object` **FilterScript** paraméter.
+Windows PowerShell tartalmaz egy `Where-Object` parancsmagot, amely lehetővé teszi, hogy a folyamat minden egyes objektum tesztelése, és csak azt adják át a folyamat megfelel egy adott teszt feltételt. Objektumok, amelyek nem adnak át a vizsgálat a folyamat törlődnek. A feltétel értékeként adja meg a `Where-Object` **FilterScript** paraméter.
 
 ### <a name="performing-simple-tests-with-where-object"></a>A Where-Object egyszerű tesztek végrehajtása
 
-Értékének **FilterScript** van egy *parancsfájlblokkban* - legalább egy Windows PowerShell-parancsok csúcsos zárójelek között {} -, amelyek kiértékelése igaz vagy hamis. Lehet, hogy a parancsfájl-blokkokban nagyon egyszerű, de szükséges hozza létre őket egy másik Windows PowerShell koncepció összehasonlító operátorok tudomása. Egy összehasonlító operátor mindkét oldalán megjelenő elemek hasonlítja össze. Összehasonlító operátorok kezdődhet a "-" karakter, és van egy neve követ. Alapszintű összehasonlító operátorok működik a szinte bármilyen típusú objektumot. A speciális összehasonlító operátorok csak lehet, hogy működni szöveg vagy tömb.
+Értékét **FilterScript** van egy *parancsfájlblokkban* – egy vagy több Windows PowerShell-parancsok csúcsos zárójelek között {} –, amely kiértékeli a true vagy FALSE (hamis). Lehet, hogy a parancsfájl-blokkokban nagyon egyszerű, de tudomása a másik a Windows PowerShell-fogalmat, összehasonlító operátorok hozza létre őket igényel. Egy összehasonlító operátor hasonlítja össze az egyes oldalán megjelenő elemek. Összehasonlító operátorok kezdődik a "-" karakter, és a egy neve követi. Alapszintű összehasonlító operátorok szinte bármilyen típusú objektumot működik. A speciális összehasonlító operátorok csak a szöveges vagy tömbök előfordulhat, hogy működik.
 
 > [!NOTE]
-> Alapértelmezés szerint az szöveg használatakor a Windows PowerShell összehasonlító operátorok értékek azonban nem.
+> Alapesetben, amikor szöveg dolgozik a Windows PowerShell összehasonlító operátorok nincsenek megkülönböztetve.
 
-Szempontok elemzése, mert szimbólumok szerepelhetnek, például <>, és = összehasonlító operátorok nem használatosak. Ehelyett összehasonlító operátorok rétegből betűket. Az alapvető összehasonlító operátorok a következő táblázatban láthatók.
+Megfontolandó szempontok elemzés, mert szimbólumokat <>, például és = összehasonlító operátorok nem képeznek. Ehelyett összehasonlító operátorok rétegből betűt. Az alapszintű összehasonlító operátorok az alábbi táblázatban láthatók.
 
-|Összehasonlító operátor|Jelentés|(Igaz) – Példa|
+|Összehasonlító operátor|Jelentés|Példa (igaz értéket ad vissza)|
 |-----------------------|-----------|--------------------------|
 |-eq|egyenlő|1 - eq 1|
 |-ne|Nem egyenlő|1 - ne 2|
-|-lt|Értéke kisebb, mint|1 - lt 2|
-|-le|Kisebb vagy egyenlő, mint|1 – le 2|
-|-gt|Nagyobb, mint|2 - gt 1|
+|-lt|a kisebb, mint|1 – lt 2|
+|-le|Kisebb vagy egyenlő|1 – le 2|
+|-gt|nagyobb, mint|2 – gt 1|
 |-ge|Nagyobb vagy egyenlő|2 -ge 1|
-|– például a|Olyan, mint (helyettesítő szöveg a összehasonlítását)|"file.doc" – például a "f\*.do?"|
-|-notlike|Nincs (a szöveg helyettesítő összehasonlítását) például|"file.doc"-notlike "p\*.doc"|
-|-tartalmaz|tartalmazza|1,2,3 - 1 tartalmazza|
-|-notcontains|Nem tartalmaz|1,2,3 - notcontains 4|
+|– például a|Hasonló (helyettesítő összehasonlítás szöveg)|"file.doc" – például "f\*.do?"|
+|-notlike|Nem hasonló (helyettesítő összehasonlítás szöveg)|"file.doc"-notlike "p\*.doc"|
+|-tartalmaz|tartalmaz|1,2,3 – 1 tartalmaz|
+|-notcontains|nem tartalmazza|1,2,3 - notcontains 4|
 
-Where-Object parancsfájlblokkokban a '$_' speciális változó segítségével tekintse meg a folyamat az aktuális objektum. Íme egy példa annak működéséről. Ha számokból álló listát, és csak a meglévők közül, amelyek kevesebb mint 3 vissza szeretné, Where-Object segítségével írja be a számok szűrése:
+Where-Object parancsfájl-blokkokban használja a speciális változó `$_` , tekintse meg a folyamat az aktuális objektum. Íme egy példa annak működését. Ha rendelkezik egy számokból álló listát, és csak be szeretné olvasni azokat, amelyek kevesebb mint 3, használhatja a Where-Object számok szűréséhez írja be:
 
 ```
 PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
@@ -48,15 +48,15 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 
 ### <a name="filtering-based-on-object-properties"></a>Szűrés alapján objektum tulajdonságai
 
-Az aktuális folyamat objektum $_ hivatkozik, azt a tesztek érhessék el a tulajdonságai.
+Mivel `$_` hivatkozik a jelenlegi folyamat objektumba, elérheti a tulajdonságait a tesztek.
 
-Tegyük fel azt is megtekinthetik a Win32_SystemDriver osztály a WMI-ben. Előfordulhat, hogy egy adott rendszer illesztőprogramja több száz, de csak érdekelheti a rendszer-illesztőprogramok, például azokkal, amely jelenleg fut egy adott készletét. Ha a Get-tag Win32_SystemDriver tagok megtekintéséhez használja (**Get-WmiObject – osztály Win32_SystemDriver |} Get-Member - MemberType tulajdonsága**) jelenik meg, hogy a megfelelő tulajdonság állapotát, és, hogy az illesztőprogram futtatásakor "Fut" értékkel rendelkezik. Szűrheti a rendszer illesztőprogramokat, írja be a csak a futó ők kiválasztása:
+Például hogy megtekinthessük WMI Win32_SystemDriver osztályt. Előfordulhat, hogy a rendszer-illesztőprogramok egy adott rendszer több száz, de Ön csak hasznos lehet egy adott készletét a rendszer-illesztőprogramok, például azok, amelyek jelenleg futnak. Ha a Get-Member Win32_SystemDriver tagok megtekintéséhez használja (**Get-WmiObject – osztály Win32_SystemDriver |} Get-Member - MemberType tulajdonság**) látni fogja, hogy a megfelelő tulajdonság állapotát, és, hogy az illesztőprogram futtatásakor az "Fut" értékkel rendelkezik. A rendszer-illesztőprogramok, jelölje ki a kívánt csak futó beírásával szűrheti:
 
 ```powershell
 Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript {$_.State -eq 'Running'}
 ```
 
-Ez továbbra is szolgáltat hosszú listáját. Előfordulhat, hogy szűrni kívánt csak jelölje be az illesztőprogramok által a StartMode értéket is vizsgálati automatikus indításra állítva:
+Ez egy hosszú listában továbbra is hoz létre. Előfordulhat, hogy szeretné szűrni, csak az illesztőprogramokat a StartMode értéket is tesztelésével automatikus indításra állítva:
 
 ```
 PS> Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript {$_.State -eq "Running"} | Where-Object -FilterScript {$_.StartMode -eq "Auto"}
@@ -74,7 +74,7 @@ Status      : OK
 Started     : True
 ```
 
-Ez biztosítja, nagy mennyiségű információt azt már nem szükséges, mert tudjuk, hogy fut-e az illesztőprogramok. Az egyetlen adat valószínűleg kell ezen a ponton, nevét és megjelenítendő nevét. A következő parancs csak két tulajdonságokhoz, így sokkal egyszerűbb kimeneti tartalmazza:
+Ez olyan biztosít, amely nagy mennyiségű információt, hogy már nincs szüksége, mivel tudjuk, hogy, hogy futnak-e az illesztőprogramok. Sőt valószínűleg kell ezen a ponton csak annyi információ a nevét és megjelenítendő nevét. A következő parancs csak két tulajdonságot, ami sokkal egyszerűbb kimeneti tartalmazza:
 
 ```
 PS> Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript {$_.State -eq "Running"} | Where-Object -FilterScript {$_.StartMode -eq "Manual"} | Format-Table -Property Name,DisplayName
@@ -91,17 +91,17 @@ MRxDAV                                  WebDav Client Redirector
 mssmbios                                Microsoft System Management BIOS Driver
 ```
 
-A fenti parancsban két Where-Object-eleme van, de ezek lehetnek a Where-Object elemet használatával a - és logikai operátor, ehhez hasonló:
+Két Where-Object-elemek a fenti parancsban, de azok kifejezhető egyetlen Where-Object elem használatával a - és logikai operátor szerinti szűrése, ehhez hasonló:
 
 ```powershell
 Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript { ($_.State -eq 'Running') -and ($_.StartMode -eq 'Manual') } | Format-Table -Property Name,DisplayName
 ```
 
-A szabványos logikai operátorok a következő táblázatban láthatók.
+A standard szintű logikai operátorokat az alábbi táblázatban láthatók.
 
-|Logikai operátor|Jelentés|(Igaz) – Példa|
+|Logikai operátor|Jelentés|Példa (igaz értéket ad vissza)|
 |--------------------|-----------|--------------------------|
-|- és|Logikai és; Igaz kétoldalas teljesülése esetén|(1 - eq 1.) - és (2 - eq 2).|
+|- és|Logikai és; IGAZ, ha mindkét oldal igaz|(1 - eq (1.) - és (2 - eq 2).|
 |- vagy|Logikai vagy; IGAZ, ha bármelyik oldal igaz|(1 - eq 1) – vagy (1 - eq 2).|
-|-nem|Logikai nem; Megfordítja a true és false|-nem (1 - eq 2)|
-|\!|Logikai nem; Megfordítja a true és false|\!(1 - eq 2)|
+|-nem|Logikai not; Megfordítja a true és false|-nem (1 - eq 2)|
+|\!|Logikai not; Megfordítja a true és false|\!(1 - eq 2)|

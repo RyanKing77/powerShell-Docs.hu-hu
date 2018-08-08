@@ -1,4 +1,14 @@
-
+---
+title: PowerShell távoli eljáráshívás SSH-n keresztül
+description: Távoli eljáráshívás a PowerShell Core SSH-val
+ms.date: 08/06/2018
+ms.openlocfilehash: 27a8fc5623796a270a2ea67aa550c9a0998e766b
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587499"
+---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell távoli eljáráshívás SSH-n keresztül
 
 ## <a name="overview"></a>Áttekintés

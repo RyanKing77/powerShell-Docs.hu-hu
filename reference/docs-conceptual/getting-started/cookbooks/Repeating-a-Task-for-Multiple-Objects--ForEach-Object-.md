@@ -1,20 +1,20 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell parancsmag
-title: Ismétlődő feladat több objektumok ForEach objektum számára
+keywords: PowerShell, a parancsmag
+title: Feladatok megismétlése több objektumon ForEach-Object
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-ms.openlocfilehash: 8b8002af3ade0905421760ce29cdc84b084236e9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 64d85edad4a6931b2376b95b6d1f5b4d5194399f
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954279"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587261"
 ---
-# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Ismétlődő feladat több objektum (ForEach-Object)
+# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Feladatok megismétlése több objektumon (ForEach-Object)
 
-A **ForEach-Object** parancsmag parancsfájlblokkokban és használja az aktuális folyamat objektum $_ leíróját lehetővé teszik, hogy a parancsok a minden objektumon a folyamat. Ez összetett feladatok elvégzésére is használható.
+A **ForEach-Object** parancsmagot használja a parancsfájl-blokkokban és a `$_` az aktuális folyamat objektum lehetővé teszi, hogy a folyamat minden egyes objektumában parancsot futtató leíró. Ez bonyolult feladatok elvégzésére is használható.
 
-Amennyiben ez hasznos lehet egy helyzet adatokba, így több hasznos van kezelésére. Például a Win32_LogicalDisk osztály a WMI segítségével minden helyi lemez szabad terület adatokat ad vissza. A visszaküldött adatok tekintetében bájt, azonban így nehezen olvasható:
+Egy olyan helyzetet, ahol ez hasznos lehet, hogy több hasznos adat van módosítása. Például a Win32_LogicalDisk osztály a WMI segítségével minden helyi lemez szabad terület információkat ad vissza. Az ad vissza, tekintetében bájt, azonban, ami lehetővé teszi az nehezen olvasható:
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk
@@ -27,20 +27,20 @@ Size         : 203912880128
 VolumeName   : Local Disk
 ```
 
-Azt is átalakítani a FreeSpace értéket megabájt elosztásával minden egyes értéknek 1024 kétszer; az első felosztás után ezeket az adatokat kilobájtban, pedig a második felosztás után mérete (MB). Teheti, hogy egy ForEach-Object parancsfájlblokk beírásával:
+Azt is átalakítani a FreeSpace értéket (MB): az egyes értékek kétszer; elosztja 1024 az első osztás után az adatok kilobájtban, pedig a második osztás után azt (MB). Teheti, hogy egy ForEach-Object parancsfájlblokkban lévő beírásával:
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {($_.FreeSpace)/1024.0/1024.0}
 48318.01171875
 ```
 
-Sajnos a kimeneti már adatok nem társított címkével. Mivel a WMI-tulajdonságait, például a csak olvasható, FreeSpace közvetlenül nem lehet konvertálni. Ha ez:
+Sajnos a kimenet mostantól adatok nincsenek társított címkével. A WMI-tulajdonságok írásvédettek, mivel FreeSpace közvetlenül nem konvertálhatóak. Írja be ezt:
 
 ```powershell
 Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
-Hibaüzenetet kapja:
+Hibaüzenetet kap:
 
 ```output
 "FreeSpace" is a ReadOnly property.

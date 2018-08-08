@@ -1,22 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 9aa7e92632c671751020687ddbfc374eeda7148b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189414"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587295"
 ---
-# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 nyelvi újdonságai
+# <a name="new-language-features-in-powershell-50"></a>A PowerShell 5.0 új nyelvi funkciók
 
-PowerShell 5.0 vezet be a következő új nyelvi elemek a Windows PowerShellben:
+PowerShell 5.0 vezet be a következő új nyelvi elemei a Windows PowerShellben:
 
 ## <a name="class-keyword"></a>Osztály kulcsszó
 
-A **osztály** kulcsszó egy új osztályt határoz meg. Ez a .NET-keretrendszer típus igaz értékű.
-A osztályelemen nyilvános, de csak nyilvános modul hatókörében.
-Nem lehet hivatkozni a következő típusnév karakterláncként (például `New-Object` nem működik), és ebben a kiadásban szövegkonstans típus nem használható (például `[MyClass]`) kívül a parancsfájl/modul fájlt, amelyben az osztály definiálva van.
+A **osztály** kulcsszó határozza meg egy új osztályt. Ez a valódi .NET-keretrendszer típusa.
+A osztályelemen nyilvános, de csak nyilvános modul hatókörébe.
+Nem lehet hivatkozni a típusnév karakterláncként (például `New-Object` nem működik), ebben a kiadásban, és nem használhat olyan típusú konstans (például `[MyClass]`) kívül a parancsfájl nebo modul fájlt, amelyben az osztály definiálva van.
 
 ```powershell
 class MyClass
@@ -25,11 +25,11 @@ class MyClass
 }
 ```
 
-## <a name="enum-keyword-and-enumerations"></a>Enum kulcsszó és az
+## <a name="enum-keyword-and-enumerations"></a>Enum kulcsszó és enumerálásokat tartalmaznak
 
-Támogatja a **enum** kulcsszó bővült, melyik soremelés használ elválasztóként.
-Aktuális korlátozások: enumerátor tekintetében maga nem határozhat meg, de egy felsorolás egy másik enum tekintetében is inicializálására, az alábbi példában látható módon.
-Emellett az alaptípus tartalomtípusa nem jelenleg adható meg; mindig [int].
+Támogatja a **enum** kulcsszó hozzá lett adva, melyik soremelés használ elválasztóként.
+Aktuális korlátozások: nem lehet definiálni enumerátor tekintetében magát, de szempontjából egy másik enum enum is inicializálása, az alábbi példában látható módon.
+Ezenkívül az alaptípus nem jelenleg adható meg; minden esetben [int].
 
 ```powershell
 enum Color2
@@ -38,7 +38,7 @@ enum Color2
 }
 ```
 
-Az enumerálóérték elemzési idő állandónak; kell lennie. egy meghívott parancs eredménye nem állítható be azt.
+Az enumerálóérték állandónak kell lennie parse time; egy meghívott parancs eredménye nem állítható be azt.
 
 ```powershell
 enum MyEnum
@@ -50,78 +50,78 @@ enum MyEnum
 }
 ```
 
-Felsorolások matematikai művelteket is támogatja, a következő példában látható módon.
+Enumerálások aritmetikai műveletek támogatásához, az alábbi példában látható módon.
 
 ```powershell
 enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Importálás – DscResource
+## <a name="import-dscresource"></a>Az import-DscResource
 
-**Importálás – DscResource** mostantól egy igaz dinamikus kulcsszóval.
-PowerShell elemzi a megadott modul gyökérmodult, tartalmazó osztályok keresése a **DscResource** attribútum.
+**Az import-DscResource** már igaz dinamikus kulcsszó.
+PowerShell elemzi a megadott modul legfelső szintű modul, osztályban, amelyek tartalmazzák a Keresés a **DscResource** attribútum.
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-Új mező **ImplementingAssembly**, ModuleInfo hozzá lett adva. A dinamikus szerelvény egy szkriptmodulba készült, ha a parancsfájl osztályok határozza meg, vagy a bináris modulok betöltött szerelvény érték. Nincs beállítva mikor ModuleType jegyzékfájl =.
+Egy új mezőt **ImplementingAssembly**, ModuleInfo bővült. Azt a dinamikus szerelvény egy szkriptmodulba készült, ha a parancsfájl definiálja azokat az osztályokat, vagy a betöltött szerelvény a bináris modulok van beállítva. Nincs beállítva mikor ModuleType = jegyzékfájlt.
 
-A reflexió a **ImplementingAssembly** mező a modulokban lévő erőforrások felderítésére szolgál. Ez azt jelenti, hogy is felderítheti, PowerShell vagy más felügyelt nyelvek erőforrásokat.
+A reflexió a **ImplementingAssembly** mező felderítette az erőforrásokat egy modulban. Ez azt jelenti, hogy a PowerShell vagy más felügyelt nyelveken írt erőforrások deríthet fel.
 
-Az inicializálók mezők:
+Inicializátory mezőket:
 
 ```powershell
 [int] $i = 5
 ```
 
-Statikus támogatott; az működik, mint egy attribútum, mint a típusmegkötések, így bármilyen sorrendben adható meg.
+Statikus támogatott; működik egy attribútum, például az ajánlattípusra vonatkozó megkötések, ahogy, így bármilyen sorrendben adható meg.
 
 ```powershell
 static [int] $count = 0
 ```
 
-A típus nem kötelező megadni.
+Egy nem kötelező.
 
 ```powershell
 $s = "hello"
 ```
 
-Minden tagjai nyilvános.
+Minden tag nyilvánosak legyenek.
 
-## <a name="constructors-and-instantiation"></a>Konstruktorok és a példánylétrehozás
+## <a name="constructors-and-instantiation"></a>Konstruktorok és példányosítás
 
-A Windows PowerShell-osztályokat lehet konstruktorok; az osztály megegyező névvel rendelkeznek. Konstruktorok is túlterhelt. Statikus konstruktorok támogatottak. Inicializálási kifejezések értékkel rendelkező tulajdonságok a rendszer konstruktorban kód futtatása előtt inicializálja. A statikus tulajdonságok inicializálása előtt statikus konstruktorban törzsét, és objektumpéldány tulajdonságai inicializálása előtt nem statikus konstruktorban törzsét. Jelenleg nincs konstruktor a másik konstruktor hívásakor szintaxis (például a C\# szintaxis ": this()"). Kerülő megoldás lehet egy közös Init metódus meghatározásához.
+Windows PowerShell-osztályok rendelkezhet konstruktorok; a neve megegyezik az osztály rendelkeznek. Is túlterhelt konstruktorral. Statikus konstruktorok támogatottak. Tulajdonságok inicializálási kifejezésekkel inicializálása konstruktorban kód futtatása előtt. A statikus tulajdonságok inicializálása előtt egy statikus konstruktor törzse, és a példány tulajdonságainak inicializálása előtt nem statikus konstruktor törzse. Jelenleg nincs másik konstruktor konstruktor megismernie szintaxisának (például a C\# szintaxis ": this()"). A megoldás, hogy egy közös Init módszer meghatározásához.
 
-A következő módon példányának osztályok ebben a kiadásban.
+A következő módon osztályok hárítható el ebben a kiadásban.
 
-Létrehozza az alapértelmezett konstruktor használatával. Vegye figyelembe, hogy a New-Object nem támogatott ebben a kiadásban.
+Hárítható el, az alapértelmezett konstruktort használatával. Vegye figyelembe, hogy a New-Object nem támogatott ebben a kiadásban.
 
 ```powershell
 $a = [MyClass]::new()
 ```
 
-Egy paraméterrel rendelkező konstruktor hívása
+A konstruktor egy paraméterrel hívása
 
 ```powershell
 $b = [MyClass]::new(42)
 ```
 
-Egy tömb átadni több paraméterekkel rendelkező konstruktor
+Egy tömb átadása több paraméterekkel rendelkező konstruktor
 ```powershell
 $c = [MyClass]::new(@(42,43,44), "Hello")
 ```
 
-Ebben a kiadásban a New-Object nem működik a Windows PowerShell-ben definiált osztályokkal. Ebben a kiadásban a következő típusnév is csak látható lexically, ami azt jelenti, nem látható a modul vagy a parancsfájl az osztályt definiáló kívül. Funkciók Windows PowerShell meghatározott osztály példányainak lépjen vissza, és példányok működik jól kívül a modul vagy a parancsfájlhoz.
+Az ebben a kiadásban a New-Object nem működik Windows PowerShell-ben definiált osztályokkal. Ebben a kiadásban název typu is csak látható betűrendbe, ami azt jelenti, már nem látható a modul vagy a parancsfájl az osztályt definiáló kívül. Funkciók a Windows PowerShellben meghatározott osztály példányainak adhat vissza, és példányok működnek jól kívül a modul vagy a parancsfájl.
 
-`Get-Member -Static` konstruktorok, sorolja fel, mint bármely más módszerrel túlterhelések szeretné megjeleníteni. Az ezen szintakszist teljesítménye is jelentősen gyorsabb, mint a New-Object.
+`Get-Member -Static` konstruktorok, sorolja fel, hogy meg tudja tekinteni a túlterhelések, mint bármely más módszerrel. Ezt a szintaxist teljesítménye is jelentősen gyorsabb, mint a New-Object.
 
-A pszeudo statikus metódus nevű **új** .NET tárolóhelytípussal működik, a következő példában látható módon.
+A pszeudo statikus metódust **új** együttműködik a .NET-típusok, az alábbi példában látható módon.
 
 ```powershell
 [hashtable]::new()
 ```
 
-Most már megtekintheti konstruktor túlterhelések Get-tag, illetve ez a példa látható:
+Most már megtekintheti a konstruktor túlterheléssel Get-Member, vagy ebben a példában látható módon:
 
 ```powershell
 PS> [hashtable]::new
@@ -134,7 +134,7 @@ hashtable new(int capacity, float loadFactor)
 
 ## <a name="methods"></a>Metódusok
 
-A Windows PowerShell osztály adott metódusát, a scriptblock kulcsszót, amelynek csak egy záró blokk lett megvalósítva. Minden módszereket nyilvános. A következő nevű metódus meghatározásának példáját mutatja be **DoSomething**.
+A Windows PowerShell-osztály metódusának a scriptblock kulcsszót, amelynek csak egy záró blokk van megvalósítva. Az összes módszer nyilvánosak legyenek. A következő nevű metódus meghatározása példán látható **DoSomething**.
 
 ```powershell
 class MyClass
@@ -147,42 +147,42 @@ class MyClass
 }
 ```
 
-A metódushívás:
+Metódushívás:
 
 ```powershell
 $b = [MyClass]::new()
 $b.DoSomething(42)
 ```
 
-Túlterhelt metódusok – Ez azt jelenti, hogy a meglévő metódus azonos nevű, de a megadott értékek--szerint megkülönböztetett is támogatott.
+--Metódusok túlterhelt, azokkal, amelyek neve megegyezik egy meglévő módszer, de különbözteti meg a megadott értékek – is támogatottak.
 
 ## <a name="properties"></a>Tulajdonságok
 
-Az összes tulajdonság olyan nyilvános. Tulajdonságok szükség soremelés vagy pontosvesszővel válassza el. Ha nincs objektum típusaként van megadva, a a tulajdonság típusa nem objektum.
+Az összes tulajdonság nyilvánosak legyenek. Tulajdonságok szükség soremelés vagy pontosvesszővel válassza el. Ha nincs objektum típus van megadva, a tulajdonság típusának egy objektum.
 
-Érvényesítési attribútumot, vagy argumentum átalakítása attribútumok használó tulajdonságok (pl. `[ValidateSet("aaa")]`) a várt módon működik.
+Érvényesítési attribútumok vagy az argumentum-átalakítás attribútumok tulajdonságok (pl. `[ValidateSet("aaa")]`) a várt módon működik.
 
 ## <a name="hidden"></a>Rejtett
 
-Egy új kulcsszó **rejtett**, hozzá lett adva. **Rejtett** tulajdonságai és metódusai (beleértve a konstruktorok) alkalmazhatók.
+Egy új kulcsszó, **Hidden**, hozzá van adva. **Rejtett** tulajdonságai és metódusai (beleértve a konstruktorok) is alkalmazható.
 
-A rejtett tagokat nyilvános, de nem jelennek meg a Get-tag kimeneti kivéve, ha a - Force paramétert.
+Rejtett tagok nyilvános, de nem jelennek meg a Get-Member kimenetét, kivéve, ha a - Force paramétert.
 
-Rejtett tagok nincsenek mikor befejeződését, vagy az Intellisense segítségével, kivéve, ha a létrehozása után következik be, a rejtett tag definiáló osztály fülre.
+A tagok nem tartoznak mikor rejtett lapon befejezése vagy az IntelliSense segítségével, kivéve, ha az osztály a rejtett tag meghatározása befejezése után történik.
 
-Új attribútum **System.Management.Automation.HiddenAttribute** bővült, így C#-kódban a Windows PowerShell belül azonos szemantikáját.
+Egy új attribútum **System.Management.Automation.HiddenAttribute** , hogy a C#-kód azonos szemantikáját Windows Powershellen belülről lehet hozzá lett adva.
 
-## <a name="return-types"></a>Visszatérési típusokat
+## <a name="return-types"></a>Návratové typy
 
-Visszatérési típusa a szerződést; az eredményül kapott értéket alakítja át a várt típusú. Ha nincs visszatérési típusa van megadva, a visszatérési típus érvénytelen. Nincsenek objektumok; streaming van objektumok nem lehet írni a feldolgozási sor szándékosan vagy véletlenül.
+Typ vrácené hodnoty je szerződés; a visszaadott érték a várt típus alakítja át. Ha nincs visszatérési típus van megadva, a typ vrácené hodnoty je typ void. Nincsenek objektumok; streamelési van objektumok nem lehet írni a folyamat szándékosan vagy véletlenül iratkozott le.
 
 ## <a name="attributes"></a>Attribútumok
 
 Két új attribútum **DscResource** és **DscProperty** lettek hozzáadva.
 
-## <a name="lexical-scoping-of-variables"></a>A változók lexikális hatókörének beállítása
+## <a name="lexical-scoping-of-variables"></a>Lexikális hatókörkezeléséhez kapcsolódó változók
 
-A következő példáját mutatja be, hogyan lexikális tartalmazó works ebben a kiadásban.
+Az alábbi példán látható hogyan lexikai hatókörkezelési működik Ebben a kiadásban.
 
 ```powershell
 $d = 42 # Script scope
@@ -208,10 +208,10 @@ $v = bar
 $v -eq $d # true
 ```
 
-## <a name="end-to-end-example"></a>Végpontok – példa
+## <a name="end-to-end-example"></a>Teljes körű – példa
 
-Az alábbi példa létrehoz egy HTML dinamikus stílus lap nyelvi (DSL) megvalósításának számos új, egyéni osztályok.
-Ezt követően a példa ad segédfüggvények találhatók, az elem osztályt, például címsorok és táblák, részeként meghatározott elemtípus létrehozásához, mert típusok nem használhatók a modulok hatókörén kívül.
+A következő példában létrehozunk egy HTML dinamikus stílus lap nyelv (DSL) megvalósításának számos új, egyéni osztályok.
+Ezt követően a példa ad segédfüggvények hozhat létre egyedi elemtípus az elem osztályt, például a címsorok és a táblázatok, részeként, mert típusok nem használhatók egy modul hatókörén kívül.
 
 ```powershell
 # Classes that define the structure of the document
@@ -308,7 +308,7 @@ $bodyText += $Properties.foreach{TH $_}
 # Add the rows
 $bodyText += foreach ($row in $Data)
     {
-        TR (-join $Properties.Foreach{ TD ($row.$\_) } )
+        TR (-join $Properties.Foreach{ TD ($row.$_) } )
     }
 
     $table = [Element] @{

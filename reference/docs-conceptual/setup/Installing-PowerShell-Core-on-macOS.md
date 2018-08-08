@@ -1,3 +1,14 @@
+---
+title: A PowerShell Core telepítése macOS rendszerre
+description: Információ a PowerShell Core telepítése macOS rendszeren
+ms.date: 08/06/2018
+ms.openlocfilehash: ff1814d95b3ca3fa8497069dff249fd2ad5576ef
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587465"
+---
 # <a name="installing-powershell-core-on-macos"></a>A PowerShell Core telepítése macOS rendszerre
 
 A PowerShell Core a macOS 10.12 és újabb verzióit támogatja.
@@ -37,7 +48,7 @@ Végül győződjön meg arról, hogy megfelelően működik-e a telepítés:
 pwsh
 ```
 
-Lépjen ki a PowerShell, és térjen vissza a bash, használja a 'Kilépés' parancsot. 
+Lépjen ki a PowerShell, és térjen vissza a bash, használja a 'Kilépés' parancsot.
 ```sh
 exit
 ```
