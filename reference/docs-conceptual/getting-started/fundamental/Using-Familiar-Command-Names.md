@@ -1,58 +1,84 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell parancsmag
+ms.date: 08/27/2018
+keywords: PowerShell, a parancsmag
 title: Jól ismert parancsnevek használata
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 08402aa5b959711c150fff89aa6747b6b43f8aa8
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952681"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134083"
 ---
 # <a name="using-familiar-command-names"></a>Jól ismert parancsnevek használata
-Egy olyan mechanizmus használatával nevű *aliasképző*, a Windows PowerShell segítségével a felhasználók alternatív névvel parancsok hivatkozik. Aliasképző élmény a felhasználók közös parancs nevét, amely már ismerik a Windows PowerShell hasonló műveletek végrehajtásához újból más ismertetése lehetővé teszi. Bár nem ismertetjük részletesen Windows PowerShell-aliasokat, továbbra is használhatja őket, a Windows PowerShell-lel használatának első lépéseit.
 
-Aliasképző beírt parancsnév társít egy másik parancsba is. Például a Windows PowerShell rendelkezik egy belső függvény **Clear-állomás** , amely törli a kimeneti ablakban. Ha akár a **cls** vagy **törölje** parancsot egy parancssorba, a Windows PowerShell parancs értelmezi, hogy ez az alias a **Clear-állomás** funkciót, és futtatja a  **Törölje az állomás** függvény.
+PowerShell alternatív névvel parancsok hivatkozik aliasokat támogatja. Aliasképző segítségével a felhasználók élményét a gyakori, a már ismert parancsnevek használata hasonló műveletek a PowerShellben más ismertetése.
 
-Ez a szolgáltatás segít a felhasználóknak további Windows PowerShell. Első, a legtöbb Cmd.exe és a UNIX felhasználók rendelkeznek-e, hogy a felhasználók már tudja nevű parancsok nagy repertoire, és bár a Windows PowerShell alakokat nem lehet azonos eredményt adnak, elég közel használó felhasználók őket anélkül, hogy a munka formában először memorize a Windows PowerShell-neveket. Második a fő eljárás megzavarását az új felület esetén a felhasználó már ismeri a másik rendszerhéj forrása "ujját memória" által okozott hibákat. Ha a Cmd.exe használt évig, ha a kimenet teljes képernyős, és törölni szeretné azt, reflexively írja be a **cls** parancsot, és nyomja le az ENTER billentyűt. Az alias nélkül a **Clear-állomás** funkció a Windows PowerShellben, egyszerűen számíthat a hibaüzenet a következő "**"cls"nem ismerhető fel egy parancsmag, function, futtatható program vagy parancsfájl.**" és nem meghatározni, hogy mi a teendő, törölje a kimeneti kell hagyni.
+Aliasképző hozzárendeli egy másik parancs egy új nevet. Például, a PowerShell, egy belső függvény nevű `Clear-Host` , amely törli a kimeneti ablakban. Beírhatja, vagy a `cls` vagy `clear` alias parancsot a parancssorba. PowerShell ezek az aliasok értelmezi, és futtatja a `Clear-Host` függvény.
 
-A következő a közös Cmd.exe és UNIX-parancsok Windows PowerShell belül használható rövid listáját:
+Ez a funkció segít a felhasználóknak további PowerShell. Első, a legtöbb Cmd.exe és a UNIX-ra a felhasználók rendelkeznek egy nagy repertoire, amely a felhasználók már tudja név alapján. A PowerShell-megfelelőik nem azonos eredményeket hozhat. Azonban az eredmény Bezárás nem elegendő, amelyeket a felhasználók a PowerShell-parancs neve ismerete nélkül működnek. "Finger memória" as gazdasági válság után egy másik fő forrásai akkor, ha egy új parancs-rendszerhéj tanulási. Ha használta a Cmd.exe évig, előfordulhat, hogy reflexively be a `cls` paranccsal törölje a képernyőn. Az alias nélkül `Clear-Host`, hibaüzenetet kap, és nem tudja, mi a teendő a kimenet törlése.
+
+Az alábbi lista tartalmazza a közös Cmd.exe és a Unix-parancsok használható néhány, a PowerShellben:
 
 |||||
 |-|-|-|-|
-|cat|Dir|csatlakoztatása|rm|
-|cd|echo|move|rmdir|
-|chdir|tartalmának végleges törlése|popd|alvó állapot|
-|Törölje a jelet|h|PS|sort|
-|cls|Előzmények|pushd|TEE|
+|cat|a dir parancs|csatlakoztatási|erőforrás-kezelő|
+|CD-ről|echo|Áthelyezés|rmdir|
+|chdir|Tartalmának végleges törlése|popd|alvó állapot|
+|Világos|H|PS|Rendezés|
+|CLS|Előzmények|pushd|TEE|
 |Másolás|Kill|pwd|típus|
 |del|LP|r|írási|
-|diff|Ls|ren||
+|a diff|ls|ren||
 
-Ha ezek egyike segítségével reflexively parancsokat, és szeretné megtanulni a natív Windows PowerShell-paranccsal valódi nevét, használja a **Get-Alias** parancs:
+A `Get-Alias` parancsmag megjeleníti a valódi neve alias társított natív PowerShell-parancsot.
 
-```
+```powershell
 PS> Get-Alias cls
-
-CommandType     Name                            Definition
------------     ----                            ----------
-Alias           cls                             Clear-Host
 ```
 
-Olvashatóbbá példák, a Windows PowerShell felhasználói útmutatója általában Ezzel elkerülheti alias. Azonban több tudomása aliasok ez korai továbbra is lehet hasznos, ha a Windows PowerShell-kód más forrásból származó tetszőleges kódtöredékek dolgozik, vagy saját aliasok meghatározhat. Ez a szakasz a többi szabványos aliasok és hogyan adhat meg a saját aliasok ismertetik.
-
-### <a name="interpreting-standard-aliases"></a>Standard aliasok értelmezése
-Ellentétben a fent említett aliasok tervezett egyéb felületek név-kompatibilisek, a Windows PowerShell épített aliasok általában tervezett kivonatosan mutatja. A rövidebb nevek gyorsan írható, de nem lehet olvasni, ha nem tudja, mit hivatkoznak.
-
-A Windows PowerShell megpróbálja kedvezőtlenül között az érthetőség és kivonatosan mutatja, adja meg a standard aliasok rövid szintaxist nevek a gyakori műveletek és főnevek alapuló készlete. Ez lehetővé teszi, hogy egy közös parancsmagokat olvasható amikor tudja, hogy a rövid szintaxist nevek aliasok sor. Például a standard aliasok művelet **beolvasása** rövidítése **g**, a művelet **beállítása** rövidítése **s**, a főnév **Elem** rövidítése **i**, a főnév **hely** rövidítése **l**, és a parancs rövidítése főnév**cm**.
-
-Ez a következő példa mutatja be, ennek működéséről. A Get-cikk szabványos aliasa származik egyesítő **g** a Get és **i** elem: **gi**. A Set-cikk szabványos aliasa származik egyesítő **s** készlet és **i** elem: **si**. A Get-hely normál alias származik egyesítő **g** a Get és **l** helyen **főkönyvi**. A hely beállítása a szabványos aliasa származik egyesítő **s** készlet és **l** helyen **l**. A Get-Command szabványos aliasa származik egyesítő **g** a Get és **cm** parancs, **gcm**. Nincs Set-Command parancsmaggal van, de ha vannak, azt tudná kitalálja, hogy a szabványos alias származik **s** készlet és **cm** parancshoz: **scm**. Ezenkívül a Windows PowerShell aliassal való ellátását, akik előforduló ismernie személyek **scm** tudná kitalálja, hogy az alias Set-parancs hivatkozik.
-
-### <a name="creating-new-aliases"></a>Új aliasok létrehozása
-A saját aliasok a Set-Alias parancsmaggal hozhat létre. A következő utasítás például a szabványos aliasok értelmezése ismertetett szabványos parancsmag-aliasok létrehozása:
-
+```Output
+CommandType     Name                               Version    Source
+-----------     ----                               -------    ------
+Alias           cls -> Clear-Host
 ```
+
+## <a name="interpreting-standard-aliases"></a>Standard aliasok értelmezése
+
+Az aliasok azt leírt előző más parancsrendszerhéjakban neve kompatibilitást tervezték.
+A legtöbb aliasok beépített PowerShell áttekinthetőség lettek kialakítva. Rövidebb nevek használata egyszerűbb, írja be, de a rendszer nehezen olvasható, ha nem tudja, hogy mire hivatkoznak.
+
+PowerShell-aliasok megpróbálhatja az érthetőség és az áttekinthetőség között. PowerShell közös főneveket és műveletek aliasok szabványos készletét használja.
+
+Példa rövidítések:
+
+| Főnév vagy művelet | Rövidítése |
+|--------------|--------------|
+| Lekérés          | G            |
+| Beállítás          | s            |
+| Elem         | I            |
+| Hely     | L            |
+| Parancs      | cm           |
+| Alias        | Al           |
+
+Ezek az aliasok akkor érthető, ha ismeri a hónapok rövid nevét.
+
+| Parancsmag neve    | Alias |
+|----------------|-------|
+| `Get-Item `    | GI    |
+| `Set-Item`     | SI    |
+| `Get-Location` | GL    |
+| `Set-Location` | SL    |
+| `Get-Command`  | gcm –   |
+| `Get-Alias`    | gal   |
+
+Ha ismeri, a PowerShell aliasképző, könnyebbé vált a kitalálja, hogy a **sal** alias hivatkozik `Set-Alias`.
+
+## <a name="creating-new-aliases"></a>Új aliasok létrehozása
+
+A saját alias használatával is létrehozhat a `Set-Alias` parancsmagot. Például a következő utasításokat a korábban tárgyalt szabványos parancsmag-aliasok hozzon létre:
+
+```powershell
 Set-Alias -Name gi -Value Get-Item
 Set-Alias -Name si -Value Set-Item
 Set-Alias -Name gl -Value Get-Location
@@ -60,7 +86,8 @@ Set-Alias -Name sl -Value Set-Location
 Set-Alias -Name gcm -Value Get-Command
 ```
 
-Belső a Windows PowerShell parancsokat hasonló indításakor használja, de ezek aliasok a következők nem módosítható. Ha megpróbálja ténylegesen hajtható végre az alábbi parancsok egyikét, elérhetővé válik a arról tájékoztat, hogy az alias nem lehet módosítani. Például:
+Belsőleg PowerShell indítása során hasonló parancsokat használja, de ezek az aliasok nem módosítható.
+Ha megpróbálja hajtsa végre az alábbi parancsok egyikét, hibaüzenet elmagyarázza, hogy az alias nem lehet módosítani. Például:
 
 ```
 PS> Set-Alias -Name gi -Value Get-Item

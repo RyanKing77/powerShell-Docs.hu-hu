@@ -1,29 +1,19 @@
 ---
-ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A DSC-parancsfájl-erőforrás
-ms.openlocfilehash: 1163d454972d8ee519d1c55b77bb85979faf3536
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.date: 08/24/2018
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: DSC-Script erőforrás
+ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189448"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43133893"
 ---
-# <a name="dsc-script-resource"></a>A DSC-parancsfájl-erőforrás
+# <a name="dsc-script-resource"></a>DSC-Script erőforrás
 
+> A következőkre vonatkozik: Windows PowerShell 4.0-s verzióját, Windows PowerShell 5.x
 
-> Vonatkozik: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
-
-A **parancsfájl** erőforrás a Windows PowerShell szükséges konfiguráló (DSC) lehetővé teszi a Windows PowerShell parancsfájl-blokkokban futtathatnak célcsomópontokat. A `Script` erőforrás `GetScript`, `SetScript`, és `TestScript` tulajdonságok. Ezeket a tulajdonságokat meg kell minden egyes cél csomóponton futó parancsfájl-blokkokban.
-
-A `GetScript` parancsprogram-blokkot kell visszaadnia egy kivonattáblát az aktuális csomópont állapotát jelző. A hashtable csak tartalmaznia kell egy key `Result` és az érték típusúnak kell lennie `String`. Visszaadandó semmit nem szükséges. A DSC-ből nem minden kimenetét a script blokkból.
-
-A `TestScript` parancsprogram-blokkot kell meghatározni, hogy az aktuális csomópont módosítani kell-e. Az kell visszaadnia `$true` Ha a csomópont naprakész. Az kell visszaadnia `$false` Ha a csomópont-konfiguráció elavult, és amelyet frissíteni kell a `SetScript` parancsprogram-blokkot tartalmazzon. A `TestScript` DSC hívja parancsprogram-blokkot tartalmazzon.
-
-A `SetScript` parancsprogram-blokkot kell módosítani a csomópont. Azt nevezzük DSC által, ha a `TestScript` visszatérési blokkolása `$false`.
-
-Ha szeretné-e a konfigurációs parancsprogram a változók használata a `GetScript`, `TestScript`, vagy `SetScript` parancsfájl-blokkokban, használja a `$using:` hatókör (lásd lent példát).
-
+A **parancsfájl** erőforrás a Windows PowerShell Desired State Configuration (DSC) csomópontokon való futtatáshoz Windows PowerShell parancsfájl-blokkokban cél mechanizmust biztosít. A **parancsfájl** erőforrás-felhasználási `GetScript`, `SetScript`, és `TestScript` való hajtsa végre a megfelelő DSC parancsfájl-blokkokban tartalmazó tulajdonságok állapot műveleteket.
 
 ## <a name="syntax"></a>Szintaxis
 
@@ -38,37 +28,68 @@ Script [string] #ResourceName
 }
 ```
 
+> [!NOTE]
+> A `GetScript`, `TestScript`, és `SetScript` karakterláncok blokkok tárolni.
+
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   |
-|---|---|
-| GetScript| Biztosít egy adatblokk indításakor futó Windows PowerShell-parancsfájl a [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) parancsmag. Ez a blokk egy kivonattáblát kell visszaadnia. A hashtable csak tartalmaznia kell egy key **eredmény** és az érték típusúnak kell lennie **karakterlánc**.|
-| SetScript| A Windows PowerShell-parancsfájl adatblokk biztosít. Ha meghívása a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) parancsmag, a **TestScript** blokk első futtatja. Ha a **TestScript** értéket ad vissza blokkolása **$false**, a **SetScript** blokk fog futni. Ha a **TestScript** értéket ad vissza blokkolása **$true**, a **SetScript** blokk nem fog futni.|
-| TestScript| A Windows PowerShell-parancsfájl adatblokk biztosít. Ha meghívása a [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) parancsmag, ez a blokk futtatásakor. Ha a visszaadott érték **$false**, a SetScript blokk fog futni. Ha a visszaadott érték **$true**, SetScript blokk lesz, nem futnak. A **TestScript** blokk is fut, indításakor a [teszt-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) parancsmag. Azonban ebben az esetben az a **SetScript** blokk nem fogja futtatni, függetlenül attól, milyen értéket a TestScript blokkolása értéket ad vissza. A **TestScript** blokkot kell visszaadnia igaz, ha a tényleges konfigurációs megegyezik a jelenlegi kívánt állapot konfigurációs, és hamis értéket, ha nem felel meg. (Az aktuális kívánt állapot az utolsó konfigurációját a csomópont által használt DSC helyeztek.)|
-| hitelesítő adatok| Azt jelzi, ha a hitelesítő adatok szükségesek a parancsfájl futtatásához használandó hitelesítő adatok.|
-| dependsOn| Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az **ResourceName** és annak típusa **ResourceType**, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.
+|Tulajdonság|Leírás|
+|--------|-----------|
+|GetScript|Parancsprogram-blokkot, amely a csomópont aktuális állapotát adja vissza.|
+|SetScript|Parancsprogram-blokkot DSC használó, kényszerítse a megfelelőséget, amikor a csomópont nem a kívánt állapotban van.|
+|TestScript|Parancsprogram-blokkot, amely meghatározza, hogy a csomópont a kívánt állapotban van.|
+|Hitelesítő adatok| Azt jelzi, ha a hitelesítő adatok szükségesek a szkript futtatásához használandó hitelesítő adatok.|
+|DependsOn| Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója letiltása, a futtatni kívánt parancsfájl először van **ResourceName** és a típusa **ResourceType**, ez a tulajdonság használata esetén `DependsOn = "[ResourceType]ResourceName"`.
 
-## <a name="example-1"></a>1. példa
+### <a name="getscript"></a>GetScript
+
+DSC nem használja a kimenetét `GetScript`. A [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) parancsmag végrehajtja a `GetScript` a csomópont aktuális állapotának beolvasására tett. Visszatérési értéket nem kötelező a `GetScript`. Ha megad egy visszatérési értéket, kell lennie egy `hashtable` tartalmazó egy **eredmény** kulcsot, amelynek az értéke egy `String`.
+
+### <a name="testscript"></a>TestScript
+
+A `TestScript` határozza meg, hogy DSC által végrehajtott a `SetScript` kell futtatni. Ha a `TestScript` adja vissza `$false`, DSC végrehajtja a `SetScript` ahhoz, hogy a csomópont a kívánt állapotra. Kell visszaadnia egy `boolean` értéket. Eredménye `$true` azt jelzi, hogy a csomópont megfelelő és `SetScript` nem kell végrehajtani.
+
+A [a Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) parancsmag végrehajtja a `TestScript` csomópontok megfelelnek-e lekérni a **parancsfájl** erőforrásokat. Azonban ebben az esetben az a `SetScript` nem fut, függetlenül attól, hogy mi a `TestScript` letiltása értéket ad vissza.
+
+> [!NOTE]
+> Minden kimenetének a `TestScript` része, a visszaadott érték. PowerShell unsuppressed kimeneti adatok nullától eltérő, ami azt jelenti, amely értelmezi a `TestScript` adja vissza `$true` függetlenül a csomópont állapota.
+> Ez kiszámíthatatlan következményekkel járhat, téves, eredményez, és nehézséget okoz a hibaelhárítás során.
+
+### <a name="setscript"></a>SetScript
+
+A `SetScript` módosítja a csomópont kívánt állapotát enfore. Azt nevezzük DSC szerint, ha a `TestScript` parancsfájl-blokk értéket ad vissza `$false`. A `SetScript` kell nem tartozik visszaadott érték.
+
+## <a name="examples"></a>Példák
+
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>1. példa: Írása egy parancsfájl-erőforrás használatával mintaszöveg
+
+Ebben a példában megvizsgálja, hogy létezik-e `C:\TempFolder\TestFile.txt` minden egyes csomóponton. Ha még nem létezik, akkor használatával létrehozza a `SetScript`. A `GetScript` nem használatos a fájlt, és a visszaadott érték tartalmát adja vissza.
+
 ```powershell
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script ScriptExample
+    Node localhost
     {
-        SetScript =
+        Script ScriptExample
         {
-            $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
-            $sw.WriteLine("Some sample string")
-            $sw.Close()
+            SetScript = {
+                $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
+                $sw.WriteLine("Some sample string")
+                $sw.Close()
+            }
+            TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
+            GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
         }
-        TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
     }
 }
 ```
 
-## <a name="example-2"></a>2. példa
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>2. példa: Hasonlítsa össze a fájlverzió-információkat használ egy parancsfájl-erőforrás
+
+Ez a példa lekéri a *megfelelő* fájlverzió-információkat a szerzői műveletekhez részben számítógépen szöveges fájlból, és tárolja azokat az a `$version` változó. A csomópont MOF-fájl létrehozása, DSC helyettesíti a `$using:version` változók minden parancsprogram a következő értékkel: blokkolja a `$version` változó. A futtatás során a *megfelelő* verzió minden csomóponton egy szöveges fájlban és képest, és az azt követő végrehajtások frissített.
+
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -76,27 +97,30 @@ Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script UpdateConfigurationVersion
+    Node localhost
     {
-        GetScript = {
-            $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "$currentVersion" }
-        }
-        TestScript = {
-            $state = $GetScript
-            if( $state['Result'] -eq $using:version )
-            {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
-                return $true
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+                return @{ 'Result' = "$currentVersion" }
             }
-            Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
-            return $false
-        }
-        SetScript = {
-            $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            }
         }
     }
 }
 ```
-
-Ehhez az erőforráshoz a konfigurációs verzió ír egy szövegfájlba. Ebben a verzióban érhető el az ügyfélszámítógépen, de nem a csomópontok egyikén, ezért az egyes átadni rendelkezik a `Script` a PowerShell parancsfájl-blokkokban erőforrás `using` hatókör. Amikor a csomópont MOF létrehozása a fájl, értékét a `$version` változó olvasható ki egy szövegfájlból, az ügyfélszámítógépen. A DSC cserél a `$using:version` minden parancsprogram változók értékét letiltása a `$version` változó.

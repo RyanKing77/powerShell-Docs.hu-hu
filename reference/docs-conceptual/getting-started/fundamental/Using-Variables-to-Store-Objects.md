@@ -1,21 +1,22 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell parancsmag
+ms.date: 08/27/2018
+keywords: PowerShell, a parancsmag
 title: Objektumok tárolása változókban
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: e52f0a344d0ad13db42b34bed912d584c99b0e30
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3168b64039a601857f9c684108de5770f88329e3
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953327"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134058"
 ---
-# <a name="using-variables-to-store-objects"></a>Objektumok tárolása változókban
-PowerShell objektumok működik. PowerShell lehetővé teszi változók, alapvetően az objektumok megőrizni későbbi felhasználásra kimeneti nevű létrehozását. Más változók használata esetén ismertetése ne feledje, hogy PowerShell változók objektumokat, nem szöveges.
+# <a name="using-variables-to-store-objects"></a>Változók használata az objektumok tárolására
 
-Változók mindig vannak-e megadva, a kezdeti karakter $, és a alfanumerikus karaktereket vagy a aláhúzásjellel is tartalmazhat, a név.
+PowerShell-objektumok működik. PowerShell változók néven elnevezett objektumok létrehozását teszi lehetővé.
+Változók nevek a aláhúzás karakterrel használatával bármely alfanumerikus karaktereket tartalmazhat. A PowerShell használatakor egy változó mindig használatával van megadva a \$ karakter követ a változó nevét.
 
-### <a name="creating-a-variable"></a>Egy változó létrehozása
+## <a name="creating-a-variable"></a>Egy változó létrehozása
+
 Írja be egy érvényes változónevet hozhat létre egy változót:
 
 ```
@@ -23,13 +24,14 @@ PS> $loc
 PS>
 ```
 
-Ez eredményt adja vissza, nem mert **$loc** rendelkezik értékkel. Hozzon létre egy változót, és rendelje hozzá az azonos lépésben értéket. PowerShell csak létrehozza a változót, ha nem létezik. Ellenkező esetben a megadott érték rendel a létező változó. Az aktuális helyen tárolja a változóban **$loc**, típus:
+Ebben a példában nincs eredményt adja vissza, mert `$loc` nincs értéke. Hozzon létre egy változót, és rendelje hozzá ugyanazt a lépésben egy értéket. PowerShell csak a változót hoz létre, ha még nem létezik.
+Ellenkező esetben a megadott értéket rendel a meglévő változókat. Az alábbi példában az aktuális helyen tárolja a változó `$loc`:
 
-```
+```powershell
 $loc = Get-Location
 ```
 
-Nem jelenik meg ez a parancs beírásakor, mert a kimeneti $helyi küld kimeneti van A PowerShellben megjelenített eredménye az, hogy az adatokat, amely nem egyéb irányítva, mindig küldi el a képernyőre egyik mellékhatása. Írja be a $loc megjeleníti az aktuális hely:
+PowerShell semmilyen kimenet jeleníti meg, ha ezt a parancsot. PowerShell Get-Location kimenete küld `$loc`. A PowerShell nem hozzárendelt vagy átirányított adatokat küldeni a képernyő. Írja be `$loc` az aktuális tartózkodási helyét jeleníti meg:
 
 ```
 PS> $loc
@@ -39,9 +41,9 @@ Path
 C:\temp
 ```
 
-Használhat **Get-tag** változók tartalma kapcsolatos információk megjelenítéséhez. A Get-tag $loc ismertetett láthatja, hogy a rendszer egy **PathInfo** objektum, csakúgy, mint a kimenet a Get-helyről:
+Használhat `Get-Member` a változók tartalma információit jeleníti meg. `Get-Member` azt mutatja be, hogy `$loc` van egy **PathInfo** objektum, csakúgy, mint a kimenetét `Get-Location`:
 
-```
+```powershell
 PS> $loc | Get-Member -MemberType Property
 
    TypeName: System.Management.Automation.PathInfo
@@ -54,47 +56,47 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {...
 ProviderPath Property   System.String ProviderPath {get;}
 ```
 
-### <a name="manipulating-variables"></a>Változók módosítása
-PowerShell biztosít több parancsok, változók módosítására. Írja be a teljes listáját a olvasható formában látható:
+## <a name="manipulating-variables"></a>Változók módosítása
 
-```
+PowerShell segítségével kezelheti a változók különböző parancsokat biztosít. Egy olvasható formában felsorolását beírásával tekintheti meg:
+
+```powershell
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-A változók hoz létre az aktuális PowerShell-munkamenetben kívül több rendszer által definiált változókat. Használhatja a **Remove-változó** parancsmag segítségével törölje a jelet a változókat, amelyek nem szabályozzák PowerShell kijelentkezik. Írja be a következő parancs futtatásával törölje az összes változó:
+PowerShell számos, a rendszer által meghatározott változókat is létrehoz. Használhatja a `Remove-Variable` változók, amely PowerShell nem szabályozza, távolítsa el a jelenlegi munkamenet-parancsmagot. Írja be a következő parancsot, törölje az összes változót:
 
-```
+```powershell
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
 ```
 
-Ez a művelet létrehoz a megerősítést kérő alább látható.
+Az előző parancs futtatása után a `Get-Variable` parancsmag megjeleníti a PowerShell rendszerváltozók.
 
-```
-Confirm
-Are you sure you want to perform this action?
-Performing operation "Remove Variable" on Target "Name: Error".
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
-(default is "Y"):A
-```
+PowerShell létrehoz egy változó meghajtó is. Az alábbi példa használatával megjelenítheti az összes PowerShell változók a változó meghajtót használja:
 
-Ha ezután futtatja a **Get-Variable** parancsmag, látni fogja a fennmaradó PowerShell változókat. Egy változó PowerShell meghajtó is van, mivel emellett megjeleníthetők összes PowerShell változók beírásával:
-
-```
+```powershell
 Get-ChildItem variable:
 ```
 
-### <a name="using-cmdexe-variables"></a>Cmd.exe változók használata
-PowerShell, de nem Cmd.exe parancs-rendszerhéj környezetben fut, és minden környezetben elérhető azonos változókat is használhat, a Windows. Ezek a változók egy meghajtón keresztül közzétett **env**:. Ezek a változók beírásával tekintheti meg:
+## <a name="using-cmdexe-variables"></a>A Cmd.exe változók használata
 
-```
+PowerShell a rendelkezésre álló bármely Windows folyamatot, beleértve a Cmd.exe azonos környezeti változókat is használhat. Ezek a változók nevű meghajtó keresztül közzétett `env:`. Ezek a változók a következő parancs beírásával tekintheti meg:
+
+```powershell
 Get-ChildItem env:
 ```
 
-Bár a szabványos változó parancsmagok vannak nem tudja kezelni a **env:** változók, továbbra is használhatja őket megadásával a **env:** előtag. Például az operációs rendszer gyökérkönyvtárában megtekintéséhez használhatja a parancs-rendszerhéj **% SystemRoot %** belül PowerShell írja be a változót:
+A standard `*-Variable` parancsmagok nem tudja kezelni a környezeti változókat. A környezeti változók használatával elért a `env:` meghajtó előtag. Ha például a **% SystemRoot %** Cmd.exe változót az operációs rendszer legfelső szintű könyvtár nevét tartalmazza. A PowerShellben használja `$env:SystemRoot` elérni ugyanazt az értéket.
 
 ```
 PS> $env:SystemRoot
 C:\WINDOWS
 ```
 
-Hozhat létre, és PowerShell belül a környezeti változók módosításához. Környezeti változók elérhető Windows PowerShell rendszerben található Windows környezeti változók normál szabályok felelnek meg.
+Is létrehozhat, és a Powershellen belülről a környezeti változók módosításához. Környezeti változók a PowerShellben hajtsa végre a környezeti változókat az operációs rendszer máshol használja ugyanazokat a szabályokat. A következő példában létrehozunk egy új környezeti változót:
+
+```powershell
+$env:LIB_PATH='/usr/local/lib'
+```
+
+Bár nem kötelező, a környezeti változók neve csupa nagybetűssé használatához közös ennyi az egész.

@@ -1,175 +1,182 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell parancsmag
+ms.date: 08/27/2018
+keywords: PowerShell, a parancsmag
 title: Részletes súgóinformációk kérése
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483032"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134034"
 ---
 # <a name="getting-detailed-help-information"></a>Részletes súgóinformációk kérése
-Windows PowerShell Windows PowerShell fogalmak és a Windows PowerShell nyelvi részletes súgó-témaköröket tartalmazza. Megtalálhatók az egyes parancsmag és a szolgáltató Súgó-témaköröket és sok függvények és parancsfájlok Súgó-témaköröket.
 
-E súgótémakörök útmutatást megjelenítéséhez a parancssorba, vagy tekintse meg a Microsoft TechNet Library az alábbi témakörök a közelmúltban frissített verziói. Számos olyan programok, amelyek futtatni a Windows PowerShell, például a Windows PowerShell integrált parancsfájlkezelési környezet, adja meg a Súgó további szolgáltatásokat, például a környezetfüggő súgó és lefordított súgófájl (.chm).
+PowerShell, amelyek bemutatják a PowerShell alapfogalmai és a PowerShell nyelv részletes cikkeket tartalmaz. Is találhatók Súgócikkek minden parancsmag és a szolgáltató, és számos függvények és parancsfájlok.
 
-## <a name="getting-help-for-cmdlets"></a>Parancsmag súgójának megjelenítése
-A Windows PowerShell-parancsmagokkal kapcsolatos súgó megjelenítéséhez használja a [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) parancsmag. Segítség a példában a [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) parancsmag, típus:
+Ezek Súgócikkek jeleníthetők meg a parancssort vagy a legutóbb frissített verzióit a következő cikkeket megtekintése a [PowerShell](/powershell/scripting/powershell-scripting) online dokumentációját.
 
-```
-get-help get-childitem
-```
+## <a name="getting-help-for-cmdlets"></a>Súgó a parancsmagokhoz
 
-vagy a
+PowerShell-parancsmagokkal kapcsolatos súgó lekéréséhez használja a [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) parancsmagot. Segítség kérése az a példában a `Get-ChildItem` parancsmagot, írja be:
 
-```
-get-childitem -?
-```
-
-Akkor is kaphat a Get-Help parancsmag kapcsolatban. Például:
-
-```
-get-help get-help
-```
-
-A parancsmag súgótémakörök listájának lekérése a munkamenetben, írja be:
-
-```
-get-help -category cmdlet
-```
-
-Egyszerre csak egy lapot minden súgótémakör megjelenítéséhez használja a **súgó** függvény vagy az alias **man**. Például a Get-ChildItem parancsmag súgójának megjelenítéséhez írja be a következőt
-
-```
-man get-childitem
+```powershell
+Get-Help Get-ChildItem
 ```
 
 vagy a
 
-```
-help get-childitem
-```
-
-Egy parancsmag, függvény vagy parancsfájl, például a paraméterek és a használati példák leírást kapcsolatos részletes információk megjelenítéséhez használja a *részletes* paramétert a Get-Help parancsmag. Például a Get-ChildItem parancsmag részletes információkat kaphat, írja be:
-
-```
-get-help get-childitem -detailed
+```powershell
+Get-ChildItem -?
 ```
 
-Minden tartalom súgójának megjelenítéséhez használja a *teljes* a Get-Help parancsmag paraméter. Például a Get-ChildItem parancsmag Súgó-témakör minden tartalom megjelenítéséhez írja be:
+A Get-Help parancsmag kapcsolatos még is kaphat segítséget. Például:
 
-```
-get-help get-childitem -full
-```
-
-Beolvasandó részletes súgó parancsmag, használja a paraméterekről a *paraméter* paramétert a Get-Help parancsmag. Például beolvasandó részletes súgó a Get-ChildItem parancsmag típusú paraméterek mindegyikét:
-
-```
-get-help get-childitem -parameter *
+```powershell
+Get-Help Get-Help
 ```
 
-Csak a példák a súgótémakörök megjelenítéséhez használja a *példa* a Get-Help paramétere. Például a Get-ChildItem parancsmag Súgó-témakör csak a példák megjelenítéséhez írja be:
+Súgócikkek az összes parancsmag listájának lekérése a munkamenetben, írja be:
 
-```
-get-help get-childitem -examples
-```
-
-A parancsmagok írást Súgó-témaköröket írásával kapcsolatban további információkért lásd: [arról, hogy miként írási parancsmag](https://go.microsoft.com/fwlink/?LinkID=123415) az MSDN könyvtárában.
-
-## <a name="getting-conceptual-help"></a>Fogalmi kapcsolatos segítség kérése
-A Get-Help parancsmag a Windows PowerShellben, beleértve a Windows PowerShell nyelvi kapcsolatos témakörök szintén elméleti témaköreit információkat jelenít meg. Fogalmi Súgó-témaköröket a "about_" előtaggal, például about_line_editing kezdődik. (Az elméleti téma nevét kell megadni angol még akkor is, a Windows PowerShell nem angol nyelvű verzióiban.)
-
-Elméleti témaköreit listájának megjelenítéséhez írja be:
-
-```
-get-help about_*
+```powershell
+Get-Help -Category Cmdlet
 ```
 
-Adott megjelenítéséhez írja be például a témakör neve:
+Egyszerre csak egy oldal egyes súgócikk megjelenítéséhez használja a `help` függvény vagy az aliasával `man`.
+Például Súgó megjelenítése a `Get-ChildItem` parancsmag típusa
 
-```
-get-help about_command_syntax
-```
-
-A paraméterek, a Get-Help, például a *részletes*, *paraméter*, és *példák*, nincsenek hatással az elméleti súgótémakörök megjelenítését.
-
-## <a name="getting-help-about-providers"></a>Szolgáltatók kapcsolatos súgó elérése
-A Get-Help parancsmag Windows PowerShell-szolgáltató információit jeleníti meg. Ha segítséget szeretne kérni a szolgáltató, írja be a "Get-Help" szolgáltató neve követ. Például a beállításjegyzék-szolgáltatójának súgójának, írja be:
-
-```
-get-help registry
+```powershell
+man Get-ChildItem
 ```
 
-A szolgáltató súgótémakörök a munkamenetet, írja be az összes listáját
+vagy a
 
-```
-get-help -category provider
-```
-
-A paraméterek, a Get-Help, például a *részletes*, *paraméter*, és *példák*, hatástalan szolgáltató súgótémakörök megjelenítéséhez.
-
-## <a name="getting-help-about-scripts-and-functions"></a>Kapcsolatos parancsfájlokban és függvényekben kapcsolatos segítség kérése
-Sok parancsfájlokban és függvényekben, a Windows PowerShell rendelkezik Súgó-témaköröket. A Get-Help parancsmag segítségével megjelenítheti a parancsfájlokban és függvényekben Súgó-témaköröket.
-
-A függvény a súgó megjelenítéséhez írja be a "get-help" függvény nevével kiegészítve. Ha segítséget szeretne kérni a Disable-PSRemoting függvény, például:
-
-```
-get-help disable-psremoting
+```powershell
+help Get-ChildItem
 ```
 
-A parancsfájl a súgó megjelenítéséhez írja be a parancsfájlban a teljes elérési útja. Ha a parancsfájl elérési út szerepel-e a Path környezeti változóba, akkor kihagyhatja a parancs az elérési út.
+Részletes információk megjelenítéséhez használja a **részletes** paraméterében a `Get-Help` parancsmagot. Például részletes információkhoz juthat a `Get-ChildItem` parancsmagot, írja be:
 
-Például, ha a c: "TestScript.ps1" nevű parancsfájl\\PS-teszt címtár megjeleníthető a Súgó-témakört a parancsfájl típusát:
-
-```
-get-help c:\ps-test\TestScript.ps1
+```powershell
+Get-Help Get-ChildItem -Detailed
 ```
 
-A paraméterek, a parancsmag megjelenő tervezett segítenek, például a *részletes*, *teljes*, *példák*, és *paraméter*, a munkahelyi parancsfájl Súgó és függvény segítségével, túl. Azonban ha azt minden Súgó megjelenítése, írja be a "get-help \*", Súgó függvények és parancsfájlok nem jelenik meg.
+A Súgó a cikkben minden tartalom megjelenítéséhez használja a **teljes** paraméterében a `Get-Help` parancsmagot. Ha például minden tartalom megjelenítéséhez a cikk segítséget a `Get-ChildItem` parancsmagot, írja be:
 
-További információ a Súgó-témaköröket a függvények és parancsfájlok írása: [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af), és [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
-
-## <a name="getting-help-online"></a>Online súgó
-Ha az Internethez csatlakoznak, a legjobb részleteket a segítségkéréshez egyik online a segítő súgótémakörök megjelenítéséhez. Mivel az online témakörök könnyen lehet frissíteni, akkor ezeknél valószínűleg adja meg a legújabb tartalom.
-
-Ha segítséget szeretne kérni online, próbálja meg a *Online* a Get-Help parancsmag paraméter. A *Online* paraméter csak a parancsmag súgójában, a Get-Help parancsmag munkálatok súgó működik, és parancsfájl-súgó. Nem használhatja a *Online* paraméterrel fogalmi (:) témakörök vagy szolgáltató Súgó-témaköröket. Emellett ez a szolgáltatás nem választható, mert nem működik minden parancsmagot, függvény vagy parancsfájl súgótémakör.
-
-Azonban a súgótémakörök, amelyek rendelkeznek a Windows PowerShell, beleértve a szolgáltató Súgó és fogalmi (:) Súgó-témaköröket érhetők el online a [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116) a Microsoft TechNet Library szakasza.
-
-Használatához a *Online* paramétert a Get-Help parancsmag használata a következő parancs formátuma.
-
-```
-get-help <command-name> -online
+```powershell
+Get-Help Get-ChildItem -Full
 ```
 
-Ahhoz, hogy a Get-ChildItem parancsmaggal kapcsolatban a témakör online verzióját, például:
+Első részletes súgó használatát egy parancsmag-paraméterekkel kapcsolatos a **paraméter** paraméterében a `Get-Help` parancsmagot. Például beolvasni a részletes súgót paramétereit a `Get-ChildItem` parancsmagot, írja be:
 
-```
-get-help get-childitem -online
-```
-
-A Súgó-témakör online verzióját érhető el, ha az alapértelmezett böngészőben nyílik.
-
-Online súgó súgótémakör esetén támogatott, ha az internetes URL-címét a témakör is megtekintheti. Az internetcím súgótémakör kapcsolódó hivatkozások szakaszában jelenik meg.
-
-Például az URL-cím, az Add-Computer parancsmag online verziójához parancsot kell beírnia:
-
-```
-get-help add-computer
+```powershell
+Get-Help Get-ChildItem -Parameter *
 ```
 
-Az első sor a kapcsolódó hivatkozások szakaszban, a következő témakörben alább láthatók.
+A példákban csak a Súgó a cikkben megjelenítéséhez használja a **példák** paraméterében a `Get-Help`.
+Ha például csak a példák megjelenítése a Súgó cikk a `Get-ChildItem `parancsmagot, írja be:
 
-```
-Online version: http://go.microsoft.com/fwlink/?LinkID=135194
+```powershell
+Get-Help Get-ChildItem -Examples
 ```
 
-Online támogatást nyújt a súgótémakörök kapcsolatos információkért lásd: [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf), és mit [arról, hogy miként írási parancsmag](https://go.microsoft.com/fwlink/?LinkID=123415) az MSDN könyvtárában.
+Súgócikkek az írást parancsmagok írásával kapcsolatban további információkért lásd: [arról, hogy miként írhat parancsmag](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).
+
+## <a name="getting-conceptual-help"></a>Fogalmi segítség kérése
+
+A `Get-Help` parancsmag is információkat jelenít meg elméleti cikkek PowerShell-lel, beleértve a cikkeket a PowerShell nyelv tudnivalók. Cikkek kezdje a "about_" előtaggal, például a about_line_editing fogalmi segítséget. (A fogalmi cikkeinek kell megadni angol nyelven még a PowerShell nem angol nyelvű verziója.)
+
+Elméleti cikkek listájának megjelenítéséhez írja be:
+
+```powershell
+Get-Help about_*
+```
+
+Egy adott súgócikk megjelenítéséhez írja be például a cikk neve:
+
+```powershell
+Get-Help about_command_syntax
+```
+
+A paraméterek a `Get-Help`, például **részletes**, **paraméter**, és **példák**, nem befolyásolják a fogalmi Súgócikkek megjelenítését.
+
+## <a name="getting-help-about-providers"></a>Szolgáltatók kapcsolatos segítség
+
+A `Get-Help` parancsmag PowerShell szolgáltatók információit jeleníti meg. Súgó kérése egy szolgáltatót, írja be a `Get-Help` szolgáltató neve követ. Például a beállításjegyzék-szolgáltatójának súgójának megjelenítéséhez írja be:
+
+```powershell
+Get-Help registry
+```
+
+Súgócikkek az összes szolgáltatót listájának lekérése a munkamenetben, írja be a következőt
+
+```powershell
+Get-Help -Category provider
+```
+
+A paraméterek a `Get-Help`, például **részletes**, **paraméter**, és **példák**, nem befolyásolják a szolgáltató Súgócikkek megjelenítését.
+
+## <a name="getting-help-about-scripts-and-functions"></a>Parancsfájlokban és függvényekben kapcsolatos segítség
+
+Számos parancsfájlokban és függvényekben a PowerShellben kell a cikkeket. Használja a `Get-Help` parancsmaggal a Súgócikkek a parancsfájlokban és függvényekben.
+
+A függvény súgójának megjelenítéséhez írja be a következőt `Get-Help` függvény neve követ. Segítség kérése az a példában a `Disable-PSRemoting` működik, írja be:
+
+```powershell
+Get-Help Disable-PSRemoting
+```
+
+A parancsfájl súgójának megjelenítéséhez írja be a parancsfájl elérési útját. Ha a parancsfájl nem szerepelnek a Path környezeti változóhoz elérési út, teljes elérési útját kell használnia.
+
+Ha például a c: "TestScript.ps1" nevű parancsfájl rendelkezik\\PS-tesztelési címtárat, megjelenítése a Súgó a cikk a parancsfájl típusa:
+
+```powershell
+Get-Help c:\ps-test\TestScript.ps1
+```
+
+A paraméterek, a parancsmag súgójában működik a parancsfájl és a függvény értékek megjelenítésére lettek kialakítva segítségével túl. Azonban súgó a függvények és parancsfájlok nem látható futtatásakor `Get-Help *`.
+
+Súgócikkek a függvények és parancsfájlok írása kapcsolatos információkért tekintse meg a következő cikkeket:
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+
+## <a name="getting-help-online"></a>Online súgó elérése
+
+Online súgó cikkeinek az egyik legjobb módja, ha segítséget szeretne kérni. Online témájú cikkei például könnyebben frissítése, és adja meg a legfrissebb tartalmakat.
+
+Online súgó lekéréséhez használja a **Online** paraméterében a `Get-Help` parancsmagot. A PowerShell-lel, beleértve a szolgáltató súgó származnak az összes Súgócikkek fogalmi (:), a cikkeket, és érhetők el online a [PowerShell](/powershell/scripting/powershell-scripting) dokumentációját.
+
+> [!NOTE]
+> Nem használhatja a **Online** paramétert fogalmi (about_ *) vagy a szolgáltató a cikkeket.
+> Online súgó nem kötelező, így minden parancsmag, függvény vagy parancsfájl nem működik.
+
+Például a súgócikk online verziójának beszerzéséhez a a `Get-ChildItem` parancsmagot, írja be:
+
+```powershell
+Get-Help Get-ChildItem -Online
+```
+
+PowerShell a cikk az alapértelmezett böngészőben nyílik meg. Online súgó egy súgócikk támogatott, ha az URL-címét a súgócikk is megtekintheti. Az URL-cím egy súgócikk kapcsolódó hivatkozások szakaszában jelenik meg.
+
+Például az URL-cím, az Add-Computer parancsmag online verziójának megtekintéséhez írja be:
+
+```powershell
+Get-Help Add-Computer
+```
+
+A cikk a kapcsolódó hivatkozások szakasz első sorában az alábbiakban látható.
+
+```Output
+Online version: http://go.microsoft.com/fwlink/?LinkId=821564
+```
+
+Online-támogatást nyújt a Súgócikkek kapcsolatos információkért lásd: [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 ## <a name="see-also"></a>Lásd még:
-- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [Get-Help](/powershell/module/microsoft.powershell.core/get-help)

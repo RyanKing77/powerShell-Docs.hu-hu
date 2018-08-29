@@ -1,159 +1,152 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell parancsmag
+ms.date: 08/14/2018
+keywords: PowerShell, a parancsmag
 title: Parancsfájlok írása és futtatása a Windows PowerShell ISE-ben
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 4d7c5352ef1dac6f63a50433676068f83a920db5
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 943752df2ecd3fce715dda0ca7ade97186620560
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483117"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133869"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Parancsfájlok írása és futtatása a Windows PowerShell ISE-ben
 
-Ez a témakör ismerteti létrehozása, szerkesztése, futtatása és mentése a parancsfájlok a parancssori panelbe.
+Ez a cikk ismerteti, hogyan létrehozása, szerkesztése, futtatása és mentése a parancsfájlokat a parancsfájl panelen.
 
-## <a name="how-to-create-and-run-scripts"></a>Hozzon létre, és parancsfájlok futtatása
+## <a name="how-to-create-and-run-scripts"></a>Hogyan hozhat létre és szkriptek futtatása
 
-Nyissa meg, és szerkesztheti a parancssori panelbe Windows PowerShell-fájlokat. A Windows PowerShell érdeklő adott fájltípusokhoz olyan parancsfájlokat (.ps1), parancsfájlok (.psd1) és parancsfájlok modul (.psm1). Ilyen típusú a parancssori panelbe szerkesztőben színes szintaxist. Más közös fájltípus esetében előfordulhat, hogy nyissa meg a parancssori panelbe konfigurációs fájlok (.ps1xml), XML, és szövegfájlok.
+Megnyithatja és szerkesztheti a Windows PowerShell-fájlokat a parancsfájl panelen. Adott fájltípusokat a lényeges a Windows PowerShell parancsfájlok (.ps1), parancsfájlok (.psd1) és parancsfájlok modul (.psm1). Az ilyen a parancsfájl panelen szerkesztőben színes szintaxist. Más közös fájltípusok megnyitásakor előfordulhat, hogy a parancsfájl panelen olyan konfigurációs fájlok (.ps1xml), XML-fájlok és szöveges fájlok.
 
 > [!NOTE]
-> A Windows PowerShell végrehajtási házirend határozza meg, hogy parancsfájlok futtatásához, és a Windows PowerShell-profilok és konfigurációs fájlok. Az alapértelmezett végrehajtási házirendjét, korlátozott, megakadályozza, hogy az összes parancsfájl futtatását, és megakadályozza, hogy a profil betöltését. Profilok betölteni, és használható engedélyezi a végrehajtási házirend módosításához lásd [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) és [about_Signing [v4]](https://technet.microsoft.com/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
+> A Windows PowerShell végrehajtási házirend határozza meg, hogy parancsfájlok futtatásához, és Windows PowerShell-profilok és konfigurációs fájlok betöltése. Az alapértelmezett végrehajtási házirend korlátozott, megakadályozza, hogy az összes parancsfájl futtatását, és megakadályozza, hogy a profilok betöltése. Ha módosítani szeretné a végrehajtási házirendet, hogy a profilok betölteni és használni, lásd: [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy) és [about_Signing](/powershell/module/microsoft.powershell.core/about/about_signing).
 
 ### <a name="to-create-a-new-script-file"></a>Az új parancsfájl létrehozása
 
-Kattintson az eszköztár **új** , vagy a **fájl** menüben kattintson **új**. A létrehozott fájl az aktuális PowerShell lapon új fájl lapon jelenik meg. Ne feledje, hogy a PowerShell fülek láthatók csak ha egynél több. Alapértelmezés szerint a fájl típusa parancsfájl (.ps1) létrejött, de egy olyan új nevét és kiterjesztését is menthető. Több parancsfájlok ugyanazon a PowerShell lapon hozhatók létre.
+Kattintson az eszköztár **új**, vagy a a **fájl** menüben kattintson a **új**. A létrehozott fájlt a jelenlegi PowerShell-lap egy új fájl lapján jelenik meg. Ne feledje, hogy a PowerShell-lapok láthatók csak ha egynél több. Alapértelmezés szerint létrejön egy fájl, a típus parancsprogramnak (.ps1), de egy új nevet és a kiterjesztéssel menthetők. Több parancsfájl-fájl is létrehozható PowerShell ugyanazon a lapon.
 
-### <a name="to-open-an-existing-script"></a>Egy meglévő parancsfájl megnyitása
+### <a name="to-open-an-existing-script"></a>Meglévő parancsfájl megnyitása
 
-Kattintson az eszköztár **nyitott**, vagy a a **fájl** menüben kattintson **nyissa meg**. Az a **nyissa meg a** párbeszédpanelen jelölje ki a megnyitni kívánt fájlt. A megnyitott fájlt egy új lapon jelenik meg.
+Kattintson az eszköztár **nyissa meg**, vagy a a **fájl** menüben kattintson a **nyílt**. Az a **nyissa meg a** párbeszédpanelen jelölje ki a megnyitni kívánt fájlt. A megnyitott fájlt egy új lapon jelenik meg.
 
-### <a name="to-close-a-script-tab"></a>A parancsfájl lap bezárásához
+### <a name="to-close-a-script-tab"></a>A parancsfájl lap bezárása
 
-A parancsfájl bezárja a parancsfájl lapon, majd tegye a következők egyikét:
+Kattintson a **bezárásához** (X) ikonra a fájl lap szeretné zárja be, vagy válassza ki a **fájl** menüben, majd kattintson **bezárásához**.
 
-1. Kattintson a **Bezárás** (X) ikonra, a parancsfájl fülre.
+Ha a fájl utolsó mentése óta módosítva lett, mentse vagy vesse el, hogy kéri.
 
-2. Az a **fájl** menüben kattintson a **Bezárás**.
+### <a name="to-display-the-file-path"></a>A fájl elérési útja megjelenítése
 
-Ha a fájl utolsó mentése óta módosították, mentse vagy vesse el, hogy kéri.
-
-### <a name="to-display-the-file-path"></a>A fájl elérési útjának megjelenítése
-
-A Fájl fülre mutasson a fájl nevét. A parancsfájlban a teljes elérési útja megjelenik egy elemleírás.
+A fájl lapon mutasson a fájl nevét. A teljes elérési útját a parancsfájl egy elemleírás jelenik meg.
 
 ### <a name="to-run-a-script"></a>Parancsfájl futtatása
 
-Kattintson az eszköztár **-parancsfájl futtatása**, vagy a a **fájl** menüben kattintson a **futtatása**.
+Kattintson az eszköztár **parancsfájl futtatása**, vagy a a **fájl** menüben kattintson a **futtatása**.
 
-### <a name="to-run-a-portion-of-a-script"></a>Egy része egy parancsfájl futtatásához
+### <a name="to-run-a-portion-of-a-script"></a>Egy része egy parancsfájl futtatása
 
-1. A parancsfájl ablaktáblában jelölje ki a parancsfájl egy részét.
+1. A parancsfájl panelen válassza ki a parancsfájl egy részét.
+2. Az a **fájl** menüben kattintson a **kijelölés futtatása**, vagy kattintson az eszköztár **kijelölés futtatása**.
 
-2. A a **fájl** menüben kattintson a **kijelölés futtatása**, vagy kattintson az eszköztár **kijelölés futtatása**.
+### <a name="to-stop-a-running-script"></a>Leállítja a parancsprogram futtatásához
 
-### <a name="to-stop-a-running-script"></a>Leállítja a futó parancsfájlt
+Többféleképpen is lehet leállítani a parancsfájl futtatását.
 
-Kattintson az eszköztár **művelet leállítása**, nyomja le a CTRL + BREAK, vagy a a **fájl** menüben kattintson a **művelet leállítása**. Nyomja le **CTRL + C** is működik, kivéve, ha néhány szöveg van kijelölve, ebben az esetben **CTRL + C** a másolási funkcióhoz a kijelölt szöveg van leképezve.
+- Kattintson a **leállítása műveletet** eszköztár
+- Nyomja le a CTRL + BREAK
+- Válassza ki a **fájl** menüben, majd kattintson **leállítása műveletet**.
 
-## <a name="how-to-write-and-edit-text-in-the-script-pane"></a>Írása, és a parancssori panelbe szöveg szerkesztése
+Billentyű **CTRL + C** is működik, hacsak a szöveg van kijelölve, ebben az esetben **CTRL + C** leképezi a másolási funkcióhoz a kijelölt szöveg.
 
-Az alábbi lépések segítségével panelbe szöveg szerkesztése. Akkor is másolja, Kivágás, beillesztés, szöveg keresése és cseréje. Is visszavonja, és az utolsó végrehajtott művelet. Ezekhez a billentyűparancsok ugyanazok, mint az összes Windows-alkalmazások.
+## <a name="how-to-write-and-edit-text-in-the-script-pane"></a>Írása, és a parancsfájl panelen szöveg szerkesztése
 
-### <a name="to-enter-text-in-the-script-pane"></a>Szöveg bevitele a parancssori panelbe
+Akkor is másolás, Kivágás, illessze be, szöveg keresése és cseréje a parancsfájl panelen. Visszavonás is, és az iménti az utolsó művelet megismétlése. Ezek a műveletek billentyűparancsai a azonos parancsikonjait, az összes Windows-alkalmazásokhoz használható.
 
-1. Húzza az egérmutatót a parancssori panelbe bárhova kattinthat a parancssori panelbe, vagy úgy **nyissa meg a parancssori panelbe** a a **nézet** menü.
+### <a name="to-enter-text-in-the-script-pane"></a>Szöveg bevitele a parancsfájl panelen
 
-2. Hozzon létre egy parancsfájlt. Zintaxisszínek és kiegészítést legyen ez egy gazdagabb élmény a Windows PowerShell ISE.
+1. A kurzor elmozdítása a parancsfájl panelen, a parancsfájl panelen egy tetszőleges pontjára kattint, vagy kattintson **Ugrás a parancsfájl panelen** a a **nézet** menü.
+2. Hozzon létre egy parancsfájlt. Szintaxis színezés és kiegészítés adjon meg egy gazdagabb szerkesztési funkciót a Windows PowerShell ISE-ben.
+3. Lásd: [kiegészítés használata a parancsfájl panelen és a konzol ablaktáblában hogyan](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) segítheti a írja be a lapon kiegészítési funkció használatával.
 
-3. Lásd: [kiegészítést használja a parancsfájl és a konzol ablaktáblában hogyan](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) segítő írja be a lapon kiegészítési funkció használatáról részleteket.
+### <a name="to-find-text-in-the-script-pane"></a>A parancsfájl panelen belüli szövegek megkeresése
 
-### <a name="to-find-text-in-the-script-pane"></a>A parancssori panelbe szöveg keresése
-
-1. Szöveg bárhol megkereséséhez nyomja le az **CTRL + F** vagy a a **szerkesztése** menüben kattintson a **parancsfájl található**.
-
-2. A kurzor utáni szöveg megkereséséhez nyomja le az **F3** vagy a a **szerkesztése** menüben kattintson a **következő parancsfájlban**.
-
-3. A kurzor előtti szöveg megkereséséhez nyomja le az **SHIFT + F3** vagy a a **szerkesztése** menüben kattintson a **előző parancsfájlban**.
+1. Szöveg bárhol megkereséséhez nyomja le az ENTER **CTRL + F** vagy a a **szerkesztése** menüben kattintson a **parancsfájl található**.
+2. Szöveg keresése a kurzor utáni, nyomja le a **F3** vagy a a **szerkesztése** menüben kattintson a **következő parancsfájlban**.
+3. A kurzor előtti szöveg megkereséséhez nyomja le az ENTER **SHIFT + F3** vagy a a **szerkesztése** menüben kattintson a **előző szkriptben**.
 
 ### <a name="to-find-and-replace-text-in-the-script-pane"></a>A parancssori panelbe szöveg keresése és cseréje
 
-Nyomja le az **CTRL + H** vagy a a **szerkesztése** menüben kattintson a **cserélje le a parancsfájl**. Adja meg mind a keresett szöveget, és a szöveg, amellyel cserélje le azt, és nyomja le az **ENTER**.
+Nyomja meg **CTRL + H** vagy a a **szerkesztése** menüben kattintson a **cserélje le a parancsfájl**. Adja meg a szöveg keresése és a cseréhez használandó szöveg nyomja le az **ENTER**.
 
-### <a name="to-go-to-a-particular-line-of-text-in-the-script-pane"></a>Ugrás a parancsfájl ablaktáblán egy adott szövegsor
+### <a name="to-go-to-a-particular-line-of-text-in-the-script-pane"></a>Ugrás a parancsfájl panelen egy adott szövegsor
 
-1. A parancsfájl ablaktáblán nyomja le az **CTRL + G** vagy a a **szerkesztése** menüben kattintson **sor Ugrás**.
+1. Nyomja le a parancsfájl panelen **CTRL + G** vagy a a **szerkesztése** menüben kattintson a **lépjen sorra**.
 
-2. Adja meg a sor számát.
+2. Adjon meg egy sor száma.
 
-### <a name="to-copy-text-in-the-script-pane"></a>A parancssori panelbe szöveg másolása
+### <a name="to-copy-text-in-the-script-pane"></a>A parancsfájl panelen szöveg másolása
 
-1. A parancsfájl ablaktáblában jelölje ki a másolni kívánt szöveg.
+1. A parancsfájl panelen válassza ki a másolni kívánt szöveg.
 
-2. Nyomja le az **CTRL + C** vagy az eszköztáron kattintson a **másolási** ikonra, vagy a a **szerkesztése** menüben kattintson a **másolása**.
+2. Nyomja meg **CTRL + C** vagy az eszköztáron kattintson a **másolási** ikonra, vagy a a **szerkesztése** menüben kattintson a **másolási**.
 
-### <a name="to-cut-text-in-the-script-pane"></a>A parancssori panelbe szöveg kivágni
+### <a name="to-cut-text-in-the-script-pane"></a>A parancsfájl panelen szöveg kivágása
 
-1. A parancsfájl ablaktáblában jelölje ki a szöveget, amelyet szeretne kivágása.
+1. A parancsfájl panelen válassza ki a Kivágás kívánt szöveg.
+2. Nyomja meg **CTRL + X** vagy az eszköztáron kattintson a **Kivágás** ikonra, vagy a a **szerkesztése** menüben kattintson a **Kivágás**.
 
-2. Nyomja le az **CTRL + X** vagy az eszköztáron kattintson a **Kivágás** ikonra, vagy a a **szerkesztése** menüben kattintson a **Kivágás**.
+### <a name="to-paste-text-into-the-script-pane"></a>Szöveg beillesztése a parancsfájl panelen
 
-### <a name="to-paste-text-into-the-script-pane"></a>Szöveg beillesztése a parancsfájl ablaktábla
+Nyomja meg **CTRL + V** vagy az eszköztáron kattintson a **beillesztési** ikonra, vagy a a **szerkesztése** menüben kattintson a **beillesztési**.
 
-Nyomja le az **CTRL + V** vagy az eszköztáron kattintson a **Beillesztés** ikonra, vagy a a **szerkesztése** menüben kattintson a **Beillesztés**.
+### <a name="to-undo-an-action-in-the-script-pane"></a>A parancsfájl panelen művelet visszavonása
 
-### <a name="to-undo-an-action-in-the-script-pane"></a>A parancssori panelbe művelet visszavonása
+Nyomja meg **CTRL + Z** vagy az eszköztáron kattintson a **visszavonása** ikonra, vagy a a **szerkesztése** menüben kattintson a **visszavonása**.
 
-Nyomja le az **CTRL + Z** vagy az eszköztáron kattintson a **visszavonása** ikonra, vagy a a **szerkesztése** menüben kattintson a **visszavonása**.
+### <a name="to-redo-an-action-in-the-script-pane"></a>A parancsfájl panelen művelet visszavonása
 
-### <a name="to-redo-an-action-in-the-script-pane"></a>A parancssori panelbe művelet visszavonása
-
-Nyomja le az **CTRL + Y** vagy az eszköztáron kattintson a **végezze el újra** ikonra, vagy a a **szerkesztése** menüben kattintson a **végezze el újra**.
+Nyomja meg **CTRL + Y** vagy az eszköztáron kattintson a **újra elvégzi** ikonra, vagy a a **szerkesztése** menüben kattintson a **ismétlése**.
 
 ## <a name="how-to-save-a-script"></a>A parancsfájl mentése
 
-A következő lépésekkel mentéséhez és a parancsfájl neve. Egy csillag megjelölni egy fájlt, amely nem lett mentve óta módosították, hogy a parancsfájl neve mellett jelenik meg. A csillag eltűnik, ha a fájl mentése.
+Egy csillag megjelölni egy fájlt, amely még nem mentette, mert megváltozott a szkript neve mellett jelenik meg. A csillag eltűnik a fájl mentésekor.
 
 ### <a name="to-save-a-script"></a>A parancsfájl mentése
 
-Nyomja le az **CTRL + S** vagy az eszköztáron kattintson a **mentése** ikonra, vagy a a **fájl** menüben kattintson a **mentése**.
+Nyomja meg **CTRL + S** vagy az eszköztáron kattintson a **mentése** ikonra, vagy a a **fájl** menüben kattintson a **mentése**.
 
-### <a name="to-save-and-name-a-script"></a>A mentéshez és a parancsfájl neve
+### <a name="to-save-and-name-a-script"></a>Mentéséhez és a egy parancsfájl neve
 
-1. Az a **fájl** menüben kattintson a **Mentés másként**. A **Mentés másként** párbeszédpanel jelenik meg.
-
+1. Az a **fájl** menüben kattintson a **Mentés másként**. A **Mentés másként** párbeszédpanel fog megjelenni.
 2. Az a **Fájlnév** mezőbe írja be a fájl nevét.
-
-3. Az a **Fájltípus** jelölje ki a fájl típusa. Például a **Fájltípus** mezőben jelölje ki "œPowerShell parancsfájlok (\* .ps1)".
-
+3. Az a **Fájltípus** jelölje ki a fájl típusa. Például a **Fájltípus** jelölje ki "PowerShell-parancsfájlok (\*.ps1)".
 4. Kattintson a **Save** (Mentés) gombra.
 
-### <a name="to-save-a-script-in-ascii-encoding"></a>A parancsfájl mentése ASCII kódolással
+### <a name="to-save-a-script-in-ascii-encoding"></a>A parancsfájl mentéséhez ASCII-kódolás
 
-Alapértelmezés szerint a Windows PowerShell ISE új parancsfájlokat (.ps1), parancsfájlok (.psd1) és parancsfájlok modul (.psm1) (BigEndianUnicode kódolás) Unicode-ként alapértelmezés szerint menti. Â mentse a parancsfájlt egy másik kódolással, például az ASCII (ANSI), használja a **mentése** vagy **SaveAs** metódusai a [$psISE.CurrentFile](https://technet.microsoft.com/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) objektum.
+Alapértelmezés szerint Windows PowerShell ISE-ben új parancsfájlok (.ps1), parancsfájlok (.psd1) és parancsfájlok modul (.psm1), Unicode a (BigEndianUnicode kódolás) alapértelmezés szerint menti. Â mentse a parancsfájlt egy másik kódolással, például az ASCII (ANSI), használja a **mentése** vagy **Mentés másként** metódusokat a [$psISE.CurrentFile](the-ise-object-model-hierarchy.md) objektum.
 
-A következő parancsot egy új parancsfájlt parancsfájl.ps1 ASCII kódolással menti.
+A következő parancsot egy új parancsfájl parancsfájl.ps1 ASCII kódolással menti.
 
 ```powershell
 $psISE.CurrentFile.SaveAs("MyScript.ps1", [System.Text.Encoding]::ASCII)
 ```
 
-A következő parancs lecseréli a jelenlegi parancsfájlt ugyanazzal a névvel, de ASCII kódolással.
+A következő parancs ugyanazzal a névvel, de a kódolással ASCII fájl lecseréli a jelenlegi parancsfájlt.
 
 ```powershell
 $psISE.CurrentFile.Save([System.Text.Encoding]::ASCII)
 ```
 
-A következő paranccsal lekérdezi az aktuális fájl kódolási.
+Az alábbi parancs lekéri az aktuális fájl kódolási.
 
 ```powershell
 $psISE.CurrentFile.encoding
 ```
 
-A Windows PowerShell ISE támogatja a következő kódolási beállítások: ASCII, BigEndianUnicode kódolás, Unicode, UTF32, UTF7, UTF8 és alapértelmezett. A rendszer az alapértelmezett beállítás értékének függ.
+Windows PowerShell ISE-ben a következő kódolási beállításokat támogatja: ASCII, Toto, Unicode, UTF32, UTF7, UTF8 és alapértelmezett. Az alapértelmezett beállítás értékét a rendszer függ.
 
-A Windows PowerShell ISE nem változtatja meg más szerkesztők által létrehozott parancsfájlok kódolás Windows PowerShell ISE még ha használja a Mentés vagy a Mentés másként parancsokat.
+Windows PowerShell ISE parancsfájl-fájlok kódolást, ha a Mentés vagy a Mentés másként nem változik parancsokat.
 
 ## <a name="see-also"></a>Lásd még:
 

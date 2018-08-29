@@ -2,12 +2,12 @@
 title: PowerShell-fejlesztéshez a Visual Studio Code használatával
 description: PowerShell-fejlesztéshez a Visual Studio Code használatával
 ms.date: 08/06/2018
-ms.openlocfilehash: f8e1e9af257037fc7bd74549e4197c9a1695e952
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587431"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134100"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell-fejlesztéshez a Visual Studio Code használatával
 
@@ -36,7 +36,7 @@ Windows PowerShell hagyományos számítási feladatok esetén tekintse meg a [W
   > [!IMPORTANT]
   > MacOS-gépeken telepítenie kell a PowerShell-bővítmény OpenSSL megfelelő működéséhez.
   > Ennek legegyszerűbb módja az, hogy telepítése [Homebrew](http://brew.sh/) , majd futtassa `brew install openssl`.
-  > A VS Code most már betöltheti a a PowerShell-bővítmény sikeresen megtörtént.
+  > A VS Code most már betöltheti a PowerShell-bővítmény sikeresen megtörtént.
 
 - **Windows**: kövesse a telepítési utasításokat a [VS Code fut a Windows](https://code.visualstudio.com/docs/setup/windows) lap
 

@@ -1,37 +1,43 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell parancsmag
-title: Információk kérése a parancsokról
+ms.date: 08/27/2018
+keywords: PowerShell, a parancsmag
+title: Parancsok kapcsolatos információk lekérése
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: c51579fe2cdf4f2a0d3248d1aaf3f1f9cac83868
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: f4238927f10b4204cd3e23f0b0453011f54cb04a
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482726"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134010"
 ---
-# <a name="getting-information-about-commands"></a>Információk kérése a parancsokról
-A Windows PowerShell `Get-Command` parancsmag lekéri az aktuális munkamenetben rendelkezésre álló összes parancsot. Amikor beírja `Get-Command` egy PowerShell-parancssorba, a következőhöz hasonló kimenetet fog látni:
+# <a name="getting-information-about-commands"></a>Parancsok kapcsolatos információk lekérése
 
-```
-PS> Get-Command
-CommandType     Name                            Definition
------------     ----                            ----------
-Cmdlet          Add-Content                     Add-Content [-Path] <String[...
-Cmdlet          Add-History                     Add-History [[-InputObject] ...
-Cmdlet          Add-Member                      Add-Member [-MemberType] <PS...
+A PowerShell `Get-Command` jeleníti meg a parancsok, amelyek használhatók az aktuális munkamenetben.
+Ha futtatja a `Get-Command` parancsmagot, tekintse meg a következő kimenethez hasonló:
+
+```output
+CommandType     Name                    Version    Source
+-----------     ----                    -------    ------
+Cmdlet          Add-Computer            3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Add-Content             3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Add-History             3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Add-JobTrigger          1.1.0.0    PSScheduledJob
+Cmdlet          Add-LocalGroupMember    1.0.0.0    Microsoft.PowerShell.LocalAccounts
+Cmdlet          Add-Member              3.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Add-PSSnapin            3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-Ez a kimeneti keres sokkal például a Cmd.exe súgó kimenete: belső parancsok táblázatos összegzését. A kivonat a a **Get-Command** a fent látható minden parancs látható kimeneti rendelkezik egy parancsmag CommandType parancsot. A parancsmag típus Windows PowerShell belső parancs - olyan típusú, amely a nagyjából megfelel a **dir** és **cd** Cmd.exe, valamint a UNIX ismertetése, például a BASH built-ins parancsok.
+A kimeneti keresi sokkal cmd.exe súgó példához hasonlóan: belső parancsok táblázatos összegzését. Az a kivonat a `Get-Command` a fent látható minden parancs kimenete tartalmaz egy parancsmag CommandType parancsot. Egy parancsmag PowerShell belső parancs típusa. Ez a típus nagyjából megfelel, mint `dir` és `cd` a Cmd.exe vagy a Unix beépített parancsok ismertetése, például a bash.
 
-A kimenet a `Get-Command` parancsot, a definíciók végződhet folytatást jelző pontokra (...), annak jelzésére, hogy a PowerShell nem tudja megjeleníteni a tartalmat a rendelkezésre álló területet. Windows PowerShell kimenet megjelenítése, ha a kimeneti szövegként formázza, és azt, hogy az adatok szabályszerűen felelnek meg az ablak majd elrendezése. Előadás a későbbi szakaszában a is.
+A `Get-Command` parancsmag rendelkezik egy **szintaxis** paraméter, amely egyes parancsmagok szintaxisát adja vissza. Az alábbi példa bemutatja, hogyan szintaxisának lekérése a `Get-Help` parancsmagot:
 
-A `Get-Command` parancsmagja rendelkezik egy **szintaxis** paraméter, amely minden parancsmag szintaxisa a következő lekérdezi. Ahhoz, hogy a Get-Help parancsmag szintaxisa a következő, a következő paranccsal:
-
-```
+```powershell
 Get-Command Get-Help -Syntax
+```
 
+```output
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>] [-Functionality <String[]>]
  [-Role <String[]>] [-Full] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 
@@ -45,35 +51,44 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Role <String[]>] [-Parameter <String>] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-### <a name="displaying-available-command-types"></a>Elérhető parancstípusok megjelenítése
-A **Get-Command** parancs nem szerepel minden elérhető Windows PowerShell parancsot. Ehelyett a **Get-Command** parancs csak a parancsmagokat a jelenlegi munkamenet jeleníti meg. A Windows PowerShell ténylegesen támogatja több más típusú parancsokat. Aliasok, függvények és parancsfájlok egyaránt Windows PowerShell-parancsok, bár a nem a Windows PowerShell felhasználói útmutatója részletes ismertetése. Külső fájlok, amelyeknek is végrehajtható, vagy egy regisztrált típus kezelőjének is besorolt parancsok.
+## <a name="displaying-available-command-by-type"></a>Rendelkezésre álló parancssori megjelenítése típus szerint
 
-Ahhoz, hogy minden parancs a munkamenetben, írja be:
+A `Get-Command` parancs felsorolja a parancsmagok csak az aktuális munkamenetben. PowerShell ténylegesen parancsok számos egyéb típusú támogatja:
+
+- Aliasok
+- Funkciók
+- Parancsfájlok
+
+Külső végrehajtható fájlok, vagy egy regisztrált típus kezelőjének rendelkező fájlokat is besorolt parancsokat.
+
+A munkamenet összes parancs kérni, írja be:
 
 ```powershell
 Get-Command *
 ```
 
-Mivel ebben a listában a keresési elérési út külső fájlokat tartalmazza, ezrei között válogathat tartalmazhat. Több célszerű egy meghatározott parancsok közül.
-
-Más típusú natív parancsok használatához a **CommandType** paramétere a `Get-Command` parancsmag.
+Ez a lista tartalmazza a keresési útvonalat a külső parancsok, így tartalmazhat, ezer elem.
+Több hasznos, és tekintse meg a parancsok csökkentett készletét.
 
 > [!NOTE]
-> A csillag (\*) helyettesítő karakterek használata a Windows PowerShell parancssori argumentumok szolgál. A \* azt jelenti, hogy "egyezik egy vagy több szereplő olyan karakterek". Beírhatja `Get-Command a*` található a betűvel kezdődő minden parancs "a". Ellentétben a Cmd.exe megfelelő helyettesítő a Windows PowerShell helyettesítő is fog egyezni időtartamra.
+> A csillag (\*) helyettesítő karakterek használata a PowerShell-parancs argumentumainak szolgál. A \* azt jelenti, hogy egyezik"egy vagy több bármilyen karaktert". Beírhatja `Get-Command a*` található betűvel kezdődő összes parancs "a". Ellentétben a Cmd.exe megfelelő helyettesítő PowerShell a helyettesítő karakter is meg fog egyezni egy ideig.
 
-Get parancs aliasok, amelyek a hozzárendelt becenevet parancsokat, írja be:
+Használja a **CommandType** paraméterében `Get-Command` beolvasni a más típusú natív parancsokat.
+-parancsmag futtatási eredményei között.
+
+Első parancsaliasok, amelyek a hozzárendelt beceneveinek parancsokat, írja be:
 
 ```powershell
 Get-Command -CommandType Alias
 ```
 
-A funkciók eléréséhez a jelenlegi munkamenet, írja be:
+A függvények az aktuális munkamenet kérni, írja be:
 
 ```powershell
 Get-Command -CommandType Function
 ```
 
-A Windows PowerShell keresési út parancsfájlok megjelenítéséhez írja be:
+A PowerShell a keresési útvonalat szkriptek jelennek meg, írja be:
 
 ```powershell
 Get-Command -CommandType Script
