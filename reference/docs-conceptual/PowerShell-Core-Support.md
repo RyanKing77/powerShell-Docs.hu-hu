@@ -102,7 +102,7 @@ Támogatja a PowerShell Core nem terjed ki a többi termék modulok, ha az ilyen
 Például a `ActiveDirectory` modul részét képező Windows Server része nem támogatott forgatókönyv szerint.
 
 Előfordulhat azonban, a PowerShell Core explicit módon nem támogató modulok kompatibilis bizonyos esetekben.
-Telepítse a [ `WindowsPSModulePath` ][] modult, fűzze hozzá a Windows PowerShell `PSModulePath` , a PowerShell Core `PSModulePath`.
+Telepítse a [`WindowsPSModulePath`][] modult, fűzze hozzá a Windows PowerShell `PSModulePath` , a PowerShell Core `PSModulePath`.
 
 Először telepítse a `WindowsPSModulePath` modul a PowerShell-galériából:
 
