@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell, a parancsmag
 title: Jól ismert parancsnevek használata
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 08402aa5b959711c150fff89aa6747b6b43f8aa8
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134083"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353249"
 ---
 # <a name="using-familiar-command-names"></a>Jól ismert parancsnevek használata
 
@@ -16,9 +16,9 @@ PowerShell alternatív névvel parancsok hivatkozik aliasokat támogatja. Aliask
 
 Aliasképző hozzárendeli egy másik parancs egy új nevet. Például, a PowerShell, egy belső függvény nevű `Clear-Host` , amely törli a kimeneti ablakban. Beírhatja, vagy a `cls` vagy `clear` alias parancsot a parancssorba. PowerShell ezek az aliasok értelmezi, és futtatja a `Clear-Host` függvény.
 
-Ez a funkció segít a felhasználóknak további PowerShell. Első, a legtöbb Cmd.exe és a UNIX-ra a felhasználók rendelkeznek egy nagy repertoire, amely a felhasználók már tudja név alapján. A PowerShell-megfelelőik nem azonos eredményeket hozhat. Azonban az eredmény Bezárás nem elegendő, amelyeket a felhasználók a PowerShell-parancs neve ismerete nélkül működnek. "Finger memória" as gazdasági válság után egy másik fő forrásai akkor, ha egy új parancs-rendszerhéj tanulási. Ha használta a Cmd.exe évig, előfordulhat, hogy reflexively be a `cls` paranccsal törölje a képernyőn. Az alias nélkül `Clear-Host`, hibaüzenetet kap, és nem tudja, mi a teendő a kimenet törlése.
+Ez a funkció segít a felhasználóknak további PowerShell. Első, a legtöbb **cmd.exe** és a Unix-felhasználók vannak egy nagy repertoire, amely a felhasználók már tudja név alapján. A PowerShell-megfelelőik nem azonos eredményeket hozhat. Azonban az eredmény Bezárás nem elegendő, amelyeket a felhasználók a PowerShell-parancs neve ismerete nélkül működnek. "Finger memória" as gazdasági válság után egy másik fő forrásai akkor, ha egy új parancs-rendszerhéj tanulási. Ha már használt **cmd.exe** éve reflexively írja be a `cls` paranccsal törölje a képernyőn. Az alias nélkül `Clear-Host`, hibaüzenetet kap, és nem tudja, mi a teendő a kimenet törlése.
 
-Az alábbi lista tartalmazza a közös Cmd.exe és a Unix-parancsok használható néhány, a PowerShellben:
+Az alábbi lista tartalmazza a közös néhány **cmd.exe** és a Unix-parancsok a PowerShellben is használhatja:
 
 |||||
 |-|-|-|-|

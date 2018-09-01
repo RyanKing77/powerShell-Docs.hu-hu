@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell, a parancsmag
 title: Fontos PowerShell fogalmainak megértése
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 5f8192f962cebb8ee5e5384e39b48de811b11003
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134240"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353194"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Fontos PowerShell fogalmainak megértése
 
@@ -23,10 +23,9 @@ Ha már használta a szöveg – a feldolgozás eszközök múltbeli adatok feld
 
 ## <a name="the-command-family-is-extensible"></a>A parancs termékcsalád bővíthető
 
-Felületek, például a Cmd.exe lehetőséget, hogy közvetlenül a beépített parancsa beállítása nem biztosíthat.
-Külső parancssori eszközök, amely a Cmd.exe hozhat létre. De ezek külső eszközök nincs súgó integrációs szolgáltatások. A Cmd.exe automatikusan nem ismert, hogy a külső eszközök-e érvényes parancsokat.
+Felületek, például **cmd.exe**oly módon, hogy a beépített parancsa set közvetlenül kiterjesztése nem ad meg. Hozhat létre, amely a külső parancssori eszközök **cmd.exe**. De ezek külső eszközök nincs súgó integrációs szolgáltatások. **a Cmd.exe**automatikusan nem ismert, hogy a külső eszközök-e érvényes parancsokat.
 
-A natív parancsokat a PowerShell nevezzük *parancsmagok* (ejtsd parancs-lehetővé teszi, hogy). Létrehozhat saját parancsmagok modulokat, és függvények használatával összeállított programkódban vagy szkriptekben. Modulok parancsmagok és szolgáltatók hozzáadhatja a rendszerhéjat. PowerShell-parancsfájlokat, amelyek hasonló UNIX shell-szkript és a Cmd.exe kötegelt fájlokat is támogatja.
+A natív parancsokat a PowerShell nevezzük *parancsmagok* (ejtsd parancs-lehetővé teszi, hogy). Létrehozhat saját parancsmagok modulokat, és függvények használatával összeállított programkódban vagy szkriptekben. Modulok parancsmagok és szolgáltatók hozzáadhatja a rendszerhéjat. PowerShell is támogatja a parancsfájlokat, amelyek hasonló UNIX rendszerhéj-parancsfájlok és **cmd.exe** batch-fájlokat.
 
 ## <a name="powershell-handles-console-input-and-display"></a>PowerShell konzolon bemeneti és a megjelenített kezeli
 

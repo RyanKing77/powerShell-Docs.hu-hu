@@ -3,14 +3,14 @@ ms.date: 08/27/2018
 keywords: PowerShell, a parancsmag
 title: Objektumok tárolása változókban
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: 3168b64039a601857f9c684108de5770f88329e3
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134058"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353218"
 ---
-# <a name="using-variables-to-store-objects"></a>Változók használata az objektumok tárolására
+# <a name="using-variables-to-store-objects"></a>Objektumok tárolása változókban
 
 PowerShell-objektumok működik. PowerShell változók néven elnevezett objektumok létrehozását teszi lehetővé.
 Változók nevek a aláhúzás karakterrel használatával bármely alfanumerikus karaktereket tartalmazhat. A PowerShell használatakor egy változó mindig használatával van megadva a \$ karakter követ a változó nevét.
@@ -78,15 +78,15 @@ PowerShell létrehoz egy változó meghajtó is. Az alábbi példa használatáv
 Get-ChildItem variable:
 ```
 
-## <a name="using-cmdexe-variables"></a>A Cmd.exe változók használata
+## <a name="using-cmdexe-variables"></a>A cmd.exe változók használata
 
-PowerShell a rendelkezésre álló bármely Windows folyamatot, beleértve a Cmd.exe azonos környezeti változókat is használhat. Ezek a változók nevű meghajtó keresztül közzétett `env:`. Ezek a változók a következő parancs beírásával tekintheti meg:
+PowerShell bármely Windows-folyamat számára elérhető azonos környezeti változókat is használhat, beleértve a **cmd.exe**. Ezek a változók nevű meghajtó keresztül közzétett `env:`. Ezek a változók a következő parancs beírásával tekintheti meg:
 
 ```powershell
 Get-ChildItem env:
 ```
 
-A standard `*-Variable` parancsmagok nem tudja kezelni a környezeti változókat. A környezeti változók használatával elért a `env:` meghajtó előtag. Ha például a **% SystemRoot %** Cmd.exe változót az operációs rendszer legfelső szintű könyvtár nevét tartalmazza. A PowerShellben használja `$env:SystemRoot` elérni ugyanazt az értéket.
+A standard `*-Variable` parancsmagok nem tudja kezelni a környezeti változókat. A környezeti változók használatával elért a `env:` meghajtó előtag. Például a **% SystemRoot %** változóját **cmd.exe** az operációs rendszer legfelső szintű könyvtár nevét tartalmazza. A PowerShellben használja `$env:SystemRoot` elérni ugyanazt az értéket.
 
 ```
 PS> $env:SystemRoot

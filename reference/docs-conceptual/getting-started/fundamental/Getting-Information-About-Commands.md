@@ -1,16 +1,16 @@
 ---
 ms.date: 08/27/2018
 keywords: PowerShell, a parancsmag
-title: Parancsok kapcsolatos információk lekérése
+title: A parancsokkal kapcsolatos információk lekérése
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: f4238927f10b4204cd3e23f0b0453011f54cb04a
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134010"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353170"
 ---
-# <a name="getting-information-about-commands"></a>Parancsok kapcsolatos információk lekérése
+# <a name="getting-information-about-commands"></a>A parancsokkal kapcsolatos információk lekérése
 
 A PowerShell `Get-Command` jeleníti meg a parancsok, amelyek használhatók az aktuális munkamenetben.
 Ha futtatja a `Get-Command` parancsmagot, tekintse meg a következő kimenethez hasonló:
@@ -29,7 +29,7 @@ Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-A kimeneti keresi sokkal cmd.exe súgó példához hasonlóan: belső parancsok táblázatos összegzését. Az a kivonat a `Get-Command` a fent látható minden parancs kimenete tartalmaz egy parancsmag CommandType parancsot. Egy parancsmag PowerShell belső parancs típusa. Ez a típus nagyjából megfelel, mint `dir` és `cd` a Cmd.exe vagy a Unix beépített parancsok ismertetése, például a bash.
+A kimeneti keresi sokkal például annak a súgónak **cmd.exe**: belső parancsok táblázatos összegzését. Az a kivonat a `Get-Command` a fent látható minden parancs kimenete tartalmaz egy parancsmag CommandType parancsot. Egy parancsmag PowerShell belső parancs típusa. Ez a típus nagyjából megfelel, mint `dir` és `cd` a **cmd.exe** vagy a Unix-rendszerhéjjal beépített parancsok, például a bash.
 
 A `Get-Command` parancsmag rendelkezik egy **szintaxis** paraméter, amely egyes parancsmagok szintaxisát adja vissza. Az alábbi példa bemutatja, hogyan szintaxisának lekérése a `Get-Help` parancsmagot:
 
@@ -71,7 +71,7 @@ Ez a lista tartalmazza a keresési útvonalat a külső parancsok, így tartalma
 Több hasznos, és tekintse meg a parancsok csökkentett készletét.
 
 > [!NOTE]
-> A csillag (\*) helyettesítő karakterek használata a PowerShell-parancs argumentumainak szolgál. A \* azt jelenti, hogy egyezik"egy vagy több bármilyen karaktert". Beírhatja `Get-Command a*` található betűvel kezdődő összes parancs "a". Ellentétben a Cmd.exe megfelelő helyettesítő PowerShell a helyettesítő karakter is meg fog egyezni egy ideig.
+> A csillag (\*) helyettesítő karakterek használata a PowerShell-parancs argumentumainak szolgál. A \* azt jelenti, hogy egyezik"egy vagy több bármilyen karaktert". Beírhatja `Get-Command a*` található betűvel kezdődő összes parancs "a". Ellentétben a helyettesítő karakterek megfeleltetése **cmd.exe**, a PowerShell a helyettesítő karakter is egyezni fog a egy ideig.
 
 Használja a **CommandType** paraméterében `Get-Command` beolvasni a más típusú natív parancsokat.
 -parancsmag futtatási eredményei között.

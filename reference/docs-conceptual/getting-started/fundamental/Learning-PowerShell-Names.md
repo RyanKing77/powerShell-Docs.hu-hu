@@ -1,16 +1,16 @@
 ---
 ms.date: 08/24/2018
 keywords: PowerShell, a parancsmag
-title: PowerShell-nevek elsajátítása
+title: A PowerShell-nevek elsajátítása
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: d4e374530c8628df0d53fd860c4b7a149c58eb60
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 44c66488a20c38d8528c92d753f6b32dda5a2dcb
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134206"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353266"
 ---
-# <a name="learning-powershell-names"></a>PowerShell-nevek elsajátítása
+# <a name="learning-powershell-names"></a>A PowerShell-nevek elsajátítása
 
 A legtöbb parancssori felületek jelentős mennyiségű időt befektetés parancsok és paraméterek-nevek elsajátítása van szükség. A probléma oka, hogy nincsenek-e néhány minta. Csak akkor memorization nyújt a parancsok és paraméterek, amelyek rendszeres időközönként szüksége.
 
@@ -19,10 +19,13 @@ Ez a megszokottnál logikai parancsnevekre, mivel minden egyes parancsot egy kü
 
 ## <a name="learning-command-names-in-traditional-shells"></a>A hagyományos parancskörnyezet parancs-nevek elsajátítása
 
-A legtöbb parancsok beépített elemei az operációs rendszer vagy az alkalmazások, például szolgáltatások vagy folyamatok kezeléséhez. A parancs rendelkezik, amely, vagy előfordulhat, hogy nem fér el a család nevét. Ha például a Windows rendszerek esetében is használhatja a `net start` és `net stop` parancsokat egy szolgáltatás elindítása és leállítása. **SZEMÉLYI EXE** a Windows egy másik szolgáltatás ellenőrző eszköz van. Ugyanez a neve nem illik bele az elnevezési mintát a `net` parancsok szolgáltatás. Folyamatok kezelésére, a Windows rendelkezik a `tasklist` parancsot a folyamatok listája és a `taskkill` folyamatok kill parancsot.
+A legtöbb parancsok beépített elemei az operációs rendszer vagy az alkalmazások, például szolgáltatások vagy folyamatok kezeléséhez. A parancs rendelkezik, amely, vagy előfordulhat, hogy nem fér el a család nevét. Ha például a Windows rendszerek esetében is használhatja a `net start` és `net stop` parancsokat egy szolgáltatás elindítása és leállítása. **Az SC.exe** a Windows egy másik szolgáltatás ellenőrző eszköz van. Ugyanez a neve nem illik bele az elnevezési mintát a **net.exe** szolgáltatás parancsokat. Folyamatok kezelésére, a Windows rendelkezik a **tasklist.exe** parancsot a folyamatok listája és a **taskkill.exe** folyamatok kill parancsot.
 
-Ezek a parancsok is szabálytalan paraméter előírásoknak. Nem használhatja a `net start` paranccsal indíthatja el a szolgáltatást egy távoli számítógépen. A `sc` parancs is indítsa el a szolgáltatást egy távoli számítógépen.
-De a távoli számítógép megadásához, a neve egy dupla fordított perjelet kell előtagot. A nyomtatásisor-kezelő szolgáltatás elindításához DC01 nevű távoli számítógépen írja be `sc \\DC01 start spooler`. A lista DC01 futó feladatokat, használhatja a **/S** paraméter és a fordított perjelek nélkül a számítógép nevét. Például: `tasklist /S DC01`.
+Ezek a parancsok is szabálytalan paraméter előírásoknak. Nem használhatja a `net start` paranccsal indíthatja el a szolgáltatást egy távoli számítógépen. A **sc.exe** parancs is indítsa el a szolgáltatást egy távoli számítógépen. De a távoli számítógép megadásához, a neve egy dupla fordított perjelet kell előtagot. A nyomtatásisor-kezelő szolgáltatás elindításához DC01 nevű távoli számítógépen írja be `sc.exe \\DC01 start spooler`.
+A lista DC01 futó feladatokat, használhatja a **/S** paraméter és a fordított perjelek nélkül a számítógép nevét. Például: `tasklist /S DC01`.
+
+> [!NOTE]
+> PowerShell 6-os verziójának előtt `sc` alias lett a `Set-Content` parancsmagot. Futtatásához a **sc.exe** parancsot, akkor tartalmaznia kell a fájl kiterjesztése.
 
 Szolgáltatások és -folyamatok felügyelhető elemek egy számítógépen, amelyek jól definiált életciklusait példák. Indítása vagy leállítása, szolgáltatások és -folyamatok, vagy jelenleg futó szolgáltatások vagy folyamatok listájának lekérése. Bár vannak fontos technikai különbség közöttük, a szolgáltatások és -folyamatok hajt végre műveleteket ugyanazok a koncepciót tekintve. Ezenkívül a választási lehetőségek létrehozunk egy művelet paramétereinek megadása testre szabható lehet tárolókéhoz hasonló is.
 
@@ -37,8 +40,7 @@ Standard szintű műveletek ajánlott PowerShell rendelkezik. Főneveket keveseb
 Ebben a példában két főneveket és műveletek konzisztencia nem egyszerűsítése érdekében, hogy jelentős tanulási. Kiterjesztheti a lista 10 műveletek és 10 főneveket szabványos készletét. Csak már megértéséhez 20 szavakat.
 De azokat a szavakat 100 egyedi parancs nevének kombinálható is.
 
-Legyen könnyen érthető, egy PowerShell-parancsot célja annak nevét olvassa el. A parancs az a számítógép leállítása `Stop-Computer`. A paranccsal listát készíthet a hálózat minden számítógépe van `Get-Computer`.
-A parancs az lekérni a rendszer dátum `Get-Date`.
+Legyen könnyen érthető, egy PowerShell-parancsot célja annak nevét olvassa el. A parancs az a számítógép leállítása `Stop-Computer`. A paranccsal listát készíthet a hálózat minden számítógépe van `Get-Computer`. A parancs az lekérni a rendszer dátum `Get-Date`.
 
 Listázhatja az összes olyan parancsok, amelyek tartalmazzák az adott művelet a **művelet** paramétere `Get-Command`. Tekintse meg a művelet használó összes parancsmag például `Get`, írja be:
 
