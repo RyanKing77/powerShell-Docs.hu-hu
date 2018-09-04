@@ -129,7 +129,7 @@ Használja a PowerShell Core [.NET Standard][] 2.0 meglévő .NET-szerelvények 
 Sok PowerShell-modul függenek ezekkel a szerelvényekkel (gyakran időpontokban DLL-ek), így a .NET Standard lehetővé teszi, hogy a .NET Core használatának folytatásához.
 A PowerShell Core, nézze meg jól ismert mappák – például a globális szerelvény-gyorsítótár általában tartalmazó lemez – a keresendő függőségek .NET-keretrendszer DLL heurisztikát is tartalmaz.
 
-További információ a .NET Standard az a [.NET Blog][], a jelen [YouTube][] video- és keresztül ez [– gyakori kérdések][] a Githubon.
+További információ a .NET Standard az a [.NET Blog][], a jelen [YouTube][] video- és keresztül ez [gyakori kérdések][] a Githubon.
 
 Ajánlott erőfeszítéseket annak érdekében, hogy a PowerShell nyelv és a "beépített" modulokat (például `Microsoft.PowerShell.Management`, `Microsoft.PowerShell.Utility`használatához és így tovább) azonos működik, mint a Windows PowerShellben.
 Sok esetben a Közösség segítségével hozzáadtunk azok a parancsmagok új funkciókat és hibajavításokat tartalmaz.
@@ -385,13 +385,13 @@ További információk a módját a jelen használjuk ezeket az adatokat annak [
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [breaking-changes]: breaking-changes-ps6.md
-[changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
+[változásnaplójában]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
 [.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
-[GYAKORI KÉRDÉSEK]: https://github.com/dotnet/standard/blob/master/docs/faq.md
+[gyakori kérdések]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
