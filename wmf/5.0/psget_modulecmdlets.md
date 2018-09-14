@@ -1,49 +1,49 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 02aebbd2557298b1b88229fdf5f67bdd08cea452
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29b11e8b11f27fc5be60ea8c5cd56138326b3998
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190604"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522827"
 ---
-# <a name="powershellget-cmdlets-for-module-management"></a><span data-ttu-id="42324-102">PowerShellGet-parancsmagok modulkezeléshez</span><span class="sxs-lookup"><span data-stu-id="42324-102">PowerShellGet Cmdlets for Module Management</span></span>
+# <a name="powershellget-cmdlets-for-module-management"></a><span data-ttu-id="4300f-102">PowerShellGet-parancsmagok modulkezeléshez</span><span class="sxs-lookup"><span data-stu-id="4300f-102">PowerShellGet Cmdlets for Module Management</span></span>
 
-- [<span data-ttu-id="42324-103">Keresés – DscResource</span><span class="sxs-lookup"><span data-stu-id="42324-103">Find-DscResource</span></span>](https://technet.microsoft.com/library/mt654006.aspx)
-- [<span data-ttu-id="42324-104">A modul keresése</span><span class="sxs-lookup"><span data-stu-id="42324-104">Find-Module</span></span>](https://technet.microsoft.com/library/dn807167.aspx)
-- [<span data-ttu-id="42324-105">Keresés – parancsprogram</span><span class="sxs-lookup"><span data-stu-id="42324-105">Find-Script</span></span>](https://technet.microsoft.com/library/mt654001.aspx)
-- [<span data-ttu-id="42324-106">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="42324-106">Get-InstalledModule</span></span>](https://technet.microsoft.com/en-us/library/mt653990.aspx)
-- [<span data-ttu-id="42324-107">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="42324-107">Get-InstalledScript</span></span>](https://technet.microsoft.com/en-us/library/mt653994.aspx)
-- [<span data-ttu-id="42324-108">Get-PSRepository</span><span class="sxs-lookup"><span data-stu-id="42324-108">Get-PSRepository</span></span>](https://technet.microsoft.com/en-us/library/dn807170.aspx)
-- [<span data-ttu-id="42324-109">Install-modul</span><span class="sxs-lookup"><span data-stu-id="42324-109">Install-Module</span></span>](https://technet.microsoft.com/en-us/library/dn807162.aspx)
-- [<span data-ttu-id="42324-110">Install-parancsfájl</span><span class="sxs-lookup"><span data-stu-id="42324-110">Install-Script</span></span>](https://technet.microsoft.com/en-us/library/mt653998.aspx)
-- [<span data-ttu-id="42324-111">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="42324-111">New-ScriptFileInfo</span></span>](https://technet.microsoft.com/en-us/library/mt653995.aspx)
-- [<span data-ttu-id="42324-112">Közzététel modul</span><span class="sxs-lookup"><span data-stu-id="42324-112">Publish-Module</span></span>](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [<span data-ttu-id="42324-113">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="42324-113">Publish-Script</span></span>](https://technet.microsoft.com/en-us/library/mt654003.aspx)
-- [<span data-ttu-id="42324-114">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="42324-114">Register-PSRepository</span></span>](https://technet.microsoft.com/en-us/library/dn807168.aspx)
-- [<span data-ttu-id="42324-115">Save-Module</span><span class="sxs-lookup"><span data-stu-id="42324-115">Save-Module</span></span>](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [<span data-ttu-id="42324-116">Save-Script</span><span class="sxs-lookup"><span data-stu-id="42324-116">Save-Script</span></span>](https://technet.microsoft.com/en-us/library/mt654004.aspx)
-- [<span data-ttu-id="42324-117">Set-PSRepository</span><span class="sxs-lookup"><span data-stu-id="42324-117">Set-PSRepository</span></span>](https://technet.microsoft.com/en-us/library/dn807165.aspx)
-- [<span data-ttu-id="42324-118">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="42324-118">Test-ScriptFileInfo</span></span>](https://technet.microsoft.com/en-us/library/mt654005.aspx)
-- [<span data-ttu-id="42324-119">Távolítsa el modul</span><span class="sxs-lookup"><span data-stu-id="42324-119">Uninstall-Module</span></span>](https://technet.microsoft.com/en-us/library/mt653996.aspx)
-- [<span data-ttu-id="42324-120">Távolítsa el parancsfájl</span><span class="sxs-lookup"><span data-stu-id="42324-120">Uninstall-Script</span></span>](https://technet.microsoft.com/en-us/library/mt653989.aspx)
-- [<span data-ttu-id="42324-121">Frissítés-modul</span><span class="sxs-lookup"><span data-stu-id="42324-121">Update-Module</span></span>](https://technet.microsoft.com/en-us/library/dn807166.aspx)
-- [<span data-ttu-id="42324-122">Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="42324-122">Update-ModuleManifest</span></span>](https://technet.microsoft.com/en-us/library/mt654002.aspx)
-- [<span data-ttu-id="42324-123">Update-Script</span><span class="sxs-lookup"><span data-stu-id="42324-123">Update-Script</span></span>](https://technet.microsoft.com/en-us/library/mt653997.aspx)
-- [<span data-ttu-id="42324-124">Update-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="42324-124">Update-ScriptFileInfo</span></span>](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [<span data-ttu-id="42324-125">PSRepository regisztrációjának törlése</span><span class="sxs-lookup"><span data-stu-id="42324-125">Unregister-PSRepository</span></span>](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [<span data-ttu-id="4300f-103">Find-DscResource</span><span class="sxs-lookup"><span data-stu-id="4300f-103">Find-DscResource</span></span>](https://technet.microsoft.com/library/mt654006.aspx)
+- [<span data-ttu-id="4300f-104">Find-Module</span><span class="sxs-lookup"><span data-stu-id="4300f-104">Find-Module</span></span>](https://technet.microsoft.com/library/dn807167.aspx)
+- [<span data-ttu-id="4300f-105">Find-Script</span><span class="sxs-lookup"><span data-stu-id="4300f-105">Find-Script</span></span>](https://technet.microsoft.com/library/mt654001.aspx)
+- [<span data-ttu-id="4300f-106">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="4300f-106">Get-InstalledModule</span></span>](https://technet.microsoft.com/library/mt653990.aspx)
+- [<span data-ttu-id="4300f-107">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="4300f-107">Get-InstalledScript</span></span>](https://technet.microsoft.com/library/mt653994.aspx)
+- [<span data-ttu-id="4300f-108">Get-PSRepository</span><span class="sxs-lookup"><span data-stu-id="4300f-108">Get-PSRepository</span></span>](https://technet.microsoft.com/library/dn807170.aspx)
+- [<span data-ttu-id="4300f-109">Install-Module</span><span class="sxs-lookup"><span data-stu-id="4300f-109">Install-Module</span></span>](https://technet.microsoft.com/library/dn807162.aspx)
+- [<span data-ttu-id="4300f-110">Install-Script</span><span class="sxs-lookup"><span data-stu-id="4300f-110">Install-Script</span></span>](https://technet.microsoft.com/library/mt653998.aspx)
+- [<span data-ttu-id="4300f-111">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="4300f-111">New-ScriptFileInfo</span></span>](https://technet.microsoft.com/library/mt653995.aspx)
+- [<span data-ttu-id="4300f-112">Közzététel-modul</span><span class="sxs-lookup"><span data-stu-id="4300f-112">Publish-Module</span></span>](https://technet.microsoft.com/library/dn807163.aspx)
+- [<span data-ttu-id="4300f-113">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="4300f-113">Publish-Script</span></span>](https://technet.microsoft.com/library/mt654003.aspx)
+- [<span data-ttu-id="4300f-114">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="4300f-114">Register-PSRepository</span></span>](https://technet.microsoft.com/library/dn807168.aspx)
+- [<span data-ttu-id="4300f-115">Save-Module</span><span class="sxs-lookup"><span data-stu-id="4300f-115">Save-Module</span></span>](https://technet.microsoft.com/library/mt653992.aspx)
+- [<span data-ttu-id="4300f-116">Save-Script</span><span class="sxs-lookup"><span data-stu-id="4300f-116">Save-Script</span></span>](https://technet.microsoft.com/library/mt654004.aspx)
+- [<span data-ttu-id="4300f-117">Set-PSRepository</span><span class="sxs-lookup"><span data-stu-id="4300f-117">Set-PSRepository</span></span>](https://technet.microsoft.com/library/dn807165.aspx)
+- [<span data-ttu-id="4300f-118">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="4300f-118">Test-ScriptFileInfo</span></span>](https://technet.microsoft.com/library/mt654005.aspx)
+- [<span data-ttu-id="4300f-119">Távolítsa el modul</span><span class="sxs-lookup"><span data-stu-id="4300f-119">Uninstall-Module</span></span>](https://technet.microsoft.com/library/mt653996.aspx)
+- [<span data-ttu-id="4300f-120">Eltávolítási Parancsprogramja</span><span class="sxs-lookup"><span data-stu-id="4300f-120">Uninstall-Script</span></span>](https://technet.microsoft.com/library/mt653989.aspx)
+- [<span data-ttu-id="4300f-121">Frissítés-modul</span><span class="sxs-lookup"><span data-stu-id="4300f-121">Update-Module</span></span>](https://technet.microsoft.com/library/dn807166.aspx)
+- [<span data-ttu-id="4300f-122">Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="4300f-122">Update-ModuleManifest</span></span>](https://technet.microsoft.com/library/mt654002.aspx)
+- [<span data-ttu-id="4300f-123">Update-Script</span><span class="sxs-lookup"><span data-stu-id="4300f-123">Update-Script</span></span>](https://technet.microsoft.com/library/mt653997.aspx)
+- [<span data-ttu-id="4300f-124">Update-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="4300f-124">Update-ScriptFileInfo</span></span>](https://technet.microsoft.com/library/mt653991.aspx)
+- [<span data-ttu-id="4300f-125">PSRepository regisztrációjának törlése</span><span class="sxs-lookup"><span data-stu-id="4300f-125">Unregister-PSRepository</span></span>](https://technet.microsoft.com/library/dn807161.aspx)
 
-## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a><span data-ttu-id="42324-126">Modul függőségi telepítési támogatja, a Get-InstalledModule és az Uninstall-modul parancsmagjai</span><span class="sxs-lookup"><span data-stu-id="42324-126">Module dependency installation support, Get-InstalledModule and Uninstall-Module cmdlets</span></span>
-- <span data-ttu-id="42324-127">A Publish-modul a parancsmag modul függőségek feltöltési felvételére.</span><span class="sxs-lookup"><span data-stu-id="42324-127">Added module dependencies population in the Publish-Module cmdlet.</span></span> <span data-ttu-id="42324-128">PSModuleInfo RequiredModules és NestedModules listája közzé kell tenni a függőségi lista a modulok készítéséhez használják.</span><span class="sxs-lookup"><span data-stu-id="42324-128">The RequiredModules and NestedModules lists of PSModuleInfo are used in preparing the dependency list of a module to be published.</span></span>
-- <span data-ttu-id="42324-129">A telepítés- és frissítés-modul parancsmagokkal hozzáadott függőségi telepítési támogatást.</span><span class="sxs-lookup"><span data-stu-id="42324-129">Added dependency installation support in the Install-Module and Update-Module cmdlets.</span></span> <span data-ttu-id="42324-130">Modul függőségek vannak telepítve, és alapértelmezés szerint frissíti.</span><span class="sxs-lookup"><span data-stu-id="42324-130">Module dependencies are installed and updated by default.</span></span>
-- <span data-ttu-id="42324-131">A keresés-modul a parancsmag modul függőségek szerepeljenek az eredmények egy - IncludeDependencies paraméter hozzá.</span><span class="sxs-lookup"><span data-stu-id="42324-131">Added an -IncludeDependencies parameter to the Find-Module cmdlet to include module dependencies in the results.</span></span>
-- <span data-ttu-id="42324-132">A keresett modul - MaximumVersion támogatása Install-modul, és a frissítés-modul parancsmagokkal.</span><span class="sxs-lookup"><span data-stu-id="42324-132">Added -MaximumVersion support on the Find-Module, Install-Module, and Update-Module cmdlets.</span></span>
-- <span data-ttu-id="42324-133">A hozzáadott új Get-InstalledModule és eltávolítás-modul parancsmagokkal.</span><span class="sxs-lookup"><span data-stu-id="42324-133">Added new Get-InstalledModule and Uninstall-Module cmdlets.</span></span>
+## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a><span data-ttu-id="4300f-126">Modul függőségi telepítését támogatja, a Get-InstalledModule és az Uninstall-modul parancsmagjaival</span><span class="sxs-lookup"><span data-stu-id="4300f-126">Module dependency installation support, Get-InstalledModule and Uninstall-Module cmdlets</span></span>
+- <span data-ttu-id="4300f-127">A Publish-Module parancsmaggal hozzá modul függőségek population.</span><span class="sxs-lookup"><span data-stu-id="4300f-127">Added module dependencies population in the Publish-Module cmdlet.</span></span> <span data-ttu-id="4300f-128">PSModuleInfo RequiredModules és NestedModules listája közzé kell tenni a modulok függőséglista készítéséhez használják.</span><span class="sxs-lookup"><span data-stu-id="4300f-128">The RequiredModules and NestedModules lists of PSModuleInfo are used in preparing the dependency list of a module to be published.</span></span>
+- <span data-ttu-id="4300f-129">Az Install-Module és Update-modul parancsmagjaival hozzáadva függőségi telepítési támogatást.</span><span class="sxs-lookup"><span data-stu-id="4300f-129">Added dependency installation support in the Install-Module and Update-Module cmdlets.</span></span> <span data-ttu-id="4300f-130">Modul függőségek telepítése és frissítése, alapértelmezés szerint.</span><span class="sxs-lookup"><span data-stu-id="4300f-130">Module dependencies are installed and updated by default.</span></span>
+- <span data-ttu-id="4300f-131">Az eredmények tartalmazzák a modul függőségek a Find-Module parancsmaggal - IncludeDependencies paramétert adott hozzá.</span><span class="sxs-lookup"><span data-stu-id="4300f-131">Added an -IncludeDependencies parameter to the Find-Module cmdlet to include module dependencies in the results.</span></span>
+- <span data-ttu-id="4300f-132">A Find-Module - MaximumVersion támogatása Install-Module, valamint az Update-Module parancsmaghoz.</span><span class="sxs-lookup"><span data-stu-id="4300f-132">Added -MaximumVersion support on the Find-Module, Install-Module, and Update-Module cmdlets.</span></span>
+- <span data-ttu-id="4300f-133">Új Get-InstalledModule és eltávolítás-Module parancsmagok hozzáadva.</span><span class="sxs-lookup"><span data-stu-id="4300f-133">Added new Get-InstalledModule and Uninstall-Module cmdlets.</span></span>
 
-## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a><span data-ttu-id="42324-134">Támogatja a PowerShellGet parancsmagok bemutató modul függőségek:</span><span class="sxs-lookup"><span data-stu-id="42324-134">PowerShellGet cmdlets demo with module dependencies support:</span></span>
+## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a><span data-ttu-id="4300f-134">PowerShellGet-parancsmagok bemutató modul függőségekkel rendelkező támogatják:</span><span class="sxs-lookup"><span data-stu-id="4300f-134">PowerShellGet cmdlets demo with module dependencies support:</span></span>
 
-### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a><span data-ttu-id="42324-135">Győződjön meg arról, hogy a modul függőségek érhetők el a tárházban:</span><span class="sxs-lookup"><span data-stu-id="42324-135">Ensure that module dependencies are available on the repository:</span></span>
+### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a><span data-ttu-id="4300f-135">Győződjön meg arról, hogy a modul függőségek érhetők el a tárházban:</span><span class="sxs-lookup"><span data-stu-id="4300f-135">Ensure that module dependencies are available on the repository:</span></span>
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
@@ -57,7 +57,7 @@ Version    Name                     Repository    Description
 2.0        RequiredModule3          LocalRepo     RequiredModule3 module
 ```
 
-### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a><span data-ttu-id="42324-136">Hozzon létre egy modult, amely szerepel a moduljegyzékben RequiredModules és NestedModules tulajdonságainak függőségekkel rendelkező.</span><span class="sxs-lookup"><span data-stu-id="42324-136">Create a module with dependencies that are specified in the RequiredModules and NestedModules properties of its module manifest.</span></span>
+### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a><span data-ttu-id="4300f-136">Hozzon létre egy modult a moduljegyzék RequiredModules és NestedModules tulajdonságaiban megadott függőségekkel.</span><span class="sxs-lookup"><span data-stu-id="4300f-136">Create a module with dependencies that are specified in the RequiredModules and NestedModules properties of its module manifest.</span></span>
 ```powershell
 $RequiredModules = @('RequiredModule1',
                      @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.5'; },
@@ -71,12 +71,12 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a><span data-ttu-id="42324-137">Két verziója közzététele (**"1.0"** és **"2.0"**) a tárházba függőségekkel rendelkező TestDepWithNestedRequiredModules1 modul.</span><span class="sxs-lookup"><span data-stu-id="42324-137">Publish two versions (**“1.0”** and **“2.0”**) of the TestDepWithNestedRequiredModules1 module with dependencies to the repository.</span></span>
+###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a><span data-ttu-id="4300f-137">Két verzió közzététele (**"1.0"** és **"2.0"**) a TestDepWithNestedRequiredModules1 modul függőségekkel a tárházba.</span><span class="sxs-lookup"><span data-stu-id="4300f-137">Publish two versions (**“1.0”** and **“2.0”**) of the TestDepWithNestedRequiredModules1 module with dependencies to the repository.</span></span>
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
 
-###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a><span data-ttu-id="42324-138">A modul keresése zajlik TestDepWithNestedRequiredModules1 a függőségekkel rendelkező - IncludeDependencies megadásával.</span><span class="sxs-lookup"><span data-stu-id="42324-138">Find the TestDepWithNestedRequiredModules1 module with its dependencies by specifying -IncludeDependencies.</span></span>
+###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a><span data-ttu-id="4300f-138">Keresse meg a TestDepWithNestedRequiredModules1 modul függőségével - IncludeDependencies megadásával.</span><span class="sxs-lookup"><span data-stu-id="4300f-138">Find the TestDepWithNestedRequiredModules1 module with its dependencies by specifying -IncludeDependencies.</span></span>
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
@@ -91,7 +91,7 @@ Version    Name                                Repository  Description
 2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
 ```
 
-### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a><span data-ttu-id="42324-139">A modul függőségek kereséséhez használja a keresés-modul metaadatai.</span><span class="sxs-lookup"><span data-stu-id="42324-139">Use Find-Module metadata to find the module dependencies.</span></span>
+### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a><span data-ttu-id="4300f-139">A modul függőségek kereséséhez használja a Find-Module metaadatait.</span><span class="sxs-lookup"><span data-stu-id="4300f-139">Use Find-Module metadata to find the module dependencies.</span></span>
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -130,7 +130,7 @@ RequiredVersion 2.5
 CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v2/
 ```
 
-###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a><span data-ttu-id="42324-140">A TestDepWithNestedRequiredModules1 modul telepítése függőségekkel rendelkező.</span><span class="sxs-lookup"><span data-stu-id="42324-140">Install the TestDepWithNestedRequiredModules1 module with dependencies.</span></span>
+###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a><span data-ttu-id="4300f-140">A TestDepWithNestedRequiredModules1 modul telepítése függőségekkel.</span><span class="sxs-lookup"><span data-stu-id="4300f-140">Install the TestDepWithNestedRequiredModules1 module with dependencies.</span></span>
 ```powershell
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
@@ -146,7 +146,7 @@ Version    Name                    Repository   Description
 1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a><span data-ttu-id="42324-141">Frissítse a TestDepWithNestedRequiredModules1 modul függőségek.</span><span class="sxs-lookup"><span data-stu-id="42324-141">Update the TestDepWithNestedRequiredModules1 module with dependencies.</span></span>
+###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a><span data-ttu-id="4300f-141">Frissítse a TestDepWithNestedRequiredModules1 modul függőségek.</span><span class="sxs-lookup"><span data-stu-id="4300f-141">Update the TestDepWithNestedRequiredModules1 module with dependencies.</span></span>
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -172,8 +172,8 @@ Version    Name                                Repository  Description
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a><span data-ttu-id="42324-142">Futtassa az Uninstall-modul parancsmagot egy modul, amely PowerShellGet segítségével telepített eltávolítása.</span><span class="sxs-lookup"><span data-stu-id="42324-142">Run the Uninstall-Module cmdlet to uninstall a module that you installed by using PowerShellGet.</span></span>
-<span data-ttu-id="42324-143">Ha bármely más modul attól függ, hogy a modul, amely a törölni kívánt, PowerShellGet hibát jelez.</span><span class="sxs-lookup"><span data-stu-id="42324-143">If any other module depends on the module that you want to delete, PowerShellGet throws an error.</span></span>
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a><span data-ttu-id="4300f-142">A PowerShellGet-modul által telepített modul eltávolítása az Uninstall-Module parancsmag futtatásával.</span><span class="sxs-lookup"><span data-stu-id="4300f-142">Run the Uninstall-Module cmdlet to uninstall a module that you installed by using PowerShellGet.</span></span>
+<span data-ttu-id="4300f-143">Ha bármely egyéb modult a modul, amely a törölni kívánt függ, a PowerShellGet hibát jelez.</span><span class="sxs-lookup"><span data-stu-id="4300f-143">If any other module depends on the module that you want to delete, PowerShellGet throws an error.</span></span>
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
 
@@ -185,7 +185,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-## <a name="save-module-cmdlet"></a><span data-ttu-id="42324-144">Mentés-modul a parancsmag</span><span class="sxs-lookup"><span data-stu-id="42324-144">Save-Module cmdlet</span></span>
+## <a name="save-module-cmdlet"></a><span data-ttu-id="4300f-144">Save-Module parancsmaggal</span><span class="sxs-lookup"><span data-stu-id="4300f-144">Save-Module cmdlet</span></span>
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -203,12 +203,12 @@ d----- 4/21/2015 5:40 PM RequiredModule2
 d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
-## <a name="update-modulemanifest-cmdlet"></a><span data-ttu-id="42324-145">Frissítés-ModuleManifest parancsmag</span><span class="sxs-lookup"><span data-stu-id="42324-145">Update-ModuleManifest cmdlet</span></span>
-<span data-ttu-id="42324-146">Ez a parancsmag bemeneti tulajdonság értékekkel jegyzékfájl frissítése érdekében használatos.</span><span class="sxs-lookup"><span data-stu-id="42324-146">This new cmdlet is used to help update manifest file with input property values.</span></span> <span data-ttu-id="42324-147">Minden teszt-ModuleManifest hajtja paraméterek vesz igénybe.</span><span class="sxs-lookup"><span data-stu-id="42324-147">It takes all parameters that Test-ModuleManifest does.</span></span>
+## <a name="update-modulemanifest-cmdlet"></a><span data-ttu-id="4300f-145">Frissítés-ModuleManifest parancsmag</span><span class="sxs-lookup"><span data-stu-id="4300f-145">Update-ModuleManifest cmdlet</span></span>
+<span data-ttu-id="4300f-146">Az új parancsmag súgójának és a bemeneti tulajdonságértékek jegyzékfájl frissítése szolgál.</span><span class="sxs-lookup"><span data-stu-id="4300f-146">This new cmdlet is used to help update manifest file with input property values.</span></span> <span data-ttu-id="4300f-147">Összes paraméter, amely Test-ModuleManifest vesz igénybe.</span><span class="sxs-lookup"><span data-stu-id="4300f-147">It takes all parameters that Test-ModuleManifest does.</span></span>
 
-<span data-ttu-id="42324-148">Azt figyelje meg, hogy a modul szerzők nagy szeretné adja meg "\*" FunctionsToExport, CmdletsToExport, például az exportált értékek stb. Modul közzététele PowerShell gyűjteményébe, során nem meghatározott funkciók és parancsok lesz nem kitöltve megfelelően alakzatot a gyűjteményben.</span><span class="sxs-lookup"><span data-stu-id="42324-148">We notice that a lot of module authors would like to specify “\*” in exported values such as FunctionsToExport, CmdletsToExport, etc. During module publishing to PowerShell Gallery, unspecified functions and commands will not be populated properly onto the Gallery.</span></span> <span data-ttu-id="42324-149">Ezért javasoljuk, hogy modul szerzők frissítése megfelelő értékekkel a jegyzékfájlban.</span><span class="sxs-lookup"><span data-stu-id="42324-149">Therefore, we suggest module authors update their manifests with proper values.</span></span>
+<span data-ttu-id="4300f-148">Láthatjuk, hogy a modul szerzők sok szeretné adja meg "\*" FunctionsToExport, CmdletsToExport, például az exportált értékeket stb. PowerShell-galériában modul a közzététel során nem meghatározott függvényeket és a parancsok nem tölti fel a megfelelően alakzatot a katalógusban.</span><span class="sxs-lookup"><span data-stu-id="4300f-148">We notice that a lot of module authors would like to specify “\*” in exported values such as FunctionsToExport, CmdletsToExport, etc. During module publishing to PowerShell Gallery, unspecified functions and commands will not be populated properly onto the Gallery.</span></span> <span data-ttu-id="4300f-149">Ezért javasoljuk, hogy modul szerzők frissítése a jegyzékek megfelelő értékekkel.</span><span class="sxs-lookup"><span data-stu-id="4300f-149">Therefore, we suggest module authors update their manifests with proper values.</span></span>
 
-<span data-ttu-id="42324-150">Ha tulajdonságok exportált modulok, a frissítés-ModuleManifest tölti a megadott jegyzékfájl exportált funkciók, a parancsmagok, a változók stb adataival:</span><span class="sxs-lookup"><span data-stu-id="42324-150">If you have modules that have exported properties, Update-ModuleManifest will fill the specified manifest file with information from exported functions, cmdlets, variables etc:</span></span>
+<span data-ttu-id="4300f-150">Ha exportálta tulajdonságok modulok, Update-ModuleManifest fog töltse ki a megadott jegyzékfájl exportált funkciók, a parancsmagok, a változók stb származó adatokkal:</span><span class="sxs-lookup"><span data-stu-id="4300f-150">If you have modules that have exported properties, Update-ModuleManifest will fill the specified manifest file with information from exported functions, cmdlets, variables etc:</span></span>
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -232,7 +232,7 @@ AliasesToExport = '*'
 }
 ```
 
-<span data-ttu-id="42324-151">Miután a frissítés-ModuleManifest:</span><span class="sxs-lookup"><span data-stu-id="42324-151">After Update-ModuleManifest:</span></span>
+<span data-ttu-id="4300f-151">Miután a frissítés-ModuleManifest:</span><span class="sxs-lookup"><span data-stu-id="4300f-151">After Update-ModuleManifest:</span></span>
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
@@ -257,11 +257,11 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 }
 ```
 
-<span data-ttu-id="42324-152">Minden modul vannak társítva metaadatmezőket.</span><span class="sxs-lookup"><span data-stu-id="42324-152">For each module, there are also metadata fields associated with it.</span></span> <span data-ttu-id="42324-153">Metaadatok helyes megjelenítéséhez a PowrShell gyűjteménye, a frissítés-ModuleManifest segítségével feltöltése PrivateData a mezőket.</span><span class="sxs-lookup"><span data-stu-id="42324-153">In order to display metadata properly on PowrShell Gallery, you can use Update-ModuleManifest to populate those fields under PrivateData.</span></span>
+<span data-ttu-id="4300f-152">Az egyes modulok is találhatók társított metaadatokat tartalmazó mezőket.</span><span class="sxs-lookup"><span data-stu-id="4300f-152">For each module, there are also metadata fields associated with it.</span></span> <span data-ttu-id="4300f-153">Annak érdekében, hogy a metaadatok megfelelően megjeleníteni PowrShell gyűjteménye, a frissítés-ModuleManifest használatával ezek a mezők területen PrivateData feltöltéséhez.</span><span class="sxs-lookup"><span data-stu-id="4300f-153">In order to display metadata properly on PowrShell Gallery, you can use Update-ModuleManifest to populate those fields under PrivateData.</span></span>
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
-<span data-ttu-id="42324-154">A jegyzékfájl sablonból PrivateData hashtable tulajdonságai a következők:</span><span class="sxs-lookup"><span data-stu-id="42324-154">PrivateData hashtable from the manifest file template has the following properties:</span></span>
+<span data-ttu-id="4300f-154">A jegyzékfájl sablonból PrivateData kivonattábla a következő tulajdonságokkal rendelkezik:</span><span class="sxs-lookup"><span data-stu-id="4300f-154">PrivateData hashtable from the manifest file template has the following properties:</span></span>
 ```powershell
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
@@ -286,4 +286,4 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-<span data-ttu-id="42324-155">***Megjegyzés:*** DscResourcesToExport csak a legújabb PowerShell 5.0-s verziója támogatott.</span><span class="sxs-lookup"><span data-stu-id="42324-155">***Note:*** DscResourcesToExport is only supported on the latest PowerShell version 5.0.</span></span> <span data-ttu-id="42324-156">Jelenleg nem lehet a mező frissítéséhez, ha a korábbi PowerShell-verziót futtat.</span><span class="sxs-lookup"><span data-stu-id="42324-156">We won’t be able to update the field if you are running on previous PowerShell version.</span></span>
+<span data-ttu-id="4300f-155">***Megjegyzés:*** DscResourcesToExport csak a legújabb PowerShell 5.0-s verzió támogatott.</span><span class="sxs-lookup"><span data-stu-id="4300f-155">***Note:*** DscResourcesToExport is only supported on the latest PowerShell version 5.0.</span></span> <span data-ttu-id="4300f-156">Azt nem lehet frissíteni a mezőt, ha az előző PowerShell-verziót futtat.</span><span class="sxs-lookup"><span data-stu-id="4300f-156">We won’t be able to update the field if you are running on previous PowerShell version.</span></span>
