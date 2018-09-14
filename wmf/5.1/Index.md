@@ -3,12 +3,12 @@ ms.date: 08/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: A WMF 5.1 kibocsátási megjegyzései
-ms.openlocfilehash: 3512d2e80501a596e1fd6d7b33d4d75286cef1b9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3081d200f0c6aac6074719bb1c204900aabf96c2
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189788"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522905"
 ---
 # <a name="windows-management-framework-wmf-51"></a>Windows Management Framework (WMF) 5.1 #
 
@@ -23,17 +23,17 @@ A WMF 5.1 Windows 7, Windows 8.1, Windows Server 2008 R2, 2012 és 2012 R2 rends
 - Biztonsági fejlesztések: katalógus által aláírt modulok használatának kényszerítése a lekérési kiszolgálóról érkező modulok, illetve PowerShellGet-parancsmagok használata esetén
 - Válaszok néhány felhasználói kérésre és problémára
 
-Ha többet szeretne megtudni a kiadás újdonságairól, tekintse meg az [Új forgatókönyvek és funkciók](https://docs.microsoft.com/en-us/powershell/wmf/5.1/scenarios-features) szakasz témaköreit.
+Ha többet szeretne megtudni a kiadás újdonságairól, tekintse meg az [Új forgatókönyvek és funkciók](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features) szakasz témaköreit.
 
-A [Telepítés és konfigurálás](https://docs.microsoft.com/en-us/powershell/wmf/5.1/install-configure) témakör a WMF követelményeit és telepítési utasításait ismerteti.
+A [Telepítés és konfigurálás](https://docs.microsoft.com/powershell/wmf/5.1/install-configure) témakör a WMF követelményeit és telepítési utasításait ismerteti.
 
-A [Kompatibilitás](https://docs.microsoft.com/en-us/powershell/wmf/5.1/compatibility) témakör ismerteti, mely WMF-verziók mely Windows-kiadásokon telepíthetők.
+A [Kompatibilitás](https://docs.microsoft.com/powershell/wmf/5.1/compatibility) témakör ismerteti, mely WMF-verziók mely Windows-kiadásokon telepíthetők.
 
-A [Termékkompatibilitás](https://docs.microsoft.com/en-us/powershell/wmf/5.1/productincompat) témakör azokat a Microsoft-alkalmazásokat sorolja fel, amelyek még nem támogatják a WMF 5.1 szolgáltatást.
+A [Termékkompatibilitás](https://docs.microsoft.com/powershell/wmf/5.1/productincompat) témakör azokat a Microsoft-alkalmazásokat sorolja fel, amelyek még nem támogatják a WMF 5.1 szolgáltatást.
 
 A WMF összetevőiről részletes információt az MSDN-dokumentációban találhat:
 
-- [PowerShell 5.1](https://docs.microsoft.com/en-us/powershell/)
-- [WMI](https://msdn.microsoft.com/en-us/library/jj152383(v=vs.85).aspx)
-- [WinRM](https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx)
-- [Szoftverleltár-naplózás](https://technet.microsoft.com/en-us/library/dn383584(v=ws.11).aspx)
+- [PowerShell 5.1](https://docs.microsoft.com/powershell/)
+- [WMI](https://msdn.microsoft.com/library/jj152383(v=vs.85).aspx)
+- [WinRM](https://msdn.microsoft.com/library/aa384426(v=vs.85).aspx)
+- [Szoftverleltár-naplózás](https://technet.microsoft.com/library/dn383584(v=ws.11).aspx)

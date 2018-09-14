@@ -2,12 +2,12 @@
 title: A PowerShell Core 6.0 újdonságai
 description: Új szolgáltatásokat és módosításokat jelent meg a PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 9bd59dc1821e2fb3ec2d30254ab1fac4089f0340
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587244"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557232"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>A PowerShell Core 6.0 újdonságai
 
@@ -15,7 +15,7 @@ ms.locfileid: "39587244"
 
 ## <a name="moved-from-net-framework-to-net-core"></a>A .NET-keretrendszer átkerülnek a .NET Core
 
-Használja a PowerShell Core [.NET Core 2.0][] , a modul.
+Használja a PowerShell Core [A .NET core 2.0][] , a modul.
 .NET core 2.0 lehetővé teszi, hogy a PowerShell Core (Windows, macOS és Linux), több platformon működik.
 A PowerShell Core is elérhetővé teszi a .NET Core 2.0 használható a PowerShell-parancsmagok és parancsfájlok által nyújtott API-készlet.
 
@@ -129,7 +129,7 @@ Használja a PowerShell Core [.NET Standard][] 2.0 meglévő .NET-szerelvények 
 Sok PowerShell-modul függenek ezekkel a szerelvényekkel (gyakran időpontokban DLL-ek), így a .NET Standard lehetővé teszi, hogy a .NET Core használatának folytatásához.
 A PowerShell Core, nézze meg jól ismert mappák – például a globális szerelvény-gyorsítótár általában tartalmazó lemez – a keresendő függőségek .NET-keretrendszer DLL heurisztikát is tartalmaz.
 
-További információ a .NET Standard az a [.NET Blog][], a jelen [YouTube][] video- és keresztül ez [gyakori kérdések][] a Githubon.
+További információ a .NET Standard az a [.NET Blog][], a jelen [YouTube-on][] video- és keresztül ez [GYAKORI KÉRDÉSEK][] a Githubon.
 
 Ajánlott erőfeszítéseket annak érdekében, hogy a PowerShell nyelv és a "beépített" modulokat (például `Microsoft.PowerShell.Management`, `Microsoft.PowerShell.Utility`használatához és így tovább) azonos működik, mint a Windows PowerShellben.
 Sok esetben a Közösség segítségével hozzáadtunk azok a parancsmagok új funkciókat és hibajavításokat tartalmaz.
@@ -373,14 +373,14 @@ Javításhoz és módosításhoz teljes listájáért tekintse meg a [változás
   - az operációsrendszer-platform (`$PSVersionTable.OSDescription`)
   - a pontos PowerShell-verzió (`$PSVersionTable.GitCommitId`)
 
-Ha azt szeretné, a telemetria lemond, egyszerűen törölje `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` , vagy hozzon létre `POWERSHELL_TELEMETRY_OPTOUT` környezeti változót a következő értékek egyikét: `true`, `1` vagy `yes`.
-Változó létrehozása vagy törlése a fájl megkerüli az összes telemetriai adat még a PowerShell első futtatása előtt.
+Ha azt szeretné, a telemetria lemond, egyszerűen hozzon létre `POWERSHELL_TELEMETRY_OPTOUT` környezeti változót a következő értékek egyikét: `true`, `1` vagy `yes`.
+A változó létrehozása megkerüli az összes telemetriai adat még a PowerShell első futtatása előtt.
 Is tervezzük a telemetriai adatok és az elemzések, mi az a telemetriai adatokból glean is közzéteheti a [közösségi irányítópult][community-dashboard].
 További információk a módját a jelen használjuk ezeket az adatokat annak [blogbejegyzés][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
-[.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[A .NET core 2.0]: https://docs.microsoft.com/dotnet/core/
+[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
@@ -390,8 +390,8 @@ További információk a módját a jelen használjuk ezeket az adatokat annak [
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
 [.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
-[YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
-[gyakori kérdések]: https://github.com/dotnet/standard/blob/master/docs/faq.md
+[YouTube-on]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
+[GYAKORI KÉRDÉSEK]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
