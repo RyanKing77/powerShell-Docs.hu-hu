@@ -2,12 +2,12 @@
 title: A PowerShell Core telepítése macOS rendszerre
 description: Információ a PowerShell Core telepítése macOS rendszeren
 ms.date: 08/06/2018
-ms.openlocfilehash: ff1814d95b3ca3fa8497069dff249fd2ad5576ef
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 50b8dbbf26f02580e4be45978c926d5337da6b63
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587465"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557160"
 ---
 # <a name="installing-powershell-core-on-macos"></a>A PowerShell Core telepítése macOS rendszerre
 
@@ -15,73 +15,20 @@ A PowerShell Core a macOS 10.12 és újabb verzióit támogatja.
 A githubon érhető el az összes csomag [kiadások][] lapot.
 A csomag telepítése után futtassa `pwsh` parancsot egy terminálról.
 
-### <a name="installation-via-homebrew-on-macos-1012"></a>A macOS 10.12 + keresztül Homebrew telepítési
+### <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>MacOS 10.12 vagy újabb rendszeren keresztül Homebrew kiadási legújabb előzetes verziójának telepítése
 
 [Homebrew] [ brew] az előnyben részesített Csomagkezelő macOS-hez.
-Egy terminálablakban írja be a következőt `brew` futtatásához a homebrew-val.  Ha a `brew` parancs nem található kell, hogy telepítse a homebrew-val következő [az utasításokat][brew].
+Ha a `brew` parancs nem található kell, hogy telepítse a homebrew-val következő [az utasításokat][brew].
 
-> [!NOTE]
-> Ha a homebrew-t korábban telepítette, mindig egy célszerű futtatni "frissítés-visszaállítás brew" & & "brew frissítés".
-```sh
-brew update-reset
-brew update
-```
-
-> Régebbi verzióit a homebrew-t használja a koppintson "caskroom/cask", amely elavult, és telepítse át a "homebrew/cask".  További információ található [homebrew-val – cask][cask]. Használja a "brew koppintson" parancsot az aktuális TAP-oknak listázásához.  Ha megjelenik "caskroom/cask" "frissítés brew" használhatja a homebrew-val áttelepítése a TAP-oknak kell.
+Miután telepítette a homebrew-val, a PowerShell telepítése ördöngösség.
+Először telepítse [homebrew-val – Cask][cask], így további csomagok telepítése és telepítése [Cask-verziók] [cask-verzió], amely lehetővé teszi csomagok alternatív verzióját telepítse:
 
 ```sh
-brew tap
-brew update
+brew tap caskroom/cask
+brew tap caskroom/versions
 ```
 
-Telepítése vagy frissítése után homebrew-val, a PowerShell telepítése ördöngösség.
-
-PowerShell telepítéséhez:
-
-```sh
-brew cask install powershell
-```
-
-Végül győződjön meg arról, hogy megfelelően működik-e a telepítés:
-
-```sh
-pwsh
-```
-
-Lépjen ki a PowerShell, és térjen vissza a bash, használja a 'Kilépés' parancsot.
-```sh
-exit
-```
-
-PowerShell új verzióinak kiadásakor egyszerűen frissítés a Homebrew-képlet, és frissítése a PowerShell:
-
-```sh
-brew update
-brew cask upgrade powershell
-```
-
-> [!NOTE]
-> A fenti parancsok is meghívhassák belül (pwsh) PowerShell-gazdagépet, de majd a PowerShell-héj kell kilépett és újraindítja a frissítés befejezéséhez és a frissítés $PSVersionTable látható értékeket.
-
-### <a name="installing-preview-via-homebrew-on-macos-1012"></a>Előzetes keresztül Homebrew macOS 10.12 + telepítése
-
-[Homebrew] [ brew] az előnyben részesített Csomagkezelő macOS-hez.
-Egy terminálablakban írja be a következőt `brew` futtatásához a homebrew-val.  Ha a `brew` parancs nem található kell, hogy telepítse a homebrew-val következő [az utasításokat][brew].
-
-> [!NOTE]
-> Ha a homebrew-t korábban telepítette, mindig egy célszerű futtatni "frissítés-visszaállítás brew" & & "brew frissítés".
-```sh
-brew update-reset
-brew update
-```
-
-Ezután koppintson a `versions` hordó-adattár az előzetes verzió csomag beszerzése:
-
-```sh
-brew tap homebrew/cask-versions
-```
-
-PowerShell-minta telepítése:
+Most már PowerShell telepíthető:
 
 ```sh
 brew cask install powershell-preview
@@ -93,7 +40,7 @@ Végül győződjön meg arról, hogy megfelelően működik-e a telepítés:
 pwsh-preview
 ```
 
-PowerShell új verzióinak kiadásakor egyszerűen frissítés a Homebrew-képlet, és frissítése a PowerShell-előzetes verzió:
+PowerShell új verzióinak kiadásakor egyszerűen frissítés a Homebrew-képlet, és frissítése a PowerShell:
 
 ```sh
 brew update
@@ -101,16 +48,62 @@ brew cask upgrade powershell-preview
 ```
 
 > [!NOTE]
-> A fenti parancsok is meghívhassák belül (pwsh) PowerShell-gazdagépet, de majd a PowerShell-héj kell kilépett és újraindítja a frissítés befejezéséhez és a frissítés $PSVersionTable látható értékeket.
+> A fenti parancsok is meghívhassák belül (pwsh) PowerShell-gazdagépet, de majd a PowerShell-héj kell kilépett és újraindítja a frissítés befejezéséhez.
+> és frissítse a $PSVersionTable látható értékeket.
+
+[brew]: http://brew.sh/
+[cask]: https://caskroom.github.io/
+[cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
+
+### <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>MacOS 10.12 vagy újabb rendszeren keresztül Homebrew kiadási legújabb előzetes verziójának telepítése
+
+[Homebrew] [ brew] az előnyben részesített Csomagkezelő macOS-hez.
+Ha a `brew` parancs nem található kell, hogy telepítse a homebrew-val következő [az utasításokat][brew].
+
+Miután telepítette a homebrew-val, a PowerShell telepítése ördöngösség.
+Először telepítse [homebrew-val – Cask][cask], így további csomagok telepítése és telepítése [Cask-verziók] [cask-verzió], amely lehetővé teszi csomagok alternatív verzióját telepítse:
+
+```sh
+brew tap caskroom/cask
+brew tap caskroom/versions
+```
+
+Most már PowerShell telepíthető:
+
+```sh
+brew cask install powershell-preview
+```
+
+Végül győződjön meg arról, hogy megfelelően működik-e a telepítés:
+
+```sh
+pwsh-preview
+```
+
+PowerShell új verzióinak kiadásakor egyszerűen frissítés a Homebrew-képlet, és frissítése a PowerShell:
+
+```sh
+brew update
+brew cask upgrade powershell-preview
+```
+
+> [!NOTE]
+> A fenti parancsok is meghívhassák belül (pwsh) PowerShell-gazdagépet, de majd a PowerShell-héj kell kilépett és újraindítja a frissítés befejezéséhez.
+> és frissítse a $PSVersionTable látható értékeket.
+
+[brew]: http://brew.sh/
+[cask]: https://caskroom.github.io/
+[cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 
 ### <a name="installation-via-direct-download"></a>Telepítési keresztül közvetlen letöltésére
 
-A csomag csomag `powershell-6.0.2-osx.10.12-x64.pkg` a a [kiadások][] lap a macOS-számítógépre.
+A csomag-csomag letöltése `powershell-6.1.0-osx-x64.pkg`
+az a [kiadások][] lap a macOS-számítógépre.
 
 Kattintson duplán a fájlra, és kövesse az utasításokat, vagy telepítheti a terminálról:
 
 ```sh
-sudo installer -pkg powershell-6.0.2-osx.10.12-x64.pkg -target /
+sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 ```
 
 ## <a name="binary-archives"></a>Bináris archívum
@@ -121,19 +114,19 @@ PowerShell bináris `tar.gz` archívumok biztosított macOS és Linux platformok
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.0.2
+sudo mkdir -p /usr/local/microsoft/powershell/6.1.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.0.2
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.1.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.0.2/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.0.2/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
 ```
 
 ## <a name="uninstalling-powershell-core"></a>A PowerShell Core eltávolítása
@@ -159,7 +152,7 @@ Távolítsa el a további PowerShell-elérési utak, tekintse meg a [elérési u
 
 ## <a name="paths"></a>Elérési utak
 
-* `$PSHOME` van `/usr/local/microsoft/powershell/6.0.2/`
+* `$PSHOME` van `/usr/local/microsoft/powershell/6.1.0/`
 * Felhasználói profilokat fog olvasni `~/.config/powershell/profile.ps1`
 * Alapértelmezett profilokat fog olvasni `$PSHOME/profile.ps1`
 * Felhasználói modulok fog olvasni `~/.local/share/powershell/Modules`
@@ -173,14 +166,13 @@ Az alapértelmezett gazdagép-specifikus profilok létezik így `Microsoft.Power
 PowerShell tiszteletben tartja a [XDG alap könyvtár megadása] [ xdg-bds] macOS rendszeren.
 
 Mivel a macOS BSD, az előtag típusából származtatott `/usr/local` helyett használja `/opt`.
-Ebből kifolyólag `$PSHOME` van `/usr/local/microsoft/powershell/6.0.2/`, és a szimbolikus van elhelyezve `/usr/local/bin/pwsh`.
+Ebből kifolyólag `$PSHOME` van `/usr/local/microsoft/powershell/6.1.0/`, és a szimbolikus van elhelyezve `/usr/local/bin/pwsh`.
 
 ## <a name="additional-resources"></a>További források
 
 * [Webes homebrew-val][brew]
 * [Github-adattár homebrew-val][GitHub]
 * [Homebrew-val – Cask][cask]
-
 
 [brew]: http://brew.sh/
 [GitHub]: https://github.com/Homebrew

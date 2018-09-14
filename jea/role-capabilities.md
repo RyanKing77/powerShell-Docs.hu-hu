@@ -1,74 +1,74 @@
 ---
 ms.date: 06/12/2017
-keywords: jea, a powershell, a biztonsági
-title: JEA szerepkör képességek
-ms.openlocfilehash: 0531baa284e66a42a162329ea20ecfdca6d0b526
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: a jea, powershell, biztonsági
+title: A JEA szerepköri funkciók
+ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190536"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522941"
 ---
-# <a name="jea-role-capabilities"></a>JEA szerepkör képességek
+# <a name="jea-role-capabilities"></a>A JEA szerepköri funkciók
 
-> A következőkre vonatkozik: a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
-A JEA-végpont létrehozása, ha szüksége lesz legalább "szerepkör képességek", amelyeket meghatározásához *mi* valaki teheti meg egy JEA-munkamenetben.
-Egy szerepkör képesség, a parancsmagok, függvények, szolgáltatók, és biztosítani kell a Kapcsolódás a felhasználók külső programok .psrc kiterjesztésű PowerShell adatfájlt.
+A JEA-végpont létrehozása, amikor szüksége lesz legalább "szerepkör-funkciókkal" ismertetik meghatározásához *mi* valaki a JEA-munkamenet az teheti meg.
+Egy szerepkör szolgáltatás érhető el egy PowerShell-adatfájlt .psrc kiterjesztése, amely felsorolja az összes a parancsmagok, függvények, szolgáltatók és külső programok, amelyek a felhasználók kapcsolódás elérhetővé kell tenni.
 
-Ez a témakör ismerteti, hogyan JEA szinkronizálásával PowerShell szerepkör funkció fájl létrehozásához.
+Ez a témakör ismerteti, hogyan hozzon létre egy PowerShell szerepkör képesség fájlt a JEA-felhasználók számára.
 
-## <a name="determine-which-commands-to-allow"></a>Határozza meg, mely parancsok engedélyezése
+## <a name="determine-which-commands-to-allow"></a>Határozza meg, hogy mely parancsok
 
-Az első lépés, amikor a szerepkör funkció fájl létrehozásakor fontolja meg, mi a felhasználókat, akik a szerepkör hozzáféréssel kell rendelkeznie.
-Az adatgyűjtési folyamatot követelmények időt vehet igénybe, de egy rendkívül fontos folyamat.
-Mivel a felhasználók számára hozzáférést a túl kevés parancsmag és funkció is megakadályozza, hogy azok a munkájához beolvasásakor.
-Túl sok parancsmag és funkció való hozzáférés történt egynél védelméről az implicit rendszergazda jogosultságokkal a biztonsági hatékonyabb védelem gyengítése felhasználók vezethet.
+Az első lépés egy szerepkör képesség fájl létrehozásakor, hogy fontolja meg, mi a felhasználók, akik a szerepkör hozzá kell férniük.
+A követelmények adatgyűjtési folyamatának eltarthat egy ideig, de rendkívül fontos folyamat.
+Mivel a felhasználók számára hozzáférést túl kevés parancsmagok és funkciók megakadályozhatja azokat a feladat végrehajtása.
+Túl sok parancsmagok és funkciók elérésének engedélyezése a felhasználók számára ez több, mint a kívánt azok implicit rendszergazda jogosultságokkal a biztonsági forgalmazóval gyengítése vezethet.
 
-Hogyan lépjen erről a folyamatról függ a szervezet és a célokat, azonban a következő tippek segítségével, nyissa meg a megfelelő elérési úton.
+Hogyan nyissa meg a folyamat függ a szervezet és a célokat, azonban az alábbi tippek segítségével, győződjön meg arról, hogy jó úton.
 
-1. **Azonosítsa** a parancsok felhasználók használnak a munkájuk elvégzéséhez. Ez magában foglalhatja felmérve az informatikai részleg, automatizálási parancsfájlokat ellenőrzése vagy PowerShell-munkamenethez ki vagy naplók elemzése.
-2. **Frissítés** használata PowerShell alakokat parancssori eszköze, a legjobb naplózás és a JEA testreszabási felületet. Külső programok, granularly natív PowerShell-parancsmagok és a JEA funkciók nem korlátozható.
-3. **Korlátozása** a parancsmagok, ha szükséges, hogy csak adott paraméterek vagy értékek paraméter engedélyezése körét. Ez különösen fontos, ha a felhasználók csak egy rendszer kezelése képesnek kell lennie.
-4. **Hozzon létre** használ parancsok összetett vagy nehéz korlátozhatja a JEA-parancsok egyéni függvényekhez. Egy egyszerű függvényt, amely egy összetett parancs becsomagolja, vagy további ellenőrzési logika vonatkozik a rendszergazdák és a végfelhasználói egyszerűség vezérelhetőséget kínálhat.
-5. **Teszt** engedélyezett parancsok a felhasználók és/vagy automation hatókörön belüli listáját szolgáltatását, és szükség szerint módosítsa.
+1. **Azonosítsa** a parancsok felhasználóknak a munkájuk elvégzéséhez használ. Ez magában foglalhatja felmérve az informatikai részleg, automatizálási szkriptek ellenőrzése vagy a PowerShell-munkamenet átiratok vagy naplók elemzése.
+2. **Frissítés** felhasználása parancssori eszközök használatával PowerShell megfelelője, ahol lehetséges, a legjobb naplózás és a JEA testreszabási munkáját. Külső programok nem korlátozható, natív PowerShell-parancsmagok és a JEA funkciókat kínálja.
+3. **Korlátozása** hatóköre a parancsmagok, ha csak szükség esetén engedélyezi a megadott paramétereket, vagy a paraméterértékeket. Ez különösen fontos, ha a felhasználók kezeléséhez a rendszer csak tudnia kell.
+4. **Hozzon létre** összetett parancsokat vagy parancsokat, amelyeket nehéz a JEA képeinek egyéni függvényekhez. Egyszerű függvény, amely becsomagolja a komplex parancsot, vagy további érvényesítési logika vonatkozik a rendszergazdák és a végfelhasználói egyszerűség további vezérlőelemek kínálnak.
+5. **Teszt** a hatókörrel rendelkező parancsok listájához, engedélyezett a felhasználók és/vagy az automation-szolgáltatásokat és szükség szerint módosíthatja.
 
-Fontos megjegyezni, hogy JEA munkamenetben parancsok pedig gyakran Futtatás rendszergazdai (vagy egyéb emelt szintű) jogosultságokkal.
-A használható gondos érték fontos, hogy a JEA-végpont nem teszi lehetővé a rájuk vonatkozó engedélyek jogosultságszintjének emeléséhez csatlakozó felhasználó.
-Az alábbiakban néhány olyan parancsokat, amelyek használható ártó engedélyezett, ha egy korlátozás nélküli állapotot.
-Vegye figyelembe, hogy ez nem egy tárgyal minden releváns kérdést, és csak figyelmeztető kiindulási pontként használható.
+Fontos megjegyezni, hogy a JEA-munkamenet parancsai gyakran futtassa az admin (vagy más módon emelt szintű) jogosultságokkal.
+Az elérhető parancsok gondos lehetőség kiválasztva fontos, hogy a JEA-végpont nem engedélyezi a csatlakozó felhasználó emelheti az engedélyeit.
+Az alábbiakban néhány példa, amely használható ártó szándékkal Ha engedélyezett korlátozás állapotban.
+Vegye figyelembe, hogy ez nem egy kimerítően teljes lista, és csak a figyelmeztető kiindulási pontként használható.
 
-### <a name="examples-of-potentially-dangerous-commands"></a>Potenciálisan veszélyes parancsok példák
+### <a name="examples-of-potentially-dangerous-commands"></a>Példák a potenciálisan veszélyes parancsok
 
-Kockázati | Példa | Kapcsolódó parancsok
+Kockázat | Példa | Kapcsolódó parancsok
 -----|---------|-----------------
-A csatlakozó felhasználó JEA elkerülésére rendszergazdai jogosultságok megadása | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`
-Tetszőleges kódot, például a kártevő, biztonsági réseket és védelmet elkerülésére egyéni parancsfájlok | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
+A kapcsolódó felhasználó rendszergazdai jogosultságokat a JEA Mellőzés megadása | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`
+Tetszőleges kódot, például a kártevők, a biztonsági rések vagy a védelem megkerülésére egyéni parancsfájlok | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
 
-## <a name="create-a-role-capability-file"></a>Egy szerepkör funkció fájl létrehozása
+## <a name="create-a-role-capability-file"></a>Hozzon létre egy szerepkört képesség fájlt
 
-Az új PowerShell-szerepkör funkció fájlt létrehozhatja a [New-PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile) parancsmag.
+Az új PowerShell-szerepkör képesség fájlt létrehozhatja a [New-PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile) parancsmagot.
 
 ```powershell
 New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
 ```
 
-Az eredményül kapott szerepet funkció fájl egy szövegszerkesztőben megnyitott, és módosítani kell, hogy a szerepkör a kívánt parancsokat.
-A PowerShell súgójának Néhány példa hogyan konfigurálható a fájl tartalmazza.
+Az eredményül kapott szerepkör képesség fájl egy szövegszerkesztőben megnyitott és a kívánt parancsokat a szerepkör engedélyezéséhez módosítani kell.
+A PowerShell súgójában számos példát, hogyan konfigurálhatja a fájl tartalmazza.
 
-### <a name="allowing-powershell-cmdlets-and-functions"></a>PowerShell-parancsmagok és a Funkciók
+### <a name="allowing-powershell-cmdlets-and-functions"></a>PowerShell-parancsmagok és funkciók
 
-Felhasználókat, hogy futtassák a PowerShell-parancsmagok és a funkciók engedélyezésére, vegye fel a parancsmag vagy függvény neve a VisbibleCmdlets vagy VisibleFunctions mezőket.
-Ha nem nem biztos benne, hogy egy parancs egy parancsmag vagy függvény-e, futtassa `Get-Command <name>` és a "CommandType" tulajdonságot a kimenetben.
+Való használatának engedélyezése a felhasználók PowerShell-parancsmagok vagy a függvények futtatását, adja hozzá a VisbibleCmdlets vagy VisibleFunctions mezőket a parancsmag vagy függvény neve.
+Ha nem tudja,-e a parancs a egy parancsmag vagy a funkciót, futtathatja `Get-Command <name>` , és ellenőrizze a "Parancstípus" tulajdonságot a kimenetben.
 
 ```powershell
 VisibleCmdlets = 'Restart-Computer', 'Get-NetIPAddress'
 ```
 
-Egyes esetekben az egy adott parancsmag vagy függvény hatóköre túl széleskörű, a felhasználók igényei szerint.
-A DNS-rendszergazdai például, valószínűleg csak igényeinek érhetik el a DNS-szolgáltatás újraindítására.
-Több-bérlős környezetben, ahol bérlők által elérhető adatbázisnézet önkiszolgáló kezelőeszközöket bérlők kell korlátozni kezelése a saját erőforrásait.
-Ezekben az esetekben a korlátozhatja, mely paraméterek érhetők el a parancsmag vagy a függvény.
+Néha egy adott parancsmag vagy a funkció célja túl széleskörű, a felhasználók igényei szerint.
+Egy DNS-rendszergazdai például valószínűleg csak igényeinek megfelelően elérni a DNS-szolgáltatás újraindítására.
+Egy több-bérlős környezetben, ahol a bérlők önkiszolgáló felügyeleti eszközök hozzáférést kapnak, a bérlők kell korlátozni kezelése a saját erőforrásaikat.
+Ezekben az esetekben korlátozhatja a paramétereket a parancsmag vagy a funkció teszi közzé.
 
 ```powershell
 
@@ -76,8 +76,8 @@ VisibleCmdlets = @{ Name = 'Restart-Computer'; Parameters = @{ Name = 'Name' }}
 
 ```
 
-A speciális esetben is szükség lehet valaki megadhatja értékek korlátozása ezeket a paramétereket.
-Szerepkör képességek lehetővé teszik, hogy a megengedett értékek vagy egy reguláris kifejezési minta annak meghatározásához, hogy engedélyezett-e egy adott bemeneti kiértékelt a kulcstulajdonságokat határozza meg.
+A speciális esetben is szükség lehet mely értékeket adhat meg valaki korlátozhatja a ezeket a paramétereket.
+Szerepköri funkciók segítségével meghatározhatja a megengedett értékek vagy a meghatározásához, hogy engedélyezett-e a megadott bemeneti kiértékelt Reguláriskifejezés-mintának.
 
 ```powershell
 VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; ValidateSet = 'Dns', 'Spooler' }},
@@ -85,73 +85,73 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> A [gyakori PowerShell-paramétereket](https://technet.microsoft.com/library/hh847884.aspx) mindig engedélyezettek, még akkor is, ha korlátozza az elérhető paramétereket.
-> Nem kifejezetten sorolja fel azokat a paramétereket mezőben.
+> A [gyakori PowerShell-paramétereket](https://technet.microsoft.com/library/hh847884.aspx) mindig engedélyezett, még akkor is, ha a rendelkezésre álló paraméterek korlátozza.
+> Nem explicit módon sorolja fel azokat a paramétereket mezőben.
 
-Az alábbi táblázat ismerteti a különböző módszereket testre szabhatja látható parancsmag vagy egy függvényt.
+Az alábbi táblázat ismerteti a különböző módszereket testre szabhatja a látható parancsmag vagy függvény.
 Szabadon kombinálhatók felel meg az alábbi a VisibleCmdlets mezőbe.
 
 Példa                                                                                      | Használati eset
 ---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------
-`'My-Func'` vagy `@{ Name = 'My-Func' }`                                                       | Lehetővé teszi a felhasználó futtatásához `My-Func` a paraméterek korlátozások nélkül.
-`'MyModule\My-Func'`                                                                         | Lehetővé teszi a felhasználó futtatásához `My-Func` a modulból `MyModule` a paraméterek korlátozások nélkül.
-`'My-*'`                                                                                     | Lehetővé teszi a felhasználónak, amelyben bármely parancsmag vagy a funkció futtatásához `My`.
-`'*-Func'`                                                                                   | Lehetővé teszi a felhasználó bármely parancsmag vagy a funkció futtatásához a főnév `Func`.
-`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`               | Lehetővé teszi a felhasználó futtatásához `My-Func` rendelkező a `Param1` és/vagy `Param2` paraméterek. Bármely érték lehet biztosítani a paramétereket.
-`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Lehetővé teszi a felhasználó futtatásához `My-Func` rendelkező a `Param1` paraméter. A paraméter csak "Érték1" és "Érték2" kell adni.
-`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Lehetővé teszi a felhasználó futtatásához `My-Func` rendelkező a `Param1` paraméter. Kezdve a "contoso" értéket a paraméter lehet biztosítani.
+`'My-Func'` vagy `@{ Name = 'My-Func' }`                                                       | Lehetővé teszi a felhasználó futtatásához `My-Func` paramétereknek korlátozása nélkül.
+`'MyModule\My-Func'`                                                                         | Lehetővé teszi a felhasználó futtatásához `My-Func` modulból `MyModule` paramétereknek korlátozása nélkül.
+`'My-*'`                                                                                     | Lehetővé teszi a felhasználó bármely parancsmag vagy a funkció futtatását a művelettel `My`.
+`'*-Func'`                                                                                   | Lehetővé teszi, hogy a felhasználót, hogy a főnév futtassa bármely parancsmag vagy függvény `Func`.
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`               | Lehetővé teszi a felhasználó futtatásához `My-Func` együtt a `Param1` és/vagy `Param2` paramétereket. Bármilyen érték lehet biztosítani a paraméterekhez.
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Lehetővé teszi a felhasználó futtatásához `My-Func` együtt a `Param1` paraméter. Csak a "Érték1" és "Érték2" a paraméter lehet biztosítani.
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Lehetővé teszi a felhasználó futtatásához `My-Func` együtt a `Param1` paraméter. "Contoso" kezdetű bármilyen érték lehet biztosítani a paraméterhez.
 
 
 > [!WARNING]
-> Ajánlott biztonsági eljárások azt nem javasolt helyettesítő karaktereket használ, látható parancsmagok és a funkciók meghatározásakor.
-> Ehelyett minden megbízható parancsot annak biztosítására a többi parancs nincs, amelyek azonos elnevezési sémája véletlenül jogosult explicit módon listában.
+> Az ajánlott biztonsági eljárások nem ajánlott a helyettesítő karakterek használata látható parancsmagok és funkciók meghatározásakor.
+> Ehelyett minden egyes megbízható parancsot annak biztosítására, hogy véletlenül jogosultak a többi parancs, amely ugyanazt a elnevezési sémát használja explicit módon listája.
 
-Egy ValidatePattern és a ValidateSet egy parancsmag vagy függvény nem alkalmazható.
+Egy parancsmag vagy függvény nem tudja alkalmazni a ValidatePattern és ValidateSet is.
 
 Ha így tesz, a ValidatePattern felülírja a ValidateSet.
 
-ValidatePattern kapcsolatos további információkért tekintse meg [ez *Hey, Scripting Guy!* utáni](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) és a [PowerShell reguláris kifejezések](https://technet.microsoft.com/library/hh847880.aspx) tartalom hivatkozik.
+ValidatePattern kapcsolatos további információkért tekintse meg [ez *Hey, Scripting Guy!* közzététele](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) és a [PowerShell reguláris kifejezések](https://technet.microsoft.com/library/hh847880.aspx) referenciákra.
 
-### <a name="allowing-external-commands-and-powershell-scripts"></a>Külső parancsok és a PowerShell parancsfájlok
+### <a name="allowing-external-commands-and-powershell-scripts"></a>Lehetővé teszi a külső parancsok és a PowerShell-parancsprogramok
 
-A felhasználók egy JEA munkameneten belül futó végrehajtható fájlok és a PowerShell-parancsfájlokat (.ps1), fel kell vennie a teljes elérési útja a VisibleExternalCommands mezőben programhoz.
+Ahhoz, hogy a felhasználók számára a végrehajtható fájlok és a PowerShell-parancsfájlok (.ps1) futtassa a JEA-munkamenetben, fel kell vennie a teljes elérési útja az egyes programokat a VisibleExternalCommands mezőben.
 
 ```powershell
 VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Contoso\Scripts\UpdateITSoftware.ps1'
 ```
 
-Javasoljuk, ahol lehetséges, a PowerShell parancsmag/függvény alakokat a bármely külső végrehajtható fájlok, mivel az informatikai részleg ellenőrzése, mely paraméterek megengedett, a PowerShell-parancsmagok/funkciók engedélyezésére.
+Javasolt, ha lehetséges, a PowerShell parancsmag/függvény megfelelője, külső végrehajtható fájlokat is engedélyezni szeretné, mivel azt szabályozza, amely fölött paramétereket a PowerShell-parancsmagok és funkciók használatára.
 
-Sok végrehajtható fájlok lehetővé teszik a jelenlegi állapotában olvasására és csak a különböző paraméterek megadásával módosítsa.
+Számos végrehajtható fájlok lehetővé teszik az aktuális állapot olvasására és majd módosítsa azt csak a különböző paraméterek megadásával.
 
-Tegyük fel, ellenőrizze, hogy melyik hálózati megosztások a helyi számítógép által üzemeltetett kívánó fájl kiszolgálói rendszergazda szerepkör.
+Vegyük példaként egy fájlt, ellenőrizze, hogy mely hálózati megosztások a helyi számítógép által üzemeltetett szeretné kiszolgálói rendszergazda szerepe.
 Ellenőrizze, hogy egy módja `net share`.
-Azonban, így a net.exe nem nagyon súlyos, mert a rendszergazda ugyanilyen könnyen használhatja a parancs ahhoz, hogy a rendszergazda jogosultságokkal rendelkező `net group Administrators unprivilegedjeauser /add`.
-A jobb megoldás, hogy [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) amely ugyanazt az eredményt éri el, de korlátozottabb hatókörrel rendelkezik.
+Azonban, így a net.exe nagyon súlyos, mert a rendszergazda sikerült ugyanilyen egyszerűen használja a parancsot a rendszergazdai jogosultságokat kapjanak `net group Administrators unprivilegedjeauser /add`.
+Jobb módszer, hogy lehetővé tegyék [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) amely ugyanazt az eredményt éri el, de korlátozottabb hatóköre.
 
-Külső parancsok elérhetővé tétele a felhasználók számára a JEA-munkamenetben, mindig adja meg annak érdekében, hogy egy hasonlóan elnevezett (és potenciálisan malicous) programot, máshová helyezve a rendszer nem hajtódnak inkább a végrehajtható fájl teljes elérési útvonalát.
+Külső parancsok elérhetővé tétele a felhasználók számára a JEA-munkamenetben, mindig adjon meg egy hasonlóan elnevezett (és potenciálisan malicous) program máshol helyezhető el a rendszer nem végrehajtásra kerülhetnek inkább biztosításához a végrehajtható fájl teljes elérési útja.
 
-### <a name="allowing-access-to-powershell-providers"></a>PowerShell-szolgáltatók való hozzáférés
+### <a name="allowing-access-to-powershell-providers"></a>Engedélyezi a hozzáférést a PowerShell-szolgáltatók
 
-Alapértelmezés szerint nem PowerShell szolgáltatók érhetők el a JEA-munkamenetekben.
+Alapértelmezés szerint nem PowerShell-szolgáltatók a JEA-munkamenetek érhető el.
 
-Ez az elsősorban a bizalmas adatokat és beállításokat adatokat tesznek közzé a kapcsolódó felhasználó a kockázat csökkentésére.
+Ez az elsősorban bizalmas információkat és adatokat tesznek közzé a csatlakozó felhasználó beállításainak kockázatának csökkentése érdekében.
 
 Ha szükséges, a PowerShell-szolgáltató használatával hozzáférést biztosíthat a `VisibleProviders` parancsot.
-A szolgáltatók teljes listájának megtekintéséhez futtassa a `Get-PSProvider`.
+Szolgáltatók teljes listájának megtekintéséhez futtassa az alábbi parancsot `Get-PSProvider`.
 
 ```powershell
 VisibleProviders = 'Registry'
 ```
 
-Egyszerű tevékenység, amelynek szüksége van a fájlrendszer, a beállításjegyzék, a tanúsítványtároló vagy a többi bizalmas szolgáltatók esetén is érdemes lehet írása, amely kompatibilis a szolgáltató, a felhasználó nevében egyéni függvény.
-Funkciók, a parancsmagok és a külső programok által biztosított JEA munkamenetben nem tartoznak ugyanazon a korlátozások tartoznak, mint JEA – alapértelmezés szerint bármely szolgáltató eléréséhez.
-Is érdemes lehet a [felhasználói meghajtó](session-configurations.md#user-drive) fájlok másolása a JEA végpont onnan esetén szükséges.
+A fájlrendszer, a beállításjegyzék, a tanúsítványtároló vagy a más bizalmas szolgáltatók hozzáférést igénylő egyszerű feladatok is érdemes lehet egyéni függvény, amely együttműködik a szolgáltató, a felhasználó nevében írása.
+Funkciók, a parancsmagok és a egy JEA munkamenetben rendelkezésre álló külső programok nem vonatkozik a JEA azonos kötöttségek – alapértelmezés szerint hozzáférhet a bármely szolgáltatónál.
+Megfontolni a [felhasználói meghajtó](session-configurations.md#user-drive) amikor fájlokat másol és- tárolókról a JEA-végpont megadása kötelező.
 
 ### <a name="creating-custom-functions"></a>Egyéni függvények létrehozása
 
-Egyszerűbbé teheti az összetett feladatok a végfelhasználóknak a szerepkör funkció fájlban egyéni funkciók hozhat létre.
-Egyéni funkciók is hasznosak, ha speciális ellenőrzési logika az parancsmag-paramétereket.
+Egy szerepkör képesség fájlban, az összetett feladatok egyszerűbbé tétele a végfelhasználók számára az egyéni függvények hozhat létre.
+Egyéni funkciók is hasznosak, ha speciális ellenőrzési logika parancsmag paraméterértékeket.
 Egyszerű funkciók írhat a **FunctionDefinitions** mező:
 
 ```powershell
@@ -169,28 +169,28 @@ FunctionDefinitions = @{
 ```
 
 > [!IMPORTANT]
-> Ne feledje, a nevet az egyéni funkciók a **VisibleFunctions** mezőt, így a JEA felhasználók által futtatható.
+> Ne felejtse el hozzáadni az egyéni függvények nevét a **VisibleFunctions** mezőt, így a JEA-felhasználók által futtatható.
 
 
-Egyéni funkciók törzsében (parancsfájlblokkban) a rendszer az alapértelmezett nyelv módban fut, és nincs JEA tartozó nyelvi korlátok.
-Ez azt jelenti, hogy funkciók is a fájlrendszert és beállításjegyzéket, majd futtassa a parancsokat elvégzett nem látható a szerepkör funkció fájlban.
-Elkerülése érdekében, így tetszőleges kód futtatható, ha a paraméterek használatával kezeli, és elkerülheti a átirányítás felhasználói bevitel közvetlenül be például a parancsmagok `Invoke-Expression`.
+Egyéni függvény törzsében (parancsfájl-blokk) a rendszer az alapértelmezett nyelv módját fut, és nem a JEA nyelvi korlátozások vonatkoznak.
+Ez azt jelenti, hogy funkciók is fájlrendszert és beállításjegyzéket, majd futtassa a parancsokat elvégzett nem látható a szerepkör képesség fájlban.
+Ügyeljen arra, hogy kerülje, lehetővé téve tetszőleges kód futtatható, ha a paraméterek használatával, és elkerülheti az átirányítás felhasználói bevitel közvetlenül be például a parancsmagok `Invoke-Expression`.
 
-A fenti példában, megfigyelheti, hogy a teljesen minősített Modulnév (FQMN) `Microsoft.PowerShell.Utility\Select-Object` helyett a rövid szintaxist használta `Select-Object`.
-Szerepkör szolgáltatásfájlokban definiált függvények még lépnek JEA munkamenetek, beleértve a proxy funkciók körét korlátozhatja a meglévő parancsok JEA hoz létre.
+A fenti példában megfigyelheti, hogy a modul teljesen minősített nevét (FQMN) `Microsoft.PowerShell.Utility\Select-Object` helyett a gyorsírás használt `Select-Object`.
+Szerepkör képesség fájlban meghatározott függvényeket továbbra is vonatkozik JEA munkamenetek, amely tartalmazza a proxy funkciók hatókörének korlátozásához a meglévő parancsok JEA hoz létre.
 
-Select-Object alapértelmezett, korlátozott parancsmag minden JEA-munkamenetekben, amelyek nem teszik lehetővé a objektumokon tetszőleges Tulajdonságok parancsra.
-A korlátozás nélküli Select-Object funkciók használatához explicit módon a FQMN megadásával kell igényelnie a teljes megvalósítás.
-Bármely korlátozott parancsmag JEA munkamenetben virágot fog hozni a kívánt viselkedést eredményező beállítást egy függvényből összhangban PowerShell meghívásakor [sorrend parancs](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence).
+Select-Object a egy alapértelmezett, korlátozott parancsmag az összes JEA-munkamenetekben, amelyek nem teszik lehetővé tetszőleges tulajdonságok objektumok kiválasztása.
+A korlátozás Select-Object az funkciók használatához explicit módon a FQMN megadásával kell igényelnie a teljes megvalósítás.
+A JEA munkamenetben korlátozott parancsmagokhoz fog ugyanígy viselkednek, a PowerShell megfelelően függvény meghívásakor [elsőbbséget parancs](https://msdn.microsoft.com/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence).
 
-Ha egyéni funkciók számos, helyezze őket könnyebben lehet egy [PowerShell parancsfájl modul](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx).
-Majd tehet olyan feladatokat a JEA munkamenet VisibleFunctions mező meg, mint a beépített és harmadik féltől származó modulok látható.
+Ha egyéni függvények rengeteg, állítsa őket az egyszerűbb lehet egy [PowerShell-parancsfájl modul](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx).
+Majd ezekhez a függvényekhez láthatóvá teheti a JEA-munkamenet VisibleFunctions mező használatával, mint a beépített és külső modulok.
 
-## <a name="place-role-capabilities-in-a-module"></a>A modul hely szerepkör képességei
+## <a name="place-role-capabilities-in-a-module"></a>Szerepköri funkciók helyezze egy modulban
 
-Ahhoz, hogy PowerShell található szerepkör-funkció fájl akkor kell tárolni egy PowerShell-moduljának "RoleCapabilities" mappában.
-A modul bármely mappában szereplő tárolhatók a `$env:PSModulePath` környezeti változó, azonban kell nem elhelyezés System32 (beépített modulok számára fenntartott) vagy egy mappa ahol a nem megbízható, csatlakozó felhasználók módosíthatják a fájlok.
-Az alábbiakban látható egy példa egy egyszerű PowerShell parancsfájl modul nevű létrehozása *ContosoJEA* a "Program fájlok" elérési úton.
+Ahhoz, hogy a PowerShell-lel szerepkör képesség fájl található, az azt kell tárolni egy PowerShell-modul a "RoleCapabilities" mappájában.
+A modul bármelyik mappájában található tárolhatók a `$env:PSModulePath` környezeti változót, azonban ne jelölje azt a System32 (beépített modulok számára fenntartott) vagy egy mappában, a nem megbízható, csatlakozás a felhasználók módosíthatják a fájlok.
+Az alábbi példában egy egyszerű PowerShell parancsfájl modul nevű létrehozásának, *ContosoJEA* a "Program Files" elérési úton.
 
 ```powershell
 # Create a folder for the module
@@ -207,41 +207,41 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-Lásd: [egy PowerShell-modul ismertetése](https://msdn.microsoft.com/en-us/library/dd878324.aspx) további információt a PSModulePath környezeti változó, a PowerShell modulok és a modul jegyzékfájljai.
+Lásd: [egy PowerShell-modul ismertetése](https://msdn.microsoft.com/library/dd878324.aspx) PowerShell modulok, a modul jegyzékek és a PSModulePath környezeti változó további információt.
 
-## <a name="updating-role-capabilities"></a>Szerepkör képességek frissítése
-
-
-Egy szerepkör funkció fájl frissíthetjük bármikor egyszerűen módosításainak mentése folyamatban van a szerepkör funkció fájlt.
-Bármely új JEA munkameneteket a szerepkör funkció frissítése után a módosított képességek fogja tartalmazni.
-
-Ezért a szerepkör képességek mappa hozzáférés szabályozása, ezért fontos.
-Csak messzemenően megbízható rendszergazdák szerepkör szolgáltatásfájlokban módosítása képesnek kell lennie.
-Egy nem megbízható felhasználói szerepkör szolgáltatásfájlokban módosíthatja, ha azok könnyen magukat hozzáférést biztosíthat a parancsmagok, ami lehetővé teszi, hogy függesztheti.
+## <a name="updating-role-capabilities"></a>Szerepköri funkciók frissítése
 
 
-A rendszergazdák szeretnék a hozzáférést a szerepkör funkciókat zárolása győződjön meg arról, helyi rendszer rendelkezik olvasási hozzáférés a szerepkör szolgáltatásfájlokban és tartalmazó modult.
+Egyszerűen módosításainak mentése folyamatban van a szerepkör képesség fájl által bármikor frissítheti egy szerepkör képesség fájlt.
+Minden olyan új JEA munkamenetek, a szerepkör funkció frissítése után elindult a módosított képességek fogja tartalmazni.
 
-## <a name="how-role-capabilities-are-merged"></a>Hogyan egyesítve lesznek szerepkör képességek
+Ezért a szerepkörrel képességeket mappa hozzáférés szabályozása, ezért fontos.
+Kizárólag megbízható rendszergazdák tudják módosítani a szerepkör képesség fájlokat kell lennie.
+Nem megbízható felhasználók módosíthatják a szerepkör képesség fájlokat, ha azok segítségével könnyedén magukat hozzáférést biztosíthat parancsmagok, amelyek lehetővé teszik a jogosultságai kibővítésére őket.
 
-Felhasználók is hozzáférhetnek, hogy több szerepkör képességek attól függően, hogy a szerepkör-hozzárendelések a JEA munkamenet be a [munkamenet konfigurációs fájl](session-configurations.md).
-Ha ez történik, JEA a felhasználó megpróbál az *leghatékonyabb* valamelyik szerepkörnél által engedélyezett parancsokat.
+
+A rendszergazdáknak a szerepkör lehetőségekhez zároljuk szeretne győződjön meg arról, helyi rendszer szerepkör képesség fájlokat és tartalmazó modulok olvasási hozzáféréssel rendelkezik.
+
+## <a name="how-role-capabilities-are-merged"></a>Szerepköri funkciók hogyan egyesítésekor
+
+Felhasználók számára hozzáférés engedélyezhető több szerepkörrel képességeket, amikor belép a JEA munkamenet függően a szerepkör-hozzárendelések a [munkamenet konfigurációs fájl](session-configurations.md).
+Ha ez történik, a JEA próbál-e a felhasználónak, a *legmegengedőbb* valamelyik szerepkörnél által engedélyezett parancsokat.
 
 **VisibleCmdlets és VisibleFunctions**
 
-A legösszetettebb egyesítési logika hatással van a parancsmag és funkció, a paraméterek és a paraméterértékeket a JEA korlátozott lehet.
+A legösszetettebb egyesítési logikai hatással van a parancsmagok és a függvények, amelyek a paramétereket és a paraméterértékek a JEA korlátozott lehet.
 
 A szabályok a következők:
 
-1. A parancsmag csak akkor jelenik meg egy szerepkör, ha bármely alkalmazandó típusparaméter-korlátozásokkal rendelkező felhasználó számára látható lesz.
-2. Ha a parancsmag több szerepkör láthatóvá válnak, és mindegyik szerepkör tartalmazza a parancsmag azonos korlátozásaival, a parancsmag az e-korlátozásokkal rendelkező felhasználó számára látható lesz.
-3. Ha a parancsmag több szerepkör láthatóvá válnak, és minden egyes szerepkör lehetővé teszi, hogy a különböző paraméterek, a parancsmag és az összes megadott paraméterek között minden szerepkör lesz a felhasználó számára látható. Ha egy szerepkör nem rendelkezik a paraméterek vonatkozóan, minden paraméter engedélyezett lesz.
-4. Ha egy szerepkör ellenőrzése set vagy egy parancsmag-paraméterben ellenőrzése mintát határoz meg, és a többi szerepkör lehetővé teszi, hogy a paraméter, de nem korlátozhatják a paraméterértékeket, az érvényesítés set vagy -mintát lesz figyelembe véve.
-5. Ha ellenőrzése meg egynél több szerepkör ugyanazon parancsmag paraméter meg van adva, származó összes ellenőrzése minden érték engedélyezett lesz.
-6. Ha a validate minta egynél több szerepkör ugyanazon parancsmag paraméter meg van adva, a minták valamelyikének megfelelő értékeket engedélyezett lesz.
-7. Ha egy ellenőrzése készlet egy vagy több szerepkör van definiálva, és ellenőrzése mintát egy másik szerepkör ugyanazon parancsmag paraméter van megadva, az érvényesítés beállítása a rendszer figyelmen kívül hagyja, és szabály (6) a fennmaradó ellenőrzése minták vonatkozik.
+1. Ha a parancsmag csak akkor jelenik meg egy szerepkör, a bármely alkalmazandó paraméter megkötésekkel rendelkező felhasználó számára látható lesz.
+2. A parancsmag láthatóvá válik a több szerepkört, és mindegyik szerepkör tartalmazza a parancsmag azonos korlátait, a parancsmag az adott megkötésekkel rendelkező felhasználó számára látható lesz.
+3. Ha a parancsmag láthatóvá válik a több szerepkört, és minden egyes szerepkör lehetővé teszi, hogy a paraméterek külön készletét, a parancsmag és az összes megadott paraméterek között minden szerepkör lesz a felhasználó számára látható. Ha egy szerepkör nem rendelkezik a paraméterek korlátait, minden paraméter engedélyezett lesz.
+4. Ha egy szerepkör ellenőrzése set vagy egy parancsmag-paraméterben ellenőrzése mintája határoz meg, és a többi szerepkör lehetővé teszi, hogy a paraméter, de nem korlátozza a paraméterértékeket, ellenőrzése beállított vagy minta figyelmen kívül.
+5. Ha egy ellenőrzés beállítása egynél több szerepkör ugyanazon parancsmag paraméter meg van adva, minden érték ellenőrzése minden portprofilkészletéből engedélyezett lesz.
+6. Ha az érvényesítés mintát egynél több szerepkör ugyanazon parancsmag paraméter van megadva, azokat az értékeket, a minták megfelelő engedélyezett lesz.
+7. Egy ellenőrzés beállítása van meghatározva egy vagy több szerepkört, és ugyanezt a parancsmagot paramétert egy másik szerepkör ellenőrzése mintát van definiálva, az ellenőrzés beállítása a rendszer figyelmen kívül hagyja, és (6) a szabály vonatkozik a fennmaradó ellenőrzése minták.
 
-Alább látható egy példa hogyan szerepkörök szerint ezek a szabályok egyesítve lesznek:
+Alább egy példát, hogyan szerepkörök egyesítésekor ezek a szabályok megfelelően van:
 
 ```powershell
 # Role A Visible Cmdlets
@@ -269,12 +269,12 @@ $mergedAandB = @{
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 
-A szerepkör funkció fájlban lévő többi mezőt egyszerűen összesített csoportja engedélyezett külső parancsok, a aliasok, a szolgáltatók és az indítási parancsfájlok hozzáadódnak.
-Bármely parancs, az alias, a szolgáltató vagy a parancsfájl egy szerepkör képesség érhető el a JEA felhasználó számára elérhető lesz.
+A szerepkör képesség fájlban a többi mező egyszerűen kerülnek engedélyezett külső parancsok, aliasok, szolgáltatók és az indítási parancsfájlok összesített csoportja.
+Minden parancs, a alias, a szolgáltató vagy a parancsfájl egy szerepkör képesség érhető el a JEA-felhasználó számára elérhető lesz.
 
-Ügyeljen arra, hogy ellenőrizze, hogy a szolgáltatók egy kombinált készlete szerepkör funkció és parancsmagok/funkciók/parancsok egy másik nem csatlakozó felhasználóknak hozzáférést véletlen rendszererőforrások.
-Például, ha egy szerepkör lehetővé teszi a `Remove-Item` parancsmag és egy másik lehetővé teszi, hogy a `FileSystem` szolgáltató, amelyek kockázata, hogy a JEA felhasználó törlése tetszőleges fájlokat a számítógépre.
-Felhasználók érvényes engedélyeit azonosításával kapcsolatos további információk találhatók a [JEA témakör naplózás](audit-and-report.md).
+Ügyeljen arra, hogy ellenőrizze, hogy a szolgáltatók egy kombinált készletét szerepkörrel képességeket és a parancsmagok és funkciók/parancsok egy másik nem csatlakozó felhasználók véletlen erőforrások hozzáférésének engedélyezéséhez rendszer.
+Például, ha egy szerepkör lehetővé teszi a `Remove-Item` parancsmag és a egy másik lehetővé teszi, hogy a `FileSystem` szolgáltató, vannak kockázata, hogy a JEA felhasználó törlése tetszőleges fájlokat a számítógépre.
+További információ a felhasználók érvényes engedélyeit azonosító megtalálható a [JEA témakört naplózás](audit-and-report.md).
 
 ## <a name="next-steps"></a>További lépések
 

@@ -2,16 +2,16 @@
 ms.date: 08/09/2018
 keywords: telepítés, a windows, linux, macOS, ARM, raspbian
 title: A PowerShell telepítése
-ms.openlocfilehash: 24c40723e8f0218b3192d3d844762f774adf9c29
-ms.sourcegitcommit: 7d135f5fcb0eacab9862cfa64c4e42448b258f34
+ms.openlocfilehash: b89f11c36459bd0b03693d89ae3ff6f1327ea755
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40027614"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557090"
 ---
 # <a name="installing-various-versions-of-powershell"></a>PowerShell-verziók telepítése
 
-Az évek során történt PowerShell számos kiadásaiban. Kezdetben Windows PowerShell volt a .NET-keretrendszer épül, és csak a Windows rendszer verzióin. Az aktuális kiadással a PowerShell Core használja a .NET Core 2.0 a modul. A PowerShell Core a Windows, macOS és Linux platformokat támogatja.
+Az évek során történt PowerShell számos kiadásaiban. Kezdetben Windows PowerShell volt a .NET-keretrendszer épül, és csak a Windows rendszer verzióin. A jelenlegi kiadásban, a PowerShell Core használja, a .NET Core, a futásidejű 2.x. A PowerShell Core a Windows, macOS és Linux platformokat támogatja.
 
 ## <a name="windows-powershell"></a>Windows PowerShell
 

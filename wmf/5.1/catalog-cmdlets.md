@@ -3,28 +3,28 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: Katalógusbeli parancsmagok
-ms.openlocfilehash: 7eaca09667af0eb5d719f23e987bb112e8514978
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ec5fc866fe27a894b23b93d3ea46ad9c0cba288e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189067"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522888"
 ---
-# <a name="catalog-cmdlets"></a>Katalógus-parancsmagok
+# <a name="catalog-cmdlets"></a>Katalógusbeli parancsmagok
 
-A két új parancsmagok jelentek meg [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) modul hozhatnak létre és a windows katalógusban fájlok érvényesítése.
+A két új parancsmag új verziója [Microsoft.Powershell.Secuity](https://technet.microsoft.com/library/hh847877.aspx) modul hozza létre, és a windows katalógusban fájlok érvényesítése.
 
 ## <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
 
-`New-FileCatalog` létrehoz egy windows catalog mappák és fájlok. A katalógusban az összes fájl megadott elérési utak a kivonatok tartalmazza. Mappák és a katalógus fájl ezeken a mappákon jelölő megfelelő készletét terjeszthetnek. Egy katalógusfájlt segítségével tartalom címzettje ellenőrzi, hogy a módosítások a mappákat a katalógus létrehozása után.
+`New-FileCatalog` létrehoz egy windows katalógusfájlt az tartozó fájlok és mappák. A katalógus-kivonat a megadott elérési utak lévő összes fájlt tartalmazza. A katalógus fájl mappákat jelölő megfelelő együtt mappakészlet terjeszthetnek. Egy katalógusfájlt megállapítani, hogy e módosítások történtek a mappákat a katalógus létrehozása után használhatják a címzett tartalom.
 
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
-1. és 2 létrehozása katalógus verziója támogatott. 1-es verziójú SHA1 kivonatoló algoritmust használ fájlkivonat és 2 használ SHA256 verzió létrehozásához. Katalógus 2-es verzió nem támogatott a *Windows Server 2008 R2* és *Windows 7*. Javasoljuk, hogy a katalógus 2-es verzióját használja, ha platformokat használó *Windows 8*, *Windows Server 2012* vagy újabb verzió.
+1. és 2 létrehozása katalógus-verzió is támogatott. 1. verziójának SHA1 kivonatoló algoritmust használja fájlkivonatokkal és verzió 2 használja SHA256 létrehozásához. Katalógus 2-es verzió nem támogatott az *Windows Server 2008 R2* és *Windows 7*. Javasoljuk, hogy ha platformok használja a katalógus 2-es verziójú *Windows 8*, *Windows Server 2012* vagy újabb verzió.
 
-Egy meglévő modul ezen parancs használatához adja meg kell egyeznie a moduljegyzékben helyét CatalogFilePath és az elérési utat változókat. Az alábbi példában a moduljegyzékben C:\Program Files\Windows PowerShell\Modules\Pester van.
+Ezzel a paranccsal egy meglévő modulon használatához adja meg a moduljegyzékben helyének megfelelően CatalogFilePath és az elérési út változókat. Az alábbi példában a moduljegyzékben C:\Program Files\Windows PowerShell\Modules\Pester szerepel.
 
 ![](../images/NewFileCatalog.jpg)
 
@@ -34,13 +34,13 @@ Ez a katalógus fájlt hoz létre.
 
 ![](../images/CatalogFile2.jpg)
 
-Egy katalógusfájlt (Pester.cat a fenti exmaple) sértetlenségének ellenőrzése, alá kell írni használatával a [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) parancsmag.
+Egy katalógusfájlt (Pester.cat a fenti példában) sértetlenségének ellenőrzése, alá kell írni használatával a [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) parancsmagot.
 
 
 ## <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
 
-`Test-FileCatalog` a katalógus képviselő mappákat ellenőrzi.
+`Test-FileCatalog` a katalógus jelölő mappákat ellenőrzi.
 
 ```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -48,6 +48,6 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-Ez a parancsmag összehasonlítja a kivonatok összes fájl és a relatív elérési utak azokat, lemezre menti a katalógus fájlban található. Ha a fájlkivonat és elérési utak bármely eltérést észlel állapotot adja vissza `ValidationFailed`.
-Felhasználók tudják lekérni az összes ezek az adatokat a a `Detailed` váltani. A katalógus aláírási állapot jelenik meg a `Signature` mező, amely ugyanaz, mint a hívása a [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) parancsmag a katalógus fájlra.
-Felhasználók is hagyhatja a fájl ellenőrzésekor használatával a `FilesToSkip` paraméter.
+Ez a parancsmag összehasonlítja a kivonatok, és azok relatív elérési utakat azokról, lemezre menti a katalógus fájlban található összes fájlt. Ha azt észleli, hogy bármely fájlkivonatokkal és elérési utak nem egyezik a állapotát adja vissza `ValidationFailed`.
+Felhasználók kérheti le az összes ezen információk használatával a `Detailed` váltani. Aláíró állapotát, a katalógusban elemnél a `Signature` mező, amely ugyanaz, mint a hívása a [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) katalógusfájl parancsmagot.
+Felhasználók ki is hagyhatja bármely fájl ellenőrzésekor használatával a `FilesToSkip` paraméter.

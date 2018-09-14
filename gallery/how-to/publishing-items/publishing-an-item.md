@@ -1,121 +1,121 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
-title: Létrehozása és közzététele egy elemet
-ms.openlocfilehash: 7c2a2be6986bf65c168d7c3960366fac4ee31301
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: katalógus, a powershell, a parancsmag, a psgallery
+title: Létrehozása és közzététele egy elem
+ms.openlocfilehash: c5027c5fb357bb187611880ba75610a8f33074e0
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189533"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522973"
 ---
-# <a name="creating-and-publishing-an-item"></a>Létrehozása és közzététele egy elemet
+# <a name="creating-and-publishing-an-item"></a>Létrehozása és közzététele egy elem
 
-A PowerShell-galériában közzététele és megosztása stabil PowerShell-modulok, a parancsfájlok és a DSC-erőforrások az PowerShell szélesebb körű felhasználói Közösséggel a hely.
+A PowerShell-galériából az a hely közzététele és stabil PowerShell-modulok, a parancsfájlokat és a DSC-erőforrások megosztása a szélesebb körű PowerShell felhasználói Közösség.
 
-Ez a cikk ismerteti a mechanika és fontos történő előkészítésének lépéseit egy parancsfájl vagy modul, és közzéteheti azt a PowerShell-galériában.
-Azt javasoljuk, hogy tekintse át a [közzétételi irányelvek](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) győződjön meg arról, hogy a elemeket tesz közzé szélesebb körben elfogadják PowerShell-galériában felhasználók megismerése.
+Ez a cikk ismerteti a mechanics és a egy parancsfájl vagy a modul előkészítése és közzétételével az a PowerShell-galériából, fontos lépéseket.
+Azt javasoljuk, hogy tekintse át a [a közzététellel kapcsolatos irányelvek](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines) győződjön meg arról, hogy a közzétett elemeket is szélesebb körben elfogad, PowerShell-galériából felhasználók megismerése.
 
-A cikk közzétételéhez a PowerShell-galériában minimális követelmények a következők:
+A cikk közzétételéhez a PowerShell-galériából minimális követelmények a következők:
 
-- PowerShell-galériában fiókkal rendelkezik, és a vele társított az API-kulcs
-- Győződjön meg arról metaadat szükséges az elemben
-- Győződjön meg arról, a cikk közzétételéhez készen áll az előzetes ellenőrzése eszközök segítségével
-- A cikk közzétételéhez a Publish-modul és a közzététel-parancsfájl paranccsal PowerShell-galériában
-- Válaszol kérdéseivel és észrevételeivel a elemével kapcsolatban
+- Egy PowerShell-Galériabeli fiók rendelkezik, és az API-kulcs társítva
+- Az elem szükséges metaadatok ellenőrzéséhez
+- Az előzetes érvényesítési eszközök segítségével győződjön meg arról, az elem közzétételre kész
+- A cikk közzétételéhez a PowerShell-galériából, a Publish-Module és Publish-Script-parancsok használatával
+- Válaszol-e a kérdése vagy aggodalma van az elemmel kapcsolatos
 
-A PowerShell-galériában PowerShell-modulok és a PowerShell-parancsfájlok fogad el.
-Ha a parancsfájlok hivatkozunk, azt egy PowerShell-parancsfájlt, amely egy egyetlen fájlt, és nem nagyobb modulja részét jelenti.
+A PowerShell-galériából a PowerShell-modulok és a PowerShell-parancsfájlok fogad el.
+Parancsfájlok nevezzük, amikor egy PowerShell-parancsprogram, amely egy egyetlen fájlt, és nem egy nagyobb modul részét értjük.
 
-## <a name="powershell-gallery-account-and-api-key"></a>PowerShell-galériában fiók és API-kulcs
+## <a name="powershell-gallery-account-and-api-key"></a>PowerShell-Galériabeli fiók és API-kulcs
 
-Lásd: [PowerShell gyűjtemény fiók létrehozása](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account) a PowerShell-galériában fiókja beállításával.
+Lásd: [létrehozása egy PowerShell-galéria fiók](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery_creating_an_account) beállítása a PowerShell-Galériabeli fiók számára.
 
-Fiók létrehozását követően érheti el a cikk közzétételéhez szükséges API-kulcs.
-A fiókkal jelentkezik be, miután a felhasználónév regisztrálása helyett a PowerShell-galériában lap tetején fog megjelenni.
-Kattintson a felhasználónevére elindítjuk ezt a saját fiók lapra, ahol megtalálja az API-kulcsot.
+Miután létrehozott egy fiókot, egy elem közzététele szükséges API-kulcs kérheti le.
+A fiókkal jelentkezik be, miután a felhasználónév regisztrálása helyett a PowerShell-galériából lapok tetején jelennek meg.
+Kattintson a felhasználónevére vesz igénybe, a saját fiók oldalra, ahol megtalálja az API-kulcsot.
 
-Megjegyzés: Az API-kulcsot kell kezelni, a felhasználónevet és jelszót biztonságos helyen.
-A kulcshoz, vagy valaki másról, frissítheti a PowerShell-galériában saját elemek.
-Javasoljuk, hogy rendszeresen, a kulcs, amely végezhető frissítése kulccsal alaphelyzetbe a saját fiók-lapon.
+Megjegyzés: Az API-kulcsot kell kezelni, így a felhasználónevét és jelszavát.
+Ezzel a kulccsal, vagy bármely más, frissítheti bármelyik a saját a PowerShell-galériából.
+Javasoljuk, hogy rendszeresen, a kulcs, amely végezhető frissítse a saját fiókoldal alaphelyzetbe kulcs használatával.
 
-## <a name="required-metadata-for-items-published-to-the-powershell-gallery"></a>A PowerShell-galériában közzétett cikkek kötelező metaadatok
+## <a name="required-metadata-for-items-published-to-the-powershell-gallery"></a>A PowerShell-galériában közzétett cikkekhez szükséges metaadatokat
 
-A PowerShell-galériában alapján a parancsfájl vagy modul jegyzékben szereplő metaadatok mezők gallery felhasználói adatokat szolgáltat.
-Létrehozása vagy módosítása a PowerShell-galériában kiadvány elemek rendelkezik egy kis készletét a cikk jegyzékben szereplő adatok követelményeinek.
-Azt javasoljuk, hogy a cikk metaadatok részében tekintse át a [közzétételi irányelvek](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) a legjobb információt nyújt a felhasználók számára az elemek hogyan.
+A PowerShell-galériából származó metaadatokat tartalmazó mezőket a parancsfájl vagy a modul jegyzékfájlban szereplő gyűjtemény felhasználók információkat biztosít.
+Létrehozása vagy módosítása a PowerShell-galériában kiadvány elemek van egy kis készletét a cikk jegyzékfájlban megadott információk követelményei.
+Azt javasoljuk, hogy az elemek metaadatokat tartalmazó szakasz, tekintse át a [a közzététellel kapcsolatos irányelvek](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines) megtudhatja, hogyan lehet a legjobb információt nyújt a felhasználók számára az elemek.
 
-A [New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/ModuleManifest-Reference) és [New-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo) parancsmagok a jegyzék sablon hozza létre, a helyőrzők a jegyzék elemek.
+A [New-ModuleManifest](https://msdn.microsoft.com/powershell/gallery/psget/module/ModuleManifest-Reference) és [New-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo) parancsmagok a jegyzékfájl sablon hozza létre, a helyőrzőket a jegyzékfájl elemek.
 
-Mind jegyzékfájlokat rendelkezik két szakaszok fontos a közzétételt, a PrivateData a PowerShell modul jegyzék elsődleges kulcs adatainak elsődleges kulcs az adatok és PSData területe mindent kívül a PrivateData szakasz.
-Az elsődleges kulcsok van kötve a PowerShell verzióját használja, és nincs definiálva nem támogatottak.
-PrivateData támogatja az új kulcsok hozzáadása, úgy, hogy a PowerShell-galériában vonatkozó elemeket a PSData.
+Mindkét jegyzékek rendelkezik, amelyek fontosak a közzététel két szakasz, az elsődleges kulcs adatokat és PSData területére PrivateData az elsődleges kulcs adatokat egy PowerShell-modul jegyzékfájlban mindennél kívül a PrivateData szakaszban.
+Elsődleges kulcsok halmaza vannak kötve, a PowerShell verzióját használja, és nincs definiálva nem támogatottak.
+PrivateData hozzáadását az új kulcsok, így az elemeket a PowerShell-galériából a PSData támogatja.
 
 
-Közzéteszi a PowerShell-galériában elem kitöltése legfontosabb jegyzék elemei a következők:
+A PowerShell-galériában közzétett elem kitöltése legfontosabb jegyzékfájl elemek a következők:
 
-- Parancsfájl vagy modulnév - azokat a paraméterkészletben található állítják a. Egy olyan parancsfájlt, PS1 vagy a. Egy modul psd1 kiterjesztésű.
-- Verzió - Ez egy szükséges elsődleges kulcs, formátumot kell követnie (ajánlott eljárások talál információt) SemVer irányelvek
-- Szerző - ez szükséges elsődleges kulcs, és a cikk társítani kell a nevét tartalmazza (lásd a szerzők és tulajdonosai alatt)
-- Leírás – Ez az elsődleges kulcs kötelező, segítségével ismertetik a mi nem ezt az elemet, és a bármely vonatkozó követelményekhez
-- ProjectURI - a mező értéke egy erősen ajánlott URI, amely egy Github-tárház egy hivatkozást kínál a PSData vagy az elem fejlesztési végezheti hasonló helyen
+- Parancsfájl vagy a modul neve – azokat a paraméterkészletben található állítják a. Egy parancsfájl PS1 vagy a. Egy modul psd1 kiterjesztésű.
+- Verzió - formátumban kell irányelvekhez SemVer (lásd: ajánlott eljárások részletei), mert szükség elsődleges kulcs
+- Szerző – ez szükséges elsődleges kulccsal, és tartalmazza az elem társítani kell a nevét (lásd a szerzők és a tulajdonosok, alább)
+- Leírás – Ez az elsődleges kulcs kötelező, segítségével röviden elmagyarázza, Mire jó ez az elem és az azt használó
+- ProjectURI – a mező értéke egy erősen ajánlott URI, amely egy hivatkozást kínál a Github-tárházba PSData vagy hasonló helyre, ahol mégis fejlesztését az elem
 
-Szerzők és a PowerShell-galériában tulajdonosok elemek kapcsolatos fogalmak, de nem mindig felelnek meg.
-Konfigurációelem tulajdonosainak PowerShell-galériában fiókkal a cikk kezelése engedéllyel rendelkező felhasználók. Előfordulhat, hogy sok tulajdonosai, aki frissítheti bármelyik elemre.
-A tulajdonos csak érhető el a PowerShell-galériából, és elvész, ha a cikk egy rendszer átmásolva a másikra.
-Szerző: beépített a jegyzék adatokat, így az mindig az elem részét karakterlánc.
+Szerzők és a PowerShell-galériából tulajdonosok elemek kapcsolódó fogalmak, de nem mindig egyezik.
+Konfigurációelem tulajdonosainak engedélye az elem kezelése PowerShell-galéria-fiókkal rendelkező felhasználók. Előfordulhat, hogy minden elem frissítésére felhatalmazott fiókadminisztrátorról sok tulajdonos.
+A tulajdonos csak akkor érhető el a PowerShell-galériából, és megszakad, ha a cikk egy rendszer lesz átmásolva a másikra.
+Szerző: beépített az alkalmazásjegyzék adatokat, így az mindig az elem részét karakterlánc.
 A Microsoft-termékek elemek kapcsolatos ajánlások a következők:
 
-- Több tulajdonosokra bízza, legalább egy, a csapat a cikk; előállító nevét folyamatban van
-- Rendelkeznie kell a jól ismert csoport nevét (például az Azure SDK csoport) Szerző vagy a Microsoft Corporation.
+- Legalább egy folyamatban, amely az elemet; a csapat nevét, több tulajdonosokkal rendelkezhetnek
+- Rendelkeznie kell egy jól ismert csoport neve (például az Azure SDK csapata) a szerző, vagy a Microsoft Corporation.
 
 
-## <a name="pre-validate-your-item"></a>A cikk előzetes ellenőrzése
+## <a name="pre-validate-your-item"></a>A cikk előre ellenőrzése
 
-Van néhány eszközök futtatásához a kódot a cikk a PowerShell-galériában való közzététele előtt kell:
+Van néhány, a PowerShell-galériából, az elem közzététele előtt a kód futtatásához szükséges eszközöket:
 
-- [PowerShell parancsfájl Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/), amely van a PowerShell-galériában
-- A modulok, PowerShell részét képező teszt ModuleManifest
-- Parancsfájlok, amely PowerShell Get teszt ScriptFileInfo
+- [PowerShell parancsfájl Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/), amely szerepel a PowerShell-galéria
+- A Test-ModuleManifest, amely része a PowerShell-modulok
+- A parancsfájlok, ez a PowerShell Get teszt ScriptFileInfo
 
-[PowerShell parancsfájl Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) egy statikus kód elemző eszköz, amely a rendszer ellenőrzi a kód azt irányelvek kódolási alapvető PowerShell megfelel-e. Az eszköz közös és fontos problémák a kódban azonosítja, és rendszeresen közzététele készülhet a cikk a fejlesztés során kell futtatni.
-PowerShell parancsfájl Analyzer nyújtják a hibákat, figyelmeztetés és információs forrásként azonosított problémák listája.
-Az összes hiba kell figyelembe venni, a PowerShell-galériában való közzététel előtt. Figyelmeztetések kell vizsgálni, és a legtöbb kell figyelembe venni.
-PowerShell parancsfájl Analyzer futtatása minden alkalommal, amikor egy elem közzétéve, vagy a PowerShell-galériában frissítve.
-A gyűjtemény műveleti csapata kapcsolatba fog lépni elem tulajdonosai számára a cím hibákat talált.
+[PowerShell parancsfájl Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) egy statikus elemző eszköz, amely megvizsgálja, hogy a kód kódolási irányelvek basic PowerShell megfelel-e. Ez az eszköz azonosítja a kódban a gyakori és a kritikus problémák, és rendszeresen segítséget nyújtanak a cikk közzététele készen álljon a fejlesztés során kell futtatni.
+PowerShell parancsfájl Analyzer hibáit, azonosított hibák, figyelmeztetés és információkat nyújt.
+Hibákat kell foglalkozni, a PowerShell-galériából való közzététel előtt. Figyelmeztetések kell vizsgálni, és a legtöbb beavatkozást igényel.
+PowerShell parancsfájl Analyzer futtatása minden alkalommal, amikor elem közzétett vagy a PowerShell-galériából frissíteni.
+A katalógus műveletek csapata kapcsolatba lép a konfigurációelem tulajdonosainak kapcsolatos hibák megoldásához található.
 
-Ha a cikk a jegyzék adatokat nem lehet olvasni a PowerShell-galériában infrastruktúra, csak akkor tudja közzétenni.
-[Teszt-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) fog dolgozza fel a gyakori problémák, amelyek a modul nem lesz használható, ha telepítve van. Minden modul közzéteheti azt a PowerShell-galériában előtt kell futtatni.
+A jegyzékfájl információkat az elem nem lehet olvasni a PowerShell-galériából infrastruktúra által, ha nem tudja közzétenni.
+[Test-ModuleManifest](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) fogja a tényleges előforduló problémákat okozhat a modul nem lesz használható, ha telepítve van. Minden modul, a PowerShell-galériából történő közzététele előtt kell futtatni.
 
-Hasonlóképpen [teszt-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) érvényesíti a metaadatokat egy parancsfájlt, és minden parancsfájl (közzétett külön, és a modulok) közzéteheti azt a Powershell-galériában előtt kell futtatni.
+Hasonlóképpen [Test-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_test-scriptfileinfo) érvényesíti a metaadatokat egy parancsfájlban, és minden parancsfájlt (modul közzétett webszolgáltatáson), a Powershell-galériából történő közzététele előtt kell futtatni.
 
 
 ## <a name="publishing-items"></a>Közzétételi elemek
 
-Kell használnia a [Publish-parancsfájl](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) vagy [Publish-modul](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) elemek közzététele a PowerShell-galériában.
-Ezek a parancsok mindkét esetében
+Kell használnia a [Publish-Script](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_publish-script) vagy [Publish-Module](https://msdn.microsoft.com/powershell/gallery/psget/module/psget_publish-module) elemek közzététele a PowerShell-galériában.
+Ezek a parancsok mindkét megkövetelése
 
-- Az elem elérési útját lesznek közzétéve. Egy modul a modul nevű mappát használja. Ha megad egy mappát, amely ugyanabban a modulban több verzióját tartalmazza, RequiredVersion kell megadnia.
-- A Nuget API-kulcsot. Ez az API-kulcsot a PowerShell-galériában saját fiók lapján található.
+- Teszi közzé az elem elérési útja. Egy modul használja a mappát, a modul neve. Ha megad egy mappát, amely ugyanazon modul több verzióját tartalmazza, RequiredVersion kell megadnia.
+- A Nuget-API-kulcs. Ez az API-kulcsot a My Account oldal a PowerShell-galériában található.
 
-A többi beállítást, a parancssorban a legtöbb, akkor nem kell a parancsban adja meg azokat a cikk közzétételekor, a jegyzék adatokat kell megadni.
+Így nem kell megadnia őket a parancsban az alkalmazásjegyzék adatokat tesz közzé, az elem a többi beállítást, a parancssorban a legtöbb legyen.
 
-Hibák elkerülése érdekében javasolt, hogy a parancsok - Whatif használatával megpróbál-Verbose, a közzététel előtt.
-Megtakarít jelentős időt, mivel minden alkalommal, amikor a PowerShell-galériában közzéteszi, frissítenie kell a cikk a manifest szakasz a verziószámot.
+Hibák elkerülése érdekében, erősen ajánlott, hogy a parancsok használata a – Whatif megpróbál-Verbose, a közzététel előtt.
+Ez menti jelentős időt, mivel minden alkalommal, amikor közzéteszi a PowerShell-galériából, a verziószámot a manifest szakasz elem frissítenie kell.
 
-Példák lenne: "Publish-modul-elérési út". \MyModule "- RequiredVersion"0.0.1"- NugetAPIKey"GUID"- Whatif-részletes" "Publish-parancsfájl-elérési út".\MyScriptFile.PS1"- NugetAPIKey"GUID"- Whatif-Verbose"
+Példák lenne: "Publish-Module-elérési út". \MyModule "- RequiredVersion"0.0.1-re frissül"- NugetAPIKey"GUID"- Whatif-részletes a(z)" Publish-Script-elérési út ".\MyScriptFile.PS1" - NugetAPIKey "GUID" - Whatif-részletes "
 
-Gondosan tekintse át a kimenetet, és ha nincs hiba vagy figyelmeztetés jelenik meg, ismételje meg a parancs - Whatif nélkül.
+Gondosan tekintse át a kimenetet, és ha nincsenek hibák vagy figyelmeztetések látja, ismételje meg a parancsot,-Whatif nélkül.
 
-A PowerShell-galériában közzétett összes elemet vírusok megvizsgálja, és a PowerShell parancsfájl Analyzer segítségével elemzik.
-A problémák merülnek fel a jelenleg a közzétevőjének kapnak a feloldásához.
+Minden elem, a PowerShell-galériában közzétett vírusok esetén sor fog kerülni, és a PowerShell-parancsfájl Analyzer segítségével elemzik.
+Minden olyan problémák merülnek fel, hogy küld vissza a közzétevő a feloldásához.
 
-Amint egy elem közzétette a PowerShell-galériában, szüksége lesz a cikk kapcsolatos visszajelzéseket figyelendő.
+A PowerShell-galériában egy cikk közzététele után kell tekintse meg az elemet a visszajelzés.
 
-- Győződjön meg arról, figyelemmel kísérni a közzétételéhez használt fiókhoz tartozó e-mail címet.
-A felhasználók és a PowerShell-Galériabeli műveleti csapata fog visszajelzést keresztül fiók, beleértve a PSSA vagy a víruskereső vizsgálatok problémákat.
-Ha az e-mail fiók érvénytelen, vagy ha komoly problémákat a fiók és a hosszú ideig feloldatlan balra jelentett, elemek hagyva, ezért el lesz távolítva a PowerShell-galériából ismertetett lehet tekinteni a [használati](https://www.powershellgallery.com/policies/Terms).
-- Azt javasoljuk, hogy az egyes PowerShell gyűjteményelem közzététele megjegyzések előfizetni.
-Ez lehetővé teszi, hogy értesítést, ha bárki, aki a PowerShell-galériában a elemén megjegyzések.
-Ez nem kötelező, mivel az LiveFyre rendelkező fiók létrehozása.
+- Győződjön meg, hogy a közzétételéhez használt fiókhoz tartozó e-mail cím figyelheti.
+A felhasználók és a PowerShell-galéria üzemeltetési csapat fogja visszajelzést felmerülő problémák megoldásáról a PSSA vagy víruskereső vizsgálatok fiókon keresztül.
+Ha az e-mail-fiók érvénytelen, vagy ha a fiók és a hosszú ideig feloldatlan balra jelentett súlyos problémákat, elemek elhagyott és törlődik a PowerShell-galériából leírtak szerint lehessen venni a [használati](https://www.powershellgallery.com/policies/Terms).
+- Azt javasoljuk, hogy minden egyes közzétett PowerShell Katalóguselem megjegyzések előfizetni.
+Ez lehetővé teszi, hogy értesítést kapjon, ha bárki észrevételeit az elemek, a PowerShell-galériában.
+Ez nem kötelező, mivel a LiveFyre-fiók létrehozása.

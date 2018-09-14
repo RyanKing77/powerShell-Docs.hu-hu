@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Ismerkedés a Desired State Configuration (DSC) rétegen a Linux rendszeren
-ms.openlocfilehash: d5a4a17fbcffbbbd6df3dd902dbd104769b7d17e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: d436fc3b451efb8a12dfdc44909824934b5fcbe4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893596"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523024"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Ismerkedés a Desired State Configuration (DSC) rétegen a Linux rendszeren
 
@@ -75,7 +75,7 @@ A Windows PowerShell a konfigurációs kulcsszó a Linux rendszerű számítóg�
 
 1. Az nx modul importálásához. Az nx Windows PowerShell-modul tartalmaz beépített erőforrások sémáját DSC Linux rendszeren, és telepítve legyen a helyi számítógépen, és importálja a konfigurációban.
 
-   - Nx-modul telepítéséhez, másolni vagy nx modulkönyvtárat `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` vagy `$PSHOME\Modules`. Az nx modul tartalmazza a DSC Linux-telepítési csomag (MSI). A konfigurációban az nx modul importálásához használja a `Import-DSCResource` parancsot:
+   - Nx-modul telepítéséhez, másolni vagy nx modulkönyvtárat `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` vagy `$PSHOME\Modules`. Az nx-modul a DSC Linux-telepítési csomag tartalmazza. A konfigurációban az nx modul importálásához használja a `Import-DSCResource` parancsot:
 
    ```powershell
    Configuration ExampleConfiguration{

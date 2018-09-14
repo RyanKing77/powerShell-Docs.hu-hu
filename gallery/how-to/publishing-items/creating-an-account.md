@@ -1,42 +1,35 @@
 ---
-ms.date: 06/12/2017
+ms.date: 09/11/2018
 contributor: JKeithB
-keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
-title: PowerShell-galériában fiók létrehozása
-ms.openlocfilehash: 4a44b51967ea8acdd331f6b3c682fc5884bd2f54
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: katalógus, a powershell, a parancsmag, a psgallery
+title: PowerShell-Galériabeli fiók létrehozása
+ms.openlocfilehash: 08d18310d9e18b00bd9e22efcc552dfd29f8982c
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219565"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522836"
 ---
-## <a name="creating-a-powershell-gallery-account"></a>PowerShell-galériában fiók létrehozása
+# <a name="creating-a-powershell-gallery-account"></a>PowerShell-Galériabeli fiók létrehozása
 
-A PowerShell-galériában fiók semmit a PowerShell-galériában való közzététele előtt kell létrehozni.
-A PowerShell-galériában fiókok össze kell kapcsolni egy Azure Active Directory levelezési fiók vagy egy Microsoft-fiók (tartománnyal rendelkező Outlook.com-os, hotmail.com, stb.)
+Semmit a PowerShell-galériából történő közzététele előtt létre kell hoznia egy PowerShell-Galériabeli fiók.
+PowerShell-galériából fiókokhoz kell társítani egy levelezési bejelentkezési fiókot. Ez a fiók lehet egy Azure Active Directory-fiókot, vagy a Microsoft ID, például az Outlook.com-os vagy hotmail.com-os e-mail-fiók.
 
-PowerShell-galériában-fiók létrehozásához látogassa https://PowerShellGallery.com , majd kattintson a "Regisztráció" (lásd az alábbi képen).
+PowerShell-Galériabeli fiók létrehozásához lépjen a [ https://PowerShellGallery.com ](https://PowerShellGallery.com) , majd kattintson a **jelentkezzen be a** az alábbi képen látható módon.
 
-![Új fiók regisztrálása](../../Images/CreatingAccount-Register.png)
+![Új fiók regisztrálása](../../Images/CreateAccount-Register.png)
 
-A következő oldalon egy Azure Active Directory-fiókot használ, jelölje ki "Munkahelyi vagy iskolai fiók", és jelentkezzen be a fiókjával.
-Használja a Microsoft-fiók – például Hotmail.com vagy Outlook.com-os tartomány - válassza a "Személyes fiók", és jelentkezzen be.
+Az Azure Active Directory-fiók használatához válassza **munkahelyi vagy iskolai fiókkal**, és jelentkezzen be a fiókjával. A Microsoft ID használatához válasszon **személyes fiók** , és jelentkezzen be.
 
-Ha már bejelentkezett, kérni fogja a PowerShell-galériában felhasználónevét létrehozásához.
-Tekintse át a használati feltételeket és adatvédelmi szabályzat a csatolt, adjon meg egy felhasználónevet, majd regisztrálja.
+Ezután kéri felhasználónevét, a PowerShell-galériából létrehozásához. Tekintse át a használati feltételeket és adatvédelmi szabályzatát, írjon be egy felhasználónevet, és kattintson **regisztrálása**.
 
-Megjegyzés: A fiók neve nem lehet módosítani, a már létrehozott.
-Lásd: [elem tulajdonosainak kezelése](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) az ezzel kapcsolatos további részletekért.
+> [!NOTE]
+> A fiók neve a létrehozásuk után nem módosítható. További információkért lásd: [Konfigurációelem tulajdonosainak kezelése](managing-item-owners.md).
 
-## <a name="recommended-practices-for-powershell-gallery-accounts"></a>Ajánlott eljárások a PowerShell-galériában fiókok
+## <a name="recommended-practices-for-powershell-gallery-accounts"></a>PowerShell-galériából fiókok ajánlott eljárásai
 
-Fontos, hogy a PowerShell-galériában fiókjához használt e-mail fiókot felügyelhető aktívan.
-A PowerShell gyűjteményelemek tulajdonosainak összes communiction az e-mailt a PowerShell-galériában fiókjához társított címen keresztül történik.
-Ha azt nem lehet csatlakozni a tulajdonosa, a műveleti csapata előfordulhat, hogy kell bizonyos körülmények elem törlése.
+Fontos aktívan figyeljük a PowerShell-galériából fiókjához használt e-mail-fiók. PowerShell-galériából elemek tulajdonosok folytatott minden kommunikáció az e-mail-cím keresztül történik. Ha a PowerShell-galéria üzemeltetési csapat tud kapcsolatba lépni egy munkaelem tulajdonosa, hogy egy elem törléséhez fiókdíjat.
 
-A szervezeteknek, amelyek gyakran közzétételére a PowerShell-galériában egyedi fiók létrehozása az Outlook.com-os, vagy egy másik Microsoft-fiók tartománya erre a célra.
-Sok esetben fiók nem rendszeresen figyeli a rendszer.
-Ebben az esetben ajánlott Outlook továbbítás használatára egy másik fiókot, a szervezeten belül, a cikk tulajdonos(ok) által figyelendő általában egy e-mail küldéséhez.
+Szervezetek számára, amelyek gyakran közzététele a PowerShell-galériában erre a célra hozzon létre egy egyedi külső fiókot. Azt javasoljuk, hogy e-mail továbbítás használatával értesítések címre továbbítsa a szervezeten belül.
 
-Ha egy elemhez tartozó több tulajdonosai, az összes kommunikáció a PowerShell-galériában érkező kerül minden tulajdonosai számára.
-Lásd: [elem tulajdonosainak kezelése](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) további részleteket a tulajdonosok ad hozzá egy elemet.
+Több olyan elem társítva, amikor minden PowerShell-galériából értesítést kapnak összes tulajdonos. További információkért lásd: [Konfigurációelem tulajdonosainak kezelése](managing-item-owners.md).

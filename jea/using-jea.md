@@ -1,46 +1,46 @@
 ---
 ms.date: 06/12/2017
-keywords: jea, a powershell, a biztonsági
+keywords: a jea, powershell, biztonsági
 title: A JEA használata
-ms.openlocfilehash: 891e4be4c3fadceeff5ede7ac5cab04a5f80e5c1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190077"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522990"
 ---
 # <a name="using-jea"></a>A JEA használata
 
-> A következőkre vonatkozik: a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
-Ez a témakör ismerteti a különböző módokon csatlakozhat, és használja a JEA végpontot.
+Ez a témakör ismerteti a különböző módokon csatlakozhat, és a JEA-végpont használata.
 
-## <a name="using-jea-interactively"></a>JEA interaktív futtatása
+## <a name="using-jea-interactively"></a>A JEA interaktív használata
 
-Ha teszteli az JEA konfigurációját, vagy vannak-e egyszerű feladatok felhasználók számára, használhatja a rendszeres PowerShell távoli eljáráshívás munkamenet ugyanúgy JEA.
-Összetett távelérése feladatokhoz, javasoljuk, hogy használjon [implicit távoli eljáráshívás](#using-jea-with-implicit-remoting) helyette számára megkönnyíti a felhasználók által a felhasználók kapnak az adatok objektumokat helyileg.
+Ha teszteli a JEA-konfiguráció vagy egyszerű feladatok végrehajtásához a felhasználók számára, használhatja a normál PowerShell távoli eljáráshívás munkamenet ugyanúgy JEA.
+Összetett távoli eljáráshívás feladatokhoz, javasoljuk, hogy használjon [implicit távelérési](#using-jea-with-implicit-remoting) inkább hogy egyszerűbb legyen a felhasználók számára azáltal, hogy megfelelően működjenek a felhasználók az adatobjektumok helyileg.
 
 A JEA interaktív használatához szüksége lesz:
-- A számítógép csatlakozik a nevét (a helyi számítógépen is lehet)
-- A JEA-végpont a számítógépen regisztrált neve
-- A számítógép hitelesítő adatainak a JEA végpontot elérő
+- A számítógép kapcsolódik a nevét (a helyi gép is lehet)
+- A regisztrált ezen a számítógépen a JEA-végpont neve
+- Hitelesítő adatok a számítógép, amelyhez hozzáférése a JEA-végpont
 
-Az aktuális adatnak, megkezdheti a JEA munkamenet [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSSession) vagy [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/enter-pssession).
+Az aktuális adatnak megkezdheti a JEA munkamenet [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSSession) vagy [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/enter-pssession).
 
 ```powershell
 $nonAdminCred = Get-Credential
 Enter-PSSession -ComputerName localhost -ConfigurationName JEAMaintenance -Credential $nonAdminCred
 ```
 
-Ha a fiók jelenleg jelentkezett be, ha a JEA végponthoz való hozzáférést, akkor kihagyhatja a `-Credential` paraméter.
+Ha a fiók van jelenleg bejelentkezve szerint a JEA-végpont hozzáféréssel rendelkezik, akkor kihagyhatja a `-Credential` paraméter.
 
-Amikor a PowerShell kérni módosításai `[localhost]: PS>` megtudják, hogy most interakció a távoli JEA-munkamenet.
-Futtathat `Get-Command` , mely parancsok elérhető.
-Szüksége lesz a rendszergazdát, hogy ismerje meg, ha a rendelkezésre álló paramétereket vagy megengedett értékei korlátozások vegye fel a kapcsolatot.
+Ha a PowerShell kérni a módosítások `[localhost]: PS>` , hogy most már használja a távoli munkamenetet a JEA-tudni fogja.
+Futtathat `Get-Command` ellenőrizze a rendelkezésre álló parancsokat.
+Tekintse meg a rendszergazdát, ismerje meg, ha a rendelkezésre álló paraméterek vagy a megengedett értékei korlátozások kell.
 
-Ne feledje JEA munkamenetek üzemmódban működjenek NoLanguage, ezért néhány módot általában a PowerShellben nem érhető el.
-Például adatok tárolására, vagy vizsgálja meg a parancsmagok által visszaadott objektumok tulajdonságainak változók nem használhatók.
-Az alábbi példa azt mutatja meg, például hogy miként lehet használhat PowerShell ma, és ugyanazt a beolvasandó két megközelítés parancs NoLanguage módban működik.
+Ne feledje a JEA-munkamenetek módban működik NoLanguage, ezért általában a powershellel több szempontból nem érhető el.
+Például az adatok tárolására, vagy vizsgálja meg a parancsmag által visszaadott objektumok tulajdonságainak változók nem használhatók.
+Az alábbi példa mutat egy példát, előfordulhat, hogy a PowerShell még ma, és azonos első két módszer parancs NoLanguage módban működik.
 
 ```powershell
 # Using variables in NoLanguage mode is disallowed, so the following will not work
@@ -57,19 +57,19 @@ Start-VM -VM (Get-VM -Name 'SQL01')
 Start-VM -VMName 'SQL01'
 ```
 
-Az összetettebb parancs-indítások megnehezítik ezt a módszert használja, érdemes lehet [implicit távoli eljáráshívás](#using-jea-with-implicit-remoting) vagy [egyéni függvények létrehozása](role-capabilities.md#creating-custom-functions) , amely a kívánt funkció burkolja.
+Az összetettebb parancs meghívásához, amelyek megnehezítik a ezt a módszert, fontolja meg [implicit távelérési](#using-jea-with-implicit-remoting) vagy [egyéni funkciók létrehozásával](role-capabilities.md#creating-custom-functions) , amely burkolása az a Funkciók, amennyit csak szeretne.
 
-## <a name="using-jea-with-implicit-remoting"></a>Implicit távelérése JEA használata
+## <a name="using-jea-with-implicit-remoting"></a>Implicit távelérési JEA használata
 
-PowerShell ahol webalkalmazásproxy-parancsmagok importálásához egy távoli számítógépről a helyi számítógépen, és kezelheti azokat helyi parancsok, mintha egy alternatív távelérése modellt támogatja.
-Ez implicit távelérése nevezik, és esetén, tekintse meg a helyes [ez *Hey, Scripting Guy!* blogbejegyzés](https://blogs.technet.microsoft.com/heyscriptingguy/2013/09/08/remoting-the-implicit-way/).
-Implicit távoli eljáráshívási akkor különösen hasznos, ha olyan JEA, mert lehetővé teszi a JEA-parancsmaggal egy teljes nyelvi módban működik.
-Ez azt jelenti, hogy kiegészítés, a változók használata, módosíthat objektumokat, és még a helyi parancsfájlok használatával könnyebben automatizálhatja a JEA végpont ellen.
-A proxy-utasítás hívása, bármikor az adatokat elküldi a JEA végpontnak a távoli számítógépen, és ott hajtja végre.
+PowerShell-alternatív távoli eljáráshívás modell, ahol webalkalmazásproxy-parancsmagok importálásához egy távoli számítógépről a helyi számítógépen, és dolgozhat velük, mintha helyi parancsok támogatja.
+Ez implicit távelérési nevezzük, és és kifejtett [ez *Hey, Scripting Guy!* blogbejegyzés](https://blogs.technet.microsoft.com/heyscriptingguy/2013/09/08/remoting-the-implicit-way/).
+Implicit távelérési különösen hasznos, ha JEA dolgozik, mivel lehetővé teszi a JEA-parancsmagok teljes nyelvi üzemmódban működik.
+Ez azt jelenti, kiegészítés, a változók használata, objektumok módosítását, és helyi parancsfájlok használatával könnyebben automatizálhatja a JEA-végponton.
+Visszaállít egy proxy parancsot indít el, az adatokat küldeni a JEA-végpont a távoli számítógépen, és ott hajtja végre.
 
-Implicit távelérési parancsmagok importálása egy meglévő PowerShell-munkamenetet úgy működik.
-Kiválaszthatja a parancsokat minden egyes proxy parancsmag segítségével különböztetheti meg egymástól, mely parancsok vannak a távoli rendszer kiválasztása a karakterláncot előtag nem kötelező.
-Egy ideiglenes szkriptmodulba tartalmazó összes proxy parancs létrehozza, és a helyi PowerShell-munkamenet időtartama alatt is használható.
+Implicit távelérési parancsmagok importál egy meglévő PowerShell-munkamenetet úgy működik.
+Igény szerint kiválaszthatja megkereshetők a főnevek minden proxy parancsmag egy karakterlánccal megszakíthatja a távoli rendszer parancsai megkülönböztetni előtagot.
+Egy ideiglenes szkriptmodulba tartalmazó összes proxy parancsot jön létre, és használhatja a helyi PowerShell-munkamenet időtartamát.
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
@@ -83,12 +83,12 @@ Get-JEACommand
 ```
 
 > [!IMPORTANT]
-> Előfordulhat, hogy egyes rendszerek nem importálni egy teljes JEA-munkamenet az alapértelmezett JEA parancsmagokban korlátok miatt.
-> Ennek elkerülése érdekében, csak akkor importálja a szükséges parancsokat a JEA-munkamenetből, explicit módon adja meg a saját nevét a `-CommandName` paraméter.
-> Egy következő frissítés megoldja a teljes JEA munkamenetek érintett rendszerek importálása.
+> Egyes rendszerek nem lehet képes importálni a alapértelmezett JEA parancsmagok megkötések miatt egy teljes JEA-munkamenetet.
+> Ennek elkerülése érdekében, az importálás kizárólag a szükséges parancsokat a JEA-munkamenet azáltal, hogy explicit módon a nevük a `-CommandName` paraméter.
+> Egy következő frissítés fogja oldja meg az érintett rendszerek teljes JEA-munkamenetek importálásával kapcsolatos hiba.
 
-Ha nem tudja importálni a JEA-munkamenet alapértelmezett JEA paramétereknek vonatkozó korlátozások miatt, követheti az alábbi lépéseket az alapértelmezett parancsok az importált készletből kiszűrésére.
-Továbbra is fogja tudni használni a parancsok például `Select-Object` – csak a helyi távoli helyett a JEA-munkamenetben a számítógépre telepített verzió fogja használni.
+Ha Ön nem lehet importálni a JEA munkamenet alapértelmezett JEA paraméterek korlátai miatt, követheti a szűrje ki az importált beállítása a alapértelmezett parancsokat az alábbi lépéseket.
+Ön továbbra is képesek lesznek parancsok, például `Select-Object` – csak fogja használni a távoli egy, a JEA-munkamenet helyett a számítógépre telepített helyi verziója.
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
@@ -105,35 +105,35 @@ $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notconta
 Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
-Megőrizni a implicit távoli eljáráshívás segítségével a proxy parancsmagjait [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
-Implicit távelérése kapcsolatos további információkért tekintse meg a Súgó dokumentációját [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) és [Import-Module](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/import-module).
+A proxy parancsmagok implicit távelérési használatával is megőrizheti [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
+Implicit távelérési kapcsolatos további információkért tekintse meg a Súgó dokumentációját [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) és [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module).
 
-## <a name="using-jea-programatically"></a>JEA programozottan használatával
+## <a name="using-jea-programatically"></a>A JEA használata, amellyel programozott módon
 
-JEA is használható, az automatizálási rendszerek és felhasználói alkalmazásokban, például a belső fejlesztésű támogató alkalmazások és a webhelyek.
-A megoldás, azonos módon, amely alkalmazások készítéséhez, amely kommunikálni, korlátozás nélküli PowerShell végpontokhoz, hogy a program kell vegye figyelembe, hogy JEA korlátozza-e a távoli munkamenet futtatott parancsok szerint.
+A JEA is használható, az automatizálási rendszer és a felhasználói alkalmazásokban, például a segélyszolgálat belső fejlesztésű alkalmazásokat és webhelyeket.
+A módszer megegyezik, az alkalmazások létrehozásához, amely kommunikációhoz korlátozás PowerShell-végpontokra, hogy a program érdemes figyelembe venni, hogy a JEA korlátozná a távoli munkamenet futtatott parancsok csoportosítani.
 
-Egyszerű, egyszeri feladatokhoz használhatja [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) JEA használatával parancsok futtatásához.
+Egyszerű, egyszeri feladatokhoz használhatja [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) a JEA használata parancsok futtatására.
 
 ```powershell
 Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
 ```
 
-Ellenőrizze, hogy mely parancsok állnak rendelkezésre, amikor csatlakozik egy JEA munkamenet, futtassa a `Get-Command` és iterációt az eredmények a megengedett paraméterek kereséséhez.
+Ellenőrizze, hogy mely parancsok állnak rendelkezésre, amikor csatlakozik a JEA-munkamenet, futtassa a `Get-Command` közzétételt és iterációt az eredmények ellenőrzése az engedélyezett paraméterek között.
 
 ```powershell
 $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Command }
 $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
 ```
 
-Ha egy C# alkalmazást fejleszt, a PowerShell futási térből, amely összeköti a JEA munkamenet lévő megadásával hozhat létre egy [WSManConnectionInfo](https://msdn.microsoft.com/en-us/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) objektum.
+Ha egy C# alkalmazást fejleszt, a PowerShell futási térrel, amely kapcsolódik a JEA-munkamenet megadásával a konfiguráció nevét a hozhat létre egy [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) objektum.
 
 ```csharp
 
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
-var creds        = // create a PSCredential object here (https://msdn.microsoft.com/en-us/library/system.management.automation.pscredential(v=vs.85).aspx)
+var creds        = // create a PSCredential object here (https://msdn.microsoft.com/library/system.management.automation.pscredential(v=vs.85).aspx)
 
 WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
                     false,                 // Use SSL
@@ -166,14 +166,14 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 }
 ```
 
-## <a name="using-jea-with-powershell-direct"></a>PowerShell közvetlen JEA használatával
+## <a name="using-jea-with-powershell-direct"></a>A JEA használata a PowerShell Direct használatával
 
-Hyper-V a Windows 10 és Windows Server 2016 kínál [PowerShell közvetlen](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession), egy szolgáltatás, amely lehetővé teszi, hogy a Hyper-V rendszergazdák, függetlenül a hálózati konfiguráció vagy a távoli felügyelet a PowerShell segítségével a virtuális gépek kezeléséhez a virtuális gép beállításait.
+A Windows 10 és Windows Server 2016 Hyper-V kínál [PowerShell Directet](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/vmsession), egy szolgáltatást, amely lehetővé teszi, hogy a Hyper-V rendszergazdák, függetlenül a hálózati konfiguráció vagy a távoli felügyelet a PowerShell használatával a virtuális gépek kezeléséhez a virtuális gép beállításait.
 
-PowerShell közvetlen JEA biztosítanak a Hyper-V korlátozott rendszergazdai hozzáférés a virtuális Gépet, amely lehet hasznos, ha megszakad a hálózati kapcsolat a virtuális gépre, és hárítsa el a hálózati beállításokat kell egy adatközpont-felügyeleti használható.
+A JEA PowerShell Direct használatával egy Hyper-V korlátozott rendszergazdai hozzáférést biztosíthat a virtuális gép, amely lehet hasznos, ha a virtuális gép hálózati kapcsolatát, és a egy adatközpont-felügyeleti el kell hárítania a hálózati beállításokat.
 
-Nincs további beállításokat kell megadnia PowerShell közvetlen keresztül használja a JEA, azonban a virtuális gépen futó operációs rendszer kell lennie a Windows 10 vagy Windows Server 2016.
-A Hyper-V felügyeleti használatával csatlakozhat a JEA végpont a `-VMName` vagy `-VMId` PSRemoting parancsmagok paraméterek:
+További konfiguráció nélkül nem szükséges a JEA használata a PowerShell directtel, azonban lehet, hogy a virtuális gépen futó operációs rendszer Windows 10-es vagy Windows Server 2016-ban.
+A Hyper-V-rendszergazda segítségével csatlakoztathatók a JEA-végpont a `-VMName` vagy `-VMId` PSRemoting parancsmagok a paramétereket:
 
 ```powershell
 # Entering a JEA session using PowerShell Direct when the VM name is unique
@@ -184,7 +184,7 @@ $vm = Get-VM -VMName 'MyVM' | Select-Object -First 1
 Enter-PSSession -VMId $vm.VMId -ConfigurationName 'NICMaintenance' -Credential 'localhost\JEAformyHoster'
 ```
 
-Erősen ajánlott, hogy hozzon létre egy dedikált helyi felhasználói jogosultságokkal nincs más kezelheti a Hyper-V rendszergazdák számára, hogy a rendszer.
-Ne feledje, hogy még nem rendszerjogosultságú felhasználói továbbra is be tud jelentkezni egy Windows-számítógép alapértelmezés, beleértve a korlátozás nélküli PowerShell használatával.
-Amely lehetővé teszi (néhány) keresse meg a fájlrendszer és a további tudnivalók az operációs rendszer környezetében.
-A Hyper-V rendszergazdák is képesek csak akkor férhessenek hozzá a virtuális gépek PowerShell közvetlenül a JEA zárolását, szüksége lesz a Hyper-V rendszergazdai JEA fiókot a helyi bejelentkezési jogokkal megtagadása.
+Erősen ajánlott, hogy hoz létre egy dedikált helyi felhasználót a rendszer a Hyper-V-rendszergazdáknak használata kezelheti semmilyen egyéb jog.
+Ne feledje, hogy még egy nem rendszerjogosultságú felhasználói továbbra is be tud jelentkezni a Windows-gépek alapértelmezés szerint, beleértve a korlátozás PowerShell használatával.
+Amely lehetővé teszi számukra (néhány) keresse meg a fájlrendszer és a további információ az operációs rendszer környezetében.
+Egy Hyper-V-rendszergazdát, hogy csakis azokhoz a virtuális gép PowerShell Direct használatával a JEA zárolhat, szüksége lesz megtagadása helyi bejelentkezési jogosultságai a Hyper-V-rendszergazda a JEA-fiókhoz.

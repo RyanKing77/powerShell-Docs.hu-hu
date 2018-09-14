@@ -2,12 +2,12 @@
 title: PowerShell távoli eljáráshívás SSH-n keresztül
 description: Távoli eljáráshívás a PowerShell Core SSH-val
 ms.date: 08/14/2018
-ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 0605e2400ab23a5ca97910621a59a64d19a80bde
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133844"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557107"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell távoli eljáráshívás SSH-n keresztül
 
@@ -167,6 +167,30 @@ A Linux telepítse az SSH (beleértve sshd-kiszolgálót) a platformjának megfe
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
+
+## <a name="authentication"></a>Hitelesítés
+
+PowerShell távoli eljáráshívás ssh-n keresztül az SSH-ügyfél és az SSH-szolgáltatást között a hitelesítési csere támaszkodik, és nem valósítja meg a hitelesítési sémát magát.
+Ez azt jelenti, hogy többek között a multi-factor authentication szolgáltatáshoz beállított hitelesítési sémát az SSH és PowerShell függetlenül történik.
+Például konfigurálhatja a nyilvános kulcsos hitelesítés, valamint az egyszeri jelszó megkövetelése a fokozott biztonság az SSH-szolgáltatást.
+A multi-factor authentication konfigurálása az ebben a dokumentációban hatókörén kívül számára.
+Hogyan kell megfelelően multi-factor authentication konfigurálásához, és a PowerShell-en kívül működik, a PowerShell-táveléréssel használata előtt az SSH számára dokumentációban tájékozódhat.
+
+## <a name="authentication"></a>Hitelesítés
+
+PowerShell távoli eljáráshívás ssh-n keresztül az SSH-ügyfél és az SSH-szolgáltatást között a hitelesítési csere támaszkodik, és nem valósítja meg a hitelesítési sémát magát.
+Ez azt jelenti, hogy többek között a multi-factor authentication szolgáltatáshoz beállított hitelesítési sémát az SSH és PowerShell függetlenül történik.
+Például konfigurálhatja a nyilvános kulcsos hitelesítés, valamint az egyszeri jelszó megkövetelése a fokozott biztonság az SSH-szolgáltatást.
+A multi-factor authentication konfigurálása az ebben a dokumentációban hatókörén kívül számára.
+Hogyan kell megfelelően multi-factor authentication konfigurálásához, és a PowerShell-en kívül működik, a PowerShell-táveléréssel használata előtt az SSH számára dokumentációban tájékozódhat.
+
+## <a name="authentication"></a>Hitelesítés
+
+PowerShell távoli eljáráshívás ssh-n keresztül az SSH-ügyfél és az SSH-szolgáltatást között a hitelesítési csere támaszkodik, és nem valósítja meg a hitelesítési sémát magát.
+Ez azt jelenti, hogy többek között a multi-factor authentication szolgáltatáshoz beállított hitelesítési sémát az SSH és PowerShell függetlenül történik.
+Például konfigurálhatja a nyilvános kulcsos hitelesítés, valamint az egyszeri jelszó megkövetelése a fokozott biztonság az SSH-szolgáltatást.
+A multi-factor authentication konfigurálása az ebben a dokumentációban hatókörén kívül számára.
+Hogyan kell megfelelően multi-factor authentication konfigurálásához, és a PowerShell-en kívül működik, a PowerShell-táveléréssel használata előtt az SSH számára dokumentációban tájékozódhat.
 
 ## <a name="powershell-remoting-example"></a>Távoli eljáráshívás a PowerShell-példa
 

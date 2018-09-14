@@ -1,27 +1,31 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
-title: Ismerkedjen meg a PowerShell-galériában
-ms.openlocfilehash: 83974698152e75efac66ea725a9c220486676d6f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: katalógus, a powershell, a parancsmag, a psgallery
+title: A PowerShell-galériából használatának első lépései
+ms.openlocfilehash: 39998df1a2bf9363dd008dc96a802157c8d691d7
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190162"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523053"
 ---
-# <a name="get-started-with-the-powershell-gallery"></a>Ismerkedjen meg a PowerShell-galériában
+# <a name="get-started-with-the-powershell-gallery"></a>A PowerShell-galériából használatának első lépései
 
-Elemek letöltése a PowerShell-galériából a rendszerre van szükség a [PowerShellGet](/powershell/module/powershellget) modul. A PowerShellGet modul megtalálható a következők bármelyike lehet. Jelentkezzen be a PowerShell-galériából töltse le a cikkek nem kell.
+A megfelelő elemeket telepíthet a PowerShell-galériából módja a parancsmagok használata a [PowerShellGet](/powershell/module/powershellget) modul. Jelentkezzen be a PowerShell-galériából töltse le a cikkek nem kell.
 
-## <a name="discovering-items-from-the-powershell-gallery"></a>A PowerShell-galériából elemek felfedezése
+> [!NOTE]
+> Lehetséges, hogy közvetlenül a PowerShell-galériából töltse le a csomag, de ez nem ajánlott eljárás. További részletekért lásd: [manuális letöltés](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/how-to/working-with-items/manual-download.md).  
 
-Az elemek találhatók a PowerShell-galériában használatával a **keresési** ezen a webhelyen, vagy keresse meg a modulok és a parancsfájlok lap vezérlőelem. A PowerShell-galériából elemek futtatásával is találhatók a [keresés-modul][] és [keresés-parancsfájl][] elemtípus, attól függően, a parancsmagok `-Repository PSGallery`.
 
-A gyűjteményből eredmények szűréséhez hajtható végre a következő paraméterekkel:
+## <a name="discovering-items-from-the-powershell-gallery"></a>A PowerShell-galériából elemek felderítése...
+
+Található elemek a PowerShell-galériából használatával a **keresési** vezérlőelem ezen a webhelyen, vagy a modulok és a parancsfájlok lapok tallózva. A PowerShell-galériából elemek futtatásával is találhatók a [Find-Module][] és [Find-Script][] parancsmagok, az elem típusa, attól függően `-Repository PSGallery`.
+
+A katalógus eredményeinek szűrése hajtható végre a következő paraméterekkel:
 
 - Név
-- AllVersions
+- Allversions paramétert
 - MinimumVersion
 - RequiredVersion
 - Címke
@@ -31,70 +35,71 @@ A gyűjteményből eredmények szűréséhez hajtható végre a következő para
 - Parancs
 - Szűrő
 
-Ha csak kíváncsiak vagyunk a katalógusban adott DSC-erőforrások felderítéséhez, futtathatja a [keresés-DscResource] parancsmag. Keresés – DscResource a gyűjteményben található DSC erőforrást adatait jeleníti meg.
-A DSC-erőforrások mindig érkeznek modul részeként, mert továbbra is szeretné futtatni [Install-modul][] ezen DSC-erőforrások telepítéséhez.
+Ha érdekli csak a katalógus adott DSC-erőforrások felderítéséhez, akkor futtathatja a [Find-DscResource] parancsmagot. Find-DscResource DSC-erőforrások a katalógusban szereplő adatokat ad vissza.
+DSC-erőforrások mindig érkezzenek a modul részét képező, mert továbbra is szeretné futtatni [Install-Module][] ezen DSC-erőforrások telepítéséhez.
 
-## <a name="learning-about-items-in-the-powershell-gallery"></a>A PowerShell-galériában elemeinek megismerése
+## <a name="learning-about-items-in-the-powershell-gallery"></a>A PowerShell-galériából elemeinek megismerése
 
-Ha érdekli a cikk állapította meg, érdemes lehet további információ. Ehhez úgy, hogy az elem adott oldalon, a gyűjteményben. Adott oldalon, képes lesz látható az összes, a metaadatok feltöltése a cikkhez. Ezeket a metaadatokat egy elem az elem szerzői szolgáltatja, és nem ellenőrzi a Microsoft által. A tulajdonos elem a cikk közzétételéhez használt gyűjtemény fiók erősen kötődik, és több megbízható, mint az Author mező.
+Egy elem érdekli azonosítása, után érdemes többet szeretne megtudni róla. Ehhez megvizsgálja az adott lapon adott elemet a katalógusban. A oldalon láthatja az összes elem a hardvertokenfájlok feltöltése a metaadatok. Ezeket a metaadatokat egy elem a cikk szerzője által biztosított, és a Microsoft nem ellenőrzi. A tulajdonos elem erősen vannak kötve, a katalógus fiók tesz közzé az elemet, és több megbízható-e, mint az Author mező.
 
-Ha úgy érzi, hogy egy elem nincs közzétéve jóhiszeműen, kattintson a **jelentés visszaélés** , hogy az elem oldalon.
+Ha úgy gondolja, hogy egy elem nincs közzétéve jóhiszeműen, kattintson a **visszaélés jelentése** adott elemet oldalon.
 
-Ha fut [keresés-modul][] vagy [keresés-parancsfájl][], a visszaadott PSGetModuleInfo objektumot meg tudja tekinteni ezeket az adatokat. Ahhoz például, `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` adatait jeleníti meg a PSReadLine modul a gyűjteményben.
+Ha [Find-Module][] vagy [Find-Script][], a visszaadott PSGetModuleInfo objektumban is megtekintheti ezeket az adatokat. Ha például fut `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member`
+a katalógusban az PSReadLine modulban adatokat ad vissza.
 
-## <a name="downloading-items-from-the-powershell-gallery"></a>Elemek letöltése a PowerShell-galériából
+## <a name="downloading-items-from-the-powershell-gallery"></a>PowerShell-galériából történő elemletöltés
 
-Ha elemek letöltése a PowerShell-galériából javasoljuk a következő folyamat:
+Ha a PowerShell-galériából történő elemletöltés javasoljuk a következő folyamatot:
 
 ### <a name="inspect"></a>Vizsgálja meg
 
-Egy elemet a gyűjteményből, a vizsgálathoz letöltéséhez futtassa vagy a [mentés-modul][] vagy [mentés-parancsfájl][] parancsmag, attól függően, hogy az elem típusa. Ez lehetővé teszi a helyileg menteni az elemet a telepítés nélküli, és vizsgálja meg a cikk tartalma. Ne felejtse el kézzel törölje a mentett elemet.
+Egy elem a katalógusból vizsgálatra letöltéséhez futtathatja az alábbiak a [Save-Module][] vagy [Save-Script][] parancsmagot, a konfigurációelem típusától függően. Ez lehetővé teszi az elem mentése helyi telepítés nélküli, és vizsgálja meg az elem tartalma. Ne felejtse el kézzel törölje a mentett elemet.
 
-Ezek az elemek egy része felhasználók a Microsoft által készített, és más felhasználók által a PowerShell közösségi készített.
-A Microsoft azt javasolja, hogy tekintse át a tartalom és a kód elemeknek a telepítés előtti tár.
+Ezek az elemek egyes készült Microsoft és mások vannak a PowerShell-Közösség által készített.
+A Microsoft azt javasolja, hogy tekintse át a tartalmát, és a telepítés előtt a katalógus elemeinek kódot.
 
-Ha úgy érzi, hogy egy elem nincs közzétéve jóhiszeműen, kattintson a **jelentés visszaélés** , hogy az elem oldalon.
+Ha úgy gondolja, hogy egy elem nincs közzétéve jóhiszeműen, kattintson a **visszaélés jelentése** adott elemet oldalon.
 
 ### <a name="install"></a>Telepítés
 
-Egy elem a katalógusból való használatra telepítéséhez futtassa vagy a [Install-modul][] vagy [telepítési-parancsfájl][] parancsmag, attól függően, hogy az elem típusa.
+Egy elem telepíteni a galériából való használatra, futtathatja az alábbiak a [Install-Module][] vagy [Install-Script][] parancsmagot, a konfigurációelem típusától függően.
 
-[Install-modul][] telepíti a modult `$env:ProgramFiles\WindowsPowerShell\Modules` alapértelmezés szerint.
-Ehhez szükséges, hogy rendszergazdai fiókkal. Ha ad hozzá a `-Scope CurrentUser` paraméter, a modul telepítve van a `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
+[Install-Module][] telepíti a modult `$env:ProgramFiles\WindowsPowerShell\Modules` alapértelmezés szerint.
+Ehhez rendszergazdai fiókkal. Ha a `-Scope CurrentUser` paramétert, telepítve van a modul `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .
 
-[telepítési-parancsfájl][] telepíti a parancsfájlt, amellyel `$env:ProgramFiles\WindowsPowerShell\Scripts` alapértelmezés szerint.
-Ehhez szükséges, hogy rendszergazdai fiókkal. Ha ad hozzá a `-Scope CurrentUser` paraméter, telepítve van a parancsfájl `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
+[Install-Script][] a parancsfájl telepíti `$env:ProgramFiles\WindowsPowerShell\Scripts` alapértelmezés szerint.
+Ehhez rendszergazdai fiókkal. Ha a `-Scope CurrentUser` paramétert, telepítve van a parancsfájl `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .
 
-Alapértelmezés szerint [Install-modul][] és [telepítési-parancsfájl][] elem legfrissebb verzióját telepíti.
-A cikk korábbi verziója telepítéséhez adja hozzá a `-RequiredVersion` paraméter.
+Alapértelmezés szerint [Install-Module][] és [Install-Script][] telepíti egy elemet a legújabb verzióját.
+A cikk egy régebbi verziója hozzáadásával a `-RequiredVersion` paraméter.
 
 ### <a name="deploy"></a>telepítése Telepítse a
 
-Azure Automation a PowerShell-galériából elemet telepítéséhez kattintson **központi telepítése az Azure Automation** elem részleteit megjelenítő oldalon. Az Azure felügyeleti portálra, ahol regisztrál Azure-fiók hitelesítő adataival irányítja. Vegye figyelembe, hogy függőségekkel rendelkező elemek telepítését helyezik üzembe a függőségek az Azure Automation. A "Központi telepítése az Azure Automation" gomb letiltható hozzáadásával a **AzureAutomationNotSupported** címkén belül, hogy a konfigurációelem-metaadatok.
+Egy elemet az Azure Automation PowerShell-galériából történő üzembe helyezéséhez kattintson **üzembe helyezés az Azure Automation** elem részleteit megjelenítő oldalon. Átirányítjuk az Azure felügyeleti portálon, ha bejelentkezik az Azure-fiók hitelesítő adataival. Vegye figyelembe, hogy telepítése függőségekkel rendelkező elemek telepíti a függőségeket az Azure Automationhöz. Adja hozzá a "Üzembe helyezés az Azure Automation" gomb letiltható a **AzureAutomationNotSupported** a elemmetaadatok címkét.
 
-Azure Automation kapcsolatos további tudnivalókért tekintse meg a [Azure Automation](/azure/automation) dokumentációját.
+Azure Automation kapcsolatos további információkért tekintse meg a [Azure Automation](/azure/automation) dokumentációját.
 
 ## <a name="updating-items-from-the-powershell-gallery"></a>A PowerShell-galériából elemek frissítése
 
-Elemek telepítve a PowerShell-galériából frissítéséhez futtassa a [frissítés-modul] [-] vagy az [Update-parancsfájl] [] parancsmag. További paraméterek nélküli futtatásakor [frissítés-modul] [-] minden egyes futtatásával telepített modulokban frissíteni próbálja [Install-modul][]. Modulok szelektív frissítéséhez vegye fel a `-Name` paraméter.
+A PowerShell-galériából származó elemek frissítéséhez futtassa a [Update-modul] [-] vagy [frissítési parancsfájl] [] parancsmagot. Ha további paraméterek nélkül futtatja, [Update-modul] [-] próbál meg minden egyes futtatásával telepített modulok frissítésére, [Install-Module][]. Szelektív-modulok frissítése, adja hozzá a `-Name` paraméter.
 
-Hasonlóképpen, további paraméterek nélküli futtatásakor [parancsfájl-frissítés] [-] is frissíteni próbálja minden parancsfájl futtatásával telepítve [telepítési-parancsfájl][]. Parancsfájlok szelektív frissítéséhez vegye fel a `-Name` paraméter.
+Ehhez hasonlóan ha további paraméterek nélkül futtatja, [frissítési parancsfájl] [-] is frissíteni próbálja minden parancsprogram futtatásával telepített [Install-Script][]. Külön-külön frissíteni a parancsfájlok, adja hozzá a `-Name` paraméter.
 
 ## <a name="list-items-that-you-have-installed-from-the-powershell-gallery"></a>A PowerShell-galériából telepített listaelemek
 
-Szeretné tudni, melyik modulokat a PowerShell-galériából telepítette, futtassa a [Get-InstalledModule][] parancsmag. Ez a parancs megjeleníti a modulok, a rendszeren, hogy közvetlenül a PowerShell-galériából telepített.
+Ismerje meg, melyik modulokat a PowerShell-galériából telepítette, futtassa a [Get-InstalledModule][] parancsmagot. Ez a parancs felsorolja az összes van a rendszeren telepített, közvetlenül a PowerShell-galériából.
 
-Hasonlóképpen, a PowerShell-galériából telepítése parancsfájlok tudni, futtassa a [Get-InstalledScript][] parancsmag. Ez a parancs felsorolja az összes parancsfájlját a rendszeren, hogy közvetlenül a PowerShell-galériából telepített.
+Hasonlóképpen, a PowerShell-galériából telepített parancsfájlok, futtassa a [Get-InstalledScript][] parancsmagot. Ez a parancs megjeleníti a parancsfájlokat a rendszeren telepített, közvetlenül a PowerShell-galériából.
 
-[keresés-DscResource]: /powershell/module/powershellget/Find-DscResource
-[keresés-modul]: /powershell/module/powershellget/Find-Module
-[keresés-parancsfájl]: /powershell/module/powershellget/Find-Script
+[Find-DscResource]: /powershell/module/powershellget/Find-DscResource
+[Find-Module]: /powershell/module/powershellget/Find-Module
+[Find-Script]: /powershell/module/powershellget/Find-Script
 [Get-InstalledModule]: /powershell/module/powershellget/Get-InstalledModule
 [Get-InstalledScript]: /powershell/module/powershellget/Get-InstalledScript
-[Install-modul]: /powershell/module/powershellget/Install-Module
-[telepítési-parancsfájl]: /powershell/module/powershellget/Install-Script
+[Install-Module]: /powershell/module/powershellget/Install-Module
+[Install-Script]: /powershell/module/powershellget/Install-Script
 [Publish-Module]: /powershell/module/powershellget/Publish-Module
 [Publish-Script]: /powershell/module/powershellget/Publish-Script
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
-[mentés-modul]: /powershell/module/powershellget/Save-Module
-[mentés-parancsfájl]: /powershell/module/powershellget/Save-Script
+[Save-Module]: /powershell/module/powershellget/Save-Module
+[Save-Script]: /powershell/module/powershellget/Save-Script
