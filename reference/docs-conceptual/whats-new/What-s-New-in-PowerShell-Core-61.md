@@ -2,12 +2,12 @@
 title: A PowerShell Core 6.1 újdonságai
 description: Új szolgáltatásaival és módosításaival, amely a PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 27e7e846e9ba6ab34d83a084c2589b67a9d5cba9
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: b95b9dd504ea2a165a4689a3b28d2298644e5e68
+ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557304"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45611522"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>A PowerShell Core 6.1 újdonságai
 
@@ -34,6 +34,11 @@ A Windows, a .NET-csapattal szállított a [Windows kompatibilitási csomag a .N
 Lehetőségekkel bővült a Windows-kompatibilitási csomag PowerShell Core 6.1-es kiadásra, hogy bármilyen modulok vagy ezekkel az API-parancsprogramok is használhatók legyenek elérhetők.
 
 A Windows-kompatibilitási csomag lehetővé teszi, hogy a PowerShell Core használata **több mint 1900 parancsmagok a Windows rendszerrel szállított 2018. október 10. és a Windows Server 2019**.
+
+## <a name="support-for-application-whitelisting"></a>Az alkalmazások engedélyezési listáinak támogatása
+
+PowerShell Core 6.1 rendelkezik a Windows PowerShell 5.1 támogatása paritásos [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) és [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) alkalmazásengedélyezés bevezetését.
+Az alkalmazások engedélyezési listáinak lehetővé teszi, hogy a szabályozhatja a melyik bináris fájlokat engedélyezett hajtható végre, a PowerShell-lel használt [korlátozott nyelvmód](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Teljesítménnyel kapcsolatos fejlesztések
 
@@ -153,7 +158,7 @@ Manifest   1.0.0.0    NetworkSwitchManager        Desk      {Disable-NetworkSwit
 Manifest   1.0.0.0    NetworkTransition           Desk      {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
 ```
 
-Ezzel a viselkedéssel kapcsolatos további információkért tekintse meg [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/2-Draft-Accepted/RFC0025-PSCore6-and-Windows-Modules.md).
+Ezzel a viselkedéssel kapcsolatos további információkért tekintse meg [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).
 
 ## <a name="markdown-cmdlets-and-rendering"></a>Markdown-parancsmagok és megjelenítési szoftverek
 
