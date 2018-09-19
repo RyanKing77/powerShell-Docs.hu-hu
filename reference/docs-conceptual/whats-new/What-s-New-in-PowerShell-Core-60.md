@@ -2,12 +2,12 @@
 title: A PowerShell Core 6.0 újdonságai
 description: Új szolgáltatásokat és módosításokat jelent meg a PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: 9bd59dc1821e2fb3ec2d30254ab1fac4089f0340
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557232"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289242"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>A PowerShell Core 6.0 újdonságai
 
@@ -80,7 +80,7 @@ A változások száma hagyományosan nem támogatott a Windows fájlnévkarakter
   - Az előzmények mentési útvonala a következő helyen található `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
   - A felhasználói modul elérési út a következő helyen található: `~/.local/share/powershell/Modules`
 - A kettőspont a Unix tartalmazó fájl- és mappanevek támogatása. (#4959)
-- Támogatás a parancsfájl nevét vagy teljes elérési útját, amelyek vesszővel válassza el egymástól. (#4136) (Köszönhetően @TimCurwick!)
+- Támogatás a parancsfájl nevét vagy teljes elérési útját, amelyek vesszővel válassza el egymástól. (#4136) (Köszönhetően [ @TimCurwick ](https://github.com/TimCurwick)!)
 - Észleli, ha `-LiteralPath` mellőzése a helyettesítő karakterekkel való navigáció parancsmagok segítségével. (#5038)
 - Frissített `Get-ChildItem` működéséhez több hasonló a * nix `ls -R` és a Windows `DIR /S` natív parancsokat.
   `Get-ChildItem` most adja vissza a rekurzív a keresés során tapasztalt szimbolikus hivatkozásokat, és nem keres a könyvtárak, amelyek ezeket a hivatkozásokat cél. (#3780)
@@ -118,7 +118,7 @@ További módosítások `pwsh(.exe)` a `powershell.exe`:
   Azonban ez a változás megköveteli, hogy Ön kifejezetten megad `-c` vagy `-Command` hasonló parancsok futtatására tett kísérlet során `pwsh.exe -Command Get-Command`. (#4019)
 - A PowerShell Core elfogadja a `-i` (vagy `-Interactive`) kapcsoló interaktív shell jelzi. (#3558) Ez lehetővé teszi egy alapértelmezett rendszerhéját Unix platformon használható PowerShell-lel.
 - Paraméterek eltávolítása `-importsystemmodules` és `-psconsoleFile` a `pwsh.exe`. (#4995)
-- Módosított `pwsh -version` és a beépített súgója `pwsh.exe` igazodni más natív eszközökkel. (#4958 & #4931) (Köszönjük, hogy @iSazonov)
+- Módosított `pwsh -version` és a beépített súgója `pwsh.exe` igazodni más natív eszközökkel. (#4958 & #4931) (Köszönjük, hogy [ @iSazonov ](https://github.com/iSazonov))
 - Érvénytelen argumentum üzenetei `-File` és `-Command` és a kilépési kódokat az Unix szabványok (#4573)
 - Hozzáadott `-WindowStyle` Windows paraméterrel. (#4573) Ehhez hasonlóan a csomag-alapú telepítések frissítések nem Windows platformokon helybeni frissítéseket állnak.
 
@@ -214,21 +214,21 @@ PowerShell-feladatokkal kapcsolatos további információkért lásd: [about_Job
 
 ## <a name="semantic-versioning"></a>Szemantikus verziószámozást
 
-- Végrehajtott `SemanticVersion` kompatibilis `SemVer 2.0`. (#5037) (Köszönjük, hogy @iSazonov!)
-- Módosította az alapértelmezett `ModuleVersion` a `New-ModuleManifest` való `0.0.1` SemVer igazodva. (#4842) (Köszönjük, hogy @LDSpits)
-- Hozzáadott `semver` , egy típus accelerator `System.Management.Automation.SemanticVersion`. (#4142) (Köszönhetően @oising!)
+- Végrehajtott `SemanticVersion` kompatibilis `SemVer 2.0`. (#5037) (Köszönjük, hogy [ @iSazonov ](https://github.com/iSazonov)!)
+- Módosította az alapértelmezett `ModuleVersion` a `New-ModuleManifest` való `0.0.1` SemVer igazodva. (#4842) (Köszönjük, hogy [ @LDSpits ](https://github.com/LDSpits))
+- Hozzáadott `semver` , egy típus accelerator `System.Management.Automation.SemanticVersion`. (#4142) (Köszönhetően [ @oising ](https://github.com/oising)!)
 - Kezelőfelületének összehasonlítása az engedélyezett egy `SemanticVersion` példány és a egy `Version` példányt, amely úgy van felépítve csak `Major` és `Minor` verzió értékeket.
 
 ## <a name="language-updates"></a>Nyelvi frissítések
 
-- Bemutatjuk a Unicode escape-elemzés, hogy a felhasználók használhatják a Unicode-karaktereket argumentum, a karakterláncok vagy a változó neve. (#3958) (Köszönhetően @rkeithhill!)
+- Bemutatjuk a Unicode escape-elemzés, hogy a felhasználók használhatják a Unicode-karaktereket argumentum, a karakterláncok vagy a változó neve. (#3958) (Köszönhetően [ @rkeithhill ](https://github.com/rkeithhill)!)
 - A hozzáadott új escape-karakter az ESC Billentyűt: `` `e``
-- Mostantól támogatott az átalakítás enumerálások (#4318) karakterláncot a (Köszönjük, hogy @KirkMunro)
+- Mostantól támogatott az átalakítás enumerálások (#4318) karakterláncot a (Köszönjük, hogy [ @KirkMunro ](https://github.com/KirkMunro))
 - Rögzített leadó egyetlen elem tömb általános gyűjteményhez. (#3170)
-- A hozzáadott karakter tartomány túlterhelési a `..` operátor, így `'a'..'z'` karaktereit adja eredményül. "a" z-ig. (#5026) (Köszönjük, hogy @IISResetMe!)
+- A hozzáadott karakter tartomány túlterhelési a `..` operátor, így `'a'..'z'` karaktereit adja eredményül. "a" z-ig. (#5026) (Köszönjük, hogy [ @IISResetMe ](https://github.com/IISResetMe)!)
 - Rögzített változó-hozzárendelés nem felülírja az írásvédett változók
 - Az automatikus változók Hívásiverem leküldése "DottedScopes", amikor szkriptparancsmagok dotting (#4709)
-- A felosztási operátor "Egysoros, többsoros" beállítás engedélyezése (#4721) (Köszönjük, hogy @iSazonov)
+- A felosztási operátor "Egysoros, többsoros" beállítás engedélyezése (#4721) (Köszönjük, hogy [ @iSazonov ](https://github.com/iSazonov))
 
 ## <a name="engine-updates"></a>Frissítések
 
@@ -240,12 +240,12 @@ PowerShell-feladatokkal kapcsolatos további információkért lásd: [about_Job
   - `Platform`: Ezt adja vissza `[System.Environment]::OSVersion.Platform` értékre van állítva `Win32NT` Windows, a `Unix` MacOS-gépeken, és `Unix` Linux rendszeren.
 - Eltávolítja a `BuildVersion` tulajdonságot `$PSVersionTable`.
   Ez a tulajdonság lett szorosan kapcsolódnak a Windows build-verziószáma.
-  Ehelyett azt javasoljuk, hogy használjon `GitCommitId` a PowerShell Core pontos buildverziója lekéréséhez. (#3877) (Köszönhetően @iSazonov!)
+  Ehelyett azt javasoljuk, hogy használjon `GitCommitId` a PowerShell Core pontos buildverziója lekéréséhez. (#3877) (Köszönhetően [ @iSazonov ](https://github.com/iSazonov)!)
 - Távolítsa el `ClrVersion` tulajdonságot `$PSVersionTable`.
   Ez a tulajdonság a .NET Core nem számít, és csak továbbra is fennáll, a .NET Core a PowerShell nem vonatkozik konkrét örökölt célokat.
 - Három új automatikus változók meghatározni, hogy az egy adott operációs rendszer fut-e a PowerShell hozzáadva: `$IsWindows`, `$IsMacOs`, és `$IsLinux`.
 - Adjon hozzá `GitCommitId` a PowerShell Core szalagcím.
-  Most nem szükséges futtatni `$PSVersionTable` , amint, indítsa el a Powershellt a verzió beszerzéséhez! (#3916) (Köszönhetően @iSazonov!)
+  Most nem szükséges futtatni `$PSVersionTable` , amint, indítsa el a Powershellt a verzió beszerzéséhez! (#3916) (Köszönhetően [ @iSazonov ](https://github.com/iSazonov)!)
 - Adjon hozzá egy JSON konfigurációs fájl nevű `powershell.config.json` a `$PSHome` indítási idő előtt meg kell adni bizonyos beállítások tárolására (pl. `ExecutionPolicy`).
 - Folyamat nem blokkolja a Windows EXE futtatásakor
 - COM-gyűjtemények engedélyezett enumerálása. (#4553)
@@ -255,93 +255,93 @@ PowerShell-feladatokkal kapcsolatos további információkért lásd: [about_Job
 ### <a name="new-cmdlets"></a>Új parancsmagok
 
 - Adjon hozzá `Get-Uptime` való `Microsoft.PowerShell.Utility`.
-- Adjon hozzá `Remove-Alias` parancsot. (#5143) (Köszönjük, hogy @PowershellNinja!)
-- Adjon hozzá `Remove-Service` felügyeleti modul. (#4858) (Köszönjük, hogy @joandrsn!)
+- Adjon hozzá `Remove-Alias` parancsot. (#5143) (Köszönjük, hogy [ @PowershellNinja ](https://github.com/PowershellNinja)!)
+- Adjon hozzá `Remove-Service` felügyeleti modul. (#4858) (Köszönjük, hogy [ @joandrsn ](https://github.com/joandrsn)!)
 
 ### <a name="web-cmdlets"></a>Webes parancsmagjai
 
-- Adja hozzá a tanúsítvány-hitelesítési támogatás a web parancsmagok. (#4646) (Köszönjük, hogy @markekraus)
-- Adja hozzá a tartalom fejlécek támogatása webes parancsmagok. (#4494 & #4640) (Köszönjük, hogy @markekraus)
-- Adja hozzá több hivatkozás fejléc támogató webes parancsmagok. (#5265) (Köszönjük, hogy @markekraus!)
+- Adja hozzá a tanúsítvány-hitelesítési támogatás a web parancsmagok. (#4646) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus))
+- Adja hozzá a tartalom fejlécek támogatása webes parancsmagok. (#4494 & #4640) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus))
+- Adja hozzá több hivatkozás fejléc támogató webes parancsmagok. (#5265) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus)!)
 - Webes parancsmagok hivatkozás-fej tördelés támogatása (#3828)
   - A `Invoke-WebRequest`, ha a válasz tartalmaz egy hivatkozást a fejlécet, RelationLink tulajdonság létrehozunk egy szótár, az URL-címeket jelölő, és `rel` attribútumok, valamint ellenőrizze, hogy a fejlesztő használandó könnyebben abszolút URL-címek.
   - A `Invoke-RestMethod`, ha a válasz tartalmaz egy hivatkozást a fejlécet, elérhetővé tesszük a `-FollowRelLink` kapcsolót, hogy automatikusan kövesse `next` `rel` hivatkozásokat, amíg azok már nem létezik vagy egyszer azt nyomja le az opcionális `-MaximumFollowRelLink` paraméter értéke.
-- Adjon hozzá `-CustomMethod` webes parancsmagokhoz, hogy a nem szabványos módszerrel műveletek paramétert. (#3142) (Köszönhetően @Lee303!)
-- Adjon hozzá `SslProtocol` webes parancsmagok támogatják. (#5329) (Köszönjük, hogy @markekraus!)
-- Adja hozzá a többrészes webes parancsmagok támogatása. (#4782) (Köszönjük, hogy @markekraus)
-- Adjon hozzá `-NoProxy` webes parancsmagok, hogy azok figyelmen kívül hagyja a rendszerre kiterjedő proxy beállítása. (#3447) (Köszönhetően @TheFlyingCorpse!)
-- Webes parancsmagok ügynök felhasználói most már az operációs rendszer platform jelentések (#4937) (Köszönjük, hogy @LDSpits)
+- Adjon hozzá `-CustomMethod` webes parancsmagokhoz, hogy a nem szabványos módszerrel műveletek paramétert. (#3142) (Köszönhetően [ @Lee303 ](https://github.com/Lee303)!)
+- Adjon hozzá `SslProtocol` webes parancsmagok támogatják. (#5329) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus)!)
+- Adja hozzá a többrészes webes parancsmagok támogatása. (#4782) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus))
+- Adjon hozzá `-NoProxy` webes parancsmagok, hogy azok figyelmen kívül hagyja a rendszerre kiterjedő proxy beállítása. (#3447) (Köszönhetően [ @TheFlyingCorpse ](https://github.com/TheFlyingCorpse)!)
+- Webes parancsmagok ügynök felhasználói most már az operációs rendszer platform jelentések (#4937) (Köszönjük, hogy [ @LDSpits ](https://github.com/LDSpits))
 - Adjon hozzá `-SkipHeaderValidation` váltson webes parancsmagok támogatják a fejlécek hozzáadása a fejléc értéke ellenőrzése nélkül. (#4085)
 - Engedélyezze a webes parancsmagok nem érvényesíti a HTTPS-tanúsítvány a kiszolgáló, ha szükséges.
-- Hitelesítési paraméterek hozzáadása a webes parancsmagok. (#5052) (Köszönjük, hogy @markekraus)
+- Hitelesítési paraméterek hozzáadása a webes parancsmagok. (#5052) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus))
   - Adjon hozzá `-Authentication` , amely három lehetőséget kínál: alapszintű, OAuth és tulajdonosi.
   - Adjon hozzá `-Token` beolvasni a tulajdonosi jogkivonatot OAuth és tulajdonosi beállításait.
   - Adjon hozzá `-AllowUnencryptedAuthentication` a HTTPS-től eltérő bármely átviteli séma biztosított authentication kihagyásához.
-- Adjon hozzá `-ResponseHeadersVariable` való `Invoke-RestMethod` válaszfejlécek rögzítését engedélyezéséhez. (#4888) (Köszönjük, hogy @markekraus)
+- Adjon hozzá `-ResponseHeadersVariable` való `Invoke-RestMethod` válaszfejlécek rögzítését engedélyezéséhez. (#4888) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus))
 - Javítsa ki a webes parancsmagjai a HTTP-válasz szerepeljenek a kivétel, amikor a válaszként kapott állapotkód nem sikeres. (#3201)
-- Módosítsa a webes parancsmagok `UserAgent` a `WindowsPowerShell` való `PowerShell`. (#4914) (Köszönjük, hogy @markekraus)
+- Módosítsa a webes parancsmagok `UserAgent` a `WindowsPowerShell` való `PowerShell`. (#4914) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus))
 - Adjon hozzá kifejezett `ContentType` az észlelési `Invoke-RestMethod` (#4692)
-- Javítsa ki a webes parancsmagok `-SkipHeaderValidation` nem szabványos felhasználói ügynök fejlécek dolgozhat. (#4479 & #4512) (Köszönjük, hogy @markekraus)
+- Javítsa ki a webes parancsmagok `-SkipHeaderValidation` nem szabványos felhasználói ügynök fejlécek dolgozhat. (#4479 & #4512) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>JSON-parancsmagok
 
-- Adjon hozzá `-AsHashtable` való `ConvertFrom-Json` vissza egy `Hashtable` helyette. (#5043) (Köszönjük, hogy @bergmeister!)
+- Adjon hozzá `-AsHashtable` való `ConvertFrom-Json` vissza egy `Hashtable` helyette. (#5043) (Köszönjük, hogy [ @bergmeister ](https://github.com/bergmeister)!)
 - Használja a prettier formázó `ConvertTo-Json` kimeneti. (#2787) (Köszönhetően @kittholland!)
 - Adjon hozzá `Jobject` szerializálási támogatási `ConvertTo-Json`. (#5141)
 - Javítsa ki `ConvertFrom-Json` deszerializálni az adatcsatornából karakterláncok, amelyek együttesen hozhatnak létre a teljes JSON-karakterláncot.
   Ez a bizonyos esetekben, ahol a sortörésekből álló szóközöket tartalmazza megtörnék JSON-elemzési megoldása. (#3823)
 - Távolítsa el a `AliasProperty "Count"` definiált `System.Array`.
-  Ezzel eltávolítja a felesleges beolvasások `Count` néhány tulajdonság `ConvertFrom-Json` kimeneti. (#3231) (Köszönhetően @PetSerAl!)
+  Ezzel eltávolítja a felesleges beolvasások `Count` néhány tulajdonság `ConvertFrom-Json` kimeneti. (#3231) (Köszönhetően [ @PetSerAl ](https://github.com/PetSerAl)!)
 
 ### <a name="csv-cmdlets"></a>CSV-parancsmagok
 
-- Adjon hozzá `PSTypeName` támogatása `Import-Csv` és `ConvertFrom-Csv`. (#5389) (Köszönjük, hogy @markekraus!)
-- Győződjön meg arról, `Import-Csv` támogatja `CR`, `LF`, és `CRLF` as sor elválasztó. (#5363) (Köszönjük, hogy @iSazonov!)
-- Győződjön meg arról, `-NoTypeInformation` az alapértelmezett `Export-Csv` és `ConvertTo-Csv`. (#5164) (Köszönjük, hogy @markekraus)
+- Adjon hozzá `PSTypeName` támogatása `Import-Csv` és `ConvertFrom-Csv`. (#5389) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus)!)
+- Győződjön meg arról, `Import-Csv` támogatja `CR`, `LF`, és `CRLF` as sor elválasztó. (#5363) (Köszönjük, hogy [ @iSazonov ](https://github.com/iSazonov)!)
+- Győződjön meg arról, `-NoTypeInformation` az alapértelmezett `Export-Csv` és `ConvertTo-Csv`. (#5164) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus))
 
 ### <a name="service-cmdlets"></a>Parancsmagok
 
-- Adja hozzá tulajdonságokat `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, és `StartupType` , a `ServiceController` által visszaadott objektumokhoz `Get-Service`. (#4907) (Köszönjük, hogy @joandrsn)
-- Hitelesítő adatok beállítása a funkcionalitást `Set-Service` parancsot. (#4844) (Köszönjük, hogy @joandrsn)
+- Adja hozzá tulajdonságokat `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName`, és `StartupType` , a `ServiceController` által visszaadott objektumokhoz `Get-Service`. (#4907) (Köszönjük, hogy [ @joandrsn ](https://github.com/joandrsn))
+- Hitelesítő adatok beállítása a funkcionalitást `Set-Service` parancsot. (#4844) (Köszönjük, hogy [ @joandrsn ](https://github.com/joandrsn))
 
 ### <a name="other-cmdlets"></a>Egyéb parancsmagok
 
 - Adjon hozzá egy paramétert a `Get-ChildItem` nevű `-FollowSymlink` symlinks áthaladó igény szerint, hurkokat hivatkozás ellenőrzése. (#4020)
-- Frissítés `Add-Type` támogatásához `CSharpVersion7`. (#3933) (Köszönhetően @iSazonov)
+- Frissítés `Add-Type` támogatásához `CSharpVersion7`. (#3933) (Köszönhetően [ @iSazonov ](https://github.com/iSazonov))
 - Távolítsa el a `Microsoft.PowerShell.LocalAccounts` modul mindaddig, amíg talál egy jobb megoldás nem támogatott API-k használata miatt. (#4302)
 - Távolítsa el a `*-Counter` parancsmagok a `Microsoft.PowerShell.Diagnostics` mindaddig, amíg talál egy jobb megoldás nem támogatott API-k használata miatt. (#4303)
 - Támogatása `Invoke-Item -Path <folder>`. (#4262)
-- Adjon hozzá `-Extension` és `-LeafBase` vált, amennyiben az `Split-Path` úgy, hogy akkor is feloszthatja az elérési utak a fájlnév kiterjesztése és a fájlnevet a többi között. (#2721) (Köszönhetően @powercode!)
+- Adjon hozzá `-Extension` és `-LeafBase` vált, amennyiben az `Split-Path` úgy, hogy akkor is feloszthatja az elérési utak a fájlnév kiterjesztése és a fájlnevet a többi között. (#2721) (Köszönhetően [ @powercode ](https://github.com/powercode)!)
 - Paraméterek hozzáadása `-Top` és `-Bottom` való `Sort-Object` az alsó vagy felső N-rendezés
-- Egy folyamat szülőfolyamata elérhetővé hozzáadásával a `CodeProperty "Parent"` való `System.Diagnostics.Process`. (#2850) (Köszönhetően @powercode!)
+- Egy folyamat szülőfolyamata elérhetővé hozzáadásával a `CodeProperty "Parent"` való `System.Diagnostics.Process`. (#2850) (Köszönhetően [ @powercode ](https://github.com/powercode)!)
 - MB memória oszlopait helyett KB-os használata `Get-Process`
-- Adjon hozzá `-NoNewLine` a Váltás `Out-String`. (#5056) (Köszönjük, hogy @raghav710)
+- Adjon hozzá `-NoNewLine` a Váltás `Out-String`. (#5056) (Köszönjük, hogy [ @raghav710 ](https://github.com/raghav710))
 - `Move-Item` a parancsmag figyelembe veszi `-Include`, `-Exclude`, és `-Filter` paramétereket. (#3878)
 - Lehetővé teszi `*` beállításjegyzékbeli elérési út a használandó `Remove-Item`. (#4866)
 - Adjon hozzá `-Title` való `Get-Credential` és az azonnali élmény több platformon használja őket egységes előtérrendszerként.
 - Adja hozzá a `-TimeOut` paramétert `Test-Connection`. (#2492)
 - `Get-AuthenticodeSignature` parancsmagok most már beszerezheti a fájl aláírása időbélyegző. (#4061)
 - Távolítsa el a nem támogatott `-ShowWindow` átállás `Get-Help`. (#4903)
-- Javítsa ki `Get-Content -Delimiter` nem tartalmazza a kivonni kívánt a tömbelemek rekordsémáját visszaadott a (#3706) (Köszönjük, hogy @mklement0)
-- Adjon hozzá `Meta`, `Charset`, és `Transitional` paraméterek `ConvertTo-HTML` (#4184) (Köszönjük, hogy @ergo3114)
+- Javítsa ki `Get-Content -Delimiter` nem tartalmazza a kivonni kívánt a tömbelemek rekordsémáját visszaadott a (#3706) (Köszönjük, hogy [ @mklement0 ](https://github.com/mklement0))
+- Adjon hozzá `Meta`, `Charset`, és `Transitional` paraméterek `ConvertTo-HTML` (#4184) (Köszönjük, hogy [ @ergo3114 ](https://github.com/ergo3114))
 - Adjon hozzá `WindowsUBR` és `WindowsVersion` tulajdonságok `Get-ComputerInfo` eredménye
 - Adjon hozzá `-Group` paramétert `Get-Verb`
-- Adjon hozzá `ShouldProcess` támogatása a `New-FileCatalog` és `Test-FileCatalog` (kijavítja `-WhatIf` és `-Confirm`). (#3074) (Köszönhetően @iSazonov!)
-- Adjon hozzá `-WhatIf` váltson `Start-Process` parancsmag (#4735) (Köszönjük, hogy @sarithsutha)
+- Adjon hozzá `ShouldProcess` támogatása a `New-FileCatalog` és `Test-FileCatalog` (kijavítja `-WhatIf` és `-Confirm`). (#3074) (Köszönhetően [ @iSazonov ](https://github.com/iSazonov)!)
+- Adjon hozzá `-WhatIf` váltson `Start-Process` parancsmag (#4735) (Köszönjük, hogy [ @sarithsutha ](https://github.com/sarithsutha))
 - Adjon hozzá `ValidateNotNullOrEmpty` túl sok meglévő paraméterek.
 
 ## <a name="tab-completion"></a>Kiegészítés
 
-- A továbbfejlesztett a típus következtetésekhez a kiegészítés futásidejű változó értékek alapján. (#2744) (Köszönhetően @powercode!) Ez lehetővé teszi az olyan helyzetekben, például a kiegészítés:
+- A továbbfejlesztett a típus következtetésekhez a kiegészítés futásidejű változó értékek alapján. (#2744) (Köszönhetően [ @powercode ](https://github.com/powercode)!) Ez lehetővé teszi az olyan helyzetekben, például a kiegészítés:
 
   ```powershell
   $p = Get-Process
   $p | Foreach-Object Prio<tab>
   ```
 
-- Adja hozzá a kivonattábla kulcsa parancssori kiegészítési `-Property` , `Select-Object`. (#3625) (Köszönhetően @powercode)
-- Argument automatikus kiegészítését a engedélyezése `-ExcludeProperty` és `-ExpandProperty` , `Select-Object`. (#3443) (Köszönhetően @iSazonov!)
-- Javításra került egy kiegészítés győződjön meg arról, hogy a `native.exe --<tab>` fejeznie natív könyvtárba. (#3633) (Köszönhetően @powercode!)
+- Adja hozzá a kivonattábla kulcsa parancssori kiegészítési `-Property` , `Select-Object`. (#3625) (Köszönhetően [ @powercode ](https://github.com/powercode))
+- Argument automatikus kiegészítését a engedélyezése `-ExcludeProperty` és `-ExpandProperty` , `Select-Object`. (#3443) (Köszönhetően [ @iSazonov ](https://github.com/iSazonov)!)
+- Javításra került egy kiegészítés győződjön meg arról, hogy a `native.exe --<tab>` fejeznie natív könyvtárba. (#3633) (Köszönhetően [ @powercode ](https://github.com/powercode)!)
 
 ## <a name="breaking-changes"></a>Használhatatlanná tévő változásai
 
