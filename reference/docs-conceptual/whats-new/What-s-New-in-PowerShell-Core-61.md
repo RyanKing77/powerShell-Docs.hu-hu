@@ -2,12 +2,12 @@
 title: A PowerShell Core 6.1 újdonságai
 description: Új szolgáltatásaival és módosításaival, amely a PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: b95b9dd504ea2a165a4689a3b28d2298644e5e68
-ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
+ms.openlocfilehash: 5e2fe3c819ed638b2c14d7d40e08b7c32953147f
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45611522"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289225"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>A PowerShell Core 6.1 újdonságai
 
@@ -91,9 +91,9 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 | Idő (mp)   | 0.259                  | 0.577               | 0.125                  |
 | Gyorsulás figyelhető meg (%) | N.a.                    | -122.8 %             | 78.3 % (51.7 % WPS) |
 
-## <a name="check-system32-for-compatible-inbox-modules-on-windows"></a>Ellenőrizze `system32` a Windows kompatibilis Beérkezett üzenetek modulok
+## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Ellenőrizze `system32` a Windows kompatibilis beépített modulok
 
-A Windows 10-es 1809 update és a Windows Server 2019 frissítettük a Beérkezett üzenetek kell megjelölni kompatibilis PowerShell Core a PowerShell-modulok száma.
+A Windows 10-es 1809 update és a Windows Server 2019 számos beépített kell megjelölni kompatibilis PowerShell Core a PowerShell-modulok frissítve.
 
 PowerShell Core 6.1 indulásakor, automatikus módon kiegészül `$windir\System32` részeként a `PSModulePath` környezeti változót.
 Azonban csak jelezzék modulok `Get-Module` és `Import-Module` ha annak `CompatiblePSEdition` kompatibilis van megjelölve `Core`.
@@ -143,7 +143,7 @@ Get-Module Net* -ListAvailable -SkipEditionCheck
 ModuleType Version    Name                        PSEdition ExportedCommands
 ---------- -------    ----                        --------- ----------------
 Manifest   2.0.0.0    NetAdapter                  Core,Desk {Disable-NetAdapter, Disable-NetAdapterBinding, ...
-Manifest   1.0.0.0    NetConnection               Desk      {Get-NetConnectionProfile, Set-NetConnectionProf...
+Manifest   1.0.0.0    NetConnection               Core,Desk {Get-NetConnectionProfile, Set-NetConnectionProf...
 Manifest   1.0.0.0    NetDiagnostics              Desk      Get-NetView
 Manifest   1.0.0.0    NetEventPacketCapture       Core,Desk {New-NetEventSession, Remove-NetEventSession, Ge...
 Manifest   2.0.0.0    NetLbfo                     Core,Desk {Add-NetLbfoTeamMember, Add-NetLbfoTeamNic, Get-...
@@ -151,11 +151,11 @@ Manifest   1.0.0.0    NetNat                      Core,Desk {Get-NetNat, Get-Net
 Manifest   2.0.0.0    NetQos                      Core,Desk {Get-NetQosPolicy, Set-NetQosPolicy, Remove-NetQ...
 Manifest   2.0.0.0    NetSecurity                 Core,Desk {Get-DAPolicyChange, New-NetIPsecAuthProposal, N...
 Manifest   1.0.0.0    NetSwitchTeam               Core,Desk {New-NetSwitchTeam, Remove-NetSwitchTeam, Get-Ne...
-Manifest   1.0.0.0    NetTCPIP                    Desk      {Get-NetIPAddress, Get-NetIPInterface, Get-NetIP...
+Manifest   1.0.0.0    NetTCPIP                    Core,Desk {Get-NetIPAddress, Get-NetIPInterface, Get-NetIP...
 Manifest   1.0.0.0    NetWNV                      Core,Desk {Get-NetVirtualizationProviderAddress, Get-NetVi...
-Manifest   1.0.0.0    NetworkConnectivityStatus   Desk      {Get-DAConnectionStatus, Get-NCSIPolicyConfigura...
-Manifest   1.0.0.0    NetworkSwitchManager        Desk      {Disable-NetworkSwitchEthernetPort, Enable-Netwo...
-Manifest   1.0.0.0    NetworkTransition           Desk      {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
+Manifest   1.0.0.0    NetworkConnectivityStatus   Core,Desk {Get-DAConnectionStatus, Get-NCSIPolicyConfigura...
+Manifest   1.0.0.0    NetworkSwitchManager        Core,Desk {Disable-NetworkSwitchEthernetPort, Enable-Netwo...
+Manifest   1.0.0.0    NetworkTransition           Core,Desk {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
 ```
 
 Ezzel a viselkedéssel kapcsolatos további információkért tekintse meg [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).
@@ -186,7 +186,7 @@ További információ ennek a funkciónak a [PowerShell RFC0029](https://github.
 
 ## <a name="web-cmdlet-improvements"></a>Webes parancsmag fejlesztései
 
-Köszönhetően @markekraus, egy teljes slew kapcsolatos fejlesztések történtek-e a webalkalmazás-parancsmagok: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+Köszönhetően [ @markekraus ](https://github.com/markekraus), egy teljes slew kapcsolatos fejlesztések történtek-e a webalkalmazás-parancsmagok: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)
 és [ `Invoke-RestMethod` ](/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 
 - [Lekéréses kérelem #6109](https://github.com/PowerShell/PowerShell/pull/6109) -kódolási értéke UTF-8 az alapértelmezett `application-json` válaszok
@@ -268,7 +268,7 @@ Igény szerinti hozzáadásával SSH protokollt a PowerShell-táveléréssel leh
 
 ## <a name="msi-option-to-add-explorer-shell-context-menu-on-windows"></a>MSI lehetőség a Windows Intéző rendszerhéj helyi menüjének hozzáadása
 
-Köszönhetően @bergmeister, engedélyezheti a Windows egy helyi menüjében. Most megnyithatja a PowerShell 6.1 a rendszerre telepített bármely mappából a Windows Explorerben:
+Köszönhetően [ @bergmeister ](https://github.com/bergmeister), engedélyezheti a Windows egy helyi menüjében. Most megnyithatja a PowerShell 6.1 a rendszerre telepített bármely mappából a Windows Explorerben:
 
 ![A PowerShell 6-os rendszerhéj helyi menü](./images/shell_context_menu.png)
 
@@ -276,7 +276,7 @@ Köszönhetően @bergmeister, engedélyezheti a Windows egy helyi menüjében. M
 
 ### <a name="run-as-administrator-in-the-windows-shortcut-jump-list"></a>"Futtatás rendszergazdaként" a Windows helyi jump listában
 
-Köszönhetően @bergmeister, a PowerShell Core helyi jump listában mostantól tartalmazza a "Futtatás mint rendszergazda":
+Köszönhetően [ @bergmeister ](https://github.com/bergmeister), a PowerShell Core helyi jump listában mostantól tartalmazza a "Futtatás mint rendszergazda":
 
 ![Futtatás a PowerShell 6-os helyettesítő listában rendszergazdaként](./images/jumplist.png)
 
@@ -296,11 +296,11 @@ PS /usr/bin> cd -
 PS /etc>
 ```
 
-Ezenkívül `cd --` vált `$HOME`.
+Ezenkívül `cd` és `cd --` módosítsa `$HOME`.
 
 ### `Test-Connection`
 
-Köszönhetően @iSazonov, a [ `Test-Connection` ](/powershell/module/microsoft.powershell.management/test-connection) parancsmag rendelkezik már a PowerShell Core.
+Köszönhetően [ @iSazonov ](https://github.com/iSazonov), a [ `Test-Connection` ](/powershell/module/microsoft.powershell.management/test-connection) parancsmag rendelkezik már a PowerShell Core.
 
 ### <a name="update-help-as-non-admin"></a>`Update-Help` a nem rendszergazda
 
@@ -309,7 +309,7 @@ Kérték `Update-Help` már nem kell rendszergazdaként kell futtatnia.
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Új módszerek/tulajdonságai `PSCustomObject`
 
-Köszönhetően @iSazonov, új módszerek és a Tulajdonságok hozzáadtunk `PSCustomObject`.
+Köszönhetően [ @iSazonov ](https://github.com/iSazonov), új módszerek és a Tulajdonságok hozzáadtunk `PSCustomObject`.
 `PSCustomObject` most már tartalmaz egy `Count` / `Length` tulajdonságot, amely lehetővé teszi az elemek száma.
 
 Mindkét példa vissza `2` számának `PSCustomObjects` a gyűjteményben.
@@ -368,7 +368,7 @@ Adja meg az áthelyezés AJ nélküli UTF-8, a PowerShell 6.0-s, frissítettük 
 
 ### <a name="conversions-from-psmethod-to-delegate"></a>Átváltás a PSMethod delegálása
 
-Köszönhetően @powercode, mostantól támogatjuk a átalakítása egy `PSMethod` delegált be.
+Köszönhetően [ @powercode ](https://github.com/powercode), mostantól támogatjuk a átalakítása egy `PSMethod` delegált be.
 Ez lehetővé teszi, hogy többek között a megadásának `PSMethod` `[M]::DoubleStrLen` be delegált értékként `[M]::AggregateString`:
 
 ```powershell
@@ -391,7 +391,7 @@ További információ az ezt a módosítást, tekintse meg [PR #5287](https://gi
 
 ### <a name="standard-deviation-in-measure-object"></a>Szórás `Measure-Object`
 
-Köszönhetően @CloudyDino, hozzáadtunk egy `StandardDeviation` tulajdonságot `Measure-Object`:
+Köszönhetően [ @CloudyDino ](https://github.com/CloudyDino), hozzáadtunk egy `StandardDeviation` tulajdonságot `Measure-Object`:
 
 ```powershell
 Get-Process | Measure-Object -Property CPU -AllStats
@@ -409,7 +409,7 @@ Property          : CPU
 
 ### `GetPfxCertificate -Password`
 
-Köszönhetően @maybe-hello-world, `Get-PfxCertificate` most már rendelkezik a `Password` paraméter, amely egy `SecureString`. Ez lehetővé teszi, hogy azt nem interaktív módon:
+Köszönhetően [ @maybe-hello-world ](https://github.com/maybe-hello-world), `Get-PfxCertificate` most már rendelkezik a `Password` paraméter, amely egy `SecureString`. Ez lehetővé teszi, hogy azt nem interaktív módon:
 
 ```powershell
 $certFile = '\\server\share\pwd-protected.pfx'
@@ -429,7 +429,7 @@ Emellett a `help` függvény módosítása, hogy `more.com` Windows vagy a rends
 
 Korábban, a `Set-Location` vagy `cd` térjen vissza a felhasználók az alapértelmezett hely a meghajtó küldött PSDrive.
 
-Köszönhetően @mcbobke, felhasználók ekkor elküldi az utolsó ismert aktuális munkakönyvtár az adott munkamenethez.
+Köszönhetően [ @mcbobke ](https://github.com/mcbobke), felhasználók ekkor elküldi az utolsó ismert aktuális munkakönyvtár az adott munkamenethez.
 
 ### <a name="windows-powershell-type-accelerators"></a>Windows PowerShell-típus megoldásgyorsítók
 
@@ -451,11 +451,10 @@ Ha például lekérdezheti, ha az LDAP:
 [adsi]'LDAP://CN=FooUse,OU=People,DC=contoso,DC=com'
 ```
 
-Mindkét példa Win32_OperatingSystem CIM objektum létrehozása:
+A következő példában egy Win32_OperatingSystem CIM-objektumot hoz létre:
 
 ```powershell
-[wmi]"win32_operatingsystem=@"
-[wmiclass]"win32_operatingsystem"
+[wmi]"Win32_OperatingSystem=@"
 ```
 
 ```Output
@@ -467,9 +466,23 @@ SerialNumber    : 12345-67890-ABCDE-F0123
 Version         : 10.0.18234
 ```
 
+Ebben a példában egy Win32_OperatingSystem osztály ManagementClass objektumot ad vissza.
+
+```powershell
+[wmiclass]"Win32_OperatingSystem"
+```
+
+```Output
+   NameSpace: ROOT\cimv2
+
+Name                                Methods              Properties
+----                                -------              ----------
+Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumber, BuildType, Caption...}
+```
+
 ### <a name="-lp-alias-for-all--literalpath-parameters"></a>`-lp` az összes alias `-LiteralPath` paraméterek
 
-Köszönhetően @kvprasoon, hogy most már megvannak a paraméter-alias `-lp` minden a beépített PowerShell-parancsmagok, amelyek rendelkeznek egy `-LiteralPath` paraméter.
+Köszönhetően [ @kvprasoon ](https://github.com/kvprasoon), hogy most már megvannak a paraméter-alias `-lp` minden a beépített PowerShell-parancsmagok, amelyek rendelkeznek egy `-LiteralPath` paraméter.
 
 ## <a name="breaking-changes"></a>Használhatatlanná tévő változásai
 
