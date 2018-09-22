@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Jegyzékfájl értékek elem, amely hatással van a PowerShell-galéria felhasználói felülete
-ms.openlocfilehash: 60415193129fe040b53d35b1f8701408cfc4989d
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e7e9910504a665e464add0a83454cec64c1a0937
+ms.sourcegitcommit: 601609575a3214ea7086a3bcb586ae0d1df3d418
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268177"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532970"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Jegyzékfájl értékek elem, amely hatással van a PowerShell-galéria felhasználói felülete
 
@@ -44,6 +44,8 @@ Az alábbi táblázat a közzétevő által vezérelt a PowerShell-Galériabeli 
 | **Korábbi verziók** | A korábbi verziók a frissítések, egy modulban, a PowerShell-galériából történő tükrözi. Egy elem verzióját el van rejtve a törlési funkció használatával, ha azt nem megjelennek a korábbi verziók, kivéve a konfigurációelem tulajdonosainak. | Nem | Nem |
 | **Project-webhely** | A projekt hely a moduljegyzékben Privatedata\PSData szakaszában modulok biztosítunk egy ProjectURI megadásával. A parancsfájl jegyzékfájlban szabályozza azt megadásával. PROJECTURI. | Igen | Igen |
 | **Licenc** | Egy licenc hivatkozást a moduljegyzékben Privatedata\PSData szakaszában modulok egy LicenseURI megadásával. A parancsfájl jegyzékfájlban szabályozza azt megadásával. LICENSEURI. Fontos megjegyezni, hogy ha a licenc nem áll rendelkezésre a LicenseURI keresztül, vagy belül egy modult, majd a használati feltételeket a PowerShell-galéria adja meg a használati feltételeket a cikkhez. Tekintse meg a részletes használati feltételeit. | Igen | Igen |
+| **Ikon** | Egy ikont az IconURI jelzőt a parancsfájl-jegyzékfájlban, vagy a moduljegyzékben Privatedata-PSData szakaszában megadásával tetszőleges elemre a PowerShell-galériából adható meg. Az IconURI egy 32 x 32 átláthatóság háttér-rendszerképet kell mutatnia. Az URI-t **kell** közvetlen kép URL-cím és **nem kell** keresse fel a képet, vagy annak egy fájljához a PowerShell-galériából csomagot tartalmazó webhelyet. | Igen | Igen |
+
 
 ## <a name="editing-item-details"></a>Elem részleteinek szerkesztése
 
