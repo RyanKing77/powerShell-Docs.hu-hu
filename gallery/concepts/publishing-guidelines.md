@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 description: A kiadók irányelvek
 title: PowerShell-galériából közzétételi irányelvek és bevált gyakorlatok
-ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 2ddeae9fdb33a58f97bfeb66079541bb7c5791b1
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523026"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851169"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell-Galériabeli közzétételi irányelvek és bevált gyakorlatok
 
@@ -39,6 +39,7 @@ Az alábbi irányelveket is sokkal valószínűbb, letöltődnek és mások ált
 - Hajtsa végre a [SemVer](http://semver.org/) irányelvek verziószámozása
 - Használjon címkéket, gyakori PowerShell-galériából címkék leírtak szerint
 - Közzététel a helyi tárház használatával tesztelése
+- A PowerShellGet használatával elvégezhető a közzététel
 
 Minden egyes foglalkozik röviden az alábbi szakaszokban.
 
@@ -215,6 +216,12 @@ Ezek a megoldások azokkal a Register-PSRepository használatával egy új "tár
 Egy további pont teszt közzétételre vonatkozó: bármely a PowerShell-galériából való közzététel elem nem törölhető az üzemeltetési csapat, akik megerősíti, hogy semmi nem függ a közzétenni kívánt elemet, segítséget nélkül.
 Éppen ezért azt nem támogatják a PowerShell-galériából tesztelési célként, és felveszi a kapcsolatot minden közzétevő, akik úgy valósítja meg.
 
+## <a name="use-powershellget-to-publish"></a>A PowerShellGet használatával elvégezhető a közzététel
+
+Erősen ajánlott, hogy a kiadók a Publish-Module és Publish-Script parancsmagokat használja, a PowerShell-galériából való munka során. A PowerShellGet létrehozása a PowerShell-galériában-közzétételt a telepítésével kapcsolatos fontos részleteket megjegyzésénél elkerülése érdekében. A kiadók előfordulhat, hagyja ki a PowerShellGet, és a NuGet-ügyfél vagy a PackageManagement-parancsmagok használata helyett a Publish-Module választotta. Nincsenek részletek, amelyek egyszerűen kihagyva, számos különböző támogatási kérések eredményez, amelyek.
+
+Ha a nem használt Publish-Module vagy a Publish-Script indok van, kérjük tudassa velünk, a következő címen. A PowerShellGet GitHub-adattárat probléma fájlt, majd adja meg, amely miatt a válassza a NuGet vagy PackageManagement részleteit. 
+
 ## <a name="recommended-workflow"></a>Ajánlott munkafolyamat
 
 A legtöbb sikeres megközelítés található, a PowerShell-galériában közzétett cikkek szó:
@@ -229,3 +236,4 @@ A legtöbb sikeres megközelítés található, a PowerShell-galériában közz�
 - Döntse el, ha szeretné a kódot az elem alá
 - Ha úgy gondolja, hogy a projekt készen áll a használatra az éles környezetben, tegye közzé egy 1.0.0-s verziót a PowerShell-galériában
 - Folytassa a visszajelzések és újrafuttathatja a kódban felhasználói bemenet alapján
+
