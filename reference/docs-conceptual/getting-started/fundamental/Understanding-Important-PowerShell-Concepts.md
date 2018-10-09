@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell, a parancsmag
 title: Fontos PowerShell fogalmainak megértése
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353194"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850997"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Fontos PowerShell fogalmainak megértése
 
@@ -23,7 +23,7 @@ Ha már használta a szöveg – a feldolgozás eszközök múltbeli adatok feld
 
 ## <a name="the-command-family-is-extensible"></a>A parancs termékcsalád bővíthető
 
-Felületek, például **cmd.exe**oly módon, hogy a beépített parancsa set közvetlenül kiterjesztése nem ad meg. Hozhat létre, amely a külső parancssori eszközök **cmd.exe**. De ezek külső eszközök nincs súgó integrációs szolgáltatások. **a Cmd.exe**automatikusan nem ismert, hogy a külső eszközök-e érvényes parancsokat.
+Felületek, például **cmd.exe** oly módon, hogy a beépített parancsa set közvetlenül kiterjesztése nem ad meg. Hozhat létre, amely a külső parancssori eszközök **cmd.exe**. De ezek külső eszközök nincs súgó integrációs szolgáltatások. **a Cmd.exe** automatikusan nem ismert, hogy a külső eszközök-e érvényes parancsokat.
 
 A natív parancsokat a PowerShell nevezzük *parancsmagok* (ejtsd parancs-lehetővé teszi, hogy). Létrehozhat saját parancsmagok modulokat, és függvények használatával összeállított programkódban vagy szkriptekben. Modulok parancsmagok és szolgáltatók hozzáadhatja a rendszerhéjat. PowerShell is támogatja a parancsfájlokat, amelyek hasonló UNIX rendszerhéj-parancsfájlok és **cmd.exe** batch-fájlokat.
 

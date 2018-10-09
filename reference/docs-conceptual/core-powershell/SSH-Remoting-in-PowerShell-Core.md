@@ -2,12 +2,12 @@
 title: PowerShell távoli eljáráshívás SSH-n keresztül
 description: Távoli eljáráshívás a PowerShell Core SSH-val
 ms.date: 08/14/2018
-ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
-ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
+ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46134280"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851237"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell távoli eljáráshívás SSH-n keresztül
 
@@ -35,7 +35,7 @@ A Linux telepítse az SSH (beleértve sshd-kiszolgálót) a platformjának megfe
 
 ## <a name="set-up-on-windows-machine"></a>Windows-gépen beállítása
 
-1. Telepítse a legújabb verzióját, [a Windows PowerShell Core]
+1. Telepítse a legújabb verzióját, [a Windows PowerShell Core](../setup/installing-powershell-core-on-windows.md#msi)
 
    - Is megadhatja, hogy a távoli eljáráshívás SSH-támogatás, ha megnézzük a paraméterkészletek számára `New-PSSession`
 
@@ -47,7 +47,7 @@ A Linux telepítse az SSH (beleértve sshd-kiszolgálót) a platformjának megfe
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. A legújabb [Win32 OpenSSH] build telepítése [telepítés] utasításai a githubról
+2. Telepítse a legújabb [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) a GitHub használatával hozhat létre a [telepítési](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) utasításokat
 3. A helyen, amelyre telepítve van a Win32-OpenSSH sshd_config fájlban szerkesztése
 
    - Győződjön meg arról, hogy engedélyezve van a jelszó-hitelesítés
@@ -91,8 +91,8 @@ A Linux telepítse az SSH (beleértve sshd-kiszolgálót) a platformjának megfe
 
 ## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Állítsa be a Linux (Ubuntu 14.04) gépen
 
-1. Telepítse a legújabb [a PowerShell Core for Linux] build a Githubról
-2. Telepítése [Ubuntu SSH] igény szerint
+1. Telepítse a legújabb [PowerShell Core for Linux](../setup/installing-powershell-core-on-linux.md#ubuntu-1404) létrehozása a Githubról
+2. Telepítés [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) igény szerint
 
    ```bash
    sudo apt install openssh-client
@@ -127,7 +127,7 @@ A Linux telepítse az SSH (beleértve sshd-kiszolgálót) a platformjának megfe
 
 ## <a name="set-up-on-macos-machine"></a>Állítsa be a MacOS rendszerű gépén
 
-1. Telepítse a legújabb [PowerShell Core for MacOS keretrendszert]-build
+1. Telepítse a legújabb [MacOS-hez a PowerShell Core](../setup/installing-powershell-core-on-macos.md) összeállítása
 
    - Győződjön meg arról, hogy SSH-távelérés engedélyezve van az alábbi lépéseket:
      - Nyissa meg `System Preferences`
@@ -316,7 +316,5 @@ A sudo parancs nem működik a távoli munkamenet Linux rendszerű gépen.
 [MacOS-hez a PowerShell Core](../setup/installing-powershell-core-on-macos.md)
 
 [A Win32-OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
-
-[telepítés](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

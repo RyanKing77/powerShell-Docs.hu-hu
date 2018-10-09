@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell, a parancsmag
 title: telepítheti és használhatja a windows powershell-elérés
-ms.openlocfilehash: 8fa965ff30cd9e0b688bcc46d01d843a0f1c2e0b
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268415"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851324"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Webes Windows PowerShell-elérés telepítése és használata
 
@@ -178,7 +178,7 @@ Alapértelmezés szerint a parancsmag telepíti a webalkalmazás **pswa** (és a
 7. Az a **hely kötésének hozzáadása** párbeszédpanel a **típus** mezőben válassza **https**.
 
 8. Az a **SSL-tanúsítvány** mezőben válassza ki a megfelelő aláírt tanúsítványt a legördülő menüből.
-   Kattintson az **OK** gombra. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
+   Kattintson az OK** gombra. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
 
    A Windows PowerShell-elérés webes alkalmazás most már az aláírt SSL-tanúsítvány használatára van konfigurálva.
 
@@ -261,7 +261,7 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
 
 2. Hozzon létre egy új alkalmazáskészletet a Windows PowerShell-elérés. Bontsa ki az IIS-kezelő fát megjelenítő ablaktábláján, válassza az átjárókiszolgáló csomópontját **alkalmazáskészletek**, és kattintson a **alkalmazáskészlet hozzáadása** a a **műveletek** ablaktáblán.
 
-3. Adjon hozzá egy új alkalmazáskészlet nevű **pswa_pool**, vagy adjon meg egy másik nevet. Kattintson az **OK** gombra.
+3. Adjon hozzá egy új alkalmazáskészlet nevű **pswa_pool**, vagy adjon meg egy másik nevet. Kattintson az OK** gombra.
 
 4. Az IIS-kezelő fát megjelenítő ablaktábláján, bontsa ki a kiszolgáló, amelyen Windows PowerShell-elérés telepítve van, amíg a csomópont a **helyek** mappa megjelent-e. Válassza ki a **helyek** mappát.
 
@@ -271,7 +271,7 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
 
 7. Az a **alkalmazáskészlet** mezőben válassza ki a 3. lépésben létrehozott alkalmazáskészletet.
 
-8. Az a **fizikai elérési út** mezőben tallózással keresse meg az alkalmazás helyét. Használhatja az alapértelmezett hely `%windir%/Web/PowerShellWebAccess/wwwroot`. Kattintson az **OK** gombra.
+8. Az a **fizikai elérési út** mezőben tallózással keresse meg az alkalmazás helyét. Használhatja az alapértelmezett hely `%windir%/Web/PowerShellWebAccess/wwwroot`. Kattintson az OK** gombra.
 
 9. Az eljárás lépéseit kövesse [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) ebben a témakörben.
 
@@ -327,7 +327,7 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
 
    Módosítsa az alapértelmezett portot, ha egy másik webhely már használja a 443-ast, vagy ha egyéb biztonsági okokból módosítani szeretné a portszámot. Ha az átjárókiszolgálón egy másik webhely használja a kiválasztott portot, figyelmeztetés jelenik meg kattintva **OK** a a **webhely hozzáadása** párbeszédpanel bezárásához. Windows PowerShell-elérés futtatásához egy nem használt portot kell használnia.
 
-1. Ha a szervezet számára szükséges, megadhat egy állomásnevet, amely logikus a szervezet és a felhasználó számára, mint például **www.contoso.com**. Kattintson az **OK** gombra.
+1. Ha a szervezet számára szükséges, megadhat egy állomásnevet, amely logikus a szervezet és a felhasználó számára, mint például **`www.contoso.com`**. Kattintson az OK** gombra.
 
 1. A biztonságosabb éles környezet érdekében határozottan javasoljuk egy érvényes, hitelesítésszolgáltató által aláírt tanúsítványt biztosítását. SSL-tanúsítványt kell megadnia, mivel a felhasználók csak a Windows PowerShell-elérés keresztül kapcsolódhatnak egy HTTPS-webhelyen. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
 
@@ -406,7 +406,7 @@ A biztonságos éles környezethez mindig érvényes, hitelesítésszolgáltató
    - Kattintson a **importálása** egy meglévő, érvényes tanúsítvány importálásához a hálózat egy helyéről.
    - Kattintson a **tanúsítványkérelem létrehozása** tanúsítvány kérése hitelesítésszolgáltatótól például [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), vagy [GeoTrust](https://www.geotrust.com/). A tanúsítvány köznapi nevének egyeznie kell a kérésben szereplő állomás fejlécével.
 
-     Például, ha az ügyfél böngészője kérelmek http://www.contoso.com/, akkor a köznapi név is meg kell http://www.contoso.com/. Ez a lehetőség a legbiztonságosabb és ajánlott a Windows PowerShell-elérés átjáró-tanúsítvánnyal, amelyek biztosítják.
+     Például, ha az ügyfél böngészője kérelmek `http://www.contoso.com/`, akkor a köznapi név is meg kell `http://www.contoso.com/`. Ez a lehetőség a legbiztonságosabb és ajánlott a Windows PowerShell-elérés átjáró-tanúsítvánnyal, amelyek biztosítják.
 
    - Kattintson a **önaláírt tanúsítvány létrehozása** , hozzon létre egy tanúsítványt, hogy azonnal használható, és később aláírhat egy hitelesítésszolgáltató Ha szükséges. Adjon meg egy rövid nevet az önaláírt tanúsítvány, például **Windows PowerShell-elérés**. Ez a lehetőség nem tekinthető biztonságosnak, és csak privát tesztkörnyezetben ajánlott.
 

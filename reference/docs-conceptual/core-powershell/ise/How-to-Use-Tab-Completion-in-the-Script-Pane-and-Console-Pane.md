@@ -1,33 +1,33 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell parancsmag
+keywords: PowerShell, a parancsmag
 title: Parancssori kiegészítés használata a Parancsfájl panelen és a Konzol panelen
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
-ms.openlocfilehash: e1f8146b6113a82fd3d857c98550ec2e459715a4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 24a3f00987ff5ca4bf82d1a3206857ec3c4b3f09
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954925"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851135"
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a>Parancssori kiegészítés használata a Parancsfájl panelen és a Konzol panelen
 
-Kiegészítést automatikus segítséget nyújt, ha a parancsfájl ablaktáblán vagy a parancssori ablaktáblában írja be. Ez a funkció előnyeit tegye a következőket:
+Kiegészítés automatikus segítséget nyújt, ha elkezdi beírni a parancsfájl ablaktáblán vagy a parancssori ablak. A következő lépések használatával Ez a funkció előnyeit:
 
-## <a name="to-automatically-complete-a-command-entry"></a>A parancs bejegyzés automatikusan befejezéséhez
+## <a name="to-automatically-complete-a-command-entry"></a>A parancs bejegyzés automatikus elvégzéséhez
 
-A parancs vagy parancsfájl ablaktáblán írja be a parancsot néhány karakterét, és nyomja le az FÜLRE kattintva válassza ki a kívánt befejezési szöveget. Ha több elemet a szöveg, amelyet eredetileg megadott kezdődik, akkor olvassa tovább Tab billentyűkombinációval, amíg meg nem jelenik meg a kívánt elemet. Kiegészítést is segítséget nyújt egy parancsmag neve, a paraméter neve, a változó neve, a objektum tulajdonság neve vagy a egy fájl elérési útját írja be.
+A parancs vagy parancsfájl ablaktáblán írja be egy parancsot néhány karakterét, és nyomja le az FÜLRE kattintva válassza ki a kívánt befejezési szöveget. Ha több elem kezdetben beírt szöveggel kezdődik, majd folytassa a Tab billentyűkombinációval, amíg meg nem jelenik meg a kívánt elemet. Kiegészítés segíthet írja be a parancsmag neve, a paraméter neve, változó neve, objektum tulajdonság neve vagy egy fájl elérési útját.
 
 > [!NOTE]
-> A parancsfájl ablaktáblán TAB billentyűkombinációval automatikusan befejezi a parancs csak akkor, ha szerkeszti, .ps1, .psd1 vagy .psm1 fájlok. Kiegészítést bármikor, ha a parancs ablaktábla ír működik.
+> A parancsfájl panelen TAB billentyűkombinációval automatikusan befejezi a parancs csak akkor, ha szerkeszti, .ps1, .psd1 vagy .psm1 fájlok. Kiegészítés működik, bármikor, amikor elkezdi beírni a parancs ablaktáblán.
 
-## <a name="to-automatically-complete-a-cmdlet-parameter-entry"></a>A parancsmag paraméter bejegyzés automatikusan befejezéséhez
+## <a name="to-automatically-complete-a-cmdlet-parameter-entry"></a>Egy parancsmag-paraméterrel bejegyzést automatikus elvégzéséhez
 
-A parancs vagy a parancsfájl ablaktáblán írja be a parancsmag kötőjellel, és nyomja le az lapon.
+A parancs ablaktáblán vagy a parancsfájl panelen írja be a parancsmag kötőjellel, és nyomja le az lapon.
 
-Írja be például `Get-Process -` majd nyomja le az lapon többször a paraméterek, a parancsmag pedig megjelenítéséhez.
+Írja be például `Get-Process -` és nyomja le lapon többször viszont megjelenítéséhez a paraméterek a parancsmaghoz.
 
 ## <a name="see-also"></a>Lásd még:
 
 - [A Windows PowerShell ISE bemutatása](Introducing-the-Windows-PowerShell-ISE.md)
-- [A PowerShell lap létrehozása](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
+- [PowerShell-lap létrehozása](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)

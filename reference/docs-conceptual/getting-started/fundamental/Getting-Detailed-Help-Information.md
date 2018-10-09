@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell, a parancsmag
 title: Részletes súgóinformációk kérése
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: d2578604ec7c01c0b2734bd180e1babaca58b153
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134034"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851272"
 ---
 # <a name="getting-detailed-help-information"></a>Részletes súgóinformációk kérése
 
@@ -149,7 +149,7 @@ Online súgó cikkeinek az egyik legjobb módja, ha segítséget szeretne kérni
 Online súgó lekéréséhez használja a **Online** paraméterében a `Get-Help` parancsmagot. A PowerShell-lel, beleértve a szolgáltató súgó származnak az összes Súgócikkek fogalmi (:), a cikkeket, és érhetők el online a [PowerShell](/powershell/scripting/powershell-scripting) dokumentációját.
 
 > [!NOTE]
-> Nem használhatja a **Online** paramétert fogalmi (about_ *) vagy a szolgáltató a cikkeket.
+> Nem használhatja a **Online** fogalmi paraméterrel (about_\*) vagy a szolgáltató a cikkeket.
 > Online súgó nem kötelező, így minden parancsmag, függvény vagy parancsfájl nem működik.
 
 Például a súgócikk online verziójának beszerzéséhez a a `Get-ChildItem` parancsmagot, írja be:

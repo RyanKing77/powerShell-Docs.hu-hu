@@ -2,16 +2,16 @@
 ms.date: 08/27/2018
 keywords: PowerShell, a parancsmag
 title: PowerShell-parancsprogramok
-ms.openlocfilehash: 754805148dc815a12c5c77e4894fb598c6927f7e
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 8a152ab338d42f861b7ff38de44d68db14262abb
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43133993"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851186"
 ---
 # <a name="powershell"></a>PowerShell
 
-PowerShell egy feladatalapú parancssori rendszerhéj és programozási nyelv a .NET-keretrendszer épülő az.
+PowerShell egy feladatalapú parancssori rendszerhéj és programozási nyelv, .NET épülő az.
 PowerShell segítségével a rendszergazdák és a teljesítmény – a felhasználók gyorsan automatizálhatja a feladatokat, amelyek kezelése (Linux, macOS és Windows) operációs rendszerekkel és folyamatokkal.
 
 PowerShell-parancsok segítségével kezelhet számítógépeket a parancssorból. PowerShell-szolgáltatók lehetővé teszik az adattárakban, például a beállításjegyzék eléréséhez, és a tanúsítványtárolót, egyszerűen, férni a fájlrendszerhez. PowerShell tartalmaz egy gazdag kifejezés az elemzési és a egy fejlett programozási nyelv.
