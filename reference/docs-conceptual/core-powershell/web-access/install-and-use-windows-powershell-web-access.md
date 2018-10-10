@@ -6,7 +6,7 @@ ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
 ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2018
+ms.lasthandoff: 10/09/2018
 ms.locfileid: "48851324"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Webes Windows PowerShell-elérés telepítése és használata
@@ -208,7 +208,7 @@ Windows PowerShell-elérés engedélyezési szabályai és biztonsági kapcsolat
 
    Ez az engedélyezési szabály lehetővé teszi, hogy egy adott felhasználó hozzáférését egy számítógépre a hálózaton, amelyhez általában hozzáférhetnek, hozzáférést egy adott munkamenet-konfiguráció, amely a felhasználó szokásos parancsfájl-kezelési hatókörét, és parancsmag-igényeihez.
 
-   A következő példában a `Contoso` tartomány `JSmith` nevű felhasználója hozzáférést kap a `Contoso_214` számítógép kezeléséhez, és egy `NewAdminsOnly` nevű munkamenet-konfiguráció használatához.
+   A következő példában a `JSmith` tartomány `Contoso` nevű felhasználója hozzáférést kap a `Contoso_214` számítógép kezeléséhez, és egy `NewAdminsOnly` nevű munkamenet-konfiguráció használatához.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -381,7 +381,7 @@ Windows PowerShell-elérés engedélyezési szabályai és biztonsági kapcsolat
 
    Ez az engedélyezési szabály lehetővé teszi egy adott felhasználó hozzáférését egy adott számítógépre a hálózaton, amelyhez általában van hozzáférése egy adott munkamenet-konfiguráció, ami a felhasználói hozzáférést a(z)™ s tipikus parancsfájl-kezelési és parancsmag-igényeihez.
 
-   A következő példában a `Contoso` tartomány `JSmith` nevű felhasználója hozzáférést kap a `Contoso_214` számítógép kezeléséhez, és egy `NewAdminsOnly` nevű munkamenet-konfiguráció használatához.
+   A következő példában a `JSmith` tartomány `Contoso` nevű felhasználója hozzáférést kap a `Contoso_214` számítógép kezeléséhez, és egy `NewAdminsOnly` nevű munkamenet-konfiguráció használatához.
 
    `Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
