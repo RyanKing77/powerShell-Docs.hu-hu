@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, a core
 title: PowerShell 6.0 kapcsolatos ismert problémák
-ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268002"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49450996"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 kapcsolatos ismert problémák
 
@@ -90,9 +90,9 @@ Korlátozott felügyelet (JEA) távoli eljáráshívás végpontok létrehozása
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`, és a PowerShell használatával
 
-Mivel a PowerShell parancsok többsége a memóriában (például Python vagy Ruby), a sudo közvetlenül a PowerShell built-ins nem használhat. (Természetesen futtathatjuk `powershell` a sudo.) Sudo, például a Powershellen belülről egy PowerShell-parancsmag futtatásához szükség esetén `sudo `Set-Date` 8/18/2016`, majd kellene tennie `sudo powershell `Set-Date` 8/18/2016`. Hasonlóképpen nem egy beépített PowerShell exec közvetlenül. Ehelyett meg kell tegye `exec powershell item_to_exec`.
+Mivel a PowerShell parancsok többsége a memóriában (például Python vagy Ruby), a sudo közvetlenül a PowerShell built-ins nem használhat. (Természetesen futtathatjuk `pwsh` a sudo.) Ha a sudo, például a Powershellen belülről egy PowerShell-parancsmag futtatásához szükséges `sudo Set-Date 8/18/2016`, majd kellene tennie `sudo pwsh Set-Date 8/18/2016`. Hasonlóképpen nem egy beépített PowerShell exec közvetlenül. Ehelyett meg kell tegye `exec pwsh item_to_exec`.
 
-A probléma jelenleg követett #3232 részeként.
+A probléma jelenleg követett részeként [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
 ### <a name="missing-cmdlets"></a>Hiányzó parancsmagok
 

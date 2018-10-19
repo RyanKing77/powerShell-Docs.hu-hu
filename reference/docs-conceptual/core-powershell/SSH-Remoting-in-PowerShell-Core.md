@@ -2,12 +2,12 @@
 title: PowerShell távoli eljáráshívás SSH-n keresztül
 description: Távoli eljáráshívás a PowerShell Core SSH-val
 ms.date: 08/14/2018
-ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 842e67e96661bca8be54aab33cbc11aa23dbd1c0
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851237"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451065"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell távoli eljáráshívás SSH-n keresztül
 
@@ -15,7 +15,7 @@ ms.locfileid: "48851237"
 
 PowerShell távoli eljáráshívás általában winrm funkciót használ a kapcsolat egyeztetési és adatátvitel. Az SSH Linux és Windows platformokon elérhető, és lehetővé teszi a valódi többplatformos PowerShell távoli eljáráshívás.
 
-A Rendszerfelügyeleti webszolgáltatások egy robusztus üzemeltetési modellt biztosít a távoli PowerShell-munkamenetet. amely a megvalósítás SSH-alapú távoli eljáráshívás jelenleg nem támogatja a távoli végpont-konfiguráció és a JEA (Just Enough Administration).
+A Rendszerfelügyeleti webszolgáltatások egy robusztus üzemeltetési modellt biztosít a távoli PowerShell-munkamenetet. Távoli eljáráshívás SSH-alapú jelenleg nem támogatja a távoli végpont-konfiguráció és a JEA (Just Enough Administration).
 
 Az SSH a távelérés lehetővé teszi egyszerű PowerShell-munkamenet távelérés Windows és Linux gép között. SSH távoli eljáráshívás hoz létre, mint egy SSH-alrendszer egy PowerShell gazdafolyamat a célgépen.
 Végül hoznunk egy általános üzemeltetési modell, a Rendszerfelügyeleti webszolgáltatások, a végpont-konfiguráció és a JEA hasonló lesz.
@@ -48,7 +48,7 @@ A Linux telepítse az SSH (beleértve sshd-kiszolgálót) a platformjának megfe
    ```
 
 2. Telepítse a legújabb [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) a GitHub használatával hozhat létre a [telepítési](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) utasításokat
-3. A helyen, amelyre telepítve van a Win32-OpenSSH sshd_config fájlban szerkesztése
+3. Szerkessze az sshd_config fájlban található `%ProgramData%\ssh`.
 
    - Győződjön meg arról, hogy engedélyezve van a jelszó-hitelesítés
 
@@ -57,7 +57,7 @@ A Linux telepítse az SSH (beleértve sshd-kiszolgálót) a platformjának megfe
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
@@ -66,7 +66,7 @@ A Linux telepítse az SSH (beleértve sshd-kiszolgálót) a platformjának megfe
      Az egyik megoldás, a Powershell telepítési könyvtárát, amely nem rendelkezik a tárolóhelyek szimbolikus létrehozásához:
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
      ```
 
      és a alrendszer írja be:
