@@ -97,7 +97,7 @@ items:
       - name: A Windows PowerShell ISE szkriptelési objektummodellje
         href: ''
         items:
-        - name: A Windows PowerShell ISE szkriptelési objektummodelljének célja
+        - name: A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja
           href: core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model.md
         - name: Az ISE objektummodell-hierarchiája
           href: core-powershell/ise/the-ise-object-model-hierarchy.md
@@ -149,6 +149,8 @@ items:
   - name: Újdonságok
     href: ''
     items:
+    - name: A PowerShell Core 6.1 újdonságai
+      href: whats-new/what-s-new-in-powershell-core-61.md
     - name: A PowerShell Core 6.0 újdonságai
       href: whats-new/what-s-new-in-powershell-core-60.md
       items:
@@ -239,9 +241,9 @@ items:
     href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
   - name: '2. függelék: Egyéni PowerShell-parancsikon létrehozása'
     href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: a3f5f4ba7de337ed1f2f2653625c355f68cfde2b
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 426f1336debdcd8b74b9e1954cebe49bfa7c82ea
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43133206"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557143"
