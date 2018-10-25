@@ -1,36 +1,38 @@
-## Microsoft Open Source Code of Conduct
+# <a name="microsoft-open-source-code-of-conduct"></a><span data-ttu-id="22e25-101">A Microsoft nyílt forráskóddal kapcsolatos viselkedési szabályzata</span><span class="sxs-lookup"><span data-stu-id="22e25-101">Microsoft Open Source Code of Conduct</span></span>
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+<span data-ttu-id="22e25-102">Ez a projekt [a Microsoft nyílt forráskóddal kapcsolatos viselkedési szabályzata](https://opensource.microsoft.com/codeofconduct/) alapján működik.</span><span class="sxs-lookup"><span data-stu-id="22e25-102">This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).</span></span>
+<span data-ttu-id="22e25-103">További információt a [viselkedési szabályzattal kapcsolatos gyakori kérdések oldalán](https://opensource.microsoft.com/codeofconduct/faq/) olvashat, kérdéseit és hozzászólásait pedig az [opencode@microsoft.com](mailto:opencode@microsoft.com) címen várjuk.</span><span class="sxs-lookup"><span data-stu-id="22e25-103">For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.</span></span>
 
-[![Build status](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
+<span data-ttu-id="22e25-104">[![Létrehozási állapot](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)</span><span class="sxs-lookup"><span data-stu-id="22e25-104">[![Build status](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)</span></span>
 
-# PowerShell Documentation
+## <a name="powershell-documentation"></a><span data-ttu-id="22e25-105">PowerShell-dokumentáció</span><span class="sxs-lookup"><span data-stu-id="22e25-105">PowerShell Documentation</span></span>
 
-Welcome to the PowerShell-Docs repository, housing the official Windows PowerShell documentation. 
+<span data-ttu-id="22e25-106">Üdvözli a PowerShell-Docs tárház, lakáshelyzet, a PowerShell hivatalos dokumentációját.</span><span class="sxs-lookup"><span data-stu-id="22e25-106">Welcome to the PowerShell-Docs repository, housing the official PowerShell documentation.</span></span>
 
-## Repository Structure
-Each folder in this repo publishes to [MSDN](https://msdn.microsoft.com/en-us/powershell). The folders correspond to the following PowerShell assets:
-* [/dsc/](https://msdn.microsoft.com/en-us/powershell/dsc/) is  for the Desired State Configuration feature
-* [/gallery/](https://msdn.microsoft.com/powershell/gallery) is for the [PowerShell Gallery](https://www.powershellgallery.com/)
-* [/jea/](https://msdn.microsoft.com/powershell/jea/) is for the Just Enough Administration feature
-* [/reference/](https://msdn.microsoft.com/powershell/reference/) is for PowerShell module reference across versions 2.0, 3.0, 4.0, 5.0, 5.1, and 6.0
-  * This content will be retrieved by the `Get-Help` cmdlet in the future
-* [/scripting/](https://msdn.microsoft.com/en-us/powershell/scripting/) is general PowerShell reference content
-* [/wmf](https://msdn.microsoft.com/en-us/powershell/wmf/readme) contains release notes for the Windows Management Framework, the package used to distribute new versions of PowerShell to previous versions of Windows. 
+## <a name="repository-structure"></a><span data-ttu-id="22e25-107">Tárház szerkezete</span><span class="sxs-lookup"><span data-stu-id="22e25-107">Repository Structure</span></span>
 
+<span data-ttu-id="22e25-108">A következő legfelső szintű mappák példakódokban mindegyike tartalmaz egy dokumentumkészlet közzétett [Microsoft Docs](https://docs.microsoft.com/powershell).</span><span class="sxs-lookup"><span data-stu-id="22e25-108">Each of the following top-level folders in this repo contain a DocSet that is published to [Microsoft Docs](https://docs.microsoft.com/powershell).</span></span>
 
+- <span data-ttu-id="22e25-109">[/Developer/](https://docs.microsoft.com/powershell/developer/) jövőbeli érhető el a PowerShell SDK-dokumentáció</span><span class="sxs-lookup"><span data-stu-id="22e25-109">[/developer/](https://docs.microsoft.com/powershell/developer/) is the future home of the PowerShell SDK documentation</span></span>
+  - <span data-ttu-id="22e25-110">Jelenleg is zajlik az MSDN-ről a tartalom</span><span class="sxs-lookup"><span data-stu-id="22e25-110">We are in the process of migrating this content from MSDN</span></span>
+- <span data-ttu-id="22e25-111">[/DSC/](https://docs.microsoft.com/powershell/dsc/) van a Desired State Configuration szolgáltatáshoz</span><span class="sxs-lookup"><span data-stu-id="22e25-111">[/dsc/](https://docs.microsoft.com/powershell/dsc/) is for the Desired State Configuration feature</span></span>
+- <span data-ttu-id="22e25-112">[/Gallery/](https://docs.microsoft.com/powershell/gallery) szól a [PowerShell-galéria](https://www.powershellgallery.com/)</span><span class="sxs-lookup"><span data-stu-id="22e25-112">[/gallery/](https://docs.microsoft.com/powershell/gallery) is for the [PowerShell Gallery](https://www.powershellgallery.com/)</span></span>
+- <span data-ttu-id="22e25-113">[/jea/](https://docs.microsoft.com/powershell/jea/) a Just Enough Administration szolgáltatásának van</span><span class="sxs-lookup"><span data-stu-id="22e25-113">[/jea/](https://docs.microsoft.com/powershell/jea/) is for the Just Enough Administration feature</span></span>
+- <span data-ttu-id="22e25-114">[/Reference/](https://docs.microsoft.com/powershell/scripting/) olyan 3.0, 4.0-s verzióját, 5.0, 5.1 és 6.0-s verziója között PowerShell fogalmi témakörök és modulokra vonatkozó referenciák</span><span class="sxs-lookup"><span data-stu-id="22e25-114">[/reference/](https://docs.microsoft.com/powershell/scripting/) is for PowerShell conceptual topics and module reference across versions 3.0, 4.0, 5.0, 5.1, and 6.0</span></span>
+  - <span data-ttu-id="22e25-115">Ez a tartalom egyben súgó tartalma által beolvasott forrását a `Get-Help` parancsmag</span><span class="sxs-lookup"><span data-stu-id="22e25-115">This content is also the source of help content retrieved by the `Get-Help` cmdlet</span></span>
+- <span data-ttu-id="22e25-116">[/WMF](https://docs.microsoft.com/powershell/wmf/readme) kibocsátási megjegyzéseket tartalmaz, a Windows Management Framework, a csomag terjesztése PowerShell új verziója a Windows korábbi verzióiban használt.</span><span class="sxs-lookup"><span data-stu-id="22e25-116">[/wmf](https://docs.microsoft.com/powershell/wmf/readme) contains release notes for the Windows Management Framework, the package used to distribute new versions of PowerShell to previous versions of Windows.</span></span>
 
-## Contributing
+## <a name="contributing"></a><span data-ttu-id="22e25-117">Közreműködő</span><span class="sxs-lookup"><span data-stu-id="22e25-117">Contributing</span></span>
 
-We actively merge contributions into this repository via [pull request](https://help.github.com/articles/using-pull-requests/) into the *staging* branch. 
-Please note that before you submit a pull request you must [sign a Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is free to use your submissions.
-For more information on contributing, read our [contributions guide](CONTRIBUTING.md).
-There is a draft [style guide](./STYLE.md) to review before making contributions.
-Please use the Issue and Pull Request templates to help keep documentation consistent across versions. 
+<span data-ttu-id="22e25-118">Aktívan összevonása hozzájárulások keresztül a tárházba [pull-kérelem](https://help.github.com/articles/using-pull-requests/) be a *átmeneti* ágat.</span><span class="sxs-lookup"><span data-stu-id="22e25-118">We actively merge contributions into this repository via [pull request](https://help.github.com/articles/using-pull-requests/) into the *staging* branch.</span></span>
+<span data-ttu-id="22e25-119">Vegye figyelembe, hogy a lekéréses kérelem küldése előtt [aláírni a közreműködői licencszerződés](https://cla.microsoft.com/) annak biztosításához, hogy a Közösség beküldött anyagokért használata ingyenes.</span><span class="sxs-lookup"><span data-stu-id="22e25-119">Please note that before you submit a pull request you must [sign a Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is free to use your submissions.</span></span>
 
-## Licenses
+<span data-ttu-id="22e25-120">A közreműködő további információért olvassa el a [a közreműködői útmutatóban](CONTRIBUTING.md).</span><span class="sxs-lookup"><span data-stu-id="22e25-120">For more information on contributing, read our [contributor's guide](CONTRIBUTING.md).</span></span>
+<span data-ttu-id="22e25-121">A közreműködői útmutatóban hogyan működhet közre a dokumentáció, a javasolt eszközök és a stílus és a formázási követelmények részletes információkat tartalmaz.</span><span class="sxs-lookup"><span data-stu-id="22e25-121">The contributor's guide contains detail information about how to contribute documentation, suggested tools, and style and formatting requirements.</span></span>
+<span data-ttu-id="22e25-122">A probléma és a Pull-kérési sablonok használja annak érdekében, hogy egységes dokumentáció verziója között.</span><span class="sxs-lookup"><span data-stu-id="22e25-122">Please use the Issue and Pull Request templates to help keep documentation consistent across versions.</span></span>
 
-There are two license files for this project. 
-The MIT License applies to the code contained in this repo.
-The Creative Commons license applies to the documentation. 
+## <a name="licenses"></a><span data-ttu-id="22e25-123">Licencek</span><span class="sxs-lookup"><span data-stu-id="22e25-123">Licenses</span></span>
+
+<span data-ttu-id="22e25-124">Két licenc fájlok vannak a projekthez.</span><span class="sxs-lookup"><span data-stu-id="22e25-124">There are two license files for this project.</span></span>
+<span data-ttu-id="22e25-125">Az MIT-licenccel vonatkozik a szabályzat, amely ebben a tárházban.</span><span class="sxs-lookup"><span data-stu-id="22e25-125">The MIT License applies to the code contained in this repo.</span></span>
+<span data-ttu-id="22e25-126">A dokumentáció a Creative Commons licencet vonatkozik.</span><span class="sxs-lookup"><span data-stu-id="22e25-126">The Creative Commons license applies to the documentation.</span></span>
