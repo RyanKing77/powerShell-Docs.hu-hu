@@ -181,14 +181,10 @@ items:
     href: getting-started/cookbooks/changing-computer-state.md
   - name: Adatgyűjtés a számítógépekről
     href: getting-started/cookbooks/collecting-information-about-computers.md
-  - name: .NET- és COM-objektumok létrehozása – New-Object
-    href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
   - name: Egyéni beviteli mező létrehozása
     href: getting-started/cookbooks/creating-a-custom-input-box.md
   - name: Grafikus dátumválasztó létrehozása
     href: getting-started/cookbooks/creating-a-graphical-date-picker.md
-  - name: WMI-objektumok lékérése – Get-WmiObject
-    href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
   - name: Aktuális hely kezelése
     href: getting-started/cookbooks/managing-current-location.md
   - name: Folyamatok kezelése folyamatparancsmagokkal
@@ -205,22 +201,12 @@ items:
     href: getting-started/cookbooks/other-useful-scripting-objects.md
   - name: Hálózatkezelési feladatok végrehajtása
     href: getting-started/cookbooks/performing-networking-tasks.md
-  - name: Adatok átirányítása Out-parancsmagokkal
+  - name: Adatátirányítás az Out-parancsmagokkal
     href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
-  - name: Objektumok eltávolítása a folyamatból – Where-Object
-    href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
-  - name: Feladat megismétlése több objektumon – ForEach-Object
-    href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
   - name: Elemek kiválasztása egy listamezőből
     href: getting-started/cookbooks/selecting-items-from-a-list-box.md
-  - name: Objektumrészek kijelölése – Select-Object
-    href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
-  - name: Objektumok rendezése
-    href: getting-started/cookbooks/sorting-objects.md
   - name: A kimeneti nézet módosítása formázási parancsokkal
     href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
-  - name: Statikus osztályok és metódusok használata
-    href: getting-started/cookbooks/using-static-classes-and-methods.md
   - name: Az objektumstruktúra megtekintése – Get-Member
     href: getting-started/cookbooks/viewing-object-structure--get-member-.md
   - name: Fájlok és mappák használata
@@ -229,6 +215,21 @@ items:
     href: getting-started/cookbooks/working-with-files-folders-and-registry-keys.md
   - name: Objektumok használata
     href: getting-started/cookbooks/working-with-objects.md
+    items:
+    - name: WMI-objektumok lékérése – Get-WmiObject
+      href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
+    - name: .NET- és COM-objektumok létrehozása – New-Object
+      href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
+    - name: Objektumok eltávolítása a folyamatból – Where-Object
+      href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
+    - name: Objektumrészek kijelölése – Select-Object
+      href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
+    - name: Objektumok rendezése
+      href: getting-started/cookbooks/sorting-objects.md
+    - name: Feladat megismétlése több objektumon – ForEach-Object
+      href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
+    - name: Statikus osztályok és metódusok használata
+      href: getting-started/cookbooks/using-static-classes-and-methods.md
   - name: Nyomtatók használata
     href: getting-started/cookbooks/working-with-printers.md
   - name: Beállításjegyzék-bejegyzések használata
@@ -241,9 +242,9 @@ items:
     href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
   - name: '2. függelék: Egyéni PowerShell-parancsikon létrehozása'
     href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: 426f1336debdcd8b74b9e1954cebe49bfa7c82ea
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: e1cc2802354cbb58a8d4cc19903a62339aa333b5
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557143"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225743"
