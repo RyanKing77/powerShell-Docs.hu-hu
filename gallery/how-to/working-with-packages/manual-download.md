@@ -1,0 +1,65 @@
+---
+ms.date: 09/11/2018
+contributor: JKeithB
+keywords: katalógus, a powershell, a psgallery
+title: Csomagok manuális letöltése
+ms.openlocfilehash: 0952aa4ec474850af5219fb2e0e9ee3e954b0f9a
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50004075"
+---
+# <a name="manual-package-download"></a><span data-ttu-id="48f65-103">Csomagok manuális letöltése</span><span class="sxs-lookup"><span data-stu-id="48f65-103">Manual Package Download</span></span>
+
+<span data-ttu-id="48f65-104">A Powershell-galériából támogatja a webhely a csomag közvetlenül, letölti a PowerShellGet-parancsmagok használata nélkül.</span><span class="sxs-lookup"><span data-stu-id="48f65-104">The Powershell Gallery supports downloading a package from the website directly, without using the PowerShellGet cmdlets.</span></span> <span data-ttu-id="48f65-105">A csomag tölti le a NuGet csomag (.nupkg) fájlt, amely ezután egyszerűen átmásolható egy belső tárházba.</span><span class="sxs-lookup"><span data-stu-id="48f65-105">The package will be downloaded as a NuGet package (.nupkg) file, which can then be easily copied to an internal repository.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="48f65-106">Manuális csomag a Letöltés **nem** szánt az Install-Module parancsmaggal helyettesítője.</span><span class="sxs-lookup"><span data-stu-id="48f65-106">Manual package download is **not** intended as a replacement for the Install-Module cmdlet.</span></span>
+> <span data-ttu-id="48f65-107">A csomag letöltése nem telepíti a modult vagy parancsfájl.</span><span class="sxs-lookup"><span data-stu-id="48f65-107">Downloading the package does not install the module or script.</span></span> <span data-ttu-id="48f65-108">Függőségek nem szerepelnek a NuGet-csomag letöltése.</span><span class="sxs-lookup"><span data-stu-id="48f65-108">Dependencies are not included in the NuGet package downloaded.</span></span> <span data-ttu-id="48f65-109">Az alábbi utasítások csak tájékoztatási céllal van megadva.</span><span class="sxs-lookup"><span data-stu-id="48f65-109">The following instructions are provided for reference purposes only.</span></span>
+
+## <a name="using-manual-download-to-acquire-a-package"></a><span data-ttu-id="48f65-110">Manuális letöltés segítségével csomag beszerzése</span><span class="sxs-lookup"><span data-stu-id="48f65-110">Using manual download to acquire a package</span></span>
+
+<span data-ttu-id="48f65-111">Minden oldalnak van a manuális letöltéséhez, egy hivatkozás, itt látható módon:</span><span class="sxs-lookup"><span data-stu-id="48f65-111">Each page has a link for Manual Download, as shown here:</span></span>
+
+![Manuális letöltés](../../Images/packagedisplaypagewithpseditions.png)
+
+<span data-ttu-id="48f65-113">Manuális letöltéséhez kattintson a **töltse le a nyers nupkg**.</span><span class="sxs-lookup"><span data-stu-id="48f65-113">To download manually, click on **Download the raw nupkg file**.</span></span> <span data-ttu-id="48f65-114">A csomag másolatát másolta a letöltési mappa nevét a böngésző `<name>.<version>.nupkg`.</span><span class="sxs-lookup"><span data-stu-id="48f65-114">A copy of the package copied to the download folder for your browser with the name `<name>.<version>.nupkg`.</span></span>
+
+<span data-ttu-id="48f65-115">A NuGet-csomagot a csomag tartalma kapcsolatos információkat tartalmazó további fájlokat a ZIP-archívumot.</span><span class="sxs-lookup"><span data-stu-id="48f65-115">A NuGet package is a ZIP archive with extra files containing information about the contents of the package.</span></span> <span data-ttu-id="48f65-116">Egyes böngészők, például az Internet Explorer, automatikusan cserélje le a `.nupkg` kiterjesztése a `.zip`.</span><span class="sxs-lookup"><span data-stu-id="48f65-116">Some browsers, like Internet Explorer, automatically replace the `.nupkg` file extension with `.zip`.</span></span> <span data-ttu-id="48f65-117">Bontsa ki a csomagot, nevezze át a `.nupkg` fájlt `.zip`, ha szükséges, bontsa ki a tartalmát egy helyi mappába.</span><span class="sxs-lookup"><span data-stu-id="48f65-117">To expand the package, rename the `.nupkg` file to `.zip`, if needed, then extract the contents to a local folder.</span></span>
+
+<span data-ttu-id="48f65-118">A NuGet csomag fájlt a következő NuGet-specifikus elemeket, amelyek nem részei az eredeti csomagolt kódot tartalmazza:</span><span class="sxs-lookup"><span data-stu-id="48f65-118">A NuGet package file includes the following NuGet-specific elements that aren't part of the original packaged code:</span></span>
+
+- <span data-ttu-id="48f65-119">Nevű mappa `_rels` -tartalmaz egy `.rels` fájlt, amely felsorolja a függőségeket</span><span class="sxs-lookup"><span data-stu-id="48f65-119">A folder named `_rels` - contains a `.rels` file that lists the dependencies</span></span>
+- <span data-ttu-id="48f65-120">Nevű mappa `package` -NuGet-specifikus adatait tartalmazza</span><span class="sxs-lookup"><span data-stu-id="48f65-120">A folder named `package` - contains the NuGet-specific data</span></span>
+- <span data-ttu-id="48f65-121">Nevű fájl `[Content_Types].xml` -ismerteti, hogyan működnek a PowerShellGet-kiterjesztése a NuGet</span><span class="sxs-lookup"><span data-stu-id="48f65-121">A file named `[Content_Types].xml` - describes how extensions like PowerShellGet work with NuGet</span></span>
+- <span data-ttu-id="48f65-122">Nevű fájl `<name>.nuspec` -metaadatok tömeges tartalmaz</span><span class="sxs-lookup"><span data-stu-id="48f65-122">A file named `<name>.nuspec` - contains the bulk of the metadata</span></span>
+
+## <a name="installing-powershell-modules-from-a-nuget-package"></a><span data-ttu-id="48f65-123">A NuGet-csomagot a PowerShell-modulok telepítése</span><span class="sxs-lookup"><span data-stu-id="48f65-123">Installing PowerShell Modules from a NuGet package</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="48f65-124">Ezek az utasítások **nem** futtatásával ugyanazt az eredményt adja `Install-Module`.</span><span class="sxs-lookup"><span data-stu-id="48f65-124">These instructions **DO NOT** give the same result as running `Install-Module`.</span></span> <span data-ttu-id="48f65-125">Ezek az utasítások megfelelnek a minimális követelményeknek.</span><span class="sxs-lookup"><span data-stu-id="48f65-125">These instructions fulfill the minimum requirements.</span></span> <span data-ttu-id="48f65-126">Ezek nem tartozhat helyettesítheti a `Install-Module`.</span><span class="sxs-lookup"><span data-stu-id="48f65-126">They are not intended to be a replacement for `Install-Module`.</span></span> <span data-ttu-id="48f65-127">Néhány által végrehajtott lépések `Install-Module` nem szerepelnek.</span><span class="sxs-lookup"><span data-stu-id="48f65-127">Some steps performed by `Install-Module` are not included.</span></span>
+
+<span data-ttu-id="48f65-128">A legegyszerűbb megközelítés, hogy távolítsa el a NuGet-specifikus elemek.</span><span class="sxs-lookup"><span data-stu-id="48f65-128">The easiest approach is to remove the NuGet-specific elements from the folder.</span></span> <span data-ttu-id="48f65-129">A PowerShell-kóddal, a csomagot a szerző által létrehozott kihasználatlan marad.</span><span class="sxs-lookup"><span data-stu-id="48f65-129">This leaves the PowerShell code created by the package author.</span></span> <span data-ttu-id="48f65-130">A lépések a következők:</span><span class="sxs-lookup"><span data-stu-id="48f65-130">The steps are:</span></span>
+
+1. <span data-ttu-id="48f65-131">Bontsa ki a tartalmát egy helyi mappába a NuGet-csomagot.</span><span class="sxs-lookup"><span data-stu-id="48f65-131">Extract the contents of the NuGet package to a local folder.</span></span>
+2. <span data-ttu-id="48f65-132">A NuGet-specifikus elemeket törölje a mappát.</span><span class="sxs-lookup"><span data-stu-id="48f65-132">Delete the NuGet-specific elements from the folder.</span></span>
+3. <span data-ttu-id="48f65-133">Nevezze át a mappát.</span><span class="sxs-lookup"><span data-stu-id="48f65-133">Rename the folder.</span></span> <span data-ttu-id="48f65-134">Az alapértelmezett mappa neve: általában `<name>.<version>`.</span><span class="sxs-lookup"><span data-stu-id="48f65-134">The default folder name is usually `<name>.<version>`.</span></span> <span data-ttu-id="48f65-135">A verzió lehetnek "– előzetes" Ha a modul előzetes verziójának van megjelölve.</span><span class="sxs-lookup"><span data-stu-id="48f65-135">The version can include "-prerelease" if the module is tagged as a prerelease version.</span></span> <span data-ttu-id="48f65-136">Nevezze át a mappát csak a modul nevét.</span><span class="sxs-lookup"><span data-stu-id="48f65-136">Rename the folder to just the module name.</span></span> <span data-ttu-id="48f65-137">Például a "azurerm.storage.5.0.4-preview" "azurerm.storage" lesz.</span><span class="sxs-lookup"><span data-stu-id="48f65-137">For example, "azurerm.storage.5.0.4-preview" becomes "azurerm.storage".</span></span>
+4. <span data-ttu-id="48f65-138">Másolja a mappát a PSModulePath.</span><span class="sxs-lookup"><span data-stu-id="48f65-138">Copy the folder to your PSModulePath.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="48f65-139">A Manuális letöltés nem tartalmazza a modul által igényelt függőségek.</span><span class="sxs-lookup"><span data-stu-id="48f65-139">The manual download does not include any dependencies required by the module.</span></span> <span data-ttu-id="48f65-140">Ha a csomag függőségekkel rendelkezik, a rendszer, hogy megfelelően működjön a modul csak telepíthető.</span><span class="sxs-lookup"><span data-stu-id="48f65-140">If the package has dependencies, they must be installed on the system for this module to work correctly.</span></span> <span data-ttu-id="48f65-141">A PowerShell-galériából jeleníti meg a csomag által igényelt összes függőségét.</span><span class="sxs-lookup"><span data-stu-id="48f65-141">The PowerShell Gallery shows all dependencies required by the package.</span></span>
+
+## <a name="installing-powershell-scripts-from-a-nuget-package"></a><span data-ttu-id="48f65-142">A NuGet-csomagot a PowerShell-parancsprogramok telepítése</span><span class="sxs-lookup"><span data-stu-id="48f65-142">Installing PowerShell Scripts from a NuGet package</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="48f65-143">Ezek az utasítások **nem** futtatásával ugyanazt az eredményt adja `Install-Script`.</span><span class="sxs-lookup"><span data-stu-id="48f65-143">These instructions **DO NOT** give the same result as running `Install-Script`.</span></span> <span data-ttu-id="48f65-144">Ezek az utasítások megfelelnek a minimális követelményeknek.</span><span class="sxs-lookup"><span data-stu-id="48f65-144">These instructions fulfill the minimum requirements.</span></span> <span data-ttu-id="48f65-145">Ezek nem tartozhat helyettesítheti a `Install-Script`.</span><span class="sxs-lookup"><span data-stu-id="48f65-145">They are not intended to be a replacement for `Install-Script`.</span></span>
+
+<span data-ttu-id="48f65-146">A legegyszerűbb megközelítés közvetlenül, hogy a kivonatot a NuGet-csomagot, majd használja a szkriptet.</span><span class="sxs-lookup"><span data-stu-id="48f65-146">The easiest approach is to extract the NuGet package, then use the script directly.</span></span> <span data-ttu-id="48f65-147">A lépések a következők:</span><span class="sxs-lookup"><span data-stu-id="48f65-147">The steps are:</span></span>
+
+1. <span data-ttu-id="48f65-148">Bontsa ki a NuGet-csomag tartalmát.</span><span class="sxs-lookup"><span data-stu-id="48f65-148">Extract the contents of the NuGet package.</span></span>
+2. <span data-ttu-id="48f65-149">A `.PS1` mappában található fájl közvetlenül a következő helyről is használható.</span><span class="sxs-lookup"><span data-stu-id="48f65-149">The `.PS1` file in the folder can be used directly from this location.</span></span>
+3. <span data-ttu-id="48f65-150">Előfordulhat, hogy törli a NuGet-specifikus elemek a mappában.</span><span class="sxs-lookup"><span data-stu-id="48f65-150">You may delete the NuGet-specific elements in the folder.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="48f65-151">A Manuális letöltés nem tartalmazza a modul által igényelt függőségek.</span><span class="sxs-lookup"><span data-stu-id="48f65-151">The manual download does not include any dependencies required by the module.</span></span> <span data-ttu-id="48f65-152">Ha a csomag függőségekkel rendelkezik, a rendszer, hogy megfelelően működjön a modul csak telepíthető.</span><span class="sxs-lookup"><span data-stu-id="48f65-152">If the package has dependencies, they must be installed on the system for this module to work correctly.</span></span> <span data-ttu-id="48f65-153">A PowerShell-galériából jeleníti meg a csomag által igényelt összes függőségét.</span><span class="sxs-lookup"><span data-stu-id="48f65-153">The PowerShell Gallery shows all dependencies required by the package.</span></span>
