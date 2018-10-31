@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A Linux nxEnvironment erőforrás DSC
-ms.openlocfilehash: 3c9f39760e0fba7fac060f29f9e808a3a434401f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: DSC, a Linux nxEnvironment erőforrás
+ms.openlocfilehash: 763ec560faa6adaf42aef3c21c9045be95f780bc
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189482"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225981"
 ---
-# <a name="dsc-for-linux-nxenvironment-resource"></a>A Linux nxEnvironment erőforrás DSC
+# <a name="dsc-for-linux-nxenvironment-resource"></a>DSC, a Linux nxEnvironment erőforrás
 
-A **nxEnvironment** erőforrás a PowerShell kívánt állapot konfigurációs szolgáltatása (DSC) gombra a rendszerszintű környezeti változókat a Linux csomópont kezelése mechanizmust biztosít.
+A **nxEnvironment** erőforrás a PowerShell Desired State Configuration (DSC) kezelése a Linux csomópont rendszerszintű környezeti változókat mechanizmust biztosít.
 
 ## <a name="syntax"></a>Szintaxis
 
@@ -31,20 +31,20 @@ nxEnvironment <string> #ResourceName
 
 |  Tulajdonság |  Leírás |
 |---|---|
-| Név| A környezeti változó, amelyekhez egy adott állapot biztosításához nevét jelöli.|
-| Érték| A környezeti változóhoz rendelhető érték.|
-| Győződjön meg arról| Ellenőrizze, hogy létezik-e a változó határozza meg. A tulajdonság "Elérhető" annak érdekében, hogy létezik-e a változó értéke. Állítsa az értékét "Hiányzik", annak érdekében, a változó nem létezik. Az alapértelmezett érték: "Elérhető".|
-| Elérési út| Határozza meg a konfigurálni kívánt környezeti változó. Ez a tulajdonság beállítása **$true** Ha a változó a **elérési** változó; ellenkező esetben állítsa **$false**. Az alapértelmezett érték **$false**. Ha a konfigurálni kívánt változó a **elérési** változó, a megadott érték keresztül a **érték** tulajdonság hozzáfűzi a meglévő értéket.|
-| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például ha a **azonosító** az erőforrás konfigurációs futtatni kívánt először parancsprogramblokkja **ResourceName** és annak típusa **ResourceType**, ez a szintaxis a tulajdonság `DependsOn = "[ResourceType]ResourceName"`.|
+| Név| Azt jelzi, hogy a neve, amelyhez szeretne biztosítani adott állapotú környezeti változó.|
+| Érték| Rendelhet hozzá a környezeti változó értéke.|
+| Győződjön meg, hogy| Ellenőrizze, hogy létezik-e a változó határozza meg. Ez annak érdekében, hogy létezik a változó "e" tulajdonság értéke. Állítsa a "Hiányzó" annak biztosítására, a változó nem létezik. Az alapértelmezett érték: "E".|
+| Elérési út| A konfigurálni kívánt környezeti változó határozza meg. Ez a tulajdonság beállítása **$true** Ha a változó a **elérési** változó; ellenkező esetben beállíthatja azt a **$false**. Az alapértelmezett érték **$false**. Ha a változó konfigurált a **elérési** változóhoz, a megadott érték keresztül a **érték** tulajdonság hozzá lesznek fűzve a meglévő értéket.|
+| DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például ha a **azonosító** az erőforrás, amely a futtatni kívánt konfigurációs parancsprogram-blokkot első az **ResourceName** és a típusa **ResourceType**, ezzel esetén a tulajdonság `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>További információ
 
-* Ha **elérési** hiányzik, vagy állítsa be **$false**, a környezeti változók felügyelete `/etc/environment`. A programok vagy parancsfájlok forrás konfigurálásra lehet szükség a `/etc/environment` fájl a felügyelt környezeti változók elérésére.
-* Ha **elérési** értéke **$true**, a fájlban a következő környezeti változó felügyelt `/etc/profile.d/DSCenvironment.sh`. Ha még nem létezik. létrehozza ezt a fájlt. Ha **ellenőrizze, hogy** van beállítva a "Hiányzik" és **elérési** értékre van állítva **$true**, környezeti változó csak törlődnek a `/etc/profile.d/DSCenvironment.sh` és más fájlok nem a.
+* Ha **elérési** hiányzik, vagy állítsa **$false**, felügyelete, a környezeti változók `/etc/environment`. A programok vagy parancsfájlok forrás konfigurációt igényelhetnek a `/etc/environment` fájl eléréséhez a felügyelt környezeti változókat.
+* Ha **elérési** értékre van állítva **$true**, a környezeti változó kezelik a fájl `/etc/profile.d/DSCenvironment.sh`. Ez a fájl létrejön, ha még nem létezik. Ha **ellenőrizze, hogy** van beállítva a "Hiányzik" és **elérési** értékre van állítva **$true**, környezeti változó csak törlődni fog `/etc/profile.d/DSCenvironment.sh` és más fájlokból nem.
 
 ## <a name="example"></a>Példa
 
-A következő példa bemutatja, hogyan használható a **nxEnvironment** annak érdekében, hogy erőforrás **TestEnvironmentVariable** jelen, és a "Test-érték" értékkel rendelkezik. Ha **TestEnvironmentVariable** van nincs jelen, a rendszer automatikusan létrehozza.
+Az alábbi példa bemutatja, hogyan használható a **nxEnvironment** annak érdekében, hogy erőforrás **TestEnvironmentVariable** létezik, és a "Test-Value" értékkel rendelkezik. Ha **TestEnvironmentVariable** van nem található, a rendszer automatikusan létrehozza.
 
 ```
 Import-DSCResource -Module nx

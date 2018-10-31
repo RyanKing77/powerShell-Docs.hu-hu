@@ -1,31 +1,31 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A PowerShell osztályok egyéni DSC-erőforrás írása
-ms.openlocfilehash: f2500bfb41302cbeaf3cb9d23b843f26f01c1d5b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: A PowerShell-osztályok egyéni DSC-erőforrás írása
+ms.openlocfilehash: a8f08323f2cced8a17de4224bea94a54ba5ef0cd
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189465"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226083"
 ---
-# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>A PowerShell osztályok egyéni DSC-erőforrás írása
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>A PowerShell-osztályok egyéni DSC-erőforrás írása
 
-> Vonatkozik: Windows Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
-A Windows PowerShell 5.0 PowerShell osztályok bevezetésével most hozzon létre egy osztályt adhat meg DSC erőforrás. Az osztály a séma- és az erőforrás végrehajtásának határozza meg, így nincs szükség külön MOF-fájl létrehozásához. A gyökérmappa-szerkezetében osztály-alapú erőforrásokhoz is felügyelete egyszerűbb, mert egy **DSCResources** mappa nincs szükség.
+PowerShell-osztályok a Windows PowerShell 5.0 bevezetésével most már megadhatja a DSC-erőforrás osztály létrehozásával. Az osztály a séma- és az erőforrás végrehajtásának határozza meg, így nem kell külön MOF-fájl létrehozásához. A gyökérmappa-szerkezetében osztályalapú erőforrás egyben egyszerűbb, mivel egy **DSCResources** mappa már nem szükséges.
 
-Osztály-alapú DSC az erőforrás a séma van definiálva, amely attribútumokkal megadhatja a tulajdonság módosítható-osztály tulajdonságai... Az erőforrás megvalósítja **Get()**, **set() metódust**, és **Test()** módszerek (egyenértékű a **Get-TargetResource**, **Set-TargetResource**, és **teszt-TargetResource** funkciók a parancsprogram-erőforráshoz.
+Osztályalapú DSC erőforrás a séma számít, ha az osztály, amely attribútumait megadhatja a tulajdonság módosítható tulajdonságai... Az erőforrás valósít meg **Get()**, **Set()**, és **Test()** metódusok (egyenértékű a **Get-TargetResource**, **Set-TargetResource**, és **Test-TargetResource** függvények a parancsfájl erőforrást.
 
-Ebben a témakörben létrehozunk egy egyszerű nevű erőforrás **FileResource** , amely kezeli a fájl a megadott elérési úton.
+Ebben a témakörben egy egyszerű erőforrás nevű hozunk létre **FileResource** , amely kezeli a megadott elérési út egy fájlt.
 
-A DSC-erőforrásokra vonatkozó további információkért lásd: [Build egyéni Windows PowerShell kívánt állapot konfigurációs erőforrások](authoringResource.md)
+DSC-erőforrások kapcsolatos további információkért lásd: [hozhat létre egyéni Windows PowerShell Desired State Configuration erőforrások](authoringResource.md)
 
->**Megjegyzés:** általános gyűjtemények osztály fájlalapú erőforrások – használata nem támogatott.
+>**Megjegyzés:** általános gyűjtemények nem támogatottak az osztály-alapú erőforrások.
 
-## <a name="folder-structure-for-a-class-resource"></a>Egy osztály erőforrás mappaszerkezet
+## <a name="folder-structure-for-a-class-resource"></a>A mappastruktúra osztály erőforrás
 
-Egyéni DSC-erőforrás PowerShell osztállyal alkalmazásához hozzon létre a következő mappaszerkezetet. Az osztály definiálva van **MyDscResource.psm1** , és a moduljegyzékben meghatározva **MyDscResource.psd1**.
+Egy olyan PowerShell osztállyal DSC egyéni erőforrás implementálásához hozzon létre a következő mappaszerkezetet. Az osztály definiálva van **MyDscResource.psm1** , és a moduljegyzékben meghatározva **MyDscResource.psd1**.
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -34,9 +34,9 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
            MyDscResource.psd1
 ```
 
-## <a name="create-the-class"></a>Az osztály létrehozásához
+## <a name="create-the-class"></a>Az osztály létrehozása
 
-Az osztály kulcsszó használatával hozzon létre egy PowerShell-osztályt. Adja meg, hogy egy osztály DSC erőforrás, használja a **DscResource()** attribútum. Az osztály nevét a DSC-erőforrás neve.
+Az osztály kulcsszó használatával hozzon létre egy PowerShell-osztályt. Adja meg, hogy egy osztály a DSC-erőforrás, használja a **DscResource()** attribútum. Az osztály nevét a DSC-erőforrás neve.
 
 ```powershell
 [DscResource()]
@@ -44,9 +44,9 @@ class FileResource {
 }
 ```
 
-### <a name="declare-properties"></a>Deklarálja tulajdonságai
+### <a name="declare-properties"></a>Deklarálja a tulajdonságai
 
-A DSC-erőforrás séma a osztály tulajdonságai típusúként van definiálva. Az alábbiak szerint deklarálja azt három tulajdonságot.
+A DSC-erőforrás séma számít, ha az osztály tulajdonságait. A következő azt deklarálja három tulajdonságot.
 
 ```powershell
 [DscProperty(Key)]
@@ -62,14 +62,14 @@ A DSC-erőforrás séma a osztály tulajdonságai típusúként van definiálva.
 [Nullable[datetime]] $CreationTime
 ```
 
-Figyelje meg, hogy a tulajdonság módosítását mutatjuk be attribútumok szerint. Az attribútumok szerinti a következőképpen történik:
+Figyelje meg, hogy a Tulajdonságok attribútumok szerint módosítják. Az attribútumok értelmében a következőképpen történik:
 
-- **DscProperty(Key)**: A tulajdonságra szükség. A tulajdonság egy kulcsot. Az összes tulajdonság értékének megjelölt kulcsok kell alakítania egy erőforráspéldány konfiguráció belül egyedi azonosításához.
-- **DscProperty(Mandatory)**: A tulajdonságra szükség.
-- **DscProperty(NotConfigurable)**: A tulajdonság csak olvasható. Ez attribútummal rendelkező tulajdonságok nem állíthatják be a konfigurációs, de által a rendszer feltölti a **Get()** metódust, ha létezik.
-- **DscProperty()**: A tulajdonság konfigurálható, de nincs rá szükség.
+- **DscProperty(Key)**: A tulajdonság megadása kötelező. A tulajdonság egy kulcsot. Kulcsok belül egy konfigurációs egy erőforrás-példány egyedi azonosításához kell alakítania megjelölt összes tulajdonságának értékét.
+- **DscProperty(Mandatory)**: A tulajdonság megadása kötelező.
+- **DscProperty(NotConfigurable)**: A tulajdonság csak olvasható. Ez attribútummal rendelkező tulajdonságok nem állítható be a konfiguráció, de által fel van töltve a **Get()** módszer, ha a jelen.
+- **DscProperty()**: A tulajdonság konfigurálható, de ez nem kötelező.
 
-A **$Path** és **$SourcePath** tulajdonságainak mindkét karakterláncot. A **$CreationTime** van egy [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) tulajdonság. A **$Ensure** tulajdonsága egy számbavételi típus, az alábbiak szerint definiáltuk.
+A **$Path** és **$SourcePath** tulajdonságok a következők mindkét karakterláncokat. A **$CreationTime** van egy [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) tulajdonság. A **$Ensure** tulajdonság meghatározása a következő enumerálási típusát.
 
 ```powershell
 enum Ensure
@@ -79,11 +79,11 @@ enum Ensure
 }
 ```
 
-### <a name="implementing-the-methods"></a>Az eljárások végrehajtása
+### <a name="implementing-the-methods"></a>A metódusok végrehajtása
 
-A **Get()**, **set() metódust**, és **Test()** módszerrel is hasonló a **Get-TargetResource**, **Set-TargetResource** , és **teszt-TargetResource** funkciók a parancsprogram-erőforráshoz.
+A **Get()**, **Set()**, és **Test()** módszerek a következők csatlakoztatja a **Get-TargetResource**, **Set-TargetResource** , és **Test-TargetResource** függvények a parancsfájl erőforrást.
 
-Ezt a kódot is magában foglalja a CopyFile() függvény, másolja át a fájlt a segítő függvény **$SourcePath** való **$Path**.
+Ez a kód is magában foglalja a CopyFile() függvény segítő függvény, amely átmásolja a fájlt a **$SourcePath** való **$Path**.
 
 ```powershell
 
@@ -217,7 +217,7 @@ Ezt a kódot is magában foglalja a CopyFile() függvény, másolja át a fájlt
 ```
 
 ### <a name="the-complete-file"></a>A teljes fájl
-A teljes osztály fájl követi.
+A teljes fájl követi.
 
 ```powershell
 enum Ensure
@@ -415,9 +415,9 @@ class FileResource
 ```
 
 
-## <a name="create-a-manifest"></a>A jegyzékfájl létrehozása
+## <a name="create-a-manifest"></a>Jegyzék létrehozásához
 
-A DSC-motor elérhetővé tegyen egy osztály-alapú erőforrás, akkor tartalmaznia kell egy **DscResourcesToExport** kivonat a jegyzékfájlban, amely arra utasítja az erőforrás exportálandó modul. A jegyzékfájl így néz ki:
+Osztályalapú erőforrás akkor válik elérhetővé a DSC motor, meg kell adni egy **DscResourcesToExport** utasítás, amely arra utasítja a modult, exportálhatja az erőforrás-jegyzékfájl. A jegyzékfájl így néz ki:
 
 ```powershell
 @{
@@ -455,7 +455,7 @@ PowerShellVersion = '5.0'
 
 ## <a name="test-the-resource"></a>Az erőforrás tesztelése
 
-Miután az osztály és a jegyzékfájlt a a mappastruktúra a fentebb leírt módon, az új erőforrás használó konfiguráció is létrehozhat. A DSC-konfiguráció futtatásával kapcsolatos információkért lásd: [konfigurációk hozzanak](enactingConfigurations.md). A következő konfigurációs ellenőrzi, hogy a fájlban a következő `c:\test\test.txt` létezik, és ha nem, másolja át a fájlt a `c:\test.txt` (létre kell hoznia `c:\test.txt` a konfiguráció futtatása előtt).
+Az osztály és fájlok mentése a korábban leírtaknak megfelelően a gyökérmappa-szerkezetében lévő, után az új erőforrás használó konfiguráció is létrehozhat. A DSC-konfiguráció futtatásával kapcsolatos további információkért lásd: [konfigurációk életbe léptetése](enactingConfigurations.md). A következő konfigurációt ellenőrzi, hogy a fájlban a következő `c:\test\test.txt` létezik, és ha nem, másolja át a fájlt a `c:\test.txt` (hozzon létre `c:\test.txt` a konfiguráció futtatása előtt).
 
 ```powershell
 Configuration Test
@@ -474,19 +474,19 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential támogatása
 
->**Megjegyzés:** **PsDscRunAsCredential** PowerShell 5.0-s vagy újabb támogatott.
+>**Megjegyzés:** **PsDscRunAsCredential** a PowerShell 5.0-s és újabb verzióiban támogatott.
 
-A **PsDscRunAsCredential** tulajdonság használható [a DSC-konfigurációk](configurations.md) erőforrás blokk adhatja meg, hogy az erőforrás verziója alatt kell futtatni a megadott hitelesítő adatok készletét.
-További információkért lásd: [felhasználói hitelesítő adatokkal rendelkező futtató DSC](runAsUser.md).
+A **PsDscRunAsCredential** tulajdonság használható [DSC-konfigurációk](configurations.md) erőforrás letiltása, hogy az erőforrás alatt kell futtatni. egy meghatározott hitelesítő adatok megadásához.
+További információkért lásd: [DSC futtatása felhasználói hitelesítő adatokkal](runAsUser.md).
 
 ### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>Szükséges, vagy az erőforrás PsDscRunAsCredential letiltása
 
-A **DscResource()** attribútum egy választható paramétert fogad, **RunAsCredential**.
-Ezt a paramétert értékek egyike szükséges:
+A **DscResource()** attribútumot vesz igénybe egy nem kötelező paraméter **RunAsCredential**.
+Ez a paraméter három érték egyikét veheti fel:
 
-- `Optional` **PsDscRunAsCredential** nem kötelező konfigurációk, amelyek ehhez az erőforráshoz. Ez az alapértelmezett érték.
-- `Mandatory` **PsDscRunAsCredential** , amely behívja ehhez az erőforráshoz konfigurálni kell használni.
-- `NotSupported` Ehhez az erőforráshoz hívó konfigurációk nem használható **PsDscRunAsCredential**.
+- `Optional` **PsDscRunAsCredential** nem kötelező konfigurációk, amelyek meg az ehhez az erőforráshoz. Ez az alapértelmezett érték.
+- `Mandatory` **PsDscRunAsCredential** kell használni minden olyan konfiguráció, amely meghívja ezt az erőforrást.
+- `NotSupported` Konfigurációk, amelyek meg az ehhez az erőforráshoz nem használható **PsDscRunAsCredential**.
 - `Default` Ugyanaz, mint a `Optional`.
 
 Például adja meg, hogy az egyéni erőforrás nem támogatja a következő attribútum segítségével **PsDscRunAsCredential**:
@@ -499,9 +499,9 @@ class FileResource {
 
 ### <a name="access-the-user-context"></a>Hozzáférés a felhasználói környezet
 
-A felhasználói környezet belül egyéni erőforrás eléréséhez használhatja az automatikus változó `$global:PsDscContext`.
+A felhasználói környezet belül egy egyéni erőforrás elérésére, használhatja az automatikus változót `$global:PsDscContext`.
 
-Például a következő kódot a felhasználói környezet, amely alatt az erőforrás fut, a részletes kimeneti adatfolyamba lesz írási:
+Például a következő kódot a felhasználói környezet, amelyben az erőforrás fut. a részletes kimeneti adatfolyamba volna írni:
 
 ```powershell
 if (PsDscContext.RunAsUser) {
@@ -511,4 +511,4 @@ if (PsDscContext.RunAsUser) {
 
 ## <a name="see-also"></a>Lásd még:
 ### <a name="concepts"></a>Fogalmak
-[Egyéni Windows PowerShell kívánt állapot konfigurációs erőforrások létrehozása](authoringResource.md)
+[Egyéni Windows PowerShell Desired State Configuration erőforrások létrehozása](authoringResource.md)

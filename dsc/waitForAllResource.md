@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: A DSC WaitForAll erőforrás
-ms.openlocfilehash: 4413220bb0b5eeef5fd1599f794cd551f15a2925
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: DSC WaitForAll erőforrás
+ms.openlocfilehash: 367f95caaa71ebec9c8e0a7c31fa5c0f5be27945
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221782"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226100"
 ---
-# <a name="dsc-waitforall-resource"></a>A DSC WaitForAll erőforrás
+# <a name="dsc-waitforall-resource"></a>DSC WaitForAll erőforrás
 
-> Vonatkozik: A Windows PowerShell 5.0-s és újabb verziók
+> A következőkre vonatkozik: Windows PowerShell 5.0-s és újabb verziók
 
-A **WaitForAll** kívánt állapot konfigurációs szolgáltatása (DSC) erőforrás használhatja egy csomópont blokkja egy [DSC-konfiguráció](configurations.md) függőségek konfigurációk létrehozáskor határozza meg.
+A **WaitForAll** egy csomópont letiltása a Desired State Configuration (DSC) erőforrás használható egy [DSC-konfiguráció](configurations.md) függőségeinek megadása a konfigurációk a többi csomóponton.
 
-Ehhez az erőforráshoz sikeres lesz, ha az erőforrás által megadott Ha a **ResourceName** tulajdonság definiált összes cél csomóponton megfelelő állapotban van a **csomópontnév** tulajdonság.
+Ez az erőforrás sikeres lesz, abban az esetben, ha az erőforrás által meghatározott a **ResourceName** tulajdonság az összes, meghatározott cél csomóponton a kívánt állapotban van a **csomópontnév** tulajdonság.
 
 
 ## <a name="syntax"></a>Szintaxis
@@ -36,14 +36,14 @@ WaitForAll [string] #ResourceName
 
 |  Tulajdonság  |  Leírás   |
 |---|---|
-| resourceName| Az erőforrásnév függ. Ha egy másik konfigurációs ehhez az erőforráshoz tartozik, a neve, ahogyan formázása "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "|
-| Csomópontnév| Az erőforrás függ a célcsomópontokat.|
-| RetryIntervalSec| Másodpercig az újrapróbálkozás előtt száma. Minimális érték 1.|
-| a retryCount| A próbálkozások maximális számát.|
-| ThrottleLimit| Az egyidejű csatlakozást a gépek számát. Alapértelmezés szerint új-cimsession alapértelmezett.|
-| dependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának kell futtatni, mielőtt ehhez az erőforráshoz van konfigurálva. Például, ha az erőforrás-konfiguráció azonosítója blokk futtatni kívánt parancsfájl első az __ResourceName__ és annak típusa __ResourceType__, az e tulajdonság használatával szintaxisa a következő `DependsOn = "[ResourceType]ResourceName"`.|
+| Erőforrásnév| Az erőforrásnév függenek. Ha az erőforrás tartozik egy másik konfigurációs, formázhatja a nevet a következőként "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "|
+| Csomópontnév| Az erőforrás függenek a célcsomópontokat.|
+| RetryIntervalSec| Mielőtt újra próbálkozna másodpercek számát. Minimális érték 1.|
+| retryCount| Az újrapróbálkozások maximális száma.|
+| ThrottleLimit| Egyidejű csatlakozás gépek száma. Alapértelmezés szerint új cimsession alapértelmezett.|
+| DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója letiltása, a futtatni kívánt parancsfájl először van __ResourceName__ és a típusa __ResourceType__, ez a tulajdonság használata esetén `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 ## <a name="example"></a>Példa
 
-Példa bemutatja, hogyan az erőforrás, lásd: [cross-csomópont függőségeinek megadása](crossNodeDependencies.md)
+Egy példa bemutatja, hogyan használhatja ezt az erőforrást: [csomópontok közötti függőségek megadása](crossNodeDependencies.md)

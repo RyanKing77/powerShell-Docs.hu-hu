@@ -1,88 +1,88 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
-title: PowerShell-galériában – gyakori kérdések
-ms.openlocfilehash: e377e71cf5eeb1f8b73430cc0b97527eac970cff
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: katalógus, a powershell, a parancsmag, a psgallery
+title: PowerShell-galériából – gyakori kérdések
+ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190434"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002872"
 ---
 # <a name="frequently-asked-questions"></a>Gyakori kérdések
 
 ## <a name="what-is-a-powershell-module"></a>Mi az a PowerShell-modult?
 
-Egy PowerShell-modul csomag egy újrafelhasználható tartalmazó néhány PowerShell szolgáltatást. A PowerShell (funkciók, változókat, DSC erőforrások stb.) tartalmát csomagolható modulok. Modulok általában egy adott elérési úton tárolt fájlok adott típusú tartalmazó mappákat. Nincsenek ott a PowerShell-modulok néhány különböző típusú.
+Egy PowerShell-modul az egyes PowerShell-funkciókat tartalmazó újrafelhasználható csomag. A PowerShell (funkciók, változókat, DSC-erőforrások, stb.) minden csomagolható modulok. Modulok általában az adott típusú egy adott elérési úton tárolt fájlokat tartalmazó mappákat. PowerShell-modulok is elérhető néhány különböző típusai vannak.
 
-## <a name="what-is-a-powershell-script"></a>Mi az a PowerShell-parancsfájlt?
+## <a name="what-is-a-powershell-script"></a>Mi az, egy PowerShell-parancsfájlt?
 
-Egy PowerShell-parancsprogram egy .ps1 fájl újbóli használata és megosztása engedélyezése tárolt parancsokat. PowerShell-munkafolyamatok is PowerShell-parancsfájlok, amelyek felsorolják feladatokhoz, és adja meg ezeket a feladatokat az alkalmazás-előkészítés. További információkért látogasson el a [PowerShell munkafolyamat-első lépések](https://technet.microsoft.com/library/jj134242.aspx).
+Egy PowerShell-parancsprogram egy .ps1 kiterjesztésű fájlba újbóli használata és megosztása engedélyezéséhez tárolt parancsokat. PowerShell-munkafolyamatok is rendelkezésre állnak PowerShell-parancsfájlok, amelyek szerkezeti feladatokhoz, és adja meg ezeket a feladatokat az alkalmazás-előkészítés. További információkért látogasson el [– első lépések PowerShell-munkafolyamat](https://technet.microsoft.com/library/jj134242.aspx).
 
-## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>Hogyan eltérnek PowerShell-parancsfájlok PowerShell-modulok?
+## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>Miben különböznek PowerShell-szkripteket a PowerShell-modulok?
 
-Modulok általában jobb megosztható, de azt engedélyezi a parancsfájl használatával könnyebben a munkafolyamatok és a parancsfájlok hozzájárulnak a közösségi megosztás. További információkért tekintse meg a következő angol nyelvű blogokban:
+Modulok általában jobb megosztási, de azt engedélyezi a parancsfájl megkönnyítheti a munkafolyamatok és a parancsfájlok járulnak hozzá a Közösség megosztását. További információkért tekintse meg a következő angol nyelvű blogokban:
 
-- [Nem parancsfájlokat, írási PowerShell-modulok](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
-- [PowerShell-modulok ismertetése](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
+- [Ne írjon a parancsfájlok, PowerShell-modul írása](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
+- [PowerShell-modulok megismerése](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
 
-## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Hogyan is közzéteheti a PowerShell-galériában?
+## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Hogyan teheti közzé a PowerShell-galériában?
 
-Regisztrálnia kell egy fiókot a PowerShell-galériában elem a gyűjteményben való közzététele előtt. Ennek az az oka elem közzététele egy NuGetApiKey, amelyről az regisztráláskor igényel. Regisztrálni, használja a személyes, munkahelyi vagy iskolai fiókkal bejelentkezni a PowerShell-galériában. Egyszeri regisztrációt, ha az első alkalommal bejelentkezik. Ezután a NuGetApiKey érhető el a profil lapon.
+Regisztrálnia kell egy fiókot a PowerShell-galériából a csomagok a katalógusban való közzététel előtt. Ez azért van így, mert csomagok közzététele megköveteli egy NuGetApiKey, amelyről az regisztráláskor. Regisztrálni, használja a személyes, munkahelyi vagy iskolai fiókjával jelentkezzen be a PowerShell-galériából. Egyszeri regisztrációs folyamatot kötelező, amikor először jelentkezik be. Ezt követően a NuGetApiKey a profil lapon érhető el.
 
-Miután regisztrálta a katalógusban, a [Publish-modul](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) vagy [Publish-parancsfájl](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmagok közzétenni a elem a gyűjteményben. Ezen parancsmagok futtatásához kapcsolatos további részletekért látogasson el a közzététel fülre, vagy olvassa el a [Publish-modul](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) és [Publish-parancsfájl](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) dokumentációját.
+Ha már regisztrálta a katalógusban, használja a [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) vagy [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmagjait a csomag közzététele a katalógusban. Ezek a parancsmagok futtatásával kapcsolatos további részletekért látogasson el a Közzététel lapot, vagy olvassa el a [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) és [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) dokumentációját.
 
-**Nem kell regisztrálni, vagy jelentkezzen be a gyűjtemény telepítéséhez vagy elemek mentése.**
+**Nem kell regisztrálni, vagy jelentkezzen be a katalógus telepítéséhez vagy csomagok mentése.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-an-item-to-the-powershell-gallery-what-does-that-mean"></a>Kaptam "kérelem feldolgozása sikertelen. "A megadott API-kulcs érvénytelen, vagy nem rendelkezik hozzáféréssel a megadott csomaghoz.". A távoli kiszolgáló hibát adott vissza: (403-as) tiltott. " a cikk közzétételéhez a PowerShell-galériában közben hiba történt. az mit jelent?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Kapott "nem sikerült feldolgozni a kérelmet. "A megadott API-kulcs érvénytelen, vagy nem rendelkezik hozzáféréssel a megadott csomaghoz.". A távoli kiszolgáló hibát adott vissza: (403) megtiltva. " Hiba történt a PowerShell-galériában egy csomag közzététele során. az mit jelent?
 
-Ez a hiba akkor fordulhat elő, a következő okok miatt:
+Ez a hiba a következő okok miatt fordulhat elő:
 
 - **A megadott API-kulcs érvénytelen.**
-     Győződjön meg arról, hogy megadta a fiókhoz tartozó érvényes API-kulcsot. Ahhoz, hogy az API-kulcsot, a profil a lapnak a megtekintésére.
-- **A megadott elem neve nem Ön tulajdonában van.**
-     Ha meggyőződött róla, hogy az API-kulcs megfelelő, akkor előfordulhat, hogy már vannak ilyen nevű megegyezik a használni kívánt elem. A cikk a tulajdonos által fel nem sorolt lehetett, ebben az esetben az nem fog megjelenni a keresési eredmények között. Annak megállapításához, hogy egy elemet ugyanazzal a névvel már létezik-e, nyisson meg egy böngészőt, és az elem részleteit megjelenítő oldalra léphet: `https://www.powershellgallery.com/packages/<itemName>`. Például Navigálás közvetlenül `https://www.powershellgallery.com/packages/pester` elindítjuk ezt a Pester modul részleteit megjelenítő oldalra, hogy-e fel nem sorolt, vagy nem. Ha egy ütköző nevű elem már létezik, és fel nem sorolt, akkor a következőket teheti:
-    - Válassza ki a cikk egy másik nevet.
-    - Lépjen kapcsolatba a meglévő elemet.
+     Győződjön meg arról, hogy megadott érvényes API-kulcsot a fiókból. Az API-kulcs beszerzéséhez profiloldalán megtekintheti.
+- **A megadott csomag neve nem Ön tulajdonában van.**
+     Ha meggyőződött róla, hogy az API-kulcs helyes, majd előfordulhat, hogy már léteznek a neve megegyezik egy használni kívánt csomagot. A csomag Előfordulhat, hogy importálta a tulajdonos által fel nem sorolt, ebben az esetben az nem fog megjelenni minden olyan keresési eredmények között. Annak megállapításához, hogy egy azonos nevű csomag már létezik-e, nyisson meg egy böngészőt, és a csomag részleteit megjelenítő oldalra léphet: `https://www.powershellgallery.com/packages/<packageName>`. Például közvetlenül a Navigálás `https://www.powershellgallery.com/packages/pester` vesz igénybe, a Pester modul részleteit megjelenítő oldalra, hogy fel nem sorolt-e. Ha egy ütköző nevű csomag már létezik, és fel nem sorolt, végezheti el:
+    - Válassza ki a csomag egy másik nevet.
+    - Lépjen kapcsolatba a következő létező csomagba.
 
-## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Miért nem tudom jelentkezzen be a személyes fiókkal, de sikertelen bejelentkezés tegnap?
+## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Miért nem sikerül bejelentkezni a személyes fiókkal jelentkezik be, de szeretnék sikerült tegnap bejelentkezni?
 
-Felhívjuk a figyelmét arra, hogy gyűjtemény fiókját nem alkalmazzák a módosításokat az elsődleges e-mail aliasát. További információkért lásd: [Microsoft E-mail aliasok](https://windows.microsoft.com/windows/outlook/add-alias-account).
+Vegye figyelembe, hogy a katalógus-fiók nem alkalmazzák a módosításokat az elsődleges e-mail-címre. További információkért lásd: [Microsoft E-mail aliasok](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
-## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>Miért nem látom az összes gyűjteményelemet a kategória jelölőnégyzetek az elemek lapon kiválasztott?
+## <a name="why-dont-i-see-all-the-gallery-packages-when-i-select-all-the-category-checkboxes-on-the-packages-tab"></a>Miért nem látom az összes katalóguscsomagok csomagok lapján az összes kategória jelölőnégyzetek kiválasztásakor?
 
-A kategória jelölőnégyzet bejelölésével akkor van feltüntetve "Szeretném ebbe a kategóriába tartozó összes elemeket." Csak a kiválasztott kategóriákra elemeinek jelenik meg. Ezért hasonlóan kijelölésével a kategória négyzet jelölését, meg vannak megjelölve "Szeretnék egyetlen kategória összes problémát talál." Azonban minden elem a gyűjteményben nem tartoznak sem kategóriáinak, így azok nem jelennek meg az eredményeket. A gyűjtemény minden elemén, törölje az összes kategória, vagy válassza ismét a elemek lap.
+Egy kategória jelölőnégyzet kiválasztásával, vannak megjelölve "Szeretnék kapni, tekintse meg a kategória összes csomagot." Csak a kiválasztott kategóriákba tartozó csomag jelenik meg. Tehát ehhez hasonlóan a kategória összes jelölőnégyzetek bejelölésével, akkor is figyelmezteti a "Szeretnék kapni, tekintse meg az összes csomag bármelyik kategóriában." De az egyes csomagok a katalógusban nem tartozik kategóriákra szerepel a listában, így azok nem jelennek az eredményeket. Tekintse meg a katalógusban található összes csomagot, törölje az összes kategóriát, vagy válassza ki újra a csomagok lapot.
 
-## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Mik a követelmények, a modul közzétételéhez a PowerShell-galériában?
+## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Mik a modul közzétételére a PowerShell-galériából?
 
-PowerShell modul (parancsfájl-modulokba, a bináris modulok vagy jegyzék modulok) bármilyen teheti közzé a katalógusban. Modul közzétételéhez PowerShellGet információk – a verzió, néhány dolgot tudnia kell leírása, Szerző és hogyan licencelése. Ezek az információk olvasható a közzétételi folyamat részeként a *moduljegyzék* (.psd1) fájl, vagy az értéke a [ **Publish-modul** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag **LicenseUri** paraméter. A katalógusban közzétett összes modul modul jegyzékfájlokban kell rendelkeznie. Bármely modul, amely a következő információkat tartalmazza a jegyzékben teheti közzé a gyűjteményben:
-
-- Verzió
-- Leírás
-- Szerző
-- A licencfeltételeket, a modul, vagy részeként mutató URI-t a **PrivateData** a jegyzék, vagy a szakasz a **LicenseUri** paramétere a [ **Publish-modul** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag.
-
-## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Hogyan hozható létre egy megfelelően formázott moduljegyzék?
-
-Egy moduljegyzék létrehozásához legegyszerűbb módja a futtassa a [ **New-ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag. PowerShell 5.0-s vagy újabb, a New-ModuleManifest hoz létre egy megfelelően formázott moduljegyzék például hasznos metaadatok üres mezők **ProjectUri**, **LicenseUri**, és **címkék**. Egyszerűen csak töltse ki a üres értékeket, vagy használja a létrehozott jegyzékre megfelelő formázását példát.
-
-Győződjön meg arról, hogy minden szükséges metaadatok mezők megfelelően ki van töltve, használja a [ **teszt-ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag.
-
-A modul jegyzékfájl mezők frissítéséhez használja a [ **frissítés-ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag.
-
-## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Mik a követelmények, a parancsfájl közzétételéhez a katalógusban?
-
-PowerShell parancsfájl (parancsfájlok és munkafolyamatok) bármilyen teheti közzé a katalógusban. Parancsfájl közzétételét, PowerShellGet információk – a verzió, néhány dolgot tudnia kell leírása, Szerző és hogyan licencelése. Ezt az információt a parancsfájl-fájlból a közzétételi folyamat részeként olvasható *PSScriptInfo* szakaszban, vagy az értéke a [ **Publish-parancsfájl** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag  **LicenseUri** paraméter. A katalógusban közzétett összes parancsfájl metaadat-információt kell rendelkeznie. Bármely parancsfájl, amely tartalmazza a következő információkat PSScriptInfo szakaszban található a gyűjteményelem közzé kell tenni:
+PowerShell-modul (parancsfájl-modulokba, bináris modulok vagy jegyzékfájl modulok) bármilyen típusú tehetők közzé a katalógusban. A közzétételhez egy modul PowerShellGet tudnia kell, néhány dolgot kapcsolatos – a verzió, leírás, Szerző és hogyan licencelve van. Ez az információ olvasható, a közzétételi folyamat részeként a *moduljegyzék* (.psd1) fájl, vagy az értékét a [ **Publish-Module** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag **LicenseUri** paraméter. A galériában közzétett modulok modul jegyzékfájlokká kell rendelkeznie. A katalógus teheti közzé minden olyan modul, amely a következő információkat tartalmazza a jegyzékfájlban:
 
 - Verzió
 - Leírás
 - Szerző
-- A licencfeltételeket, a parancsfájl, részeként mutató URI-t a **PSScriptInfo** a parancsfájl vagy a szakasz a **LicenseUri** paramétere a [ **Publish-parancsfájl** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag.
+- A licencfeltételeket, a modul részét képező vagy egy URI-t a **PrivateData** a jegyzékfájl, vagy a szakasz a **LicenseUri** paraméterében a [ **Publish-Module** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmagot.
 
-## <a name="how-do-i-search"></a>Hogyan kereshető?
+## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Hogyan hozhatok létre egy megfelelően formázott moduljegyzék?
 
-Adja meg, mi keres a szövegmezőben. Például ha azt szeretné, a kapcsolódó Azure SQL modulok keresése zajlik, csak gépelje "azure sql". A keresőmotor azokat az összes közzétett elemek, többek között a címét, leírását és metaadatok között kulcsszavak keresi. Ezt követően a súlyozott minőségi pontszám alapján, jelenik meg a leginkább megfelel. Egyedi mező mező szerint is kereshet: "érték" szintaxist a keresési lekérdezés az alábbi mezők:
+Hozzon létre egy moduljegyzék legegyszerűbb módja az, hogy futtassa a [ **New-ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmagot. PowerShell 5.0-s vagy újabb, a New-ModuleManifest hoz létre egy megfelelően formázott moduljegyzék hasznos metaadatokat, például az üres mezők **ProjectUri**, **LicenseUri**, és **címkék**. Egyszerűen adja meg a megszámlálandó üres értékeket, vagy a létrehozott jegyzékre használja példaként megfelelő formázását.
+
+Győződjön meg arról, hogy minden szükséges metaadatokat tartalmazó mezőket megfelelően ki van töltve, használja a [ **Test-ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmagot.
+
+A modul jegyzékfájl mezők frissítéséhez használja a [ **Update-ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmagot.
+
+## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Mik a parancsfájl közzététele a katalógusban?
+
+PowerShell-parancsprogram (parancsfájlok és munkafolyamatok) bármilyen típusú teheti közzé a katalógusban. Parancsfájl közzétételét, a PowerShellGet tudnia kell, néhány dolgot kapcsolatos – a verzió, leírás, Szerző és hogyan licencelve van. Ez az információ olvasható, a parancsfájl a közzétételi folyamat részeként *PSScriptInfo* szakaszban vagy értékét a [ **Publish-Script** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag  **LicenseUri** paraméter. A katalógusban közzétett összes parancsfájl metaadat-információkat kell rendelkeznie. A katalógus teheti közzé minden olyan parancsfájl, amely a PSScriptInfo szakaszban a következő információkat tartalmazza:
+
+- Verzió
+- Leírás
+- Szerző
+- Egy URI-t a licencfeltételeket, a parancsfájl, vagy részeként a **PSScriptInfo** a parancsfájl vagy a szakasz a **LicenseUri** paraméterében a [ **Publish-Script** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmagot.
+
+## <a name="how-do-i-search"></a>Hogyan kereshetek?
+
+Írja be, amit Ön keres a szövegmezőben. Például ha szeretné az Azure SQL kapcsolódó keresőmodul, csak írja be "az azure sql". A keresőmotor megkeresi ezeket a kulcsszavakat, az összes közzétett csomagok, például a címét, leírását és a metaadatok között. Ezután egy súlyozott minőségi pontszám alapján, jelenik meg a leginkább megfelel. Mezőben használja adott mező szerint is kereshet: "érték" a következő mezőket a keresési lekérdezés szintaxist:
 
 - Címkék
 - Funkciók
@@ -90,61 +90,61 @@ Adja meg, mi keres a szövegmezőben. Például ha azt szeretné, a kapcsolódó
 - DscResources
 - PowerShellVersion
 
-Igen, például ha PowerShellVersion keres: "2.0" csak eredmények, amelyek kompatibilisek-e (a modul, a parancsfájl jegyzékfájl alapján) PowerShellVersion 2.0 fog megjelenni.
+Igen, például, ha a keresés PowerShellVersion: (a parancsfájl modul jegyzékfájl alapján) PowerShellVersion 2.0-val kompatibilis "2.0" csak eredmények jelennek meg.
 
-## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Hogyan hozható létre egy megfelelően formázott parancsfájlt?
+## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Hogyan hozhatok létre egy megfelelően formázott parancsfájlt?
 
-Hozzon létre egy megfelelően formázott parancsfájlt a legegyszerűbb módja futtatásához a [ **New-ScriptFileInfo** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag. PowerShell 5.0-s, új-ScriptFileInfo hoz létre egy megfelelően formázott parancsfájl üres mezők például hasznos metaadatok **ProjectUri**, **LicenseUri**, és **címkék** . Egyszerűen adja meg az üres, vagy használjon a létrehozott parancsfájlt példa bemutatja, hogy megfelelő formázását.
+Parancsfájl megfelelően formázott legegyszerűbb módja az, hogy futtassa a [ **New-ScriptFileInfo** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmagot. PowerShell 5.0-, a New-ScriptFileInfo hoz létre egy megfelelően formázott parancsfájl üres mezők hasznos metaadatokat, például a **ProjectUri**, **LicenseUri**, és **címkék** . Egyszerűen adja meg a megszámlálandó üres értékeket, vagy a megfelelő formázását, például a létrehozott parancsfájl használatával.
 
-Győződjön meg arról, hogy minden szükséges metaadatok mezők megfelelően ki van töltve, használja a [ **teszt-ScriptFileInfo** ](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag.
+Győződjön meg arról, hogy minden szükséges metaadatokat tartalmazó mezőket megfelelően ki van töltve, használja a [ **Test-ScriptFileInfo** ](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmagot.
 
-A parancsfájl metaadatmezőket frissítéséhez használja a [ **frissítés-ScriptFileInfo** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag.
+A parancsfájl metaadatmezőket frissítéséhez használja a [ **Update-ScriptFileInfo** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmagot.
 
-## <a name="what-other-types-of-powershell-modules-exist"></a>Milyen más PowerShell-modulok létezik?
+## <a name="what-other-types-of-powershell-modules-exist"></a>Milyen más PowerShell-modul létezik?
 
-A kifejezés PowerShell-modul a fájlok tényleges funkcióit megvalósító is hivatkozik. Parancsfájl modul fájlok (.psm1) PowerShell-kódot tartalmaznak. A modul bináris fájlok (.dll) lefordított kódot tartalmaznak.
+Az előfizetési időszak PowerShell-modul is a fájlok tényleges funkciókat megvalósító utal. A modul parancsfájlok (.psm1) PowerShell-kódot tartalmaz. A modul bináris fájlok (.dll) lefordított kódot tartalmaznak.
 
-Gondolja át az egyik módja: a mappa, amely magában foglalja a modul az a modul mappa. A modul mappát egy moduljegyzék (.psd1), amely leírja a mappa tartalmát is tartalmazhat. A fájl ténylegesen a munkájuk, a parancsfájl modul (.psm1) és a modul bináris fájlokat (.dll). DSC erőforrások egy meghatározott almappára találhatók, és parancsfájl modul vagy bináris modul fájlokat megvalósítása.
+Gondolja át, hogy egyik módja: a mappát, amely magában foglalja a modul az a modul mappa. A modul mappáját egy modul jegyzékfájlt (.psd1), amely leírja a mappa tartalmát is tartalmazhat. Valójában hogyan használják a munkahelyi fájlok a parancsfájl modul (.psm1) és a modul bináris fájlokat (.dll). DSC-erőforrások egy adott alfeladat mappában található, és a parancsfájl modul vagy a modul bináris fájlokat vannak implementálva.
 
-A modulok a gyűjtemény összes modul jegyzékfájlokban, valamint ezek a modulok többsége tartalmazhatja parancsfájl modul vagy modul bináris fájlokat. A kifejezés modul zavaró lehet a különböző jelentésekkel miatt. Explicit módon másként nincs feltüntetve, minden használ, a word modul ezen a lapon tekintse át a modul mappát, amely tartalmazza ezeket a fájlokat.
+A katalógusban található összes modul jegyzékek tartalmazhat, és ezeket a modulokat a legtöbb parancsfájl modul vagy a modul bináris fájlokat tartalmaz. A kifejezés modul miatt ezek különböző jelentéssel zavaró lehet. Kivéve, ha explicit módon meghatározva, a word modul ezen az oldalon összes felhasználását tekintse meg a modul mappát, amely tartalmazza ezeket a fájlokat.
 
-## <a name="how-does-packagemanagement-relate-to-powershellget-high-level-answer"></a>Hogyan kapcsolódnak PackageManagement PowerShellGet? (Magas szintű válasz)
+## <a name="how-does-packagemanagement-relate-to-powershellget-high-level-answer"></a>Hogyan kapcsolódnak a PackageManagement PowerShellGet? (Magas szintű válasz)
 
-PackageManagement bármilyen Csomagkezelő való munkához egy közös felületet. Végül PowerShell-modulok, a MSIs, a Ruby gems, a NuGet-csomagok vagy a Perl-modulok által foglalkozik, hogy meg kell tudni parancsokkal PackageManagement meg (Keresés – csomag és Install-Package) található, és telepítheti. PackageManagement ezt végzi, azzal, hogy minden egyes Csomagkezelő PackageManagement keresztül csatlakozó csomag szolgáltatót. Szolgáltatók tegye meg a tényleges munkát; tartalom beolvasása a tárházak találhatók, és a tartalomhoz helyileg telepíteni. Gyakran csomag szolgáltatók egyszerűen elemlista a meglévő csomag kezelőeszközei egy adott csomag típusa.
+A PackageManagement egy közös felület bármilyen Csomagkezelő való munkához. Végül PowerShell-modulok, a MSIs, a Ruby gems, a NuGet-csomagok vagy a Perl-modulok még foglalkozik, hogy meg kell tudni (Find-Package és Install-Package) keresse meg és telepítheti a PackageManagement a parancsok használata. A PackageManagement egyes Csomagkezelő, amely rendkívüli PackageManagement csomag szolgáltatót sablonkonfigurációkat azért teszi ezt. Szolgáltatók tegye meg a tényleges munka; tartalmat beolvasni a változásokat, és a tartalom helyi telepítése. Csomag szolgáltatók gyakran egyszerűen burkolása körül a meglévő csomag manager eszközök egy adott csomag-típus.
 
-PowerShellGet, a package manager PowerShell elemekhez. Nincs olyan PowerShellGet funkciókkal rendelkezik PackageManagement keresztül PSModule csomag szolgáltató. Ebből kifolyólag is fut [Install-modul](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) vagy az Install-Package-szolgáltató PSModule modul telepítésére a PowerShell-galériából. Bizonyos PowerShellGet funkciót, beleértve a [frissítés-modul](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) és [Publish-modul](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), PackageManagement parancsok nem érhető el.
+A PowerShellGet a Csomagkezelő PowerShell csomagok. Nincs egy PSModule csomag szolgáltató, amely elérhetővé teszi a PackageManagement PowerShellGet funkciót. Ez az oka, vagy futtassa is [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) vagy az Install-Package-szolgáltató PSModule modul telepítésére a PowerShell-galériából. Bizonyos PowerShellGet funkciókat, beleértve a [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) és [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), nem érhető el a PackageManagement-parancsok segítségével.
 
-Az összegzés PowerShellGet kizárólag arra irányul, amely a prémium csomag felügyeleti tartalom-közzétételi környezetet PowerShell. PackageManagement arra irányul, hogy az ilyen eszközök egy általános készlete keresztül minden csomag felügyeleti feladatait. Unsatisfying találja a választ, ha van egy hosszú válasz, ez a dokumentum alján a **hogyan PackageManagement ténylegesen kapcsolódik PowerShellGet?** szakasz.
+Összefoglalva a PowerShellGet kizárólag összpontosít egy prémium szintű csomag megoldást PowerShell tartalom kellene. A PackageManagement összpontosít adatokhoz hozzáférést biztosító eszközök egy általános rekordkészletből minden csomag felügyeleti funkciókat. Unsatisfying találja meg a választ, van-e ez a dokumentum alján egy hosszú válasz a a **hogyan PackageManagement ténylegesen kapcsolódik a PowerShellGet?** szakaszban.
 
-További információkért tekintse meg a [PackageManagement projekt lap](https://oneget.org/).
+További információkért látogasson el a [PackageManagement projektoldalon](https://oneget.org/).
 
 ## <a name="how-does-nuget-relate-to-powershellget"></a>Hogyan kapcsolódnak NuGet PowerShellGet?
 
-A PowerShell-galériában egy módosított verziója telepítve a [NuGet gyűjtemény](https://www.nuget.org/). PowerShellGet NuGet-szolgáltatóját használja a NuGet-alapú tárházak találhatók, mint például a PowerShell-galériában együttműködni.
+A PowerShell-galériából egy módosított verziója, a [NuGet-katalógusban](https://www.nuget.org/). A PowerShellGet NuGet-szolgáltató például a PowerShell-galériából NuGet-alapú tárházak dolgozhat használ.
 
-Bármilyen érvényes NuGet tárház vagy a fájlmegosztásnak elleni PowerShellGet is használhatja. Egyszerűen hozzá kell adnia a tárház futtatásával a [ **Register-PSRepository** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmag.
+A PowerShellGet is használhatja bármilyen érvényes NuGet tárházban vagy a fájlmegosztásnak ellen. Egyszerűen csak hozzá kell a tárház futtatásával a [ **Register-PSRepository** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) parancsmagot.
 
-## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>Amely azt jelenti a gyűjtemény használható NuGet.exe használata?
+## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>Jelent NuGet.exe használható dolgozhat a katalógusban?
 
 Igen.
 
-## <a name="how-does-packagemanagement-actually-relate-to-powershellget-technical-details"></a>Hogyan PackageManagement ténylegesen kapcsolódik PowerShellGet? (Technikai részleteket)
+## <a name="how-does-packagemanagement-actually-relate-to-powershellget-technical-details"></a>Hogyan PackageManagement ténylegesen kapcsolódik a PowerShellGet? (Technikai részletek)
 
-A technikai részletek alatt PowerShellGet fokozottan PackageManagement infrastruktúráját használja.
+Technikai részletek a PowerShellGet erősen PackageManagement infrastruktúrát használja.
 
-A PowerShell-parancsmag rétegben [Install-modul](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) van ténylegesen vékony csomagolásának Install-Package-szolgáltató PSModule.
+A PowerShell-parancsmag rétegben [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) ténylegesen vékony burkolója Install-Package-szolgáltató PSModule.
 
-Az PackageManagement csomag szolgáltató rétegben a PSModule csomag szolgáltató ténylegesen hívja be más PackageManagement csomag szolgáltatók. Például ha (például a PowerShell-galériában) NuGet-alapú gyűjtemények dolgozik, a PSModule csomag szolgáltató használ a NuGet csomag szolgáltató működéséhez a tárházban.
+A PackageManagement csomag szolgáltató rétegben az PSModule csomag szolgáltató ténylegesen hívások egyéb PackageManagement csomag szolgáltatók. Például ha katalógusok NuGet-alapú (például a PowerShell-galériából) dolgozik, a PSModule csomag szolgáltató használ a NuGet-csomag szolgáltató dolgozhat a tárházban.
 
-![PowerShellGet architektúra](Images/powershellgetArchitecture.png)
+![A PowerShellGet-architektúra](Images/powershellgetArchitecture.png)
 
-1. ábra: PowerShellGet architektúrája
+1. ábra: A PowerShellGet-architektúra
 
-## <a name="what-is-required-to-run-powershellget"></a>Mi az PowerShellGet futtatásához szükséges?
+## <a name="what-is-required-to-run-powershellget"></a>Mi szükséges a PowerShellGet futtatásához?
 
-Általánosságban ajánlott kiadási PowerShellGet modul (vegye figyelembe, hogy szükséges-e a .NET 4.5) legújabb verzióját.
+Általában javasoljuk, hogy kiválasztotta a PowerShellGet modul (vegye figyelembe, hogy .NET 4.5-ös igényel) legújabb verzióját.
 
-A **PowerShellGet** module használatához **PowerShell 3.0-s vagy újabb**.
+A **PowerShellGet** modulhoz szükséges **PowerShell 3.0-s vagy újabb**.
 
 Ezért **PowerShellGet** a következő operációs rendszerek egyike szükséges:
 
@@ -156,16 +156,16 @@ Ezért **PowerShellGet** a következő operációs rendszerek egyike szükséges
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** is szükséges a .NET-keretrendszer 4.5 vagy újabb. Telepítheti a .NET-keretrendszer 4.5 vagy újabb a [Itt](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**A PowerShellGet** is szükséges a .NET-keretrendszer 4.5 vagy újabb. Telepítheti a .NET-keretrendszer 4.5 vagy újabb a [Itt](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
-## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>Az elemek, a jövőben tesznek közzé nevek lefoglalhat?
+## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Ennyi az egész lehet foglalni a jövőben tesznek közzé csomagok nevei?
 
-Nincs lehetőség a guggolós elemek nevei. Ha úgy véli, hogy egy meglévő elem tartott a neve, amely megfelel a cikk több, próbálja meg [való kapcsolódás a tulajdonos elem](./how-to/working-with-items/contacting-item-owners.md). Ha néhány hétre belül nem kap választ, meg, forduljon a támogatási szolgálathoz, és a PowerShell-galériában csapat azt jeleníti meg.
+Nem alkalmas guggolós csomag nevét. Ha úgy érzi, hogy egy meglévő csomaghoz vette a nevét, amely megfelel a csomag több, próbálja meg [forduljon a tulajdonoshoz csomag](./how-to/working-with-packages/contacting-package-owners.md). Ha nem kap választ belül egy pár hétig, forduljon az ügyfélszolgálathoz, és a PowerShell-galériából csapat azt jeleníti meg.
 
-## <a name="how-do-i-claim-ownership-for-items-"></a>Milyen jogcímek a cikkek tulajdonosa?
+## <a name="how-do-i-claim-ownership-for-packages"></a>Hogyan vehetem tulajdonjog-csomagok?
 
-Tekintse meg [elem tulajdonosainak kezelése a PowerShellGallery.com](./how-to/publishing-items/managing-item-owners.md) részleteiről.
+Tekintse meg [csomag tulajdonosainak kezelése a PowerShellGallery.com](./how-to/publishing-packages/managing-package-owners.md) részleteiről.
 
-## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>Hogyan egy elem tulajdonost, aki a cikk licencet van megsértése foglalkozik?
+## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>Hogyan egy csomag tulajdonost, aki a csomag licenc van megsértése foglalkoznak?
 
-A PowerShell közösségi működjön együtt a cikk tulajdonosok és más elemek tulajdonosai között esetleg felmerülő jogviták javasoljuk.  Azt a célra egy [névfeloldási folyamat vitát](./how-to/getting-support/dispute-resolution.md) , kérjük, hogy PowerShellGallery.com rendszergazdák intercede előtt hajtsa végre.
+Azt javasoljuk, hogy a PowerShell-Közösség működhet együtt, oldja meg a csomag tulajdonosai és más csomagokat, a tulajdonosok között felmerülő viták.  Azt a célra egy [névfeloldási folyamat vitát](./how-to/getting-support/dispute-resolution.md) , megkérjük, hogy a rendszergazdák PowerShellGallery.com intercede előtt hajtsa végre.

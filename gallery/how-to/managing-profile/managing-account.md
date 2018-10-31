@@ -2,15 +2,15 @@
 ms.date: 09/05/2018
 contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
-title: PowerShell-Galériabeli fiók beállításai
-ms.openlocfilehash: dd7b8b3a99b5b7fbfec5d7f82b81dd6d5cfb906c
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+title: PowerShell-galéria fiókjának beállításai
+ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523348"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002786"
 ---
-# <a name="powershell-gallery-account-settings"></a>PowerShell-Galériabeli fiók beállításai
+# <a name="powershell-gallery-account-settings"></a>PowerShell-galéria fiókjának beállításai
 
 A PowerShell-Galériabeli fiók országom nevét, amely az identitás van csatolva. Az identitáshoz vagy a Microsoft ID, például `user@hotmail.com` vagy `user@outlook.com`, vagy egy Azure Active Directory (AAD) fiókot.
 
@@ -34,7 +34,7 @@ Amikor új e-mail címet, a PowerShell-galériából egy ellenőrző levelet kü
 PowerShell-galériából a következő értesítési beállításokat biztosítja:
 
 - Felhasználók felvehesse velem a kapcsolatot a PowerShell-galériából keresztül
-- Értesítést kérek, ha egy elemet a rendszer továbbítja a PowerShell-galériából saját fiók használatával
+- Értesítést kérek, ha egy csomagot a rendszer továbbítja a PowerShell-galériából saját fiók használatával
 
 ![E-mail-cím megváltoztatása](../../Images/PSGallery_AccountEmailOptions.png)
 

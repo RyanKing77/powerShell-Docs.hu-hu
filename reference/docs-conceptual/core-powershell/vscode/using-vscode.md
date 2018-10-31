@@ -2,12 +2,12 @@
 title: PowerShell-fejlesztéshez a Visual Studio Code használatával
 description: PowerShell-fejlesztéshez a Visual Studio Code használatával
 ms.date: 08/06/2018
-ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134100"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225794"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell-fejlesztéshez a Visual Studio Code használatával
 
@@ -124,12 +124,11 @@ Például egy konfigurációkat adhat hozzá:
 - A hibakereső egy interaktív munkamenet indítása
 - Csatolja a hibakeresőt a PowerShell gazdafolyamatokon
 
-  Kövesse az alábbi lépéseket a hibakeresési konfigurációs fájl létrehozása céljából:
+Kövesse az alábbi lépéseket a hibakeresési konfigurációs fájl létrehozása céljából:
 
   1. Nyissa meg a **Debug** lenyomásával nézet **Ctrl + Shift + D** (**Cmd + Shift + D** Mac gépen).
   2. Nyomja le az **konfigurálása** fogaskerék ikont, az eszköztáron.
-  3. A Visual Studio Code felszólítja, hogy **környezet kiválasztása**.
-  Válasszon **PowerShell**.
+  3. A Visual Studio Code felszólítja, hogy **környezet kiválasztása**. Válasszon **PowerShell**.
 
   Ha így tesz, a Visual Studio Code létrehoz egy könyvtárat és a egy ".vscode\launch.json" fájlt a munkaterület gyökérkönyvtárába.
   Ez az a hibakeresési konfigurációs tárolására. Ha a fájlok egy Git-tárházban, általában a launch.json fájl véglegesíteni kívánja.
@@ -171,9 +170,7 @@ Például egy konfigurációkat adhat hozzá:
 
   Ha a hibakeresési konfigurációs létrejött, melyik konfiguráció, ha kiválaszt egy, a hibakeresési konfigurációjából legördülő a hibakeresési munkamenet során használni kívánt kiválaszthatja a **Debug** nézet eszköztárán.
 
-  Van néhány hasznos az első lépésekhez a PowerShell-bővítmény használata a Visual Studio Code-blogok
-
-A Visual Studio Code-ot:
+Van néhány hasznos az első lépésekhez a PowerShell-bővítmény használata a Visual Studio Code-blogok:
 
 - [PowerShell-bővítmény][ps-extension]
 - [Írási és hibakeresése a Visual Studio Code-ban a PowerShell-parancsprogramok][debug]

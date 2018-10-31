@@ -2,25 +2,25 @@
 ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
-title: Licenc elfogadása igénylő parancsfájlok
-ms.openlocfilehash: 6374c8c8536dd0c8f27580a5b8895b8db18424f9
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+title: Licencfeltételek elfogadását igénylő parancsprogramok
+ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048884"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002582"
 ---
-# <a name="requiring-license-acceptance-for-scripts"></a>Licenc elfogadása igénylő parancsfájlok
+# <a name="requiring-license-acceptance-for-scripts"></a>Licencfeltételek elfogadását igénylő parancsprogramok
 
-Licenc elfogadása parancsfájlok nem támogatott. Azonban a forgatókönyvet, ahol egy parancsfájl attól függ, a modul, amely licencszerződés elfogadását igényli támogatott.
+Licencfeltételek elfogadásának parancsfájlok nem támogatott. Azonban a forgatókönyvet, ahol a parancsfájl attól függ, a licencfeltételek elfogadását igénylő moduljára támogatott.
 
-Parancsfájl commands(Install-Script/Save-Script/Update-Script) támogatja az új paramétert, amely úgy viselkedik, mintha a felhasználói látta a licenc - AcceptLicense. Ha nincs megadva a - AcceptLicense; a felhasználó kéri, hogy elfogadja a licencfeltételeket és a függő modul license.txt megjelenítendő.
+Parancsfájl commands(Install-Script/Save-Script/Update-Script) támogatásához új paraméter, amely viselkedik, mintha a felhasználó látott a licenc - AcceptLicense. Ha nincs megadva - AcceptLicense; a felhasználó a licenc elfogadására kéri a rendszer és a függő modul license.txt megjelenítendő.
 
 ## <a name="examples"></a>PÉLDÁK
 
-### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>1. példa: Telepítési parancsfájl licenc elfogadása igénylő függőségekkel rendelkező
+### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>1. példa: Telepítési szkriptet a licencfeltételek elfogadását igénylő függőségek
 
-Parancsfájl "ScriptRequireLicenseAcceptance" modul "ModuleRequireLicenseAcceptance" függ. Licenc elfogadása felhasználótól.
+Parancsfájl "ScriptRequireLicenseAcceptance" modul: ModuleRequireLicenseAcceptance"függ. Licenc fogadja el a rendszer kéri.
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance
@@ -38,16 +38,16 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>2. példa: Telepítési parancsfájl licenc elfogadása és - AcceptLicense függőségekkel rendelkező
+### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>2. példa: Telepítési szkriptet - AcceptLicense és a licencfeltételek elfogadását igénylő függőségekkel
 
-Parancsfájl "ScriptRequireLicenseAcceptance" modul "ModuleRequireLicenseAcceptance" függ. Nem felhasználótól fogadnia a licencfeltételeket, mert - AcceptLicense sincs megadva.
+Parancsfájl "ScriptRequireLicenseAcceptance" modul: ModuleRequireLicenseAcceptance"függ. Fogadja el a licenc - AcceptLicense van megadva, az nem kéri a felhasználótól.
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 ```
 
-## <a name="more-details"></a>További részletekért
+## <a name="more-details"></a>További részletek
 
-- [Licenc elfogadása támogatásra van szüksége a modulok](module-license-acceptance.md)
-- [A PowerShellGallery licenc elfogadása támogatásra van szüksége](../how-to/working-with-items/items-that-require-license-acceptance.md)
-- [Licencfeltételek elfogadásának kérése az Azure Automation szolgáltatásban való üzembe helyezéshez](../how-to/working-with-items/deploy-to-azure-automation.md)
+- [Licencfeltételek elfogadásának támogatást igénylő modulok](module-license-acceptance.md)
+- [A PowerShell-Galériabeli licencfeltételek elfogadását támogatásra van szüksége](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
+- [Licencfeltételek elfogadásának kérése az Azure Automation szolgáltatásban való üzembe helyezéshez](../how-to/working-with-packages/deploy-to-azure-automation.md)

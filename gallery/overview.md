@@ -1,51 +1,52 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-keywords: gyűjtemény, powershell, a parancsmag, psgallery, psget
-title: A PowerShell-galériában
-ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+keywords: katalógus, powershell, a parancsmag, psgallery, psget
+title: A PowerShell-galéria
+ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482930"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225618"
 ---
-# <a name="the-powershell-gallery"></a>A PowerShell-galériában
+# <a name="the-powershell-gallery"></a>A PowerShell-galéria
 
-A PowerShell-galériában PowerShell tartalom központi tárháza. Az oktatóanyagban található PowerShell-parancsokat és a kívánt állapot konfigurációs szolgáltatása (DSC) erőforrásokat tartalmazó hasznos PowerShell-modulok.
-PowerShell-parancsfájlok, amelyek PowerShell-munkafolyamatok, és amely szerkezeti feladatokhoz és tartalmazhat adja meg a műveleti sorrend a ezeket a feladatokat is tájékozódhat. Ezek az elemek egy része felhasználók a Microsoft által készített, és más felhasználók által a PowerShell közösségi készített.
+A PowerShell-galériából a PowerShell-tartalmak központi adattára. A PowerShell-parancsok és a Desired State Configuration (DSC) erőforrásokat tartalmazó hasznos PowerShell-modulok is megtalálhatja.
+PowerShell-parancsfájlok, amelyek előfordulhat, hogy tartalmazza a PowerShell-munkafolyamatokkal, és amely szerkezeti feladatokhoz, és adja meg ezeket a feladatokat az alkalmazás-előkészítés is megtalálhatja. Néhány ezeket a csomagokat a Microsoft által lett létrehozva, és mások vannak a PowerShell-Közösség által készített.
 
-## <a name="powershellget-overview"></a>PowerShellGet áttekintése
+## <a name="powershellget-overview"></a>A PowerShellGet áttekintése
 
-A PowerShellGet modul tartalmaz parancsmagokat a felderítése, telepítése, frissítése és PowerShell összetevők, például a modulok, a DSC-erőforrások, a szerepkör képességek és a parancsfájlokat a közzététel a [PowerShell-galériában](https://www.PowerShellGallery.com) és egyéb magánhálózatokon tárházak találhatók.
+A PowerShellGet modul felderítése, telepítése, frissítése és PowerShell csomagok, amely tartalmazza azokat az összetevőket, például a modulok, a DSC-erőforrások, a szerepköri funkciók és a parancsfájlok közzétételéhez szükséges parancsmagokat tartalmazza a [PowerShell-galériából](https://www.PowerShellGallery.com)és más privát tárházakban.
 
-## <a name="getting-started-with-the-gallery"></a>A gyűjtemény első lépések
+## <a name="getting-started-with-the-gallery"></a>A katalógus – első lépések
 
-Elemet a gyűjteményből telepítéséhez a PowerShellGet modul legújabb verzióját.
-Lásd: [telepítése PowerShellGet](installing-psget.md) részletes utasításokért.
+A PowerShellGet-modul legújabb verzióját a katalógusból csomagok telepítése szükséges.
+Lásd: [PowerShellGet telepítése](installing-psget.md) részletes utasításokért.
 
-Tekintse meg a [bevezetés](getting-started.md) oldalon olvashat PowerShellGet parancsok használata a gyűjteményben. Is futtathatja *Update-Help-modul PowerShellGet* parancsok helyi súgó telepítése.
+Tekintse meg a [bevezetés](getting-started.md) további tudnivalókat a PowerShellGet-parancsok használata a katalógusban. Futtathat *Update-Help-Module PowerShellGet* ezekkel a parancsokkal a helyi súgó telepítése.
 
-## <a name="supported-operating-systems"></a>Támogatott operációs rendszerek
+## <a name="supported-operating-systems"></a>A támogatott operációs rendszerek
 
-A **PowerShellGet** module használatához **Windows PowerShell 3.0-s vagy újabb**, vagy **PowerShell Core 6.0-s vagy újabb**.
+A **PowerShellGet** modulhoz szükséges **Windows PowerShell 3.0-s vagy újabb**, vagy **a PowerShell Core 6.0-s vagy újabb**.
 
-Egy megfelelő verziója **Windows PowerShell** érhető el a fenti operációs rendszerek:
+Egy megfelelő verziója **Windows PowerShell** ezen operációs rendszerekhez érhető el:
 
 - Windows-10
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
 - Windows 7 SP1
+- A Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** is szükséges a .NET-keretrendszer 4.5 vagy újabb. Telepítheti a .NET-keretrendszer 4.5 vagy újabb a [Itt](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**A PowerShellGet** szükséges a .NET-keretrendszer 4.5 vagy újabb. Telepítheti a .NET-keretrendszer 4.5 vagy újabb a [Itt](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
-**PowerShell Core** sok operációs rendszereket támogatja. Lásd: [Ez a cikk](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/) teljes listáját.
+Mivel **a PowerShell Core** platformfüggetlen és, hogy azt jelenti, hogy a Windows, Linux és MacOS rendszeren működik, amely is lehetővé teszi, **PowerShellGet** ezeket rendszereken érhető el. Által támogatott rendszerek teljes listáját **a PowerShell Core** lásd [PowerShell telepítése](/powershell/scripting/setup/installing-powershell).
 
-Számos modult a dokumentumtárban tárolt támogatják a különböző operációs rendszerei között, és további követelmények. További információ a modulokat dokumentációjában tájékozódhat.
+A tárban lévő üzemeltetett számos modulok támogatják a különböző OSE-kre, és a további követelményeket támasztanak. Tekintse meg a modulok további információt a dokumentációban.
 
-## <a name="got-a-question-have-feedback"></a>A kapott a következő kérdést? Van?
+## <a name="got-a-question-have-feedback"></a>Kérdése van? Visszajelzés küldene?
 
-További információ a PowerShell-galériában és PowerShellGet megtalálhatók a [bevezetés](getting-started.md) lap. Adja meg a visszajelzések és a jelentés kapcsolatos problémákat [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
+További információ a PowerShell-galéria és a PowerShellGet megtalálható a [bevezetés](getting-started.md) lap. Adja meg a visszajelzések és a jelentés kapcsolatos problémákat [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

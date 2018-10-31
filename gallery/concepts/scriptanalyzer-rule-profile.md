@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
-title: ScriptAnalyzer szabály profil galéria
-ms.openlocfilehash: 54100f7a530cbc769e4a0e2dbff18dbc5de88fa6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: katalógus, a powershell, a parancsmag, a psgallery
+title: Katalógus ScriptAnalyzer szabály profil
+ms.openlocfilehash: d91a88981cc2f3269a1f8b6ee864f8333a2f097c
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225742"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002496"
 ---
-# <a name="scriptanalyzer-rule-profile-for-gallery"></a>ScriptAnalyzer szabály profil galéria
+# <a name="scriptanalyzer-rule-profile-for-gallery"></a>Katalógus ScriptAnalyzer szabály profil
 
-PowerShell-galériában közzétett cikkek minőségének biztosítása érdekében Futtatás [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) szabályok használatával határozza meg, hogy van-e elküldve parancsfájlokban felmerülő szabálysértéseket.
+A futtatott PowerShell-galériában közzétett csomagokat a minőség biztosítása érdekében [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) szabályok használatával határozza meg, hogy vannak-e a szkriptekben elküldött kapcsolatban felmerülő szabálysértéseket.
 
-ScriptAnalyzer futtatja azt szabályok listáján található [GitHub-oldalon](https://github.com/PowerShell/PSScriptAnalyzer/blob/development/Engine/Settings/PSGallery.psd1).
-Ha bármilyen probléma merül fel kapcsolatos szabályok azt futnak, forduljon a PowerShell-Galériabeli rendszergazdák, vagy nyissa meg a problémát a ScriptAnalzyer.
+Annak a ScriptAnalyzer futtatjuk szabályok listáján [GitHub-oldalon](https://github.com/PowerShell/PSScriptAnalyzer/blob/development/Engine/Settings/PSGallery.psd1).
+Ha bármely aggály szabályok futtatjuk, lépjen kapcsolatba a PowerShell-galéria rendszergazdák, vagy nyissa meg a problémát a ScriptAnalzyer.
 
-ScriptAnalyzer eredmények minden oldalon egyedi elem gyűjteményben a következő kiadásban jelennek meg. Javasoljuk a cikk tulajdonosok ellenőrizze, hogy nincsenek a közzétett cikkek súlyos hibák az elemek kereséséhez.
+ScriptAnalyzer eredményeket a minden egyes csomag lapon katalógus a következő kiadásban jelennek meg. Azt javasoljuk, hogy a csomag tulajdonosok csomagjaikat, hogy nincsenek közzétett csomag súlyos hibák ellenőrzéséhez.

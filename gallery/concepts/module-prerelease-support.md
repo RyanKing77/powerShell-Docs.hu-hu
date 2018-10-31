@@ -3,21 +3,21 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: katalógus, powershell, a parancsmag, psget
 title: Előzetes verziója
-ms.openlocfilehash: 9c3ddb623fbcb7f4b3453dd70cdc56a8dc2e9f6a
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268619"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002769"
 ---
 # <a name="prerelease-module-versions"></a>Előzetes verziója
 
-1.6.0-s verziójának verziótól kezdődően a PowerShellGet és a PowerShell-galériából támogatást nyújt a címkézési egy előzetes verzióját, 1.0.0-esnél újabb verzióiban. Ez a funkció előtt előzetes elemeket a rendszer 0-verzió kezdő járulnia korlátozott. Ezeket a funkciókat az a célja, hogy a szélesebb körű támogatást biztosít [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning egyezmény visszamenőleges PowerShell verziók 3 és újabb, vagy meglévő a PowerShellGet verzióival való kompatibilitás megszakítása nélkül. Ez a témakör a modul-specifikus szolgáltatásokra összpontosít. A parancsfájlok egyenértékű funkciókra a [parancsfájlok előzetes verziók](script-prerelease-support.md) témakör. Használja ezeket a funkciókat, a kiadók is modul vagy verzió 2.5.0-alpha-parancsprogramot, és később kiadásból egy éles használatra kész 2.5.0, amely felülírja az előzetes verziót.
+1.6.0-s verziójának verziótól kezdődően a PowerShellGet és a PowerShell-galériából támogatást nyújt a címkézési egy előzetes verzióját, 1.0.0-esnél újabb verzióiban. Ez a funkció előtt előzetes csomagokat a rendszer 0-verzió kezdő járulnia korlátozott. Ezeket a funkciókat az a célja, hogy a szélesebb körű támogatást biztosít [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning egyezmény visszamenőleges PowerShell verziók 3 és újabb, vagy meglévő a PowerShellGet verzióival való kompatibilitás megszakítása nélkül. Ez a témakör a modul-specifikus szolgáltatásokra összpontosít. A parancsfájlok egyenértékű funkciókra a [parancsfájlok előzetes verziók](script-prerelease-support.md) témakör. Használja ezeket a funkciókat, a kiadók is modul vagy verzió 2.5.0-alpha-parancsprogramot, és később kiadásból egy éles használatra kész 2.5.0, amely felülírja az előzetes verziót.
 
 Magas szinten a modul előzetes funkciók a következők:
 
-- A modul előzetes karakterláncot ad hozzá a moduljegyzékben PSData szakaszában azonosítja az előzetes verzióként. Ha a modul a PowerShell-galériából tesznek közzé, ezeket az adatokat a jegyzékfájl kinyert, és előzetes elemek azonosításához használt.
-- Előzetes elemek beszerzéséhez szükséges hozzáadása `-AllowPrerelease` jelzőt a PowerShellGet-parancsokkal `Find-Module`, `Install-Module`, `Update-Module`, és `Save-Module`. Ha nincs megadva a jelzőt, végleges elemek nem jelenik meg.
+- A modul előzetes karakterláncot ad hozzá a moduljegyzékben PSData szakaszában azonosítja az előzetes verzióként. Ha a modul a PowerShell-galériából tesznek közzé, ezeket az adatokat a jegyzékfájl kinyert, és előzetes csomagok azonosítására szolgál.
+- Előzetes csomagokat beszerzéséhez szükséges hozzáadása `-AllowPrerelease` jelzőt a PowerShellGet-parancsokkal `Find-Module`, `Install-Module`, `Update-Module`, és `Save-Module`. Ha nincs megadva a jelzőt, végleges csomagok nem jelenik meg.
 - Modulverziók által megjelenített `Find-Module`, `Get-InstalledModule`, és a PowerShell-galériából a jelenik meg egyetlen utótaggal, mint 2.5.0-alpha előzetes karakterláncot karakterláncként.
 
 Szolgáltatások részletei az alábbiakban találhatók.
@@ -51,7 +51,7 @@ A kiadás előtti karakterlánc részletes követelményei a következők:
 
 - Előzetes karakterlánc csak akkor adható meg, ha a ModuleVersion 3 szegmenssel főverzió.alverzió.build formában az. Ez SemVer v1.0.0 illeszkedik.
 - Egy kötőjel a kivonni kívánt a buildszám és a megjelenés előtti karakterlánc között. Egy kötőjel mint az első karakter, csak a kiadás előtti karakterlánc kell venni.
-- A kiadás előtti karakterlánc csak alfanumerikus ASCII-karaktereket tartalmazhat [0-pedig a 9A-Za - z-]. Ajánlott eljárás a Prerelease megkezdéséhez karakterlánc egy alfanumerikus karakter, könnyebben azonosíthatja, hogy ez a kiadás előtti verzióját, elemek listájának beolvasásakor.
+- A kiadás előtti karakterlánc csak alfanumerikus ASCII-karaktereket tartalmazhat [0-pedig a 9A-Za - z-]. Ajánlott eljárás a Prerelease megkezdéséhez karakterlánc egy alfanumerikus karakter, könnyebben azonosíthatja, hogy ez a kiadás előtti verzióját, csomagok listájának beolvasásakor.
 - Jelenleg csak SemVer v1.0.0 előzetes karakterláncok támogatott. Előzetes karakterlánc **nem kell** vagy időszak tartalmazhat vagy + [. +], amely SemVer 2.0 használata engedélyezett.
 - Néhány példa a támogatott előzetes karakterlánc:-alpha, - α1, – BÉTAVERZIÓ, - update20171020
 
@@ -61,9 +61,9 @@ Rendezési sorrend módosítja, ami fontos a PowerShell-galériából való köz
 
 A PowerShell-galériából való közzétételkor alapértelmezés szerint a közzétett modul verzióját kell lennie a nagyobb, mint a korábban közzétett verzió, a PowerShell-galériában található.
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Keresés és a PowerShellGet-parancsokkal előzetes elemek beolvasása
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Keresés és a PowerShellGet-parancsokkal előzetes csomagok beszerzése
 
-Előzetes elemekről-Module PowerShellGet Find-Module, Install-Module, frissítés, kezelése és a Save-Module parancsokat igényel, a - AllowPrerelease jelző hozzáadása. Ha meg van adva a - AllowPrerelease, előzetes elemek helyőrzője, ha ezek meg adva. Ha - AllowPrerelease jelző nincs megadva, kiadás előtti elemek nem fognak megjelenni.
+Előzetes csomagokat-Module PowerShellGet Find-Module, Install-Module, frissítés, kezelése és a Save-Module parancsokat igényel, a - AllowPrerelease jelző hozzáadása. Ha meg van adva a - AllowPrerelease, előzetes csomagokat helyőrzője, ha ilyenek. Ha nincs megadva - AllowPrerelease jelző, előzetes csomagokat nem jelenik meg.
 
 Alól kivételt csak ehhez a PowerShellGet modul parancsok a következők: Get-InstalledModule és bizonyos esetekben az Uninstall-modul.
 

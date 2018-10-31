@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC, a Linux nxFileLine erőforrás
-ms.openlocfilehash: f2a989dd3a6746948e09ba94e279c02be8ebe2de
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6a91db25638b09659adfabcec78f91bcb2e69dd9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893297"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225590"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>DSC, a Linux nxFileLine erőforrás
 
-A **nxFileLine** erőforrás a PowerShell Desired State Configuration (DSC) használatával kezelheti egy konfigurációs fájl egy Linux-csomóponton belül sorok mechanizmust biztosít.
+A **nxFileLine** erőforrás a PowerShell Desired State Configuration (DSC) kezelése konfigurációs fájl egy Linux-csomóponton belül sorok mechanizmust biztosít.
 
 ## <a name="syntax"></a>Szintaxis
 

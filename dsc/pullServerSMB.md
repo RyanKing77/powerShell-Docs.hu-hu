@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC SMB-lekérési kiszolgálójának beállítása
-ms.openlocfilehash: 1eac6c51aeca3ed573ba8fa27188103436004920
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: ebf9ac7923a7c226bc01014d890d993d452af578
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892865"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225862"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>A DSC SMB-lekérési kiszolgálójának beállítása
 
@@ -132,7 +132,7 @@ Minden olyan konfigurációs MOF-fájl neve legyen *ConfigurationID*.mof, ahol *
 > [!NOTE]
 > Ha használja az SMB-lekérési kiszolgálójának konfigurációazonosítók kell használnia. Konfigurációs nevek nem támogatottak az SMB.
 
-Minden egyes erőforrás a modul zip és nevű megfelelően van szükség az a következő mintának `{Module Name}_{Module Version}.zip`. Ha például 3.1.2.0 modul verziójával xWebAdminstration modul neve "xWebAdministration_3.2.1.0.zip". Minden egyes modul verzióját tartalmaznia kell egy egyetlen zip-fájlt. Mivel csak egyetlen verziója is minden egyes zip-fájlt a WMF 5.0-s hozzá a modul formátum az erőforráshoz egyetlen címtárban több modul verziók támogatása nem támogatott. Ez azt jelenti, hogy előtt becsomagolást mentése erőforrás modulok DSC lekéréses kiszolgálón való használatra kell, hogy módosítsa a könyvtár struktúra. Az alapértelmezett formátum a modulok DSC-erőforrás a WMF 5.0 tartalmazó `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Előtt terveztük a lekérési kiszolgálón csomagolási egyszerűen távolítsa el a `{Module version}` mappát az elérési út válik, így `{Module Folder}\DscResources\{DSC Resource Folder}\`. Ezzel a mappa zip-fent leírtak szerint, és helyezze a zip-fájlok az SMB-megosztás mappát.
+Minden egyes erőforrás modulnak kell zip és a következő mintának megfelelő nevű `{Module Name}_{Module Version}.zip`. Ha például 3.1.2.0 modul verziójával xWebAdminstration modul neve "xWebAdministration_3.2.1.0.zip". Minden egyes modul verzióját tartalmaznia kell egy egyetlen zip-fájlt. Mivel csak egyetlen verziója is minden egyes zip-fájlt a WMF 5.0-s hozzá a modul formátum az erőforráshoz egyetlen címtárban több modul verziók támogatása nem támogatott. Ez azt jelenti, hogy előtt becsomagolást mentése erőforrás modulok DSC lekéréses kiszolgálón való használatra kell, hogy módosítsa a könyvtár struktúra. Az alapértelmezett formátum a modulok DSC-erőforrás a WMF 5.0 tartalmazó `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Előtt terveztük a lekérési kiszolgálón csomagolási egyszerűen távolítsa el a `{Module version}` mappát az elérési út válik, így `{Module Folder}\DscResources\{DSC Resource Folder}\`. Ezzel a mappa zip-fent leírtak szerint, és helyezze a zip-fájlok az SMB-megosztás mappát.
 
 ## <a name="creating-the-mof-checksum"></a>A MOF-ellenőrzőösszeg létrehozása
 

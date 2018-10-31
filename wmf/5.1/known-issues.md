@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: A WMF 5.1 ismert problémák
-ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: e59ea1b9a5282eb5727a37ce605c71724a219827
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892137"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225845"
 ---
 # <a name="known-issues-in-wmf-51"></a>A WMF 5.1 ismert problémák
 
@@ -33,7 +33,7 @@ Ebben a kiadásban két problémák vannak, célszerű tisztában lennie a Peste
 
 ## <a name="dsc-after-uninstall-wmf"></a>DSC után távolítsa el a WMF
 
-- A WMF eltávolítása nem törli DSC MOF dokumentumok a konfigurációs mappából. DSC nem fog megfelelően működni, ha a MOF-dokumentumok tartalmaznak újabb tulajdonságok, amelyek nem érhetők el a régebbi rendszerekre. Ebben az esetben futtassa a következő szkriptet az emelt szintű PowerShell-konzolon a DSC-állapotok karbantartása.
+- A WMF eltávolítása nem törli DSC MOF dokumentumok a konfigurációs mappából. DSC nem fog megfelelően működni, ha a MOF-dokumentumok tartalmaznak újabb tulajdonságok, amelyek nem érhetők el a régebbi rendszerekre. Ebben az esetben futtassa a következő szkriptet a DSC-állapotok karbantartása emelt szintű PowerShell-konzolon.
 
   ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",

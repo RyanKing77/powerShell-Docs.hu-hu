@@ -3,18 +3,18 @@ ms.date: 03/27/2018
 contributor: JKeithB
 keywords: katalógus, a powershell, a psgallery, GDPR
 title: PowerShell-galéria GDPR-megfelelőség
-ms.openlocfilehash: 14b82fa07df52f02f0d7577cb0eef70faa4285a2
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893246"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002650"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell-galéria GDPR-megfelelőség
 
 ## <a name="overview"></a>Áttekintés
 
-A 2018 május az európai adatvédelmi törvény, az általános adatvédelmi rendelet (GDPR), akkor lép érvénybe.
+A 2018 május az európai adatvédelmi törvény, az általános adatvédelmi rendelet (GDPR), érvénybe vett igénybe.
 Az általános adatvédelmi rendelet új szabályokat a vállalatok, kormányzati szerveknek, non-profit és más szervezetek számára, hogy az ajánlat termékek és szolgáltatások, az Európai Unió (EU), vagy hogy a felhasználók adatokat gyűjthet és elemezhet kötött EU-polgárokkal kapcsolatos ír elő.
 Az általános adatvédelmi rendelet vonatkozik, bárhol is található.
 
@@ -26,16 +26,16 @@ Az általános adatvédelmi rendelet vonatkozik, bárhol is található.
 A PowerShell-galériából a következő adatokat, a felhasználók, amelyek személyes adatokat tartalmazhatnak biztosított tárolja:
 
 - PowerShell-Galériabeli fiók
-- A PowerShell-galériában közzétett cikkek
+- A PowerShell-galériában közzétett csomagokat
 - A PowerShell-galériából csapat váltott e-mailben
 
 A legtöbb felhasználó ne hozzon létre egy PowerShell-Galériabeli fiók.
-Egy fiók nem kötelező, kivéve, ha szeretné tegyen közzé egy elemet, vagy az "Ügyfél Owner" szolgáltatás használata a PowerShell-galériában.
+Egy fiók nem kötelező, kivéve, ha egy csomag közzététele, vagy az "Ügyfél Owner" szolgáltatás használata a PowerShell-galériából kívánja.
 E-mailek levelezés, a felhasználó által kezdeményezett, nem a PowerShell-galériában nem tárolja a személyes azonosításra alkalmas adatokat a felhasználók számára, akik nem hozott létre egy fiókot.
 
-Felhasználók, akik egy PowerShell-Galériabeli fiók létrehozása a PowerShell-galériából elemek tehetnek közzé.
-Azok az elemek várhatóan PowerShell-kódot, de egyéb információkat, ideértve a személyes adatokat is tartalmazhat.
-Az alábbi információk jelennek meg, hogyan kezdheti az összes elem a PowerShell-galériából történő közzétételét.
+Felhasználók, akik egy PowerShell-Galériabeli fiók létrehozása a PowerShell-galériából csomagok tehetnek közzé.
+Azokat a csomagokat várhatóan PowerShell-kódot, de egyéb információkat, ideértve a személyes adatokat is tartalmazhat.
+Az alábbi információk jelennek meg, hogyan kezdheti összes csomag közzétételét a PowerShell-galériában.
 
 ## <a name="dsr-export-of-powershell-gallery-data"></a>PowerShell-galériából adatok DSR exportálása
 
@@ -45,9 +45,9 @@ A következő szakaszok ismertetik a PowerShell-galériából hogyan támogatja 
 
 E-mailek levelezést tartalmazhatja a következő:
 
-- Elemek, ha megvizsgálja a kód elemzés észlelt egy tetszőleges elemre a PowerShell-galériában közzétett problémáját PowerShell-galériából tulajdonosainak küldött e-mail
+- A PowerShell-galériából csomagokat, ha megvizsgálja a kód elemzés minden olyan csomag, a PowerShell-galériában közzétett hibát észlelt a tulajdonosainak küldött e-mail
 - A PowerShell-galériából csapat az e-mail-cím használatával "a kapcsolatfelvétel" lapon a bárki által küldött e-mail [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)
-- Regisztrált felhasználó, aki a PowerShell-galériából a "Forduljon Owner" szolgáltatás segítségével a PowerShell-galériából elemeire tulajdonosának e-mail küldése
+- Regisztrált felhasználó, aki a PowerShell-galériából a "Forduljon Owner" szolgáltatás segítségével a PowerShell-galériából csomag tulajdonosának e-mail küldése
 
 Által vagy a PowerShell-galériában elküldött e-mailek 90 napos adatmegőrzési már támogatja a lehetséges biztonsági vizsgálatok kártevő kódja észleli a PowerShell-galériából.
 E-mailek házirend 90 nap után törlődnek.
@@ -65,13 +65,13 @@ Ha létrehozott egy PowerShell-Galériabeli fiók, annak az alábbi lépések me
 
 Ha egynél több fiók található a PowerShell-galériából létrehozott, szüksége lesz a ismételje meg ezeket a lépéseket az egyes fiókok számára.
 
-### <a name="items-in-the-powershell-gallery"></a>A PowerShell-galériából elemek
+### <a name="packages-in-the-powershell-gallery"></a>A PowerShell-galériából-csomagok
 
-Megkönnyítése érdekében a PowerShell-galériában közzétett exportáló elemek, a Microsoft közzétette a parancsfájl "GetPSGalleryItemsForAuthor" a PowerShell-galériában.
-Ez a szkript egy példányát minden eleméhez, a PowerShell-galériából, az elemben tárolt Szerző információk alapján üzembe minden egyes verziója exportálja.
+Megkönnyítése érdekében a PowerShell-galériában közzétett exportáló csomagokat, Microsoft közzétette a parancsfájl "GetPSGalleryItemsForAuthor" a PowerShell-galériában.
+Ez a szkript exportál egy példányát minden egyes verziója minden csomag üzembe a PowerShell-galériából, a csomag tárolt Szerző információk alapján.
 
 > [!NOTE]
-> A cikk közzétételekor a szerző az elemek jegyzéke tárolja.
+> A szerző, a csomag közzétételekor tárolja a csomagjegyzéket.
 > Nincs garancia arra, hogy a szerző stejnou identitou jako a PowerShell-galériából a használt fióknak-e.
 > Ha más értéket az Author mező használata esetén kell adnia ezt az értéket, amikor ez a szkript használatával.
 
@@ -88,16 +88,16 @@ A parancsfájl közvetlenül, majd futtassa a következő PowerShell-parancsok f
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
-A rendszer felkéri adja meg a szerző és a egy mappát a rendszer, ha azt szeretné, hogy a menteni kívánt elemeket.
+Adja meg a szerző és a rendszer egy mappát, ahová a csomagokat menteni fogja kérni.
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>Személyes adatok törlése a PowerShell-galériából
 
-A PowerShell-Galériabeli fiók vagy a PowerShell-galériából szereplő bármely elem törléséhez e-mailben cgadmin@microsoft.com nevű: "A GDPR-kérelmet ehhez a fiókhoz kapcsolódó elemek".
+A PowerShell-Galériabeli fiók vagy bármilyen saját a PowerShell-galériából a csomag törlésére, e-mailben cgadmin@microsoft.com nevű: "A GDPR-kérelmet ehhez a fiókhoz kapcsolódó elemek".
 Az üzenet törzsében milyen információkat szeretne törölt állapotba. Például:
 
-- Törölje a verzió x.y.z saját elem (elem name)
-- Törölje az összes verzióját a saját item (elem name)
+- Törölje a csomag "package name" verzió x.y.z
+- Törölje az összes verzióját a csomag "package name"
 - Törölje a saját PowerShell-Galériabeli fiók
 
 A PowerShell-galériából rendszergazdák 7 munkanapon belül választ fog kapni.
-A megadott elemek törlődni fognak a kérés elküldése után 30 napon belül.
+A megadott csomagokat a kérés elküldése után 30 napon belül törölve lesz.

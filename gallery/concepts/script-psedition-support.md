@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: Parancsfájl-kompatibilis PowerShell-kiadások
-ms.openlocfilehash: 2313131fe17dcd9508db514883ae3dcb837fb07e
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: fcfe670a0a9ee71427b4a8adaaf3d612411941f7
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587210"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002411"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Parancsfájl-kompatibilis PowerShell-kiadások
 
@@ -67,4 +67,4 @@ Find-Script -Tag PSEdition_Core
 ## <a name="more-details"></a>További részletek
 
 - [PSEditions paraméterrel rendelkező modulok](module-psedition-support.md)
-- [Pseditions paraméterrel támogatja a PowerShell-Galériabeli](../how-to/finding-items/searching-by-psedition.md)
+- [Pseditions paraméterrel támogatja a PowerShell-Galériabeli](../how-to/finding-packages/searching-by-psedition.md)

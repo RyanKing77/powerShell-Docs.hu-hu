@@ -3,21 +3,21 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: katalógus, powershell, a parancsmag, psget
 title: A parancsfájlok előzetes verziók
-ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268466"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002735"
 ---
 # <a name="prerelease-versions-of-scripts"></a>A parancsfájlok előzetes verziók
 
-1.6.0-s verziójának verziótól kezdődően a PowerShellGet és a PowerShell-galériából támogatást nyújt a címkézési egy előzetes verzióját, 1.0.0-esnél újabb verzióiban. Ez a funkció előtt előzetes elemeket a rendszer 0-verzió kezdő járulnia korlátozott. Ezeket a funkciókat az a célja, hogy a szélesebb körű támogatást biztosít [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning egyezmény visszamenőleges PowerShell verziók 3 és újabb, vagy meglévő a PowerShellGet verzióival való kompatibilitás megszakítása nélkül. Ez a témakör a parancsfájl-specifikus szolgáltatásokra összpontosít. A modulok egyenértékű funkciókra a [Prerelease modulverziók](module-prerelease-support.md) témakör. Használja ezeket a funkciókat, a kiadók is verzió 2.5.0-alpha, a szkriptet azonosító, és később kiadásból egy éles használatra kész 2.5.0, amely felülírja az előzetes verziót.
+1.6.0-s verziójának verziótól kezdődően a PowerShellGet és a PowerShell-galériából támogatást nyújt a címkézési egy előzetes verzióját, 1.0.0-esnél újabb verzióiban. Ez a funkció előtt előzetes csomagokat a rendszer 0-verzió kezdő járulnia korlátozott. Ezeket a funkciókat az a célja, hogy a szélesebb körű támogatást biztosít [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) versioning egyezmény visszamenőleges PowerShell verziók 3 és újabb, vagy meglévő a PowerShellGet verzióival való kompatibilitás megszakítása nélkül. Ez a témakör a parancsfájl-specifikus szolgáltatásokra összpontosít. A modulok egyenértékű funkciókra a [Prerelease modulverziók](module-prerelease-support.md) témakör. Használja ezeket a funkciókat, a kiadók is verzió 2.5.0-alpha, a szkriptet azonosító, és később kiadásból egy éles használatra kész 2.5.0, amely felülírja az előzetes verziót.
 
 Magas szinten a kiadás előtti parancsfájl szolgáltatásai többek között:
 
-- A verzió-karakterlánc, a parancsfájl-jegyzékfájlban PrereleaseString utótag hozzáadása. Ha a parancsfájlok tesznek közzé a PowerShell-galériából, ezeket az adatokat a jegyzékfájl kinyert, és előzetes elemek azonosításához használt.
-- -AllowPrerelease jelző hozzáadja a PowerShellGet parancsok Find-Script Install-Script előzetes elemek beszerzése szükséges frissítés-parancsfájl, és a Save-Script. Ha nincs megadva a jelzőt, végleges elemek nem jelenik meg.
+- A verzió-karakterlánc, a parancsfájl-jegyzékfájlban PrereleaseString utótag hozzáadása. A PowerShell-galériából való közzétételekor a parancsfájlok, ezeket az adatokat a jegyzékfájl kinyert, és előzetes csomagok azonosítására szolgál.
+- -AllowPrerelease jelző hozzáadja a PowerShellGet parancsok Find-Script Install-Script előzetes csomagok beszerzése szükséges frissítés-parancsfájl, és a Save-Script. Ha nincs megadva a jelzőt, végleges csomagok nem jelenik meg.
 - A PrereleaseString 2.5.0-alpha hasonlóan a parancsfájl verziója jelenik meg a Find-Script, Get-InstalledScript, és a PowerShell-galériából a fog megjelenni.
 
 Szolgáltatások részletei az alábbiakban találhatók.
@@ -54,9 +54,9 @@ Rendezési sorrend módosítja, ami fontos a PowerShell-galériából való köz
 
 A PowerShell-galériából való közzétételkor alapértelmezés szerint a parancsfájl közzétett verzióját kell lennie a nagyobb, mint a korábban közzétett verzió, a PowerShell-galériában található. A kiadó. Előfordulhat, hogy frissítéssel verzió 2.5.0-alpha 2.5.0-beta vagy 2.5.0 (az előzetes utótag nélkül).
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Keresés és a PowerShellGet-parancsokkal előzetes elemek beolvasása
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Keresés és a PowerShellGet-parancsokkal előzetes csomagok beszerzése
 
-A PowerShellGet Find-Script, Install-Script, frissítési-parancsfájlt, az előzetes elemekről foglalkozó és a Save-Script parancsokat igényel, a - AllowPrerelease jelző hozzáadása. Ha meg van adva a - AllowPrerelease, előzetes elemek helyőrzője, ha ezek meg adva. Ha - AllowPrerelease jelző nincs megadva, kiadás előtti elemek nem fognak megjelenni.
+A PowerShellGet Find-Script, Install-Script, frissítési-parancsfájlt, előzetes csomagokat foglalkozó és a Save-Script parancsokat igényel, a - AllowPrerelease jelző hozzáadása. Ha meg van adva a - AllowPrerelease, előzetes csomagokat helyőrzője, ha ilyenek. Ha nincs megadva - AllowPrerelease jelző, előzetes csomagokat nem jelenik meg.
 
 Alól kivételt csak a PowerShellGet parancsprogram-utasítások a a következők: Get-InstalledScript és bizonyos esetekben az eltávolítási-szkriptet.
 

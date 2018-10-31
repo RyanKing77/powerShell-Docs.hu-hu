@@ -3,18 +3,18 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Licencfeltételek elfogadását igénylő modulok
-ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893110"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002667"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Licencfeltételek elfogadását igénylő modulok
 
 ## <a name="synopsis"></a>SYNOPSIS
 
-Néhány modul közzétevők jogi részlegek számára szükséges, hogy ügyfeleink kell explicit módon fogadnia a licencfeltételeket PowerShell-galériából a modul telepítése előtt. Ha egy felhasználó telepíti, frissíti, vagy közvetlenül vagy egy másik cikkhez függőségként a PowerShellGet,-modul menti, és a modulnak szüksége van arra, hogy egy licencet a felhasználó, a felhasználó jeleznie kell, akkor el kell fogadnia a licencfeltételeket, vagy a művelet sikertelen lesz.
+Néhány modul közzétevők jogi részlegek számára szükséges, hogy ügyfeleink kell explicit módon fogadnia a licencfeltételeket PowerShell-galériából a modul telepítése előtt. Ha egy felhasználó telepíti, frissíti, vagy közvetlenül vagy egy másik csomagnak függőségként a PowerShellGet,-modul menti, és a modulnak szüksége van arra, hogy egy licencet a felhasználó, a felhasználó jeleznie kell, akkor el kell fogadnia a licencfeltételeket, vagy a művelet sikertelen lesz.
 
 ## <a name="publish-requirements-for-modules"></a>Modulok követelményei közzététele
 
@@ -43,7 +43,7 @@ Modulok, amelyeket a felhasználók licenc elfogadására szeretne az alábbi k�
 
 - Telepítés/Save/frissítése során szükség lesz a művelet, ha egy függő modul (valami mást attól függ, a modul) van szüksége a licencfeltételek elfogadását, majd a licenc elfogadása viselkedése (feljebb).
 - Ha a modul verzió telepítését a rendszer a helyi katalógus már fel van sorolva, hogy lenne szülőkönyvtár a licenc.
-- Telepítés/Save/frissítés művelet során egy függő modul licencre van szüksége, és a licencfeltételek elfogadását nem történik meg, ha a művelet meghiúsul, és kövesse a telepítés/save/frissítése nem sikerült elem szokásos folyamatok.
+- Telepítés/Save/frissítés művelet során egy függő modul licencre van szüksége, és a licencfeltételek elfogadását nem történik meg, ha a művelet meghiúsul, és kövesse a normál folyamatok a csomag telepítése/save/frissítése nem sikerült.
 
 ## <a name="impact-on--force"></a>A - Force gyakorolt hatás
 
@@ -219,6 +219,6 @@ A modul frissül minden licenc elfogadására kérése nélkül.
 
 [Licencfeltételek elfogadásának megkövetelése a parancsfájlokhoz](./script-license-acceptance.md)
 
-[A PowerShell-Galériabeli licencfeltételek elfogadását támogatásra van szüksége](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[A PowerShell-Galériabeli licencfeltételek elfogadását támogatásra van szüksége](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[Licencfeltételek elfogadásának kérése az Azure Automation szolgáltatásban való üzembe helyezéshez](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Licencfeltételek elfogadásának kérése az Azure Automation szolgáltatásban való üzembe helyezéshez](../how-to/working-with-packages/deploy-to-azure-automation.md)
