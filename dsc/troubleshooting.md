@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 10/30/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC hibaelhárítása
-ms.openlocfilehash: 93a2f3728968882f78d4c050238d226b71c11ca5
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 04fb1e9016c508d0e514b51b3cfd6e6f6d5c4974
+ms.sourcegitcommit: 9cabc119f4d59598e12d4a36238a311349082ff0
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268194"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50410014"
 ---
 # <a name="troubleshooting-dsc"></a>A DSC hibaelhárítása
 
@@ -503,7 +503,7 @@ ConfigurationID                :
 ConfigurationMode              : ApplyAndMonitor
 ConfigurationModeFrequencyMins : 30
 Credential                     :
-DebugMode                      : False
+DebugMode                      : {None}
 DownloadManagerCustomData      :
 DownloadManagerName            :
 LocalConfigurationManagerState : Ready
@@ -513,7 +513,7 @@ RefreshMode                    : PUSH
 PSComputerName                 :
 ```
 
-Láthatja, hogy `DebugMode` értékre van állítva **hamis**.
+Láthatja, hogy `DebugMode` értékre van állítva **"None"**.
 
 Beállítása a `DebugMode` bemutató a következő PowerShell-erőforrásból:
 
@@ -603,12 +603,12 @@ function Test-TargetResource
 
 Ez a szkript létrehoz egy véletlenszerű számot, és ennek megfelelően frissíti a szolgáltató kódot. A `DebugMode` hamis, a fájl tartalmát "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" soha nem módosulnak.
 
-Most, `DebugMode` való **igaz** konfigurációs parancsfájlban:
+Most, `DebugMode` való **"ForceModuleImport"** konfigurációs parancsfájlban:
 
 ```powershell
 LocalConfigurationManager
 {
-    DebugMode = $true
+    DebugMode = "ForceModuleImport"
 }
 ```
 
