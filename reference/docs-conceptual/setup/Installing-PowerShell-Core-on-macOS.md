@@ -1,13 +1,13 @@
 ---
 title: A PowerShell Core telepítése macOS rendszerre
 description: Információ a PowerShell Core telepítése macOS rendszeren
-ms.date: 08/06/2018
-ms.openlocfilehash: e226cd64f8788ae74dc72fdc0cd219923b7a2cd6
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.date: 11/02/2018
+ms.openlocfilehash: 162e841bf71d708e9db84ea1bb2dbef13924783b
+ms.sourcegitcommit: f4247d3f91d06ec392c4cd66921ce7d0456a2bd9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002359"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50998503"
 ---
 # <a name="installing-powershell-core-on-macos"></a>A PowerShell Core telepítése macOS rendszerre
 
@@ -15,10 +15,14 @@ A PowerShell Core a macOS 10.12 és újabb verzióit támogatja.
 A githubon érhető el az összes csomag [kiadások][] lapot.
 A csomag telepítése után futtassa `pwsh` parancsot egy terminálról.
 
-## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Legújabb stabil kiadási keresztül Homebrew MacOS 10.12 vagy újabb telepítése
+## <a name="about-brew"></a>Brew kapcsolatban
 
 [Homebrew] [ brew] az előnyben részesített Csomagkezelő macOS-hez.
 Ha a `brew` parancs nem található kell, hogy telepítse a homebrew-val következő [az utasításokat][brew].
+
+## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Legújabb stabil kiadási keresztül Homebrew MacOS 10.12 vagy újabb telepítése
+
+Lásd: [kapcsolatos Brew](#about-brew) Brew kapcsolatos információkat.
 
 Most már PowerShell telepíthető:
 
@@ -46,8 +50,7 @@ brew cask upgrade powershell
 
 ## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>MacOS 10.12 vagy újabb rendszeren keresztül Homebrew kiadási legújabb előzetes verziójának telepítése
 
-[Homebrew] [ brew] az előnyben részesített Csomagkezelő macOS-hez.
-Ha a `brew` parancs nem található kell, hogy telepítse a homebrew-val következő [az utasításokat][brew].
+Lásd: [kapcsolatos Brew](#about-brew) Brew kapcsolatos információkat.
 
 Miután telepítette a homebrew-val, a PowerShell telepítése ördöngösség.
 Először telepítse [Cask-verziók] [ cask-versions] , amellyel alternatív verzióit a cask csomagok telepítéséhez:
@@ -90,6 +93,8 @@ Kattintson duplán a fájlra, és kövesse az utasításokat, vagy telepítheti 
 sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 ```
 
+Telepítés [OpenSSL](#install-openssl) , erre azért van szükség a PowerShell távvezérlése és CIM-műveleteket.
+
 ## <a name="binary-archives"></a>Bináris archívum
 
 PowerShell bináris `tar.gz` archívumok biztosított speciális üzembe helyezési forgatókönyvek megvalósítását teszik lehetővé, a macOS platformon.
@@ -111,6 +116,41 @@ sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
 
 # Create the symbolic link that points to pwsh
 sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+```
+
+Telepítés [OpenSSL](#install-openssl) , erre azért van szükség a PowerShell távvezérlése és CIM-műveleteket.
+
+## <a name="installing-dependencies"></a>Függőségek telepítése
+
+### <a name="install-xcode-command-line-tools"></a>Telepítse az xcode-ban a parancssori eszközök
+
+```shell
+xcode-select -install
+```
+
+### <a name="install-openssl"></a>OpenSSL telepítése
+
+PowerShell távvezérlése és CIM-műveletek OpenSSL van szükség.  Telepíthet MacPorts vagy Brew keresztül.
+
+#### <a name="install-openssl-via-brew"></a>OpenSSL keresztül Brew telepítése
+
+Lásd: [kapcsolatos Brew](#about-brew) Brew kapcsolatos információkat.
+
+Futtatás `brew install openssl` OpenSSL telepítéséhez.
+
+#### <a name="install-openssl-via-macports"></a>OpenSSL keresztül MacPorts telepítése
+
+1. Telepít a [xcode-ban a parancssori eszközök](#install-xcode-command-line-tools)
+1. Telepítse a MacPorts.
+   Tekintse meg a [telepítési útmutató](https://guide.macports.org/chunked/installing.macports.html) Ha utasításokat kell.
+1. A futó MacPorts frissítése `sudo port selfupdate`
+1. A futó MacPorts csomagok frissítése `sudo port upgrade outdated`
+1. OpenSSL futtatásával futtatásával telepítse: `sudo port instal openssl`
+1. Hivatkozás a kódtárakat, így PowerShell használhatják azt.
+
+```shell
+sudo mkdir -p /usr/local/opt/openssl
+sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
 ## <a name="uninstalling-powershell-core"></a>A PowerShell Core eltávolítása
@@ -148,7 +188,7 @@ Az alapértelmezett gazdagép-specifikus profilok létezik így `Microsoft.Power
 PowerShell tiszteletben tartja a [XDG alap könyvtár megadása] [ xdg-bds] macOS rendszeren.
 
 Mivel a macOS BSD, az előtag típusából származtatott `/usr/local` helyett használja `/opt`.
-Ebből kifolyólag `$PSHOME` van `/usr/local/microsoft/powershell/6.1.0/`, és a szimbolikus van elhelyezve `/usr/local/bin/pwsh`.
+Ebből kifolyólag `$PSHOME` van `/usr/local/microsoft/powershell/6.1.0/`, és a szimbolikus hivatkozást van elhelyezve `/usr/local/bin/pwsh`.
 
 ## <a name="additional-resources"></a>További források
 
