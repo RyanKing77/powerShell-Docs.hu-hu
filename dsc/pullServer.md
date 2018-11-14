@@ -1,165 +1,165 @@
 ---
 ms.date: 04/11/2018
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
+keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC Pull Service
-ms.openlocfilehash: 057da50843e79ae31eef4fea1fa58e882a9d1ace
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2ef48b88cc9e14da452e0d19e5a0f43fc8a95ab2
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189992"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619160"
 ---
-# <a name="desired-state-configuration-pull-service"></a>Célállapot-konfiguráló lekéréses szolgáltatása
+# <a name="desired-state-configuration-pull-service"></a>Desired State Configuration lekéréses szolgáltatás
 
-> Vonatkozik: A Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> A lekéréses kiszolgáló (Windows-szolgáltatás *DSC-szolgáltatás*), Windows Server támogatott összetevője létezik azonban a következők: nem tervezi, hogy új funkciók és képességek kínálnak. Javasoljuk, hogy kezdje a Váltás felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (tartalmazza a Windows Server-kiszolgáló lekéréses is) vagy a közösségi megoldásoknak a valamelyikét felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
+> A lekéréses kiszolgálón (Windows-szolgáltatás *DSC-szolgáltatás*), a Windows Server támogatott összetevője létezik azonban tervekben sem funkciókat és képességeket kínálnak. Javasoljuk, hogy helyeződnek felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (beleértve a lekéréses kiszolgálón a Windows Server csomagban) vagy a közösségi megoldások felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
 
-Helyi Configuration Manager Service lekéréses megoldás központilag kezelhető.
-Ez a módszer használata esetén a csomópont kezelt regisztrálva a szolgáltatásban, és LCM beállítások a konfigurációs hozzárendelni.
-A konfiguráció szerint függőségeinek a konfigurációs szükséges összes DSC erőforrásokat a számítógép letölti és LCM felügyelje a konfigurációt használja.
-A felügyelt számítógép állapotára vonatkozó adatokat tölt fel az a jelentéskészítés szolgáltatás.
-Ez a neve "szolgáltatás lekéréses."
+Helyi Configuration Manager lekéréses Szolgáltatottszoftver-megoldás központilag kezelhetők.
+Ez a megközelítés használatakor a felügyelt csomópont regisztrálva a szolgáltatásban és konfigurálása során a LCM beállításokat rendelt.
+A konfiguráció minden DSC-erőforrások függőségeként a konfigurációhoz szükséges a géphez letöltött és LCM használja a konfiguráció kezelésére.
+A felügyelt számítógép állapotát a service for reporting töltenek fel.
+A fogalom a neve "lekéréses szolgáltatás."
 
-Az aktuális lekéréses szolgáltatás beállításai a következők:
+A lekéréses szolgáltatás jelenlegi lehetőségek a következők:
 
-- Azure Automation kívánt állapot konfigurációs szolgáltatás
+- Azure Automation Desired State Configuration service
 - Windows Server rendszeren futó lekéréses szolgáltatás
 - Közösségi nyílt forráskódú megoldások karbantartása
 - SMB-megosztáson
 
-**Az ajánlott megoldás**, és a lehetőség érhető el, a legtöbb szolgáltatásokkal [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+**Az ajánlott megoldás a**, és a lehetőség érhető el, a legtöbb funkciót a [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
-Az Azure-szolgáltatás csomópontok helyszíni saját adatközpontját, illetve például az Azure és az AWS nyilvános felhőket is kezelheti.
-Személyes környezetekben, ahol kiszolgálók nem közvetlenül csatlakozik az internethez, fontolja meg, ezzel a kimenő forgalom csak a közzétett Azure IP-címtartomány (lásd: [Azure Datacenter IP-címtartományok](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
+Az Azure-szolgáltatás csomópontjai a helyszíni privát adatközpontok, vagy a nyilvános felhők, például az Azure és az AWS is kezelheti.
+Ahol kiszolgálói nem tudnak közvetlenül kapcsolódni az internetre privát környezetek esetén fontolja meg, csak a közzétett Azure IP-címtartomány irányuló kimenő forgalom korlátozása (lásd: [Azure Datacenter IP-címtartományok](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
 
-Az online szolgáltatás, amely még nem állnak rendelkezésre az lekéréses szolgáltatásban, a Windows Server funkciói:
-- Összes adata titkosításra kerül az átvitel során, és inaktív
-- Ügyfél-tanúsítványok létrehozása és kezelése automatikusan
-- Titkos kulcsok tárolására központilag kezelésére szolgáló [jelszavak és a hitelesítő adatok](/azure/automation/automation-credentials), vagy [változók](/azure/automation/automation-variables) például a kiszolgáló nevét vagy a kapcsolati karakterláncok
-- Központilag kezelheti a csomópont [LCM konfiguráció](metaConfig.md#basic-settings)
-- Központilag konfigurációk kiosztása ügyfél csomópontok
-- Kiadás configuration "Kanári csoportok" éles elérése előtt tesztelési módosításai
+Az online szolgáltatás, amelyek nem a Windows Server, a lekéréses szolgáltatásban jelenleg elérhető funkciók:
+- Összes adat titkosítva lesz az úton lévő és inaktív
+- Ügyfél-tanúsítványok létrehozása és felügyelete automatikus
+- Titkos kódok tárolása központilag kezelésére szolgáló [jelszavak és a hitelesítő adatok](/azure/automation/automation-credentials), vagy [változók](/azure/automation/automation-variables) például a kiszolgáló nevét vagy a kapcsolati karakterláncok
+- Központilag kezelheti a csomópont [LCM konfigurálása](metaConfig.md#basic-settings)
+- Konfigurációk központilag ügyfél-csomópontok hozzárendelése
+- Kiadási konfiguráció módosításait "tesztcsoportos csoportok" tesztelési éles elérése előtt
 - Grafikus jelentési
   - A granularitási DSC erőforrás szintjén állapotának részletei
-  - Az ügyfél gépek hibaelhárítási részletes hibaüzenetek
-- [Integráció az Azure Naplóelemzés](/azure/automation/automation-dsc-diagnostics) riasztások, automatikus feladatokat, jelentések és riasztási Android vagy iOS-alkalmazás
+  - Hibaelhárítás az ügyfélgépek a részletes hibaüzenetek
+- [Integráció az Azure Log Analytics](/azure/automation/automation-dsc-diagnostics) riasztási, automatizált feladatokat, jelentéskészítési és riasztási Android vagy iOS-alkalmazás
 
-## <a name="dsc-pull-service-in-windows-server"></a>A DSC lekérési szolgáltatás a Windows Server
+## <a name="dsc-pull-service-in-windows-server"></a>DSC lekéréses szolgáltatás a Windows Server
 
-Akkor lehet egy lekéréses szolgáltatást, hogy a Windows Serveren futó konfigurálására.
-Befolyásolható, hogy a lekéréses service megoldás a Windows Serverben megtalálható tartalmaz-e a konfigurációk/modulok letölthető tárolása, és a jelentés adatokat az rögzítése csak képességeit.
-Nem tartalmazza az Azure-ban a szolgáltatás által kínált képességeket, és ezért nincs értékeléséhez, hogyan szeretné használni a szolgáltatás egy jó eszköz.
+A Windows Serveren futó lekéréses szolgáltatás konfigurálása lehetőség.
+Felhasználóitevékenység, hogy az lekéréses szolgáltatás része a Windows Server tartalmaz konfigurációk/modulok letölthető tárolására, és a jelentés adatai az adatbázis csak képességeit.
+Nem tartalmazza a képességek a szolgáltatást az Azure által kínált számos, és ezért nem kiértékelését, hogy a szolgáltatás használni kívánt hatékony eszköz.
 
-A lekéréses szolgáltatás, a Windows Server egy olyan webes szolgáltatás az IIS-ben elérhetővé DSC konfigurációs fájlokat a célcsomópontokat azokat a csomópontokat, kérje meg őket az OData-illesztőfelület használó.
+A lekéréses szolgáltatás, a Windows Server rendszer egy webszolgáltatás, amely egy OData-felületet segítségével DSC konfigurációs fájlok célcsomópontok számára elérhetővé tenni, ha azokat a csomópontokat, kérje meg őket az IIS-ben.
 
-A lekérési kiszolgálójával használatának követelményei:
+Egy lekéréses kiszolgálót használatának követelményei:
 
 - Futtató kiszolgálón:
-  - WMF/PowerShell 5.0-s vagy újabb
+  - A WMF/PowerShell 5.0-s vagy újabb
   - IIS-kiszolgálói szerepkör
-  - A DSC szolgáltatás
-- Ideális esetben egyes azt jelenti, hogy egy tanúsítványgenerálás során, a biztonságos hitelesítő adatok a helyi Configuration Manager (LCM) számára átadott a célcsomópontokat
+  - DSC-szolgáltatás
+- Ideális esetben néhány azt jelenti, hogy egy tanúsítványt létrehozni bloberőforrásokhoz átadott, a helyi Configuration Manager (LCM) Konfigurálása a célcsomópontokat hitelesítő adatok biztonságossá tételéhez
 
-A legjobb konfigurálja a Windows Server a gazdaszolgáltatás lekéréses módja a DSC-konfiguráció.
-Példa parancsfájl lejjebb tekinthetők meg.
+Windows Server konfigurálása a gazdagépen lekéréses szolgáltatás a legjobb módszer az DSC-konfiguráció használata.
+Példa parancsfájl lejjebb találja.
 
 ### <a name="supported-database-systems"></a>Támogatott adatbázis-rendszerek
 
-|WMF 4.0   |WMF 5.0  |WMF 5.1 |WMF 5.1 (a Windows Server Insider Preview 17090)|
+|WMF 4.0   |WMF 5.0  |WMF 5.1 |A WMF 5.1 (Windows Server Insider Preview 17090)|
 |---------|---------|---------|---------|
-|MDB     |ESENT (alapértelmezett), Postaláda |ESENT (alapértelmezett), Postaláda|(Alapértelmezett), az SQL Server MDB ESENT
+|MDB     |MDB (alapértelmezett), ESENT |MDB (alapértelmezett), ESENT|(Alapértelmezett), SQL Server, MDB ESENT
 
-Kezdve a 17090 kiadási [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server támogatott beállítás a lekéréses szolgáltatás (Windows-szolgáltatás *DSC-szolgáltatás*).  Ez biztosítja, hogy egy új beállítás nem áttelepített nagy DSC környezetek méretezéshez [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+Kezdődően az 17090 kiadási [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server támogatott beállítás a lekéréses szolgáltatás a (Windows-szolgáltatás *DSC-szolgáltatás*).  Ez biztosítja, hogy új lehetőség a skálázás, nagy méretű DSC-környezetekben, amelyek nem áttelepített [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
-> **Megjegyzés:**: SQL Server-támogatása nem lesz felvéve a korábbi verziókra WMF 5.1 (vagy korábbi), és csak a Windows Server-verziók kisebb 17090 elérhető lesz.
+> **Megjegyzés:**: SQL Server-támogatása nem kerül a korábbi verziók a WMF 5.1-es (vagy korábbi), és csak a Windows Server-verziók nagyobb vagy egyenlő 17090 elérhető lesz.
 
-A lekérési kiszolgálójával, hogy az SQL Server használata konfigurálásához állítsa **SqlProvider** való `$true` és **SqlConnectionString** egy érvényes SQL Server kapcsolati karakterlánc módosításait.  További információkért lásd: [SqlClient kapcsolati karakterláncok](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
-Például egy SQL Server-konfiguráció **xDscWebService**, elolvashatja [xDscWebService erőforrást használó](#using-the-xdscwebservice-resource) és tekintse át a [Sample_xDscWebServiceRegistration_ A Githubon UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
+A lekérési kiszolgálójával, hogy az SQL Server konfigurálásához állítsa **SqlProvider** a `$true` és **SqlConnectionString** a egy érvényes SQL Server kapcsolati karakterláncát.  További információkért lásd: [SqlClient kapcsolati karakterláncok](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
+Például egy SQL Server-konfiguráció **xDscWebService**, először olvassa el [xDscWebService erőforrást használó](#using-the-xdscwebservice-resource) , és tekintse át a [Sample_xDscWebServiceRegistration_ A Githubon UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
 
-### <a name="using-the-xdscwebservice-resource"></a>A xDscWebService erőforrás használata
+### <a name="using-the-xdscwebservice-resource"></a>A xDscWebService erőforrás segítségével
 
-A legegyszerűbben úgy állítsa be a webkiszolgáló lekéréses használatára a **xDscWebService** erőforrás szerepel a **xPSDesiredStateConfiguration** modul.
-Az alábbi lépések ismertetik az erőforrás használata, amely beállítja a webszolgáltatás konfigurációban.
+Lekérési kiszolgáló beállítása a legegyszerűbb módja az, hogy használja a **xDscWebService** erőforrás, szerepel a **xPSDesiredStateConfiguration** modul.
+A következő lépések azt ismertetik, hogyan használhatja az erőforrást, amely beállítja a web service konfigurációban.
 
-1. Hívja a [Install-modul](/powershell/module/PowershellGet/Install-Module) telepítésére szolgáló parancsmagot a **xPSDesiredStateConfiguration** modul. **Megjegyzés:**: **Install-modul** megtalálható a **PowerShellGet** modul, amely PowerShell 5.0 szerepel. Letöltheti a **PowerShellGet** modul a PowerShell 3.0 és 4.0-s verzióját, [PackageManagement PowerShell modulok előzetes](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
-1. Az SSL-tanúsítvány lekérése a DSC lekérési kiszolgálójával megbízható hitelesítésszolgáltatótól származó, vagy a szervezet vagy egy nyilvános szolgáltató belül. A szervezet kapott tanúsítvány általában a PFX formátumban van. Telepítse a tanúsítványt a csomóponton a DSC lekérési kiszolgálójával, hogy CERT: \LocalMachine\My alkalmazandó alapértelmezett helyen lesz. Jegyezze fel a tanúsítvány-ujjlenyomatot.
-1. Válassza ki a regisztrációs kulcsot használ egy GUID Azonosítót. Hozhat létre egy PowerShell-lel írja be a következő, a PS-parancssorba, és nyomja le az enter: "``` [guid]::newGuid()```"vagy"```New-Guid```". Ez a kulcs által használandó ügyfél-csomópontok egy megosztott kulcsot, hitelesítéséhez a regisztráció során. További információkért tekintse meg a regisztrációs kulcsot következő szakaszban.
-1. A PowerShell ISE (F5) a következő konfigurációs parancsfájl futtatásához (például mappájában található a **xPSDesiredStateConfiguration** Sample_xDscWebServiceRegistration.ps1 modul). Ezt a parancsfájlt hoz létre a lekérési kiszolgálójával.
+1. Hívja a [Install-Module](/powershell/module/PowershellGet/Install-Module) telepítésére szolgáló parancsmagot a **xPSDesiredStateConfiguration** modul. **Megjegyzés:**: **Install-Module** szerepel a **PowerShellGet** modult, amely része a PowerShell 5.0-s. Letöltheti a **PowerShellGet** modul a PowerShell 3.0 és 4.0-s verzióját, [PackageManagement PowerShell modul előzetes](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+1. SSL-tanúsítvány a DSC lekéréses kiszolgálón le egy megbízható hitelesítésszolgáltató, vagy a szervezet vagy egy nyilvános szolgáltató belül. A szolgáltató kapott tanúsítvány általában a PFX formátumban van. Telepítse a tanúsítványt, amely a DSC lekéréses kiszolgálón az alapértelmezett helyen, amely lehet a CERT: \LocalMachine\My válnak a csomóponton. Jegyezze fel a tanúsítvány-ujjlenyomatot.
+1. Válassza ki a regisztrációs kulcsát, használható egy GUID Azonosítót. Hozhat létre egy PowerShell-lel, írja be a következő, a PS-parancssorba, és nyomja le az enter: "``` [guid]::newGuid()```"vagy"```New-Guid```". Ezt a kulcsot a regisztráció során hitelesítsék magukat a megosztott kulcs lesz ügyfél csomópontja. További információkért tekintse meg a regisztrációs kulcsot az alábbi szakaszban.
+1. A PowerShell ISE-ben (F5) a következő konfigurációs parancsfájl futtatásához (példák mappájában található a **xPSDesiredStateConfiguration** modul Sample_xDscWebServiceRegistration.ps1 mint). Ez a szkript állítja be a lekéréses kiszolgálón.
 
-```powershell
-configuration Sample_xDscWebServiceRegistration
-{
-    param
-    (
-        [string[]]$NodeName = 'localhost',
-
-        [ValidateNotNullOrEmpty()]
-        [string] $certificateThumbPrint,
-
-        [Parameter(HelpMessage='This should be a string with enough entropy (randomness) to protect the registration of clients to the pull server.  We will use new GUID by default.')]
-        [ValidateNotNullOrEmpty()]
-        [string] $RegistrationKey   # A guid that clients use to initiate conversation with pull server
-    )
-
-    Import-DSCResource -ModuleName xPSDesiredStateConfiguration
-
-    Node $NodeName
+    ```powershell
+    configuration Sample_xDscWebServiceRegistration
     {
-        WindowsFeature DSCServiceFeature
-        {
-            Ensure = "Present"
-            Name   = "DSC-Service"
-        }
+        param
+        (
+            [string[]]$NodeName = 'localhost',
 
-        xDscWebService PSDSCPullServer
-        {
-            Ensure                  = "Present"
-            EndpointName            = "PSDSCPullServer"
-            Port                    = 8080
-            PhysicalPath            = "$env:SystemDrive\inetpub\PSDSCPullServer"
-            CertificateThumbPrint   = $certificateThumbPrint
-            ModulePath              = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules"
-            ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"
-            State                   = "Started"
-            DependsOn               = "[WindowsFeature]DSCServiceFeature"
-            RegistrationKeyPath     = "$env:PROGRAMFILES\WindowsPowerShell\DscService"
-            AcceptSelfSignedCertificates = $true
-            Enable32BitAppOnWin64   = $false
-        }
+            [ValidateNotNullOrEmpty()]
+            [string] $certificateThumbPrint,
 
-        File RegistrationKeyFile
+            [Parameter(HelpMessage='This should be a string with enough entropy (randomness) to protect the registration of clients to the pull server.  We will use new GUID by default.')]
+            [ValidateNotNullOrEmpty()]
+            [string] $RegistrationKey   # A guid that clients use to initiate conversation with pull server
+        )
+
+        Import-DSCResource -ModuleName xPSDesiredStateConfiguration
+
+        Node $NodeName
         {
-            Ensure          = 'Present'
-            Type            = 'File'
-            DestinationPath = "$env:ProgramFiles\WindowsPowerShell\DscService\RegistrationKeys.txt"
-            Contents        = $RegistrationKey
+            WindowsFeature DSCServiceFeature
+            {
+                Ensure = "Present"
+                Name   = "DSC-Service"
+            }
+
+            xDscWebService PSDSCPullServer
+            {
+                Ensure                  = "Present"
+                EndpointName            = "PSDSCPullServer"
+                Port                    = 8080
+                PhysicalPath            = "$env:SystemDrive\inetpub\PSDSCPullServer"
+                CertificateThumbPrint   = $certificateThumbPrint
+                ModulePath              = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules"
+                ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"
+                State                   = "Started"
+                DependsOn               = "[WindowsFeature]DSCServiceFeature"
+                RegistrationKeyPath     = "$env:PROGRAMFILES\WindowsPowerShell\DscService"
+                AcceptSelfSignedCertificates = $true
+                Enable32BitAppOnWin64   = $false
+            }
+
+            File RegistrationKeyFile
+            {
+                Ensure          = 'Present'
+                Type            = 'File'
+                DestinationPath = "$env:ProgramFiles\WindowsPowerShell\DscService\RegistrationKeys.txt"
+                Contents        = $RegistrationKey
+            }
         }
     }
-}
-```
+    ```
 
-1. Futtassa a konfiguráció sikeres, az SSL-tanúsítvány ujjlenyomatát a **certificateThumbPrint** paraméter vagy a GUID-regisztrációs kulcs a **RegistrationKey** paraméter:
+1. Futtassa a konfigurációt, az SSL-tanúsítvány ujjlenyomata átadása a **certificateThumbPrint** paraméter és a egy GUID regisztrációs kulcsát a **RegistrationKey** paramétert:
 
-```powershell
-# To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
-# and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
-dir Cert:\LocalMachine\my
+    ```powershell
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
+    # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
+    dir Cert:\LocalMachine\my
 
-# Then include this thumbprint when running the configuration
-Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutputPath c:\Configs\PullServer
+    # Then include this thumbprint when running the configuration
+    Sample_xDscWebServiceRegistration -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutputPath c:\Configs\PullServer
 
-# Run the compiled configuration to make the target node a DSC Pull Server
-Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
-```
+    # Run the compiled configuration to make the target node a DSC Pull Server
+    Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
+    ```
 
 #### <a name="registration-key"></a>Regisztrációs kulcs
 
-Teszi lehetővé az ügyfélszámítógépek csomópontok regisztrálni a kiszolgálót, hogy használhatnak konfigurációs nevek helyett egy konfigurációs Azonosítót, egy regisztrációs kulcsot, amely a fenti konfigurációban készült nevű fájlba mentése `RegistrationKeys.txt` a `C:\Program Files\WindowsPowerShell\DscService`. A regisztrációs kulcs funkciókkal, mint a kezdeti regisztráció során az ügyfél és a lekéréses kiszolgáló által használt megosztott titkos kulcs. Az ügyfél létrehoz egy önaláírt tanúsítványt, amellyel egyedi módon a kiszolgálón elvégzett hitelesítéshez lekéréses Ha regisztrálása sikeresen befejeződött. Ez a tanúsítvány ujjlenyomatának helyileg tárolja és társított a lekérési kiszolgálójával URL-CÍMÉT.
-> **Megjegyzés:**: PowerShell 4.0-s verzióját nem támogatja a regisztrációs kulccsal.
+Ahhoz, hogy az ügyfél-csomópontokat, hogy a konfigurációs nevek helyett egy konfigurációs azonosító használatához regisztrálni a kiszolgálóval, a fenti konfigurációs által létrehozott regisztrációs kulcsát nevű fájlba mentése `RegistrationKeys.txt` a `C:\Program Files\WindowsPowerShell\DscService`. A regisztrációs kulcs egy közös titkos kulcsot használja a kezdeti regisztráció során az ügyfél és a lekéréses kiszolgálón működik. Az ügyfél, amely után a regisztráció sikeres elvégzése után a lekéréses kiszolgálón egyedi hitelesítésére használt önaláírt tanúsítványt hoz létre. Ez a tanúsítvány ujjlenyomatának helyileg tárolja, és a társított URL-címét a lekéréses kiszolgálón.
+> **Megjegyzés:**: regisztráció kulcsok nem támogatottak a PowerShell 4.0-s verzióját.
 
-Ahhoz, hogy egy csomópont a a lekérési kiszolgálón való hitelesítéshez szükséges konfigurálásához a regisztrációs kulcsot kell lennie az összes cél csomóponttal fog a lekérési kiszolgálójával kell regisztrálása metakonfigurációját. Vegye figyelembe, hogy a **RegistrationKey** az alábbi metakonfigurációját tartalomkonvertálást követően törlődik a célként megadott gép sikeresen regisztrálta, és hogy a "140a952b-b9d6-406b-b416-e0f759c9c0e4" értékét meg kell egyeznie az értékeket a A lekérési kiszolgálón RegistrationKeys.txt fájlt. A regisztrációs kulcs értékét biztonságosan, mindig kezelni, mert ismerete, hogy lehetővé teszi, hogy a célszámítógép regisztrálni a lekérési kiszolgálójával.
+Annak érdekében, hogy a pull-kiszolgálóval hitelesíteni csomópontok konfigurálásához, a regisztrációs kulccsal kell lennie az összes cél csomóponttal fog a lekéréses kiszolgálón kell Regisztrálás a metaconfiguration. Vegye figyelembe, hogy a **RegistrationKey** az alábbi metaconfiguration eltűnik, miután sikeresen regisztrálta a célgépen, és hogy az érték '140a952b-b9d6-406b-b416-e0f759c9c0e4' meg kell egyeznie a tárol a A lekérési kiszolgálón RegistrationKeys.txt fájlt. A regisztrációs kulcs értékét biztonságosan, mindig kezeli, mivel azt, hogy lehetővé teszi bármely a célgépen, a lekéréses kiszolgálón regisztrálni.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -202,47 +202,47 @@ configuration Sample_MetaConfigurationToRegisterWithLessSecurePullServer
 Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $RegistrationKey -OutputPath c:\Configs\TargetNodes
 ```
 
-> **Megjegyzés:**: A **ReportServerWeb** szakasz lehetővé teszi a lekérési kiszolgálójával küldendő jelentésadatait.
+> **Megjegyzés:**: A **ReportServerWeb** szakasz lehetővé teszi, hogy a lekéréses kiszolgálón küldendő adatokról szóló jelentéseket küldeni.
 
-A hiánya a **ConfigurationID** tulajdonság a metakonfigurációját fájlban implicit módon azt jelenti, hogy a lekéréses kiszolgáló a V2 verziójú kiszolgáló lekéréses protokollt támogat, egy kezdeti regisztrációs szükség.
-Ezzel ellentétben a jelenléte egy **ConfigurationID** azt jelenti, hogy a lekéréses protokoll a V1-es verziót használja, és nincs regisztrálása feldolgozási.
+Hiánya az **ConfigurationID** tulajdonság a metaconfiguration fájlban implicit módon azt jelenti, hogy a lekéréses kiszolgáló támogat a V2 verziójú lekéréses kiszolgálón protokollt így egy kezdeti regisztrációs megadása kötelező.
+Ezzel szemben, a jelenléte egy **ConfigurationID** azt jelenti, hogy a lekéréses kiszolgálón protokoll V1 verzióját használja, és nincs a feldolgozás nem regisztrációs.
 
->**Megjegyzés:**: a forgatókönyvben a egy LEKÜLDÉSES programhiba van a jelenlegi kiadásban, így meg kell határozni egy ConfigurationID tulajdonság egy lekérési kiszolgálójával soha nem regisztrált csomópontok metakonfigurációját fájlban. Ezzel a V1 lekéréses protokoll kényszerítése és elkerülése érdekében a regisztrációs hibaüzenetek.
+>**Megjegyzés:**: a forgatókönyvben a egy LEKÜLDÉSES hibajelentés létezik a jelenlegi kiadásban, amellyel meg kell határozni egy ConfigurationID tulajdonság egy lekéréses kiszolgálót soha nem regisztrált csomópontok metaconfiguration fájlban. Ezzel a V1 lekéréses kiszolgálón protokoll kényszerítése és regisztrációs hibaüzenetek elkerülése érdekében.
 
-## <a name="placing-configurations-and-resources"></a>Konfigurációk és erőforrások
+## <a name="placing-configurations-and-resources"></a>Konfigurációkat és erőforrásokat elhelyezése
 
-Miután a lekéréses server telepítésének befejezése határozzák meg a mappák a **ConfigurationPath** és **ModulePath** tulajdonságok a lekéréses kiszolgáló konfigurációjában: hol helyezi el a modulok és konfigurációk elérhető a célcsomópontokat való lekérésére fogja tárolni.
-Ezeket a fájlokat kell lennie ahhoz, hogy a lekérési kiszolgálójával, hogy helyesen dolgozza fel őket egy meghatározott formátumban.
+Miután a lekéréses server telepítésének befejezése határozzák meg a mappák a **ConfigurationPath** és **ModulePath** a pull-kiszolgálói konfigurációban a tulajdonságok akkor, hogy hol helyezi el a modulok és konfigurációk amely lekéréses cél csomópontok elérhető lesz.
+Ezeket a fájlokat kell lennie ahhoz, hogy a pull-kiszolgáló megfelelően feldolgozza őket egy meghatározott formátumban.
 
-### <a name="dsc-resource-module-package-format"></a>A DSC erőforrás modul csomag formátuma
+### <a name="dsc-resource-module-package-format"></a>DSC erőforrás modul csomag formátuma
 
-Minden erőforrás modul zip és megfelelő a következő mintát kell `{Module Name}_{Module Version}.zip`.
-Például 3.1.2.0 modul verziójával xWebAdminstration nevű modul volna neve "xWebAdministration_3.2.1.0.zip".
-Egy modul verziói szerepelnie kell egy egyetlen zip-fájlt.
-Mivel minden egyes zip-fájlban szereplő erőforrás csak egyetlen verziója van telepítve, a WMF 5.0 támogatja a több verziója egyetlen könyvtárban hozzáadott modul formátum nem támogatott.
-Ez azt jelenti, hogy csomagolási erőforrás modulok DSC lekérési kiszolgálójával való használatra mentése előtt szüksége lesz a könyvtárstruktúra kis módosítja.
-Az alapértelmezett DSC erőforrást a WMF 5.0 tartalmazó modulok formátuma "{modul mappa}\{verziója} \DscResources\{DSC Erőforrásmappa}\'.
-Előtt feliratkozott a lekérési kiszolgálójával csomagolása, távolítsa el a **{verziója}** mappában, így az elérési útja bekerül a(z) {modul mappa} \DscResources\{DSC Erőforrásmappa}\'.
-A mappa az módosítását zip-fent leírt módon, és ezek a zip-fájlok a **ModulePath** mappa.
+Minden egyes erőforrás modulnak kell zip és a következő mintának megfelelően nevű `{Module Name}_{Module Version}.zip`.
+Ha például 3.1.2.0 modul verziójával xWebAdminstration modul neve "xWebAdministration_3.2.1.0.zip".
+Minden egyes modul verzióját tartalmaznia kell egy egyetlen zip-fájlt.
+Mivel minden egyes zip-fájlt az erőforráshoz csak egyetlen verziója, a WMF 5.0-s egyetlen címtárban több modul verzió támogatása hozzáadva a modul formátum nem támogatott.
+Ez azt jelenti, hogy becsomagolást mentése erőforrás modulok DSC lekéréses kiszolgálón való használatra előtt ki kell, hogy módosítsa a könyvtár struktúra.
+Az alapértelmezett formátum a modulok DSC-erőforrás a WMF 5.0 tartalmazó "{modul mappáját}\{Modulverzió} \DscResources\{DSC Erőforrásmappa}\'.
+Terveztük a lekérési kiszolgálón csomagolást, előtt távolítsa el a **{modul version}** mappát az elérési út válik, így a(z) {modul mappáját} \DscResources\{DSC Erőforrásmappa}\'.
+A mappa az módosítása zip-fent leírtak szerint, és helyezze ezeket a zip-fájlokat a **ModulePath** mappát.
 
-Használjon `New-DscChecksum {module zip file}` az újonnan hozzáadott modul ellenőrzőösszeg-fájl létrehozásához.
+Használat `New-DscChecksum {module zip file}` az újonnan hozzáadott modul ellenőrzőösszeg fájl létrehozásához.
 
-### <a name="configuration-mof-format"></a>Konfigurációs MOF formátuma
+### <a name="configuration-mof-format"></a>Konfigurációs MOF-formátuma
 
-Konfigurációs MOF-fájlt kell, hogy egy LCM a cél csomópont azt is ellenőrzi a konfigurációt az ellenőrzőösszeg-fájl megfeleltetni.
-Hozzon létre egy ellenőrzőösszeg, hívja meg a [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DscChecksum) parancsmag.
-A parancsmag tart egy **elérési** paraméter meghatározza, hogy a mappát, ahol a konfigurációs MOF található.
-A parancsmag létrehoz egy ellenőrzőösszeg nevű `ConfigurationMOFName.mof.checksum`, ahol `ConfigurationMOFName` a konfigurációs mof-fájl neve.
-Ha egynél több konfigurációs MOF-fájlok a megadott mappában, ellenőrzőösszeg minden konfigurációs a mappában létrejön.
-A MOF-fájlok és az azokhoz társított ellenőrzőösszeg fájlokat helyezze a **ConfigurationPath** mappa.
+A konfigurációs MOF-fájlt kell ellenőrzőösszeg fájl párosítani, hogy a cél csomópont egy LCM ellenőrizheti a konfigurációt.
+Ellenőrzőösszeg létrehozásához hívja a [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DscChecksum) parancsmagot.
+A parancsmag lép egy **elérési út** paraméter, amely a mappát, ahol a konfigurációs MOF található.
+A parancsmag létrehoz egy ellenőrzőösszeg-fájlt `ConfigurationMOFName.mof.checksum`, ahol `ConfigurationMOFName` a konfigurációs mof-fájl neve.
+Ha egynél több konfigurációs MOF-fájlok a megadott mappában, a mappában az egyes konfigurációkhoz egy ellenőrzőösszeg jön létre.
+A MOF-fájlok és az azokhoz társított ellenőrzőösszeg fájlokat helyezze a **ConfigurationPath** mappát.
 
->**Megjegyzés:**: Ha megváltoztatja a konfigurációs MOF-fájl bármely olyan módon, az ellenőrzőösszeg-fájl is kell hozni.
+>**Megjegyzés:**: Ha módosítja a konfigurációs MOF-fájl bármilyen módon, akkor is hozza létre az ellenőrzőösszeg-fájl.
 
-### <a name="tooling"></a>Tooling eszköz
+### <a name="tooling"></a>Eszköztámogatás
 
-Annak érdekében, hogy a beállítás, érvényesítése és a könnyebb, lekéréses kiszolgáló felügyelete a következő eszközök érhetők el a legújabb verzió xPSDesiredStateConfiguration modul példaként:
+Annak érdekében, hogy a beállítás alkotják, ellenőrzése és felügyelete egyszerűbb, a lekéréses kiszolgálón a következő eszközöket is a xPSDesiredStateConfiguration modul legújabb verziója található példák:
 
-1. Ez a modul, amely segít csomagolási DSC erőforrás modulok és konfigurációs fájljait a lekérési kiszolgálón. [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1). Az alábbi példák:
+1. A modul, amely segít a csomagolási DSC erőforrás modulok és konfigurációs fájljait használja a lekérési kiszolgálón. [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1). Az alábbi példákat:
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
@@ -253,28 +253,28 @@ Annak érdekében, hogy a beállítás, érvényesítése és a könnyebb, leké
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
     ```
 
-1. Egy parancsfájl, amely ellenőrzi a lekérési kiszolgálójával megfelelően van konfigurálva. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+1. A parancsfájl, amely ellenőrzi a lekérési kiszolgálón megfelelően van konfigurálva. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
 ## <a name="community-solutions-for-pull-service"></a>Közösségi megoldások lekéréses szolgáltatás
 
-A DSC-Közösség rendelkezik létrehozott több megoldások megvalósításához a lekéréses szolgáltatás protokoll.
-A helyszíni környezetben ezek ajánlatot lekéréses szolgáltatás képességei és hozzájárulnak a Közösség növekményes fejlesztések lehetőséget.
+A DSC-Közösség készített rendelkezik több megoldás megvalósítása a lekéréses szolgáltatás protokollt.
+A helyszíni környezetben ezek ajánlat lekéréses szolgáltatásfunkciók és a egy lehetőség, hogy hozzájáruljanak a Közösség növekményes fejlesztései.
 
 - [Vontatóhajó](https://github.com/powershellorg/tug)
-- [A DSC-TRÆK](https://github.com/powershellorg/dsc-traek)
+- [DSC-TRÆK](https://github.com/powershellorg/dsc-traek)
 
-## <a name="pull-client-configuration"></a>Leküldéses ügyfél-konfiguráció
+## <a name="pull-client-configuration"></a>Lekérési ügyfél-konfiguráció
 
-A következő témakörök ismertetik részletesen lekéréses ügyfelek beállítása:
+Az alábbi témakörök ismertetik részletesen pull-ügyfelek beállítását:
 
-- [Egy konfigurációs azonosítójával DSC lekérési ügyfél beállítása](pullClientConfigID.md)
-- [Konfigurációs nevek használatával DSC lekérési ügyfél beállítása](pullClientConfigNames.md)
+- [Egy konfigurációs azonosítóval DSC lekérési ügyfél beállítása](pullClientConfigID.md)
+- [Konfigurációs nevekkel DSC lekérési ügyfél beállítása](pullClientConfigNames.md)
 - [Részleges konfigurációk](partialConfigs.md)
 
 ## <a name="see-also"></a>Lásd még:
 
-- [A Windows PowerShell célállapot-konfiguráló áttekintése](overview.md)
+- [Windows PowerShell Desired State Configuration áttekintése](overview.md)
 - [Konfigurációk életbe léptetése](enactingConfigurations.md)
 - [A DSC jelentéskészítő kiszolgálójának használata](reportServer.md)
-- [[MS-DSCPM]: Szükségeskonfiguráció-State Configuration lekéréses modell protokoll](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]: konfiguráló lekéréses modell protokoll Errata szükséges](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]: a lekéréses modell protokoll Desired State Configuration](https://msdn.microsoft.com/library/dn393548.aspx)
+- [[MS-DSCPM]: a lekéréses modell protokoll hibajegyzék Desired State Configuration](https://msdn.microsoft.com/library/mt612824.aspx)
