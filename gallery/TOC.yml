@@ -7,9 +7,9 @@ items:
   href: getting-started.md
 - name: Útmutató
   items:
-  - name: Elemek keresése a katalógusban
+  - name: Csomagok keresése a katalógusban
     items:
-    - name: Elemek keresése
+    - name: Csomagok keresése
       href: how-to/finding-packages/search-syntax.md
     - name: Keresés a PSEdition paraméter értéke szerint
       href: how-to/finding-packages/searching-by-psedition.md
@@ -17,17 +17,17 @@ items:
       href: how-to/finding-packages/filtering-packages.md
   - name: Közzététel a katalógusban
     items:
-    - name: Elemek létrehozása és közzététele
+    - name: Csomagok létrehozása és közzététele
       href: how-to/publishing-packages/publishing-a-package.md
     - name: PowerShell-galériabeli fiók létrehozása
       href: how-to/publishing-packages/creating-an-account.md
-    - name: Elemek listázásának megszüntetése
+    - name: Csomagok eltávolítása a listáról
       href: how-to/publishing-packages/unlisting-packages.md
-    - name: Elemek törlése
+    - name: Csomagok törlése
       href: how-to/publishing-packages/deleting-packages.md
-    - name: Elemtulajdonosok kezelése
+    - name: A csomagok tulajdonosának kezelése
       href: how-to/publishing-packages/managing-package-owners.md
-  - name: Elemek használata
+  - name: A csomagok használata
     items:
     - name: Fájllistanézet
       href: how-to/working-with-packages/filelist-view.md
@@ -35,9 +35,9 @@ items:
       href: how-to/working-with-packages/deploy-to-azure-automation.md
     - name: Csomagok manuális letöltése
       href: how-to/working-with-packages/manual-download.md
-    - name: Licencfeltételek elfogadását megkövetelő elemek
+    - name: Licencfeltételek elfogadását megkövetelő csomagok
       href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-    - name: Elemtulajdonosok felkeresése
+    - name: Kapcsolatfelvétel a csomagok tulajdonosával
       href: how-to/working-with-packages/contacting-package-owners.md
     - name: Visszajelzés küldése a közösségi médiában vagy megjegyzésekkel
       href: how-to/working-with-packages/social-media-feedback.md
@@ -47,11 +47,13 @@ items:
       href: how-to/managing-profile/managing-account.md
     - name: API-kulcsok kezelése
       href: how-to/managing-profile/creating-apikeys.md
+  - name: Helyi PowerShellGet-tárházak használata
+    href: how-to/working-with-local-psrepositories.md
 - name: Fogalmak
   items:
   - name: A közzététellel kapcsolatos irányelvek és gyakorlati tanácsok
     href: concepts/publishing-guidelines.md
-  - name: Elemek jegyzéke és a galéria felhasználói felülete
+  - name: Csomagok jegyzéke és a katalógus felhasználói felülete
     href: concepts/package-manifest-affecting-ui.md
   - name: Meghatározott PSEdition kiadások használatának megkövetelése
     items:
@@ -65,7 +67,7 @@ items:
       href: concepts/script-license-acceptance.md
     - name: Licencfeltételek elfogadásának megkövetelése modulok esetén
       href: concepts/module-license-acceptance.md
-  - name: Elemek definiálása előzetes kiadásúként
+  - name: Csomagok definiálása előzetes kiadásúként
     items:
     - name: Modulok definiálása előzetes kiadásúként
       href: concepts/module-prerelease-support.md
@@ -91,9 +93,9 @@ items:
   href: faqs.md
 - name: PowerShellGet-parancsmagok
   href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 386e86b4a27ea840cc688b47f597e845f041af60
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 123607d3ce1139511ee0006b9ec6ed2e9ae99010
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002325"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619126"

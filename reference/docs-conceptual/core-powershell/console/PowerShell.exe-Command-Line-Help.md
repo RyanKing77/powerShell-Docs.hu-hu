@@ -3,12 +3,12 @@ ms.date: 08/14/2018
 keywords: PowerShell, a parancsmag
 title: A PowerShell.exe parancssori súgója
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
+ms.sourcegitcommit: 03c7672ee72698fe88a73e99702ceaadf87e702f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133867"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51691830"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe parancssori súgója
 
@@ -51,7 +51,10 @@ Az alapértelmezett végrehajtási házirend beállítása a jelenlegi munkamene
 
 A megadott parancsfájlt futtatja a helyi hatókörében ("dot forráskódú"), így az a funkciók és a szkript által létrehozott változók érhetők el a jelenlegi munkamenet. Adja meg a parancsprogram elérési útja és a paramétereket. **Fájl** kell lennie az utolsó paramétert a parancsba. Után minden érték a **-fájl** paraméter legyenek értelmezve a szkriptet a szkript elérési útja és a paraméterek átadott.
 
-A parancsfájlnak átadott paraméterek adhatók be a szövegkonstansok (után értelmezése az aktuális felületen szerint). Például ha a cmd.exe és a egy környezeti változó értékével továbbítani kívánt lenne használhatja a cmd.exe Szintaxis: `powershell -File .\test.ps1 -Sample %windir%` ebben a példában a parancsfájl kap a szövegkonstanst `$env:windir` és nem a környezeti változó értékét: `powershell -File .\test.ps1 -Sample $env:windir`
+A parancsfájlnak átadott paraméterek után értelmezése az aktuális felületen által átadott szöveges karakterláncként. Például ha a cmd.exe és a egy környezeti változó értékével továbbítani kívánt használna a cmd.exe szintaxist: `powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+Ezzel szemben a futó `powershell.exe -File .\test.ps1 -TestParam $env:windir` cmd.exe eredmények a szkriptben a konstans sztring fogadása `$env:windir` , mert ez nem bír speciális jelentéssel a jelenlegi cmd.exe rendszerhéjba.
+A `$env:windir` környezeti változó hivatkozás stílusát _is_ használni egy `-Command` paramétert, mivel a hiba azt fogja értelmezni PowerShell-kódot.
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {Text |} XML}
 
@@ -103,22 +106,31 @@ A munkamenet a styl okna állítja be. Érvényes értékek: Normal, kis méret�
 
 ### <a name="-command"></a>-Parancs
 
-A megadott parancsokat (paraméterek) végrehajtja a, hogy azok lettek írta be a PowerShell-parancssorba. Végrehajtás után a PowerShell kilép, kivéve, ha a `-NoExit` paraméter meg van adva.
-Szöveg után `-Command` a PowerShell érkezik, egy egyetlen parancssori paranccsal futtathatja. Ez eltér attól, hogy miként `-File` kezeli a parancsfájl küldött paramétereket.
+A megadott parancsokat (paraméterek) végrehajtja a, hogy azok lettek írta be a PowerShell-parancssorba.
+Végrehajtás után a PowerShell kilép, kivéve, ha a **NoExit** paraméter meg van adva.
+Szöveg után `-Command` a PowerShell érkezik, egy egyetlen parancssori paranccsal futtathatja.
+Ez eltér attól, hogy miként `-File` kezeli a parancsfájl küldött paramétereket.
 
-A parancs értéke lehet "-", egy karakterláncot. vagy parancsprogram-blokkot. Ha a parancs értéke "-", a parancs szövege a standard bemenetet olvasható.
+Értékét `-Command` lehet "-", karakterlánc vagy parancsprogram-blokkot.
+A parancs eredményét, a szülő rendszerhéj mezeje deszerializált XML-objektumok, nem élő objektumokat.
 
-Parancsfájl-blokkokban kapcsos zárójelek közé kell lennie ({}). Parancsprogram-blokkot is megadhat, csak akkor, ha a PowerShell.exe fut a PowerShellben. A parancsfájl eredményét a szülő rendszerhéjba mezeje deszerializált XML-objektumok, nem élő objektumokat.
+Ha az értéke `-Command` van "-", a parancs szövege a standard bemenetet olvasható.
 
-Ha a parancs értéke egy karakterlánc **parancs** kell lennie az utolsó paramétert a parancsba, bármilyen karakter beírása után a parancsot, a parancs argumentumainak értelmez miatt.
+Amikor értékét `-Command` egy karakterlánc **parancs** _kell_ utolsó paramétere helyén megadott bármely karakter beírása után a parancsot, a parancs argumentumainak értelmez miatt lehet.
 
-Egy karakterláncot egy PowerShell-parancsot futtató ír, formátumot használja:
+A **parancs** paraméter csak fogad végrehajtási parancsprogram-blokkot, amikor felismerhető átadott érték `-Command` ScriptBlock típusként.
+Ez a _csak_ lehetséges egy másik PowerShell-gazdagépet a PowerShell.exe futtatásakor.
+A scriptblock kulcsszót, írja be egy meglévő változó, egy kifejezésből visszaadott vagy a PowerShell által elemzett szereplő állomás kapcsos zárójelek közé szövegkonstans parancsprogram-blokkot, `{}`, mielőtt a PowerShell.exe átadott.
 
-```powershell
+A cmd.exe esetében nincs ilyen, mint egy parancsprogram-blokkot (vagy a scriptblock kulcsszót típus), ezért az átadott érték **parancs** fog _mindig_ karakterláncot.
+Egy parancsfájl-blokkon belül a karakterláncot írhat, de a végrehajtás alatt helyett úgy működik, pontosan, hogy a beírt egy tipikus PowerShell-parancssorba, a parancsfájl tartalmát, a nyomtatási kitiltás vissza is.
+
+Az átadott karakterlánc `-Command` továbbra is hajtják végre, a PowerShell-lel, így a parancsfájl-blokk kapcsos zárójelek gyakran nem szükségesek az elsőként a cmd.exe futtatásakor.
+Egy karakterláncot, definiált beágyazott parancsprogram-blokkot végrehajtásához a [hívási operátor](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&` használható:
+
+```console
 "& {<command>}"
 ```
-
-Az idézőjelek jelzik, hogy egy karakterláncot és az invoke-operátor (&) hatására végrehajtani a parancsot.
 
 ### <a name="-help---"></a>-Help-,?, /?
 
