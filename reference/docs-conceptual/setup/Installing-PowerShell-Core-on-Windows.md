@@ -2,12 +2,12 @@
 title: A PowerShell Core telepítése Windows rendszerre
 description: Információ a Windows PowerShell Core telepítése
 ms.date: 08/06/2018
-ms.openlocfilehash: 2b21908c38796117308f2ac1219db00ff9086408
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: ba159a69df7e117e90e21dd26228b61146260475
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850979"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320891"
 ---
 # <a name="installing-powershell-core-on-windows"></a>A PowerShell Core telepítése Windows rendszerre
 
@@ -99,7 +99,7 @@ Mindkét esetben szüksége lesz a Windows 10-es x64 ZIP kiadási csomag és a e
 1. A kedvenc zip segédprogrammal tömörítse ki a csomagot egy könyvtárba, a csatlakoztatott Nano Server-rendszerképben.
 2. Válassza le a lemezképet, és indítsa el azt.
 3. Csatlakozzon a Windows PowerShell Beérkezett üzenetek példányához.
-4. Kövesse az utasításokat, hozzon létre egy távoli eljáráshívás végpont a ["egy másik példány technikával"](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+4. Kövesse az utasításokat, hozzon létre egy távoli eljáráshívás végpont a ["egy másik példány technikával"](../core-powershell/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
 ### <a name="online-deployment-of-powershell-core"></a>Online-hoz a PowerShell Core telepítése
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: A Windows PowerShell rendszerkövetelményei
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 5e1fdb9cb4f10fd71c2d2daf693cb359fddcc5bc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 8850cf26b0313dfb8898ccb66b4767d695860d4c
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002718"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320737"
 ---
 # <a name="windows-powershell-system-requirements"></a>A Windows PowerShell rendszerkövetelményei
 Ez a témakör felsorolja a rendszerkövetelményeket, a Windows PowerShell 3.0, a Windows PowerShell 4.0-s és a Windows PowerShell 5.0-s és a Windows PowerShell 5.1-es és a speciális funkciók, például a Windows PowerShell integrált parancsfájlkezelési környezet (ISE), a CIM-parancsok, és a munkafolyamatok.
@@ -87,9 +87,9 @@ Windows PowerShell 4.0 szükséges a teljes Microsoft .NET-keretrendszer 4.5-ös
 
 Windows PowerShell 3.0 a Microsoft .NET-keretrendszer 4 teljes telepítése szükséges. A Windows 8 és Windows Server 2012 tartalmazza a Microsoft .NET-keretrendszer 4.5-ös, alapértelmezés szerint teljesíti ezt a követelményt.
 
-A Microsoft .NET-keretrendszer 4.5 (dotNetFx45_Full_setup.exe) telepítése: [Microsoft .NET-keretrendszer 4.5-ös](http://go.microsoft.com/fwlink/?LinkID=242919) a Microsoft Download Center.
+A Microsoft .NET-keretrendszer 4.5 (dotNetFx45_Full_setup.exe) telepítése: [Microsoft .NET-keretrendszer 4.5-ös](https://go.microsoft.com/fwlink/?LinkID=242919) a Microsoft Download Center.
 
-A Microsoft .NET-keretrendszer 4 (dotNetFx40_Full_setup.exe) teljes verziójának telepítése: [a Microsoft .NET-keretrendszer 4 (webes telepítő)](http://go.microsoft.com/fwlink/?LinkID=212931) a Microsoft Download Center.
+A Microsoft .NET-keretrendszer 4 (dotNetFx40_Full_setup.exe) teljes verziójának telepítése: [a Microsoft .NET-keretrendszer 4 (webes telepítő)](https://go.microsoft.com/fwlink/?LinkID=212931) a Microsoft Download Center.
 
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0-s verzióját
 Windows PowerShell 5.0 szükséges a Windows Management Framework 4.0 a Windows Server 2008 R2 SP1 és Windows 7 SP1 előtelepítve.
@@ -138,7 +138,7 @@ Hozzáadásával vagy a Windows PowerShell 2.0 motor telepítése és hozzáadá
 ## <a name="windows-preinstallation-environment"></a>Windows előtelepítési környezet
 Windows PowerShell 2.0, a Windows PowerShell 3.0 és a Windows PowerShell 4.0-s verzióját futtassa a Windows előtelepítési környezetben (Windows PE). Azonban nem támogatottak a következő parancsmagokat.
 
-- [Háttérben futó intelligens átviteli szolgáltatás (BITS) parancsmagok](http://go.microsoft.com/fwlink/?LinkId=257514)
+- [Háttérben futó intelligens átviteli szolgáltatás (BITS) parancsmagok](https://go.microsoft.com/fwlink/?LinkId=257514)
 
 - [Get-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 

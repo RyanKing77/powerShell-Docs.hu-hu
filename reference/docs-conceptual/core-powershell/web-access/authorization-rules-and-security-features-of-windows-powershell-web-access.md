@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell, a parancsmag
 title: A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói
-ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
-ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
+ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43133862"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321079"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói
 
@@ -20,19 +20,19 @@ Windows PowerShell-elérés a Windows Server 2012 R2 és Windows Server 2012-alk
 ## <a name="configuring-authorization-rules-and-site-security"></a>Az engedélyezési szabályok és a hely biztonságának konfigurálása
 
 Után a Windows PowerShell-elérés telepítése és az átjáró van konfigurálva, a felhasználó meg tudja nyitni a böngészőben a bejelentkezési oldal, de nem tudnak bejelentkezni mindaddig, amíg a Windows PowerShell-elérés rendszergazdai hozzáférést biztosít a felhasználónak explicit módon. "Windows PowerShell-elérés" hozzáférés-vezérlés kezeli az alábbi táblázatban ismertetett Windows PowerShell-parancsmagok használatával. Engedélyezési szabályok hozzáadásához és kezeléséhez nincs hasonló grafikus felhasználói felület.
-Lásd: [Windows PowerShell webes elérés parancsmagjai](cmdlets/web-access-cmdlets.md).
+Lásd: [Windows PowerShell webes elérés parancsmagjai](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Rendszergazdák meghatározhatnak `{0-n}` hitelesítési szabályokat Windows PowerShell-elérés. Az alapértelmezett biztonság inkább korlátozóak, nem pedig engedélyezők; a nulla hitelesítési szabály azt jelenti, hogy egyetlen felhasználó sem férhet hozzá semmihez.
 
-[Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) és [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) a Windows Server 2012 R2 tartalmaznak egy Credential paramétert, amely lehetővé teszi, hogy hozzáadását és tesztelését egy távoli Windows PowerShell-elérés engedélyezési szabályai számítógép, vagy a Windows PowerShell-elérés aktív munkamenet belül. Igény szerint a többi Windows PowerShell-parancsmagok, amelyek tartalmaznak egy Credential paramétert, megadhat egy PSCredential objektumot a paraméter értékeként. A távoli számítógépnek átadni kívánt hitelesítő adatokat tartalmazó PSCredential objektum létrehozásához futtassa a [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) parancsmagot.
+[Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) és [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) a Windows Server 2012 R2 tartalmaznak egy Credential paramétert, amely lehetővé teszi, hogy hozzáadását és tesztelését egy távoli Windows PowerShell-elérés engedélyezési szabályai számítógép, vagy a Windows PowerShell-elérés aktív munkamenet belül. Igény szerint a többi Windows PowerShell-parancsmagok, amelyek tartalmaznak egy Credential paramétert, megadhat egy PSCredential objektumot a paraméter értékeként. A távoli számítógépnek átadni kívánt hitelesítő adatokat tartalmazó PSCredential objektum létrehozásához futtassa a [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) parancsmagot.
 
-Windows PowerShell-elérés hitelesítési szabályai engedélyezett szabályok. Minden egyes szabály egy adott Windows PowerShellÂ, felhasználók és célszámítógépek között engedélyezett kapcsolat definíciója [munkamenet-konfigurációk](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (más néven végpontok vagy _futási terek_) a a megadott célszámítógépeken.
+Windows PowerShell-elérés hitelesítési szabályai engedélyezett szabályok. Minden egyes szabály egy adott Windows PowerShell, felhasználók és célszámítógépek között engedélyezett kapcsolat definíciója [munkamenet-konfigurációk](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) (más néven végpontok vagy _futási terek_) a a megadott célszámítógépeken.
 A magyarázatot **futási terek** lásd [PowerShell futtatóterek használata kezdete](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > [!IMPORTANT]
 > A felhasználónak csak egy érvényes szabályra van szüksége a hozzáférés megszerzéséhez. Ha a felhasználó kap hozzáférést egy számítógéphez a teljes nyelvi hozzáféréssel vagy csak Windows PowerShell távfelügyeleti parancsmagjaihoz való hozzáférés a webalapú konzol, a felhasználó jelentkezzen be (vagy Ugrás) más számítógépekre, amelyek az első célszámítógéphez csatlakoznak. A legbiztonságosabb módja Windows PowerShell-elérés konfigurálása, hogy csak korlátozott munkamenet-konfigurációk, amelyek lehetővé teszik, hogy szokásos módon kell távolról végrehajtani konkrét feladatok elvégzését való hozzáférés engedélyezése a felhasználóknak.
 
-A hivatkozott parancsmagok [Windows PowerShell webes elérés parancsmagjai](cmdlets/web-access-cmdlets.md) lehetővé teszik hozzáférési szabályok engedélyezik a Windows PowerShell-elérés átjáró felhasználója használt készlet létrehozásához. A szabályok eltérnek a célszámítógépen található hozzáférés-vezérlési listáktól (ACL), és további biztonsági réteget biztosítanak a webes eléréshez. A biztonsággal kapcsolatos további részleteket a következő szakasz tartalmazza.
+A hivatkozott parancsmagok [Windows PowerShell webes elérés parancsmagjai](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) lehetővé teszik hozzáférési szabályok engedélyezik a Windows PowerShell-elérés átjáró felhasználója használt készlet létrehozásához. A szabályok eltérnek a célszámítógépen található hozzáférés-vezérlési listáktól (ACL), és további biztonsági réteget biztosítanak a webes eléréshez. A biztonsággal kapcsolatos további részleteket a következő szakasz tartalmazza.
 
 Ha a felhasználók nem felelnek meg az előző biztonsági rétegek bármelyikét, a böngészőjük kapott egy általános "hozzáférés megtagadva" üzenet. Habár az átjáró-kiszolgáló naplózza a biztonsági adatokat, a végfelhasználóknak nem jelenik meg információ arról, hogy hány biztonsági rétegnek feleltek meg, illetve melyik rétegnél nem sikerült a bejelentkezés vagy a hitelesítés.
 
@@ -229,4 +229,4 @@ Ha az átjáró-kiszolgálót futtat Windows Server 2012 R2, Windows PowerShell-
 
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 
-[Windows PowerShell webes elérés parancsmagjai](cmdlets/web-access-cmdlets.md)
+[Windows PowerShell webes elérés parancsmagjai](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

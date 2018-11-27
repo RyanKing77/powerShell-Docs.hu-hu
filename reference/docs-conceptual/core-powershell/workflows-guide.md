@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell parancsmag
-title: munkafolyamatok útmutató
-ms.openlocfilehash: 7c4cbcb03bf5abaeba65563156acd588f7671d93
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+keywords: PowerShell, a parancsmag
+title: a munkafolyamatok útmutatója
+ms.openlocfilehash: e2c91299f064a10fd27ab195d0309a9bef6a7ded
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482794"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320380"
 ---
 # <a name="psworkflow-module"></a>PSWorkflow modul
 
-Ez a szakasz a Súgó-témaköröket tartalmaz a **PSWorkflow** modul, amely tartalmazza a Windows PowerShell munkafolyamat szolgáltatást támogató parancsmagok. A **PSWorkflow** modul telepítve van a Windows PowerShell használatával.
+Ez a szakasz a Súgó-témaköröket tartalmaz a **PSWorkflow** modult, amely tartalmazza a Windows PowerShell-munkafolyamat szolgáltatást támogató parancsmagok. A **PSWorkflow** modul telepítve van a Windows PowerShell-lel.
 
 ## <a name="help-topics"></a>Súgótémakörök
 
-[Munkafolyamat-parancsmagok](http://go.microsoft.com/fwlink/?LinkID=245865)
+[A munkafolyamat-parancsmagok](https://go.microsoft.com/fwlink/?LinkID=245865)
 
 [about_Workflows](https://technet.microsoft.com/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 
@@ -35,4 +35,4 @@ Ez a szakasz a Súgó-témaköröket tartalmaz a **PSWorkflow** modul, amely tar
 
 [about_Suspend-Workflow](https://technet.microsoft.com/library/be2ded75-1eca-493e-96c1-758f92b5f199)
 
-[PowerShell-munkafolyamati segédprogram parancsmagok](https://technet.microsoft.com/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)
+[PowerShell-munkafolyamat segédprogram parancsmagok](https://technet.microsoft.com/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)

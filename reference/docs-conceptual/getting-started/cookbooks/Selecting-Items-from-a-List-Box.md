@@ -1,22 +1,22 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell parancsmag
+keywords: PowerShell, a parancsmag
 title: Elemek kiválasztása egy listából
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
-ms.openlocfilehash: 6ff6bff8f6ce4e9236d7877c4cca24a10932cbe0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951681"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320822"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Elemek kiválasztása egy listából
 
-Egy párbeszédpanelt, amely lehetővé teszi, hogy a rendszergazdák kiválaszthatják az elemeket a lista vezérlőelemet létrehozásához használja a Windows PowerShell 3.0-s és újabb verziókban.
+Egy párbeszédpanel, amely lehetővé teszi az elemek kiválasztása egy lista vezérlőelem a felhasználók létrehozásához használja a Windows PowerShell 3.0-s és újabb verziókban.
 
-## <a name="create-a-list-box-control-and-select-items-from-it"></a>Hozzon létre egy lista vezérlőelem, és válassza ki az elemeket
+## <a name="create-a-list-box-control-and-select-items-from-it"></a>Hozzon létre egy lista vezérlőelem és elemeket választhat
 
-Másolja és illessze be a következő Windows PowerShell ISE-be, és mentse egy Windows PowerShell-parancsfájlt (.ps1).
+Másolja, és ezután illessze be a következő Windows PowerShell ISE-ben, és mentse egy Windows PowerShell-parancsprogram (.ps1).
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -75,20 +75,20 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-A parancsfájl első lépése két .NET-keretrendszer osztály betöltése: **System.Drawing** és **System.Windows.Forms**. Majd indítsa el a .NET-keretrendszer osztály új példánya **: System.Windows.Forms.Form**; biztosítja az üres űrlapból, vagy ablak, amelyhez elkezdhet szabályozza.
+A szkript első lépése két .NET-keretrendszer osztály betöltésekor: **System.Drawing** és **System.Windows.Forms**. Indítsa el a .NET-keretrendszer osztály egy új példányát **System.Windows.Forms.Form**; amely biztosítja, hogy egy üres űrlapot vagy ablakban, amelyhez elkezdhet szabályozza.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 ```
 
-Az űrlap osztály példányának létrehozása után értéket hozzárendelni az osztály három tulajdonságot.
+Miután létrehozta az űrlap osztály egy példányát, értéket rendelni az osztály három tulajdonságot.
 
-- **Text.** Ez lesz az ablak címe.
+- **Szöveg.** Ez lesz az ablak címe.
 
-- **Size.** Ez az az űrlap képpontban méretét. A fenti parancsfájl űrlapot hoz létre, amely 300 x 200 magassága képpontban megadva.
+- **Velikost.** Ez a méretét az űrlap (képpontban). A fenti szkript létrehoz egy képernyő, amely 300 képpont széles és 200 képpont magas.
 
-- **StartingPosition.** Ez nem kötelező tulajdonság értéke **CenterScreen** az előző parancsfájlban. Ez a tulajdonság nem ad hozzá, ha a Windows kiválaszt egy helyet, az űrlap megnyitásakor. Úgy, hogy a **StartingPosition** való **CenterScreen**, akkor program automatikusan jeleníti meg az űrlap közepén a képernyő minden alkalommal, amikor betölti a.
+- **Kezdőpozíció.** Ez nem kötelező tulajdonsága **CenterScreen** az előző szkriptben. Ha nem ezt a tulajdonságot, a Windows kiválaszt egy helyet, az űrlap megnyitásakor. Beállításával a **kezdőpozíció** való **CenterScreen**, akkor már automatikusan megjelenítése az űrlap a képernyő közepén minden alkalommal, amikor betölti.
 
 ```powershell
 $form.Text = 'Select a Computer'
@@ -96,7 +96,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Ezután hozzon létre egy **OK** gombra az űrlap. Adja meg a méretét és viselkedését a **OK** gombra. Ebben a példában a gomb pozíciója a képernyő felső szélétől 120 képpont, de 75 képpont bal szélétől. A gomb magassága 23 képpont, amíg a gomb hossza 75 képpontban megadva. A parancsfájl előre meghatározott Windows Forms-típusok gombra viselkedésmódját meghatározására használja.
+Ezután hozzon létre egy **OK** gombot az űrlapon. Adja meg a méretét és viselkedését a **OK** gombra. Ebben a példában a gomb elhelyezése, a képernyő felső széle 120 képpont 75 képpont bal szélétől. A gomb magassága 23 képpont, amíg a gomb hossza 75 képpont. A szkript előre meghatározott Windows Forms-típusok a gomb viselkedés határozza meg.
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -108,7 +108,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-Hasonlóképpen, létrehozhat egy **Mégse** gombra. A **Mégse** gomb, a lista elejéről 120 képpont, de az ablak bal szélétől 150 képpont.
+Hasonlóképpen, létrehozhat egy **Mégse** gombra. A **Mégse** gombot a felső 120 képpont, de az ablak bal szélétől 150 pixeles.
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -120,7 +120,7 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-A következő adja meg a címke szövegét, a ablakban adja meg a felhasználók a információkat. Ebben az esetben érdemes a felhasználóknak, hogy a számítógép.
+Következő lépésként adja meg az ablak, amely leírja az adatokat, adja meg a felhasználók a felirat szövege. Ebben az esetben érdemes a felhasználók számára, válasszon ki egy számítógépet.
 
 ```powershell
 $label = New-Object System.Windows.Forms.Label
@@ -130,7 +130,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-Adja hozzá a vezérlő (ebben az esetben egy lista), amely lehetővé teszi a felhasználóknak adja meg az adatokat, akkor már ismertetett a címke szövegét. Nincsenek alkalmazhat listák; mellett sok más vezérlők További vezérlők, lásd: [System.Windows.Forms Namespace](http://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) az MSDN Webhelyén.
+Adja hozzá a vezérlő (ebben az esetben egy lista), amely lehetővé teszi a felhasználóknak adja meg az adatokat, akkor már ismertetett a felirat szövege. Nincsenek alkalmazhat listák; mellett számos más vezérlők További vezérlők, lásd: [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) az MSDN Webhelyén.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -139,10 +139,10 @@ $listBox.Size = New-Object System.Drawing.Size(260,20)
 $listBox.Height = 80
 ```
 
-A következő szakaszban adja meg a felhasználók számára megjelenítendő a lista kívánt értékeket.
+A következő szakaszban adja meg a kívánt értékeket, a felhasználók számára megjelenítendő legördülő listából.
 
 > [!NOTE]
-> A lista hozta létre a parancsfájl a csak egy kiválasztását teszi lehetővé. Egy lista vezérlőelem, amely lehetővé teszi több kijelölés létrehozásához adjon meg értéket a **SelectionMode** tulajdonságot, hasonlóan a következő: `$listBox.SelectionMode = 'MultiExtended'`. További információkért lásd: [többszörös kijelölés listák](Multiple-selection-List-Boxes.md).
+> A legördülő listából a szkript által létrehozott csak egy kiválasztását teszi lehetővé. A lista vezérlőelem, amely lehetővé teszi, hogy több elem is választható létrehozásához adjon meg értéket a **SelectionMode** tulajdonságát, hasonlóan a következő: `$listBox.SelectionMode = 'MultiExtended'`. További információkért lásd: [többszörös kijelölési lista](Multiple-selection-List-Boxes.md).
 
 ```powershell
 [void] $listBox.Items.Add('atl-dc-001')
@@ -154,31 +154,31 @@ A következő szakaszban adja meg a felhasználók számára megjelenítendő a 
 [void] $listBox.Items.Add('atl-dc-007')
 ```
 
-A lista vezérlőelem vegye fel az űrlap, és kérje meg a Windows a képernyő elveire más windows és a párbeszédpanel megnyitásához, ha meg van nyitva.
+A lista vezérlőelem felvétele az űrlapot, és kérje meg a Windows más windows és a párbeszédpanelek interaktív irányítópultunkat képernyő megnyitásához, ha meg van nyitva.
 
 ```powershell
 $form.Controls.Add($listBox)
 $form.Topmost = $true
 ```
 
-Adja hozzá a következő kódsort a képernyőn megjelenő Windows.
+Adja hozzá az alábbi kódsort az űrlap megjelenítésére a Windows.
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-Végezetül, a kódot a **Ha** blokk utasítja Windows Mi a teendő az űrlapot, miután a felhasználók jelöljön ki egy lehetőséget a legördülő listából, és kattintson a **OK** gombra vagy nyomja le az **Enter**kulcs.
+Végül a kód belül a **Ha** blokk arra utasítja a Windows Mi a teendő az űrlapot, miután a felhasználók jelöljön ki egy lehetőséget a legördülő listából, és kattintson a **OK** gombra vagy nyomja le a **Enter**kulcsot.
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $listBox.SelectedItem
-    $x
+    $x = $listBox.SelectedItem
+    $x
 }
 ```
 
 ## <a name="see-also"></a>Lásd még:
 
-- [Hey Scripting Guy: Miért nem PowerShell grafikus felhasználói Felülettel példákban használhatók?](http://go.microsoft.com/fwlink/?LinkId=506644)
+- [Hey Scripting Guy: Miért nem a grafikus PowerShell-példákat működnek?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [A hét Windows PowerShell tipp: lista elemek kijelölése](http://technet.microsoft.com/library/ff730949.aspx)
+- [Windows PowerShell Tip of the Week: elemek kiválasztása egy listából](https://technet.microsoft.com/library/ff730949.aspx)

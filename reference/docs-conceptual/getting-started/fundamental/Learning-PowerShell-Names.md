@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: PowerShell, a parancsmag
 title: A PowerShell-nevek elsajátítása
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851255"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320482"
 ---
 # <a name="learning-powershell-names"></a>A PowerShell-nevek elsajátítása
 
-A legtöbb parancssori felületek jelentős mennyiségű időt befektetés parancsok és paraméterek-nevek elsajátítása van szükség. A probléma oka, hogy nincsenek-e néhány minta. Csak akkor memorization nyújt a parancsok és paraméterek, amelyek rendszeres időközönként szüksége.
+A legtöbb parancssori felületek jelentős mennyiségű időt befektetés parancsok és paraméterek-nevek elsajátítása van szükség. A probléma oka, hogy nincsenek-e néhány minta. Memorization az egyetlen módja a parancsok és paraméterek, amelyek rendszeres időközönként szüksége.
 
 Amikor új parancsot vagy a paraméter használata esetén nem minden esetben használhat korábban megszerzett ismeretek. Keresse meg, és ismerje meg, egy új nevet kell. Hagyományosan a parancssori felületen indítsa el az eszközök egy kis készletét, és növekményes kiegészítésekkel növelheti. Egyszerűen tekintse meg, miért van a nem szabványos struktúra nem.
 Ez a megszokottnál logikai parancsnevekre, mivel minden egyes parancsot egy külön eszközt. PowerShell rendelkezik annak parancsnevek kezelni.

@@ -1,28 +1,28 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell parancsmag
+keywords: PowerShell, a parancsmag
 title: Adatátirányítás az Out-parancsmagokkal
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: 3ca7984e831a995e80cbd8a4d83ae9225c2a4f4c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952120"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321009"
 ---
-# <a name="redirecting-data-with-out--cmdlets"></a>Az Out - adatok átirányítása * parancsmagok
+# <a name="redirecting-data-with-out--cmdlets"></a>Adatátirányítás az Out-* parancsmagokkal
 
-A Windows PowerShell számos-parancsmagokat kínál, amelyekkel szabályozhatja, hogy közvetlenül a kimeneti adatok. Ezeket a parancsmagokat a megosztás két lényeges, azonosítandó paraméterek.
+Windows PowerShell számos-parancsmagokat kínál, amelyek segítségével szabályozhatja, hogy közvetlenül a kimeneti adatokat. Ezek a parancsmagok két lényeges, azonosítandó paraméterek megosztani.
 
-Először azokat általában átalakítási valamilyen szöveges adatokat. Van így, mert azok kimeneti szöveg beavatkozást igénylő rendszerösszetevők az adatokat. Ez azt jelenti, hogy az objektumokat képviseli szövegként van szükségük. A-szöveg formátuma, ezért a Windows PowerShell konzol ablakban látható módon.
+Először azok általánosan adatok átalakítása a valamilyen szöveget. Van így, mert ezek az adatok kimenetét szövegbevitel igénylő-összetevőkkel. Ez azt jelenti, hogy az objektumok tartozik szöveg van szükségük. A szöveg formátuma, ezért a Windows PowerShell konzol ablakában látható módon.
 
-Második, ezek a parancsmagok a Windows PowerShell-művelet használata **kimenő** mert azok adatokat küld a Windows PowerShell valahol máshol. A **kimenő gazdagép** parancsmag nincs kivétel: a fogadó ablakban megjelenített Windows PowerShell kívül esik. Ez azért fontos, mert a Windows PowerShell kívül adatokat küldi el, ha az ténylegesen törlődik. Erre úgy tekinthet, ha hozzon létre egy folyamatot, hogy a fogadó ablakban lapok az adatok, majd próbálja meg formázni a listában, ahogy az itt látható:
+A második, ezeket a parancsmagokat használja-e a Windows PowerShell-műveletet **ki** mert azok adatokat küld a Windows Powershellből valahol máshol. A **élekről gazdagép** parancsmag ez sem kivétel: a fogadó ablakban megjelenített Windows PowerShell kívül esik. Ez azért fontos, mert adatküldést kívül a Windows PowerShell, ténylegesen eltávolítja azt. Ez, láthatja, ha létrehoz egy folyamatot, hogy a fogadó ablakban oldalak adatok próbálja, majd próbálja meg egy listaként formázandó itt látható módon:
 
 ```powershell
 Get-Process | Out-Host -Paging | Format-List
 ```
 
-A parancs folyamatra vonatkozó információ oldalain megjelenő listaformátumot várt. Ehelyett az alapértelmezett táblázatos listáját jeleníti meg:
+Így várhatóan a parancs formátuma folyamatra vonatkozó információ a lapok megjelenítéséhez. Ehelyett azt jeleníti meg az alapértelmezett táblázatos listájában:
 
 ```output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
@@ -36,9 +36,9 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ...
 ```
 
-A **kimenő gazdagép** parancsmag elküldi az adatokat közvetlenül a konzol, ezért a **Format-List** parancs soha nem kap semmit formázásához.
+A **élekről gazdagép** parancsmag elküldi az adatokat a konzolon, így a **Format-List** parancs soha nem kap semmit sem kell formázni.
 
-A helyes-e ez a parancs szerkezeti módja, amelyre az a **kimenő gazdagép** parancsmag az alább látható módon a folyamat végén. Ez azt eredményezi, hogy a folyamat adatok listaként lapozható és a megjelenített előtt kell formázni.
+Építse fel a parancs a megfelelő módon, hogy helyezze a **élekről gazdagép** parancsmag az alább látható módon a folyamat végén. Ennek hatására az adatfeldolgozás előtt lapozható és a megjelenő listában formázott.
 
 ```
 PS> Get-Process | Format-List | Out-Host -Paging
@@ -63,26 +63,26 @@ Name    : explorer
 ...
 ```
 
-Ez vonatkozik az összes a **kimenő** parancsmagok. Egy **kimenő** parancsmag mindig megjelenjen-e a folyamat végén.
+Ez vonatkozik az összes a **ki** parancsmagok. Egy **ki** parancsmag mindig meg kell jelennie a folyamat végén.
 
 > [!NOTE]
-> Minden a **kimenő** parancsmagok szöveg, a formázást érvényben a konzolablakban, ideértve a sor hossza határok kimenet megjelenítése.
+> Az összes a **ki** parancsmagok az kimeneti használatával a formázás érvényben a konzolablakban, beleértve a sor hosszának korlátozása, szöveges formában jelennek meg.
 
-#### <a name="paging-console-output-out-host"></a>Lapozás a konzol kimeneti (kimenő gazdagép)
+#### <a name="paging-console-output-out-host"></a>Lapozófájl-konzolkimenet (élekről gazdagép)
 
-Alapértelmezés szerint a Windows PowerShell adatokat küldi el a gazdagép ablak, amely pontosan mi a kimenő gazdagép parancsmag biztosítja. Az elsődleges funkciója a kimenő gazdagép parancsmag lapozófájlok, mint korábban tárgyalt. Például a következő parancs használatát kimenő gazdagépről a Get-Command parancsmag kimenetét lapon:
+Alapértelmezés szerint Windows PowerShell a gazdagép ablak, amely pontosan mit küld adatokat a kimenő irányú gazdagép parancsmag biztosítja. Az elsődleges funkciója a élekről gazdagép parancsmag a már volt szó korábbi lapozófájlok lehetőség. A következő parancsot használja például élekről tárolni a lapon a Get-Command parancsmag kimenete:
 
 ```powershell
 Get-Command | Out-Host -Paging
 ```
 
-Használhatja a **további** oldaladatokat függvényt. A Windows PowerShell parancssorába **további** egy funkciója, amely behívja **kimenő gazdagép-lapozást**. Az alábbi parancs bemutatja, használja a **további** működnek, mint a Get-parancs kimenetében lapon:
+Is használhatja a **további** oldaladatokat függvényt. A Windows PowerShellben **további** egy függvény meghívásához **élekről gazdagép-lapozás**. A következő parancs használatát mutatja be a **további** függvény lapon a Get-parancs kimenetében:
 
 ```powershell
 Get-Command | more
 ```
 
-Ha egy vagy több fájlt adja meg a további függvény argumentumaként, a függvény a megadott fájlok olvasását, és azok tartalmát, a fogadó oldalon:
+Ha további függvény argumentumaként adja meg egy vagy több fájlt, a függvény a megadott fájlok olvasásához, és azok tartalmát, a fogadó oldalon:
 
 ```
 PS> more c:\boot.ini
@@ -93,15 +93,15 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### <a name="discarding-output-out-null"></a>Kimeneti elvetése (kimenő Null)
+#### <a name="discarding-output-out-null"></a>Kimeneti elvetése (élekről Null)
 
-A **kimenő Null** parancsmag arra tervezték, hogy azonnal elveti az összes beviteli kap. Ez akkor hasznos, a kapott egyik mellékhatása fut egy parancs, mint a szükségtelen adatok törlésével. Ha írja be a következő parancsot, nem kap semmit újra a parancsot:
+A **élekről Null** célja, hogy a parancsmag azonnal elveti fogad semmilyen bemenetet. Ez akkor hasznos, ami miatt elvetette a szükségtelen adatokat, mellékhatása futtat egy parancsot kap. Amikor beírja a következő parancsot, nem kap semmit újra a parancsot:
 
-```powreshell
+```powershell
 Get-Command | Out-Null
 ```
 
-A **kimenő Null** parancsmag dobja kimeneti hiba. Például, ha a következő parancsot adja meg, egy üzenet jelenik meg tájékoztat, hogy a Windows PowerShell nem ismeri fel a "Rendszer-NotACommand":
+A **élekről Null** parancsmag nem elveti hibakimenet. Például ha ad meg a következő parancsot, megjelenik egy üzenet, amely tájékoztatja, hogy Windows PowerShell nem ismeri fel a "Van – NotACommand":
 
 ```
 PS> Get-Command Is-NotACommand | Out-Null
@@ -113,7 +113,7 @@ At line:1 char:12
 
 #### <a name="printing-data-out-printer"></a>Nyomtatás adatok (Out-nyomtató)
 
-Adatok használatával kinyomtathatja a **Out-nyomtató** parancsmag. A **Out-nyomtató** parancsmag fogja használni az alapértelmezett nyomtató, ha a nyomtató neve nincs megadva. Bármely Windows-alapú nyomtató használhatja a megjelenített név megadásával. Nincs szükség a nyomtató- vagy a tényleges fizikai nyomtató bármilyen típusú. Például ha a Microsoft Office dokumentum a lemezképkészítés eszközöket, akkor is küldheti az adatokat képfájlra mutató beírásával:
+Adatok használatával kinyomtathatja a **Out-nyomtató** parancsmagot. A **Out-nyomtató** parancsmag fogja használni az alapértelmezett nyomtató, ha nem ad meg a nyomtató neve. Bármely Windows-alapú nyomtató használhatja a megjelenített név megadásával. Hiba esetén nem kell a nyomtató- vagy a tényleges fizikai nyomtató bármilyen típusú. Például ha rendelkezik a Microsoft Office dokumentum lemezkép-készítési eszközök telepíteni, elküldheti az adatok képfájlra mutató beírásával:
 
 ```powershell
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
@@ -121,27 +121,27 @@ Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Wri
 
 #### <a name="saving-data-out-file"></a>Adatok mentése (out-File)
 
-Egy fájl helyett a konzolablakban kimeneti a használatával küldhet a **out-File** parancsmag. A következő parancssori folyamatok listájának küld a fájl **C:\\temp\\processlist.txt**:
+Egy fájl helyett a konzolablakban kimeneti a használatával küldhet a **out-File** parancsmagot. A következő parancsot a folyamatok listáját küld a fájl **C:\\temp\\processlist.txt**:
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt
 ```
 
-Az eredmények használatával a **out-File** parancsmag nem lehet várt a hagyományos kimenet átirányítása használata. Szeretné megtudni, annak viselkedését, figyelembe kell venni a környezet, amelyben a **out-File** parancsmag működik.
+Az eredményeket a a **out-File** parancsmag nem lehet várt hagyományos kimenet átirányítása való használatakor. Szeretné megtudni, annak viselkedését, figyelembe kell venni a környezet, amelyben a **out-File** parancsmag működik.
 
-Alapértelmezés szerint a **out-File** parancsmag létrehoz egy Unicode-fájlt. Ez az ajánlott alapértelmezett hosszú távon, de az azt jelenti, hogy eszközök, amelyek ASCII fájlokat nem fog megfelelően működni az alapértelmezett kimeneti formátummal. Módosíthatja az alapértelmezett kimeneti formátum ASCII használatával a **kódolás** paraméter:
+Alapértelmezés szerint a **out-File** parancsmag létrehoz egy Unicode-fájlt. Ez az ajánlott alapértelmezett hosszú távon, de az azt jelenti, hogy eszközöket, amelyek hatással vannak az ASCII-fájlokat nem működik megfelelően az alapértelmezett kimeneti formátum. ASCII az alapértelmezett kimeneti formátum a használatával módosíthatja a **kódolás** paramétert:
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt -Encoding ASCII
 ```
 
-**Out-File** formátumok fájl tartalmát a konzol kimeneti tűnik. Ez azt eredményezi, hogy a kimeneti kell csonkolni, akárcsak a legtöbb esetben a konzolablakban. Ha például a következő parancsot:
+**Out-File** formátumok tartalmát a konzol kimenete a következőképpen néznek fájlt. Ez azt eredményezi, hogy az eredmény csonkolva lesznek, mint a legtöbb esetben a konzolablakban van. Ha például a következő parancsot:
 
 ```powershell
 Get-Command | Out-File -FilePath c:\temp\output.txt
 ```
 
-A kimeneti fog kinézni:
+A kimenet a következőképpen jelenik meg:
 
 ```output
 CommandType     Name                            Definition
@@ -151,10 +151,10 @@ Cmdlet          Add-History                     Add-History [[-InputObject] ...
 ...
 ```
 
-Ahhoz, hogy a kimenet nem kényszerítik ki a sor becsomagolja szélességét a megfelelő, használhatja a **szélesség** paramétert vonalvastagságát. Mivel **szélesség** 32 bites egész paraméter, a megadható maximális érték érték 2147483647. A vonalvastagság ezen maximális értékre állítva a következőket írja be:
+Szeretne kapni, amely nem kényszeríti a sor burkolja szélességét a megfelelő kimeneti, használhatja a **szélesség** paraméterrel megadhatja a vonal vastagsága. Mivel **szélesség** van a 32 bites egész szám paramétert, a maximális megadható értéke 2147483647. Írja be a következő, a maximális értékre a vonalvastagság:
 
 ```powershell
 Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
 ```
 
-A **out-File** parancsmag akkor hasznos, ha a kimeneti menti, akkor rendelkezik jelenik meg a konzolon. A kimeneti formátum részletesebben vezérelheti speciális eszközök kell. A következő fejezet bizonyos adatai használható együtt a következő fog keresni.
+A **out-File** parancsmag akkor hasznos, ha a kimeneti menti, ahogyan kellene rendelkeznek a konzolon. Kimeneti formátum szabályozásához kell speciális eszközök. Az alábbiakban tájékozódhat a következő fejezet, és néhány információ az objektum adatkezelési lévőket.

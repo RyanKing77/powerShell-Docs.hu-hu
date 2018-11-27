@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell, a parancsmag
 title: telepítheti és használhatja a windows powershell-elérés
-ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48851324"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320686"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Webes Windows PowerShell-elérés telepítése és használata
 
@@ -25,7 +25,7 @@ Az ügyféleszköz lehet laptop, nem munkára használt vagy kölcsönbe kapott 
 
 Windows PowerShell-elérés beállítása és konfigurációja egy három lépéses folyamat a következő:
 
-1. [Windows PowerShell-elérés telepítése](#install-windows-powershell-web-access)
+1. [Windows PowerShell-elérés telepítése](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Az átjáró konfigurálása](#configure-the-gateway)
 1. [Korlátozó engedélyezési szabály konfigurálása](#configure-a-restrictive-authorization-rule)
 
@@ -58,7 +58,7 @@ Egyéb, cookie-kat elfogadó, JavaScriptet és HTTPS-webhelyeket futtató böng�
 
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>Minimális tesztelésen átesett mobileszközök és böngészők
 
-- Windows Phone 7 és 7.5
+- Windows Phone 7 és 7.5
 - Google Android WebKit 3.1 böngésző Android 2.2.1-en (Kernel 2.6)
 - Apple Safari 5.0.1-es iPhone operációs rendszerhez
 - Apple Safari 5.0.1-es iPad 2 operációs rendszerhez
@@ -75,7 +75,7 @@ A Windows PowerShell-elérés webalapú konzol használatához böngészők a k�
 
 Telepíthető a Windows PowerShell-elérés átjáró egy kiszolgálót, amelyen fut a Windows Server 2012 R2 vagy Windows Server 2012 vagy Windows PowerShell-parancsmagok használatával, illetve a szerepkörök hozzáadása és megnyitott a Kiszolgálókezelőben a szolgáltatások varázsló használatával. A gyors telepítéshez és konfigurációs Windows PowerShell-parancsmag használatával ebben a szakaszban leírtak szerint.
 
-1. [Windows PowerShell-elérés telepítése](#install-Windows-powershell-web-access)
+1. [Windows PowerShell-elérés telepítése](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Az átjáró konfigurálása](#configure-the-gateway)
 1. [Korlátozó engedélyezési szabály konfigurálása](#configure-a-restrictive-authorization-rule)
 
@@ -178,7 +178,7 @@ Alapértelmezés szerint a parancsmag telepíti a webalkalmazás **pswa** (és a
 7. Az a **hely kötésének hozzáadása** párbeszédpanel a **típus** mezőben válassza **https**.
 
 8. Az a **SSL-tanúsítvány** mezőben válassza ki a megfelelő aláírt tanúsítványt a legördülő menüből.
-   Kattintson az **OK** gombra. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
+   Kattintson az OK** gombra. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
 
    A Windows PowerShell-elérés webes alkalmazás most már az aláírt SSL-tanúsítvány használatára van konfigurálva.
 
@@ -189,7 +189,7 @@ Alapértelmezés szerint a parancsmag telepíti a webalkalmazás **pswa** (és a
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Korlátozó engedélyezési szabály konfigurálása
 
-Után a Windows PowerShell-elérés telepítése és az átjáró van konfigurálva, a felhasználó meg tudja nyitni a böngészőben a bejelentkezési oldal, de nem tudnak bejelentkezni mindaddig, amíg a Windows PowerShell-elérés rendszergazdai hozzáférést biztosít a felhasználónak explicit módon. Windows PowerShell-elérés hozzáférés-vezérlés kezeli az alábbi táblázatban ismertetett Windows PowerShell-parancsmagok használatával. Engedélyezési szabályok hozzáadásához és kezeléséhez nincs hasonló grafikus felhasználói felület. További részletes információ a Windows PowerShell-elérés parancsmagjai, lásd a parancsmagokkal kapcsolatos témaköröket [Windows PowerShell webes elérés parancsmagjai](cmdlets/web-access-cmdlets.md).
+Után a Windows PowerShell-elérés telepítése és az átjáró van konfigurálva, a felhasználó meg tudja nyitni a böngészőben a bejelentkezési oldal, de nem tudnak bejelentkezni mindaddig, amíg a Windows PowerShell-elérés rendszergazdai hozzáférést biztosít a felhasználónak explicit módon. Windows PowerShell-elérés hozzáférés-vezérlés kezeli az alábbi táblázatban ismertetett Windows PowerShell-parancsmagok használatával. Engedélyezési szabályok hozzáadásához és kezeléséhez nincs hasonló grafikus felhasználói felület. További részletes információ a Windows PowerShell-elérés parancsmagjai, lásd a parancsmagokkal kapcsolatos témaköröket [Windows PowerShell webes elérés parancsmagjai](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Windows PowerShell-elérés engedélyezési szabályai és biztonsági kapcsolatos további részletekért lásd: [engedélyezési szabályai és biztonsági szolgáltatások a Windows PowerShell-elérés](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -261,7 +261,7 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
 
 2. Hozzon létre egy új alkalmazáskészletet a Windows PowerShell-elérés. Bontsa ki az IIS-kezelő fát megjelenítő ablaktábláján, válassza az átjárókiszolgáló csomópontját **alkalmazáskészletek**, és kattintson a **alkalmazáskészlet hozzáadása** a a **műveletek** ablaktáblán.
 
-3. Adjon hozzá egy új alkalmazáskészlet nevű **pswa_pool**, vagy adjon meg egy másik nevet. Kattintson az **OK** gombra.
+3. Adjon hozzá egy új alkalmazáskészlet nevű **pswa_pool**, vagy adjon meg egy másik nevet. Kattintson az OK** gombra.
 
 4. Az IIS-kezelő fát megjelenítő ablaktábláján, bontsa ki a kiszolgáló, amelyen Windows PowerShell-elérés telepítve van, amíg a csomópont a **helyek** mappa megjelent-e. Válassza ki a **helyek** mappát.
 
@@ -271,7 +271,7 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
 
 7. Az a **alkalmazáskészlet** mezőben válassza ki a 3. lépésben létrehozott alkalmazáskészletet.
 
-8. Az a **fizikai elérési út** mezőben tallózással keresse meg az alkalmazás helyét. Használhatja az alapértelmezett hely `%windir%/Web/PowerShellWebAccess/wwwroot`. Kattintson az **OK** gombra.
+8. Az a **fizikai elérési út** mezőben tallózással keresse meg az alkalmazás helyét. Használhatja az alapértelmezett hely `%windir%/Web/PowerShellWebAccess/wwwroot`. Kattintson az OK** gombra.
 
 9. Az eljárás lépéseit kövesse [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) ebben a témakörben.
 
@@ -327,7 +327,7 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
 
    Módosítsa az alapértelmezett portot, ha egy másik webhely már használja a 443-ast, vagy ha egyéb biztonsági okokból módosítani szeretné a portszámot. Ha az átjárókiszolgálón egy másik webhely használja a kiválasztott portot, figyelmeztetés jelenik meg kattintva **OK** a a **webhely hozzáadása** párbeszédpanel bezárásához. Windows PowerShell-elérés futtatásához egy nem használt portot kell használnia.
 
-1. Ha a szervezet számára szükséges, megadhat egy állomásnevet, amely logikus a szervezet és a felhasználó számára, mint például **`www.contoso.com`**. Kattintson az **OK** gombra.
+1. Ha a szervezet számára szükséges, megadhat egy állomásnevet, amely logikus a szervezet és a felhasználó számára, mint például **`www.contoso.com`**. Kattintson az OK** gombra.
 
 1. A biztonságosabb éles környezet érdekében határozottan javasoljuk egy érvényes, hitelesítésszolgáltató által aláírt tanúsítványt biztosítását. SSL-tanúsítványt kell megadnia, mivel a felhasználók csak a Windows PowerShell-elérés keresztül kapcsolódhatnak egy HTTPS-webhelyen. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
 
@@ -360,7 +360,7 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
 
 ### <a name="configuring-a-restrictive-authorization-rule"></a>Korlátozó engedélyezési szabály konfigurálása
 
-Után a Windows PowerShell-elérés telepítése és az átjáró van konfigurálva, a felhasználó meg tudja nyitni a böngészőben a bejelentkezési oldal, de nem tudnak bejelentkezni mindaddig, amíg a Windows PowerShell-elérés rendszergazdai hozzáférést biztosít a felhasználónak explicit módon. Windows PowerShell-elérés hozzáférés-vezérlés kezeli az alábbi táblázatban ismertetett Windows PowerShell-parancsmagok használatával. Engedélyezési szabályok hozzáadásához és kezeléséhez nincs hasonló grafikus felhasználói felület. További részletes információ a Windows PowerShell-elérés parancsmagjai, lásd a parancsmagokkal kapcsolatos témaköröket [Windows PowerShell webes elérés parancsmagjai](cmdlets/web-access-cmdlets.md).
+Után a Windows PowerShell-elérés telepítése és az átjáró van konfigurálva, a felhasználó meg tudja nyitni a böngészőben a bejelentkezési oldal, de nem tudnak bejelentkezni mindaddig, amíg a Windows PowerShell-elérés rendszergazdai hozzáférést biztosít a felhasználónak explicit módon. Windows PowerShell-elérés hozzáférés-vezérlés kezeli az alábbi táblázatban ismertetett Windows PowerShell-parancsmagok használatával. Engedélyezési szabályok hozzáadásához és kezeléséhez nincs hasonló grafikus felhasználói felület. További részletes információ a Windows PowerShell-elérés parancsmagjai, lásd a parancsmagokkal kapcsolatos témaköröket [Windows PowerShell webes elérés parancsmagjai](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Windows PowerShell-elérés engedélyezési szabályai és biztonsági kapcsolatos további részletekért lásd: [engedélyezési szabályai és biztonsági szolgáltatások a Windows PowerShell-elérés](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -404,7 +404,7 @@ A biztonságos éles környezethez mindig érvényes, hitelesítésszolgáltató
 1. Az a **műveletek** ablaktáblán, tegye a következők egyikét. Kiszolgálótanúsítványok konfigurálása az IIS-ben kapcsolatos további információkért lásd: [Kiszolgálótanúsítványok konfigurálása az IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Kattintson a **importálása** egy meglévő, érvényes tanúsítvány importálásához a hálózat egy helyéről.
-   - Kattintson a **tanúsítványkérelem létrehozása** tanúsítvány kérése hitelesítésszolgáltatótól például [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), vagy [GeoTrust](https://www.geotrust.com/). A tanúsítvány köznapi nevének egyeznie kell a kérésben szereplő állomás fejlécével.
+   - Kattintson a **tanúsítványkérelem létrehozása** tanúsítvány kérése hitelesítésszolgáltatótól például [VeriSign](https://www.verisign.com/), [Thawte](https://www.thawte.com/), vagy [GeoTrust](https://www.geotrust.com/). A tanúsítvány köznapi nevének egyeznie kell a kérésben szereplő állomás fejlécével.
 
      Például, ha az ügyfél böngészője kérelmek `http://www.contoso.com/`, akkor a köznapi név is meg kell `http://www.contoso.com/`. Ez a lehetőség a legbiztonságosabb és ajánlott a Windows PowerShell-elérés átjáró-tanúsítvánnyal, amelyek biztosítják.
 

@@ -1,228 +1,228 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell parancsmag
-title: A PowerShell 50 a milyen s ISE
+keywords: PowerShell, a parancsmag
+title: Újdonságai a PowerShell 50 ISE-ben
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 35b825cfa6ea720d0af3537c5d1b16c5ececb701
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953582"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320584"
 ---
-# <a name="what39s-new-in-the-windows-powershell-ise"></a>Mi&#39;a újdonságai a Windows PowerShell ISE s
-Ez a témakör ismerteti a Windows PowerShell integrált parancsfájlkezelési környezet (ISE) verzióban bevezetett új és frissített szolgáltatásai.
+# <a name="what39s-new-in-the-windows-powershell-ise"></a>Mi&#39;újdonságai a Windows PowerShell ISE-ben
+Ez a témakör ismerteti a Windows PowerShell integrált parancsfájlkezelési környezet (ISE) verzióban bevezetett új és frissített funkciókat.
 
 ## <a name="feature-description"></a>A szolgáltatás leírása
-A Windows PowerShell ISE még egy fogadó alkalmazás, amely lehetővé teszi a írási, futtatására, és tesztelje a parancsfájlokat és a modulok grafikus és intuitív környezetben. A legfontosabb jellemzők zintaxisszínek, például lapon befejezését, visual-hibakeresés, Unicode-megfelelőségi és környezetfüggő Súgó hatékony programozási környezetet biztosítson.
+A Windows PowerShell ISE-ben egy fogadó alkalmazás, amely lehetővé teszi, hogy írási, futtatása és tesztelése a szkriptek és modulok grafikus és intuitív környezetben. Például a szintaxis-színezést, a legfontosabb jellemzők lapon befejezését, vizuális hibakeresési, Unicode-megfelelőség és környezetfüggő súgó gazdag parancsfájl-kezelési felületet biztosít.
 
-A Windows PowerShell ISE áttekintését lásd: [Windows PowerShell integrált parancsfájlkezelési környezet áttekintése](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+Windows PowerShell ISE-ben áttekintését lásd: [Windows PowerShell integrált parancsfájlkezelési környezet áttekintése](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
 
-## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>A Windows PowerShell ISE új és módosított funkciók
-A következő táblázat felsorolja az új és módosított szolgáltatások a jelen kiadása a Windows PowerShell ISE a Windows PowerShellben.
+## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Új és módosított funkciók a Windows PowerShell ISE-ben
+A következő táblázat felsorolja az új és módosított szolgáltatások a Windows PowerShell ISE-ben a Windows PowerShellben, kiadás.
 
-|Szolgáltatás/funkció|A Windows PowerShell ISE 4.0|A Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
+|Szolgáltatás/funkció|Windows PowerShell ISE-ben 4.0|Windows PowerShell ISE-ben 3.0|Windows PowerShell ISE-ben 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
 |**[IntelliSense](#intellisense)**|X|X||
-|**[Részletek](#snippets)**|X|X||
-|**[Bővítmény eszközök](#add-on-tools)**|X|X||
+|**[A kódrészletek](#snippets)**|X|X||
+|**[Bővítmény-eszközök](#add-on-tools)**|X|X||
 |**[Indítsa újra a Manager és az automatikus mentés](#restart-manager-and-auto-save)**|X|X||
-|**[A legtöbb-legutóbbi listája](#most-recently-used-list)**|X|X||
-|**[Konzol ablaktáblában](#console-pane)**|X|X||
+|**[Legutóbb használt listája](#most-recently-used-list)**|X|X||
+|**[Konzol panelen](#console-pane)**|X|X||
 |**[Parancssori kapcsolók](#command-line-switches)**|X|X||
 |**[Új szerkesztő szolgáltatások](#new-editor-features)**|X|X||
 |**[Új súgó-megjelenítő ablakban](#new-help-viewer-window)**|X|X||
-|**[Megjelenítése-Command parancsmaggal](#show-command-cmdlet)**|X|X||
+|**[Show-Command parancsmaggal](#show-command-cmdlet)**|X|X||
 
-### <a name="intellisense"></a>IntelliSense
-**A hozzáadott ISE 3.0**
+### <a name="intellisense"></a>Az IntelliSense
+**A ISE-ben 3.0 hozzáadva**
 
-IntelliSense az automatikus-végrehajtási segítséget szolgáltatása, amely része a Windows PowerShell ISE. IntelliSense megjeleníti a parancsmagok, paraméterek, a paraméterértékek, fájlok vagy mappák potenciálisan megfelelő beíráskor kattintható menük.
-
-**Milyen hozzáadott értéket nyújt ez a változás?**
-
-IntelliSense hozzáadásával ezért könnyebben parancsmagok és szintaxis észleléséhez, amikor a Windows PowerShell ISE parancsfájlok létrehozására használhatja. A Windows PowerShell ISE segítségével ismerje meg a Windows PowerShell új parancsfájlok létrehozása során.
-
-**Mi működik másképp?**
-
-Amikor beírja parancsmagok a Windows PowerShell ISE 3.0-s vagy újabb, egy görgethető és kattintható menü jeleníti meg, keresse meg és jelölje ki a megfelelő parancsokat.
-
-### <a name="snippets"></a>Részletek
-**A hozzáadott ISE 3.0**
-
-*Kódtöredékek* a Windows PowerShell-kódot hoz létre a Windows PowerShell ISE parancsfájlok beilleszthet rövid szakaszok is vannak. A Windows PowerShell ISE kódtöredékek alapértelmezett készletét tartalmazza. Kódtöredékek használatával adhat hozzá a **New-részlet** parancsmag a Windows PowerShell ISE végzett munka közben.
+Az IntelliSense az automatikus kiegészítését támogatás szolgáltatása, amely része a Windows PowerShell ISE-ben. Az IntelliSense potenciálisan egyező parancsmagok, paraméterek, paraméterértékeket, fájlok vagy mappák beírása kattintható menük jeleníti meg.
 
 **Milyen hozzáadott értéket nyújt ez a változás?**
 
-Részletek segítségével gyorsan állítson össze és automatizálását a környezetében parancsfájlokat hozhatnak létre.
+Az IntelliSense igény szerinti hozzáadásával célszerűbb a parancsmagok és a szintaxis észleléséhez, amikor a parancsfájlok létrehozásához használt Windows PowerShell ISE-ben. További Windows PowerShell új parancsfájlok létrehozásakor használhatja a Windows PowerShell ISE-ben.
 
 **Mi működik másképp?**
 
-Kódtöredékek használata a Windows PowerShell 3.0-s vagy újabb, a **szerkesztése** menüben kattintson a **Start kódtöredékek**, vagy nyomja le az ENTER **Ctrl-J**.
+Írja be a parancsmagok a Windows PowerShell ISE 3.0-s vagy újabb verzió, amikor egy görgethető és kattintható menü jeleníti meg, keresse meg és válassza ki a megfelelő parancsokat lehetővé teszi.
 
-### <a name="add-on-tools"></a>Bővítmény eszközök
-**A PowerShell 3.0 hozzáadva**
+### <a name="snippets"></a>A kódrészletek
+**A ISE-ben 3.0 hozzáadva**
 
-A Windows PowerShell ISE mostantól támogatja a bővítmény eszközök, amelyek Windows megjelenítési alaprendszer (WPF) vezérlők, amelyek felhasználásával a hálózatiobjektum-modellt. Bővítmények megjelenítése a konzol egy függőleges vagy vízszintes ablaktáblát. Lapokra vezérlőként több bővítmény eszközök ablaktáblában jelennek meg. Hozzáadhat, vagy távolítsa el a bővítmény eszközök, amelyek a Microsofton kívüli más felek hozzák létre. Importálandó, vagy távolítsa el a bővítmény eszközök kapcsolatos további információkért lásd: [Windows PowerShell ISE műveletek](http://technet.microsoft.com/library/cc732148.aspx).
+*A kódrészletek* rövid szakaszok szúrhat be a parancsfájlok a Windows PowerShell ISE-ben létrehozhat Windows PowerShell-szabályzat. Windows PowerShell ISE-ben tartalmaz egy alapértelmezett részletek. A kódrészletek használatával adhat hozzá a **New-kódrészlet** parancsmag használatakor a Windows PowerShell ISE-ben.
 
 **Milyen hozzáadott értéket nyújt ez a változás?**
 
-A bővítmények lehetővé teszik bővíthető és testreszabható a Windows PowerShell ISE, amelyek a parancsfájl-kezelési élmény javítása érdekében vagy funkciókat adnak hozzá a Windows PowerShell ISE eszközökkel.
+A kódrészletek, gyorsan összeállíthat és a környezet automatizáló szkriptek létrehozására.
 
 **Mi működik másképp?**
 
-A Windows PowerShell ISE 3.0-s és újabb verziói rendelkeznek a **parancsok** bővítmény. A **parancsok** bővítmény lehetővé teszi a parancsmagok keresse meg és érheti el a parancsmagok-mellé a vonatkozó súgó megjelenítéséhez a **parancsfájl** és **konzol** ablaktábla.
+Kódrészletek a használata a Windows PowerShell 3.0-s vagy újabb, a **szerkesztése** menüben kattintson a **Start kódrészletek**, vagy nyomja le az **Ctrl-J**.
 
-További bővítmények található használatával a **bővítmény eszközök webhely megnyitása** parancs a **bővítmények** menü.
+### <a name="add-on-tools"></a>Bővítmény-eszközök
+**Új funkció a PowerShell 3.0**
+
+Windows PowerShell ISE-ben mostantól támogatja a bővítmény eszközöket, amelyek a Windows megjelenítési Alaprendszeri (WPF) vezérlőelem, amely lehet hozzáadni a hálózatiobjektum-modellt. Bővítmény eszközök is megjeleníthetők a konzol egy függőleges vagy vízszintes ablaktáblát. A többlapos vezérlőként több bővítmény Eszközök panelen jelennek meg. Is hozzáadhat, vagy távolítsa el a Microsofton kívüli felek által készített eszközök bővítményt. Importálhatja, vagy távolítsa el a bővítményt eszközök kapcsolatos további információkért lásd: [Windows PowerShell ISE Operations](https://technet.microsoft.com/library/cc732148.aspx).
+
+**Milyen hozzáadott értéket nyújt ez a változás?**
+
+A bővítmények lehetővé teszik a kiterjesztéséhez és testre szabásához Windows PowerShell ISE-ben az eszközök, amelyek további funkciókkal bővítik a Windows PowerShell ISE-ben vagy a parancsfájl-kezelési környezet minőségét.
+
+**Mi működik másképp?**
+
+Windows PowerShell ISE-ben, 3.0-s és újabb verziók kapható a **parancsok** bővítményt. A **parancsok** bővítmény lehetővé teszi, hogy a parancsmagok keresse meg és érheti el a parancsmagok egymás mellett a Súgó a **parancsfájl** és **konzol** ablaktáblái.
+
+További bővítmények találhatók használatával a **nyílt bővítmény eszközök webhely** parancs a **bővítmények** menü.
 
 ### <a name="restart-manager-and-auto-save"></a>Indítsa újra a manager és az automatikus mentés
-**A PowerShell 3.0 hozzáadva**
+**Új funkció a PowerShell 3.0**
 
-Windows PowerShell ISE mostantól automatikusan menti a Megnyitás parancsfájlokba két percenként másik helyen.  Ha a Windows PowerShell ISE nem működik, vagy ha az operációs rendszer újraindítása után a Windows PowerShell ISE újraindul, helyreállítja parancsfájlok, melyeket nyissa meg az utolsó munkamenetnek, még akkor is, ha a parancsfájlok nem sikerült menteni.
+Windows PowerShell ISE-ben mostantól automatikusan menti a megnyitott parancsfájlok két percenként, egy külön helyet.  Ha a Windows PowerShell ISE-ben nem működik, vagy ha az operációs rendszer újraindul, Windows PowerShell ISE újraindítása után, működés, visszaadhatja parancsfájlok, amelyek korábban nyissa meg a legutóbbi munkamenet akkor is, ha a parancsfájlok nem lettek mentve.
 
-Az automatikus mentése időköz módosításához futtassa a következő parancsot a konzol ablaktáblában: **$psise. Options.AutoSaveMinuteInterval**.
-
-**Milyen hozzáadott értéket nyújt ez a változás?**
-
-Most már dolgozhat ismerete, hogy a Megnyitás parancsfájlokba automatikusan menti a rendszer váratlan újraindítása esetén a Windows PowerShell ISE belül.
-
-**Mi működik másképp?**
-
-A Windows PowerShell ISE 2.0 nem menti a parancsfájlok automatikusan esetén a számítógép újraindítását.
-
-### <a name="most-recently-used-list"></a>A legtöbb-legutóbbi listája
-**A PowerShell 3.0 hozzáadva**
-
-Windows PowerShell ISE most már rendelkezik a legtöbb legutóbb használt fájlok listáját. Amikor megnyit egy fájlt a Windows PowerShell ISE, a fájl kerül a legtöbb legutóbb használt lista a a **fájl** menü.
-
-A legtöbb legutóbb használt fájlok alapértelmezett számának módosításához, futtassa a következő parancsot a konzol ablaktáblában: **$psise. Options.MruCount**.
+Az automatikus mentése időköz módosításához futtassa a következő parancsot a konzolablakban: **$psise. Options.AutoSaveMinuteInterval**.
 
 **Milyen hozzáadott értéket nyújt ez a változás?**
 
-A legtöbb legutóbb használt lista segítségével mostantól egyszerűen hozzáférhessenek a gyakran használt fájlokat.
+Most már dolgozhat, hogy a nyílt parancsprogramok a rendszer automatikusan menti váratlan újraindítása esetén, hogy a Windows PowerShell ISE belül.
 
 **Mi működik másképp?**
 
-A Windows PowerShell ISE 2.0 nem rendelkezik a legtöbb legutóbb használt listáját.
+Windows PowerShell ISE 2.0 nem menti a parancsfájlok automatikus újraindítás esetén.
 
-### <a name="console-pane"></a>Konzol ablaktáblában
-**A PowerShell 3.0 hozzáadva**
+### <a name="most-recently-used-list"></a>Legutóbb használt listája
+**Új funkció a PowerShell 3.0**
 
-A külön parancs és a kimeneti ablaktábla elérhető Windows PowerShell ISE első kiadása már megtörtént egyesített konzol egytáblás. A konzol ablaktáblában függvény és egy tipikus Windows PowerShell-konzolba megjelenése hasonló, de (a legtöbb ebben a témakörben ismertetett) a következő fejlesztéseket tartalmazza.
+Windows PowerShell ISE-ben a legutóbb használt listáját a fájlok most már rendelkezik. Amikor megnyit egy fájlt a Windows PowerShell ISE-ben, a fájl bekerül a legutóbb használt listájának a a **fájl** menü.
 
-- Zintaxisszínek bemeneti szöveg (kimeneti szöveg nem), beleértve az XML-szintaxis
+A legutóbb használt listán fájl alapértelmezett számának módosításához futtassa a következő parancsot a konzolablakban: **$psise. Options.MruCount**.
 
-- IntelliSense
+**Milyen hozzáadott értéket nyújt ez a változás?**
 
-- Megfelelő zárójel
+A legutóbb használt lista használatával most már könnyedén elérheti a gyakran használt fájlok.
 
-- Hiba arra utal, hogy
+**Mi működik másképp?**
+
+Windows PowerShell ISE 2.0 nem rendelkezik a legutóbb használt listáját.
+
+### <a name="console-pane"></a>Konzol panelen
+**Új funkció a PowerShell 3.0**
+
+A külön parancsot és a Windows PowerShell ISE-ben az első kiadásban elérhető kimeneti ablaktábla mostantól egy egyetlen konzol ablaktáblában. A konzol ablaktáblában a függvény és a egy tipikus Windows PowerShell-konzolt a megjelenése hasonló, de (a legtöbb olyan ebben a témakörben leírtak szerint) a következő fejlesztéseket tartalmazza.
+
+- Szintaxis színezést bemeneti szöveg (nem kimeneti szöveg), beleértve syntaxe XML
+
+- Az IntelliSense
+
+- Egyező kapcsos zárójel
+
+- Hiba történt annak jelzése
 
 - Teljes Unicode-támogatás
 
 - **F1** környezetfüggő súgó
 
-- **CTRL + F1** környezetfüggő megjelenítése-parancs
+- **CTRL + F1** környezetfüggő Show-parancs
 
-- Összetett parancsfájl és jobbról balra támogatás
+- A parancsfájl komplex és támogatja a jobbról balra
 
 - Betűtípus-támogatás
 
 - Nagyítás
 
-- Vonal-válassza ki, és a blokk-válassza módok
+- Vonal-válasszon és a blokk-válasszon módok
 
-- A parancssorban megnyomásakor beírt tartalom megőrzése a **mentése** mutató nyílra kattintva a konzol előzményeinek megtekintése
+- A parancssorban, amikor lenyomja a beírt tartalom megőrzése az **mentése** nyílra a konzolon előzményeinek megtekintése
 
 **Milyen hozzáadott értéket nyújt ez a változás?**
 
-A konzol ablaktáblában módosítások hozzáadását, amely több azonos-e a konzol felületét parancsfájl-kezelési élményt nyújt.
+A konzolablakban a módosítások hozzáadása, amely megfelel a konzol felületét a parancsfájl-kezelési élményt nyújt.
 
 **Mi működik másképp?**
 
-A Windows PowerShell ISE 2.0 rendelkezik, külön parancs és a kimeneti ablaktábla.
+Windows PowerShell ISE 2.0 rendelkezik, külön parancsot és a kimeneti ablaktábla.
 
 ### <a name="command-line-switches"></a>Parancssori kapcsolók
-**A PowerShell 3.0 hozzáadva**
+**Új funkció a PowerShell 3.0**
 
-Ha a parancssorból indítsa el a Windows PowerShell ISE (írja be a **powershell_ise.exe**), a következő új parancssori kapcsolókat is hozzáadhat.
+Ha a parancssorból indítsa el Windows PowerShell ISE-ben (beírásával **powershell_ise.exe**), a következő új parancssori kapcsolókat is hozzáadhat.
 
-- *-NoProfile*: elindul a Windows PowerShell ISE futtatása nélkül **$profile**
+- *-NoProfile*: Windows PowerShell ISE elindul futtatása nélkül **$profile**
 
 - *-Súgó*: a súgóablak megjelenítése
 
-- *-mta*: Windows PowerShell ISE többszálas apartman módban indul. Az alapértelmezett működési mód a Windows PowerShell ISE egyszálas apartman módban, vagy *- sta*.
+- *-mta*: Windows PowerShell ISE többszálú apartman módban indul. Az alapértelmezett működési mód a Windows PowerShell ISE-ben az egyszálas apartman módban, vagy *- sta*.
 
 **Milyen hozzáadott értéket nyújt ez a változás?**
 
-A parancssori kapcsolók hozzáadása lehetővé teszi, hogy a környezet, amelyben a Windows PowerShell ISE fut. szabályozzák.
+A parancssori kapcsolók igény szerinti hozzáadásával lehetővé teszi a környezet, amelyben a Windows PowerShell ISE-t futtató szabályozását.
 
 **Mi működik másképp?**
 
-A Windows PowerShell ISE 2.0 nem ismeri fel a parancssori kapcsolók.
+Windows PowerShell ISE 2.0 nem ismeri fel a parancssori kapcsolók.
 
 ### <a name="new-editor-features"></a>Új szerkesztő szolgáltatások
-**A PowerShell 3.0 hozzáadva**
+**Új funkció a PowerShell 3.0**
 
-Más Windows PowerShell ISE szerkesztési funkciói a következők:
+Más Windows PowerShell ISE-ben szerkesztési funkciók a következők:
 
-- **XML-zintaxisszínek**Windows PowerShell ISE most színek XML szintaxis ugyanúgy, mint azt a Windows PowerShell-szintaxis színek.
+- **XML-szintaxis színezést**Windows PowerShell ISE-ben mostantól színek syntaxe XML ugyanúgy, ahogy azt a Windows PowerShell-szintaxis színek.
 
-- **Megfelelő zárójel** Windows PowerShell ISE megfelelő zárójel és kiemelve, és a következőképpen használható: (használata esetén például a **egyezés Ugrás** parancs vagy **Ctrl +]** megkeresi a záró zárójel, ha egy kijelölt nyitó zárójel).
+- **Kapcsos zárójel megfelelő** Windows PowerShell ISE-ben kiterjed kapcsos zárójel megfelelő, és a kiemelés, és az alábbi módon használható: (használata esetén például a **egyezés Ugrás** parancs vagy **Ctrl +]** megkeresi a Záró kapcsos zárójel, ha rendelkezik egy nyitó zárójel jelölve).
 
-- **Vázlat nézetben** a parancssori panelbe támogatja, tagolás, amely lehetővé teszi, hogy összecsukás és kód szakasza Kibontás plusz vagy mínusz kattintva jelentkezik be a bal margó. Használhatja a kapcsos zárójelek vagy a **#region** és **#endregion** címkék elején vagy végén egy összecsukható szakasz megjelölni. Kibontásához vagy összecsukásához minden egyes, nyomja le az **Ctrl + M**.
+- **Vázlat nézetben** a parancsfájl panelen támogatja, felvázolva, amellyel összecsukás és kód szakaszait Kibontás plusz vagy mínusz kattintson a bal oldali margó bejelentkezik. Zárójelek között is használhatja, vagy a **#region** és **#endregion** címkék elején vagy végén egy összecsukható szakasz megjelölni. Kibontása vagy összecsukása minden régióban, nyomja le a **Ctrl + M**.
 
-- **Áthúzása szöveg szerkesztése**Windows PowerShell ISE most támogatja áthúzása szöveg szerkesztése. Jelöljön ki egyetlen szövegrészt, és húzza a szöveget a szerkesztő vagy a konzol a szöveg áthelyezése egy másik helyre. Ha lenyomva tartja a Ctrl billentyűt, miközben a kijelölt szöveg az egérgomb felengedésekor a szöveget az új helyre másolódik. Ebben a Windows PowerShell ISE, valamint a Windows PowerShell ISE korábbi verzióját, a Windows PowerShell ISE fájlokat áthúzása Windows PowerShell ISE megnyitja a fájlt.
+- **Áthúzása szövegszerkesztés**Windows PowerShell ISE-ben mostantól támogatja a áthúzása szöveg szerkesztése. Válassza ki bármelyik szövegblokk, és húzza át azt a szerkesztő vagy a konzol a szöveg áthelyezése egy másik helyre. Ha meg a Ctrl billentyűt lenyomva tartva húzza a kijelölt szöveg az egérgomb felengedésekor a szöveget az új helyre másolódik. Ebben a Windows PowerShell ISE-ben, valamint a régebbi Windows PowerShell ISE-ben, a Windows PowerShell ISE-ben, fájlokat áthúzása Windows PowerShell ISE-t megnyitja a fájlt.
 
-- **Elemzési hiba megjelenítési** piros aláhúzás jelöl, elemzési hibákat. Ha hibát jelzett, telepített mutat, elemleírás jelenik meg a probléma megoldására a kódban található.
+- **Elemzési hiba megjelenített** piros aláhúzás jelöl, elemzési hibákat. Ha az egérmutatót a jelzett hiba, elemleírás jelenik meg a a probléma, amely a kódban található.
 
-- **Nagyítás** nagyítás százalékos aránya a konzol "™ s tartalom állítható be a nagyítási csúszkát (a jobb alsó sarkában Windows PowerShell ISE ablaka), vagy a parancs **$psise.options.Zoom** a konzol ablaktáblában.
+- **Nagyítás** nagyítás százalékos aránya a konzol "™ s tartalom nagyítás csúszka segítségével (a jobb alsó sarokban a Windows PowerShell ISE-ablakot), vagy a parancs beírásával állítható **$psise.options.Zoom** a konzol ablaktáblában.
 
-- **Rich text másolás és Beillesztés** a betűtípus mérete és szín adatokat az eredeti kijelölés a Windows PowerShell ISE megtartja a vágólapra másolása.
+- **Rich text másolás és Beillesztés** betűtípusát, méretét, és az eredeti kijelölés színe információkat a Windows PowerShell ISE-ben megtartja a vágólapra másolása.
 
-- **Kijelölés blokkolása** szövegblokk választhatja ki a parancsfájl ablaktáblán az egérrel szöveg kijelölése közben az ALT billentyűt lenyomva tartja, vagy billentyűkombináció lenyomásával **Alt + Shift + mutató nyílra**.
+- **Letiltja a kijelölés** szöveg kiválasztásakor az egérrel a parancsfájl panelen az ALT billentyűt lenyomva vagy billentyű lenyomásával kiválaszthatja szövegblokk **Alt + Shift + nyíl**.
 
 **Milyen hozzáadott értéket nyújt ez a változás?**
 
-A további szerkesztési funkcióival egy egységes és hatékony szerkesztési környezetben.
+A további szerkesztési funkciók adjon meg egy egységes és a hatékony Kódszerkesztő környezetében.
 
 **Mi működik másképp?**
 
-Szerkesztési fejlesztéseknek nem volt megtalálható a Windows PowerShell ISE 2.0.
+Ezek a szerkesztési fejlesztések nem volt megtalálható a Windows PowerShell ISE 2.0.
 
 ### <a name="new-help-viewer-window"></a>Új súgó-megjelenítő ablakban
-**A PowerShell 3.0 hozzáadva**
+**Új funkció a PowerShell 3.0**
 
-Ha lenyomja az **F1** parancsmag a kurzor áll, vagy van kiemelve parancsmag részét, az új súgómegjelenítő nyílik meg a kijelölt parancsmag vonatkozó környezetfüggő súgó. A Windows PowerShell vonatkozó súgó megjelenítéséhez írja be **operátorok** a konzol ablaktáblában, majd nyomja le az **F1**.
+Ha lenyomja **F1** a kurzort egy parancsmag vagy van kiemelve a parancsmag részét, ha az új súgómegjelenítő megnyílik a környezetfüggő súgó a kiemelt parancsmaggal kapcsolatban. Windows PowerShell kapcsolatban súgójának megjelenítéséhez írja be a **operátorok** a konzol ablaktáblában, és nyomja le az **F1**.
 
-Ez a funkció használatához Windows PowerShell súgója témakörök legújabb verziója letölthető a Microsoft webhelyén. A legegyszerűbb módja, ha a súgótémakörök letöltése futtatni a **Update-Help** parancsmag a konzol ablaktáblában, ha fut a Windows PowerShell ISE rendszergazdaként.
+Ez a funkció használatához töltse le a Windows PowerShell súgója témakörök legfrissebb verzióját a Microsoft webhelyén. A legegyszerűbb módja, ha a súgótémakörök letöltése, hogy futtassa a **Update-Help** parancsmag a konzol ablaktáblában, ha rendszergazdaként futtatja a Windows PowerShell ISE-ben.
 
-Hol megváltoztathatja a **F1** kulcs segítséget keres. A a **eszközök**/**beállítások** menü, az a **általános beállítások** lap **egyéb beállítások**, állítsa be, vagy törölje a jelölőnégyzet **online tartalom helyett használja a helyi súgó tartalma**. Ha be van jelölve, majd az ügyfél keresi a parancsmag segítségre van szüksége a letöltött súgó modulok mappában található.  Ha a jelölőnégyzet nincs bejelölve, majd az ügyfél jelenik meg a TechNet könyvtárban a parancsmag súgóját.
+Hol módosíthatja a **F1** kulcs segítséget keres. Az a **eszközök**/**beállítások** menü, az a **általános beállítások** lap **egyéb beállítások**, állítsa be, vagy törölje a jelet a jelölőnégyzet **online tartalom helyett használja a helyi súgó tartalma**. Ha be van jelölve, az ügyfél az a parancsmagot a letöltött súgó modulok mappában található segítséget keres.  Ha a jelölőnégyzet nincs bejelölve, majd az ügyfél néz ki mindez a TechNet könyvtárban a parancsmag súgóját.
 
 **Milyen hozzáadott értéket nyújt ez a változás?**
 
-Környezetfüggő súgó anélkül, hogy az aktuális parancsmag vagy parancsfájl tanulási zökkenőmentes élményt nyújt.
+Az aktuális parancsmag vagy szkript elhagyása nélkül környezetfüggő súgó zökkenőmentes tanulási élményt nyújt.
 
 **Mi működik másképp?**
 
-A súgófájl a helyi számítógépen a Windows PowerShell ISE korábbi verzióiban az F1 billentyű megnyomásával megnyitva. A Windows PowerShell ISE 3.0-s és újabb verziók megnyílik egy ablak, amely tartalmazza a parancsmag, amely kereshető és konfigurálható a Súgó gombra. A Súgó élmény új Windows PowerShell ISE 3.0, és új Windows PowerShell 3.0 frissített súgó.
+Korábbi verzióiban a Windows PowerShell ISE-ben az F1 billentyű megnyomásával megnyitni a súgófájlban a helyi számítógépen. A Windows PowerShell ISE 3.0-s és újabb verziók megnyílik egy ablak, amely tartalmazza a kereshető és konfigurálható a parancsmag súgóját. Az ügyféltámogatási élmény a Windows PowerShell ISE 3.0 új, és új Windows PowerShell 3.0 a frissíthető súgó.
 
-### <a name="show-command-cmdlet"></a>Megjelenítése-Command parancsmaggal
-**A PowerShell 3.0 hozzáadva**
+### <a name="show-command-cmdlet"></a>Show-Command parancsmaggal
+**Új funkció a PowerShell 3.0**
 
-A **megjelenítése-parancs** parancsmag lehetővé teszi állítható össze, vagy futtassa egy parancsmag vagy a függvény egy grafikus űrlap kitöltésével. Az űrlap lehetővé teszi, hogy a felhasználók grafikus környezetben a Windows PowerShell-lel dolgozni. **A parancs megjelenítése** is lehetővé teszi, hogy speciális, amely a gyors Windows PowerShell-alapú grafikus felhasználói felületének létrehozásához.
+A **Show-parancs** parancsmag lehetővé teszi, hogy compose vagy egy parancsmag vagy függvény futtatása egy grafikus űrlap kitöltésével. Az űrlap lehetővé teszi, hogy a felhasználók grafikus környezetben a Windows PowerShell-lel dolgozni. **Show-parancs** is lehetővé teszi, hogy komplex, amely a Windows PowerShell-alapú gyors grafikus létrehozásához.
 
 **Milyen hozzáadott értéket nyújt ez a változás?**
 
-A **megjelenítése-parancs** a Windows PowerShell-parancsfájlok, megadhatja a felhasználók a grafikus környezet, amelyhez nem ismeri. **A parancs megjelenítése** is hozzájárulhat a bevezető felhasználók ismerje meg a Windows PowerShell.
+Használatával **Show-parancs** a Windows PowerShell-szkriptek, megadhatja a felhasználók számára, amellyel nem ismeri a grafikus környezetet. **Show-parancs** ismerje meg a Windows PowerShell bevezető felhasználók is segít.
 
 **Mi működik másképp?**
 
 Show-parancsot az új Windows PowerShell ISE 3.0.
 
 ## <a name="see-also"></a>Lásd még:
-A Windows PowerShell ISE a Windows PowerShell használatával kapcsolatos további információkért tekintse meg a következőket.
+Windows PowerShell ISE-ben a Windows PowerShellben való használatáról további információkért lásd az alábbi hivatkozásokat.
 
-- [A Windows PowerShell integrált parancsfájlkezelési környezet felfedezése](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
-- [A TechNet Wiki ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [Script Center](http://technet.microsoft.com/scriptcenter/default)
+- [A Windows PowerShell integrált parancsfájlkezelési környezetet felfedezése](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
+- [ISE-ben a TechNet-Wikiben](https://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
+- [Script Center](https://technet.microsoft.com/scriptcenter/default)

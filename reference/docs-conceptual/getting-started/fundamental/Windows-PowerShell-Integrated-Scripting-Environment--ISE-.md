@@ -1,72 +1,72 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell parancsmag
-title: A Windows PowerShell integrált parancsfájlkezelési környezet ISE
+keywords: PowerShell, a parancsmag
+title: Windows PowerShell integrált parancsfájl-kezelési környezet ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: d116ec107c2d07e9fd55ee974008b3636b4ab049
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952069"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320516"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell integrált parancsfájlkezelési környezet (ISE)
 
-A Windows PowerShell integrált parancsfájlkezelési környezet (ISE) a Windows PowerShell-motor és a nyelv két állomás egyike. Azt írni, futtatására és parancsfájlok tesztelése, melyek nem érhetők el a Windows PowerShell-konzolban. Az ISE ad-zintaxisszínek, kiegészítést, az IntelliSense, visual-Hibakeresés és környezetfüggő súgó.
+A Windows PowerShell integrált parancsfájl-kezelési környezet (ISE) a Windows PowerShell-motor és a nyelv két gazdagép egyike. Azt is írhat futtassa, és parancsfájlok tesztelése, hogy nem érhetők el a Windows PowerShell-konzolon. A ISE hozzáadja a szintaxis-színezést, kiegészítés, az IntelliSense, vizuális hibakeresési és környezetfüggő súgó.
 
-A ISE lehetővé teszi, hogy a konzol ablaktáblában parancsok futtatását, de is támogatja, amelyek segítségével egyszerre forráskódját a parancsfájl és más, amely az ISE csatlakoztatható eszközök ablaktábla. Akkor is megnyithatja több parancsfájl a Windows egy időben, ami akkor hasznos, ha egy parancsfájl, amely más parancsfájlokat vagy modulok meghatározott funkciókat használja hibakeresés alatt.
+A ISE lehetővé teszi, hogy a konzol ablaktáblában parancsok futtatása, de ablaktáblára van felosztva, segítségével egyszerre tekinthet meg a forráskódot a parancsfájl és egyéb eszközöket, amelyek segítségével csatlakoztassa az ISE-ben is támogatja. Akkor is megnyithatja több parancsfájl a Windows egy időben, ami akkor hasznos, ha egy parancsfájl, amely az egyéb parancsfájlokat vagy modulok meghatározott függvényeket használja hibakeresés.
 
 ## <a name="whats-new"></a>What’s New (Újdonságok)
 
-Az alábbiakban néhány funkciója, amely a legutóbbi kiadásaiban PowerShell ISE lettek hozzáadva.
+Íme néhány lettek hozzáadva az ISE-ben a PowerShell legújabb verzióiban található funkciók.
 
-### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>Hozzáadva a PowerShell 3.0 (a Windows Server 2012, Windows 8)
+### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>Új funkció a PowerShell 3.0 (a Windows Server 2012, Windows 8)
 
-**IntelliSense** automatikusan elvégzi a parancsok beíráskor menük egyező parancsmagok, paraméterek, paraméterértékeket, fájlok vagy mappák megjelenítésével.
+**Az IntelliSense** automatikusan elvégzi az egyező parancsmagok, paraméterek, paraméterértékeket, fájlok vagy mappák menük megjelenítésével beírása a parancsokat.
 
-**Kódtöredékek** , hogy könnyen szúrhat be a parancsfájlok a írási kód rövid szakaszok is vannak. A lista hasznos kódtöredékek gyűjteményét tartalmazza, és segítségével több a **New-részlet** parancsmag.
+**A kódrészletek** kódot, hogy könnyen beilleszthet a parancsfájlok az írási rövid szakaszait is. Hasznos kódrészletek gyűjteménye szerepel a mezőben, és több használatával is a **New-kódrészlet** parancsmagot.
 
-**Bővítmény eszközök** , adja hozzá az ISE szolgáltatások hozhat létre, amely együttműködik a kód írása [a Windows PowerShell ISE Scripting objektummodell](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+**Bővítmény eszközök** ír kódot, amellyel kommunikál hozhat létre az ISE funkciók hozzáadása, amely [a Windows PowerShell ISE parancsfájl-kezelési objektummodell](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
 
-Ezek az eszközök vezérlők lapokra ablaktábla megjelenítése, vagy a háttérben láthatatlanul működik. A **parancsok** bővítmény jó példa és 3.0-s verzió megtalálható, és később, amely megjeleníti az elérhető parancsok és azok súgó listáját.
+Ezek az eszközök gomb lapnézetben panelen beállítások megjelenítéséhez, vagy alapfeladatokat működik a háttérben is. A **parancsok** bővítmény jó példa, és 3.0-s verzió részét képezi, és később, amely megjeleníti az elérhető parancsok és a Súgó listáját.
 
-**Indítsa újra a Manager és az automatikus mentési** automatikusan menti a parancsfájlok két percenként összeomlási vagy váratlan újraindítása esetén munkája adatveszteség elkerülése végett.
+**Indítsa újra a Manager és az automatikus mentés** automatikusan a parancsfájlok két percenként mentse a munkáját, egy összeomlási vagy váratlan újraindítás esetén adatvesztés elkerülése érdekében.
 
-**A legtöbb legutóbbi lista** tagja mostantól a fájl megnyitása menüből, hogy egyszerűbb legyen a leggyakrabban használt fájlok eléréséhez.
+**A legtöbb a legutóbb használt lista** a fájl megnyitása menüben, hogy megkönnyítsék az eljutást a leggyakrabban használt fájlok tartoznak.
 
-**Egyesített konzolpanelen**. A ISE korábbi verzióiban nem voltak különálló parancs és a kimeneti ablaktábla. Most egyesített egytáblás be, hogy több közvetlenül utánozza lásd a Windows Powershell-konzolban.
+**Egyesített konzolpanelen**. A ISE korábbi verzióiban voltak külön parancsot és a kimeneti ablaktábla. Akkor most mostantól egyetlen, hogy több közvetlenül utánozza lásd a Windows Powershell-konzolon.
 
-**Parancssori kapcsolók**. Számos új parancssori kapcsolókat ad az ISE működésének teljesebb körű vezérlése. -NoProfile elindítja az ISE profil parancsprogram futtatása nélkül. -Help megnyílik az ISE-a Súgó ablakot. -mta "többszálas apartman módban" ISE kezdődik. Az alapértelmezett érték a egyszálas.
+**Parancssori kapcsolók**. Számos új parancssori kapcsolók jobban szabályozhatja az ISE működésének biztosítanak. -NoProfile profil parancsfájl futtatása nélkül indítja el az ISE-ben. -Súgó egy Súgó az ISE-ablakot nyit meg. -mta elindítja a "több szálon futó apartman módban" az ISE-ben. Az alapértelmezett érték az egyszálas.
 
-**Új szerkesztő szolgáltatások** könnyebben létrehozásához, és olvassa el a kódot:
+**Új szerkesztő szolgáltatások** könnyebben hozhat létre, és olvassa el a kódot:
 
-- **XML-zintaxisszínek**. Az ISE-szerkesztő, azt a Windows PowerShell-kód szintaxis színek most színek XML szintaxis azonos módon.
+- **XML-szintaxis színezést**. A ISE-szerkesztő, azt a Windows PowerShell-kód szintaxis színek most színek syntaxe XML megegyező módon.
 
-- **Megfelelő zárójel**. A ISEWindows PowerShell ISE kiemeli a segítségével ellenőrizze, hogy a záró zárójelnek a nyitó kereséséhez megfelelő számú egyező kell használni azokat. Használja a CTRL -\[ található a záró zárójel, amely megfelel a nyitó zárójel a kurzor alatti.
+- **Kapcsos zárójel megfelelő**. A ISEWindows PowerShell ISE kiemeli a megfelelő zárójelek segítségével ellenőrizze, hogy a megfelelő számú záró zárójelnek megfelelően a nyitó megjelennek. Használja a CTRL -\[ a kapcsos zárójelet, amely megfelel a, amely a kurzort a nyitó zárójel található.
 
-- **Vázlat nézetben**. Csukja össze, vagy a plusz és mínusz jelek a bal margón bontsa ki a szakaszokban a kódot. Így könnyebben megtalálhatja a kód egy hosszú parancsfájlban keres.
+- **Vázlat nézetben**. Akkor is kibonthatja vagy összecsukhatja szakasza a kód a plusz és csökkentve a bal oldali margó bejelentkezik. Így könnyebb megtalálni a kód egy hosszú parancsfájlban keres.
 
-- **Áthúzása szöveg szerkesztése**. Jelöljön ki egy szöveget, majd húzza azt áthelyezése egy másik helyre. Ha meg a Ctrl billentyűt lenyomva tartva ahelyett, hogy másolja a kijelölt szöveg húzza át.
+- **Áthúzása szövegszerkesztés**. Jelöljön ki egy szöveget, és húzza át egy másik helyre. Ha Ön a Ctrl billentyűt lenyomva tartva húzza a kijelölt szöveg helyett másolja át.
 
-- **Elemzési hiba megjelenítési**. A Windows PowerShell a parancsfájl megvizsgálja, közben. Ha hibát észlel, a hibát okozó kód egy piros hullámos jeleníti meg. Ha a jelzett hiba mutat, a elemleírás jeleníti meg a problémát talált.
+- **Elemzési hiba megjelenített**. Windows PowerShell a parancsfájl megvizsgálja a beírás közben. Ha hibát észlel, a hibát okozó kód egy piros hullámos jeleníti meg. Ha az egérmutatót a jelzett hiba, a elemleírásokban bemutatja, a probléma, amely található.
 
-- **Nagyítás**. A szöveg könnyebb olvasni, vagy hogy áttekintő képet a csúszka használatával az ISE ablak jobb alsó sarkában lévő kicsinyítés nagyítás.
+- **Nagyítás**. Szabadon nagyíthatja könnyebb olvasni, vagy a nagyobb méretű kép megjelenítéséhez az ISE-ablak jobb alsó sarkában található csúszkával kicsinyítés a szöveg.
 
-- **Rich text másolás és Beillesztés**. Ha másol az ISE a vágólapra, a betűtípus, mérete és a kijelölt szöveg színét információk része.
+- **Rich text másolás és Beillesztés**. Amikor másol az ISE-ben a vágólapra, a betűtípus, méretét és színét információkat a kijelölt szöveg képezi.
 
-- **Kijelölés blokkolása**. Kiválaszthatja a szöveg blokk alakú adattömb szöveg kijelölése az egérrel panelbe közben az ALT billentyűt lenyomva tartja, vagy megnyomja **Alt + Shift + mutató nyílra**.
+- **Letiltja a kijelölés**. Szöveg kiválasztásakor az egérrel a parancsfájl panelen az ALT billentyűt lenyomva vagy billentyű lenyomásával kiválaszthatja egy blokk-alakú szövegrészletet, **Alt + Shift + nyíl**.
 
-### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>Hozzáadva a PowerShell 2.0-s (Windows Server 2008 R2, Windows 7)
+### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>Új funkció a PowerShell 2.0-s (Windows Server 2008 R2, Windows 7)
 
-A ISE a PowerShell 2.0-ban jelent.
+Az ISE-ben a PowerShell 2.0-jelent meg.
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>A Windows PowerShell ISE futtatásának követelményei
 
-Az ISE érhető el minden Windows rendszeren futtatható a Windows PowerShell 2.0-s vagy újabb verzió. Minden Windows és Windows Server verziója a Windows PowerShell és az ISE verzióját is tartalmazza, de frissítheti a legújabb elérhető a Windows Management Framework (WMF) telepítésével. Tekintse meg a [WMF](/powershell/wmf/readme) dokumentációjában talál további információt.
+Az ISE-ben elérhető bármely Windows-számítógépen futtatható a Windows PowerShell 2.0-s verziójú vagy újabb verzió. Windows és Windows Server minden verziója tartalmazza a Windows PowerShell és az ISE verzióját, de frissítheti a legújabb elérhető a Windows Management Framework (WMF) telepítésével. Tekintse meg a [WMF](/powershell/wmf) dokumentációjában talál további információt.
 
 > [!NOTE]
-> A Windows PowerShell ISE használatához a grafikus felhasználói felületen, a Windows Server Server Core esetén nem futtatható.
+> Grafikus felhasználói felületet igényel a Windows PowerShell ISE-ben, mert a Windows Server Server Core beállítást nem futtatható.
 
 ## <a name="see-also"></a>Lásd még:
 
-[A windows a power shell ise objektummodell scripting célja](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[A windows power shell ise parancsfájl-kezelési objektummodelljének célja](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
