@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: A PowerShell-galériából használatának első lépései
-ms.openlocfilehash: 85b0a754aba25d850dc918024419318554f92b33
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.openlocfilehash: c8beba3009e462ce52cdecd34fc0313d9234f289
+ms.sourcegitcommit: 1082b13115c5c5be4b76574ba55307b3e567983f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225675"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52576889"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>A PowerShell-galériából – első lépések
 
-A megfelelő lehetőség a csomagok telepítéséhez a PowerShell-galériából, hogy a parancsmagok használata a [PowerShellGet](/powershell/module/powershellget) modul. Jelentkezzen be a PowerShell-galériából töltse le a cikkek nem kell.
+A PowerShell-galériából tárháza csomagot tartalmazó parancsfájlok, a modulok és a DSC-erőforrások letöltheti és használhatja. A parancsmagok használata a [PowerShellGet](/powershell/module/powershellget) modul a PowerShell-galériából csomagok telepítéséhez. Jelentkezzen be a PowerShell-galériából töltse le a cikkek nem kell.
 
 > [!NOTE]
 > Lehetséges, hogy közvetlenül a PowerShell-galériából töltse le a csomag, de ez nem ajánlott eljárás.
@@ -20,9 +20,9 @@ A megfelelő lehetőség a csomagok telepítéséhez a PowerShell-galériából,
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>A PowerShell-galériából csomagok felderítése
 
-Található csomagokat a PowerShell-galériából használatával a **keresési** vezérlőelem ezen a webhelyen, vagy a modulok és a parancsfájlok lapok tallózva. A PowerShell-galériából csomagok futtatásával is talál a [Find-Module][] és [Find-Script][] parancsmagok, az elem típusa, attól függően `-Repository PSGallery`.
+Található csomagokat a PowerShell-galériából használatával a **keresési** vezérlőelem a PowerShell-galériából [kezdőlap](https://www.powershellgallery.com), vagy keresse a modulok és a parancsfájlokat a a [csomagok lapján ](https://www.powershellgallery.com/packages). A PowerShell-galériából csomagok futtatásával is talál a [Find-Module][], [Find-DscResource], és [Find-Script][] parancsmagok, a csomag típusától függően a `-Repository PSGallery`.
 
-A katalógus eredményeinek szűrése hajtható végre a következő paraméterekkel:
+A katalógus eredményeit az alábbi paraméterek használatával szűrheti:
 
 - Név
 - Allversions paramétert
@@ -75,15 +75,15 @@ Egy régebbi verzióját a csomag telepítéséhez, adja hozzá a `-RequiredVers
 
 ### <a name="deploy"></a>telepítése Telepítse a
 
-Egy csomag az Azure Automation PowerShell-galériából történő üzembe helyezéséhez kattintson **üzembe helyezés az Azure Automation** csomag részleteit megjelenítő oldalon. Átirányítjuk az Azure felügyeleti portálon, ha bejelentkezik az Azure-fiók hitelesítő adataival. Vegye figyelembe, hogy függőségekkel rendelkező csomagok telepítése telepíti a függőségeket az Azure Automationhöz. Adja hozzá a "Üzembe helyezés az Azure Automation" gomb letiltható a **AzureAutomationNotSupported** a csomag metaadata címkét.
+Egy csomag az Azure Automation PowerShell-galériából történő üzembe helyezéséhez kattintson **Azure Automation**, majd kattintson a **üzembe helyezés az Azure Automation** csomag részleteit megjelenítő oldalon. Ekkor megnyílik az Azure felügyeleti portálon, ha bejelentkezik az Azure-fiók hitelesítő adataival. Vegye figyelembe, hogy függőségekkel rendelkező csomagok telepítése telepíti a függőségeket az Azure Automationhöz. Adja hozzá a "Üzembe helyezés az Azure Automation" gomb letiltható a **AzureAutomationNotSupported** a csomag metaadata címkét.
 
 Azure Automation kapcsolatos további információkért tekintse meg a [Azure Automation](/azure/automation) dokumentációját.
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>A PowerShell-galériából csomagok frissítése
 
-A PowerShell-galériából telepített csomagok frissítéséhez futtassa a [Update-modul] [-] vagy [frissítési parancsfájl] [] parancsmagot. Ha további paraméterek nélkül futtatja, [Update-modul] [-] próbál meg minden egyes futtatásával telepített modulok frissítésére, [Install-Module][]. Szelektív-modulok frissítése, adja hozzá a `-Name` paraméter.
+A PowerShell-galériából telepített csomagok frissítéséhez futtassa a [Update-modul] [-] vagy [frissítési parancsfájl] [] parancsmagot. Ha további paraméterek nélkül futtatja, [Update-modul] [-] futtatásával telepített összes modul frissíteni próbálja [Install-Module][]. Szelektív-modulok frissítése, adja hozzá a `-Name` paraméter. 
 
-Ehhez hasonlóan ha további paraméterek nélkül futtatja, [frissítési parancsfájl] [-] is frissíteni próbálja minden parancsprogram futtatásával telepített [Install-Script][]. Külön-külön frissíteni a parancsfájlok, adja hozzá a `-Name` paraméter.
+Ehhez hasonlóan további paraméterek nélkül futtatásakor [frissítési parancsfájl] [-] is frissíteni próbálja az összes parancsfájl futtatásával telepített [Install-Script][]. Külön-külön frissíteni a parancsfájlok, adja hozzá a `-Name` paraméter.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>A PowerShell-galériából telepített csomagok
 
