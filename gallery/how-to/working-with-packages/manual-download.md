@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: katalógus, a powershell, a psgallery
 title: Csomagok manuális letöltése
-ms.openlocfilehash: 0952aa4ec474850af5219fb2e0e9ee3e954b0f9a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004075"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742822"
 ---
 # <a name="manual-package-download"></a>Csomagok manuális letöltése
 
-A Powershell-galériából támogatja a webhely a csomag közvetlenül, letölti a PowerShellGet-parancsmagok használata nélkül. A csomag tölti le a NuGet csomag (.nupkg) fájlt, amely ezután egyszerűen átmásolható egy belső tárházba.
+A Powershell-galériából támogatja a webhely a csomag közvetlenül, letölti a PowerShellGet-parancsmagok használata nélkül. Minden olyan csomag, a NuGet csomag (.nupkg) fájlt, amely majd másolhat egy belső tárházat töltheti le.
 
 > [!NOTE]
 > Manuális csomag a Letöltés **nem** szánt az Install-Module parancsmaggal helyettesítője.
@@ -45,7 +45,7 @@ A legegyszerűbb megközelítés, hogy távolítsa el a NuGet-specifikus elemek.
 1. Bontsa ki a tartalmát egy helyi mappába a NuGet-csomagot.
 2. A NuGet-specifikus elemeket törölje a mappát.
 3. Nevezze át a mappát. Az alapértelmezett mappa neve: általában `<name>.<version>`. A verzió lehetnek "– előzetes" Ha a modul előzetes verziójának van megjelölve. Nevezze át a mappát csak a modul nevét. Például a "azurerm.storage.5.0.4-preview" "azurerm.storage" lesz.
-4. Másolja a mappát a PSModulePath.
+4. Másolja a mappát a található mappák közül a `$env:PSModulePath value`. `$env:PSModulePath` az elérési utak, amelyben PowerShell modulok kell keresnie egy pontosvesszővel elválasztott csoportja.
 
 > [!IMPORTANT]
 > A Manuális letöltés nem tartalmazza a modul által igényelt függőségek. Ha a csomag függőségekkel rendelkezik, a rendszer, hogy megfelelően működjön a modul csak telepíthető. A PowerShell-galériából jeleníti meg a csomag által igényelt összes függőségét.
