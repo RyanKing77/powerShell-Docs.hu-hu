@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: Kompatibilis PowerShell-kiadások rendelkező modulok
-ms.openlocfilehash: 0a95b47b506fbdddbb98b455a1d10d0f08ce402b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002684"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655327"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Kompatibilis PowerShell-kiadások rendelkező modulok
 
 Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhető el, amelyek különböző szolgáltatáskészleteket és platformkompatibilitást kínálnak.
 
-- **Desktop kiadás:** A .NET-keretrendszeren alapul, és a Windows teljes erőforrás-igényű kiadásain, például a Server Core és a Windows asztali kiadásain futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít kompatibilitást.
-- **Core kiadás:** .NET Core-on alapul, és a Windows csökkentett erőforrás-igényű kiadásain, például a Nano Serveren és a Windows IoT kiadásokon futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít kompatibilitást.
+- **Desktop kiadás:** .NET-keretrendszer épül, és kompatibilis a Windows például a Server Core és a Windows asztal teljes erőforrás-igényű kiadásain fut PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít.
+- **Core kiadás:** .NET Core épül, és kompatibilis csökkentett erőforrás-igényű kiadása esetén például a Nano Server Windows és Windows IoT kiadásokon futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít.
 
 A futó használni kívánt PowerShell PSEdition tulajdonságában jelenik meg `$PSVersionTable`.
 
@@ -96,7 +96,7 @@ A modul szerzők esetleg mindkét PowerShell-kiadások (asztalon és Core) célz
 
 Egy modul dolgozhat asztali és a Core kiadás, az adott modul Szerző hozzáadásához szükséges logikát, vagy a RootModule, vagy a moduljegyzékben $PSEdition változóval rendelkezik. Modulok lefordított DLL-ek CoreCLR-és FullCLR két készletnyi is rendelkezhet. Az alábbiakban a több, a modul megfelelő DLL betöltésére szolgáló logikai csomag lehetőség közül választhat.
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>1. lehetőség: Csomagolására hajthatja végre a több verziói és több a PowerShell modul
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>1. lehetőség: A célcsoport-kezelési több verziói és több a PowerShell modul csomagolása
 
 A modul mappa tartalma
 
@@ -174,7 +174,7 @@ $PSModule.OnRemove = {
 }
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>2. lehetőség: A psd1 kiterjesztésű fájl $PSEdition változót használja a megfelelő DLL-EK és a beágyazott/szükséges modulok betöltése
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>2. lehetőség: A psd1 kiterjesztésű fájl $PSEdition változó segítségével a megfelelő DLL-EK és a beágyazott/szükséges modulok betöltése
 
 A PS 5.1-es vagy újabb a modul jegyzékfájl $PSEdition globális változó használata engedélyezett. Használja ezt a változót, a modul Szerző értékeket adhat meg a feltételes modul jegyzékfájl. A korlátozott nyelvmód vagy adatok szakasz $PSEdition változó lehet hivatkozni.
 
@@ -260,6 +260,6 @@ Find-Module -Tag PSEdition_Core
 
 [PSEditions paraméterrel rendelkező parancsfájlok](script-psedition-support.md)
 
-[Pseditions paraméterrel támogatja a PowerShell-Galériabeli](../how-to/finding-packages/searching-by-psedition.md)
+[Pseditions paraméterrel támogatja a PowerShell-Galériabeli](../how-to/finding-packages/searching-by-compatibility.md)
 
 [Moduljegyzék frissítése](/powershell/module/powershellget/update-modulemanifest)

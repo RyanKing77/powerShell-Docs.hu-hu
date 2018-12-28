@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Létrehozása és közzététele egy elem
-ms.openlocfilehash: ced892b558b81c3ef9575b5a01e74932515b412a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 3875c7ae8231f254e655f149c788503cb0b3077c
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004079"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655429"
 ---
 # <a name="creating-and-publishing-an-item"></a>Létrehozása és közzététele egy elem
 
@@ -56,10 +56,11 @@ PrivateData hozzáadását az új kulcsok, így az elemeket a PowerShell-galéri
 A PowerShell-galériában közzétett elem kitöltése legfontosabb jegyzékfájl elemek a következők:
 
 - Parancsfájl vagy a modul neve – azokat a paraméterkészletben található állítják a. Egy parancsfájl PS1 vagy a. Egy modul psd1 kiterjesztésű.
-- Verzió - formátumban kell irányelvekhez SemVer (lásd: ajánlott eljárások részletei), mert szükség elsődleges kulcs
-- Szerző – ez szükséges elsődleges kulccsal, és tartalmazza az elem társítani kell a nevét (lásd a szerzők és a tulajdonosok, alább)
+- Verzió - formátum SemVer irányelveket kell követniük, mert elsődleges kulcs szükséges. Részletekért lásd: ajánlott eljárások.
+- Szerző – ez szükséges elsődleges kulccsal, és az elem társítani kell a nevét tartalmazza. Szerzők és a tulajdonosok az alábbi témakörben talál.
 - Leírás – Ez az elsődleges kulcs kötelező, segítségével röviden elmagyarázza, Mire jó ez az elem és az azt használó
 - ProjectURI – a mező értéke egy erősen ajánlott URI, amely egy hivatkozást kínál a Github-tárházba PSData vagy hasonló helyre, ahol mégis fejlesztését az elem
+- Címkék - a csomag alapján a kompatibilis psedition paraméterrel és platformok címkézése erős javaslatot. Lásd: [közzétételi irányelvei](/powershell/gallery/concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms) részleteiről.
 
 Szerzők és a PowerShell-galériából tulajdonosok elemek kapcsolódó fogalmak, de nem mindig egyezik.
 Konfigurációelem tulajdonosainak engedélye az elem kezelése PowerShell-galéria-fiókkal rendelkező felhasználók. Előfordulhat, hogy minden elem frissítésére felhatalmazott fiókadminisztrátorról sok tulajdonos.
@@ -104,7 +105,7 @@ Ezek a parancsok mindkét megkövetelése
 Hibák elkerülése érdekében, erősen ajánlott, hogy a parancsok használata a – Whatif megpróbál-Verbose, a közzététel előtt.
 Ez menti jelentős időt, mivel minden alkalommal, amikor közzéteszi a PowerShell-galériából, a verziószámot a manifest szakasz elem frissítenie kell.
 
-Példák lenne: "Publish-Module-elérési út". \MyModule "- RequiredVersion"0.0.1-re frissül"- NugetAPIKey"GUID"- Whatif-részletes a(z)" Publish-Script-elérési út ".\MyScriptFile.PS1" - NugetAPIKey "GUID" - Whatif-részletes "
+Példák a következő lesz: "Közzététele-Module-elérési út". \MyModule "- RequiredVersion"0.0.1-re frissül"- NugetAPIKey"GUID"- Whatif-részletes a(z)" közzététele parancsfájl-elérési út ".\MyScriptFile.PS1" - NugetAPIKey "GUID" - Whatif-részletes "
 
 Gondosan tekintse át a kimenetet, és ha nincsenek hibák vagy figyelmeztetések látja, ismételje meg a parancsot,-Whatif nélkül.
 

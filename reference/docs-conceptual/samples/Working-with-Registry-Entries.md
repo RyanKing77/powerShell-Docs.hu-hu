@@ -1,0 +1,183 @@
+---
+ms.date: 06/05/2017
+keywords: PowerShell, a parancsmag
+title: Beállításjegyzék-bejegyzések használata
+ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
+ms.openlocfilehash: bffdf80931fc4dc570b584623487077dc5d449dc
+ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53404460"
+---
+# <a name="working-with-registry-entries"></a>Beállításjegyzék-bejegyzések használata
+
+Mivel a beállításjegyzék-bejegyzések tulajdonságok kulcsokat, és mint ilyen, nem közvetlenül tallózható, ha a velük végzett munkát egy némileg eltérő megközelítést kell.
+
+### <a name="listing-registry-entries"></a>Beállításjegyzék-bejegyzések listája
+
+Nincsenek számos különböző módon megvizsgálhatja a beállításjegyzékbeli bejegyzéseket. A legegyszerűbb módja, hogy a kulcshoz társított tulajdonságnevek kap. Például ahhoz, hogy a beállításkulcs bejegyzések **HKEY_LOCAL_MACHINE\\szoftver\\Microsoft\\Windows\\CurrentVersion**, használjon **Get-Item** . Beállításkulcsok rendelkezik egy tulajdonságot "Property" általános nevét, amely az a kulcsot a beállításjegyzék-bejegyzések listája. A következő parancsot a tulajdonság tulajdonság kiválasztása, és kibontja az elemeket, hogy egy listában jelennek:
+
+```
+PS> Get-Item -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion | Select-Object -ExpandProperty Property
+DevicePath
+MediaPathUnexpanded
+ProgramFilesDir
+CommonFilesDir
+ProductId
+```
+
+A beállításjegyzék-bejegyzések olvashatóbb formátumban megtekintéséhez használja **Get-ItemProperty**:
+
+```
+PS> Get-ItemProperty -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
+
+PSPath              : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SO
+                      FTWARE\Microsoft\Windows\CurrentVersion
+PSParentPath        : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SO
+                      FTWARE\Microsoft\Windows
+PSChildName         : CurrentVersion
+PSDrive             : HKLM
+PSProvider          : Microsoft.PowerShell.Core\Registry
+DevicePath          : C:\WINDOWS\inf
+MediaPathUnexpanded : C:\WINDOWS\Media
+ProgramFilesDir     : C:\Program Files
+CommonFilesDir      : C:\Program Files\Common Files
+ProductId           : 76487-338-1167776-22465
+WallPaperDir        : C:\WINDOWS\Web\Wallpaper
+MediaPath           : C:\WINDOWS\Media
+ProgramFilesPath    : C:\Program Files
+PF_AccessoriesName  : Accessories
+(default)           :
+```
+
+A Windows PowerShell biztonsággal kapcsolatos tulajdonságok a kulcshoz tartozó összes előtaggal van "PS", mint például **PSPath**, **PSParentPath**, **PSChildName**, és **PSProvider** .
+
+Használhatja a "**.**" jelölése címre az aktuális helyét. Használhat **hely beállítása** módosítani a **CurrentVersion** registry container első:
+
+```powershell
+Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
+```
+
+Másik lehetőségként használhatja a beépített HKLM PSDrive az **hely beállítása**:
+
+```powershell
+Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
+```
+
+Ezután használhatja a "**.**" jelöléssel aktuális helyének teljes elérési út megadása nélkül a tulajdonságok listázásához:
+
+```
+PS> Get-ItemProperty -Path .
+...
+DevicePath          : C:\WINDOWS\inf
+MediaPathUnexpanded : C:\WINDOWS\Media
+ProgramFilesDir     : C:\Program Files
+...
+```
+
+Elérési út bővítése működik ugyanaz, mint a fájlrendszeren belüli ennek a helynek, így a **ItemProperty** listázásakor **HKLM:\\szoftver\\Microsoft\\Windows \\Súgó** használatával **Get-ItemProperty-elérési út... \\Súgó**.
+
+### <a name="getting-a-single-registry-entry"></a>Egyetlen bejegyzés beolvasása
+
+Ha szeretné lekérdezni egy adott bejegyzést egy beállításkulcsot, több lehetséges módszer egyikét használhatja. Ebben a példában találja értékét **DevicePath** a **HKEY_LOCAL_MACHINE\\szoftver\\Microsoft\\Windows\\CurrentVersion**.
+
+Használatával **Get-ItemProperty**, használja a **elérési** paraméterrel adja meg annak a kulcsnak a nevét, és a **neve** paramétert adja meg a nevét a **DevicePath** bejegyzés.
+
+```
+PS> Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion -Name DevicePath
+
+PSPath       : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\
+               Microsoft\Windows\CurrentVersion
+PSParentPath : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\
+               Microsoft\Windows
+PSChildName  : CurrentVersion
+PSDrive      : HKLM
+PSProvider   : Microsoft.PowerShell.Core\Registry
+DevicePath   : C:\WINDOWS\inf
+```
+
+Ez a parancs visszaadja a standard szintű Windows PowerShell tulajdonságait, valamint a **DevicePath** tulajdonság.
+
+> [!NOTE]
+> Bár a **Get-ItemProperty** rendelkezik **szűrő**, **Belefoglalás**, és **kizárása** paraméterek, nem használható a név tulajdonság szerint szűrheti. Tekintse meg ezeket a paramétereket beállításkulcsok – elem elérési utak minősülő – és nem a beállításjegyzék-bejegyzések – amelyeket elem tulajdonságai.
+
+Egy másik lehetőség, hogy a Reg.exe parancssori eszközzel. Segítségre van szüksége a reg.exe, írja be a következőt **reg.exe /?** a parancssorba. A DevicePath bejegyzés megkereséséhez használja reg.exe, ahogyan az alábbi parancsot:
+
+```
+PS> reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion /v DevicePath
+
+! REG.EXE VERSION 3.0
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
+    DevicePath  REG_EXPAND_SZ   %SystemRoot%\inf
+```
+
+Is használhatja a **WshHej COM** objektum is található egyes beállításjegyzék-bejegyzések, bár ez a módszer nem működik nagy mennyiségű bináris adatot, vagy a beállításjegyzék-bejegyzések neve, amely tartalmazhat, mint például "\\"). A tulajdonságnév hozzáfűzése a nézetelem elérési útja a egy \\ elválasztó:
+
+```
+PS> (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DevicePath")
+%SystemRoot%\inf
+```
+
+### <a name="creating-new-registry-entries"></a>Új beállításjegyzék-bejegyzések létrehozása
+
+"PowerShellPath" nevű új bejegyzés hozzáadása a **CurrentVersion** fő, használati **New-ItemProperty** az elérési útját a kulcsot, a bejegyzés neve és a bejegyzés értéke. Ebben a példában azt vesz igénybe a Windows PowerShell-változó értékét **$PSHome**, amely a telepítési könyvtár elérési útját tárolja a Windows PowerShell környezethez.
+
+Adhat hozzá az új bejegyzést a kulcs a következő paranccsal, és a parancs is információval szolgál az új bejegyzést:
+
+```
+PS> New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -PropertyType String -Value $PSHome
+
+PSPath         : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWAR
+                 E\Microsoft\Windows\CurrentVersion
+PSParentPath   : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWAR
+                 E\Microsoft\Windows
+PSChildName    : CurrentVersion
+PSDrive        : HKLM
+PSProvider     : Microsoft.PowerShell.Core\Registry
+PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
+```
+
+A **%d{PropertyType/** nevének kell lennie egy **Microsoft.Win32.RegistryValueKind** enumerálási tag a következő táblázatból:
+
+|%D{PropertyType/ érték|Jelentés|
+|----------------------|-----------|
+|Bináris|A bináris adatok|
+|Duplaszó|Egy szám, amely egy érvényes UInt32|
+|ExpandString|Egy karakterlánc, amely dinamikusan bontva környezeti változókat is tartalmazhat.|
+|MultiString|Egy többsoros karakterlánc|
+|Sztring|Bármilyen karakterlánc típusú értéket|
+|Négyszó típusú|8 bájtos bináris adatok|
+
+> [!NOTE]
+> Adjon meg egy olyan értéktömböt a több helyre egy beállításjegyzékbeli bejegyzést is hozzáadhat a **elérési út** paramétert:
+
+```powershell
+New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -PropertyType String -Value $PSHome
+```
+
+Egy már meglévő beállításazonosító bejegyzés hozzáadásával is felülírhatja a **kényszerített** paraméter sem **New-ItemProperty** parancsot.
+
+### <a name="renaming-registry-entries"></a>Beállításjegyzék-bejegyzések átnevezése
+
+Átnevezi a **PowerShellPath** bejegyzést a "PSHome," használata **Rename-ItemProperty**:
+
+```powershell
+Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome
+```
+
+Átnevezett értéket jeleníti meg, adja hozzá a **PassThru** paramétert a parancshoz.
+
+```powershell
+Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
+```
+
+### <a name="deleting-registry-entries"></a>Beállításjegyzék-bejegyzések törlése
+
+A PSHome és a PowerShellPath beállításjegyzék-bejegyzések törléséhez használja **Remove-ItemProperty**:
+
+```powershell
+Remove-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PSHome
+Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath
+```

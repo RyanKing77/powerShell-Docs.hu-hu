@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: Parancsfájl-kompatibilis PowerShell-kiadások
-ms.openlocfilehash: fcfe670a0a9ee71427b4a8adaaf3d612411941f7
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002411"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655276"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Parancsfájl-kompatibilis PowerShell-kiadások
 
 Az 5.1-es verziótól kezdődően a PowerShell különböző kiadásokban érhető el, amelyek különböző szolgáltatáskészleteket és platformkompatibilitást kínálnak.
 
-- **Desktop kiadás:** A .NET-keretrendszeren alapul, és a Windows teljes erőforrás-igényű kiadásain, például a Server Core és a Windows asztali kiadásain futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít kompatibilitást.
+- **Desktop kiadás:** .NET-keretrendszer épül, és kompatibilis a Windows például a Server Core és a Windows asztal teljes erőforrás-igényű kiadásain fut PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít.
 
-- **Core kiadás:** .NET Core-on alapul, és a Windows csökkentett erőforrás-igényű kiadásain, például a Nano Serveren és a Windows IoT kiadásokon futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít kompatibilitást.
+- **Core kiadás:** .NET Core épül, és kompatibilis csökkentett erőforrás-igényű kiadása esetén például a Nano Server Windows és Windows IoT kiadásokon futtatott PowerShell-verziókat célzó szkriptekhez és modulokhoz biztosít.
 
 A futtatott PowerShell-verzió a $PSVersionTable PSEdition tulajdonságában jelenik meg.
 
@@ -67,4 +67,4 @@ Find-Script -Tag PSEdition_Core
 ## <a name="more-details"></a>További részletek
 
 - [PSEditions paraméterrel rendelkező modulok](module-psedition-support.md)
-- [Pseditions paraméterrel támogatja a PowerShell-Galériabeli](../how-to/finding-packages/searching-by-psedition.md)
+- [Pseditions paraméterrel támogatja a PowerShell-Galériabeli](../how-to/finding-packages/searching-by-compatibility.md)

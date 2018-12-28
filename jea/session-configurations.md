@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: Jea-t a munkamenet-konfigurációk
-ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522959"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655463"
 ---
 # <a name="jea-session-configurations"></a>Jea-t a munkamenet-konfigurációk
 
-> A következőkre vonatkozik: Windows PowerShell 5.0
+> Érintett kiadások: Windows PowerShell 5.0
 
 A JEA-végpont létrehozásával és a egy PowerShell-munkamenet konfigurációs fájl regisztrálása a meghatározott módon regisztrálva van a rendszeren.
 A munkamenet-konfigurációk meghatározásához *akik* használhatja a JEA-végpont, és mely szerepkör(ök) fog hozzáféréssel rendelkeznek.
@@ -80,6 +80,8 @@ Ha egy vagy több biztonsági csoport megadva, a virtuális fiók már nem fog t
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+> [!NOTE]
+> A virtuális fiókok ideiglenesen kapnak a bejelentkezés, a szolgáltatás közvetlenül a helyi kiszolgálói biztonsági házirendben.  Ha a megadott VirtualAccountGroups egyike már rendelkezik ezzel a jogosultsággal, a házirendben, az egyes virtuális fiók lesz többé nem hozzáadható és eltávolítható a szabályzat alól.  Ez például tartományvezérlőkkel, ahol a tartományvezérlő biztonsági házirendjének felülvizsgálata szorosan naplóz esetekben hasznos lehet.  Ez a lehetőség csak a 2018 November rendelkező Windows Server 2016 vagy újabb kumulatív és a Windows Server 2019 a január 2019- vagy újabb kumulatív.
 
 #### <a name="group-managed-service-account"></a>Csoportosan felügyelt szolgáltatásfiók
 
