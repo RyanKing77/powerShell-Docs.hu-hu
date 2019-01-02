@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 description: A kiadók irányelvek
 title: PowerShell-galériából közzétételi irányelvek és bevált gyakorlatok
-ms.openlocfilehash: 7e9eca8d3372ddf0b94ab42e125991b857456551
-ms.sourcegitcommit: aa1129cc2b0ae6e18918b2b0ea70c74915ed019b
+ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235405"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655395"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell-Galériabeli közzétételi irányelvek és bevált gyakorlatok
 
@@ -33,6 +33,7 @@ Csomagok, amelyek az alábbiakra sokkal valószínűbb, letöltődnek és mások
 - Legyen elérhető a felhasználói visszajelzések
 - Adja meg a szkriptek helyett modulok
 - Egy projekt hely mutató hivatkozásokat tartalmaznak
+- A csomag a kompatibilis PSEdition(s) és platformok címkézése 
 - Tartalmazza a modulok tesztek
 - Közé tartozik, és/vagy a szerződés csatolása
 - A kód aláírása
@@ -92,8 +93,8 @@ Felhasználók, akik visszajelzést vélelmezett fontosak válaszolni, mivel eze
 
 Visszajelzés két módszer érhető el a PowerShell-galériában található:
 
-- Kapcsolattartási tulajdonos: Ez lehetővé teszi, hogy egy felhasználó egy e-mailt küldhet a csomag tulajdonost. Csomag tulajdonosai fontos, hogy a PowerShell-galériából csomagok használt e-mail cím figyelheti, és reagálhat rájuk problémákat, amelyek akkor aktiválódnak. Egy ezt a módszert hátránya, hogy csak a felhasználó és a tulajdonos minden eddiginél megjelenik a kommunikációt, így a tulajdonos ugyanezt a kérdést megválaszolni sokszor előfordulhat, hogy rendelkezik.
-- Megjegyzés: A csomag lap alján megjegyzés mező kitöltése.
+- Tulajdonosától: Ez lehetővé teszi egy felhasználó egy e-mailt küldhet a csomag tulajdonost. Csomag tulajdonosai fontos, hogy a PowerShell-galériából csomagok használt e-mail cím figyelheti, és reagálhat rájuk problémákat, amelyek akkor aktiválódnak. Egy ezt a módszert hátránya, hogy csak a felhasználó és a tulajdonos minden eddiginél megjelenik a kommunikációt, így a tulajdonos ugyanezt a kérdést megválaszolni sokszor előfordulhat, hogy rendelkezik.
+- Megjegyzések: A csomag alján lap Megjegyzés mező kitöltése.
   Ebbe a rendszerbe előnye, hogy más felhasználók láthatják a megjegyzések és a válaszok, ami csökkenti az, hogy hányszor bármely egyetlen kérdésre válaszolni kell.
   A csomag tulajdonosával, erősen ajánlott, hogy kövesse az egyes csomagokhoz tartozó megjegyzések.
 Lásd: [visszajelzés biztosít a közösségi médiában vagy megjegyzésekkel](../how-to/working-with-packages/social-media-feedback.md) hogyan valósítható meg a részleteket.
@@ -134,6 +135,16 @@ Hivatkozás hozzáadása azzal ProjectURI a jegyzékfájl PSData szakaszban a k�
         ProjectUri = 'https://github.com/powershell/powershell'
 
 Ha egy ProjectURI áll rendelkezésre, a PowerShell-galériából tartalmaz egy hivatkozást a projekt webhelyére, a csomag lap bal oldalán.
+
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>A csomag a kompatibilis PSEdition(s) és platformok címkézése 
+
+A következő címkék segítségével a felhasználók számára, amely csomagokat jól használhatók a saját gondoskodjanak a környezet bemutatása:
+
+- PSEdition_Desktop: Csomagok, amelyek kompatibilisek a Windows PowerShell-lel 
+- PSEdition_Core: Csomagok, amelyek kompatibilisek a Powershell Core 
+- Windows: Csomagok, amelyek kompatibilisek a Windows operációs rendszer
+- Linux: Csomagok, amelyek kompatibilisek a Linux operációs rendszerek 
+- MacOS: Csomagok, amelyek kompatibilisek a Mac operációs rendszer
 
 ## <a name="include-tests"></a>Tesztek belefoglalása
 
