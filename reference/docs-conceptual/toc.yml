@@ -1,252 +1,256 @@
 items:
 - name: Áttekintés
-  href: PowerShell-Scripting.md
+  href: overview.md
+- name: Telepítés
+  href: install/installing-powershell.md
   items:
-  - name: Telepítés
-    href: setup/Installing-PowerShell.md
-    items:
-    - name: PowerShell Core
-      href: ''
-      items:
-      - name: A PowerShell Core telepítése Windows rendszerre
-        href: setup/Installing-PowerShell-Core-on-Windows.md
-      - name: A PowerShell Core telepítése Linux rendszerre
-        href: setup/Installing-PowerShell-Core-on-Linux.md
-      - name: A PowerShell Core telepítése macOS rendszerre
-        href: setup/Installing-PowerShell-Core-on-macOS.md
-      - name: A PowerShell Core telepítése ARM rendszerre
-        href: setup/PowerShell-Core-on-ARM.md
-    - name: Windows PowerShell
-      href: ''
-      items:
-      - name: A Windows PowerShell telepítése
-        href: setup/installing-windows-powershell.md
-      - name: A Windows PowerShell 2.0 motor telepítése
-        href: setup/installing-the-windows-powershell-2.0-engine.md
-      - name: A Windows PowerShell rendszerkövetelményei
-        href: setup/windows-powershell-system-requirements.md
-  - name: Első lépések
-    href: getting-started/getting-started-with-windows-powershell.md
-    items:
-    - name: A Windows PowerShell indítása
-      href: setup/starting-windows-powershell.md
-    - name: A Windows PowerShell 2.0 motor indítása
-      href: setup/starting-the-windows-powershell-2.0-engine.md
-  - name: Fogalmak
-    href: getting-started/fundamental/understanding-important-powershell-concepts.md
-    items:
-    - name: A PowerShell-nevek elsajátítása
-      href: getting-started/fundamental/learning-powershell-names.md
-    - name: Jól ismert parancsnevek használata
-      href: getting-started/fundamental/using-familiar-command-names.md
-    - name: Részletes súgóinformációk kérése
-      href: getting-started/fundamental/getting-detailed-help-information.md
-    - name: A parancsokkal kapcsolatos információk lekérése
-      href: getting-started/fundamental/getting-information-about-commands.md
-    - name: Objektumok tárolása változókban
-      href: getting-started/fundamental/using-variables-to-store-objects.md
-    - name: A PowerShell-folyamat ismertetése
-      href: getting-started/fundamental/understanding-the-powershell-pipeline.md
-    - name: Távoli parancsok futtatása
-      href: core-powershell/running-remote-commands.md
-      items:
-      - name: PowerShell távoli eljáráshívás SSH-n keresztül
-        href: core-powershell/SSH-Remoting-in-PowerShell-Core.md
-      - name: WS-Management (WSMan) távoli eljáráshívás a PowerShell Core-ban
-        href: core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-      - name: WinRM-biztonság
-        href: setup/winrmsecurity.md
-      - name: Második ugrás végrehajtása a PS távoli eljáráshívásai során
-        href: setup/ps-remoting-second-hop.md
-  - name: Összetevők
+  - name: PowerShell Core
     href: ''
     items:
-    - name: Konzol
-      href: ''
-      items:
-      - name: A PowerShell.exe parancssori súgója
-        href: core-powershell/console/powershell.exe-command-line-help.md
-      - name: A parancssorbővítés használata
-        href: core-powershell/console/using-tab-expansion.md
-    - name: ISE
-      href: core-powershell/ise/introducing-the-windows-powershell-ise.md
-      items:
-      - name: Windows PowerShell integrált parancsfájlkezelési környezet (ISE)
-        href: getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-.md
-      - name: A Windows PowerShell ISE használata
-        href: ''
-        items:
-        - name: A Windows PowerShell ISE felfedezése
-          href: getting-started/fundamental/exploring-the-windows-powershell-ise.md
-        - name: PowerShell-lap létrehozása a Windows PowerShell ISE-ben
-          href: core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
-        - name: Szkriptek hibakeresése a Windows PowerShell ISE-ben
-          href: core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
-        - name: Profilok használata a Windows PowerShell ISE-ben
-          href: core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
-        - name: Parancssori kiegészítés használata a szkript- és konzolpaneleken
-          href: core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
-        - name: A konzolpanel használata a Windows PowerShell ISE-ben
-          href: core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
-        - name: Szkriptek írása és futtatása a Windows PowerShell ISE-ben
-          href: core-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
-        - name: A Windows PowerShell ISE billentyűparancsai
-          href: core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
-        - name: A Windows PowerShell ISE kisegítő lehetőségei
-          href: setup/accessibility-in-windows-powershell-ise.md
-      - name: A Windows PowerShell ISE szkriptelési objektummodellje
-        href: ''
-        items:
-        - name: A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja
-          href: core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model.md
-        - name: Az ISE objektummodell-hierarchiája
-          href: core-powershell/ise/the-ise-object-model-hierarchy.md
-        - name: Az ObjectModelRoot objektum
-          href: core-powershell/ise/the-objectmodelroot-object.md
-        - name: Az ISEAddOnToolCollection objektum
-          href: core-powershell/ise/the-iseaddontoolcollection-object.md
-        - name: Az ISEAddOnTool objektum
-          href: core-powershell/ise/the-iseaddontool-object.md
-        - name: Az ISEEditor objektum
-          href: core-powershell/ise/the-iseeditor-object.md
-        - name: Az ISEFileCollection objektum
-          href: core-powershell/ise/the-isefilecollection-object.md
-        - name: Az ISEFile objektum
-          href: core-powershell/ise/the-isefile-object.md
-        - name: Az ISEMenuItemCollection objektum
-          href: core-powershell/ise/the-isemenuitemcollection-object.md
-        - name: Az ISEMenuItem objektum
-          href: core-powershell/ise/the-isemenuitem-object.md
-        - name: Az ISEOptions objektum
-          href: core-powershell/ise/the-iseoptions-object.md
-        - name: Az ISESnippetCollection objektum
-          href: core-powershell/ise/the-isesnippetcollection-object.md
-        - name: Az ISESnippetObject
-          href: core-powershell/ise/the-isesnippetobject.md
-        - name: A PowerShellTabCollection objektum
-          href: core-powershell/ise/the-powershelltabcollection-object.md
-        - name: A PowerShellTab objektum
-          href: core-powershell/ise/the-powershelltab-object.md
-    - name: Visual Studio Code
-      items:
-      - name: A Visual Studio Code használata
-        href: core-powershell/vscode/using-vscode.md
-    - name: Webes elérés
-      href: ''
-      items:
-      - name: Engedélyezési szabályok és biztonsági funkciók
-        href: core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-      - name: Telepítés
-        href: core-powershell/web-access/install-and-use-windows-powershell-web-access.md
-      - name: Hozzáférési problémák elhárítása
-        href: core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
-      - name: A Webes Windows PowerShell-elérés eltávolítása
-        href: core-powershell/web-access/uninstall-windows-powershell-web-access.md
-      - name: A webalapú PowerShell-konzol használata
-        href: core-powershell/web-access/use-the-web-based-windows-powershell-console.md
-    - name: A munkafolyamatok útmutatója
-      href: core-powershell/workflows-guide.md
-  - name: Újdonságok
+    - name: A PowerShell Core telepítése Windows rendszerre
+      href: install/installing-powershell-core-on-windows.md
+    - name: A PowerShell Core telepítése Linux rendszerre
+      href: install/installing-powershell-core-on-linux.md
+    - name: A PowerShell Core telepítése macOS rendszerre
+      href: install/installing-powershell-core-on-macos.md
+    - name: A PowerShell Core telepítése ARM rendszerre
+      href: install/powershell-core-on-arm.md
+  - name: Windows PowerShell
     href: ''
     items:
-    - name: A PowerShell Core 6.1 újdonságai
-      href: whats-new/what-s-new-in-powershell-core-61.md
-    - name: A PowerShell Core 6.0 újdonságai
-      href: whats-new/what-s-new-in-powershell-core-60.md
-      items:
-      - name: Meghibásodást okozó változások a PowerShell Core 6.0-ban
-        href: whats-new/breaking-changes-ps6.md
-      - name: A PowerShell Core 6.0 ismert problémái
-        href: whats-new/known-issues-ps6.md
-    - name: A PowerShell 5.0 újdonságai
-      href: whats-new/what-s-new-with-powershell.md
-      items:
-      - name: A Windows PowerShell 5.0 újdonságai
-        href: whats-new/what-s-new-in-windows-powershell-50.md
-      - name: A PowerShell 5.0 ISE újdonságai
-        href: whats-new/what-s-new-in-the-powershell-50-ise.md
-  - name: A PowerShell Core támogatási életciklusa
-    href: PowerShell-Core-Support.md
-  - name: További információ
+    - name: A Windows PowerShell telepítése
+      href: install/installing-windows-powershell.md
+    - name: A Windows PowerShell 2.0 motor telepítése
+      href: install/installing-the-windows-powershell-2.0-engine.md
+    - name: A Windows PowerShell rendszerkövetelményei
+      href: install/windows-powershell-system-requirements.md
+- name: Első lépések
+  href: getting-started/getting-started-with-windows-powershell.md
+  items:
+  - name: A Windows PowerShell indítása
+    href: getting-started/starting-windows-powershell.md
+  - name: A Windows PowerShell 2.0 motor indítása
+    href: getting-started/starting-the-windows-powershell-2.0-engine.md
+- name: A PowerShell megismerése
+  href: learn/understanding-important-powershell-concepts.md
+  items:
+  - name: A PowerShell-nevek elsajátítása
+    href: learn/learning-powershell-names.md
+  - name: Jól ismert parancsnevek használata
+    href: learn/using-familiar-command-names.md
+  - name: Részletes súgóinformációk kérése
+    href: learn/getting-detailed-help-information.md
+  - name: A parancsokkal kapcsolatos információk lekérése
+    href: learn/getting-information-about-commands.md
+  - name: Objektumok tárolása változókban
+    href: learn/using-variables-to-store-objects.md
+  - name: A PowerShell-folyamat ismertetése
+    href: learn/understanding-the-powershell-pipeline.md
+  - name: További PowerShell-oktatóanyagok
+    href: learn/more-powershell-learning.md
+  - name: Hordozható modulok írása
+    href: learn/writing-portable-modules.md
+  - name: Távoli parancsok futtatása
+    href: learn/remoting/running-remote-commands.md
+    items:
+    - name: PowerShell távoli eljáráshívás SSH-n keresztül
+      href: learn/remoting/ssh-remoting-in-powershell-core.md
+    - name: WS-Management (WSMan) távoli eljáráshívás a PowerShell Core-ban
+      href: learn/remoting/wsman-remoting-in-powershell-core.md
+    - name: WinRM-biztonság
+      href: learn/remoting/winrmsecurity.md
+    - name: A második ugrás végrehajtása a PowerShell távoli eljáráshívásai során
+      href: learn/remoting/ps-remoting-second-hop.md
+  - name: Szószedet
+    href: learn/windows-powershell-glossary.md
+- name: Összetevők
+  href: ''
+  items:
+  - name: Konzol
     href: ''
     items:
-    - name: További PowerShell-oktatóanyagok
-      href: getting-started/more-powershell-learning.md
-    - name: Szószedet
-      href: windows-powershell-glossary.md
+    - name: A PowerShell.exe parancssori súgója
+      href: components/console/powershell.exe-command-line-help.md
+    - name: A parancssorbővítés használata
+      href: components/console/using-tab-expansion.md
+  - name: ISE
+    href: components/ise/introducing-the-windows-powershell-ise.md
+    items:
+    - name: Windows PowerShell integrált parancsfájlkezelési környezet (ISE)
+      href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
+    - name: A Windows PowerShell ISE használata
+      href: ''
+      items:
+      - name: A Windows PowerShell ISE felfedezése
+        href: components/ise/exploring-the-windows-powershell-ise.md
+      - name: PowerShell-lap létrehozása a Windows PowerShell ISE-ben
+        href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+      - name: Szkriptek hibakeresése a Windows PowerShell ISE-ben
+        href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+      - name: Profilok használata a Windows PowerShell ISE-ben
+        href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
+      - name: Parancssori kiegészítés használata a szkript- és konzolpaneleken
+        href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+      - name: A konzolpanel használata a Windows PowerShell ISE-ben
+        href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+      - name: Szkriptek írása és futtatása a Windows PowerShell ISE-ben
+        href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+      - name: A Windows PowerShell ISE billentyűparancsai
+        href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+      - name: A Windows PowerShell ISE kisegítő lehetőségei
+        href: components/ise/accessibility-in-windows-powershell-ise.md
+    - name: Az ISE parancsfájl-kezelési objektummodell
+      href: ''
+      items:
+      - name: A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja
+        href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+      - name: Az ISE objektummodell-hierarchiája
+        href: components/ise/object-model/the-ise-object-model-hierarchy.md
+      - name: Az ObjectModelRoot objektum
+        href: components/ise/object-model/the-objectmodelroot-object.md
+      - name: Az ISEAddOnToolCollection objektum
+        href: components/ise/object-model/the-iseaddontoolcollection-object.md
+      - name: Az ISEAddOnTool objektum
+        href: components/ise/object-model/the-iseaddontool-object.md
+      - name: Az ISEEditor objektum
+        href: components/ise/object-model/the-iseeditor-object.md
+      - name: Az ISEFileCollection objektum
+        href: components/ise/object-model/the-isefilecollection-object.md
+      - name: Az ISEFile objektum
+        href: components/ise/object-model/the-isefile-object.md
+      - name: Az ISEMenuItemCollection objektum
+        href: components/ise/object-model/the-isemenuitemcollection-object.md
+      - name: Az ISEMenuItem objektum
+        href: components/ise/object-model/the-isemenuitem-object.md
+      - name: Az ISEOptions objektum
+        href: components/ise/object-model/the-iseoptions-object.md
+      - name: Az ISESnippetCollection objektum
+        href: components/ise/object-model/the-isesnippetcollection-object.md
+      - name: Az ISESnippetObject
+        href: components/ise/object-model/the-isesnippetobject.md
+      - name: A PowerShellTabCollection objektum
+        href: components/ise/object-model/the-powershelltabcollection-object.md
+      - name: A PowerShellTab objektum
+        href: components/ise/object-model/the-powershelltab-object.md
+  - name: Visual Studio Code
+    href: components/vscode/using-vscode.md
+    items:
+    - name: Az ISE-élmény replikálása a Visual Studio Code-ban
+      href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+    - name: A Visual Studio Code használata távoli szerkesztéshez és hibakereséshez
+      href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+  - name: Webes elérés
+    href: ''
+    items:
+    - name: Engedélyezési szabályok és biztonsági funkciók
+      href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
+    - name: Telepítés
+      href: components/web-access/install-and-use-windows-powershell-web-access.md
+    - name: Hozzáférési problémák elhárítása
+      href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
+    - name: A Webes Windows PowerShell-elérés eltávolítása
+      href: components/web-access/uninstall-windows-powershell-web-access.md
+    - name: A webalapú PowerShell-konzol használata
+      href: components/web-access/use-the-web-based-windows-powershell-console.md
+  - name: A munkafolyamatok útmutatója
+    href: components/workflows-guide.md
+- name: Újdonságok
+  href: ''
+  items:
+  - name: A PowerShell Core 6.1 újdonságai
+    href: whats-new/what-s-new-in-powershell-core-61.md
+  - name: A PowerShell Core 6.0 újdonságai
+    href: whats-new/what-s-new-in-powershell-core-60.md
+    items:
+    - name: Meghibásodást okozó változások a PowerShell Core 6.0-ban
+      href: whats-new/breaking-changes-ps6.md
+    - name: A PowerShell Core 6.0 ismert problémái
+      href: whats-new/known-issues-ps6.md
+  - name: A PowerShell 5.0 újdonságai
+    href: whats-new/what-s-new-with-powershell.md
+    items:
+    - name: A Windows PowerShell 5.0 újdonságai
+      href: whats-new/what-s-new-in-windows-powershell-50.md
+    - name: A PowerShell 5.0 ISE újdonságai
+      href: whats-new/what-s-new-in-the-powershell-50-ise.md
+- name: A PowerShell Core támogatási életciklusa
+  href: powershell-support-lifecycle.md
 - name: Mintaparancsfájlok
-  href: getting-started/fundamental/sample-scripts-for-administration.md
+  href: samples/sample-scripts-for-administration.md
   items:
   - name: A számítógép állapotának módosítása
-    href: getting-started/cookbooks/changing-computer-state.md
+    href: samples/changing-computer-state.md
   - name: Adatgyűjtés a számítógépekről
-    href: getting-started/cookbooks/collecting-information-about-computers.md
+    href: samples/collecting-information-about-computers.md
+  - name: Felhasználói felületi elemek létrehozása
+    href: ''
+    items:
+    - name: Egyéni beviteli mező létrehozása
+      href: samples/creating-a-custom-input-box.md
+    - name: Grafikus dátumválasztó létrehozása
+      href: samples/creating-a-graphical-date-picker.md
+    - name: Többszörös kijelölésű listamezők
+      href: samples/multiple-selection-list-boxes.md
+    - name: Elemek kiválasztása egy listamezőből
+      href: samples/selecting-items-from-a-list-box.md
   - name: PowerShell-parancs dekódolása futó folyamatból
-    href: getting-started/cookbooks/Decode-PowerShell-Command-from-a-Running-Process.md
+    href: samples/decode-powershell-command-from-a-running-process.md
   - name: Aktuális hely kezelése
-    href: getting-started/cookbooks/managing-current-location.md
+    href: samples/managing-current-location.md
   - name: Folyamatok kezelése folyamatparancsmagokkal
-    href: getting-started/cookbooks/managing-processes-with-process-cmdlets.md
+    href: samples/managing-processes-with-process-cmdlets.md
   - name: Szolgáltatások kezelése
-    href: getting-started/cookbooks/managing-services.md
+    href: samples/managing-services.md
   - name: Windows PowerShell-illesztők kezelése
-    href: getting-started/cookbooks/managing-windows-powershell-drives.md
+    href: samples/managing-windows-powershell-drives.md
   - name: Elemek közvetlen módosítása
-    href: getting-started/cookbooks/manipulating-items-directly.md
-  - name: Egyéni beviteli mező létrehozása
-    href: getting-started/cookbooks/creating-a-custom-input-box.md
-  - name: Grafikus dátumválasztó létrehozása
-    href: getting-started/cookbooks/creating-a-graphical-date-picker.md
-  - name: Többszörös kijelölésű listamezők
-    href: getting-started/cookbooks/multiple-selection-list-boxes.md
-  - name: Elemek kiválasztása egy listamezőből
-    href: getting-started/cookbooks/selecting-items-from-a-list-box.md
+    href: samples/manipulating-items-directly.md
   - name: Hálózatkezelési feladatok végrehajtása
-    href: getting-started/cookbooks/performing-networking-tasks.md
-  - name: Adatátirányítás az Out-parancsmagokkal
-    href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
+    href: samples/performing-networking-tasks.md
+  - name: Adatátirányítás az Out-* parancsmagokkal
+    href: samples/redirecting-data-with-out---cmdlets.md
   - name: A kimeneti nézet módosítása formázási parancsokkal
-    href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
-  - name: Az objektumstruktúra megtekintése – Get-Member
-    href: getting-started/cookbooks/viewing-object-structure--get-member-.md
+    href: samples/using-format-commands-to-change-output-view.md
   - name: Fájlok és mappák használata
-    href: getting-started/cookbooks/working-with-files-and-folders.md
+    href: samples/working-with-files-and-folders.md
   - name: Fájlmappák és beállításkulcsok használata
-    href: getting-started/cookbooks/working-with-files-folders-and-registry-keys.md
+    href: samples/working-with-files-folders-and-registry-keys.md
   - name: Objektumok használata
-    href: getting-started/cookbooks/working-with-objects.md
+    href: samples/working-with-objects.md
     items:
     - name: WMI-objektumok lékérése – Get-WmiObject
-      href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
+      href: samples/getting-wmi-objects--get-wmiobject-.md
     - name: .NET- és COM-objektumok létrehozása – New-Object
-      href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
+      href: samples/creating-.net-and-com-objects--new-object-.md
     - name: Objektumok eltávolítása a folyamatból – Where-Object
-      href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
+      href: samples/removing-objects-from-the-pipeline--where-object-.md
     - name: Objektumrészek kijelölése – Select-Object
-      href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
+      href: samples/selecting-parts-of-objects--select-object-.md
     - name: Objektumok rendezése
-      href: getting-started/cookbooks/sorting-objects.md
+      href: samples/sorting-objects.md
     - name: Feladat megismétlése több objektumon – ForEach-Object
-      href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
+      href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
     - name: Statikus osztályok és metódusok használata
-      href: getting-started/cookbooks/using-static-classes-and-methods.md
+      href: samples/using-static-classes-and-methods.md
+    - name: Az objektumstruktúra megtekintése – Get-Member
+      href: samples/viewing-object-structure--get-member-.md
   - name: Nyomtatók használata
-    href: getting-started/cookbooks/working-with-printers.md
+    href: samples/working-with-printers.md
   - name: Beállításjegyzék-bejegyzések használata
-    href: getting-started/cookbooks/working-with-registry-entries.md
+    href: samples/working-with-registry-entries.md
   - name: Beállításkulcsok használata
-    href: getting-started/cookbooks/working-with-registry-keys.md
+    href: samples/working-with-registry-keys.md
   - name: Szoftvertelepítések használata
-    href: getting-started/cookbooks/working-with-software-installations.md
+    href: samples/working-with-software-installations.md
   - name: További hasznos szkriptelési objektumok
-    href: getting-started/cookbooks/other-useful-scripting-objects.md
+    href: samples/other-useful-scripting-objects.md
   - name: '1. függelék: Kompatibilitási aliasok'
-    href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
+    href: samples/appendix-1---compatibility-aliases.md
   - name: '2. függelék: Egyéni PowerShell-parancsikon létrehozása'
-    href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: 4a1d2db118f9f26da16a57208d801305087b58f2
-ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+    href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+ms.openlocfilehash: 934498dd6e2e2158d1ef2a83dbf38e3a2f51dfd0
+ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51619143"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53747738"
