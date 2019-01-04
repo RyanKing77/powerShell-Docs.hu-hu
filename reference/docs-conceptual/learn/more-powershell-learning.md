@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: További PowerShell-oktatóanyagok
-ms.openlocfilehash: da9dfeca3d2d2cfadf6ace0aa98007d16a548aae
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5e81801df99a55a358d1d1405bdc79f882aae92f
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404364"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012551"
 ---
 # <a name="more-powershell-learning"></a>További PowerShell-oktatóanyagok
 
@@ -29,23 +29,9 @@ A rendelkezésre álló parancssori súgó mellett az alábbi forrásanyagokban 
 - [Ismerkedés a PowerShell 3.0-s (Gyorstanfolyam)](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
 - [Speciális eszközök és szkriptek használata a PowerShell 3.0 a Jump Starttal](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8277)
 
-### <a name="script-center-learn"></a>Ismerje meg a Parancsprogramtárban
+### <a name="channel-9-videos"></a>Channel 9-videók
 
-#### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>A foglalt rendszergazdai adatsor Windows PowerShell alapjai
-
-- [PowerShell "SmowerShell" – 1. Windows PowerShell rész kell megtudhatja, miért](https://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Hallgassa meg, a folyamat keresztül – hogyan összetett Windows PowerShell-parancsokat a szórakoztató és a nyereség 2. rész](https://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Egyetlen szolgáltatót? Nem, alig – tekintse meg A Windows PowerShell szolgáltatók 3. rész](https://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [A fő esemény – Windows PowerShell Does eseménynaplók 4. rész](https://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Több mint távolról lehetséges – Windows PowerShell használatával való kezeléséről a távoli asztali 5. rész](https://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
-
-#### <a name="learn-it-now-before-its-an-emergency"></a>Most megtudhatja, még mielőtt vészhelyzet esetén
-
-- [Windows PowerShell: Most megtudhatja, még mielőtt vészhelyzet esetén – 1. rész](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
-- [Windows PowerShell: Most megtudhatja, még mielőtt vészhelyzet esetén – 2. rész](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
-- [Windows PowerShell: Most megtudhatja, még mielőtt vészhelyzet esetén – 3. rész](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
-- [Windows PowerShell: Most megtudhatja, még mielőtt vészhelyzet esetén – 4. rész](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
-- [Windows PowerShell: Most megtudhatja, még mielőtt vészhelyzet esetén – 5. rész](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
+A Channel 9 az a videó közzététele platform. Nincsenek elérhető több száz videó PowerShell kapcsolatban. [Keressen a "PowerShell"](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) elérhető videóit megtekintéséhez.
 
 ## <a name="resources-for-windows-powershell-developers"></a>Erőforrások Windows PowerShell-fejlesztőknek
 

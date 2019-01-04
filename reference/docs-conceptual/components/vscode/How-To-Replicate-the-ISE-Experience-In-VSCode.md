@@ -1,15 +1,15 @@
 ---
-title: Hogyan replikáljon az ISE élmény, a Visual Studio Code-ban
-description: Hogyan replikáljon az ISE élmény, a Visual Studio Code-ban
+title: Az ISE-élmény replikálása a Visual Studio Code-ban
+description: Az ISE-élmény replikálása a Visual Studio Code-ban
 ms.date: 08/06/2018
-ms.openlocfilehash: 0ac38985a842a0dfc6118d0ae7116d12e1579daf
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655519"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012483"
 ---
-# <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Hogyan replikáljon az ISE élmény, a Visual Studio Code-ban
+# <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Az ISE-élmény replikálása a Visual Studio Code-ban
 
 A PowerShell-bővítmény VSCode-nem keresik a PowerShell ISE-teljes funkcióparitás, amíg nincsenek funkciók a VSCode-élmény több természetes tehet felhasználói számára az ISE-ben.
 
@@ -57,7 +57,7 @@ Az alapértelmezett érték `true` kisegítő célokra.
 ```
 
 > [!NOTE]
-> A háttérben PowerShell folyamat továbbra is indul el, mivel biztosítja az intellisense, a parancsfájl elemzés, a szimbólum navigációs, stb. De a konzol nem jelennek meg.
+> A háttérben PowerShell folyamat továbbra is indul el, mivel biztosítja az IntelliSense, parancsfájl-elemző, szimbólum navigációs stb. De a konzol nem jelennek meg.
 
 ## <a name="assume-files-are-powershell-by-default"></a>Tegyük fel, fájlok PowerShell alapértelmezés szerint.
 

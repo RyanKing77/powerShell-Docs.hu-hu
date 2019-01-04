@@ -1,16 +1,16 @@
 ---
 ms.date: 08/24/2018
 keywords: PowerShell, a parancsmag
-title: A PowerShell-nevek elsajátítása
+title: PowerShell-parancs nevek elsajátítása
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404471"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012466"
 ---
-# <a name="learning-powershell-names"></a>A PowerShell-nevek elsajátítása
+# <a name="learning-powershell-command-names"></a>PowerShell-parancs nevek elsajátítása
 
 A legtöbb parancssori felületek jelentős mennyiségű időt befektetés parancsok és paraméterek-nevek elsajátítása van szükség. A probléma oka, hogy nincsenek-e néhány minta. Memorization az egyetlen módja a parancsok és paraméterek, amelyek rendszeres időközönként szüksége.
 
