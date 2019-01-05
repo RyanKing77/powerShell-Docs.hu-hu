@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-erőforrások
-ms.openlocfilehash: 02e1b9856942cf28e77d83dac89681a08cf6bb74
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
+ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012449"
+ms.locfileid: "54046691"
 ---
 # <a name="dsc-resources"></a>DSC-erőforrások
 
@@ -104,3 +104,53 @@ Configuration TestConfig
 > A PowerShell 5.0-es verziótól kezdve az intellisense lett hozzáadva a DSC. Ez az új funkció lehetővé teszi, hogy \<lapon\> és \<Ctrl + szóköz\> a kulcsnevek automatikus kiegészítés.
 
 ![Erőforrás kiegészítés](../media/resource-tabcompletion.png)
+
+## <a name="built-in-resources"></a>Beépített erőforrások
+
+Közösségi erőforrások kívül beépített erőforrások Windows, Linux-erőforrások és a csomópontok közötti függőségek erőforrásokat. A fenti lépések segítségével határozza meg a szintaxis ezeket az erőforrásokat és azok használatát. Ezek az erőforrások kiszolgálása a lapok alapján lettek archiválva **referencia**.
+
+Windows beépített erőforrások
+
+* [Archív erőforrás](../reference/resources/windows/archiveResource.md)
+* [Környezeti erőforrás](../reference/resources/windows/environmentResource.md)
+* [File erőforrás](../reference/resources/windows/fileResource.md)
+* [Group erőforrás](../reference/resources/windows/groupResource.md)
+* [GroupSet erőforrás](../reference/resources/windows/groupSetResource.md)
+* [Log erőforrás](../reference/resources/windows/logResource.md)
+* [Package erőforrás](../reference/resources/windows/packageResource.md)
+* [ProcessSet erőforrás](../reference/resources/windows/ProcessSetResource.md)
+* [Registry erőforrás](../reference/resources/windows/registryResource.md)
+* [Script erőforrás](../reference/resources/windows/scriptResource.md)
+* [Service erőforrás](../reference/resources/windows/serviceResource.md)
+* [ServiceSet erőforrás](../reference/resources/windows/serviceSetResource.md)
+* [User erőforrás](../reference/resources/windows/userResource.md)
+* [WindowsFeature erőforrás](../reference/resources/windows/windowsFeatureResource.md)
+* [WindowsFeatureSet erőforrás](../reference/resources/windows/windowsFeatureSetResource.md)
+* [WindowsOptionalFeature erőforrás](../reference/resources/windows/windowsOptionalFeatureResource.md)
+* [WindowsOptionalFeatureSet erőforrás](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
+* [WindowsPackageCabResource erőforrás](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsProcess erőforrás](../reference/resources/windows/windowsProcessResource.md)
+
+[Csomópontok közötti függőségek](../configurations/crossNodeDependencies.md) erőforrások
+
+* [WaitForAll erőforrás](../reference/resources/windows/waitForAllResource.md)
+* [WaitForSome erőforrás](../reference/resources/windows/waitForSomeResource.md)
+* [WaitForAny erőforrás](../reference/resources/windows/waitForAnyResource.md)
+
+Package Management-erőforrásokkal
+
+* [PackageManagement-erőforrás](../reference/resources/packagemanagement/PackageManagementDscResource.md)
+* [PackageManagementSource erőforrás](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+
+Linux-erőforrások
+
+* [Linux archív erőforrás](../reference/resources/linux/lnxArchiveResource.md)
+* [Linux környezeti erőforrás](../reference/resources/linux/lnxEnvironmentResource.md)
+* [Linux FileLine erőforrás](../reference/resources/linux/lnxFileLineResource.md)
+* [Linux-fájl erőforrás](../reference/resources/linux/lnxFileResource.md)
+* [Linux-Group erőforrás](../reference/resources/linux/lnxGroupResource.md)
+* [Linux-Package erőforrás](../reference/resources/linux/lnxPackageResource.md)
+* [Linux-Script erőforrás](../reference/resources/linux/lnxScriptResource.md)
+* [Linux-szolgáltatás-erőforrás](../reference/resources/linux/lnxServiceResource.md)
+* [Linux SshAuthorizedKeys erőforrás](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
+* [Linux felhasználói erőforrás](../reference/resources/linux/lnxUserResource.md)

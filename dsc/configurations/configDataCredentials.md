@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A konfigurációs adatok hitelesítő adatok beállításai
-ms.openlocfilehash: c4057457bf6beb2c5fc9dffef9122cd488ccdcd7
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 10cf3456fcc7104b7dd779db30aebace54ba087a
+ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
 ms.translationtype: MT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012432"
+ms.locfileid: "54046641"
 ---
 # <a name="credentials-options-in-configuration-data"></a>A konfigurációs adatok hitelesítő adatok beállításai
 >Érvényes: Windows PowerShell 5.0
@@ -115,7 +115,8 @@ configuration unencryptedPasswordDemo
     }
 }
 
-# We declared the ConfigurationData in a local variable, but we need to pass it in to our configuration function
+# We declared the ConfigurationData in a local variable, but we need to pass it
+# in to our configuration function
 # We need to invoke the configuration function we created to generate a MOF
 unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 
@@ -127,7 +128,7 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-Ez az cikkből szerint "TestMachine1" konfigurációja által létrehozott ".mof" fájlból. A `System.Security.SecureString` szerepel a konfigurációs egyszerű volt, és a ".mof" fájlt tárolja egy `MSF_Credential`. A `SecureString` a jelenlegi felhasználó profil van titkosítva. Ez jól működik, a PowerShell Távfelügyelet minden formája. Egy ".mof" fájl egy önálló önálló konfigurációs mechanizmusa tervezték. A PowerShell 5.0-es verziótól kezdve ".mof" található csomópont összes fájlnak titkosítva inaktív, de nem az átvitel során, a csomópontra. Ez azt jelenti, hogy jelszavak egy ".mof" fájlban feltárt egyszerű szövegként, amikor egy csomópont alkalmazza őket. Hitelesítő adatok titkosításához, kell használnia egy **lekéréses kiszolgálón**. További információkért lásd: [biztonságossá tétele MOF-fájlok tanúsítványokkal](./pull-server/secureMOF.md).
+Ez az cikkből szerint "TestMachine1" konfigurációja által létrehozott ".mof" fájlból. A `System.Security.SecureString` szerepel a konfigurációs egyszerű volt, és a ".mof" fájlt tárolja egy `MSF_Credential`. A `SecureString` a jelenlegi felhasználó profil van titkosítva. Ez jól működik, a PowerShell Távfelügyelet minden formája. Egy ".mof" fájl egy önálló önálló konfigurációs mechanizmusa tervezték. A PowerShell 5.0-es verziótól kezdve ".mof" található csomópont összes fájlnak titkosítva inaktív, de nem az átvitel során, a csomópontra. Ez azt jelenti, hogy jelszavak egy ".mof" fájlban feltárt egyszerű szövegként, amikor egy csomópont alkalmazza őket. Hitelesítő adatok titkosításához, kell használnia egy **lekéréses kiszolgálón**. További információkért lásd: [biztonságossá tétele MOF-fájlok tanúsítványokkal](../pull-server/secureMOF.md).
 
 ```syntax
 instance of MSFT_Credential as $MSFT_Credential1ref
