@@ -38,4 +38,4 @@ Az alábbi eljárás ismerteti, hogyan lehet parancsikon létrehozása a Windows
 
 11. Ha el szeretné helyezni az asztalon, egy adott időpontban a konzolon, ha meg van nyitva, törölje a **a rendszer helyezi** jelölőnégyzetet a **ablak helyének** szakaszt, és módosítsa az értékeket a a **Balra** és **felső** lévő a **ablak helyének** szakaszban.
 
-12. Kattintson az OK** gombra.
+12. Kattintson az **OK** gombra.
