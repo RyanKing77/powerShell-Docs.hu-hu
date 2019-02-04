@@ -2,15 +2,15 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: 2f05fe96ec792a31fabf3aff0f9e18b40178316c
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893188"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685311"
 ---
-# <a name="packagemanagement-cmdlets"></a><span data-ttu-id="2f59e-102">PackageManagement-parancsmagok</span><span class="sxs-lookup"><span data-stu-id="2f59e-102">PackageManagement Cmdlets</span></span>
+# <a name="packagemanagement-cmdlets"></a><span data-ttu-id="d09fa-102">PackageManagement-parancsmagok</span><span class="sxs-lookup"><span data-stu-id="d09fa-102">PackageManagement Cmdlets</span></span>
 
-<span data-ttu-id="2f59e-103">Ez a központi eleme a PackageManagement a szoftverek felderítése, telepítése és leltárt (SDII).</span><span class="sxs-lookup"><span data-stu-id="2f59e-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="2f59e-104">Próbálja ki ezeket a műveleteket a parancsmagokat:</span><span class="sxs-lookup"><span data-stu-id="2f59e-104">Try out the cmdlets for these operations:</span></span>
+<span data-ttu-id="d09fa-103">Ez a központi eleme a PackageManagement a szoftverek felderítése, telepítése és leltárt (SDII).</span><span class="sxs-lookup"><span data-stu-id="d09fa-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="d09fa-104">Próbálja ki ezeket a műveleteket a parancsmagokat:</span><span class="sxs-lookup"><span data-stu-id="d09fa-104">Try out the cmdlets for these operations:</span></span>
 
 - `Find-Package`
 - `Find-PackageProvider`
@@ -26,17 +26,17 @@ ms.locfileid: "37893188"
 - `Uninstall-Package`
 - `Unregister-PackageSource`
 
-<span data-ttu-id="2f59e-105">A PackageManagement az egy PowerShell-modul, frissítéséhez PackageManagement magát a következőket teheti:</span><span class="sxs-lookup"><span data-stu-id="2f59e-105">As PackageManagement is a PowerShell module, you can do the following to update PackageManagement itself:</span></span>
+<span data-ttu-id="d09fa-105">A PackageManagement az egy PowerShell-modul, frissítéséhez PackageManagement magát a következőket teheti:</span><span class="sxs-lookup"><span data-stu-id="d09fa-105">As PackageManagement is a PowerShell module, you can do the following to update PackageManagement itself:</span></span>
 
 ```powershell
 Install-Module PackageManagement –Force
 ```
 
-<span data-ttu-id="2f59e-106">Ebben az esetben a PowerShell-munkamenetben írja be újra a PackageManagement az új verzióra váltás kap.</span><span class="sxs-lookup"><span data-stu-id="2f59e-106">In this case, you will have to re-enter PowerShell session to switch to the new version of PackageManagement.</span></span>
+<span data-ttu-id="d09fa-106">Ebben az esetben a PowerShell-munkamenetben írja be újra a PackageManagement az új verzióra váltás kap.</span><span class="sxs-lookup"><span data-stu-id="d09fa-106">In this case, you will have to re-enter PowerShell session to switch to the new version of PackageManagement.</span></span>
 
-## <a name="find-package-cmdletpowershellmodulepackagemanagementfind-package"></a>[<span data-ttu-id="2f59e-107">Find-Package parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-107">Find-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Find-Package)
+## <a name="find-package-cmdletpowershellmodulepackagemanagementfind-package"></a>[<span data-ttu-id="d09fa-107">Find-Package parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-107">Find-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Find-Package)
 
-<span data-ttu-id="2f59e-108">Ez a parancsmag lehetővé teszi, hogy a csomag forrásokból használatával szoftvercsomagok felderítése csomag szolgáltatók betöltése.</span><span class="sxs-lookup"><span data-stu-id="2f59e-108">This cmdlet allows discovery of software packages in available package sources using loaded package providers.</span></span>
+<span data-ttu-id="d09fa-108">Ez a parancsmag lehetővé teszi, hogy a csomag forrásokból használatával szoftvercsomagok felderítése csomag szolgáltatók betöltése.</span><span class="sxs-lookup"><span data-stu-id="d09fa-108">This cmdlet allows discovery of software packages in available package sources using loaded package providers.</span></span>
 
 ```powershell
 # Find all available Windows PowerShell module packages from galleries registered
@@ -52,11 +52,11 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-## <a name="find-packageprovider-cmdletpowershellmodulepackagemanagementfind-packageprovider"></a>[<span data-ttu-id="2f59e-109">Keresés – PackageProvider parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-109">Find-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Find-PackageProvider)
+## <a name="find-packageprovider-cmdletpowershellmodulepackagemanagementfind-packageprovider"></a>[<span data-ttu-id="d09fa-109">Keresés – PackageProvider parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-109">Find-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Find-PackageProvider)
 
-<span data-ttu-id="2f59e-110">A `Find-PackageProvider` parancsmaggal megkeresi a PowerShellGet megfelelő csomag forrásainak érhető el a PackageManagement-szolgáltatók regisztrálva.</span><span class="sxs-lookup"><span data-stu-id="2f59e-110">The `Find-PackageProvider` cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet.</span></span> <span data-ttu-id="2f59e-111">Ezek a érhető el a telepítési csomag szolgáltatók a `Install-PackageProvider` parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="2f59e-111">These are package providers available for installation with the `Install-PackageProvider` cmdlet.</span></span> <span data-ttu-id="2f59e-112">Alapértelmezés szerint ez a PowerShell-galériából, a "PackageManagement" és "a Felhőszolgáltatói címkék a modullistából is tartalmaz.</span><span class="sxs-lookup"><span data-stu-id="2f59e-112">By default, this includes modules available in the PowerShell Gallery with the 'PackageManagement' and 'Provider' Tags.</span></span>
+<span data-ttu-id="d09fa-110">A `Find-PackageProvider` parancsmaggal megkeresi a PowerShellGet megfelelő csomag forrásainak érhető el a PackageManagement-szolgáltatók regisztrálva.</span><span class="sxs-lookup"><span data-stu-id="d09fa-110">The `Find-PackageProvider` cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet.</span></span> <span data-ttu-id="d09fa-111">Ezek a érhető el a telepítési csomag szolgáltatók a `Install-PackageProvider` parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="d09fa-111">These are package providers available for installation with the `Install-PackageProvider` cmdlet.</span></span> <span data-ttu-id="d09fa-112">Alapértelmezés szerint ez a PowerShell-galériából, a "PackageManagement" és "a Felhőszolgáltatói címkék a modullistából is tartalmaz.</span><span class="sxs-lookup"><span data-stu-id="d09fa-112">By default, this includes modules available in the PowerShell Gallery with the 'PackageManagement' and 'Provider' Tags.</span></span>
 
-<span data-ttu-id="2f59e-113">`Find-PackageProvider` a PackageManagement az azure blob tároló, ahol használjuk a PackageManagement boostrapper szolgáltató megtalálásához, és telepíteni kell őket a rendelkezésre álló megfelelő PackageManagement-szolgáltatókat is megtalálja.</span><span class="sxs-lookup"><span data-stu-id="2f59e-113">`Find-PackageProvider` also finds matching PackageManagement providers that are available in the PackageManagement azure blob store where we use the PackageManagement boostrapper provider for finding and installing them.</span></span>
+<span data-ttu-id="d09fa-113">`Find-PackageProvider` a PackageManagement az azure blob tároló, ahol használjuk a PackageManagement boostrapper szolgáltató megtalálásához, és telepíteni kell őket a rendelkezésre álló megfelelő PackageManagement-szolgáltatókat is megtalálja.</span><span class="sxs-lookup"><span data-stu-id="d09fa-113">`Find-PackageProvider` also finds matching PackageManagement providers that are available in the PackageManagement azure blob store where we use the PackageManagement boostrapper provider for finding and installing them.</span></span>
 
 ```powershell
 #Find all available package providers in PackageManagement azure blob store as well as in PowerShellGallery.com
@@ -69,9 +69,9 @@ Find-PackageProvider -Name "Nuget" -AllVersions
 Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 ```
 
-## <a name="get-package-cmdletpowershellmodulepackagemanagementget-package"></a>[<span data-ttu-id="2f59e-114">Get-Package parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-114">Get-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Get-Package)
+## <a name="get-package-cmdletpowershellmodulepackagemanagementget-package"></a>[<span data-ttu-id="d09fa-114">Get-Package parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-114">Get-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Get-Package)
 
-<span data-ttu-id="2f59e-115">Ez a parancsmag az összes szoftvercsomag PackageManagement használatával telepített listáját adja vissza.</span><span class="sxs-lookup"><span data-stu-id="2f59e-115">This cmdlet returns a list of all software packages that have been installed using PackageManagement.</span></span>
+<span data-ttu-id="d09fa-115">Ez a parancsmag az összes szoftvercsomag PackageManagement használatával telepített listáját adja vissza.</span><span class="sxs-lookup"><span data-stu-id="d09fa-115">This cmdlet returns a list of all software packages that have been installed using PackageManagement.</span></span>
 
 ```powershell
 # Get all the packages installed by Programs provider
@@ -82,9 +82,9 @@ Get-Package –Provider Programs
 Get-Package –Provider NuGet -Destination c:\test
 ```
 
-## <a name="get-packageprovider-cmdletpowershellmodulepackagemanagementget-packageprovider"></a>[<span data-ttu-id="2f59e-116">Get-PackageProvider parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-116">Get-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Get-PackageProvider)
+## <a name="get-packageprovider-cmdletpowershellmodulepackagemanagementget-packageprovider"></a>[<span data-ttu-id="d09fa-116">Get-PackageProvider parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-116">Get-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Get-PackageProvider)
 
-<span data-ttu-id="2f59e-117">Csomag szolgáltatók betöltött és készen áll a használatra, a helyi számítógépen is leltározandó parancsmag használatával.</span><span class="sxs-lookup"><span data-stu-id="2f59e-117">Package providers that are loaded and ready to be used on the local machine can be inventoried by using the cmdlet.</span></span>
+<span data-ttu-id="d09fa-117">Csomag szolgáltatók betöltött és készen áll a használatra, a helyi számítógépen is leltározandó parancsmag használatával.</span><span class="sxs-lookup"><span data-stu-id="d09fa-117">Package providers that are loaded and ready to be used on the local machine can be inventoried by using the cmdlet.</span></span>
 
 ```powershell
 # Get all currently loaded package providers
@@ -94,9 +94,9 @@ Get-PackageProvider
 Get-PackageProvider -ListAvailable
 ```
 
-## <a name="get-packagesource-cmdletpowershellmodulepackagemanagementget-packagesource"></a>[<span data-ttu-id="2f59e-118">Get-PackageSource parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-118">Get-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Get-PackageSource)
+## <a name="get-packagesource-cmdletpowershellmodulepackagemanagementget-packagesource"></a>[<span data-ttu-id="d09fa-118">Get-PackageSource parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-118">Get-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Get-PackageSource)
 
-<span data-ttu-id="2f59e-119">Ez a parancsmag egy csomag szolgáltató regisztrált csomagforrások listáját kéri le.</span><span class="sxs-lookup"><span data-stu-id="2f59e-119">This cmdlet gets a list of package sources that are registered for a package provider.</span></span>
+<span data-ttu-id="d09fa-119">Ez a parancsmag egy csomag szolgáltató regisztrált csomagforrások listáját kéri le.</span><span class="sxs-lookup"><span data-stu-id="d09fa-119">This cmdlet gets a list of package sources that are registered for a package provider.</span></span>
 
 ```powershell
 # Get all package sources
@@ -106,9 +106,9 @@ Get-PackageSource
 Get-PackageSource –ProviderName PowerShellGet
 ```
 
-## <a name="import-packageprovider-cmdletpowershellmodulepackagemanagementimport-packageprovider"></a>[<span data-ttu-id="2f59e-120">Importálás – PackageProvider parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-120">Import-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Import-PackageProvider)
+## <a name="import-packageprovider-cmdletpowershellmodulepackagemanagementimport-packageprovider"></a>[<span data-ttu-id="d09fa-120">Importálás – PackageProvider parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-120">Import-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Import-PackageProvider)
 
-<span data-ttu-id="2f59e-121">Ez a parancsmag hozzáadja a jelenlegi munkamenet csomag felügyeleti csomag szolgáltatók.</span><span class="sxs-lookup"><span data-stu-id="2f59e-121">This cmdlet adds Package Management package providers to the current session.</span></span>
+<span data-ttu-id="d09fa-121">Ez a parancsmag hozzáadja a jelenlegi munkamenet csomag felügyeleti csomag szolgáltatók.</span><span class="sxs-lookup"><span data-stu-id="d09fa-121">This cmdlet adds Package Management package providers to the current session.</span></span>
 
 ```powershell
 # Import a package provider from the local machine
@@ -130,9 +130,9 @@ Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 ```
 
-## <a name="-install-package-cmdletpowershellmodulepackagemanagementinstall-package"></a>[<span data-ttu-id="2f59e-122"> Install-Package parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-122"> Install-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Install-Package)
+## <a name="-install-package-cmdletpowershellmodulepackagemanagementinstall-package"></a>[<span data-ttu-id="d09fa-122"> Install-Package parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-122"> Install-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Install-Package)
 
-<span data-ttu-id="2f59e-123">Ez a parancsmag lehetővé teszi, hogy a csomag forrásokból használatával szoftvercsomagok telepítése csomag szolgáltatók betöltése.</span><span class="sxs-lookup"><span data-stu-id="2f59e-123">This cmdlet allows installation of software packages in available package sources using loaded package providers.</span></span>
+<span data-ttu-id="d09fa-123">Ez a parancsmag lehetővé teszi, hogy a csomag forrásokból használatával szoftvercsomagok telepítése csomag szolgáltatók betöltése.</span><span class="sxs-lookup"><span data-stu-id="d09fa-123">This cmdlet allows installation of software packages in available package sources using loaded package providers.</span></span>
 
 ```powershell
 # Install a package by name.
@@ -145,9 +145,9 @@ Install-Package -Name jquery -Source nuget.org -Destination c:\test
 Find-Package -Name jquery –Provider NuGet | Install-Package -Destination c:\test
 ```
 
-## <a name="install-packageprovider-cmdletpowershellmodulepackagemanagementinstall-packageprovider"></a>[<span data-ttu-id="2f59e-124">Install-PackageProvider parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-124">Install-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Install-PackageProvider)
+## <a name="install-packageprovider-cmdletpowershellmodulepackagemanagementinstall-packageprovider"></a>[<span data-ttu-id="d09fa-124">Install-PackageProvider parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-124">Install-PackageProvider Cmdlet</span></span>](/powershell/module/PackageManagement/Install-PackageProvider)
 
-<span data-ttu-id="2f59e-125">Ez a parancsmag egy vagy több csomagot felügyeleti csomag szolgáltatót telepíti.</span><span class="sxs-lookup"><span data-stu-id="2f59e-125">This cmdlet installs one or more Package Management package providers.</span></span>
+<span data-ttu-id="d09fa-125">Ez a parancsmag egy vagy több csomagot felügyeleti csomag szolgáltatót telepíti.</span><span class="sxs-lookup"><span data-stu-id="d09fa-125">This cmdlet installs one or more Package Management package providers.</span></span>
 
 ```powershell
 # Install a package provider from the PowerShell Gallery
@@ -164,18 +164,18 @@ Find-PackageProvider –Name "Gistprovider" | Install-PackageProvider -Verbose
 Install-PackageProvider –Name Gistprovider –Verbose –Scope CurrentUser
 ```
 
-## <a name="register-packagesource-cmdletpowershellmodulepackagemanagementregister-packagesource"></a>[<span data-ttu-id="2f59e-126">Register-PackageSource parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-126">Register-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Register-PackageSource)
+## <a name="register-packagesource-cmdletpowershellmodulepackagemanagementregister-packagesource"></a>[<span data-ttu-id="d09fa-126">Register-PackageSource parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-126">Register-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Register-PackageSource)
 
-<span data-ttu-id="2f59e-127">Ez a parancsmag egy csomag forrása hozzáadja a megadott csomag szolgáltató.</span><span class="sxs-lookup"><span data-stu-id="2f59e-127">This cmdlet adds a package source for a specified package provider.</span></span>
-<span data-ttu-id="2f59e-128">Előfordulhat, hogy mindegyik PackageManagement-szolgáltató egy vagy több szoftverfrissítési forrásból, vagy tárházakban.</span><span class="sxs-lookup"><span data-stu-id="2f59e-128">Each PackageManagement provider may have one or multiple software sources, or repositories.</span></span> <span data-ttu-id="2f59e-129">A PackageManagement biztosít hozzáadása/eltávolítása/lekérdezési PowerShell-parancsmagokat a forrás.</span><span class="sxs-lookup"><span data-stu-id="2f59e-129">PackageManagement provides PowerShell cmdlets to add/remove/query the source.</span></span> <span data-ttu-id="2f59e-130">Ha például egy csomag forrása a NuGet-szolgáltató regisztrálásához:</span><span class="sxs-lookup"><span data-stu-id="2f59e-130">For example, you can register a package source for the NuGet provider:</span></span>
+<span data-ttu-id="d09fa-127">Ez a parancsmag egy csomag forrása hozzáadja a megadott csomag szolgáltató.</span><span class="sxs-lookup"><span data-stu-id="d09fa-127">This cmdlet adds a package source for a specified package provider.</span></span>
+<span data-ttu-id="d09fa-128">Előfordulhat, hogy mindegyik PackageManagement-szolgáltató egy vagy több szoftverfrissítési forrásból, vagy tárházakban.</span><span class="sxs-lookup"><span data-stu-id="d09fa-128">Each PackageManagement provider may have one or multiple software sources, or repositories.</span></span> <span data-ttu-id="d09fa-129">A PackageManagement biztosít hozzáadása/eltávolítása/lekérdezési PowerShell-parancsmagokat a forrás.</span><span class="sxs-lookup"><span data-stu-id="d09fa-129">PackageManagement provides PowerShell cmdlets to add/remove/query the source.</span></span> <span data-ttu-id="d09fa-130">Ha például egy csomag forrása a NuGet-szolgáltató regisztrálásához:</span><span class="sxs-lookup"><span data-stu-id="d09fa-130">For example, you can register a package source for the NuGet provider:</span></span>
 
 ```powershell
 Register-PackageSource -Name "NugetSource" -Location "http://www.nuget.org/api/v2" –ProviderName nuget
 ```
 
-## <a name="save-package-cmdletpowershellmodulepackagemanagementsave-package"></a>[<span data-ttu-id="2f59e-131">A parancsmag Save-csomag</span><span class="sxs-lookup"><span data-stu-id="2f59e-131">Save-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Save-Package)
+## <a name="save-package-cmdletpowershellmodulepackagemanagementsave-package"></a>[<span data-ttu-id="d09fa-131">A parancsmag Save-csomag</span><span class="sxs-lookup"><span data-stu-id="d09fa-131">Save-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Save-Package)
 
-<span data-ttu-id="2f59e-132">Ez a parancsmag csomagok menti a helyi számítógépre telepítés nélkül.</span><span class="sxs-lookup"><span data-stu-id="2f59e-132">This cmdlet saves packages to the local computer without installing them.</span></span>
+<span data-ttu-id="d09fa-132">Ez a parancsmag csomagok menti a helyi számítógépre telepítés nélkül.</span><span class="sxs-lookup"><span data-stu-id="d09fa-132">This cmdlet saves packages to the local computer without installing them.</span></span>
 
 ```powershell
 # Saves jquery package to c:\test using NuGetProvider
@@ -187,18 +187,18 @@ Find-Package -Name jquery -Source http://www.nuget.org/api/v2/ | Save-Package -P
 Find-Package -Source c:\test
 ```
 
-## <a name="set-packagesource-cmdletpowershellmodulepackagemanagementset-packagesource"></a>[<span data-ttu-id="2f59e-133">Set-PackageSource parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-133">Set-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Set-PackageSource)
+## <a name="set-packagesource-cmdletpowershellmodulepackagemanagementset-packagesource"></a>[<span data-ttu-id="d09fa-133">Set-PackageSource parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-133">Set-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Set-PackageSource)
 
-<span data-ttu-id="2f59e-134">Ez a parancsmag módosítja egy meglévő csomag forrása kapcsolatos információkat.</span><span class="sxs-lookup"><span data-stu-id="2f59e-134">This cmdlet changes information about an existing package source.</span></span>
+<span data-ttu-id="d09fa-134">Ez a parancsmag módosítja egy meglévő csomag forrása kapcsolatos információkat.</span><span class="sxs-lookup"><span data-stu-id="d09fa-134">This cmdlet changes information about an existing package source.</span></span>
 
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
 Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2
 ```
 
-## <a name="uninstall-package-cmdletpowershellmodulepackagemanagementuninstall-package"></a>[<span data-ttu-id="2f59e-135">Csomag eltávolítása parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-135">Uninstall-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Uninstall-Package)
+## <a name="uninstall-package-cmdletpowershellmodulepackagemanagementuninstall-package"></a>[<span data-ttu-id="d09fa-135">Csomag eltávolítása parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-135">Uninstall-Package Cmdlet</span></span>](/powershell/module/PackageManagement/Uninstall-Package)
 
-<span data-ttu-id="2f59e-136">Ez a parancsmag eltávolítja a helyi számítógépen telepített csomagok.</span><span class="sxs-lookup"><span data-stu-id="2f59e-136">This cmdlet uninstalls packages installed on the local computer.</span></span>
+<span data-ttu-id="d09fa-136">Ez a parancsmag eltávolítja a helyi számítógépen telepített csomagok.</span><span class="sxs-lookup"><span data-stu-id="d09fa-136">This cmdlet uninstalls packages installed on the local computer.</span></span>
 
 ```powershell
 # Uninstall jquery using nuget
@@ -208,7 +208,7 @@ Uninstall-Package -Name jquery –Provider NuGet -Destination c:\test
 Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Package
 ```
 
-## <a name="unregister-packagesource-cmdletpowershellmodulepackagemanagementunregister-packagesource"></a>[<span data-ttu-id="2f59e-137">Regisztrációját PackageSource parancsmag</span><span class="sxs-lookup"><span data-stu-id="2f59e-137">Unregister-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Unregister-PackageSource)
+## <a name="unregister-packagesource-cmdletpowershellmodulepackagemanagementunregister-packagesource"></a>[<span data-ttu-id="d09fa-137">Regisztrációját PackageSource parancsmag</span><span class="sxs-lookup"><span data-stu-id="d09fa-137">Unregister-PackageSource Cmdlet</span></span>](/powershell/module/PackageManagement/Unregister-PackageSource)
 
 ```powershell
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.

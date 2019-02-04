@@ -3,26 +3,26 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-erőforrások metódusainak közvetlen hívása
 ms.openlocfilehash: cf237f638593706e5959e2bcc0d851b0e55baf0e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404169"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685675"
 ---
-# <a name="calling-dsc-resource-methods-directly"></a><span data-ttu-id="1d429-103">DSC-erőforrások metódusainak közvetlen hívása</span><span class="sxs-lookup"><span data-stu-id="1d429-103">Calling DSC resource methods directly</span></span>
+# <a name="calling-dsc-resource-methods-directly"></a><span data-ttu-id="913f2-103">DSC-erőforrások metódusainak közvetlen hívása</span><span class="sxs-lookup"><span data-stu-id="913f2-103">Calling DSC resource methods directly</span></span>
 
-><span data-ttu-id="1d429-104">Érvényes: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="1d429-104">Applies To: Windows PowerShell 5.0</span></span>
+><span data-ttu-id="913f2-104">Érvényes: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="913f2-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="1d429-105">Használhatja a [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) parancsmag, amellyel közvetlenül hívja az a funkciók vagy DSC-erőforrás módszerek (a **Get-TargetResource**, **Set-TargetResource**, és  **Test-TargetResource** funkciók MOF-alapú erőforrás, vagy a **első**, **beállítása**, és **teszt** módszer egy adott osztály-alapú erőforrás).</span><span class="sxs-lookup"><span data-stu-id="1d429-105">You can use the [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) cmdlet to directly call the functions or methods of a DSC resource (The **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions of a MOF-based resource, or the **Get**, **Set**, and **Test** methods of a class-based resource).</span></span>
-<span data-ttu-id="1d429-106">Ez használható szeretné használni a DSC-erőforrások harmadik felek, akár egy hasznos eszköz erőforrások fejlesztése során.</span><span class="sxs-lookup"><span data-stu-id="1d429-106">This can be used by third-parties that want to use DSC resources, or as a helpful tool while developing resources.</span></span>
+<span data-ttu-id="913f2-105">Használhatja a [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) parancsmag, amellyel közvetlenül hívja az a funkciók vagy DSC-erőforrás módszerek (a **Get-TargetResource**, **Set-TargetResource**, és  **Test-TargetResource** funkciók MOF-alapú erőforrás, vagy a **első**, **beállítása**, és **teszt** módszer egy adott osztály-alapú erőforrás).</span><span class="sxs-lookup"><span data-stu-id="913f2-105">You can use the [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) cmdlet to directly call the functions or methods of a DSC resource (The **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions of a MOF-based resource, or the **Get**, **Set**, and **Test** methods of a class-based resource).</span></span>
+<span data-ttu-id="913f2-106">Ez használható szeretné használni a DSC-erőforrások harmadik felek, akár egy hasznos eszköz erőforrások fejlesztése során.</span><span class="sxs-lookup"><span data-stu-id="913f2-106">This can be used by third-parties that want to use DSC resources, or as a helpful tool while developing resources.</span></span>
 
-<span data-ttu-id="1d429-107">Ez a parancsmag jellemzően a metaconfiguration tulajdonsággal együtt `refreshMode = 'Disabled'`, függetlenül attól, hogy mi is használható, de **refreshMode** értékre van állítva.</span><span class="sxs-lookup"><span data-stu-id="1d429-107">This cmdlet is typically used in combination with a metaconfiguration property `refreshMode = 'Disabled'`, but it can be used no matter what **refreshMode** is set to.</span></span>
+<span data-ttu-id="913f2-107">Ez a parancsmag jellemzően a metaconfiguration tulajdonsággal együtt `refreshMode = 'Disabled'`, függetlenül attól, hogy mi is használható, de **refreshMode** értékre van állítva.</span><span class="sxs-lookup"><span data-stu-id="913f2-107">This cmdlet is typically used in combination with a metaconfiguration property `refreshMode = 'Disabled'`, but it can be used no matter what **refreshMode** is set to.</span></span>
 
-<span data-ttu-id="1d429-108">Hívásakor a **Invoke-DscResource** parancsmaggal, megadhatja mely metódus vagy függvény használatával a **metódus** paraméter.</span><span class="sxs-lookup"><span data-stu-id="1d429-108">When calling the **Invoke-DscResource** cmdlet, you specify which method or function to call by using the **Method** parameter.</span></span> <span data-ttu-id="1d429-109">Az erőforrás tulajdonságainak egy kivonattáblát átadásával értékeként adja meg a **tulajdonság** paraméter.</span><span class="sxs-lookup"><span data-stu-id="1d429-109">You specify the properties of the resource by passing a hashtable as the value of the **Property** parameter.</span></span>
+<span data-ttu-id="913f2-108">Hívásakor a **Invoke-DscResource** parancsmaggal, megadhatja mely metódus vagy függvény használatával a **metódus** paraméter.</span><span class="sxs-lookup"><span data-stu-id="913f2-108">When calling the **Invoke-DscResource** cmdlet, you specify which method or function to call by using the **Method** parameter.</span></span> <span data-ttu-id="913f2-109">Az erőforrás tulajdonságainak egy kivonattáblát átadásával értékeként adja meg a **tulajdonság** paraméter.</span><span class="sxs-lookup"><span data-stu-id="913f2-109">You specify the properties of the resource by passing a hashtable as the value of the **Property** parameter.</span></span>
 
-<span data-ttu-id="1d429-110">Az alábbi példák-erőforrások metódusainak közvetlen hívása:</span><span class="sxs-lookup"><span data-stu-id="1d429-110">The following are examples of directly calling resource methods:</span></span>
+<span data-ttu-id="913f2-110">Az alábbi példák-erőforrások metódusainak közvetlen hívása:</span><span class="sxs-lookup"><span data-stu-id="913f2-110">The following are examples of directly calling resource methods:</span></span>
 
-## <a name="ensure-a-file-is-present"></a><span data-ttu-id="1d429-111">Győződjön meg, hogy egy fájl jelen</span><span class="sxs-lookup"><span data-stu-id="1d429-111">Ensure a file is present</span></span>
+## <a name="ensure-a-file-is-present"></a><span data-ttu-id="913f2-111">Győződjön meg, hogy egy fájl jelen</span><span class="sxs-lookup"><span data-stu-id="913f2-111">Ensure a file is present</span></span>
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
@@ -31,7 +31,7 @@ $result = Invoke-DscResource -Name File -Method Set -Property @{
 $result | fl
 ```
 
-## <a name="test-that-a-file-is-present"></a><span data-ttu-id="1d429-112">Tesztelje, hogy egy fájl jelen</span><span class="sxs-lookup"><span data-stu-id="1d429-112">Test that a file is present</span></span>
+## <a name="test-that-a-file-is-present"></a><span data-ttu-id="913f2-112">Tesztelje, hogy egy fájl jelen</span><span class="sxs-lookup"><span data-stu-id="913f2-112">Test that a file is present</span></span>
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
@@ -40,7 +40,7 @@ $result = Invoke-DscResource -Name File -Method Test -Property @{
 $result | fl
 ```
 
-## <a name="get-the-contents-of-file"></a><span data-ttu-id="1d429-113">Fájl tartalmának beolvasása</span><span class="sxs-lookup"><span data-stu-id="1d429-113">Get the contents of file</span></span>
+## <a name="get-the-contents-of-file"></a><span data-ttu-id="913f2-113">Fájl tartalmának beolvasása</span><span class="sxs-lookup"><span data-stu-id="913f2-113">Get the contents of file</span></span>
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
@@ -49,9 +49,9 @@ $result = Invoke-DscResource -Name File -Method Get -Property @{
 $result.ItemValue | fl
 ```
 
-><span data-ttu-id="1d429-114">**Megjegyzés:** Összetett erőforrások metódusainak közvetlen hívása nem támogatott.</span><span class="sxs-lookup"><span data-stu-id="1d429-114">**Note:** Directly calling composite resource methods is not supported.</span></span> <span data-ttu-id="1d429-115">Ehelyett hívja meg a mögöttes erőforrások, az összetett erőforrás alkotó módszereket.</span><span class="sxs-lookup"><span data-stu-id="1d429-115">Instead, call the methods of the underlying resources that make up the composite resource.</span></span>
+><span data-ttu-id="913f2-114">**Megjegyzés:** Összetett erőforrások metódusainak közvetlen hívása nem támogatott.</span><span class="sxs-lookup"><span data-stu-id="913f2-114">**Note:** Directly calling composite resource methods is not supported.</span></span> <span data-ttu-id="913f2-115">Ehelyett hívja meg a mögöttes erőforrások, az összetett erőforrás alkotó módszereket.</span><span class="sxs-lookup"><span data-stu-id="913f2-115">Instead, call the methods of the underlying resources that make up the composite resource.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="1d429-116">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="1d429-116">See Also</span></span>
-- [<span data-ttu-id="1d429-117">MOF-egyéni DSC-erőforrás írása</span><span class="sxs-lookup"><span data-stu-id="1d429-117">Writing a custom DSC resource with MOF</span></span>](../resources/authoringResourceMOF.md)
-- [<span data-ttu-id="1d429-118">A PowerShell-osztályok egyéni DSC-erőforrás írása</span><span class="sxs-lookup"><span data-stu-id="1d429-118">Writing a custom DSC resource with PowerShell classes</span></span>](../resources/authoringResourceClass.md)
-- [<span data-ttu-id="1d429-119"> DSC-erőforrások hibakeresése</span><span class="sxs-lookup"><span data-stu-id="1d429-119">Debugging DSC resources</span></span>](../troubleshooting/debugResource.md)
+## <a name="see-also"></a><span data-ttu-id="913f2-116">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="913f2-116">See Also</span></span>
+- [<span data-ttu-id="913f2-117">MOF-egyéni DSC-erőforrás írása</span><span class="sxs-lookup"><span data-stu-id="913f2-117">Writing a custom DSC resource with MOF</span></span>](../resources/authoringResourceMOF.md)
+- [<span data-ttu-id="913f2-118">A PowerShell-osztályok egyéni DSC-erőforrás írása</span><span class="sxs-lookup"><span data-stu-id="913f2-118">Writing a custom DSC resource with PowerShell classes</span></span>](../resources/authoringResourceClass.md)
+- [<span data-ttu-id="913f2-119"> DSC-erőforrások hibakeresése</span><span class="sxs-lookup"><span data-stu-id="913f2-119">Debugging DSC resources</span></span>](../troubleshooting/debugResource.md)

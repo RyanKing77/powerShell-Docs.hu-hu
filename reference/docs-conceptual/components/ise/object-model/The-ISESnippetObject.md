@@ -4,45 +4,45 @@ keywords: PowerShell, a parancsmag
 title: Az ISESnippetObject
 ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
 ms.openlocfilehash: f80080f4207cf226fb7466c4842446d08c081347
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404591"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685451"
 ---
-# <a name="the-isesnippetobject"></a><span data-ttu-id="0bd56-103">Az ISESnippetObject</span><span class="sxs-lookup"><span data-stu-id="0bd56-103">The ISESnippetObject</span></span>
+# <a name="the-isesnippetobject"></a><span data-ttu-id="ef72b-103">Az ISESnippetObject</span><span class="sxs-lookup"><span data-stu-id="ef72b-103">The ISESnippetObject</span></span>
 
-<span data-ttu-id="0bd56-104">Egy **ISESnippet** objektum a Microsoft.PowerShell.Host.ISE.ISESnippet osztály egy példányát.</span><span class="sxs-lookup"><span data-stu-id="0bd56-104">An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class.</span></span> <span data-ttu-id="0bd56-105">A tagjai a **$psISE.CurrentPowerShellTab.Snippets** gyűjtemény összes példák a **ISESnippet** objektumokat.</span><span class="sxs-lookup"><span data-stu-id="0bd56-105">The members of the **$psISE.CurrentPowerShellTab.Snippets** collection are all examples of **ISESnippet** objects.</span></span> <span data-ttu-id="0bd56-106">Hozzon létre egy kódrészletet legegyszerűbb módja az, hogy használja a [New-IseSnippet&#91;PSITPro5_ISE&#93; ](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="0bd56-106">The easiest way to create a snippet is to use the [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.</span></span>
+<span data-ttu-id="ef72b-104">Egy **ISESnippet** objektum a Microsoft.PowerShell.Host.ISE.ISESnippet osztály egy példányát.</span><span class="sxs-lookup"><span data-stu-id="ef72b-104">An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class.</span></span> <span data-ttu-id="ef72b-105">A tagjai a **$psISE.CurrentPowerShellTab.Snippets** gyűjtemény összes példák a **ISESnippet** objektumokat.</span><span class="sxs-lookup"><span data-stu-id="ef72b-105">The members of the **$psISE.CurrentPowerShellTab.Snippets** collection are all examples of **ISESnippet** objects.</span></span> <span data-ttu-id="ef72b-106">Hozzon létre egy kódrészletet legegyszerűbb módja az, hogy használja a [New-IseSnippet&#91;PSITPro5_ISE&#93; ](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="ef72b-106">The easiest way to create a snippet is to use the [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.</span></span>
 
-## <a name="properties"></a><span data-ttu-id="0bd56-107">Tulajdonságok</span><span class="sxs-lookup"><span data-stu-id="0bd56-107">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="ef72b-107">Tulajdonságok</span><span class="sxs-lookup"><span data-stu-id="ef72b-107">Properties</span></span>
 
-### <a name="author"></a><span data-ttu-id="0bd56-108">Szerző</span><span class="sxs-lookup"><span data-stu-id="0bd56-108">Author</span></span>
+### <a name="author"></a><span data-ttu-id="ef72b-108">Szerző</span><span class="sxs-lookup"><span data-stu-id="ef72b-108">Author</span></span>
 
-<span data-ttu-id="0bd56-109">Támogatja a Windows PowerShell ISE-ben, 3.0-s és újabb verziók, és nem szerepel a korábbi verziók.</span><span class="sxs-lookup"><span data-stu-id="0bd56-109">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="ef72b-109">Támogatja a Windows PowerShell ISE-ben, 3.0-s és újabb verziók, és nem szerepel a korábbi verziók.</span><span class="sxs-lookup"><span data-stu-id="ef72b-109">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="0bd56-110">A csak olvasható tulajdonság, amely lekérdezi a kódrészlet szerzőjének nevét.</span><span class="sxs-lookup"><span data-stu-id="0bd56-110">The read-only property that gets the name of the author of the snippet.</span></span>
+<span data-ttu-id="ef72b-110">A csak olvasható tulajdonság, amely lekérdezi a kódrészlet szerzőjének nevét.</span><span class="sxs-lookup"><span data-stu-id="ef72b-110">The read-only property that gets the name of the author of the snippet.</span></span>
 
 ```powershell
 # Get the author of the first snippet item
 $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 ```
 
-### <a name="codefragment"></a><span data-ttu-id="0bd56-111">CodeFragment</span><span class="sxs-lookup"><span data-stu-id="0bd56-111">CodeFragment</span></span>
+### <a name="codefragment"></a><span data-ttu-id="ef72b-111">CodeFragment</span><span class="sxs-lookup"><span data-stu-id="ef72b-111">CodeFragment</span></span>
 
-<span data-ttu-id="0bd56-112">Támogatja a Windows PowerShell ISE-ben, 3.0-s és újabb verziók, és nem szerepel a korábbi verziók.</span><span class="sxs-lookup"><span data-stu-id="0bd56-112">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="ef72b-112">Támogatja a Windows PowerShell ISE-ben, 3.0-s és újabb verziók, és nem szerepel a korábbi verziók.</span><span class="sxs-lookup"><span data-stu-id="ef72b-112">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="0bd56-113">A csak olvasható tulajdonság, amely lekérdezi a kódrészletet a szerkesztő beszúrni.</span><span class="sxs-lookup"><span data-stu-id="0bd56-113">The read-only property that gets the code fragment to be inserted into the editor.</span></span>
+<span data-ttu-id="ef72b-113">A csak olvasható tulajdonság, amely lekérdezi a kódrészletet a szerkesztő beszúrni.</span><span class="sxs-lookup"><span data-stu-id="ef72b-113">The read-only property that gets the code fragment to be inserted into the editor.</span></span>
 
 ```powershell
 # Get the code fragment associated with the first snippet item.
 $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 ```
 
-### <a name="shortcut"></a><span data-ttu-id="0bd56-114">Helyi</span><span class="sxs-lookup"><span data-stu-id="0bd56-114">Shortcut</span></span>
+### <a name="shortcut"></a><span data-ttu-id="ef72b-114">Helyi</span><span class="sxs-lookup"><span data-stu-id="ef72b-114">Shortcut</span></span>
 
-<span data-ttu-id="0bd56-115">Támogatja a Windows PowerShell ISE-ben, 3.0-s és újabb verziók, és nem szerepel a korábbi verziók.</span><span class="sxs-lookup"><span data-stu-id="0bd56-115">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="ef72b-115">Támogatja a Windows PowerShell ISE-ben, 3.0-s és újabb verziók, és nem szerepel a korábbi verziók.</span><span class="sxs-lookup"><span data-stu-id="ef72b-115">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="0bd56-116">A csak olvasható tulajdonság, amely lekérdezi a Windows a menüelem billentyűparancsot.</span><span class="sxs-lookup"><span data-stu-id="0bd56-116">The read-only property that gets the Windows keyboard shortcut for the menu item.</span></span>
+<span data-ttu-id="ef72b-116">A csak olvasható tulajdonság, amely lekérdezi a Windows a menüelem billentyűparancsot.</span><span class="sxs-lookup"><span data-stu-id="ef72b-116">The read-only property that gets the Windows keyboard shortcut for the menu item.</span></span>
 
 ```powershell
 # Get the shortcut for the first submenu item.
@@ -51,8 +51,8 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-## <a name="see-also"></a><span data-ttu-id="0bd56-117">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="0bd56-117">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ef72b-117">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="ef72b-117">See Also</span></span>
 
-- [<span data-ttu-id="0bd56-118">Az ISESnippetCollection objektum</span><span class="sxs-lookup"><span data-stu-id="0bd56-118">The ISESnippetCollection Object</span></span>](The-ISESnippetCollection-Object.md)
-- [<span data-ttu-id="0bd56-119">A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja</span><span class="sxs-lookup"><span data-stu-id="0bd56-119">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
-- [<span data-ttu-id="0bd56-120">Az ISE objektummodell-hierarchiája</span><span class="sxs-lookup"><span data-stu-id="0bd56-120">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="ef72b-118">Az ISESnippetCollection objektum</span><span class="sxs-lookup"><span data-stu-id="ef72b-118">The ISESnippetCollection Object</span></span>](The-ISESnippetCollection-Object.md)
+- [<span data-ttu-id="ef72b-119">A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja</span><span class="sxs-lookup"><span data-stu-id="ef72b-119">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
+- [<span data-ttu-id="ef72b-120">Az ISE objektummodell-hierarchiája</span><span class="sxs-lookup"><span data-stu-id="ef72b-120">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)

@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 3f73b7cf0cdf033cbd561b3412734692bb7decd7
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 28f4f8ae2bbddc8fb5ef9d95d3061a91fcc8ffe2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187536"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687362"
 ---
-# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a><span data-ttu-id="3661a-102">Lehetővé teszi a konfigurációban azonos ismétlődő erőforrások</span><span class="sxs-lookup"><span data-stu-id="3661a-102">Allowing for Identical Duplicate Resources in a Configuration</span></span>
+# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a><span data-ttu-id="e1c6c-102">Azonos ismétlődő erőforrások engedélyezése</span><span class="sxs-lookup"><span data-stu-id="e1c6c-102">Allowing for Identical Duplicate Resources in a Configuration</span></span>
 
-<span data-ttu-id="3661a-103">A DSC engedélyezése vagy nem ütköző erőforrás-definíciókban belül a konfiguráció kezelésére.</span><span class="sxs-lookup"><span data-stu-id="3661a-103">DSC does not allow or handle conflicting resource definitions within a configuration.</span></span> <span data-ttu-id="3661a-104">Helyett megpróbálja feloldani az ütközést, egyszerűen meghiúsul.</span><span class="sxs-lookup"><span data-stu-id="3661a-104">Instead of trying to resolve the conflict, it simply fails.</span></span> <span data-ttu-id="3661a-105">A konfiguráció újbóli több összetett erőforrások révén válik funkcióját, stb. fogja akkor történik ütközés, gyakrabban.</span><span class="sxs-lookup"><span data-stu-id="3661a-105">As configuration reuse becomes more utilized through composite resources, etc. conflicts will occur more often.</span></span> <span data-ttu-id="3661a-106">Amikor ütköző erőforrás-definíciókban azonosak, DSC intelligens legyen, és hogy ez.</span><span class="sxs-lookup"><span data-stu-id="3661a-106">When conflicting resource definitions are identical, DSC should be smart and allow this.</span></span> <span data-ttu-id="3661a-107">Ebben a kiadásban támogatjuk, hogy több erőforrás példánya azonos definíciókkal rendelkeznek:</span><span class="sxs-lookup"><span data-stu-id="3661a-107">With this release, we support having multiple resource instances that have identical definitions:</span></span>
+<span data-ttu-id="e1c6c-103">Nem engedélyezi a DSC, vagy ütköző erőforrás-definíciókban belül a konfiguráció kezelésére.</span><span class="sxs-lookup"><span data-stu-id="e1c6c-103">DSC does not allow or handle conflicting resource definitions within a configuration.</span></span> <span data-ttu-id="e1c6c-104">Az ütközés feloldása helyett egyszerűen meghiúsul.</span><span class="sxs-lookup"><span data-stu-id="e1c6c-104">Instead of trying to resolve the conflict, it simply fails.</span></span> <span data-ttu-id="e1c6c-105">Konfiguráció újbóli több összetett erőforrások révén válik fel, mert ütközés stb. fogja gyakrabban fordulnak elő.</span><span class="sxs-lookup"><span data-stu-id="e1c6c-105">As configuration reuse becomes more utilized through composite resources, etc. conflicts will occur more often.</span></span> <span data-ttu-id="e1c6c-106">Amikor az ütköző erőforrás-definíciókban azonosak, DSC legyen intelligens és ez lehetővé teszi.</span><span class="sxs-lookup"><span data-stu-id="e1c6c-106">When conflicting resource definitions are identical, DSC should be smart and allow this.</span></span> <span data-ttu-id="e1c6c-107">Ebben a kiadásban támogatott több, azonos definíciókkal rendelkező erőforrás példánnyal rendelkező:</span><span class="sxs-lookup"><span data-stu-id="e1c6c-107">With this release, we support having multiple resource instances that have identical definitions:</span></span>
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -51,9 +51,9 @@ Configuration WebApplication
 }
 ```
 
-<span data-ttu-id="3661a-108">A korábbi kiadásokban az eredmény lenne egy WindowsFeature FE_IIS és annak biztosítása érdekében a webalkalmazás-Server szerepkört próbált WindowsFeature Worker_IIS példányok közötti ütközés miatt sikertelen fordítás telepítve van.</span><span class="sxs-lookup"><span data-stu-id="3661a-108">In previous releases, the result would be a failed compilation due to a conflict between the WindowsFeature FE_IIS and WindowsFeature Worker_IIS instances trying to ensure the 'Web-Server' role is installed.</span></span> <span data-ttu-id="3661a-109">Figyelje meg, hogy *összes* az éppen konfigurált tulajdonságok megegyeznek a két konfigurációban.</span><span class="sxs-lookup"><span data-stu-id="3661a-109">Notice that *all* of the properties that are being configured are identical in these two configurations.</span></span> <span data-ttu-id="3661a-110">Mivel *összes* Ez a két tulajdonságokat erőforrások azonosak, ez most a sikeres fordítás eredményez.</span><span class="sxs-lookup"><span data-stu-id="3661a-110">Since *all* of the properties in these two resources are identical, this will result in a successful compilation now.</span></span>
+<span data-ttu-id="e1c6c-108">A korábbi kiadásokban az eredmény lehet a WindowsFeature FE_IIS és annak biztosítása érdekében a webalkalmazás-kiszolgáló szerepkört próbált WindowsFeature Worker_IIS példányok közötti ütközés miatt nem sikerült rendszerezve van telepítve.</span><span class="sxs-lookup"><span data-stu-id="e1c6c-108">In previous releases, the result would be a failed compilation due to a conflict between the WindowsFeature FE_IIS and WindowsFeature Worker_IIS instances trying to ensure the 'Web-Server' role is installed.</span></span> <span data-ttu-id="e1c6c-109">Figyelje meg, hogy *összes* a folyamatban konfigurált tulajdonságok megegyeznek az alábbi két konfigurációk.</span><span class="sxs-lookup"><span data-stu-id="e1c6c-109">Notice that *all* of the properties that are being configured are identical in these two configurations.</span></span> <span data-ttu-id="e1c6c-110">Mivel *összes* Ez a két tulajdonság azonos erőforrásokat, emiatt most a sikeres fordítás.</span><span class="sxs-lookup"><span data-stu-id="e1c6c-110">Since *all* of the properties in these two resources are identical, this will result in a successful compilation now.</span></span>
 
-<span data-ttu-id="3661a-111">Tulajdonságok különböznek a két erőforrásnak, ha azok nem veszik figyelembe azonos, és a fordítás sikertelen lesz:</span><span class="sxs-lookup"><span data-stu-id="3661a-111">If any of the properties are different between the two resources, they will not be considered identical and compilation will fail:</span></span>
+<span data-ttu-id="e1c6c-111">Ha bármely tulajdonsága eltérő a két erőforrás között, nem minősülnek azonos, és a fordítás sikertelen lesz:</span><span class="sxs-lookup"><span data-stu-id="e1c6c-111">If any of the properties are different between the two resources, they will not be considered identical and compilation will fail:</span></span>
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -94,4 +94,4 @@ Configuration WebApplication
 }
 ```
 
-<span data-ttu-id="3661a-112">Ez a nagyon hasonló konfiguráció sikertelen lesz, mert a WindowsFeature FE_IIS és WindowsFeature Worker_IIS erőforrás már nem azonosak, és ezért ütközés lép fel.</span><span class="sxs-lookup"><span data-stu-id="3661a-112">This very similar configuration will fail because the WindowsFeature FE_IIS and the WindowsFeature Worker_IIS resources are no longer identical and therefore conflict.</span></span>
+<span data-ttu-id="e1c6c-112">Ez nagyon hasonló konfigurálása sikertelen lesz, mert a WindowsFeature FE_IIS és a WindowsFeature Worker_IIS erőforrások nem lesznek azonos, és ezért ütköznek.</span><span class="sxs-lookup"><span data-stu-id="e1c6c-112">This very similar configuration will fail because the WindowsFeature FE_IIS and the WindowsFeature Worker_IIS resources are no longer identical and therefore conflict.</span></span>

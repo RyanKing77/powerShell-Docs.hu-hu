@@ -4,20 +4,20 @@ keywords: PowerShell, a parancsmag
 title: Objektumok rendezése
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
 ms.openlocfilehash: 06aa15d89888f1ecbe60b8e1dfb4efebb1d73673
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404154"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685885"
 ---
-# <a name="sorting-objects"></a><span data-ttu-id="401ee-103">Objektumok rendezése</span><span class="sxs-lookup"><span data-stu-id="401ee-103">Sorting Objects</span></span>
+# <a name="sorting-objects"></a><span data-ttu-id="7b054-103">Objektumok rendezése</span><span class="sxs-lookup"><span data-stu-id="7b054-103">Sorting Objects</span></span>
 
-<span data-ttu-id="401ee-104">A megjelenített adatok könnyebb vizsgálata használatával azt is rendszerezheti a `Sort-Object` parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="401ee-104">We can organize displayed data to make it easier to scan by using the `Sort-Object` cmdlet.</span></span> <span data-ttu-id="401ee-105">`Sort-Object` egy vagy több tulajdonságának rendezendő nevét veszi fel, és ezek a tulajdonságok értékei szerint rendezett adatok visszaadása.</span><span class="sxs-lookup"><span data-stu-id="401ee-105">`Sort-Object` takes the name of one or more properties to sort on, and returns data sorted by the values of those properties.</span></span>
+<span data-ttu-id="7b054-104">A megjelenített adatok könnyebb vizsgálata használatával azt is rendszerezheti a `Sort-Object` parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="7b054-104">We can organize displayed data to make it easier to scan by using the `Sort-Object` cmdlet.</span></span> <span data-ttu-id="7b054-105">`Sort-Object` egy vagy több tulajdonságának rendezendő nevét veszi fel, és ezek a tulajdonságok értékei szerint rendezett adatok visszaadása.</span><span class="sxs-lookup"><span data-stu-id="7b054-105">`Sort-Object` takes the name of one or more properties to sort on, and returns data sorted by the values of those properties.</span></span>
 
-## <a name="basic-sorting"></a><span data-ttu-id="401ee-106">Alapszintű rendezése</span><span class="sxs-lookup"><span data-stu-id="401ee-106">Basic sorting</span></span>
+## <a name="basic-sorting"></a><span data-ttu-id="7b054-106">Alapszintű rendezése</span><span class="sxs-lookup"><span data-stu-id="7b054-106">Basic sorting</span></span>
 
-<span data-ttu-id="401ee-107">Fontolja meg a probléma az aktuális könyvtárban található fájlokat és alkönyvtárakat listázása.</span><span class="sxs-lookup"><span data-stu-id="401ee-107">Consider the problem of listing subdirectories and files in the current directory.</span></span>
-<span data-ttu-id="401ee-108">Amely szerint rendezni szeretnénk **LastWriteTime** , majd az **neve**, beírásával is tesszük azt:</span><span class="sxs-lookup"><span data-stu-id="401ee-108">If we want to sort by **LastWriteTime** and then by **Name**, we can do it by typing:</span></span>
+<span data-ttu-id="7b054-107">Fontolja meg a probléma az aktuális könyvtárban található fájlokat és alkönyvtárakat listázása.</span><span class="sxs-lookup"><span data-stu-id="7b054-107">Consider the problem of listing subdirectories and files in the current directory.</span></span>
+<span data-ttu-id="7b054-108">Amely szerint rendezni szeretnénk **LastWriteTime** , majd az **neve**, beírásával is tesszük azt:</span><span class="sxs-lookup"><span data-stu-id="7b054-108">If we want to sort by **LastWriteTime** and then by **Name**, we can do it by typing:</span></span>
 
 ```powershell
 Get-ChildItem |
@@ -40,7 +40,7 @@ LastWriteTime          Name
 ...
 ```
 
-<span data-ttu-id="401ee-109">Is rendezheti az objektumok fordított sorrendben adja meg a **Descending** paraméter váltani.</span><span class="sxs-lookup"><span data-stu-id="401ee-109">You can also sort the objects in reverse order by specifying the **Descending** switch parameter.</span></span>
+<span data-ttu-id="7b054-109">Is rendezheti az objektumok fordított sorrendben adja meg a **Descending** paraméter váltani.</span><span class="sxs-lookup"><span data-stu-id="7b054-109">You can also sort the objects in reverse order by specifying the **Descending** switch parameter.</span></span>
 
 ```powershell
 Get-ChildItem |
@@ -65,14 +65,14 @@ LastWriteTime          Name
 11/6/2017 10:10:11 AM  .localization-config
 ```
 
-## <a name="using-hash-tables"></a><span data-ttu-id="401ee-110">Jelszókivonat-táblák használata</span><span class="sxs-lookup"><span data-stu-id="401ee-110">Using hash tables</span></span>
+## <a name="using-hash-tables"></a><span data-ttu-id="7b054-110">Jelszókivonat-táblák használata</span><span class="sxs-lookup"><span data-stu-id="7b054-110">Using hash tables</span></span>
 
-<span data-ttu-id="401ee-111">Eltérőek a különböző tulajdonságok tömbben kivonattáblák használatával lehet rendezni.</span><span class="sxs-lookup"><span data-stu-id="401ee-111">You can sort different properties in different orders by using hash tables in an array.</span></span>
-<span data-ttu-id="401ee-112">Minden egyes kivonattábla használ egy **kifejezés** kulcsot karakterláncként adja meg a tulajdonság nevét és a egy **növekvő** vagy **Descending** kulcsot adja meg a rendezési sorrend szerint `$true` vagy `$false`.</span><span class="sxs-lookup"><span data-stu-id="401ee-112">Each hash table uses an **Expression** key to specify the property name as string and an **Ascending** or **Descending** key to specify the sort order by `$true` or `$false`.</span></span>
-<span data-ttu-id="401ee-113">A **kifejezés** kulcs megadása kötelező.</span><span class="sxs-lookup"><span data-stu-id="401ee-113">The **Expression** key is mandatory.</span></span>
-<span data-ttu-id="401ee-114">A **növekvő** vagy **Descending** kulcsot nem kötelező megadni.</span><span class="sxs-lookup"><span data-stu-id="401ee-114">The **Ascending** or **Descending** key is optional.</span></span>
+<span data-ttu-id="7b054-111">Eltérőek a különböző tulajdonságok tömbben kivonattáblák használatával lehet rendezni.</span><span class="sxs-lookup"><span data-stu-id="7b054-111">You can sort different properties in different orders by using hash tables in an array.</span></span>
+<span data-ttu-id="7b054-112">Minden egyes kivonattábla használ egy **kifejezés** kulcsot karakterláncként adja meg a tulajdonság nevét és a egy **növekvő** vagy **Descending** kulcsot adja meg a rendezési sorrend szerint `$true` vagy `$false`.</span><span class="sxs-lookup"><span data-stu-id="7b054-112">Each hash table uses an **Expression** key to specify the property name as string and an **Ascending** or **Descending** key to specify the sort order by `$true` or `$false`.</span></span>
+<span data-ttu-id="7b054-113">A **kifejezés** kulcs megadása kötelező.</span><span class="sxs-lookup"><span data-stu-id="7b054-113">The **Expression** key is mandatory.</span></span>
+<span data-ttu-id="7b054-114">A **növekvő** vagy **Descending** kulcsot nem kötelező megadni.</span><span class="sxs-lookup"><span data-stu-id="7b054-114">The **Ascending** or **Descending** key is optional.</span></span>
 
-<span data-ttu-id="401ee-115">Az alábbi példa rendezése csökkenő objektumok **LastWriteTime** sorrendjét és növekvő **neve** sorrendben.</span><span class="sxs-lookup"><span data-stu-id="401ee-115">The following example sorts objects in descending **LastWriteTime** order and ascending **Name** order.</span></span>
+<span data-ttu-id="7b054-115">Az alábbi példa rendezése csökkenő objektumok **LastWriteTime** sorrendjét és növekvő **neve** sorrendben.</span><span class="sxs-lookup"><span data-stu-id="7b054-115">The following example sorts objects in descending **LastWriteTime** order and ascending **Name** order.</span></span>
 
 ```powershell
 Get-ChildItem |
@@ -92,10 +92,10 @@ LastWriteTime          Name
 ...
 ```
 
-<span data-ttu-id="401ee-116">És a scriptblock kulcsszót is megadható a **kifejezés** kulcsot.</span><span class="sxs-lookup"><span data-stu-id="401ee-116">You can also set a scriptblock to the **Expression** key.</span></span>
-<span data-ttu-id="401ee-117">Ha fut a `Sort-Object` parancsmag hajtja végre a scriptblock kulcsszót, és az eredmények rendezéséhez használandó.</span><span class="sxs-lookup"><span data-stu-id="401ee-117">When running the `Sort-Object` cmdlet, the scriptblock is executed and the result is used for sorting.</span></span>
+<span data-ttu-id="7b054-116">És a scriptblock kulcsszót is megadható a **kifejezés** kulcsot.</span><span class="sxs-lookup"><span data-stu-id="7b054-116">You can also set a scriptblock to the **Expression** key.</span></span>
+<span data-ttu-id="7b054-117">Ha fut a `Sort-Object` parancsmag hajtja végre a scriptblock kulcsszót, és az eredmények rendezéséhez használandó.</span><span class="sxs-lookup"><span data-stu-id="7b054-117">When running the `Sort-Object` cmdlet, the scriptblock is executed and the result is used for sorting.</span></span>
 
-<span data-ttu-id="401ee-118">Az alábbi példa az objektumokat a időtartama szerint csökkenő sorrendben rendezi **CreationTime** és **LastWriteTime**.</span><span class="sxs-lookup"><span data-stu-id="401ee-118">The following example sorts objects in descending order by the time span between **CreationTime** and **LastWriteTime**.</span></span>
+<span data-ttu-id="7b054-118">Az alábbi példa az objektumokat a időtartama szerint csökkenő sorrendben rendezi **CreationTime** és **LastWriteTime**.</span><span class="sxs-lookup"><span data-stu-id="7b054-118">The following example sorts objects in descending order by the time span between **CreationTime** and **LastWriteTime**.</span></span>
 
 ```powershell
 Get-ChildItem |
@@ -117,29 +117,29 @@ LastWriteTime          CreationTime
 ...
 ```
 
-## <a name="tips"></a><span data-ttu-id="401ee-119">Tipp</span><span class="sxs-lookup"><span data-stu-id="401ee-119">Tips</span></span>
+## <a name="tips"></a><span data-ttu-id="7b054-119">Tipp</span><span class="sxs-lookup"><span data-stu-id="7b054-119">Tips</span></span>
 
-<span data-ttu-id="401ee-120">Kihagyhatja a **tulajdonság** paraméter neve megegyezik a következőket:</span><span class="sxs-lookup"><span data-stu-id="401ee-120">You can omit the **Property** parameter name as following:</span></span>
+<span data-ttu-id="7b054-120">Kihagyhatja a **tulajdonság** paraméter neve megegyezik a következőket:</span><span class="sxs-lookup"><span data-stu-id="7b054-120">You can omit the **Property** parameter name as following:</span></span>
 
 ```powershell
 Sort-Object LastWriteTime, Name
 ```
 
-<span data-ttu-id="401ee-121">Emellett olvassa el `Sort-Object` által a beépített alias `sort`:</span><span class="sxs-lookup"><span data-stu-id="401ee-121">Besides, you can refer to `Sort-Object` by its built-in alias, `sort`:</span></span>
+<span data-ttu-id="7b054-121">Emellett olvassa el `Sort-Object` által a beépített alias `sort`:</span><span class="sxs-lookup"><span data-stu-id="7b054-121">Besides, you can refer to `Sort-Object` by its built-in alias, `sort`:</span></span>
 
 ```powershell
 sort LastWriteTime, Name
 ```
 
-<span data-ttu-id="401ee-122">A rendezési kivonattáblák kulcsainak rövidíthető a következő:</span><span class="sxs-lookup"><span data-stu-id="401ee-122">The keys in the hash tables for sorting can be abbreviated as following:</span></span>
+<span data-ttu-id="7b054-122">A rendezési kivonattáblák kulcsainak rövidíthető a következő:</span><span class="sxs-lookup"><span data-stu-id="7b054-122">The keys in the hash tables for sorting can be abbreviated as following:</span></span>
 
 ```powershell
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-<span data-ttu-id="401ee-123">Ebben a példában a **e** rövidítése **kifejezés**, a **d** rövidítése **Descending**, és a **egy** a rövidítése **növekvő**.</span><span class="sxs-lookup"><span data-stu-id="401ee-123">In this example, the **e** stands for **Expression**, the **d** stands for **Descending**, and the **a** stands for **Ascending**.</span></span>
+<span data-ttu-id="7b054-123">Ebben a példában a **e** rövidítése **kifejezés**, a **d** rövidítése **Descending**, és a **egy** a rövidítése **növekvő**.</span><span class="sxs-lookup"><span data-stu-id="7b054-123">In this example, the **e** stands for **Expression**, the **d** stands for **Descending**, and the **a** stands for **Ascending**.</span></span>
 
-<span data-ttu-id="401ee-124">A jobb olvashatóság érdekében helyezze el a kivonattáblák egy külön változóba:</span><span class="sxs-lookup"><span data-stu-id="401ee-124">To improve readability, you can place the hash tables into a separate variable:</span></span>
+<span data-ttu-id="7b054-124">A jobb olvashatóság érdekében helyezze el a kivonattáblák egy külön változóba:</span><span class="sxs-lookup"><span data-stu-id="7b054-124">To improve readability, you can place the hash tables into a separate variable:</span></span>
 
 ```powershell
 $order = @(

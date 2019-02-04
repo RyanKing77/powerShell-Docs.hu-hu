@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 9a9bdac652512640209c20e3deb20d7abc0142c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5ac9566979e1b761249f5cc7c62ed44047a2b9f6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219531"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685234"
 ---
-# <a name="register-a-powershell-repository"></a><span data-ttu-id="3ea9e-102">PowerShell-tárház regisztrálása</span><span class="sxs-lookup"><span data-stu-id="3ea9e-102">Register a PowerShell Repository</span></span>
-<span data-ttu-id="3ea9e-103">Beállíthatja, hogy PowerShellGet belső adattárak ellen.</span><span class="sxs-lookup"><span data-stu-id="3ea9e-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="3ea9e-104">Ehhez használja az alábbi kiegészítésekkel:</span><span class="sxs-lookup"><span data-stu-id="3ea9e-104">This is done by using the following additions:</span></span>
-- <span data-ttu-id="3ea9e-105">Register-PSRepository: A tárházat az aktuális felhasználó regisztrálja.</span><span class="sxs-lookup"><span data-stu-id="3ea9e-105">Register-PSRepository: Registers a repository for the current user.</span></span>
-- <span data-ttu-id="3ea9e-106">Unregister-PSRepository: Eltávolítja az aktuális felhasználó számára regisztrált tára.</span><span class="sxs-lookup"><span data-stu-id="3ea9e-106">Unregister-PSRepository: Removes a registered repository for the current user.</span></span>
-- <span data-ttu-id="3ea9e-107">Set-PSRepository: A regisztrált tárház értékeinek beállításához.</span><span class="sxs-lookup"><span data-stu-id="3ea9e-107">Set-PSRepository: Set values for a registered repository.</span></span>
-- <span data-ttu-id="3ea9e-108">Get-PSRepository: Az aktuális felhasználó számára regisztrált összes tárházak beolvasása.</span><span class="sxs-lookup"><span data-stu-id="3ea9e-108">Get-PSRepository: Get all registered repositories for the current user.</span></span>
+# <a name="register-a-powershell-repository"></a><span data-ttu-id="64eb6-102">PowerShell-tárház regisztrálása</span><span class="sxs-lookup"><span data-stu-id="64eb6-102">Register a PowerShell Repository</span></span>
+<span data-ttu-id="64eb6-103">Konfigurálhatja a PowerShellGet belső tárházak ellen.</span><span class="sxs-lookup"><span data-stu-id="64eb6-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="64eb6-104">Ehhez használja az alábbi kiegészítésekkel:</span><span class="sxs-lookup"><span data-stu-id="64eb6-104">This is done by using the following additions:</span></span>
+- <span data-ttu-id="64eb6-105">Register-PSRepository: Egy adattár, az aktuális felhasználó regisztrálja.</span><span class="sxs-lookup"><span data-stu-id="64eb6-105">Register-PSRepository: Registers a repository for the current user.</span></span>
+- <span data-ttu-id="64eb6-106">Unregister-PSRepository: Eltávolít egy regisztrált tárház az aktuális felhasználó.</span><span class="sxs-lookup"><span data-stu-id="64eb6-106">Unregister-PSRepository: Removes a registered repository for the current user.</span></span>
+- <span data-ttu-id="64eb6-107">Set-PSRepository: Regisztrált tárház értékeinek beállítása.</span><span class="sxs-lookup"><span data-stu-id="64eb6-107">Set-PSRepository: Set values for a registered repository.</span></span>
+- <span data-ttu-id="64eb6-108">Get-PSRepository: Az aktuális felhasználó regisztrált összes tárházak beolvasása.</span><span class="sxs-lookup"><span data-stu-id="64eb6-108">Get-PSRepository: Get all registered repositories for the current user.</span></span>
 
-<span data-ttu-id="3ea9e-109">A tárház regisztrálása után keresés- és telepítési-modul segítségével használható.</span><span class="sxs-lookup"><span data-stu-id="3ea9e-109">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
+<span data-ttu-id="64eb6-109">Egy tárház regisztrálása után Find-Module és az Install-Module segítségével dolgozhat vele.</span><span class="sxs-lookup"><span data-stu-id="64eb6-109">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
 
 ```powershell
 \#Register a default repository

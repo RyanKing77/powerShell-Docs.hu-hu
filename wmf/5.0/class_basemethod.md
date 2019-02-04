@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: d7aec1a2ba8964e877ddd7406609fe135b1eb462
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 0e79127faf3f9bf6fe7d525db5bb946daf3b93e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219742"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687635"
 ---
-# <a name="call-base-class-method"></a><span data-ttu-id="c2ffa-102">Alaposztály metódusának hívása</span><span class="sxs-lookup"><span data-stu-id="c2ffa-102">Call Base Class Method</span></span>
+# <a name="call-base-class-method"></a><span data-ttu-id="4b291-102">Alaposztály metódusának hívása</span><span class="sxs-lookup"><span data-stu-id="4b291-102">Call Base Class Method</span></span>
 
-<span data-ttu-id="c2ffa-103">Ha szeretné felülbírálni az alosztályok módszerek.</span><span class="sxs-lookup"><span data-stu-id="c2ffa-103">You can override existing methods in subclasses.</span></span> <span data-ttu-id="c2ffa-104">Ehhez deklarálható módszerek használatával, az azonos névvel és aláírással:</span><span class="sxs-lookup"><span data-stu-id="c2ffa-104">To do this, declare methods by using the same name and signature:</span></span>
+<span data-ttu-id="4b291-103">A meglévő módszerek az alosztályok felül lehet bírálni.</span><span class="sxs-lookup"><span data-stu-id="4b291-103">You can override existing methods in subclasses.</span></span> <span data-ttu-id="4b291-104">Ehhez deklarálja a módszerek ilyen névvel és aláírás használatával:</span><span class="sxs-lookup"><span data-stu-id="4b291-104">To do this, declare methods by using the same name and signature:</span></span>
 
 ```powershell
 class baseClass
@@ -26,7 +26,7 @@ class childClass1 : baseClass
 [childClass1]::new().foo() # return 200600
 ```
 
-<span data-ttu-id="c2ffa-105">Alaposztály metódusok hívására a felülbírált implementációiból, típusúvá az alaposztály ([baseClass] $Ez) a meghívási:</span><span class="sxs-lookup"><span data-stu-id="c2ffa-105">To call base class methods from overridden implementations, cast to the base class ([baseClass]$this) on invocation:</span></span>
+<span data-ttu-id="4b291-105">Alaposztály módszerek meghívhatnak felülbírált megvalósításokhoz, konvertálni az alaposztály ([baseClass] $Ez) a meghívási:</span><span class="sxs-lookup"><span data-stu-id="4b291-105">To call base class methods from overridden implementations, cast to the base class ([baseClass]$this) on invocation:</span></span>
 
 ```powershell
 class childClass2 : baseClass
@@ -40,7 +40,7 @@ class childClass2 : baseClass
 [childClass2]::new().foo() # return 301500
 ```
 
-<span data-ttu-id="c2ffa-106">Az összes PowerShell módszereket virtuális.</span><span class="sxs-lookup"><span data-stu-id="c2ffa-106">All PowerShell methods are virtual.</span></span> <span data-ttu-id="c2ffa-107">Ugyanaz a szintaxis használatával, mint egy felülbírálás elrejthetők alosztály nem virtuális .NET-metódusokat: csak az azonos névvel és aláírással rendelkező metódusok deklarálható.</span><span class="sxs-lookup"><span data-stu-id="c2ffa-107">You can hide non-virtual .NET methods in a subclass by using the same syntax as you do for an override: just declare methods with same name and signature.</span></span>
+<span data-ttu-id="4b291-106">Az összes PowerShell-módszer olyan virtuális.</span><span class="sxs-lookup"><span data-stu-id="4b291-106">All PowerShell methods are virtual.</span></span> <span data-ttu-id="4b291-107">Ugyanazt a szintaxist is felülbírálás használatával elrejtheti alosztályát nem virtuális .NET-metódusokat: csak az azonos nevű és aláírás módszerek deklarálható.</span><span class="sxs-lookup"><span data-stu-id="4b291-107">You can hide non-virtual .NET methods in a subclass by using the same syntax as you do for an override: just declare methods with same name and signature.</span></span>
 
 ```powershell
 class MyIntList : system.collections.generic.list[int]

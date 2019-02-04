@@ -2,41 +2,41 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A PowerShell-osztályok egyéni DSC-erőforrás írása
-ms.openlocfilehash: 0759685b04688f574d72b62a15833832ad19e816
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404336"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688314"
 ---
-# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a><span data-ttu-id="cd3b7-103">A PowerShell-osztályok egyéni DSC-erőforrás írása</span><span class="sxs-lookup"><span data-stu-id="cd3b7-103">Writing a custom DSC resource with PowerShell classes</span></span>
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a><span data-ttu-id="8ae7f-103">A PowerShell-osztályok egyéni DSC-erőforrás írása</span><span class="sxs-lookup"><span data-stu-id="8ae7f-103">Writing a custom DSC resource with PowerShell classes</span></span>
 
-> <span data-ttu-id="cd3b7-104">Érvényes: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="cd3b7-104">Applies To: Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="8ae7f-104">Érvényes: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="8ae7f-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="cd3b7-105">PowerShell-osztályok a Windows PowerShell 5.0 bevezetésével most már megadhatja a DSC-erőforrás osztály létrehozásával.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-105">With the introduction of PowerShell classes in Windows PowerShell 5.0, you can now define a DSC resource by creating a class.</span></span> <span data-ttu-id="cd3b7-106">Az osztály a séma- és az erőforrás végrehajtásának határozza meg, így nem kell külön MOF-fájl létrehozásához.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-106">The class defines both the schema and the implementation of the resource, so there is no need to create a separate MOF file.</span></span> <span data-ttu-id="cd3b7-107">A gyökérmappa-szerkezetében osztályalapú erőforrás egyben egyszerűbb, mivel egy **DSCResources** mappa már nem szükséges.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-107">The folder structure for a class-based resource is also simpler, because a **DSCResources** folder is not necessary.</span></span>
+<span data-ttu-id="8ae7f-105">PowerShell-osztályok a Windows PowerShell 5.0 bevezetésével most már megadhatja a DSC-erőforrás osztály létrehozásával.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-105">With the introduction of PowerShell classes in Windows PowerShell 5.0, you can now define a DSC resource by creating a class.</span></span> <span data-ttu-id="8ae7f-106">Az osztály a séma- és az erőforrás végrehajtásának határozza meg, így nem kell külön MOF-fájl létrehozásához.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-106">The class defines both the schema and the implementation of the resource, so there is no need to create a separate MOF file.</span></span> <span data-ttu-id="8ae7f-107">A gyökérmappa-szerkezetében osztályalapú erőforrás egyben egyszerűbb, mivel egy **DSCResources** mappa már nem szükséges.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-107">The folder structure for a class-based resource is also simpler, because a **DSCResources** folder is not necessary.</span></span>
 
-<span data-ttu-id="cd3b7-108">Osztályalapú DSC erőforrás a séma számít, ha az osztály, amely attribútumait megadhatja a tulajdonság módosítható tulajdonságai...</span><span class="sxs-lookup"><span data-stu-id="cd3b7-108">In a class-based DSC resource, the schema is defined as properties of the class which can be modified with attributes to specify the property type..</span></span> <span data-ttu-id="cd3b7-109">Az erőforrás valósít meg **Get()**, **Set()**, és **Test()** metódusok (egyenértékű a **Get-TargetResource**, **Set-TargetResource**, és **Test-TargetResource** függvények a parancsfájl erőforrást.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-109">The resource is implemented by **Get()**, **Set()**, and **Test()** methods (equivalent to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
+<span data-ttu-id="8ae7f-108">Osztályalapú DSC erőforrás a séma számít, ha az osztály, amely attribútumait megadhatja a tulajdonság módosítható tulajdonságai...</span><span class="sxs-lookup"><span data-stu-id="8ae7f-108">In a class-based DSC resource, the schema is defined as properties of the class which can be modified with attributes to specify the property type..</span></span> <span data-ttu-id="8ae7f-109">Az erőforrás valósít meg **Get()**, **Set()**, és **Test()** metódusok (egyenértékű a **Get-TargetResource**, **Set-TargetResource**, és **Test-TargetResource** függvények a parancsfájl erőforrást.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-109">The resource is implemented by **Get()**, **Set()**, and **Test()** methods (equivalent to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
 
-<span data-ttu-id="cd3b7-110">Ebben a témakörben egy egyszerű erőforrás nevű hozunk létre **FileResource** , amely kezeli a megadott elérési út egy fájlt.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-110">In this topic, we will create a simple resource named **FileResource** that manages a file in a specified path.</span></span>
+<span data-ttu-id="8ae7f-110">Ebben a témakörben egy egyszerű erőforrás nevű hozunk létre **FileResource** , amely kezeli a megadott elérési út egy fájlt.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-110">In this topic, we will create a simple resource named **FileResource** that manages a file in a specified path.</span></span>
 
-<span data-ttu-id="cd3b7-111">DSC-erőforrások kapcsolatos további információkért lásd: [hozhat létre egyéni Windows PowerShell Desired State Configuration erőforrások](authoringResource.md)</span><span class="sxs-lookup"><span data-stu-id="cd3b7-111">For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)</span></span>
+<span data-ttu-id="8ae7f-111">DSC-erőforrások kapcsolatos további információkért lásd: [hozhat létre egyéni Windows PowerShell Desired State Configuration erőforrások](authoringResource.md)</span><span class="sxs-lookup"><span data-stu-id="8ae7f-111">For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)</span></span>
 
-><span data-ttu-id="cd3b7-112">**Megjegyzés:** Általános gyűjtemények nem támogatottak az osztály-alapú erőforrások.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-112">**Note:** Generic collections are not supported in class-based resources.</span></span>
+><span data-ttu-id="8ae7f-112">**Megjegyzés:** Általános gyűjtemények nem támogatottak az osztály-alapú erőforrások.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-112">**Note:** Generic collections are not supported in class-based resources.</span></span>
 
-## <a name="folder-structure-for-a-class-resource"></a><span data-ttu-id="cd3b7-113">A mappastruktúra osztály erőforrás</span><span class="sxs-lookup"><span data-stu-id="cd3b7-113">Folder structure for a class resource</span></span>
+## <a name="folder-structure-for-a-class-resource"></a><span data-ttu-id="8ae7f-113">A mappastruktúra osztály erőforrás</span><span class="sxs-lookup"><span data-stu-id="8ae7f-113">Folder structure for a class resource</span></span>
 
-<span data-ttu-id="cd3b7-114">Egy olyan PowerShell osztállyal DSC egyéni erőforrás implementálásához hozzon létre a következő mappaszerkezetet.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-114">To implement a DSC custom resource with a PowerShell class, create the following folder structure.</span></span> <span data-ttu-id="cd3b7-115">Az osztály definiálva van **MyDscResource.psm1** , és a moduljegyzékben meghatározva **MyDscResource.psd1**.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-115">The class is defined in **MyDscResource.psm1** and the module manifest is defined in **MyDscResource.psd1**.</span></span>
+<span data-ttu-id="8ae7f-114">Egy olyan PowerShell osztállyal DSC egyéni erőforrás implementálásához hozzon létre a következő mappaszerkezetet.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-114">To implement a DSC custom resource with a PowerShell class, create the following folder structure.</span></span> <span data-ttu-id="8ae7f-115">Az osztály definiálva van **MyDscResource.psm1** , és a moduljegyzékben meghatározva **MyDscResource.psd1**.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-115">The class is defined in **MyDscResource.psm1** and the module manifest is defined in **MyDscResource.psd1**.</span></span>
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1
-           MyDscResource.psd1
+        MyDscResource.psm1
+        MyDscResource.psd1
 ```
 
-## <a name="create-the-class"></a><span data-ttu-id="cd3b7-116">Az osztály létrehozása</span><span class="sxs-lookup"><span data-stu-id="cd3b7-116">Create the class</span></span>
+## <a name="create-the-class"></a><span data-ttu-id="8ae7f-116">Az osztály létrehozása</span><span class="sxs-lookup"><span data-stu-id="8ae7f-116">Create the class</span></span>
 
-<span data-ttu-id="cd3b7-117">Az osztály kulcsszó használatával hozzon létre egy PowerShell-osztályt.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-117">You use the class keyword to create a PowerShell class.</span></span> <span data-ttu-id="cd3b7-118">Adja meg, hogy egy osztály a DSC-erőforrás, használja a **DscResource()** attribútum.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-118">To specify that a class is a DSC resource, use the **DscResource()** attribute.</span></span> <span data-ttu-id="cd3b7-119">Az osztály nevét a DSC-erőforrás neve.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-119">The name of the class is the name of the DSC resource.</span></span>
+<span data-ttu-id="8ae7f-117">Az osztály kulcsszó használatával hozzon létre egy PowerShell-osztályt.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-117">You use the class keyword to create a PowerShell class.</span></span> <span data-ttu-id="8ae7f-118">Adja meg, hogy egy osztály a DSC-erőforrás, használja a **DscResource()** attribútum.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-118">To specify that a class is a DSC resource, use the **DscResource()** attribute.</span></span> <span data-ttu-id="8ae7f-119">Az osztály nevét a DSC-erőforrás neve.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-119">The name of the class is the name of the DSC resource.</span></span>
 
 ```powershell
 [DscResource()]
@@ -44,9 +44,9 @@ class FileResource {
 }
 ```
 
-### <a name="declare-properties"></a><span data-ttu-id="cd3b7-120">Deklarálja a tulajdonságai</span><span class="sxs-lookup"><span data-stu-id="cd3b7-120">Declare properties</span></span>
+### <a name="declare-properties"></a><span data-ttu-id="8ae7f-120">Deklarálja a tulajdonságai</span><span class="sxs-lookup"><span data-stu-id="8ae7f-120">Declare properties</span></span>
 
-<span data-ttu-id="cd3b7-121">A DSC-erőforrás séma számít, ha az osztály tulajdonságait.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-121">The DSC resource schema is defined as properties of the class.</span></span> <span data-ttu-id="cd3b7-122">A következő azt deklarálja három tulajdonságot.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-122">We declare three properties as follows.</span></span>
+<span data-ttu-id="8ae7f-121">A DSC-erőforrás séma számít, ha az osztály tulajdonságait.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-121">The DSC resource schema is defined as properties of the class.</span></span> <span data-ttu-id="8ae7f-122">A következő azt deklarálja három tulajdonságot.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-122">We declare three properties as follows.</span></span>
 
 ```powershell
 [DscProperty(Key)]
@@ -62,14 +62,14 @@ class FileResource {
 [Nullable[datetime]] $CreationTime
 ```
 
-<span data-ttu-id="cd3b7-123">Figyelje meg, hogy a Tulajdonságok attribútumok szerint módosítják.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-123">Notice that the properties are modified by attributes.</span></span> <span data-ttu-id="cd3b7-124">Az attribútumok értelmében a következőképpen történik:</span><span class="sxs-lookup"><span data-stu-id="cd3b7-124">The meaning of the attributes is as follows:</span></span>
+<span data-ttu-id="8ae7f-123">Figyelje meg, hogy a Tulajdonságok attribútumok szerint módosítják.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-123">Notice that the properties are modified by attributes.</span></span> <span data-ttu-id="8ae7f-124">Az attribútumok értelmében a következőképpen történik:</span><span class="sxs-lookup"><span data-stu-id="8ae7f-124">The meaning of the attributes is as follows:</span></span>
 
-- <span data-ttu-id="cd3b7-125">**DscProperty(Key)**: A tulajdonság megadása kötelező.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-125">**DscProperty(Key)**: The property is required.</span></span> <span data-ttu-id="cd3b7-126">A tulajdonság egy kulcsot.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-126">The property is a key.</span></span> <span data-ttu-id="cd3b7-127">Kulcsok belül egy konfigurációs egy erőforrás-példány egyedi azonosításához kell alakítania megjelölt összes tulajdonságának értékét.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-127">The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.</span></span>
-- <span data-ttu-id="cd3b7-128">**DscProperty(Mandatory)**: A tulajdonság megadása kötelező.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-128">**DscProperty(Mandatory)**: The property is required.</span></span>
-- <span data-ttu-id="cd3b7-129">**DscProperty(NotConfigurable)**: A tulajdonság csak olvasható.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-129">**DscProperty(NotConfigurable)**: The property is read-only.</span></span> <span data-ttu-id="cd3b7-130">Ez attribútummal rendelkező tulajdonságok nem állítható be a konfiguráció, de által fel van töltve a **Get()** módszer, ha a jelen.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-130">Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.</span></span>
-- <span data-ttu-id="cd3b7-131">**DscProperty()**: A tulajdonság konfigurálható, de ez nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-131">**DscProperty()**: The property is configurable, but it is not required.</span></span>
+- <span data-ttu-id="8ae7f-125">**DscProperty(Key)**: A tulajdonság megadása kötelező.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-125">**DscProperty(Key)**: The property is required.</span></span> <span data-ttu-id="8ae7f-126">A tulajdonság egy kulcsot.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-126">The property is a key.</span></span> <span data-ttu-id="8ae7f-127">Kulcsok belül egy konfigurációs egy erőforrás-példány egyedi azonosításához kell alakítania megjelölt összes tulajdonságának értékét.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-127">The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.</span></span>
+- <span data-ttu-id="8ae7f-128">**DscProperty(Mandatory)**: A tulajdonság megadása kötelező.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-128">**DscProperty(Mandatory)**: The property is required.</span></span>
+- <span data-ttu-id="8ae7f-129">**DscProperty(NotConfigurable)**: A tulajdonság csak olvasható.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-129">**DscProperty(NotConfigurable)**: The property is read-only.</span></span> <span data-ttu-id="8ae7f-130">Ez attribútummal rendelkező tulajdonságok nem állítható be a konfiguráció, de által fel van töltve a **Get()** módszer, ha a jelen.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-130">Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.</span></span>
+- <span data-ttu-id="8ae7f-131">**DscProperty()**: A tulajdonság konfigurálható, de ez nem kötelező.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-131">**DscProperty()**: The property is configurable, but it is not required.</span></span>
 
-<span data-ttu-id="cd3b7-132">A **$Path** és **$SourcePath** tulajdonságok a következők mindkét karakterláncokat.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-132">The **$Path** and **$SourcePath** properties are both strings.</span></span> <span data-ttu-id="cd3b7-133">A **$CreationTime** van egy [DateTime](/dotnet/api/system.datetime) tulajdonság.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-133">The **$CreationTime** is a [DateTime](/dotnet/api/system.datetime) property.</span></span> <span data-ttu-id="cd3b7-134">A **$Ensure** tulajdonság meghatározása a következő enumerálási típusát.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-134">The **$Ensure** property is an enumeration type, defined as follows.</span></span>
+<span data-ttu-id="8ae7f-132">A **$Path** és **$SourcePath** tulajdonságok a következők mindkét karakterláncokat.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-132">The **$Path** and **$SourcePath** properties are both strings.</span></span> <span data-ttu-id="8ae7f-133">A **$CreationTime** van egy [DateTime](/dotnet/api/system.datetime) tulajdonság.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-133">The **$CreationTime** is a [DateTime](/dotnet/api/system.datetime) property.</span></span> <span data-ttu-id="8ae7f-134">A **$Ensure** tulajdonság meghatározása a következő enumerálási típusát.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-134">The **$Ensure** property is an enumeration type, defined as follows.</span></span>
 
 ```powershell
 enum Ensure
@@ -79,14 +79,13 @@ enum Ensure
 }
 ```
 
-### <a name="implementing-the-methods"></a><span data-ttu-id="cd3b7-135">A metódusok végrehajtása</span><span class="sxs-lookup"><span data-stu-id="cd3b7-135">Implementing the methods</span></span>
+### <a name="implementing-the-methods"></a><span data-ttu-id="8ae7f-135">A metódusok végrehajtása</span><span class="sxs-lookup"><span data-stu-id="8ae7f-135">Implementing the methods</span></span>
 
-<span data-ttu-id="cd3b7-136">A **Get()**, **Set()**, és **Test()** módszerek a következők csatlakoztatja a **Get-TargetResource**, **Set-TargetResource** , és **Test-TargetResource** függvények a parancsfájl erőforrást.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-136">The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
+<span data-ttu-id="8ae7f-136">A **Get()**, **Set()**, és **Test()** módszerek a következők csatlakoztatja a **Get-TargetResource**, **Set-TargetResource** , és **Test-TargetResource** függvények a parancsfájl erőforrást.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-136">The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
 
-<span data-ttu-id="cd3b7-137">Ez a kód is magában foglalja a CopyFile() függvény segítő függvény, amely átmásolja a fájlt a **$SourcePath** való **$Path**.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-137">This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**.</span></span>
+<span data-ttu-id="8ae7f-137">Ez a kód is magában foglalja a CopyFile() függvény segítő függvény, amely átmásolja a fájlt a **$SourcePath** való **$Path**.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-137">This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**.</span></span>
 
 ```powershell
-
     <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
@@ -216,8 +215,9 @@ enum Ensure
     }
 ```
 
-### <a name="the-complete-file"></a><span data-ttu-id="cd3b7-138">A teljes fájl</span><span class="sxs-lookup"><span data-stu-id="cd3b7-138">The complete file</span></span>
-<span data-ttu-id="cd3b7-139">A teljes fájl követi.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-139">The complete class file follows.</span></span>
+### <a name="the-complete-file"></a><span data-ttu-id="8ae7f-138">A teljes fájl</span><span class="sxs-lookup"><span data-stu-id="8ae7f-138">The complete file</span></span>
+
+<span data-ttu-id="8ae7f-139">A teljes fájl követi.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-139">The complete class file follows.</span></span>
 
 ```powershell
 enum Ensure
@@ -414,10 +414,9 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
+## <a name="create-a-manifest"></a><span data-ttu-id="8ae7f-140">Jegyzék létrehozásához</span><span class="sxs-lookup"><span data-stu-id="8ae7f-140">Create a manifest</span></span>
 
-## <a name="create-a-manifest"></a><span data-ttu-id="cd3b7-140">Jegyzék létrehozásához</span><span class="sxs-lookup"><span data-stu-id="cd3b7-140">Create a manifest</span></span>
-
-<span data-ttu-id="cd3b7-141">Osztályalapú erőforrás akkor válik elérhetővé a DSC motor, meg kell adni egy **DscResourcesToExport** utasítás, amely arra utasítja a modult, exportálhatja az erőforrás-jegyzékfájl.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-141">To make a class-based resource available to the DSC engine, you must include a **DscResourcesToExport** statement in the manifest file that instructs the module to export the resource.</span></span> <span data-ttu-id="cd3b7-142">A jegyzékfájl így néz ki:</span><span class="sxs-lookup"><span data-stu-id="cd3b7-142">Our manifest looks like this:</span></span>
+<span data-ttu-id="8ae7f-141">Osztályalapú erőforrás akkor válik elérhetővé a DSC motor, meg kell adni egy **DscResourcesToExport** utasítás, amely arra utasítja a modult, exportálhatja az erőforrás-jegyzékfájl.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-141">To make a class-based resource available to the DSC engine, you must include a **DscResourcesToExport** statement in the manifest file that instructs the module to export the resource.</span></span> <span data-ttu-id="8ae7f-142">A jegyzékfájl így néz ki:</span><span class="sxs-lookup"><span data-stu-id="8ae7f-142">Our manifest looks like this:</span></span>
 
 ```powershell
 @{
@@ -453,9 +452,9 @@ PowerShellVersion = '5.0'
 }
 ```
 
-## <a name="test-the-resource"></a><span data-ttu-id="cd3b7-143">Az erőforrás tesztelése</span><span class="sxs-lookup"><span data-stu-id="cd3b7-143">Test the resource</span></span>
+## <a name="test-the-resource"></a><span data-ttu-id="8ae7f-143">Az erőforrás tesztelése</span><span class="sxs-lookup"><span data-stu-id="8ae7f-143">Test the resource</span></span>
 
-<span data-ttu-id="cd3b7-144">Az osztály és fájlok mentése a korábban leírtaknak megfelelően a gyökérmappa-szerkezetében lévő, után az új erőforrás használó konfiguráció is létrehozhat.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-144">After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource.</span></span> <span data-ttu-id="cd3b7-145">A DSC-konfiguráció futtatásával kapcsolatos további információkért lásd: [konfigurációk életbe léptetése](../pull-server/enactingConfigurations.md).</span><span class="sxs-lookup"><span data-stu-id="cd3b7-145">For information about how to run a DSC configuration, see [Enacting configurations](../pull-server/enactingConfigurations.md).</span></span> <span data-ttu-id="cd3b7-146">A következő konfigurációt ellenőrzi, hogy a fájlban a következő `c:\test\test.txt` létezik, és ha nem, másolja át a fájlt a `c:\test.txt` (hozzon létre `c:\test.txt` a konfiguráció futtatása előtt).</span><span class="sxs-lookup"><span data-stu-id="cd3b7-146">The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).</span></span>
+<span data-ttu-id="8ae7f-144">Az osztály és fájlok mentése a korábban leírtaknak megfelelően a gyökérmappa-szerkezetében lévő, után az új erőforrás használó konfiguráció is létrehozhat.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-144">After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource.</span></span> <span data-ttu-id="8ae7f-145">A DSC-konfiguráció futtatásával kapcsolatos további információkért lásd: [konfigurációk életbe léptetése](../pull-server/enactingConfigurations.md).</span><span class="sxs-lookup"><span data-stu-id="8ae7f-145">For information about how to run a DSC configuration, see [Enacting configurations](../pull-server/enactingConfigurations.md).</span></span> <span data-ttu-id="8ae7f-146">A következő konfigurációt ellenőrzi, hogy a fájlban a következő `c:\test\test.txt` létezik, és ha nem, másolja át a fájlt a `c:\test.txt` (hozzon létre `c:\test.txt` a konfiguráció futtatása előtt).</span><span class="sxs-lookup"><span data-stu-id="8ae7f-146">The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).</span></span>
 
 ```powershell
 Configuration Test
@@ -472,24 +471,24 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="cd3b7-147">PsDscRunAsCredential támogatása</span><span class="sxs-lookup"><span data-stu-id="cd3b7-147">Supporting PsDscRunAsCredential</span></span>
+## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="8ae7f-147">PsDscRunAsCredential támogatása</span><span class="sxs-lookup"><span data-stu-id="8ae7f-147">Supporting PsDscRunAsCredential</span></span>
 
-><span data-ttu-id="cd3b7-148">**Megjegyzés:** **PsDscRunAsCredential** a PowerShell 5.0-s és újabb verzióiban támogatott.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-148">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
+><span data-ttu-id="8ae7f-148">**Megjegyzés:** **PsDscRunAsCredential** a PowerShell 5.0-s és újabb verzióiban támogatott.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-148">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
 
-<span data-ttu-id="cd3b7-149">A **PsDscRunAsCredential** tulajdonság használható [DSC-konfigurációk](../configurations/configurations.md) erőforrás letiltása, hogy az erőforrás alatt kell futtatni. egy meghatározott hitelesítő adatok megadásához.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-149">The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
-<span data-ttu-id="cd3b7-150">További információkért lásd: [DSC futtatása felhasználói hitelesítő adatokkal](../configurations/runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="cd3b7-150">For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).</span></span>
+<span data-ttu-id="8ae7f-149">A **PsDscRunAsCredential** tulajdonság használható [DSC-konfigurációk](../configurations/configurations.md) erőforrás letiltása, hogy az erőforrás alatt kell futtatni. egy meghatározott hitelesítő adatok megadásához.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-149">The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
+<span data-ttu-id="8ae7f-150">További információkért lásd: [DSC futtatása felhasználói hitelesítő adatokkal](../configurations/runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="8ae7f-150">For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).</span></span>
 
-### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a><span data-ttu-id="cd3b7-151">Szükséges, vagy az erőforrás PsDscRunAsCredential letiltása</span><span class="sxs-lookup"><span data-stu-id="cd3b7-151">Require or disallow PsDscRunAsCredential for your resource</span></span>
+### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a><span data-ttu-id="8ae7f-151">Szükséges, vagy az erőforrás PsDscRunAsCredential letiltása</span><span class="sxs-lookup"><span data-stu-id="8ae7f-151">Require or disallow PsDscRunAsCredential for your resource</span></span>
 
-<span data-ttu-id="cd3b7-152">A **DscResource()** attribútumot vesz igénybe egy nem kötelező paraméter **RunAsCredential**.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-152">The **DscResource()** attribute takes an optional parameter **RunAsCredential**.</span></span>
-<span data-ttu-id="cd3b7-153">Ez a paraméter három érték egyikét veheti fel:</span><span class="sxs-lookup"><span data-stu-id="cd3b7-153">This parameter takes one of three values:</span></span>
+<span data-ttu-id="8ae7f-152">A **DscResource()** attribútumot vesz igénybe egy nem kötelező paraméter **RunAsCredential**.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-152">The **DscResource()** attribute takes an optional parameter **RunAsCredential**.</span></span>
+<span data-ttu-id="8ae7f-153">Ez a paraméter három érték egyikét veheti fel:</span><span class="sxs-lookup"><span data-stu-id="8ae7f-153">This parameter takes one of three values:</span></span>
 
-- <span data-ttu-id="cd3b7-154">`Optional` **PsDscRunAsCredential** nem kötelező konfigurációk, amelyek meg az ehhez az erőforráshoz.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-154">`Optional` **PsDscRunAsCredential** is optional for configurations that call this resource.</span></span> <span data-ttu-id="cd3b7-155">Ez az alapértelmezett érték.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-155">This is the default value.</span></span>
-- <span data-ttu-id="cd3b7-156">`Mandatory` **PsDscRunAsCredential** kell használni minden olyan konfiguráció, amely meghívja ezt az erőforrást.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-156">`Mandatory` **PsDscRunAsCredential** must be used for any configuration that calls this resource.</span></span>
-- <span data-ttu-id="cd3b7-157">`NotSupported` Konfigurációk, amelyek meg az ehhez az erőforráshoz nem használható **PsDscRunAsCredential**.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-157">`NotSupported` Configurations that call this resource cannot use **PsDscRunAsCredential**.</span></span>
-- <span data-ttu-id="cd3b7-158">`Default` Ugyanaz, mint a `Optional`.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-158">`Default` Same as `Optional`.</span></span>
+- <span data-ttu-id="8ae7f-154">`Optional` **PsDscRunAsCredential** nem kötelező konfigurációk, amelyek meg az ehhez az erőforráshoz.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-154">`Optional` **PsDscRunAsCredential** is optional for configurations that call this resource.</span></span> <span data-ttu-id="8ae7f-155">Ez az alapértelmezett érték.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-155">This is the default value.</span></span>
+- <span data-ttu-id="8ae7f-156">`Mandatory` **PsDscRunAsCredential** kell használni minden olyan konfiguráció, amely meghívja ezt az erőforrást.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-156">`Mandatory` **PsDscRunAsCredential** must be used for any configuration that calls this resource.</span></span>
+- <span data-ttu-id="8ae7f-157">`NotSupported` Konfigurációk, amelyek meg az ehhez az erőforráshoz nem használható **PsDscRunAsCredential**.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-157">`NotSupported` Configurations that call this resource cannot use **PsDscRunAsCredential**.</span></span>
+- <span data-ttu-id="8ae7f-158">`Default` Ugyanaz, mint a `Optional`.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-158">`Default` Same as `Optional`.</span></span>
 
-<span data-ttu-id="cd3b7-159">Például adja meg, hogy az egyéni erőforrás nem támogatja a következő attribútum segítségével **PsDscRunAsCredential**:</span><span class="sxs-lookup"><span data-stu-id="cd3b7-159">For example, use the following attribute to specify that your custom resource does not support using **PsDscRunAsCredential**:</span></span>
+<span data-ttu-id="8ae7f-159">Például adja meg, hogy az egyéni erőforrás nem támogatja a következő attribútum segítségével **PsDscRunAsCredential**:</span><span class="sxs-lookup"><span data-stu-id="8ae7f-159">For example, use the following attribute to specify that your custom resource does not support using **PsDscRunAsCredential**:</span></span>
 
 ```powershell
 [DscResource(RunAsCredential=NotSupported)]
@@ -497,11 +496,41 @@ class FileResource {
 }
 ```
 
-### <a name="access-the-user-context"></a><span data-ttu-id="cd3b7-160">Hozzáférés a felhasználói környezet</span><span class="sxs-lookup"><span data-stu-id="cd3b7-160">Access the user context</span></span>
+### <a name="declaring-multiple-class-resources-in-a-module"></a><span data-ttu-id="8ae7f-160">Egy modulban levő több osztály erőforrások deklaráló</span><span class="sxs-lookup"><span data-stu-id="8ae7f-160">Declaring multiple class resources in a module</span></span>
 
-<span data-ttu-id="cd3b7-161">A felhasználói környezet belül egy egyéni erőforrás elérésére, használhatja az automatikus változót `$global:PsDscContext`.</span><span class="sxs-lookup"><span data-stu-id="cd3b7-161">To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.</span></span>
+<span data-ttu-id="8ae7f-161">Egy modul alapú osztály több DSC-erőforrások adhatja meg.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-161">A module can define multiple class based DSC resources.</span></span> <span data-ttu-id="8ae7f-162">A mappastruktúra a következő módon hozhat létre:</span><span class="sxs-lookup"><span data-stu-id="8ae7f-162">You can create the folder structure in the following ways:</span></span>
 
-<span data-ttu-id="cd3b7-162">Például a következő kódot a felhasználói környezet, amelyben az erőforrás fut. a részletes kimeneti adatfolyamba volna írni:</span><span class="sxs-lookup"><span data-stu-id="cd3b7-162">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
+1. <span data-ttu-id="8ae7f-163">Adja meg az első erőforrásra a "<ModuleName>.psm1" fájl- és további erőforrások alapján a **DSCResources** mappát.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-163">Define the first resource in the "<ModuleName>.psm1" file and subsequent resources under the **DSCResources** folder.</span></span>
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. <span data-ttu-id="8ae7f-164">Adja meg a tartozó összes erőforrást a **DSCResources** mappát.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-164">Define all resources under the **DSCResources** folder.</span></span>
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
+
+> [!NOTE]
+> <span data-ttu-id="8ae7f-165">A fenti példákban hozzáadása a csoportban psm1 kiterjesztésű fájlokat a **DSCResources** , a **NestedModules** kulcsfontosságú a psd1 kiterjesztésű fájl.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-165">In the examples above, add any PSM1 files under the **DSCResources** to the **NestedModules** key in your PSD1 file.</span></span>
+
+### <a name="access-the-user-context"></a><span data-ttu-id="8ae7f-166">Hozzáférés a felhasználói környezet</span><span class="sxs-lookup"><span data-stu-id="8ae7f-166">Access the user context</span></span>
+
+<span data-ttu-id="8ae7f-167">A felhasználói környezet belül egy egyéni erőforrás elérésére, használhatja az automatikus változót `$global:PsDscContext`.</span><span class="sxs-lookup"><span data-stu-id="8ae7f-167">To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.</span></span>
+
+<span data-ttu-id="8ae7f-168">Például a következő kódot a felhasználói környezet, amelyben az erőforrás fut. a részletes kimeneti adatfolyamba volna írni:</span><span class="sxs-lookup"><span data-stu-id="8ae7f-168">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
 
 ```powershell
 if (PsDscContext.RunAsUser) {
@@ -509,6 +538,6 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="cd3b7-163">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="cd3b7-163">See Also</span></span>
-### <a name="concepts"></a><span data-ttu-id="cd3b7-164">Fogalmak</span><span class="sxs-lookup"><span data-stu-id="cd3b7-164">Concepts</span></span>
-[<span data-ttu-id="cd3b7-165">Egyéni Windows PowerShell Desired State Configuration erőforrások létrehozása</span><span class="sxs-lookup"><span data-stu-id="cd3b7-165">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](authoringResource.md)
+## <a name="see-also"></a><span data-ttu-id="8ae7f-169">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="8ae7f-169">See Also</span></span>
+
+[<span data-ttu-id="8ae7f-170">Egyéni Windows PowerShell Desired State Configuration erőforrások létrehozása</span><span class="sxs-lookup"><span data-stu-id="8ae7f-170">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](authoringResource.md)

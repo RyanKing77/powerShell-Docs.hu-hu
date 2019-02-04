@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 14208e3b5d5c2fef80fa42a87cc00aeee81bd042
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b8940ded189d822a5a2cd40773ef5146353611cc
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189907"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686207"
 ---
-# <a name="cryptographic-message-syntax-cms-cmdlets"></a><span data-ttu-id="d6d45-102">Kriptográfiai szintaxisú (CMS) parancsmagok</span><span class="sxs-lookup"><span data-stu-id="d6d45-102">Cryptographic Message Syntax (CMS) cmdlets</span></span>
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a><span data-ttu-id="6eea8-102">Titkosítási üzenet szintaxis-(CMS-) parancsmagok</span><span class="sxs-lookup"><span data-stu-id="6eea8-102">Cryptographic Message Syntax (CMS) cmdlets</span></span>
 
-<span data-ttu-id="d6d45-103">A titkosított üzenetek szintaxisának parancsmagok támogatja a titkosítási és visszafejtési a IETF szabványos formátumot használja az üzenetek titkosítással védi a megfelelően tartalom [RFC5652](https://tools.ietf.org/html/rfc5652).</span><span class="sxs-lookup"><span data-stu-id="d6d45-103">The Cryptographic Message Syntax cmdlets support encryption and decryption of content using the IETF standard format for cryptographically protecting messages as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).</span></span>
+<span data-ttu-id="6eea8-103">A titkosítási üzenet szintaxis parancsmagok támogatják a titkosítási és visszafejtési a IETF szabvány formátum használatával titkosítási szempontból védelme érdekében üzenetet megfelelően tartalom [RFC5652](https://tools.ietf.org/html/rfc5652).</span><span class="sxs-lookup"><span data-stu-id="6eea8-103">The Cryptographic Message Syntax cmdlets support encryption and decryption of content using the IETF standard format for cryptographically protecting messages as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).</span></span>
 
 ```powershell
 Get-CmsMessage [-Content] <string>
@@ -25,13 +25,13 @@ Unprotect-CmsMessage [-Path] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeC
 Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeContext]
 ```
 
-<span data-ttu-id="d6d45-104">A CMS titkosítási szabvány valósítja meg a nyilvános kulcsú titkosítás, ha a kulcsok tartalom titkosításához használt (a *nyilvános kulcs*) és a tartalom visszafejtésére szolgáló jelszó kulcsok (a *titkos kulcs*) külön.</span><span class="sxs-lookup"><span data-stu-id="d6d45-104">The CMS encryption standard implements public key cryptography, where the keys used to encrypt content (the *public key*) and the keys used to decrypt content (the *private key*) are separate.</span></span>
+<span data-ttu-id="6eea8-104">A standard szintű tartalomkezelő rendszer titkosítási valósítja meg a nyilvános kulcsú titkosítás, ahol a kulcsok tartalom titkosításához használt (a *nyilvános kulcs*) és a tartalom visszafejtésére szolgáló kulcsok (a *titkos kulcs*) jelennek meg.</span><span class="sxs-lookup"><span data-stu-id="6eea8-104">The CMS encryption standard implements public key cryptography, where the keys used to encrypt content (the *public key*) and the keys used to decrypt content (the *private key*) are separate.</span></span>
 
-<span data-ttu-id="d6d45-105">A nyilvános kulcs akkor lehet megosztani, széles körben, és nincs bizalmas adatokat.</span><span class="sxs-lookup"><span data-stu-id="d6d45-105">Your public key can be shared widely, and is not sensitive data.</span></span> <span data-ttu-id="d6d45-106">Ha a tartalom a nyilvános kulcsával van titkosítva, csak a titkos kulcsot is visszafejteni.</span><span class="sxs-lookup"><span data-stu-id="d6d45-106">If any content is encrypted with this public key, only your private key can decrypt it.</span></span> <span data-ttu-id="d6d45-107">További információkért lásd: [nyilvános kulcsú](https://en.wikipedia.org/wiki/Public-key_cryptography).</span><span class="sxs-lookup"><span data-stu-id="d6d45-107">For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).</span></span>
+<span data-ttu-id="6eea8-105">A nyilvános kulcs széles körben történő megosztásának, és nem érzékeny adatokat.</span><span class="sxs-lookup"><span data-stu-id="6eea8-105">Your public key can be shared widely, and is not sensitive data.</span></span> <span data-ttu-id="6eea8-106">Ha bármilyen tartalmat a nyilvános kulccsal titkosított, csak a titkos kulcsot is a visszafejtésre.</span><span class="sxs-lookup"><span data-stu-id="6eea8-106">If any content is encrypted with this public key, only your private key can decrypt it.</span></span> <span data-ttu-id="6eea8-107">További információkért lásd: [nyilvános kulcsú titkosítással](https://en.wikipedia.org/wiki/Public-key_cryptography).</span><span class="sxs-lookup"><span data-stu-id="6eea8-107">For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).</span></span>
 
-<span data-ttu-id="d6d45-108">Titkosítási tanúsítványok a PowerShell ismeretlen, szükség egy egyedi kulcshasználat azonosítója (EKU) segítségével jelölje őket adatok titkosítási tanúsítványok (például az azonosítók "Kód aláírása", 'Titkosított Mail').</span><span class="sxs-lookup"><span data-stu-id="d6d45-108">To be recognized in PowerShell, encryption certificates require a unique key usage identifier (EKU) to identify them as data encryption certificates (like the identifiers for 'Code Signing', 'Encrypted Mail').</span></span>
+<span data-ttu-id="6eea8-108">Titkosítási tanúsítványok ismerhetők meg a PowerShell, szükség van egy egyedi kulcshasználat azonosító (EKU) lenne azonosítani őket (például a "Kód aláírása", 'Titkosított Mail' azonosítók) adatok titkosítási tanúsítványok.</span><span class="sxs-lookup"><span data-stu-id="6eea8-108">To be recognized in PowerShell, encryption certificates require a unique key usage identifier (EKU) to identify them as data encryption certificates (like the identifiers for 'Code Signing', 'Encrypted Mail').</span></span>
 
-<span data-ttu-id="d6d45-109">Íme egy példa a jó dokumentum titkosítási tanúsítvány létrehozása:</span><span class="sxs-lookup"><span data-stu-id="d6d45-109">Here is an example of creating a certificate that is good for Document Encryption:</span></span>
+<span data-ttu-id="6eea8-109">Íme egy példa, amely jó dokumentum titkosítási tanúsítvány létrehozása:</span><span class="sxs-lookup"><span data-stu-id="6eea8-109">Here is an example of creating a certificate that is good for Document Encryption:</span></span>
 
 ```powershell
 (Change the text in **Subject** to your name, email, or other identifier), and put in a file (i.e.: DocumentEncryption.inf):
@@ -55,12 +55,12 @@ ValidityPeriodUnits = "1000"
 %szOID\_ENHANCED\_KEY\_USAGE% = "{text}%szOID\_DOCUMENT\_ENCRYPTION%"
 ```
 
-<span data-ttu-id="d6d45-110">Majd futtassa:</span><span class="sxs-lookup"><span data-stu-id="d6d45-110">Then run:</span></span>
+<span data-ttu-id="6eea8-110">Majd futtassa:</span><span class="sxs-lookup"><span data-stu-id="6eea8-110">Then run:</span></span>
 ```powershell
 certreq -new DocumentEncryption.inf DocumentEncryption.cer
 ```
 
-<span data-ttu-id="d6d45-111">És mostantól titkosításához és visszafejtéséhez tartalom:</span><span class="sxs-lookup"><span data-stu-id="d6d45-111">And you can now encrypt and decrypt content:</span></span>
+<span data-ttu-id="6eea8-111">És most titkosítása és visszafejtése a tartalmat:</span><span class="sxs-lookup"><span data-stu-id="6eea8-111">And you can now encrypt and decrypt content:</span></span>
 
 ```powershell
 $protected = "Hello World" | Protect-CmsMessage -To "\*me@somewhere.com\*[](mailto:*leeholm@microsoft.com*)"
@@ -80,14 +80,14 @@ $protected | Unprotect-CmsMessage
 Hello World
 ```
 
-<span data-ttu-id="d6d45-112">Bármely típusú paramétert **CMSMessageRecipient** azonosítók a következő formátumokban támogatja:</span><span class="sxs-lookup"><span data-stu-id="d6d45-112">Any parameter of type **CMSMessageRecipient** supports identifiers in the following formats:</span></span>
-- <span data-ttu-id="d6d45-113">Egy tényleges tanúsítványt (a letöltött tanúsítvány-szolgáltatójáról)</span><span class="sxs-lookup"><span data-stu-id="d6d45-113">An actual certificate (as retrieved from the certificate provider)</span></span>
-- <span data-ttu-id="d6d45-114">Elérési útját a tanúsítványát tartalmazó fájl</span><span class="sxs-lookup"><span data-stu-id="d6d45-114">Path to the a file containing the certificate</span></span>
-- <span data-ttu-id="d6d45-115">A tanúsítványt tartalmazó könyvtár elérési útja</span><span class="sxs-lookup"><span data-stu-id="d6d45-115">Path to a directory containing the certificate</span></span>
-- <span data-ttu-id="d6d45-116">(A tanúsítványtárolóban kereséséhez használt) a tanúsítvány ujjlenyomata</span><span class="sxs-lookup"><span data-stu-id="d6d45-116">Thumbprint of the certificate (used to look in the certificate store)</span></span>
-- <span data-ttu-id="d6d45-117">A tanúsítvány (a tanúsítványtárolóban kereséséhez használt)</span><span class="sxs-lookup"><span data-stu-id="d6d45-117">Subject name of the certificate (used to look in the certificate store)</span></span>
+<span data-ttu-id="6eea8-112">Bármilyen típusú paramétert **CMSMessageRecipient** azonosítók támogatja a következő formátumban:</span><span class="sxs-lookup"><span data-stu-id="6eea8-112">Any parameter of type **CMSMessageRecipient** supports identifiers in the following formats:</span></span>
+- <span data-ttu-id="6eea8-113">Egy tényleges tanúsítványt (a lekért tanúsítványt szolgáltatójáról)</span><span class="sxs-lookup"><span data-stu-id="6eea8-113">An actual certificate (as retrieved from the certificate provider)</span></span>
+- <span data-ttu-id="6eea8-114">Elérési útját a tanúsítványt tartalmazó fájl</span><span class="sxs-lookup"><span data-stu-id="6eea8-114">Path to the a file containing the certificate</span></span>
+- <span data-ttu-id="6eea8-115">Egy tanúsítványt tartalmazó könyvtár elérési útja</span><span class="sxs-lookup"><span data-stu-id="6eea8-115">Path to a directory containing the certificate</span></span>
+- <span data-ttu-id="6eea8-116">(A tanúsítvány-áruházban keresse meg a használt) a tanúsítvány ujjlenyomata</span><span class="sxs-lookup"><span data-stu-id="6eea8-116">Thumbprint of the certificate (used to look in the certificate store)</span></span>
+- <span data-ttu-id="6eea8-117">(A tanúsítvány-áruházban keresse meg a használt) a tanúsítvány tulajdonos neve</span><span class="sxs-lookup"><span data-stu-id="6eea8-117">Subject name of the certificate (used to look in the certificate store)</span></span>
 
-<span data-ttu-id="d6d45-118">A tanúsítványszolgáltató dokumentum titkosítási tanúsítványok megtekintéséhez használja a **- DocumentEncryptionCert** dinamikus paramétert:</span><span class="sxs-lookup"><span data-stu-id="d6d45-118">To view document encryption certificates in the certificate provider, you can use the **-DocumentEncryptionCert** dynamic parameter:</span></span>
+<span data-ttu-id="6eea8-118">A tanúsítványszolgáltató dokumentum titkosítási tanúsítványok megtekintéséhez használja a **- DocumentEncryptionCert** dinamikus paraméterek:</span><span class="sxs-lookup"><span data-stu-id="6eea8-118">To view document encryption certificates in the certificate provider, you can use the **-DocumentEncryptionCert** dynamic parameter:</span></span>
 
 ```powershell
 dir -DocumentEncryptionCert

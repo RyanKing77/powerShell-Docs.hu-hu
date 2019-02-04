@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 7667aebb6545ae8dde5d94baee4a663f1d26c167
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3c1fcf94174b99490b19963662ef1ccdf6cebfec
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219582"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686970"
 ---
-# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="ee76f-102">PowerShell-parancsfájl felderítési, telepítés és kezelés PowerShellGet az</span><span class="sxs-lookup"><span data-stu-id="ee76f-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="8f6ba-102">PowerShell-parancsfájlok felderítése, telepítése és kezelése a Powershellgettel</span><span class="sxs-lookup"><span data-stu-id="8f6ba-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
 
-<span data-ttu-id="ee76f-103">A WMF 5.0 RTM verzióban PowerShellGet kapott hozzá megosztása szolgáltatás PowerShell parancsfájlt.</span><span class="sxs-lookup"><span data-stu-id="ee76f-103">PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.</span></span>
-<span data-ttu-id="ee76f-104">A következő új parancsmagok a PowerShellGet modul támogatásához a PowerShell-parancsfájlok hozzáadódnak.</span><span class="sxs-lookup"><span data-stu-id="ee76f-104">The following new cmdlets are added to the PowerShellGet module for supporting the PowerShell Scripts.</span></span>
+<span data-ttu-id="8f6ba-103">A PowerShellGet a WMF 5.0 RTM verzióban megosztása funkció PowerShell-parancsprogram van hozzá.</span><span class="sxs-lookup"><span data-stu-id="8f6ba-103">PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.</span></span>
+<span data-ttu-id="8f6ba-104">Az alábbi új parancsmagok kerülnek a PowerShellGet-modul a PowerShell-parancsfájlok támogatásához.</span><span class="sxs-lookup"><span data-stu-id="8f6ba-104">The following new cmdlets are added to the PowerShellGet module for supporting the PowerShell Scripts.</span></span>
 ```powershell
 PS C:\\windows\\system32&gt; Get-Command \*script\* -Module PowerShellGet | Sort-Object -Property Noun, Verb
 CommandType Name Version Source
@@ -38,7 +38,7 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 -   **Test-ScriptFileInfo** cmdlet lets you to validate and get the script file metadata.
 ```
 
-<span data-ttu-id="ee76f-105">Parancsfájl megosztási parancsmagok szintaxisa:</span><span class="sxs-lookup"><span data-stu-id="ee76f-105">Syntax of script sharing Cmdlets:</span></span>
+<span data-ttu-id="8f6ba-105">Parancsfájl megosztási parancsmagok szintaxisa:</span><span class="sxs-lookup"><span data-stu-id="8f6ba-105">Syntax of script sharing Cmdlets:</span></span>
 ```powershell
 **New-ScriptFileInfo** \[-Path\] &lt;string&gt; -Description &lt;string&gt; \[-Version &lt;version&gt;\] \[-Author &lt;string&gt;\] \[-Guid &lt;guid&gt;\] \[-CompanyName &lt;string&gt;\] \[-Copyright &lt;string&gt;\] \[-RequiredModules &lt;Object\[\]&gt;\] \[-ExternalModuleDependencies &lt;string\[\]&gt;\] \[-RequiredScripts &lt;string\[\]&gt;\] \[-ExternalScriptDependencies &lt;string\[\]&gt;\] \[-Tags &lt;string\[\]&gt;\] \[-ProjectUri &lt;uri&gt;\] \[-LicenseUri &lt;uri&gt;\] \[-IconUri &lt;uri&gt;\] \[-ReleaseNotes &lt;string\[\]&gt;\] \[-PassThru\] \[-Force\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 
