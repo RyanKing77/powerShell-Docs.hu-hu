@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: A Windows PowerShell ISE billentyűparancsai
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404162"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686711"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>A Windows PowerShell ISE billentyűparancsai
 
@@ -27,9 +27,9 @@ A következő billentyűparancsokat használhatja a szöveg szerkesztésekor.
 |**Szkript helye**|CTRL+F|Szkriptpanel|
 |**A szkript a következő keresése**|F3|Szkriptpanel|
 |**Előző szkriptben keresése**|SHIFT+F3|Szkriptpanel|
-|**Párjának keresése**|CTRL +]|Szkriptpanel|
+|**Párjának keresése**|CTRL+]|Szkriptpanel|
 |**Paste**|CTRL+V|Szkriptpanel parancs panel|
-|**Ismét:**|CTRL+Y|Szkriptpanel parancs panel|
+|**Redo**|CTRL+Y|Szkriptpanel parancs panel|
 |**Cserélje le a parancsfájlt**|CTRL+H|Szkriptpanel|
 |**Mentés**|CTRL+S|Szkriptpanel|
 |**Az összes kijelölése**|CTRL+A|A parancsfájl panelen, a parancs ablaktáblán, a Tesztkimenet ablaktáblán|
@@ -57,10 +57,10 @@ A következő billentyűparancsokat használhatja testreszabásához a Windows P
 |Művelet|Billentyűparancs|
 |----------|---------------------|
 |**Nyissa meg a parancs (v2), vagy (v3-as és újabb verziók) panel**|CTRL+D|
-|**Ugrás a Tesztkimenet ablaktáblán (csak v2)**|CTRL + SHIFT + O|
+|**Ugrás a Tesztkimenet ablaktáblán (csak v2)**|CTRL+SHIFT+O|
 |**Ugrás a parancsfájl panelen**|CTRL+I|
-|**Parancsfájl ablaktábla megjelenítése**|CTRL + R|
-|**Parancsfájl ablaktábla elrejtése**|CTRL + R|
+|**Parancsfájl ablaktábla megjelenítése**|CTRL+R|
+|**Parancsfájl ablaktábla elrejtése**|CTRL+R|
 |**Szkriptpanel mozgatása felfelé**|CTRL+1|
 |**Szkriptpanel jobbra**|CTRL+2|
 |**Maximalizálja a parancsfájl panelen**|CTRL+3|
@@ -73,11 +73,11 @@ A következő billentyűparancsokat használhatja a parancsfájlok hibakeresése
 
 |Művelet|Billentyűparancs|Használja a|
 |----------|---------------------|----------|
-|**Futtatás/folytatása**|F5|Szkriptpanel, amikor egy parancsprogram-hibakeresés|
+|**Run/Continue**|F5|Szkriptpanel, amikor egy parancsprogram-hibakeresés|
 |**Lépjen be**|F11|Szkriptpanel, amikor egy parancsprogram-hibakeresés|
 |**Átlépés**|F10|Szkriptpanel, amikor egy parancsprogram-hibakeresés|
 |**Krokovat s Vystoupením**|SHIFT+F11|Szkriptpanel, amikor egy parancsprogram-hibakeresés|
-|**Hívási verem megjelenítése**|CTRL + SHIFT + D|Szkriptpanel, amikor egy parancsprogram-hibakeresés|
+|**Hívási verem megjelenítése**|CTRL+SHIFT+D|Szkriptpanel, amikor egy parancsprogram-hibakeresés|
 |**Lista töréspontok keresése**|CTRL+SHIFT+L|Szkriptpanel, amikor egy parancsprogram-hibakeresés|
 |**Toggle Breakpoint**|F9|Szkriptpanel, amikor egy parancsprogram-hibakeresés|
 |**Az összes töréspont eltávolítása**|CTRL+SHIFT+F9|Szkriptpanel, amikor egy parancsprogram-hibakeresés|
@@ -94,7 +94,7 @@ A következő billentyűparancsokat használhatja a parancsfájlok hibakeresése
 |**Krokovat s Vystoupením**|O|Konzol ablaktáblában, amikor egy parancsprogram-hibakeresés|
 |**Ismételje meg az utolsó parancs** (a lépést, vagy keresztül lépés)|ENTER|Konzol ablaktáblában, amikor egy parancsprogram-hibakeresés|
 |**Hívási verem megjelenítése**|K|Konzol ablaktáblában, amikor egy parancsprogram-hibakeresés|
-|**Állítsa le a hibakeresést**|VÁLASZOK|Konzol ablaktáblában, amikor egy parancsprogram-hibakeresés|
+|**Állítsa le a hibakeresést**|Q|Konzol ablaktáblában, amikor egy parancsprogram-hibakeresés|
 |**A parancsfájl listázása**|L|Konzol ablaktáblában, amikor egy parancsprogram-hibakeresés|
 |**Hibakeresés a parancsok konzol megjelenítése**|H vagy?|Konzol ablaktáblában, amikor egy parancsprogram-hibakeresés|
 

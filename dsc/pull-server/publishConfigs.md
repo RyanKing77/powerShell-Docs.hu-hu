@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A lekéréses kiszolgálóra konfigurációs azonosítókat (v4 vagy v5) használatával közzététele
 ms.openlocfilehash: 0144fec43d7a8d65b79891567cc0dc3952175343
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404196"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686368"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>A lekéréses kiszolgálóra konfigurációs azonosítókat (v4 vagy v5) használatával közzététele
 
@@ -18,7 +18,7 @@ Az alábbi szakaszok azt feltételezik, hogy Ön már beállított egy lekérés
 
 Minden egyes célcsomóponttal konfigurálható töltse le a konfigurációk, az erőforrásokat, és még jelentést annak állapotát. Ebből a cikkből megtudhatja, hogyan tölthet fel erőforrásokat, így elérhetők tölthető le, és konfigurálja az ügyfeleket, automatikusan erőforrások letöltéséhez. Amikor a csomópont kap keresztül egy hozzárendelt konfigurációs **lekéréses** vagy **leküldéses** (v5), automatikusan letölti az konfigurációjában megadott helyen található az LCM Konfigurálása a szükséges erőforrásokat.
 
-## <a name="compile-configurations"></a>Konfiguráció fordítása
+## <a name="compile-configurations"></a>Compile Configurations
 
 Az első lépés tárolásához [konfigurációk](../configurations/configurations.md) lekéréses kiszolgálón, hogy ".mof" fájlokba fordítsa őket. Általános, és több ügyfélre vonatkozik, hogy a konfigurációt, használja a `localhost` a csomópont blokkban. Az alábbi példában látható egy konfigurációs shell által használt `localhost` egy adott ügyfél neve helyett.
 
@@ -85,7 +85,7 @@ Nincs kimenet nem jelenik meg, de meg kell jelennie egy "<GUID or Configuration 
 
 ## <a name="where-to-store-mof-files-and-checksums"></a>MOF-fájlok és az ellenőrzőösszegeket tárolására
 
-### <a name="on-a-dsc-http-pull-server"></a>A DSC HTTP lekéréses kiszolgálón
+### <a name="on-a-dsc-http-pull-server"></a>On a DSC HTTP Pull Server
 
 Amint azt a HTTP-lekérési kiszolgáló beállításakor [DSC HTTP-lekérési kiszolgáló beállítása](pullServer.md), adja meg a könyvtárakat a **ModulePath** és **ConfigurationPath** kulcsok. A **ConfigurationPath** kulcs azt jelzi, ahol minden ".mof" fájlokat kell tárolni. A **ConfigurationPath** azt jelzi, ahol minden ".mof" és ".checksum" fájlok kell tárolni.
 

@@ -1,26 +1,26 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 76aa4a372602d78e013b2138eb6409304a4dfb76
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: add6bec798713f00d4b23414b172445e38bbfa44
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190060"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685325"
 ---
-# <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Célállapot-konfiguráció (DSC) ismert problémák és korlátozások
+# <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) ismert problémák és korlátozások
 
-<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Megtörje módosítása: A DSC-konfigurációk jelszavak titkosításához/visszafejtéséhez használt tanúsítványok nem feltétlenül WMF 5.0 RTM telepítése után
+<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Kompatibilitástörő változás: A DSC-konfigurációk jelszavak titkosítási/visszafejtési tanúsítványokat nem működnek a WMF 5.0 RTM-re telepítése után
 --------------------------------------------------------------------------------------------------------------------------------
 
-A WMF 4.0-s és a WMF 5.0 Preview kiadásokban DSC nem teszik lehetővé a jelszavak a konfigurációban kell lennie a length több mint 121 karaktereket. A DSC rövid jelszavak használatát, akkor is, ha a hosszú és erős jelszót volt szükség volt kényszerítése. A legfrissebb módosítás lehetővé teszi, hogy a DSC-konfiguráció tetszőleges hosszúságú jelszót.
+A WMF 4.0-s és WMF 5.0-s előzetes kiadások DSC nem teszik lehetővé a jelszavak hosszát, a konfiguráció a több mint 121 karakter. DSC rövid jelszavak használatát, akkor is, ha a hosszú és erős jelszót volt szükség volt kényszerítése. Ez használhatatlanná tévő változás lehetővé teszi, hogy a jelszavakat a DSC-konfiguráció tetszőleges hosszúságú lehet.
 
-**Megoldás:** hozza létre újból a tanúsítványt, amelynek adattitkosítás vagy kulcs rejtjelezése kulcs használatát, és a dokumentum titkosítási kibővített kulcshasználat (1.3.6.1.4.1.311.80.1). A TechNet cikknek <https://technet.microsoft.com/library/dn807171.aspx> további részleteket tartalmaz.
+**Megoldás:** Hozza létre újra a tanúsítványt, az adattitkosítás vagy a fő titkosítási kulcs használati és dokumentum titkosítási kibővített kulcshasználat (1.3.6.1.4.1.311.80.1). TechNet-cikk <https://technet.microsoft.com/library/dn807171.aspx> tartalmaz további információkat.
 
 
-<a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>A DSC-parancsmagok sikertelenek lehetnek a WMF 5.0 RTM telepítése után
+<a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>A WMF 5.0 RTM-re telepítése után sikertelen lehet a DSC-parancsmagok
 ------------------------------------------------------------------------------------
-Start-DscConfiguration és egyéb DSC-parancsmagokkal meghiúsulhat, miután telepítette a WMF 5.0 RTM-re a következő hiba miatt:
+Start-DscConfiguration és egyéb DSC-parancsmagok után telepíti a WMF 5.0 RTM-re a következő hibaüzenettel meghiúsulhat:
 ```powershell
     LCM failed to retrieve the property PendingJobStep from the object of class dscInternalCache .
     + CategoryInfo : ObjectNotFound: (root/Microsoft/...gurationManager:String) [], CimException
@@ -28,67 +28,67 @@ Start-DscConfiguration és egyéb DSC-parancsmagokkal meghiúsulhat, miután tel
     + PSComputerName : localhost
 ```
 
-**Megoldás:** DSCEngineCache.mof törlése a következő parancs futtatásával egy rendszergazda jogú PowerShell-munkamenetben (Futtatás rendszergazdaként):
+**Megoldás:** DSCEngineCache.mof törölje a következő parancs futtatásával egy rendszergazda jogú PowerShell-munkamenetben (Futtatás rendszergazdaként):
 
 ```powershell
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
 
 
-<a name="dsc-cmdlets-may-not-work-if-wmf-50-rtm-is-installed-on-top-of-wmf-50-production-preview"></a>A DSC-parancsmagok előfordulhat, hogy nem működik, ha a WMF 5.0 RTM WMF 5.0 éles előzetes funkciók mellett kártevőészlelést telepítve van
+<a name="dsc-cmdlets-may-not-work-if-wmf-50-rtm-is-installed-on-top-of-wmf-50-production-preview"></a>DSC-parancsmagok előfordulhat, hogy nem működik, ha a WMF 5.0 RTM-re épülő WMF 5.0 éles előzetes verzió van telepítve
 ------------------------------------------------------
-**Megoldás:** a következő parancsot egy rendszergazda jogú PowerShell-munkamenetben (Futtatás rendszergazdaként):
+**Megoldás:** Futtassa a következő parancsot egy rendszergazda jogú PowerShell-munkamenetben (Futtatás rendszergazdaként):
 ```powershell
     mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 ```
 
 
-<a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>LCM is kísérhet instabil állapotban DebugMode a Get-DscConfiguration használata során
+<a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>Az LCM lépjen nem stabil állapotba kerülnek DebugMode Get-DscConfiguration használatával
 -------------------------------------------------------------------------------
 
-Ha LCM DebugMode, állítsa le a Get-DscConfiguration feldolgozását a CTRL + C billentyűkombináció lenyomásával okozhat a go LCM instabil állapotban ilyen be, hogy a DSC-parancsmagok többsége nem fognak működni.
+Ha LCM DebugMode, nyomja le a CTRL + C billentyűkombinációval állítsa le a Get-DscConfiguration feldolgozása okozhat a go LCM nem stabil állapotba kerülnek az ilyen a DSC-parancsmagok többsége nem fog működni.
 
-**Megoldás:** nem CTRL + C billentyűkombináció Get-DscConfiguration parancsmag hibakeresés során.
+**Megoldás:** Ne nyomja le a CTRL + C Get-DscConfiguration parancsmag hibakeresése során.
 
 
-<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>A DebugMode STOP-DscConfiguration lefagyhat
+<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>STOP-DscConfiguration lefagyhat DebugMode a
 ------------------------------------------------------------------------------------------------------------------------
-Ha LCM DebugMode, Stop-DscConfiguration leállhat a Get-DscConfiguration által elindított egy műveletet leállítására tett kísérlet közben
+Ha LCM DebugMode, Stop-DscConfiguration leállhat a Get-DscConfiguration által indított művelet megszakítására tett kísérlet során
 
-**Megoldás:** Befejezés szakaszban leírt módon történő Get-DscConfiguration indította a műveletet a hibakeresés "[hibakeresés DSC erőforrások](https://msdn.microsoft.com/powershell/dsc/debugresource)".
+**Megoldás:** A hibakeresés, a szakaszban ismertetett módon, a Get-DscConfiguration által indított művelet befejezéséhez "[hibakeresés DSC-erőforrások](https://msdn.microsoft.com/powershell/dsc/debugresource)".
 
 
 <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>Részletes hibaüzenetek nem jelennek meg DebugMode
 -----------------------------------------------------------------------------------
-Ha LCM DebugMode, a részletes hibaüzeneteket a DSC-források jelennek meg.
+Ha LCM DebugMode, nem a részletes hibaüzenet jelenik meg a DSC-erőforrásokat.
 
-**Megoldás:** letiltása *DebugMode* részletes üzenetek a erőforrás megtekintéséhez
+**Megoldás:** Tiltsa le *DebugMode* erőforrásból részletes üzenetek megtekintéséhez
 
 
-<a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Invoke-DscResource műveletek nem sikerült beolvasni a Get-DscConfigurationStatus parancsmaggal
+<a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Invoke-DscResource műveletek nem lehet beolvasni a Get-DscConfigurationStatus parancsmag
 --------------------------------------------------------------------------------------
-Után közvetlenül a bármilyen olyan erőforrás módszerek meghívására Invoke-DscResource parancsmag használatával, a rekordok ilyen művelet nem sikerült beolvasni a Get-DscConfigurationStatus egy későbbi időpontban.
+Invoke-DscResource parancsmag használatával bármely erőforrás metódusokat hívhat meg közvetlenül, miután a rekordokat az ilyen művelet nem lehet beolvasni Get-DscConfigurationStatus keresztül egy későbbi időpontban.
 
-**Megoldás:** nincs.
+**Megoldás:** Nincs.
 
 
 <a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus értéket ad vissza lekéréses ciklus műveletek típusként *konzisztencia*
 ---------------------------------------------------------------------------------
-Ha egy csomópont értéke LEKÉRÉSES frissítési mód, minden egyes lekéréses műveletet hajtja végre, a Get-DscConfigurationStatus parancsmag jelent-e a művelet típusú, mint *konzisztencia* helyett *kezdeti*
+Ha egy csomópont értéke LEKÉRÉSES frissítési mód, minden egyes lekéréses műveletet hajtja végre, a Get-DscConfigurationStatus parancsmag jelentések, a művelet típusa *konzisztencia* helyett *kezdeti*
 
-**Megoldás:** nincs.
+**Megoldás:** Nincs.
 
 <a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-DscResource parancsmag nem ad vissza üzenet állították sorrendben
 ---------------------------------------------------------------------------------
-Az Invoke-DscResource parancsmag nem ad vissza figyelmeztetést, a részletes és hibaüzeneteket LCM vagy a DSC-erőforrás állították sorrendben.
+Az Invoke-DscResource a parancsmag nem ad részletes, figyelmeztetés, és hibaüzenetek LCM vagy a DSC-erőforrás állították a sorrendben.
 
-**Megoldás:** nincs.
+**Megoldás:** Nincs.
 
 
-<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>A DSC-erőforrások nem indítja el egyszerűen Invoke-DscResource használata esetén
+<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>DSC-erőforrások hibakeresése nem végezhető el egyszerűen Invoke-DscResource együtt használva
 -----------------------------------------------------------------------
-Ha az LCM hibakeresési módban fut. (lásd: [hibakeresés DSC erőforrások](https://msdn.microsoft.com/powershell/dsc/debugresource) további részletekért), Invoke-DscResource parancsmag nem ad futási térben csatlakoztatni a hibakeresési információ.
-**Megoldás:** felderítése, és csatolja a parancsmagok használatával futási térben **Get-PSHostProcessInfo**, **Enter-PSHostProcess** , **Get-futási térben** és **Hibakeresési-futási térben** hibakeresése a DSC-erőforrás.
+Az LCM futtatásakor hibakeresési módban (lásd: [hibakeresés DSC-erőforrások](https://msdn.microsoft.com/powershell/dsc/debugresource) további részletekért), Invoke-DscResource parancsmag nem ad futási térben csatlakozni hibakeresési információkat.
+**Megoldás:** Fedezze fel, és csatolja a futási térben parancsmagokkal **Get-PSHostProcessInfo**, **Enter-PSHostProcess** , **Get-futási térben** és **hibakeresési futási térben** hibakeresése a DSC-erőforrás.
 
 ```powershell
 # Find all the processes hosting PowerShell
@@ -116,76 +116,76 @@ Debug-Runspace -Id 2
 ```
 
 
-<a name="various-partial-configuration-documents-for-same-node-cannot-have-identical-resource-names"></a>Azonos csomópont különböző részleges konfigurációs dokumentumok azonos erőforrás neve nem lehet.
+<a name="various-partial-configuration-documents-for-same-node-cannot-have-identical-resource-names"></a>Ugyanazon a csomóponton különböző részleges konfigurációs dokumentumok azonos erőforrás neve nem lehet.
 ------------------------------------------------------------------------------------------
 
-Több részleges konfigurációkat egyetlen csomópont vannak telepítve, az erőforrások OK azonos nevű futásidejű hiba.
+Azonos nevek erőforrások OK, amely egyetlen csomópont időszakaik legyenek több részleges konfigurációk, futásidejű hiba.
 
-**Megoldás:** különböző részleges konfigurációk is ugyanazokat az erőforrásokat különböző neveket használja.
+**Megoldás:** Akkor is ugyanazokat az erőforrásokat a különböző neveket használ a különböző részleges konfigurációk.
 
 
-<a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration – UseExisting nem működik a - Credential
+<a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration – UseExisting nem működik – a hitelesítő adatok
 ------------------------------------------------------------------
 
-– UseExisting paraméterrel, a Start-DscConfiguration használatakor az-Credential paraméter a rendszer figyelmen kívül hagyja. A DSC alapértelmezett folyamat identitást használja folytatja a műveletet. Ez hibát okoz, ha eltérő hitelesítő adatok a távoli csomóponton levő folytatáshoz van szükség.
+Start-DscConfiguration – UseExisting paraméterrel, használatakor a – Credential paraméter figyelmen kívül hagyja. DSC használ alapértelmezett folyamatidentitás folytatja a műveletet. Ez hibát okoz, ha más hitelesítő adatokat távoli csomóponton folytatja van szükség.
 
-**Megoldás:** használata CIM munkamenet távoli DSC műveletek:
+**Megoldás:** CIM-munkamenet távoli DSC műveletek:
 ```powershell
 $session = New-CimSession -ComputerName $node -Credential $credential
 Start-DscConfiguration -UseExisting -CimSession $session
 ```
 
 
-<a name="ipv6-addresses-as-node-names-in-dsc-configurations"></a>IPv6-címek, a csomópont nevének a DSC-konfigurációk
+<a name="ipv6-addresses-as-node-names-in-dsc-configurations"></a>A DSC-konfigurációkat csomópont nevét, az IPv6-címek
 --------------------------------------------------
-IPv6-címek, a csomópont nevének a DSC konfigurációs parancsfájlokat ebben a kiadásban nem támogatottak.
+DSC-konfigurációs szkripteket a csomópont nevét, az IPv6-címek nem támogatottak ebben a kiadásban.
 
-**Megoldás:** nincs.
+**Megoldás:** Nincs.
 
 
-<a name="debugging-of-class-based-dsc-resources"></a>A DSC osztály-alapú erőforrások hibakeresés
+<a name="debugging-of-class-based-dsc-resources"></a>Osztályalapú DSC-erőforrások hibakeresése
 --------------------------------------
-A DSC-erőforrások osztály-alapú hibakeresés nem támogatott ebben a kiadásban.
+Osztályalapú DSC-erőforrások hibakeresése ebben a kiadásban nem támogatott.
 
-**Megoldás:** nincs.
+**Megoldás:** Nincs.
 
 
-<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Változók & DSC osztály-alapú erőforrás $script hatókörben megadott függvények nem maradnak meg több hívások DSC-erőforrás között
+<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Változók és a DSC osztály-alapú erőforrás $script hatókörében meghatározott függvényeket nem maradnak meg több alkalommal hívnia egy DSC-erőforrás között
 -------------------------------------------------------------------------------------------------------------------------------------
 
-Start-DSCConfiguration több egymást követő hívások sikertelen lesz, ha a configuration osztály-alapú erőforrás, változók vagy $script hatókörben megadott funkciók használ.
+Start-DSCConfiguration több egymást követő hívások sikertelen lesz, ha a konfigurációs van használó osztályalapú erőforrás, amelynek változók vagy $script hatókörében meghatározott függvényeket.
 
-**Megoldás:** DSC erőforrásosztály magát a változók és a funkciók meghatározása. No $script hatókör változók vagy funkciók.
+**Megoldás:** Adjon meg a változók és a functions a DSC-erőforrás osztály. A műveletek/No $script hatókör változókat.
 
 
 <a name="dsc-resource-debugging-when-a-resource-is-using-psdscrunascredential"></a>Ha egy erőforrás PSDscRunAsCredential hibakeresés DSC erőforrás
 ----------------------------------------------------------------------
-A DSC erőforrás hibakeresési erőforrás használatakor a *PSDscRunAsCredential* tulajdonság a konfigurációban nincs suported ebben a kiadásban.
+DSC-erőforrás hibakeresés erőforrás használatakor a *PSDscRunAsCredential* konfigurációjában tulajdonság nem suported ebben a kiadásban.
 
-**Megoldás:** nincs.
+**Megoldás:** Nincs.
 
 
-<a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>PsDscRunAsCredential DSC összetett erőforrások esetén nem támogatott
+<a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>PsDscRunAsCredential összetett DSC-erőforrások esetén nem támogatott
 ----------------------------------------------------------------
 
-**Megoldás:** használata Credential tulajdonság, ha elérhető. Példa ServiceSet és WindowsFeatureSet
+**Megoldás:** Hitelesítő adat tulajdonság akkor használható, ha elérhető. Példa ServiceSet és WindowsFeatureSet
 
 
 <a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource-szintaxis* nem tükrözi a megfelelő PsDscRunAsCredential
 -------------------------------------------------------------------------
-Get-DscResource-szintaxis nem tükrözi PsDscRunAsCredential megfelelően erőforrás kötelezőként jelöli meg, vagy nem támogatja ezt.
+Get-DscResource-szintaxist nem tükrözi a PsDscRunAsCredential megfelelően erőforrás jelöli meg, kötelező vagy nem támogatja ezt.
 
-**Megoldás:** nincs. Azonban ISE konfigurációs szerzői tükrözi PsDscRunAsCredential tulajdonságra vonatkozó metaadat IntelliSense használatakor.
+**Megoldás:** Nincs. Azonban ISE-ben konfigurációs szerzői tükrözi PsDscRunAsCredential tulajdonságra vonatkozó metaadat IntelliSense használatakor.
 
 
 <a name="windowsoptionalfeature-is-not-available-in-windows-7"></a>WindowsOptionalFeature nem érhető el a Windows 7
 -----------------------------------------------------
 
-A WindowsOptionalFeature DSC-erőforrás nem érhető el a Windows 7. Ehhez az erőforráshoz van szükség, a DISM-modulját, és a DISM-parancsmagok érhetők el a Windows 8 és újabb verziókban a Windows operációs rendszer elindítása.
+A DSC WindowsOptionalFeature erőforrás nem érhető el a Windows 7. Ezt az erőforrást igényel a DISM modul, és a DISM-parancsmagok érhetők el a Windows 8 és újabb verzióiban a Windows operációs rendszer indítása.
 
-<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Osztály-alapú DSC erőforrások importálás-DscResource - ModuleVersion előfordulhat, hogy nem működik megfelelően
+<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Osztályalapú DSC-erőforrások az Import-DscResource - ModuleVersion esetleg nem működnek megfelelően
 ------------------------------------------------------------------------------------------
-Ha a fordítás fürtcsomópont egy osztály-alapú DSC erőforrásmodul, több verziójának `Import-DscResource -ModuleVersion` nem veszi a megadott verzióját, és annak az eredménye a következő fordítási hiba.
+Ha a fordítás csomópont több egy osztályalapú DSC erőforrás-modul verziószámát, `Import-DscResource -ModuleVersion` ne foglalkozzon megadott verzióját és sémafordítási hiba történt a következő eredményez.
 
 ```
 ImportClassResourcesFromModule : Exception calling "ImportClassResourcesFromModule" with "3" argument(s): "Keyword 'MyTestResource' already defined in the configuration."
@@ -196,20 +196,20 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-**Megoldás:** importálja a szükséges verziót megadásával a *ModuleSpecification* az objektum a `-ModuleName` a `RequiredVersion` kulcs van megadva az alábbiak szerint:
+**Megoldás:** Importálja a szükséges verzióra definiálásával a *ModuleSpecification* az objektum a `-ModuleName` a `RequiredVersion` kulcs van megadva a következőképpen:
 ``` PowerShell
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
 ```
 
-<a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Néhány DSC-erőforrásokhoz, mint a beállításjegyzék erőforrás indítsa el a kérelem feldolgozása hosszú ideig tarthat.
+<a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Előfordulhat, hogy egyes DSC-erőforrások, például beállításjegyzék erőforrás időbe telik a kérelem feldolgozása megkezdődött.
 --------------------------------------------------------------------------------------------------------------------------------
 
-**Resolution1:** hozzon létre egy ütemezett feladat, amely a szükségtelenné vált a következő mappa rendszeres időközönként.
+**Resolution1:** Hozzon létre egy ütemezett feladat, rendszeres időközönként megtisztítja a következő mappát.
 ``` PowerShell
 $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
-**Resolution2:** karbantartása a DSC-konfiguráció módosítása a *CommandAnalysis* végén található a konfigurációs mappát.
+**Resolution2:** A DSC-konfiguráció karbantartása módosítsa a *CommandAnalysis* végén található a konfigurációs mappát.
 ``` PowerShell
 Configuration $configName
 {

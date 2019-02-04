@@ -1,15 +1,15 @@
 ---
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
-title: A második Ugrás létrehozása a PowerShell távoli eljáráshívás
+title: A második ugrás végrehajtása a PowerShell távoli eljáráshívásai során
 ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404245"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684751"
 ---
-# <a name="making-the-second-hop-in-powershell-remoting"></a>A második Ugrás létrehozása a PowerShell távoli eljáráshívás
+# <a name="making-the-second-hop-in-powershell-remoting"></a>A második ugrás végrehajtása a PowerShell távoli eljáráshívásai során
 
 A "második Ugrás probléma" hivatkozik olyan helyzet, a következőhöz hasonló:
 
@@ -39,7 +39,7 @@ Példa bemutatja, hogyan engedélyezheti és CredSSP használata PowerShell-táv
 - Biztonsági rések rendelkezik.
 - Ügyfél- és kiszolgálói szerepkörök konfigurálást igényel.
 
-## <a name="kerberos-delegation-unconstrained"></a>A Kerberos-delegálás (nem korlátozott)
+## <a name="kerberos-delegation-unconstrained"></a>Kerberos delegation (unconstrained)
 
 Győződjön meg arról, a második Ugrás végrehajtása a nem korlátozott Kerberos-delegálás is használható. Ezt a módszert azonban nem szabályozza, ahol szolgálnak a delegált hitelesítő adatokat biztosít.
 
@@ -213,7 +213,7 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [Hogyan Windows Server 2012 használatának egyszerűbbé tétele a problémás Kerberos által korlátozott delegálást, 1. rész](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Hogyan Windows Server 2012 használatának egyszerűbbé tétele a problémás Kerberos által korlátozott delegálást, 2. rész](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Understanding Kerberos általi korlátozott delegálás az Azure Active Directory Application Proxy központi telepítéseknél integrált Windows-hitelesítés](https://aka.ms/kcdpaper)
-- [[MS-ADA2]: Az Active Directory séma attribútumok M2.210 attribútum msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
+- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
 - [[MS-SFU]: Kerberos-protokoll kiterjesztései: Felhasználó és a korlátozott delegálás protokoll 1.3.2 S4U2proxy szolgáltatás](https://msdn.microsoft.com/library/cc246079.aspx)
 - [Erőforrás-alapú Kerberos által korlátozott delegálás](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Távoli felügyelet nélkül PrincipalsAllowedToDelegateToAccount használatával korlátozott delegálás](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)

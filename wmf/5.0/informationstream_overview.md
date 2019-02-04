@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 6dadbe9c41ed0a61839ef94fe0a950fe501941ee
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e61f59f8f7634853c9f6e0d3923939543ff04f20
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219232"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685612"
 ---
 # <a name="information-stream"></a>Információfolyam
 
-Egy új strukturált adatokat adatfolyam már használható parancsfájl és a gazdagép közötti strukturált adatok átviteléhez. **Write-Host** is frissült az adatfolyamot, ahol most rögzítése, és azt csend kimenete hozható létre. Az új **írási-információk** parancsmag (valamint a megfelelő WriteInformation API) használt **- InformationVariable** és **- InformationAction** általános paraméterek lehetővé teszi a nagyobb rugalmasságot és funkció.
+Egy új strukturált információfolyam most már használható parancsfájl és a gazdagép közötti strukturált adatok továbbítására. **Write-Host** is frissítve lett, hogy gridre bocsáthatja ki az adatfolyamot, most rögzítése és csend azt a kimenetet. Az új **írási-információk** parancsmag (és egy megfelelő WriteInformation API-val) együttes **- InformationVariable** és **- InformationAction** általános paraméterek lehetővé teszi a nagyobb rugalmasságot és képességet.
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script
@@ -69,7 +69,7 @@ MessageData
 {[Message, =============================], [NoNewLine, False], [ForegroundColor, DarkYellow], [BackgroundColor, DarkMa...
 {[Message, I ], [NoNewLine, True], [ForegroundColor, White], [BackgroundColor, DarkMagenta]}
 {[Message, <3], [NoNewLine, True], [ForegroundColor, Red], [BackgroundColor, DarkMagenta]}
-{[Message,  Output], [NoNewLine, False], [ForegroundColor, White], [BackgroundColor, DarkMagenta]}
+{[Message,  Output], [NoNewLine, False], [ForegroundColor, White], [BackgroundColor, DarkMagenta]}
 {[Message, =============================], [NoNewLine, False], [ForegroundColor, DarkYellow], [BackgroundColor, DarkMa...
 {[Message, ], [NoNewLine, False], [ForegroundColor, DarkYellow], [BackgroundColor, DarkMagenta]}
 {[Message, SCRIPT COMPLETE!One!Eleven!], [NoNewLine, False], [ForegroundColor, Green], [BackgroundColor, DarkMagenta]}
@@ -91,34 +91,34 @@ PS C:\Users\demo>
 PS C:\Users\demo> ## All output includes useful properties that you would expect
 PS C:\Users\demo> ## of a generic event stream
 PS C:\Users\demo> $ivOutput.Process
-MessageData     : System.Diagnostics.Process (powershell)
-Source          : c:\temp\OutputGusher.ps1
-TimeGenerated   : 2/9/2015 5:08:52 PM
-Tags            : {Process}
-User            : demo
-Computer        : srv2
-ProcessId       : 4008
-NativeThreadId  : 7980
+MessageData     : System.Diagnostics.Process (powershell)
+Source          : c:\temp\OutputGusher.ps1
+TimeGenerated   : 2/9/2015 5:08:52 PM
+Tags            : {Process}
+User            : demo
+Computer        : srv2
+ProcessId       : 4008
+NativeThreadId  : 7980
 ManagedThreadId : 8
 
 PS C:\Users\demo> ## And of course, this works from hosting applications.
 PS C:\Users\demo> $ps = [PowerShell]::Create()
 PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke()
 
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-    559      41   119704     130968 ...46     7.77   4008 powershell
+Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
+-------  ------    -----      ----- -----   ------     -- -----------
+    559      41   119704     130968 ...46     7.77   4008 powershell
 
 PS C:\Users\demo> $information = $ps.Streams.Information
 PS C:\Users\demo> $information | ? { $_.Tags -contains 'LogLow'}
 
-MessageData     : Some spammy logging information
-Source          : C:\temp\OutputGusher.ps1
-TimeGenerated   : 2/9/2015 5:08:53 PM
-Tags            : {LogLow}
-User            : demo
-Computer        : srv2
-ProcessId       : 4008
-NativeThreadId  : 2276
+MessageData     : Some spammy logging information
+Source          : C:\temp\OutputGusher.ps1
+TimeGenerated   : 2/9/2015 5:08:53 PM
+Tags            : {LogLow}
+User            : demo
+Computer        : srv2
+ProcessId       : 4008
+NativeThreadId  : 2276
 ManagedThreadId : 14
 ```

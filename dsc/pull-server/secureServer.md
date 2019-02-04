@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Lekérési kiszolgáló – ajánlott eljárások
 ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404388"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686676"
 ---
 # <a name="pull-server-best-practices"></a>Lekérési kiszolgáló – ajánlott eljárások
 
@@ -66,7 +66,7 @@ Egy lekéréses kiszolgálót telepítése a DSC szolgáltatás Windows Server i
 
 Telepíti a legújabb tartalom a Windows Update, kívül két letöltések üzembe helyezése egy DSC lekéréses kiszolgálót célszerű figyelembe venni: A Windows Management Framework, és a DSC-modul a pull-kiszolgáló üzembe helyezésének automatizálása legújabb verzióját.
 
-### <a name="wmf"></a>A WMF
+### <a name="wmf"></a>WMF
 
 A Windows Server 2012 R2 tartalmaz egy a DSC szolgáltatás nevű funkciót. A DSC szolgáltatás lekéréses server funkciókat, beleértve a bináris fájlokat, amelyek támogatják az OData-végpont biztosítja.
 A WMF része a Windows Server, és a egy Agilis kiadása ütemben történik a Windows Server-kiadások között frissül. [A WMF 5.0 új verzióinak](https://www.microsoft.com/en-us/download/details.aspx?id=54616) a DSC szolgáltatás frissítéseket is tartalmaz. Emiatt tanácsos egy töltse le a WMF legújabb kiadását, és tekintse át a kibocsátási megjegyzéseket határozza meg, ha a kiadás a DSC szolgáltatás frissítését tartalmazza. Emellett tekintse át a kibocsátási megjegyzések a szakaszában, amely azt jelzi-e egy update vagy a forgatókönyv tervezési állapota stabil vagy kísérleti szerepel a listán.
@@ -104,7 +104,7 @@ Rendelkeznek hozzáféréssel a Windows Server telepítési fájlok, amelyek má
 
 Kérje le a telepítések támogatottak a fizikai és virtuális kiszolgáló. A lekéréses kiszolgálón méretezési követelményei összhangba kerüljenek a Windows Server 2012 R2 követelményei.
 
-Processzor: 1,4 GHz-es 64 bites processzor, memória: 512 MB szabad lemezterület: 32 GB-os hálózati: Gigabit Ethernet-Adapter
+Processzor: 1,4 GHz-es 64 bites processzor, memória: 512 MB szabad lemezterület: 32 GB-os hálózati: Gigabit Ethernet Adapter
 
 A tervezési feladat|
 ---|

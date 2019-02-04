@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 0543afbc72148b1ba713e59655126c069b16ef33
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5b31fe833fb0f9d0f3f2733e777e4608a697d583
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218433"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685633"
 ---
-# <a name="side-by-side-module-versioning-support-for-dsc-resources"></a>A DSC-erőforrások párhuzamos modul Versioning támogatása
+# <a name="side-by-side-module-versioning-support-for-dsc-resources"></a>Egymás melletti modul verziószámozás támogatása a DSC-erőforrásokhoz
 
-Modulok tartalmazó DSC-erőforrások lehetnek egymás melletti telepítve, és a DSC-konfigurációk használhatja az erőforrást, amelyre telepítve van a rendszeren egy adott verziójához.
+A modulok DSC-erőforrásokat tartalmazó lehet telepítve egymás mellett, és a DSC-konfigurációk használhatja az erőforrást, amelyre telepítve van a rendszeren egy adott verzióját.
 
-További információkért lásd: [erőforrásokat használó többféle verzióját tartalmazó](https://msdn.microsoft.com/powershell/dsc/sxsresource).
+További információkért lásd: [eltérő verziójú erőforrások használata](https://msdn.microsoft.com/powershell/dsc/sxsresource).
 
 ## <a name="known-issues"></a>Ismert problémák
 
-Ebben a kiadásban a következő ismert problémákat olvashatja egymás melletti telepítés:
+Ebben a kiadásban a következő ismert problémák egymás melletti telepítés:
 
--   A DSC-erőforrás belül ugyanaz a konfiguráció két különböző verzióinak használata nem támogatott.
+-   Két különböző verzióit a DSC-erőforrás belül ugyanaz a konfiguráció használata nem támogatott.

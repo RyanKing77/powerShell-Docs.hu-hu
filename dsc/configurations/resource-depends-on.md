@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
-title: Erőforrás-függőségek használatával DependsOn
+title: Erőforrás-függőségek DependsOn használatával
 ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404219"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688062"
 ---
-# <a name="resource-dependencies-using-dependson"></a>Erőforrás-függőségek használatával DependsOn
+# <a name="resource-dependencies-using-dependson"></a>Erőforrás-függőségek DependsOn használatával
 
 Amikor ír [konfigurációk](configurations.md), hozzáadhat [erőforrás blokkok](../resources/resources.md) konfigurálása egy cél csomópont aspektusait. Adja hozzá az erőforrás-blokkok továbbra is, mint a konfigurációk növelhető, elég nagy és kezelése nehézkes. Az egyik ilyen kihívás abban az erőforrás-blokkok alkalmazott sorrendben. Erőforrások általában a sorrendben vannak definiálva a konfigurációs belül érvényesek. Növekedésével a konfiguráció nagyobb és összetettebb, használhatja a `DependsOn` kulcs megadásával az erőforrások, amelyek egy erőforrást egy másik erőforrás függ a alkalmazott sorrendjének módosításához.
 

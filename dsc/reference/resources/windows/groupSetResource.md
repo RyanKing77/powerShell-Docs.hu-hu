@@ -4,11 +4,11 @@ keywords: DSC, powershell, a konfigurációt, a beállítása
 description: Lehetővé teszi a célcsomóponton helyi csoportok kezelése.
 title: DSC GroupSet erőforrás
 ms.openlocfilehash: afe4c4d33ac5620c411481e93d76a1f90c26deb9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048483"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684926"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet erőforrás
 

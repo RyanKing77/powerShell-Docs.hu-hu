@@ -4,11 +4,11 @@ contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: NuGet rendszerindítása
 ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002138"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683967"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>A NuGet-szolgáltató és a NuGet.exe bootstrap
 
@@ -155,7 +155,7 @@ Ha a parancsmagokat végrehajtódtak nem emelt szintű engedélyekkel rendelkez�
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-A második lehetőség a NuGet.Org webhelyen NuGet.exe töltheti le: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) egy éles gépek Nuget verziót kiválasztásakor róla, hogy újabb, mint a 2.8.5.208, és azonosítja a verzióját, amely rendelkezik címkével lett " ajánlott". Fontos, hogy a fájl feloldása, ha a böngésző segítségével lett letöltve. Ennek segítségével hajtható végre a `Unblock-File` parancsmagot.
+A második lehetőség a NuGet.Org webhelyen NuGet.exe töltheti le: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) A Nuget-verzió éles gépek kiválasztásakor róla, hogy újabb, mint a 2.8.5.208, és a "ajánlott" lett jelölve, hogy az a verzió azonosításához. Fontos, hogy a fájl feloldása, ha a böngésző segítségével lett letöltve. Ennek segítségével hajtható végre a `Unblock-File` parancsmagot.
 
 Mindkét esetben a NuGet.exe fájl átmásolható tetszőleges helyére `$env:path`, de a szabványos helyek:
 

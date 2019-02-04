@@ -2,12 +2,12 @@
 title: PowerShell távoli eljáráshívás SSH-n keresztül
 description: Távoli eljáráshívás a PowerShell Core SSH-val
 ms.date: 08/14/2018
-ms.openlocfilehash: b5c6bd70841e270c2c128601612c07af9d9aa6e4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655293"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687131"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell távoli eljáráshívás SSH-n keresztül
 
@@ -47,7 +47,7 @@ SSH minden gépen telepítve kell lennie. Mindkét az SSH-ügyfél telepítése 
    ```
 
 2. Telepítse a legújabb Win32-OpenSSH. A telepítési utasításokért lásd: [telepítési az OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
-3. Szerkessze a `sshd_config` helyen található fájl `%ProgramData%\ssh`.
+3. Szerkessze a `sshd_config` helyen található fájl `$env:ProgramData\ssh`.
 
    - Győződjön meg arról, hogy engedélyezve van a jelszó-hitelesítés
 

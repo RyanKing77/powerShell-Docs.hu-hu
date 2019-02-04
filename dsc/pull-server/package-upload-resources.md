@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Csomag és a egy lekéréses kiszolgálót erőforrás feltöltése
 ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404171"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688804"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Csomag és a egy lekéréses kiszolgálót erőforrás feltöltése
 
@@ -51,7 +51,7 @@ Nem lehet jelenik meg semmilyen kimenet, de meg kell jelennie egy "xPSDesiredSta
 
 ### <a name="where-to-store-resource-archives"></a>Erőforrás-archívumok tárolására
 
-#### <a name="on-a-dsc-http-pull-server"></a>A DSC HTTP lekéréses kiszolgálón
+#### <a name="on-a-dsc-http-pull-server"></a>On a DSC HTTP Pull Server
 
 Amint azt a HTTP-lekérési kiszolgáló beállításakor [DSC HTTP-lekérési kiszolgáló beállítása](pullServer.md), adja meg a könyvtárakat a **ModulePath** és **ConfigurationPath** kulcsok. A **ConfigurationPath** kulcs azt jelzi, ahol minden ".mof" fájlokat kell tárolni. A **ModulePath** azt jelzi, ahol minden DSC-erőforrás modulokat kell tárolni.
 

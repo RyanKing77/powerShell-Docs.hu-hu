@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Licencfeltételek elfogadását igénylő parancsprogramok
 ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002582"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684212"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>Licencfeltételek elfogadását igénylő parancsprogramok
 
@@ -16,11 +16,11 @@ Licencfeltételek elfogadásának parancsfájlok nem támogatott. Azonban a forg
 
 Parancsfájl commands(Install-Script/Save-Script/Update-Script) támogatásához új paraméter, amely viselkedik, mintha a felhasználó látott a licenc - AcceptLicense. Ha nincs megadva - AcceptLicense; a felhasználó a licenc elfogadására kéri a rendszer és a függő modul license.txt megjelenítendő.
 
-## <a name="examples"></a>PÉLDÁK
+## <a name="examples"></a>EXAMPLES
 
-### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>1. példa: Telepítési szkriptet a licencfeltételek elfogadását igénylő függőségek
+### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>1. példa: Licencfeltételek elfogadását igénylő függőségekkel parancsfájl telepítése
 
-Parancsfájl "ScriptRequireLicenseAcceptance" modul: ModuleRequireLicenseAcceptance"függ. Licenc fogadja el a rendszer kéri.
+Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'. Licenc fogadja el a rendszer kéri.
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance
@@ -38,9 +38,9 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>2. példa: Telepítési szkriptet - AcceptLicense és a licencfeltételek elfogadását igénylő függőségekkel
+### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>2. példa: Licencfeltételek elfogadásának és - AcceptLicense függőségekkel parancsfájl telepítése
 
-Parancsfájl "ScriptRequireLicenseAcceptance" modul: ModuleRequireLicenseAcceptance"függ. Fogadja el a licenc - AcceptLicense van megadva, az nem kéri a felhasználótól.
+Script 'ScriptRequireLicenseAcceptance' depends on module 'ModuleRequireLicenseAcceptance'. Fogadja el a licenc - AcceptLicense van megadva, az nem kéri a felhasználótól.
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense

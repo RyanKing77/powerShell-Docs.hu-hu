@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: db9b48c188b3bfe2e20c06875606a285922f55a6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 57152e9f62c34600df63a2db8e9683928e825d93
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219861"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685745"
 ---
-# <a name="detailed-information-about-lcm-state"></a>LCM állapotával kapcsolatos részletes információk
+# <a name="detailed-information-about-lcm-state"></a>Az LCM állapotának részletes adatai
 
-Fejlesztéseket hajtottunk kitettségének LCM állapotára vonatkozó részletek. A Get-DscLocalConfigurationManager által visszaadott LCMState most már tartalmazza a következő értékeket:
+Fejlesztéseket hajtottunk is közzéteheti az LCM állapotának részleteit. A Get-DscLocalConfigurationManager által visszaadott LCMState mostantól tartalmazza a következő értékeket:
 
-* **Üresjárati**
+* **Inaktív**
 * **elfoglalt**
 * **PendingReboot**
 * **PendingConfiguration**
 
-Egy LCMStateDetail tulajdonság, amely tartalmazza a állapotával kapcsolatos további információk is jelentek meg.
+Bővítettük egy LCMStateDetail tulajdonsággal, amely tartalmazza az állam bővebben is.

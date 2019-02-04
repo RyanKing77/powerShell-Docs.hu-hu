@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC használata a Nano Serveren
 ms.openlocfilehash: fd81fe56d16100f45d9ee2dfd8fdc303c2a6c17a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404237"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686585"
 ---
 # <a name="using-dsc-on-nano-server"></a>A DSC használata a Nano Serveren
 
@@ -46,7 +46,7 @@ Leküldéses és lekéréses módok
 - [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
 - [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
 - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
-- [Új DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
+- [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
 - Konfiguráció fordítása (lásd: [DSC-konfigurációk](../configurations/configurations.md))
 

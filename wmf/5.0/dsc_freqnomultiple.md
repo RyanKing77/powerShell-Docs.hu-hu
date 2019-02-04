@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: a3ac215396206fba62bce303733429d60722ee6b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 23a5c8832f7c2888880a1ee846d75feaa95ebe47
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218382"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688202"
 ---
-# <a name="frequencies-for-refreshmode-and-configurationmode-dont-need-to-be-multiples-of-each-other"></a>RefreshMode és ConfigurationMode gyakoriságot nem kell lenniük minden más Többszörösök
+# <a name="frequencies-for-refreshmode-and-configurationmode-dont-need-to-be-multiples-of-each-other"></a>RefreshMode és a ConfigurationMode nem kell minden más Többszörösök
 
-A korábbi verziójában DSC, a LCM kezelni kellene `RefreshFrequencyMins` és `ConfigurationModeFrequencyMins` többszöröseként egymással. A WMF 5.0 RTM-re egymástól független dolgoznak fel ezeket a tulajdonságokat.
+DSC korábbi verziójában, az LCM kezelni kellene `RefreshFrequencyMins` és `ConfigurationModeFrequencyMins` többszöröseként egymással. A WMF 5.0 RTM-re ezek a Tulajdonságok feldolgozása egymástól független.
 
-További információkért lásd: [konfigurálása a helyi Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig).
+További információkért lásd: [a Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig).

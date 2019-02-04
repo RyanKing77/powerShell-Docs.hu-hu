@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Újdonságai a PowerShell 50 ISE-ben
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320584"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687929"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Mi&#39;újdonságai a Windows PowerShell ISE-ben
 Ez a témakör ismerteti a Windows PowerShell integrált parancsfájlkezelési környezet (ISE) verzióban bevezetett új és frissített funkciókat.
@@ -34,7 +34,7 @@ A következő táblázat felsorolja az új és módosított szolgáltatások a W
 |**[Új súgó-megjelenítő ablakban](#new-help-viewer-window)**|X|X||
 |**[Show-Command parancsmaggal](#show-command-cmdlet)**|X|X||
 
-### <a name="intellisense"></a>Az IntelliSense
+### <a name="intellisense"></a>IntelliSense
 **A ISE-ben 3.0 hozzáadva**
 
 Az IntelliSense az automatikus kiegészítését támogatás szolgáltatása, amely része a Windows PowerShell ISE-ben. Az IntelliSense potenciálisan egyező parancsmagok, paraméterek, paraméterértékeket, fájlok vagy mappák beírása kattintható menük jeleníti meg.
@@ -112,7 +112,7 @@ A külön parancsot és a Windows PowerShell ISE-ben az első kiadásban elérhe
 
 - Szintaxis színezést bemeneti szöveg (nem kimeneti szöveg), beleértve syntaxe XML
 
-- Az IntelliSense
+- IntelliSense
 
 - Egyező kapcsos zárójel
 
@@ -147,11 +147,11 @@ Windows PowerShell ISE 2.0 rendelkezik, külön parancsot és a kimeneti ablakt�
 
 Ha a parancssorból indítsa el Windows PowerShell ISE-ben (beírásával **powershell_ise.exe**), a következő új parancssori kapcsolókat is hozzáadhat.
 
-- *-NoProfile*: Windows PowerShell ISE elindul futtatása nélkül **$profile**
+- *-NoProfile*: Elindítja a Windows PowerShell ISE-ben futó nélkül **$profile**
 
-- *-Súgó*: a súgóablak megjelenítése
+- *-Súgó*: A súgóablak megjelenítése
 
-- *-mta*: Windows PowerShell ISE többszálú apartman módban indul. Az alapértelmezett működési mód a Windows PowerShell ISE-ben az egyszálas apartman módban, vagy *- sta*.
+- *-mta*: Többszálú apartman módban indul el a Windows PowerShell ISE-ben. Az alapértelmezett működési mód a Windows PowerShell ISE-ben az egyszálas apartman módban, vagy *- sta*.
 
 **Milyen hozzáadott értéket nyújt ez a változás?**
 
@@ -176,7 +176,7 @@ Más Windows PowerShell ISE-ben szerkesztési funkciók a következők:
 
 - **Elemzési hiba megjelenített** piros aláhúzás jelöl, elemzési hibákat. Ha az egérmutatót a jelzett hiba, elemleírás jelenik meg a a probléma, amely a kódban található.
 
-- **Nagyítás** nagyítás százalékos aránya a konzol "™ s tartalom nagyítás csúszka segítségével (a jobb alsó sarokban a Windows PowerShell ISE-ablakot), vagy a parancs beírásával állítható **$psise.options.Zoom** a konzol ablaktáblában.
+- **Nagyítás** nagyítás százalékos aránya a konzoltartalmak nagyítás csúszka segítségével (a jobb alsó sarokban a Windows PowerShell ISE-ablakot), vagy a parancs beírásával állítható **$psise.options.Zoom** a konzol ablaktáblában.
 
 - **Rich text másolás és Beillesztés** betűtípusát, méretét, és az eredeti kijelölés színe információkat a Windows PowerShell ISE-ben megtartja a vágólapra másolása.
 

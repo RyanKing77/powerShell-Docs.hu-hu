@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.topic: conceptual
-title: egy ismert probléma vagy korlátozás átíráshoz sablon – példa
-ms.openlocfilehash: 453d4e40b906ebcab7314f04e138ded271338846
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: a példában egy ismert probléma, illetve korlátozás writeup sablonját
+ms.openlocfilehash: ed7ae3de392c8902917e5b98fd4fc9d5138ccaed
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221935"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688678"
 ---
->Megjegyzés: Adja meg a javasolt informatív címet és egy rövid leírást
+>Megjegyzés: a javasolt jellemző címet és a egy rövid leírást adjon meg
 
 ## <a name="example-erroneous-executionpolicy-errors"></a>Példa: Hibás ExecutionPolicy hibák ##
-A Windows 7 a PowerShell-modulok és a DSC-erőforrások ExecutionPolicy kapcsolatos jelentett hibákat eredményezhet.
+Windows 7, a PowerShell-modulok és a DSC-erőforrások használatának kapcsolatos ExecutionPolicy jelentett hibákat eredményezhet.
 
 ### <a name="resolution"></a>Felbontás
 

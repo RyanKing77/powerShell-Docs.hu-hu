@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A Local Configuration Manager konfigurálása a Windows PowerShell korábbi verziói
-ms.openlocfilehash: 31ba2ecdaa5a2ff7fcfddb1791c4d00343f4b5d5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 945d2dc95304a347ec26f2f66f5a17bfefb90997
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404247"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688860"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>A Local Configuration Manager konfigurálása a Windows PowerShell korábbi verziói
 
@@ -34,9 +34,20 @@ Az alábbi listában a helyi Configuration Manager – tulajdonságok, amelyeket
 - **Hitelesítő adatok**: Hitelesítő adatok (például a Get-Credential) azt jelzi, hogy távoli erőforrások eléréséhez, mint például a konfigurációs szolgáltatáshoz való szükséges.
 - **DownloadManagerCustomData**: Egy tömb, amely tartalmazza a letöltéskezelő jellemző egyéni adatokat jelöli.
 - **DownloadManagerName**: Azt jelzi, hogy a konfiguráció és a letöltéskezelő modul nevét.
-- **RebootNodeIfNeeded**: Bizonyos konfigurációs módosítások egy célcsomóponttal szükség lehet, hogy újra kell indítani a módosítások a alkalmazni. A következő értékkel **igaz**, ez a tulajdonság a csomópont újraindul, amint a konfigurálás teljesen vonatkozik, további figyelmeztetés nélkül. Ha **hamis** (az alapértelmezett érték), a konfiguráció befejeződik, de a csomópont kell manuálisan újra kell indítani a módosítások érvénybe léptetéséhez.
+- **RebootNodeIfNeeded**: Állítsa a bestattempt értékre `$true` lehetővé teszik az erőforrások újraindításához, a Node használatával, a `$global:DSCMachineStatus` jelzőt. Ellenkező esetben el manuálisan indítsa újra a csomópont minden olyan konfiguráció, amely ezt megköveteli. Az alapértelmezett érték: `$false`. Használja ezt a beállítást, ha újraindítás feltétel nem DSC (például a Windows Installer) szerint van gyakorlatokkal, kombinálja együtt a [xPendingReboot](https://github.com/powershell/xpendingreboot) modul.
 - **RefreshFrequencyMins**: Ha meg van adva egy lekérési szolgáltatást használja. Azt a gyakoriságot (percben), a Local Configuration Manager kapcsolatba lép egy lekérési szolgáltatást a jelenlegi konfiguráció letöltéséhez. Ez az érték beállítható ConfigurationModeFrequencyMins együtt. A RefreshMode LEKÉRÉSES értékre van állítva, ha a célcsomópont kapcsolatba lép a lekéréses szolgáltatás RefreshFrequencyMins által meghatározott időközönként, és letölti az aktuális konfigurációt. A konzisztencia-motor ConfigurationModeFrequencyMins által meghatározott időközönként majd alkalmazza a legfrissebb konfigurációt, a cél csomópontra letöltött. Ha nincs beállítva egész RefreshFrequencyMins többszöröse ConfigurationModeFrequencyMins, a rendszer kerekíti. Az alapértelmezett érték 30.
 - **A RefreshMode**: Lehetséges értékek a következők **leküldéses** (alapértelmezett), és **lekéréses**. A "leküldéses" konfigurációban be kell jelölnie egy konfigurációs fájlt a cél csomópontokon bármelyik ügyfélszámítógép használatával. A "PULL parancs" módban be kell állítania egy lekéréses szolgáltatás a helyi Configuration Manager kapcsolatba, és a konfigurációs fájlok eléréséhez.
+
+> [!NOTE]
+> Az LCM elindításakor a **ConfigurationModeFrequencyMins** ciklus alapján:
+>
+> - Egy új metaconfig használatával alkalmazta `Set-DscLocalConfigurationManager`
+> - A gép újraindítása
+>
+> Minden olyan feltétel, ahol az időzítő folyamata során lép fel, amelyek 30 másodpercen belül összeomlás, és újraindítja a ciklus.
+> Egy párhuzamos művelet sikerült. a ciklus késleltetés az indítás alatt, ha ez a művelet időtartama meghaladja a konfigurált ciklus gyakoriságát, a következő időzítő nem indul el.
+>
+> A példában a metaconfig lekéréses 15 perces gyakorisággal van beállítva, és egy lekéréses T1 kapcsolaton keresztül történik.  A csomópont nem fejeződik be a munkahelyi 16 percig.  Az első 15 perces ciklus a rendszer figyelmen kívül hagyja, és a következő lekéréses fog zajlani a T1 + 15: 15.
 
 ### <a name="example-of-updating-local-configuration-manager-settings"></a>Példa a Local Configuration Manager-beállítások frissítése
 

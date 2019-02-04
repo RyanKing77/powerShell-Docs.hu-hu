@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell, a parancsmag
 title: Jól ismert parancsnevek használata
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 3d2c681623086e061e237f08603d65150d2b1947
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405601"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688923"
 ---
 # <a name="using-familiar-command-names"></a>Jól ismert parancsnevek használata
 
@@ -22,8 +22,8 @@ Az alábbi lista tartalmazza a közös néhány **cmd.exe** és a Unix-parancsok
 
 |||||
 |-|-|-|-|
-|cat|a dir parancs|csatlakoztatási|erőforrás-kezelő|
-|CD-ről|echo|Áthelyezés|rmdir|
+|cat|a dir parancs|csatlakoztatási|rm|
+|cd|echo|Áthelyezés|rmdir|
 |chdir|Tartalmának végleges törlése|popd|alvó állapot|
 |Világos|H|PS|Rendezés|
 |CLS|Előzmények|pushd|TEE|
@@ -45,7 +45,7 @@ Alias           cls -> Clear-Host
 
 ## <a name="interpreting-standard-aliases"></a>Standard aliasok értelmezése
 
-Az aliasok azt leírt előző más parancsrendszerhéjakban neve kompatibilitást tervezték.
+Az aliasokat, hogy a korábban ismertetett egyéb parancsrendszerhéjakban neve kompatibilitást lettek tervezve.
 A legtöbb aliasok beépített PowerShell áttekinthetőség lettek kialakítva. Rövidebb nevek használata egyszerűbb, írja be, de a rendszer nehezen olvasható, ha nem tudja, hogy mire hivatkoznak.
 
 PowerShell-aliasok megpróbálhatja az érthetőség és az áttekinthetőség között. PowerShell közös főneveket és műveletek aliasok szabványos készletét használja.
@@ -54,10 +54,10 @@ Példa rövidítések:
 
 | Főnév vagy művelet | Rövidítése |
 |--------------|--------------|
-| Lekérés          | G            |
+| Lekérés          | g            |
 | Beállítás          | s            |
-| Elem         | I            |
-| Hely     | L            |
+| Elem         | i            |
+| Hely     | l            |
 | Parancs      | cm           |
 | Alias        | Al           |
 
@@ -65,7 +65,7 @@ Ezek az aliasok akkor érthető, ha ismeri a hónapok rövid nevét.
 
 | Parancsmag neve    | Alias |
 |----------------|-------|
-| `Get-Item `    | GI    |
+| `Get-Item `    | gi    |
 | `Set-Item`     | SI    |
 | `Get-Location` | GL    |
 | `Set-Location` | SL    |

@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, powershell, a parancsmag, psgallery, psget
 title: Helyi PSRepositories használata
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51619258"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688391"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>A PowerShellGet helyi tárház használata
 
@@ -23,7 +23,7 @@ Ez a cikk ismerteti, hogyan állítható be egy helyi PowerShell-tárház. A cik
 
 ## <a name="local-repository-types"></a>Helyi tárház típusa
 
-Kétféleképpen hozhat létre egy helyi PSRepository: NuGet server vagy a fájlmegosztásnak. Minden típusának van előnyeit és hátrányait:
+Kétféleképpen hozhat létre egy helyi PSRepository: NuGet a kiszolgáló vagy a fájlmegosztásnak. Minden típusának van előnyeit és hátrányait:
 
 NuGet-kiszolgáló
 
@@ -123,7 +123,7 @@ A modul a PSGallery a helyi PSRepository való közzétételéhez használhatja 
 
 - Adja meg a csomag nevét
 - Adja meg a "NuGet" szolgáltatója
-- Adja meg a PSGallery helyeként a forrás (https://www.powershellgallery.com/api/v2)
+- Adja meg a PSGallery helyeként a forrás)https://www.powershellgallery.com/api/v2)
 - Adja meg az elérési útját a helyi tárház
 
 Példa:

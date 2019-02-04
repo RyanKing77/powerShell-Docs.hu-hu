@@ -4,11 +4,11 @@ contributor: JKeithB, SydneyhSmith
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Kompatibilis PowerShell-kiadások vagy operációs rendszert tartalmazó csomagok
 ms.openlocfilehash: 8230866561d3021379a48cc2c83fb4104a4058c1
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747704"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685955"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Kompatibilis PowerShell-kiadások vagy operációs rendszert tartalmazó csomagok
 
@@ -73,7 +73,7 @@ Címkék: "Compatibility1" "Compatibility2"
 
 Például ha a PowerShell Core kompatibilitás a Windows és a Linux rendszerű gépeken futó rendelkező, használja a keresési címkéket:
 
-Címkék: "PSEdition_Core", "Windows", "Linux" 
+Címkék: "PSEdition_Core" "Windows" "Linux" 
 
 Keresés a PowerShell használatával, használhatja a `Find-Module` (és a PowerShellGet modul más parancsmagjai), ehhez hasonló:
 

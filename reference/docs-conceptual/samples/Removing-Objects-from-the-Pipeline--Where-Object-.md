@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Objektumok eltávolítása az adatcsatornából Where-Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404531"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685724"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Objektumok eltávolítása az adatcsatornából (Where-Object)
 
@@ -27,7 +27,7 @@ Megfontolandó szempontok elemzés, mert szimbólumokat <>, például és = öss
 
 |Összehasonlító operátor|Jelentés|Példa (igaz értéket ad vissza)|
 |-----------------------|-----------|--------------------------|
-|-eq|egyenlő|1 - eq 1|
+|-eq|egyenlő|1 -eq 1|
 |-ne|Nem egyenlő|1 - ne 2|
 |-lt|a kisebb, mint|1 – lt 2|
 |-le|Kisebb vagy egyenlő|1 – le 2|

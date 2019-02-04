@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: f1742aa901deacf2ff9eae14ce5814ee12682a2f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: dfc8ea4aba6cfe79f58d58d81e6abb3bcfa0ca3e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219487"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688986"
 ---
-# <a name="software-discovery-install-and-inventory-with-packagemanagement"></a>Szoftver felderítési, telepítése és PackageManagement készlethez
+# <a name="software-discovery-install-and-inventory-with-packagemanagement"></a>Szoftverek felderítése, telepítése és Leltárazása a packagemanagementtel
 
-PackageManagement (más néven OneGet) új módja a felderítése, és a webes körül a szoftvercsomagok telepítése. A vezető vagy a meglévő csomag kezelők (más néven csomag szolgáltatók) multiplexor egyesíti Windows csomag egyetlen Windows PowerShell kapcsolat. A PackageManagement a következőket teheti.
+A PackageManagement (más néven OneGet) egy új módja felderítése és telepítése az interneten a szoftvercsomagok. Fontos, hogy a vezető vagy multiplexor meglévő csomag kezelők (más néven csomag szolgáltatók), amely egyetlen Windows PowerShell-felülettel rendelkező Windows-csomagkezelés egyesíti. A PackageManagement, a következőket teheti.
 
--   Szoftver tárházak találhatók, ahol csomagok is keresni, szerezte be, és telepítve listájának kezelése
--   Fedezze fel, és különböző csomag kezelők telepítése
--   Szoftvercsomagok kell felderítése
--   Zökkenőmentesen telepítése, eltávolítása és készlet egy vagy több szoftvert adattárak-csomagok
+-   Kezelheti, amelyben csomagok is lehet keresni, szerzett és telepített szoftverek tárházak listáját
+-   Fedezze fel, és telepítse a különböző csomagkezelők
+-   Fedezze fel a szükséges szoftverfrissítési csomagok
+-   Zökkenőmentesen telepítése, eltávolítása és leltárazása a tárházból való egy vagy több szoftverfrissítési csomagok
 
 További részletekért lásd: http://oneget.org/.

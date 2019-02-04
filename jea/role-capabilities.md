@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: A JEA szerepköri funkciók
 ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522941"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685493"
 ---
 # <a name="jea-role-capabilities"></a>A JEA szerepköri funkciók
 
-> A következőkre vonatkozik: Windows PowerShell 5.0
+> Érintett kiadások: Windows PowerShell 5.0
 
 A JEA-végpont létrehozása, amikor szüksége lesz legalább "szerepkör-funkciókkal" ismertetik meghatározásához *mi* valaki a JEA-munkamenet az teheti meg.
 Egy szerepkör szolgáltatás érhető el egy PowerShell-adatfájlt .psrc kiterjesztése, amely felsorolja az összes a parancsmagok, függvények, szolgáltatók és külső programok, amelyek a felhasználók kapcsolódás elérhetővé kell tenni.

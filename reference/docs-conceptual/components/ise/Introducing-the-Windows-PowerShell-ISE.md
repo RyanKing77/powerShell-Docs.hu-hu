@@ -2,12 +2,12 @@
 ms.date: 08/14/2018
 keywords: PowerShell, a parancsmag
 title: A Windows PowerShell ISE bemutatása
-ms.openlocfilehash: 09a28b295855fd2a3c62bba8a681399dae3454f8
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
+ms.openlocfilehash: 729c8535dbcfcd2c51070b8beac5d328375f36ae
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411582"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685101"
 ---
 # <a name="the-windows-powershell-ise"></a>A Windows PowerShell ISE-ben
 
@@ -15,8 +15,8 @@ A Windows PowerShell integrált parancsfájl-kezelési környezet (ISE) egy Wind
 
 ## <a name="support"></a>Támogatás
 
-Az ISE-ben bevezetett Windows PowerShell V2 és újratervezett PowerShell V3. Az ISE-ben támogatott Windows Powershellt, és többek között a Windows PowerShell V5.1 összes támogatott verzióján. Az ISE-ben azonban maintennce módban van, és nincs tervben új szolgáltatások valószínűleg hozzá kell adni.
-Emellett nincs rendszer nem támogatja az ISE-ben a PowerShell 6-os verziója és más alkalmazásokhoz. Gondolja át, egy grafikus eszköz, amellyel kezelheti a PowerShell scrips, és így tovább, aki a felhasználók [Visual Studio Code](https://code.visualstudio.com/).
+Az ISE-ben bevezetett Windows PowerShell V2 és újratervezett PowerShell V3. Az ISE-ben támogatott Windows Powershellt, és többek között a Windows PowerShell V5.1 összes támogatott verzióján. Az ISE-ben, azonban a karbantartási módban van, és nincs tervben új szolgáltatások valószínűleg hozzá kell adni.
+Emellett nincs rendszer nem támogatja az ISE-ben a PowerShell 6-os verziója és más alkalmazásokhoz. Gondolja át, egy grafikus eszköz, amellyel kezelheti a PowerShell-parancsfájlokat, és így tovább, aki a felhasználók [Visual Studio Code](https://code.visualstudio.com/).
 
 ## <a name="key-features"></a>A legfontosabb jellemzők
 

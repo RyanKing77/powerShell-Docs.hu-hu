@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 900960f20d251020b9b4a284d6c6175a7038e033
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b5ba6f6088e6a81d044fc513572f7c7cb688cd10
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219215"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687978"
 ---
-# <a name="automatic-runas-support-for-dsc-resources"></a>A DSC-erőforrások automatikus RunAs támogatása
+# <a name="automatic-runas-support-for-dsc-resources"></a>Automatikus Futtatófiók-támogatás a DSC-erőforrások
 
-WMF 5.0 futó támogatását is magában foglalja **bármely** hitelesítő adatok tulajdonsággal megadott készlete a DSC-erőforrásra `PsDscRunAsCredential`.
+A WMF 5.0 tartalmaz támogatása: **bármely** DSC-erőforrás a hitelesítő adatok a tulajdonság használatával meghatározott készletén `PsDscRunAsCredential`.
 
-További információkért lásd: [felhasználói hitelesítő adatokkal rendelkező futtató DSC](https://msdn.microsoft.com/powershell/dsc/runasuser).
+További információkért lásd: [DSC futtatása felhasználói hitelesítő adatokkal](https://msdn.microsoft.com/powershell/dsc/runasuser).

@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: PowerShell, a parancsmag
 title: PowerShell-parancsprogramok
-ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404348"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685094"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -50,7 +50,7 @@ Get-Service | Get-Member
 
 ### <a name="consistency"></a>Consistency
 
-Rendszerek kezelése összetett feladat lehet. Egységes felület rendelkező eszközök segítségével szabályozhatja a járó összetettséget. Sajnos parancssori eszközök és parancsfájlok futtatására alkalmas COM-objektumok azok konzisztencia nem ismert.
+Rendszerek kezelése összetett feladat lehet. Egységes felület rendelkező eszközök segítségével szabályozhatja a járó összetettséget. Sajnos parancssori eszközök és parancsfájlok futtatására alkalmas Component Object Model (COM) objektumok a konzisztencia nem ismert.
 
 A PowerShell konzisztencia az egyik elsődleges eszközei. Például, ha megismerheti, hogyan használható a `Sort-Object` parancsmag használhatja arra, hogy bármely parancsmag kimenete rendezéséhez. Ismerje meg a különböző rendezési rutinok minden parancsmag nem kell.
 

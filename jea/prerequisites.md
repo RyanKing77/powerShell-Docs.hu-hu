@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: A JEA-Előfeltételek
 ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893035"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688356"
 ---
 # <a name="prerequisites"></a>Előfeltételek
 
-> A következőkre vonatkozik: Windows PowerShell 5.0
+> Érintett kiadások: Windows PowerShell 5.0
 
 Just Enough Administration lehetővé teszi a Windows PowerShell 5.0-s vagy újabb.
 Ez a témakör ismerteti az előfeltételeket kell biztosítani a JEA használatának elkezdéséhez.
@@ -34,7 +34,7 @@ A JEA a otthoni vagy munkahelyi számítógépen is használhatja:
 --------------------------|-----------------------------------------------------
 Windows 10 1607+          | Előtelepített
 Windows 10 1603, 1511     | Előre telepítve, a csökkentett funkciók<sup>2</sup>
-A Windows 10 1507-es           | Nem elérhető el
+Windows 10 1507           | Nem elérhető el
 A Windows 8, 8.1            | A WMF 5.1 összes funkciójának
 Windows 7                 | Csökkentett funkciók<sup>1</sup> a WMF 5.1
 

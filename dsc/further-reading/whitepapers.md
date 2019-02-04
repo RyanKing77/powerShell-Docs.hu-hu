@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Tanulmányok
 ms.openlocfilehash: 645378802e1ab592857e442db5bc86ac33817e5e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404167"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688818"
 ---
 # <a name="whitepapers"></a>Tanulmányok
 

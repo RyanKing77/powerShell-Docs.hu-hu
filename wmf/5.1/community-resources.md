@@ -3,36 +3,36 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: Közösségi források
-ms.openlocfilehash: 144fa655d4c14656246bc6c86e7c43f1ea8dca3c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2bd006b1b873f475e04ebb00cc89d593e114cafc
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219368"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685087"
 ---
 # <a name="community-resources"></a>Közösségi források #
-> Megjegyzés: A rendszer előzetes és bármikor megváltozhat.
+> Megjegyzés: Ezek az információk előzetesek, és változhat a tartalmuk.
 
-A PowerShell csapatának üdvözli és könnyen létrejöhetnek a termék az ügyfelek visszajelzései alapján, és támogatja a több megközelítés a felhasználók számára, lépjen velünk kapcsolatba.
-Az alábbi módszerek bármelyikét lehetővé teszi a visszajelzést a számunkra, de javasoljuk, hogy a hivatkozások a PowerShell kezdőlapon megkezdése.
+A PowerShell csapatának szívesen fogadja, és arra ösztönzi a terméket az ügyfélvisszajelzések, és támogatja a több módszer a felhasználók számára, hogy lépjen kapcsolatba velünk.
+Az alábbi módszerek bármelyikét lehetővé teszi, hogy visszajelzést küld nekünk, de javasoljuk, hogy először a PowerShell kezdőlapján a hivatkozásokat.
 
-A [PowerShell kezdőlap](https://microsoft.com/powershell) a center PowerShell információt, és közvetlenül a "Visszajelzés" az oldal tetején a menü hivatkozást tartalmaz.
-Megkezdheti van gyorsan hozzáférni a csatornán.
-Ez az az ajánlott módszer a visszajelzés, aktívan fenntartási adott idő alatt, és a legjobb hely elvezeti Önt.
+A [PowerShell kezdőlap](https://microsoft.com/powershell) a center PowerShell kapcsolatos információkat, és tartalmazza a hivatkozást közvetlenül a "Visszajelzés" a menüben a lap tetején.
+Elindíthatja hiba a visszajelzési csatornákat gyors eléréséhez.
+Ez a visszajelzés, idővel a rendszer aktívan tartja, és átirányítja azt a legjobb hely ajánlott módja.
 
-A PowerShell csapat felügyeli a [UserVoice fórum](https://windowsserver.uservoice.com/forums/301869-powershell/) problémák és a Windows PowerShell és a szolgáltatások javaslatok rögzítéséhez.
-Ezen a fórumon támogatja a meglévő problémák, a PowerShell csapat használja a munkahelyi rangsorolására hozzáadását szavazatot.
-Adja meg a szavakat vagy kifejezéseket, azokat a keresési funkciót jobb látható, ha azt azonosították korábban a problémához kapcsolódó.
-Ha semmi nem egyezik, nyugodtan új elem hozzáadásához.
-A különböző területen a PowerShell csapat felügyeli a jobb oldalon felsorolt alszakaszokat van.
-A probléma hozzáadásához a megfelelő területen, vagy hagyja a mezőt, a legfelső szintű és a PowerShell csapatának helyezi azt a megfelelő helyen után azt tekintse át.
+A PowerShell-csapat kezeli a [UserVoice fórumot](https://windowsserver.uservoice.com/forums/301869-powershell/) hibák és javaslatok a Windows PowerShell és szolgáltatásaink rögzítéséhez.
+Ezen a fórumon meglévő problémákat, amelyek a PowerShell csapata használ a munkahelyi rangsorolására szavazatok hozzáadását támogatja.
+Adja meg a szavakat vagy kifejezéseket, azokat a keresési funkció a jobb oldalon tekintheti meg, ha azt azonosították korábban a problémához kapcsolódó.
+Ha semmit nem egyezik, nyugodtan adjon hozzá egy új elemet.
+Nincsenek alszakaszok a különböző területek, a PowerShell-csapat kezeli a jobb oldalon látható.
+Adja hozzá a problémát a megfelelő területen, vagy meghagyhatja a legfelső szintű és a PowerShell csapatának helyezi azt a megfelelő helyen miután azt.
 
-GitHub jártas felhasználóknak visszajelzést küldhet a számos PowerShell szolgáltatást megjelenítve jelzi a problémákat a [PowerShell GitHub hely](https://github.com/powershell).
-Nincsenek sok adattárak azt karbantartása és nyílt forráskódú fejlesztési és rögzítése felhasználói problémák azon a helyen.
-Néhány kulcsfontosságú tárhelyek felhívja a következők:
+Felhasználók, akik jól ismerik a GitHub visszajelzést küldhet a sok PowerShell szolgáltatással megjelenítve jelzi a problémákat a problémákat a [PowerShell GitHub-webhelyről](https://github.com/powershell).
+Nincsenek számos tárházak azt fenntartására és a nyílt forráskódú fejlesztési és a felhasználói problémák az adott helyen rögzítése használja.
+Néhány kulcsfontosságú tárházakban való a következők:
 
-* [PowerShell-dokumentumok](https://github.com/PowerShell/powershell-docs), ahol minden dokumentációt (beleértve a tartalom) megmarad.
-* [PowerShell](https://github.com/PowerShell/powershell) a hely, a PowerShell Core, amely PowerShell jövőbeli verziójában.
-Ez a szolgáltatás javaslatok javaslat, vagy a problémák emelje a PowerShell Core hely.
-* [PowerShellGet](https://github.com/PowerShell/powershellget) tárház van a PowerShellGet modul és a parancsmagok.
-* [DSCResources](https://github.com/PowerShell/DscResources) azokat a DSC-modulok a PowerShell csapat által fenntartott és a PowerShell-galériában a DSC-Resource Kit közzétéve.
+* [PowerShell-Docs](https://github.com/PowerShell/powershell-docs), ahol az összes dokumentáció (beleértve a tartalom) fenn lesz tartva.
+* [PowerShell](https://github.com/PowerShell/powershell) az a hely, a PowerShell Core, amely PowerShell jövőbeli verziójában.
+Ez a javaslat szolgáltatási javaslatok, vagy a PowerShell Core problémák előléptetése a hely.
+* [A PowerShellGet](https://github.com/PowerShell/powershellget) tárház van a PowerShellGet modul és a parancsmagok.
+* [DSCResources](https://github.com/PowerShell/DscResources) DSC-modulokat a PowerShell csapata tartja karban, és a DSC Resource Kit PowerShell-galériában közzétett készletét tartalmazza.

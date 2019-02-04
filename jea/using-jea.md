@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: A JEA használata
 ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522990"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686858"
 ---
 # <a name="using-jea"></a>A JEA használata
 
-> A következőkre vonatkozik: Windows PowerShell 5.0
+> Érintett kiadások: Windows PowerShell 5.0
 
 Ez a témakör ismerteti a különböző módokon csatlakozhat, és a JEA-végpont használata.
 

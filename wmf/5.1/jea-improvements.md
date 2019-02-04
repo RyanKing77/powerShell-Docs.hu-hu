@@ -5,11 +5,11 @@ keywords: WMF, powershell, beállítás
 contributor: ryanpu
 title: Éppen elég felügyelettel (JEA) fejlesztései
 ms.openlocfilehash: 66cbacb78f8a365e9c8556c7c56b3c3525de7395
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267865"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684702"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Éppen elég felügyelettel (JEA) fejlesztései
 

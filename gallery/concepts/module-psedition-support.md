@@ -4,11 +4,11 @@ contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: Kompatibilis PowerShell-kiadások rendelkező modulok
 ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655327"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684996"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Kompatibilis PowerShell-kiadások rendelkező modulok
 

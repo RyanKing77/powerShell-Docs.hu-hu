@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: PowerShell, a parancsmag
 title: a windows powershell-elérés eltávolítása
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404515"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688160"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Webes Windows PowerShell-elérés eltávolítása
 
 Frissítve: 2013. június 24-én
 
-Érvényes: A Windows Server 2012 R2, Windows Server 2012-ben
+Érvényes: Windows Server 2012 R2, Windows Server 2012
 
 Ebben a témakörben leírt lépéseket az átjárókiszolgáló, amelyre telepítve van a Windows PowerShell-elérés webhely és a megfelelő alkalmazás eltávolítása.
 

@@ -2,12 +2,12 @@
 ms.date: 10/16/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Konfigurációk életbe léptetése
-ms.openlocfilehash: 4a6e7e511446ab27307683ad3d5676391e7c791c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404495"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684177"
 ---
 # <a name="enacting-configurations"></a>Konfigurációk életbe léptetése
 
@@ -48,6 +48,6 @@ Azonban, ismerje meg, hogy ez a megvalósítás csak korlátozott funkciókat, �
 
 Az alábbi témakörök ismertetik a lekérési szolgáltatást és az ügyfelek számára:
 
-- [Az Azure Automation DSC – áttekintés](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Az Azure Automation DSC – áttekintés](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Az SMB-lekérési kiszolgálójának beállítása](pullServerSMB.md)
 - [Lekérési ügyfél beállítása](pullClientConfigID.md)

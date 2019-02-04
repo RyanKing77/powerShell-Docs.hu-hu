@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, erőforrás, katalógus, beállítása
-title: A konfigurációs paraméterek hozzáadása
+title: Paraméterek hozzáadása konfigurációkhoz
 ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404235"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685402"
 ---
-# <a name="add-parameters-to-a-configuration"></a>A konfigurációs paraméterek hozzáadása
+# <a name="add-parameters-to-a-configuration"></a>Paraméterek hozzáadása konfigurációkhoz
 
 Funkciók, például [konfigurációk](configurations.md) , hogy a felhasználói bemenet alapján több dinamikus konfigurációk rendelkeznek. A lépések hasonlóak leírt [függvényeket paraméterekkel](/powershell/module/microsoft.powershell.core/about/about_functions).
 

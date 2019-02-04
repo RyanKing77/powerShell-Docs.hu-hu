@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: A számítógép állapotának módosítása
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
 ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404451"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687390"
 ---
 # <a name="changing-computer-state"></a>A számítógép állapotának módosítása
 

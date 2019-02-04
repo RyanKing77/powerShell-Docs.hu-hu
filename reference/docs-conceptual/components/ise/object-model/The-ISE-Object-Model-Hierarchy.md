@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Az ISE objektummodell-hierarchiája
 ms.openlocfilehash: 0159707b1050c412a74da3d3ca02a46cea982556
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404467"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683771"
 ---
 # <a name="the-ise-object-model-hierarchy"></a>Az ISE objektummodell-hierarchiája
 
@@ -15,7 +15,7 @@ Ez a témakör bemutatja a Windows PowerShell integrált parancsfájlkezelési k
 Windows PowerShell ISE-ben megtalálható a Windows PowerShell 3.0 és a Windows PowerShell 4.0-s verzióját.
 Kattintson egy objektum, amelyben az osztály, amely meghatározza az objektum a hivatkozási dokumentációját.
 
-## <a name="psise-object"></a>$psISE objektum
+## <a name="psise-object"></a>$psISE Object
 
 A **$psISE** objektum a [gyökérobjektum](The-ObjectModelRoot-Object.md) a Windows PowerShell ISE-objektum hierarchia.
 A legfelső szintű helyen található, azt elérhetővé teszi a következő objektumok scripting:
@@ -26,7 +26,7 @@ A **$psISE.CurrentFile** objektum egy példányát a [ISEFile](The-ISEFile-Objec
 
 ## <a name="psisecurrentpowershelltabthe-powershelltab-objectmd"></a>[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)
 
-A **$psISE.CurrentPowerShellTab** objektum egy példányát a [PowerShellTab](The-PowerShellTab-Object.md) osztály.
+The **$psISE.CurrentPowerShellTab** object is an instance of the [PowerShellTab](The-PowerShellTab-Object.md) class.
 
 ## <a name="psisecurrentvisiblehorizontaltool"></a>$psISE.CurrentVisibleHorizontalTool
 

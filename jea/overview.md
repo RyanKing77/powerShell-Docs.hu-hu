@@ -1,54 +1,54 @@
 ---
 ms.date: 06/12/2017
-keywords: jea, a powershell, a biztonsági
+keywords: a jea, powershell, biztonsági
 title: Éppen elég felügyelettel áttekintése
-ms.openlocfilehash: 3dae8b31d4d13ff9033803035c870c02fc7c38ca
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c097838fb25a63d42502eebf751c64c537bdd077
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222088"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686081"
 ---
 # <a name="just-enough-administration"></a>Just Enough Administration
 
-Csak elég adminisztrációs (JEA) olyan biztonsági technológia, amely lehetővé teszi a számára a delegált felügyelet semmit, amelyek a PowerShell használatával kezelhetők.
-A jea-ban a következőket teheti:
+Csak Enough Administration (JEA) egy biztonsági technológia lehetővé teszi összes adat delegált felügyeletét, amelyek kezelhetők a PowerShell használatával.
+A JEA-segítségével:
 
-- **Adjon meg kevesebb a gépeken rendszergazdák** emelés virtuális fiók vagy csoport által felügyelt szolgáltatásfiókok, amelyek rendszeres felhasználók nevében privilegizált műveleteket.
-- **Korlátozza a felhasználók mit tehetnek** megadásával, mely parancsmagok, függvények és külső parancsokat futtathatnak.
-- **Jobb megértése érdekében a felhasználók tevékenységeit** ki és a naplókat, amelyek bemutatják, pontosan parancsok, amelyek a felhasználó a munkamenet során végrehajtott.
+- **A rendszergazdák a gépeken számának csökkentése** kibővítéséhez virtuális fiókok és csoportok felügyelt szolgáltatásfiókokat, amelyek a normál felhasználók nevében privilegizált műveletek elvégzéséhez.
+- **Korlátozza a felhasználók mit tehetnek** megadásával, mely parancsmagok, a functions és a külső parancsokat futtathatnak.
+- **Jobb megértése érdekében a felhasználók mire** az átiratok és a naplókat, amelyek bemutatják, pontosan parancsok, amelyek a felhasználó a munkamenet során végrehajtott.
 
 **Miért fontos ez?**
 
-A kiszolgálók felügyeletére használt kiemelt jogosultságokkal rendelkező fiókok súlyos biztonsági kockázatot jelenthet.
-Kell egy támadó kedvezőtlenül egyik ezeket a fiókokat, akkor el tudják indítani [támadások oldalirányú](http://aka.ms/pth) a szervezetben.
-Minden felhasználói fiókhoz, azok kedvezőtlenül is betekintést biztosít további fiókokat és erőforrásokat, őket még egy lépéssel közelebb kerülnek ellophassák vállalati titkos adatait, a-szolgáltatásmegtagadásos támadás, és több indítása.
+A kiszolgálók felügyeletéhez használt magas jogosultsági szintű fiókok súlyos biztonsági kockázatot jelenthet.
+Kell egy támadó veszélyeztetheti e fiókok, akkor el tudják indítani az [oldalirányú támadások](http://aka.ms/pth) a szervezetben.
+Minden fiók, veszélyeztetheti is biztosíthat számukra hozzáférést még további fiókokat és erőforrásokat, őket egy lépéssel közelebb kerülnek lopásának megjelölése vállalati titkos kulcsokat, egy-szolgáltatásmegtagadási támadást, és további indítása.
 
-Nincs mindig könnyen rendszergazdai jogosultságokkal, vagy távolítsa el.
-Vegye figyelembe a gyakori forgatókönyv, ahol telepítve van a DNS-szerepkört az Active Directory-tartományvezérlő ugyanazon a számítógépen.
-A DNS-rendszergazdák helyi rendszergazdai jogosultsága a DNS-kiszolgálóval kapcsolatos problémák megoldása, de a művelet végrehajtásához, így kell tenni őket a kiemelt jogosultságokkal rendelkező "Tartományi rendszergazdák" biztonsági csoport szükséges.
-Ez a megközelítés hatékonyan biztosít a DNS-rendszergazdák szabályozhatják a teljes tartomány és a hozzáférés meg, hogy a gép összes erőforrás.
+Akkor sem mindig egyszerű, rendszergazdai jogosultságokkal, vagy eltávolítani.
+Fontolja meg a gyakori forgatókönyv, ahol telepítve van a DNS-szerepkört az Active Directory-tartományvezérlő ugyanazon a gépen.
+A DNS-rendszergazdák számára szükséges DNS-kiszolgálóval kapcsolatos problémák kijavításához, de annak érdekében, hogy ehhez módosítania kell azokat a magas jogosultsági szintű "Tartományi rendszergazdák" biztonsági csoport tagjai a helyi rendszergazdai jogosultságokkal.
+Ezt a módszert hatékonyan DNS-rendszergazdák szabályozni a teljes tartomány- és hozzáférés biztosít ezen a gépen futó összes erőforrást.
 
-JEA segít a probléma segítenek elfogadják a elve *legalacsonyabb jogosultsági szint*.
-Az JEA beállíthatja a felügyeleti végpont a DNS-rendszergazdák számára, amely hozzáférést biztosít a munkájához szükséges összes PowerShell-parancsok, de semmi további.
-Ez azt jelenti, hogy a hozzáférés egy sor mérgezettként DNS-gyorsítótár javítására, illetve a DNS-kiszolgáló újraindítása nem szándékos jogosultsága ahhoz, hogy az Active Directory adnak, vagy keresse meg a fájlrendszer vagy potenciálisan veszélyes parancsfájlok futtatása.
-Még jobb, ha a JEA munkamenet ideiglenes kiemelt jogosultságokkal rendelkező virtuális fiókok használatára van konfigurálva, a DNS-rendszergazdák kapcsolódhatnak a kiszolgálóra történő *nem rendszergazdai* -felhasználó hitelesítő adatait, és bármikor használatához általában szükség van-parancsok futtatásához rendszergazdai jogosultságokkal.
-Ez a funkció lehetővé teszi felhasználók eltávolítása széles körben jogosultságú helyi vagy tartományi rendszergazdai szerepköröket, és ehelyett alaposan szabályozhatja azok minden számítógépen el.
+JEA segít a probléma megoldása segít elfogadják a elvét *legalacsonyabb jogosultsági*.
+A JEA konfigurálhat egy felügyeleti végpont a DNS-rendszergazdák számára, amely hozzáférést biztosít a munkájához szükséges összes PowerShell-parancsokat, de semmi nem további.
+Ez azt jelenti, hogy a megfelelő hozzáférés szennyezett DNS-gyorsítótár javítása, vagy indítsa újra a DNS-kiszolgáló nélkül véletlenül is ad nekik az Active Directory rights, vagy tallózással keresse meg a fájlrendszerben, vagy potenciálisan veszélyes szkriptek futtatása.
+Még jobb, ha a JEA-munkamenet emelt szintű virtuális ideiglenes fiókok használatára van konfigurálva, a DNS-rendszergazdák kapcsolódhatnak a kiszolgálóra történő *nem rendszergazdai* hitelesítő adatait, és továbbra is képesek általában igénylő parancsok futtatásához rendszergazdai jogosultságokat.
+Ez a funkció lehetővé teszi, hogy távolítsa el a felhasználókat széles körben jogosultságú helyi és tartományi rendszergazdai szerepköröket, és ehelyett alaposan ellenőrzését Mik ezek szeretnék megtenni az összes olyan számítógépen.
 
-## <a name="get-started-with-jea"></a>Ismerkedés a JEA
+## <a name="get-started-with-jea"></a>A JEA használatának első lépései
 
-Megkezdheti JEA ma azon a számítógépen, amelyen a Windows Server 2016 vagy a Windows 10.
-JEA egy Windows Management Framework frissítés régebbi operációs rendszereken is futtathatja.
-Tudhat meg többet a követelmények, JEA használatára, és megtudhatja, használja, és naplózási JEA-végpont, tekintse meg a következő témaköröket:
+Megkezdheti a használatát még ma a jea-t bármely gépen futó Windows Server 2016 vagy Windows 10-es.
+A JEA egy Windows Management Framework frissítéssel régebbi operációs rendszereken is futtathatja.
+A jea-t használja, és megtudhatja, hogyan hozhat létre követelményeivel kapcsolatos további használja, és naplózása a JEA-végpont, tekintse meg a következő témaköröket:
 
-- [Előfeltételek](prerequisites.md) -ismerteti, hogyan állítsa be a környezetet, JEA használatára.
-- [Szerepkör képességek](role-capabilities.md) -szerepkörök, amelyek megadják, hogy mi a felhasználó számára engedélyezett a JEA-munkamenet az létrehozását ismerteti.
-- [Munkamenet-konfigurációk](session-configurations.md) -ismerteti, hogy a felhasználók hozzárendelése szerepkörökhöz, és állítsa be a JEA identitás JEA végpontok konfigurálása
-- [Regisztrálja a JEA](register-jea.md) - JEA-végpont létrehozása, és tegye elérhetővé a felhasználók csatlakoznak.
-- [JEA használatával](using-jea.md) – ismerje meg a különböző módszereket, JEA.
-- [Biztonsági szempontok](security-considerations.md) -tekintse át az ajánlott biztonsági eljárások és JEA konfigurációs beállítások következményeit.
-- [Naplózása és jelentése JEA](audit-and-report.md) -megtudhatja, hogyan naplózása és jelentése JEA végpontok.
+- [Előfeltételek](prerequisites.md) -azt ismerteti, hogyan állítsa be a környezetet a JEA használata.
+- [Szerepköri funkciók](role-capabilities.md) -ismerteti, hogyan hozhat létre szerepköröket, amelyek meghatározzák, hogy mi a felhasználó számára engedélyezett a JEA-munkamenetben.
+- [A munkamenet-konfigurációk](session-configurations.md) -ismerteti, hogy a felhasználók leképezése a szerepkörök és a JEA identitás beállításához a JEA-végpontok konfigurálása
+- [A JEA regisztrálása](register-jea.md) – a JEA-végpont létrehozása, és lehetővé teszi a felhasználók számára való csatlakozáshoz.
+- [A JEA használata](using-jea.md) – ismerje meg a különböző módszereket használhat a jea-t.
+- [Biztonsági szempontok](security-considerations.md) – tekintse át az ajánlott biztonsági eljárások és a JEA-konfigurációs beállítások következményeit.
+- [Naplózása és jelentései JEA](audit-and-report.md) – ismerje meg, hogyan naplózása és jelentései a JEA-végpont.
 
-## <a name="samples-and-dsc-resource"></a>Kódminták és DSC-erőforrás
+## <a name="samples-and-dsc-resource"></a>Minták és a DSC-erőforrás
 
-Minta JEA-konfiguráció és a JEA DSC erőforrás is található a [JEA GitHub-tárházban](https://github.com/PowerShell/JEA).
+Minta JEA konfigurációkat és a JEA DSC-erőforrás megtalálható a [JEA GitHub-adattár](https://github.com/PowerShell/JEA).

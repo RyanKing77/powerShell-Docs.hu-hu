@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a psgallery, GDPR
 title: PowerShell-galéria GDPR-megfelelőség
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002650"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687817"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell-galéria GDPR-megfelelőség
 
@@ -53,8 +53,8 @@ E-mailek levelezést tartalmazhatja a következő:
 E-mailek házirend 90 nap után törlődnek.
 
 Minden e-mailek küldése az előző 90 napon belül, vagy az e-mail-címét és a PowerShell-galériából példányait kérheti.
-Kérelem ezt a levelezését, küldjön egy e-mailek [ cgadmin@microsoft.com ](mailto:cgadmin@microsoft.com), és a cím: "Vonatkozó DSR-kérelmek ebbe a fiókba vonatkozó e-mailek".
-Az üzenet törzsében, adja meg a kért információk (például:. küldje el a minden e-mailek küldött vagy erre a címre érkezett.) Használata esetén az e-mail-címét a kérelem számított 90 napon belül minden e-maileket küld üzleti 7 napon belül.
+Kérelem ezt a levelezését, küldjön egy e-mailek [ cgadmin@microsoft.com ](mailto:cgadmin@microsoft.com), és a cím: "DSR kérése e-mailekhez, ez a fiók vonatkozó".
+Az üzenet törzsében, adja meg a kért információk (például: Kérjük, küldjön minden e-mailek küldött vagy erre a címre érkezett.) Használata esetén az e-mail-címét a kérelem számított 90 napon belül minden e-maileket küld üzleti 7 napon belül.
 
 ### <a name="powershell-gallery-account-information"></a>PowerShell-Galériabeli fiók adatait
 
@@ -92,7 +92,7 @@ Adja meg a szerző és a rendszer egy mappát, ahová a csomagokat menteni fogja
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>Személyes adatok törlése a PowerShell-galériából
 
-A PowerShell-Galériabeli fiók vagy bármilyen saját a PowerShell-galériából a csomag törlésére, e-mailben cgadmin@microsoft.com nevű: "A GDPR-kérelmet ehhez a fiókhoz kapcsolódó elemek".
+A PowerShell-Galériabeli fiók vagy bármilyen saját a PowerShell-galériából a csomag törlésére, e-mailben cgadmin@microsoft.com és a cím: "Általános adatvédelmi rendelet kérése ehhez a fiókhoz kapcsolódó elemek".
 Az üzenet törzsében milyen információkat szeretne törölt állapotba. Például:
 
 - Törölje a csomag "package name" verzió x.y.z

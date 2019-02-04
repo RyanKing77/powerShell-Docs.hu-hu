@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: f491e30859cbe6cbaa58f94389382ff231c52956
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e2c9233734a6ede04e8ec2bbad05950cbb31cbba
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225691"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687985"
 ---
-# <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Modulok támogatása deklaráló verzió tartományok (1.*, stb.)
-Együtt **- MinimumVersion**, **- MaximumVersion** mostantól lehetővé teszi a felhasználónak az adott tartományon belüli get/importálás modul. A paraméter is támogatja a **.** \*. A következő példa bemutatja, hogyan működik:
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Modultámogatás a deklaráló verzió tartományok (1.* stb.)
+Kombinálva **- MinimumVersion**, **- MaximumVersion** mostantól lehetővé teszi a felhasználó adott tartományon belüli/importálás modul számára. A paraméter is támogatja **.** \*. Az alábbi példa bemutatja, hogyan működik:
 
 Most, kombinálhatja **- MinimumVersion** és **- MaximumVersion** adott tartományon belüli modul importálásához:
 

@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: A WMF 5.1 kibocsátási megjegyzései
-ms.openlocfilehash: 5c3075eda5482cc6a43bd237fe4fca0064136753
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 205c7dc895ba47a0967ebfccfcf337ea28296f31
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219436"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685038"
 ---
-# <a name="windows-management-framework-wmf-51-release-notes"></a>A Windows Management Framework (WMF) 5.1 kibocsátási megjegyzések #
+# <a name="windows-management-framework-wmf-51-release-notes"></a>Windows Management Framework (WMF) 5.1 kibocsátási megjegyzései #
 
-WMF 5.1 összetevői a PowerShell, a WMI, a Rendszerfelügyeleti webszolgáltatások és a szoftverleltár-naplózási (SIL) a Windows Server 2016 kiadott.
+A WMF 5.1 összetevői a PowerShell, a WMI, a Rendszerfelügyeleti webszolgáltatások és a szoftverleltár-naplózási (SIL) kiadott – Windows Server 2016-ban.
 A WMF 5.1 Windows 7, Windows 8.1, Windows Server 2008 R2, 2012 és 2012 R2 rendszerre telepíthető, és számos javítást tartalmaz a WMF 5.0 RTM-hez képest, melyek többek között a következők:
 
 - Új parancsmagok: helyi felhasználók és csoportok; Get-ComputerInfo
@@ -24,7 +24,7 @@ A WMF 5.1 Windows 7, Windows 8.1, Windows Server 2008 R2, 2012 és 2012 R2 rends
 
 **Fontos megjegyzések:**
 
-- **WMF 5.1 a .NET-keretrendszer 4.5.2-es szükséges** (vagy újabb). Telepítés sikeres lesz, azonban a legfontosabb jellemzők sikertelen lesz, ha a .NET 4.5.2 (vagy újabb) nincs telepítve. Útmutatás a érhető el a [telepítése és konfigurálása a WMF 5.1 ](https://msdn.microsoft.com/powershell/wmf/5.1/install-configure) témakör.
-- WMF 5.1 Preview WMF 5.1 RTM telepítése előtt el kell távolítani.
-- WMF 5.1 WMF 5.0 vagy a WMF 4.0 keresztül közvetlenül is telepíthető.
-- Az __nem szükséges__ WMF 4.0 telepítése WMF 5.1 a Windows 7 és Windows Server 2008 R2 telepítése előtt. Amely WMF 5.1 előzetes problémát, és lett feloldva.
+- **A WMF 5.1 szükséges a .NET-keretrendszer 4.5.2-es** (vagy újabb). Telepítés sikeres lesz, de a legfontosabb jellemzők sikertelen lesz, ha a .NET 4.5.2-es (vagy újabb) nincs telepítve. Útmutatást a [telepítése és konfigurálása a WMF 5.1-es ](https://msdn.microsoft.com/powershell/wmf/5.1/install-configure) témakör.
+- A WMF 5.1-es előzetes verzió a WMF 5.1 RTM telepítése előtt el kell távolítani.
+- A WMF 5.1 közvetlenül a WMF 5.0 vagy a WMF 4.0 keresztül lehet telepíteni.
+- Ez __nem szükséges__ WMF 4.0 telepítése a WMF 5.1 Windows 7 és Windows Server 2008 R2 telepítése előtt. Amely a WMF 5.1-es előzetes kiadásban történt, és lett feloldva.

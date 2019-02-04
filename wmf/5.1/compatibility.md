@@ -2,39 +2,39 @@
 ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
-title: WMF 5.1 operációs rendszer kompatibilitási
-ms.openlocfilehash: f0037dbc3b172fc98f5f8044a794e49f7727a05c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: A WMF 5.1-es operációs rendszerek kompatibilitása
+ms.openlocfilehash: 441124d2ad3de7601e8dcdd2073ba7094a11de81
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187510"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686256"
 ---
-# <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 operációs rendszer kompatibilitási #
+# <a name="wmf-51-operating-system-compatibility"></a>A WMF 5.1-es operációs rendszerek kompatibilitása #
 
-> Megjegyzés: A rendszer előzetes és bármikor megváltozhat.
+> Megjegyzés: Ezek az információk előzetesek, és változhat a tartalmuk.
 
-| Operációs rendszer verziója | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [A WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
+| Operációs rendszer verziója | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [A WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
-| Windows Server 2016 | Érhető el a-mezőben * |  |  |  |  |
-| Windows-10 | Érhető el a-mezőben * | Érhető el a-mezőben *  | | | |
-| Windows Server 2012 R2| Igen | Igen | Beépített hajók |  |  |
-| A Windows 8.1 | Igen | Igen |  Beépített hajók |  |  |
-| Windows Server 2012 | Igen | Igen | Igen |  Beépített hajók | |
-| Windows 8 |  |  |  | Beépített hajók | |
-| Windows Server 2008 R2 SP1 | Igen | Igen | Igen |  Igen| Beépített hajók |
-| Windows 7 SP1  | Igen | Igen | Igen | Igen | Beépített hajók |
+| Windows Server 2016 | A mobilplatform-box * |  |  |  |  |
+| Windows 10 | A mobilplatform-box * | A mobilplatform-box *  | | | |
+| Windows Server 2012 R2| Igen | Igen | Beépített részeként szerezhető be |  |  |
+| Windows 8.1 | Igen | Igen |  Beépített részeként szerezhető be |  |  |
+| Windows Server 2012 | Igen | Igen | Igen |  Beépített részeként szerezhető be | |
+| Windows 8 |  |  |  | Beépített részeként szerezhető be | |
+| Windows Server 2008 R2 SP1 | Igen | Igen | Igen |  Igen| Beépített részeként szerezhető be |
+| Windows 7 SP1  | Igen | Igen | Igen | Igen | Beépített részeként szerezhető be |
 | Windows Server 2008 SP2 | | | | Igen | Igen |
 | Windows Vista | | | | | Igen |
 | Windows Server 2003| | | |  | Igen |
 | Windows XP | | | |  | Igen |
 
 
-Kapcsolatos "érhető el a-mezőben *": A WMF 5.0 jellemzői foglalt az eredeti Windows 10 RTM verzióját.
-A WMF 5.1 funkcióit a Windows Server 2016 és a Windows 10 évforduló Edition foglalt.
-WMF 5.1 esetén nem alkalmazható ezen operációsrendszer-verziók, a frissítéseket Windows Update meghatározott.
+Információk "a Mobilplatform-box *": A WMF 5.0 funkcióját az eredeti Windows 10 RTM verzió is szerepel.
+A WMF 5.1 funkcióját a Rendszeríró a Windows Server 2016 és Windows 10 Évfordulós kiadását.
+A WMF 5.1-es nem alkalmazható ezen operációsrendszer-verziók számára, a frissítéseket Windows Update-en keresztül biztosított.
 
 
-A rendszer egy dolog, ami arról értesít, hogy a WMF nem tartalmaz a Windows.
-WMF egy frissítési csomagot, amely korábban kiadott Windows-verziókhoz Windows funkciókat biztosít.
-Ez egy fontos különbséggel lehet végrehajtani, ha a segítségkérés bármely ezeket a szolgáltatásokat, ezen összetevők verziója, nem fog egyezni mi rendszerrel szállított, az eredeti operációs rendszerben.
+Megjegyzés: az egyik dolog, hogy a WMF nem tartalmaz a Windows.
+A WMF egy frissítési csomagot, amely korábban kiadott Windows verziók Windows funkciókat biztosít.
+Ez egy fontos különbséggel lehet végrehajtani, ha a ezen összetevők verziója, ezeket a szolgáltatásokat bármely segítségét kérné nem egyeznek meg mi szállított az eredeti operációs rendszerben.

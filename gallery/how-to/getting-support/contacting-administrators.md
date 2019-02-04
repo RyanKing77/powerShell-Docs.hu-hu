@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Kapcsolattartó katalógus-rendszergazdák
 ms.openlocfilehash: f9197dfbf0cedb642259f554b42ec6f63eae30a4
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002172"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684982"
 ---
 # <a name="contact-gallery-administrators"></a>Kapcsolattartó katalógus-rendszergazdák
 

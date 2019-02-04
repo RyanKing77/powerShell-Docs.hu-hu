@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell, a core
 title: PowerShell 6.0 kapcsolatos ismert problémák
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49450996"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686760"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 kapcsolatos ismert problémák
 
@@ -15,7 +15,7 @@ ms.locfileid: "49450996"
 
 PowerShell a Linux és MacOS rendszeren alfa kiadásaiban többnyire működési, de rendelkezik néhány jelentős korlátozások és a használati problémákkal kapcsolatban. Béta verzióinak PowerShell Linux és macOS működési és alfa kiadások, mint stabil azonban továbbra is kell, hiányoznak bizonyos funkciók készletét, és a hibák is tartalmazhat. Bizonyos esetekben ezek olyan problémák, egyszerűen, amelyek még nem javított hibák. Más esetekben (mint az alapértelmezett aliasok ls, cp, stb.), a Microsoft által keresett visszajelzést kapcsolatban a választási lehetőségek arra a Közösségtől.
 
-Megjegyzés: Miatt számos mögöttes alrendszerek Hasonlóságok, Linux és macOS PowerShell általában azonos szintű szolgáltatásai és a hibákat a lejárat megosztása. Kivéve az alábbi esetekben ebben a szakaszban a problémák mindkét típusú operációs rendszerekre vonatkozik.
+Megjegyzés: PowerShell a Linux és MacOS rendszeren miatt számos mögöttes alrendszerek Hasonlóságok, általában azonos szintű szolgáltatásai és a hibákat a lejárat megosztása. Kivéve az alábbi esetekben ebben a szakaszban a problémák mindkét típusú operációs rendszerekre vonatkozik.
 
 ### <a name="case-sensitivity-in-powershell"></a>Kisbetű/nagybetű megkülönböztetése a PowerShellben
 
@@ -107,7 +107,7 @@ A következő táblázat felsorolja az ismert, hogy nem működik a Linux/MacOS-
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Nem érhető el.|Ezeket a parancsokat a rendszer nem ismeri. Ez egy későbbi kiadásban rögzíteni kell.|
 |`Get-Acl` és `Set-Acl` esetén|Nem érhető el.|Ezeket a parancsokat a rendszer nem ismeri. Ez egy későbbi kiadásban rögzíteni kell.|
 |`Get-AuthenticodeSignature` és `Set-AuthenticodeSignature` esetén|Nem érhető el.|Ezeket a parancsokat a rendszer nem ismeri. Ez egy későbbi kiadásban rögzíteni kell.|
-|`Wait-Process`|Elérhető, nem működik megfelelően. |Például "folyamatának elindítása gvim - PassThru | Nem működik a wait-Process'; Várjon, amíg a folyamat nem.|
+|`Wait-Process`|Elérhető, nem működik megfelelően. |Például `Start-Process gvim -PassThru | Wait-Process` nem működik; várja meg a folyamat nem sikerül.|
 |`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Elérhető, de nem működik.|Ír, egy üzenet, miszerint a parancsok nem működnek. Ezek egy későbbi kiadásban rögzíteni kell.|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Elérhető, de nincs eseményforrások érhetők el.|A PowerShell-parancsok eseménykezelési jelen van, de a parancsok (például System.Timers.Timer) együttes eseményforrások többsége nem érhetők el Linux rendszerre, így a parancsok a Alpha kiadásban használhatatlan.|
 |`Set-ExecutionPolicy`|Elérhető, de nem működik.|Ezen a platformon nem támogatott üzenetnek adja vissza. Végrehajtási házirend egy felhasználó témájú "biztonsági", amely segítségével megakadályozható, hogy a felhasználó költséges hibák. Akkor sem biztonsági határként.|

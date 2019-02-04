@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-Registry erőforrás
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048492"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687810"
 ---
 # <a name="dsc-registry-resource"></a>DSC-Registry erőforrás
 
@@ -39,9 +39,9 @@ Registry [string] #ResourceName
 | Értéknév| A beállításazonosító nevét jelzi. Hozzáadhat és eltávolíthat egy beállításkulcsot, adja meg a tulajdonság egy üres karakterlánccal ValueType vagy értékadat megadása nélkül. Módosíthatja, vagy távolítsa el az alapértelmezett érték egy beállításkulcs, adja meg, ez a tulajdonság egy üres karakterlánccal ValueType vagy értékadat megadása során.|
 | Győződjön meg, hogy| Azt jelzi, ha a kulcs-érték létezik-e. Annak érdekében, hogy tesznek, a "E" tulajdonság értéke. Győződjön meg arról, hogy azok nem léteznek, hogy a "Hiányzó" tulajdonság értéke. Az alapértelmezett érték: "E".|
 | Force| Ha a megadott beállításkulcs megtalálható, **kényszerített** felülírja azt az új értéket. Ha a beállításkulcs törlése az alkulcsok, ez kell lennie **$true** |
-| Hexadecimális| Azt jelzi, ha adatokat hexadecimális formátumban kell megadni. Ha meg van adva, a DWORD/Négyszó típusú érték hexadecimális formátumban jelenik meg. Más fájltípusok nem érvényes. Az alapértelmezett érték **$false**.|
+| Hex| Azt jelzi, ha adatokat hexadecimális formátumban kell megadni. Ha meg van adva, a DWORD/Négyszó típusú érték hexadecimális formátumban jelenik meg. Más fájltípusok nem érvényes. Az alapértelmezett érték **$false**.|
 | DependsOn| Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója letiltása, a futtatni kívánt parancsfájl először van **ResourceName** és a típusa **ResourceType**, ez a tulajdonság használata esetén `DependsOn = "[ResourceType]ResourceName"`.|
-| Értékadat| A beállításazonosító adatait.|
+| ValueData| A beállításazonosító adatait.|
 | ÉrtékTípusa| Az érték típusát jelzi. A támogatott típusok a következők: Karakterlánc (REG_SZ), a bináris (REG-bináris), Dword 32-bit-es (REG_DWORD), Négyszó típusú 64 bites (REG_QWORD), karakterláncsoros (REG_MULTI_SZ), bővíthető karakterlánc (REG_EXPAND_SZ) |
 
 ## <a name="example"></a>Példa

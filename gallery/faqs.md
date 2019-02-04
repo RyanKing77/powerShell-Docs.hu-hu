@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: PowerShell-galériából – gyakori kérdések
 ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002872"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688013"
 ---
 # <a name="frequently-asked-questions"></a>Gyakori kérdések
 
@@ -35,7 +35,7 @@ Ha már regisztrálta a katalógusban, használja a [Publish-Module](https://go.
 
 **Nem kell regisztrálni, vagy jelentkezzen be a katalógus telepítéséhez vagy csomagok mentése.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Kapott "nem sikerült feldolgozni a kérelmet. "A megadott API-kulcs érvénytelen, vagy nem rendelkezik hozzáféréssel a megadott csomaghoz.". A távoli kiszolgáló hibát adott vissza: (403) megtiltva. " Hiba történt a PowerShell-galériában egy csomag közzététele során. az mit jelent?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Kapott "nem sikerült feldolgozni a kérelmet. "A megadott API-kulcs érvénytelen, vagy nem rendelkezik hozzáféréssel a megadott csomaghoz.". A távoli kiszolgáló hibát adott vissza: (403) tiltott." Hiba történt a PowerShell-galériában egy csomag közzététele során. az mit jelent?
 
 Ez a hiba a következő okok miatt fordulhat elő:
 
@@ -138,7 +138,7 @@ A PackageManagement csomag szolgáltató rétegben az PSModule csomag szolgálta
 
 ![A PowerShellGet-architektúra](Images/powershellgetArchitecture.png)
 
-1. ábra: A PowerShellGet-architektúra
+1. ábra. A PowerShellGet-architektúra
 
 ## <a name="what-is-required-to-run-powershellget"></a>Mi szükséges a PowerShellGet futtatásához?
 
@@ -148,7 +148,7 @@ A **PowerShellGet** modulhoz szükséges **PowerShell 3.0-s vagy újabb**.
 
 Ezért **PowerShellGet** a következő operációs rendszerek egyike szükséges:
 
-- Windows-10
+- Windows 10
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
 - Windows 7 SP1

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 6f46d747879bb3106c6c477561248f7ea53274f7
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 6a3c888a97e027b6e52ee1bee80fe86be858d2b5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219089"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688552"
 ---
-# <a name="new-and-updated-cmdlets-based-on-community-feedback"></a>Új és frissített parancsmagok közösségi visszajelzések alapján
-Jelenleg néhány új segédprogram parancsmaggal hozzáadta, és frissíti a meglévő parancsmagokon keresztül visszajelzései alapján [Connect](https://connect.microsoft.com/powershell). Nyissa meg a visszajelzést, és a lehető kérelmek számos címen keresztül továbbra is.
+# <a name="new-and-updated-cmdlets-based-on-community-feedback"></a>Közösségi visszajelzések alapján megjelent új és frissített parancsmagok
+Azt hozzá néhány új segédprogramként használható parancsmagot, és frissíti a meglévő parancsmagok használatával a közösségi visszajelzések alapján [Connect](https://connect.microsoft.com/powershell). Haladjon végig a visszajelzéseket, és a kérések a lehető legtöbb cím továbbra is.

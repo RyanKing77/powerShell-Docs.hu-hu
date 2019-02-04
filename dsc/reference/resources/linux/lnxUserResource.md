@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC, a Linux nxUser erőforrás
 ms.openlocfilehash: 1b02be1559957585a2a1733630cb93440e8182f9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048248"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686011"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC, a Linux nxUser erőforrás
 
@@ -43,7 +43,7 @@ nxUser <string> #ResourceName
 | Jelszó| A Linux-számítógép számára a megfelelő képernyőn a felhasználók jelszó kivonatát. Ez általában egy sózott SHA-256 algoritmust, vagy SHA-512 kivonat. A Debian és Ubuntu Linux ezt az értéket a mkpasswd paranccsal hozhatók létre. Más Linux-disztribúciók kivonatának használható a Python titkosítási könyvtár a titkosítási módszert.|
 | Letiltva| Azt jelzi, hogy a fiók engedélyezve van-e. Ez a tulajdonság beállítása **$true** győződjön meg arról, hogy ez a fiók le van tiltva, és állítsa be a **$false** annak érdekében, hogy engedélyezve van.|
 | PasswordChangeRequired| Azt jelzi, hogy a felhasználó módosítsa a jelszót. Ez a tulajdonság beállítása **$true** győződjön meg arról, hogy a felhasználó nem tudja módosítani a jelszót, és állítsa be a **$false** , hogy a felhasználó módosítsa a jelszót. Az alapértelmezett érték **$false**. Ez a tulajdonság csak akkor történik, ha a felhasználói fiók korábban nem létezett, és létre lesz hozva.|
-| Kezdő_könyvtár| A felhasználó kezdőkönyvtárának.|
+| HomeDirectory| A felhasználó kezdőkönyvtárának.|
 | Csoportazonosító| A felhasználó elsődleges csoportos azonosítója.|
 | DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például ha erőforrás konfigurációs parancsprogram-blokkot futtatni kívánt azonosítója először "ResourceName" és a típus: "ResourceType", ez a tulajdonság használatával szintaxisa `DependsOn = "[ResourceType]ResourceName"`.|
 

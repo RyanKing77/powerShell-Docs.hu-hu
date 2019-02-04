@@ -1,15 +1,15 @@
 ---
-title: Távoli Szerkesztés és hibakeresés a Visual Studio Code használatával
-description: Távoli Szerkesztés és hibakeresés a Visual Studio Code használatával
+title: A Visual Studio Code használata távoli szerkesztéshez és hibakereséshez
+description: A Visual Studio Code használata távoli szerkesztéshez és hibakereséshez
 ms.date: 08/06/2018
-ms.openlocfilehash: bab1a629a7e9dafd5957cf93025abb18b8a4f326
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: fbc1ee3556e822b4afb2b37111d0688dc89fdab3
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655520"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688951"
 ---
-# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Távoli Szerkesztés és hibakeresés a Visual Studio Code használatával
+# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>A Visual Studio Code használata távoli szerkesztéshez és hibakereséshez
 
 Azoknak, azokat az ISE ismernie, előfordulhat, hogy már ismert, hogy futtatja sikerült `psedit file.ps1` az integrált konzol – helyi vagy távoli - fájlok megnyitásához a jobb gombbal az ISE-ben.
 
@@ -61,7 +61,7 @@ A parancsmag watered le leírását a következő:
 - `Enter-PSSession -ContainerId foo` és `Enter-PSSession -VmId foo` keresztül a PowerShell Directet munkamenet indítása
 - `Enter-PSSession -HostName foo` SSH-kapcsolaton keresztül egy munkamenet indítása
 
-További információ az `Enter-PSSession`, tekintse meg a docs [Itt](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
+További információ az `Enter-PSSession`, tekintse meg a docs [Itt](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
 
 E fogja használni az SSH a távelérése óta egy Ubuntu virtuális gép az Azure-ban macOS rendszerről fogom.
 

@@ -1,54 +1,54 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 9ead27fd5d4f146e9062488c1c8cc22a073b922e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 22a027ebc97e15075980bc77ce272d8ecdae0b5f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187102"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686991"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>A PowerShell parancsfájlokban végzett hibakeresésének javításai
 
-Számos fejlesztéssel PowerShell 5.0 került sor a hibakeresési élmény javítása érdekében:
+Számos fejlesztéssel történtek a PowerShell 5.0 a hibakeresési élmény:
 
 ## <a name="break-all"></a>Törés az összes
 
-A PowerShell-konzolban és a Windows PowerShell ISE most engedélyezi, hogy megszakítással belépjen a hibakeresőbe parancsfájlok futtatásához. Ez a helyi és távoli munkamenetek működik.
+A PowerShell-konzolt és a Windows PowerShell ISE-ben mostantól lehetővé teszi, hogy megszakítással belépjen a hibakeresőbe parancsfájlok futtatásához. Ez a módszer a helyi és távoli munkamenetek során.
 
-A konzolon nyomja le az **Ctrl + Break**.
+Nyomja meg a konzolon **Ctrl + Break**.
 
-ISE, nyomja le az **Ctrl + B**, vagy használja a **hibakeresési -> minden törés** menüparancshoz.
+A ISE-ben, nyomja le az ENTER **Ctrl + B**, vagy használja a **hibakeresése -> minden felosztása** parancs.
 
-## <a name="remote-debugging-and-remote-file-editing-in-windows-powershell-ise"></a>Távoli hibakereséssel és a távoli fájl szerkesztése a Windows PowerShell ISE
+## <a name="remote-debugging-and-remote-file-editing-in-windows-powershell-ise"></a>Távoli hibakeresés és a távoli fájl szerkesztése a Windows PowerShell ISE-ben
 
-A Windows PowerShell ISE lehetővé teszi a megnyitni és módosítani a fájlok a távoli kapcsolat a PSEdit parancs futtatásával.
-Például nyithatja meg a fájlt szerkesztésre a parancssorból egy távoli munkamenet az alábbiak szerint:
+Windows PowerShell ISE-ben mostantól lehetővé teszi megnyithatja és szerkesztheti a fájlokat a távoli kapcsolat a PSEdit parancsnak futtatásával.
+Például nyithatja meg egy fájlt szerkesztésre a parancssorból egy távoli munkamenetet a következőképpen:
 
 ```powershell
 [RemoteComputer1]: PS C:\> PSEdit C:\DebugDemoScripts\Test-GetMutex.ps1
 ```
 
-Emellett mostantól szerkeszteni és menteni egy távoli fájlban, amely automatikusan megnyílik a Windows PowerShell ISE, amikor a töréspont kattint.
-Most debug egy parancsfájlt, amely egy távoli számítógépen fut, a hiba javításához, és futtassa újból a módosítási parancsfájl fájl szerkesztésével.
+Emellett most már szerkesztheti és menti a változásokat egy távoli fájlt, amely automatikusan megnyílik a Windows PowerShell ISE-ben a töréspont elérésekor.
+Most hibakeresése egy parancsfájlt, amely egy távoli számítógépen fut, javítsa ki a hibát, és futtassa újból a módosított szkriptet a fájl szerkesztésével.
 
-## <a name="advanced-script-debugging"></a>Speciális parancsprogram-hibakeresés engedélyezése
+## <a name="advanced-script-debugging"></a>Speciális Erőforrásparancsfájlokban végzett hibakeresés
 
-Nincsenek új, speciális hibakeresési szolgáltatásokat, amelyek lehetővé teszik a helyi számítógép folyamat, amely be van töltve a Windows PowerShell csatolja, és hibakeresési tetszőleges futási terek a folyamatba.
+Nincsenek új, fejlett hibakeresési funkciók, amelyekkel bármely helyi számítógép folyamatot, amely be van töltve a Windows PowerShell csatolja, és a hibakeresés tetszőleges futási terek, az adott folyamatban.
 
 ### <a name="runspace-debugging"></a>Futási térben hibakeresés
 
-Új parancsmagokkal bővült, amelyek lehetővé teszik, hogy a folyamat az aktuális futási terek listában, és a Windows PowerShell-konzolt vagy az ISE hibakereső csatlakoztatni, hogy futási térben a parancsprogram-hibakeresés engedélyezése:
+Új parancsmagok, amelyekkel egy folyamat az aktuális futási terek listában, és a Windows PowerShell-konzolt vagy az ISE Hibakereső csatlakoztatása a parancsprogram-hibakeresés futási térben lettek hozzáadva:
 
--   Get-futási térben
--   Hibakeresési-futási térben
+-   Get-Runspace
+-   Debug-Runspace
 -   Enable-RunspaceDebug
 -   Disable-RunspaceDebug
 -   Get-RunspaceDebug
 
 ### <a name="attach-to-process-hosting-powershell"></a>PowerShell tartalmazó folyamat csatolása
 
-E számítógép folyamat, amely rendelkezik a Windows PowerShell betöltött most csatlakoztatni. Ehhez a folyamathoz hasonló módon, hogy miként meg interaktív távoli munkamenetbe a Enter-PSSession parancsmag futtatásával egy interaktív munkamenet megadva:
+Most már minden olyan számítógép folyamata, amely rendelkezik a Windows PowerShell betöltött csatlakoztathat. Ehhez a folyamathoz hasonló módon, hogy hogyan ad meg egy interaktív távoli munkamenetet a Enter-PSSession parancsmag futtatásával egy interaktív munkamenetbe írja be:
 
--   Adja meg PSHostProcess
--   Kilépés-PSHostProcess
+-   Enter-PSHostProcess
+-   Exit-PSHostProcess

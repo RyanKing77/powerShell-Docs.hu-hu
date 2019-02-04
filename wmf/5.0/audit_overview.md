@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 6af2375a701caf173a8d31f322afc5540f50471c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 6c2e1c641aa549591de7289c2d8a3f6a24158562
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225470"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686963"
 ---
-# <a name="audit-powershell-usage-using-transcription-and-logging"></a>Írjanak elő használatával PowerShell használatának naplózása és naplózás
+# <a name="audit-powershell-usage-using-transcription-and-logging"></a>PowerShell használatának Beszédátírási és naplózás
 
 - [Bővített átírási beállítások](audit_transcript.md)
 - [Parancsfájlok nyomkövetése és naplózása](audit_script.md)
-- [Kriptográfiai szintaxisú (CMS) parancsmagok](audit_cms.md)
+- [Titkosítási üzenet szintaxis-(CMS-) parancsmagok](audit_cms.md)

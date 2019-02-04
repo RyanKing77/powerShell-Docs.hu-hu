@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: 46a278b83edb9d8e3d75b0874603710d416be3b5
-ms.sourcegitcommit: f4247d3f91d06ec392c4cd66921ce7d0456a2bd9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50998520"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684653"
 ---
 # <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Az import-DscResource kulcsszó támogatja a - ModuleVersion paramétert
 
@@ -16,9 +16,9 @@ ms.locfileid: "50998520"
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-ModuleVersion <ModuleVersion>]
 ```
 
-* **Név**: egy vagy több erőforrás importálása nevét.
-* **ModuleName**: a modul nevét vagy ModuleSpecification objektumok importálása egy vagy több modulja.
-* **ModuleVersion**: modul importálásához verzióját. Ha használta, modulename: csak egy modult kell meghatároznia név alapján.
+* **Név**: Egy vagy több erőforrás importálása nevei.
+* **ModuleName**: A modul nevét vagy ModuleSpecification objektumok importálása egy vagy több modulja.
+* **ModuleVersion**: Modul importálása verzióját. Ha használta, modulename: csak egy modult kell meghatároznia név alapján.
 
 A Windows PowerShell ISE-ben az megjelenik az IntelliSense használatával:
 

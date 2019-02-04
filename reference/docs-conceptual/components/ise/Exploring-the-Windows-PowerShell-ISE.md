@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: A Windows PowerShell ISE felfedezése
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ms.openlocfilehash: 059651f159fb2636a93167709134788e90d062b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404459"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684478"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>A Windows PowerShell ISE felfedezése
 
@@ -42,7 +42,7 @@ A következő gomb az eszköztáron található.
 |**Paste**|A kurzor helyen a vágólap tartalmának beillesztése.|
 |**Törölje a Tesztkimenet ablaktáblán**|Törli az összes tartalom a Tesztkimenet ablaktáblán.|
 |**A Visszavonás**|Az imént végrehajtott művelet visszavonása.|
-|**Ismét:**|Az imént visszavont művelet végrehajtása.|
+|**Redo**|Az imént visszavont művelet végrehajtása.|
 |**Parancsfájl futtatása**|Parancsfájlok futtatására szolgál.|
 |**Kijelölés futtatása**|Egy kiválasztott része egy parancsfájlt futtat.|
 |**Végrehajtási leállítása**|Leállítja egy parancsfájlt, hogy fut-e.|

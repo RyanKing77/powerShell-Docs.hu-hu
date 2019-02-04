@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: af16ce7c5d97731581aa3393a70aba672244c9d8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: eec82b0cb9860d07a282a07c414c3723be313fa4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187085"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683757"
 ---
-# <a name="remove-dsc-documents"></a>A DSC-dokumentumok törlése
+# <a name="remove-dsc-documents"></a>DSC-dokumentumok eltávolítása
 
-Amikor egy konfigurációs dokumentum DSC érkeznek, a dokumentum végighalad különböző szakaszaiban (függőben lévő, aktuális, előző). A DSC-ből a Windows PowerShell 4.0, azt hozzá egy új parancsmagot `Remove-DscConfigurationDocument`, részeként [2014. novemberben kiadott kumulatív frissítés a Windows RT 8.1, Windows 8.1 és Windows Server 2012 R2](https://support.microsoft.com/kb/3000850).
+A konfigurációs dokumentum DSC érkeznek, a dokumentum különböző fázisaival (függőben lévő, jelenlegi, korábbi) keresztül kerül. Új parancsmag a Windows PowerShell 4.0-s, DSC felvettük `Remove-DscConfigurationDocument`, részeként [2014. novemberi kumulatív frissítés a Windows RT 8.1, Windows 8.1 és Windows Server 2012 R2](https://support.microsoft.com/kb/3000850).

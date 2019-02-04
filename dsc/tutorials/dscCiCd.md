@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat felépítésével bajlódnia
-ms.openlocfilehash: c305d9bc7e0f8c659129b5a20d0b7e8b34d09ba8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404376"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687264"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat felépítésével bajlódnia
 
@@ -25,7 +25,7 @@ Ebben a példában használatához ismernie kell a következőkkel:
 - CI-CD fogalmakat. Útmutatással található [a kiadási adatfolyamat-modell](http://aka.ms/thereleasepipelinemodelpdf).
 - [A Git](https://git-scm.com/) verziókövetés
 - A [Pester](https://github.com/pester/Pester) tesztelési keretrendszerének
-- [A Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://www.visualstudio.com/tfs/)
 
 ## <a name="what-you-will-need"></a>Mit kell
 
@@ -37,7 +37,7 @@ Ez az a számítógépen, ahol teheti meg az összes beállíthatja és futtatha
 
 Az ügyfélszámítógépen kell telepíteni az alábbi Windows számítógép:
 
-- [a git](https://git-scm.com/)
+- [Git](https://git-scm.com/)
 - klónozza a helyi git-adattár https://github.com/PowerShell/Demo_CI
 - egy szövegszerkesztőben, például [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -388,7 +388,7 @@ Kiadási definíció hozzunk létre úgy, hogy a projekt rendszerbe minden kód 
 
 Ehhez adja hozzá társított új kiadási definíciót a `InfraDNS` hozhat létre a korábban létrehozott builddefiníciót.
 Ügyeljen arra, hogy válasszon **folyamatos üzembe helyezés** úgy, hogy az új kiadás akkor aktiválódik, amikor elkészül egy új build.
-([Hogyan: Kiadási definíciók együttműködve](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions)) és a következőképpen konfigurálja:
+([Mik azok a folyamatok kiadását? ](/azure/devops/pipelines/release/what-is-release-management)) és a következőképpen konfigurálja:
 
 Adja hozzá a kiadási definíció az alábbi lépéseket:
 

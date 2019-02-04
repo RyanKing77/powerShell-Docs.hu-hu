@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Konfigurációs azonosítók használata a PowerShell 4.0-s lekérési ügyfél beállítása
 ms.openlocfilehash: 9adc767e91ff19d373c122a0d493e7b8703d5476
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404396"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685479"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Konfigurációs azonosítók használata a PowerShell 4.0-s lekérési ügyfél beállítása
 
@@ -47,7 +47,7 @@ Létrehozhat egy véletlenszerű **Guid** az alábbi példa használatával.
 
 Minden egyes ügyfélnek meg kell adni a **lekéréses** módban, és a pull-kiszolgáló URL-címét a konfigurációja tárolására. Ehhez az szükséges, akkor a helyi Configuration Manager (LCM) konfigurálása a szükséges információkat. Az LCM konfigurálása, a létrehozott konfigurációs, különleges típusú egy **LocalConfigurationManager** letiltása. Az LCM konfigurálása kapcsolatos további információkért lásd: [a Local Configuration Manager](../managing-nodes/metaConfig4.md).
 
-## <a name="http-dsc-pull-server"></a>HTTP-DSC lekéréses kiszolgálón
+## <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 Ha a lekéréses kiszolgálón webszolgáltatásként, amely be van állítva, akkor be a **DownloadManagerName** való **WebDownloadManager**. A **WebDownloadManager** meg kell adnia egy **ServerUrl** , a **DownloadManagerCustomData** kulcsot. Megadhat egy értéket is **AllowUnsecureConnection**, amint az az alábbi példában. A következő szkriptet az LCM konfigurálja a pull-konfigurációk "PullServer" nevű kiszolgálóról.
 

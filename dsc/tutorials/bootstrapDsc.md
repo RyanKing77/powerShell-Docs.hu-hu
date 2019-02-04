@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Konfigurálása a virtuális gépek első indításkor DSC használatával
-ms.openlocfilehash: 7b9ebc6c818aa39365759945667426c8976997e5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2ae6f7a85af3d08bad9e97b90efaefb2ff8410ca
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404392"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686907"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurálása a virtuális gépek első indításkor DSC használatával
 
@@ -18,16 +18,17 @@ ms.locfileid: "53404392"
 
 > [!NOTE]
 > A **DSCAutomationHostEnabled** ebben a témakörben ismertetett beállításkulcs nem érhető el a PowerShell 4.0-s verzióját.
-> Új virtuális gépek konfigurálásának első rendszerindítás a PowerShell 4.0-s, további információkért lásd: [automatikusan konfigurálja a gépek használatával DSC, kezdeti rendszerindítás szeretne?] > ()https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
+> Új virtuális gépek konfigurálásának első rendszerindítás a PowerShell 4.0-s, további információkért lásd: [automatikusan konfigurálja a gépek használatával DSC, kezdeti rendszerindítás szeretne?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
 Ezekben a példákban futtatásához szüksége lesz:
 
-- Egy rendszerindító virtuális Merevlemezre dolgozhat. Letöltheti a Windows Server 2016, a próbaverziója ISO [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Hogyan hozhat létre egy VHD, ISO-lemezképének talál útmutatást [létrehozása rendszerindító virtuális merevlemezek](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
+- Egy rendszerindító virtuális Merevlemezre dolgozhat. Letöltheti a Windows Server 2016, a próbaverziója ISO [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
+  Hogyan hozhat létre egy VHD, ISO-lemezképének talál útmutatást [létrehozása rendszerindító virtuális merevlemezek](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
 - Egy gazdagép-számítógép, amely rendelkezik Hyper-V engedélyezve van. További információ: [Hyper-V áttekintése](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 
   DSC használatával automatizálhatja a szoftverfrissítési telepítés és konfigurálás első számítógép számára.
   Ehhez vagy a konfigurációs MOF-dokumentum, vagy egy metaconfiguration való injektálása (például egy VHD-KET) a rendszerindító adathordozó, hogy az első rendszerindítás során futnak.
-  Ez a viselkedés úgy van megadva a [DSCAutomationHostEnabled beállításkulcs](DSCAutomationHostEnabled.md) beállításkulcs alatt `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies`.
+  Ez a viselkedés úgy van megadva a [DSCAutomationHostEnabled beállításkulcs](DSCAutomationHostEnabled.md) beállításkulcs alatt `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`.
   Alapértelmezés szerint ennek a kulcsnak értéke 2, amely lehetővé teszi, hogy a DSC futtatása rendszerindítás közben.
 
   Ha nem szeretné a DSC futtatása rendszerindítás közben, az értékét állítsa be a [DSCAutomationHostEnabled beállításkulcs](DSCAutomationHostEnabled.md) 0 beállításkulcsot.
@@ -172,7 +173,7 @@ Ezt ellenőrizheti meghívásával a [Get-WindowsFeature](/powershell/module/ser
 
 ## <a name="disable-dsc-at-boot-time"></a>Tiltsa le a DSC rendszerindítás közben
 
-Az érték alapértelmezés szerint a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled` kulcs értéke 2, amely lehetővé teszi a DSC-konfiguráció, ha a számítógép nem függőben lévő vagy a jelenlegi állapotban. Ha nem szeretné a futtatását, hogy az első konfiguráció, így kell beállítása a kulcsnak az értéke 0-ra:
+Az érték alapértelmezés szerint a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled` kulcs értéke 2, amely lehetővé teszi a DSC-konfiguráció, ha a számítógép nem függőben lévő vagy a jelenlegi állapotban. Ha nem szeretné a futtatását, hogy az első konfiguráció, így kell beállítása a kulcsnak az értéke 0-ra:
 
 1. A VHD csatlakoztatására meghívásával a [virtuális merevlemez csatlakoztatása](/powershell/module/hyper-v/mount-vhd) parancsmagot. Például:
 
@@ -186,10 +187,10 @@ Az érték alapértelmezés szerint a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Win
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`
    ```
 
-3. Keresse meg a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*` a PowerShell-beállításjegyzék-szolgáltatójának használatával.
+3. Keresse meg a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` a PowerShell-beállításjegyzék-szolgáltatójának használatával.
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
+   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
    ```
 
 4. Módosítsa az értéket a `DSCAutomationHostEnabled` 0-ra.

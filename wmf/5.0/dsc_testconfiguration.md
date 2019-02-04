@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 10f8dd0f5097260eb4a8516f9662df3d219bdfe5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4008a7f91af41150f26c4147135b30aa8835281c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187561"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688559"
 ---
-# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>Teszt-DscConfiguration parancsmag referencia-konfigurációkat támogat.
+# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>A test-DscConfiguration parancsmag támogatja a referencia-konfigurációkat
 
-Engedélyezi az összehasonlításhoz használandó hivatkozási konfigurációs dokumentum megadásával célcsomópontokat egy vagy több kívánt konfiguráció állapotának tesztelése a Test-DscConfiguration parancsmag frissítve lett.
+A Test-DscConfiguration parancsmag frissítve lett, hogy egy vagy több cél csomópontok kívánt konfigurációs állapotát egy referencia-konfigurációs dokumentum porovnání megadásával tesztelése.
 
-A következő új paraméterkészletei a DSC-konfigurációk használata csak tesztelési megadott elérési út, és soha nem érvényesek a megadott cél csomópontokon minden konfigurációs. A Start-DscConfiguration és egyéb DSC-parancsmagokkal, minden egyes MOF neve segítségével határozza meg, melyik teszteli a konfigurációt a célcsomóponton.
+A következő új paraméterkészlettel DSC-konfigurációk használata csak tesztelési megadott elérési út, és soha ne alkalmazzon az egyes konfigurációkhoz a célként megadott csomópontokon. A Start-DscConfiguration és egyéb DSC-parancsmagok, minden egyes MOF neve meghatározására szolgál melyik teszteli a konfigurációt a cél-csomópont.
 
 ```powershell
 Test-DscConfiguration   [-Path] <string>
@@ -29,7 +29,7 @@ Test-DscConfiguration   [-Path] <string>
                         [<CommonParameters>]
 ```
 
-A következő új paraméterkészletei csak tesztelése, és soha ne alkalmazzon a konfigurációt a megadott cél csomópontokon egyetlen DSC-konfiguráció használatával.
+A következő új paraméterkészlettel csak teszteléshez, és soha nem a konfiguráció alkalmazása a célként megadott csomópontokon egyetlen DSC-konfigurációja használja.
 
 ```powershell
 Test-DscConfiguration   -ReferenceConfiguration <string>

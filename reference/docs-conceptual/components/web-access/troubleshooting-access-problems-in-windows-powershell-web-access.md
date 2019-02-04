@@ -2,18 +2,18 @@
 ms.date: 08/23/2017
 keywords: PowerShell, a parancsmag
 title: a windows powershell-elérés hozzáférési problémák hibaelhárítása
-ms.openlocfilehash: c9b98c7a1685679eb88b718de0351154cb84e92e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404229"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688118"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Hozzáférési problémák hibaelhárítása a Webes Windows PowerShell-elérésben
 
 Frissítve: Június 24 2013 (2017. augusztus 23 módosított)
 
-Érvényes: A Windows Server 2012 R2, Windows Server 2012-ben
+Érvényes: Windows Server 2012 R2, Windows Server 2012
 
 Az alábbi szakaszok néhány gyakori problémák azonosítása a Windows PowerShell-elérés használatával távoli számítógéphez való csatlakozásra tett kísérlet közben, és a problémák megoldásához javaslatokat tartalmaz.
 
@@ -93,9 +93,9 @@ Ne használjon egy pontot (.) önmagában számítógépnévként.
 
 Paraméter | Érték
 -- | --
-UserName | Kiszolgáló\_neve\\felhasználói\_neve<br/>Localhost\\user\_name<br/>. \\felhasználói\_neve
-Felhasználói csoport | Kiszolgáló\_neve\\felhasználói\_csoport<br/>Localhost\\felhasználói\_csoport<br/>. \\felhasználói\_csoport
-ComputerGroup | Kiszolgáló\_neve\\számítógép\_csoport<br/>Localhost\\számítógép\_csoport<br/>. \\számítógép\_csoport
+UserName | Server\_name\\user\_name<br/>Localhost\\user\_name<br/>.\\user\_name
+UserGroup | Kiszolgáló\_neve\\felhasználói\_csoport<br/>Localhost\\user\_group<br/>. \\felhasználói\_csoport
+ComputerGroup | Kiszolgáló\_neve\\számítógép\_csoport<br/>Localhost\\computer\_group<br/>.\\computer\_group
 
 #### <a name="gateway-server-is-in-a-domain"></a>Az átjárókiszolgáló egy tartományhoz tartozik
 
@@ -113,15 +113,15 @@ ComputerName | Kiszolgálónév
 
 Jelentkezzen be a célkiszolgálóként működő átjárókiszolgálóra a következők valamelyike szerint formázott hitelesítő adatokkal.
 
-- Kiszolgáló\_neve\\felhasználói\_neve
+- Server\_name\\user\_name
 - Localhost\\user\_name
-- . \\felhasználói\_neve
+- .\\user\_name
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>Egy biztonsági azonosítóval (SID) jelenik meg egy olyan engedélyezési szabály
 
 Egy biztonsági azonosítóval (SID) jelenik meg a szintaxis felhasználó helyett egy olyan engedélyezési szabály\_neve/számítógép\_nevét.
 
-Ennek az lehet az oka, hogy a szabály már nem érvényes, vagy az Active Directory tartományi szolgáltatások lekérdezése meghiúsult.
+Ennek az lehet az oka, hogy a szabály már nem érvényes, vagy az Active Directory Domain Services lekérdezése meghiúsult.
 Az engedélyezési szabály érvénytelen általában nem forgatókönyvekben, ahol az átjárókiszolgáló korábban egy munkacsoporthoz tartozik, de később csatlakozik egy tartományhoz
 
 ## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>IPv6-címként egy tartomány nem tud bejelentkezni a szabály
@@ -139,4 +139,4 @@ IPv6-címek kapcsolatos további információkért lásd: [IPv6 működése](htt
 
 - [Engedélyezési szabályai és biztonsági funkciói Windows PowerShell-Elérésbe](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 - [A webes Windows PowerShell-konzol használata](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [távelérés követelményeivel foglalkozó cikkben](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

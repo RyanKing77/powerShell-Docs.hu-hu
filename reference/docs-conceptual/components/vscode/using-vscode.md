@@ -2,12 +2,12 @@
 title: PowerShell-fejlesztéshez a Visual Studio Code használatával
 description: PowerShell-fejlesztéshez a Visual Studio Code használatával
 ms.date: 08/06/2018
-ms.openlocfilehash: 3101fa57896996a696385801303333e4a6406d20
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 03f370d0906790b573ea42290b9ccdec2cf84f2e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404159"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686697"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell-fejlesztéshez a Visual Studio Code használatával
 
@@ -63,6 +63,24 @@ Például hozzon létre egy új fájlt, kattintson a **fájl -> új**.
 A mentéshez kattintson **File -> Mentés** adja meg a fájl nevét, most tegyük fel, és `HelloWorld.ps1`.
 Zárja be a fájlt, kattintson a "x", a fájl neve mellett.
 Lépjen ki a Visual Studio Code-ban való **File -> kilépési**.
+
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>Korlátozott rendszereken a PowerShell-bővítmény telepítése
+
+Egyes rendszerek állítsa be úgy, hogy az összes kód aláírása ellenőrizendő igényel, és megköveteli, PowerShell-szerkesztő szolgáltatások manuálisan kell jóváhagyni a rendszeren való futtatásához.
+Egy csoportházirend-frissítés, amely módosítja a végrehajtási házirend ennek valószínű oka, ha a PowerShell-bővítmény telepítve van, de az elérni próbált hasonló hibával:
+
+```
+Language server startup failed.
+```
+
+Manuális jóváhagyásáról PowerShell szerkesztő szolgáltatásokat, és így a PowerShell-bővítmény VSCode-nyisson meg egy PowerShell parancssort és futtassa:
+
+```powershell
+Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
+```
+
+A program "Szeretné futtatni a szoftvert a nem megbízható közzétételi?"
+Típus `R` , futtassa a fájlt. Ezután nyissa meg a Visual Studio Code-ot, és ellenőrizze, hogy a PowerShell-bővítmény megfelelően működik-e. Ha továbbra is problémákba ütközik bevezetés, ossza meg velünk az [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
 #### <a name="using-a-specific-installed-version-of-powershell"></a>Egy adott PowerShell telepített verziójának használatával
 

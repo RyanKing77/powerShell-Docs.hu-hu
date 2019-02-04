@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
-title: A alkalmazni, Get, és a egy csomópont konfigurációjának tesztelése
+title: Apply, Get és Test konfigurációk csomóponton
 ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404375"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684338"
 ---
-# <a name="apply-get-and-test-configurations-on-a-node"></a>A alkalmazni, Get, és a egy csomópont konfigurációjának tesztelése
+# <a name="apply-get-and-test-configurations-on-a-node"></a>Apply, Get és Test konfigurációk csomóponton
 
 Ez az útmutató bemutatja, hogyan használható a konfigurációkat egy cél csomópont. Ez az útmutató az alábbi lépéseket van osztva:
 

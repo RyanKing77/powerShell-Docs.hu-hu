@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC, a Linux nxFileLine erőforrás
 ms.openlocfilehash: 6a91db25638b09659adfabcec78f91bcb2e69dd9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048237"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684968"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>DSC, a Linux nxFileLine erőforrás
 
@@ -30,7 +30,7 @@ nxFileLine <string> #ResourceName
 
 |  Tulajdonság |  Leírás |
 |---|---|
-| Fájl elérési útja| A fájl teljes elérési útja a célcsomóponton lévő sorok kezeléséhez.|
+| FilePath| A fájl teljes elérési útja a célcsomóponton lévő sorok kezeléséhez.|
 | ContainsLine| Győződjön meg arról, hogy egy sort a fájl létezik. Ezt a sort a fájl is bővül, ha nem létezik a fájlban. **ContainsLine** kötelező, de egy üres karakterláncra állítható (`ContainsLine = ""`) Ha már nincs szükség.|
 | DoesNotContainPattern| A sorokat, amelyek a fájl nem létezhet Reguláriskifejezés-mintának. Olyan sort, amely létezik a fájlban a reguláris kifejezésnek megfelelő a sort a fájl törlődik.|
 | DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például ha a **azonosító** az erőforrás, amely a futtatni kívánt konfigurációs parancsprogram-blokkot első az **ResourceName** és a típusa **ResourceType**, ezzel esetén a tulajdonság `DependsOn = "[ResourceType]ResourceName"`.|

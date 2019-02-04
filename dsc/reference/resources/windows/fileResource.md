@@ -2,23 +2,21 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-File erőforrás
-ms.openlocfilehash: e5f7a91e5f19c8c7bbada090804d8f29a7cfedd5
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.openlocfilehash: b5bc2c305b8cfccbd044274811df631264a24279
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048523"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688426"
 ---
 # <a name="dsc-file-resource"></a>DSC-File erőforrás
 
 > Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
-A fájl erőforrás a Windows PowerShell Desired State Configuration (DSC) lehetővé teszi a fájlok és mappák célcsomóponton kezeléséhez.
-
->**Megjegyzés:** Ha a **MatchSource** tulajdonsága **$false** (amely a az alapértelmezett érték), a tartalmát, másolja a gyorsítótárazza a rendszer először a konfiguráció alkalmazása.
->A konfiguráció további alkalmazásokat nem ellenőrzi a frissített fájlok és/vagy mappák által megadott útvonal **SourcePath**. Ha szeretné-e a fájlok és/vagy mappákat a frissítések keresése **SourcePath** minden alkalommal, amikor a konfigurációs van érvényben, állítsa be **MatchSource** való **$true**.
+A fájl erőforrás a Windows PowerShell Desired State Configuration (DSC) lehetővé teszi a fájlok és mappák célcsomóponton kezeléséhez. A **DestinationPath** és **SourcePath** mindkét által elérhetőnek kell lennie a cél csomópont.
 
 ## <a name="syntax"></a>Szintaxis
+
 ```
 File [string] #ResourceName
 {
@@ -39,24 +37,48 @@ File [string] #ResourceName
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   |
-|---|---|
-| DestinationPath| Azt jelzi, hogy a hely, ahol szeretne biztosítani egy fájl vagy könyvtár állapota.|
-| Attribútumok| Itt adhatja meg a kívánt állapotra a célként megadott fájl vagy könyvtár attribútumait.|
-| Ellenőrzőösszeg| Annak meghatározása,-e az azonos két fájlt használandó ellenőrzőösszeg típusát jelzi. Ha __ellenőrzőösszeg__ nincs megadva, csak a fájl vagy könyvtár nevét használja az összehasonlítást. Érvényes értékek a következők: Az SHA-1, SHA-256, SHA-512, createdDate, modifiedDate.|
-| Tartalom| Itt adhatja meg, például egy adott karakterláncot egy fájl tartalmát.|
-| Hitelesítő adatok| A hitelesítő adatokat, amelyek szükségesek a hozzáférési erőforrások, például a forrásfájlokat, azt jelzi, ha ilyen hozzáférésre szüksége.|
-| Győződjön meg, hogy| Azt jelzi, hogy a fájl vagy könyvtár létezik-e. Állítsa be ezt a tulajdonságot a "Hiányzó" annak érdekében, hogy a fájl vagy könyvtár nem létezik. Állítsa a "E" Győződjön meg arról, hogy a fájl vagy könyvtár létezik. Az alapértelmezett érték "E".|
-| Force| Bizonyos fájl műveletek (például fájl felülírása vagy egy nem üres könyvtár törlése) hibát eredményez. A kényszerített tulajdonságot felülbírálja az ilyen hibák. Az alapértelmezett érték __$false__.|
-| Parancs recurse kapcsolójának| Azt jelzi, ha alkönyvtárakat tartalmaz. Ez a tulajdonság beállítása __$true__ jelzi, hogy szeretné-e alkönyvtárak fogja tartalmazni. Az alapértelmezett érték __$false__. **Megjegyzés:**: Ez a tulajdonság csak akkor érvényes, ha a tulajdonság beállítása könyvtárba.|
-| DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója letiltása, a futtatni kívánt parancsfájl először van __ResourceName__ és a típusa __ResourceType__, ez a tulajdonság használata esetén `DependsOn = "[ResourceType]ResourceName"`.|
-| SourcePath| Azt jelzi, hogy az elérési utat, amelyről a fájl vagy mappa erőforrás másolásához.|
-| Típus| Azt jelzi, hogy az erőforráshoz konfigurált egy könyvtárat vagy fájl. Ez azt jelzi, hogy az erőforrás egy könyvtárat a "Directory" tulajdonság értéke. Állítsa a "File" azt jelzi, hogy az erőforrás egy fájlt. Az alapértelmezett érték: "File".|
-| MatchSource| Ha az alapértelmezett értékre állítva __$false__, majd a forrás (pl.: fájlok A, B és C) lévő fájlok az első alkalommal a konfiguráció alkalmazása hozzáadódik a célhelyen. (D) új fájl kerül, a forrás-, ha azt fogja nem vehető fel a cél, akkor is, ha a konfiguráció alkalmazása újra később. Ha az érték __$true__, akkor minden alkalommal, amikor a konfigurációs van érvényben, ezt követően a forrás (például D fájl ebben a példában) található új fájlokat adnak hozzá a célhelyen. Az alapértelmezett érték **$false**.|
+|Tulajdonság       |Leírás                                                                   |Szükséges|Alapértelmezett|
+|---------------|------------------------------------------------------------------------------|--------|-------|
+|DestinationPath|A helyre, a cél csomóponton szeretne biztosítani a `Present` vagy `Absent`.|Igen|Nem|
+|Attribútumok     |A kívánt állapotra a célként megadott fájl vagy könyvtár attribútumait. Érvényes értékek a következők **archív**, **Hidden**, **ReadOnly**, és **rendszer**.|Nem|Egyik sem|
+|Ellenőrzőösszeg      |Annak meghatározása,-e az azonos két fájlt használandó ellenőrzőösszeg típusa. Érvényes értékek a következők: Az SHA-1, SHA-256, SHA-512, createdDate, modifiedDate.|Nem|A rendszer összehasonlítja a csak a fájl vagy könyvtár nevét.|
+|Tartalom       |Csak akkor érvényes, ha a használt `File` típusa. Azt jelzi, ellenőrizze, hogy a tartalom `Present` vagy `Absent` a célként megadott fájlból. |Nem|Egyik sem|
+|Hitelesítő adatok     |A hitelesítő adatokat, amelyek szükségesek a hozzáférési erőforrások, például a forrásfájlok.|Nem|A célcsomópont számítógépfiókja. (*lásd a megjegyzést*)|
+|Győződjön meg, hogy         |A célként megadott fájl vagy könyvtár a kívánt állapotra. |Nem|**Jelen van**|
+|Force          |Felülbírálja a hozzáférés-műveletek (például fájl felülírása vagy egy nem üres könyvtár törlése) hibát eredményez.|Nem|`$false`|
+|Parancs recurse kapcsolójának        |Csak akkor érvényes, ha a használt `Directory` típusa. Az állapot művelet rekurzív módon alkönyvtáraiban hajt végre.|Nem|`$false`|
+|DependsOn      |Megadott erőforrás(ok) függőség beállítása. Ehhez az erőforráshoz csak akkor futnak, minden függő erőforrások sikeres végrehajtása után. Megadhatja a tőle függő erőforrások, a szintaxis használatával `"[ResourceType]ResourceName"`. Lásd: [about_DependsOn](../../../configurations/resource-depends-on.md)|Nem|Egyik sem|
+|SourcePath     |Az elérési út, amelyről a fájl vagy mappa erőforrás másolásához.|Nem|Egyik sem|
+|Típus           |A konfigurált erőforrás típusát. Érvényes értékek a következők `Directory` és `File`.|Nem|`File`|
+|MatchSource    |Azt határozza meg, ha az erőforrás kell figyelnie a forráskönyvtár a kezdeti másolat után hozzáadott új fájlokat. Érték `$true` azt jelzi, hogy a kezdeti másolat után új forrásfájlokat kell másolni, hogy a célhelyen. Ha beállítása `$False`, az erőforrás gyorsítótárazza a forráskönyvtár tartalmát, és figyelmen kívül hagyja a kezdeti másolat után hozzáadott fájlokat.|Nem|`$false`|
+
+> [!WARNING]
+> Ha nem ad meg értéket `Credential` vagy `PSRunAsCredential` (PS még az V.5), az erőforrás eléréséhez fog használni a számítógépfiókot a célcsomópont a `SourcePath`.  Ha a `SourcePath` egy UNC-megosztásnevet, ez "Hozzáférés megtagadva" hibaüzenetet eredményezhet. Ellenőrizze, hogy az engedélyek megfelelően vannak beállítva, vagy használja a `Credential` vagy `PSRunAsCredential` tulajdonságokat adja meg a fiókot kell használni.
+
+## <a name="present-vs-absent"></a>Jelenlegi vs. Nincs jelen
+
+Az egyes DSC-erőforrások számára megadott érték alapján különböző műveleteket hajtja végre, a `Ensure` tulajdonság. Az értékeket adja meg a fenti tulajdonságokat határozza meg, az állapot műveletet végrehajtani.
+
+### <a name="existence"></a>Létezik-e
+
+Csak megadása egy `DestinationPath`, az erőforrás biztosítja, hogy létezik-e az elérési út (`Present`) vagy nem létezik (`Absent`).
+
+### <a name="copy-operations"></a>Másolási műveletek
+
+Beállítás megadása egy `SourcePath` és a egy `DestinationPath` együtt egy `Type` értékét **Directory**, az erőforrás-másolatok forrás elérési utat a könyvtár. A Tulajdonságok `Recurse`, `Force`, és `MatchSource` másolási művelet típusának módosítása hajtja végre, miközben `Credential` határozza meg, melyik fiókot szeretné használni a forrás-könyvtár eléréséhez.
+
+### <a name="limitations"></a>Korlátozások
+
+Ha a megadott érték `ReadOnly` a a `Attributes` tulajdonság mellett egy `DestinationPath`, `Ensure = "Present"` kell létrehoznia az elérési útvonal, közben `Contents` állíthatja be a fájl tartalmát.  Egy `Absent` állapotbetöltési művelet lenne figyelmen kívül a `Attributes` tulajdonság teljesen, és távolítsa el minden olyan fájlt a megadott elérési úton.
 
 ## <a name="example"></a>Példa
 
-Az alábbi példa bemutatja, hogyan használhatja a File resource annak érdekében, hogy egy könyvtárat az elérési útját `C:\Users\Public\Documents\DSCDemo\DemoSource` egy forrást a számítógépen (például a "PULL parancs" kiszolgáló) is jelen (együtt az összes alkönyvtár) célcsomóponton. Ez is egy megerősítő üzenetet írja a naplóba, amikor végzett és a egy nyilatkozatot, győződjön meg arról, hogy fut-e a fájl-ellenőrzés műveletet a naplózási művelet előtt.
+Az alábbi példa másol egy könyvtárat és annak almappáiba egy lekéréses kiszolgálót egy célcsomóponttal a fájl erőforrás használatával. Ha a művelet sikeres, a Log erőforrás egy megerősítő üzenetet ír az eseménynaplóba.
+
+A forráskönyvtár egy UNC elérési út (`\\PullServer\DemoSource`) megosztott a lekérési kiszolgálóról. A `Recurse` tulajdonság biztosítja, hogy minden alkönyvtár másolása is megtörténik.
+
+> [!IMPORTANT]
+> Az LCM Konfigurálása a célként megadott csomópontban alapértelmezés szerint a helyi rendszerfiók környezetében hajtja végre. Hozzáférést kell biztosítani a **SourcePath**, adjon a célcsomópont számítógép fiókja megfelelő engedélyekkel. A **Credential** és **PSDSCRunAsCredential** (v5) is módosíthatja a összefüggésben LCM a által használt eléréséhez a **SourcePath**. Önnek kell elvégeznie a fiókhoz használandó a hozzáférést a hozzáférést a **SourcePath**.
 
 ```powershell
 Configuration FileResourceDemo
@@ -65,10 +87,10 @@ Configuration FileResourceDemo
     {
         File DirectoryCopy
         {
-            Ensure = "Present"  # You can also set Ensure to "Absent"
-            Type = "Directory" # Default is "File".
-            Recurse = $true # Ensure presence of subdirectories, too
-            SourcePath = "C:\Users\Public\Documents\DSCDemo\DemoSource"
+            Ensure = "Present" # Ensure the directory is Present on the target node.
+            Type = "Directory" # The default is File.
+            Recurse = $true # Recursively copy all subdirectories.
+            SourcePath = "\\PullServer\DemoSource"
             DestinationPath = "C:\Users\Public\Documents\DSCDemo\DemoDestination"
         }
 
@@ -76,8 +98,10 @@ Configuration FileResourceDemo
         {
             # The message below gets written to the Microsoft-Windows-Desired State Configuration/Analytic log
             Message = "Finished running the file resource with ID DirectoryCopy"
-            DependsOn = "[File]DirectoryCopy" # This means run "DirectoryCopy" first.
+            DependsOn = "[File]DirectoryCopy" # Depends on successful execution of the File resource.
         }
     }
 }
 ```
+
+További on használatára vonatkozó **hitelesítő adatok** DSC itt talál: [futtatása felhasználóként](../../../configurations/runAsUser.md) vagy [Config tartozó hitelesítő adatok](../../../configurations/configDataCredentials.md).

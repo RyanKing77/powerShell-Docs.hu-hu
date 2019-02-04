@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 01d4989711c22db20431876c52740afb350caad0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9849feb01cd7be41703bdd1e8cb2c5a86cccff52
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219548"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685780"
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>PowerShell-parancsmagok létrehozása OData-végpont alapján
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Windows PowerShell-parancsmagok alapján egy OData-végpont létrehozása
+<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Az OData-végpont alapján Windows PowerShell-parancsmagok létrehozása
 --------------------------------------------------------------
 
-**Export-ODataEndpointProxy** parancsmag létrehoz egy Windows PowerShell-parancsmagok által megadott OData-végpont funkciókon alapulnak.
+**Exportálás – ODataEndpointProxy** -parancsmag, amely létrehoz egy Windows PowerShell-parancsmagok a megadott OData-végpont által elérhetővé tett funkciók alapján.
 
-A következő példa bemutatja, hogyan használja a következő új parancsmagot:
+Az alábbi példa bemutatja, hogyan használhatja az új parancsmag:
 
 \# Az Export-ODataEndpointProxy alapvető használati eset
 
@@ -46,19 +46,19 @@ ipmo 'C:\Users\user\Generated.psd1'
 #
 ```
 
-Még vannak főbb használati esetek fejlesztési erre a funkcióra, de nem kizárólagosan beleértve a részei:
+Továbbra is vannak fejlesztést, így ezt a funkciót, beleértve többek között, a fő használati eseteit részei:
 -   Társítások
--   Sikeres adatfolyamok
+-   Streamek átadása
 
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>Windows PowerShell-parancsmagok egy OData-végpont a ODataUtils alapján készítése
+<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>Az OData-végpont az ODataUtils alapján Windows PowerShell-parancsmagok létrehozása
 ------------------------------------------------------------------------------
-A ODataUtils modul lehetővé teszi, hogy a Windows PowerShell-parancsmagok az OData-t támogató REST-végpontok előállítását. A következő növekményes fejlesztéseket Microsoft.PowerShell.ODataUtils Windows PowerShell-modul szerepelnek.
--   További információ a kiszolgálóoldali végpont az ügyféloldali csatorna.
--   Ügyféloldali lapozás támogatása
+A ODataUtils modul lehetővé teszi, hogy a Windows PowerShell-parancsmagjait REST-végpontokat, amelyek támogatják az OData generációja. A következő növekményes fejlesztéseket a Microsoft.PowerShell.ODataUtils Windows PowerShell-modul találhatók.
+-   Csatorna ügyféloldali, kiszolgálóoldali végpontról további információt.
+-   Ügyféloldali lapozási támogatása
 -   Kiszolgálóoldali szűrés használatával a – Select paraméter
--   Webes kérelemfejléc támogatása
+-   Webalkalmazás-kérelemfejlécek támogatása
 
-Az Export-ODataEndPointProxy parancsmag által létrehozott webalkalmazásproxy-parancsmagok további információkkal (nem szerepel a ügyféloldali proxy létrehozása során használt $metadata) a kiszolgáló oldalán OData-végpont az információk adatfolyamon (egy új Windows PowerShell 5.0 szolgáltatáshoz). Itt található példa bemutatja, hogyan ezt az információt lekérni.
+A webalkalmazásproxy-parancsmagok az Export-ODataEndPointProxy parancsmag által létrehozott további információkkal (nem szerepel a a ügyféloldali proxy létrehozása során használt $metadata) a kiszolgálóról ügyféloldali OData-végpont (egy új Windows Information Stream A PowerShell 5.0-s szolgáltatás). Íme egy példa adatok beszerzése.
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
 $generatedProxyModuleDir = Join-Path -Path $env:SystemDrive -ChildPath 'ODataDemoProxy'
@@ -80,7 +80,7 @@ $additionalInfo = $infoStream.GetEnumerator() | % MessageData
 $additionalInfo['odata.count']
 ```
 
-A kiszolgáló oldalán kötegekben az a rekordok ügyféloldali lapozás támogatása használatával kérheti le. Ez akkor hasznos, ha ha előbb telepítik azokra a nagy mennyiségű adatot a kiszolgálóról a hálózaton keresztül.
+A rekordok érheti el a kiszolgálói oldalon kötegekben, a ügyféloldali lapozási támogatási használatával. Ez akkor hasznos, ha be kell szereznie egy nagy mennyiségű adatot a kiszolgálóról a hálózaton keresztül.
 ```powershell
 $skipCount = 0
 $batchSize = 3
@@ -93,14 +93,14 @@ $skipCount += $batchSize
 }
 ```
 
-A létrehozott webalkalmazásproxy-parancsmagok támogatja a – Select paraméter, amely használható szűrőként a csak a rekord tulajdonságokat, amelyeket az ügyfélnek. Ez csökkenti a hálózaton keresztül továbbított adatmennyiséget, mert a kiszolgáló oldalán a szűrés történik.
+A létrehozott webalkalmazásproxy-parancsmagok támogatják a – Select paramétert, amely használható egy szűrőt a csak a rekord tulajdonságokat, amelyeket az ügyfélnek kell. Ez csökkenti a hálózaton keresztül továbbított adatok mennyisége, mivel a szűrés a kiszolgálói oldalon történik.
 ```powershell
 # In the below example only the Name property of the
 # Product record is retrieved from the server side.
 Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
-Az Export-ODataEndpointProxy parancsmag és az általa létrehozott webalkalmazásproxy-parancsmagok mostantól támogatja a fejlécek paraméter (ellátási értékeinek egy kivonattáblát), amely azokat az adatokat a kiszolgálóoldali OData-végpont által várt csatorna segítségével. A következő példában egy előfizetés kulcs egy előfizetés kulcs hitelesítéshez számított szolgáltatások fejlécek keresztül is csatorna.
+Az Export-ODataEndpointProxy parancsmagot, és az általa létrehozott webalkalmazásproxy-parancsmagok mostantól támogatják a fejlécek paraméter (egy kivonattáblát értékeket adjon meg), amelyet használhat a channel minden további információt a kiszolgálóoldali OData-végpont által várt. A következő példában a szolgáltatásokhoz, amelyek egy előfizetési kulcsot hitelesítéshez sebességhez fejlécek keresztül egy előfizetési kulcsot is channel.
 ```powershell
 # As an example, in the below command 'XXXX' is the authentication used by the
 # Export-ODataEndpointProxy cmdlet to interact with the server-side

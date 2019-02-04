@@ -1,25 +1,25 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 6d37fbc5091d69925d60349f3acbdecc92da1b95
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 31fde15e644455dbe77f68bca713bf026544fdc7
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34220342"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688531"
 ---
 # <a name="on-demand-pull-of-dsc-configurations"></a>DSC-konfigurációk igény szerinti lekérése
 
-Az új frissítés-DscConfiguration parancsmag elindítja a metaadat-konfigurációjában a lekéréses kiszolgálóról lekérési. A jelenség gyakran nevezik "Pull most".
+Az új frissítés-DscConfiguration parancsmag elindítja a lekérési kiszolgálóról a metaadat-konfigurációjában meghatározott lekérési. A viselkedés gyakran nevezik "Most Pull".
 
 
-Miután elindul, a lekéréses pontosan ugyanúgy viselkedik, mikor kellene elindított rendszeres gyakorisága:
+Aktivált, miután a lekéréses pontosan ugyanúgy viselkedik, hogy mikor kell aktiválódni a szokásos gyakoriság:
 
-1. Az aktuális ellenőrzőösszeg összeveti az ellenőrzőösszeg-konfigurációhoz a lekérési kiszolgálón.
-2. Ha a egyeznek, fejeződik a konfiguráció alkalmazása nélkül.
-3. Ha ezek eltérnek, a konfiguráció a lekérési kiszolgálójával lekért és alkalmazása.
+1. Az ellenőrzőösszeg aktuális a rendszer összehasonlítja a konfiguráció a lekérési kiszolgálón ellenőrzőösszeget.
+2. Ha a egyeznek, sikeres volt a Kapcsolódás a konfiguráció alkalmazása nélkül.
+3. Ha ezek eltérnek, a konfiguráció a lekéréses kiszolgálón származhatnak és alkalmazása.
 
-**Megjegyzés:** Ha a metaadat-konfiguráció RefreshMode = "Push" hibát ad vissza a parancsmag által, ezért ez a parancsmag mindig nem változtat semmin, ha egy célcsomóponttal "Push" módban van.
+**Megjegyzés:** Ha a metaadat-konfiguráció RefreshMode = "Push" hibát ad vissza a parancsmag által, így ez a parancsmag minden esetben nem változtat semmin, ha egy célcsomóponttal "Push" módban van.
 
 ```powershell
 Update-DscConfiguration     [[-ComputerName] <string[]>]

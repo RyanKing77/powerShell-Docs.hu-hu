@@ -3,11 +3,11 @@ ms.date: 06/20/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC PackageManagementSource erőforrás
 ms.openlocfilehash: e51b5318288bef458567dd4b58d17caaea3ed69b
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048239"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686319"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource erőforrás
 

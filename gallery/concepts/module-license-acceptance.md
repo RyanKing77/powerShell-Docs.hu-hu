@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Licencfeltételek elfogadását igénylő modulok
 ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002667"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687530"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Licencfeltételek elfogadását igénylő modulok
 
@@ -28,7 +28,7 @@ Modulok, amelyeket a felhasználók licenc elfogadására szeretne az alábbi k�
 ## <a name="impact-on-installsaveupdate-module"></a>Telepítés/Save/Update-Module gyakorolt hatás
 
 - Telepítés/Save/frissítési parancsmagok támogatni fogja az új paraméter, amely fog viselkedni, mintha a felhasználói licenc látott – AcceptLicense.
-- Ha nincs megadva a – AcceptLicense RequiredLicenseAcceptance értéke igaz, a felhasználó a license.txt látható, és a rendszer: &quot;elfogadja ezeket a licencfeltételeket (Yes/No/YesToAll/NoToAll)&quot;.
+- Ha nincs megadva a – AcceptLicense RequiredLicenseAcceptance értéke igaz, a felhasználó lesz látható a license.txt, és a rendszer: &quot;Elfogadja ezeket a licencfeltételeket (Yes/No/YesToAll/NoToAll)&quot;.
   - Ha elfogadja a licencfeltételeket
     - **Save-Module:** lesznek másolva a modul a felhasználó&#39;s rendszer
     - **Install-Module:** lesznek másolva a modul a felhasználó&#39;s rendszer a megfelelő mappába (hatókör alapján)
@@ -49,9 +49,9 @@ Modulok, amelyeket a felhasználók licenc elfogadására szeretne az alábbi k�
 
 Adjon meg `–Force` nem elegendő az, hogy fogadja el a licencet. `–AcceptLicense` engedély telepítéséhez szükség. Ha `–Force` van megadva, RequiredLicenseAcceptance értéke igaz, és `–AcceptLicense` nincs megadva, a művelet sikertelen lesz.
 
-## <a name="examples"></a>PÉLDÁK
+## <a name="examples"></a>EXAMPLES
 
-### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>1. példa: Frissítés a modul Manifest licencfeltételek elfogadásának megkövetelése
+### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>1. példa: Licencfeltételek elfogadásának kérése az Alkalmazásjegyzéket az modul frissítése
 
 ```powershell
 Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -PrivateData @{
@@ -65,7 +65,7 @@ Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -Pr
 
 Ez a parancs frissíti a jegyzékfájlt, és a RequireLicenseAcceptance jelzőt igaz értékre állítja.
 
-### <a name="example-2-install-module-requiring-license-acceptance"></a>2. példa: Licencfeltételek elfogadását igénylő a modul telepítése
+### <a name="example-2-install-module-requiring-license-acceptance"></a>2. példa: Licencfeltételek elfogadását igénylő modul telepítése
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance
@@ -88,7 +88,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 Ez a parancs megjeleníti a licenc license.txt fájlból, és kéri a felhasználót, fogadja el a licencfeltételeket.
 
-### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>3. példa: Telepítse a modul igénylő licencfeltételek elfogadását - AcceptLicense
+### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>3. példa: A - AcceptLicense licencfeltételek elfogadását igénylő modul telepítése
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
@@ -96,7 +96,7 @@ Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 
 A modul telepítve van minden licenc elfogadására kérése nélkül.
 
-### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>4. példa: Telepítse a modul igénylő licencfeltételek elfogadását a - Force
+### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>4. példa: A - Force licencfeltételek elfogadását igénylő modul telepítése
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance -Force
@@ -113,7 +113,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
    .InstallPackage
 ```
 
-### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>5. példa: Install-Module licencfeltételek elfogadását igénylő függőségekkel
+### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>5. példa: Licencfeltételek elfogadását igénylő függőségekkel modul telepítése
 
 A modul "ModuleWithDependency" modul "ModuleRequireLicenseAcceptance" függ. Licenc fogadja el a rendszer kéri.
 
@@ -135,7 +135,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>6. példa: Install-Module - AcceptLicense és a licencfeltételek elfogadását igénylő függőségekkel
+### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>6. példa: Licencfeltételek elfogadásának és - AcceptLicense függőségekkel modul telepítése
 
 A modul "ModuleWithDependency" modul "ModuleRequireLicenseAcceptance" függ. Fogadja el a licenc - AcceptLicense van megadva, az nem kéri a felhasználótól.
 
@@ -143,7 +143,7 @@ A modul "ModuleWithDependency" modul "ModuleRequireLicenseAcceptance" függ. Fog
 Install-Module -Name ModuleWithDependency -AcceptLicense
 ```
 
-### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>7. példa: Egy régebbi, mint PSGetFormatVersion 2.0-s ügyfél licencfeltételek elfogadását igénylő modul telepítése
+### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>7. példa: A régebbi, mint PSGetFormatVersion 2.0-s ügyfél licencfeltételek elfogadását igénylő modul telepítése
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance
@@ -153,7 +153,7 @@ Install-Module -Name ModuleRequireLicenseAcceptance
 WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGetFormatVersion '2.0' is not supported by the current version of PowerShellGet. Get the latest version of the PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
 ```
 
-### <a name="example-8-save-module-requiring-license-acceptance"></a>8. példa: A licencfeltételek elfogadását igénylő modul mentése
+### <a name="example-8-save-module-requiring-license-acceptance"></a>8. példa: Licencfeltételek elfogadását igénylő modul mentése
 
 ```powershell
 Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
@@ -176,7 +176,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 Ez a parancs megjeleníti a licenc license.txt fájlból, és kéri a felhasználót, fogadja el a licencfeltételeket.
 
-### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>9. példa: - AcceptLicense a licencfeltételek elfogadását igénylő modul mentése
+### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>9. példa: A modul - AcceptLicense a licencfeltételek elfogadását igénylő mentése
 
 ```powershell
 Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
@@ -184,7 +184,7 @@ Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
 
 A modul a rendszer minden licenc elfogadására kérdés nélkül menti.
 
-### <a name="example-10-update-module-requiring-license-acceptance"></a>10. példa: Licencfeltételek elfogadását igénylő Update-modul
+### <a name="example-10-update-module-requiring-license-acceptance"></a>10. példa: Licencfeltételek elfogadását igénylő modulok frissítésére
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance
@@ -207,7 +207,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 Ez a parancs megjeleníti a licenc license.txt fájlból, és kéri a felhasználót, fogadja el a licencfeltételeket.
 
-### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>11. példa: Frissítés a modul igénylő licencfeltételek elfogadását - AcceptLicense
+### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>11. példa: A - AcceptLicense licencfeltételek elfogadását igénylő modulok frissítésére
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense

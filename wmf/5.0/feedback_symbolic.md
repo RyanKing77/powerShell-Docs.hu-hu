@@ -1,22 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 82451c550014c684958aaf0f324457db8f0d8ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1c4a7ad30b04d138ba8a840968a6bf1763448ac6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222004"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688265"
 ---
-# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Szimbolikus hivatkozásokat továbbfejlesztett elem-parancsmagok használatával kommunikál
+# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Szimbolikus hivatkozások használata az Item-parancsmagokkal továbbfejlesztett kezelése
 
-Támogatja a szimbolikus csatolást, hogy  **\*-cikk** és néhány kapcsolódó parancsmagok bővültek. Most szimbolikus hivatkozásokat hozhat létre egyszerű soronként **új elem**. Láthatja, hogy a cikk kapcsolódó parancsmagok (**Remove-cikk, a Get-ChildItem**) hasonlóan viselkednek a nagyon előtt.
+Szimbolikus hivatkozások támogatásához  **\*-elem** és néhány kapcsolódó parancsmagok bővültek. Most létrehozhat egy egyszerű sort a szimbolikus hivatkozások **New-cikk**. Láthatja, hogy az elem kapcsolódó parancsmagok (**Remove-elem, a Get-ChildItem**) hasonlóan viselkednek a nagyon előtt.
 
-Az alábbi példában látható, néhány új képessége esetekben használja:
+Az alábbiakban látható néhány új képességét eseteinek:
 
 ## <a name="new-item"></a>ÚJ ELEM
 
-### <a name="symbolic-link-files"></a>SZIMBOLIKUS HIVATKOZÁST FÁJLOK
+### <a name="symbolic-link-files"></a>SZIMBOLIKUS HIVATKOZÁS FÁJLOK
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -30,7 +30,7 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-### <a name="symbolic-link-directories"></a>SZIMBOLIKUS HIVATKOZÁST KÖNYVTÁRAK
+### <a name="symbolic-link-directories"></a>SZIMBOLIKUS HIVATKOZÁS KÖNYVTÁRAK
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
@@ -110,7 +110,7 @@ SpecialBuild: False
 Language:
 ```
 
-## <a name="remove-item"></a>ELEM ELTÁVOLÍTÁSA
+## <a name="remove-item"></a>REMOVE-ELEM
 
 ```powershell
 # Works like any other item type

@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: ff2c2bd7369893d72db001ecabf63991ded0bfd5
-ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44339871"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687418"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Egyesített és konzisztens állapotreprezentáció
 
@@ -27,18 +27,18 @@ Az alábbi táblázatban látható a létrejövő állapot kapcsolódó tulajdon
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S<sub>i</sub>                   | Inaktív                 | Siker    | $false        | S                            | $null                          |
 | F<sub>i</sub>                   | PendingConfiguration | Hiba    | $false        | $null                        | F                              |
-| S, F                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
+| S,F                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
 | F,S                             | PendingConfiguration | Hiba    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Hiba    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
 | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Hiba    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-| S-, r                            | PendingReboot        | Siker    | $true         | S                            | r                              |
+| S, r                            | PendingReboot        | Siker    | $true         | S                            | r                              |
 | F, r                            | PendingReboot        | Hiba    | $true         | $null                        | F, r                           |
 | r, S                            | PendingReboot        | Siker    | $true         | $null                        | r                              |
 | r, F                            | PendingReboot        | Siker    | $true         | $null                        | r                              |
 
-- S<sub>i</sub>: egy sorozat erőforrásokat, amelyeket a sikeres
-- F<sub>i</sub>: egy sorozat erőforrásokat, amelyeket a alkalmazni a sikertelen feldolgozásokat is beleértve
-- r: egy erőforrást, amelyhez újraindítás szükséges
+- S<sub>i</sub>: Az erőforrások sikeresen végrehajtott egy sorozat
+- F<sub>i</sub>: Sikertelenül telepített erőforrások sorozata
+- r: Egy erőforrás, amely újraindítást igényel
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState

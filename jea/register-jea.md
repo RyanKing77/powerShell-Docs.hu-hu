@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: Konfigurációk a JEA regisztrálása
 ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002906"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689063"
 ---
 # <a name="registering-jea-configurations"></a>Konfigurációk a JEA regisztrálása
 
-> A következőkre vonatkozik: Windows PowerShell 5.0
+> Érintett kiadások: Windows PowerShell 5.0
 
 Miután a [szerepkörrel képességeket](role-capabilities.md) és [munkamenet konfigurációs fájl](session-configurations.md) hozta létre, az utolsó lépés a JEA használata előtt, hogy a JEA-végpontjának regisztrálását.
 A JEA-végpont regisztrálása a rendszer a teszi elérhetővé a végpont-felhasználók és automatizálási motor általi használatra.

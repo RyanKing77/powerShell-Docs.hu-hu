@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: A WMF 5.1 DSC fejlesztései
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523042"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683799"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>A Desired State Configuration (DSC) a WMF 5.1 fejlesztései
 
@@ -207,11 +207,11 @@ Ez a funkció meggátolja, hogy a csomópontok konfigurációk vagy amely nem eg
 
 ***
 * Konfigurációs fájlok (. MOF-fájlok): A meglévő PowerShell-parancsmag [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) ki van bővítve a MOF-fájlok-aláírás támogatásához.
-* Modulok: Modulok aláírása végzi el a megfelelő modul katalógus az alábbi lépéseket követve aláíró:
-    1. Hozzon létre egy katalógus fájlt: egy katalógusfájlt kriptográfiai kivonatokat vagy ujjlenyomat gyűjteményét tartalmazza.
+* Modulok: Aláírás-modulok végzi el a megfelelő modul katalógus az alábbi lépéseket követve aláíró:
+    1. Hozzon létre egy katalógus fájlt: A katalógus kriptográfiai kivonatokat vagy ujjlenyomat gyűjteményét tartalmazza.
        Minden egyes ujjlenyomat felel meg egy fájlt, amely a modul része.
        Új parancsmag [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), engedélyezze a felhasználók számára, hogy a modul olyan katalógusfájlt bővült.
-    2. A katalógus-fájl aláírásához: használata [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) a katalógus-fájl aláírásához.
+    2. A katalógus-fájl aláírásához: Használat [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) a katalógus-fájl aláírásához.
     3. Helyezze a katalógus-fájlt a modul mappán belül.
 Szabályok szerint modul katalógus fájl neve megegyezik a modul az a modul mappában kell elhelyezni.
 
@@ -260,10 +260,10 @@ A Local Configuration Manager végrehajtja a következő lépéseket a digitáli
     * Keresse meg a `<moduleName>.cat` fájlt, és ellenőrizze a parancsmag segítségével aláírását [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx).
     * Ellenőrizze, hogy a hitelesített az aláíró hitelesítésszolgáltatót megbízható-e.
     * Ellenőrizze, hogy a modul tartalma nem módosították az új parancsmaggal [Test-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx).
-5. Install-Module $env való: ProgramFiles\WindowsPowerShell\Modules\
+5. Install-Module to $env:ProgramFiles\WindowsPowerShell\Modules\
 6. A konfigurációs folyamat
 
-> Megjegyzés: A modul-katalógus és konfigurációs aláírás-ellenőrzése csak történik, amikor a konfiguráció alkalmazása a rendszer először, vagy ha a modul letöltését és telepítését.
+> Megjegyzés: A modul-katalógus és konfigurációs aláírás-ellenőrzése csak akkor hajtható végre, ha a konfigurációt alkalmazza a rendszer először, vagy ha a modul letöltését és telepítését.
 Konzisztencia-futtatások nem ellenőrzik az aláírás Current.mof vagy a modul függőségeit.
 Ellenőrzése nem sikerült minden fázisban, ha például ha a konfiguráció az abból lekért a lekéréses kiszolgálón nincs aláírva, majd az alábbi hiba miatt leállítja a konfiguráció feldolgozása és az ideiglenes fájlok törlése.
 

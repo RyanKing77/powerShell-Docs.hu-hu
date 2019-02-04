@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Egyéni Windows PowerShell Desired State Configuration erőforrások létrehozása
 ms.openlocfilehash: 882b6efed4564d2354183d7472b301e1e1758335
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404165"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684590"
 ---
 # <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>Egyéni Windows PowerShell Desired State Configuration erőforrások létrehozása
 

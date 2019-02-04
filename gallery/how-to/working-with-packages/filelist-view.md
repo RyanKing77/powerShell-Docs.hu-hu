@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: A katalógusban a fájllista szolgáltatás
 ms.openlocfilehash: 5f372c943c73fa8e1014657394e40eaedef5d045
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004087"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684548"
 ---
 # <a name="filelist-feature-in-the-gallery"></a>A katalógusban a fájllista szolgáltatás
 

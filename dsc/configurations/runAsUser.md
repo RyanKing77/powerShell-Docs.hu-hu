@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
-title: DSC-erőforrások hitelesítő adatok használata
+title: Hitelesítő adatok használata DSC-erőforrásokkal
 ms.openlocfilehash: af54c286ce744cd7db0b0e2d05087f60cdf1a33c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404351"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686851"
 ---
-# <a name="use-credentials-with-dsc-resources"></a>DSC-erőforrások hitelesítő adatok használata
+# <a name="use-credentials-with-dsc-resources"></a>Hitelesítő adatok használata DSC-erőforrásokkal
 
 > Érvényes: Windows PowerShell 5.0, 5.1 Windows PowerShell
 

@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Jegyzékfájl értékek csomagot, amely hatással van a PowerShell-galéria felhasználói felülete
 ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655345"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687250"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Jegyzékfájl értékek csomagot, amely hatással van a PowerShell-galéria felhasználói felülete
 
@@ -30,7 +30,7 @@ Az alábbi táblázat a közzétevő által vezérelt a PowerShell-galériából
 | **Kibocsátási megjegyzések** | Modulok Ez az információ alapszanak ReleaseNotes szakaszban PSData\PrivateData alatt. Parancsfájl manifestech van a. RELEASENOTES eleme. | Igen | Igen |
 | **Tulajdonosok** | Tulajdonosok a PowerShell-galériából, a csomag frissítésére felhatalmazott fiókadminisztrátorról felhasználóinak listája. A tulajdonos listában nem szerepel a csomagjegyzéket. További dokumentáció azt ismerteti, hogyan [konfigurációelem tulajdonosainak kezelése](../how-to/publishing-packages/managing-package-owners.md). | Nem | Nem |
 | **Szerző** | Ez az a moduljegyzékben szerzőként, és a egy parancsfájl-jegyzékfájlt, része. SZERZŐ. Az Author mező gyakran használják, adjon meg egy vállalat vagy szervezet csomagokkal társított. | Igen | Igen |
-| **A szerzői jog** | Ez az a szerzői jog mező a moduljegyzékben és. Szerzői jogi egy parancsfájl-jegyzékfájlban. | Igen | Igen |
+| **Copyright** | Ez az a szerzői jog mező a moduljegyzékben és. Szerzői jogi egy parancsfájl-jegyzékfájlban. | Igen | Igen |
 | **FileList** | A fájlok listájának megjelenítése a csomag közzététele után a PowerShell-galériában. Már nem vezérelheti a jegyzékfájl információkat. Megjegyzés: egy további .nuspec fájl szerepel a PowerShell-galériából, amely nem található a rendszeren a csomag telepítése után minden csomag-van. Ez a csomag a Nuget csomag jegyzékfájlt, és figyelmen kívül hagyhatja. | Nem | Nem |
 | **A címkék** | Modulok címkék szerinti PSData\PrivateData tartalmaznak. A parancsfájlok a szakaszban van címkézve. CÍMKÉK. Vegye figyelembe, hogy a címkék nem tartalmazhat szóközt, akkor is, ha idézőjelek között vannak. A címkék rendelkezik további követelmények és jelentését, amely a címke részletek szakaszban Ez a témakör későbbi része ismerteti. | Igen | Igen |
 | **Parancsmagok** | Ez a modul jegyzéket CmdletsToExport megtalálható. Vegye figyelembe, hogy az ajánlott eljárás az explicit módon a listaelemek helyett a helyettesítő karakterek használatával "*", ahogy, amely javítja a terhelés-module teljesítményét a felhasználók számára. | Igen | Nem |
@@ -42,9 +42,9 @@ Az alábbi táblázat a közzétevő által vezérelt a PowerShell-galériából
 | **Függőségek** | A függőségek a modulokat a PowerShell-galériából, amely RequiredModules, vagy a modul, vagy, a parancsfájl jegyzékfájlban deklarált olyan #Requires – modul (név). | Igen | Igen |
 | **Powershell minimális verziója** | Ennek segítségével is megadható egy moduljegyzék PowerShellVersion | Igen | Nem |
 | **Korábbi verziók** | A korábbi verziók a frissítések, egy modulban, a PowerShell-galériából történő tükrözi. Ha egy csomag verziója rejtett a törlési funkció használatával, azt nem megjelennek a korábbi verziók, kivéve csomag tulajdonosai. | Nem | Nem |
-| **Project-webhely** | A projekt hely a moduljegyzékben Privatedata\PSData szakaszában modulok biztosítunk egy ProjectURI megadásával. A parancsfájl jegyzékfájlban szabályozza azt megadásával. PROJECTURI. | Igen | Igen |
+| **Project Site** | A projekt hely a moduljegyzékben Privatedata\PSData szakaszában modulok biztosítunk egy ProjectURI megadásával. A parancsfájl jegyzékfájlban szabályozza azt megadásával. PROJECTURI. | Igen | Igen |
 | **Licenc** | Egy licenc hivatkozást a moduljegyzékben Privatedata\PSData szakaszában modulok egy LicenseURI megadásával. A parancsfájl jegyzékfájlban szabályozza azt megadásával. LICENSEURI. Fontos megjegyezni, hogy ha a licenc nem áll rendelkezésre a LicenseURI keresztül, vagy belül egy modult, majd a használati feltételeket a PowerShell-galériából a adja meg a csomag a használati feltételeket. Tekintse meg a részletes használati feltételeit. | Igen | Igen |
-| **Ikon** | Egy ikont az IconURI jelzőt a parancsfájl-jegyzékfájlban, vagy a moduljegyzékben Privatedata-PSData szakaszában megadásával minden olyan csomag, a PowerShell-galériából a adható meg. Az IconURI egy 32 x 32 átláthatóság háttér-rendszerképet kell mutatnia. Az URI-t **kell** közvetlen kép URL-cím és **nem kell** keresse fel a képet, vagy annak egy fájljához a PowerShell-galériából csomagot tartalmazó webhelyet. | Igen | Igen |
+| **Icon** | Egy ikont az IconURI jelzőt a parancsfájl-jegyzékfájlban, vagy a moduljegyzékben Privatedata-PSData szakaszában megadásával minden olyan csomag, a PowerShell-galériából a adható meg. Az IconURI egy 32 x 32 átláthatóság háttér-rendszerképet kell mutatnia. Az URI-t **kell** közvetlen kép URL-cím és **nem kell** keresse fel a képet, vagy annak egy fájljához a PowerShell-galériából csomagot tartalmazó webhelyet. | Igen | Igen |
 
 
 ## <a name="editing-package-details"></a>Csomag részleteinek szerkesztése
@@ -54,7 +54,7 @@ A PowerShell-galéria szerkesztése csomag lap lehetővé teszi, hogy a kiadók 
 - Title
 - Leírás
 - Összefoglalás
-- Ikon URL-címe
+- Icon URL
 - Projekt kezdőlap URL-címe
 - Szerzők
 - Szerzői jog
@@ -79,19 +79,19 @@ Referenciaként itt található néhány leggyakrabban használt címkék 12/14/
 | --- | --- |
 | Azure |  |
 | DSC | Kevésbé kívánatosak DesiredStateConfiguration, túl hosszú |
-| Erőforrás-kezelő | ARM feldolgozók csoportja leírására szolgál, és ne használja az Azure Resource Manager |
+| ResourceManager | ARM feldolgozók csoportja leírására szolgál, és ne használja az Azure Resource Manager |
 | DSCResourceKit |  |
-| AZ SQL |  |
+| SQL |  |
 | AWS |  |
 | DSCResource |  |
 | Automatizálás |  |
 | REST |  |
 | ActiveDirectory | AD jelenleg nem használja önmagában  |
-| SQL Server |  |
+| SQLServer |  |
 | DBA |  |
 | Biztonság | Defense rendszer kevésbé pontos |
 | Adatbázis | Kevésbé kívánatos (többes számú) adatbázisok |
-| Fejlesztés és üzemeltetés |  |
+| DevOps |  |
 | Windows |  |
 | Build |  |
 | Telepítés | Üzembe helyezése kevésbé gyakran használt |
@@ -101,35 +101,35 @@ Referenciaként itt található néhány leggyakrabban használt címkék 12/14/
 | VersionControl | Verzió: kevésbé pontos, bár a gyakrabban használt  |
 | Naplózás | Előnyben részesített műveletként naplózás használata |
 | Napló | Egy dolog Log előnyben részesített használata |
-| Tartalék |  |
+| Biztonsági mentés |  |
 | IaaS |  |
 | Linux |  |
 | IIS |  |
 | AzureAutomation |  |
 | Tárolás |  |
 | GitHub |  |
-| JSON-ban |  |
+| Json |  |
 | Exchange |  |
 | Hálózat | Hálózatkezelés hasonlóan, a kevésbé gyakran használt |
 | SharePoint |  |
 | Jelentés | Jelentési művelet, a jelentés egy dolog |
 | A jelentés | A jelentés azért is lehet |
-| A Rendszerfelügyeleti webszolgáltatások |  |
+| WinRM |  |
 | Figyelés |  |
-| VSTS-BEN |  |
+| VSTS |  |
 | Excel |  |
 | Google |  |
 | Szín |  |
 | DNS |  |
-| Office 365 | Célszerű a helyesírás-ellenőrzés Office ki. Office 365 ritkább esetben használja, bár a rövidebb |
+| Office365 | Célszerű a helyesírás-ellenőrzés Office ki. Office 365 ritkább esetben használja, bár a rövidebb |
 | Gitlab |  |
 | Pester |  |
-| Azure ad |  |
+| AzureAD |  |
 | HTML |  |
 | Hyper-V | Hyper-v rendszer kevésbé gyakori címkeként |
 | Konfiguráció |  |
 | ChatOps |  |
-| A PackageManagement |  |
+| PackageManagement |  |
 | WMI |  |
 | Tűzfal |  |
 | Docker |  |
@@ -137,5 +137,5 @@ Referenciaként itt található néhány leggyakrabban használt címkék 12/14/
 | AzureRm | Elsősorban az AzureRM-modulok használják |
 | Zip |  |
 | MSI |  |
-| macOS |  |
+| MacOS |  |
 | PoshBot |  |

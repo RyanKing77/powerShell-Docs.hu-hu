@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: A PowerShell.exe parancssori súgója
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
 ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404211"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688825"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe parancssori súgója
 
@@ -72,7 +72,7 @@ Nem lépjen ki az indítási parancsok futtatása után.
 
 A szerzői jogi szalagcím indításkor elrejtése.
 
-### <a name="-noninteractive"></a>– Nem interaktív
+### <a name="-noninteractive"></a>-NonInteractive
 
 Egy interaktív kérdés nem jelenik meg a felhasználónak.
 
@@ -139,7 +139,7 @@ Powershell.exe szintaxisát jeleníti meg. Ha elkezdi beírni a PowerShell.exe p
 > [!NOTE]
 > Hibaelhárítási megjegyzés: A PowerShell 2.0 néhány program, a Windows PowerShell konzol sikertelen kezdve egy LastExitCode, 0xc0000142.
 
-## <a name="examples"></a>PÉLDÁK
+## <a name="examples"></a>EXAMPLES
 
 ```powershell
 # Create a new PowerShell session and load a saved console file

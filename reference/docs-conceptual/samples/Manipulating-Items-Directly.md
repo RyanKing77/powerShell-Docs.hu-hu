@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Elemek közvetlen módosítása
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 688f9194bd16793331325999c69e88df3e94c976
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404544"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685192"
 ---
 # <a name="manipulating-items-directly"></a>Elemek közvetlen módosítása
 
@@ -93,7 +93,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Annak ellenére, hogy szeretné kezelni a beállításjegyzék-bejegyzések elemek kényelmes, úgy, hogy gondoskodik róla, hogy azt az egyedi nem adható meg a egy beállításjegyzékbeli bejegyzést elérési útját. Az elérési út jelölés nem különbözteti meg a beállításkulcsot nevű **futtatása** és a **(alapértelmezett)** beállításjegyzékbeli bejegyzést a **futtatása** alkulcs. Továbbá mert a beállításjegyzék-bejegyzések neve tartalmazhat fordított perjellel (**\\**), ha a beállításjegyzék-bejegyzések is elemet, majd különbséget tenni egy nevű beállításjegyzék-bejegyzés nem tudta használni az elérési út jelöléssel  **Windows\\CurrentVersion\\futtatása** származó az alkulcs az adott elérési úton található.
+Annak ellenére, hogy szeretné kezelni a beállításjegyzék-bejegyzések elemek kényelmes, úgy, hogy gondoskodik róla, hogy azt az egyedi nem adható meg a egy beállításjegyzékbeli bejegyzést elérési útját. Az elérési út jelölés nem különbözteti meg a beállításkulcsot nevű **futtatása** és a **(alapértelmezett)** beállításjegyzékbeli bejegyzést a **futtatása** alkulcs. Továbbá mert a beállításjegyzék-bejegyzések neve tartalmazhat fordított perjellel (**\\**), ha beállításjegyzék-bejegyzések elemet, majd különbséget tenni egy nevű beállításjegyzék-bejegyzés nem tudta használni az elérési út jelöléssel  **Windows\\CurrentVersion\\futtatása** származó az alkulcs az adott elérési úton található.
 
 ### <a name="renaming-existing-items-rename-item"></a>Meglévő elemeket (Rename-elem) átnevezése
 

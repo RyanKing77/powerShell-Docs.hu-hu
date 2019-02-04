@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Részletes súgóinformációk kérése
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ms.openlocfilehash: 8b56f003fdef38b0f126cfe82eefcc145cc54783
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411599"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684086"
 ---
 # <a name="getting-detailed-help-information"></a>Részletes súgóinformációk kérése
 

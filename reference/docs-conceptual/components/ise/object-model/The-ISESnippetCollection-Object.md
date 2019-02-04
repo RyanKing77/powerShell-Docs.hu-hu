@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Az ISESnippetCollection objektum
 ms.assetid: ae974955-4282-4cbc-8c42-0fff1904ef32
 ms.openlocfilehash: bd5ed4a1f15e0a398b7c6a17f0071cad889be4a7
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404604"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684611"
 ---
 # <a name="the-isesnippetcollection-object"></a>Az ISESnippetCollection objektum
 
@@ -16,7 +16,7 @@ A **ISESnippetCollection** objektum olyan gyűjteménye, **ISESnippet** objektum
 
 ## <a name="methods"></a>Metódusok
 
-### <a name="load-filepathname-"></a>Betöltés\( FilePathName \)
+### <a name="load-filepathname-"></a>Load\( FilePathName \)
 
 Támogatja a Windows PowerShell ISE-ben, 3.0-s és újabb verziók, és nem szerepel a korábbi verziók.
 

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
-title: DSC WaitForSome erőforrás
+title: DSC WaitForSome Resource
 ms.openlocfilehash: 906375a8fcf9b87d4b7487e63e6fae3f05b86d0d
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048243"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685339"
 ---
-# <a name="dsc-waitforsome-resource"></a>DSC WaitForSome erőforrás
+# <a name="dsc-waitforsome-resource"></a>DSC WaitForSome Resource
 
 > Érvényes: Windows PowerShell 5.0-s és újabb verziók
 
@@ -40,7 +40,7 @@ WaitForSome [String] #ResourceName
 |---|---|
 | NodeCount| Ehhez az erőforráshoz sikeres a kívánt állapotban kell lennie csomópontok minimális száma.|
 | Csomópontnév| Az erőforrás függenek a célcsomópontokat.|
-| Erőforrásnév| Az erőforrásnév függenek. Ha az erőforrás tartozik egy másik konfigurációs, formázhatja a nevet a következőként "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "|
+| ResourceName| Az erőforrásnév függenek. Ha az erőforrás tartozik egy másik konfigurációs, formázhatja a nevet a következőként "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "|
 | RetryIntervalSec| Mielőtt újra próbálkozna másodpercek számát. Minimális érték 1.|
 | retryCount| Az újrapróbálkozások maximális száma.|
 | ThrottleLimit| Egyidejű csatlakozás gépek száma. Alapértelmezés szerint új cimsession alapértelmezett.|

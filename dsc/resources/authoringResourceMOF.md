@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: MOF-egyéni DSC-erőforrás írása
-ms.openlocfilehash: 2dcdeb49b50e23bc8b9d87293ebb8d8ec5e7b57d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404156"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687565"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>MOF-egyéni DSC-erőforrás írása
 
@@ -290,3 +290,16 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
+
+## <a name="rebooting-the-node"></a>A csomópont újraindítása
+
+Ha a végrehajtott műveletek az `Set-TargetResource` függvény újra kell indítani, globális jelző használatával ossza meg az LCM kell újraindítani a csomópontot. Az újraindítás közvetlenül után kerül sor a `Set-TargetResource` függvény lefutott.
+
+Belül a `Set-TargetResource` működik, adja hozzá a következő kódsort.
+
+```powershell
+# Include this line if the resource requires a system reboot.
+$global:DSCMachineStatus = 1
+```
+
+Ahhoz, hogy az LCM kell újraindítani a csomópontot a **RebootNodeIfNeeded** jelzőt kell beállítani `$true`. A **ActionAfterReboot** beállítás is meg kell **ContinueConfiguration**, amely az alapértelmezett érték. Az LCM konfigurálása a további információkért lásd: [a Local Configuration Manager](../managing-nodes/metaConfig.md), vagy [a Local Configuration Manager (v4)](../managing-nodes/metaConfig4.md).

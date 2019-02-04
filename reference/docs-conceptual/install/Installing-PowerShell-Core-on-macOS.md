@@ -3,11 +3,11 @@ title: A PowerShell Core telepítése macOS rendszerre
 description: Információ a PowerShell Core telepítése macOS rendszeren
 ms.date: 12/12/2018
 ms.openlocfilehash: 91e64cace7d4ed988da56109dde9bf2a80528eb4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404236"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688482"
 ---
 # <a name="installing-powershell-core-on-macos"></a>A PowerShell Core telepítése macOS rendszerre
 
@@ -190,11 +190,11 @@ PowerShell tiszteletben tartja a [XDG alap könyvtár megadása] [ xdg-bds] macO
 Mivel a macOS BSD, az előtag típusából származtatott `/usr/local` helyett használja `/opt`.
 Tehát `$PSHOME` van `/usr/local/microsoft/powershell/6.1.0/`, és a szimbolikus hivatkozást van elhelyezve `/usr/local/bin/pwsh`.
 
-## <a name="additional-resources"></a>További források
+## <a name="additional-resources"></a>Egyéb források
 
 * [Webes homebrew-val][brew]
 * [Github-adattár homebrew-val][GitHub]
-* [Homebrew-val – Cask][cask]
+* [Homebrew-Cask][cask]
 
 [brew]: http://brew.sh/
 [Cask]: https://github.com/Homebrew/homebrew-cask

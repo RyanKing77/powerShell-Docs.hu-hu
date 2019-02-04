@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: A WMF 5.1 PowerShell motor fejlesztései
 ms.openlocfilehash: 738f72b910de7d44f48309013237d523d0dd40a4
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892892"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687446"
 ---
 # <a name="powershell-engine-improvements"></a>PowerShell motor fejlesztései
 
@@ -27,7 +27,7 @@ Néhány példa fejlesztései (a az eredményeket a hardverektől függően vál
 | -------- | :---------------: | :---------------: |
 | `powershell -command "echo 1"` | 900 | 250 |
 | Először minden eddiginél PowerShell futtatása: `powershell -command "Unknown-Command"` | 30000 | 13000 |
-| Parancs a beépített elemzési gyorsítótár: `powershell -command "Unknown-Command"` | a 7000-es | 520 |
+| Parancs a beépített elemzési gyorsítótár: `powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
 
 > [!Note]

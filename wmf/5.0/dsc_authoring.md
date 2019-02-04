@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 1595a3e817fd711c35128f06927fd57df7a63fb8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ec4ae8e4b2ef0ec226cb75607f7aaf34b48f6b76
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218246"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688762"
 ---
 # <a name="authoring-improvements-using-powershell-ise"></a>A PowerShell ISE-vel való szerkesztés javításai
 
-Szerzői DSC-konfigurációk a Windows PowerShell ISE sokkal egyszerűbb, Köszönjük, a következő fejlesztéseket kínálja:
+Szerzői DSC-konfigurációk a Windows PowerShell ISE-ben sokkal egyszerűbb, Köszönjük a következő fejlesztései:
 
-- Listán belül minden DSC erőforrás egy **konfigurációs** blokk vagy **csomópont** blokk megadásával **Ctrl + szóköz** benne egy üres sor.
-- Az erőforrás-tulajdonságokat, amelyek az automatikus kiegészítés a **számbavételi** típusa.
-- Az automatikus kiegészítés a **DependsOn** tulajdonság DSC-erőforrások, más erőforrás-példánya a konfiguráció alapján.
-- Jobb kiegészítést az erőforrás-tulajdonságok értékeit.
+- Belül minden DSC-erőforrások listája egy **konfigurációs** letiltása vagy **csomópont** megadásával blokk **Ctrl + szóköz** benne egy üres sor.
+- Az erőforrás-tulajdonságok, amelyek az automatikus kiegészítés a **enumerálás** típusa.
+- Az automatikus kiegészítés a **DependsOn** tulajdonság DSC-erőforrások, a többi erőforrás-példány a konfiguráció alapján.
+- Erőforrás-tulajdonság értékeinek jobb kiegészítése.
 
-**Megjegyzés:** erőforrás tulajdonságértékek üres karakterláncot kell rendelkeznie, a beállítások felsorolni Ctrl + szóköz használatba vétele előtt. Nyomja le **lapon** ciklusok lehetőségeit.
+**Megjegyzés:** Erőforrás-tulajdonság értékeinek üres karakterláncot kell rendelkeznie, Ctrl + szóköz listázhatja a beállítások használata előtt. Billentyű **lapon** ciklusok lehetőségek között.

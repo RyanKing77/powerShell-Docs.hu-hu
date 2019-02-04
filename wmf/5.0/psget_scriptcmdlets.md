@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: a2938c168f476e5f9c38ba55ceb45fa2b95571e2
-ms.sourcegitcommit: bad40d59598ae5597051fa381986316a2d9bf6c8
+ms.openlocfilehash: ac845a461eef4f567b74f813621f6bfa38419afb
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36271177"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687845"
 ---
 # <a name="powershellget-cmdlets-for-script-management"></a>PowerShellGet-parancsmagok parancsfájlkezeléshez
 
-## <a name="find-script-cmdlet"></a>Keresés parancsfájl-parancsmag
-Keresés-parancsfájl parancsmag lehetővé teszi a parancsfájlok, például a neve, címke, szűrő, utasítás neve, verziója tartományon, pontos verziót, összes verzió és annak függőségeit és az adott vagy regisztrált összes adattárak különböző keresési feltételekkel felderítéséhez.
+## <a name="find-script-cmdlet"></a>Find-Script parancsmag
+Find-Script parancsmag lehetővé teszi, hogy a különböző keresési feltételeknek, például a neve, a címke, szűrő, parancsnév, verziótartományon, pontos verzióját, összes verzió és annak függőségeit, és adott vagy regisztrált összes változásokat a parancsfájlok felderítése.
 
-Példa használati:
+Gyakorlati példa:
 ```powershell
 \# Find a script from the registered repository with ScriptSourceLocation
 Find-Script -Repository GalleryINT -Name Required-Script2
@@ -149,8 +149,8 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## <a name="save-script-cmdlet"></a>Mentés parancsfájl-parancsmag
-Mentés-parancsfájl parancsmag lehetővé teszi, hogy tekintse át a parancsfájl által megadott helyre való mentése.
+## <a name="save-script-cmdlet"></a>Save-Script parancsmag
+Save-Script parancsmag lehetővé teszi, hogy tekintse át a parancsfájl által megadott helyre való mentése.
 ```powershell
 \# Save a script file to the specified location for the script analysis
 \# Piping the Find-Script output to Save-Script cmdlet
@@ -162,10 +162,10 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-## <a name="install-script-and-get-installedscript-cmdlets"></a>Telepítési-parancsfájlt és a Get-InstalledScript parancsmagok
-Install-parancsfájl parancsmag lehetővé teszi egy adott parancsfájl és függőségeinek telepítése a megadott hatókörben. Alapértelmezés szerint a parancsfájlok telepítve vannak az AllUsers hatókörre. Get-InstalledScript parancsmag lehetővé teszi a parancsprogramok, amely a telepítési parancsfájl-parancsmag használatával telepített listájának lekérdezése.
+## <a name="install-script-and-get-installedscript-cmdlets"></a>Install-Script és a Get-InstalledScript parancsmagok
+Install-Script parancsmag lehetővé teszi, hogy egy adott parancsfájl annak függőségeivel együtt telepítse a megadott hatókörhöz. Alapértelmezés szerint a parancsfájlok telepítve vannak az AllUsers hatókörhöz. Get-InstalledScript parancsmag lehetővé teszi, hogy a parancsfájl-fájlokat, amelyek az Install-Script parancsmag használatával telepített listájának beolvasása.
 
-Használjon Megjegyzés: ahhoz, hogy a felügyeleti és parancsfájlok megkeresése, ha telepítve vannak, Install parancsprogramot fog hozzon létre egy $home\Documents\WindowsPowerShell\Scripts scripts tárolására szolgáló alapértelmezett mappát, és mappában hozzáadni az elérési út környezethez. Az elérési út fontos, ha az Install-parancsfájl helyett Mentés-parancsfájl használatával. Get-InstalledScripts és eltávolítás parancsfájl-csak együttműködhet parancsfájl helyezve a rendszer telepítse-parancsfájl használatával.
+Megjegyzés használja: Ahhoz, hogy a felügyeleti és parancsfájlok megtalálása után a telepítéskor, Install-script fog hozzon létre egy $home\Documents\WindowsPowerShell\Scripts scripts tárolására szolgáló alapértelmezett mappát, és a mappa hozzáadása a PATH környezet. Ha az elérési út módosítása nagyon fontos, használja a Save-Script Install-Script helyett. Get-InstalledScripts és eltávolítás parancsfájl-Install-Script használatával a rendszer elhelyezett szkriptekkel csak működik.
 ```powershell
 \# Install locations for scripts:
 \# Default scope is AllUsers.
@@ -221,7 +221,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-Get-parancs is használható – Name &lt;InstalledScriptFileName&gt; Letöltés helye. A PATH környezeti változóba első használatát egy adott hatókör két telepítési helyek kerülnek.
+Get-parancs is használható – Name &lt;InstalledScriptFileName&gt; , hogy álljon. Két telepítési helyek kerülnek egy adott hatókör első használatakor a PATH környezeti változóba.
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -343,8 +343,8 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## <a name="update-script-cmdlet"></a>Frissítés parancsfájl-parancsmag
-Frissítés-parancsfájl parancsmag lehetővé teszi az helybeni frissítése a parancsfájlok, amelyek megtörtént-e telepítési parancsfájl-parancsmag használatával.
+## <a name="update-script-cmdlet"></a>Frissítési parancsfájl-parancsmag
+Frissítési parancsfájl-parancsmag lehetővé teszi, hogy helyben az Install-Script parancsmaggal beléptetésekor telepített parancsfájlok frissítése.
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -385,7 +385,7 @@ Version Name Type Repository Description
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
 
-## <a name="uninstall-script-cmdlet"></a>Távolítsa el parancsfájl parancsmag
+## <a name="uninstall-script-cmdlet"></a>Eltávolítási Parancsprogramja parancsmag
 ```powershell
 Uninstall-Script cmdlet lets you to uninstall the installed script files.
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -422,8 +422,8 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a>Új ScriptFileInfo és a teszt-ScriptFileInfo parancsmagok
-Új ScriptFileInfo parancsmag segítségével hozzon létre egy új parancsfájlt metaadatok verzióját, Guid, Szerző és leírását, például stb. Teszt-ScriptFileInfo parancsmag lehetővé teszi, hogy a parancsfájl fájl metaadatot beszerezni és ellenőrizheti.
+## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a>New-ScriptFileInfo and Test-ScriptFileInfo cmdlets
+Új ScriptFileInfo parancsmag lehetővé teszi, hogy hozzon létre egy új parancsfájlt verziója, a Guid, a szerző és a leírást, például metaadatokkal stb. Test-ScriptFileInfo parancsmag lehetővé teszi, hogy ellenőrizze, és a parancsfájl metaadatainak beolvasása.
 ```powershell
 \# Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Description "Script file description goes here"
@@ -574,8 +574,8 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## <a name="update-scriptfileinfo-cmdlet"></a>Frissítés-ScriptFileInfo parancsmag
-Frissítés-ScriptFileInfo parancsmag lehetővé teszi a meglévő parancsfájl fájl metaadatok frissítésére.
+## <a name="update-scriptfileinfo-cmdlet"></a>Update-ScriptFileInfo cmdlet
+Frissítés-ScriptFileInfo parancsmag lehetővé teszi, hogy a meglévő parancsfájl metaadaainak frissítése.
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
 Update-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-ScriptWithCompletePSScriptInfo.ps1 -Version 2.0
@@ -585,8 +585,8 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>Register-PSRepository és a Set-PSRepository parancsmagot megosztása támogatási parancsfájl
-Adja hozzá a Register-PSRepository/Set-PSRepository-parancsmagok használatával a **ScriptSourceLocation** és **ScriptPublishLocation** a PSRepository számára.
+## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>Register-PSRepository és a Set-PSRepository parancsmagok szkript megosztásának támogatása
+Adja hozzá a Register-PSRepository/Set-PSRepository parancsmagok segítségével a **ScriptSourceLocation** és **ScriptPublishLocation** , a PSRepository.
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
 Register-PSRepository -Name GalleryINT \`
@@ -643,8 +643,8 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-## <a name="publish-script-cmdlet"></a>Közzététel parancsfájl parancsmag
-Közzététel parancsfájl parancsmag lehetővé teszi, hogy a parancsfájl verziója, Guid, Szerző és leírását, például érvényes metaadatok közzététele stb.
+## <a name="publish-script-cmdlet"></a>Parancsfájl-közzététel parancsmag
+Parancsfájl-közzététel parancsmag lehetővé teszi, hogy érvényes metaadatok verziója, a Guid, a szerző és a leírást, például a parancsfájl-fájlt tesz közzé stb.
 ```powershell
 \# Publish the really basic script file with required metadata
 Publish-Script -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Repository GalleryINT -NuGetApiKey cad91af7-a49c-4026-9570-a4c16564e785 -Verbose

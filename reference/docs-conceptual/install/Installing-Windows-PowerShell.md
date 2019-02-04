@@ -3,11 +3,11 @@ ms.date: 08/09/2017
 keywords: PowerShell, parancsmag, letöltése, telepítése, a telepítő, windows 10, windows 8.1, windows 8.0-s, windows 7
 title: A Windows PowerShell telepítése
 ms.openlocfilehash: 1630ba445c88953b2729232ae7d80afa326f25e6
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404234"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687327"
 ---
 # <a name="installing-windows-powershell"></a>A Windows PowerShell telepítése
 
@@ -26,7 +26,7 @@ Az itt felsorolt összes verzió az eredeti verzió, mert a kiadott, sem a friss
 
 Verzió | Hely
 -- | --
-Windows-10 | Kattintson a bal alsó sarokban Windows ikonjára, és kezdje el begépelni a PowerShell
+Windows 10 | Kattintson a bal alsó sarokban Windows ikonjára, és kezdje el begépelni a PowerShell
 Windows 8.1, 8.0 | A kezdőképernyőn írja be a PowerShell indítása.<br/>Ha a számítógépen, kattintson a bal alsó sarokban Windows ikonjára, kezdje el begépelni a PowerShell
 Windows 7 SP1 | Kattintson a bal alsó sarokban található Windows ikont, a Keresés mezőbe írja be a PowerShell start
 
@@ -34,7 +34,7 @@ Windows 7 SP1 | Kattintson a bal alsó sarokban található Windows ikont, a Ker
 
 Verzió | Hely
 -- | --
-Windows-10 | Kattintson a bal alsó sarokban Windows ikonjára, és kezdje el begépelni az ISE-ben
+Windows 10 | Kattintson a bal alsó sarokban Windows ikonjára, és kezdje el begépelni az ISE-ben
 Windows 8.1, 8.0 | A kezdőképernyőn írja be a **PowerShell ISE-ben**.<br/>Ha az asztalon kattintson bal alsó sarokban található Windows ikonra, írja be a **PowerShell ISE-ben**
 Windows 7 SP1 | Kattintson a bal alsó sarokban található Windows ikont, a Keresés mezőbe írja be a PowerShell start
 
@@ -68,10 +68,10 @@ A WMF telepítő verzióegyezéseket PowerShell; verziója Nincs nincs önálló
 
 Ha a meglévő PowerShell-lel, frissítenie kell a Windows, segítségével az alábbi táblázatban keresse meg a frissíteni kívánt PowerShell verziójának telepítőjét.
 
-Windows | POWERSHELL 3.0 | PS 4.0 | POWERSHELL 5.0 | POWERSHELL 5.1 |
+Windows | PS 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
 --|--|--|--|--|
 A Windows 10-es (lásd a Note1)<br/>Windows Server 2016 | - | - | - | telepítve van
-A Windows 8.1<br/>Windows Server 2012 R2 | - | telepítve van | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 8.1<br/>Windows Server 2012 R2 | - | telepítve van | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 8<br/>Windows Server 2012 | telepítve van | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 

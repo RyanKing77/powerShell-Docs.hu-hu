@@ -4,15 +4,15 @@ keywords: PowerShell, a parancsmag
 title: Az ISEAddOnToolCollection objektum
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
 ms.openlocfilehash: ff4f19d1a85a592f2f4f09c62caa0971751bdff7
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404468"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685563"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>Az ISEAddOnToolCollection objektum
 
-A **ISEAddOnToolCollection** objektum olyan gyűjteménye, **ISEAddOnTool** objektumokat. Például a **$psISE.CurrentPowerShellTab.VerticalAddOnTools** objektum.
+A **ISEAddOnToolCollection** objektum olyan gyűjteménye, **ISEAddOnTool** objektumokat. An example is the **$psISE.CurrentPowerShellTab.VerticalAddOnTools** object.
 
 ## <a name="methods"></a>Metódusok
 
@@ -80,6 +80,6 @@ $psISE.PowerShellTabs.Remove($newTab)
 
 ## <a name="see-also"></a>Lásd még:
 
-- [Az PowerShellTab objektum](The-PowerShellTab-Object.md)
+- [The PowerShellTab Object](The-PowerShellTab-Object.md)
 - [A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Az ISE objektummodell-hierarchiája](The-ISE-Object-Model-Hierarchy.md)

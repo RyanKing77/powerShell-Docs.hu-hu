@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Távoli parancsok futtatása
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 ms.openlocfilehash: 2001b5509acde6ec4259bb1442944958a67aa66f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404527"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688594"
 ---
 # <a name="running-remote-commands"></a>Távoli parancsok futtatása
 
@@ -27,7 +27,7 @@ Számos Windows PowerShell-parancsmagok rendelkeznie a ComputerName paraméter, 
 
 Ezek a parancsmagok a következők:
 
-- [Számítógép újraindítása](/powershell/module/microsoft.powershell.management/restart-computer)
+- [Restart-Computer](/powershell/module/microsoft.powershell.management/restart-computer)
 - [Test-Connection](/powershell/module/microsoft.powershell.management/test-connection)
 - [CLEAR-Eseménynapló](/powershell/module/microsoft.powershell.management/clear-eventlog)
 - [Get-EventLog](/powershell/module/microsoft.powershell.management/get-eventlog)
@@ -74,7 +74,7 @@ Exit-PSSession
 Enter-PSSession és kilépési-PSSession-parancsmagokkal kapcsolatos további információkért lásd:
 
 - [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession)
-- [Kilépés-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession)
+- [Exit-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession)
 
 ### <a name="run-a-remote-command"></a>Távoli parancs futtatása
 
@@ -145,7 +145,7 @@ Távoli eljáráshívás hibákkal kapcsolatos útmutatásért lásd: [about_Rem
 
 - [about_Remote](https://technet.microsoft.com/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
 - [about_Remote_FAQ](https://technet.microsoft.com/library/e23702fd-9415-4a98-9975-390a4d3adc42)
-- [távelérés követelményeivel foglalkozó cikkben](https://technet.microsoft.com/library/da213949-134c-4741-b307-81f4492ba1bd)
+- [about_Remote_Requirements](https://technet.microsoft.com/library/da213949-134c-4741-b307-81f4492ba1bd)
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
@@ -153,7 +153,7 @@ Távoli eljáráshívás hibákkal kapcsolatos útmutatásért lásd: [about_Rem
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 - [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [A WSMan-szolgáltató](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [WSMan Provider](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 
 [wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
 [ssh-remoting]: SSH-Remoting-in-PowerShell-Core.md

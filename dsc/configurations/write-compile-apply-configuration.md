@@ -1,17 +1,17 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfiguráció, a szolgáltatás, a telepítő
-title: Írási, fordítsa le és a konfiguráció alkalmazása
+title: Konfiguráció írása, fordítása és alkalmazása
 ms.openlocfilehash: fa4d98fd12202439ba7025fd8af3fa398653ca05
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404183"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684415"
 ---
 > Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
-# <a name="write-compile-and-apply-a-configuration"></a>Írási, fordítsa le és a konfiguráció alkalmazása
+# <a name="write-compile-and-apply-a-configuration"></a>Konfiguráció írása, fordítása és alkalmazása
 
 Ebben a gyakorlatban létrehozásával és alkalmazásával a Desired State Configuration (DSC) konfigurációs elejétől a végéig ismerteti.
 A következő példában, megtudhatja, hogyan írhat, és a egy nagyon egyszerű konfiguráció alkalmazása. A konfiguráció biztosítja, hogy a "HelloWorld.txt" fájl létezik a helyi gépen. Ha a fájl törléséhez DSC létrehozza azt a következő alkalommal, amikor frissíti.

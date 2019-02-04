@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Elemek kiválasztása egy listából
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
 ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404352"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688496"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Elemek kiválasztása egy listából
 

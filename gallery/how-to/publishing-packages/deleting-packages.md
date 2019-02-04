@@ -4,13 +4,13 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Csomagok törlésével
 ms.openlocfilehash: ca5e68fcad52e4c7561d2c2b3858228652f22e0b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004119"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684975"
 ---
-# <a name="deleting-packages"></a>Csomagok törlésével
+# <a name="deleting-packages"></a>Csomagok törlése
 
 A PowerShell-galériából nem támogatja a végleges törlés csomagok, mert, amely megtörnék bárki, aki attól függően, a fennmaradó rendelkezésre álló.
 

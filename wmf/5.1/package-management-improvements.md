@@ -3,67 +3,67 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 contributor: jianyunt, quoctruong
-title: A WMF 5.1 csomag felügyeleti fejlesztései
-ms.openlocfilehash: 1ebd574bd98a056de634ac688244813c1947618e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: A WMF 5.1 csomagkezelés fejlesztései
+ms.openlocfilehash: adcddcc94022f4961f3dd23c2cd56f2a8720049b
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187459"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688237"
 ---
-# <a name="improvements-to-package-management-in-wmf-51"></a>A WMF 5.1# csomag felügyeleti fejlesztései
+# <a name="improvements-to-package-management-in-wmf-51"></a>A WMF 5.1-es # csomagkezelés fejlesztései
 
-## <a name="improvements-in-packagemanagement"></a>PackageManagement fejlesztései ##
-A WMF 5.1 a javításai a következők:
+## <a name="improvements-in-packagemanagement"></a>A PackageManagement fejlesztései ##
+A WMF 5.1 a javításokat az alábbiak:
 
-### <a name="version-alias"></a>Verzió-Alias
+### <a name="version-alias"></a>Version Alias
 
-**A forgatókönyv**: Ha 1.0-s és 2.0-s egy csomagot, P1, a rendszerre telepített, és el szeretné távolítani az 1.0-s verzióját kell futtatni `Uninstall-Package -Name P1 -Version 1.0` , és elvárják, a parancsmag futtatása után a rendszer eltávolítja az 1.0-s verziója. Az eredménye, hogy 2.0-s verziójának lekérdezi eltávolítva.
+**A forgatókönyv**: 1.0-s és a egy csomagot, P1, a rendszerre telepített 2.0-s verziót használja-e, és el szeretné távolítani az 1.0-s verzióját, futtatná `Uninstall-Package -Name P1 -Version 1.0` és a parancsmag futtatása után el kell távolítani az 1.0-s verzióját. Azonban az eredmény a 2.0-s verziójának beolvasása eltávolítja.
 
-Ez akkor fordul elő, mert a `-Version` paramétere az alias a `-MinimumVersion` paraméter. PackageManagement 1.0 minimális verziója minősített csomaghoz keres, amikor a legújabb verzióra adja vissza. Ez a viselkedés normál esetben elvárható, hiszen a legújabb verzió: általában a kívánt eredményt keresése. Azonban ez nem vonatkozik a `Uninstall-Package` eset.
+Ez akkor fordul elő, mert a `-Version` paraméter egy aliast a `-MinimumVersion` paraméter. A PackageManagement az 1.0-s verziójával minősített csomagot keres, ha a legújabb verziót adja vissza. Ez a viselkedés a normál esetben elvárható, hiszen a keresés, a legújabb verzióra általában a kívánt eredményt. Azonban ez nem vonatkozik a `Uninstall-Package` eset.
 
-**Megoldás**: eltávolított `-Version` alias teljes egészében a PackageManagement (más néven OneGet) és PowerShellGet.
+**Megoldás**: eltávolított `-Version` alias teljes egészében a PackageManagement (más néven) OneGet), és a PowerShellGet.
 
-### <a name="multiple-prompts-for-bootstrapping-the-nuget-provider"></a>Több kér a NuGet-szolgáltató rendszerindítása
+### <a name="multiple-prompts-for-bootstrapping-the-nuget-provider"></a>A NuGet-szolgáltató rendszerindításra több utasításokat
 
-**A forgatókönyv**: futtatásakor `Find-Module` vagy `Install-Module` vagy a NuGet-szolgáltató bootstrap próbál más PackageManagement parancsmagok PackageManagement első elindításakor a számítógépen. Teszi ezt, mert a PowerShellGet szolgáltató is használ a NuGet-szolgáltató letöltése a PowerShell-modulok. PackageManagement majd felszólítja a felhasználót, telepítse a NuGet-szolgáltatót engedélyt. Miután a felhasználó a "yes", a betöltéshez gombra kattint, a NuGet-szolgáltató legújabb verzióját telepíti.
+**A forgatókönyv**: Futtatásakor `Find-Module` vagy `Install-Module` vagy más PackageManagement-parancsmagok a számítógép első elindításakor a PackageManagement próbál meg a NuGet-szolgáltató elindíthat. Ezt hajtja végre, mert a PowerShellGet szolgáltató is használ a NuGet-szolgáltató letöltése a PowerShell-modulok. A PackageManagement majd felszólítja a felhasználót, telepítse a NuGet-szolgáltató engedélyt. Miután a felhasználó az "Igen", a rendszerindításra választja, a NuGet-szolgáltató legújabb verzióját telepíti.
 
-Azonban bizonyos esetekben egy régi verziója NuGet-szolgáltató telepítve a számítógépre, hogy a régebbi verziójú NuGet néha lekérdezi betöltött először a PowerShell-munkamenetbe (Ez a versenyhelyzet PackageManagement). Azonban PowerShellGet hozni a NuGet-szolgáltató működése érdekében újabb verzióját, így PowerShellGet rendszerindításának újra a NuGet-szolgáltató PackageManagement kéri. Ennek eredményeképp a NuGet-szolgáltató rendszerindítása több kér.
+Azonban bizonyos esetekben egy régi verziója NuGet-szolgáltató ugyanarra a számítógépre telepítve, a régebbi verzió néha lekérdezi betöltötte először (Ez a versenyhelyzet PackageManagement) PowerShell-munkamenetbe. Azonban az PowerShellGet a NuGet-szolgáltató használatát újabb verziója szükséges, így a PowerShellGet PackageManagement újra elindíthat a NuGet-szolgáltató. Ennek eredményeképpen a NuGet-szolgáltató rendszerindításra több utasításokat.
 
-**Megoldás**: WMF5.1, PackageManagement betölti a NuGet-szolgáltató több kér a NuGet-szolgáltató rendszerindítása elkerülése érdekében a legújabb verzióra.
+**Megoldás**: PackageManagement WMF5.1, betölti a NuGet-szolgáltató rendszerindításra több utasításokat elkerülése érdekében a NuGet-szolgáltató legújabb verzióját.
 
-Dolgozunk ennek sikerült is kézzel törölje a régi verzióját a NuGet-szolgáltató (NuGet-Anycpu.exe), ha a probléma van a $env: ProgramFiles\PackageManagement\ProviderAssemblies $env: LOCALAPPDATA\PackageManagement\ProviderAssemblies
+Ezt a problémát úgy is működhetnek (NuGet-Anycpu.exe) NuGet-szolgáltató régebbi verzióját manuálisan törlésével, ha a probléma $env létezik: ProgramFiles\PackageManagement\ProviderAssemblies $env: LOCALAPPDATA\PackageManagement\ProviderAssemblies
 
 
-### <a name="support-for-packagemanagement-on-computers-with-intranet-access-only"></a>Azokon a számítógépeken csak az intranetes hozzáférés PackageManagement támogatása
+### <a name="support-for-packagemanagement-on-computers-with-intranet-access-only"></a>A PackageManagement a számítógépeken csak az intranetes hozzáférés támogatása
 
-**A forgatókönyv**: a vállalati forgatókönyvhöz, személyek dolgozik a környezet esetén nincs Internet-hozzáféréssel, de az Intranet csak. PackageManagement ebben az esetben nem támogatja a WMF 5.0.
+**A forgatókönyv**: A vállalati forgatókönyvhöz az ember dolgozik környezet alapján, ha ott nem nincs Internet-hozzáférést, de az intranetes csak. A PackageManagement ebben az esetben a WMF 5.0 nem támogat.
 
-**A forgatókönyv**: A WMF 5.0, PackageManagement nem támogatja csak Intranet (de nem Internet) rendelkező számítógépek hozzáférést.
+**A forgatókönyv**: A WMF 5.0-s PackageManagement nem támogatták a csak Intranet (de nem az interneten) rendelkező számítógépek hozzáférést.
 
-**Megoldás**: A WMF 5.1 teszi lehetővé az Intranet PackageManagement használni ezeket a lépéseket követheti:
+**Megoldás**: A WMF 5.1 hajtsa végre ezeket a lépéseket, hogy az intranetes számítógépekhez PackageManagement használatára:
 
-1. Töltse le a NuGet-szolgáltató használatával internetkapcsolattal rendelkező másik számítógép segítségével `Install-PackageProvider -Name NuGet`.
+1. Töltse le a NuGet-szolgáltató használatával egy másik számítógépre, az internetkapcsolattal rendelkező `Install-PackageProvider -Name NuGet`.
 
-2. A NuGet-szolgáltató vagy alatt található `$env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget` vagy `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget`.
+2. Keresse meg a NuGet-szolgáltató szakaszban `$env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget` vagy `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget`.
 
-3. A bináris fájlok másolása egy mappát vagy hálózati megosztás helyét, az intranetes számítógép eléréséhez, és telepítse a NuGet-szolgáltató `Install-PackageProvider -Name NuGet -Source <Path to folder>`.
+3. A bináris fájlok másolását egy mappát vagy hálózati megosztási helyre, amely az intranetes számítógép eléréséhez, és telepítse a NuGet-szolgáltató `Install-PackageProvider -Name NuGet -Source <Path to folder>`.
 
 
 ### <a name="event-logging-improvements"></a>Esemény naplózása fejlesztései
 
-Csomagok telepítése, amikor módosítja a számítógép állapotát. A WMF 5.1 PackageManagement most események naplózása a Windows eseménynaplójában keresse meg `Install-Package`, `Uninstall-Package`, és `Save-Package` tevékenységeket. Az Eseménynapló számára ugyanúgy kell PowerShell, ez azt jelenti, hogy `Microsoft-Windows-PowerShell, Operational`.
+Csomagokat telepíteni, ha módosítja a számítógép állapotát. A WMF 5.1-es, a PackageManagement mostantól rögzíti eseményeket, a Windows eseménynaplójában keresse meg a `Install-Package`, `Uninstall-Package`, és `Save-Package` tevékenységeket. Az Eseménynapló rendszer ugyanaz, mint a PowerShell-lel, azt jelenti, `Microsoft-Windows-PowerShell, Operational`.
 
 ### <a name="support-for-basic-authentication"></a>Alapszintű hitelesítés támogatása
 
-WMF 5.1 PackageManagement keresése és csomagok telepítése a tárházból alapszintű hitelesítést támogatja. Megadhatja, hogy a hitelesítő adatait a `Find-Package` és `Install-Package` parancsmagok. Például:
+A WMF 5.1-es a PackageManagement támogatja a Keresés és a egy adattárból, amely egyszerű hitelesítés szükséges csomagok telepítése. A hitelesítő adatokat, megadhatja a `Find-Package` és `Install-Package` parancsmagok. Például:
 
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
-### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>A rendszer proxy mögött PackageManagement használatának támogatása
+### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>PackageManagement használatával a rendszer proxy mögött támogatása
 
-A WMF 5.1 PackageManagement most paraméterek fogadja el új proxy `-ProxyCredential` és `-Proxy`. Ezek a paraméterek használatával megadhatja a proxy URL-címe és PackageManagement parancsmagokkal hitelesítő adatokat. Alapértelmezés szerint a rendszer proxybeállítások vannak érvényben. Például:
+A WMF 5.1-es, a PackageManagement mostantól új proxy paraméter szükséges `-ProxyCredential` és `-Proxy`. Ezeket a paramétereket használja, megadhatja a proxykiszolgáló URL-cím és a PackageManagement-parancsmagok hitelesítő adatait. Alapértelmezés szerint systémová nastavení proxy serveru szolgálnak. Például:
 
 ``` PowerShell
 Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
-title: Egy adott verzióját egy telepített erőforrás importálása
+title: Telepített erőforrás meghatározott verziójának importálása
 ms.openlocfilehash: 5ed81e11aa67eb6590d958647f48a33b1b5f1c0e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404148"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683883"
 ---
-# <a name="import-a-specific-version-of-an-installed-resource"></a>Egy adott verzióját egy telepített erőforrás importálása
+# <a name="import-a-specific-version-of-an-installed-resource"></a>Telepített erőforrás meghatározott verziójának importálása
 
 > Érvényes: Windows PowerShell 5.0
 

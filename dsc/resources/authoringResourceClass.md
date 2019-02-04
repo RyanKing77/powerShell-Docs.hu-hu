@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A PowerShell-osztályok egyéni DSC-erőforrás írása
-ms.openlocfilehash: 0759685b04688f574d72b62a15833832ad19e816
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404336"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688314"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>A PowerShell-osztályok egyéni DSC-erőforrás írása
 
@@ -30,8 +30,8 @@ Egy olyan PowerShell osztállyal DSC egyéni erőforrás implementálásához ho
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1
-           MyDscResource.psd1
+        MyDscResource.psm1
+        MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>Az osztály létrehozása
@@ -86,7 +86,6 @@ A **Get()**, **Set()**, és **Test()** módszerek a következők csatlakoztatja 
 Ez a kód is magában foglalja a CopyFile() függvény segítő függvény, amely átmásolja a fájlt a **$SourcePath** való **$Path**.
 
 ```powershell
-
     <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
@@ -217,6 +216,7 @@ Ez a kód is magában foglalja a CopyFile() függvény segítő függvény, amel
 ```
 
 ### <a name="the-complete-file"></a>A teljes fájl
+
 A teljes fájl követi.
 
 ```powershell
@@ -414,7 +414,6 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
-
 ## <a name="create-a-manifest"></a>Jegyzék létrehozásához
 
 Osztályalapú erőforrás akkor válik elérhetővé a DSC motor, meg kell adni egy **DscResourcesToExport** utasítás, amely arra utasítja a modult, exportálhatja az erőforrás-jegyzékfájl. A jegyzékfájl így néz ki:
@@ -497,6 +496,36 @@ class FileResource {
 }
 ```
 
+### <a name="declaring-multiple-class-resources-in-a-module"></a>Egy modulban levő több osztály erőforrások deklaráló
+
+Egy modul alapú osztály több DSC-erőforrások adhatja meg. A mappastruktúra a következő módon hozhat létre:
+
+1. Adja meg az első erőforrásra a "<ModuleName>.psm1" fájl- és további erőforrások alapján a **DSCResources** mappát.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. Adja meg a tartozó összes erőforrást a **DSCResources** mappát.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
+
+> [!NOTE]
+> A fenti példákban hozzáadása a csoportban psm1 kiterjesztésű fájlokat a **DSCResources** , a **NestedModules** kulcsfontosságú a psd1 kiterjesztésű fájl.
+
 ### <a name="access-the-user-context"></a>Hozzáférés a felhasználói környezet
 
 A felhasználói környezet belül egy egyéni erőforrás elérésére, használhatja az automatikus változót `$global:PsDscContext`.
@@ -510,5 +539,5 @@ if (PsDscContext.RunAsUser) {
 ```
 
 ## <a name="see-also"></a>Lásd még:
-### <a name="concepts"></a>Fogalmak
+
 [Egyéni Windows PowerShell Desired State Configuration erőforrások létrehozása](authoringResource.md)

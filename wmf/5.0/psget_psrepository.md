@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 9a9bdac652512640209c20e3deb20d7abc0142c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5ac9566979e1b761249f5cc7c62ed44047a2b9f6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219531"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685234"
 ---
 # <a name="register-a-powershell-repository"></a>PowerShell-tárház regisztrálása
-Beállíthatja, hogy PowerShellGet belső adattárak ellen. Ehhez használja az alábbi kiegészítésekkel:
-- Register-PSRepository: A tárházat az aktuális felhasználó regisztrálja.
-- Unregister-PSRepository: Eltávolítja az aktuális felhasználó számára regisztrált tára.
-- Set-PSRepository: A regisztrált tárház értékeinek beállításához.
-- Get-PSRepository: Az aktuális felhasználó számára regisztrált összes tárházak beolvasása.
+Konfigurálhatja a PowerShellGet belső tárházak ellen. Ehhez használja az alábbi kiegészítésekkel:
+- Register-PSRepository: Egy adattár, az aktuális felhasználó regisztrálja.
+- Unregister-PSRepository: Eltávolít egy regisztrált tárház az aktuális felhasználó.
+- Set-PSRepository: Regisztrált tárház értékeinek beállítása.
+- Get-PSRepository: Az aktuális felhasználó regisztrált összes tárházak beolvasása.
 
-A tárház regisztrálása után keresés- és telepítési-modul segítségével használható.
+Egy tárház regisztrálása után Find-Module és az Install-Module segítségével dolgozhat vele.
 
 ```powershell
 \#Register a default repository

@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Keresési eredmények szűrése
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004122"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687593"
 ---
 # <a name="filtering-search-results"></a>Keresési eredmények szűrése
 
@@ -41,7 +41,7 @@ Ehhez hasonlóan a szeretné csak a PowerShell-galériából a parancsfájlokat,
 
 > [!NOTE]
 > Szűrők jellegűek.
-> Példa: Parancsmagok és a functions tartalmazó csomag jelenik meg, ha a rendszer ellenőrzi a parancsmag vagy függvényben (vagy mindkettő).
+> Példa: Ha a rendszer ellenőrzi a parancsmag vagy függvényben (vagy mindkettő) parancsmagok és a functions tartalmazó csomag jelenik meg.
 > Ha egyik sincs kijelölve, a csomag nem jelenik meg.
 > Hasonlóképpen ha az összes kategória ki van jelölve, csak az ezekben a kategóriákban egyikét tartalmazó csomagok fog megjelenni.
 > **Csomagok, amelyek nem tartozik egyik ezekben a kategóriákban nem jelenik meg.**

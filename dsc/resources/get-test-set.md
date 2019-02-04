@@ -2,18 +2,18 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Get-teszt – Set
-ms.openlocfilehash: e46710954679bf20f4536c6efbcbd4dafd9e629e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 6d059518a49926bc5fb56e37e7d3d4d2c66bddec
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404240"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687733"
 ---
 # <a name="get-test-set"></a>Get-teszt – Set
 
 >Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
-![GET, tesztelési, és állítsa be](/media/get-test-set.png)
+![Get, Test és Set](/media/get-test-set.png)
 
 PowerShell Desired State Configuration körül jön létre egy **első**, **teszt**, és **beállítása** folyamat. DSC [erőforrások](resources.md) minden tartalmaz módszerek mindkét művelet végrehajtásához. Az egy [konfigurációs](../configurations/configurations.md), meg kell adni, amely egy erőforrás paraméterek válnak kulcsok erőforrás blokkok határoz meg **első**, **teszt**, és **beállítása** metódusok.
 
@@ -237,6 +237,6 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 
 ## <a name="see-also"></a>Lásd még:
 
-- [Az Azure Automation DSC – áttekintés](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Az Azure Automation DSC – áttekintés](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Az SMB-lekérési kiszolgálójának beállítása](../pull-server/pullServerSMB.md)
 - [Lekérési ügyfél beállítása](../pull-server/pullClientConfigID.md)

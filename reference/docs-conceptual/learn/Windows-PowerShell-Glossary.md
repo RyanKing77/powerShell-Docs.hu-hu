@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Windows PowerShell-szószedet
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404523"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686333"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell-szószedet
 
@@ -44,7 +44,7 @@ ms.locfileid: "53404523"
 |megszakítást okozó hiba|Egy hiba, amely leállítja a Windows PowerShell, a parancs feldolgozása.|
 |tranzakció|Egy atomi munkaegysége. A munka egy tranzakcióban kell végezni, teljes; Ha a tranzakció bármelyik részét nem sikerül, a teljes tranzakció sikertelen lesz.|
 |a fájl típusa|A Windows PowerShell XML-fájl, amely .ps1xml kiterjesztése, és, amely kiterjeszti a Windows PowerShell a Microsoft .NET-keretrendszer típusok tulajdonságait.|
-|Művelet|A szó, amely megelőzi a kötőjel a egy Windows PowerShell-parancsmag neve. A művelet azt ismerteti, hogy a, a parancsmag által végrehajtandó műveletet.|
+|verb|A szó, amely megelőzi a kötőjel a egy Windows PowerShell-parancsmag neve. A művelet azt ismerteti, hogy a, a parancsmag által végrehajtandó műveletet.|
 |Windows PowerShell|Egy parancssori rendszerhéj és feladatalapú parancsprogramozási technológiát, amely biztosítja az informatikai rendszergazdák teljes körű vezérlését és automatizálási rendszer felügyeleti feladatokat.|
 |Windows PowerShell-paranccsal|Az elemek a folyamat, amely olyan műveleteket kell elvégezni. Windows PowerShell-parancsok vannak, vagy a billentyűzet begépelt vagy programozott módon meghívott.|
 |Windows PowerShell-adatfájlt|Egy szöveges fájl, amely a .psd1 fájlnévkiterjesztéssel rendelkezik. Windows PowerShell modul jegyzékfájl adatok tárolására, és tárolja a lefordított sztringeket a parancsfájl nemzetközivé például különböző célú adatfájlok használ.|

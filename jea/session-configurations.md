@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: Jea-t a munkamenet-konfigurációk
 ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655463"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689126"
 ---
 # <a name="jea-session-configurations"></a>Jea-t a munkamenet-konfigurációk
 
@@ -44,9 +44,9 @@ Munkamenetek van ilyen módon fog működni a [NoLanguage mód](https://technet.
 - Get-Command (gcm)
 - Get-FormatData
 - Get-Help
-- Mérték-objektum (mérték)
-- Kimenő irányú alapértelmezett
-- Select-Object (kijelölés)
+- Measure-Object (measure)
+- Out-Default
+- Select-Object (select)
 
 Nincs PowerShell szolgáltató érhetők el, sem pedig bármilyen külső programok (végrehajtható fájlok, parancsfájlok stb.).
 

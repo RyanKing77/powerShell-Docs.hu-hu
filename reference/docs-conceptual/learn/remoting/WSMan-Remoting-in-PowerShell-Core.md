@@ -2,12 +2,12 @@
 title: WS-Management (WSMan) távoli eljáráshívás a PowerShell Core-ban
 description: Távoli eljáráshívás a PowerShell Core-t a wsman által használt
 ms.date: 08/06/2018
-ms.openlocfilehash: ce58ed88f59f32b0f83951e55de36e829f7fa3f4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404611"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686179"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>WS-Management (WSMan) távoli eljáráshívás a PowerShell Core-ban
 
@@ -28,7 +28,7 @@ További részletekért tekintse meg a probléma [#1193](https://github.com/Powe
 
 A parancsfájl
 
-1. Létrehoz egy könyvtárat a beépülő modulhoz %windir%\System32\PowerShell belül
+1. Létrehoz egy könyvtárat a beépülő modulhoz belül `$env:windir\System32\PowerShell`
 1. Másolja át a pwrshplugin.dll adott helyhez
 1. Egy konfigurációs fájlt hoz létre
 1. Regisztrál, hogy beépülő modul a Rendszerfelügyeleti webszolgáltatások

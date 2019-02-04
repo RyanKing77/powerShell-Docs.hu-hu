@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: c51b583658ec82f39e4117e4266fa2e645b5012a
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: dcba906695acc44c313a401b2c9a50355ec84383
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187206"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685738"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Csomópontok közötti függőségek megadása
 
-A beépített WaitFor használatával\* erőforrások (`WaitForAll`, `WaitForAny`, és `WaitForSome`), megadhat függőségek számítógépeken nélkül külső vezénylési konfigurációs futtatása során.
+A beépített WaitFor használatával\* erőforrások (`WaitForAll`, `WaitForAny`, és `WaitForSome`), most már megadhatja függőségek számítógép között anélkül, hogy külső vezénylési konfigurációs futtatások során.
 
-További információkért lásd: [cross-csomópont függőségeinek megadása](https://msdn.microsoft.com/powershell/dsc/crossnodedependencies)
+További információkért lásd: [csomópontok közötti függőségek megadása](https://msdn.microsoft.com/powershell/dsc/crossnodedependencies)

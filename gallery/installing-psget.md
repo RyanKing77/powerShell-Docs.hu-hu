@@ -4,11 +4,11 @@ contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: A PowerShellGet telepítése
 ms.openlocfilehash: 5c51cb1c7ea2538cc5f8503ce6c5d80edda70e15
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002223"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683876"
 ---
 # <a name="installing-powershellget"></a>A PowerShellGet telepítése
 
@@ -17,7 +17,7 @@ ms.locfileid: "50002223"
 - [Windows 10-es](https://www.microsoft.com/windows) vagy újabb
 - [A Windows Server 2016](/windows-server/windows-server) vagy újabb
 - [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) vagy újabb
-- [PowerShell 6-os](https://github.com/PowerShell/PowerShell/releases)
+- [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
 ## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>PowerShell-verziók 3.0 és 4.0-s verzióját a PowerShellGet modul beolvasása
 

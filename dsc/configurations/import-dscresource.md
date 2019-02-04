@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
-title: Az Import-DSCResource használatával
+title: Az Import-DSCResource használata
 ms.openlocfilehash: 6bc3c1aa1d34a05e3188666da825322235c0672e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404289"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686613"
 ---
-# <a name="using-import-dscresource"></a>Az Import-DSCResource használatával
+# <a name="using-import-dscresource"></a>Az Import-DSCResource használata
 
 `Import-DScResource` van egy dinamikus kulcsszóval, amely csak egy konfigurációs parancsfájl-blokkon belül használható. A `Import-DSCResource` kulcsszó használatával importálja a konfigurációt a szükséges erőforrásokat. Alatt lévő erőforrások `$phsome` importálása automatikusan történik, de továbbra is ajánlott explicit módon importálja az összes erőforrás használatban a [konfigurációs](Configurations.md).
 

@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: PowerShell-folyamatok ismertetése
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
 ms.openlocfilehash: fc7c7f57bdce458185a0f5bdb8bc1fbbd81d0d61
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404164"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686193"
 ---
 # <a name="understanding-pipelines"></a>A folyamatok ismertetése
 

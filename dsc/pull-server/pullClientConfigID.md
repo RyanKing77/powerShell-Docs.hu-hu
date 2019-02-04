@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Konfigurációs azonosítók PowerShell 5.0-s és újabb verziók használata lekérési ügyfél beállítása
 ms.openlocfilehash: 8d8cf478f9127e1b7005d1b9e832e84b11612c9c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404292"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685871"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Konfigurációs azonosítók PowerShell 5.0-s és újabb verziók használata lekérési ügyfél beállítása
 
@@ -51,7 +51,7 @@ Használatával kapcsolatos további részletekért **GUID** a környezetben, l�
 
 Minden egyes ügyfélnek meg kell adni a **lekéréses** módban, és a pull-kiszolgáló URL-címét a konfigurációja tárolására. Ehhez az szükséges, akkor a helyi Configuration Manager (LCM) konfigurálása a szükséges információkat. Az LCM konfigurálása, a konfiguráció, a kitüntetett különleges hoz létre a **DSCLocalConfigurationManager** attribútum. Az LCM konfigurálása kapcsolatos további információkért lásd: [a Local Configuration Manager](../managing-nodes/metaConfig.md).
 
-### <a name="http-dsc-pull-server"></a>HTTP-DSC lekéréses kiszolgálón
+### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 A következő szkriptet az LCM lekéréses konfigurációk úgy konfigurálja a kiszolgáló neve "CONTOSO-PullSrv".
 
@@ -117,7 +117,7 @@ Ha csak adja meg a **ConfigurationRepositoryWeb** vagy **ConfigurationRepository
 > [!NOTE]
 > Kombinálhatja **ConfigurationRepositoryWeb** a **ResourceRepositoryShare** vagy **ConfigurationRepositoryShare** a **ResourceRepositoryWeb** . Erre vonatkozó példákat nem látható az alábbiakban.
 
-### <a name="http-dsc-pull-server"></a>HTTP-DSC lekéréses kiszolgálón
+### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 A következő metaconfiguration konfigurálja beolvasni a konfigurációkat a lekérési ügyfél **CONTOSO-PullSrv** és erőforrását **CONTOSO-ResourceSrv**.
 
@@ -211,7 +211,7 @@ PullClientConfigID
 
 Alapértelmezés szerint csomópontok nem küldenek jelentéseket konfigurált lekéréses kiszolgálón. Egy lekéréses kiszolgálót használhat a konfigurációk, az erőforrások és a jelentéskészítés, de létre kell hoznia egy **ReportRepositoryWeb** beállítása a jelentéskészítési letiltása.
 
-### <a name="http-dsc-pull-server"></a>HTTP-DSC lekéréses kiszolgálón
+### <a name="http-dsc-pull-server"></a>HTTP DSC Pull Server
 
 Az alábbi példa bemutatja egy metaconfiguration, amely beállítja a pull-konfigurációkat és erőforrásokat, majd küldje el jelentésadatokat, egyetlen lekéréses kiszolgálóra ügyfelet.
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Egypéldányos DSC-erőforrás írása (ajánlott eljárás)
 ms.openlocfilehash: 9494964b1b13eaa082ad5cbc279b4586bb7211cc
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404432"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688657"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Egypéldányos DSC-erőforrás írása (ajánlott eljárás)
 

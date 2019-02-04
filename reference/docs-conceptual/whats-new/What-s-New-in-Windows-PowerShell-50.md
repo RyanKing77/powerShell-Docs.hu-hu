@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Windows PowerShell 5.0 újdonságai
-ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
-ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
+ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978895"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688636"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 újdonságai
 Windows PowerShell 5.0 jelentős új szolgáltatásokat tartalmaz, amelyek kibővítik annak használati, javítják használhatóságát, és szabályozhatja, és kezelheti a Windows-alapú környezetek egyszerűbb és.
@@ -38,9 +38,9 @@ Számos frissítéseket és fejlesztéseket a Windows PowerShell Desired State C
   - [Új DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) mostantól támogatja az UNC elérési útvonalat.
 
 - Az új parancsmagok a [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) modul
-  - [Frissítés-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx): egy igény szerinti lekérése kiszolgáló ellenőrzést hajt végre.
-  - [STOP-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx): leállítja a már futó konfiguráció.
-  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx): lehetővé teszi a különböző fázisaival (folyamatban, jelenlegi vagy korábbi) konfiguráció-dokumentumok eltávolítása.
+  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx):  Egy igény szerinti lekérése kiszolgáló ellenőrzést végez.
+  - [STOP-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx):  Már fut egy konfigurációját leáll.
+  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx):  Lehetővé teszi a különböző fázisaival (folyamatban, jelenlegi vagy korábbi) konfiguráció-dokumentumok eltávolítása.
 
 - Nyelvi fejlesztések
   - DependsOn mostantól támogatja az összetett erőforrások.
@@ -64,10 +64,10 @@ Számos frissítéseket és fejlesztéseket a Windows PowerShell Desired State C
 
 - Rugalmassággal kapcsolatos fejlesztések
   - A LocalConfigurationManager erőforrás rendelkezik egy új tulajdonság **ActionAfterReboot**.
-    - ContinueConfiguration (alapértelmezett érték): a konfiguráció automatikusan folytatja a cél csomópont újraindítása után.
+    - ContinueConfiguration (alapértelmezett érték): A konfiguráció automatikusan folytatja a cél csomópont újraindítása után.
     - StopConfiguration: Nem automatikusan folytatja a konfiguráció egy csomópont újraindítását követően.
   - Konzisztencia Futtatás most fordulhat elő többször a PULL művelet, vagy fordítva.
-  - Verziószámozás támogatása: DSC mostantól képes felismerni egy dokumentumot létrehozott egy újabb ügyfél (mellékelt [WMF 5.0](https://aka.ms/wmf5download)).
+  - Verziószámozás támogatása:  DSC mostantól képes felismerni egy dokumentumot létrehozott egy újabb ügyfél (mellékelt [WMF 5.0](https://aka.ms/wmf5download)).
 
 - Hiba történt a megelőzési fejlesztései
   - Modulverzió kényszerítése megtörtént a konfiguráció alkalmazása előtt.
@@ -117,7 +117,7 @@ Számos frissítéseket és fejlesztéseket a Windows PowerShell Desired State C
 - Windows PowerShell beszédátírási lett továbbfejlesztve, hogy érvényesek minden üzemeltetési alkalmazások (például a Windows PowerShell ISE-ben) mellett a konzol gazdakörnyezetét (**powershell.exe**). Átírási beállítások (beleértve az egy rendszerszintű átiratok engedélyezése) engedélyezésével konfigurálható a **kapcsolja be a PowerShell Beszédátírási** található a felügyeleti sablonok/Windows-összetevők/Windows csoportházirend-beállítás PowerShell.
 - Egy új parancsfájl részletes nyomkövetési szolgáltatás engedélyezi a részletes nyomon követési és elemzési rendszerek a Windows PowerShell parancsfájl-kezelési használati teszi lehetővé. Miután engedélyezte a részletes parancsfájl nyomkövetés, Windows PowerShell az összes parancsfájl-blokkokban naplózza az esemény nyomkövetése for Windows (ETW) eseménynaplóba **Microsoft-Windows-PowerShell/műveleti**.
 - A Windows PowerShell 5.0-től kezdődően új titkosítási üzenet szintaxis parancsmagok támogatják az tartalmak titkosítását és visszafejtését titkosítási szempontból védelme érdekében üzenetet megfelelően az IETF szabvány formátum használatával [RFC5652](https://tools.ietf.org/html/rfc5652). A Get-CmsMessage, a védelem-CmsMessage és Unprotect-CmsMessage parancsmagok hozzáadva a [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh849807.aspx) modul.
-- Az új parancsmagok a [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modul, Get-futási térrel, hibakeresési-futási térrel, Get-RunspaceDebug, Enable-RunspaceDebug és Disable-RunspaceDebug, lehetővé teszik egy futási térből, és az Indítás és leállítás a hibakeresési beállításainak megadása a futási térben hibakeresést. Tetszőleges futási terek hibakeresési ", amely azt jelenti, hogy futási terek, amelyek nem egy Windows PowerShell-konzol vagy a Windows PowerShell ISE-munkamenet alapértelmezett futási térben" "Windows PowerShell lehetővé teszi, hogy állítson be töréspontokat a parancsfájlt, és hozzáadta a töréspontok állítsa le a parancsfájlt amíg nem lehet hibakereső hibakeresése a futási térben parancsfájl futtatását. Tetszőleges futási terek beágyazott hibakeresési támogatása a Windows PowerShell parancsfájl hibakeresőt a futási terek bővült.
+- Az új parancsmagok a [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modul, Get-futási térrel, hibakeresési-futási térrel, Get-RunspaceDebug, Enable-RunspaceDebug és Disable-RunspaceDebug, lehetővé teszik egy futási térből, és az Indítás és leállítás a hibakeresési beállításainak megadása a futási térben hibakeresést. Hibakeresés tetszőleges futási terek (vagyis a futási terek, amelyek nem egy Windows PowerShell-konzol vagy a Windows PowerShell ISE-munkamenet alapértelmezett futási térben) Windows PowerShell lehetővé teszi, hogy állítson be töréspontokat a parancsfájlt, és hozzáadta töréspontok állítsa le a parancsfájlt amíg nem lehet hibakereső hibakeresése a futási térben parancsfájl futtatását. Tetszőleges futási terek beágyazott hibakeresési támogatása a Windows PowerShell parancsfájl hibakeresőt a futási terek bővült.
 - Hexadecimális formátumú új parancsmag hozzáadva az [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modul. Hexadecimális formátumú szöveg vagy bináris adatok megtekintése az hexadecimális formátumban teszi lehetővé.
 - Get-vágólapra és Set-vágólap-parancsmagok hozzáadva a [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modul; ezek megkönnyítik a tartalom, és a egy Windows PowerShell-munkamenetből átvitelét. A vágólap-parancsmagok támogatják a lemezképek, a hangfájlok, a fájl listák és a szöveg.
 - Új parancsmag, Clear-RecycleBin, bővült a [Microsoft.PowerShell.Management](https://technet.microsoft.com/library/hh849827(v=wps.640).aspx) modulja; Ez a parancsmag kiüríti a Lomtár Bin rögzített meghajtót, amely tartalmazza a külső meghajtók esetében. Alapértelmezés szerint kéri megerősítését a Clear-RecycleBin parancsot, mert a parancsmag ConfirmImpact tulajdonsága ConfirmImpact.High értékre van állítva.
@@ -132,41 +132,42 @@ Számos frissítéseket és fejlesztéseket a Windows PowerShell Desired State C
 - Windows PowerShell-feladatok AtBreakpoint, új állapot lett hozzáadva. A AtBreakpoint állapot vonatkozik, amikor egy feladat fut egy parancsfájl, amely tartalmazza a set-töréspontokat, és a parancsfájl eléri egy töréspontot. Ha a feladat hibakeresési töréspont jelenleg le van állítva, a Debug-Job parancsmag futtatásával kell hibakeresést végeznie a a feladatot.
 - Windows PowerShell 5.0 ugyanabban a mappában lévő $PSModulePath valósít meg egyetlen Windows PowerShell-modul több verziójának támogatása. Egy RequiredVersion tulajdonsággal bővült a ModuleSpecification osztályhoz segítségével a kívánt verziót, a modul; kap Ez a tulajdonság nem kölcsönösen kizárják egymást az ModuleVersion tulajdonság. A Get-Module FullyQualifiedName paraméterének értéke részeként mostantól támogatott a RequiredVersion Import-Module és a Remove-modul parancsmagjaival.
 - Most már elvégezheti a modul verzió érvényesítése a Test-ModuleManifest parancsmag futtatásával.
-- A Get-Command parancsmagot eredményeit mostantól megjelenítik a verzió oszlopban; új verzió tulajdonsággal bővült a CommandInfo osztály. Get-Command több verzióját ugyanarra a parancsait mutatja. A verzió tulajdonság része is CmdletInfo származtatott osztályait: CmdletInfo és ApplicationInfo.
+- A Get-Command parancsmagot eredményeit mostantól megjelenítik a verzió oszlopban; új verzió tulajdonsággal bővült a CommandInfo osztály. Get-Command több verzióját ugyanarra a parancsait mutatja. A verzió tulajdonság része is CmdletInfo származtatott osztályok: CmdletInfo és ApplicationInfo.
 - Get-Command paramétere egy új, - ShowCommandInfo, amely PSObjects ShowCommand információkat ad vissza. Ez akkor különösen hasznos funkciókat Show-parancs futtatásakor a Windows PowerShell ISE-ben Windows PowerShell-távelérés használatával. A - ShowCommandInfo paraméter lecseréli a meglévő Get-SerializedCommand függvény a Microsoft.PowerShell.Utility modulban, de a Get-SerializedCommand parancsfájl támogatja az alacsonyabb szintű scripting továbbra is elérhető.
-- Új Get-ItemPropertyValue parancsmag lehetővé teszi egy tulajdonság értékének lekérése pontjelöléssel nélkül. Például a régebbi kiadásokban a Windows PowerShell, futtathatja a következő parancsot az alkalmazás alapja tulajdonság PowerShellEngine beállításkulcs értékének beolvasásához: **(Get-ItemProperty-elérési út HKLM:\\szoftver\\ A Microsoft\\PowerShell\\3\\PowerShellEngine-ApplicationBase neve). ApplicationBase**. A Windows PowerShell 5.0-től kezdődően futtathatja **Get-ItemPropertyValue-elérési út HKLM:\\szoftver\\Microsoft\\PowerShell\\3\\PowerShellEngine-név ApplicationBase** .
+- Új Get-ItemPropertyValue parancsmag lehetővé teszi egy tulajdonság értékének lekérése pontjelöléssel nélkül. Például a régebbi kiadásokban a Windows PowerShell, futtathatja a következő parancsot az alkalmazás alapja tulajdonság PowerShellEngine beállításkulcs értékének beolvasásához: **(Get-ItemProperty-elérési út HKLM:\\szoftver\\Microsoft\\PowerShell\\3\\PowerShellEngine-ApplicationBase neve). ApplicationBase**. A Windows PowerShell 5.0-től kezdődően futtathatja **Get-ItemPropertyValue-elérési út HKLM:\\szoftver\\Microsoft\\PowerShell\\3\\PowerShellEngine-név ApplicationBase** .
 - A Windows PowerShell-konzolt használja a szintaxisszínek hasonlóan a Windows PowerShell ISE-ben.
 - Új NetworkSwitch modul tartalmazza a parancsmagok, amelyek lehetővé teszik, hogy a alkalmazni a Windows Server 2012 R2-emblémával hitelesített hálózati kapcsolók kapcsoló, a virtuális LAN (VLAN) és az alapszintű 2. rétegbeli hálózati kapcsoló port konfigurációja.
 - A FullyQualifiedName paraméter van adva Import-Module és a Remove-Module-parancsmagok tárolása egy modul több verzióját támogatja.
 - Save-Help, az Update-Help, a Import-PSSession, a Export-PSSession és a Get-Command rendelkezik egy új paraméter FullyQualifiedModule ModuleSpecification típusú. Adja hozzá ezt a paramétert, a modul adja meg a teljes nevet.
 - Az érték **$PSVersionTable.PSVersion** 5.0 frissült.
-
+- A WMF 5.0 (PowerShell 5.0-s) tartalmazza a **Pester** modul.  Pester tesztelési keretrendszerének PowerShell egység. Néhány egyszerű használható kulcsszót, amelyekkel hozzon létre teszteket, hogy a parancsfájlok biztosít. 
+ 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Új szolgáltatások a Windows PowerShell Desired State Configuration
 
-- Nyelvi fejlesztések Windows PowerShell segítségével meghatározhatja a Windows PowerShell Desired State Configuration (DSC) erőforrások osztályok használatával. Az import-DscResource már igaz dinamikus kulcsszó; Windows PowerShell segítségével adatforrásonként értelmezi a megadott modul "™ s gyökérmodult osztályokat, amelyek tartalmazzák a DscResource attribútumot keres. Mostantól használhatja osztályok meghatározásához a DSC-erőforrások, ahol nem MOF-fájlt, sem a modul mappában DSCResource almappa nem szükséges. Egy Windows PowerShell-modul fájlt tartalmazhat több DSC-erőforrás osztályok.
+- Nyelvi fejlesztések Windows PowerShell segítségével meghatározhatja a Windows PowerShell Desired State Configuration (DSC) erőforrások osztályok használatával. Az import-DscResource már igaz dinamikus kulcsszó; Windows PowerShell elemzi a megadott modul legfelső szintű modul, a DscResource attribútumot tartalmazó osztályok kereséséhez. Mostantól használhatja osztályok meghatározásához a DSC-erőforrások, ahol nem MOF-fájlt, sem a modul mappában DSCResource almappa nem szükséges. Egy Windows PowerShell-modul fájlt tartalmazhat több DSC-erőforrás osztályok.
 - Új paraméter, ThrottleLimit, bővült a PSDesiredStateConfiguration modulban a következő parancsmagokat. Adja hozzá a ThrottleLimit paraméter adható meg a cél számítógépeket és eszközöket, amelyen szeretné, a parancs egy időben működjön.
   - Get-DscConfiguration
   - Get-DscConfigurationStatus
   - Get-DscLocalConfigurationManager
   - Restore-DscConfiguration
-  - A test-DscConfiguration
-  - Hasonlítsa össze-DscConfiguration
-  - Közzététel-DscConfiguration
+  - Test-DscConfiguration
+  - Compare-DscConfiguration
+  - Publish-DscConfiguration
   - Set-DscLocalConfigurationManager
   - Start-DscConfiguration
-  - Frissítés-DscConfiguration
+  - Update-DscConfiguration
 - Központi DSC hibajelentés, a hibával kapcsolatos részletes információk a program nem csak naplózza abban az esetben, ha naplófájl van, de elküldhetők egy központi helyen későbbi elemzés céljából. Ez a központi hely használatával minden olyan kiszolgáló a környezetben bekövetkezett DSC konfigurációs hibák tárolja. A jelentéskészítő kiszolgáló a metaadat-konfigurációs van definiálva, miután hibákat a jelentéskészítő kiszolgálónak küldött, és egy adatbázisban tárolja. Ez a funkció függetlenül e van konfigurálva egy célcsomóponttal állíthat egy lekéréses kiszolgálóról konfigurációk lekérni.
 - Fejlesztések a Windows PowerShell ISE-ben a DSC-erőforrások szerzői megkönnyítése érdekében. Most már a következőket teheti.
   - Belül minden DSC-erőforrások listája egy **konfigurációs** vagy **csomópont** megadásával blokk **Ctrl + szóköz** egy üres sor a blokkon belül.
   - Az erőforrás-tulajdonságainak automatikus kiegészítés a **enumerálás** típusa.
   - Az automatikus kiegészítés a **DependsOn** tulajdonság DSC-erőforrások, a többi erőforrás-példány a konfiguráció alapján.
   - Továbbfejlesztett kiegészítés erőforrás tulajdonságértékek.
-- A felhasználók most már futtathatja egy erőforrást egy meghatározott hitelesítő adatokat adja hozzá a **PSDscRunAsCredential** egy csomópont blokk attribútumot. Ha például PSDscRunAsCredential = Get-Credential Contoso\\DscUser. Ez a funkció akkor hasznos, futtassa a Windows Installer és a végrehajtható telepítők, a felhasználónkénti beállításjegyzék-struktúrát eléréséhez, vagy az aktuális felhasználói környezetet kívül más feladatok elvégzéséhez konfigurációk létrehozásához.
+- A felhasználók most már futtathatja egy erőforrást egy meghatározott hitelesítő adatokat adja hozzá a **PSDscRunAsCredential** egy csomópont blokk attribútumot. For example, PSDscRunAsCredential = Get-Credential Contoso\\DscUser. Ez a funkció akkor hasznos, futtassa a Windows Installer és a végrehajtható telepítők, a felhasználónkénti beállításjegyzék-struktúrát eléréséhez, vagy az aktuális felhasználói környezetet kívül más feladatok elvégzéséhez konfigurációk létrehozásához.
 - 32 bites (x86 alapú) támogatás lett hozzáadva a **konfigurációs** kulcsszót.
 - Mostantól DSC-konfigurációk hozzáadása által definiált egyéni súgója támogatja a Windows PowerShell \[CmdletBinding()] a generált konfigurációt függvénynek.
 - Egy új **DscLocalConfigurationManager** attribútumot jelöli meg a konfigurációs blokk egy metaadat-konfigurációt, így a DSC helyi Configuration Manager konfigurálására szolgál. Ez az attribútum csak olyan elemek, amelyek a DSC helyi Configuration Manager beállítása tartalmazó konfigurációt korlátozza. A feldolgozás során ezt a konfigurációt hoz létre egy \*. meta.mof fájlt, amely elküldi a megfelelő cél csomópontokhoz a Set-DscLocalConfigurationManager parancsmag futtatásával.
-- Részleges konfigurációk mostantól engedélyezettek a Windows PowerShell 5.0-s. Konfigurációs dokumentumok egy csomópontjára töredék juttathat el. Egy csomópont fogadni a konfigurációs dokumentum, a csomópont több töredékkel "™ s helyi Configuration Manager először állítsa adja meg a várt töredékek száma
-- Kereszt-számítógép szinkronizációs DSC Windows PowerShell 5.0 rendszerben jelent meg. A beépített WaitFor használatával\* erőforrások (**WaitForAll**, **WaitForAny**, és **WaitForSome**), most már megadhatja függőségek a számítógépeken során konfigurációs fut le, külső vezénylések nélkül. Ezeket az erőforrásokat biztosítanak a csomópontok közötti szinkronizálás CIM-kapcsolatok a WS-Man protokoll használatával. Egy konfigurációs megvárhatja egy másik számítógép "™ s adott erőforrás állapotának módosítása.
+- Részleges konfigurációk mostantól engedélyezettek a Windows PowerShell 5.0-s. Konfigurációs dokumentumok egy csomópontjára töredék juttathat el. Egy csomópont fogadni a konfigurációs dokumentum több töredékkel a csomópont helyi Configuration Manager először állítsa adja meg a várt töredék
+- Kereszt-számítógép szinkronizációs DSC Windows PowerShell 5.0 rendszerben jelent meg. A beépített WaitFor használatával\* erőforrások (**WaitForAll**, **WaitForAny**, és **WaitForSome**), most már megadhatja függőségek a számítógépeken során konfigurációs fut le, külső vezénylések nélkül. Ezeket az erőforrásokat biztosítanak a csomópontok közötti szinkronizálás CIM-kapcsolatok a WS-Man protokoll használatával. Egy konfigurációs megvárhatja egy másik számítógépet adott erőforrás állapotának módosítása.
 - Csak Enough Administration (JEA), egy új delegálás biztonsági funkció, használja a DSC és Windows PowerShell korlátozott futási terek segítségével biztonságos vállalatok adatvesztés vagy biztonsági sérülés, az alkalmazottak által, hogy szándékos vagy véletlen. További információ a JEA, ahonnan letöltheti a xJEA DSC-erőforrás, beleértve: [Just Enough Administration, lépésről lépésre](https://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx).
 - Az alábbi új parancsmagok hozzáadva a PSDesiredStateConfiguration modulnak.
   - Új Get-DscConfigurationStatus parancsmag egy célcsomóponttal konfigurációs állapot kapcsolatos áttekintő szintű adatokat olvas be. Az állapot szerezheti be az utolsó, vagy az összes konfigurációt.
@@ -177,7 +178,7 @@ Számos frissítéseket és fejlesztéseket a Windows PowerShell Desired State C
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Új szolgáltatások a Windows PowerShell ISE-ben
 
-- Most már szerkesztheti távoli Windows PowerShell-parancsfájlok és a Windows PowerShell ISE-ben, egy helyi példányát fájlok Enter-PSSession távoli munkamenet elindításához azon a számítógépen futtatja, amely "™ s a szerkeszteni kívánt fájlokat tárolja, és ezután futó **PSEdit <path and file name on the remote computer>**. Ez a funkció egyszerűsíti a szerkesztési a Server Core telepítési lehetőség Windows Server, ahol nem tudja futtatni a Windows PowerShell ISE-ben tárolt Windows PowerShell-fájlokat.
+- Most már szerkesztheti távoli Windows PowerShell-parancsfájlok és a Windows PowerShell ISE-ben, egy helyi példányát fájlok futtatásával Enter-PSSession távoli munkamenet elindításához azon a számítógépen, a szerkeszteni kívánt fájlokat tárolja, és futtassa **PSEdit \<elérési útját és nevét a távoli számítógépen\>**. Ez a funkció egyszerűsíti a szerkesztési a Server Core telepítési lehetőség Windows Server, ahol nem tudja futtatni a Windows PowerShell ISE-ben tárolt Windows PowerShell-fájlokat.
 - A Start-átírási parancsmag mostantól támogatott a Windows PowerShell ISE-ben.
 - Most már a Windows PowerShell ISE-ben a távoli parancsfájlokat is hibakeresési.
 - Egy új parancsával **összes felosztása** (Ctrl + B) bontja a hibakeresőt a helyi és távoli futó parancsprogramok.
@@ -221,7 +222,7 @@ Windows PowerShell 4.0 a következő új funkciókat tartalmaz.
 - A **Passthru** paraméter hozzáadva a **Enable-JobTrigger** és **Disable-JobTrigger** parancsmagok. A Passthru paraméter létrehozása vagy módosítása a parancs minden olyan objektumokat jeleníti meg.
 - A paraméter nevét adja meg a munkacsoportban a **Add-Computer** és **Remove-Computer** parancsmagok mostantól konzisztensek. Mindkét parancsmag most már használja a paraméterrel **Munkacsoport_neve**.
 - Egy új közös paraméter **PipelineVariable**, hozzá van adva. PipelineVariable változóként, melyet a folyamat további részében is átadható lehetővé teszi egy védőeszközön parancs (vagy egy védőeszközön parancs része) eredményeinek mentésére.
-- Mostantól támogatott a gyűjtemény szűrést egy metódus-szintaxis használatával. Ez azt jelenti, hogy most már szűrhet objektumok gyűjteményét Where() vagy Where-Object metódushívásokat formázott hasonló egyszerűsített szintaxis használatával. Az alábbiakban egy példa a: (Get-Process) .where ({$_. -Neve egyezik "powershell"})
+- Mostantól támogatott a gyűjtemény szűrést egy metódus-szintaxis használatával. Ez azt jelenti, hogy most már szűrhet objektumok gyűjteményét Where() vagy Where-Object metódushívásokat formázott hasonló egyszerűsített szintaxis használatával. A következő egy példa: (Get-Process) .where ({$_. -Neve egyezik "powershell"})
 - A **Get-Process** parancsmag rendelkezik egy új kapcsolóparaméter **IncludeUserName**.
 - Új parancsmag, **Get-FileHash**, egy fájlkivonat adja vissza a megadott fájl több formátum, hozzá van adva.
 - A Windows PowerShell 4.0-s, ha egy modul használja a **DefaultCommandPrefix** kulcs a jegyzékfájlban, vagy ha a felhasználó importál egy modult a következővel a **előtag** paramétert, a **ExportedCommands**tulajdonság a modul a parancsok láthatók a modul a előtaggal. A modulhoz minősített szintaxissal, modulename: a parancsok futtatásakor\\CommandName, a nevek tartalmaznia kell az előtagot.
@@ -237,7 +238,7 @@ Windows PowerShell 4.0 a következő új funkciókat tartalmaz.
 
 - Támogatás hozzáadva az új **PipelineVariable** általános paraméter iteratív folyamatok, például kontextusában a System Center Orchestrator által használt; azaz folyamatok, amelyek egyszerűen balról jobbra, nem pedig parancsok futtatásához összekeveredett streamelés segítségével futnak.
 - Paraméterkötés dolgozhat kívül lapon befejezési forgatókönyvek, például parancsok, amelyek nem szerepelnek az aktuális futási térben jelentősen bővült.
-- Egyéni tároló tevékenységek már támogatja a Windows PowerShell-munkafolyamat. Ha egy tevékenység-paraméter a típusú **tevékenység**, **tevékenység\[]**""vagy a tevékenységek általános gyűjteménye "és a felhasználó parancsprogram-blokkot mellékelt argumentumként, majd a Windows PowerShell-munkafolyamat XAML, mint a szokásos Windows PowerShell-parancsfájl-munkafolyamat összeállítása a parancsprogram-blokkot alakítja.
+- Egyéni tároló tevékenységek már támogatja a Windows PowerShell-munkafolyamat. Ha egy tevékenység-paraméter a típusú **tevékenység**, **tevékenység\[]** (vagy a tevékenységek általános gyűjteménye) és a felhasználó argumentumként, majd a Windows PowerShell parancsprogram-blokkot mellékelt A munkafolyamat XAML, mint a szokásos Windows PowerShell-parancsfájl-munkafolyamat összeállítása a parancsprogram-blokkot alakítja.
 - Egy összeomlás utáni Windows PowerShell-munkafolyamat automatikusan újracsatlakozik a felügyelt csomópontok.
 - Most már képes szabályozni **Foreach-Parallel** tevékenység-utasítások használatával a **ThrottleLimit** tulajdonság.
 - A **ErrorAction** általános paraméter új érvényes értékkel, rendelkezik **Suspend**, amely pedig kizárólag a munkafolyamatok.
@@ -315,7 +316,7 @@ Windows PowerShell 3.0 a következő új funkciókat is tartalmaz.
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell-munkafolyamat
 
-Windows PowerShell-munkafolyamati Windows PowerShell biztosít a Windows Workflow Foundation hatékonyságát. Munkafolyamatokat ír XAML vagy a Windows PowerShell nyelven, és azokat ugyanúgy, mint a parancsmag futtatásakor szeretné futtatni. A [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) parancsmag Előhozza workflw parancsok és a [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) parancsmag Előhozza a munkafolyamatok súgóját.
+Windows PowerShell-munkafolyamati Windows PowerShell biztosít a Windows Workflow Foundation hatékonyságát. Munkafolyamatokat ír XAML vagy a Windows PowerShell nyelven, és azokat ugyanúgy, mint a parancsmag futtatásakor szeretné futtatni. A [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) parancsmag beolvassa a munkafolyamat-parancsok és a [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) parancsmag Előhozza a munkafolyamatok súgóját.
 
 Munkafolyamatok, amelyek hosszú futású, ismételhető, gyakori, párhuzamosítható, megszakítható, suspendable és újraindítható multicomputer felügyeleti tevékenységek sorrendje. A munkafolyamatok a szándékos vagy véletlen a működésében zavarokat tapasztalhat, például a hálózati leállások, a Windows újraindítása vagy áramkimaradás folytathatók.
 
@@ -453,35 +454,35 @@ Windows PowerShell 3.0, a célt szolgálják, hogy a nyelvi egyszerűbb, könnye
 |||
 |-|-|
 |-JobTrigger|Új-JobTrigger|
-|Connect-PSSession|Új PSSessionConfigurationFile|
+|Connect-PSSession|New-PSSessionConfigurationFile|
 |ConvertFrom-Json|New-PSTransportOption|
-|ConvertTo-Json|Új PSWorkflowExecutionOption|
+|ConvertTo-Json|New-PSWorkflowExecutionOption|
 |Disable-JobTrigger|Új PSWorkflowSession|
-|Disable-ScheduledJob|Új ScheduledJobOption|
-|Kapcsolat bontása-PSSession|Új-WinEvent|
-|Enable-JobTrigger|Kapnak-PSSession|
+|Disable-ScheduledJob|New-ScheduledJobOption|
+|Disconnect-PSSession|New-WinEvent|
+|Enable-JobTrigger|Receive-PSSession|
 |Enable-ScheduledJob|Register-CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
 |Get-CimClass|Remove-CimInstance|
 |Get-CimInstance|Remove-CimSession|
 |Get-CimSession|Remove-TypeData|
-|Get-ControlPanelItem|Számítógép átnevezése|
+|Get-ControlPanelItem|Rename-Computer|
 |Get-IseSnippet|RESUME-Job|
 |Get-JobTrigger|Save-Help|
 |Get-ScheduledJob|Set-CimInstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
-|Importálás – IseSnippet|Set-ScheduledJobOption|
+|Import-IseSnippet|Set-ScheduledJobOption|
 |Invoke-AsWorkflow|A parancs show|
 |Invoke-CimMethod|Show-ControlPanelItem|
 |Invoke-RestMethod|Suspend-Job|
 |Invoke-WebRequest|Test-PSSessionConfigurationFile|
-|Új-CimInstance|Fájl letiltásának feloldása|
-|Új-CimSession|Unregister-ScheduledJob|
-|Új CimSessionOption|Update-Help|
-|Új IseSnippet||
+|New-CimInstance|Fájl letiltásának feloldása|
+|New-CimSession|Unregister-ScheduledJob|
+|New-CimSessionOption|Update-Help|
+|New-IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Létező fő parancsmagjainak és ProvidersWindows PowerShell 3.0 fejlesztései új szolgáltatásokkal meglévő parancsmagjaihoz, beleértve az egyszerűsített szintaxis és a következő parancsmagok új paraméterei: számítógépes parancsmagok, a fürt megosztott kötetei szolgáltatás parancsmagok, a Get-ChildItem, Get-Command, Get-tartalom, a Get-előzmények mérték-objektum, hálózatbiztonsági parancsmagok, Select-Object, Select-karakterlánc, osztott-elérési út, folyamatának elindítása, Tee-objektum, a Test-Connection tag hozzáadása és a WMI-parancsmagokat.
+### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Létező fő parancsmagjainak és ProvidersWindows PowerShell 3.0 fejlesztései többek között az egyszerűsített szintaxis és a következő parancsmagok új paraméterei meglévő parancsmagjaihoz új szolgáltatásokat tartalmazza: Számítógépes parancsmagok, a fürt megosztott kötetei szolgáltatás parancsmagok, a Get-ChildItem, Get-Command, Get-tartalom, a Get-előzmények mérték-objektum, hálózatbiztonsági parancsmagok, Select-Object, Select-karakterlánc, osztott-elérési út, folyamatának elindítása, Tee-objektum, a Test-Connection tag hozzáadása és a WMI-parancsmagokat.
 
 A Windows PowerShell-szolgáltatókat is is érdekében jelentős mértékben, beleértve a tanúsítványt a támogatott szolgáltatók a webalkalmazás üzemeltetéséhez Secure Socket Layer (SSL)-tanúsítványok kezeléséhez, támogatja a hitelesítő adatok állandó hálózati meghajtók és az alternatív adatstreamek fájlrendszer meghajtók.
 

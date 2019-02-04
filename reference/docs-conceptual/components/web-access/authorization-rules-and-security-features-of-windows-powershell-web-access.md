@@ -2,18 +2,18 @@
 ms.date: 06/27/2017
 keywords: PowerShell, a parancsmag
 title: A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói
-ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404288"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686417"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>A Webes Windows PowerShell-elérés engedélyezési szabályai és biztonsági funkciói
 
 Frissítve: 2013. június 24-én
 
-Érvényes: A Windows Server 2012 R2, Windows Server 2012-ben
+Érvényes: Windows Server 2012 R2, Windows Server 2012
 
 Windows PowerShell-elérés a Windows Server 2012 R2 és Windows Server 2012-alkalmazásban korlátozó biztonsági modellel rendelkezik. Felhasználók kifejezetten hozzáférést kell biztosítani ahhoz, hogy jelentkezzen be a Windows PowerShell-elérés átjáró és a webes Windows PowerShell-konzolt használja.
 
@@ -186,13 +186,13 @@ Az előző esetben a Windows PowerShell-elérés a cél számítógéphez sikere
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Egyetlen engedélyezési szabálykészlet használata több helyhez
 
-Az engedélyezési szabályok XML-fájlban tárolódnak. Alapértelmezés szerint az XML-fájl elérési útja a `%windir%\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
+Az engedélyezési szabályok XML-fájlban tárolódnak. Alapértelmezés szerint az XML-fájl elérési útja a `$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
 
-Az engedélyezési szabályok XML-fájl elérési útját tárolja a **powwa.config** fájlt, amely megtalálható a `%windir%\Web\PowershellWebAccess\data`. A rendszergazda rugalmasan módosíthatja az alapértelmezett elérési utat mutató hivatkozás **powwa.config** vagy követelményeknek megfelelően. Lehetővé teszi a rendszergazda módosíthatja a fájl helyét lehetővé teszi, hogy több Windows PowerShell-elérés átjáró használja ugyanazokat az engedélyezési szabályokat, ha ilyen konfiguráció van szükség.
+Az engedélyezési szabályok XML-fájl elérési útját tárolja a **powwa.config** fájlt, amely megtalálható a `$env:windir\Web\PowershellWebAccess\data`. A rendszergazda rugalmasan módosíthatja az alapértelmezett elérési utat mutató hivatkozás **powwa.config** vagy követelményeknek megfelelően. Lehetővé teszi a rendszergazda módosíthatja a fájl helyét lehetővé teszi, hogy több Windows PowerShell-elérés átjáró használja ugyanazokat az engedélyezési szabályokat, ha ilyen konfiguráció van szükség.
 
 ## <a name="session-management"></a>Munkamenet-kezelés
 
-Alapértelmezés szerint a Windows PowerShell-elérés egy felhasználó egy adott időpontban legfeljebb három munkamenet használatára korlátozza. Szerkesztheti a webalkalmazás **web.config** fájlt az IIS-kezelő felhasználói munkamenetek különböző számú támogatásához. Az elérési útját a **web.config** fájl `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
+Alapértelmezés szerint a Windows PowerShell-elérés egy felhasználó egy adott időpontban legfeljebb három munkamenet használatára korlátozza. Szerkesztheti a webalkalmazás **web.config** fájlt az IIS-kezelő felhasználói munkamenetek különböző számú támogatásához. Az elérési útját a **web.config** fájl `$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
 
 Alapértelmezés szerint az IIS webkiszolgáló úgy van beállítva, az alkalmazáskészlet újraindítása, ha bármilyen beállítás szerkesztése. Az alkalmazáskészlet újraindul például, ha a módosítások a **web.config** fájlt. > mert **Windows PowerShell-elérés** használ a memórián belüli munkamenet-állapotok, > bejelentkezett felhasználók **Windows PowerShell-elérés** munkamenetek elveszítik munkameneteiket, amikor az alkalmazáskészlet újraindul.
 

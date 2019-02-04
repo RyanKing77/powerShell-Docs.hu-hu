@@ -3,11 +3,11 @@ ms.date: 08/24/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-Script erőforrás
 ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048516"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684842"
 ---
 # <a name="dsc-script-resource"></a>DSC-Script erőforrás
 

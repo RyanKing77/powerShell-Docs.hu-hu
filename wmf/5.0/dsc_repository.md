@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 802196d821303fcf2d3e87784ca2064c386f882e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: cc859d68491c817d641cc598513efb3208db0619
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221819"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685241"
 ---
-# <a name="separation-of-configuration-resource-and-report-repositories"></a>A konfiguráció, erőforrás és jelentés adattárak elkülönítése
+# <a name="separation-of-configuration-resource-and-report-repositories"></a>Konfigurációs, erőforrás- és Jelentéstárházak szétválasztása
 
-Ebben a kiadásban azt teszik lehetővé az összes szükséges való lekérésére a rugalmasságot és a jelentés egy vagy több DSC lekérési kiszolgálókra. Minden egyes végpont külön-külön lehet meghatározni, hogy akkor is lekéréses konfigurációk egy helyről, egy másik erőforrásokat, és a jelentés egy másik helyre.
+Ebben a kiadásban azt teszi lehetővé az összes szükséges lekérni a rugalmasságot és a jelentés egy vagy több DSC lekéréses kiszolgálóra. Minden végpont külön-külön lehet meghatározni, hogy olvashatók konfigurációk egy helyen, egy másik erőforrás és jelentés még egy másik helyre.
 
-További információkért lásd: [ügyféltelepítéshez lekéréses konfigurációs azonosítójával](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid) vagy [konfigurációs nevek használatával lekéréses ügyfél beállítása](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)
+További információkért lásd: [konfigurációs azonosítóval lekérési ügyfél beállítása](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid) vagy [konfigurációs nevek lekérési ügyfél beállítása](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)

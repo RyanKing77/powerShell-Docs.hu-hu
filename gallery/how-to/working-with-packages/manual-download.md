@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a psgallery
 title: Csomagok manuális letöltése
 ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
-ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742822"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687698"
 ---
 # <a name="manual-package-download"></a>Csomagok manuális letöltése
 

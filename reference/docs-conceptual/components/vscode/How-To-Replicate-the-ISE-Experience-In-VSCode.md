@@ -3,11 +3,11 @@ title: Az ISE-élmény replikálása a Visual Studio Code-ban
 description: Az ISE-élmény replikálása a Visual Studio Code-ban
 ms.date: 08/06/2018
 ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012483"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687376"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Az ISE-élmény replikálása a Visual Studio Code-ban
 
@@ -19,9 +19,9 @@ Ez a dokumentum próbál konfigurálhatja a vscode-ban, hogy a felhasználói fe
 
 | Függvény                              | ISE-kötés                  | VSCode-kötés                              |
 | ----------------                      | -----------                  | --------------                              |
-| Megszakítás és break ladicí program          | <kbd>CTRL</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
+| Megszakítás és break ladicí program          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
 | Hajtsa végre az aktuális sor/kiemelt szöveg | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
-| Lista elérhető kódrészletek               | <kbd>CTRL</kbd>+<kbd>J</kbd> | <kbd>CTRL</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
+| Lista elérhető kódrészletek               | <kbd>Ctrl</kbd>+<kbd>J</kbd> | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
 
 ### <a name="custom-key-bindings"></a>Egyéni kulcs kötések használata
 

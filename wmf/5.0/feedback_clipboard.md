@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: e6b54519d878ab572662075709beb4cf4454b0c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d5ec95abb1d3160afc4179cff991cb5ef72d85fe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188057"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685920"
 ---
 # <a name="clipboard-cmdlets"></a>Vágólap-parancsmagok
-**Get-vágólapra** és **Set-vágólapra** megkönnyítik a tartalomátvitelt a és a Windows PowerShell-munkamenetben. Például, ha a Windows Intéző segítségével három fájlok másolása a vágólapra (jelölje ki őket, és nyomja le `ctrl-c`, például), majd egyszerűen elérhetők a vágólap tartalmát, a fájlok listáját:
+**Get-vágólapra** és **Set-vágólapra** könnyebben, tartalom, és a egy Windows PowerShell-munkamenetből átvitelét. Például, ha a Windows Explorer használatával három fájlok másolása a vágólapra (Ha kiválasztja őket, majd nyomja le az `ctrl-c`, például), majd könnyedén hozzáférhet a vágólap tartalmát, azon fájlok listáját:
 
 ```powershell
 PS C:\\&gt; Get-Clipboard -Format FileDropList
@@ -28,4 +28,4 @@ Mode LastWriteTime Length Name
 ```
 
 
-A vágólap parancsmagok támogatja a képek, a hangfájlok, a fájl listák és a szöveg.
+A vágólap-parancsmagok támogatják a lemezképek, a hangfájlok, a fájl listák és a szöveg.

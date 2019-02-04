@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Fontos PowerShell fogalmainak megértése
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
 ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404140"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686984"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Fontos PowerShell fogalmainak megértése
 

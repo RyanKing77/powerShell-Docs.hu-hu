@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-erőforrások
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54046691"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686067"
 ---
 # <a name="dsc-resources"></a>DSC-erőforrások
 
@@ -109,7 +109,7 @@ Configuration TestConfig
 
 Közösségi erőforrások kívül beépített erőforrások Windows, Linux-erőforrások és a csomópontok közötti függőségek erőforrásokat. A fenti lépések segítségével határozza meg a szintaxis ezeket az erőforrásokat és azok használatát. Ezek az erőforrások kiszolgálása a lapok alapján lettek archiválva **referencia**.
 
-Windows beépített erőforrások
+A Windows beépített erőforrásai
 
 * [Archív erőforrás](../reference/resources/windows/archiveResource.md)
 * [Környezeti erőforrás](../reference/resources/windows/environmentResource.md)
@@ -128,7 +128,7 @@ Windows beépített erőforrások
 * [WindowsFeatureSet erőforrás](../reference/resources/windows/windowsFeatureSetResource.md)
 * [WindowsOptionalFeature erőforrás](../reference/resources/windows/windowsOptionalFeatureResource.md)
 * [WindowsOptionalFeatureSet erőforrás](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
-* [WindowsPackageCabResource erőforrás](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsPackageCabResource Resource](../reference/resources/windows/windowsPackageCabResource.md)
 * [WindowsProcess erőforrás](../reference/resources/windows/windowsProcessResource.md)
 
 [Csomópontok közötti függőségek](../configurations/crossNodeDependencies.md) erőforrások

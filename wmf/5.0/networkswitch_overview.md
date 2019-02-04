@@ -1,45 +1,45 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 11b5e36f703c242e0bc820ab19d11d39305fa90c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 61c5df1b64cb9c54f9c7372a56e77abf319658dd
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187911"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683764"
 ---
 # <a name="network-switch-management-with-powershell"></a>Hálózati kapcsolók kezelése a PowerShell-lel
 
-A **Get-NetworkSwitchEthernetPort** parancsmag most osztályt a következő kiegészítő információkat ad vissza:
+A **Get-NetworkSwitchEthernetPort** parancsmag mostantól osztályt a következő kiegészítő információkat ad vissza:
 
-- IP-cím – az a port társított IP-cím
-- PortMode – a port mód: hozzáférés, útvonal vagy trönk
+- IP-cím – a porthoz társított IP-cím
+- PortMode – a port mód: hozzáférés, útvonal vagy hálózati trönk
 - AccessVLAN – a VLAN Azonosítóját társított ezt a portot, a hozzáférési mód
-- TrunkedVLANList – Ez a port trönk módban tartozó azonosítók a VLAN hálózatok listája
+- Ehhez a porthoz trönk módban társított azonosítók a VLAN-ok listáját TrunkedVLANList –
 
-## <a name="fundamental-network-switch-management-with-windows-powershell"></a>Alapvető hálózati kapcsoló kezelése a Windows PowerShell használatával
+## <a name="fundamental-network-switch-management-with-windows-powershell"></a>Alapvető hálózati kapcsolók kezelése a Windows PowerShell-lel
 
-A Hálózatikapcsoló-parancsmagjai, a WMF 5.0-ben bevezetett lehetővé teszik a Windows Server 2012 R2 embléma hitelesített hálózati kapcsolók kapcsoló, a virtuális LAN (VLAN) és a 2. rétegbeli hálózati kapcsoló port alapkonfiguráció alkalmazandó. Microsoft továbbra is támogató véglegesíteni a [adatközpont-absztrakciós](http://technet.microsoft.com/cloud/dal.aspx) réteg (DAL) stratégiai, és az érték szerepel, az ügyfelek és a partnerek ezen a helyen. Ezek a parancsmagok használatával hajthatja végre:
+A hálózati kapcsoló, a WMF 5.0-s-ben bevezetett parancsmagjaival kapcsoló, a virtuális LAN (VLAN) és az alapszintű 2. rétegbeli hálózati kapcsoló port konfigurációja alkalmazhat a Windows Server 2012 R2-emblémával hitelesített hálózati kapcsolók. A Microsoft továbbra is fontos, hogy támogató a [adatközpont-absztrakciós](http://technet.microsoft.com/cloud/dal.aspx) réteg (DAL) vision, és a megjelenítendő érték ügyfeleink és partnereink számára ezen a helyen. Ezek a parancsmagok használatával hajthatja végre:
 
-- Globális konfigurációs, például a kapcsolóhoz:
-    - Gazdagép neve
+- Globális váltson konfigurációs, például:
+    - Gazdagép nevének beállítása
     - Set kapcsoló szalagcím
     - Konfigurációs megőrzése
-    - Engedélyezheti vagy tilthatja le a szolgáltatást
+    - Engedélyezi vagy letiltja a szolgáltatás
 
 - VLAN-konfiguráció:
-    - Hozzon létre, vagy távolítsa el a VLAN
+    - Hozzon létre vagy VLAN eltávolítása
     - Engedélyezheti vagy tilthatja le a VLAN
     - VLAN számbavétele
-    - Állítsa be a rövid nevet a VLAN-hoz
+    - Rövid név beállítása egy VLAN-hoz
 
-- 2. réteg port konfigurálása:
+- 2. rétegbeli port konfigurációja:
     - Portok számbavétele
     - Engedélyezheti vagy tilthatja le a portok
-    - Set port módok és tulajdonságai
+    - Beállított port módok és tulajdonságai
     - Adja hozzá, vagy VLAN-Trönk vagy a hozzáférés a porton társítása
 
-Fedezze fel az összes NetworkSwitch!
+Indítsa el a NetworkSwitch parancsmagok mindegyikét keres vizsgálatát!
 
 ```powershell
 PS> Get-Command *-NetworkSwitch*
@@ -68,4 +68,4 @@ PS> Get-Command *-NetworkSwitch*
 | Function    | Set-NetworkSwitchVlanProperty             | NetworkSwitch |
 ```
 
-További információ a Jeffrey Snover WMF 5.0 előzetes bejelentés blogbejegyzésben érhető el: <http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>
+További információ a WMF 5.0-s előzetes bejelentés ebben a blogbejegyzésben Jeffrey Snover érhető el: <http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>

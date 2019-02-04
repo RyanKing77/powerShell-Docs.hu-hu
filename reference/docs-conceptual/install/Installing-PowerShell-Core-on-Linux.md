@@ -3,11 +3,11 @@ title: A PowerShell Core telepítése Linux rendszerre
 description: Információ a különböző Linux-disztribúciókon a PowerShell Core telepítése
 ms.date: 08/06/2018
 ms.openlocfilehash: afb11f053517af592fe42754d543f9f4a9966c5b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404263"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684492"
 ---
 # <a name="installing-powershell-core-on-linux"></a>A PowerShell Core telepítése Linux rendszerre
 
@@ -44,7 +44,7 @@ Közvetlen letöltésére keresztül telepítése nem változik, a fájl neve el
 |Distribution(s)|Stabil parancs | A parancs előzetes verzió |
 |---------------|---------------|-----------------|
 | Ubuntu, a Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| CentOS, a RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
 ## <a name="ubuntu-1404"></a>Ubuntu 14.04
@@ -392,7 +392,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1
 sudo yum remove powershell
 ```
 
-## <a name="opensuse"></a>OpenSUSE
+## <a name="opensuse"></a>openSUSE
 
 ### <a name="installation---opensuse-423"></a>Telepítés – openSUSE 42.3
 
@@ -524,7 +524,7 @@ A AUR a csomagok telepítésével kapcsolatos további információkért lásd: 
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
-## <a name="snap-package"></a>Oszlopokhoz illesztés csomag
+## <a name="snap-package"></a>Snap Package
 
 ### <a name="getting-snapd"></a>Első snapd
 
@@ -668,7 +668,7 @@ A következő diagram a .NET Core 2.0 hivatalosan támogatott különböző Linu
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, openssl-függvénytárak, libicu |
 | OpenSUSE 42.3 | libcurl4, libopenssl1_0_0, libicu52_1 |
 | openSUSE Leap 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
-| Fedora 27 <br> 28 Fedora | libunwind, libcurl, openssl-függvénytárak, libicu, a/compat-openssl10 |
+| Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-függvénytárak, libicu, a/compat-openssl10 |
 
 Nem hivatalosan támogatott Linux-disztribúciókon a PowerShell bináris fájljainak telepítéséhez telepíteni szeretné a cél operációs rendszer szükséges függőséget a különálló lépések.
 Például a [Amazon Linux dockerfile] [ amazon-dockerfile] először telepíti a függőségeket, és ezt követően kiolvassa a Linuxos `tar.gz` archív.

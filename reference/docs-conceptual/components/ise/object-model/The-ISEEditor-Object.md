@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Az ISEEditor objektum
 ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404539"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686151"
 ---
 # <a name="the-iseeditor-object"></a>Az ISEEditor objektum
 
@@ -246,6 +246,6 @@ $myEditor.InsertText($selection.ToLower())
 ## <a name="see-also"></a>Lásd még:
 
 - [Az ISEFile objektum](The-ISEFile-Object.md)
-- [Az PowerShellTab objektum](The-PowerShellTab-Object.md)
+- [The PowerShellTab Object](The-PowerShellTab-Object.md)
 - [A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Az ISE objektummodell-hierarchiája](The-ISE-Object-Model-Hierarchy.md)

@@ -2,12 +2,12 @@
 title: A PowerShell Core 6.1 újdonságai
 description: Új szolgáltatásaival és módosításaival, amely a PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851307"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687894"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>A PowerShell Core 6.1 újdonságai
 
@@ -18,7 +18,7 @@ Változások teljes listájához tekintse meg a [a Githubon változásnaplójáb
 
 És közben ki az alábbi néhány nevet nevezzük, Köszönjük, hogy [összes a közösségi közreműködők](https://github.com/PowerShell/PowerShell/graphs/contributors) , amely ebben a kiadásban lehetővé tenni.
 
-## <a name="net-core-21"></a>A .NET core 2.1-es verziója
+## <a name="net-core-21"></a>.NET Core 2.1
 
 Után, a .NET Core 2.1 átkerül PowerShell Core 6.1 [májusban, amely a](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), számos fejlesztéssel a Powershellbe, így többek között:
 
@@ -37,7 +37,7 @@ A Windows-kompatibilitási csomag lehetővé teszi, hogy a PowerShell Core haszn
 
 ## <a name="support-for-application-whitelisting"></a>Az alkalmazások engedélyezési listáinak támogatása
 
-PowerShell Core 6.1 rendelkezik a Windows PowerShell 5.1 támogatása paritásos [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) és [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) alkalmazásengedélyezés bevezetését.
+PowerShell Core 6.1 rendelkezik a Windows PowerShell 5.1 támogatása paritásos [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) és [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) alkalmazásengedélyezés bevezetését.
 Az alkalmazások engedélyezési listáinak lehetővé teszi, hogy a szabályozhatja a melyik bináris fájlokat engedélyezett hajtható végre, a PowerShell-lel használt [korlátozott nyelvmód](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Teljesítménnyel kapcsolatos fejlesztések
@@ -54,7 +54,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-O
 |              | Windows PowerShell 5.1 | A PowerShell Core 6.0 | A PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | Idő (mp)   | 25.178                 | 19.653              | 6.641               |
-| Gyorsulás figyelhető meg (%) | N.a.                    | 21.9 %               | 66.2 %               |
+| Gyorsulás figyelhető meg (%) | N.a.                    | 21.9%               | 66.2%               |
 
 Hasonlóképpen az alábbihoz hasonló rendezési forgatókönyvek javult több mint 15 %-kal:
 
@@ -65,7 +65,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 |              | Windows PowerShell 5.1 | A PowerShell Core 6.0 | A PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | Idő (mp)   | 12.170                 | 8.493               | 7.08                |
-| Gyorsulás figyelhető meg (%) | N.a.                    | 30.2 %               | 16.6 %               |
+| Gyorsulás figyelhető meg (%) | N.a.                    | 30.2%               | 16.6%               |
 
 `Import-Csv` azt is lett felgyorsul jelentősen regresszió után a Windows PowerShellben.
 Az alábbi példa egy teszt CSV 26,616 sorok és oszlopok hat használja:
@@ -77,7 +77,7 @@ Measure-Command {$a = Import-Csv foo.csv}
 |              | Windows PowerShell 5.1 | A PowerShell Core 6.0 | A PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
 | Idő (mp)   | 0.441                  | 1.069               | 0.268                  |
-| Gyorsulás figyelhető meg (%) | N.a.                    | -142.4 %             | 74.9 % (39.2 % WPS) |
+| Gyorsulás figyelhető meg (%) | N.a.                    | -142.4%             | 74.9 % (39.2 % WPS) |
 
 Végül, a JSON-t átalakítás `PSObject` rendelkezik lett felgyorsul több mint 50 %-kal Windows PowerShell óta.
 Az alábbi példa ~ 2 MB-os teszt JSON-fájlt használ:
@@ -89,7 +89,7 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 |              | Windows PowerShell 5.1 | A PowerShell Core 6.0 | A PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
 | Idő (mp)   | 0.259                  | 0.577               | 0.125                  |
-| Gyorsulás figyelhető meg (%) | N.a.                    | -122.8 %             | 78.3 % (51.7 % WPS) |
+| Gyorsulás figyelhető meg (%) | N.a.                    | -122.8%             | 78.3 % (51.7 % WPS) |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Ellenőrizze `system32` a Windows kompatibilis beépített modulok
 
@@ -209,7 +209,7 @@ Ha `pwsh.exe` nem érhető el, PowerShell Direct visszavált használandó `powe
 
 `Enable-PSRemoting` most létrehoz két távoli eljáráshívás munkamenet-konfigurációk:
 
-- Egy a PowerShell főverziója. Ha például`PowerShell.6`. Ezt a végpontot, amely képes lehet hivatkozni alverzió frissítések között, a "rendszerszintű" PowerShell 6-os munkamenet-konfiguráció
+- Egy a PowerShell főverziója. Például: `PowerShell.6`. Ezt a végpontot, amely képes lehet hivatkozni alverzió frissítések között, a "rendszerszintű" PowerShell 6-os munkamenet-konfiguráció
 - Egy verzióspecifikus munkamenet-konfiguráció, például: `PowerShell.6.1.0`
 
 Ez a viselkedés akkor hasznos, ha ugyanazon a gépen több PowerShell 6-os verzió telepítve, és elérhető legyen.

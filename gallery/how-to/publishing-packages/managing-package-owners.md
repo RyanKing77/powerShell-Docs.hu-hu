@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Csomag tulajdonosainak kezelése
 ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004123"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685976"
 ---
 # <a name="managing-package-owners"></a>Csomag tulajdonosainak kezelése
 
@@ -34,7 +34,7 @@ Ha egy csomag közzé lett téve a PowerShell-galériából, könnyebbé vált a
 5. E-mailt az új társtulajdonos, majd küldeni a meghívással csomag tulajdonosává válik.
 6. Miután, hogy a felhasználó a hivatkozásra kattint, azok teljes társtulajdonos, teljes körűen felügyelve egy csomagot, beleértve a más felhasználók tulajdonosként való eltávolítása.
 
-**Megjegyzés:**: mindaddig, amíg az új tulajdonos megerősíti, hogy tulajdonjoga, azok *nem fog* csomag tulajdonosának helyrendszerként legyen felsorolva.
+**MEGJEGYZÉS:**: Mindaddig, amíg az új tulajdonos megerősíti, hogy tulajdonjoga, azok *nem lesz* csomag tulajdonosának helyrendszerként legyen felsorolva.
 Megtekintésekor a **tulajdonosainak kezelése** oldalon, a jelenlegi tulajdonos a "jóváhagyásra" bejegyzést fog látni.
 A meghívó távolíthatja el; ugyanúgy, mint a más tulajdonosok távolíthatja el.
 Ez a folyamat a Meghívók meggátolja, hogy a felhasználókat a tévesen tulajdonosaihoz csomagjaikat, a más felhasználók hozzáadásakor.

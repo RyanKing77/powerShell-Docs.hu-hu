@@ -1,26 +1,26 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 9ca12ad3f0729a2e9595d7ca5ccf9041e47658a3
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: db9c630bcb8e9e0da423c779976739f1ae76f13e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218093"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687971"
 ---
 # <a name="archive-cmdlets"></a>Archív parancsmagok
 
-Két új parancsmagok **Compress-archívum** és **kibontott-archívum**, hogy tömöríti, és bontsa ki a ZIP-fájl.
+Két új parancsmagot **Compress archiválása** és **Expand-archívum**, hagyjuk, hogy tömöríteni, és bontsa ki a ZIP-fájlokat.
 
-## <a name="compress-archive"></a>Compress-archívum
-A **Compress-archívum** parancsmag létrehoz egy új fájlt a megadott fájlok. Archív fájlba kell csomagolni, és opcionálisan az egyszerűbb kezelés és tárolás egyetlen fájlba tömörített több fájlok teszi lehetővé. Az archív fájl a megadott tömörítési algoritmust tömörítheti a **- CompressionLevel** paraméter.
+## <a name="compress-archive"></a>Compress-Archive
+A **Compress archiválása** parancsmag egy új fájlt hoz létre a megadott fájlok. Archív fájl több csomagolni, és igény szerint egyszerűbb kezelését és a storage egyetlen fájlba tömörített fájlok teszi lehetővé. Archív fájl a megadott tömörítési algoritmust tömörítheti a **- CompressionLevel** paraméter.
 ```powershell
 Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>]
 Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>]
 ```
 
-## <a name="expand-archive"></a>Bontsa ki a archív
-A **kibontott-archívum** parancsmag fájlok kibontása a megadott archívum fájlból. Archív fájlba kell csomagolni, és opcionálisan az egyszerűbb kezelés és tárolás egyetlen fájlba tömörített több fájlok teszi lehetővé.
+## <a name="expand-archive"></a>Bontsa ki a csomópontot archív
+A **Expand-archívum** parancsmag fájlok kibontása a megadott archívum fájlból. Archív fájl több csomagolni, és igény szerint egyszerűbb kezelését és a storage egyetlen fájlba tömörített fájlok teszi lehetővé.
 ```powershell
 Expand-Archive -LiteralPath <String> [-DestinationPath] <String>
 Expand-Archive [-Path] <String> [-DestinationPath] <String>

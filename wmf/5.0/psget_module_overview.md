@@ -1,23 +1,23 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 9efc640dfda7e08e59d2c56746facd9658b1f9de
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a0b1573611c5d4232082c19ca19b4cca79d0699e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222173"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685255"
 ---
-# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>PowerShell modul felderítési, telepítése és PowerShellGet készlethez
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>PowerShell-modulok felderítése, telepítése és Leltárazása a powershellgettel
 
-Ebben a kiadásban a WMF PowerShellGet tartalmazza:
--   Keresés-modul a modul metaadatai szűrheti az a – Tag paraméter
--   Keresés-modul szűrést végezhet a tárház vonatkozó keresést nyelvi paraméterrel - szűrő
--   Keresés-modul is szűrő alapján a modul tartalmának a - paranccsal - DscResource, és - paramétereket tartalmaz
--   Keresés – DscResource lehetővé teszi, hogy a tárolóhelyekkel egyes DSC erőforrásainak felderítése
--   A telepítés és a fájlmegosztások a NuGet közzétételi támogatása
+A PowerShellGet ebben a kiadásban a WMF tartalmazza:
+-   Modul metaadatainak szűrésével find-Module-a - Tag paraméter
+-   Tárház-specifikus keresési nyelv szűrésével find-Module-a - Filter paraméter
+-   Find-Module is szűrés annak alapján, a modul tartalmának a - paranccsal, - DscResource, és - paramétereket
+-   Find-DscResource lehetővé teszi, hogy az egyes DSC-erőforrások tárházakban
+-   A telepítés és NuGet fájlmegosztások közzétételét támogatása
 
-## <a name="example-commands"></a>Példa parancsok
+## <a name="example-commands"></a>Példaparancsok
 ```powershell
 \# Find all modules with tags Azure or DSC
 Find-Module -Tag Azure, DSC
@@ -52,10 +52,10 @@ Find-Module -Filter Cookbook -Repository PSGallery
 Find-Module -Filter RBAC -Repository PSGallery
 ```
 
-## <a name="new-features-in-powershellget"></a>Az PowerShellGet új funkciói
--   Egymás melletti verzióinak támogatása a Windows PowerShell 5.0-s vagy újabb
--   A modul függőségi telepítés támogatása
+## <a name="new-features-in-powershellget"></a>A PowerShellGet az új funkciói
+-   Egymás melletti verzió támogatása a Windows PowerShell 5.0-s vagy újabb
+-   A modul függőséget telepítés támogatása
 -   Három új parancsmagok
     -   Get-InstalledModule
-    -   Távolítsa el modul
-    -   Mentés-modul
+    -   Uninstall-Module
+    -   Save-Module

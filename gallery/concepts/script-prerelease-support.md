@@ -4,11 +4,11 @@ contributor: keithb
 keywords: katalógus, powershell, a parancsmag, psget
 title: A parancsfájlok előzetes verziók
 ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002735"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683981"
 ---
 # <a name="prerelease-versions-of-scripts"></a>A parancsfájlok előzetes verziók
 
@@ -144,6 +144,6 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm
 - [Find-script](/powershell/module/powershellget/find-script)
 - [Install-script](/powershell/module/powershellget/install-script)
 - [Save-script](/powershell/module/powershellget/save-script)
-- [Frissítés-parancsfájl](/powershell/module/powershellget/update-script)
+- [Update-script](/powershell/module/powershellget/update-script)
 - [Get-Installedscript](/powershell/module/powershellget/get-installedscript)
-- [Eltávolítási parancsprogramja](/powershell/module/powershellget/uninstall-script)
+- [UnInstall-script](/powershell/module/powershellget/uninstall-script)

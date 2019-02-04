@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 7667aebb6545ae8dde5d94baee4a663f1d26c167
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3c1fcf94174b99490b19963662ef1ccdf6cebfec
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219582"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686970"
 ---
-# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>PowerShell-parancsfájl felderítési, telepítés és kezelés PowerShellGet az
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>PowerShell-parancsfájlok felderítése, telepítése és kezelése a Powershellgettel
 
-A WMF 5.0 RTM verzióban PowerShellGet kapott hozzá megosztása szolgáltatás PowerShell parancsfájlt.
-A következő új parancsmagok a PowerShellGet modul támogatásához a PowerShell-parancsfájlok hozzáadódnak.
+A PowerShellGet a WMF 5.0 RTM verzióban megosztása funkció PowerShell-parancsprogram van hozzá.
+Az alábbi új parancsmagok kerülnek a PowerShellGet-modul a PowerShell-parancsfájlok támogatásához.
 ```powershell
 PS C:\\windows\\system32&gt; Get-Command \*script\* -Module PowerShellGet | Sort-Object -Property Noun, Verb
 CommandType Name Version Source

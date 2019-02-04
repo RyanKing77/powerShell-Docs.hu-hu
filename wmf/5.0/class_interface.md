@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 116f79a95126d0a1c579a95ec99eb5d8b75cc1e0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4b593e9a1eca43ee7ad85fc921ae3c1d62722db9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225487"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687859"
 ---
 # <a name="declare-implemented-interface"></a>Megvalósított interfész deklarálása
 
-Deklarálhatja megvalósított illesztőfelületek alaptípusában vagy után azonnal kettőspontot (:), ha nincs megadva alap típus. Minden típusnevek külön vesszővel válassza el. Nagyon hasonlít, a C# szintaxis.
+Eszközhöz adhat meg implementovaná rozhraní típusok, vagy közvetlenül egy kettőspontot (:), ha nincs megadva alap típus. Írja be az összes vesszőkkel válassza el egymástól a neveket. Nagyon hasonló a C# szintaxist.
 
 ```powershell
 class MyComparable : system.IComparable

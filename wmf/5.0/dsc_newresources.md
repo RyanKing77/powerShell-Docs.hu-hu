@@ -1,22 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 18f77922a30e8b6fb73c08f0d218f2655a129bce
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 64a00e041bbeeea117db43116b486e83dfe923b0
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225572"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688258"
 ---
 # <a name="new-built-in-dsc-resources"></a>Új beépített DSC-erőforrások
 
-WMF 5.0 RTM 4 új DSC-erőforrással rendelkezik:
+4 új DSC-erőforrásokat a WMF 5.0 RTM-re van:
 * WindowsFeatureSet
 * WindowsOptionalFeatureSet
 * ServiceSet
 * ProcessSet
 
-Ezeket az erőforrásokat konfigurálása több példány használatával egyetlen erőforráshívás könnyű megoldást biztosítson.
+Ezek az erőforrások egyetlen erőforrás-hívás használatával több példány konfigurálása egyszerű módot biztosítanak.
 
 ## <a name="windowsfeatureset"></a>WindowsFeatureSet
 

@@ -4,17 +4,17 @@ contributor: Farehar
 keywords: katalógus, a powershell, a psgallery
 title: Licencfeltételek elfogadásának megkövetelése
 ms.openlocfilehash: eaed248895d14bd455d2d8d3c2222d8848eeccae
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004086"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684135"
 ---
 # <a name="require-license-acceptance"></a>Licencfeltételek elfogadásának megkövetelése
 
 Szükséges a licencfeltételek elfogadását szöveg megjelenik-e a licencfeltételek elfogadását igénylő modulok elem részleteit megjelenítő oldalon. Licenc modul "Nézet License.txt" hivatkozásra kattintva tekinthet meg.
 
-![Licencfeltételek elfogadásának megkövetelése](../../Images/RequireLicenseAcceptance.png)
+![Require License Acceptance](../../Images/RequireLicenseAcceptance.png)
 
 Telepítésekor, mentés vagy a modul a PowerShellGet vagy frissítése az Azure Automationhöz üzembe helyezésekor elfogadásához kéri a felhasználótól.
 

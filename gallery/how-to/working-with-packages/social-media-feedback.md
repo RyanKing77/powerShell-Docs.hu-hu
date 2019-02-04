@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Visszajelzés küldése a közösségi médiában vagy megjegyzésekkel
 ms.openlocfilehash: a7cdcc2ff2c18fb606d077adf0bdecf57c90703f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004070"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684352"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Visszajelzés küldése a közösségi médiában vagy megjegyzésekkel
 

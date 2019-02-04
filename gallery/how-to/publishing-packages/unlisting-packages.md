@@ -4,13 +4,13 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Csomagok listázásának megszüntetése
 ms.openlocfilehash: fb66fd23dae1d4640056a764c31426f61f56d910
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004095"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684394"
 ---
-# <a name="unlisting-packages"></a>Unlisting csomagok
+# <a name="unlisting-packages"></a>Csomagok eltávolítása a listáról
 
 **Miért éppen eltávolítja egy csomagot a beállítás nem elérhető PowerShell-galériából?**
 

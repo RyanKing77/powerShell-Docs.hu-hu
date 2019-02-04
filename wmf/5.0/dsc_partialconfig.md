@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 779c39b590c05b944c61f53155cf2e602a7cfc4e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: cb26e816b2bd95280ec3a426dbf60629c7668077
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189397"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686249"
 ---
-# <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a>Állítsa be csomópontot több konfigurációs töredék (részleges konfigurációk)
+# <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a>Több konfigurációs töredékkel (részleges konfigurációk) rendelkező csomópontok konfigurálása
 
-WMF 5.0 következők támogatásával segíti a konfigurációs dokumentumok töredékben csomóponthoz. További információkért lásd: [részleges konfigurációk](https://msdn.microsoft.com/powershell/dsc/partialconfigs).
+A WMF 5.0 segítségével konfigurációs dokumentumok töredék a csomóponthoz. További információkért lásd: [részleges konfigurációk](https://msdn.microsoft.com/powershell/dsc/partialconfigs).
