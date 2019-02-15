@@ -1,167 +1,167 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-keywords: katalógus, a powershell, a parancsmag, a psgallery
-description: A kiadók irányelvek
-title: PowerShell-galériából közzétételi irányelvek és bevált gyakorlatok
-ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+keywords: gyűjtemény, a powershell, a parancsmag, a psgallery
+description: Közzétevők vonatkozó irányelvek
+title: PowerShell-galériában irányelvek és bevált gyakorlatok közzététele
+ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655395"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265569"
 ---
-# <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell-Galériabeli közzétételi irányelvek és bevált gyakorlatok
+# <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery irányelvek és bevált gyakorlatok közzététele
 
-Ez a témakör ismerteti a csomagok, a PowerShell-galériában közzétett széles körben fogad el, és adja meg a nagy értékű a felhasználók számára, hogyan kezeli az a PowerShell-galériából a jegyzékfájl adatokat és nagy visszajelzései alapján a Microsoft teams által használt javasolt lépések PowerShell-galériából felhasználók számát.
-Ezen irányelvek betartása közzétett csomagokat kell telepíteni, nagy valószínűséggel megbízható, és a további felhasználókat szerezzen.
+Ez a témakör ismerteti a javasolt lépéseket, győződjön meg arról, a PowerShell-galériában közzétett csomagok széles körben fogad el, és adja meg a nagy értékű a felhasználóknak, miként kezeli a PowerShell-galériában a jegyzék adatok és a nagy visszajelzései alapján Microsoft csapatai által használt PowerShell-galériában felhasználók számát.
+Csomagok betartásuk közzétett kell telepíteni, nagy valószínűséggel megbízható, és a több felhasználó vonzerőt.
 
-Útmutató a megfelelő PowerShell-galériából csomag, milyen választható jegyzékfájl beállítások legfontosabb, visszajelzést kapjanak az kezdeti teszik a felülvizsgálók a kód javításához teszi az alábbi vannak és [Powershell parancsfájl Analyzer](https://aka.ms/psscriptanalyzer), verziókezelés a modul, a dokumentáció, a tesztek és a példák a mi megosztott használata.
-Ez a dokumentáció részét a következő közzétételi irányelvei [magas minőségű DSC erőforrás modulok](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
+Egy jó PowerShell gyűjteménycsomag, mely opcionális jegyzék beállításokat a legfontosabbak, a kódot a kezdeti véleményezők visszajelzést javítása hasznossá vonatkozó irányelvek alábbi vannak és [Powershell parancsfájl Analyzer](https://aka.ms/psscriptanalyzer), Versioning a modul, dokumentáció, tesztek & használata a mi megosztott példák.
+Nagy részét a dokumentáció a következő közzétételi irányelveiről [magas minőségi DSC erőforrás modulok](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-A beállítás esetén a csomag közzétételét a PowerShell-galériából, lásd: [létrehozása és közzététele egy csomag](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
+A beállítás esetén egy csomag közzététele a PowerShell-galériában, lásd: [létrehozása és közzététele egy csomag](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
 
-Ezeket az irányelveket a visszajelzés üdvözölte van. Ha visszajelzést, nyissa meg a problémákat a [Github dokumentációs tárház](https://github.com/powershell/powershell-docs/issues).
+Ezeket az irányelveket kapcsolatos visszajelzéseket üdvözölte van. Ha van, nyissa meg a problémákat a [dokumentáció Github-tárházban](https://github.com/powershell/powershell-docs/issues).
 
-## <a name="best-practices-for-publishing-packages"></a>Ajánlott eljárások a csomagok közzététele
+## <a name="best-practices-for-publishing-packages"></a>Gyakorlati tanácsok a csomagok közzététele
 
-A következő gyakorlati tanácsok Mi a felhasználók PowerShell-galériából elemek tegyük fel, fontos, és névleges prioritási sorrendben vannak felsorolva.
-Csomagok, amelyek az alábbiakra sokkal valószínűbb, letöltődnek és mások által elfogadott.
+A következő gyakorlati tanácsok mi PowerShell gyűjteményelemek felhasználóinak tegyük fel például azért fontos, és névleges prioritási sorrendben vannak felsorolva.
+Kövesse az alábbi irányelveket csomagok valószínűleg sokkal letöltött és mások által elfogadott.
 
 - PSScriptAnalyzer használata
 - Dokumentáció és példák
-- Legyen elérhető a felhasználói visszajelzések
-- Adja meg a szkriptek helyett modulok
-- Egy projekt hely mutató hivatkozásokat tartalmaznak
-- A csomag a kompatibilis PSEdition(s) és platformok címkézése 
-- Tartalmazza a modulok tesztek
-- Közé tartozik, és/vagy a szerződés csatolása
+- Visszajelzés válaszol kell
+- Adja meg a parancsfájlok helyett modulok
+- Adja meg a projekt hely mutató hivatkozások
+- A csomag a kompatibilis PSEdition(s) és platformok címke 
+- A modulok tesztek tartalmazza
+- Tartalmaznak és/vagy csatolja a licencfeltételeket
 - A kód aláírása
-- Hajtsa végre a [SemVer](http://semver.org/) irányelvek verziószámozása
-- Használjon címkéket, gyakori PowerShell-galériából címkék leírtak szerint
-- Közzététel a helyi tárház használatával tesztelése
-- A PowerShellGet használatával elvégezhető a közzététel
+- Hajtsa végre a [SemVer](http://semver.org/) versioning vonatkozó irányelvek
+- Használja a címkéket, dokumentált módon gyakori PowerShell-galériában címkék
+- Egy helyi tárház közzétételen tesztelése
+- PowerShellGet segítségével közzététele
 
-Minden egyes foglalkozik röviden az alábbi szakaszokban.
+Ezek mindegyikének vonatkozik röviden az alábbi szakaszokban.
 
 ## <a name="use-psscriptanalyzer"></a>PSScriptAnalyzer használata
 
-[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) egy ingyenes statikus elemző eszköz, a PowerShell-kód működik.
-A PowerShell-kódot, és gyakran egy javaslatot a hiba megoldásával leggyakoribb problémáinak PSScriptAnalyzer azonosítja.
-Az eszköz egyszerűen használható, és kategorizálja a problémákról, hibák (súlyos, vonhat), Figyelmeztetőre (át kell tekinteni és beavatkozást igényel.), és információkat (érdemes kivétele ajánlott eljárások).
-A PowerShell-galériában közzétett összes csomag PSScriptAnalyzer beolvasandó, és az esetleges hibákat jelentést küld a tulajdonos vissza, és vonhat.
+[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) szabad statikus kód elemző eszköz, amely PowerShell-kódjába működéséről.
+PSScriptAnalyzer látható a PowerShell-kódot, és gyakran egy javaslatot a probléma megoldásával kapcsolatos leggyakoribb hibák azonosítja.
+Az eszköz könnyen használható, és a problémákat hibaként kategorizálja (súlyos, számos), figyelmeztetés (át kell tekinteni & foglalkozzon), és információkat (érdemes kikérése ajánlott eljárások).
+A PowerShell-galériában közzétett összes csomag PSScriptAnalyzer beolvasandó, és az esetleges hibákat jelentett vissza a tulajdonos, és kell figyelembe venni.
 
-Az ajánlott eljárás, hogy futtassa `Invoke-ScriptAnalyzer` a `-Recurse` és `-Severity` figyelmeztetés.
+A bevált gyakorlat az, hogy futtassa `Invoke-ScriptAnalyzer` rendelkező `-Recurse` és `-Severity` figyelmeztetés.
 
-Tekintse át az eredményeket, és ellenőrizze, hogy:
+Tekintse át az eredményeket, és győződjön meg arról, hogy:
 
-- Minden hibát kijavított vagy ellenáll a dokumentáció a
-- Minden figyelmeztetés felül, és adott esetben címzett
+- Az összes hiba kijavítására sor vagy dokumentumban tárgyalt
+- Az összes figyelmeztetés felülvizsgálata és adott esetben címzett
 
-Felhasználók, akik a PowerShell-galériából csomagok beszerzése időveszteség PSScriptAnalyzer futtatásához, és az összes hiba és figyelmeztetés kiértékeléséhez.
-Nagyon valószínű csomag tulajdonosok kapcsolatba, ha azok jelenik meg, hogy nincs-e PSScriptAnalyzer által jelentett hiba, a felhasználók.
-Egy jelentős indok, hogy a kódot, amely meg van jelölve, amely során a csomag esetén adja hozzá ezt az információt a dokumentációban ugyanezt a kérdést megválaszolni sokszor ne kelljen.
+Felhasználók, akik szerezni a PowerShell-galériából csomagok javasoljuk, hogy a PSScriptAnalyzer futtatni, és értékelje ki az összes hiba és figyelmeztetés.
+Felhasználók valószínűleg nagyon Ha akkor jelenik meg, hogy van-e PSScriptAnalyzer által jelentett hiba, forduljon a csomag tulajdonosai.
+Ha a kódot hibaként megjelölt hagyja a csomag jelentős indok arra, vegye fel ezt az információt a dokumentációját, ne kelljen sokszor válaszolja meg ugyanezt a kérdést.
 
 ## <a name="include-documentation-and-examples"></a>Dokumentáció és példák
 
-Dokumentáció és példákat is az a legjobb módszer annak garantálására, felhasználók kihasználhatják a közös kód.
+Dokumentáció és példák, amelyek a legjobb felhasználók mértékben kihasználhassa az összes megosztott kódot.
 
-Dokumentáció az a leginkább hasznos tudnivaló, hogy a PowerShell-galériában közzétett csomagokat felvenni.
-Felhasználók általában megkerülik nem dokumentáció, csomagok, a tulajdonos alternatív, hogy olvassa el a kódot, és ismerje meg a csomag t, és hogyan használható a.
-Nincsenek elérhető kapcsolatos dokumentáció a PowerShell-csomagok, például a több cikkek:
+Dokumentáció a lehető leghasznosabb tudnivaló, hogy szerepeljen a PowerShell-galériában közzétett csomagok is.
+Felhasználók általában kihagyása a csomagok dokumentáció nélkül, mivel ez esetben olvassa el a kódot, megtudhatja, hogy a csomag nincs és való használatát.
+Nincsenek elérhető, hogy hogyan dokumentációját a PowerShell-csomagokat, beleértve a több olyan cikket:
 
-- Útmutató a Súgó szerepelnek [arról, hogy miként írhat parancsmag](https://go.microsoft.com/fwlink/?LinkID=123415)
-- Hozza létre a parancsmag súgóját, akkor a legjobb módszer a PowerShell-parancsfájlt, függvényt vagy parancsmagot.
-  Parancsmag súgóját létrehozásával kapcsolatos további információkért kezdődnie [arról, hogy miként írhat parancsmag](https://go.microsoft.com/fwlink/?LinkID=123415).
-  Adjon hozzá egy parancsfájlban súgó, lásd: [kapcsolatos megjegyzés-alapú súgó](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
-- Számos modulok is dokumentáció szöveges formátumban, például a MarkDown-fájlok.
-  Ez különösen hasznos lehet, ha a Githubon, ahol a Markdown egy olyan kitett formátum egy projekt hely van.
-  Az ajánlott eljárás a használandó [Github-stílusú Markdown](https://help.github.com/categories/writing-on-github/)
+- Súgó vonatkozó irányelvek szerepelnek [arról, hogy miként írási parancsmag](https://go.microsoft.com/fwlink/?LinkID=123415)
+- Parancsmag súgójának létrehozására, akkor a legjobb módszer a PowerShell-parancsfájl, függvényt vagy parancsmagot.
+  A parancsmag súgójában talál létrehozásával kapcsolatos információért kezdje [arról, hogy miként írási parancsmag](https://go.microsoft.com/fwlink/?LinkID=123415).
+  Egy parancsfájlban súgó hozzáadása, lásd: [Megjegyzés-alapú súgó](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+- Számos modult is dokumentáció szöveges formátumú, például a MarkDown-fájlokat.
+  Ez különösen hasznos lehet, ha a github webhelyen, ahol a Markdown terhelésnek kitett formátum a projekt hely van.
+  A bevált gyakorlat [Github-stílusú Markdown](https://help.github.com/categories/writing-on-github/)
 
-Példák bemutatják a felhasználók hogyan a csomag javasolt használni.
-Sok fejlesztő tudatja Önnel, hogy megtekintik a példákat, mielőtt dokumentáció segít megérteni, hogyan dolgot használni.
-Példák megjelenítése alapvető használatát, plusz egy szimulált valósághű használati esetekhez és a kód a legjobb típusa nem jól megjegyzésekkel.
-Példák a PowerShell-galériában közzétett modulok egy példa a modul legfelső szintű mappát kell lennie.
+Példák megjelenítése a felhasználók hogyan a csomag való használatra készült-e.
+Sok fejlesztők megtudhatja, hogy, hogy megnézi a példák dokumentációját, valami használata előtt.
+A legjobb a példák megjelenítése alapvető használata, valamint szimulált valósághű használati esetek és a kód típus jól megjegyzésként.
+A PowerShell-galériában közzétett modulok példák a modul legfelső szintű példák mappában kell lennie.
 
-Egy jó minta példákat találhat a [PSDscResource modul](https://www.powershellgallery.com/packages/PSDscResources) a Examples\RegistryResource mappában.
-Nincsenek négy minta használati esetek az egyes fájlok tetején egy rövid leírást, hogy milyen bemutatott dokumentumokat.
+Egy jó példák mintát itt található: a [PSDscResource modul](https://www.powershellgallery.com/packages/PSDscResources) a Examples\RegistryResource mappában.
+Nincsenek négy minta használati esetek az egyes fájlok tetején rövid leírását, hogy mi bemutatott dokumentumok.
 
 ## <a name="respond-to-feedback"></a>Visszajelzés válaszolni
 
-A Közösség által magas értékelni csomag tulajdonosok, akik visszajelzést megfelelően válaszolnak.
-Felhasználók, akik visszajelzést vélelmezett fontosak válaszolni, mivel ezek elég iránt javítására, próbálja ki a csomagot.
+Visszajelzés megfelelően válaszolni csomag tulajdonosok magas kell értékelni a Közösség által.
+Felhasználók, akik vélelmezett visszajelzést fontosak válaszolni, mivel ezek az érdekelt elég azt javítása érdekében próbálkozzon a csomagban.
 
-Visszajelzés két módszer érhető el a PowerShell-galériában található:
+Kétféleképpen visszajelzés érhető el a PowerShell-galériában:
 
-- Tulajdonosától: Ez lehetővé teszi egy felhasználó egy e-mailt küldhet a csomag tulajdonost. Csomag tulajdonosai fontos, hogy a PowerShell-galériából csomagok használt e-mail cím figyelheti, és reagálhat rájuk problémákat, amelyek akkor aktiválódnak. Egy ezt a módszert hátránya, hogy csak a felhasználó és a tulajdonos minden eddiginél megjelenik a kommunikációt, így a tulajdonos ugyanezt a kérdést megválaszolni sokszor előfordulhat, hogy rendelkezik.
-- Megjegyzések: A csomag alján lap Megjegyzés mező kitöltése.
-  Ebbe a rendszerbe előnye, hogy más felhasználók láthatják a megjegyzések és a válaszok, ami csökkenti az, hogy hányszor bármely egyetlen kérdésre válaszolni kell.
-  A csomag tulajdonosával, erősen ajánlott, hogy kövesse az egyes csomagokhoz tartozó megjegyzések.
-Lásd: [visszajelzés biztosít a közösségi médiában vagy megjegyzésekkel](../how-to/working-with-packages/social-media-feedback.md) hogyan valósítható meg a részleteket.
+- Lépjen kapcsolatba a tulajdonos: Ez lehetővé teszi a felhasználó egy e-mailt küldeni a csomag tulajdonos(ok). Csomag tulajdonos fontos, hogy a PowerShell-galériában csomagok használt e-mail cím figyelése és problémák előállított válaszolni. Egy ezt a módszert hátránya, hogy csak a felhasználó és a tulajdonos legalább egyszer jelenik meg a kommunikációt, előfordulhat, hogy ugyanezt a kérdést válaszoljon hány alkalommal kell a tulajdonos.
+- Megjegyzések: A csomag alján lap Megjegyzés mező.
+  Ebbe a rendszerbe előnye, hogy más felhasználók láthatják a megjegyzések és a válaszok, ami csökkenti a szám, ahányszor bármely egyetlen kérdésre válaszolni kell.
+  A csomag tulajdonosaként erősen ajánlott, hogy kövesse a megjegyzésekkel az egyes csomagok.
+Lásd: [biztosító visszajelzés keresztül a közösségi média és a megjegyzések](../how-to/working-with-packages/social-media-feedback.md) hogyan valósítható meg.
 
-A tulajdonosok, akik visszajelzést zárójelentésben válaszolni a Közösség által vannak értékeljük.
-A jelentés a lehetőség segítségével további információt kérhet, ha szükséges, adja meg a probléma megoldásához, vagy azonosítását, ha egy frissítés kijavítja a hibát.
+Visszajelzés zárójelentésben válaszolni tulajdonosok vannak értékeljük a Közösség által.
+A jelentés a lehetőség segítségével szükség esetén további adatokat kér, adja meg a probléma megoldásához, vagy megállapítani, hogy egy frissítés kijavítja a hibát.
 
-Ha nem megfelelő viselkedésének megfigyelt vagy a kommunikációs csatornákat, a PowerShell-galériából visszaélés jelentése funkcióját használja, lépjen kapcsolatba a katalógus-rendszergazdák.
+Ha nem megfelelő vagy a kommunikációs csatornát a megfigyelt viselkedés, a PowerShell-galériában jelentés visszaélés funkcióját használja a gyűjtemény rendszergazdák kapcsolódni.
 
-## <a name="modules-versus-scripts"></a>Szkriptek és modulok
+## <a name="modules-versus-scripts"></a>Modulok és parancsfájlok
 
-Parancsfájl más felhasználókkal való megosztás is remek megoldást kínál, és más biztosít a példa bemutatja, hogyan lehet a problémák megoldásában.
-A probléma oka, hogy a PowerShell-galériából a parancsfájlok-e külön dokumentáció, példákat és tesztek nélkül egyetlen fájlokat.
+Egy parancsfájl megosztása más felhasználókkal nagy, és kapcsolatos problémák megoldását, hogy példát biztosít.
+A probléma oka, hogy a parancsfájlok a PowerShell-galériában külön dokumentáció, példák és tesztek nélkül egyetlen fájl.
 
-PowerShell-modulok a mappastruktúrát, amely lehetővé teszi több mappákat és fájlokat a csomag része van.
-A modul szerkezete lehetővé teszi, hogy többek között a más csomagokat, hogy listában ajánlott eljárások: parancsmag súgójában, dokumentáció, példák és tesztek.
-A legnagyobb hátránya, hogy a parancsfájl egy modul belül elérhetővé tett kell, és függvényében használatos.
-Modul létrehozásával kapcsolatos információkért lásd: [Windows PowerShell-modul írása](http://go.microsoft.com/fwlink/?LinkId=144916).
+PowerShell-modul, amely lehetővé teszi több mappákról és fájlokról, hogy bekerüljenek a csomag mappa struktúrával rendelkezik.
+A modul szerkezete lehetővé teszi, hogy a többi csomagot, ajánlott eljárások látható többek között: parancsmag súgó, dokumentáció, példák és teszteket.
+A nagy hátránya, hogy egy modul egy parancsfájlt kell kitett és használatos függvényében.
+Egy modul létrehozásával kapcsolatos további információkért lásd: [Windows PowerShell-modul írása](http://go.microsoft.com/fwlink/?LinkId=144916).
 
-Vannak helyzetek, ahol a parancsfájl DSC-konfigurációk, különösen a felhasználót jobb felhasználói élményt biztosít.
-DSC-konfigurációk esetén az ajánlott eljárás, hogy a konfiguráció közzététele egy kísérő modult, amely tartalmazza a docs, példákat és tesztek parancsfájlként.
-A parancsfájl tartalmazza a kísérő modul RequiredModules = @(a modul neve).
-Ez a módszer minden más parancsfájl használható.
+Vannak olyan helyzetek, ahol egy parancsfájl jobb élményt nyújt a DSC-konfigurációk, különösen a felhasználót.
+A DSC-konfigurációk esetén ajánlott eljárás az, ha a konfigurációs közzétesszük egy kísérő modul, amely tartalmazza a dokumentumok, példákat és tesztek parancsfájlként.
+A parancsfájl tartalmazza a kísérő moduljának használatával. a RequiredModules = @(a modul neve).
+Ez a módszer minden parancsfájl használható.
 
-Kövesse az ajánlott eljárásokat önálló parancsprogramok valós értéket adjon meg más felhasználók számára.
-Biztosít egy parancsfájlt a PowerShell-galériából való közzétételkor erősen ajánlott dokumentáció Megjegyzés-alapú és a egy projekt webhelyre mutató hivatkozás.
+Önálló olyan parancsfájlok, amelyek a bevált gyakorlat valós értéket adjon meg más felhasználók számára.
+Megadása egy parancsfájlt a PowerShell-galériában közzétételekor erősen ajánlott dokumentáció Megjegyzés-alapú és a hivatkozást a projekt helyre.
 
 ## <a name="provide-a-link-to-a-project-site"></a>Adjon meg egy hivatkozást a projekt hely
 
-Egy projekt hely, ahol a közzétevő is közvetlenül kommunikál a felhasználók a saját PowerShell-galériából csomagok.
-Felhasználók inkább a csomagok, amelyek biztosították ezt, mert lehetővé teszi számukra, hogy könnyebben csomaggal kapcsolatos információkat.
-A PowerShell-galériából a csomagok számát a GitHub lettek kifejlesztve, mások által biztosított dedikált webes telephellyel rendelkező szervezetek számára.
-Minden egyes lehessen venni egy projekt helyet.
+A projekt hely, ahol a közzétevők használhatják közvetlenül a felhasználók a PowerShell-galériában csomagok.
+Felhasználók által előnyben részesített csomagok, amelyek biztosították ezt, mivel lehetővé teszi a csomag könnyebben lekérése.
+A PowerShell-galériában csomagok számát a Githubon fejlesztett, mások által biztosított dedikált webszolgáltatás rendelkező szervezetek számára.
+Ezek mindegyikének lehet tekinteni a projekt hely.
 
-Hivatkozás hozzáadása azzal ProjectURI a jegyzékfájl PSData szakaszban a következő történik:
+Ha hozzáad egy hivatkozást a PSData szakasza a jegyzék ProjectURI belefoglalja az alábbiak szerint történik:
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/powershell/powershell'
 
-Ha egy ProjectURI áll rendelkezésre, a PowerShell-galériából tartalmaz egy hivatkozást a projekt webhelyére, a csomag lap bal oldalán.
+Ha egy ProjectURI valósul meg, a PowerShell-galériában tartalmaz egy hivatkozást a projekt helyre a csomag lap bal oldalán.
 
-## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>A csomag a kompatibilis PSEdition(s) és platformok címkézése 
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>A csomag a kompatibilis PSEdition(s) és platformok címke 
 
-A következő címkék segítségével a felhasználók számára, amely csomagokat jól használhatók a saját gondoskodjanak a környezet bemutatása:
+A következő címkék segítségével a felhasználók számára, amely csomagokat is a környezetben működik bemutatása:
 
-- PSEdition_Desktop: Csomagok, amelyek kompatibilisek a Windows PowerShell-lel 
-- PSEdition_Core: Csomagok, amelyek kompatibilisek a Powershell Core 
-- Windows: Csomagok, amelyek kompatibilisek a Windows operációs rendszer
-- Linux: Csomagok, amelyek kompatibilisek a Linux operációs rendszerek 
-- MacOS: Csomagok, amelyek kompatibilisek a Mac operációs rendszer
+- PSEdition_Desktop : Csomagok, amelyek kompatibilisek a Windows PowerShell 
+- PSEdition_Core : Csomagok, amelyek kompatibilisek a Powershell Core 
+- Windows : Csomagok, amelyek kompatibilisek a Windows operációs rendszer
+- Linux: Csomagok által támogatott Linux operációs rendszerek 
+- MacOS: A Mac operációs rendszer kompatibilis csomagok
 
-## <a name="include-tests"></a>Tesztek belefoglalása
+## <a name="include-tests"></a>Tesztek tartalmazza
 
-Többek között a nyílt forráskóddal tesztek fontos a felhasználók számára, garancia, ellenőrizze, és mit információkat biztosít a kód működése nyújtja őket. Lehetővé teszi továbbá a felhasználókat irányítva biztosítják, hogy azok nem hibásodik az eredeti funkciót, ha a kód megfelelően környezetükben módosíthatják.
+Többek között a nyílt forráskód teszteken fontos a felhasználók, megakadályozni, hogy mit, ellenőrizze, és bemutatja, hogyan működik, a kódot nyújtja őket. Azt is lehetővé teszi a felhasználóknak nem azok törés az eredeti funkciókat, ha módosíthatják a kódot a környezetükben elférjen biztosításához.
 
-Erősen ajánlott, hogy tesztek írható kihasználhatja a Pester teszt keretrendszer, amely kifejezetten a PowerShell úgy lett kialakítva.
-Pester érhető el [GitHub](https://github.com/Pester/Pester), a [PowerShell-galériából](https://www.powershellgallery.com/packages/Pester/), és a Windows 10-es, a Windows Server 2016, a WMF 5.0 és a WMF 5.1 letöltésként érhető el.
+Erősen ajánlott, hogy tesztek írva a teszt úgy tervezték, kifejezetten a PowerShell Pester keretrendszer előnyeit.
+Pester érhető el [GitHub](https://github.com/Pester/Pester), a [PowerShell-galériában](https://www.powershellgallery.com/packages/Pester/), és a Windows 10, Windows Server 2016-os, WMF 5.0 és WMF 5.1 érhető el.
 
-A [github project-webhely Pester](https://github.com/Pester/Pester) Pester teszteket, írásáról az első lépésektől ajánlott eljárások a megfelelő dokumentációja tartalmazza.
+A [Pester project webhely a Githubon](https://github.com/Pester/Pester) Pester tesztek írása gyakorlati tanácsok a kezdeti lépések a megfelelő dokumentációt tartalmaz.
 
-Tesztelési lefedettségről célértékei hívjuk a [magas minőségű Resource modul dokumentációjában](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md), 70 %-os egységgel tesztelje a kódot lefedettség ajánlott.
+A teszt érvényességének célok külön felhívjuk a [magas minőségi erőforrásmodul dokumentáció](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md), 70 % egységgel tesztelése a kód érvényességének ajánlott.
 
-## <a name="include-andor-link-to-license-terms"></a>Közé tartozik, és/vagy a szerződés csatolása
+## <a name="include-andor-link-to-license-terms"></a>Tartalmaznak és/vagy csatolja a licencfeltételeket
 
-A PowerShell-galériában közzétett összes csomag meg kell adnia a licencfeltételek figyelje, illetve a licenc tartalmazza a [használati](https://www.powershellgallery.com/policies/Terms) "Függelék A" alatt.
-Adjon meg egy másik licenc a legjobb módja, hogy adjon meg egy hivatkozást a licenc az LicenseURI PSData használatával.
-A jegyzékfájl mezők ajánlott témakörben találhat egy példát.
+A PowerShell-galériában közzétett összes csomagot kell megadnia a licencfeltételeket, illetve azokhoz kötődjön, a licenc szereplő által a [használati](https://www.powershellgallery.com/policies/Terms) "Rendellenesen A" alatt.
+A legjobb módja a adja meg egy másik licenc-hoz a LicenseURI használatát PSData licenc mutató hivatkozás biztosítása.
+Példa Manifest mezők ajánlott témakörben találja.
 
 ```powershell
 PrivateData = @{
@@ -176,79 +176,79 @@ PrivateData = @{
 
 ## <a name="sign-your-code"></a>A kód aláírása
 
-Kód aláírása biztosítja a legmagasabb szintű megbízhatóságra számára közzétett, a csomagot a felhasználók, és, hogy a kód másolatát vásárolnak pontosan a közzétevő nyilvánosan.
-Kód aláírása általában kapcsolatos további információkért lásd: [Bevezetés a kódaláírás](http://go.microsoft.com/fwlink/?LinkId=106296).
-PowerShell érvényesítési kód két elsődleges megközelítés keresztül regisztráló támogatja:
+Kódaláírás biztosítja a felhasználók számára a legmagasabb szintű megbízhatóság ki tette közzé a csomag számára, és, hogy a kód példányát vásárolnak pontosan a közzétevő kiadott.
+A kódaláírás általában kapcsolatos további információkért lásd: [bemutatása kódaláíró](http://go.microsoft.com/fwlink/?LinkId=106296).
+PowerShell érvényesítése kódaláíró két elsődleges megközelítés keresztül támogatja:
 
-- Parancsfájl fájlok aláírása
-- A katalógus aláíró modul
+- Aláírási parancsfájlok
+- Katalógus-aláíró modul
 
-PowerShell fájlok aláírása nem jól bevált megoldást arra, hogy a kód a végrehajtás alatt egy megbízható forrás által előállított volt, és nem lett módosítva.
+PowerShell fájlok aláírása nem egy jól bevált módszer annak biztosításához, hogy a kód végrehajtott egy megbízható forrás által létrehozott volt, és nem lett módosítva.
 PowerShell-parancsfájlok aláírásáról részletek tárgyalja a [kapcsolatos aláírási](/powershell/module/microsoft.powershell.core/about/about_signing) témakör.
-Az Áttekintés aláírás bármely is hozzáadhatók. PS1 fájlnevet, amely PowerShell ellenőrzi a parancsfájl betöltésekor.
-PowerShell használatával lehet korlátozott a [végrehajtási házirend](/powershell/module/microsoft.powershell.core/about/about_execution_policies) parancsmagok használata érdekében aláírt parancsfájlok.
+Az Áttekintés egy aláírás sem lehet hozzáadni. PS1 fájlnevet, amely PowerShell ellenőrzi a parancsfájl betöltésekor.
+PowerShell használatával is korlátozható a [végrehajtási házirend](/powershell/module/microsoft.powershell.core/about/about_execution_policies) parancsmagok használata érdekében aláírt parancsfájlok.
 
-Modulok aláírási katalógus funkciója PowerShell 5.1-es hozzáadva.
-Csatlakozás a modul foglalkozik a [katalógus parancsmagok](/powershell/wmf/5.1/catalog-cmdlets) témakör.
-Az Áttekintés katalógus aláírási végzi el hozzon létre egy katalógus fájlt, amely minden fájlhoz, a modul ujjlenyomat értéket tartalmaz, és majd a fájl aláírása.
-A PowerShellGet modul közzététele, install-module, save-module és update-modul parancsmagjaival fog ellenőrizze, hogy érvényes az aláírást, majd győződjön meg arról, hogy az egyes csomagokhoz tartozó kivonat értéke megegyezik-e a Mi az a katalógusban.
-Ha a modul egy korábbi verziója telepítve van a rendszeren, install-module megerősíti, hogy az aláíró szolgáltató az új verzióhoz tartozó megegyezik, amit korábban telepítve lett.
-Katalógus aláírási együttműködik, de aláíró parancsfájlok nem cseréli le. PowerShell modul betöltési idő, nem hitelesíti a katalógus aláírások.
+Katalógus aláírási modult egy olyan szolgáltatás, 5.1 verzióban PowerShell hozzáadni.
+Egy modul aláírásáról kapcsolatban lásd a [katalógus parancsmagok](/powershell/wmf/5.1/catalog-cmdlets) témakör.
+Az Áttekintés katalógus aláíró végezhető el a katalógus fájlt készít, minden fájlhoz a modul kivonatoló értéket tartalmaz, és majd a fájl aláírása.
+A PowerShellGet közzététele modul, az install-modul, a mentés-modul, és a frissítés-modul parancsmagokkal lesz érvényes biztosításához az aláírás ellenőrzéséhez, majd győződjön meg arról, hogy a kivonat értéke minden csomag megegyezik a katalógusban.
+A modul egy korábbi verziója telepítve van a rendszeren, ha a telepítés-modul megerősíti, hogy az új verzióhoz tartozó aláíró hatóság megegyezik-e a mi korábban telepítve lett.
+Katalógus aláíró működik együtt, de ez nem helyettesíti a aláíró parancsfájlok. PowerShell nem felel meg a katalógus aláírások modul betöltése során.
 
-## <a name="follow-semver-guidelines-for-versioning"></a>SemVer irányelvekhez verziószámozása
+## <a name="follow-semver-guidelines-for-versioning"></a>Kövesse a verziókövetés SemVer irányelveket
 
-[SemVer](http://semver.org/) van egy nyilvános egyezmény, amely azt ismerteti, hogyan struktúra és a egy verziót, hogy a változások könnyen intepretation módosítása.
-A verzió a csomag az alkalmazásjegyzék adatokat kell szerepelnie.
+[SemVer](http://semver.org/) van egy nyilvános konvenciót ismerteti, hogyan lehet struktúra, és módosítsa a verzió változásainak könnyen intepretation engedélyezéséhez.
+A jegyzék adatok szerepelnie kell a csomag verzióját.
 
-- A verzió megfelelően strukturálni kell, mint 3 numerikus blokkok elválasztott, mint 0.1.1 vagy 4.11.192
-- Rendszertől kezdődően a "0" azt jelzik, hogy a csomag még nem éles üzemre, és az első szám csak kezdődjön 0-s, ha egyetlen számot
-- Az első szám (1.9.9999 2.0.0) változása jelezheti a verziók közötti fő- és kompatibilitástörő változásokat
-- A második szám (1.01 1.02) módosításai jelezheti szövegen túl szolgáltatásszintű változásakor, például új parancsmagok hozzáadása a modul
-- A harmadik szám módosításai nem kompatibilitástörő változások, például új paraméterei, frissített minták vagy új tesztek jelzi
-- Verziók listázása, amikor PowerShell rendezhető a verziók karakterláncként, így 1.01.0 lesz kezelve a nagyobb 1.001.0
+- A verzió meg kell felelnie, mint 3 numerikus blokkok elválasztott, mint 0.1.1 vagy 4.11.192
+- Rendszertől kezdődően a "0" jelzi, hogy a csomag még nincs készen áll a termelési, és az első szám csak kezdjen "0", ha ez az egyetlen számát
+- Az első szám (1.9.9999 2.0.0) megváltoztatása jelzi a verziók közötti fő- és megtörje módosítása
+- A második szám (1.1 1.2) módosításai jelzi a szolgáltatás szintű változtatások, például az új parancsmagok ad hozzá egy modul
+- A harmadik szám módosításai jelző nem jelentős változásokat, például új paraméterek, a frissített minták vagy az új vizsgálat
+- Verziók listázásakor PowerShell rendezze a verziók karakterláncként, így 1.01.0 kezeli a program nagyobb, mint 1.001.0
 
-Így támogatást biztosít a legtöbb, de nem minden elemét SemVer, kifejezetten PowerShell SemVer úgy lett közzétéve, mielőtt lett létrehozva:
+PowerShell során jött létre, megelőzően SemVer, ezért azt támogatást nyújt a SemVer, nem minden elemek kifejezetten:
 
-- Előzetes karakterláncok nem támogatja a verziószámok. Ez akkor hasznos, ha a kiadó által blokkolni kívánt új főbb verziók előzetes kiadása biztosít egy 1.0.0-s verziójának megadása után. Ez a PowerShell-galéria és a PowerShellGet-parancsmagok egy későbbi kiadásban támogatott lesz.
-- PowerShell és a PowerShell-galériából, hogy verzió karakterláncok 1, 2 és 4 szegmensek. Számos korai modulok nem követte az irányelveket, és a Microsoft termék-verziók tartalmazzák a build információt (például 5.1.14393.1066) számok letiltása a 4. Ezek a különbségek versioning szempontból, figyelmen kívül hagyja.
+- Előzetes karakterláncok nem támogatja a verziószámok. Ez akkor hasznos, ha a közzétevők kívánja biztosítanak egy új főverzió az előzetes verziót egy 1.0.0 megadása után. Ez a PowerShell-galériában és PowerShellGet parancsmagok egy későbbi kiadásban lesz támogatott.
+- PowerShell és a PowerShell-galériában engedélyezése verzió karakterláncok 1, 2 és 4 szegmensek. Számos korai modult nem követte az irányelveket, és a termék a Microsoft kiadásai build adatai, a 4. a számok (például 5.1.14393.1066) letiltása. Ezek a különbségek versioning szempontból, figyelmen kívül hagyja.
 
-## <a name="test-using-a-local-repository"></a>Tesztelheti a helyi tárház használatával
+## <a name="test-using-a-local-repository"></a>Tesztelése egy helyi tárház használatával
 
-A PowerShell-galériából célja nem lehet egy a közzétételi folyamat tesztelési célt.
-A legjobb módszer a teljes körű folyamatot, a PowerShell-galériából való közzététel kipróbálásához, hogy állítsa be, és használja a saját helyi tárházában.
-Ez több módon is, beleértve a teheti meg:
+A PowerShell-galériában célja nem lehet célja a közzétételi folyamat teszteléséhez.
+A legjobb módszer a PowerShell-galériában közzétételt a végpont technológia és a saját helyi tárházon.
+Ezt megteheti a néhány módokon, például:
 
-- Egy helyi PowerShell-galériából példány beállítása használatával a [PS saját katalógus projekt](https://github.com/PowerShell/PSPrivateGallery) a Githubon. Ezen előzetes projekt segít a PowerShell-galériából, amely szabályozhatja, és a vizsgálatok használni egy példányát.
-- Állítsa be egy [belső Nuget-tárház](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). Több munka beállításához van szükség, de érvényesíteni a követelmények, nevezetesen az API-kulcs és az e függőségek szerepelnek a cél közzétételekor ellenőrzése még néhány előnye.
-- A teszt "tárház" egy fájlmegosztás állíthatja be. Ez egyszerűen elvégezhető, de, egy fájlmegosztást, mert a fentebb feltüntetett ellenőrzések nem kerül sor. Egy lehetséges ebben az esetben előnye, hogy a fájlmegosztás nem ellenőrzi az (kötelező) API-kulcsot, így azonos fő ugyanúgy a PowerShell-galériából való közzétételéhez.
+- Állítson be egy helyi PowerShell-galériában példány használatával a [PS saját gyűjtemény projekt](https://github.com/PowerShell/PSPrivateGallery) a Githubon. A kép projekt segítséget a PowerShell-galériában, amely befolyásolhatja, és használja a tesztek példányának beállításához.
+- Állítson be egy [belső Nuget-tárház](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). Ez több munkát beállításához szükséges, de még néhány követelményt, nevezetesen ellenőrzése az API-kulcs és a-e függőségek szerepelnek a cél közzétételekor érvényesíteni előnye.
+- A vizsgálat "tárház" egy fájlmegosztás állíthatja be. Ez egyszerűen állíthat be, de mivel ez egy fájlmegosztást, a fent leírt ellenőrzések nem kerül sor. Egy lehetséges ebben az esetben előnye, hogy a fájlmegosztás nem ellenőrzi az (kötelező) API-kulcsot, így azonos kulcs üzembe helyezése a PowerShell-galériában közzétételére.
 
-Ezek a megoldások azokkal a Register-PSRepository használatával egy új "tárház", amely használ a - tárház tulajdonság a Publish-Module definiálhat.
+Ezek a megoldások a Register-PSRepository segítségével határozza meg az új "tárház", amely használja a - tárház tulajdonságban Publish-modul.
 
-Egy további pont teszt közzétételre vonatkozó: minden olyan csomag, a PowerShell-galériából való közzététel nem lehet törölni a az üzemeltetési csapat, akik megerősíti, hogy semmi nem függ a közzétenni kívánt csomag nélkül.
-Éppen ezért azt nem támogatják a PowerShell-galériából tesztelési célként, és felveszi a kapcsolatot minden közzétevő, akik úgy valósítja meg.
+Egy kiegészítő kapcsolattartót teszt közzétételre vonatkozó: bármilyen teszi közzé a PowerShell-galériában csomagot nem lehet törölni a műveletek csapat, akik fog erősítse meg, hogy semmi sem függ a közzétenni kívánt csomag segítség nélkül.
+Éppen ezért jelenleg nem támogatják a PowerShell-galériában tesztelési célként, és bármelyik közzétevőt, aki így kapcsolatba lép.
 
-## <a name="use-powershellget-to-publish"></a>A PowerShellGet használatával elvégezhető a közzététel
+## <a name="use-powershellget-to-publish"></a>PowerShellGet segítségével közzététele
 
-Erősen ajánlott, hogy a kiadók a Publish-Module és Publish-Script parancsmagokat használja, a PowerShell-galériából való munka során.
-A PowerShellGet létrejött való telepítés és a PowerShell-galériából történő közzétételével kapcsolatos fontos részleteket megjegyzésénél elkerülése érdekében.
-A kiadók előfordulhat, hagyja ki a PowerShellGet, és a NuGet-ügyfél vagy a PackageManagement-parancsmagok használata helyett a Publish-Module választotta.
-Nincsenek részletek, amelyek egyszerűen kihagyva, számos különböző támogatási kérések eredményez, amelyek.
+Erősen ajánlott, hogy közzétevők a Publish-modul és a közzététel-parancsfájl parancsmagok használata, amikor a PowerShell-galériában olyan.
+Fontos tudnivalók a telepítés és a PowerShell-galériában közzétételi jelszóelőzmények elkerülheti PowerShellGet hoztak létre.
+Előfordulhat a közzétevők PowerShellGet kihagyásához és a NuGet-ügyfél vagy PackageManagement parancsmagok használata helyett Publish-modul választotta.
+Számos adatait, amely könnyen kihagyva, amely támogatási kérelmeket számos eredményez.
 
-Ha a nem használt Publish-Module vagy a Publish-Script indok van, kérjük tudassa velünk, a következő címen.
-A PowerShellGet GitHub-adattárat probléma fájlt, majd adja meg, amely miatt a válassza a NuGet vagy PackageManagement részleteit.
+Ha egy OK, hogy nem használható Publish-modul vagy a közzétételi-parancsfájl, adjon ossza meg velünk.
+A PowerShellGet GitHub-tárház problémát fájlt, és adja meg, amelyek miatt a NuGet vagy PackageManagement adatait.
 
 ## <a name="recommended-workflow"></a>Ajánlott munkafolyamat
 
-A legtöbb sikeres megközelítés található, a csomagokhoz, a PowerShell-galériában közzétett szó:
+A legtöbb sikeres megoldás, a PowerShell-galériában közzétett csomagok találtunk, amelyeknek, ez:
 
-- A kezdeti fejlesztéshez, az egy olyan nyílt forráskódú projekt hely. A PowerShell csapata használ a Githubon.
-- Használja a felülvizsgálók visszajelzései és [Powershell parancsfájl Analyzer](https://aka.ms/psscriptanalyzer) beolvasni a kódot, és stabil állapotban
+- A fejlesztési kezdeti egy egy nyílt forráskódú projekt helyet. A PowerShell csapat Github használja.
+- Használja a felülvizsgálók visszajelzései és [Powershell parancsfájl Analyzer](https://aka.ms/psscriptanalyzer) lekérni a kódot a stabil állapot
 - Dokumentáció, tartalmazza, így mások tudja, hogyan használja a munkahelyi
-- A helyi tárház használatával közzétételi művelet kipróbálásához.
-- A PowerShell-galériából, ügyelve arra, hogy a dokumentáció és a projekt helyre mutató hivatkozást tartalmazza, hogy egy stabil vagy alfa kiadás közzététele
-- Visszajelzések, és a kódba a projekt webhely ismételt futtatásával, majd a stabil frissítések közzétételéhez a PowerShell-galériában
+- Tesztelje a közzétételi művelet egy helyi tárházat.
+- Egy állandó vagy alfa kiadási közzétételére a PowerShell-galériában, meggyőződött arról, hogy hivatkozást a projekt helyre és dokumentációja
+- Visszajelzések és a kódba a projekt hely többször, majd stabil frissítések közzétételéhez a PowerShell-galériában
 - Példák és Pester tesztek hozzáadása a projekthez, és a modul
 - Döntse el, ha szeretné a kódot írja alá a csomagot
-- Ha úgy gondolja, hogy a projekt készen áll a használatra az éles környezetben, tegye közzé egy 1.0.0-s verziót a PowerShell-galériában
-- Folytassa a visszajelzések és újrafuttathatja a kódban felhasználói bemenet alapján
+- Ha úgy érzi, hogy a projekt éles környezetben használatra kész, tegye közzé a 1.0.0 verzióra, amellyel a PowerShell-galériában
+- Folytassa a visszajelzések és a kódot a felhasználói bevitel alapján többször
 

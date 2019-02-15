@@ -1,30 +1,30 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, a konfigurációt, a beállítása
-title: Rövid útmutató – a DSC-s webhely létrehozása
-ms.openlocfilehash: c62e2d8af46bf74c4dd13069ddff6cc39763a209
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Gyors üzembe helyezés - webhely létrehozása az DSC Szolgáltatásban
+ms.openlocfilehash: d98607939ccd3cc5e660936d8c0a6d54fce7d65f
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684254"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265484"
 ---
-> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> Érvényes: A Windows PowerShell 4.0-s verzióját, a Windows PowerShell 5.0
 
-# <a name="quickstart---create-a-website-with-dsc"></a>Rövid útmutató – a DSC-s webhely létrehozása
+# <a name="quickstart---create-a-website-with-dsc"></a>Gyors üzembe helyezés - webhely létrehozása az DSC Szolgáltatásban
 
-Ebben a gyakorlatban létrehozásával és alkalmazásával a Desired State Configuration (DSC) konfigurációs elejétől a végéig ismerteti.
-A példában használunk biztosítja, hogy a kiszolgáló rendelkezik-e a `Web-Server` (IIS) szolgáltatás engedélyezve van, és egy egyszerű "Hello World" webhely tartalmának szerepel a `intepub\wwwroot` könyvtárat, az adott kiszolgáló.
+Ebben a gyakorlatban végigvezeti a létrehozásával és alkalmazásával a kívánt állapot konfigurációs szolgáltatása (DSC) konfigurációs kezdetétől a végéig.
+A példában használjuk biztosítja, hogy a kiszolgáló rendelkezik-e a `Web-Server` (IIS) engedélyezve van, és egy egyszerű "Hello, World" webhely tartalmának megtalálható-e a `inetpub\wwwroot` mappában található a kiszolgálón.
 
-DSC és működésének áttekintését lásd: [Desired State Configuration áttekintése döntéshozók számára](../overview/decisionMaker.md).
+A DSC-ből és annak működéséről áttekintését lásd: [kívánt állapot konfigurációs áttekintése döntéshozók](../overview/decisionMaker.md).
 
 ## <a name="requirements"></a>Követelmények
 
-Ez a példa futtatásához szüksége lesz egy Windows Server 2012 vagy újabb verzió és a PowerShell 4.0-s vagy újabb rendszert futtató számítógép.
+A példa futtatásához, szüksége lesz egy Windows Server 2012 vagy újabb és PowerShell 4.0-s vagy újabb rendszert futtató számítógép.
 
-## <a name="write-and-place-the-indexhtm-file"></a>Írhat, és helyezze a index.HTML fájlt
+## <a name="write-and-place-the-indexhtm-file"></a>Írása, és helyezze a index.HTML fájlt
 
-Először a HTML-fájl, amely a webhely tartalmát, ezzel hozunk létre.
+Először létrehozunk fogjuk használni, a webhely tartalmát a HTML-fájlba.
 
 A legfelső szintű mappában hozza létre a `test`.
 
@@ -39,11 +39,11 @@ Egy szövegszerkesztőben írja be a következőket:
 
 Mentse ezt `index.htm` a a `test` korábban létrehozott mappába.
 
-## <a name="write-the-configuration"></a>A konfiguráció írása
+## <a name="write-the-configuration"></a>A konfiguráció írásakor
 
-A [DSC-konfiguráció](../configurations/configurations.md) egy külön PowerShell-függvény, amely meghatározza, hogyan szeretné konfigurálni egy vagy több cél számítógépek (csomópontok).
+A [DSC-konfiguráció](../configurations/configurations.md) különleges PowerShell függvény, amely meghatározza, hogyan szeretné konfigurálni egy vagy több cél számítógépek (csomópontok).
 
-A PowerShell ISE-ben írja be a következőt:
+A PowerShell ISE írja be a következőt:
 
 ```powershell
 Configuration WebsiteTest {
@@ -70,27 +70,27 @@ Configuration WebsiteTest {
 }
 ```
 
-Mentse a fájlt az `WebsiteTest.ps1`.
+Mentse a fájlt `WebsiteTest.ps1`.
 
-Láthatja, hogy hasonlóan néz ki egy PowerShell-függvény, a kulcsszó azonban kiegészül **konfigurációs** előtt a függvény nevét használja.
+Láthatja, hogy úgy tűnik, a kulcsszó azonban kiegészül a PowerShell függvény **konfigurációs** a függvény neve előtt használt.
 
-A **csomópont** letiltása, adja meg a célcsomópont konfigurálását, ebben az esetben `localhost`.
+A **csomópont** blokk megadja a célcsomópont konfigurálását, ebben az esetben `localhost`.
 
-A konfiguráció meghívja a két [erőforrások](../resources/resources.md), **WindowsFeature** és **fájl**.
-Erőforrások teheti meg, hiszen a munkát, a célcsomópont a konfiguráció által meghatározott állapotban van.
+A konfigurációs meghívja a két [erőforrások](../resources/resources.md), **WindowsFeature** és **fájl**.
+Erőforrások munkájuk a annak biztosítására, hogy, hogy a célcsomópont a konfiguráció által meghatározott állapotban van.
 
-## <a name="compile-the-configuration"></a>A konfiguráció fordítása
+## <a name="compile-the-configuration"></a>A konfiguráció-fordítási
 
-DSC csomópont alkalmazandó konfiguráció azt először kell összeállítani egy MOF-fájlba.
-Ehhez futtassa a konfiguráció, például egy függvényt.
-A PowerShell-konzolt ugyanabba a mappába, ahová mentette a konfiguráció keresse meg és futtassa a következő parancsokat egy MOF-fájlba konfiguráció fordítása:
+A DSC-konfiguráció egy csomópont alkalmazandó azt kell először fordítható MOF-fájlt.
+Ehhez futtassa a konfiguráció, például egy olyan függvényt.
+PowerShell-konzolban navigáljon a ugyanabba a mappába, ahová menteni szeretné a konfigurációt, és futtassa az alábbi parancsokat a MOF-fájlba konfiguráció-fordítási:
 
 ```powershell
 . .\WebsiteTest.ps1
 WebsiteTest
 ```
 
-Ez létrehozza a következő kimenet:
+Ezt követően a következő az alábbiakat:
 
 ```
 Directory: C:\ConfigurationTest\WebsiteTest
@@ -101,34 +101,34 @@ Mode                LastWriteTime         Length Name
 -a----        3/13/2017   5:20 PM           2746 localhost.mof
 ```
 
-Az első sor elérhetővé teszi a konfigurációs funkció a konzolon.
-A második sor fut, a konfigurációt.
-Az eredménye, hogy egy új mappát nevű `WebsiteTest` jön létre, az aktuális mappa egy almappájában.
-A `WebsiteTest` mappa tartalmaz egy fájlt `localhost.mof`.
-Ezt a fájlt, majd alkalmazható a cél csomópontra.
+Az első sor elérhetővé teszi a konfigurációs függvény a konzolon.
+A második sor fut, a konfiguráció.
+Az eredménye, hogy egy új mappát nevű `WebsiteTest` megegyezik az aktuális mappában jön létre.
+A `WebsiteTest` mappa tartalmaz egy nevű fájlt `localhost.mof`.
+Ezt a fájlt, majd a célcsomópont alkalmazhatja.
 
 ## <a name="apply-the-configuration"></a>A konfiguráció alkalmazásához
 
-Most, hogy a lefordított MOF, alkalmazhat a konfigurációt a célcsomópont (ebben az esetben az a helyi számítógép) meghívásával a [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) parancsmagot.
+Most, hogy a lefordított MOF, alkalmazhat a konfiguráció célcsomóponton (ebben az esetben, a helyi számítógép) meghívásával a [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) parancsmag.
 
-A `Start-DscConfiguration` arra utasítja a parancsmag a [helyi Configuration Manager (LCM) Konfigurálása](../managing-nodes/metaConfig.md), azaz a a alkalmazni a konfigurációt a DSC motor.
-Az LCM Konfigurálása a alkalmazni a konfigurációt a DSC-erőforrások hívása működik.
+A `Start-DscConfiguration` parancsmag közli a [helyi Configuration Manager (LCM)](../managing-nodes/metaConfig.md), vagyis a DSC-ből, a beállítások-motor.
+A LCM e történt a DSC-erőforrások, a beállítások a munkáját.
 
-Az a PowerShell-konzolt keresse meg ugyanabba a mappába, ahová mentette a konfigurációt, és futtassa a következő parancsot:
+PowerShell-konzolban navigáljon a ugyanabba a mappába, ahová menteni szeretné a konfigurációt, és futtassa a következő parancsot:
 
 ```powershell
 Start-DscConfiguration .\WebsiteTest
 ```
 
-## <a name="test-the-configuration"></a>A konfiguráció tesztelése
+## <a name="test-the-configuration"></a>Tesztelje a konfigurációt
 
-Hívása a [Get-DscConfigurationStatus](/powershell/module/psdesiredstateconfiguration/get-dscconfigurationstatus) parancsmaggal ellenőrizheti, hogy sikerült-e a konfiguráció.
+Hívása a [Get-DscConfigurationStatus](/powershell/module/psdesiredstateconfiguration/get-dscconfigurationstatus) parancsmag használatával ellenőrizheti, hogy a konfiguráció sikeres volt.
 
-Is tesztelheti az eredményeket közvetlenül, ebben az esetben megkeresve `http://localhost/` egy webböngészőben.
-Ez a példa első lépéseként kell megjelennie a "Hello World" HTML-lap hozott létre.
+Is tesztelheti az eredmények közvetlenül, ebben az esetben tallózással `http://localhost/` egy webböngészőben.
+Ez a példa első lépéseként meg kell jelennie a létrehozott "Hello World" HTML-lapon.
 
 ## <a name="next-steps"></a>További lépések
 
-- További információk a DSC-konfigurációk [DSC-konfigurációk](../configurations/configurations.md).
-- Megtudhatja, milyen DSC-erőforrás áll rendelkezésre, és hogyan hozhat létre egyéni DSC-erőforrásokat, [DSC-erőforrások](../resources/resources.md).
-- DSC-konfigurációkat és erőforrásokat a [PowerShell-galériából](https://www.powershellgallery.com/).
+- További információk a DSC-konfigurációk [a DSC-konfigurációk](../configurations/configurations.md).
+- Milyen DSC erőforrások elérhetők, és egyéni DSC erőforrások létrehozása [DSC erőforrások](../resources/resources.md).
+- A DSC-konfigurációk és az erőforrások megkeresése a [PowerShell-galériában](https://www.powershellgallery.com/).
