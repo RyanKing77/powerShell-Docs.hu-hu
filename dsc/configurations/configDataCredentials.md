@@ -1,46 +1,46 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, a konfigurációt, a beállítása
-title: A konfigurációs adatok hitelesítő adatok beállításai
+keywords: a DSC, a powershell, a konfiguráció, a beállítása
+title: Konfigurációs adatokat a hitelesítő adatok beállításai
 ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
+ms.lasthandoff: 02/18/2019
 ms.locfileid: "55686375"
 ---
-# <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="7c454-103">A konfigurációs adatok hitelesítő adatok beállításai</span><span class="sxs-lookup"><span data-stu-id="7c454-103">Credentials Options in Configuration Data</span></span>
+# <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="4da72-103">Konfigurációs adatokat a hitelesítő adatok beállításai</span><span class="sxs-lookup"><span data-stu-id="4da72-103">Credentials Options in Configuration Data</span></span>
 
-><span data-ttu-id="7c454-104">Érvényes: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="7c454-104">Applies To: Windows PowerShell 5.0</span></span>
+><span data-ttu-id="4da72-104">Érvényes: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="4da72-104">Applies To: Windows PowerShell 5.0</span></span>
 
-## <a name="plain-text-passwords-and-domain-users"></a><span data-ttu-id="7c454-105">Egyszerű szöveges jelszavak és a tartományi felhasználók</span><span class="sxs-lookup"><span data-stu-id="7c454-105">Plain Text Passwords and Domain Users</span></span>
+## <a name="plain-text-passwords-and-domain-users"></a><span data-ttu-id="4da72-105">Egyszerű szöveges jelszavak és a tartományi felhasználók</span><span class="sxs-lookup"><span data-stu-id="4da72-105">Plain Text Passwords and Domain Users</span></span>
 
-<span data-ttu-id="7c454-106">DSC-konfigurációkat titkosítás nélküli hitelesítő adatot tartalmazó egyszerű szöveges jelszavak kapcsolatos hibaüzenet hoz létre.</span><span class="sxs-lookup"><span data-stu-id="7c454-106">DSC configurations containing a credential without encryption will generate an error message about plain text passwords.</span></span>
-<span data-ttu-id="7c454-107">DSC is generál egy figyelmeztetés, tartományi hitelesítő adatok használata esetén.</span><span class="sxs-lookup"><span data-stu-id="7c454-107">Also, DSC will generate a warning when using domain credentials.</span></span>
-<span data-ttu-id="7c454-108">Le ezeket a hibaüzenetek és figyelmeztető üzenetek használata a DSC-konfigurációs adatok kulcsszavakat:</span><span class="sxs-lookup"><span data-stu-id="7c454-108">To suppress these error and warning messages use the DSC configuration data keywords:</span></span>
+<span data-ttu-id="4da72-106">A DSC-konfigurációk titkosítás nélkül hitelesítő adatokat tartalmazó hoz létre egy egyszerű szöveges jelszavak hibaüzenet.</span><span class="sxs-lookup"><span data-stu-id="4da72-106">DSC configurations containing a credential without encryption will generate an error message about plain text passwords.</span></span>
+<span data-ttu-id="4da72-107">Is DSC állít elő egy figyelmeztetés, ha a tartományi hitelesítő adatok használatával.</span><span class="sxs-lookup"><span data-stu-id="4da72-107">Also, DSC will generate a warning when using domain credentials.</span></span>
+<span data-ttu-id="4da72-108">Ne jelenjen meg többé a hibaüzenetek és figyelmeztető üzenetek használja a DSC-konfigurációs adatok kulcsszavak:</span><span class="sxs-lookup"><span data-stu-id="4da72-108">To suppress these error and warning messages use the DSC configuration data keywords:</span></span>
 
-- <span data-ttu-id="7c454-109">**PsDscAllowPlainTextPassword**</span><span class="sxs-lookup"><span data-stu-id="7c454-109">**PsDscAllowPlainTextPassword**</span></span>
-- <span data-ttu-id="7c454-110">**PsDscAllowDomainUser**</span><span class="sxs-lookup"><span data-stu-id="7c454-110">**PsDscAllowDomainUser**</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="7c454-111">Nem titkosított szöveges jelszavak tárolására és továbbítására használata általában nem biztonságos.</span><span class="sxs-lookup"><span data-stu-id="7c454-111">Storing/transmitting plaintext passwords unencrypted is generally not secure.</span></span> <span data-ttu-id="7c454-112">Hitelesítő adatok védelme az ebben a témakörben ismertetett technikák használatával használata javasolt.</span><span class="sxs-lookup"><span data-stu-id="7c454-112">Securing credentials by using the techniques covered later in this topic is recommended.</span></span>
-> <span data-ttu-id="7c454-113">Az Azure Automation DSC szolgáltatás lehetővé teszi, hogy központilag kezelheti a lefordított konfigurációk és biztonságosan tárolt hitelesítő adatokat.</span><span class="sxs-lookup"><span data-stu-id="7c454-113">The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.</span></span>
-> <span data-ttu-id="7c454-114">Információkért lásd: [DSC-konfigurációk fordítása / hitelesítő objektumai](/azure/automation/automation-dsc-compile#credential-assets)</span><span class="sxs-lookup"><span data-stu-id="7c454-114">For information, see: [Compiling DSC Configurations / Credential Assets](/azure/automation/automation-dsc-compile#credential-assets)</span></span>
-
-## <a name="handling-credentials-in-dsc"></a><span data-ttu-id="7c454-115">A DSC hitelesítő adatok kezelése</span><span class="sxs-lookup"><span data-stu-id="7c454-115">Handling Credentials in DSC</span></span>
-
-<span data-ttu-id="7c454-116">DSC-konfiguráció erőforrásokat futtató `Local System` alapértelmezés szerint.</span><span class="sxs-lookup"><span data-stu-id="7c454-116">DSC configuration resources run as `Local System` by default.</span></span>
-<span data-ttu-id="7c454-117">Azonban bizonyos erőforrások szükséges hitelesítő adatokat, például amikor a `Package` erőforrás van szüksége egy adott felhasználói fiók alatt a szoftverek telepítését.</span><span class="sxs-lookup"><span data-stu-id="7c454-117">However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.</span></span>
-
-<span data-ttu-id="7c454-118">Korábbi erőforrást használja, a szokott `Credential` kezeléséhez, ez a tulajdonság neve.</span><span class="sxs-lookup"><span data-stu-id="7c454-118">Earlier resources used a hard-coded `Credential` property name to handle this.</span></span>
-<span data-ttu-id="7c454-119">A WMF 5.0 hozzáadva egy automatikus `PsDscRunAsCredential` tulajdonság minden erőforráshoz.</span><span class="sxs-lookup"><span data-stu-id="7c454-119">WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources.</span></span>
-<span data-ttu-id="7c454-120">További információ `PsDscRunAsCredential`, lásd: [DSC futtatása felhasználói hitelesítő adatokkal](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="7c454-120">For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).</span></span>
-<span data-ttu-id="7c454-121">Egyéni erőforrásokat és újabb tulajdonsággal a automatikus létrehozása a hitelesítő adatokat a saját tulajdonság helyett.</span><span class="sxs-lookup"><span data-stu-id="7c454-121">Newer resources and custom resources can use this automatic property instead of creating their own property for credentials.</span></span>
+- <span data-ttu-id="4da72-109">**PsDscAllowPlainTextPassword**</span><span class="sxs-lookup"><span data-stu-id="4da72-109">**PsDscAllowPlainTextPassword**</span></span>
+- <span data-ttu-id="4da72-110">**PsDscAllowDomainUser**</span><span class="sxs-lookup"><span data-stu-id="4da72-110">**PsDscAllowDomainUser**</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="7c454-122">Bizonyos erőforrások kialakítása több hitelesítő adatok használata valamilyen konkrét érv amellett, és a saját hitelesítő adat tulajdonságainak rendelkeznek.</span><span class="sxs-lookup"><span data-stu-id="7c454-122">The design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.</span></span>
+> <span data-ttu-id="4da72-111">Egyszerű szöveges jelszavak titkosítás nélkül tárolja/továbbítása általában nem biztonságos.</span><span class="sxs-lookup"><span data-stu-id="4da72-111">Storing/transmitting plaintext passwords unencrypted is generally not secure.</span></span> <span data-ttu-id="4da72-112">Ebben a témakörben ismertetett módszerek használatával biztonságossá tétele a hitelesítő adatok használata ajánlott.</span><span class="sxs-lookup"><span data-stu-id="4da72-112">Securing credentials by using the techniques covered later in this topic is recommended.</span></span>
+> <span data-ttu-id="4da72-113">Az Azure Automation DSC szolgáltatás konfigurációk fordítása és biztonságosan tárolt hitelesítő adatok központi kezelését teszi lehetővé.</span><span class="sxs-lookup"><span data-stu-id="4da72-113">The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.</span></span>
+> <span data-ttu-id="4da72-114">Információkért lásd: [A DSC-konfigurációk fordítása / hitelesítőadat-eszközök](/azure/automation/automation-dsc-compile#credential-assets)</span><span class="sxs-lookup"><span data-stu-id="4da72-114">For information, see: [Compiling DSC Configurations / Credential Assets](/azure/automation/automation-dsc-compile#credential-assets)</span></span>
 
-<span data-ttu-id="7c454-123">A rendelkezésre álló hitelesítő adat található erőforrás tulajdonságainak bármelyikkel `Get-DscResource -Name ResourceName -Syntax` vagy az ISE-ben az Intellisense (`CTRL+SPACE`).</span><span class="sxs-lookup"><span data-stu-id="7c454-123">To find the available credential properties on a resource use either `Get-DscResource -Name ResourceName -Syntax` or the Intellisense in the ISE (`CTRL+SPACE`).</span></span>
+## <a name="handling-credentials-in-dsc"></a><span data-ttu-id="4da72-115">A DSC hitelesítő adatok kezelése</span><span class="sxs-lookup"><span data-stu-id="4da72-115">Handling Credentials in DSC</span></span>
+
+<span data-ttu-id="4da72-116">A DSC-konfiguráció erőforrások futtató `Local System` alapértelmezés szerint.</span><span class="sxs-lookup"><span data-stu-id="4da72-116">DSC configuration resources run as `Local System` by default.</span></span>
+<span data-ttu-id="4da72-117">Azonban bizonyos erőforrások szükséges hitelesítő adatokat, például amikor a `Package` egy adott felhasználói fiókhoz tartozó szoftver telepítéséhez szükséges erőforrás.</span><span class="sxs-lookup"><span data-stu-id="4da72-117">However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.</span></span>
+
+<span data-ttu-id="4da72-118">Korábbi erőforrást használja a kódolt `Credential` kezeléséhez, ez a tulajdonság neve.</span><span class="sxs-lookup"><span data-stu-id="4da72-118">Earlier resources used a hard-coded `Credential` property name to handle this.</span></span>
+<span data-ttu-id="4da72-119">WMF 5.0 hozzáadott automatikus `PsDscRunAsCredential` összes erőforrás tulajdonság.</span><span class="sxs-lookup"><span data-stu-id="4da72-119">WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources.</span></span>
+<span data-ttu-id="4da72-120">További információ `PsDscRunAsCredential`, lásd: [felhasználói hitelesítő adatokkal rendelkező futtató DSC](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="4da72-120">For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="4da72-121">Egyéni erőforrásokat és újabb tulajdonsággal Ez automatikus létrehozása a hitelesítő adatokat a saját tulajdonság helyett.</span><span class="sxs-lookup"><span data-stu-id="4da72-121">Newer resources and custom resources can use this automatic property instead of creating their own property for credentials.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="4da72-122">Az egyes erőforrások terv bizonyos okból többféle hitelesítő adatot használnak, és saját hitelesítő adat tulajdonságokkal rendelkeznek.</span><span class="sxs-lookup"><span data-stu-id="4da72-122">The design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.</span></span>
+
+<span data-ttu-id="4da72-123">A rendelkezésre álló hitelesítő adat található erőforrás tulajdonságainak bármelyikével `Get-DscResource -Name ResourceName -Syntax` vagy az Intellisense a ISE (`CTRL+SPACE`).</span><span class="sxs-lookup"><span data-stu-id="4da72-123">To find the available credential properties on a resource use either `Get-DscResource -Name ResourceName -Syntax` or the Intellisense in the ISE (`CTRL+SPACE`).</span></span>
 
 ```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
@@ -58,26 +58,26 @@ Group [String] #ResourceName
 }
 ```
 
-<span data-ttu-id="7c454-124">Ez a példa egy [csoport](../resources/resources.md) erőforrásban a `PSDesiredStateConfiguration` DSC-erőforrás beépített modul.</span><span class="sxs-lookup"><span data-stu-id="7c454-124">This example uses a [Group](../resources/resources.md) resource from the `PSDesiredStateConfiguration` built-in DSC resource module.</span></span>
-<span data-ttu-id="7c454-125">Azt is létre helyi csoportok és tagok hozzáadása vagy eltávolítása.</span><span class="sxs-lookup"><span data-stu-id="7c454-125">It can create local groups and add or remove members.</span></span>
-<span data-ttu-id="7c454-126">Mindkettő elfogadja a `Credential` tulajdonság és az automatikus `PsDscRunAsCredential` tulajdonság.</span><span class="sxs-lookup"><span data-stu-id="7c454-126">It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.</span></span>
-<span data-ttu-id="7c454-127">Azonban az erőforrás csak használja a `Credential` tulajdonság.</span><span class="sxs-lookup"><span data-stu-id="7c454-127">However, the resource only uses the `Credential` property.</span></span>
+<span data-ttu-id="4da72-124">Ez a példa egy [csoport](../resources/resources.md) erőforrást a `PSDesiredStateConfiguration` DSC beépített erőforrás-modul.</span><span class="sxs-lookup"><span data-stu-id="4da72-124">This example uses a [Group](../resources/resources.md) resource from the `PSDesiredStateConfiguration` built-in DSC resource module.</span></span>
+<span data-ttu-id="4da72-125">Ez lehet helyi csoportok létrehozása és tagok hozzáadása vagy eltávolítása.</span><span class="sxs-lookup"><span data-stu-id="4da72-125">It can create local groups and add or remove members.</span></span>
+<span data-ttu-id="4da72-126">Mindkét fogadja el a `Credential` tulajdonság és az automatikus `PsDscRunAsCredential` tulajdonság.</span><span class="sxs-lookup"><span data-stu-id="4da72-126">It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.</span></span>
+<span data-ttu-id="4da72-127">Azonban, hogy az erőforrás használja-e csak a `Credential` tulajdonság.</span><span class="sxs-lookup"><span data-stu-id="4da72-127">However, the resource only uses the `Credential` property.</span></span>
 
-<span data-ttu-id="7c454-128">További információ a `PsDscRunAsCredential` tulajdonságot használja, lásd: [DSC futtatása felhasználói hitelesítő adatokkal](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="7c454-128">For more information about the `PsDscRunAsCredential` property, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="4da72-128">További információ a `PsDscRunAsCredential` tulajdonság, lásd: [felhasználói hitelesítő adatokkal rendelkező futtató DSC](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="4da72-128">For more information about the `PsDscRunAsCredential` property, see [Running DSC with user credentials](runAsUser.md).</span></span>
 
-## <a name="example-the-group-resource-credential-property"></a><span data-ttu-id="7c454-129">Példa: A csoport erőforrás hitelesítő adatok a tulajdonság</span><span class="sxs-lookup"><span data-stu-id="7c454-129">Example: The Group resource Credential property</span></span>
+## <a name="example-the-group-resource-credential-property"></a><span data-ttu-id="4da72-129">Példa: A Credential tulajdonság csoporterőforrás</span><span class="sxs-lookup"><span data-stu-id="4da72-129">Example: The Group resource Credential property</span></span>
 
-<span data-ttu-id="7c454-130">DSC fut a `Local System`, így már rendelkezik a helyi felhasználók és csoportok módosításához.</span><span class="sxs-lookup"><span data-stu-id="7c454-130">DSC runs under `Local System`, so it already has permissions to change local users and groups.</span></span>
-<span data-ttu-id="7c454-131">Ha a tag hozzáadva egy helyi fiókot, akkor nem hitelesítő adatok nem szükséges.</span><span class="sxs-lookup"><span data-stu-id="7c454-131">If the member added is a local account, then no credential is necessary.</span></span>
-<span data-ttu-id="7c454-132">Ha a `Group` erőforrás egy tartományi fiókot ad a helyi csoport, akkor szükség egy hitelesítő adatot.</span><span class="sxs-lookup"><span data-stu-id="7c454-132">If the `Group` resource adds a domain account to the local group, then a credential is necessary.</span></span>
+<span data-ttu-id="4da72-130">A DSC fut a `Local System`, így az engedélyek módosítása a helyi felhasználók és csoportok már rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="4da72-130">DSC runs under `Local System`, so it already has permissions to change local users and groups.</span></span>
+<span data-ttu-id="4da72-131">Ha a hozzáadott tagja a helyi fiók, akkor nem hitelesítő adatok szükségesek.</span><span class="sxs-lookup"><span data-stu-id="4da72-131">If the member added is a local account, then no credential is necessary.</span></span>
+<span data-ttu-id="4da72-132">Ha a `Group` erőforrás egy olyan tartományi fiók hozzáadása a helyi csoport, akkor szükség a hitelesítő adatokat.</span><span class="sxs-lookup"><span data-stu-id="4da72-132">If the `Group` resource adds a domain account to the local group, then a credential is necessary.</span></span>
 
-<span data-ttu-id="7c454-133">Az Active Directory névtelen lekérdezések nem engedélyezettek.</span><span class="sxs-lookup"><span data-stu-id="7c454-133">Anonymous queries to Active Directory are not allowed.</span></span>
-<span data-ttu-id="7c454-134">A `Credential` tulajdonságát a `Group` erőforrás az Active Directory lekérdezéséhez használt tartományi fiókhoz.</span><span class="sxs-lookup"><span data-stu-id="7c454-134">The `Credential` property of the `Group` resource is the domain account used to query Active Directory.</span></span>
-<span data-ttu-id="7c454-135">A legtöbb célra ez lehet egy általános felhasználói fiókot, mert alapértelmezés szerint a felhasználók *olvasási* nagy része az objektumok az Active Directoryban.</span><span class="sxs-lookup"><span data-stu-id="7c454-135">For most purposes this could be a generic user account, because by default users can *read* most of the objects in Active Directory.</span></span>
+<span data-ttu-id="4da72-133">Az Active Directory névtelen lekérdezések nem engedélyezettek.</span><span class="sxs-lookup"><span data-stu-id="4da72-133">Anonymous queries to Active Directory are not allowed.</span></span>
+<span data-ttu-id="4da72-134">A `Credential` tulajdonsága a `Group` erőforrás lekérdezés Active Directory tartományi fiók.</span><span class="sxs-lookup"><span data-stu-id="4da72-134">The `Credential` property of the `Group` resource is the domain account used to query Active Directory.</span></span>
+<span data-ttu-id="4da72-135">A legtöbb célra ez lehet egy általános felhasználói fiókot, mert alapértelmezés szerint a felhasználók *olvasási* nagy része a objektumok az Active Directoryban.</span><span class="sxs-lookup"><span data-stu-id="4da72-135">For most purposes this could be a generic user account, because by default users can *read* most of the objects in Active Directory.</span></span>
 
-## <a name="example-configuration"></a><span data-ttu-id="7c454-136">Konfigurálása – példa</span><span class="sxs-lookup"><span data-stu-id="7c454-136">Example Configuration</span></span>
+## <a name="example-configuration"></a><span data-ttu-id="4da72-136">Példa konfiguráció</span><span class="sxs-lookup"><span data-stu-id="4da72-136">Example Configuration</span></span>
 
-<span data-ttu-id="7c454-137">Az alábbi példakód egy tartományi felhasználót egy helyi csoport feltöltéséhez használja a DSC:</span><span class="sxs-lookup"><span data-stu-id="7c454-137">The following example code uses DSC to populate a local group with a domain user:</span></span>
+<span data-ttu-id="4da72-137">Az alábbi példakód egy helyi csoport számára a tartományi felhasználók feltöltéséhez DSC használja:</span><span class="sxs-lookup"><span data-stu-id="4da72-137">The following example code uses DSC to populate a local group with a domain user:</span></span>
 
 ```powershell
 Configuration DomainCredentialExample
@@ -103,7 +103,7 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred
 ```
 
-<span data-ttu-id="7c454-138">Ez a kód egy hiba- és a figyelmeztető üzenetet hoz létre:</span><span class="sxs-lookup"><span data-stu-id="7c454-138">This code generates both an error and warning message:</span></span>
+<span data-ttu-id="4da72-138">Ezt a kódot állít elő, egy hibaüzenet és a figyelmeztető üzenet:</span><span class="sxs-lookup"><span data-stu-id="4da72-138">This code generates both an error and warning message:</span></span>
 
 ```
 ConvertTo-MOFInstance : System.InvalidOperationException error processing property 'Credential' OF
@@ -132,20 +132,20 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : FailToProcessConfiguration
 ```
 
-<span data-ttu-id="7c454-139">Ebben a példában két veti fel:</span><span class="sxs-lookup"><span data-stu-id="7c454-139">This example has two issues:</span></span>
+<span data-ttu-id="4da72-139">Ebben a példában két problémákkal rendelkezik:</span><span class="sxs-lookup"><span data-stu-id="4da72-139">This example has two issues:</span></span>
 
-1. <span data-ttu-id="7c454-140">Hiba történt ismerteti, hogy egyszerű szöveges jelszavak használata nem ajánlott</span><span class="sxs-lookup"><span data-stu-id="7c454-140">An error explains that plain text passwords are not recommended</span></span>
-2. <span data-ttu-id="7c454-141">Figyelmeztetés tanácsolja elleni tartományi hitelesítő adatok használatával</span><span class="sxs-lookup"><span data-stu-id="7c454-141">A warning advises against using a domain credential</span></span>
+1. <span data-ttu-id="4da72-140">Hiba ismerteti, hogy a jelszavakat egyszerű szöveges formában nem támogatottak</span><span class="sxs-lookup"><span data-stu-id="4da72-140">An error explains that plain text passwords are not recommended</span></span>
+2. <span data-ttu-id="4da72-141">Figyelmeztetés tesz elérhetővé a tartományi hitelesítő adatokkal szemben</span><span class="sxs-lookup"><span data-stu-id="4da72-141">A warning advises against using a domain credential</span></span>
 
-<span data-ttu-id="7c454-142">A jelzők **PSDSCAllowPlainTextPassword** és **PSDSCAllowDomainUser** mellőzése a hiba és figyelmeztetés, amely tájékoztatja a felhasználót az azzal járó kockázat.</span><span class="sxs-lookup"><span data-stu-id="7c454-142">The flags **PSDSCAllowPlainTextPassword** and **PSDSCAllowDomainUser** suppress the error and warning informing the user of the risk involved.</span></span>
+<span data-ttu-id="4da72-142">A jelzők **PSDSCAllowPlainTextPassword** és **PSDSCAllowDomainUser** hiba és figyelmeztetés, amely tájékoztatja a felhasználót a járulékos kockázatok, elhagyása.</span><span class="sxs-lookup"><span data-stu-id="4da72-142">The flags **PSDSCAllowPlainTextPassword** and **PSDSCAllowDomainUser** suppress the error and warning informing the user of the risk involved.</span></span>
 
-## <a name="psdscallowplaintextpassword"></a><span data-ttu-id="7c454-143">PSDSCAllowPlainTextPassword</span><span class="sxs-lookup"><span data-stu-id="7c454-143">PSDSCAllowPlainTextPassword</span></span>
+## <a name="psdscallowplaintextpassword"></a><span data-ttu-id="4da72-143">PSDSCAllowPlainTextPassword</span><span class="sxs-lookup"><span data-stu-id="4da72-143">PSDSCAllowPlainTextPassword</span></span>
 
-<span data-ttu-id="7c454-144">Az első hibaüzenet-dokumentáció URL-címet tartalmaz.</span><span class="sxs-lookup"><span data-stu-id="7c454-144">The first error message has a URL with documentation.</span></span>
-<span data-ttu-id="7c454-145">Ez a hivatkozás ismerteti a jelszavak titkosítása egy [ConfigurationData](./configData.md) struktúra és a egy tanúsítványt.</span><span class="sxs-lookup"><span data-stu-id="7c454-145">This link explains how to encrypt passwords using a [ConfigurationData](./configData.md) structure and a certificate.</span></span>
-<span data-ttu-id="7c454-146">További információ a tanúsítványok és a DSC [blogbejegyzésből](http://aka.ms/certs4dsc).</span><span class="sxs-lookup"><span data-stu-id="7c454-146">For more information on certificates and DSC [read this post](http://aka.ms/certs4dsc).</span></span>
+<span data-ttu-id="4da72-144">Az első hibaüzenet rendelkezik olyan dokumentáció URL-címe.</span><span class="sxs-lookup"><span data-stu-id="4da72-144">The first error message has a URL with documentation.</span></span>
+<span data-ttu-id="4da72-145">Ez a hivatkozás a jelszavak titkosítása ismerteti egy [ConfigurationData](./configData.md) struktúra és a tanúsítvány.</span><span class="sxs-lookup"><span data-stu-id="4da72-145">This link explains how to encrypt passwords using a [ConfigurationData](./configData.md) structure and a certificate.</span></span>
+<span data-ttu-id="4da72-146">További információ a tanúsítványok és DSC [olvassa el a feladás egy vagy több](http://aka.ms/certs4dsc).</span><span class="sxs-lookup"><span data-stu-id="4da72-146">For more information on certificates and DSC [read this post](http://aka.ms/certs4dsc).</span></span>
 
-<span data-ttu-id="7c454-147">Egyszerű szöveges jelszó kényszerítése, a erőforrás igényel a `PsDscAllowPlainTextPassword` kulcsszót a konfigurációs adatokat a következő szakaszban:</span><span class="sxs-lookup"><span data-stu-id="7c454-147">To force a plain text password, the resource requires the `PsDscAllowPlainTextPassword` keyword in the configuration data section as follows:</span></span>
+<span data-ttu-id="4da72-147">Az erőforrás megköveteli, hogy egy egyszerű szöveges jelszó, a `PsDscAllowPlainTextPassword` kulcsszó a konfigurációs adatokat a következő szakaszban:</span><span class="sxs-lookup"><span data-stu-id="4da72-147">To force a plain text password, the resource requires the `PsDscAllowPlainTextPassword` keyword in the configuration data section as follows:</span></span>
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
@@ -179,9 +179,9 @@ $cd = @{
 DomainCredentialExample -ConfigurationData $cd
 ```
 
-### <a name="localhostmof"></a><span data-ttu-id="7c454-148">localhost.mof</span><span class="sxs-lookup"><span data-stu-id="7c454-148">localhost.mof</span></span>
+### <a name="localhostmof"></a><span data-ttu-id="4da72-148">localhost.mof</span><span class="sxs-lookup"><span data-stu-id="4da72-148">localhost.mof</span></span>
 
-<span data-ttu-id="7c454-149">A **PSDSCAllowPlainTextPassword** jelző megköveteli, hogy a felhasználó elfogadja a MOF-fájlnak egyszerű szöveges jelszavak tárolására kockázatát.</span><span class="sxs-lookup"><span data-stu-id="7c454-149">The **PSDSCAllowPlainTextPassword** flag requires that the user acknowledge the risk of storing plain text passwords in a MOF file.</span></span> <span data-ttu-id="7c454-150">A létrehozott MOF-fájlnak annak ellenére, hogy egy **PSCredential** tulajdonságot tartalmazó objektumra egy **SecureString** lett megadva, a jelszavak továbbra is egyszerű szövegként jelenik meg.</span><span class="sxs-lookup"><span data-stu-id="7c454-150">In the generated MOF file, even though a **PSCredential** object containing a **SecureString** was used, the passwords still appear as plain text.</span></span> <span data-ttu-id="7c454-151">Ez az az egyetlen alkalom, a hitelesítő adatok érhetők el.</span><span class="sxs-lookup"><span data-stu-id="7c454-151">This is the only time the credentials are exposed.</span></span> <span data-ttu-id="7c454-152">Hozzáférjenek a MOF-fájl biztosít, bárki hozzáférhet a rendszergazdai fiókhoz.</span><span class="sxs-lookup"><span data-stu-id="7c454-152">Gaining access to this MOF file gives anyone access to the Administrator account.</span></span>
+<span data-ttu-id="4da72-149">A **PSDSCAllowPlainTextPassword** jelző megköveteli, hogy a felhasználó megerősíti a jelszavakat egyszerű szöveges formában tárolja a MOF-fájlban kockázatát.</span><span class="sxs-lookup"><span data-stu-id="4da72-149">The **PSDSCAllowPlainTextPassword** flag requires that the user acknowledge the risk of storing plain text passwords in a MOF file.</span></span> <span data-ttu-id="4da72-150">A generált MOF-fájlban annak ellenére, hogy egy **PSCredential** objektumot tartalmazó egy **SecureString** lett megadva, a jelszavak továbbra is egyszerű szövegként jelenik meg.</span><span class="sxs-lookup"><span data-stu-id="4da72-150">In the generated MOF file, even though a **PSCredential** object containing a **SecureString** was used, the passwords still appear as plain text.</span></span> <span data-ttu-id="4da72-151">Ez az az egyetlen alkalom érhetők el a hitelesítő adatokat.</span><span class="sxs-lookup"><span data-stu-id="4da72-151">This is the only time the credentials are exposed.</span></span> <span data-ttu-id="4da72-152">A MOF fájl által biztosított mindenki számára hozzáférést a rendszergazdai fiók hozzáférjenek.</span><span class="sxs-lookup"><span data-stu-id="4da72-152">Gaining access to this MOF file gives anyone access to the Administrator account.</span></span>
 
 ```
 /*
@@ -216,33 +216,33 @@ ModuleVersion = "1.0";
 };
 ```
 
-### <a name="credentials-in-transit-and-at-rest"></a><span data-ttu-id="7c454-153">Hitelesítő adatok átvitel és inaktív</span><span class="sxs-lookup"><span data-stu-id="7c454-153">Credentials in transit and at rest</span></span>
+### <a name="credentials-in-transit-and-at-rest"></a><span data-ttu-id="4da72-153">Az átvitel során, és a hitelesítő adatok</span><span class="sxs-lookup"><span data-stu-id="4da72-153">Credentials in transit and at rest</span></span>
 
-- <span data-ttu-id="7c454-154">A **PSDscAllowPlainTextPassword** jelző lehetővé teszi, hogy a tiszta szöveges jelszavak tartalmazó MOF-fájlok összeállítása.</span><span class="sxs-lookup"><span data-stu-id="7c454-154">The **PSDscAllowPlainTextPassword** flag allows the compilation of MOF files that contain passwords in clear text.</span></span>
-  <span data-ttu-id="7c454-155">Intézkedésekre tiszta szöveges jelszavak tartalmazó MOF-fájlok tárolásakor.</span><span class="sxs-lookup"><span data-stu-id="7c454-155">Take precautions when storing MOF files containing clear text passwords.</span></span>
-- <span data-ttu-id="7c454-156">Ha a MOF-fájl kézbesíti a rendszer egy csomópontja **leküldéses** mód, a Rendszerfelügyeleti webszolgáltatások titkosítja a kommunikációt a tiszta szöveges jelszavak védelmére, kivéve, ha az alapértelmezés felülbírálása a **AllowUnencrypted** paraméter.</span><span class="sxs-lookup"><span data-stu-id="7c454-156">When the MOF file is delivered to a Node in **Push** mode, WinRM encrypts the communication to protect the clear text password unless you override the default with the **AllowUnencrypted** parameter.</span></span>
-  - <span data-ttu-id="7c454-157">A MOF-fájlban található, aktívan titkosítása a MOF-tanúsítvánnyal védi, mielőtt egy csomópontjára telepítve van.</span><span class="sxs-lookup"><span data-stu-id="7c454-157">Encrypting the MOF with a certificate protects the MOF file at rest before it has been applied to a node.</span></span>
-- <span data-ttu-id="7c454-158">A **lekéréses** mód, a Windows-lekérési kiszolgálójával, hogy a forgalom az Internet Information Server megadott protokoll használatával titkosítja a HTTPS használatával konfigurálhatja.</span><span class="sxs-lookup"><span data-stu-id="7c454-158">In **Pull** mode, you can configure Windows pull server to use HTTPS to encrypt traffic using the protocol specified in Internet Information Server.</span></span> <span data-ttu-id="7c454-159">További információkért tekintse meg a cikkeket [DSC lekérési ügyfél beállítása](../pull-server/pullclient.md) és [biztonságossá tétele MOF-fájlok tanúsítványokkal](../pull-server/secureMOF.md).</span><span class="sxs-lookup"><span data-stu-id="7c454-159">For more information, see the articles [Setting up a DSC pull client](../pull-server/pullclient.md) and [Securing MOF files with Certificates](../pull-server/secureMOF.md).</span></span>
-  - <span data-ttu-id="7c454-160">Az a [Azure Automation Állapotkonfiguráció](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) szolgáltatás, lekéréses forgalmat a rendszer mindig titkosítja.</span><span class="sxs-lookup"><span data-stu-id="7c454-160">In the [Azure Automation State Configuration](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) service, Pull traffic is always encrypted.</span></span>
-- <span data-ttu-id="7c454-161">Inaktív titkosított MOF-fájlok a csomóponton, a PowerShell 5.0-s verziójától.</span><span class="sxs-lookup"><span data-stu-id="7c454-161">On the Node, MOF files are encrypted at rest Beginning in PowerShell 5.0.</span></span>
-  - <span data-ttu-id="7c454-162">A PowerShell 4.0-s MOF fájlokhoz nem titkosított inaktív, kivéve, ha azok van titkosítva, egy tanúsítványt, ha leküldött vagy lekérte a csomópontra.</span><span class="sxs-lookup"><span data-stu-id="7c454-162">In PowerShell 4.0 MOF files are unencrypted at rest unless they are encrypted with a certificate when they pushed or pulled to the Node.</span></span>
+- <span data-ttu-id="4da72-154">A **PSDscAllowPlainTextPassword** jelző lehetővé teszi, hogy a jelszavakat egyszerű szöveges tartalmazó MOF-fájlok összeállítása.</span><span class="sxs-lookup"><span data-stu-id="4da72-154">The **PSDscAllowPlainTextPassword** flag allows the compilation of MOF files that contain passwords in clear text.</span></span>
+  <span data-ttu-id="4da72-155">Intézkedésekre tiszta szöveges jelszavak tartalmazó MOF-fájlok tárolásakor.</span><span class="sxs-lookup"><span data-stu-id="4da72-155">Take precautions when storing MOF files containing clear text passwords.</span></span>
+- <span data-ttu-id="4da72-156">Ha a a MOF-fájlt egy csomópontot a rendszer **leküldéses** módban, a Rendszerfelügyeleti webszolgáltatások titkosítja a kommunikációt a tiszta szöveges jelszavak védelmére, kivéve, ha felülírja az alapértelmezett a **AllowUnencrypted** paraméter.</span><span class="sxs-lookup"><span data-stu-id="4da72-156">When the MOF file is delivered to a Node in **Push** mode, WinRM encrypts the communication to protect the clear text password unless you override the default with the **AllowUnencrypted** parameter.</span></span>
+  - <span data-ttu-id="4da72-157">A MOF-fájlban található, aktívan tanúsítvánnyal MOF titkosított védi, mielőtt telepítve van a csomópont.</span><span class="sxs-lookup"><span data-stu-id="4da72-157">Encrypting the MOF with a certificate protects the MOF file at rest before it has been applied to a node.</span></span>
+- <span data-ttu-id="4da72-158">A **lekéréses** módban Windows lekérési kiszolgálójával, hogy HTTPS használatával titkosítja a forgalmat az Internet Information Server megadott protokoll használatával konfigurálható.</span><span class="sxs-lookup"><span data-stu-id="4da72-158">In **Pull** mode, you can configure Windows pull server to use HTTPS to encrypt traffic using the protocol specified in Internet Information Server.</span></span> <span data-ttu-id="4da72-159">További információkért lásd: a cikkek [ügyféltelepítéshez DSC lekérési](../pull-server/pullclient.md) és [biztonságossá tétele MOF-fájlok tanúsítványokkal](../pull-server/secureMOF.md).</span><span class="sxs-lookup"><span data-stu-id="4da72-159">For more information, see the articles [Setting up a DSC pull client](../pull-server/pullclient.md) and [Securing MOF files with Certificates](../pull-server/secureMOF.md).</span></span>
+  - <span data-ttu-id="4da72-160">Az a [Azure Automation Állapotkonfiguráció](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) szolgáltatás, lekéréses mindig titkosítja a forgalmat.</span><span class="sxs-lookup"><span data-stu-id="4da72-160">In the [Azure Automation State Configuration](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) service, Pull traffic is always encrypted.</span></span>
+- <span data-ttu-id="4da72-161">A csomópont MOF-fájlok titkosított aktívan PowerShell 5.0 kezdve.</span><span class="sxs-lookup"><span data-stu-id="4da72-161">On the Node, MOF files are encrypted at rest Beginning in PowerShell 5.0.</span></span>
+  - <span data-ttu-id="4da72-162">A PowerShell 4.0 MOF fájlok titkosítatlan aktívan kivéve, ha azok titkosíthatók a tanúsítvánnyal leküldött, vagy le kell a csomópontot.</span><span class="sxs-lookup"><span data-stu-id="4da72-162">In PowerShell 4.0 MOF files are unencrypted at rest unless they are encrypted with a certificate when they pushed or pulled to the Node.</span></span>
 
-<span data-ttu-id="7c454-163">**Egyszerű szöveges jelszavak miatt a jelentős biztonsági kockázat elkerülése érdekében a Microsoft azt ajánlja.**</span><span class="sxs-lookup"><span data-stu-id="7c454-163">**Microsoft advises to avoid plain text passwords due to the significant security risk.**</span></span>
+<span data-ttu-id="4da72-163">**A Microsoft tesz elérhetővé elkerülése formázatlan szöveges jelszavak miatt a jelentős biztonsági kockázatot jelent.**</span><span class="sxs-lookup"><span data-stu-id="4da72-163">**Microsoft advises to avoid plain text passwords due to the significant security risk.**</span></span>
 
-## <a name="domain-credentials"></a><span data-ttu-id="7c454-164">Tartományi hitelesítő adatok</span><span class="sxs-lookup"><span data-stu-id="7c454-164">Domain Credentials</span></span>
+## <a name="domain-credentials"></a><span data-ttu-id="4da72-164">Tartományi hitelesítő adatok</span><span class="sxs-lookup"><span data-stu-id="4da72-164">Domain Credentials</span></span>
 
-<span data-ttu-id="7c454-165">A példa konfigurációs parancsprogram újra fut (a vagy titkosítás nélkül), továbbra is figyelmeztetést hoz létre, a használata egy tartományi fiók a hitelesítő adatait nem javasolt.</span><span class="sxs-lookup"><span data-stu-id="7c454-165">Running the example configuration script again (with or without encryption), still generates the warning that using a domain account for a credential is not recommended.</span></span>
-<span data-ttu-id="7c454-166">Helyi fiók használatával kiküszöböli a tartományi hitelesítő adatok, amelyek felhasználhatók a többi kiszolgáló lehetséges vannak kitéve.</span><span class="sxs-lookup"><span data-stu-id="7c454-166">Using a local account eliminates potential exposure of domain credentials that could be used on other servers.</span></span>
+<span data-ttu-id="4da72-165">A példa konfigurációs parancsprogram újra fut (a vagy titkosítás nélkül), továbbra is a figyelmeztetést, hogy egy tartomány használata nem ajánlott a fiókhoz tartozó hitelesítő adatokat állít elő.</span><span class="sxs-lookup"><span data-stu-id="4da72-165">Running the example configuration script again (with or without encryption), still generates the warning that using a domain account for a credential is not recommended.</span></span>
+<span data-ttu-id="4da72-166">Helyi fiók használatával nem tartományi hitelesítő adatok, amelyek felhasználhatók a többi kiszolgáló azok elérhetővé tegyék.</span><span class="sxs-lookup"><span data-stu-id="4da72-166">Using a local account eliminates potential exposure of domain credentials that could be used on other servers.</span></span>
 
-<span data-ttu-id="7c454-167">**Hitelesítő adatok a DSC-erőforrások használatakor egy helyi fiók előnyben részesítése egy tartományi fiókot, amikor csak lehetséges.**</span><span class="sxs-lookup"><span data-stu-id="7c454-167">**When using credentials with DSC resources, prefer a local account over a domain account when possible.**</span></span>
+<span data-ttu-id="4da72-167">**Hitelesítő adatok használata a DSC-erőforrásokkal, inkább egy helyi fiók alatt egy olyan tartományi fiók, amikor lehetséges.**</span><span class="sxs-lookup"><span data-stu-id="4da72-167">**When using credentials with DSC resources, prefer a local account over a domain account when possible.**</span></span>
 
-<span data-ttu-id="7c454-168">Ha van egy "\\"vagy"\@" az a `Username` tartományi fiókként tulajdonság a hitelesítő adatokat, majd a DSC-rendszer kezeli.</span><span class="sxs-lookup"><span data-stu-id="7c454-168">If there is a '\\' or '\@' in the `Username` property of the credential, then DSC will treat it as a domain account.</span></span>
-<span data-ttu-id="7c454-169">Nincs a kivételt a "localhost", "127.0.0.1", és a ":: 1 – az a felhasználó nevét tartomány része.</span><span class="sxs-lookup"><span data-stu-id="7c454-169">There is an exception for "localhost", "127.0.0.1", and "::1" in the domain portion of the user name.</span></span>
+<span data-ttu-id="4da72-168">Ha van egy "\\"vagy"\@" a a `Username` tartományi fiókként tulajdonság a hitelesítő adat, akkor a DSC fogják kezelni.</span><span class="sxs-lookup"><span data-stu-id="4da72-168">If there is a '\\' or '\@' in the `Username` property of the credential, then DSC will treat it as a domain account.</span></span>
+<span data-ttu-id="4da72-169">A "localhost", "127.0.0.1", kivétel és a ":: 1" a felhasználónév, a tartomány része.</span><span class="sxs-lookup"><span data-stu-id="4da72-169">There is an exception for "localhost", "127.0.0.1", and "::1" in the domain portion of the user name.</span></span>
 
-## <a name="psdscallowdomainuser"></a><span data-ttu-id="7c454-170">PSDscAllowDomainUser</span><span class="sxs-lookup"><span data-stu-id="7c454-170">PSDscAllowDomainUser</span></span>
+## <a name="psdscallowdomainuser"></a><span data-ttu-id="4da72-170">PSDscAllowDomainUser</span><span class="sxs-lookup"><span data-stu-id="4da72-170">PSDscAllowDomainUser</span></span>
 
-<span data-ttu-id="7c454-171">A DSC a `Group` erőforrás a fenti példában egy Active Directory-tartomány lekérdezése *igényel* egy tartományi fiókot.</span><span class="sxs-lookup"><span data-stu-id="7c454-171">In the DSC `Group` resource example above, querying an Active Directory domain *requires* a domain account.</span></span>
-<span data-ttu-id="7c454-172">Ebben az esetben adja hozzá a `PSDscAllowDomainUser` tulajdonságot a `ConfigurationData` letiltása az alábbiak szerint:</span><span class="sxs-lookup"><span data-stu-id="7c454-172">In this case add the `PSDscAllowDomainUser` property to the `ConfigurationData` block as follows:</span></span>
+<span data-ttu-id="4da72-171">A DSC a `Group` erőforrás a fenti példában egy Active Directory-tartomány lekérdezése *szükséges* egy olyan tartományi fiók.</span><span class="sxs-lookup"><span data-stu-id="4da72-171">In the DSC `Group` resource example above, querying an Active Directory domain *requires* a domain account.</span></span>
+<span data-ttu-id="4da72-172">Ebben az esetben vegye fel a `PSDscAllowDomainUser` tulajdonságot a `ConfigurationData` blokkolja az alábbiak szerint:</span><span class="sxs-lookup"><span data-stu-id="4da72-172">In this case add the `PSDscAllowDomainUser` property to the `ConfigurationData` block as follows:</span></span>
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
@@ -277,4 +277,4 @@ $cd = @{
 DomainCredentialExample -ConfigurationData $cd
 ```
 
-<span data-ttu-id="7c454-173">Most már a konfigurációs parancsfájlt a MOF-fájlt, hibák és figyelmeztetések nélkül hoz létre.</span><span class="sxs-lookup"><span data-stu-id="7c454-173">Now the configuration script will generate the MOF file with no errors or warnings.</span></span>
+<span data-ttu-id="4da72-173">A konfigurációs parancsfájl most hibák és figyelmeztetések nélkül a MOF-fájlt hoz létre.</span><span class="sxs-lookup"><span data-stu-id="4da72-173">Now the configuration script will generate the MOF file with no errors or warnings.</span></span>
