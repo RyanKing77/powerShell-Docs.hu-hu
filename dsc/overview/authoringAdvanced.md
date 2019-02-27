@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
-title: Továbbfejlesztett DSC-készítés összeállításhoz és együttműködéshez
-ms.openlocfilehash: 3e40ba94de0a53c1c9663553c4ec443b5e0df3fd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+title: A DSC-szerepkör a CI/CD-folyamat ismertetése
+ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
+ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687173"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56803378"
 ---
-# <a name="advanced-dsc-authoring-for-composition-and-collaboration"></a>Továbbfejlesztett DSC-készítés összeállításhoz és együttműködéshez
+# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>A DSC-szerepkör a CI/CD-folyamat ismertetése
 
 Ez a cikk ismerteti a típusú megközelítések is elérhetők a konfigurációkat és erőforrásokat.
 A cél az egyes forgatókönyvek megegyezik, ha több konfigurációt elérni a kiszolgáló telepítési befejezési állapota előnyben részesített csökkenthető.
@@ -22,7 +22,7 @@ Mindegyik megközelítésnek, beleértve az előnyökről és kockázatokról k�
 
 Nincsenek a helyi Configuration Manager engedélyezéséhez a fogalom a beépített két megoldást:
 
-| Koncepció | Részletes információk
+| Fogalom | Részletes információk
 |-|-
 | Részleges konfigurációk | [Dokumentáció](../pull-server/partialConfigs.md)
 | Összetett erőforrások | [Dokumentáció](../resources/authoringResourceComposite.md)
