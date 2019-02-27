@@ -1,0 +1,53 @@
+---
+title: A parancsmag attribútumok |} A Microsoft Docs
+ms.custom: ''
+ms.date: 09/13/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: article
+helpviewer_keywords:
+- attributes [PowerShell SDK]
+- attributes [PowerShell SDK], described
+ms.assetid: d3f4f652-d929-4c27-9358-9baa390a094c
+caps.latest.revision: 14
+ms.openlocfilehash: b06faf7204213b383b25685837941ad63dcb225b
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "56845352"
+---
+# <a name="cmdlet-attributes"></a><span data-ttu-id="7ca33-102">Parancsmag-attribútumok</span><span class="sxs-lookup"><span data-stu-id="7ca33-102">Cmdlet Attributes</span></span>
+
+<span data-ttu-id="7ca33-103">Windows PowerShell határozza meg, hogy számos attribútum, amellyel közös funkciók hozzáadása a parancsmagokat a funkció a saját kód implementálása nélkül.</span><span class="sxs-lookup"><span data-stu-id="7ca33-103">Windows PowerShell defines several attributes that you can use to add common functionality to your cmdlets without implementing that functionality within your own code.</span></span> <span data-ttu-id="7ca33-104">Ez magában foglalja a parancsmag attribútum, amely azonosítja az OutputType attribútummal, amely meghatározza a .NET-keretrendszer típusok, a parancsmag a paraméter-attribútumhoz, amely azonosítja a nyilvános tulajdonságok, a parancsmag által visszaadott parancsmag osztályok, a Microsoft .NET-keretrendszer osztály paraméterek és további.</span><span class="sxs-lookup"><span data-stu-id="7ca33-104">This includes the Cmdlet attribute that identifies a Microsoft .NET Framework class as a cmdlet class, the OutputType attribute that specifies the .NET Framework types returned by the cmdlet, the Parameter attribute that identifies public properties as cmdlet parameters, and more.</span></span>
+
+## <a name="in-this-section"></a><span data-ttu-id="7ca33-105">A szakasz tartalma</span><span class="sxs-lookup"><span data-stu-id="7ca33-105">In This Section</span></span>
+
+<span data-ttu-id="7ca33-106">[A parancsmag Code attribútumok](./attributes-in-cmdlet-code.md) attribútumok használata a kódban a parancsmag előnyeit ismerteti.</span><span class="sxs-lookup"><span data-stu-id="7ca33-106">[Attributes in Cmdlet Code](./attributes-in-cmdlet-code.md) Describes the benefit of using attributes in cmdlet code.</span></span>
+
+<span data-ttu-id="7ca33-107">[Attribútum típusa](./attribute-types.md) is megadhat egy parancsmag osztály különböző attribútumokat ismerteti.</span><span class="sxs-lookup"><span data-stu-id="7ca33-107">[Attribute Types](./attribute-types.md) Describes the different attributes that can decorate a cmdlet class.</span></span>
+
+<span data-ttu-id="7ca33-108">[Alias típusattribútum-deklaráció](./alias-attribute-declaration.md) parancsmag a paraméter nevének aliasok definiálását mutatja.</span><span class="sxs-lookup"><span data-stu-id="7ca33-108">[Alias Attribute Declaration](./alias-attribute-declaration.md) Describes how to define aliases for a cmdlet parameter name.</span></span>
+
+<span data-ttu-id="7ca33-109">[A parancsmag típusattribútum-deklaráció](./cmdlet-attribute-declaration.md) ismerteti, hogyan lehet a parancsmag egy .NET-keretrendszer osztályt kell definiálni.</span><span class="sxs-lookup"><span data-stu-id="7ca33-109">[Cmdlet Attribute Declaration](./cmdlet-attribute-declaration.md) Describes how to define a .NET Framework class as a cmdlet.</span></span>
+
+<span data-ttu-id="7ca33-110">[Hitelesítőadat-típusattribútum-deklaráció](./credential-attribute-declaration.md) karakterláncot tartalmazó bemeneti való konvertálása támogatása hozzáadása egy [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objektum.</span><span class="sxs-lookup"><span data-stu-id="7ca33-110">[Credential Attribute Declaration](./credential-attribute-declaration.md) Describes how to add support for converting string input into a [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) object.</span></span>
+
+<span data-ttu-id="7ca33-111">[Deklarace OutputType attribútummal](./outputtype-attribute-declaration.md) ismerteti, hogyan lehet a .NET-keretrendszer típusok, a parancsmag által visszaadott adja meg.</span><span class="sxs-lookup"><span data-stu-id="7ca33-111">[OutputType attribute Declaration](./outputtype-attribute-declaration.md) Describes how to specify the .NET Framework types returned by the cmdlet.</span></span>
+
+<span data-ttu-id="7ca33-112">[Deklarace parametru attribútum](./parameter-attribute-declaration.md) ismerteti, hogyan lehet egy parancsmag paramétereinek megadása.</span><span class="sxs-lookup"><span data-stu-id="7ca33-112">[Parameter Attribute Declaration](./parameter-attribute-declaration.md) Describes how to define the parameters of a cmdlet.</span></span>
+
+<span data-ttu-id="7ca33-113">[ValidateCount típusattribútum-deklaráció](./validatecount-attribute-declaration.md) azt ismerteti, hogyan adhat meg, hány argumentumok egy paraméter engedélyezett.</span><span class="sxs-lookup"><span data-stu-id="7ca33-113">[ValidateCount Attribute Declaration](./validatecount-attribute-declaration.md) Describes how to define how many arguments are allowed for a parameter.</span></span>
+
+<span data-ttu-id="7ca33-114">[ValidateLength típusattribútum-deklaráció](./validatelength-attribute-declaration.md) ismerteti, hogyan lehet a hossza (karakter) egy paraméter argumentum megadása.</span><span class="sxs-lookup"><span data-stu-id="7ca33-114">[ValidateLength Attribute Declaration](./validatelength-attribute-declaration.md) Describes how to define the length (in characters) of a parameter argument.</span></span>
+
+<span data-ttu-id="7ca33-115">[ValidatePattern típusattribútum-deklaráció](./validatepattern-attribute-declaration.md) egy paraméter argumentumként a érvényes minták definiálását mutatja.</span><span class="sxs-lookup"><span data-stu-id="7ca33-115">[ValidatePattern Attribute Declaration](./validatepattern-attribute-declaration.md) Describes how to define the valid patterns for a parameter argument.</span></span>
+
+<span data-ttu-id="7ca33-116">[ValidateRange típusattribútum-deklaráció](./validaterange-attribute-declaration.md) ismerteti, hogyan lehet egy paraméterargumentum érvényes tartományának megadása.</span><span class="sxs-lookup"><span data-stu-id="7ca33-116">[ValidateRange Attribute Declaration](./validaterange-attribute-declaration.md) Describes how to define the valid range for a parameter argument.</span></span>
+
+<span data-ttu-id="7ca33-117">[ValidateSet típusattribútum-deklaráció](./validateset-attribute-declaration.md) egy paraméter paraméter lehetséges értékei definiálását mutatja.</span><span class="sxs-lookup"><span data-stu-id="7ca33-117">[ValidateSet Attribute Declaration](./validateset-attribute-declaration.md) Describes how to define the possible values for a parameter argument.</span></span>
+
+## <a name="reference"></a><span data-ttu-id="7ca33-118">Referencia</span><span class="sxs-lookup"><span data-stu-id="7ca33-118">Reference</span></span>
+
+[<span data-ttu-id="7ca33-119">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="7ca33-119">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
