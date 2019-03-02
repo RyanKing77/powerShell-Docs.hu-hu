@@ -2,12 +2,12 @@
 title: PowerShell-fejlesztéshez a Visual Studio Code használatával
 description: PowerShell-fejlesztéshez a Visual Studio Code használatával
 ms.date: 08/06/2018
-ms.openlocfilehash: 03f370d0906790b573ea42290b9ccdec2cf84f2e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686697"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251387"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell-fejlesztéshez a Visual Studio Code használatával
 
@@ -116,17 +116,28 @@ Azt javasoljuk, hogy a Visual Studio Code a következő beállításokat:
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "omnisharp.projectLoadTimeout": 120,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
 }
 ```
+
+Ha nem szeretné ezeket a beállításokat az összes fájltípus hatással, VSCode is lehetővé teszi, hogy nyelvenkénti konfigurációkat. Hozzon létre egy adott nyelvi beállítás beállításait írja a `[<language-name>]` mező. Például:
+
+```json
+"[powershell]": {
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
+}
+```
+
+Fájllal kapcsolatos további információk a VS Code-ban kódolási: [ismertetése fájlkódolás](understanding-file-encoding.md).
 
 ## <a name="debugging-with-visual-studio-code"></a>Hibakeresés a Visual Studio Code-dal
 
 ### <a name="no-workspace-debugging"></a>Nem-munkaterület-hibakeresés
 
-1.9-es verziója a Visual Studio Code-tól a PowerShell-parancsfájlok hibakeresése is a PowerShell-parancsfájlt tartalmazó mappa megnyitása nélkül.
-Nyissa meg a PowerShell-parancsfájl tárolásához a **File -> fájl megnyitása...** , állítson be egy töréspontot sorban (F9 lenyomás), és nyomja le az F5 billentyűt a hibakeresés elindításához.
-A hibakeresési műveletek panelen jelennek meg, amely lehetővé teszi, hogy a hibakeresőt, lépés, folytatása és stop-hibakeresés felosztása kell megjelennie.
+1.9-es verziója a Visual Studio Code-tól a PowerShell-parancsfájlok hibakeresése is a PowerShell-parancsfájlt tartalmazó mappa megnyitása nélkül. Nyissa meg a PowerShell-parancsfájl tárolásához a **File -> fájl megnyitása...** , állítson be egy töréspontot sorban (F9 lenyomás), és nyomja le az F5 billentyűt a hibakeresés elindításához. A hibakeresési műveletek panelen jelennek meg, amely lehetővé teszi, hogy a hibakeresőt, lépés, folytatása és stop-hibakeresés felosztása kell megjelennie.
 
 ### <a name="workspace-debugging"></a>Munkaterület-hibakeresés
 

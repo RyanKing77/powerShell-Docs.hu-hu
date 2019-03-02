@@ -8,47 +8,25 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 71da921b-7c32-4155-b2f8-b19f30ec774d
 caps.latest.revision: 7
-ms.openlocfilehash: 49f6c667b0fd9678586559af39a33f982de0a68c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b1f093de5db364ac806e58c4ed8dbf2948cb6c6
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846710"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251353"
 ---
 # <a name="date-and-time-parameters"></a>Dátum- és időparaméterek
 
 A következő táblázat felsorolja a javasolt nevek és funkciók a paramétereket, dátum és idő adatok kezelésére. Dátum és idő paraméterek jellemzően rögzíti, ha a hiba jön létre vagy érhető el.
 
-Írja be az elért adatok: SwitchParameter
-
-Végrehajtja ezt a paramétert, hogy mikor van megadva a parancsmag végre lesznek hajtva elért erőforrások alapján a megadott dátum és idő alapján a `Before` és `After` paramétereket.
-
-Ha ez a paraméter van megadva, a `Created` és `Modified` kell lennie a paraméterek nem adható meg.
-
-Adattípus: után DateTime
-
-Ezzel a paraméterrel adja meg a dátum és idő, amely után a parancsmag értek megvalósításához. Az a `After` paraméter működjön, a parancsmag is rendelkeznie kell egy `Accessed`, `Created`, vagy `Modified` paraméter. És meg kell arra a paraméterre `true` amikor a parancsmag beszerzését kezdeményezték.
-
-Mielőtt adattípus: DateTime
-
-Ezzel a paraméterrel adja meg a dátum és idő, ameddig a parancsmag értek megvalósításához. Az a `Before` paraméter működjön, a parancsmag is rendelkeznie kell egy `Accessed`, `Created`, vagy `Modified` paraméter. És meg kell arra a paraméterre `true` amikor a parancsmag beszerzését kezdeményezték.
-
-Hozza létre a típusú adatokat: SwitchParameter
-
-Végrehajtja ezt a paramétert, hogy mikor van megadva a parancsmag végre lesznek hajtva a létrehozott erőforrások alapján a megadott dátum és idő alapján a `Before` és `After` paramétereket.
-
-Ha ez a paraméter van megadva, a `Accessed` és `Modified` paraméter megadása nem kötelező.
-
-Pontos adattípus: SwitchParameter
-
-Ez a paraméter valósítja meg, hogy mikor van megadva az erőforrás kifejezés pontosan meg kell egyeznie az erőforrás neve. Ha a paraméter nincs megadva az erőforrás kifejezés és neve nem pontosan egyeznie kell.
-
-Írja be a módosított adatokat: DateTime
-
-Megvalósítani ezt a paramétert, hogy mikor van megadva a parancsmag végre lesznek hajtva megváltozott erőforrásokat alapján a megadott dátum és idő alapján a `Before` és `After` paramétereket.
-
-Ha ez a paraméter van megadva, a `Accessed` és `Created` paraméter megadása nem kötelező.
-
+|Paraméter|Funkció|
+|---|---|
+|**Accessed**<br>Adattípus: SwitchParameter|Végrehajtja ezt a paramétert, hogy mikor van megadva a parancsmag végre lesznek hajtva elért erőforrások alapján a megadott dátum és idő alapján a **előtt** és **után** paramétereket. Ha ez a paraméter van megadva, a **létrehozva** és **módosított** kell lennie a paraméterek nem adható meg.|
+|**Után**<br>Adattípus: DateTime|Ezzel a paraméterrel adja meg a dátum és idő, amely után a parancsmag értek megvalósításához. Az a **után** paraméter működjön, a parancsmag is rendelkeznie kell egy **Accessed**, **létrehozva**, vagy **módosított** paraméter. És meg kell arra a paraméterre **igaz** amikor a parancsmag beszerzését kezdeményezték.|
+|**Mielőtt**<br>Adattípus: DateTime|Ezzel a paraméterrel adja meg a dátum és idő, ameddig a parancsmag értek megvalósításához. Az a **előtt** paraméter működjön, a parancsmag is rendelkeznie kell egy **Accessed**, **létrehozva**, vagy **módosított** paraméter. És meg kell arra a paraméterre **igaz** amikor a parancsmag beszerzését kezdeményezték.|
+|**Létrehozva**<br>Adattípus: SwitchParameter|Végrehajtja ezt a paramétert, hogy mikor van megadva a parancsmag végre lesznek hajtva a létrehozott erőforrások alapján a megadott dátum és idő alapján a **előtt** és **után** paramétereket. Ha ez a paraméter van megadva, a **Accessed** és **módosított** paraméter megadása nem kötelező.|
+|**Pontos**<br>Adattípus: SwitchParameter|Ez a paraméter valósítja meg, hogy mikor van megadva az erőforrás kifejezés pontosan meg kell egyeznie az erőforrás neve. Ha a paraméter nincs megadva az erőforrás kifejezés és neve nem pontosan egyeznie kell.|
+|**Módosította**<br>Adattípus: DateTime|Megvalósítani ezt a paramétert, hogy mikor van megadva a parancsmag végre lesznek hajtva megváltozott erőforrásokat alapján a megadott dátum és idő alapján a **előtt** és **után** paramétereket. Ha ez a paraméter van megadva, a **Accessed** és **létrehozva** paraméter megadása nem kötelező.|
 ## <a name="see-also"></a>Lásd még:
 
 [Parancsmag-paraméterek](./cmdlet-parameters.md)
