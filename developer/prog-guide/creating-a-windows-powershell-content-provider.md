@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 6e5d79487539d4f58922e2686f1fdba08797f305
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5e35d2fdfa4c6bd70c1b69ca1f357ee8d8ebcdc4
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846325"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429975"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Windows PowerShelles tartalomszolgáltató létrehozása
 
 Ez a témakör ismerteti, hogyan hozhat létre egy Windows PowerShell-szolgáltatóban, amely lehetővé teszi a felhasználó a adattárban lévő elemek tartalmának módosítására. Ennek következményeképpen is módosíthatja az elemek tartalma szolgáltató nevezzük Windows PowerShell a tartalomszolgáltatón.
 
 > [!NOTE]
-> Letöltheti a C# forrásfájl (AccessDBSampleProvider06.cs) a szolgáltató a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 > Letöltheti a C# forrásfájl (AccessDBSampleProvider06.cs) a szolgáltató a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > A letöltött forrásfájlok érhetők el a  **\<PowerShell-minták >** könyvtár.
@@ -233,11 +232,9 @@ Teljes minta kódja, lásd: [AccessDbProviderSample06 kódminta](./accessdbprovi
 ## <a name="defining-object-types-and-formatting"></a>Objektumtípusok definiálása és formázása
 
 A szolgáltató írásakor tagok hozzáadása a meglévő objektumok vagy új objektumokat megadása szükség lehet. Ha ezzel végzett, létre kell hoznia egy típusok fájlt, amely a Windows PowerShell használatával azonosíthatja az objektum tagjait, és a egy formátumfájlt, amely meghatározza, hogyan jelenjen meg az objektum. További információkért lásd: [objektumtípusok kiterjesztése és formázás](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-A szolgáltató írásakor tagok hozzáadása a meglévő objektumok vagy új objektumokat megadása szükség lehet. Ha ezzel végzett, létre kell hoznia egy típusok fájlt, amely a Windows PowerShell használatával azonosíthatja az objektum tagjait, és a egy formátumfájlt, amely meghatározza, hogyan jelenjen meg az objektum. További információkért lásd: [objektumtípusok kiterjesztése és formázás](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>A Windows PowerShell-szolgáltató létrehozása
 
-Lásd: [parancsmagok,-szolgáltatók regisztrálása és alkalmazások üzemeltetése](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Lásd: [parancsmagok,-szolgáltatók regisztrálása és alkalmazások üzemeltetése](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>A Windows PowerShell-szolgáltatóban tesztelése
@@ -285,11 +282,7 @@ Country   : USA
 
 [Objektumtípusok kiterjesztése és formázása](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Objektumtípusok kiterjesztése és formázása](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [A navigációs Windows PowerShell-szolgáltatóban megvalósítása](./creating-a-windows-powershell-navigation-provider.md)
-
-[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 066aa188d5d7dfde5af424a3bb8f15ff51c1e936
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cbc8ce0600553f9e9ab973d6f92ea5eafde310e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847480"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430032"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Windows PowerShelles navigációszolgáltató létrehozása
 
 Ez a témakör ismerteti, hogyan hozhat létre egy Windows PowerShell navigációs szolgáltató, amely az adattár navigálhat. Az ilyen típusú szolgáltató támogatja a rekurzív parancsok, a beágyazott tárolók és a relatív elérési utakat.
 
 > [!NOTE]
-> Letöltheti a C# forrásfájl (AccessDBSampleProvider05.cs) a szolgáltató a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 > Letöltheti a C# forrásfájl (AccessDBSampleProvider05.cs) a szolgáltató a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > A letöltött forrásfájlok érhetők el a  **\<PowerShell-minták >** könyvtár.
@@ -186,11 +185,9 @@ Teljes minta kódja, lásd: [AccessDbProviderSample05 kódminta](./accessdbprovi
 ## <a name="defining-object-types-and-formatting"></a>Objektumtípusok definiálása és formázása
 
 Tagok hozzáadása a meglévő objektumok, vagy új objektumokat meghatározásához szolgáltató lehetőség. További információkért lásd:[objektumtípusok kiterjesztése és formázás](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Tagok hozzáadása a meglévő objektumok, vagy új objektumokat meghatározásához szolgáltató lehetőség. További információkért lásd:[objektumtípusok kiterjesztése és formázás](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>A Windows PowerShell-szolgáltató létrehozása
 
-További információkért lásd: [parancsmagjainak regisztrálásához, a szolgáltatók és az alkalmazások üzemeltetése hogyan](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 További információkért lásd: [parancsmagjainak regisztrálásához, a szolgáltatók és az alkalmazások üzemeltetése hogyan](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>A Windows PowerShell-szolgáltatóban tesztelése
@@ -323,11 +320,7 @@ Ha a Windows PowerShell-szolgáltató regisztrálva van a Windows PowerShell-lel
 
 [Objektumtípusok kiterjesztése és formázása](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Objektumtípusok kiterjesztése és formázása](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [Egy tároló Windows PowerShell-szolgáltatóban megvalósítása](./creating-a-windows-powershell-container-provider.md)
-
-[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

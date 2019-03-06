@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide, providers
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
-ms.openlocfilehash: a114a4b0d5a5bfcc0d072f83f0e59ca6d329a172
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 286df63e75d6372cb41c974e60e79b02bd13686e
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851295"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429669"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Windows PowerShell-szolgáltató létrehozása
 
@@ -33,7 +33,6 @@ Windows PowerShell számos szolgáltató (például a fájlrendszer-szolgáltat�
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>A Windows PowerShell-elérési utak használata tárolt adatok elérése
 
-A Windows PowerShell-modult, és parancsokat programozott módon révén Windows PowerShell-elérési utak Windows PowerShell-szolgáltatók érhetők el. A legtöbb esetben az elérési utak a szolgáltatón keresztül az adatok közvetlen elérésére szolgál. Azonban néhány elérési utak feloldható legyen a provider – belső elérési utak, amelyek lehetővé teszik a parancsmag a Windows PowerShell alkalmazásprogramozási felületek (API-k) használata az adatok eléréséhez. Hogyan működnek a Windows PowerShell-szolgáltatók Windows Powershellen belülről kapcsolatos további információkért lásd: [Windows PowerShell működése](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 A Windows PowerShell-modult, és parancsokat programozott módon révén Windows PowerShell-elérési utak Windows PowerShell-szolgáltatók érhetők el. A legtöbb esetben az elérési utak a szolgáltatón keresztül az adatok közvetlen elérésére szolgál. Azonban néhány elérési utak feloldható legyen a provider – belső elérési utak, amelyek lehetővé teszik a parancsmag a Windows PowerShell alkalmazásprogramozási felületek (API-k) használata az adatok eléréséhez. Hogyan működnek a Windows PowerShell-szolgáltatók Windows Powershellen belülről kapcsolatos további információkért lásd: [Windows PowerShell működése](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
 ## <a name="exposing-provider-cmdlets-using-windows-powershell-drives"></a>Meghajtók adatokhoz hozzáférést biztosító szolgáltató parancsmagok Windows PowerShell-lel
@@ -64,8 +63,6 @@ A következő táblázat felsorolja a témakörök, amelyek tartalmazzák a egym
 |[A Windows PowerShell-tulajdonság szolgáltató létrehozása](./creating-a-windows-powershell-property-provider.md)|Ez a témakör bemutatja, hogyan hozhat létre egy Windows PowerShell-szolgáltatóban, amely lehetővé teszi a felhasználó a adattárban lévő elemek tulajdonságainak módosítására.|
 
 ## <a name="see-also"></a>Lásd még:
-
-[Hogyan működik a Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Hogyan működik a Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 

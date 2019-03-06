@@ -2,12 +2,12 @@
 ms.date: 08/09/2017
 keywords: PowerShell, parancsmag, letöltése, telepítése, a telepítő, windows 10, windows 8.1, windows 8.0-s, windows 7
 title: A Windows PowerShell telepítése
-ms.openlocfilehash: 1630ba445c88953b2729232ae7d80afa326f25e6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687327"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429873"
 ---
 # <a name="installing-windows-powershell"></a>A Windows PowerShell telepítése
 
@@ -17,7 +17,7 @@ Ha érdekli a PowerShell 6-os vagy újabb, a PowerShell Core helyett a Windows P
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>A Windows 10-es, 8.1, 8.0-s és 7 PowerShell keresése
 
-Néha keresése a PowerShell konzolt vagy az ISE-ben (integrált parancsfájl-kezelési környezet) a Windows nehézkes lehet, mint a Windows egyik verziójának helyét helyez át a következő.
+Néha keresése a PowerShell konzolt vagy az ISE-ben (integrált parancsfájl-kezelési környezet) a Windows nehézkes lehet, mint a Windows egyik verziójának a helyét helyez át a következő.
 
 Az alábbi táblázatok segítséget PowerShell található Windows-verzióhoz.
 Az itt felsorolt összes verzió az eredeti verzió, mert a kiadott, sem a frissítés.
@@ -70,9 +70,9 @@ Ha a meglévő PowerShell-lel, frissítenie kell a Windows, segítségével az a
 
 Windows | PS 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
 --|--|--|--|--|
-A Windows 10-es (lásd a Note1)<br/>Windows Server 2016 | - | - | - | telepítve van
-Windows 8.1<br/>Windows Server 2012 R2 | - | telepítve van | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
-Windows 8<br/>Windows Server 2012 | telepítve van | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+A Windows 10-es (lásd a Note1)<br/>Windows Server 2016 | - | - | - | Telepítve van
+Windows 8.1<br/>Windows Server 2012 R2 | - | Telepítve van | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 8<br/>Windows Server 2012 | Telepítve van | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
 > [!NOTE]
@@ -85,7 +85,7 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
 
 Ha a keresett **Azure PowerShell-lel**, kezdheti [áttekintése az Azure PowerShell](/powershell/azure/overview).
 
-Ellenkező esetben van, mit érdemes [telepítése és konfigurálása az Azure PowerShell-lel](/powershell/azure/install-azurerm-ps)
+Ellenkező esetben van, mit érdemes [telepítése és konfigurálása az Azure PowerShell-lel](/powershell/azure/install-az-ps)
 
 ## <a name="see-also"></a>Lásd még:
 

@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: 30b4dbcd281f712bba8d8e3540d2282d527388e4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be1446dbd2b244f4752e55c8137433edee8427b0
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851057"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429992"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Windows PowerShelles elemszolgáltató létrehozása
 
 Ez a témakör ismerteti, hogyan hozhat létre egy Windows PowerShell-szolgáltatóban, amely a tárolóban lévő adatok is módosíthatja. Ebben a témakörben a tárolóban lévő adatok elemeinek neve, az "elem" az adatok tárolására. Ennek következményeképpen is módosíthatja a tárolóban lévő adatok szolgáltató nevezzük egy Windows PowerShell-elem szolgáltató.
 
 > [!NOTE]
-> Letöltheti a C# forrásfájl (AccessDBSampleProvider03.cs) a szolgáltató a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 > Letöltheti a C# forrásfájl (AccessDBSampleProvider03.cs) a szolgáltató a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > A letöltött forrásfájlok érhetők el a  **\<PowerShell-minták >** könyvtár.
@@ -88,7 +87,6 @@ A Windows PowerShell-elem szolgáltató is módosíthatja a tárolóban lévő e
 
 ## <a name="checking-for-path-validity"></a>Elérési út érvényességének ellenőrzése
 
-Az adatok egy elem keresésekor a Windows PowerShell-modul bizonyítékot szolgáltat a szolgáltató egy Windows PowerShell elérési útja "PSPath fogalmak" szakaszában meghatározott [Windows PowerShell működése](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). Egy Windows PowerShell-elem szolgáltatót kell ellenőrizni a szintaktikai és Szemantikus végrehajtási által átadott bármilyen útvonalat a [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) metódust. A metódus visszatérése `true` elérési út érvényes, és `false` más módon. Vegye figyelembe, hogy ez a metódus végrehajtása nem ellenőrizze az elérési út szintaktikailag az elem elérési úton, de csak létezik-e és szemantikailag helyes-e lennie.
 Az adatok egy elem keresésekor a Windows PowerShell-modul bizonyítékot szolgáltat a szolgáltató egy Windows PowerShell elérési útja "PSPath fogalmak" szakaszában meghatározott [Windows PowerShell működése](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). Egy Windows PowerShell-elem szolgáltatót kell ellenőrizni a szintaktikai és Szemantikus végrehajtási által átadott bármilyen útvonalat a [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) metódust. A metódus visszatérése `true` elérési út érvényes, és `false` más módon. Vegye figyelembe, hogy ez a metódus végrehajtása nem ellenőrizze az elérési út szintaktikailag az elem elérési úton, de csak létezik-e és szemantikailag helyes-e lennie.
 
 Itt van a megvalósítása a [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) metódust a szolgáltató. Vegye figyelembe, hogy ez a megvalósítás meghív egy NormalizePath segédmetódus minden elválasztó az elérési út átalakítása egy egységes.
@@ -266,11 +264,9 @@ Teljes minta kódja, lásd: [AccessDbProviderSample03 kódminta](./accessdbprovi
 ## <a name="defining-object-types-and-formatting"></a>Objektumtípusok definiálása és formázása
 
 A szolgáltató írásakor tagok hozzáadása a meglévő objektumok vagy új objektumokat megadása szükség lehet. Amikor végzett, hozzon létre egy típusok fájlt, amely a Windows PowerShell használatával azonosíthatja az objektum tagjait, és a egy formátumfájlt, amely meghatározza, hogyan jelenjen meg az objektum. További információ: [objektumtípusok kiterjesztése és formázás](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-A szolgáltató írásakor tagok hozzáadása a meglévő objektumok vagy új objektumokat megadása szükség lehet. Amikor végzett, hozzon létre egy típusok fájlt, amely a Windows PowerShell használatával azonosíthatja az objektum tagjait, és a egy formátumfájlt, amely meghatározza, hogyan jelenjen meg az objektum. További információ: [objektumtípusok kiterjesztése és formázás](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>A Windows PowerShell-szolgáltató létrehozása
 
-Lásd: [parancsmagok,-szolgáltatók regisztrálása és alkalmazások üzemeltetése](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Lásd: [parancsmagok,-szolgáltatók regisztrálása és alkalmazások üzemeltetése](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>A Windows PowerShell-szolgáltatóban tesztelése
@@ -289,16 +285,10 @@ A Windows PowerShell-elem szolgáltató regisztrációja esetén a Windows Power
 
 [Objektumtípusok kiterjesztése és formázása](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Objektumtípusok kiterjesztése és formázása](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Hogyan működik a Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
-
 [Hogyan működik a Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Egy tároló Windows PowerShell-szolgáltató létrehozása](./creating-a-windows-powershell-container-provider.md)
 
 [A meghajtó Windows PowerShell-szolgáltató létrehozása](./creating-a-windows-powershell-drive-provider.md)
-
-[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

@@ -12,30 +12,50 @@ helpviewer_keywords:
 - validation
 ms.assetid: 3f15bf20-a068-4a7d-a170-bc43f755d1fe
 caps.latest.revision: 14
-ms.openlocfilehash: f7e5d4fb2f89bd6bc7036fdcff8f38e017d5d0e4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 171e3e974619e197a0bcc9dfc759297005e34568
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848803"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429839"
 ---
 # <a name="validating-parameter-input"></a>Paraméterbevitel érvényesítése
 
-Windows PowerShell parancsmag-paraméterek többféleképpen számára továbbított argumentumok ellenőrizheti. Windows PowerShell ellenőrizheti a hossza, a tartomány és a minta az argumentum a karaktereket. Ellenőrizheti, hogy a rendelkezésre álló argumentumok (count) száma. Ezek a szabályok érvényesítése érvényesítési attribútumokat, amelyek deklarált a nyilvános tulajdonságok parancsmag osztály paraméter attribútummal határozza meg.
+PowerShell parancsmag-paraméterek többféleképpen számára továbbított argumentumok ellenőrizheti.
+PowerShell ellenőrizheti a hossza, a tartomány és a minta az argumentum a karaktereket.
+Ellenőrizheti, hogy a rendelkezésre álló argumentumok (count) száma.
+Ezek a szabályok érvényesítése érvényesítési attribútumokat, amelyek deklarált a nyilvános tulajdonságok parancsmag osztály paraméter attribútummal határozza meg.
 
-A paraméterargumentum ellenőrzése, a Windows PowerShell-modul a parancsmag futtatása előtt, győződjön meg arról, hogy a paraméter értékét, az érvényesítési attribútumok által biztosított információkat használja. Ha a paraméter bemeneti nem érvényes, akkor a felhasználó hibaüzenetet kap. Minden egyes érvényesítési paraméter határozza meg, hogy egy érvényesítési szabály, amely kikényszeríti a Windows PowerShell.
+A paraméterargumentum ellenőrzéséhez a PowerShell-modul a parancsmag futtatása előtt, győződjön meg arról, hogy a paraméter értékét, az érvényesítési attribútumok által biztosított információkat használja.
+Ha a paraméter bemeneti nem érvényes, akkor a felhasználó hibaüzenetet kap.
+Minden egyes érvényesítési paraméter határozza meg, hogy egy érvényesítési szabály, amely kikényszeríti a PowerShell.
 
-Windows PowerShell kikényszeríti az ellenőrzési szabályok alapján a következő attribútumokkal.
+PowerShell az ellenőrzési szabályok alapján a következő attribútumok érvénybe lépteti.
 
-ValidateCount paraméter elfogadó argumentumok minimális és maximális számát adja meg. Ennek az attribútumnak kódcsomagjaihoz a szintaxissal kapcsolatos további információkért lásd: [ValidateCount típusattribútum-deklaráció](./validatecount-attribute-declaration.md).
+### <a name="validatecount"></a>ValidateCount
 
-ValidateLength a paraméterargumentum karakterek minimális és maximális száma határozza meg. Ennek az attribútumnak kódcsomagjaihoz a szintaxissal kapcsolatos további információkért lásd: [ValidateLength típusattribútum-deklaráció](./validatelength-attribute-declaration.md).
+Adja meg a minimális és maximális számú argumentumot, amely egy paraméter tud fogadni.
+További információkért lásd: [ValidateCount típusattribútum-deklaráció](./validatecount-attribute-declaration.md).
 
-ValidatePattern adja meg, amely ellenőrzi a paraméterargumentum reguláris kifejezést. Ennek az attribútumnak kódcsomagjaihoz a szintaxissal kapcsolatos további információkért lásd: [ValidatePattern típusattribútum-deklaráció](./validatepattern-attribute-declaration.md).
+### <a name="validatelength"></a>ValidateLength
 
-ValidateRange megadja a paraméterargumentum minimális és maximális értékét. Ennek az attribútumnak kódcsomagjaihoz a szintaxissal kapcsolatos további információkért lásd: [ValidateRange típusattribútum-deklaráció](./validaterange-attribute-declaration.md).
+A paraméterargumentum adja meg a minimális és maximális karakterszámot.
+További információkért lásd: [ValidateLength típusattribútum-deklaráció](./validatelength-attribute-declaration.md).
 
-ValidateSet adja meg az érvényes értékek a paraméter argumentum. Ennek az attribútumnak kódcsomagjaihoz a szintaxissal kapcsolatos további információkért lásd: [ValidateSet típusattribútum-deklaráció](./validateset-attribute-declaration.md).
+### <a name="validatepattern"></a>ValidatePattern
+
+Itt adhatja meg, amely ellenőrzi a paraméterargumentum reguláris kifejezést.
+További információkért lásd: [ValidatePattern típusattribútum-deklaráció](./validatepattern-attribute-declaration.md).
+
+### <a name="validaterange"></a>ValidateRange
+
+Adja meg a paraméterargumentum minimális és maximális értékét.
+További információkért lásd: [ValidateRange típusattribútum-deklaráció](./validaterange-attribute-declaration.md).
+
+### <a name="validateset"></a>ValidateSet
+
+Adja meg az érvényes értékek a paraméter argumentum.
+További információkért lásd: [ValidateSet típusattribútum-deklaráció](./validateset-attribute-declaration.md).
 
 ## <a name="see-also"></a>Lásd még:
 

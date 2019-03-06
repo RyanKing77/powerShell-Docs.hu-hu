@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 8c111f8f2943043e4ad2a6a8677db4afe1b3cdab
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0d83a742eae2bcde2e691860a5f2b3e5862d2de
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851827"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430035"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Windows PowerShelles tárolószolgáltató létrehozása
 
@@ -25,7 +25,6 @@ Ez a témakör ismerteti, hogyan hozhat létre egy Windows PowerShell-szolgálta
 Több szintű adattárolók dolgozhatnak szolgáltató Windows PowerShell-tároló szolgáltatók nevezzük. Vegye figyelembe, hogy egy Windows PowerShell-tároló szolgáltató csak akkor, ha van egy tároló (nem beágyazott tárolók), a benne lévő elemek használhatók-e. Ha beágyazott tárolókat, majd meg kell valósítani egy Windows PowerShell-navigációs szolgáltató. Windows PowerShell-navigációs szolgáltató megvalósításával kapcsolatos további információkért lásd: [egy Windows PowerShell navigációs szolgáltató létrehozása](./creating-a-windows-powershell-navigation-provider.md).
 
 > [!NOTE]
-> Letöltheti a C# forrásfájl (AccessDBSampleProvider04.cs) a szolgáltató a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 > Letöltheti a C# forrásfájl (AccessDBSampleProvider04.cs) a szolgáltató a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > A letöltött forrásfájlok érhetők el a  **\<PowerShell-minták >** könyvtár.
@@ -418,7 +417,6 @@ Teljes minta kódja, lásd: [AccessDbProviderSample04 kódminta](./accessdbprovi
 ## <a name="building-the-windows-powershell-provider"></a>A Windows PowerShell-szolgáltató létrehozása
 
 Lásd: [parancsmagok,-szolgáltatók regisztrálása és alkalmazások üzemeltetése](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-Lásd: [parancsmagok,-szolgáltatók regisztrálása és alkalmazások üzemeltetése](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>A Windows PowerShell-szolgáltatóban tesztelése
 
@@ -537,8 +535,6 @@ Ha a Windows PowerShell-szolgáltató regisztrálva van a Windows PowerShell-lel
 [Egy elem Windows PowerShell-szolgáltatóban megvalósítása](./creating-a-windows-powershell-item-provider.md)
 
 [A navigációs Windows PowerShell-szolgáltatóban megvalósítása](./creating-a-windows-powershell-navigation-provider.md)
-
-[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

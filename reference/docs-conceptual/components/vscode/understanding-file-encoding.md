@@ -1,15 +1,15 @@
 ---
-title: Fájlkódolás VSCode-és PowerShell ismertetése
+title: A VSCode-ban és a PowerShellben történő fájlkódolás megértése
 description: Fájlkódolás VSCode, a PowerShell konfigurálása
 ms.date: 02/28/2019
-ms.openlocfilehash: f3b133b4bee7688821a5960429e2f26b69b01e12
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251724"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429805"
 ---
-# <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Fájlkódolás VSCode-és PowerShell ismertetése
+# <a name="understanding-file-encoding-in-vscode-and-powershell"></a>A VSCode-ban és a PowerShellben történő fájlkódolás megértése
 
 A VS Code használatával létrehozása és szerkesztése a PowerShell-szkripteket, fontos, hogy menti a fájlokat a helyes karaktert a kódolási formátum használatával.
 
@@ -68,7 +68,7 @@ Ez praktikus [referencia](https://www.i18nqa.com/debug/utf8-debug.html) sorolja 
 A PowerShell-bővítmény parancsfájlok számos módon kommunikál:
 
 1. Parancsfájlok szerkesztése a vscode-ban, a tartalma küldik VSCode a bővítményt. A [nyelvi protokoll][] , hogy a tartalmak kerüljenek az UTF-8 építjük. Ezért azt nem alkalmas a hibás kódolás beolvasni a bővítmény.
-2. Parancsfájlok végrehajtása közvetlenül az integrált konzol az, ha azok még olvasni a fájlt PowerShell közvetlenül. A VSCode TF PowerShell kódolás eltér, valami is itt nem megfelelő.
+2. Parancsfájlok végrehajtása közvetlenül az integrált konzol az, ha azok még olvasni a fájlt PowerShell közvetlenül. A VSCode eltér a PowerShell a kódolást, ha valami meg helytelen itt.
 3. Ha egy parancsfájl, amely meg van nyitva a vscode-ban hivatkozik, amely nem a vscode-ban nyissa meg egy másik parancsprogramra, a bővítmény visszavált a fájlrendszer a parancsprogram tartalmát betöltése. A PowerShell-bővítmény alapértelmezett értéke UTF-8 kódolást, de használ [bájtsorrendjelző][], vagy AJ, válassza ki a megfelelő kódolást az észlelést.
 
 A probléma akkor fordul elő, amikor feltéve, hogy a kódolás AJ nélküli formátumok (például [UTF-8][] Anyagjegyzék nem rendelkező és [Windows-1252][]).

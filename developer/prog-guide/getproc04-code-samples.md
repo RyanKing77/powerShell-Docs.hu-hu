@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c00afd46-758a-4aec-b865-2c9d8f6a17ad
 caps.latest.revision: 5
-ms.openlocfilehash: d679bc8cbdb026e072628d3e0c5704de2eec7af9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b9b42c818981090496f7b14a1cb8bdec14a5d5bb
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846423"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429720"
 ---
 # <a name="getproc04-code-samples"></a>GetProc04 – Kódminták
 
 Az alábbiakban a GetProc04 minta parancsmag Kódminták. Ez a `Get-Process` parancsmag minta ismertetett [hozzáadása Nonterminating hibajelentés a parancsmaghoz](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md). Ez `Get-Process` parancsmag hívások a [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódus, amikor a program érvénytelen művelet kivételt vált ki, folyamat-adatok beolvasása során.
 
 > [!NOTE]
-> Letöltheti a C# forrásfájl (getprov04.cs) a Get-Proc parancsmag használatával a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 > Letöltheti a C# forrásfájl (getprov04.cs) a Get-Proc parancsmag használatával a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > A letöltött forrásfájlok érhetők el a  **\<PowerShell-minták >** könyvtár.
