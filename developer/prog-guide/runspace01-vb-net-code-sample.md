@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: fbc90a6736d841fe184b86ab143809ad23c7977a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846850"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429771"
 ---
-# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="ef648-102">Runspace01 (VB.NET) – Kódminta</span><span class="sxs-lookup"><span data-stu-id="ef648-102">Runspace01 (VB.NET) Code Sample</span></span>
+# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="180ee-102">Runspace01 (VB.NET) – Kódminta</span><span class="sxs-lookup"><span data-stu-id="180ee-102">Runspace01 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="ef648-103">Íme a mintakódokat, a futási térben ismertetett [létrehozása egy Console Application, hogy fut a megadott parancs](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span><span class="sxs-lookup"><span data-stu-id="ef648-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span></span> <span data-ttu-id="ef648-104">Ehhez az alkalmazás hív meg egy futási teret, és ezután meghívja a parancsot.</span><span class="sxs-lookup"><span data-stu-id="ef648-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="ef648-105">(Vegye figyelembe, hogy az alkalmazás nem ad meg futási térben konfigurációs adatokat, és nem, explicit módon létrehoz egy folyamatot.) A parancs, amely meghívja a `Get-Process` parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="ef648-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
-<span data-ttu-id="ef648-106">Íme a mintakódokat, a futási térben ismertetett [létrehozása egy Console Application, hogy fut a megadott parancs](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span><span class="sxs-lookup"><span data-stu-id="ef648-106">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span></span> <span data-ttu-id="ef648-107">Ehhez az alkalmazás hív meg egy futási teret, és ezután meghívja a parancsot.</span><span class="sxs-lookup"><span data-stu-id="ef648-107">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="ef648-108">(Vegye figyelembe, hogy az alkalmazás nem ad meg futási térben konfigurációs adatokat, és nem, explicit módon létrehoz egy folyamatot.) A parancs, amely meghívja a `Get-Process` parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="ef648-108">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
+<span data-ttu-id="180ee-103">Íme a mintakódokat, a futási térben ismertetett [létrehozása egy Console Application, hogy fut a megadott parancs](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span><span class="sxs-lookup"><span data-stu-id="180ee-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span></span> <span data-ttu-id="180ee-104">Ehhez az alkalmazás hív meg egy futási teret, és ezután meghívja a parancsot.</span><span class="sxs-lookup"><span data-stu-id="180ee-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="180ee-105">(Vegye figyelembe, hogy az alkalmazás nem ad meg futási térben konfigurációs adatokat, és nem, explicit módon létrehoz egy folyamatot.) A parancs, amely meghívja a `Get-Process` parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="180ee-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="ef648-109">Kódminta</span><span class="sxs-lookup"><span data-stu-id="ef648-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="180ee-106">Kódminta</span><span class="sxs-lookup"><span data-stu-id="180ee-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -72,6 +71,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace01.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace01.vb#L09-L53 "Runspace01.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="ef648-110">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="ef648-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="180ee-107">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="180ee-107">See Also</span></span>
 
-[<span data-ttu-id="ef648-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="ef648-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="180ee-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="180ee-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
