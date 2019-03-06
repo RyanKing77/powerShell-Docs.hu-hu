@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f0dea3c-4354-4d7d-9823-5e6234c9a89e
 caps.latest.revision: 6
-ms.openlocfilehash: 348d34dc0132705fa4a50fb6fe1fd43f510ae210
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c1d38c23ea20d7e5ccbc8e475b0c2246f9670ec3
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845142"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429890"
 ---
 # <a name="runspace04--vbnet-code-sample"></a>Runspace04 (VB.NET) – Kódminta
 
 Íme a Runspace04 minta VB.NET forráskódját. Ebben a példában a [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) osztály egy parancsfájlt, amely a leállítási hibát generál végrehajtásához. A hiba kölcsönhatásai és hibarekord értelmezése felelős a gazdaalkalmazást.
 
 > [!NOTE]
-> Letöltheti a VB.NET forrásfájl (runspace02.vb) ehhez a mintához Windows szoftverek fejlesztési Kit for Windows Vista és a Microsoft .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 > Letöltheti a VB.NET forrásfájl (runspace02.vb) ehhez a mintához Windows szoftverek fejlesztési Kit for Windows Vista és a Microsoft .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > A letöltött forrásfájlok érhetők el a  **\<PowerShell-minták >** könyvtár.
