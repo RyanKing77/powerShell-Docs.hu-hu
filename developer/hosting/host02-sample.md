@@ -8,35 +8,34 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9ab83bcb-2d31-4744-a8bc-2ee22e48fc1b
 caps.latest.revision: 17
-ms.openlocfilehash: b74d3443e644bde9ec909a2cb8e0d94a6f3c2385
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.openlocfilehash: 8ce6cf1fcabf306b412b6f97915f34ab15436202
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56852240"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795181"
 ---
-# <a name="host02-sample"></a><span data-ttu-id="df3d8-102">Host02 – minta</span><span class="sxs-lookup"><span data-stu-id="df3d8-102">Host02 Sample</span></span>
+# <a name="host02-sample"></a><span data-ttu-id="f4781-102">Host02 – minta</span><span class="sxs-lookup"><span data-stu-id="f4781-102">Host02 Sample</span></span>
 
-<span data-ttu-id="df3d8-103">Ez a példa bemutatja, hogyan írhat egy gazdagép egy egyéni gazdagép megvalósítás mellett a Windows PowerShell modul használó alkalmazás.</span><span class="sxs-lookup"><span data-stu-id="df3d8-103">This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation.</span></span> <span data-ttu-id="df3d8-104">A gazdaalkalmazást állítja be a gazdagép kulturális környezet német, lefut a [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) parancsmagot, és megjeleníti az eredményeket, látnák őket a német pwrsh.exe, és ezután jelenít meg az aktuális dátumát és időpontját segítségével.</span><span class="sxs-lookup"><span data-stu-id="df3d8-104">The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.</span></span>
-<span data-ttu-id="df3d8-105">Ez a példa bemutatja, hogyan írhat egy gazdagép egy egyéni gazdagép megvalósítás mellett a Windows PowerShell modul használó alkalmazás.</span><span class="sxs-lookup"><span data-stu-id="df3d8-105">This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation.</span></span> <span data-ttu-id="df3d8-106">A gazdaalkalmazást állítja be a gazdagép kulturális környezet német, lefut a [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) parancsmagot, és megjeleníti az eredményeket, látnák őket a német pwrsh.exe, és ezután jelenít meg az aktuális dátumát és időpontját segítségével.</span><span class="sxs-lookup"><span data-stu-id="df3d8-106">The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.</span></span>
+<span data-ttu-id="f4781-103">Ez a példa bemutatja, hogyan írhat egy gazdagép egy egyéni gazdagép megvalósítás mellett a Windows PowerShell modul használó alkalmazás.</span><span class="sxs-lookup"><span data-stu-id="f4781-103">This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation.</span></span> <span data-ttu-id="f4781-104">A gazdaalkalmazást állítja be a gazdagép kulturális környezet német, lefut a [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) parancsmagot, és megjeleníti az eredményeket, látnák őket a német pwrsh.exe, és ezután jelenít meg az aktuális dátumát és időpontját segítségével.</span><span class="sxs-lookup"><span data-stu-id="f4781-104">The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="df3d8-107">Követelmények</span><span class="sxs-lookup"><span data-stu-id="df3d8-107">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="f4781-105">Követelmények</span><span class="sxs-lookup"><span data-stu-id="f4781-105">Requirements</span></span>
 
- <span data-ttu-id="df3d8-108">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="df3d8-108">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="f4781-106">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="f4781-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="df3d8-109">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="df3d8-109">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="f4781-107">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="f4781-107">Demonstrates</span></span>
 
-- <span data-ttu-id="df3d8-110">Egy egyéni gazdagépre, amelynek osztályok származtatást létrehozása a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztályt, a [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) osztály, valamint a [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) osztály.</span><span class="sxs-lookup"><span data-stu-id="df3d8-110">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="f4781-108">Egy egyéni gazdagépre, amelynek osztályok származtatást létrehozása a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztályt, a [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) osztály, valamint a [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) osztály.</span><span class="sxs-lookup"><span data-stu-id="f4781-108">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="df3d8-111">Az egyéni állomás használó egy futási teret létrehozása.</span><span class="sxs-lookup"><span data-stu-id="df3d8-111">Creating a runspace that uses the custom host.</span></span>
+- <span data-ttu-id="f4781-109">Az egyéni állomás használó egy futási teret létrehozása.</span><span class="sxs-lookup"><span data-stu-id="f4781-109">Creating a runspace that uses the custom host.</span></span>
 
-- <span data-ttu-id="df3d8-112">A gazdagép kulturális környezet német beállítást.</span><span class="sxs-lookup"><span data-stu-id="df3d8-112">Setting the host culture to German.</span></span>
+- <span data-ttu-id="f4781-110">A gazdagép kulturális környezet német beállítást.</span><span class="sxs-lookup"><span data-stu-id="f4781-110">Setting the host culture to German.</span></span>
 
-- <span data-ttu-id="df3d8-113">Létrehozás egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum, amely egy parancsfájlt, és rendezheti a folyamatok, majd lekérdezi az aktuális dátumot, német nyelven jelenik meg.</span><span class="sxs-lookup"><span data-stu-id="df3d8-113">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.</span></span>
+- <span data-ttu-id="f4781-111">Létrehozás egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum, amely egy parancsfájlt, és rendezheti a folyamatok, majd lekérdezi az aktuális dátumot, német nyelven jelenik meg.</span><span class="sxs-lookup"><span data-stu-id="f4781-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.</span></span>
 
-## <a name="example"></a><span data-ttu-id="df3d8-114">Példa</span><span class="sxs-lookup"><span data-stu-id="df3d8-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f4781-112">Példa</span><span class="sxs-lookup"><span data-stu-id="f4781-112">Example</span></span>
 
- <span data-ttu-id="df3d8-115">A következő kódot egy gazdagép a egyéni gazdagép használó alkalmazások megvalósítását mutatja be.</span><span class="sxs-lookup"><span data-stu-id="df3d8-115">The following code shows an implementation of a host application that uses the custom host.</span></span>
+ <span data-ttu-id="f4781-113">A következő kódot egy gazdagép a egyéni gazdagép használó alkalmazások megvalósítását mutatja be.</span><span class="sxs-lookup"><span data-stu-id="f4781-113">The following code shows an implementation of a host application that uses the custom host.</span></span>
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -133,9 +132,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="df3d8-116">Példa</span><span class="sxs-lookup"><span data-stu-id="df3d8-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f4781-114">Példa</span><span class="sxs-lookup"><span data-stu-id="f4781-114">Example</span></span>
 
- <span data-ttu-id="df3d8-117">A következő kódot a megvalósítása a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="df3d8-117">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="df3d8-118">Ezen elemek nincs megvalósított kivételt, vagy nem ad vissza semmit.</span><span class="sxs-lookup"><span data-stu-id="df3d8-118">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="f4781-115">A következő kódot a megvalósítása a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="f4781-115">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="f4781-116">Ezen elemek nincs megvalósított kivételt, vagy nem ad vissza semmit.</span><span class="sxs-lookup"><span data-stu-id="f4781-116">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -315,9 +314,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="df3d8-119">Példa</span><span class="sxs-lookup"><span data-stu-id="df3d8-119">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f4781-117">Példa</span><span class="sxs-lookup"><span data-stu-id="f4781-117">Example</span></span>
 
- <span data-ttu-id="df3d8-120">A következő kódot a megvalósítása a [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="df3d8-120">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="f4781-118">A következő kódot a megvalósítása a [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="f4781-118">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -566,9 +565,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="df3d8-121">Példa</span><span class="sxs-lookup"><span data-stu-id="df3d8-121">Example</span></span>
+## <a name="example"></a><span data-ttu-id="f4781-119">Példa</span><span class="sxs-lookup"><span data-stu-id="f4781-119">Example</span></span>
 
- <span data-ttu-id="df3d8-122">A következő kódot a megvalósítása a [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="df3d8-122">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="df3d8-123">Ezen elemek nincs megvalósított kivételt, vagy nem ad vissza semmit.</span><span class="sxs-lookup"><span data-stu-id="df3d8-123">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="f4781-120">A következő kódot a megvalósítása a [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="f4781-120">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="f4781-121">Ezen elemek nincs megvalósított kivételt, vagy nem ad vissza semmit.</span><span class="sxs-lookup"><span data-stu-id="f4781-121">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -785,12 +784,12 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="df3d8-124">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="df3d8-124">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f4781-122">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="f4781-122">See Also</span></span>
 
- [<span data-ttu-id="df3d8-125">System.Management.Automation.Powershell</span><span class="sxs-lookup"><span data-stu-id="df3d8-125">System.Management.Automation.Powershell</span></span>](/dotnet/api/system.management.automation.powershell)
+ [<span data-ttu-id="f4781-123">System.Management.Automation.Powershell</span><span class="sxs-lookup"><span data-stu-id="f4781-123">System.Management.Automation.Powershell</span></span>](/dotnet/api/system.management.automation.powershell)
 
- [<span data-ttu-id="df3d8-126">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="df3d8-126">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="f4781-124">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="f4781-124">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="df3d8-127">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="df3d8-127">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="f4781-125">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="f4781-125">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="df3d8-128">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="df3d8-128">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="f4781-126">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="f4781-126">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
