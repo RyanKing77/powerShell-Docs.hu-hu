@@ -123,7 +123,7 @@ A modul a PSGallery a helyi PSRepository való közzétételéhez használhatja 
 
 - Adja meg a csomag nevét
 - Adja meg a "NuGet" szolgáltatója
-- Adja meg a PSGallery helyeként a forrás)https://www.powershellgallery.com/api/v2)
+- Adja meg a PSGallery helyeként a forrás) [https://www.powershellgallery.com/api/v2](https://www.powershellgallery.com/api/v2))
 - Adja meg az elérési útját a helyi tárház
 
 Példa:
