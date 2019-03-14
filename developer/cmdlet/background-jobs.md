@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
-ms.openlocfilehash: 9aff23647e55e8c9c41c54e5b62cedc15fb28a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847627"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794705"
 ---
 # <a name="background-jobs"></a>Háttérfeladatok
 
@@ -21,7 +21,6 @@ Parancsmagok a művelet végrehajtása belső használatra, illetve a Windows Po
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>A háttérben futó feladatok Gyermekfeladatok és a feladat-tárház
 
-A háttérben futó feladatok támogató parancsmagok által visszaadott feladatobjektumot határozza meg a feladatot. (A [a Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) parancsmag is visszaad egy feladatobjektumot.) Ez a definíció megtalálhatók a feladatot, adja meg a feladatot, az állapotadatok és a gyermekfeladatok használt azonosító nevét. A feladat nem végezze el a munkát. Minden egyes háttérfeladat, a gyermek legalább egy feladat, mert a gyermek feladat végzi a tényleges munkát. A parancsmag futtatásakor, hogy a munka háttérfeladatként történik, a parancsmag hozzá kell adnia a feladat és a gyermekfeladatok közös tárházhoz, a továbbiakban a *feladat tárház*.
 A háttérben futó feladatok támogató parancsmagok által visszaadott feladatobjektumot határozza meg a feladatot. (A [a Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) parancsmag is visszaad egy feladatobjektumot.) Ez a definíció megtalálhatók a feladatot, adja meg a feladatot, az állapotadatok és a gyermekfeladatok használt azonosító nevét. A feladat nem végezze el a munkát. Minden egyes háttérfeladat, a gyermek legalább egy feladat, mert a gyermek feladat végzi a tényleges munkát. A parancsmag futtatásakor, hogy a munka háttérfeladatként történik, a parancsmag hozzá kell adnia a feladat és a gyermekfeladatok közös tárházhoz, a továbbiakban a *feladat tárház*.
 
 Hogyan történik a háttérben futó feladatok kezelése parancssori kapcsolatos további információkért tekintse meg a következőket:

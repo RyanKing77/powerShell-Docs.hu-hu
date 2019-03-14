@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 53442bb1-74a3-49f9-9150-3bc3081a7565
 caps.latest.revision: 6
-ms.openlocfilehash: 2bb62ab3e4fa1db9b3af8c82eb9035aa4f3e31c0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 27de41c88e224f7610c10a764e51524016ecc8cb
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849699"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794824"
 ---
 # <a name="list-view-labels"></a>Listanézet (Címkék)
 
-Ez a példa bemutatja, hogyan valósíthat meg, amely megjeleníti az egyéni címkével nem rendelkező a lista minden egyes sorára megjelenítheti. Ez a lista nézet tulajdonságait jeleníti meg a [System.Serviceprocess.Servicecontroller? Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController) által visszaadott objektum a [Get-Service](/powershell/module/microsoft.powershell.management/get-service) parancsmagot. Megjelenítheti az összetevőivel kapcsolatos további információk: [lista nézet létrehozásával](./creating-a-list-view.md).
 Ez a példa bemutatja, hogyan valósíthat meg, amely megjeleníti az egyéni címkével nem rendelkező a lista minden egyes sorára megjelenítheti. Ez a lista nézet tulajdonságait jeleníti meg a [System.Serviceprocess.Servicecontroller? Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController) által visszaadott objektum a [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) parancsmagot. Megjelenítheti az összetevőivel kapcsolatos további információk: [lista nézet létrehozásával](./creating-a-list-view.md).
 
 ### <a name="to-load-this-formatting-file"></a>Ez a formázási fájl betöltése

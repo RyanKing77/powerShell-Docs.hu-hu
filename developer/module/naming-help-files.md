@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
-ms.openlocfilehash: 06281a1260dbdc120867fce89e6d5c8dd0754b87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847277"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795351"
 ---
 # <a name="naming-help-files"></a>Elnevezési súgófájlok
 
-Ez a témakör azt ismerteti, hogyan egy XML-alapú súgófájl neve úgy, hogy a [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) parancsmag is megtalálhatják azt. A vonatkozó követelményeknek eltérőek az egyes parancsot.
 Ez a témakör azt ismerteti, hogyan egy XML-alapú súgófájl neve úgy, hogy a [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) parancsmag is megtalálhatják azt. A vonatkozó követelményeknek eltérőek az egyes parancsot.
 
 ## <a name="cmdlet-help-files"></a>A parancsmag Súgó-fájlok
@@ -30,7 +29,6 @@ A súgófájlban talál egy C# parancsmag névvel kell rendelkeznie a szerelvén
 
 A szerelvény neve formátumra szükség, akkor is, ha a szerelvény egy beágyazott modul.
 
-Ha például a [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) parancsmag Microsoft.PowerShell.Diagnostics.dll szerelvény van definiálva. A `Get-Help` parancsmag keres egy Súgó-témakör a `Get-WinEvent` parancsmag csak az modulkönyvtárat Microsoft.PowerShell.Diagnostics.dll-help.xml fájlban.
 Ha például a [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) parancsmag Microsoft.PowerShell.Diagnostics.dll szerelvény van definiálva. A `Get-Help` parancsmag keres egy Súgó-témakör a `Get-WinEvent` parancsmag csak az modulkönyvtárat Microsoft.PowerShell.Diagnostics.dll-help.xml fájlban.
 
 ## <a name="provider-help-files"></a>Szolgáltató súgófájlok
@@ -47,7 +45,6 @@ Ha például a tanúsítványszolgáltató Microsoft.PowerShell.Security.dll sze
 
 ## <a name="function-help-files"></a>Függvény súgófájlok
 
-Függvények használatával dokumentálni kell [Megjegyzés-alapú súgó](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) vagy dokumentált súgó XML-fájlban. Ha a funkció leírása itt található egy XML-fájlt, a következő függvénynek rendelkeznie kell egy `.ExternalHelp` kulcsszó, amely összekapcsolja az XML-fájlt a funkciót megjegyzéseket. Ellenkező esetben a `Get-Help` parancsmag nem találja a súgófájlt.
 Függvények használatával dokumentálni kell [Megjegyzés-alapú súgó](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) vagy dokumentált súgó XML-fájlban. Ha a funkció leírása itt található egy XML-fájlt, a következő függvénynek rendelkeznie kell egy `.ExternalHelp` kulcsszó, amely összekapcsolja az XML-fájlt a funkciót megjegyzéseket. Ellenkező esetben a `Get-Help` parancsmag nem találja a súgófájlt.
 
 Nem vonatkoznak technikai követelmények nevéhez egy függvény súgófájl. Azonban ajánlott eljárás, hogy nevezze el a súgófájlban a parancsfájl-modul, amely a függvény definiálva van. Például a következő függvényt a MyModule.psm1 fájlban van definiálva.

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
 caps.latest.revision: 8
-ms.openlocfilehash: e8185eb7221a3be0445eddc537dbca89478c74f2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2d634e7638ec0e0117d65ca0b2d08e68f0068a03
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849468"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794909"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>Objektumok alapértelmezett tagkészleteinek definiálása
 
@@ -21,7 +21,6 @@ A tag PSStandardMembers set meghatározásához az alapértelmezett tulajdonság
 
 ## <a name="member-set-for-systemdiagnosticsprocess"></a>Tag beállítása a System.Diagnostics.Process
 
-A következő példában a PSStandardMembers tag beállítása határozza meg a beállított DefaultDisplayPropertySet tulajdonság [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objektumokat. Ez a tulajdonság beállítása használják a [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) parancsmagot.
 A következő példában a PSStandardMembers tag beállítása határozza meg a beállított DefaultDisplayPropertySet tulajdonság [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objektumokat. Ez a tulajdonság beállítása használják a [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) parancsmagot.
 
 ```xml
@@ -44,7 +43,6 @@ A következő példában a PSStandardMembers tag beállítása határozza meg a 
   </MemberSet>
 ```
 
-A következő kimenetet jeleníti meg az alapértelmezett tulajdonság által visszaadott a [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) parancsmagot. Csak a `Id`, `Handles`, `CPU`, és `Name` tulajdonságait adja vissza minden egyes folyamat objektumról.
 A következő kimenetet jeleníti meg az alapértelmezett tulajdonság által visszaadott a [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) parancsmagot. Csak a `Id`, `Handles`, `CPU`, és `Name` tulajdonságait adja vissza minden egyes folyamat objektumról.
 
 ```powershell

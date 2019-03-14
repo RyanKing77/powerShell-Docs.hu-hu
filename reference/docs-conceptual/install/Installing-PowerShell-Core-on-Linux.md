@@ -2,12 +2,12 @@
 title: A PowerShell Core telepítése Linux rendszerre
 description: Információ a különböző Linux-disztribúciókon a PowerShell Core telepítése
 ms.date: 08/06/2018
-ms.openlocfilehash: afb11f053517af592fe42754d543f9f4a9966c5b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 718be0f03f136d6eb7d78fff51abdc36f6a8f0c2
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684492"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795725"
 ---
 # <a name="installing-powershell-core-on-linux"></a>A PowerShell Core telepítése Linux rendszerre
 
@@ -146,9 +146,6 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
-> [!NOTE]
-> Miután Ubuntu 18.04 támogatása hozzáadva `6.1.0-preview.2`
-
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Telepítési csomag tárház - Ubuntu 18.04-n keresztül
 
 A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.
@@ -198,8 +195,7 @@ sudo apt-get remove powershell
 ## <a name="ubuntu-1810"></a>Ubuntu 18.10
 
 > [!NOTE]
-> Ubuntu 18.10 támogatása hozzáadva után `6.1.0-preview.3`.
-> Mivel 18.10 napi build, akkor csak a támogatott közösségi.
+> Mivel 18.10 egy [közbenső kiadási](https://www.ubuntu.com/about/release-cycle), csak [támogatott közösségi](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
 
 Keresztül támogatott 18.10 telepítése `snapd`. Lásd: [beépülő csomag] [ snap] teljes útmutatás;
 
@@ -666,14 +662,14 @@ A következő diagram a .NET Core 2.0 hivatalosan támogatott különböző Linu
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Nyújtás) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, openssl-függvénytárak, libicu |
-| OpenSUSE 42.3 | libcurl4, libopenssl1_0_0, libicu52_1 |
+| openSUSE 42.3 | libcurl4, libopenssl1_0_0, libicu52_1 |
 | openSUSE Leap 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-függvénytárak, libicu, a/compat-openssl10 |
 
 Nem hivatalosan támogatott Linux-disztribúciókon a PowerShell bináris fájljainak telepítéséhez telepíteni szeretné a cél operációs rendszer szükséges függőséget a különálló lépések.
 Például a [Amazon Linux dockerfile] [ amazon-dockerfile] először telepíti a függőségeket, és ezt követően kiolvassa a Linuxos `tar.gz` archív.
 
-[amazon-dockerfile]: https://github.com/PowerShell/PowerShell/blob/master/docker/community/amazonlinux/Dockerfile
+[amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
 ### <a name="installation---binary-archives"></a>Telepítés – bináris archívum
 
@@ -716,5 +712,5 @@ A profilok tiszteletben PowerShell a gazdagép konfiguráció, így az alapérte
 
 PowerShell tiszteletben tartja a [XDG alap könyvtár megadása] [ xdg-bds] Linux rendszeren.
 
-[kiadások]: https://github.com/PowerShell/PowerShell/releases/latest
+[Kiadások]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

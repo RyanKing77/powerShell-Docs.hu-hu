@@ -4,16 +4,17 @@ ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 contributor: jianyunt, quoctruong
 title: A WMF 5.1 csomagkezelés fejlesztései
-ms.openlocfilehash: adcddcc94022f4961f3dd23c2cd56f2a8720049b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 30ef59ed9dc0d56636d85cc6e53523a9a73963a4
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688237"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794280"
 ---
-# <a name="improvements-to-package-management-in-wmf-51"></a>A WMF 5.1-es # csomagkezelés fejlesztései
+# <a name="improvements-to-package-management-in-wmf-51"></a>A WMF 5.1 csomagkezelés fejlesztései
 
-## <a name="improvements-in-packagemanagement"></a>A PackageManagement fejlesztései ##
+## <a name="improvements-in-packagemanagement"></a>A PackageManagement fejlesztései
+
 A WMF 5.1 a javításokat az alábbiak:
 
 ### <a name="version-alias"></a>Version Alias
@@ -61,6 +62,7 @@ A WMF 5.1-es a PackageManagement támogatja a Keresés és a egy adattárból, a
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
+
 ### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>PackageManagement használatával a rendszer proxy mögött támogatása
 
 A WMF 5.1-es, a PackageManagement mostantól új proxy paraméter szükséges `-ProxyCredential` és `-Proxy`. Ezeket a paramétereket használja, megadhatja a proxykiszolgáló URL-cím és a PackageManagement-parancsmagok hitelesítő adatait. Alapértelmezés szerint systémová nastavení proxy serveru szolgálnak. Például:

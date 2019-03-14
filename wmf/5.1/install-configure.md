@@ -4,15 +4,14 @@ ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 contributor: keithb
 title: Telepítse és konfigurálja a WMF 5.1
-ms.openlocfilehash: e5c7968744a442b4be9f1e43a45e91429a6d6165
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e5590d48d467506270ccef4089513e1afade07be
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685059"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795572"
 ---
-# <a name="install-and-configure-wmf-51"></a>Telepítse és konfigurálja a WMF 5.1 #
-
+# <a name="install-and-configure-wmf-51"></a>Telepítse és konfigurálja a WMF 5.1
 
 ## <a name="download-and-install-the-wmf-51-package"></a>Töltse le és telepítse a WMF 5.1-csomagot
 
@@ -67,8 +66,8 @@ Windows PowerShell Desired State Configuration (DSC) attól függ, hogy a Rendsz
 A Rendszerfelügyeleti webszolgáltatások a Windows Server 2008 R2 és Windows 7 alapértelmezés szerint nincs engedélyezve.
 Futtatás `Set-WSManQuickConfig`, egy Windows PowerShell az emelt szintű ahhoz, hogy a WinRM-munkamenetben.
 
-
 ## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>Telepítse a WMF 5.1 Windows Server 2012 R2, Windows Server 2012 és Windows 8.1
+
 **Telepítse a Windows Explorer (vagy a Fájlkezelővel, a Windows Server 2012 R2 vagy Windows 8.1)**
 
 1. Lépjen abba a mappába, amelybe letöltötte a MSU-fájlt.

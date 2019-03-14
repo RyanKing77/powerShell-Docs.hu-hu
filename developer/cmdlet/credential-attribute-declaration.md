@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 96a5dcad-faed-44d8-8c80-321f10499710
 caps.latest.revision: 6
-ms.openlocfilehash: abdd6e915b768b8ac688b6fc8c3194723961765e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1513d340cdadc5cb7622e791cc3c163ff39dfe1d
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851988"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795402"
 ---
 # <a name="credential-attribute-declaration"></a>Hitelesítő adatok attribútumdeklarációja
 
-A hitelesítő adatok attribútum értéke, amely a hitelesítő adat típusú paraméterek együtt nem kötelező attribútum [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) úgy, hogy egy karakterlánc is adható át argumentumként a paramétert. Deklarace parametru hozzáadta ezt az attribútumot, ha a Windows PowerShell be a karakterláncot tartalmazó bemeneti alakít egy [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objektum. Ha például a [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential) parancsmag rendelkezik készítése a Windows PowerShell ezt az attribútumot használja a [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) a parancsmag által visszaadott objektumot.
 A hitelesítő adatok attribútum értéke, amely a hitelesítő adat típusú paraméterek együtt nem kötelező attribútum [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) úgy, hogy egy karakterlánc is adható át argumentumként a paramétert. Deklarace parametru hozzáadta ezt az attribútumot, ha a Windows PowerShell be a karakterláncot tartalmazó bemeneti alakít egy [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objektum. Ha például a [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential) parancsmag rendelkezik készítése a Windows PowerShell ezt az attribútumot használja a [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) a parancsmag által visszaadott objektumot.
 
 ## <a name="syntax"></a>Szintaxis

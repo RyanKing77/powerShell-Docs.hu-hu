@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfiguráció, a szolgáltatás, a telepítő
 title: Konfiguráció írása, fordítása és alkalmazása
-ms.openlocfilehash: fa4d98fd12202439ba7025fd8af3fa398653ca05
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684415"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795419"
 ---
 > Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
@@ -60,7 +60,9 @@ A konfiguráció, például egy függvényt, futtató lefordítása fog egy ".mo
 Futtassa a konfigurációt, kell *pont forrás* a "HelloWorld.ps1" parancsfájlt az aktuális hatókörben.
 További információkért lásd: [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
 
+<!-- markdownlint-disable MD038 -->
 *Pont forrás* az elérési út helyétől, után írja be a "HelloWorld.ps1" parancsfájl a `. ` (pont, terület). A következő lehetőségekkel, majd futtassa a konfiguráció például függvény meghívásával.
+<!-- markdownlint-enable MD038 -->
 
 ```powershell
 . C:\Scripts\WebsiteTest.ps1

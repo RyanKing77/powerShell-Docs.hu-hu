@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell, a parancsmag
 title: Jól ismert parancsnevek használata
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 3d2c681623086e061e237f08603d65150d2b1947
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b61d647d882d4b2f7ea423a48319e3c104ce96c7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688923"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795674"
 ---
 # <a name="using-familiar-command-names"></a>Jól ismert parancsnevek használata
 
@@ -22,13 +22,13 @@ Az alábbi lista tartalmazza a közös néhány **cmd.exe** és a Unix-parancsok
 
 |||||
 |-|-|-|-|
-|cat|a dir parancs|csatlakoztatási|rm|
+|cat|a dir parancs|Csatlakoztatási|rm|
 |cd|echo|Áthelyezés|rmdir|
-|chdir|Tartalmának végleges törlése|popd|alvó állapot|
+|chdir|Tartalmának végleges törlése|popd|Alvó állapot|
 |Világos|H|PS|Rendezés|
 |CLS|Előzmények|pushd|TEE|
 |Másolás|Kill|pwd|típus|
-|del|LP|r|írási|
+|del|LP|r|Írási|
 |a diff|ls|ren||
 
 A `Get-Alias` parancsmag megjeleníti a valódi neve alias társított natív PowerShell-parancsot.
@@ -56,7 +56,7 @@ Példa rövidítések:
 |--------------|--------------|
 | Lekérés          | g            |
 | Beállítás          | s            |
-| Elem         | i            |
+| Elem         | I            |
 | Hely     | l            |
 | Parancs      | cm           |
 | Alias        | Al           |
@@ -65,7 +65,7 @@ Ezek az aliasok akkor érthető, ha ismeri a hónapok rövid nevét.
 
 | Parancsmag neve    | Alias |
 |----------------|-------|
-| `Get-Item `    | gi    |
+| `Get-Item`     | gi    |
 | `Set-Item`     | SI    |
 | `Get-Location` | GL    |
 | `Set-Location` | SL    |

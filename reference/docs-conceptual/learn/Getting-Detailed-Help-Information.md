@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell, a parancsmag
 title: Részletes súgóinformációk kérése
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 8b56f003fdef38b0f126cfe82eefcc145cc54783
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e58814f512aa2c5914f92f942cf2a4a76956ee20
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684086"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794569"
 ---
 # <a name="getting-detailed-help-information"></a>Részletes súgóinformációk kérése
 
@@ -74,7 +74,7 @@ Get-Help Get-ChildItem -Parameter *
 ```
 
 A példákban csak a Súgó a cikkben megjelenítéséhez használja a **példák** paraméterében a `Get-Help`.
-Ha például csak a példák megjelenítése a Súgó cikk a `Get-ChildItem `parancsmagot, írja be:
+Ha például csak a példák megjelenítése a Súgó cikk a `Get-ChildItem` parancsmagot, írja be:
 
 ```powershell
 Get-Help Get-ChildItem -Examples

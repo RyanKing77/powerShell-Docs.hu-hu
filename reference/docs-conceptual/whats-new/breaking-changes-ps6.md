@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, a core
 title: PowerShell 6.0 használhatatlanná tévő változásai
-ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685262"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795691"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 használhatatlanná tévő változásai
 
@@ -65,6 +65,10 @@ Nem támogatott API-k használata miatt `Microsoft.PowerShell.LocalAccounts` el 
 ### <a name="-counter-cmdlets"></a>`*-Counter` parancsmagjai
 
 Nem támogatott API-k használata miatt a `*-Counter` el lett távolítva a PowerShell Core mindaddig, amíg egy jobb megoldás található.
+
+### <a name="-eventlog-cmdlets"></a>`*-EventLog` parancsmagjai
+
+Nem támogatott API-k használata miatt a `*-EventLog` a PowerShell Core el lett távolítva. amíg nem jobb megoldás található. `Get-WinEvent` és `Create-WinEvent` érhetők el, és a Windows eseményeket létrehozásához.
 
 ## <a name="enginelanguage-changes"></a>Összetevő/nyelvi változások
 
@@ -179,9 +183,9 @@ Módosítsa a kilépési kódot `pwsh.exe` igazodva Unix konvenciók
 
 Nem támogatott API-kat, mert a `LocalAccounts` modul és a `Counter` parancsmagok a a `Diagnostics` modul el lettek távolítva, amíg nem jobb megoldás található.
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Logikai paraméter a powershell-parancsprogram futtatása nem működik [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Logikai paraméter a PowerShell-parancsprogram futtatása nem működik [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Korábban, a powershell.exe használatával (mostantól `pwsh.exe`) végrehajtásához egy PowerShell szkriptet az `-File` semmilyen módon nem lehet átadni $true megadott/$false paraméter értékeként. $True támogatása/elemzett értékeket a paraméterekhez $false hozzá lett adva. Kapcsoló értékeket is támogatottak, ahogy jelenleg dokumentált szintaxis nem működik.
+Korábban, a **powershell.exe** (mostantól **pwsh.exe**) végrehajtásához egy PowerShell szkriptet az `-File` semmilyen módon nem lehet átadni megadott `$true` / `$false` paraméterként értékek. Támogatja a `$true` / `$false` elemzett értékeket a paraméterekhez hozzá lett adva. Kapcsoló értékeket is támogatottak, ahogy jelenleg dokumentált szintaxis nem működik.
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Távolítsa el `ClrVersion` tulajdonságot `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
@@ -193,7 +197,7 @@ A nem Windows platformokon shebangje határoz meg PowerShell használatának eng
 
 ### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Unicode escape-elemzés megvalósítása [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u#### `` vagy `` `u{####} `` megfelelő Unicode-karaktert alakítja át. A kimenetben szövegkonstans `` `u ``, a használni kívánt szintaxiskiemelést escape: ``` ``u ```.
+`` `u####`` vagy `` `u{####}`` megfelelő Unicode-karaktert alakítja át. A kimenetben szövegkonstans `` `u``, a használni kívánt szintaxiskiemelést escape: ``` ``u```.
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Változás `New-ModuleManifest` kódolási `UTF8NoBOM` nem Windows platformokon [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 

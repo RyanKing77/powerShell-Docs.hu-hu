@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Konfigurációs és környezeti adatok szétválasztása
-ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687516"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794926"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Konfigurációs és környezeti adatok szétválasztása
 
@@ -88,7 +88,7 @@ Mode                LastWriteTime         Length Name
 
 Nézzük meg, amely egyetlen-konfigurációt használ, állítsa be a fejlesztési és éles környezetben is webhely teljes példát. A fejlesztési környezetben az IIS és az SQL Server telepítve egyetlen csomóponton. Az éles környezetben az IIS és az SQL Server telepítése a külön csomópontokon. Adja meg az adatokat a két különböző környezetek használjuk .psd1 konfigurációs adatfájlt.
 
- ### <a name="configuration-data-file"></a>Konfigurációs adatfájlt
+### <a name="configuration-data-file"></a>Konfigurációs adatfájlt
 
 A fejlesztési és éles környezeti adatok fogunk meghatározni egy nevű fájl `DevProdEnvData.psd1` módon:
 

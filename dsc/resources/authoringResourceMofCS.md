@@ -2,14 +2,14 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC-erőforrás a szerzői műveletekC#
-ms.openlocfilehash: dcda36d27f2191f140eaaf209e1c85263d2cd8e1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6f2bb4d411237f13e2735c2e5f630b4f40dc6842
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689028"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794229"
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a>A DSC-erőforrás a szerzői műveletekC#
+# <a name="authoring-a-dsc-resource-in-c"></a>A DSC-erőforrás C nyelven készítése\#
 
 > Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 

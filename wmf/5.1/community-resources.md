@@ -3,14 +3,14 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: Közösségi források
-ms.openlocfilehash: 2bd006b1b873f475e04ebb00cc89d593e114cafc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a26f6eefeb3beb41575675b3dd4077f056606a70
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685087"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794875"
 ---
-# <a name="community-resources"></a>Közösségi források #
+# <a name="community-resources"></a>Közösségi források
 > Megjegyzés: Ezek az információk előzetesek, és változhat a tartalmuk.
 
 A PowerShell csapatának szívesen fogadja, és arra ösztönzi a terméket az ügyfélvisszajelzések, és támogatja a több módszer a felhasználók számára, hogy lépjen kapcsolatba velünk.

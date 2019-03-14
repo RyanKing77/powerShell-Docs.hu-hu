@@ -2,12 +2,12 @@
 title: A VSCode-ban és a PowerShellben történő fájlkódolás megértése
 description: Fájlkódolás VSCode, a PowerShell konfigurálása
 ms.date: 02/28/2019
-ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 73e766832d56a08bd5ef16df11899a0aab0badae
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429805"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795115"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>A VSCode-ban és a PowerShellben történő fájlkódolás megértése
 
@@ -55,11 +55,13 @@ Ezek bájt, a Windows-1252 vannak dekódolni, amikor azok a karakterek értelmez
 
 Néhány furcsa karaktersorozatok által is látható a következők:
 
+<!-- markdownlint-disable MD038 -->
 - `â€“` ahelyett, hogy `–`
 - `â€”` ahelyett, hogy `—`
 - `Ã„2` ahelyett, hogy `Ä`
 - `Â` helyett ` ` (nem törhető szóköz)
 - `Ã©` ahelyett, hogy `é`
+<!-- markdownlint-enable MD038 -->
 
 Ez praktikus [referencia](https://www.i18nqa.com/debug/utf8-debug.html) sorolja fel, hogy az UTF-8 vagy Windows-1252 kódolási általános mintákat.
 

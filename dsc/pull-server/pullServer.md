@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC Pull Service
-ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 27effe0cd3b9d90dcfaaf1bd4e38edf3c04c9cfb
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429958"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794722"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration lekéréses szolgáltatás
 
@@ -88,7 +88,7 @@ A következő lépések azt ismertetik, hogyan használhatja az erőforrást, am
 2. SSL-tanúsítvány a DSC lekéréses kiszolgálón le egy megbízható hitelesítésszolgáltató, vagy a szervezet vagy egy nyilvános szolgáltató belül. A szolgáltató kapott tanúsítvány általában a PFX formátumban van.
 3. Telepítse a tanúsítványt a csomóponton a DSC lekéréses kiszolgálón az alapértelmezett helyen, amely elvileg váló `CERT:\LocalMachine\My`.
    - Jegyezze fel a tanúsítvány-ujjlenyomatot.
-4. Válassza ki a regisztrációs kulcsát, használható egy GUID Azonosítót. Hozhat létre egy PowerShell-lel, írja be a következő, a PS-parancssorba, és nyomja le az enter: ` [guid]::newGuid()` vagy `New-Guid`. Ezt a kulcsot a regisztráció során hitelesítsék magukat a megosztott kulcs lesz ügyfél csomópontja. További információkért tekintse meg a regisztrációs kulcsot az alábbi szakaszban.
+4. Válassza ki a regisztrációs kulcsát, használható egy GUID Azonosítót. Hozhat létre egy PowerShell-lel, írja be a következő, a PS-parancssorba, és nyomja le az enter: `[guid]::newGuid()` vagy `New-Guid`. Ezt a kulcsot a regisztráció során hitelesítsék magukat a megosztott kulcs lesz ügyfél csomópontja. További információkért tekintse meg a regisztrációs kulcsot az alábbi szakaszban.
 5. A PowerShell ISE-ben (F5) a következő konfigurációs parancsfájl futtatásához (példák mappájában található a **xPSDesiredStateConfiguration** modul mint `Sample_xDscWebServiceRegistration.ps1`). Ez a szkript állítja be a lekéréses kiszolgálón.
 
     ```powershell

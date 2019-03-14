@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 93a00463-af58-41c8-b088-450909fa1d05
 caps.latest.revision: 6
-ms.openlocfilehash: 4929a5b1c9f73bb12b6df975e03fc529db3565ef
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d69e8a734aa96ff9b7911815fb43b81103548b59
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851932"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794348"
 ---
 # <a name="how-to-set-helpinfo-xml-version-numbers"></a>HelpInfo XML-verziószámok beállítása
 
@@ -21,7 +21,6 @@ Ez a témakör azt ismerteti, hogyan állítsa be, és a egy frissíthető súg�
 
 ## <a name="how-to-set-helpinfo-xml-version-numbers"></a>HelpInfo XML-verziószámok beállítása
 
-Egy HelpInfo XML-fájlban a verziószámok létfontosságúak frissíthető súgó működését. A [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) és [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) parancsmagok új súgófájlok letöltéséhez, csak akkor, ha egy felhasználói felületi kulturális környezet a távoli HelpInfo XML-fájlban a verziószám nagyobb, mint a verziószáma az adott felhasználói felület kultúrafüggő részletei a helyi HelpInfo XML, vagy nincs helyi HelpInfo XML-fájl.
 Egy HelpInfo XML-fájlban a verziószámok létfontosságúak frissíthető súgó működését. A [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) és [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) parancsmagok új súgófájlok letöltéséhez, csak akkor, ha egy felhasználói felületi kulturális környezet a távoli HelpInfo XML-fájlban a verziószám nagyobb, mint a verziószáma az adott felhasználói felület kultúrafüggő részletei a helyi HelpInfo XML, vagy nincs helyi HelpInfo XML-fájl.
 
 A HelpInfo XML-fájlt használ a 4 részből verziószámot, amely van definiálva a **System.Version** a Microsoft .NET-keretrendszer osztályát. A formátum `N1.N2.N3.N4`. Modul szerzők bármely verzióját, amely lehetővé teszi számozási használhatják a **System.Version** osztály. Frissíthető súgó csak ehhez meg kell adni a verziószám felhasználói felületi kulturális környezet növeléséhez a CAB-fájl, a felhasználói felület kulturális környezethez tartozó új verziója, a hely által meghatározott feltöltésekor a **HelpContentURI** elem a HelpInfo XML-fájlban.

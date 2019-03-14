@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dffedd31-c10d-4e11-a9ee-4fdfe9a869e8
 caps.latest.revision: 8
-ms.openlocfilehash: 980fbff49a3481d92c2ca8483772b1704462c499
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 03284495fbd6d6cfaed639604e87bc70c7023b6c
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847928"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795045"
 ---
 # <a name="remoterunspacepool01-sample"></a>RemoteRunspacePool01 – minta
 
@@ -31,7 +31,6 @@ Ez a példa bemutatja, hogyan hozható létre egy távoli futási teret készlet
 
 - Használó létrehozása egy távoli futási teret a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektum a távoli kapcsolat létrehozásához.
 
-- Fut a [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) és [Get-Service](/powershell/module/microsoft.powershell.management/get-service) parancsmagok által egyidejűleg távoli futási teret tárolókészletet használja.
 - Fut a [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) és [Get-Service](/powershell/module/microsoft.powershell.management/get-service) parancsmagok által egyidejűleg távoli futási teret tárolókészletet használja.
 
 - A távoli futási teret készlet kiadni a távoli kapcsolat bezárása.

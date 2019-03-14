@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: Hibajavításokat tartalmaz a WMF 5.1
-ms.openlocfilehash: d2cf44753a7cb54897e76cf914a8fef0f4aecf1e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f53fc40b79a3906ac2025b0eff342c0705b82655
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684149"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795368"
 ---
-# <a name="bug-fixes-in-wmf-51"></a>Hibajavításokat tartalmaz a WMF 5.1-es #
+# <a name="bug-fixes-in-wmf-51"></a>Hibajavításokat tartalmaz a WMF 5.1
 
-## <a name="bug-fixes"></a>Hibajavítások ##
+## <a name="bug-fixes"></a>Hibajavítások
 
 A következő jelentős programhibákat a WMF 5.1:
 
-### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>Teljes körűen figyelembe veszi az automatikus felderítési modul `$env:PSModulePath` ###
+### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>Teljes körűen figyelembe veszi az automatikus felderítési modul `$env:PSModulePath`
 
 A modul automatikus felderítési (betöltése modulok automatikusan, egy explicit Import-Module-parancs meghívásakor nélkül) a WMF 3 jelent meg.
 Vezetett be, amikor PowerShell ellenőrzi a parancsok `$PSHome\Modules` használata előtt `$env:PSModulePath`.
@@ -24,43 +24,43 @@ Vezetett be, amikor PowerShell ellenőrzi a parancsok `$PSHome\Modules` használ
 A WMF 5.1 módosítja ezt a viselkedést, hogy tartsa tiszteletben `$env:PSModulePath` teljesen.
 Ez lehetővé teszi egy felhasználó által létrehozott modul, amely meghatározza a PowerShell által biztosított parancsok (pl. `Get-ChildItem`) automatikus – betöltését és a beépített parancsa megfelelően felülírása.
 
-### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>Átirányítási fájlt nem hosszabb rögzített kódok `-Encoding Unicode` ###
+### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>Átirányítási fájlt nem hosszabb rögzített kódok `-Encoding Unicode`
 
 PowerShell korábbi verzióiban lehetetlen szabályozhatja, hogy a fájl kódolása például a fájl átirányítás operátor által használt volt `Get-ChildItem > out.txt` mert PowerShell hozzáadott `-Encoding Unicode`.
 
 A WMF 5.1-es verziótól kezdődően most módosíthatja a fájl kódolása átirányítás beállításával `$PSDefaultParameterValues`:
 
-```
+```powershell
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ```
 
-### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Rögzített elérése során tagjai regresszió `System.Reflection.TypeInfo` ###
+### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Rögzített elérése során tagjai regresszió `System.Reflection.TypeInfo`
 
 A WMF 5.0 rendszerben bevezetett regresszió érvénytelenítése elérésére tagjai `System.Reflection.RuntimeType`, pl. `[int].ImplementedInterfaces`.
 Ezt a hibát a WMF 5.1 megoldották.
 
 
-### <a name="fixed-some-issues-with-com-objects"></a>Bizonyos problémák rögzített COM-objektumok ###
+### <a name="fixed-some-issues-with-com-objects"></a>Bizonyos problémák rögzített COM-objektumok
 
 A WMF 5.0 bevezetett egy új COM vyvolání metody COM-objektumok és COM-objektumok elérésére tulajdonságait a Binder létrehozása.
 Az új binder jelentősen javult a teljesítmény, de bizonyos hibák, amelyek kijavítása megtörtént a WMF 5.1 is bevezetett.
 
-#### <a name="argument-conversions-were-not-always-performed-correctly"></a>Argumentum-átalakítás nem lettek mindig végrehajtva megfelelően ####
+#### <a name="argument-conversions-were-not-always-performed-correctly"></a>Argumentum-átalakítás nem lettek mindig végrehajtva megfelelően
 
 Az alábbi példában:
 
-```
+```powershell
 $obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
 A SendKeys metódus karakterláncot vár, de a PowerShell nem konvertálható a char egy karakterlánc IDispatch::Invoke, amely VariantChangeType használnak az átalakítást, amely ebben a példában az "1", "7" és "3" kulcsok küldése inkább eredményezett való átalakítás elhalasztása a várt Volume.Mute kulcs.
 
-#### <a name="enumerable-com-objects-not-always-handled-correctly"></a>COM-objektumok enumerálható nem mindig kezelése ####
+#### <a name="enumerable-com-objects-not-always-handled-correctly"></a>COM-objektumok enumerálható nem mindig kezelése
 
 PowerShell általában a legtöbb enumerálható objektumok enumerálása, de a WMF 5.0 rendszerben bevezetett regresszió miatt nem sikerült a valósítania az IEnumerable illesztőfelületet COM-objektumok enumerálása.  Például:
 
-```
+```powershell
 function Get-COMDictionary
 {
     $d = New-Object -ComObject Scripting.Dictionary
@@ -76,13 +76,13 @@ A fenti példában a WMF 5.0 helytelenül írt a Scripting.Dictionary számbavé
 
 Ez a módosítás is címek [ki 1752224 a Connect webhelyen](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
 
-### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]` nem volt engedélyezett osztályok ###
+### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]` nem volt engedélyezett osztályok
 
 A WMF 5.0 osztályokat az osztályok a használt típusú literálok érvényesítése vezetett be.
 `[ordered]` néz ki egy típusú konstans azonban nem igaz typ .NET.
 A WMF 5.0 helytelenül jelentett hiba `[ordered]` osztály belül:
 
-```
+```powershell
 class CThing
 {
     [object] foo($i)
@@ -93,7 +93,7 @@ class CThing
 ```
 
 
-### <a name="help-on-about-topics-with-multiple-versions-does-not-work"></a>Súgó a többféle verzióját tartalmazó témakörök nem működik. ###
+### <a name="help-on-about-topics-with-multiple-versions-does-not-work"></a>Súgó a többféle verzióját tartalmazó témakörök nem működik.
 
 A WMF 5.1-es, ha már telepített modulokban több verzióját, és azok minden megosztott súgótémakör, például about_PSReadline, mielőtt `help about_PSReadline` több témakörök a megfelelő módszer a valódi súgójának megtekintéséhez adna vissza.
 
