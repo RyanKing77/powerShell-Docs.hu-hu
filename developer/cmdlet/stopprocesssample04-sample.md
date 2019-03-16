@@ -8,68 +8,68 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac4903f5-fd40-4f1c-b1d1-18923c16ce45
 caps.latest.revision: 8
-ms.openlocfilehash: 63f04e4caebc31974f35b49309b176241c9b8d4b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 26e882dad839af43945f84d4cdd6cda7bdb2d587
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849986"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059711"
 ---
-# <a name="stopprocesssample04-sample"></a><span data-ttu-id="427f2-102">StopProcessSample04 – minta</span><span class="sxs-lookup"><span data-stu-id="427f2-102">StopProcessSample04 Sample</span></span>
+# <a name="stopprocesssample04-sample"></a><span data-ttu-id="173d7-102">StopProcessSample04 – minta</span><span class="sxs-lookup"><span data-stu-id="173d7-102">StopProcessSample04 Sample</span></span>
 
-<span data-ttu-id="427f2-103">Ez a példa bemutatja, hogyan írhat olyan parancsmagot, amely paraméterkészlettel nyilatkozik, adja meg az alapértelmezett paraméter beállítása, és egy bemeneti objektumot tud fogadni.</span><span class="sxs-lookup"><span data-stu-id="427f2-103">This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object.</span></span> <span data-ttu-id="427f2-104">Ez a parancsmag hasonlít a `Stop-Process` parancsmag Windows PowerShell 2.0 által biztosított.</span><span class="sxs-lookup"><span data-stu-id="427f2-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="173d7-103">Ez a példa bemutatja, hogyan írhat olyan parancsmagot, amely paraméterkészlettel nyilatkozik, adja meg az alapértelmezett paraméter beállítása, és egy bemeneti objektumot tud fogadni.</span><span class="sxs-lookup"><span data-stu-id="173d7-103">This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object.</span></span> <span data-ttu-id="173d7-104">Ez a parancsmag hasonlít a `Stop-Process` parancsmag Windows PowerShell 2.0 által biztosított.</span><span class="sxs-lookup"><span data-stu-id="173d7-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="427f2-105">Hogyan hozhat létre a mintát a Visual Studio használatával.</span><span class="sxs-lookup"><span data-stu-id="427f2-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="173d7-105">Hogyan hozhat létre a mintát a Visual Studio használatával.</span><span class="sxs-lookup"><span data-stu-id="173d7-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="427f2-106">A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a StopProcessSample04 mappát.</span><span class="sxs-lookup"><span data-stu-id="427f2-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder.</span></span> <span data-ttu-id="427f2-107">Az alapértelmezett hely a C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span><span class="sxs-lookup"><span data-stu-id="427f2-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span></span>
+1. <span data-ttu-id="173d7-106">A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a StopProcessSample04 mappát.</span><span class="sxs-lookup"><span data-stu-id="173d7-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder.</span></span> <span data-ttu-id="173d7-107">Az alapértelmezett hely a C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span><span class="sxs-lookup"><span data-stu-id="173d7-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span></span>
 
-2. <span data-ttu-id="427f2-108">A megoldásfájlt (.sln) ikonra.</span><span class="sxs-lookup"><span data-stu-id="427f2-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="427f2-109">Ekkor megnyílik a mintaprojektet a Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="427f2-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="173d7-108">A megoldásfájlt (.sln) ikonra.</span><span class="sxs-lookup"><span data-stu-id="173d7-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="173d7-109">Ekkor megnyílik a mintaprojektet a Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="173d7-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="427f2-110">Az a **összeállítása** menüjében válassza **megoldás fordítása**.</span><span class="sxs-lookup"><span data-stu-id="427f2-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="173d7-110">Az a **összeállítása** menüjében válassza **megoldás fordítása**.</span><span class="sxs-lookup"><span data-stu-id="173d7-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="427f2-111">A könyvtárban, a minta az alapértelmezett \bin vagy \bin\debug mappákat a lesz felépítve.</span><span class="sxs-lookup"><span data-stu-id="427f2-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="173d7-111">A könyvtárban, a minta az alapértelmezett \bin vagy \bin\debug mappákat a lesz felépítve.</span><span class="sxs-lookup"><span data-stu-id="173d7-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="427f2-112">A minta futtatása</span><span class="sxs-lookup"><span data-stu-id="427f2-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="173d7-112">A minta futtatása</span><span class="sxs-lookup"><span data-stu-id="173d7-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="427f2-113">Hozza létre a következő modul mappát:</span><span class="sxs-lookup"><span data-stu-id="427f2-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="173d7-113">Hozza létre a következő modul mappát:</span><span class="sxs-lookup"><span data-stu-id="173d7-113">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample04`
 
-2. <span data-ttu-id="427f2-114">A minta szerelvény a modul mappába másolja.</span><span class="sxs-lookup"><span data-stu-id="427f2-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="173d7-114">A minta szerelvény a modul mappába másolja.</span><span class="sxs-lookup"><span data-stu-id="173d7-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="427f2-115">Indítsa el a Windows PowerShellt.</span><span class="sxs-lookup"><span data-stu-id="427f2-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="173d7-115">Indítsa el a Windows PowerShellt.</span><span class="sxs-lookup"><span data-stu-id="173d7-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="427f2-116">Futtassa a következő szerelvény betöltése a Windows PowerShell parancsot:</span><span class="sxs-lookup"><span data-stu-id="427f2-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="173d7-116">Futtassa a következő szerelvény betöltése a Windows PowerShell parancsot:</span><span class="sxs-lookup"><span data-stu-id="173d7-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample04`
 
-5. <span data-ttu-id="427f2-117">Futtassa a következő parancsot a parancsmag futtatásához:</span><span class="sxs-lookup"><span data-stu-id="427f2-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="173d7-117">Futtassa a következő parancsot a parancsmag futtatásához:</span><span class="sxs-lookup"><span data-stu-id="173d7-117">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="427f2-118">Követelmények</span><span class="sxs-lookup"><span data-stu-id="427f2-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="173d7-118">Követelmények</span><span class="sxs-lookup"><span data-stu-id="173d7-118">Requirements</span></span>
 
-<span data-ttu-id="427f2-119">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="427f2-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="173d7-119">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="173d7-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="427f2-120">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="427f2-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="173d7-120">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="173d7-120">Demonstrates</span></span>
 
-<span data-ttu-id="427f2-121">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="427f2-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="173d7-121">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="173d7-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="427f2-122">Egy parancsmag osztály deklaráló parancsmag attribútumával.</span><span class="sxs-lookup"><span data-stu-id="427f2-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="173d7-122">Egy parancsmag osztály deklaráló parancsmag attribútumával.</span><span class="sxs-lookup"><span data-stu-id="173d7-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="427f2-123">Deklaráló a parancsmag paramétereit a paraméter-attribútumhoz használatával.</span><span class="sxs-lookup"><span data-stu-id="427f2-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="173d7-123">Deklaráló a parancsmag paramétereit a paraméter-attribútumhoz használatával.</span><span class="sxs-lookup"><span data-stu-id="173d7-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="427f2-124">Egy paraméter, amely a bemeneti objektum hozzáadását.</span><span class="sxs-lookup"><span data-stu-id="427f2-124">Adding a parameter that accepts input object.</span></span>
+- <span data-ttu-id="173d7-124">Egy paraméter, amely a bemeneti objektum hozzáadását.</span><span class="sxs-lookup"><span data-stu-id="173d7-124">Adding a parameter that accepts input object.</span></span>
 
-- <span data-ttu-id="427f2-125">Paraméterkészlettel paraméterek hozzáadása</span><span class="sxs-lookup"><span data-stu-id="427f2-125">Adding parameters to parameter sets</span></span>
+- <span data-ttu-id="173d7-125">Paraméterkészlettel paraméterek hozzáadása</span><span class="sxs-lookup"><span data-stu-id="173d7-125">Adding parameters to parameter sets</span></span>
 
-- <span data-ttu-id="427f2-126">Állítsa be az alapértelmezett paraméter megadásával.</span><span class="sxs-lookup"><span data-stu-id="427f2-126">Specifying the default parameter set.</span></span>
+- <span data-ttu-id="173d7-126">Állítsa be az alapértelmezett paraméter megadásával.</span><span class="sxs-lookup"><span data-stu-id="173d7-126">Specifying the default parameter set.</span></span>
 
-## <a name="example"></a><span data-ttu-id="427f2-127">Példa</span><span class="sxs-lookup"><span data-stu-id="427f2-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="173d7-127">Példa</span><span class="sxs-lookup"><span data-stu-id="173d7-127">Example</span></span>
 
-<span data-ttu-id="427f2-128">A következő kódot a Stop-Proc parancsmag paraméterkészlettel deklarálja, adja meg az alapértelmezett paraméter beállítása, és egy bemeneti objektumot tud fogadni megvalósítását mutatja be.</span><span class="sxs-lookup"><span data-stu-id="427f2-128">The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets, specifies the default parameter set, and can accept an input object.</span></span>
+<span data-ttu-id="173d7-128">A következő kódot a Stop-Proc parancsmag paraméterkészlettel deklarálja, adja meg az alapértelmezett paraméter beállítása, és egy bemeneti objektumot tud fogadni megvalósítását mutatja be.</span><span class="sxs-lookup"><span data-stu-id="173d7-128">The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets, specifies the default parameter set, and can accept an input object.</span></span>
 
-<span data-ttu-id="427f2-129">Ez a példa bemutatja a bemeneti objektum, deklarálnia paraméterkészlettel, és adja meg az alapértelmezett paramétert használja.</span><span class="sxs-lookup"><span data-stu-id="427f2-129">This sample shows the input object, how to declare parameter sets, and how to specify the default parameter set to use.</span></span>
+<span data-ttu-id="173d7-129">Ez a példa bemutatja a bemeneti objektum, deklarálnia paraméterkészlettel, és adja meg az alapértelmezett paramétert használja.</span><span class="sxs-lookup"><span data-stu-id="173d7-129">This sample shows the input object, how to declare parameter sets, and how to specify the default parameter set to use.</span></span>
 
 ```csharp
 using System;
@@ -307,9 +307,9 @@ namespace Microsoft.Samples.PowerShell.Commands
                                             "The process \"{0}\" is a critical process and should not be stopped. Are you sure you wish to stop the process?",
                                                 processName);
                // It is possible that the ProcessRecord method is called
-               // multiple times when objects are recieved as inputs from
+               // multiple times when objects are received as inputs from
                // the pipeline. So to retain YesToAll and NoToAll input that
-               // the user may enter across mutilple calls to this function,
+               // the user may enter across multiple calls to this function,
                // they are stored as private members of the cmdlet.
                if (!ShouldContinue(message, "Warning!",
                             ref yesToAll, ref noToAll))
@@ -361,7 +361,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
            WriteVerbose(message);
 
-           // If the PassThru prameter is specified, return the terminated
+           // If the PassThru parameter is specified, return the terminated
            // process to the pipeline.
            if (passThru)
            {
@@ -490,6 +490,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="427f2-130">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="427f2-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="173d7-130">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="173d7-130">See Also</span></span>
 
-[<span data-ttu-id="427f2-131">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="427f2-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="173d7-131">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="173d7-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

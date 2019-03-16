@@ -8,42 +8,42 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1685cfc4-b32c-4bed-b221-e0c4482db955
 caps.latest.revision: 9
-ms.openlocfilehash: f74ff24f114ecd872ffb443c27a57b1fbe42fa23
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eb227b5fa5e91f59b6fc99981ff5affca1cf63fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850133"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056447"
 ---
-# <a name="runspace05-sample"></a><span data-ttu-id="d4f6b-102">Runspace05 – minta</span><span class="sxs-lookup"><span data-stu-id="d4f6b-102">Runspace05 Sample</span></span>
+# <a name="runspace05-sample"></a><span data-ttu-id="8d32f-102">Runspace05 – minta</span><span class="sxs-lookup"><span data-stu-id="8d32f-102">Runspace05 Sample</span></span>
 
-<span data-ttu-id="d4f6b-103">Ez a példa bemutatja, hogyan adhat hozzá egy beépülő modul segítségével egy [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektumot, hogy a beépülő modul a parancsmag érhető el a futási térben megnyitásakor.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="d4f6b-104">A beépülő modult biztosít a Get-Proc parancsmag (határozzák meg a [GetProcessSample01 minta](../cmdlet/getprocesssample01-sample.md)), amely a szinkron módon fut egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="8d32f-103">Ez a példa bemutatja, hogyan adhat hozzá egy beépülő modul segítségével egy [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektumot, hogy a beépülő modul a parancsmag érhető el a futási térben megnyitásakor.</span><span class="sxs-lookup"><span data-stu-id="8d32f-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="8d32f-104">A beépülő modult biztosít a Get-Proc parancsmag (határozzák meg a [GetProcessSample01 minta](../cmdlet/getprocesssample01-sample.md)), amely a szinkron módon fut egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="8d32f-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="d4f6b-105">Követelmények</span><span class="sxs-lookup"><span data-stu-id="d4f6b-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="8d32f-105">Követelmények</span><span class="sxs-lookup"><span data-stu-id="8d32f-105">Requirements</span></span>
 
-<span data-ttu-id="d4f6b-106">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-106">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="8d32f-106">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="8d32f-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="d4f6b-107">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="d4f6b-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="8d32f-107">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="8d32f-107">Demonstrates</span></span>
 
-<span data-ttu-id="d4f6b-108">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-108">This sample demonstrates the following.</span></span>
+<span data-ttu-id="8d32f-108">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="8d32f-108">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="d4f6b-109">Létrehozás egy [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="8d32f-109">Létrehozás egy [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum.</span><span class="sxs-lookup"><span data-stu-id="8d32f-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="d4f6b-110">A beépülő modul való hozzáadásával a [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="8d32f-110">A beépülő modul való hozzáadásával a [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum.</span><span class="sxs-lookup"><span data-stu-id="8d32f-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="d4f6b-111">Létrehozás egy [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objektum, amely használja a [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="8d32f-111">Létrehozás egy [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objektum, amely használja a [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum.</span><span class="sxs-lookup"><span data-stu-id="8d32f-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="d4f6b-112">Létrehozás egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum, amely a futási teret használ.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="8d32f-112">Létrehozás egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum, amely a futási teret használ.</span><span class="sxs-lookup"><span data-stu-id="8d32f-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="d4f6b-113">A beépülő modul get-proc parancsmag hozzáadása, a folyamat a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="8d32f-113">A beépülő modul get-proc parancsmag hozzáadása, a folyamat a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="8d32f-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="d4f6b-114">A következő parancs futtatásával szinkron módon történik.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-114">Running the command synchronously.</span></span>
+- <span data-ttu-id="8d32f-114">A következő parancs futtatásával szinkron módon történik.</span><span class="sxs-lookup"><span data-stu-id="8d32f-114">Running the command synchronously.</span></span>
 
-- <span data-ttu-id="d4f6b-115">A Tulajdonságok beolvasása a [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) a parancs által visszaadott objektum.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-115">Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="8d32f-115">A Tulajdonságok beolvasása a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) a parancs által visszaadott objektum.</span><span class="sxs-lookup"><span data-stu-id="8d32f-115">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="d4f6b-116">Példa</span><span class="sxs-lookup"><span data-stu-id="d4f6b-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="8d32f-116">Példa</span><span class="sxs-lookup"><span data-stu-id="8d32f-116">Example</span></span>
 
-<span data-ttu-id="d4f6b-117">Ez a példa létrehoz egy futási teret használ, egy [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektumot határozza meg az elérhető elemeket a futási térben megnyitásakor.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="d4f6b-118">Ebben a példában egy modul, amely meghatározza a Get-Proc parancsmag hozzáadódik a kezdeti munkamenet-állapot.</span><span class="sxs-lookup"><span data-stu-id="d4f6b-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
+<span data-ttu-id="8d32f-117">Ez a példa létrehoz egy futási teret használ, egy [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektumot határozza meg az elérhető elemeket a futási térben megnyitásakor.</span><span class="sxs-lookup"><span data-stu-id="8d32f-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="8d32f-118">Ebben a példában egy modul, amely meghatározza a Get-Proc parancsmag hozzáadódik a kezdeti munkamenet-állapot.</span><span class="sxs-lookup"><span data-stu-id="8d32f-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -127,6 +127,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="d4f6b-119">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="d4f6b-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8d32f-119">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="8d32f-119">See Also</span></span>
 
-[<span data-ttu-id="d4f6b-120">A Windows PowerShell-gazdagépet alkalmazás írása</span><span class="sxs-lookup"><span data-stu-id="d4f6b-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="8d32f-120">A Windows PowerShell-gazdagépet alkalmazás írása</span><span class="sxs-lookup"><span data-stu-id="8d32f-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

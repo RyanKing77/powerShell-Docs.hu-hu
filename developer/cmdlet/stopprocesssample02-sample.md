@@ -8,68 +8,68 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
 caps.latest.revision: 10
-ms.openlocfilehash: 57751e74c9b8ab897dd35ca1fef4704d92a3f218
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851764"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057225"
 ---
-# <a name="stopprocesssample02-sample"></a><span data-ttu-id="fa2a5-102">StopProcessSample02 – minta</span><span class="sxs-lookup"><span data-stu-id="fa2a5-102">StopProcessSample02 Sample</span></span>
+# <a name="stopprocesssample02-sample"></a><span data-ttu-id="661cb-102">StopProcessSample02 – minta</span><span class="sxs-lookup"><span data-stu-id="661cb-102">StopProcessSample02 Sample</span></span>
 
-<span data-ttu-id="fa2a5-103">Ez a példa bemutatja, hogyan írhat olyan parancsmagot, amely a hibakeresési (WriteDebug), részletes (WriteVerbose) és (WriteWarning) figyelmeztető üzeneteket ír a helyi számítógépen lévő folyamatok leállítása közben.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="fa2a5-104">Ez a parancsmag hasonlít a `Stop-Process` parancsmag Windows PowerShell 2.0 által biztosított.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="661cb-103">Ez a példa bemutatja, hogyan írhat olyan parancsmagot, amely a hibakeresési (WriteDebug), részletes (WriteVerbose) és (WriteWarning) figyelmeztető üzeneteket ír a helyi számítógépen lévő folyamatok leállítása közben.</span><span class="sxs-lookup"><span data-stu-id="661cb-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="661cb-104">Ez a parancsmag hasonlít a `Stop-Process` parancsmag Windows PowerShell 2.0 által biztosított.</span><span class="sxs-lookup"><span data-stu-id="661cb-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="fa2a5-105">Hogyan hozhat létre a mintát a Visual Studio használatával.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="661cb-105">Hogyan hozhat létre a mintát a Visual Studio használatával.</span><span class="sxs-lookup"><span data-stu-id="661cb-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="fa2a5-106">Nyissa meg a Windows Internet Explorer, és keresse meg a mintákat a könyvtárban a StopProcessSample02 könyvtárát.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="661cb-106">Nyissa meg a Windows Internet Explorer, és keresse meg a mintákat a könyvtárban a StopProcessSample02 könyvtárát.</span><span class="sxs-lookup"><span data-stu-id="661cb-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
 
-    <span data-ttu-id="fa2a5-107">A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a StopProcessSample02 mappát.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="fa2a5-108">Az alapértelmezett hely a C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
+    <span data-ttu-id="661cb-107">A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a StopProcessSample02 mappát.</span><span class="sxs-lookup"><span data-stu-id="661cb-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="661cb-108">Az alapértelmezett hely a C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span><span class="sxs-lookup"><span data-stu-id="661cb-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
 
-2. <span data-ttu-id="fa2a5-109">A megoldásfájlt (.sln) ikonra.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="fa2a5-110">Ekkor megnyílik a mintaprojektet a Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-110">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="661cb-109">A megoldásfájlt (.sln) ikonra.</span><span class="sxs-lookup"><span data-stu-id="661cb-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="661cb-110">Ekkor megnyílik a mintaprojektet a Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="661cb-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="fa2a5-111">Az a **összeállítása** menüjében válassza **megoldás fordítása**.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-111">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="661cb-111">Az a **összeállítása** menüjében válassza **megoldás fordítása**.</span><span class="sxs-lookup"><span data-stu-id="661cb-111">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="fa2a5-112">A könyvtárban, a minta az alapértelmezett \bin vagy \bin\debug mappákat a lesz felépítve.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="661cb-112">A könyvtárban, a minta az alapértelmezett \bin vagy \bin\debug mappákat a lesz felépítve.</span><span class="sxs-lookup"><span data-stu-id="661cb-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="fa2a5-113">A minta futtatása</span><span class="sxs-lookup"><span data-stu-id="fa2a5-113">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="661cb-113">A minta futtatása</span><span class="sxs-lookup"><span data-stu-id="661cb-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="fa2a5-114">Hozza létre a következő modul mappát:</span><span class="sxs-lookup"><span data-stu-id="fa2a5-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="661cb-114">Hozza létre a következő modul mappát:</span><span class="sxs-lookup"><span data-stu-id="661cb-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample02`
 
-2. <span data-ttu-id="fa2a5-115">A minta szerelvény a modul mappába másolja.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-115">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="661cb-115">A minta szerelvény a modul mappába másolja.</span><span class="sxs-lookup"><span data-stu-id="661cb-115">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="fa2a5-116">Indítsa el a Windows PowerShellt.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="661cb-116">Indítsa el a Windows PowerShellt.</span><span class="sxs-lookup"><span data-stu-id="661cb-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="fa2a5-117">Futtassa a következő szerelvény betöltése a Windows PowerShell parancsot:</span><span class="sxs-lookup"><span data-stu-id="fa2a5-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="661cb-117">Futtassa a következő szerelvény betöltése a Windows PowerShell parancsot:</span><span class="sxs-lookup"><span data-stu-id="661cb-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample02`
 
-5. <span data-ttu-id="fa2a5-118">Futtassa a következő parancsot a parancsmag futtatásához:</span><span class="sxs-lookup"><span data-stu-id="fa2a5-118">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="661cb-118">Futtassa a következő parancsot a parancsmag futtatásához:</span><span class="sxs-lookup"><span data-stu-id="661cb-118">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="fa2a5-119">Követelmények</span><span class="sxs-lookup"><span data-stu-id="fa2a5-119">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="661cb-119">Követelmények</span><span class="sxs-lookup"><span data-stu-id="661cb-119">Requirements</span></span>
 
-<span data-ttu-id="fa2a5-120">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-120">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="661cb-120">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="661cb-120">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="fa2a5-121">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="fa2a5-121">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="661cb-121">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="661cb-121">Demonstrates</span></span>
 
-<span data-ttu-id="fa2a5-122">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-122">This sample demonstrates the following.</span></span>
+<span data-ttu-id="661cb-122">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="661cb-122">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="fa2a5-123">Egy parancsmag osztály deklaráló parancsmag attribútumával.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="661cb-123">Egy parancsmag osztály deklaráló parancsmag attribútumával.</span><span class="sxs-lookup"><span data-stu-id="661cb-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="fa2a5-124">Deklaráló a parancsmag paramétereit a paraméter-attribútumhoz használatával.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="661cb-124">Deklaráló a parancsmag paramétereit a paraméter-attribútumhoz használatával.</span><span class="sxs-lookup"><span data-stu-id="661cb-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="fa2a5-125">A részletes üzeneteket írna.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-125">Writing verbose messages.</span></span> <span data-ttu-id="fa2a5-126">A részletes üzeneteket írhat módszerrel kapcsolatos további információkért lásd: [System.Management.Automation.Cmdlet.Writeverbose\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span><span class="sxs-lookup"><span data-stu-id="fa2a5-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.Writeverbose\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
+- <span data-ttu-id="661cb-125">A részletes üzeneteket írna.</span><span class="sxs-lookup"><span data-stu-id="661cb-125">Writing verbose messages.</span></span> <span data-ttu-id="661cb-126">A részletes üzeneteket írhat módszerrel kapcsolatos további információkért lásd: [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span><span class="sxs-lookup"><span data-stu-id="661cb-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
 
-- <span data-ttu-id="fa2a5-127">Hiba üzeneteket írna.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-127">Writing error messages.</span></span> <span data-ttu-id="fa2a5-128">A hibaüzenetek írásához használt módszerrel kapcsolatos további információkért lásd: [System.Management.Automation.Cmdlet.Writeerror\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span><span class="sxs-lookup"><span data-stu-id="fa2a5-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.Writeerror\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
+- <span data-ttu-id="661cb-127">Hiba üzeneteket írna.</span><span class="sxs-lookup"><span data-stu-id="661cb-127">Writing error messages.</span></span> <span data-ttu-id="661cb-128">A hibaüzenetek írásához használt módszerrel kapcsolatos további információkért lásd: [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span><span class="sxs-lookup"><span data-stu-id="661cb-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
 
-- <span data-ttu-id="fa2a5-129">Írás figyelmeztető üzeneteket.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-129">Writing warning messages.</span></span> <span data-ttu-id="fa2a5-130">A figyelmeztető üzenetek írásához használt módszerrel kapcsolatos további információkért lásd: [System.Management.Automation.Cmdlet.Writewarning\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span><span class="sxs-lookup"><span data-stu-id="fa2a5-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.Writewarning\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
+- <span data-ttu-id="661cb-129">Írás figyelmeztető üzeneteket.</span><span class="sxs-lookup"><span data-stu-id="661cb-129">Writing warning messages.</span></span> <span data-ttu-id="661cb-130">A figyelmeztető üzenetek írásához használt módszerrel kapcsolatos további információkért lásd: [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span><span class="sxs-lookup"><span data-stu-id="661cb-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
 
-## <a name="example"></a><span data-ttu-id="fa2a5-131">Példa</span><span class="sxs-lookup"><span data-stu-id="fa2a5-131">Example</span></span>
+## <a name="example"></a><span data-ttu-id="661cb-131">Példa</span><span class="sxs-lookup"><span data-stu-id="661cb-131">Example</span></span>
 
-<span data-ttu-id="fa2a5-132">Ez a példa bemutatja, hogyan írhat a verbose, a debug és figyelmeztető üzenetek használatával a `WriteDebug`, `WriteVerbose`, és `WriteWarning` módszereket.</span><span class="sxs-lookup"><span data-stu-id="fa2a5-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
+<span data-ttu-id="661cb-132">Ez a példa bemutatja, hogyan írhat a verbose, a debug és figyelmeztető üzenetek használatával a `WriteDebug`, `WriteVerbose`, és `WriteWarning` módszereket.</span><span class="sxs-lookup"><span data-stu-id="661cb-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
 
 ```csharp
 using System;
@@ -224,9 +224,9 @@ namespace Microsoft.Samples.PowerShell.Commands
                                         processName);
 
                        // It is possible that the ProcessRecord method is called
-                       // multiple times when objects are recieved as inputs from
+                       // multiple times when objects are received as inputs from
                        // the pipeline. So to retain YesToAll and NoToAll input that
-                       // the user may enter across mutilple calls to this function,
+                       // the user may enter across multiple calls to this function,
                        // they are stored as private members of the cmdlet.
                        if (!ShouldContinue(message, "Warning!",
                                     ref yesToAll, ref noToAll))
@@ -310,6 +310,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="fa2a5-133">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="fa2a5-133">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="661cb-133">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="661cb-133">See Also</span></span>
 
-[<span data-ttu-id="fa2a5-134">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="fa2a5-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="661cb-134">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="661cb-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
