@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
-ms.openlocfilehash: 59921a92661482b8d518b82f490c9879643543bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849517"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059575"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Parancsmag-paraméterek típusai
 
@@ -91,13 +91,13 @@ private string userName;
 
 ## <a name="switch-parameters"></a>Kapcsolóparaméterek
 
-Windows PowerShell biztosít egy [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) típus, amely lehetővé teszi egy paraméter értékének értéke automatikusan `false` Ha a paraméter nincs megadva a parancsmag esetén nevezik. Amikor csak lehetséges, használja a kapcsolóparaméterek logikai típusú paraméterek helyett.
+Windows PowerShell biztosít egy [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) típus, amely lehetővé teszi egy paraméter értékének értéke automatikusan `false` Ha a paraméter nincs megadva a parancsmag esetén nevezik. Amikor csak lehetséges, használja a kapcsolóparaméterek logikai típusú paraméterek helyett.
 
 Vegye figyelembe a következő mintát. Alapértelmezés szerint számos Windows PowerShell-parancsmagok nem ad meg a folyamat egy kimeneti objektumot. Van azonban, hogy ezek a parancsmagok egy `PassThru` váltson paraméter, amely felülírja az alapértelmezett viselkedést. Ha a `PassThru` paraméter meg van adva, ha ezeket a parancsmagokat a rendszer meghív, a parancsmag kimeneti objektumot adja vissza a folyamathoz.
 
-Ha szüksége van-e a paraméter alapértelmezett értéke `true` a paraméter nincs megadva a hívást, vegye figyelembe az értelemben paraméter megfordítása. A minta egy logikai érték, amely a paraméter-attribútumhoz beállítás helyett `true`, deklarálja a tulajdonság a [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) írja be, és állítsa az alapértelmezett érték a paraméter`false`.
+Ha szüksége van-e a paraméter alapértelmezett értéke `true` a paraméter nincs megadva a hívást, vegye figyelembe az értelemben paraméter megfordítása. A minta egy logikai érték, amely a paraméter-attribútumhoz beállítás helyett `true`, deklarálja a tulajdonság a [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) írja be, és állítsa az alapértelmezett érték a paraméter`false`.
 
-Egy új kapcsolóparaméter definiálásához deklarálja a tulajdonság a [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) írja be az alábbi mintában látható módon.
+Egy új kapcsolóparaméter definiálásához deklarálja a tulajdonság a [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) írja be az alábbi mintában látható módon.
 
 ```csharp
 [Parameter(Position = 1)]

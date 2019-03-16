@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
-ms.openlocfilehash: 5d6ad7f62c451a0013f6c52b294fac9abd0b4bf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851421"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057892"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Egyéni hitelesítés implementálása egy Management OData webszolgáltatásban
 
-A Windows PowerShell webszolgáltatás segítségével egy harmadik féltől származó megvalósításához szükséges a [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) felület Windows PowerShell-parancsmagok elérhetővé. Ez az interfész a felhasználó engedélyezése a web Service hajt végre. A felület megvalósítása a kód írása, után fordítani kell azokat a DLL-ek a webes alkalmazásban használható.
+A Windows PowerShell webszolgáltatás segítségével egy harmadik féltől származó megvalósításához szükséges a [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) felület Windows PowerShell-parancsmagok elérhetővé. Ez az interfész a felhasználó engedélyezése a web Service hajt végre. A felület megvalósítása a kód írása, után fordítani kell azokat a DLL-ek a webes alkalmazásban használható.
 
 ## <a name="pass-through-authorization"></a>Az átmenő hitelesítési
 
-A legegyszerűbben úgy valósítható meg a [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) felület, amely a minden felhasználó és a csatlakoztatott megvalósítás esetén. Ebben a példában nincs biztonsági és csak egy, a felület megvalósítása llustration megadott s biztosít. Megvalósítását a [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) felület felül kell írnia a két módszer: [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). Ebben a példában a [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) mindig adja meg a **adatait a System.Security.Principal.WindowsIdentity** az aktuális felhasználóhoz rendelt objektum .
+A legegyszerűbben úgy valósítható meg a [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) felület, amely a minden felhasználó és a csatlakoztatott megvalósítás esetén. Ebben a példában nincs biztonsági és csak olyan bemutatásáért, ahogy a felület megvalósítása megadott s biztosít. Megvalósítását a [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) felület felül kell írnia a két módszer: [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). Ebben a példában a [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) mindig adja meg a **adatait a System.Security.Principal.WindowsIdentity** az aktuális felhasználóhoz társított objektumot.
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -68,7 +68,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
         /// <summary>
 
-        /// Default managemnet system state key
+        /// Default management system state key
 
         /// </summary>
 
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>Szerepkör-alapú hitelesítést
 
-Az alábbi példa egy szerepkör-alapú engedélyezési szabályzatot valósít meg. A házirend XML-fájl a fő alkalmazását a Web.config fájl a könyvtárban található, és a MOF- és XML-leképezést sémafájlok van meghatározva. Az engedélyezési sémafájl konfigurálásával kapcsolatos további információkért lásd: [konfigurálása szerepkör-alapú hitelesítést](./configuring-role-based-authorization.md). Az első rész mintát valósítja meg a [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) és [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) metódusok. Ebben az esetben a illesztőmetódusait hívja metódusok a `RbacSystem` osztály (a meghatározást lásd alább), amelyeket a felhasználó engedélyeinek ellenőrzése a tényleges munkát.
+Az alábbi példa egy szerepkör-alapú engedélyezési szabályzatot valósít meg. A házirend XML-fájl a fő alkalmazását a Web.config fájl a könyvtárban található, és a MOF- és XML-leképezést sémafájlok van meghatározva. Az engedélyezési sémafájl konfigurálásával kapcsolatos további információkért lásd: [konfigurálása szerepkör-alapú hitelesítést](./configuring-role-based-authorization.md). Az első rész mintát valósítja meg a [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) és [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) módszereket. Ebben az esetben a illesztőmetódusait hívja metódusok a `RbacSystem` osztály (a meghatározást lásd alább), amelyeket a felhasználó engedélyeinek ellenőrzése a tényleges munkát.
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -209,7 +209,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
     /// <summary>
     /// Keeps Configuration for the RbacSystem
-    /// It reads the RacSystem configuration for configuratin file and creates RbacConfiguration
+    /// It reads the RacSystem configuration for configuration file and creates RbacConfiguration
     /// </summary>
     [Serializable]
     [XmlRoot("RbacConfiguration")]
@@ -719,7 +719,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
             /// Indicates whether the current object is equal to another object of the object type.
             /// </summary>
             /// <param name="other">Other object instance</param>
-            /// <returns>true, if both instace are same else false</returns>
+            /// <returns>true, if both instance are same else false</returns>
             public override bool Equals(object other)
             {
                 return this.Equals(other as RbacUserInfo);
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-Végül a RbacSystem osztálya határozza meg a módszereket, amelyek a munkát, a felhasználó az engedélyek ellenőrzése és az engedélyezési állapotot térjen vissza a meghatározott végrehajtásának módszerek a [Microsoft.Management.Odata.Customauthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) felületet.
+Végül a RbacSystem osztálya határozza meg a módszereket, amelyek a munkát, a felhasználó az engedélyek ellenőrzése és az engedélyezési állapotot térjen vissza a meghatározott végrehajtásának módszerek a [Microsoft.Management.Odata.CustomAuthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) felületet.

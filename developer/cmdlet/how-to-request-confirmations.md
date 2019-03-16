@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
-ms.openlocfilehash: 8cfbcacf93733667ffba63a252c86518c0919b57
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851995"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058819"
 ---
 # <a name="how-to-request-confirmations"></a>Megerősítés kérése
 
-Ez a példa bemutatja, hogyan hívhat meg a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) módszerek megerősítések a kérelem a a felhasználó előtt egy műveletet.
+Ez a példa bemutatja, hogyan hívhat meg a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) módszerek megerősítések a kérelem a a felhasználó előtt egy műveletet.
 
 > [!IMPORTANT]
 > Hogyan kezeli a Windows PowerShell a kérések kapcsolatos további információkért lásd: [megerősítést kérő](./requesting-confirmation-from-cmdlets.md).
@@ -43,13 +43,13 @@ Ez a példa bemutatja, hogyan hívhat meg a [System.Management.Automation.Cmdlet
     private bool force;
     ```
 
-3. Adjon hozzá egy `if` utasítás által visszaadott értéke használt a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódus határozza meg, hogy a [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) módszert hívja meg.
+3. Adjon hozzá egy `if` utasítás által visszaadott értéke használt a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódus határozza meg, hogy a [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) módszert hívja meg.
 
-4. Vegyen fel egy második `if` utasítás által visszaadott értéke használt a [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódust, és az értékét a `Force` paraméter határozza meg, hogy legyen-e a művelet történik.
+4. Vegyen fel egy második `if` utasítás által visszaadott értéke használt a [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódust, és az értékét a `Force` paraméter határozza meg, hogy legyen-e a művelet történik.
 
 ## <a name="example"></a>Példa
 
-A következő kódot a példában a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódusokat meghívni a belül a bírálja felül a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust. Azonban Ön is meghívhatja ezek a metódusok a más bemeneti feldolgozási módszerek.
+A következő kódot a példában a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódusokat meghívni a belül a felülbírálás az a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust. Azonban Ön is meghívhatja ezek a metódusok a más bemeneti feldolgozási módszerek.
 
 ```csharp
 protected override void ProcessRecord()

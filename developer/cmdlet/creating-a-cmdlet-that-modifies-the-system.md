@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: d93cc4a05a6625d073791c067d1e9b6662c3a565
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847046"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055138"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Rendszermódosító parancsmag létrehozása
 
@@ -26,15 +26,15 @@ A parancsmag néha módosítani kell a futó állapotot a rendszer, nem csak a W
 
 A parancsmag megerősítést támogatásához két dolgot kell tennie.
 
-- Deklarálja, hogy a parancsmag megerősítést támogatja a megadása esetén a [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) úgy, hogy kulcsszó Cmdletbinding attribútum `true`.
+- Deklarálja, hogy a parancsmag megerősítést támogatja a megadása esetén a [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) úgy, hogy kulcsszó Cmdletbinding attribútum `true`.
 
-- Hívás [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) (ahogyan az az alábbi példában látható) a parancsmag végrehajtása közben.
+- Hívás [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) (ahogyan az az alábbi példában látható) a parancsmag végrehajtása közben.
 
 Megerősítő támogatásával parancsmag tesz elérhetővé a `Confirm` és `WhatIf` paraméterek, amelyeket a Windows PowerShell által biztosított, és megfelel a fejlesztési irányelveket a parancsmagok (parancsmag fejlesztési irányelvek kapcsolatos további információkért lásd: [ A parancsmag fejlesztési irányelvek](./cmdlet-development-guidelines.md).).
 
 ## <a name="changing-the-system"></a>A rendszer módosítása
 
-A művelet, "módosítása a rendszer", amely potenciálisan a Windows PowerShell kívül a rendszer állapotának módosítása minden parancsmag hivatkozik. Ha például leállítása folyamatban van egy folyamat, engedélyezése vagy letiltása egy felhasználói fiókot, vagy egy sort egy adatbázistábla soraihoz való is meg kell erősíteni a rendszer az összes változtatás hozzáadása. Ezzel szemben az operatív adatok olvasása vagy átmeneti kapcsolatokat hozhat létre ne módosítsa a rendszer, és általában nem kell megerősítést. Megerősítő is nem szükséges műveleteket, amelynek érvénybe korlátozódik belül a Windows PowerShell-futtatókörnyezet, mint például a `set-variable`. Parancsmagok, amelyek vagy előfordulhat, hogy nem módosítsa egy állandó deklarálnia kell `SupportsShouldProcess` hívja [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) csak akkor, ha azok készül, hogy módosítsa egy állandó.
+A művelet, "módosítása a rendszer", amely potenciálisan a Windows PowerShell kívül a rendszer állapotának módosítása minden parancsmag hivatkozik. Ha például leállítása folyamatban van egy folyamat, engedélyezése vagy letiltása egy felhasználói fiókot, vagy egy sort egy adatbázistábla soraihoz való is meg kell erősíteni a rendszer az összes változtatás hozzáadása. Ezzel szemben az operatív adatok olvasása vagy átmeneti kapcsolatokat hozhat létre ne módosítsa a rendszer, és általában nem kell megerősítést. Megerősítő is nem szükséges műveleteket, amelynek érvénybe korlátozódik belül a Windows PowerShell-futtatókörnyezet, mint például a `set-variable`. Parancsmagok, amelyek vagy előfordulhat, hogy nem módosítsa egy állandó deklarálnia kell `SupportsShouldProcess` hívja [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) csak akkor, ha azok készül, hogy módosítsa egy állandó.
 
 > [!NOTE]
 > ShouldProcess megerősítő csak parancsmagok vonatkozik. Ha egy parancs vagy parancsfájl módosítja a futó állapotot a rendszer közvetlenül meghívásával a .NET-metódusokat és tulajdonságokat, vagy a hívó alkalmazások, kívül a Windows PowerShell, az ilyen típusú megerősítő nem lesz elérhető.
@@ -77,11 +77,11 @@ A Stop-Proc parancsmag osztály definícióját a következő:
 public class StopProcCommand : Cmdlet
 ```
 
-Vegye figyelembe, hogy a [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) nyilatkozat, a `SupportsShouldProcess` kulcsszó attribútum értéke `true` engedélyezéséhez a parancsmag való meghíváshoz [ System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). A kulcsszó beállítása nélkül a `Confirm` és `WhatIf` paraméterek nem lesz elérhető, a felhasználó számára.
+Vegye figyelembe, hogy a [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) nyilatkozat, a `SupportsShouldProcess` kulcsszó attribútum értéke `true` engedélyezéséhez a parancsmag való meghíváshoz [ System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). A kulcsszó beállítása nélkül a `Confirm` és `WhatIf` paraméterek nem lesz elérhető, a felhasználó számára.
 
 ### <a name="extremely-destructive-actions"></a>Rendkívül felülíró művelet
 
-Egyes műveletek károsak rendkívül, például egy aktív merevlemez-partíciók újraformázást. Ezekben az esetekben a parancsmag kell beállítania `ConfirmImpact`  =  `ConfirmImpact.High` deklarálásakor a [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribútum. Ez a beállítás kényszeríti a parancsmag kérelem felhasználói jóváhagyás, akkor is, ha a felhasználó nem adta meg a `Confirm` paraméter. Azonban a parancsmag a fejlesztők kerülendő túlzott mértékű használata `ConfirmImpact` műveletek, amelyek csak potenciálisan ártalmas, például a felhasználói fiók törlése. Ne feledje, hogy `ConfirmImpact` értékre van állítva [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
+Egyes műveletek károsak rendkívül, például egy aktív merevlemez-partíciók újraformázást. Ezekben az esetekben a parancsmag kell beállítania `ConfirmImpact`  =  `ConfirmImpact.High` deklarálásakor a [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribútum. Ez a beállítás kényszeríti a parancsmag kérelem felhasználói jóváhagyás, akkor is, ha a felhasználó nem adta meg a `Confirm` paraméter. Azonban a parancsmag a fejlesztők kerülendő túlzott mértékű használata `ConfirmImpact` műveletek, amelyek csak potenciálisan ártalmas, például a felhasználói fiók törlése. Ne feledje, hogy `ConfirmImpact` értékre van állítva [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
 
 Egyes műveletekre hasonló módon, nagy valószínűséggel nem romboló, Bár elméletben módosíthatják kívül a Windows PowerShell rendszert a futó állapotot. Az ilyen parancsmagok állíthatja `ConfirmImpact` való [System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Ez fog kerülni eseménymegerősítési kéréseknek, ahol a felhasználó erősítse meg a csak a közepes hatású és a nagy hatású műveletek kérte.
 
@@ -93,7 +93,7 @@ A Stop-Proc parancsmag meghatározása három paramétert: `Name`, `Force`, és 
 
 A `Name` paraméter felel meg a `Name` a folyamat bemeneti objektum tulajdonságát. Vegye figyelembe, hogy a `Name` ebben a példában paramétert kötelező, mivel a parancsmag sikertelen lesz, ha nem rendelkezik egy névvel ellátott folyamat leállítása.
 
-A `Force` paraméter lehetővé teszi, hogy a felhasználó felülbírálhatja a hívások [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Tulajdonképpen bármely parancsmag, amely meghívja a [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) rendelkeznie kell egy `Force` paramétert, hogy amikor `Force` van megadva, a parancsmag meghívása kihagyja [ System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) és folytatja a műveletet. Vegye figyelembe, hogy ez nincs hatással a hívások [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess).
+A `Force` paraméter lehetővé teszi, hogy a felhasználó felülbírálhatja a hívások [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Tulajdonképpen bármely parancsmag, amely meghívja a [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) rendelkeznie kell egy `Force` paramétert, hogy amikor `Force` van megadva, a parancsmag meghívása kihagyja [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) és folytatja a műveletet. Vegye figyelembe, hogy ez nincs hatással a hívások [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess).
 
 A `PassThru` paraméter lehetővé teszi, hogy a felhasználó-e a parancsmag adja át a kimeneti objektum keresztül, ebben az esetben egy folyamat Leállítás utáni jelzi. Vegye figyelembe, hogy ezt a paramétert a parancsmaghoz saját maga helyett egy tulajdonság a bemeneti objektum van kötve.
 
@@ -142,7 +142,7 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>Egy bemeneti metódus feldolgozási felülbírálása
 
-A parancsmag felül kell írnia egy bemeneti metódus feldolgozása. Az alábbi kód bemutatja a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) használja a Stop-Proc parancsmagra felülbírálás. Az egyes kért Folyamatnév, ez a módszer biztosítja, hogy a folyamat nem egy külön folyamat, megkísérli leállítani a folyamatot, és ezután elküldi a kimeneti objektum, ha a `PassThru` paraméter meg van adva.
+A parancsmag felül kell írnia egy bemeneti metódus feldolgozása. Az alábbi kód bemutatja a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) használja a Stop-Proc parancsmagra felülbírálás. Az egyes kért Folyamatnév, ez a módszer biztosítja, hogy a folyamat nem egy külön folyamat, megkísérli leállítani a folyamatot, és ezután elküldi a kimeneti objektum, ha a `PassThru` paraméter meg van adva.
 
 ```csharp
 protected override void ProcessRecord()
@@ -200,9 +200,9 @@ protected override void ProcessRecord()
                 processName);
 
           // It is possible that ProcessRecord is called multiple times
-          // when the Name parameter reveives objects as input from the
+          // when the Name parameter receives objects as input from the
           // pipeline. So to retain YesToAll and NoToAll input that the
-          // user may enter across mutilple calls to ProcessRecord, this
+          // user may enter across multiple calls to ProcessRecord, this
           // information is stored as private members of the cmdlet.
           if (!ShouldContinue(message, "Warning!",
                               ref yesToAll,
@@ -210,7 +210,7 @@ protected override void ProcessRecord()
           {
             continue;
           }
-        } // if (cricicalProcess...
+        } // if (criticalProcess...
         // Stop the named process.
         try
         {
@@ -246,14 +246,14 @@ protected override void ProcessRecord()
 
 ## <a name="calling-the-shouldprocess-method"></a>A ShouldProcess metódus hívása
 
-A feldolgozási mód a parancsmag bemeneti meg kell hívnia a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) módszer előtt (például törlése fájlok) módosításakor a működik, győződjön meg arról, hogy egy művelet végrehajtása a rendszer állapotát. Ez lehetővé teszi a Windows PowerShell modul megadnia a rendszerhéjból a megfelelő "WhatIf" és "Confirm" viselkedését.
+A feldolgozási mód a parancsmag bemeneti meg kell hívnia a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódust (például törlése fájlok) módosításakor a működőképes állapotba előtt, győződjön meg arról, hogy egy művelet végrehajtása a rendszer. Ez lehetővé teszi a Windows PowerShell modul megadnia a rendszerhéjból a megfelelő "WhatIf" és "Confirm" viselkedését.
 
 > [!NOTE]
-> Ha a parancsmag kijelenti, hogy támogatja a kell dolgoznia, és győződjön meg arról, hogy nem sikerül a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) hívja, a felhasználó váratlanul előfordulhat, hogy módosítsa a rendszer.
+> Ha a parancsmag kijelenti, hogy támogatja a kell dolgoznia, és győződjön meg arról, hogy nem sikerül a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) hívja, a felhasználó váratlanul előfordulhat, hogy módosítsa a rendszer.
 
-A hívás [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) küld a felhasználó a Windows PowerShell-futtatókörnyezetben, figyelembe véve parancssori beállítást vagy preferenciaváltozók módosítani az erőforrás neve a meghatározása, mi megjelenjenek a felhasználó számára.
+A hívás [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) küld a felhasználó a Windows PowerShell-futtatókörnyezetben, figyelembe véve parancssori beállítást vagy preferenciaváltozók módosítani az erőforrás neve a meghatározása, mi megjelenjenek a felhasználó számára.
 
-Az alábbi példa bemutatja a hívást [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) a felülbírálását a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódus az a Állítsa le a folyamaton parancsmagra.
+Az alábbi példa bemutatja a hívást [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) a felülbírálását a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódusban a minta Állítsa le a folyamaton parancsmagot.
 
 ```csharp
 if (!ShouldProcess(string.Format("{0} ({1})", processName,
@@ -265,9 +265,9 @@ if (!ShouldProcess(string.Format("{0} ({1})", processName,
 
 ## <a name="calling-the-shouldcontinue-method"></a>A ShouldContinue metódus hívása
 
-A hívást a [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódus elküld egy másodlagos üzenetet a felhasználónak. A kérés érkezett hívása után [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) adja vissza `true` , és ha a `Force` paraméter nem volt beállítva `true`. A felhasználó ezután visszajelzést küldhet a tegyük fel, hogy a művelet folytatni kell. A parancsmag hívásokat [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) , egy további ellenőrzési potenciálisan veszélyes rendszermódosítások, vagy ha szeretné, hogy a felhasználó igen-mindig és nem mindig beállításokat biztosítson.
+A hívást a [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódus elküld egy másodlagos üzenetet a felhasználónak. A kérés érkezett hívása után [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) adja vissza `true` , és ha a `Force` paraméter nem volt beállítva `true`. A felhasználó ezután visszajelzést küldhet a tegyük fel, hogy a művelet folytatni kell. A parancsmag hívásokat [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) , egy további ellenőrzési potenciálisan veszélyes rendszermódosítások, vagy ha szeretné, hogy a felhasználó igen-mindig és nem mindig beállításokat biztosítson.
 
-Az alábbi példa bemutatja a hívást [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) a felülbírálását a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódus az a Állítsa le a folyamaton parancsmagra.
+Az alábbi példa bemutatja a hívást [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) a felülbírálását a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódusban a minta Állítsa le a folyamaton parancsmagot.
 
 ```csharp
 if (criticalProcess &&!force)
@@ -277,9 +277,9 @@ if (criticalProcess &&!force)
         processName);
 
   // It is possible that ProcessRecord is called multiple times
-  // when the Name parameter reveives objects as input from the
+  // when the Name parameter receives objects as input from the
   // pipeline. So to retain YesToAll and NoToAll input that the
-  // user may enter across mutilple calls to ProcessRecord, this
+  // user may enter across multiple calls to ProcessRecord, this
   // information is stored as private members of the cmdlet.
   if (!ShouldContinue(message, "Warning!",
                       ref yesToAll,
@@ -287,12 +287,12 @@ if (criticalProcess &&!force)
   {
     continue;
   }
-} // if (cricicalProcess...
+} // if (criticalProcess...
 ```
 
 ## <a name="stopping-input-processing"></a>A bemeneti feldolgozó leállítása
 
-A bemenet feldolgozásának leállítása lehetőséget kell biztosítani a metódus egy parancsmag, amellyel a rendszer a módosítások feldolgozása a bemeneti. A Stop-Proc parancsmag esetében a kérés érkezett a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust a [System.Diagnostics.Process.Kill*](/dotnet/api/System.Diagnostics.Process.Kill) metódust. Mivel a `PassThru` paraméter értéke `true`, [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) is meghívja [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) , a folyamat küldése a folyamat objektumról.
+A bemenet feldolgozásának leállítása lehetőséget kell biztosítani a metódus egy parancsmag, amellyel a rendszer a módosítások feldolgozása a bemeneti. A Stop-Proc parancsmag esetében a kérés érkezett a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust a [System.Diagnostics.Process.Kill*](/dotnet/api/System.Diagnostics.Process.Kill) metódust. Mivel a `PassThru` paraméter értéke `true`, [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) is meghívja [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) küldése a folyamat objektumról a folyamathoz.
 
 ## <a name="code-sample"></a>Kódminta
 

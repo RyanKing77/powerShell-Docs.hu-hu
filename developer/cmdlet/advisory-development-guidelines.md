@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 97a2d3587f8f69edc92150474e94a620ff9a2f71
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845793"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056566"
 ---
 # <a name="advisory-development-guidelines"></a>Tanácsolt fejlesztői útmutató
 
@@ -61,7 +61,7 @@ Ha például a [Remove-cikk](/powershell/module/microsoft.powershell.management/
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Kezeli a hitelesítő adatokat (AD03) Windows PowerShell-lel
 
-A parancsmag meg kell határoznia egy `Credential` paraméter, amely a hitelesítő adatokat jelöli. Ez a paraméter típusúnak kell lennie [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) és a egy hitelesítő adat típusattribútum-deklaráció kell definiálni. Ez a támogatás automatikusan kéri a felhasználót a felhasználónév, a jelszó vagy mindkét, amikor teljes hitelesítő adatokat nem közvetlenül. A hitelesítő adatok attribútum kapcsolatos további információkért lásd: [Credential típusattribútum-deklaráció](./credential-attribute-declaration.md).
+A parancsmag meg kell határoznia egy `Credential` paraméter, amely a hitelesítő adatokat jelöli. Ez a paraméter típusúnak kell lennie [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) és a egy hitelesítő adat típusattribútum-deklaráció kell definiálni. Ez a támogatás automatikusan kéri a felhasználót a felhasználónév, a jelszó vagy mindkét, amikor teljes hitelesítő adatokat nem közvetlenül. A hitelesítő adatok attribútum kapcsolatos további információkért lásd: [Credential típusattribútum-deklaráció](./credential-attribute-declaration.md).
 
 ### <a name="support-encoding-parameters-ad04"></a>Támogatja a kódolási paramétereket (AD04)
 
@@ -89,17 +89,17 @@ A .NET-keretrendszer osztály, amely megvalósítja a parancsmag nevezze el, ha 
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>Ha nincs adatcsatorna bemenetének bírálja felül a BeginProcessing metódus (AC02)
 
-Ha a parancsmag nem fogad bevitelt a folyamatból, feldolgozási meg kell valósítani a [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metódust. Ez a módszer használata lehetővé teszi a Windows PowerShell parancsmagok közötti rendezés fenntartásához. A folyamat az első parancsmag az objektumait mindig adja meg a fennmaradó parancsmagok a folyamat első arra, hogy a feldolgozás indítása előtt.
+Ha a parancsmag nem fogad bevitelt a folyamatból, feldolgozási meg kell valósítani a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metódust. Ez a módszer használata lehetővé teszi a Windows PowerShell parancsmagok közötti rendezés fenntartásához. A folyamat az első parancsmag az objektumait mindig adja meg a fennmaradó parancsmagok a folyamat első arra, hogy a feldolgozás indítása előtt.
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>Kezelni leállítási kérések bírálja felül a StopProcessing metódus (AC03)
 
-Bírálja felül a [System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metódust, hogy a parancsmag stopjelzést képes kezelni. Bizonyos parancsmagok időbe telik a művelet végrehajtásához, és a használatukkal továbbítani tudja a Windows PowerShell-futtatókörnyezet, például amikor a parancsmag letiltja a a hozzászólásláncot a hosszan futó távoli eljáráshívások hívásainak között hosszú ideig. Ez magában foglalja a parancsmagok, amelyek hívásokat a [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) módszert, az a [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódust, és egyéb visszajelzések olyan mechanizmusok, amelyek elvégzéséhez hosszú időt vehet igénybe. Ezekben az esetekben a felhasználó igényelhet stopjelzést küldendő ezeket a parancsmagokat.
+Bírálja felül a [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metódust, hogy a parancsmag stopjelzést képes kezelni. Bizonyos parancsmagok időbe telik a művelet végrehajtásához, és a használatukkal továbbítani tudja a Windows PowerShell-futtatókörnyezet, például amikor a parancsmag letiltja a a hozzászólásláncot a hosszan futó távoli eljáráshívások hívásainak között hosszú ideig. Ez magában foglalja a parancsmagok, amelyek hívásokat a [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) módszert, az a [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódust, és egyéb visszajelzések olyan mechanizmusok, amelyek elvégzéséhez hosszú időt vehet igénybe. Ezekben az esetekben a felhasználó igényelhet stopjelzést küldendő ezeket a parancsmagokat.
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>Az IDisposable illesztőfelülettel (AC04)
 
-Ha a parancsmag nem értékesítik (a folyamat számára írt) objektumok által a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódus, a parancsmag szükség lehet további objektum kivezetési. Például, ha a parancsmag megnyitja a fájlleíró annak [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metódust, és korlátlan ideig megőrzi a leíró általi használatra nyissa meg a [System.Management.Automation.Cmdlet.Processrecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) módszer, ezt a leírót be fog zárulni feldolgozás végén rendelkezik.
+Ha a parancsmag nem értékesítik (a folyamat számára írt) objektumok által a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódus, a parancsmag szükség lehet további objektum kivezetési. Például, ha a parancsmag megnyitja a fájlleíró annak [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metódust, és korlátlan ideig megőrzi a leíró általi használatra nyissa meg a [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) módszer, ezt a leírót be fog zárulni feldolgozás végén rendelkezik.
 
-A Windows PowerShell-modul nem mindig hívja a [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódust. Ha például a [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódus előfordulhat, hogy nem kell meghívni, ha a parancsmagot annak működését keresztül midway megszakadt, vagy ha egy megszakítást okozó hiba jelenik meg a parancsmag bármely részén. Ezért a .NET-keretrendszer osztály objektum karbantartási igénylő parancsmag meg kell valósítania a teljes [System.Idisposable](/dotnet/api/System.IDisposable) felület minta, többek között a befejezővel úgy, hogy a Windows PowerShell-modul is meghívhatja a [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) és [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) módszerek feldolgozás végén.
+A Windows PowerShell-modul nem mindig hívja a [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódust. Ha például a [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódus előfordulhat, hogy nem kell meghívni, ha a parancsmagot annak működését keresztül midway megszakadt, vagy ha egy megszakítást okozó hiba jelenik meg a parancsmag bármely részén. Ezért a .NET-keretrendszer osztály objektum karbantartási igénylő parancsmag meg kell valósítania a teljes [System.IDisposable](/dotnet/api/System.IDisposable) felület minta, többek között a befejezővel úgy, hogy a Windows PowerShell-modul is meghívhatja a [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) és [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) módszerek feldolgozás végén.
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>Szerializálási mobilbarát paramétertípusok (AC05) használata
 
@@ -117,7 +117,7 @@ Beépített rehydratable típusok:
 
 - PSPrimitiveDictionary
 
-- SwitchParmeter
+- SwitchParameter
 
 - PSListModifier
 

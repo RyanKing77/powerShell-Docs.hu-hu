@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: A JEA szerepköri funkciók
-ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685493"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055053"
 ---
 # <a name="jea-role-capabilities"></a>A JEA szerepköri funkciók
 
@@ -58,7 +58,7 @@ A PowerShell súgójában számos példát, hogyan konfigurálhatja a fájl tart
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>PowerShell-parancsmagok és funkciók
 
-Való használatának engedélyezése a felhasználók PowerShell-parancsmagok vagy a függvények futtatását, adja hozzá a VisbibleCmdlets vagy VisibleFunctions mezőket a parancsmag vagy függvény neve.
+Való használatának engedélyezése a felhasználók PowerShell-parancsmagok vagy a függvények futtatását, adja hozzá a VisibleCmdlets vagy VisibleFunctions mezőket a parancsmag vagy függvény neve.
 Ha nem tudja,-e a parancs a egy parancsmag vagy a funkciót, futtathatja `Get-Command <name>` , és ellenőrizze a "Parancstípus" tulajdonságot a kimenetben.
 
 ```powershell
@@ -101,7 +101,6 @@ Példa                                                                          
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Lehetővé teszi a felhasználó futtatásához `My-Func` együtt a `Param1` paraméter. Csak a "Érték1" és "Érték2" a paraméter lehet biztosítani.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Lehetővé teszi a felhasználó futtatásához `My-Func` együtt a `Param1` paraméter. "Contoso" kezdetű bármilyen érték lehet biztosítani a paraméterhez.
 
-
 > [!WARNING]
 > Az ajánlott biztonsági eljárások nem ajánlott a helyettesítő karakterek használata látható parancsmagok és funkciók meghatározásakor.
 > Ehelyett minden egyes megbízható parancsot annak biztosítására, hogy véletlenül jogosultak a többi parancs, amely ugyanazt a elnevezési sémát használja explicit módon listája.
@@ -129,7 +128,7 @@ Ellenőrizze, hogy egy módja `net share`.
 Azonban, így a net.exe nagyon súlyos, mert a rendszergazda sikerült ugyanilyen egyszerűen használja a parancsot a rendszergazdai jogosultságokat kapjanak `net group Administrators unprivilegedjeauser /add`.
 Jobb módszer, hogy lehetővé tegyék [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) amely ugyanazt az eredményt éri el, de korlátozottabb hatóköre.
 
-Külső parancsok elérhetővé tétele a felhasználók számára a JEA-munkamenetben, mindig adjon meg egy hasonlóan elnevezett (és potenciálisan malicous) program máshol helyezhető el a rendszer nem végrehajtásra kerülhetnek inkább biztosításához a végrehajtható fájl teljes elérési útja.
+Külső parancsok elérhetővé tétele a felhasználók számára a JEA-munkamenetben, mindig adjon meg egy hasonlóan elnevezett (és potenciálisan rosszindulatú) program máshol helyezhető el a rendszer nem végrehajtásra kerülhetnek inkább biztosításához a végrehajtható fájl teljes elérési útja.
 
 ### <a name="allowing-access-to-powershell-providers"></a>Engedélyezi a hozzáférést a PowerShell-szolgáltatók
 
@@ -171,7 +170,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > Ne felejtse el hozzáadni az egyéni függvények nevét a **VisibleFunctions** mezőt, így a JEA-felhasználók által futtatható.
 
-
 Egyéni függvény törzsében (parancsfájl-blokk) a rendszer az alapértelmezett nyelv módját fut, és nem a JEA nyelvi korlátozások vonatkoznak.
 Ez azt jelenti, hogy funkciók is fájlrendszert és beállításjegyzéket, majd futtassa a parancsokat elvégzett nem látható a szerepkör képesség fájlban.
 Ügyeljen arra, hogy kerülje, lehetővé téve tetszőleges kód futtatható, ha a paraméterek használatával, és elkerülheti az átirányítás felhasználói bevitel közvetlenül be például a parancsmagok `Invoke-Expression`.
@@ -211,14 +209,12 @@ Lásd: [egy PowerShell-modul ismertetése](https://msdn.microsoft.com/library/dd
 
 ## <a name="updating-role-capabilities"></a>Szerepköri funkciók frissítése
 
-
 Egyszerűen módosításainak mentése folyamatban van a szerepkör képesség fájl által bármikor frissítheti egy szerepkör képesség fájlt.
 Minden olyan új JEA munkamenetek, a szerepkör funkció frissítése után elindult a módosított képességek fogja tartalmazni.
 
 Ezért a szerepkörrel képességeket mappa hozzáférés szabályozása, ezért fontos.
 Kizárólag megbízható rendszergazdák tudják módosítani a szerepkör képesség fájlokat kell lennie.
 Nem megbízható felhasználók módosíthatják a szerepkör képesség fájlokat, ha azok segítségével könnyedén magukat hozzáférést biztosíthat parancsmagok, amelyek lehetővé teszik a jogosultságai kibővítésére őket.
-
 
 A rendszergazdáknak a szerepkör lehetőségekhez zároljuk szeretne győződjön meg arról, helyi rendszer szerepkör képesség fájlokat és tartalmazó modulok olvasási hozzáféréssel rendelkezik.
 
@@ -256,16 +252,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 

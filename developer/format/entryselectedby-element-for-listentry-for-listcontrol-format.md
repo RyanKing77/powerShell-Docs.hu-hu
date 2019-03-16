@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
 caps.latest.revision: 12
-ms.openlocfilehash: 723619e67612b859d0acbab37eecd82141adf923
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846073"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054935"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>A ListControl elemhez tartozó ListEntry EntrySelectedBy eleme (Formátum)
 
@@ -44,7 +44,7 @@ Nincs.
 |Elem|Leírás|
 |-------------|-----------------|
 |[A ListControl (formátum) EntrySelectedBy SelectionCondition elem.](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Nem kötelező eleme.<br /><br /> Határozza meg azt a feltételt, amelyet a lista nézet definíciójában használt léteznie kell.|
-|[A ListControl (formátum) EnrtySelectedBy SelectionSetName elem.](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|Nem kötelező eleme.<br /><br /> .NET-típusokat, amelyek a nézet definíciója egy halmazát határozza meg.|
+|[A ListControl (formátum) EntrySelectedBy SelectionSetName elem.](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|Nem kötelező eleme.<br /><br /> .NET-típusokat, amelyek a nézet definíciója egy halmazát határozza meg.|
 |[EntrySelectedBy ListControl (formátum) a TypeName elem.](./typename-element-for-entryselectedby-for-listcontrol-format.md)|Nem kötelező eleme.<br /><br /> A nézet definíciója használó .NET típust határozzon meg.|
 
 ### <a name="parent-elements"></a>Szülőelemek
@@ -79,7 +79,7 @@ Az alábbi példa bemutatja, hogyan definiálásához az adott nézet használat
 
 [A ListControl (formátum) EntrySelectedBy SelectionCondition elem.](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[A ListControl (formátum) EnrtySelectedBy SelectionSetName elem.](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[A ListControl (formátum) EntrySelectedBy SelectionSetName elem.](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [EntrySelectedBy ListControl (formátum) a TypeName elem.](./typename-element-for-entryselectedby-for-listcontrol-format.md)
 

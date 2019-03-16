@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e7040a5c-4a47-42df-a2ea-96b134a4ed9b
 caps.latest.revision: 10
-ms.openlocfilehash: e5dc525a6c80ce135d6d68e12968613056d447e8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f20708ff41d9a6de90090997a875ba5371eccd74
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846241"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058878"
 ---
 # <a name="invoking-cmdlets-and-scripts-within-a-cmdlet"></a>Parancsmagok és szkriptek meghívása parancsmagokon belül
 
@@ -21,7 +21,7 @@ A parancsmag hívhat meg más parancsmagok és parancsfájlok a feldolgozási m�
 
 ## <a name="the-invoke-method"></a>A metódus meghívása
 
-Minden parancsmag hívhat meg egy meglévő parancsmag meghívásával a [System.Management.Automation.Cmdlet.Invoke](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) metodu z pracovního módszer, például a feldolgozása egy bemeneti [ System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), amely pedig a parancsmag által felülbírálható. Csak azok a parancsmagok, amelyek közvetlenül az hajthatók ugyanakkor a [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) osztály. Nelze vyvolat származó parancsmag a [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztály.
+Minden parancsmag hívhat meg egy meglévő parancsmag meghívásával a [System.Management.Automation.Cmdlet.Invoke](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) metodu z pracovního módszer, például a feldolgozása egy bemeneti [ System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), amely pedig a parancsmag által felülbírálható. Csak azok a parancsmagok, amelyek közvetlenül az hajthatók ugyanakkor a [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) osztály. Nelze vyvolat származó parancsmag a [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztály.
 
 A [System.Management.Automation.Cmdlet.Invoke*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) módszernek a következő variantní hodnoty.
 

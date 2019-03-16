@@ -13,18 +13,18 @@ helpviewer_keywords:
 - errors [PowerShell SDK]
 ms.assetid: 0dce97c0-bd9a-4691-8ca3-e8d5dea902c5
 caps.latest.revision: 11
-ms.openlocfilehash: aac6b7b6ac8a0fad15194b6d3f92c434524fabdb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2f185e415e3effc2cf09a282ca1167e3bcfb7d6a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846164"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054407"
 ---
 # <a name="error-reporting-concepts"></a>Hibajelentés – Fogalmak
 
 Windows PowerShell biztosít, két mechanizmusok hibákat jelentő: egy mechanizmusa *megszakítást okozó hibák* és a egy másik mechanizmust *okozó*. Fontos a parancsmag hibák jelentéséhez megfelelően, hogy a megfelelő módon reagálhat, amelyen fut a parancsmagokat a gazdaalkalmazást.
 
-A parancsmag meg kell hívnia a [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) módszer, ha hiba történik, amely nem létezik, vagy nem teszi lehetővé a parancsmagot, hogy a bemeneti objektumok feldolgozásához. A parancsmag meg kell hívnia a [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) okozó jelentés küldése, ha a parancsmag továbbra is a bemeneti objektumok feldolgozása metódust. Mindkét módszer adjon meg egy hiba rekordot, amely a gazdaalkalmazást a hiba okának kivizsgálására használható.
+A parancsmag meg kell hívnia a [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) módszer, ha hiba történik, amely nem létezik, vagy nem teszi lehetővé a parancsmagot, hogy a bemeneti objektumok feldolgozásához. A parancsmag meg kell hívnia a [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) okozó jelentés küldése, ha a parancsmag továbbra is a bemeneti objektumok feldolgozása metódust. Mindkét módszer adjon meg egy hiba rekordot, amely a gazdaalkalmazást a hiba okának kivizsgálására használható.
 
 Az alábbi irányelvek segítségével meghatározhatja, hogy hiba a megszakítást okozó vagy megszakítást nem okozó hiba.
 
@@ -42,7 +42,7 @@ Az alábbi irányelvek segítségével meghatározhatja, hogy hiba a megszakít�
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [Windows PowerShell Hibarekordjainak](./windows-powershell-error-records.md)
 

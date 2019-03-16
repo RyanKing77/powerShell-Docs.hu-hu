@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
-ms.openlocfilehash: a421d151ac3fdbb763668dd6fbf775f5b91a833f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56852163"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059660"
 ---
 # <a name="common-parameter-names"></a>Gyakori paraméternevek
 
@@ -30,7 +30,7 @@ Az alábbi paramétereket az összes parancsmag hozzáadja, és elérhető lesz,
 
 Adattípus: SwitchParameter
 
-Ez a paraméter megadja e programozói szintű hibakeresési üzeneteket, amely a parancssorból is megjeleníthetők. Ezeket az üzeneteket a műveletet, a parancsmag hibaelhárítási célokra szolgálnak, és a felé irányuló hívások alapján jönnek létre a [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metódust. Hibakeresési üzeneteket nem kell legyenek.
+Ez a paraméter megadja e programozói szintű hibakeresési üzeneteket, amely a parancssorból is megjeleníthetők. Ezeket az üzeneteket a műveletet, a parancsmag hibaelhárítási célokra szolgálnak, és a felé irányuló hívások alapján jönnek létre a [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metódust. Hibakeresési üzeneteket nem kell legyenek.
 
 ### <a name="erroraction-alias-ea"></a>ErrorAction (alias: nagyvállalati szerződéssel rendelkező)
 
@@ -60,7 +60,7 @@ Ez a paraméter határozza meg a kimeneti puffer tárolja, mielőtt bármilyen o
 
 Adattípus: SwitchParameter
 
-Ez a paraméter meghatározza, hogy beírja-e a parancsmag a parancssorban jelenhet meg, magyarázó üzeneteket. Ezeket az üzeneteket célja, hogy a felhasználó további segítséget, és a felé irányuló hívások alapján jönnek létre a [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metódust.
+Ez a paraméter meghatározza, hogy beírja-e a parancsmag a parancssorban jelenhet meg, magyarázó üzeneteket. Ezeket az üzeneteket célja, hogy a felhasználó további segítséget, és a felé irányuló hívások alapján jönnek létre a [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metódust.
 
 ### <a name="warningaction-alias-wa"></a>WarningAction (alias: wa)
 

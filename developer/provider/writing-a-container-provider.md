@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: 2d2d6a32ac910ecc0fc3b6f1e78cdde54c21b427
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848425"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056464"
 ---
 # <a name="writing-a-container-provider"></a>Tárolószolgáltató írása
 
@@ -44,7 +44,7 @@ A szolgáltató származtassa deklarálja a [System.Management.Automation.Provid
 
 ### <a name="implementing-getchilditems"></a>Végrehajtási GetChildItems
 
-A PowerShell motor meghívja a [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metódust, amikor egy felhasználó meghívja a [Microsoft.Powershell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) a parancsmag. Ez a módszer beolvassa a cikkeket, amelyek a cikk a megadott elérési úton gyermekei.
+A PowerShell motor meghívja a [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metódust, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) a parancsmag. Ez a módszer beolvassa a cikkeket, amelyek a cikk a megadott elérési úton gyermekei.
 
 A hozzáférés adatbázis példában viselkedését a [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) módszer attól függ, a megadott elem típusa. Ha a cikk azt a meghajtót, majd a gyermekek táblákat, és a metódus az adatbázisból táblákat készletet ad vissza. Ha a megadott elem egy táblában, a gyermekek is, hogy a táblázat sorait. Ha a cikk egy sort, majd azt nem rendelkezik gyermekekkel, és a metódus csak az adott sorban adja vissza. Az összes alárendelt elemek vissza a PowerShell motor által küldött a [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metódust.
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>Új elem megvalósítása
 
-A [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metódus a megadott típusú új elem létrehozása a megadott elérési úton. A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.Powershell.Commands.New-cikk](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) parancsmagot.
+A [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metódus a megadott típusú új elem létrehozása a megadott elérési úton. A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.New-cikk](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) parancsmagot.
 
 Ebben a példában a metódus valósítja meg a logikát meghatározni, hogy az elérési út és a típus felel meg. Amelyek csak egy tábla közvetlenül a meghajtó (adatbázis) alatt hozható létre, és csak egy sort a táblában hozható létre. Ha a megadott elérési út és a típusa nem egyezik meg ezzel a módszerrel, a metódus kivételt jelez.
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>Végrehajtási CopyItem
 
-A [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) másolja át a megadott elem a megadott elérési úthoz. A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.Powershell.Commands.Copy-cikk](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) parancsmagot. Ez a módszer is másolása az összes mellett magát az elemet az elemek children, a rekurzív.
+A [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) másolja át a megadott elem a megadott elérési úthoz. A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.Copy-cikk](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) parancsmagot. Ez a módszer is másolása az összes mellett magát az elemet az elemek children, a rekurzív.
 
 Hasonlóan a [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metódus, ez a metódus végzi el logikát, győződjön meg arról, hogy a megadott elem az elérési utat, amely, másolja a megfelelő típusú. Például ha a cél elérési út egy táblát, a másolandó elem egy sort kell lennie.
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>Végrehajtási RemoveItem
 
-A [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) módszer eltávolítja a megadott elérési úton. A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.Powershell.Commands.Remove-cikk](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) parancsmagot.
+A [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) módszer eltávolítja a megadott elérési úton. A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.Remove-cikk](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) parancsmagot.
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)

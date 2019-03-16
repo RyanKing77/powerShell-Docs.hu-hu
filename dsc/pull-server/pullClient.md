@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC lekérési ügyfél beállítása
-ms.openlocfilehash: b7cd6dc0087eb8368c5467df4c3c7266ed704451
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 54c68ac26e5388260e252ce01418170e26ddecde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687257"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054254"
 ---
 # <a name="setting-up-a-dsc-pull-client"></a>DSC lekérési ügyfél beállítása
 
@@ -23,4 +23,5 @@ A következő témakörök azt ismertetik, hogyan állítsa be a pull-ügyfelek:
 * [Lekérési ügyfél beállítása konfigurációs nevekkel](pullClientConfigNames.md)
 * [Lekérési ügyfél beállítása konfigurációs azonosítóval](pullClientConfigID.md)
 
-> **Megjegyzés:**: Ezek a témakörök a PowerShell 5.0-s vonatkozik. A PowerShell 4.0-s lekérési ügyfél beállítása, lásd: [egy lekérési ügyfél beállítása konfigurációs Azonosítóval a PowerShell 4.0-s](pullClientConfigID4.md).
+> [!NOTE]
+> Ezek a témakörök a PowerShell 5.0-s vonatkozik. A PowerShell 4.0-s lekérési ügyfél beállítása, lásd: [egy lekérési ügyfél beállítása konfigurációs Azonosítóval a PowerShell 4.0-s](pullClientConfigID4.md).

@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: ffc08d2713c4bfc0938b2e07146102af8b5467d2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846801"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055036"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Felhasználói üzenetek hozzáadása a parancsmaghoz
 
@@ -82,7 +82,7 @@ Ez a szakasz témakörei a következők:
 
 Mindig a parancsmag elnevezési és a .NET-osztály, amely megvalósítja a parancsmag deklaráló parancsmag létrehozásának első lépése. Parancsmag rendezést felhasználói értesítések írhat a bemeneti feldolgozási módszerek; tehát általában nevet adhat a parancsmag minden olyan művelet, amely azt jelzi, hogy milyen system módosításokat végez a parancsmag használatával. A parancsmag jóváhagyott igék kapcsolatos további információkért lásd: [művelet neve](./approved-verbs-for-windows-powershell-commands.md).
 
-A Stop-Proc parancsmag úgy tervezték, hogy a rendszer; módosítása ezért a [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) tartalmaznia kell a .NET deklarációjában a `SupportsShouldProcess` kulcsszó attribútumot, és állítható `true`.
+A Stop-Proc parancsmag úgy tervezték, hogy a rendszer; módosítása ezért a [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) tartalmaznia kell a .NET deklarációjában a `SupportsShouldProcess` kulcsszó attribútumot, és állítható `true`.
 
 A következő kódot a Stop-Proc parancsmag osztály definícióját. Ez a definíció kapcsolatos további információkért lásd: [létrehozása egy parancsmag, amely módosítja a rendszer](./creating-a-cmdlet-that-modifies-the-system.md).
 
@@ -141,16 +141,16 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>Egy bemeneti metódus feldolgozási felülbírálása
 
-A parancsmag felül kell írnia egy bemeneti metódus feldolgozása, leggyakrabban lesz [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). A Stop-Proc parancsmag felülbírálja a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) bemeneti metódusához feldolgozásra. Ez a megvalósítás a Stop-Proc parancsmag a hívások végrehajtott írási részletes üzeneteket, a hibakeresési üzeneteket és a figyelmeztető üzeneteket.
+A parancsmag felül kell írnia egy bemeneti metódus feldolgozása, leggyakrabban lesz [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). A Stop-Proc parancsmag felülbírálja a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) bemeneti metódusához feldolgozásra. Ez a megvalósítás a Stop-Proc parancsmag a hívások végrehajtott írási részletes üzeneteket, a hibakeresési üzeneteket és a figyelmeztető üzeneteket.
 
 > [!NOTE]
-> További információ a hogyan Ez a metódus meghívja a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) módszereket, tekintse meg a [Létrehozása egy parancsmag, amely módosítja a rendszer](./creating-a-cmdlet-that-modifies-the-system.md).
+> További információ a hogyan Ez a metódus meghívja a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) módszereket, tekintse meg a [Létrehozása egy parancsmag, amely módosítja a rendszer](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ## <a name="writing-a-verbose-message"></a>Részletes üzenet írásának
 
-A [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) általános, nem kapcsolódó meghatározott hibafeltételek felhasználói szintű információkat írásához használt módszert. A rendszergazda folytatja a más parancsok feldolgozási felhasználhatja ezt az információt. Emellett ez a módszer használatával írt minden olyan információt kell kell honosított igény szerint.
+A [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) általános, nem kapcsolódó meghatározott hibafeltételek felhasználói szintű információkat írásához használt módszert. A rendszergazda folytatja a más parancsok feldolgozási felhasználhatja ezt az információt. Emellett ez a módszer használatával írt minden olyan információt kell kell honosított igény szerint.
 
-A Stop-Proc parancsmag a következő kód bemutatja, két hívásainak a [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metódus felülbírálását, a [System.Management.Automation.Cmdlet.Processrecord* ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust.
+A Stop-Proc parancsmag a következő kód bemutatja, két hívásainak a [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metódus felülbírálását, a [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust.
 
 ```csharp
 message = String.Format("Attempting to stop process \"{0}\".", name);
@@ -166,14 +166,14 @@ WriteVerbose(message);
 
 ## <a name="writing-a-debug-message"></a>Hibakeresési üzenet írásának
 
-A [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) módszert a parancsmag működésének hibaelhárítására használható hibakeresési üzeneteket írni. A hívás érkezett egy bemeneti metódus feldolgozása.
+A [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) módszert a parancsmag működésének hibaelhárítására használható hibakeresési üzeneteket írni. A hívás érkezett egy bemeneti metódus feldolgozása.
 
 > [!NOTE]
-> Windows PowerShell is meghatároz egy `Debug` paraméter, amely egyaránt részletes mutat be, és a hibakeresési információkat. A parancsmag támogatja ezt a paramétert, ha nem kell meghívni [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) ugyanazt a kódot, amely meghívja a [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+> Windows PowerShell is meghatároz egy `Debug` paraméter, amely egyaránt részletes mutat be, és a hibakeresési információkat. A parancsmag támogatja ezt a paramétert, ha nem kell meghívni [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) ugyanazt a kódot, amely meghívja a [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) .
 
-A kód a minta Stop-Proc parancsmag a következő két szakasz hívásainak megjelenítéséhez a [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metódus felülbírálását, a [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust.
+A kód a minta Stop-Proc parancsmag a következő két szakasz hívásainak megjelenítéséhez a [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metódus felülbírálását, a [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust.
 
-Hibakeresési üzenet írása előtt közvetlenül [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) nevezzük.
+Hibakeresési üzenet írása előtt közvetlenül [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) nevezzük.
 
 ```csharp
 message =
@@ -182,7 +182,7 @@ message =
 WriteDebug(message);
 ```
 
-Hibakeresési üzenet írása előtt közvetlenül [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) nevezzük.
+Hibakeresési üzenet írása előtt közvetlenül [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) nevezzük.
 
 ```csharp
 message =
@@ -192,15 +192,15 @@ WriteDebug(message);
 WriteObject(process);
 ```
 
-Windows PowerShell automatikusan átirányítja a bármely [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) hívásokat a nyomkövetés infrastruktúrát és a parancsmagok. Ez lehetővé teszi a metódust hívja, nem kell tennie minden olyan további fejlesztési munkálatok során, a parancsmag belül az üzemeltetési alkalmazás, egy fájl vagy egy hibakereső nyomon követését. A következő parancssori bejegyzés egy nyomkövetési művelet valósítja meg.
+Windows PowerShell automatikusan átirányítja a bármely [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) hívásokat a nyomkövetés infrastruktúrát és a parancsmagok. Ez lehetővé teszi a metódust hívja, nem kell tennie minden olyan további fejlesztési munkálatok során, a parancsmag belül az üzemeltetési alkalmazás, egy fájl vagy egy hibakereső nyomon követését. A következő parancssori bejegyzés egy nyomkövetési művelet valósítja meg.
 
 **PS > nyomkövetési-kifejezés stop-proc-fájl proc.log-paranccsal állítsa le a folyamaton Jegyzettömb**
 
 ## <a name="writing-a-warning-message"></a>Egy figyelmeztető üzenet írása
 
-A [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metódus írási egy figyelmeztetés, amikor a parancsmag arra készül, hogy előfordulhat, hogy nem várt eredményt, ha például egy csak olvasható fájlok felülírása művelet végrehajtására szolgál.
+A [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metódus írási egy figyelmeztetés, amikor a parancsmag arra készül, hogy előfordulhat, hogy nem várt eredményt, ha például egy csak olvasható fájlok felülírása művelet végrehajtására szolgál.
 
-A következő kód a minta Stop-Proc parancsmag megjeleníti a hívást a [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metódus felülbírálását, a [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust.
+A következő kód a minta Stop-Proc parancsmag megjeleníti a hívást a [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metódus felülbírálását, a [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust.
 
 ```csharp
  if (criticalProcess)
@@ -214,10 +214,10 @@ A következő kód a minta Stop-Proc parancsmag megjeleníti a hívást a [Syste
 
 ## <a name="writing-a-progress-message"></a>A folyamatállapot-üzenet írása
 
-A [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) folyamatüzeneteket írhat, amikor a parancsmag operations igénybe egy kiterjesztett sok időt vesz igénybe. Hívás [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) átadja egy [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) objektum, amely a renderelést a felhasználó számára a tároló alkalmazás érkezik.
+A [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) folyamatüzeneteket írhat, amikor a parancsmag operations igénybe egy kiterjesztett sok időt vesz igénybe. Hívás [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) átadja egy [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) objektum, amely a renderelést a felhasználó számára a tároló alkalmazás érkezik.
 
 > [!NOTE]
-> A Stop-Proc parancsmag nem tartalmazza a hívást a [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metódust.
+> A Stop-Proc parancsmag nem tartalmazza a hívást a [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metódust.
 
 A következő kódot a folyamatállapot-üzenet, amely megpróbálja elem másolása a parancsmag által írt példája.
 

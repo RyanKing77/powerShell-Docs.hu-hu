@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
 caps.latest.revision: 10
-ms.openlocfilehash: d6613889ebd2ba139ce0b3de1b8d24e4aec37d2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850588"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059167"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>Parancsmag-paraméterek deklarálása
 
@@ -83,7 +83,7 @@ A paraméter-attribútumhoz kapcsolatos további információkért lásd: [param
 
 ## <a name="how-to-declare-a-switch-parameter"></a>Hogyan Deklarovat Parametr kapcsoló
 
-- Típus nyilvános tulajdonságának kell definiálni [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter), és majd deklarálja a paraméter-attribútumhoz.
+- Típus nyilvános tulajdonságának kell definiálni [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter), és majd deklarálja a paraméter-attribútumhoz.
 
     ```csharp
     [Parameter(Position = 1)]
@@ -116,7 +116,7 @@ Az Alias attribútum kapcsolatos további információkért lásd: [Alias típus
 
 ## <a name="see-also"></a>Lásd még:
 
-[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)
+[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)
 
 [Deklarace parametru attribútum](./parameter-attribute-declaration.md)
 

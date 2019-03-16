@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
 caps.latest.revision: 8
-ms.openlocfilehash: d0fb81ee1ca1f80e216c021e1bd64771b8de4dc3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ad7f9737c646dd5cea5abb14b828236e40feac5a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849692"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057042"
 ---
 # <a name="provider-cmdlet-parameters"></a>Szolgáltatói parancsmag-paraméterek
 
@@ -29,9 +29,9 @@ Statikus paraméterek vannak meghatározva a Windows PowerShell. Ezek a paramét
 
 `Clear-ItemProperty` meghatározhatja, hogyan fogja használni a provider átadott értékek parancsmag a `Path` és `Name` paramétereit a `Clear-ItemProperty` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) metódust.
 
-`Copy-Item` meghatározhatja, hogyan fogja használni a provider átadott értékek parancsmag a `Path`, `Destination`, és `Recurse` paramétereit a `Copy-Item` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metódust.
+`Copy-Item` meghatározhatja, hogyan fogja használni a provider átadott értékek parancsmag a `Path`, `Destination`, és `Recurse` paramétereit a `Copy-Item` parancsmag alkalmazásával a [ System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metódust.
 
-Get-ChildItems parancsmag meghatározhatja, hogyan fogja használni a provider átadott értékek a `Path` és `Recures` paramétereit a `Get-ChildItem` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) és [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) módszereket.
+Get-ChildItems parancsmag meghatározhatja, hogyan fogja használni a provider átadott értékek a `Path` és `Recurse` paramétereit a `Get-ChildItem` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) és [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) módszereket.
 
 `Get-Content` meghatározhatja, hogyan fogja használni a provider átadott értékek parancsmag a `Path` paraméterében a `Get-Content` parancsmag alkalmazásával a [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) metódust.
 
@@ -45,7 +45,7 @@ Get-ChildItems parancsmag meghatározhatja, hogyan fogja használni a provider �
 
 `New-Item` meghatározhatja, hogyan fogja használni a provider átadott értékek parancsmag a `Path`, `ItemType`, és `Value` paramétereit a `New-Item` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metódust.
 
-`New-ItemProperty` meghatározhatja, hogyan fogja használni a provider átadott értékek parancsmag a `Path`, `Name`, `PropertyType`, és `Value` paramétereit a `New-ItemProperty` parancsmag alkalmazásával a [ Microsoft.Powershell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty) metódust.
+`New-ItemProperty` meghatározhatja, hogyan fogja használni a provider átadott értékek parancsmag a `Path`, `Name`, `PropertyType`, és `Value` paramétereit a `New-ItemProperty` parancsmag alkalmazásával a [ Microsoft.PowerShell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty) metódust.
 
 `Remove-Item` Meghatározhatja, hogyan fogja használni a provider átadott értékek a `Path` és `Recurse` paramétereit a `Remove-Item` parancsmag alkalmazásával a [System.Management.Automation.Provider.Containercmdletprovider.Removeitem* ](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) metódust.
 

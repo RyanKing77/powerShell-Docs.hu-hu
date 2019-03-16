@@ -8,23 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
-ms.openlocfilehash: d77e4daf25bfcd5e76c184f6dbdb619368627bfa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847669"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058776"
 ---
 # <a name="interpreting-errorrecord-objects"></a>ErrorRecord objektumok értelmezése
 
-A legtöbb esetben egy [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum képviseli egy parancs vagy parancsfájl által előállított nem megszakító hibát. Megszakítást okozó hibákat is megadhatja, a további információk egy ErrorRecord keresztül a [System.Management.Automation.Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) felületet.
+A legtöbb esetben egy [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum képviseli egy parancs vagy parancsfájl által előállított nem megszakító hibát. Megszakítást okozó hibákat is megadhatja, a további információk egy ErrorRecord keresztül a [System.Management.Automation.Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) felületet.
 
-Ha szeretne egy hibakezelő írja be a parancsfájlt vagy parancsot vagy parancsfájlt a futtatás során bekövetkező kell értelmezni adott hibáinak kezelése egy gazdagép a [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) médiaobjektum e azt Hiba történt, amelyet kezelni szeretne osztályát jelöli.
+Ha szeretne egy hibakezelő írja be a parancsfájlt vagy parancsot vagy parancsfájlt a futtatás során bekövetkező kell értelmezni adott hibáinak kezelése egy gazdagép a [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) médiaobjektum e azt Hiba történt, amelyet kezelni szeretne osztályát jelöli.
 
 Amikor a parancsmag hibába ütközik, a megszakítást okozó, vagy nem megszakító hibát, hozzunk létre egy hiba rekordot, amely leírja a hibajelzést kiváltó körülmény. A gazdaalkalmazást kell hiba rekordokkal vizsgálata, és hajtsa végre, bármilyen művelet csökkenti a hiba. A gazdaalkalmazást is vizsgálja meg a hiba rekordok nonterminating hibákat, amelyek nem tudott feldolgozni egy rekordot, de továbbra is volt, és azt kell vizsgálni hibarekordjainak megszakítást, amely a folyamat leállítása okozta hibák.
 
 > [!NOTE]
-> A megszakítást hibákat, a parancsmag meghívja a [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metódust. A megszakítást nem okozó hibákat, a parancsmag meghívja a [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódust.
+> A megszakítást hibákat, a parancsmag meghívja a [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metódust. A megszakítást nem okozó hibákat, a parancsmag meghívja a [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódust.
 
 ## <a name="error-record-design"></a>Rögzítse tervezési hiba
 
@@ -44,13 +44,13 @@ Azonosítsa a hibát a hiba rekord több részből tekintheti meg. Ezek a része
 
 ### <a name="the-error-category"></a>A Hibakategória
 
-A hiba rekord hibakategória egyike az előre definiált konstansokat által biztosított a [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumerálása. Ez az információ érhető el a [System.Management.Automation.Errorrecord.Categoryinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) tulajdonságát a [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum.
+A hiba rekord hibakategória egyike az előre definiált konstansokat által biztosított a [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumerálása. Ez az információ érhető el a [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) tulajdonságát a [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum.
 
 A parancsmag megadhatja a CloseError, OpenError, InvalidType, olvasási hiba és WriteError kategóriákat és más hiba kategóriák. A gazdagép alkalmazás használhatja a hibakategória csoportok hibák rögzítésére.
 
 ### <a name="the-exception"></a>A kivétel
 
-A kivétel a hiba rekord tartalmazza a parancsmag által biztosított és keresztül érhetők el a [System.Management.Automation.Errorrecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) tulajdonságát a [ System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum.
+A kivétel a hiba rekord tartalmazza a parancsmag által biztosított és keresztül érhetők el a [System.Management.Automation.ErrorRecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) tulajdonságát a [ System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum.
 
 Gazdagép-alkalmazások használhatják a `is` kulcsszó használatával azonosítható, hogy a kivétel egy adott osztály vagy származtatott osztály. Célszerűbb a kivétel típusa alapján az alábbi példában látható módon.
 
@@ -70,23 +70,23 @@ Az előző példában az első jogkivonat a hiba azonosítója, amelyet a paranc
 
 ### <a name="other-information"></a>Egyéb információk
 
-A [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum is adja meg a környezetben, ahol a hiba történt a leíró adatokkal. Ezen információk közé tartozik, mint például a hiba részletei, a hívási információkat és a célobjektum, ha a hiba történt a feldolgozása. Bár ez az információ a gazdaalkalmazást hasznos lehet, nem általában használatos, azonosítsa a hibát. Ezt az információt a következő tulajdonságok keresztül érhető el:
+A [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum is adja meg a környezetben, ahol a hiba történt a leíró adatokkal. Ezen információk közé tartozik, mint például a hiba részletei, a hívási információkat és a célobjektum, ha a hiba történt a feldolgozása. Bár ez az információ a gazdaalkalmazást hasznos lehet, nem általában használatos, azonosítsa a hibát. Ezt az információt a következő tulajdonságok keresztül érhető el:
 
-[System.Management.Automation.Errorrecord.Errordetails*](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
+[System.Management.Automation.ErrorRecord.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
 
-[System.Management.Automation.Errorrecord.Invocationinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.InvocationInfo)
+[System.Management.Automation.ErrorRecord.InvocationInfo](/dotnet/api/System.Management.Automation.ErrorRecord.InvocationInfo)
 
-[System.Management.Automation.Errorrecord.Targetobject*](/dotnet/api/System.Management.Automation.ErrorRecord.TargetObject)
+[System.Management.Automation.ErrorRecord.TargetObject](/dotnet/api/System.Management.Automation.ErrorRecord.TargetObject)
 
 ## <a name="see-also"></a>Lásd még:
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
 
 [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 

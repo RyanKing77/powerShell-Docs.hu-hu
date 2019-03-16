@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: MOF-egyéni DSC-erőforrás írása
-ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687565"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059728"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>MOF-egyéni DSC-erőforrás írása
 
@@ -69,7 +69,8 @@ Az előző kód kapcsolatos megjegyzések:
 
 Az erőforrás-parancsfájl valósítja meg az erőforrás a logikát. Ebben a modulban nevű három funkció tartalmaznia **Get-TargetResource**, **Set-TargetResource**, és **Test-TargetResource**. Mindhárom funkció, amely megegyezik a MOF-séma, az erőforrás létrehozott tulajdonságkészlettel paraméterkészlet kell tennie. Ebben a dokumentumban a tulajdonságai készletét a neve a "erőforrás-tulajdonságokat." Ezek három funkciót egy fájlban nevű Store <ResourceName>.psm1. A functions a következő példában egy Demo_IISWebsite.psm1 nevű fájlban vannak tárolva.
 
-> **Megjegyzés:**: Az ugyanazon konfigurációs parancsfájl futtatásakor az erőforráson egynél többször, meg kell kapnia nincsenek hibák, és az erőforrás továbbra is ugyanazt az állapotot, a szkript futtatása után. Ehhez ellenőrizze, hogy a **Get-TargetResource** és **Test-TargetResource** funkciók hagyja változatlanul az erőforrás és a meghívása a **Set-TargetResource**egynél többször ugyanezt a paramétert a sorrendben értékek 03T00 mindig egyszer ad meg, a függvény.
+> [!NOTE]
+> Az ugyanazon konfigurációs parancsfájl futtatásakor az erőforráson egynél többször, meg kell kapnia nincsenek hibák, és az erőforrás továbbra is ugyanazt az állapotot, a szkript futtatása után. Ehhez ellenőrizze, hogy a **Get-TargetResource** és **Test-TargetResource** funkciók hagyja változatlanul az erőforrás és a meghívása a **Set-TargetResource**egynél többször ugyanezt a paramétert a sorrendben értékek 03T00 mindig egyszer ad meg, a függvény.
 
 Az a **Get-TargetResource** függvény végrehajtása, a legfontosabb tulajdonságértékek biztosított paraméterek segítségével ellenőrizze a megadott erőforrás-példányának állapotát. Ez a függvény egy kivonattábla, amely felsorolja a kulcsok és a tényleges értékek ezeket a tulajdonságokat, mint a megfelelő értékeket erőforrás-tulajdonságok kell visszaadnia. A következő kód mutatja be.
 

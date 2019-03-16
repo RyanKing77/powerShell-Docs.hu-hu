@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 65d04c526ef7aa112da82adb924c0789731f3850
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845037"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055427"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Munkafolyamat létrehozása Windows PowerShell-tevékenységekkel
 
@@ -33,9 +33,9 @@ Az alábbi eljárásokból megtudhatja, hogyan hozhat létre egy munkafolyamatot
 
 2. Hozzon létre egy argumentum nevű `ComputerName` egy argumentum típusú `String[]`. Ez az argumentum ellenőrzi, és csatlakozzon a számítógépek nevét jelöli.
 
-3. Hozzon létre egy argumentum nevű `DomainCred` típusú [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Ez az argumentum egy tartományfiókot, amely jogosult a számítógép csatlakoztatása a tartományhoz, a tartományi hitelesítő adatok jelöli.
+3. Hozzon létre egy argumentum nevű `DomainCred` típusú [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Ez az argumentum egy tartományfiókot, amely jogosult a számítógép csatlakoztatása a tartományhoz, a tartományi hitelesítő adatok jelöli.
 
-4. Hozzon létre egy argumentum nevű `MachineCred` típusú [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Ez az argumentum egy rendszergazda azokon a számítógépeken és csatlakozás hitelesítő adatait jelöli.
+4. Hozzon létre egy argumentum nevű `MachineCred` típusú [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Ez az argumentum egy rendszergazda azokon a számítógépeken és csatlakozás hitelesítő adatait jelöli.
 
 5. Adjon hozzá egy **ParallelForEach** belül a tevékenység a **feladatütemezési** tevékenység. Adja meg `comp` és `ComputerName` a a szövegdobozok, hogy a hurok elemeinek végighalad a `ComputerName` tömb.
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: a4b228be91bba27670b26fe21e765ae942afe968
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850112"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056515"
 ---
 # <a name="required-development-guidelines"></a>Kötelező fejlesztői útmutató
 
@@ -107,7 +107,7 @@ Parancsmagok elnevezésekor ne használja a következő speciális karaktereket.
 |%|százalékjelet|
 |+|pluszjel|
 |=|egyenlőségjel|
-|~|tilda|
+|~|tilde|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>Paraméter neve, amely nem használható (RD03)
 
@@ -122,9 +122,9 @@ Ezek a parancsmag meg kell adnia, hogy támogatja a megerősítési kérések be
 > [!NOTE]
 > Ha a parancsmag osztály a parancsmag attribútum jelzi, hogy a parancsmag támogatja-e a hívásokat a [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódust, és a parancsmag nem sikerül, a hívást a [ System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódus, a felhasználók módosíthatják a rendszer váratlanul.
 
-Használja a [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) bármilyen rendszer módosításának módszere. Egy felhasználói beállítás szerint, és a `Whatif` paramétervezérlő a [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódust. Ezzel szemben a [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) hívás potenciálisan veszélyes módosításokat egy további ellenőrzést hajt végre. Bármely felhasználói beállítás szerint nem szabályozza ezt a módszert, vagy a `Whatif` paraméter. Ha a parancsmagot hívja a [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódus, rendelkeznie kell egy `Force` paraméter, amely figyelmen kívül hagyja a két módszer közül hívásokat és, hogy folytatja a műveletet. Ez azért fontos, mert lehetővé teszi a parancsmag nem interaktív parancsfájlok és a gazdagépek használhatók.
+Használja a [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) bármilyen rendszer módosításának módszere. Egy felhasználói beállítás szerint, és a `WhatIf` paramétervezérlő a [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódust. Ezzel szemben a [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) hívás potenciálisan veszélyes módosításokat egy további ellenőrzést hajt végre. Bármely felhasználói beállítás szerint nem szabályozza ezt a módszert, vagy a `WhatIf` paraméter. Ha a parancsmagot hívja a [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódus, rendelkeznie kell egy `Force` paraméter, amely figyelmen kívül hagyja a két módszer közül hívásokat és, hogy folytatja a műveletet. Ez azért fontos, mert lehetővé teszi a parancsmag nem interaktív parancsfájlok és a gazdagépek használhatók.
 
-A parancsmagok támogatják ezeket a hívásokat, ha a felhasználó határozhatja meg, hogy a művelet ténylegesen hajtható végre. Például a [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) parancsmag hívások a [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódus, mielőtt leállítja az folyamatokat, a rendszer, a Winlogon, beleértve egy készletét, és Spoolsrv folyamatokat.
+A parancsmagok támogatják ezeket a hívásokat, ha a felhasználó határozhatja meg, hogy a művelet ténylegesen hajtható végre. Például a [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) parancsmag hívások a [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódus, mielőtt leállítja az folyamatokat, a rendszer, a Winlogon, beleértve egy készletét, és A nyomtatásisor-folyamatokat.
 
 Ezek a metódusok támogatásával kapcsolatos további információkért lásd: [megerősítést kérő](./requesting-confirmation-from-cmdlets.md).
 
@@ -212,7 +212,7 @@ Hozzon létre egy Windows PowerShell-modul csomagolása és üzembe helyezése a
 
 ## <a name="see-also"></a>Lásd még:
 
-[Erősen javasolt fejlettségben irányelvek](./strongly-encouraged-development-guidelines.md)
+[Erősen javasolt fejlesztői útmutató](./strongly-encouraged-development-guidelines.md)
 
 [Tanácsadói fejlesztői útmutató](./advisory-development-guidelines.md)
 

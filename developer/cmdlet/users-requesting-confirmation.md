@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6f337498-c534-40ed-968a-09d4d9ca3849
 caps.latest.revision: 8
-ms.openlocfilehash: e4abbb14b31406b845d9b6af6b6372338fb0d926
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ed9ff9fc1668a89e1ac0ceac8f0800a15b349226
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846976"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059558"
 ---
 # <a name="users-requesting-confirmation"></a>Megerősítést kérő felhasználók
 
 Érték megadása `true` számára a `SupportsShouldProcess` paramétert, a parancsmag attribútum nyilatkozat, a felhasználók megadhatják a `Confirm` paraméter a parancssorban.
 
-Az alapértelmezett környezetben a felhasználók megadhatják a `Confirm` paraméter vagy `"-Confirm:$true` megerősítési kérés érkezett, hogy amikor a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) módszert hívja meg. Ez nincs hatással lévő [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) eseménymegerősítési kéréseknek, akár nagy hatású műveletek esetében.
+Az alapértelmezett környezetben a felhasználók megadhatják a `Confirm` paraméter vagy `"-Confirm:$true` megerősítési kérés érkezett, hogy amikor a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) módszert hívja meg. Ez nincs hatással lévő [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) eseménymegerősítési kéréseknek, akár nagy hatású műveletek esetében.
 
-Ha `Confirm` nincs megadva, a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) hívás megerősítését kéri, ha a `$ConfirmPreference` preferenciaváltozó egyenlő vagy nagyobb, mint a `ConfirmImpact` beállításaként a a parancsmag vagy szolgáltató. A beállítás alapértelmezett értékét `$ConfirmPreference` magas. Ezért az alapértelmezett környezet csak a parancsmagok és szolgáltatók, amely nagy hatású művelet megadása kér megerősítést.
+Ha `Confirm` nincs megadva, a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) hívás megerősítését kéri, ha a `$ConfirmPreference` preferenciaváltozó egyenlő vagy nagyobb, mint a `ConfirmImpact` beállításaként a a parancsmag vagy szolgáltató. A beállítás alapértelmezett értékét `$ConfirmPreference` magas. Ezért az alapértelmezett környezet csak a parancsmagok és szolgáltatók, amely nagy hatású művelet megadása kér megerősítést.
 
-Ha `Confirm` false (hamis), vagy ha `"-Confirm:$false` meg van adva, a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) hívás megerősítését kéri a felhasználótól, és a `$ConfirmPreference` felületváltozóban a rendszer figyelmen kívül hagyja.
+Ha `Confirm` false (hamis), vagy ha `"-Confirm:$false` meg van adva, a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) hívás megerősítését kéri a felhasználótól, és a `$ConfirmPreference` felületváltozóban a rendszer figyelmen kívül hagyja.
 
 ## <a name="remarks"></a>Megjegyzés
 

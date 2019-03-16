@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Windows PowerShell integrált parancsfájl-kezelési környezet ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3002c2cb7213b1c2d7201dddf5ff3c0651fad767
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683834"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054713"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell integrált parancsfájlkezelési környezet (ISE)
 
@@ -34,7 +34,7 @@ Ezek az eszközök gomb lapnézetben panelen beállítások megjelenítéséhez,
 
 **A legtöbb a legutóbb használt lista** a fájl megnyitása menüben, hogy megkönnyítsék az eljutást a leggyakrabban használt fájlok tartoznak.
 
-**Egyesített konzolpanelen**. A ISE korábbi verzióiban voltak külön parancsot és a kimeneti ablaktábla. Akkor most mostantól egyetlen, hogy több közvetlenül utánozza lásd a Windows Powershell-konzolon.
+**Egyesített konzolpanelen**. A ISE korábbi verzióiban voltak külön parancsot és a kimeneti ablaktábla. Akkor most mostantól egyetlen, hogy több közvetlenül utánozza lásd a Windows PowerShell-konzolon.
 
 **Parancssori kapcsolók**. Számos új parancssori kapcsolók jobban szabályozhatja az ISE működésének biztosítanak. -NoProfile profil parancsfájl futtatása nélkül indítja el az ISE-ben. -Súgó egy Súgó az ISE-ablakot nyit meg. -mta elindítja a "több szálon futó apartman módban" az ISE-ben. Az alapértelmezett érték az egyszálas.
 

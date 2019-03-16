@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Visszajelzés küldése a közösségi médiában vagy megjegyzésekkel
-ms.openlocfilehash: a7cdcc2ff2c18fb606d077adf0bdecf57c90703f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684352"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055002"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Visszajelzés küldése a közösségi médiában vagy megjegyzésekkel
 
-A Powershell-galériából a két megközelítés a felhasználók számára egy nyilvános visszajelzést támogatja:
+A PowerShell-galériából a két megközelítés a felhasználók számára egy nyilvános visszajelzést támogatja:
 
 - A bal szélén a hivatkozások segítségével egy csomagot, a Facebook, a LinkedIn, vagy Twitter közösségi média webhelyei; "megosztáshoz"
 - A Megjegyzés szolgáltatással fűzhetnek a csomagot, és engedélyezi a szerzők kapcsolatos megjegyzéseit a csomagokat tesznek közzé.
@@ -26,8 +26,7 @@ A hely, a PowerShell-galériából csomag megosztásához választotta felhaszn�
 
 Ha egy csomag valami, javasoljuk, mások megtalálják célszerű.
 A PowerShell-galériából ellenőrzi a csomag "megosztások" közösségi helyekhez, és a megjelenített futtatásainak számát, a csomagot a közösségi média webhelyei minden meg van osztva.
-Mivel ez jeleníti meg. csak alkalommal valami meg van osztva, ki lesz intepreted, más felhasználók "liking" a csomagot.
-
+Mivel ez jeleníti meg. csak alkalommal valami meg van osztva, ki lesz értelmezve, más felhasználók "liking" a csomagot.
 
 ## <a name="comments"></a>Megjegyzések
 

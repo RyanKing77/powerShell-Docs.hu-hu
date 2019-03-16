@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Létrehozása és közzététele egy elem
-ms.openlocfilehash: 70696535a3bf540ff75a2dc43bca80cb1adf8f45
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684359"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055478"
 ---
 # <a name="creating-and-publishing-an-item"></a>Létrehozása és közzététele egy elem
 
@@ -75,7 +75,7 @@ Van néhány, a PowerShell-galériából, az elem közzététele előtt a kód f
 A jegyzékfájl információkat az elem nem lehet olvasni a PowerShell-galériából infrastruktúra által, ha nem tudja közzétenni.
 [Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) fogja a tényleges előforduló problémákat okozhat a modul nem lesz használható, ha telepítve van. Minden modul, a PowerShell-galériából történő közzététele előtt kell futtatni.
 
-Hasonlóképpen [Test-ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) érvényesíti a metaadatokat egy parancsfájlban, és minden parancsfájlt (modul közzétett webszolgáltatáson), a Powershell-galériából történő közzététele előtt kell futtatni.
+Hasonlóképpen [Test-ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) érvényesíti a metaadatokat egy parancsfájlban, és minden parancsfájlt (modul közzétett webszolgáltatáson), a PowerShell-galériából történő közzététele előtt kell futtatni.
 
 
 ## <a name="publishing-items"></a>Közzétételi elemek
@@ -87,14 +87,14 @@ Kell használnia a [Publish-Script](/powershell/module/PowerShellGet/publish-scr
 
 Így nem kell megadnia őket a parancsban az alkalmazásjegyzék adatokat tesz közzé, az elem a többi beállítást, a parancssorban a legtöbb legyen.
 
-Hibák elkerülése érdekében, erősen ajánlott, hogy a parancsok használata a – Whatif megpróbál-Verbose, a közzététel előtt. Ez menti jelentős időt, mivel minden alkalommal, amikor közzéteszi a PowerShell-galériából, a verziószámot a manifest szakasz elem frissítenie kell.
+Hibák elkerülése érdekében, erősen ajánlott, hogy a parancsok használata a – WhatIf megpróbál-Verbose, a közzététel előtt. Ez menti jelentős időt, mivel minden alkalommal, amikor közzéteszi a PowerShell-galériából, a verziószámot a manifest szakasz elem frissítenie kell.
 
 Példák a következő lesz:
 
-* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
-* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
+* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`
 
-Gondosan tekintse át a kimenetet, és ha nincsenek hibák vagy figyelmeztetések látja, ismételje meg a parancsot,-Whatif nélkül.
+Gondosan tekintse át a kimenetet, és ha nincsenek hibák vagy figyelmeztetések látja, ismételje meg a parancsot,-WhatIf nélkül.
 
 Minden elem, a PowerShell-galériában közzétett vírusok esetén sor fog kerülni, és a PowerShell-parancsfájl Analyzer segítségével elemzik. Minden olyan problémák merülnek fel, hogy küld vissza a közzétevő a feloldásához.
 

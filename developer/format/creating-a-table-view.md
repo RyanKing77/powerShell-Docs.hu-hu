@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
-ms.openlocfilehash: 832527ea4b042812c39934cd7e124201c6dc2ea4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850658"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057365"
 ---
 # <a name="creating-a-table-view"></a>Tábla nézet létrehozása
 
@@ -95,7 +95,7 @@ A következő XML-elemeket a lista nézet meghatározásához használják:
 
 2. A [TableColumnHeader](./tablecolumnheader-element-format.md) elem definiálja a tábla egy oszlop tetején jelenik meg. Adja meg ezeket az elemeket a ahhoz, hogy szeretné-e a fejlécek jelenik meg.
 
-   Nem használható ezen elem száma, de száma korlátozott [TableColumnHeader](./tablecolumnheader-element-format.md) elemeit a táblázatos nézetre számának egyenlőnek kell lennie [TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) elemeket, amelyeket használhat.
+   Nem használható ezen elem száma, de száma korlátozott [TableColumnHeader](./tablecolumnheader-element-format.md) elemeit a táblázatos nézetre számának egyenlőnek kell lennie [TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) elemeket, amelyeket használhat.
 
 3. A [címke](./label-element-for-tablecolumnheader-for-tablecontrol-format.md) elem azt határozza meg a megjelenített szöveget. Ez az elem nem kötelező.
 
@@ -136,7 +136,7 @@ A következő XML-elemeket adjon meg egy olyan sor definíciók használható:
 
 - A [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) elem azt határozza meg az objektumok, amelyek egy adott definíciója szerint jelennek meg. Ez az elem nem kötelező, és csak a több meghatározása során van szükség [TableRowEntry](./listentry-element-for-listcontrol-format.md) elemek, amelyek a különböző objektumok megjelenítéséhez.
 
-- A [burkolása](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) elem azt határozza meg, hogy a következő sorban megjelenik-e a szöveg, amely meghaladja az oszlopok szélességét. Alapértelmezés szerint a rendszer csonkolja szöveg, amely meghaladja az oszlopok szélességét.
+- A [burkolása](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) elem azt határozza meg, hogy a következő sorban megjelenik-e a szöveg, amely meghaladja az oszlopok szélességét. Alapértelmezés szerint a rendszer csonkolja szöveg, amely meghaladja az oszlopok szélességét.
 
 - A [TableColumnItems](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md) elem definiálja a Tulajdonságok vagy parancsfájlok, melynek értékei jelennek meg a sorban.
 

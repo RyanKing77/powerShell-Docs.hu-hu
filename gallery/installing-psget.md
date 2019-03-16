@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: A PowerShellGet telepítése
-ms.openlocfilehash: 5c51cb1c7ea2538cc5f8503ce6c5d80edda70e15
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683876"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054824"
 ---
 # <a name="installing-powershellget"></a>A PowerShellGet telepítése
 
@@ -57,7 +57,7 @@ ms.locfileid: "55683876"
   Exit
   ```
 
-- Győződjön meg arról, hogy a PowerShellGet és PackageManagment modulok nem töltődnek be más folyamatokban.
+- Győződjön meg arról, hogy a PowerShellGet és a PackageManagement-modulok nem töltődnek be más folyamatokban.
 - Törli a tartalmát `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` és `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` mappákat.
 - Nyissa meg újra a PS-konzol emelt szintű engedélyekkel, majd futtassa a következő parancsokat.
 

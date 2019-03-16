@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3d74217621d00dfd68cad1c45d187a9c2ffb9980
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687026"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054374"
 ---
 # <a name="known-issues-and-limitations"></a>Ismert problémák és korlátozások
 
@@ -77,7 +77,7 @@ Nincsenek futtatja a Windows Server verziójától függően a probléma két le
 
 - Operációs rendszer **Windows Server 2012**
   1. A kiszolgálóra, hogy a WMF 5.0 telepítését követően a Sysprep d, bejelentkezés rendszergazdaként.
-  2. Másolja Generize.xml directory \Windows\System32\Sysprep\ActionFiles\ kívül a Windows könyvtárban, a C:\ helyre például.
+  2. Directory \Windows\System32\Sysprep\ActionFiles\ Generize.xml másolja a Windows könyvtárban, a C:\ kívüli helyre például.
   3. Nyissa meg a Generalize.xml Másolás a Jegyzettömb alkalmazásban.
   4. Keresse meg, és távolítsa el a következő szöveget, minden egyes kell törölni egy példányát (fogják a dokumentum végén).
 

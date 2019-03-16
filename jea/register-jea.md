@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: Konfigurációk a JEA regisztrálása
-ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6fa0ce434c8e70eb718545e99417bfe034cda6bf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689063"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059439"
 ---
 # <a name="registering-jea-configurations"></a>Konfigurációk a JEA regisztrálása
 
@@ -113,7 +113,7 @@ Configuration JEAMaintenance
 Ez a konfiguráció alkalmazható egy rendszer által [közvetlen meghívása a Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig) vagy frissítésekor a [lekéréses kiszolgálókonfiguráció](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
 A DSC-erőforrás is lehetővé teszi az alapértelmezett Microsoft.PowerShell távoli eljáráshívás végpont helyett.
-Ha így tesz, az erőforrás automatikusan regisztrálja a biztonsági mentési unconstrainted végpont "Microsoft.PowerShell.Restricted", amelynek az alapértelmezett (engedélyezése Rendszerfelügyeleti felhasználók és a helyi Rendszergazdák csoport tagjai elérhessék) a Rendszerfelügyeleti webszolgáltatások ACL nevű.
+Ha így tesz, az erőforrás automatikusan regisztrálja a biztonsági mentési korlátozás végpont "Microsoft.PowerShell.Restricted", amelynek az alapértelmezett (engedélyezése Rendszerfelügyeleti felhasználók és a helyi Rendszergazdák csoport tagjai elérhessék) a Rendszerfelügyeleti webszolgáltatások ACL nevű.
 
 ## <a name="unregistering-jea-configurations"></a>A JEA-konfigurációk regisztrációjának törlése
 

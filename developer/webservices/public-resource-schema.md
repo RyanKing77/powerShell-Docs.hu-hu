@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: a9204ca7b28fc5792ef9bd18f6b0b24964de7386
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849293"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057246"
 ---
 # <a name="public-resource-schema"></a>Nyilvános erőforrások sémája
 
@@ -21,7 +21,7 @@ Felügyeleti OData MOF segítségével meghatározhatja az erőforrásokat és a
 
 ## <a name="defining-a-resource"></a>Egy erőforrás meghatározása
 
-Az egyes erőforrások felel meg egy Windows PowerShell-parancsmag által visszaadott objektum. A publc erőforrás MOF-fájlt adja meg egy erőforrást egy osztály deklarálásával. Az osztály az objektum tulajdonságainak tulajdonságok áll. Például az alábbi példában a [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) osztályt a következő MOF képviseli.
+Az egyes erőforrások felel meg egy Windows PowerShell-parancsmag által visszaadott objektum. A nyilvános erőforrás MOF-fájlt adja meg egy erőforrást egy osztály deklarálásával. Az osztály az objektum tulajdonságainak tulajdonságok áll. Például az alábbi példában a [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) osztályt a következő MOF képviseli.
 
 ```csharp
 class PswsTest_Process
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Egy összetett típus az entitástulajdonság deklarálnia, deklarálhatja, mint egy `string` típusú a `EmbeddedInstance` minősítő, beleértve a komplex típus nevét. A következő példa hshows tulajdonság a nyilatkozat, a `PswsTest_ProcessModule` típus deklarálva az előző példában.
+Egy összetett típus az entitástulajdonság deklarálnia, deklarálhatja, mint egy `string` típusú a `EmbeddedInstance` minősítő, beleértve a komplex típus nevét. Az alábbi példa bemutatja egy tulajdonságának a nyilatkozat az `PswsTest_ProcessModule` típus deklarálva az előző példában.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];
@@ -63,7 +63,7 @@ Egy összetett típus az entitástulajdonság deklarálnia, deklarálhatja, mint
 
 ### <a name="associating-entities"></a>Entitások társítása
 
-A társítás és AssocationClass minősítők használatával társíthatja a két entitás. További információkért lásd: [társítása Management OData entitások](./associating-management-odata-entities.md).
+A társítás és AssociationClass minősítők használatával társíthatja a két entitás. További információkért lásd: [társítása Management OData entitások](./associating-management-odata-entities.md).
 
 ### <a name="derived-types"></a>Származtatott típusokkal
 
@@ -72,17 +72,16 @@ Egy másik a típus származtathatók. A származtatott típusban örökli az ö
 ```csharp
 Class Product {
 
-[Key] String ProductName;
+    [Key] String ProductName;
 
 };
 
 Class DairyProduct : Product {
 
-Uint16 PercentFat;
+    Uint16 PercentFat;
 };
 Class POPProduct : Product {
 
-Boolean IsCarbonated;
+    Boolean IsCarbonated;
 };
-
 ```

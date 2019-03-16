@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
 caps.latest.revision: 6
-ms.openlocfilehash: c8b3f907a80d1f6125a5ac04236245503db76ed0
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251302"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057129"
 ---
 # <a name="security-parameters"></a>Biztonsági paraméterek
 
@@ -29,7 +29,7 @@ Az alábbi táblázat a javasolt nevek és a egy művelet, például a tanúsít
 |**CertStoreLocation**<br>Adattípus: Sztring|Ez a paraméter valósítja meg, hogy a felhasználó megadhatja a helyét, a tanúsítványtárolóban. A hely az általában egy fájl elérési útját.|
 |**CertSubjectName**<br>Adattípus: Sztring|Ez a paraméter valósítja meg, hogy a felhasználó megadhatja a tanúsítvány kiállítója, vagy úgy, hogy a felhasználó megadhatja a karakterláncrészletet.|
 |**CertUsage**<br>Adattípus: Sztring|Ez a paraméter adja meg a kulcs használata vagy a kibővített kulcshasználat megvalósításához. A kulcs által megjeleníthető egy kicsit maszkolja, egy kicsit objektumazonosító (OID), vagy egy karakterláncot.|
-|**Hitelesítő adatok**<br>Adattípus: [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Ez a paraméter valósítja meg, hogy a parancsmag automatikusan kérni fogja a felhasználótól a felhasználónevet vagy jelszót. Mindkettő egy kérés jelenik meg, ha egy teljes hitelesítő adat nem közvetlenül tartalmazza.|
+|**Hitelesítő adatok**<br>Adattípus: [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Ez a paraméter valósítja meg, hogy a parancsmag automatikusan kérni fogja a felhasználótól a felhasználónevet vagy jelszót. Mindkettő egy kérés jelenik meg, ha egy teljes hitelesítő adat nem közvetlenül tartalmazza.|
 |**CSPName**<br>Adattípus: Sztring|Ez a paraméter valósítja meg, hogy a felhasználó megadhatja a tanúsítvány-szolgáltató (CSP) nevét.|
 |**CSPType**<br>Adattípus: Integer|Ez a paraméter valósítja meg, hogy a felhasználó megadhatja a kriptográfiai Szolgáltató típusát.|
 |**Csoport**<br>Adattípus: Sztring|Ez a paraméter valósítja meg, hogy a felhasználó megadhatja a hozzáféréshez egyszerű gyűjteménye. További információkért tekintse meg a leírását az **egyszerű** paraméter.|

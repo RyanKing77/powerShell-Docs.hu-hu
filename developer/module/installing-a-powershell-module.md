@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: f7899713dd273b793017adfa0a20b3ff3352b62a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851127"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059779"
 ---
 # <a name="installing-a-powershell-module"></a>PowerShell-modul telepítése
 
@@ -160,7 +160,7 @@ Ahhoz, hogy a Windows PowerShell modul felderítési szolgáltatások a Fabrikam
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technolgies\Fabrikam Manager\Modules\"
+$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -228,7 +228,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-Amikor végzett, ezeket a lépéseket a **ListAvailable** paraméterében a [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) parancsmag Előhozza a Fabrikam modulok mindkét. Egy adott modul importálásához használja a `MiminumVersion` vagy `RequiredVersion` paramétereit a [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) parancsmagot.
+Amikor végzett, ezeket a lépéseket a **ListAvailable** paraméterében a [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) parancsmag Előhozza a Fabrikam modulok mindkét. Egy adott modul importálásához használja a `MinimumVersion` vagy `RequiredVersion` paramétereit a [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) parancsmagot.
 
 Ha mindkét rendszer importálja a parancsmagmodulokat a ugyanazon munkamenet, és a modulok ugyanazokat a neveket a parancsmagokat tartalmaznak, a parancsmagok utolsó importált hatékonyak a munkamenetben.
 

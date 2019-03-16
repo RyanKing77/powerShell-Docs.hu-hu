@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e1a13100-41a4-4847-9f07-458c85783505
 caps.latest.revision: 6
-ms.openlocfilehash: a7ee550527ec1cb00b4ed83478992c7ab54dbdb6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 925ef86e61801f5a66f89dd25e0756f00dd35155
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850805"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054781"
 ---
 # <a name="frame-element-for-customitem-for-customcontrol-for-view-format"></a>A Nézet CustomControl eleméhez tartozó CustomItem Keret eleme (Formátum)
 
 Határozza meg, hogyan egy jelennek meg, például az adatok pótlása jobbra vagy balra. Ehhez az elemhez használt egyéni vezérlő nézet definiálása.
 
-Konfigurációs elem (formátum) ViewDefinitions elem (formátum) nézet elem (formátum) CustomControl elem (formátum) CustomEntries eleme CustomControl megtekintése (formátum) CustomEntry elem megtekintése (formátum) CustomItem elemhez tartozó CustomEntries számára CustomEntry CustomItem CustomControl nézet (formátum) esetében a CutomControlView (formátum) keret elemhez
+Konfigurációs elem (formátum) ViewDefinitions elem (formátum) nézet elem (formátum) CustomControl elem (formátum) CustomEntries eleme CustomControl megtekintése (formátum) CustomEntry elem megtekintése (formátum) CustomItem elemhez tartozó CustomEntries számára CustomEntry CustomItem CustomControl nézet (formátum) esetében a CustomControlView (formátum) keret elemhez
 
 ## <a name="syntax"></a>Szintaxis
 

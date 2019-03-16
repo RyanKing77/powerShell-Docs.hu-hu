@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 31df99d7-6954-4fdc-b6f5-06ecba094f43
 caps.latest.revision: 8
-ms.openlocfilehash: fe513a47908fc3020895fcb26f1840faad76210a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 39495f7813aecf5d0210866fc11f94557fdb0cd9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847718"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058997"
 ---
 # <a name="runspace03-sample"></a>Runspace03 – minta
 
@@ -35,7 +35,7 @@ Ez a minta bemutatja a következő.
 
 - A szkript futtatása szinkron módon történik.
 
-- Használatával [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objektumok kinyerése és a parancsfájl által visszaadott objektumokhoz a tulajdonságainak megjelenítéséhez.
+- Használatával [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objektumok kinyerése és a parancsfájl által visszaadott objektumokhoz a tulajdonságainak megjelenítéséhez.
 
 - Megjelenítés, a parancsfájl futtatásakor generált hibarekordjainak és beolvasását.
 

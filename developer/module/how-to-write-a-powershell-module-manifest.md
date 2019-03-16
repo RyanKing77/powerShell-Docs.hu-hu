@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: 67e041756974dcd84e15cdb4edaf91be45122e28
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849055"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059490"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Bináris PowerShell-moduljegyzék írása
 
@@ -77,7 +77,7 @@ A következő táblázat ismerteti az elemek egy moduljegyzék használhat
 |PowerShellVersion<br /><br /> Típus: karakterlánc|' '|A Windows PowerShell motor, ez a modul által megkövetelt minimális verzióját. Aktuális érvényes értékei 1.0-s, 2.0-s, 3.0-s, 4.0 és 5.0.<br /><br /> Példa: `PowerShellVersion = '5.0'`|
 |PowerShellHostName<br /><br /> Típus: karakterlánc|' '|Megadja a Windows PowerShell-gazdagép, a modul által igényelt nevét. Ez a név Windows PowerShell által biztosított. Egy gazdagép program neve a programban, írja be a következőt: `$host.name` .<br /><br /> Példa: `PowerShellHostName = 'Windows PowerShell ISE Host'`|
 |PowerShellHostVersion<br /><br /> Típus: karakterlánc|' '|A Windows PowerShell-gazdagép, ez a modul által megkövetelt minimális verzióját.<br /><br /> Példa: `PowerShellHostVersion = '2.0'`|
-|DotNetFrameworkVersion<br /><br /> Típus: karakterlánc|' '|Ez a modul által igényelt, a Microsoft .NET-keretrendszer minimális verziója.<br /><br /> Példa: `DotNetFrameorkVersion = '3.5'`|
+|DotNetFrameworkVersion<br /><br /> Típus: karakterlánc|' '|Ez a modul által igényelt, a Microsoft .NET-keretrendszer minimális verziója.<br /><br /> Példa: `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> Típus: karakterlánc|' '|A közös nyelvi futtatókörnyezet (CLR) Ez a modul által megkövetelt minimális verzióját.<br /><br /> Példa: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> Típus: karakterlánc|' '|Processzor architektúrája (nincs, X86, AMD64-es) Ez a modul által igényelt. Érvényes értékek a következők x86, AMD64 IA64 operációs rendszerben, és egyik sem (ismeretlen vagy meghatározatlan).<br /><br /> Példa: `ProcessorArchitecture = 'x86'`|
 |RequiredModules<br /><br /> Típus: [string []]|@()|Olyan modulok, ez a modul importálása előtt a globális környezetbe kell importálni. Így betöltődik, kivéve, ha azok már betöltött felsorolt modulokat. (Például egyes modulok esetleg már tölthető be egy másik modul.). Adjon meg egy adott verziót, a betöltés, lehetőség arra is `RequiredVersion` helyett `ModuleVersion`. Használata esetén `ModuleVersion` , betölti a megadott verzió legalább elérhető legújabb verzióra.<br /><br /> Példa: `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Példa: `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: 0f025213087e6f308adf8e597fc01c1320251f76
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849139"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054873"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Aliasok, helyettesítő bővítők és súgó hozzáadása a parancsmag-paraméterekhez
 
@@ -110,7 +110,7 @@ A következő kódot a Stop-Proc parancsmag az határozza meg a `HelpMessage` at
 
 ## <a name="overriding-an-input-processing-method"></a>Egy bemeneti metódus feldolgozási felülbírálása
 
-A parancsmag felül kell írnia egy bemeneti metódus feldolgozása, a leggyakrabban ez lesz [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Ha módosítja a rendszer, meg kell hívnia a parancsmag a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) módszereket, hogy a a felhasználó visszajelzést, mielőtt módosításakor. Ezek a metódusok kapcsolatos további információkért lásd: [létrehozása egy parancsmag, amely módosítja a rendszer](./creating-a-cmdlet-that-modifies-the-system.md).
+A parancsmag felül kell írnia egy bemeneti metódus feldolgozása, a leggyakrabban ez lesz [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Ha módosítja a rendszer, a parancsmag meg kell hívnia a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) módszereket, hogy a felhasználó Ha visszajelzést előtt módosításakor. Ezek a metódusok kapcsolatos további információkért lásd: [létrehozása egy parancsmag, amely módosítja a rendszer](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ## <a name="supporting-wildcard-expansion"></a>Helyettesítő karakteres bővítésének támogatása
 

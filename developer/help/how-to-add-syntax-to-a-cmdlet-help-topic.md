@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 947d0c0188df5bba3a9fb617fe5abf0b3b28eb51
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848208"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054611"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Szintaxis hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
 
@@ -112,7 +112,7 @@ A paraméter kötelező attribútum jelzi-e a paraméter (és annak értékét) 
 
    Mindaddig, amíg azok jelentését nincs bejelölve, például "string" System.String és "int" System.Int32, rövidítése típusokat.
 
-   Például a listában szereplő összes enumerálások, az előző példában a - típus paraméter, dátumoszlopban "alapszintű" vagy "speciális" állítható.
+   A listában szereplő összes enumerálások, például az "alapszintű" vagy "speciális" való beállítása az előző példában a - típusú paramétert.
 
    Váltson a paraméterek, például - lista az előző példában szereplő, nem rendelkezik az értékekkel.
 

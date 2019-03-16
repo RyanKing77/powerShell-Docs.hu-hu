@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Konfigurációs nevekkel PowerShell 5.0-s és újabb verziók lekérési ügyfél beállítása
-ms.openlocfilehash: fd038a105da7a83ecad9b571e611b65c8ec847b3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688076"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058188"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>Konfigurációs nevekkel PowerShell 5.0-s és újabb verziók lekérési ügyfél beállítása
 
@@ -23,8 +23,9 @@ Lekérési ügyfél beállítása előtt be kell állítania egy lekéréses kis
 
 Minden egyes célcsomóponttal konfigurálható töltse le a konfigurációk, az erőforrásokat, és még jelentést annak állapotát. Az alábbi szakaszok bemutatják, hogyan lekérési ügyfél beállítása egy SMB-megosztáson, vagy a HTTP-DSC lekéréses kiszolgálón. Amikor a csomópont LCM frissíti, a konfigurált helyre, töltse le a hozzárendelt konfigurációkat, felveszi Önnel. Ha minden szükséges erőforrás nem létezik a csomóponton, azt automatikusan letöltheti őket a beállított helyről. Ha a csomópont konfigurálva van egy [jelentéskészítő kiszolgáló](reportServer.md), majd a művelet állapotát jelzi.
 
-> **Megjegyzés:**: Ez a témakör a PowerShell 5.0-s vonatkozik.
-A PowerShell 4.0-s lekérési ügyfél beállításával kapcsolatos további információkért lásd: [konfigurációs azonosító használatával a PowerShell 4.0-s lekérési ügyfél beállítása](pullClientConfigID4.md)
+> [!NOTE]
+> Ez a témakör a PowerShell 5.0-s vonatkozik.
+> A PowerShell 4.0-s lekérési ügyfél beállításával kapcsolatos további információkért lásd: [konfigurációs azonosító használatával a PowerShell 4.0-s lekérési ügyfél beállítása](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>Lekérési ügyfél LCM konfigurálása
 
@@ -49,7 +50,8 @@ A következő szkriptet az LCM lekéréses konfigurációk úgy konfigurálja a 
 - A parancsfájl a **ConfigurationRepositoryWeb** blokk határozza meg a lekéréses kiszolgálón. A **ServerURL** tulajdonsága azt adja meg a végpont a lekéréses kiszolgálón.
 
 - A **RegistrationKey** tulajdonság egy lekéréses kiszolgálón található összes ügyfél csomópont és a lekéréses kiszolgálón között megosztott kulcs. Ugyanazt az értéket egy fájlt a lekérési kiszolgálón van tárolva.
-  > **Megjegyzés:**: Regisztrációs kulcs csak a munkahelyi **webes** kiszolgálók lekérése. Továbbra is kell használnia **ConfigurationID** együtt egy **SMB** lekéréses kiszolgálón.
+  > [!NOTE]
+  > Regisztrációs kulcs csak a munkahelyi **webes** kiszolgálók lekérése. Továbbra is kell használnia **ConfigurationID** együtt egy **SMB** lekéréses kiszolgálón.
   > Használatával egy lekéréses kiszolgálót konfigurálásával kapcsolatos információkat **ConfigurationID**, lásd: [konfigurációs azonosítóval lekérési ügyfél beállítása](pullClientConfigId.md)
 
 - A **ConfigurationNames** tulajdonság értéke egy tömb, amely megadja azoknak szól, az ügyfél csomópont-konfigurációk a nevét.

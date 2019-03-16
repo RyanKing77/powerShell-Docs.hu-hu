@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
-ms.openlocfilehash: 15f47c97ac5d55cb76e153af86672b3ffaf176c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848628"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057875"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader elem (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[Címke eleme TableColumnHeader a TableControl (formátum)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|Nem kötelező eleme.<br /><br /> Határozza meg a címke az az oszlop tetején jelenik meg. Ha nincs címke van megadva, a tulajdonságot, amelynek az értéke megjelenik a sorok nevét használja.|
 |[Szélesség eleme TableColumnHeader a TableControl (formátum)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Szükséges eleme.<br /><br /> Adja meg az oszlop szélessége (a karakter).|
-|[Zarovnání eleme TableColumbnHeader a TableControl (formátum)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Nem kötelező eleme.<br /><br /> Itt adhatja meg, hogyan jelenjen meg az oszlop a címkét. Ha igazítás nélkül van megadva, a címke a bal oldali van igazítva.|
+|[Zarovnání eleme TableColumnHeader a TableControl (formátum)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Nem kötelező eleme.<br /><br /> Itt adhatja meg, hogyan jelenjen meg az oszlop a címkét. Ha igazítás nélkül van megadva, a címke a bal oldali van igazítva.|
 
 ### <a name="parent-elements"></a>Szülőelemek
 
@@ -82,7 +82,7 @@ A következő példában két `TableColumnHeader` elemeket. Az első elemét hat
 
 ## <a name="see-also"></a>Lásd még:
 
-[Zarovnání eleme TableColumnHeader a TableContrl (formátum)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[Zarovnání eleme TableColumnHeader a TableControl (formátum)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [Tábla nézet létrehozása](./creating-a-table-view.md)
 

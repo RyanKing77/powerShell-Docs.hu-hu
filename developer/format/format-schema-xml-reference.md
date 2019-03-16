@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
-ms.openlocfilehash: 4dfe27a5105d82fa18e35f965f92fad16d390a2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848061"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056651"
 ---
 # <a name="format-schema-xml-reference"></a>Séma XML-referenciájának formázása
 
@@ -81,7 +81,7 @@ Ez a szakasz témakörei ismertetik a formázás fájlok (Format.ps1xml) által 
 
 [DefaultSettings elem (formátum)](./defaultsettings-element-format.md) határozza meg a formázási fájl összes nézet vonatkozó általános beállításokat. Általános beállítások közé tartozik a hibák megjelenítése a táblákat, hogyan gyűjtemények vannak bontva, definiálása, valamint további lehetőségek szöveg.
 
-[DisplayError elem (Frmat)](./displayerror-element-format.md) Megadja, hogy a karakterlánc #ERR megjelenik-e, ha hiba történik az adatok megjelenítése.
+[DisplayError elem (formátum)](./displayerror-element-format.md) Megadja, hogy a karakterlánc #ERR megjelenik-e, ha hiba történik az adatok megjelenítése.
 
 [EntrySelectedBy elemet a vezérlők (formátum) konfiguráció CustomEntry](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md) határozza meg a .NET-típusokat, amelyek a közös vezérlő vagy a feltétellel, hogy léteznie kell a Pro tento ovládací prvek használandó definíciója. Ez az elem szolgál egy közös vezérlőelem a formázási fájlban az összes nézetek által használható meghatározásakor.
 
@@ -235,7 +235,7 @@ Ez a szakasz témakörei ismertetik a formázás fájlok (Format.ps1xml) által 
 
 [A GroupBy (formátum) SelectionCondition PropertyName eleme](./propertyname-element-for-selectioncondition-for-groupby-format.md) adja meg azt a .NET-tulajdonságot, amely elindítja a feltételt. Ha ez a tulajdonság jelen-e, vagy ha való kiértékelése által `true`, a feltétel nem teljesül, és a definíció szolgál. Ez az elem szolgál, hogyan jelenjen meg az objektumok egy új csoportot meghatározásakor.
 
-[SelectionCondition EmtrySelectedBy ListEntry (formátum) esetében a PropertyName eleme](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) adja meg azt a .NET-tulajdonságot, amely elindítja a feltételt. Ha ez a tulajdonság jelen-e, vagy ha való kiértékelése által `true`, a feltétel nem teljesül, és a regisztrációslista-bejegyzés szolgál.
+[SelectionCondition EntrySelectedBy ListEntry (formátum) esetében a PropertyName eleme](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) adja meg azt a .NET-tulajdonságot, amely elindítja a feltételt. Ha ez a tulajdonság jelen-e, vagy ha való kiértékelése által `true`, a feltétel nem teljesül, és a regisztrációslista-bejegyzés szolgál.
 
 [SelectionCondition EntrySelectedBy TableRowEntry (formátum) esetében a PropertyName eleme](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) adja meg azt a .NET-tulajdonságot, amely elindítja a feltételt. Ha ez a tulajdonság jelen-e, vagy ha való kiértékelése által `true`, a feltétel nem teljesül, és a táblabejegyzés szolgál.
 
@@ -363,7 +363,7 @@ Ez a szakasz témakörei ismertetik a formázás fájlok (Format.ps1xml) által 
 
 [TableRowEntries elem (formátum)](./tablerowentries-element-for-tablecontrol-format.md) határozza meg a tábla sorait.
 
-[TableRowEntry elem (formátum)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) határozza meg, amely egy sort a táblában megjelennek az adatok.
+[TableRowEntry elem (formátum)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) határozza meg, amely egy sort a táblában megjelennek az adatok.
 
 [Szöveg elemet a vezérlők (formátum) konfiguráció CustomItem](./text-element-for-customitem-for-controls-for-configuration-format.md) megadja szöveg, amely az adatok, például címke, a vezérlő által megjelenített szögletes zárójeleket az adatok és a tárolóhelyek szolgáltatás számára az adatok behúzás adni. Ez az elem szolgál egy közös vezérlőelem a formázási fájlban az összes nézetek által használható meghatározásakor.
 
@@ -427,7 +427,7 @@ Ez a szakasz témakörei ismertetik a formázás fájlok (Format.ps1xml) által 
 
 [Szélesség elem (formátum)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md) határozza meg az oszlopok szélességét (a karakter).
 
-[Elem (formátum) burkolása](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) megadja a szöveg, amely meghaladja a Oszlopszélesség a következő sorban jelenik meg.
+[Elem (formátum) burkolása](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) megadja a szöveg, amely meghaladja a Oszlopszélesség a következő sorban jelenik meg.
 
 [WrapTables elem (formátum)](./wraptables-element-format.md) Megadja, hogy egy cellába adatok áthelyezése a következő sorra, ha az adatok hosszabb, mint az oszlopok szélességét.
 

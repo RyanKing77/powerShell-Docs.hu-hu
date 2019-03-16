@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Konfigurációs azonosítók PowerShell 5.0-s és újabb verziók használata lekérési ügyfél beállítása
-ms.openlocfilehash: 8d8cf478f9127e1b7005d1b9e832e84b11612c9c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685871"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055716"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Konfigurációs azonosítók PowerShell 5.0-s és újabb verziók használata lekérési ügyfél beállítása
 
@@ -23,7 +23,8 @@ Lekérési ügyfél beállítása előtt be kell állítania egy lekéréses kis
 
 Minden egyes célcsomóponttal konfigurálható töltse le a konfigurációk, az erőforrásokat, és még jelentést annak állapotát. Az alábbi szakaszok bemutatják, hogyan lekérési ügyfél beállítása egy SMB-megosztáson, vagy a HTTP-DSC lekéréses kiszolgálón. Amikor a csomópont LCM frissíti, a konfigurált helyre, töltse le a hozzárendelt konfigurációkat, felveszi Önnel. Ha minden szükséges erőforrás nem létezik a csomóponton, azt automatikusan letöltheti őket a beállított helyről. Ha a csomópont konfigurálva van egy [jelentéskészítő kiszolgáló](reportServer.md), majd a művelet állapotát jelzi.
 
-> **Megjegyzés:**: Ez a témakör a PowerShell 5.0-s vonatkozik. A PowerShell 4.0-s lekérési ügyfél beállításával kapcsolatos további információkért lásd: [egy lekérési ügyfél beállítása konfigurációs Azonosítóval a PowerShell 4.0-s](pullClientConfigID4.md)
+> [!NOTE]
+> Ez a témakör a PowerShell 5.0-s vonatkozik. A PowerShell 4.0-s lekérési ügyfél beállításával kapcsolatos további információkért lásd: [egy lekérési ügyfél beállítása konfigurációs Azonosítóval a PowerShell 4.0-s](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>Lekérési ügyfél LCM konfigurálása
 

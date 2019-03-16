@@ -10,12 +10,12 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: 7f8d25e03707052b1d5b62e245caae360da11d0b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 065214647dfa6d376b727930fe75140911095faf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794943"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059371"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Parancsmag bemeneti feldolgozási módszerei
 
@@ -63,7 +63,7 @@ Részletesebb példát, hogyan használható a [System.Management.Automation.Cmd
 
 Parancsmagok felül kell írni a [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) adható hozzá, amelyek érvényesek a parancsmag által feldolgozott összes rekordjára vonatkozóan utólagos feldolgozási műveleteket. Például a parancsmag karbantartása objektum változók a befejezése után lehet feldolgozása.
 
-Ha a Windows PowerShell parancs folyamat feldolgozza, Windows PowerShell meghívja ezt a módszert egyszer a parancsmag a folyamat minden példánya esetében. Azonban fontos megjegyezni, hogy a Windows PowerShell-modul nem meghívja a [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) módszert, ha a parancsmagot a bemeneti feldolgozást keresztül midway megszakadt, vagy ha egy megszakítást okozó hiba jelenik meg a parancsmag bármely részén. Ebből kifolyólag objektum karbantartási igénylő parancsmag meg kell valósítania a teljes [System.Idisposable](/dotnet/api/System.IDisposable) minta, beleértve a egy befejezővel, hogy a futtatókörnyezet is meghívhatja a [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) és [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) módszerek feldolgozás végén. Hogyan hívja meg a Windows PowerShell parancs folyamat kapcsolatos további információkért lásd: [parancsmag feldolgozása életciklus](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
+Ha a Windows PowerShell parancs folyamat feldolgozza, Windows PowerShell meghívja ezt a módszert egyszer a parancsmag a folyamat minden példánya esetében. Azonban fontos megjegyezni, hogy a Windows PowerShell-modul nem meghívja a [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) módszert, ha a parancsmagot a bemeneti feldolgozást keresztül midway megszakadt, vagy ha egy megszakítást okozó hiba jelenik meg a parancsmag bármely részén. Ebből kifolyólag objektum karbantartási igénylő parancsmag meg kell valósítania a teljes [System.IDisposable](/dotnet/api/System.IDisposable) minta, beleértve a egy befejezővel, hogy a futtatókörnyezet is meghívhatja a [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) és [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) módszerek feldolgozás végén. Hogyan hívja meg a Windows PowerShell parancs folyamat kapcsolatos további információkért lásd: [parancsmag feldolgozása életciklus](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
 
 A következő kódot egy megvalósítását mutatja be a [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) metódust.
 
@@ -88,6 +88,6 @@ Részletesebb példát, hogyan használható a [System.Management.Automation.Cmd
 
 [System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)
 
-[System.Idisposable](/dotnet/api/System.IDisposable)
+[System.IDisposable](/dotnet/api/System.IDisposable)
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

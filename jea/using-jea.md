@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: A JEA használata
-ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fa3d3a3c8bc0090ec9ad788585ec5df933134173
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686858"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054679"
 ---
 # <a name="using-jea"></a>A JEA használata
 
@@ -108,7 +108,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 A proxy parancsmagok implicit távelérési használatával is megőrizheti [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
 Implicit távelérési kapcsolatos további információkért tekintse meg a Súgó dokumentációját [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) és [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module).
 
-## <a name="using-jea-programatically"></a>A JEA használata, amellyel programozott módon
+## <a name="using-jea-programmatically"></a>Programozott módon a JEA használata
 
 A JEA is használható, az automatizálási rendszer és a felhasználói alkalmazásokban, például a segélyszolgálat belső fejlesztésű alkalmazásokat és webhelyeket.
 A módszer megegyezik, az alkalmazások létrehozásához, amely kommunikációhoz korlátozás PowerShell-végpontokra, hogy a program érdemes figyelembe venni, hogy a JEA korlátozná a távoli munkamenet futtatott parancsok csoportosítani.
@@ -126,10 +126,9 @@ $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'J
 $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
 ```
 
-Ha egy C# alkalmazást fejleszt, a PowerShell futási térrel, amely kapcsolódik a JEA-munkamenet megadásával a konfiguráció nevét a hozhat létre egy [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) objektum.
+Ha egy C# alkalmazást, létrehozhat egy PowerShell futási teret, amely kapcsolódik a JEA-munkamenet megadásával a konfiguráció nevét a egy [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) objektum.
 
 ```csharp
-
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";

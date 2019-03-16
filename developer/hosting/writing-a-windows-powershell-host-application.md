@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2039e181becd1b39fc3d6cf0cdbcf0c20e9fc206
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851834"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056430"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Windows PowerShelles gazdaalkalmazás írása
 
@@ -29,7 +29,7 @@ A következő témakörök azt ismertetik, hogyan hozzon létre egy alkalmazást
 
 [Hozzáadásával és a parancsok meghívása](./adding-and-invoking-commands.md) azt ismerteti, hogyan hozhat létre és futtassa a parancsot a gazdaalkalmazásban...
 
-[Távoli futási terek létrehozása](./creating-remote-runspaces.md) Expains egy futási teret csatlakoztatása a távoli számítógépre.
+[Távoli futási terek létrehozása](./creating-remote-runspaces.md) azt ismerteti, hogyan lehet egy futási teret csatlakozni egy távoli számítógépen.
 
 [Egyéni felhasználói felület létrehozása](./creating-a-custom-user-interface.md) Introduces egyéni felhasználói felületek és példák mutató hivatkozásokat tartalmaz.
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Lekérési kiszolgáló – ajánlott eljárások
-ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686676"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057705"
 ---
 # <a name="pull-server-best-practices"></a>Lekérési kiszolgáló – ajánlott eljárások
 
@@ -260,7 +260,7 @@ A parancs a modul letöltése előtt a jóváhagyását kéri.
 
 A DSC lekéréses kiszolgálón telepítendő a legjobb módszer, hogy a DSC-konfigurációs parancsprogram használata. Ez a dokumentum bemutatja a parancsfájlok, beleértve a két alapszintű beállítás, amely csak a DSC-webszolgáltatás konfigurálására és a speciális beállításokat, amelyeket szeretne egy Windows Server teljes körű többek között DSC webszolgáltatás konfigurálása.
 
-Megjegyzés:  Jelenleg a `xPSDesiredStateConfiguation` DSC modulnak szüksége van a kiszolgálóra, hogy EN-US területi beállítás.
+Megjegyzés:  Jelenleg a `xPSDesiredStateConfiguration` DSC modulnak szüksége van a kiszolgálóra, hogy EN-US területi beállítás.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>A Windows Server 2012 alapvető konfigurációs
 

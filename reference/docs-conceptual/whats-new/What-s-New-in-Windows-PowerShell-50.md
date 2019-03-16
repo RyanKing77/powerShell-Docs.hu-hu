@@ -2,19 +2,21 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Windows PowerShell 5.0 újdonságai
-ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688636"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055104"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 újdonságai
+
 Windows PowerShell 5.0 jelentős új szolgáltatásokat tartalmaz, amelyek kibővítik annak használati, javítják használhatóságát, és szabályozhatja, és kezelheti a Windows-alapú környezetek egyszerűbb és.
 
 Windows PowerShell 5.0 visszamenőlegesen kompatibilis. Parancsmagok, szolgáltatók, modulok, beépülő modulok, parancsfájlok, funkciók és a Windows PowerShell 4.0-s verzióját, a Windows PowerShell 3.0 és a Windows PowerShell 2.0 általában tervezett profilok működik a Windows PowerShell 5.0 módosítása nélkül.
 
 ## <a name="installing-windows-powershell"></a>A Windows PowerShell telepítése
+
 A Windows Server 2016 Technical Preview és a Windows 10 rendszeren alapértelmezés szerint telepítve van a Windows PowerShell 5.0-s.
 
 A Windows Server 2012 R2, Windows 8.1 Enterprise vagy Windows 8.1 Pro Windows PowerShell 5.0 telepítéséhez töltse le és telepítse [Windows Management Framework 5.0](https://aka.ms/wmf5download). Mindenképpen olvassa el a letöltési részleteit, és rendszerkövetelményeknek összes, Windows Management Framework 5.0 telepítése előtt.
@@ -27,6 +29,7 @@ A Windows Server 2012 R2, Windows 8.1 Enterprise vagy Windows 8.1 Pro Windows Po
 - [Új szolgáltatások a Windows PowerShell 3.0](#new-features-in-windows-powershell-30)
 
 ## <a name="windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a>Windows PowerShell 4.0-frissítések a 2014. novemberi kumulatív (KB 3000850)
+
 Számos frissítéseket és fejlesztéseket a Windows PowerShell Desired State Configuration (DSC) a Windows PowerShell 4.0-s érhetők el a [2014. novemberi kumulatív frissítés a Windows RT 8.1, Windows 8.1 és Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850 ). Megadhatja, hogy ha a KB 3000850 telepítve van a rendszeren futtatásával `Get-Hotfix -Id KB3000850` a Windows PowerShellben.
 
 - Meglévő parancsmagok a frissítések a [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) modul
@@ -140,8 +143,8 @@ Számos frissítéseket és fejlesztéseket a Windows PowerShell Desired State C
 - A FullyQualifiedName paraméter van adva Import-Module és a Remove-Module-parancsmagok tárolása egy modul több verzióját támogatja.
 - Save-Help, az Update-Help, a Import-PSSession, a Export-PSSession és a Get-Command rendelkezik egy új paraméter FullyQualifiedModule ModuleSpecification típusú. Adja hozzá ezt a paramétert, a modul adja meg a teljes nevet.
 - Az érték **$PSVersionTable.PSVersion** 5.0 frissült.
-- A WMF 5.0 (PowerShell 5.0-s) tartalmazza a **Pester** modul.  Pester tesztelési keretrendszerének PowerShell egység. Néhány egyszerű használható kulcsszót, amelyekkel hozzon létre teszteket, hogy a parancsfájlok biztosít. 
- 
+- A WMF 5.0 (PowerShell 5.0-s) tartalmazza a **Pester** modul.  Pester tesztelési keretrendszerének PowerShell egység. Néhány egyszerű használható kulcsszót, amelyekkel hozzon létre teszteket, hogy a parancsfájlok biztosít.
+
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Új szolgáltatások a Windows PowerShell Desired State Configuration
 
 - Nyelvi fejlesztések Windows PowerShell segítségével meghatározhatja a Windows PowerShell Desired State Configuration (DSC) erőforrások osztályok használatával. Az import-DscResource már igaz dinamikus kulcsszó; Windows PowerShell elemzi a megadott modul legfelső szintű modul, a DscResource attribútumot tartalmazó osztályok kereséséhez. Mostantól használhatja osztályok meghatározásához a DSC-erőforrások, ahol nem MOF-fájlt, sem a modul mappában DSCResource almappa nem szükséges. Egy Windows PowerShell-modul fájlt tartalmazhat több DSC-erőforrás osztályok.
@@ -482,7 +485,9 @@ Windows PowerShell 3.0, a célt szolgálják, hogy a nyelvi egyszerűbb, könnye
 |New-CimSessionOption|Update-Help|
 |New-IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Létező fő parancsmagjainak és ProvidersWindows PowerShell 3.0 fejlesztései többek között az egyszerűsített szintaxis és a következő parancsmagok új paraméterei meglévő parancsmagjaihoz új szolgáltatásokat tartalmazza: Számítógépes parancsmagok, a fürt megosztott kötetei szolgáltatás parancsmagok, a Get-ChildItem, Get-Command, Get-tartalom, a Get-előzmények mérték-objektum, hálózatbiztonsági parancsmagok, Select-Object, Select-karakterlánc, osztott-elérési út, folyamatának elindítása, Tee-objektum, a Test-Connection tag hozzáadása és a WMI-parancsmagokat.
+### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Meglévő Core parancsmagok és szolgáltatók fejlesztései
+
+Windows PowerShell 3.0 meglévő parancsmagjaihoz, beleértve az egyszerűsített szintaxis és a következő parancsmagok új paraméterei új szolgáltatásokat tartalmazza: Számítógépes parancsmagok, a fürt megosztott kötetei szolgáltatás parancsmagok, a Get-ChildItem, Get-Command, Get-tartalom, a Get-előzmények mérték-objektum, hálózatbiztonsági parancsmagok, Select-Object, Select-karakterlánc, osztott-elérési út, folyamatának elindítása, Tee-objektum, a Test-Connection tag hozzáadása és a WMI-parancsmagokat.
 
 A Windows PowerShell-szolgáltatókat is is érdekében jelentős mértékben, beleértve a tanúsítványt a támogatott szolgáltatók a webalkalmazás üzemeltetéséhez Secure Socket Layer (SSL)-tanúsítványok kezeléséhez, támogatja a hitelesítő adatok állandó hálózati meghajtók és az alternatív adatstreamek fájlrendszer meghajtók.
 

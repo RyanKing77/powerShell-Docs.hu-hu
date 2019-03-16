@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
-ms.openlocfilehash: dd48e82452e83f93e2e005c9db53bbc51d8b2eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848852"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054577"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl elem (Formátum)
 
@@ -48,7 +48,7 @@ Nincs.
 |[Automatikus méretezés eleme TableControl (formátum)](./autosize-element-for-tablecontrol-format.md)|Nem kötelező eleme.<br /><br /> Itt adhatja meg, hogy az oszlop méretét és az oszlopok számát módosulnak az adatok mérete alapján.|
 |[HideTableHeaders eleme TableControl (formátum)](./hidetableheaders-element-format.md)|Nem kötelező eleme.<br /><br /> Azt jelzi, hogy a táblázat fejlécében nem jelenik meg.|
 |[TableHeaders eleme TableControl (formátum)](./tableheaders-element-format.md)|Szükséges eleme.<br /><br /> A címkék a szélességet és az adatok az oszlopok a tábla nézet zarovnání határozza meg.|
-|[TableRowEntries eleme TableCotrol (formátum)](./tablerowentries-element-for-tablecontrol-format.md)|Nem kötelező eleme.<br /><br /> A táblázatos nézetre a definíciókat tartalmazza.|
+|[TableRowEntries eleme TableControl (formátum)](./tablerowentries-element-for-tablecontrol-format.md)|Nem kötelező eleme.<br /><br /> A táblázatos nézetre a definíciókat tartalmazza.|
 
 ### <a name="parent-elements"></a>Szülőelemek
 

@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-Script erőforrás
-ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684842"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054747"
 ---
 # <a name="dsc-script-resource"></a>DSC-Script erőforrás
 
@@ -57,7 +57,7 @@ A [a Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-
 
 ### <a name="setscript"></a>SetScript
 
-A `SetScript` módosítja a csomópont kívánt állapotát enfore. Azt nevezzük DSC szerint, ha a `TestScript` parancsfájl-blokk értéket ad vissza `$false`. A `SetScript` kell nem tartozik visszaadott érték.
+A `SetScript` módosítja a csomópont a kívánt állapotban kényszerítésére. Azt nevezzük DSC szerint, ha a `TestScript` parancsfájl-blokk értéket ad vissza `$false`. A `SetScript` kell nem tartozik visszaadott érték.
 
 ## <a name="examples"></a>Példák
 

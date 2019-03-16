@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC jelentéskészítő kiszolgálójának használata
-ms.openlocfilehash: 8647f80c311ee49a5cc4d57360472386e01b044e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686578"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059269"
 ---
 # <a name="using-a-dsc-report-server"></a>A DSC jelentéskészítő kiszolgálójának használata
 
@@ -16,7 +16,8 @@ ms.locfileid: "55686578"
 > [!IMPORTANT]
 > A lekéréses kiszolgálón (Windows-szolgáltatás *DSC-szolgáltatás*), a Windows Server támogatott összetevője létezik azonban tervekben sem funkciókat és képességeket kínálnak. Javasoljuk, hogy helyeződnek felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (beleértve a lekéréses kiszolgálón a Windows Server csomagban) vagy a közösségi megoldások felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
 >
-> **Megjegyzés:** a jelen témakörben található jelentéskészítő kiszolgáló nem érhető el a PowerShell 4.0-s verzióját.
+> [!NOTE]
+> A jelen témakörben található jelentéskészítő kiszolgáló nem érhető el a PowerShell 4.0-s verzióját.
 
 A helyi Configuration Manager (LCM) Konfigurálása a csomópont beállítható úgy, hogy a konfiguráció állapotára vonatkozó jelentések küldése egy lekéréses kiszolgálóra, amely lekérdezhetők az adatok lekéréséhez. Minden alkalommal, amikor a csomópont ellenőrzi, és alkalmazza a konfigurációt, küld egy jelentést a jelentéskészítő kiszolgálón. Ezek a jelentések egy adatbázist a kiszolgálón vannak tárolva, és a jelentéskészítő webszolgáltatáshoz meghívásával lekérhető. Az egyes jelentések tartalmaz információkat, például alkalmazott mely konfigurációkat, és azok sikeres volt-e, használja az erőforrásokat, esetlegesen előforduló hibák fordultak elő, és indítsa el, és a befejezési idő.
 

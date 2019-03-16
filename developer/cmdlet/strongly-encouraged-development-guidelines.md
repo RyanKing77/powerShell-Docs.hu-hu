@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794969"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057722"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Javasolt fejlesztői útmutató
 
@@ -101,7 +101,7 @@ Több parancsmag használja ugyanezt a paramétert, ha mindig használja az ugya
 
 #### <a name="parameters-that-take-true-and-false"></a>Paraméterek, amelyek a True és False
 
-Ha a paraméter csak `true` és `false`, adja meg a paraméter típusa [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter). Egy új kapcsolóparaméter számít `true` egy parancsban megadott mikor. A paraméter nem szerepel a parancs, ha a Windows PowerShell figyelembe veszi a paraméter kívánt értékét `false`. Logikai típusú paraméterek nem határoznak meg.
+Ha a paraméter csak `true` és `false`, adja meg a paraméter típusa [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). Egy új kapcsolóparaméter számít `true` egy parancsban megadott mikor. A paraméter nem szerepel a parancs, ha a Windows PowerShell figyelembe veszi a paraméter kívánt értékét `false`. Logikai típusú paraméterek nem határoznak meg.
 
 Ha a paramétert meg kell megkülönböztetni a 3 érték: $true, $false és "Ismeretlen", majd határozza meg a paraméter Nullable típusú\<bool >.  A 3. a szükségességét "Ismeretlen" érték általában akkor fordul elő, amikor a parancsmag egy objektum logikai tulajdonság módosítható. Ebben az esetben "Ismeretlen" azt jelenti, hogy ne módosítsa a tulajdonság aktuális értéke.
 
@@ -111,7 +111,7 @@ Felhasználók gyakran több argumentumot elleni ugyanazt a műveletet kell vég
 
 #### <a name="support-the-passthru-parameter"></a>A PassThru paraméter támogatása
 
-Alapértelmezés szerint számos parancsmagot, amely módosítása a rendszer, mint például a [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) parancsmag "fogadóként" objektumok szerepét, és nem adott vissza eredményt. Ezen parancsmag meg kell valósítania az `PassThru` paraméter kényszerítése a parancsmagot, amely egy objektumot ad vissza. Ha a `PassThru` paraméter meg van adva, a parancsmag egy objektumot ad vissza a hívást a [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metódust. Például a következő parancs leállítja a Információmodelleket folyamatot, és a létrejövő folyamat átadása az adatcsatornának.
+Alapértelmezés szerint számos parancsmagot, amely módosítása a rendszer, mint például a [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) parancsmag "fogadóként" objektumok szerepét, és nem adott vissza eredményt. Ezen parancsmag meg kell valósítania az `PassThru` paraméter kényszerítése a parancsmagot, amely egy objektumot ad vissza. Ha a `PassThru` paraméter meg van adva, a parancsmag egy objektumot ad vissza a hívást a [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metódust. Például a következő parancs leállítja a Információmodelleket folyamatot, és a létrejövő folyamat átadása az adatcsatornának.
 
 ```powershell
 Stop-Process calc -passthru
@@ -135,21 +135,21 @@ A Windows PowerShell-modul lehetővé teszi, hogy a felhasználót, hogy adja me
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>Támogatja a WriteWarning, WriteVerbose és WriteDebug módszerek
 
-A parancsmag meg kell hívnia a [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metódust, amikor a parancsmag arra készül, hogy előfordulhat, hogy egy nem kívánt eredmények művelet végrehajtására. Például a parancsmag kell hívnia ezt a módszert, ha a parancsmag arra készül, hogy egy csak olvasható fájl felülírása.
+A parancsmag meg kell hívnia a [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metódust, amikor a parancsmag arra készül, hogy előfordulhat, hogy egy nem kívánt eredmények művelet végrehajtására. Például a parancsmag kell hívnia ezt a módszert, ha a parancsmag arra készül, hogy egy csak olvasható fájl felülírása.
 
-A parancsmag meg kell hívnia a [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metódust, amikor a felhasználó néhány részletet a parancsmag mire van szükség. Például a parancsmag kell hívnia ezt az információt, ha a parancsmag szerzője úgy érzi, hogy nincsenek-e további információt a parancsmag mire igénylő forgatókönyvek.
+A parancsmag meg kell hívnia a [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metódust, amikor a felhasználó néhány részletet a parancsmag mire van szükség. Például a parancsmag kell hívnia ezt az információt, ha a parancsmag szerzője úgy érzi, hogy nincsenek-e további információt a parancsmag mire igénylő forgatókönyvek.
 
-A parancsmag meg kell hívnia a [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metódust, amikor egy fejlesztői vagy a termékverzió támogatási szakértő ismernie kell, mi van sérült a parancsmag-műveletet. Már nem szükséges a parancsmag hívja a [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metódus az ugyanazt a kódot, amely meghívja a [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) módszer mert a `Debug` paraméter megadja mindkét információt.
+A parancsmag meg kell hívnia a [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metódust, amikor egy fejlesztői vagy a termékverzió támogatási szakértő ismernie kell, mi van sérült a parancsmag-műveletet. Már nem szükséges a parancsmag hívja a [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metódus az ugyanazt a kódot, amely meghívja a [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metódus mivel a `Debug` paraméter megadja mindkét információt.
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>Műveletek, amelyek hosszú ideig tarthat WriteProgress támogatása
 
-A parancsmag operations egy hosszú ideig, és hogy nem fut a háttérben hosszabb időt igénylő támogatnia kell a jelentési rendszeres hívásainak keresztül a [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metódust.
+A parancsmag operations egy hosszú ideig, és hogy nem fut a háttérben hosszabb időt igénylő támogatnia kell a jelentési rendszeres hívásainak keresztül a [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metódust.
 
 #### <a name="use-the-host-interfaces"></a>A gazdagép-felület használata
 
-Néha előfordul, a parancsmag kell közvetlenül helyett a felhasználó használatával kommunikálnak a különböző írási vagy által támogatott módszerek kell a [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) osztály. Ebben az esetben a parancsmag típusból kell származtatni a [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztályt, és használja a [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) tulajdonság. Ez a tulajdonság támogatja a kommunikációs típusa, többek között a PromptForChoice, a parancssort és a WriteLine/ReadLine különböző szinteken. A leginkább adott szint is biztosít írási és olvasási egyedi kulcsok és pufferek kezelésére.
+Néha előfordul, a parancsmag kell közvetlenül helyett a felhasználó használatával kommunikálnak a különböző írási vagy által támogatott módszerek kell a [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) osztály. Ebben az esetben a parancsmag típusból kell származtatni a [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztályt, és használja a [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) tulajdonság. Ez a tulajdonság támogatja a kommunikációs típusa, többek között a PromptForChoice, a parancssort és a WriteLine/ReadLine különböző szinteken. A leginkább adott szint is biztosít írási és olvasási egyedi kulcsok és pufferek kezelésére.
 
-Kivéve, ha a parancsmag kifejezetten célja, hogy hozzon létre egy grafikus felhasználói felületen (GUI), azt kell nem kerüli meg a gazdagép használatával a [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) tulajdonság. Hozzon létre egy grafikus felhasználói Felülettel, amely a parancsmag egy példát a [Out-prvku GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) parancsmagot.
+Kivéve, ha a parancsmag kifejezetten célja, hogy hozzon létre egy grafikus felhasználói felületen (GUI), azt kell nem kerüli meg a gazdagép használatával a [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) tulajdonság. Hozzon létre egy grafikus felhasználói Felülettel, amely a parancsmag egy példát a [Out-prvku GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) parancsmagot.
 
 > [!NOTE]
 > Ne használjon parancsmagok a [System.Console](/dotnet/api/System.Console) API-t.
@@ -174,15 +174,15 @@ A parancsmag lehetővé teszi, hogy a felhasználó számára adjon meg egy fáj
 
 Ha a fájl rendelkezik az adatok, amelyek a parancsmagot olvas vagy ír, a parancsmag kell fogadja el a Windows PowerShell-elérési út bemeneti és a parancsmagot kell használnia a [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) lefordítani a Windows tulajdonság A fájlrendszer felismeri görbékké PowerShell elérési utak. Az adott mechanizmusok az alábbi módszerek az alábbiak:
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Ha az adatokat, amelyek a parancsmagot olvas vagy ír, csak karakterláncok helyett egy fájlt, a parancsmag egy készletét a szolgáltató tartalommal kapcsolatos információkat kell használnia (`Content` tag) olvasását és írását. Ez az információ szerezhető az [System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) tulajdonság. Ezek a mechanizmusok engedélyezése más adattárakban olvasását és írását az adatok a való részvételre.
+Ha az adatokat, amelyek a parancsmagot olvas vagy ír, csak karakterláncok helyett egy fájlt, a parancsmag egy készletét a szolgáltató tartalommal kapcsolatos információkat kell használnia (`Content` tag) olvasását és írását. Ez az információ szerezhető az [System.Management.Automation.Provider.CmdletProvider.InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) tulajdonság. Ezek a mechanizmusok engedélyezése más adattárakban olvasását és írását az adatok a való részvételre.
 
 #### <a name="support-wildcard-characters"></a>Támogatja a helyettesítő karakterek
 
@@ -206,11 +206,11 @@ A parancsmag egy objektum tervezésekor, győződjön meg arról, hogy a tagok k
 
 Már létező .NET keretrendszer objektumait parancsmagok által visszaadott gyakran hiányzik néhány fontos vagy kényelmes tagot, a szkript fejlesztői vagy a felhasználó szükséges. Ezek a hiányzó tagok különösen fontos, megjelenítés és létrehozásához a neveket a megfelelő tag, hogy az objektum megfelelően adható át a folyamat lehet. Hozzon létre egy egyéni Types.ps1xml fájlt a szükséges tagokkal együtt azonnal dokumentálni. Ez a fájl létrehozásakor javasoljuk az alábbi elnevezési szabályt követik: *< Your_Product_Name >*. Types.ps1xml.
 
-Például hozzáadhat egy `Mode` parancsfájl-tulajdonságot a [System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo) írja be a fájl attribútumainak egyértelműbben megjelenítése. Emellett hozzáadhat egy `Count` alias tulajdonságot a [System.Array](/dotnet/api/System.Array) írja be a tulajdonság neve konzisztens használatának engedélyezése a (helyett `Length`).
+Például hozzáadhat egy `Mode` parancsfájl-tulajdonságot a [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) írja be a fájl attribútumainak egyértelműbben megjelenítése. Emellett hozzáadhat egy `Count` alias tulajdonságot a [System.Array](/dotnet/api/System.Array) írja be a tulajdonság neve konzisztens használatának engedélyezése a (helyett `Length`).
 
 ##### <a name="implement-the-icomparable-interface"></a>A IComparable felület megvalósítása
 
-Alkalmazzon egy [System.Icomparable](/dotnet/api/System.IComparable) összes kimeneti objektumának felületet. Ez lehetővé teszi a különböző rendezési és elemzési parancsmagok egyszerűen irányíthatja át a kimeneti objektumok.
+Alkalmazzon egy [System.IComparable](/dotnet/api/System.IComparable) összes kimeneti objektumának felületet. Ez lehetővé teszi a különböző rendezési és elemzési parancsmagok egyszerűen irányíthatja át a kimeneti objektumok.
 
 ##### <a name="update-display-information"></a>Megjelenítési adatok frissítése
 
@@ -230,11 +230,11 @@ Egy paramétert a folyamat a bemenetet fogad el, ha a **paraméter** attribútum
 
 #### <a name="support-the-processrecord-method"></a>Támogatja a ProcessRecord metódus
 
-Fogadja el a fenti parancsmag a folyamat minden rekordját, hogy a parancsmag meg kell valósítani a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust. Windows PowerShell meghívja ezt a metódust többször, egyszer minden rekord, amelyet elküld a parancsmaghoz.
+Fogadja el a fenti parancsmag a folyamat minden rekordját, hogy a parancsmag meg kell valósítani a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust. Windows PowerShell meghívja ezt a metódust többször, egyszer minden rekord, amelyet elküld a parancsmaghoz.
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>Egyetlen rekord írni a folyamat (SC03)
 
-A parancsmag objektumokat adja vissza, ha a parancsmagot kell írnia az objektumok azonnal akkor jönnek létre. A parancsmag kell nem tartja őket annak érdekében, hogy a puffer őket egy kombinált tömbbe. A parancsmagokkal, amelyeket az objektumokat fogad bemenetként tudnak dolgozza fel, megjelenítéséhez, vagy feldolgozni és megjeleníteni a kimeneti objektumok késedelem nélkül. A parancsmag által létrehozott kimeneti objektumok egyenként meg kell hívnia a [System.Management.Automation.Cmdlet.Writeobject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metódust. A parancsmag által létrehozott kimeneti objektumok kötegekben (például azért, mert az alapul szolgáló API kimeneti objektumok egy tömbjét adja vissza) meg kell hívnia a [System.Managemet.Automation.Cmdlet.Writeobject](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject) a második módszer beállítása a `true`.
+A parancsmag objektumokat adja vissza, ha a parancsmagot kell írnia az objektumok azonnal akkor jönnek létre. A parancsmag kell nem tartja őket annak érdekében, hogy a puffer őket egy kombinált tömbbe. A parancsmagokkal, amelyeket az objektumokat fogad bemenetként tudnak dolgozza fel, megjelenítéséhez, vagy feldolgozni és megjeleníteni a kimeneti objektumok késedelem nélkül. A parancsmag által létrehozott kimeneti objektumok egyenként meg kell hívnia a [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metódust. A parancsmag által létrehozott kimeneti objektumok kötegekben (például azért, mert az alapul szolgáló API kimeneti objektumok egy tömbjét adja vissza) meg kell hívnia a [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) a második módszer beállítása a `true`.
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Győződjön meg, a parancsmagok kis-és nagybetűket (SC04), és
 

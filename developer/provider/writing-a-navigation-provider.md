@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: a789b392bddd344ad583c93a1a55302329df9917
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56852086"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056591"
 ---
 # <a name="writing-a-navigation-provider"></a>Navigációszolgáltató írása
 
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>Végrehajtási MakePath
 
-A [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) metódus csatlakozik a megadott szülő elérési útját és a provider – belső elérési utat határozza meg (az elérési út információ típusokat, amelyeket ebbe hoz létre a megadott gyermek elérési útja szolgáltatók is támogatják, lásd: [Windows PowerShell-szolgáltató áttekintése](./windows-powershell-provider-overview.md). A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.Powershell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) parancsmagot.
+A [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) metódus csatlakozik a megadott szülő elérési útját és a provider – belső elérési utat határozza meg (az elérési út információ típusokat, amelyeket ebbe hoz létre a megadott gyermek elérési útja szolgáltatók is támogatják, lásd: [Windows PowerShell-szolgáltató áttekintése](./windows-powershell-provider-overview.md). A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) parancsmagot.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>Végrehajtási MoveItem
 
-A [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metódus a megadott elérési út egy elem helyez át a megadott célhely elérési útja. A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.Powershell.Commands.Move-cikk](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) parancsmagot.
+A [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metódus a megadott elérési út egy elem helyez át a megadott célhely elérési útja. A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.Move-cikk](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) parancsmagot.
 
 ```csharp
 protected override void MoveItem(string path, string destination)

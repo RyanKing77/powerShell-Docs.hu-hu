@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A Local Configuration Manager konfigurálása a Windows PowerShell korábbi verziói
-ms.openlocfilehash: 945d2dc95304a347ec26f2f66f5a17bfefb90997
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cea32c9aa8144bc52f3d44f2ad852f577f6a5e6d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688860"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055308"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>A Local Configuration Manager konfigurálása a Windows PowerShell korábbi verziói
 
@@ -87,7 +87,8 @@ A alkalmazni a beállításokat, használhatja a **Set-DscLocalConfigurationMana
 Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 ```
 
-> **Megjegyzés:**: Az a **elérési** paramétert meg kell adnia a megadott elérési útját a **OutputPath** paraméter a konfigurációt az előző példában meghívásakor.
+> [!NOTE]
+> Az a **elérési** paramétert meg kell adnia a megadott elérési útját a **OutputPath** paraméter a konfigurációt az előző példában meghívásakor.
 
 Az aktuális helyi Configuration Manager-beállítások megtekintéséhez használja a **Get-DscLocalConfigurationManager** parancsmagot.
 Ha hívhat meg ezt a parancsmagot paraméterek nélkül, alapértelmezés szerint, megjelenik a csomópont, amelyen futtatja, a Local Configuration Manager beállításait.

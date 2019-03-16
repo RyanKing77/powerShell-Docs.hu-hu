@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
 caps.latest.revision: 8
-ms.openlocfilehash: 9e8123e9b1068e0fd6efec8508eacf594ff22301
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3cb370cd1bfe9ce7198980cc1c26fafb126d00a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845933"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054900"
 ---
 # <a name="runspace04-sample"></a>Runspace04 – minta
 
@@ -35,7 +35,7 @@ Ez a minta bemutatja a következő.
 
 - Vyvolání szinkron módon történik a parancsokat.
 
-- Használatával [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objektumok kinyerése és a parancsok által visszaadott objektumokhoz a tulajdonságainak megjelenítéséhez.
+- Használatával [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objektumok kinyerése és a parancsok által visszaadott objektumokhoz a tulajdonságainak megjelenítéséhez.
 
 - Beolvasása és a parancsok futtatása során generált hibarekordjainak megjelenítése.
 

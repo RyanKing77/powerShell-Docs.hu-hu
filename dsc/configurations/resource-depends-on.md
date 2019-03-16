@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Erőforrás-függőségek DependsOn használatával
-ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688062"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055699"
 ---
 # <a name="resource-dependencies-using-dependson"></a>Erőforrás-függőségek DependsOn használatával
 
@@ -16,7 +16,7 @@ Amikor ír [konfigurációk](configurations.md), hozzáadhat [erőforrás blokko
 A `DependsOn` kulcs használható bármilyen erőforrás letiltása. A többi erőforrás kulcsainak azonos mechanizmusnak a kulcs/érték-van definiálva. A `DependsOn` kulcs vár a következő szintaxissal karakterláncok tömbje.
 
 ```
-DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
 ```
 
 Az alábbi példa egy tűzfalszabály engedélyezése és a nyilvános profil konfigurálása után konfigurálja.

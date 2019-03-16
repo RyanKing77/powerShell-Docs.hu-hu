@@ -2,12 +2,12 @@
 title: PowerShell távoli eljáráshívás SSH-n keresztül
 description: Távoli eljáráshívás a PowerShell Core SSH-val
 ms.date: 08/14/2018
-ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687131"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056532"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell távoli eljáráshívás SSH-n keresztül
 
@@ -62,7 +62,7 @@ SSH minden gépen telepítve kell lennie. Mindkét az SSH-ügyfél telepítése 
      > [!NOTE]
      > Az OpenSSH a Windows, amely megakadályozza, hogy a tárolóhelyek alrendszer végrehajtható elérési utak használata programhiba van. További információkért lásd: [a GitHub-problémát](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     Az egyik megoldás, a Powershell telepítési könyvtárát, amely nem rendelkezik a tárolóhelyek szimbolikus létrehozásához:
+     Az egyik megoldás, a PowerShell telepítési könyvtárát, amely nem rendelkezik a tárolóhelyek szimbolikus létrehozásához:
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
@@ -129,7 +129,7 @@ SSH minden gépen telepítve kell lennie. Mindkét az SSH-ügyfél telepítése 
 1. Telepítse a legújabb [MacOS-hez a PowerShell Core](../../install/installing-powershell-core-on-macos.md) összeállítása
 
    - Győződjön meg arról, hogy SSH-távelérés engedélyezve van az alábbi lépéseket:
-     - Nyissa meg `System Preferences`
+     - Nyissa meg a `System Preferences`
      - Kattintson a `Sharing`
      - Ellenőrizze `Remote Login` – a következő: `Remote Login: On`
      - Megfelelő felhasználók férhessenek hozzá

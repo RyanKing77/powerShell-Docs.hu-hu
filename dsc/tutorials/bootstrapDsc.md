@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Konfigurálása a virtuális gépek első indításkor DSC használatával
-ms.openlocfilehash: 2ae6f7a85af3d08bad9e97b90efaefb2ff8410ca
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f9634c330832e23fb2c6f08c5b299b55a5505ac9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686907"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059422"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurálása a virtuális gépek első indításkor DSC használatával
 
@@ -98,12 +98,12 @@ Configuration SampleIISInstall
 
 7. Hozzon létre egy virtuális Gépet a virtuális Merevlemezt, amelyre telepítve van a DSC MOF-dokumentumot.
 
-Kezdeti rendszerindítás és az operációs rendszer telepítése után az IIS lesz telepítve.
+Első és az operációs rendszer telepítése után az IIS lesz telepítve.
 Ezt ellenőrizheti meghívásával a [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) parancsmagot.
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>A DSC metaconfiguration behelyezése egy virtuális merevlemez
 
-Beállíthatja egy számítógépen, hogy a konfigurációs lekérési kezdeti rendszerindítás, úgy, hogy egy metaconfiguration (lásd: [a helyi Configuration Manager (LCM) konfigurálása](../managing-nodes/metaConfig.md)), a VHD-be a `MetaConfig.mof` fájlt.
+Beállíthatja egy számítógépen, hogy a konfiguráció lekéréses első, úgy, hogy egy metaconfiguration (lásd: [a helyi Configuration Manager (LCM) konfigurálása](../managing-nodes/metaConfig.md)), a VHD-be a `MetaConfig.mof` fájlt.
 Ha a **DSCAutomationHostEnabled** beállításkulcs értéke 2 (az alapértelmezett érték), DSC érvényes lesz a által meghatározott metaconfiguration `MetaConfig.mof` való regisztrálásához először a számítógép indításakor a LCM.
 Ha a metaconfiguration határozza meg, hogy az LCM kérje le a konfigurációkat egy lekéréses kiszolgálóról, a számítógép megkísérli lekérni egy konfigurációt az adott lekéréses kiszolgálón található első.
 A DSC lekéréses kiszolgálón beállításával kapcsolatos további információkért lásd: [DSC lekérési kiszolgáló beállítása](../pull-server/pullServer.md).
@@ -140,7 +140,7 @@ configuration PullClientBootstrap
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. [DSC lekérési kiszolgáló beállítása](../pull-server/pullServer.md), és mentse a **SampleIISInistall** konfigurációját, és a megfelelő mappát.
+2. [DSC lekérési kiszolgáló beállítása](../pull-server/pullServer.md), és mentse a **SampleIISInstall** konfigurációját, és a megfelelő mappát.
 
 3. A számítógépen futó PowerShell 5.0-s vagy újabb, mentse a fenti metaconfiguration (**PullClientBootstrap**) PowerShell-parancsprogramnak (.ps1) fájlként.
 
@@ -168,7 +168,7 @@ configuration PullClientBootstrap
 
 8. Hozzon létre egy virtuális Gépet a virtuális Merevlemezt, amelyre telepítve van a DSC MOF-dokumentumot.
 
-Kezdeti rendszerindítás és az operációs rendszer telepítése után fogja lekérni a DSC lekéréses kiszolgálóról az a konfiguráció, és az IIS lesz telepítve.
+Első és az operációs rendszer telepítése után fogja lekérni a DSC lekéréses kiszolgálóról az a konfiguráció, és az IIS lesz telepítve.
 Ezt ellenőrizheti meghívásával a [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) parancsmagot.
 
 ## <a name="disable-dsc-at-boot-time"></a>Tiltsa le a DSC rendszerindítás közben

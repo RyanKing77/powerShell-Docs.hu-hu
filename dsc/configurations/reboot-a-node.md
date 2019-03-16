@@ -1,15 +1,15 @@
 ---
 ms.date: 1/17/2019
 keywords: DSC, powershell, a konfigurációt, a beállítása
-title: Egy csomópont újraindítása
-ms.openlocfilehash: 33ecd98aa62c3dc94a8ff2213fd3e68bf0c05cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+title: Csomópont újraindítása
+ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685689"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054730"
 ---
-# <a name="reboot-a-node"></a>Egy csomópont újraindítása
+# <a name="reboot-a-node"></a>Csomópont újraindítása
 
 > [!NOTE]
 > Ez a témakör ismerteti hogyan lehet egy csomópont újraindítását. Ahhoz, hogy az újraindítás, a sikeres a **ActionAfterReboot** és **RebootNodeIfNeeded** LCM beállításainak megfelelően konfigurálni kell.
@@ -54,7 +54,7 @@ xPendingReboot [String] #ResourceName
 | SkipWindowsUpdate | Windows Update által aktivált kihagyása újraindítások.|
 | SkipPendingFileRename | Függőben lévő fájlok kihagyása nevezze át az újraindítások. |
 | SkipCcmClientSDK | A ConfigMgr-ügyfél által aktivált kihagyása újraindítások. |
-| SkipComputerRename | Hagyja ki a számítógép átnevezése még újraindítja. |
+| SkipComputerRename | Számítógép által aktivált kihagyása újraindítások nevez át. |
 | PSDSCRunAsCredential | A 5-ös verzióját támogatja. Az erőforrás végrehajtja a megadott felhasználó. |
 | DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója letiltása, a futtatni kívánt parancsfájl először van **ResourceName** és a típusa **ResourceType**, ez a tulajdonság használata esetén `DependsOn = "[ResourceType]ResourceName"`. További információkért lásd: [DependsOn használatával](resource-depends-on.md)|
 

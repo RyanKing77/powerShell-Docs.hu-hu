@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4468066f-6759-402f-84db-0d8303cfd5cb
 caps.latest.revision: 7
-ms.openlocfilehash: 4081333c6411bfcd10005bd7018d004d44d5a932
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c5deaa9bb0dd9621b6f03aeb188cf76ed35dff6c
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845674"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054943"
 ---
 # <a name="requesting-confirmation"></a>Megerősítés kérése
 
@@ -23,7 +23,7 @@ Ez a szakasz ismerteti a megerősítést kérő üzenetek előtt egy parancsmag,
 
 [Parancsok a folyamat kérő](./requesting-confirmation-from-cmdlets.md) bemutatja a folyamatot, amely a parancsmagok, a functions és a szolgáltatók követnie kell a kérelem egy megerősítő, mielőtt a rendszer akkor lehet módosítani.
 
-[Felhasználók kér megerősítést](./users-requesting-confirmation.md) ismerteti, hogyan felhasználók kezdeményezhetik egy parancsmag, a függvény vagy a szolgáltató kérelem megerősítése során a [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) módszert hívja meg.
+[Felhasználók kér megerősítést](./users-requesting-confirmation.md) ismerteti, hogyan felhasználók kezdeményezhetik egy parancsmag, a függvény vagy a szolgáltató kérelem megerősítése során a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) módszert hívja meg.
 
 [Megerősítést](./confirmation-messages.md) a különböző megerősítő üzenet jelenhet meg mintáit tartalmazza.
 

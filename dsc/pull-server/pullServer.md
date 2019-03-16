@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC Pull Service
-ms.openlocfilehash: 27effe0cd3b9d90dcfaaf1bd4e38edf3c04c9cfb
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794722"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056770"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration lekéréses szolgáltatás
 
@@ -72,7 +72,8 @@ Példa parancsfájl lejjebb találja.
 
 Kezdődően az 17090 kiadási [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server támogatott beállítás a lekéréses szolgáltatás a (Windows-szolgáltatás *DSC-szolgáltatás*). Ez biztosítja, hogy új lehetőség a skálázás, nagy méretű DSC-környezetekben, amelyek nem áttelepített [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
-> **Megjegyzés:**: SQL Server-támogatása nem kerül a korábbi verziók a WMF 5.1-es (vagy korábbi), és csak a Windows Server-verziók nagyobb vagy egyenlő 17090 elérhető lesz.
+> [!NOTE]
+> SQL Server-támogatása nem kerül a korábbi verziók a WMF 5.1-es (vagy korábbi), és csak a Windows Server-verziók nagyobb vagy egyenlő 17090 elérhető lesz.
 
 A lekérési kiszolgálójával, hogy az SQL Server konfigurálásához állítsa **SqlProvider** a `$true` és **SqlConnectionString** a egy érvényes SQL Server kapcsolati karakterláncát. További információkért lásd: [SqlClient kapcsolati karakterláncok](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
 Például egy SQL Server-konfiguráció **xDscWebService**, először olvassa el [xDscWebService erőforrást használó](#using-the-xdscwebservice-resource) , és tekintse át a [Sample_xDscWebServiceRegistration_ A Githubon UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 46dc0657-110f-4367-8bb6-a95dca2c5016
 caps.latest.revision: 8
-ms.openlocfilehash: 59832ed8a4fad3b07a171946bff28fb3e1dbe442
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f020f023f9a379ff8a610edb7d5dcfe207170394
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845870"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055546"
 ---
 # <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
@@ -40,7 +40,7 @@ Ez a minta bemutatja a következőket:
 
 - Írja felül a [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) metódust változtathatja meg a `Get-Content` parancsmagot, lehetővé téve a felhasználó lekérni a tartalmat egy elem. (Ez a minta nem jeleníti meg a dinamikus paraméterek hozzáadása a `Get-Content` parancsmagot.).
 
-- Írja felül a [Microsoft.Powershell.Commands.Filesystemprovider.Getcontentwriter*](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter) metódust változtathatja meg a `Set-Content` parancsmagot, a felhasználók egy elem a tartalom frissítéséhez. (Ez a minta nem jeleníti meg a dinamikus paraméterek hozzáadása a `Set-Content` parancsmagot.)
+- Írja felül a [Microsoft.PowerShell.Commands.Filesystemprovider.Getcontentwriter*](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter) metódust változtathatja meg a `Set-Content` parancsmagot, a felhasználók egy elem a tartalom frissítéséhez. (Ez a minta nem jeleníti meg a dinamikus paraméterek hozzáadása a `Set-Content` parancsmagot.)
 
 ## <a name="example"></a>Példa
 

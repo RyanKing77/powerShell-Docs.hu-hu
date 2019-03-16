@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
-ms.openlocfilehash: 1556d1e07a3a085346f2cdc48ef6888ad18687ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7ad95f288e2eb7cb68341a4932500a20e7740236
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685766"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055801"
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>PowerShellGet-parancsmagok modulkezeléshez
 
@@ -35,6 +35,7 @@ ms.locfileid: "55685766"
 - [Unregister-PSRepository](https://technet.microsoft.com/library/dn807161.aspx)
 
 ## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Modul függőségi telepítését támogatja, a Get-InstalledModule és az Uninstall-modul parancsmagjaival
+
 - A Publish-Module parancsmaggal hozzá modul függőségek population. PSModuleInfo RequiredModules és NestedModules listája közzé kell tenni a modulok függőséglista készítéséhez használják.
 - Az Install-Module és Update-modul parancsmagjaival hozzáadva függőségi telepítési támogatást. Modul függőségek telepítése és frissítése, alapértelmezés szerint.
 - Az eredmények tartalmazzák a modul függőségek a Find-Module parancsmaggal - IncludeDependencies paramétert adott hozzá.
@@ -44,6 +45,7 @@ ms.locfileid: "55685766"
 ## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>PowerShellGet-parancsmagok bemutató modul függőségekkel rendelkező támogatják:
 
 ### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>Győződjön meg arról, hogy a modul függőségek érhetők el a tárházban:
+
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
@@ -58,6 +60,7 @@ Version    Name                     Repository    Des
 ```
 
 ### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>Hozzon létre egy modult a moduljegyzék RequiredModules és NestedModules tulajdonságaiban megadott függőségekkel.
+
 ```powershell
 $RequiredModules = @('RequiredModule1',
                      @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.5'; },
@@ -71,12 +74,14 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>Két verzió közzététele (**"1.0"** és **"2.0"**) a TestDepWithNestedRequiredModules1 modul függőségekkel a tárházba.
+### <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>Két verzió közzététele (**"1.0"** és **"2.0"**) a TestDepWithNestedRequiredModules1 modul függőségekkel a tárházba.
+
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
 
-###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>Keresse meg a TestDepWithNestedRequiredModules1 modul függőségével - IncludeDependencies megadásával.
+### <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>Keresse meg a TestDepWithNestedRequiredModules1 modul függőségével - IncludeDependencies megadásával.
+
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
@@ -92,6 +97,7 @@ Version    Name                               
 ```
 
 ### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>A modul függőségek kereséséhez használja a Find-Module metaadatait.
+
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -130,7 +136,8 @@ RequiredVersion 2.5
 CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v2/
 ```
 
-###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>A TestDepWithNestedRequiredModules1 modul telepítése függőségekkel.
+### <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>A TestDepWithNestedRequiredModules1 modul telepítése függőségekkel.
+
 ```powershell
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
@@ -146,7 +153,8 @@ Version    Name                    Repository   Descrip
 1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Frissítse a TestDepWithNestedRequiredModules1 modul függőségek.
+### <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Frissítse a TestDepWithNestedRequiredModules1 modul függőségek.
+
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -172,8 +180,10 @@ Version    Name                               
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>A PowerShellGet-modul által telepített modul eltávolítása az Uninstall-Module parancsmag futtatásával.
+### <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>A PowerShellGet-modul által telepített modul eltávolítása az Uninstall-Module parancsmag futtatásával.
+
 Ha bármely egyéb modult a modul, amely a törölni kívánt függ, a PowerShellGet hibát jelez.
+
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
 
@@ -186,6 +196,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 ```
 
 ## <a name="save-module-cmdlet"></a>Save-Module parancsmaggal
+
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -204,11 +215,13 @@ d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
 ## <a name="update-modulemanifest-cmdlet"></a>Frissítés-ModuleManifest parancsmag
+
 Az új parancsmag súgójának és a bemeneti tulajdonságértékek jegyzékfájl frissítése szolgál. Összes paraméter, amely Test-ModuleManifest vesz igénybe.
 
 Láthatjuk, hogy a modul szerzők sok szeretné adja meg "\*" FunctionsToExport, CmdletsToExport, például az exportált értékeket stb. PowerShell-galériában modul a közzététel során nem meghatározott függvényeket és a parancsok nem tölti fel a megfelelően alakzatot a katalógusban. Ezért javasoljuk, hogy modul szerzők frissítése a jegyzékek megfelelő értékekkel.
 
 Ha exportálta tulajdonságok modulok, Update-ModuleManifest fog töltse ki a megadott jegyzékfájl exportált funkciók, a parancsmagok, a változók stb származó adatokkal:
+
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -233,6 +246,7 @@ AliasesToExport = '*'
 ```
 
 After Update-ModuleManifest:
+
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
@@ -258,10 +272,13 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 ```
 
 Az egyes modulok is találhatók társított metaadatokat tartalmazó mezőket. Annak érdekében, hogy a metaadatok megfelelően megjeleníteni a PowerShell-galériából, a frissítés-ModuleManifest használatával ezek a mezők területen PrivateData feltöltéséhez.
+
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
+
 A jegyzékfájl sablonból PrivateData kivonattábla a következő tulajdonságokkal rendelkezik:
+
 ```powershell
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
@@ -286,4 +303,6 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-***Megjegyzés:*** DscResourcesToExport csak a legújabb PowerShell 5.0-s verzió támogatott. Azt nem lehet frissíteni a mezőt, ha az előző PowerShell-verziót futtat.
+
+> [!NOTE]
+> DscResourcesToExport csak a legújabb PowerShell 5.0-s verzió támogatott. Azt nem lehet frissíteni a mezőt, ha az előző PowerShell-verziót futtat.

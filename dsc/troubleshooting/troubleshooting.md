@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC hibaelhárítása
-ms.openlocfilehash: e1f36bbc97569ac0d65f003ee08f52ec174a4520
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684954"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059745"
 ---
 # <a name="troubleshooting-dsc"></a>A DSC hibaelhárítása
 
@@ -74,7 +74,7 @@ InDesiredState        :    False
 InitialState          :
 InstanceName          :    ServiceDll
 RebootRequested       :    False
-ReosurceName          :    File
+ResourceName          :    File
 StartDate             :    11/24/2015  3:44:56
 PSComputerName        :
 ```

@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Jegyzékfájl értékek csomagot, amely hatással van a PowerShell-galéria felhasználói felülete
-ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687250"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058215"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Jegyzékfájl értékek csomagot, amely hatással van a PowerShell-galéria felhasználói felülete
 
@@ -32,7 +32,7 @@ Az alábbi táblázat a közzétevő által vezérelt a PowerShell-galériából
 | **Szerző** | Ez az a moduljegyzékben szerzőként, és a egy parancsfájl-jegyzékfájlt, része. SZERZŐ. Az Author mező gyakran használják, adjon meg egy vállalat vagy szervezet csomagokkal társított. | Igen | Igen |
 | **Copyright** | Ez az a szerzői jog mező a moduljegyzékben és. Szerzői jogi egy parancsfájl-jegyzékfájlban. | Igen | Igen |
 | **FileList** | A fájlok listájának megjelenítése a csomag közzététele után a PowerShell-galériában. Már nem vezérelheti a jegyzékfájl információkat. Megjegyzés: egy további .nuspec fájl szerepel a PowerShell-galériából, amely nem található a rendszeren a csomag telepítése után minden csomag-van. Ez a csomag a Nuget csomag jegyzékfájlt, és figyelmen kívül hagyhatja. | Nem | Nem |
-| **A címkék** | Modulok címkék szerinti PSData\PrivateData tartalmaznak. A parancsfájlok a szakaszban van címkézve. CÍMKÉK. Vegye figyelembe, hogy a címkék nem tartalmazhat szóközt, akkor is, ha idézőjelek között vannak. A címkék rendelkezik további követelmények és jelentését, amely a címke részletek szakaszban Ez a témakör későbbi része ismerteti. | Igen | Igen |
+| **Címkék** | Modulok címkék szerinti PSData\PrivateData tartalmaznak. A parancsfájlok a szakaszban van címkézve. CÍMKÉK. Vegye figyelembe, hogy a címkék nem tartalmazhat szóközt, akkor is, ha idézőjelek között vannak. A címkék rendelkezik további követelmények és jelentését, amely a címke részletek szakaszban Ez a témakör későbbi része ismerteti. | Igen | Igen |
 | **Parancsmagok** | Ez a modul jegyzéket CmdletsToExport megtalálható. Vegye figyelembe, hogy az ajánlott eljárás az explicit módon a listaelemek helyett a helyettesítő karakterek használatával "*", ahogy, amely javítja a terhelés-module teljesítményét a felhasználók számára. | Igen | Nem |
 | **Függvények** | Ez a modul jegyzéket FunctionsToExport megtalálható. Vegye figyelembe, hogy az ajánlott eljárás az explicit módon a listaelemek helyett a helyettesítő karakterek használatával "*", ahogy, amely javítja a terhelés-module teljesítményét a felhasználók számára. | Igen | Nem |
 | **DSC-erőforrások** | A PowerShell 5.0-s verzió vagy újabb használt modulok Ez a jegyzéket DscResourcesToExport megtalálható. Ha a modul PowerShell 4 használandó, a DSCResourcesToExport nem használandó, mert nem támogatott jegyzékfájl kulcs. (DSC nem volt elérhető előtt PowerShell 4.) | Igen | Nem |
@@ -40,7 +40,7 @@ Az alábbi táblázat a közzétevő által vezérelt a PowerShell-galériából
 | **Szerepköri funkciók** | Ez megjelenik, ha a modul a PowerShell-galériában közzétett tartalmaz egy vagy több szerepkör képesség (.psrc) fájl, JEA által használt. A JEA dokumentációjában talál további részleteket [szerepkörrel képességeket](/powershell/jea/role-capabilities). | Igen | Nem |
 | **PowerShell Editions** | Ez a szkript vagy a modul jegyzékfájl van megadva. Használható a PowerShell 5.0-s, és ez alatt modulok szabályozott címkék használatával. Az asztali PSEdition_Desktop címke, majd a core, a címke PSEdition_Core. Csak a PowerShell 5.1-es vagy újabb használt modulok nincs CompatiblePSEditions kulcsot a fő jegyzékfájlban. További részletekért tekintse át a PS-Edition szolgáltatása [a PowerShell Get-dokumentáció](module-psedition-support.md). | Igen | Igen |
 | **Függőségek** | A függőségek a modulokat a PowerShell-galériából, amely RequiredModules, vagy a modul, vagy, a parancsfájl jegyzékfájlban deklarált olyan #Requires – modul (név). | Igen | Igen |
-| **Powershell minimális verziója** | Ennek segítségével is megadható egy moduljegyzék PowerShellVersion | Igen | Nem |
+| **PowerShell minimális verziója** | Ennek segítségével is megadható egy moduljegyzék PowerShellVersion | Igen | Nem |
 | **Korábbi verziók** | A korábbi verziók a frissítések, egy modulban, a PowerShell-galériából történő tükrözi. Ha egy csomag verziója rejtett a törlési funkció használatával, azt nem megjelennek a korábbi verziók, kivéve csomag tulajdonosai. | Nem | Nem |
 | **Project Site** | A projekt hely a moduljegyzékben Privatedata\PSData szakaszában modulok biztosítunk egy ProjectURI megadásával. A parancsfájl jegyzékfájlban szabályozza azt megadásával. PROJECTURI. | Igen | Igen |
 | **Licenc** | Egy licenc hivatkozást a moduljegyzékben Privatedata\PSData szakaszában modulok egy LicenseURI megadásával. A parancsfájl jegyzékfájlban szabályozza azt megadásával. LICENSEURI. Fontos megjegyezni, hogy ha a licenc nem áll rendelkezésre a LicenseURI keresztül, vagy belül egy modult, majd a használati feltételeket a PowerShell-galériából a adja meg a csomag a használati feltételeket. Tekintse meg a részletes használati feltételeit. | Igen | Igen |
@@ -93,7 +93,7 @@ Referenciaként itt található néhány leggyakrabban használt címkék 12/14/
 | Adatbázis | Kevésbé kívánatos (többes számú) adatbázisok |
 | DevOps |  |
 | Windows |  |
-| Build |  |
+| Felépítés |  |
 | Telepítés | Üzembe helyezése kevésbé gyakran használt |
 | Felhő |  |
 | A GIT |  |
@@ -113,7 +113,7 @@ Referenciaként itt található néhány leggyakrabban használt címkék 12/14/
 | Hálózat | Hálózatkezelés hasonlóan, a kevésbé gyakran használt |
 | SharePoint |  |
 | Jelentés | Jelentési művelet, a jelentés egy dolog |
-| A jelentés | A jelentés azért is lehet |
+| Jelentés | A jelentés azért is lehet |
 | WinRM |  |
 | Figyelés |  |
 | VSTS |  |

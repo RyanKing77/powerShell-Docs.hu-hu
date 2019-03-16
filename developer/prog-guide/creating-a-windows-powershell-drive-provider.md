@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: d1546ab0b0e6b5502f35c92c01ce148211c53db2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846668"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055649"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Windows PowerShelles meghajtószolgáltató létrehozása
 
@@ -61,7 +61,7 @@ Leírtak szerint [terv a Windows PowerShell-szolgáltatóban](./designing-your-w
 
 Összes Windows PowerShell-szolgáltató minősülnek állapot nélküli, ami azt jelenti, hogy a meghajtószolgáltató kell létrehozni, amely a Windows PowerShell-modul által van szükség, ha meghívja a szolgáltató kapcsolatos állapotinformációkat.
 
-A meghajtó szolgáltató állapotinformációkat tartalmaz a kapcsolat az adatbázissal, hogy a meghajtó információi részeként. A következő kódot, amely ezt az információt a módjára látható a [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objektum, amely ismerteti a meghajtó:
+A meghajtó szolgáltató állapotinformációkat tartalmaz a kapcsolat az adatbázissal, hogy a meghajtó információi részeként. A következő kódot, amely ezt az információt a módjára látható a [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objektum, amely ismerteti a meghajtó:
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
@@ -73,15 +73,15 @@ Ahhoz, hogy a meghajtó létrehozása a Windows PowerShell-modul, a meghajtó a 
 
 A felülbírálási ennek a módszernek a következőket kell tennie:
 
-- Ellenőrizze, hogy a [System.Management.Automation.Psdriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) tag létezik, és az adattár egy kapcsolat lehet tenni.
+- Ellenőrizze, hogy a [System.Management.Automation.PSDriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) tag létezik, és az adattár egy kapcsolat lehet tenni.
 
 - Meghajtó létrehozása, és töltse fel a kapcsolatot tag támogatja, a `New-PSDrive` parancsmagot.
 
-- Ellenőrizze a [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objektum a javasolt meghajtó.
+- Ellenőrizze a [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objektum a javasolt meghajtó.
 
-- Módosítsa a [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objektum, amely leírja, hogy a meghajtó bármely szükséges teljesítmény és megbízhatóság információt, vagy adjon meg további adatokat a hívók használja a meghajtót.
+- Módosítsa a [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objektum, amely leírja, hogy a meghajtó bármely szükséges teljesítmény és megbízhatóság információt, vagy adjon meg további adatokat a hívók használja a meghajtót.
 
-- Hibák kezeléséhez a [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) metódust, és ezután lépjen vissza `null`.
+- Hibák kezeléséhez a [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) metódust, és ezután lépjen vissza `null`.
 
   Ez a módszer vagy a meghajtó információi átadott, a metódus vagy egy szolgáltatóhoz tartozó verzióját, adja vissza.
 

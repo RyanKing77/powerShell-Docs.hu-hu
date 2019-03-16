@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: katalógus, a powershell, a psgallery
 title: Csomagok manuális letöltése
-ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: af628f99befe50c16c2c0c60f1a352647af34ff4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687698"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054874"
 ---
 # <a name="manual-package-download"></a>Csomagok manuális letöltése
 
-A Powershell-galériából támogatja a webhely a csomag közvetlenül, letölti a PowerShellGet-parancsmagok használata nélkül. Minden olyan csomag, a NuGet csomag (.nupkg) fájlt, amely majd másolhat egy belső tárházat töltheti le.
+A PowerShell-galériából támogatja a webhely a csomag közvetlenül, letölti a PowerShellGet-parancsmagok használata nélkül. Minden olyan csomag, a NuGet csomag (.nupkg) fájlt, amely majd másolhat egy belső tárházat töltheti le.
 
 > [!NOTE]
 > Manuális csomag a Letöltés **nem** szánt az Install-Module parancsmaggal helyettesítője.

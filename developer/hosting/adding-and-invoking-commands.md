@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
 caps.latest.revision: 5
-ms.openlocfilehash: 31371797ee57f07075da3436e0b42b2ca01aaffd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9a01f948c5b474b4f9068030907601543e13cc7e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847753"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057654"
 ---
 # <a name="adding-and-invoking-commands"></a>Meghívó parancsok hozzáadása
 
@@ -140,7 +140,7 @@ namespace HostPS1e
 
  Ön folyamat meghívása egy aszinkron módon történik az egyik túlterhelése meghívásával a [System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) hozhat létre egy [IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) objektumot, majd utána meghívja a [ System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) metódust.
 
- Az alábbi példa bemutatja, hogyan kell elindítani a folyamatot asynchronoulsy.
+ Az alábbi példa bemutatja, hogyan folyamat meghívása egy aszinkron módon történik.
 
 ```csharp
 using System;
@@ -157,7 +157,7 @@ namespace HostPS3
     {
       // Use the PowerShell.Create and PowerShell.AddCommand
       // methods to create a command pipeline that includes
-      // Get-Process cmdlet. Do not include spaces immediatly
+      // Get-Process cmdlet. Do not include spaces immediately
       // before or after the cmdlet name as that will cause
       // the command to fail.
       PowerShell ps = PowerShell.Create().AddCommand("Get-Process");

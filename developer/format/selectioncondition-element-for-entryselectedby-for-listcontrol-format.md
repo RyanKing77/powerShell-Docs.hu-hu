@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: ec75945c5517c02fa001f0a38573c045ffcdbfd3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847851"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058963"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>A ListControl elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
 
@@ -44,7 +44,7 @@ Nincs.
 
 |Elem|Leírás|
 |-------------|-----------------|
-|[SelectionCondition EmtrySelectedBy ListEntry (formátum) esetében a PropertyName elem.](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Nem kötelező eleme.<br /><br /> Megadja a .NET-tulajdonság, amely elindítja a feltételt.|
+|[SelectionCondition EntrySelectedBy ListEntry (formátum) esetében a PropertyName elem.](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Nem kötelező eleme.<br /><br /> Megadja a .NET-tulajdonság, amely elindítja a feltételt.|
 |[SelectionCondition EntrySelectedBy ListEntry (formátum) esetében a scriptblock kulcsszót elem.](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Nem kötelező eleme.<br /><br /> Megadja a parancsprogramot, amely elindítja a feltétel.|
 |[A EntrySelectedBy ListEntry (formátum) a SelectionCondition SelectionSetName eleme](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|Nem kötelező eleme.<br /><br /> Megadja azt a feltételt .NET típusú.|
 |[SelectionCondition EntrySelectedBy ListEntry (formátum) esetében a TypeName elem.](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Nem kötelező eleme.<br /><br /> A .NET típusát, amely elindítja a feltételt határozza meg.|
@@ -75,7 +75,7 @@ A listanézet egyéb összetevőivel kapcsolatos további információkért lás
 
 [ListEntry elem (formátum)](./listentry-element-for-listcontrol-format.md)
 
-[A ListEntry (formátum) EnrtySelectedBy SelectionSetName elem.](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[A ListEntry (formátum) EntrySelectedBy SelectionSetName elem.](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [EntrySelectedBy ListEntry (formátum) a TypeName elem.](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
 

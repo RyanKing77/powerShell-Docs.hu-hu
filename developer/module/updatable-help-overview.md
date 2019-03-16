@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
-ms.openlocfilehash: 4e962890fa1d5c282a02a89f0ae2e263844c635e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847487"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057603"
 ---
 # <a name="updatable-help-overview"></a>Frissíthető súgó – áttekintés
 
@@ -31,7 +31,9 @@ Frissíthető súgó teljes mértékben támogatja a Windows® 8 és Windows Ser
 
 Frissíthető súgó a következő szolgáltatásokat tartalmazza.
 
-- A [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) parancsmagot, amely meghatározza, hogy felhasználók rendelkeznek-e a legújabb súgó modul-fájlokat, és ha nem, letölti a legújabb súgófájlokat az internetről, kicsomagolja őket, és telepíti őket a megfelelő modul alkönyvtáraiban találhatóak a felhasználó számítógépén. A felhasználók használhatják a [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) parancsmag azonnal az újonnan telepített segítő súgótémakörök megjelenítéséhez. Ezek nem kell újraindítani a Windows PowerShell.
+- A [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) parancsmagot, amely meghatározza, hogy felhasználók rendelkeznek-e a legújabb súgó modul-fájlokat, és ha nem, letölti a legújabb súgófájlokat az internetről, kicsomagolja őket, és telepíti őket a megfelelő modul alkönyvtáraiban találhatóak a felhasználó számítógépén.
+  A felhasználók használhatják a [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) parancsmag azonnal az újonnan telepített segítő súgótémakörök megjelenítéséhez.
+  Ezek nem kell újraindítani a PowerShell.
 
 - A [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) parancsmagot, amely letölti a legújabb Súgó fájlokat az internetről, és menti azokat egy fájl rendszer könyvtárban. A felhasználók használhatják a `Update-Help` parancsmag súgófájlok kérhet a rendszer könyvtárát, és csomagolja ki, és telepítheti a modul alkönyvtáraiban találhatóak a felhasználó számítógépén. A `Save-Help` parancsmag célja a felhasználók, akik csak korlátozottan vagy nincs Internet-hozzáférés és a vállalatok számára, akik szívesebben Internet-hozzáférés korlátozása.
 

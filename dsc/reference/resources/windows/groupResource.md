@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-Group erőforrás
-ms.openlocfilehash: 9894150f6f749fc23efd4ce2b155b18788557d1d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 123e09b54a923af942a15f80fa7291c555b4235f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687509"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054968"
 ---
 # <a name="dsc-group-resource"></a>DSC-Group erőforrás
 
@@ -60,7 +60,7 @@ Group GroupExample
 
 ## <a name="example-2"></a>2. példa
 
-Az alábbi példa bemutatja, hogyan egy Active Directory-felhasználó hozzáadása a helyi Rendszergazdák csoport egy több gép labor hozhat létre, ha már használ egy PSCredential a helyi rendszergazdai fiók részeként.
+Az alábbi példa bemutatja, hogyan egy Active Directory-felhasználó hozzáadása a helyi Rendszergazdák csoport már használata pscredential adattá a helyi rendszergazdai fiók több gép labor build részeként.
 Mivel ez után is használja a tartományi rendszergazdai fiók (előléptetését), majd egy rövid tartományi hitelesítő adatok a meglévő PSCredential konvertálni kell.
 Ezután azt is hozzáadhat egy tartományi felhasználót a helyi Rendszergazdák csoport azon a tagkiszolgálón.
 
@@ -95,7 +95,7 @@ Group AddADUserToLocalAdminGroup {
 Az alábbi példa bemutatja, hogyan kell egy helyi csoport TigerTeamAdmins biztosítása, a kiszolgálón az TigerTeamSource.Contoso.Com nem tartalmaz egy adott tartományi fiókot, Contoso\JerryG.
 
 ```powershell
-Configuration SecureTigerTeamSrouce {
+Configuration SecureTigerTeamSource {
   Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
   Node TigerTeamSource.Contoso.Com {

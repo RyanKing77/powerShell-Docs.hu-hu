@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: cbc8ce0600553f9e9ab973d6f92ea5eafde310e2
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57430032"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055070"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Windows PowerShelles navigációszolgáltató létrehozása
 
@@ -154,9 +154,9 @@ A navigációs szolgáltatói .NET-osztály előfordulhat, hogy deklarálja Expa
 
 Alapértelmezés szerint ez a metódus felülbírálását ne helyezze át objektumokat keresztül a meglévő objektumok, kivéve, ha a [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) tulajdonsága `true`. Ha például a fájlrendszer-szolgáltatót nem másolja c:\temp\abc.txt egy már létező c:\bar.txt fájl, kivéve, ha a [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) tulajdonsága `true`. Ha a megadott elérési útja a `destination` paraméter létezik, és egy tárolót a [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) tulajdonság nem kötelező. Ebben az esetben [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) helyezze át az elem jelzi a `path` által megadott a tárolóhoz a paraméter a `destination` gyermek paraméter.
 
-A megvalósítását az [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metódus meg kell hívnia [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) , és ellenőrizze a visszaadott érték az adattár változtatások előtt. Ez a módszer segítségével amikor módosításakor a rendszer állapotáról, például fájlokat törli, győződjön meg arról, hogy egy művelet végrehajtását. [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) küld a felhasználó a Windows PowerShell-futtatókörnyezetben, figyelembe véve parancssori beállítást vagy a preferenciaváltozók módosítani az erőforrás neve annak meghatározása, mi megjelenjenek a felhasználó számára.
+A megvalósítását az [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metódus meg kell hívnia [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) , és ellenőrizze a visszaadott érték az adattár változtatások előtt. Ez a módszer segítségével amikor módosításakor a rendszer állapotáról, például fájlokat törli, győződjön meg arról, hogy egy művelet végrehajtását. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) küld a felhasználó a Windows PowerShell-futtatókörnyezetben, figyelembe véve parancssori beállítást vagy a preferenciaváltozók módosítani az erőforrás neve annak meghatározása, mi megjelenjenek a felhasználó számára.
 
-Hívása után [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) adja vissza `true`, a [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metódus meg kell hívnia a [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metódust. Ez a módszer egy üzenetet küld a felhasználó számára lehetővé tegyük fel, ha a művelet folytatni kell a visszajelzés. Meg kell hívnia a szolgáltató [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) , egy potenciálisan veszélyes rendszermódosítások további keresése.
+Hívása után [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) adja vissza `true`, a [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metódus meg kell hívnia a [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metódust. Ez a módszer egy üzenetet küld a felhasználó számára lehetővé tegyük fel, ha a művelet folytatni kell a visszajelzés. Meg kell hívnia a szolgáltató [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) , egy potenciálisan veszélyes rendszermódosítások további keresése.
 
 ## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>Az elem áthelyezése parancsmag dinamikus paraméterek csatolása
 

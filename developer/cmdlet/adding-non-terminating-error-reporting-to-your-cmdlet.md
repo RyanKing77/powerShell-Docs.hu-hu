@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 2f3bb481722363557c93ebbc5e6df62baeff2555
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0550dacc33f45f45ba105ca5cb4d2e5b5d675fb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851015"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056056"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Megszakítást nem okozó hibajelentések hozzáadása a parancsmaghoz
 
-Parancsmagok meghívásával nonterminating hibák jelentheti a [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) módszer továbbra is megfelelően működjenek, az aktuális bemeneti objektumon, vagy további bejövő és folyamat-objektumok. Ez a szakasz ismerteti, hogyan hozhat létre olyan parancsmagot, amely a bemeneti feldolgozási módszerei a nonterminating hibát jelez.
+Parancsmagok meghívásával nonterminating hibák jelentheti a [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) módszer továbbra is megfelelően működjenek, az aktuális bemeneti objektumon, vagy további bejövő és folyamat-objektumok. Ez a szakasz ismerteti, hogyan hozhat létre olyan parancsmagot, amely a bemeneti feldolgozási módszerei a nonterminating hibát jelez.
 
-Nonterminating hibák (csakúgy, mint a hibák megszakítást), a parancsmag át kell adnia egy [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum a hiba azonosítása. Minden egyes hibarekord azonosíthatók egy egyedi karakterlánccá, úgynevezett "hiba azonosítója." Az azonosító mellett minden egyes hibához kategóriáját állandók határozzák meg által meghatározott egy [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumerálása. A felhasználó megtekintheti a hibákat azok kategória alapján beállításával a `$ErrorView` "CategoryView" változó.
+Nonterminating hibák (csakúgy, mint a hibák megszakítást), a parancsmag át kell adnia egy [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum a hiba azonosítása. Minden egyes hibarekord azonosíthatók egy egyedi karakterlánccá, úgynevezett "hiba azonosítója." Az azonosító mellett minden egyes hibához kategóriáját állandók határozzák meg által meghatározott egy [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumerálása. A felhasználó megtekintheti a hibákat azok kategória alapján beállításával a `$ErrorView` "CategoryView" változó.
 
 Hiba a rekordok kapcsolatos további információkért lásd: [Windows PowerShell Hibarekordjainak](./windows-powershell-error-records.md).
 
@@ -101,11 +101,11 @@ Minden parancsmag felül kell írnia a bemeneti feldolgozási által biztosítot
 > [!NOTE]
 > A parancsmag minden rekord lehető egymástól függetlenül kell kezelni.
 
-A Get-Proc parancsmag felülbírálja a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust a `Name` paramétere a felhasználó vagy egy parancsfájl által megadott bemenetet. Ez a módszer a folyamatok minden kért Folyamatnév vagy az összes folyamat fog kapni, ha nincs név megadva. Ez a felülbírálás részleteit [létrehozásához az első parancsmag](./creating-a-cmdlet-without-parameters.md).
+A Get-Proc parancsmag felülbírálja a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust a `Name` paramétere a felhasználó vagy egy parancsfájl által megadott bemenetet. Ez a módszer a folyamatok minden kért Folyamatnév vagy az összes folyamat fog kapni, ha nincs név megadva. Ez a felülbírálás részleteit [létrehozásához az első parancsmag](./creating-a-cmdlet-without-parameters.md).
 
 #### <a name="things-to-remember-when-reporting-errors"></a>Megjegyzendő tudnivalók jelentése hiba esetén
 
-A [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektumot, hogy a parancsmag továbbítja, ha maga kivétel hiba írása szükséges. Kövesse a .NET használata a kivétel meghatározásakor. Alapvetően Ha a hiba szemantikailag ugyanaz, mint a meglévő kivételt, a parancsmag kell használni vagy származtassa. a kivétel. Ellenkező esetben a kell származtatni egy új kivétel vagy közvetlenül a kivétel hierarchia a [System.Exception](/dotnet/api/System.Exception) osztály.
+A [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektumot, hogy a parancsmag továbbítja, ha maga kivétel hiba írása szükséges. Kövesse a .NET használata a kivétel meghatározásakor. Alapvetően Ha a hiba szemantikailag ugyanaz, mint a meglévő kivételt, a parancsmag kell használni vagy származtassa. a kivétel. Ellenkező esetben a kell származtatni egy új kivétel vagy közvetlenül a kivétel hierarchia a [System.Exception](/dotnet/api/System.Exception) osztály.
 
 (FullyQualifiedErrorId osztály tulajdonságához tartozó a ErrorRecord keresztül érhetők el) hiba azonosítók létrehozása során vegye figyelembe a következőket.
 
@@ -135,7 +135,7 @@ Nem kezelt kivételek nem észlelt Windows PowerShell a következő feltételek 
 
 ## <a name="reporting-nonterminating-errors"></a>Nonterminating hibát jelentett
 
-A bemeneti feldolgozási módszerek közül is tud jelentéseket nonterminating hiba a kimeneti adatfolyamhoz a a [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódust. Íme egy példa a Get-Proc parancsmag, amely bemutatja a hívást a [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) a felülbírálását belül a [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust. Ebben az esetben a rendszer hívást kezdeményez, ha a parancsmag egy folyamatot egy adott folyamat azonosítója nem található.
+A bemeneti feldolgozási módszerek közül is tud jelentéseket nonterminating hiba a kimeneti adatfolyamhoz a a [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódust. Íme egy példa a Get-Proc parancsmag, amely bemutatja a hívást a [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) a felülbírálását belül a [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust. Ebben az esetben a rendszer hívást kezdeményez, ha a parancsmag egy folyamatot egy adott folyamat azonosítója nem található.
 
 ```csharp
 protected override void ProcessRecord()

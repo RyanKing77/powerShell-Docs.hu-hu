@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: dfda6cb68b089a30a156760345420ee80d1d3ae9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851085"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055495"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell-referencia
 
@@ -47,10 +47,10 @@ Mellett a Windows PowerShell SDK az alábbi forrásanyagokban további informác
 
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider) a névtér tartalma az osztályok, enumerálások és a egy Windows PowerShell-szolgáltató implementálásához szükséges felületek. Ilyen például a [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) osztály az alaposztály alaposztályát, mely minden Windows PowerShell szolgáltató osztályok kell származnia.
 
-[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) a névtér tartalma az osztályok a parancsmagokat és a Windows PowerShell által megvalósított szolgáltatók számára. Hasonlóképpen, ajánlott létrehozni egy *Sajátneve*. Azon parancsmagok esetében, amelyek megvalósítása névtér parancsokat.
+[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) a névtér tartalma az osztályok a parancsmagokat és a Windows PowerShell által megvalósított szolgáltatók számára. Hasonlóképpen, ajánlott létrehozni egy *Sajátneve*. Azon parancsmagok esetében, amelyek megvalósítása névtér parancsokat.
 
 [System.Management.Automation.Host](/dotnet/api/System.Management.Automation.Host) a névtér tartalma az osztályok, enumerálások és felületek, amelyek a parancsmagot használja a közötti interakció a felhasználó és a Windows PowerShell definiálásához.
 
-[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) ehhez a névtérhez más névtér osztályok által használt alaposztályok tartalmazza. Ha például a [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) osztály az alaposztálya a [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) osztály.
+[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) ehhez a névtérhez más névtér osztályok által használt alaposztályok tartalmazza. Ha például a [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) osztály az alaposztálya a [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) osztály.
 
 [System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) a névtér tartalma az osztályok, enumerálások és egy Windows PowerShell futási teret létrehozásához használt felületek. Ebben a környezetben a Windows PowerShell futási térben a környezetet, amelyben legalább egy Windows PowerShell-folyamatok meghívásához parancsmagok. Azt jelenti parancsmagok a Windows PowerShell futási térben keretén belül működik. További információk aboutWindows PowerShell futási terek, lásd: [Windows PowerShell futási terek](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

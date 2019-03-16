@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
-ms.openlocfilehash: 25b604621c90f1aa88bc1eea365e47db66e98c3d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 37689571eb1650e5991af2e7002cd037ae99dd68
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848495"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057960"
 ---
 # <a name="provider-types"></a>Szolgáltatótípusok
 
@@ -65,7 +65,7 @@ Tároló-kompatibilis szolgáltatók engedélyezése a felhasználó számára, 
 
 A [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) osztály határozza meg az alábbi módszerek megvalósításának adott szolgáltató parancsmagjai. A legtöbb esetben egy szolgáltató parancsmag támogatja, felül kell írnia a módszert, amelyet a Windows PowerShell meghívja a parancsmag meghívni például a `CopyItem` módszer a `Copy-Item` parancsmagot, és opcionálisan egy második módszer, például felülírhatja`CopyItemDynamicParameters`, a dinamikus paraméterek hozzáadása a parancsmaghoz.
 
-- A [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) és [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) módszerek határozza meg, hogy a szolgáltató támogatja-e a `Copy-Item` szolgáltató parancsmagot. Ez a parancsmag lehetővé teszi, hogy a felhasználót, hogy az elem másolása egyik helyről egy másikra.
+- A [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) és [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) módszerek határozza meg, hogy a szolgáltató támogatja-e a `Copy-Item` szolgáltató parancsmagot. Ez a parancsmag lehetővé teszi, hogy a felhasználót, hogy az elem másolása egyik helyről egy másikra.
 
 - A [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) és [System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) módszerek határozza meg, hogy a szolgáltató támogatja-e a `Get-ChildItem` szolgáltató parancsmagot. Ez a parancsmag lehetővé teszi, hogy a fölérendelt elemtől bejárásához a lekérdezni kívánt felhasználó.
 

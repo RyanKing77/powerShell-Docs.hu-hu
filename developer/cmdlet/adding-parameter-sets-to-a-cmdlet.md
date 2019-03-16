@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: b02a2e0d4b0a27c261b0bc05febda7826ad5276e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849097"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054985"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Paraméterkészletek hozzáadása parancsmagokhoz
 
@@ -179,7 +179,7 @@ Bár az egyes paraméternek egyedi paraméternek kell lennie, paraméterek egyn�
 
 ## <a name="overriding-an-input-processing-method"></a>Egy bemeneti metódus feldolgozási felülbírálása
 
-Minden parancsmagot felül kell írnia egy bemeneti metódus feldolgozása, a leggyakrabban ez lesz a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust. Ebben a parancsmagban a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) úgy, hogy a parancsmag képes feldolgozni a folyamatok tetszőleges számú módszert felülbírálja. Tartalmaz egy kiválasztási utasítás, amely meghívja a melyik paraméterkészlet alapján más módszert a felhasználó adta meg.
+Minden parancsmagot felül kell írnia egy bemeneti metódus feldolgozása, a leggyakrabban ez lesz a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust. Ebben a parancsmagban a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) úgy, hogy a parancsmag képes feldolgozni a folyamatok tetszőleges számú módszert felülbírálja. Tartalmaz egy kiválasztási utasítás, amely meghívja a melyik paraméterkészlet alapján más módszert a felhasználó adta meg.
 
 ```csharp
 protected override void ProcessRecord()

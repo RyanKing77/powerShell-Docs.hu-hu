@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d5891467-8e13-484d-b7af-32e6bffab35d
 caps.latest.revision: 4
-ms.openlocfilehash: 2aca4483e500432ef9f52804e85678d2268aa4cd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2e8f272a82ee03de306fd8eac45e109142f6284
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846906"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054798"
 ---
 # <a name="common-workflow-parameters"></a>Gyakori munkafolyamat-paraméterek
 
@@ -26,7 +26,7 @@ Az általános munkafolyamat-paraméterek kategóriákba vannak rendezve, számo
 |Név|Típus|Leírás|Végfelhasználók által a végrehajtás során adható meg?|A munkafolyamat szerzői a létrehozáskor megadott?|A példányosítás munkafolyamat Szerző szerint adható meg?|
 |----------|----------|-----------------|-----------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------|
 |PSComputerName|String]|Számítógép nevének, amelyek esetében szeretne indítsa el a feladatok listáját.|Igen|Igen|Igen|
-|PSCredential|[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|A hitelesítő adatok használata a bejelentkezéshez a PSComputerName paraméter által megadott számítógépekre. Ez a paraméter csak akkor, ha a megadott PSComputerName érvényességét.|Igen|Igen|Igen|
+|PSCredential|[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|A hitelesítő adatok használata a bejelentkezéshez a PSComputerName paraméter által megadott számítógépekre. Ez a paraméter csak akkor, ha a megadott PSComputerName érvényességét.|Igen|Igen|Igen|
 |PSPort|UInt32|A munkafolyamat futtatásához használt port.|Igen|Igen|Igen|
 |PSUseSSL|Boolean|A távoli számítógép a munkafolyamat futtatási biztonságos kapcsolatot létesíteni a Secure Sockets Layer (SSL) protokoll használatával.|Igen|Igen|Igen|
 |PSConfigurationName|Sztring|A munkamenet-konfiguráció a munkafolyamat futtatásához használt.|Igen|Igen|Igen|

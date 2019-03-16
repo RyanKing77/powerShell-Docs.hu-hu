@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
 caps.latest.revision: 12
-ms.openlocfilehash: d4564b51b74422cdaec3878b227ffc6be7c97949
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846731"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055903"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Parancsmagok meghívása parancsmagokon belül
 
@@ -24,7 +24,7 @@ Get-Process -name [a-t]
 ```
 
 > [!IMPORTANT]
-> Csak azok a parancsmagok, amelyek közvetlenül az hívhat a [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) osztály. Nelze vyvolat származó parancsmag a [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztály.
+> Csak azok a parancsmagok, amelyek közvetlenül az hívhat a [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) osztály. Nelze vyvolat származó parancsmag a [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztály.
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>A parancsmag belül egy parancsmag meghívásához
 
@@ -36,7 +36,7 @@ Get-Process -name [a-t]
     using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
     ```
 
-2. A feldolgozási mód a parancsmag bemeneti adatok létrehozásához meg kell hívni a parancsmag egy új példányát. Ebben a példában típusú objektum [Microsoft.Powershell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) jön létre a karakterlánc, amely tartalmazza a parancsmag meghívásakor használt argumentumait együtt.
+2. A feldolgozási mód a parancsmag bemeneti adatok létrehozásához meg kell hívni a parancsmag egy új példányát. Ebben a példában típusú objektum [Microsoft.PowerShell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) jön létre a karakterlánc, amely tartalmazza a parancsmag meghívásakor használt argumentumait együtt.
 
     ```csharp
     GetProcessCommand gp = new GetProcessCommand();
@@ -55,7 +55,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>Példa
 
-Ebben a példában a `Get-Process` parancsmag meghívása belül a [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) parancsmag metódusa.
+Ebben a példában a `Get-Process` parancsmag meghívása belül a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) parancsmag metódusa.
 
 ```csharp
 using System;

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 3edbcabeff0c8d84831823df11749d152b347566
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851946"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057161"
 ---
 # <a name="events01-sample"></a>Events01 – minta
 
-Ez a példa bemutatja, hogyan hozhat létre olyan parancsmagot, amely lehetővé teszi, hogy a felhasználó regisztrálhatja által előállított eseményeket [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Ezzel a parancsmaggal a felhasználók regisztrálhatnak egy művelet hajtható végre, ha létrejön egy fájl egy adott könyvtárban. Ez a minta származik a [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) alaposztály.
+Ez a példa bemutatja, hogyan hozhat létre olyan parancsmagot, amely lehetővé teszi, hogy a felhasználó regisztrálhatja által előállított eseményeket [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Ezzel a parancsmaggal a felhasználók regisztrálhatnak egy művelet hajtható végre, ha létrejön egy fájl egy adott könyvtárban. Ez a minta származik a [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) alaposztály.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Hogyan hozhat létre a mintát a Visual Studio használatával.
 
@@ -78,7 +78,7 @@ Ez a minta Windows PowerShell 2.0 szükséges.
 
 Ez a minta bemutatja a következő.
 
-- Hogyan írható-eseményregisztráció parancsmag. A parancsmag származik a [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) osztály, amely támogatja a gyakori paraméterek a Register-* esemény parancsmagok. Parancsmagok származó [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) csak definiálnia kell a adott paramétereikről bírálja felül a `GetSourceObject` és `GetSourceObjectEventName` módszerek absztrakt.
+- Hogyan írható-eseményregisztráció parancsmag. A parancsmag származik a [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) osztály, amely támogatja a gyakori paraméterek a Register-* esemény parancsmagok. Parancsmagok származó [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) csak definiálnia kell a adott paramétereikről bírálja felül a `GetSourceObject` és `GetSourceObjectEventName` módszerek absztrakt.
 
 ## <a name="example"></a>Példa
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
-ms.openlocfilehash: d919d4ad8554e762230c1448d81b50e27c38ba99
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851967"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058045"
 ---
 # <a name="cmdlet-samples"></a>Parancsmagminták
 
@@ -39,7 +39,7 @@ Ez a szakasz ismerteti, amelyek a Windows PowerShell 2.0 SDK-ban van megadva. Ez
 
 [StopProcessSample04 minta](./stopprocesssample04-sample.md) Ez a példa bemutatja, hogyan írhat olyan parancsmagot, amely paraméterkészlettel nyilatkozik, adja meg az alapértelmezett paraméter beállítása, és egy bemeneti objektumot tud fogadni.
 
-[Events01 minta](./events01-sample.md) Ez a példa bemutatja, hogyan hozhat létre olyan parancsmagot, amely lehetővé teszi, hogy a felhasználó regisztrálhatja az események által kiváltott [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Ezzel a parancsmaggal felhasználók, például regisztrálhatnak egy művelet hajtható végre, ha létrejön egy fájl egy adott könyvtárban. Ez a minta származik a [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) alaposztály.
+[Events01 minta](./events01-sample.md) Ez a példa bemutatja, hogyan hozhat létre olyan parancsmagot, amely lehetővé teszi, hogy a felhasználó regisztrálhatja az események által kiváltott [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Ezzel a parancsmaggal felhasználók, például regisztrálhatnak egy művelet hajtható végre, ha létrejön egy fájl egy adott könyvtárban. Ez a minta származik a [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) alaposztály.
 
 ## <a name="see-also"></a>Lásd még:
 

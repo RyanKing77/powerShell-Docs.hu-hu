@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
-ms.openlocfilehash: 2c6a4bca03ee7f62371cbc296f854464167e5a62
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cc014487a680747ad59437052f79d4576154a1cb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847788"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059677"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Windows PowerShell-gazda – Gyors üzembe helyezés
 
@@ -112,7 +112,7 @@ Míg a korábbi példákban használt alapértelmezett futási térben alapvető
 
 ### <a name="creating-an-initialsessionstate-object"></a>Egy InitialSessionState objektum létrehozása
 
-Hozzon létre egy egyéni futási teret, hogy először létre kell hozni egy [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum. A következő példában használunk a [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) egy ruspace létrehozni egy alapértelmezett létrehozása után [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum.
+Hozzon létre egy egyéni futási teret, hogy először létre kell hozni egy [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum. A következő példában használunk a [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) egy futási teret létrehozni egy alapértelmezett létrehozása után [System.Management.Automation.Runspaces.InitialSessionState ](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum.
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
@@ -126,7 +126,7 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>A futási térben neve
 
-Az előző példában létrehoztunk egy alapértelmezett [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum, amely a beépített Windows PowerShell core tölti be. Sikerült is rendelkezik felhívtuk a [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) módszer, amely csak a Mirosoft.PowerShell.Core szereplő parancsok szeretné betölteni InitialSessionState objektum létrehozása beépülő modul. Hozzon létre egy több korlátozott futási térrel, létre kell hoznia egy üres [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) meghívásával objektum a [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) módot, majd adja hozzá a InitialSessionState parancsokat.
+Az előző példában létrehoztunk egy alapértelmezett [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektum, amely a beépített Windows PowerShell core tölti be. Sikerült is rendelkezik felhívtuk a [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) módszer, amely csak a Microsoft.PowerShell.Core szereplő parancsok szeretné betölteni InitialSessionState objektum létrehozása beépülő modul. Hozzon létre egy több korlátozott futási térrel, létre kell hoznia egy üres [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) meghívásával objektum a [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) módot, majd adja hozzá a InitialSessionState parancsokat.
 
 A futási térrel, amely betölti, csak az Ön által megadott parancsok használatával jelentősen nagyobb teljesítményt nyújt.
 

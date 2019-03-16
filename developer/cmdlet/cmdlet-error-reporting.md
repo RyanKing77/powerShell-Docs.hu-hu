@@ -14,12 +14,12 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 7b54fc220a66a47c25b3e8cba644882d31713cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847991"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057943"
 ---
 # <a name="cmdlet-error-reporting"></a>Parancsmagok hibajelentése
 
@@ -43,7 +43,7 @@ A következőkre használható annak megállapításához, hogy hiba történik 
 
 ## <a name="reporting-nonterminating-errors"></a>Nonterminating hibát jelentett
 
-A jelentéskészítési nonterminating hiba mindig végezhető belül a parancsmag végrehajtásának a [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metódus, a [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) módszert, vagy a [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódust. Az ilyen típusú hibákat jelentett meghívásával a [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódushoz, amely ezután elküldi a hibafolyam egy.
+A jelentéskészítési nonterminating hiba mindig végezhető belül a parancsmag végrehajtásának a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metódus, a [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) módszert, vagy a [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódust. Az ilyen típusú hibákat jelentett meghívásával a [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódushoz, amely ezután elküldi a hibafolyam egy.
 
 ## <a name="reporting-terminating-errors"></a>Leállítási hibát jelentett
 
@@ -53,7 +53,7 @@ A saját kivételek esetén fellépő specifikus problémákhoz meghatározása 
 
 ## <a name="error-records"></a>Hiba a rekordok
 
-Windows PowerShell használatával egy nonterminating hibaállapotot ismerteti [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektumokat. Minden egyes [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum tartalmazza a hiba szoftverkategória-adatok, egy nem kötelező célobjektum és a hibajelzést kiváltó körülmény részleteit.
+Windows PowerShell használatával egy nonterminating hibaállapotot ismerteti [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektumokat. Minden egyes [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum tartalmazza a hiba szoftverkategória-adatok, egy nem kötelező célobjektum és a hibajelzést kiváltó körülmény részleteit.
 
 ### <a name="error-identifiers"></a>Hiba azonosítója
 
@@ -61,7 +61,7 @@ Hiba azonosítója: egyszerű karakterlánc, amely azonosítja a hibajelzést ki
 
 Hiba azonosítók megadása esetén a következő irányelveket kell követni.
 
-- Különböző, rendkívül specifikus hiba azonosítók hozzárendelése másik kódhoz tartozó elérési út. Minden kódelérési út, amely meghívja ezt [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) vagy [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) saját hiba azonosítóval kell rendelkeznie.
+- Különböző, rendkívül specifikus hiba azonosítók hozzárendelése másik kódhoz tartozó elérési út. Minden kódelérési út, amely meghívja ezt [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) vagy [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) saját hiba azonosítóval kell rendelkeznie.
 
 - Hiba azonosítók, mind a megszakítást, mind a nonterminating hibák CLR-beli kivételtípusok egyedinek kell lennie.
 

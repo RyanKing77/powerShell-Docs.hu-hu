@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
-ms.openlocfilehash: 8302326bc62b77a79f2ef44b4130ce97e6631ee4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56852093"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059643"
 ---
 # <a name="remoterunspace01-sample"></a>RemoteRunspace01 – minta
 
@@ -35,7 +35,7 @@ Ez a minta bemutatja, hogyan hozhat létre egy távoli futási teret, amely a t�
 
 ## <a name="example"></a>Példa
 
- Ez a példa határozza meg a távoli kapcsolat, és a távoli kapcsolatot létesíteni a kapcsolat adatait használja.
+Ez a példa határozza meg a távoli kapcsolat, és a távoli kapcsolatot létesíteni a kapcsolat adatait használja.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -45,7 +45,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
   using System.Management.Automation.Runspaces;   // Windows PowerShell namespace.
 
   /// <summary>
-  /// This class contains the Main enrty point for the application.
+  /// This class contains the Main entry point for the application.
   /// </summary>
   internal class RemoteRunspace01
   {
@@ -56,12 +56,12 @@ namespace Microsoft.Samples.PowerShell.Runspaces
     /// <param name="args">This parameter is not used.</param>
     public static void Main(string[] args)
     {
-      // Create a WSManConnactionInfo object using the default constructor
+      // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also specify connections to remote computers.
       WSManConnectionInfo connectionInfo = new WSManConnectionInfo();
 
-      // Set the OpertationTimeout property. The OperationTimeout is used to tell
+      // Set the OperationTimeout property. The OperationTimeout is used to tell
       // Windows PowerShell how long to wait (in milliseconds) before timing out
       // for any operation. This includes sending input data to the remote computer,
       // receiving output data from the remote computer, and more. The user can
@@ -97,5 +97,3 @@ namespace Microsoft.Samples.PowerShell.Runspaces
   }
 }
 ```
-
-## <a name="see-also"></a>Lásd még:

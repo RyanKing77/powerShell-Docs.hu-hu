@@ -11,19 +11,19 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 3e410087438ac99526049f99e5c768c017a29848
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3168275423dc65fcb2e41dedd9bea275ede58397
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845723"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055087"
 ---
 # <a name="cmdlet-class-declaration"></a>Parancsmag osztálydeklarációja
 
 A Microsoft .NET-keretrendszer osztály van deklarálva, a parancsmag megadásával a **parancsmag** attribútumra, mint a metaadatokat az osztály. (A **parancsmag** attribútum esetén az egyetlen kötelező attribútum minden parancsmag esetében). Ha a **parancsmag** attribútum, meg kell adnia a ige-főnév pár, amelyek a parancsmagot, amely a felhasználói azonosító. És meg kell írnia a Windows PowerShell-szolgáltatásokat, a parancsmag támogatja. További információ a deklaráció szintaxisa, amely meghatározza a **parancsmag** attribútumot, lásd: [parancsmag típusattribútum-deklaráció](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
-> A **parancsmag** attribútum határozza meg a [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) osztály. Ez az osztály tulajdonságait a nyilatkozat paramétereket, az attribútum deklarálásakor felelnek meg.
+> A **parancsmag** attribútum határozza meg a [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) osztály. Ez az osztály tulajdonságait a nyilatkozat paramétereket, az attribútum deklarálásakor felelnek meg.
 
 ## <a name="nouns"></a>Főneveket
 
@@ -57,7 +57,7 @@ Nevezze el az parancsmagok, Pascal használja kis-és nagybetűhasználatot. Ha 
 
 ## <a name="see-also"></a>Lásd még:
 
-[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
+[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
 
 [CmdletAttribute nyilatkozat](./cmdlet-attribute-declaration.md)
 
