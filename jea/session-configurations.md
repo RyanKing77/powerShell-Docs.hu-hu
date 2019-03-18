@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: Jea-t a munkamenet-konfigurációk
-ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689126"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056590"
 ---
 # <a name="jea-session-configurations"></a>Jea-t a munkamenet-konfigurációk
 
@@ -60,7 +60,7 @@ Eldöntheti, melyik identitás jea-t fogja használni a munkamenet-konfiguráci�
 
 #### <a name="local-virtual-account"></a>Virtuális helyi fiók
 
-Ha a szerepköröket a JEA-végpont által támogatott összes kezelésére használhatók a helyi gépen, és egy helyi rendszergazdai fiók elegendő ahhoz, hogy a parancsok sikeresen futtatni, konfigurálnia kell a jea-t a helyi virtuális fiók használata.
+Ha a szerepköröket a JEA-végpont által támogatott összes kezelésére használhatók a helyi gépen, és egy helyi rendszergazdai fiók elegendő ahhoz, hogy a parancsok sikeresen lefutott, konfigurálnia kell a jea-t a helyi virtuális fiók használata.
 A virtuális fiókok olyan ideiglenes fiókot, amely egy adott felhasználónak egyedi, és csak az utolsó idejére a PowerShell-munkamenetet.
 Egy olyan tagkiszolgáló vagy a munkaállomáson, a virtuális fiókok tartoznak a helyi számítógép **rendszergazdák** csoportból, és a legtöbb rendszer erőforrásait elérheti.
 Az Active Directory-tartományvezérlő, a virtuális fiókok tartoznak a tartomány **Tartománygazdák** csoport.
@@ -80,6 +80,7 @@ Ha egy vagy több biztonsági csoport megadva, a virtuális fiók már nem fog t
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
 > A virtuális fiókok ideiglenesen kapnak a bejelentkezés, a szolgáltatás közvetlenül a helyi kiszolgálói biztonsági házirendben.  Ha a megadott VirtualAccountGroups egyike már rendelkezik ezzel a jogosultsággal, a házirendben, az egyes virtuális fiók lesz többé nem hozzáadható és eltávolítható a szabályzat alól.  Ez például tartományvezérlőkkel, ahol a tartományvezérlő biztonsági házirendjének felülvizsgálata szorosan naplóz esetekben hasznos lehet.  Ez a lehetőség csak a 2018 November rendelkező Windows Server 2016 vagy újabb kumulatív és a Windows Server 2019 a január 2019- vagy újabb kumulatív.
 
@@ -104,7 +105,6 @@ csoportosan felügyelt szolgáltatásfiók-fiókok csak használható amikor há
 
 > [!NOTE]
 > A felügyelt szolgáltatásfiókok csoportot csak olyan elérhető Windows PowerShell 5.1-es vagy újabb és a tartományhoz csatlakoztatott gépeket.
-
 
 #### <a name="more-information-about-run-as-users"></a>További információ a futtató felhasználók
 
@@ -179,6 +179,7 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>Szerepkör képesség keresési sorrendje
+
 A fenti példa szerint szerepkörrel képességeket szerepkör képesség fájl egybesimított (fájlkiterjesztés nélkül fájlnév) nevére hivatkozik.
 A rendszer strukturálatlan ugyanazzal a névvel több szerepkörrel képességeket érhetők el, ha PowerShell használatával az implicit keresési sorrendje válassza ki a szerepkör hatékony képesség fájlt.
 Akkor **nem** hozzáférést biztosít minden szerepkör képesség fájl ezzel a névvel.
@@ -217,6 +218,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > Feltételes hozzáférési szabályok csak olyan, a Windows PowerShell 5.1-es vagy újabb.
 
 ### <a name="other-properties"></a>Egyéb tulajdonságok
+
 Munkamenet konfigurációs fájljainak minden szerepkör képesség fájl anélkül teheti meg, csak lehetővé teszi csatlakozó felhasználók hozzáférést biztosíthat más parancsok is megteheti.
 Ha azt szeretné, hogy minden felhasználó hozzáférést adott parancsmagok, függvények és szolgáltatók, megteheti közvetlenül a a munkamenet-konfigurációs fájlt.
 A támogatott tulajdonságok a munkamenet-konfigurációs fájl teljes listájának megtekintéséhez futtassa `Get-Help New-PSSessionConfigurationFile -Full`.

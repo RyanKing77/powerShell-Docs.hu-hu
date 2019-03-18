@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
 caps.latest.revision: 6
-ms.openlocfilehash: 803fe4ae24a4f8022639c5b6d6298100859177ce
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a50de014988336c473c565b506a73de1c864d7e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848460"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058232"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>Szolgáltatói dinamikus parancsmag-paraméterek
 
@@ -73,7 +73,7 @@ internal sealed class CertificateProviderDynamicParameters
 
 `Copy-Item` a parancsmag a dinamikus paraméterek által aktivált meghatározhatja a `Path`, `Destination`, és `Recurse` paraméterei a `Copy-Item` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) metódust.
 
-Get-ChildItems parancsmag a dinamikus paraméterek által aktivált meghatározhatja a `Path` és `Recures` paramétereit a `Get-ChildItem` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) és [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) módszereket.
+Get-ChildItems parancsmag a dinamikus paraméterek által aktivált meghatározhatja a `Path` és `Recurse` paramétereit a `Get-ChildItem` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) és [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) módszereket.
 
 `Get-Content` a parancsmag a dinamikus paraméterek által aktivált meghatározhatja a `Path` paraméterében a `Get-Content` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) metódust.
 
@@ -89,7 +89,7 @@ Get-ChildItems parancsmag a dinamikus paraméterek által aktivált meghatározh
 
 `New-ItemProperty` a parancsmag a dinamikus paraméterek által aktivált meghatározhatja a `Path`, `Name`, `PropertyType`, és `Value` paraméterei a `New-ItemProperty` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) metódust.
 
-`New-PSDrive` a parancsmag a dinamikus paraméterek által aktivált meghatározhatja a [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) által visszaadott objektum a `New-PSDrive` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) metódust.
+`New-PSDrive` a parancsmag a dinamikus paraméterek által aktivált meghatározhatja a [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) által visszaadott objektum a `New-PSDrive` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) metódust.
 
 `Remove-Item` Dinamikus paraméterek által aktivált meghatározhatja a `Path` és `Recurse` paraméterei a `Remove-Item` parancsmag alkalmazásával a [ System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) metódust.
 

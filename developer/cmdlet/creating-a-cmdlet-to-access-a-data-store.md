@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 6171f96d66d0b2aa0fd9cb2a939768287c4bcb87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849181"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059524"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Parancsmag létrehozása adattár eléréséhez
 
-Ez a szakasz ismerteti, hogyan hozhat létre olyan parancsmagot, amely hozzáfér a tárolt adatokat, de a Windows PowerShell-szolgáltatóban. Az ilyen típusú parancsmagot használja a Windows PowerShell-modul a Windows PowerShell szolgáltató infrastruktúra, és ezért a parancsmag osztályból kell származnia a [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) alaposztály.
+Ez a szakasz ismerteti, hogyan hozhat létre olyan parancsmagot, amely hozzáfér a tárolt adatokat, de a Windows PowerShell-szolgáltatóban. Az ilyen típusú parancsmagot használja a Windows PowerShell-modul a Windows PowerShell szolgáltató infrastruktúra, és ezért a parancsmag osztályból kell származnia a [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) alaposztály.
 
 A Select-Str parancsmag, az itt leírtak szerint is keresse meg és válassza ki a karakterláncok egy fájl vagy az objektum. A karakterlánc azonosításához használt minták keresztül explicit módon adható meg a `Path` paramétert a parancsmag vagy implicit módon keresztül a `Script` paraméter.
 
@@ -45,7 +45,7 @@ Ez a szakasz témakörei a következők:
 
 Mindig a parancsmag elnevezési és a .NET-osztály, amely megvalósítja a parancsmag deklaráló parancsmag létrehozásának első lépése. Ez a parancsmag észleli a "Kiválasztás", tehát a művelet nevét itt választott által meghatározott egyes karakterláncok a [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) osztály. A főnév neve "Str" használata a parancsmag közvetítőtől karakterláncokat. Az alábbi nyilatkozatot jegyezze fel, hogy a parancsmag ige és főnév neve jelennek-e be a parancsmag az osztály nevét. A parancsmag jóváhagyott igék kapcsolatos további információkért lásd: [művelet neve](./approved-verbs-for-windows-powershell-commands.md).
 
-Ez a parancsmag a .NET-osztály származhat a [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) alaposztály, mert a Windows PowerShell-modul által közzé kellett tenni a Windows PowerShell-szolgáltató támogatja infrastruktúra. Vegye figyelembe, hogy ez a parancsmag emellett lehetővé teszi például használja a .NET-keretrendszer reguláris kifejezések osztályok [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+Ez a parancsmag a .NET-osztály származhat a [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) alaposztály, mert a Windows PowerShell-modul által közzé kellett tenni a Windows PowerShell-szolgáltató támogatja infrastruktúra. Vegye figyelembe, hogy ez a parancsmag emellett lehetővé teszi például használja a .NET-keretrendszer reguláris kifejezések osztályok [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
 
 A következő kódot a Select-Str parancsmag osztálydefiníció.
 
@@ -117,7 +117,7 @@ Ha ez a paraméter meg van adva, a parancsmag használja az alapértelmezett par
 
 Ez a parancsmag a következő támogatási paramétereket, hogy módosítsa a keresési funkciókat, a parancsmag segítségével határozza meg.
 
-A `Script` paraméter adja meg a parancsmag egy másik keresési mechanizmust biztosít használható parancsprogram-blokkot. A parancsfájl kell tartalmaznia a megfelelő használt minták, és adja vissza egy [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objektum. Vegye figyelembe, hogy ezt a paramétert is az egyedi paraméter, amely azonosítja a `ScriptParameterSet` paraméterkészletet. Amikor a Windows PowerShell-modul látja ezt a paramétert, akkor használja, csak a tartoznak paraméterek a `ScriptParameterSet` paraméterkészletet.
+A `Script` paraméter adja meg a parancsmag egy másik keresési mechanizmust biztosít használható parancsprogram-blokkot. A parancsfájl kell tartalmaznia a megfelelő használt minták, és adja vissza egy [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objektum. Vegye figyelembe, hogy ezt a paramétert is az egyedi paraméter, amely azonosítja a `ScriptParameterSet` paraméterkészletet. Amikor a Windows PowerShell-modul látja ezt a paramétert, akkor használja, csak a tartoznak paraméterek a `ScriptParameterSet` paraméterkészletet.
 
 ```csharp
 [Parameter(
@@ -195,13 +195,13 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>Jelentést készítő paraméterkészlettel
 
-Ezt a parancsmagot használja két paraméterkészlettel (`ScriptParameterSet` és `PatternParameterSet`, azaz thedefault), az adatok elérésére használt két paraméterkészlettel nevei. `PatternParameterSet` az alapértelmezett paraméterkészletet, és ha használható a `Pattern` paraméter meg van adva. `ScriptParameterSet` használatos, amikor a felhasználó egy másik keresési mechanizmussal adja meg a `Script` paraméter. Paraméterkészlettel kapcsolatos további információkért lásd: [hozzáadása paraméterkészletek parancsmag](./adding-parameter-sets-to-a-cmdlet.md).
+Ez a parancsmag két paraméterkészlettel használ (`ScriptParameterSet` és `PatternParameterSet`, az alapértelmezett), az adatok elérésére használt két paraméterkészlettel nevei. `PatternParameterSet` az alapértelmezett paraméterkészletet, és ha használható a `Pattern` paraméter meg van adva. `ScriptParameterSet` használatos, amikor a felhasználó egy másik keresési mechanizmussal adja meg a `Script` paraméter. Paraméterkészlettel kapcsolatos további információkért lásd: [hozzáadása paraméterkészletek parancsmag](./adding-parameter-sets-to-a-cmdlet.md).
 
 ## <a name="overriding-input-processing-methods"></a>Bemeneti feldolgozási módszerek felülbírálása
 
-Parancsmagok egy vagy több módszert feldolgozása a bemeneti felül kell írnia a [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztály. A bemeneti feldolgozási módszerekkel kapcsolatos további információkért lásd: [létrehozásához az első parancsmag](./creating-a-cmdlet-without-parameters.md).
+Parancsmagok egy vagy több módszert feldolgozása a bemeneti felül kell írnia a [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztály. A bemeneti feldolgozási módszerekkel kapcsolatos további információkért lásd: [létrehozásához az első parancsmag](./creating-a-cmdlet-without-parameters.md).
 
-Ez a parancsmag felülbírálja a [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) hozhat létre egy tömbjét metódus lefordított indításkor reguláris kifejezéseket. Ez növeli a teljesítményt, hogy ne használjon egyszerű megfelelő keresések során.
+Ez a parancsmag felülbírálja a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) hozhat létre egy tömbjét metódus lefordított indításkor reguláris kifejezéseket. Ez növeli a teljesítményt, hogy ne használjon egyszerű megfelelő keresések során.
 
 ```csharp
 protected override void BeginProcessing()
@@ -280,7 +280,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-Ez a parancsmag emellett felülbírálja a [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódus feldolgozása a karakterlánc-beállításokat a felhasználó által a parancssoron. Karakterlánc kijelölés eredményét egy egyéni objektum formájában privát meghívásával ír **MatchString** metódust.
+Ez a parancsmag emellett felülbírálja a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódus feldolgozása a karakterlánc-beállításokat a felhasználó által a parancssoron. Karakterlánc kijelölés eredményét egy egyéni objektum formájában privát meghívásával ír **MatchString** metódust.
 
 ```csharp
 protected override void ProcessRecord()
@@ -301,7 +301,7 @@ protected override void ProcessRecord()
     {
       WriteVerbose("Processing path " + path.Path);
 
-      // Check if the path represens one of the items to be
+      // Check if the path represents one of the items to be
       // excluded. If so, continue to next path.
       if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
          continue;
@@ -357,7 +357,7 @@ protected override void ProcessRecord()
           }
           else
           {
-            // Add the block(line) that did notmatch to the
+            // Add the block(line) that did not match to the
             // collection of non matches , which will be stored
             // in the SessionState variable $NonMatches
             nonMatches.Add(items[0]);
@@ -391,7 +391,7 @@ protected override void ProcessRecord()
 
 ## <a name="accessing-content"></a>Tartalom elérése
 
-A parancsmag meg kell nyitnia a szolgáltató, a Windows PowerShell-elérési útját jelzi, hogy hozzá tudjon férni az adatokat. A [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) objektum esetében a Providert a futási teret használ, miközben a [System.Management.Automation.Pscmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) tulajdonságát a a parancsmag segítségével nyissa meg a szolgáltatót. Az adatszolgáltató által biztosított tartalmakhoz való hozzáférést a [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) megnyitni a szolgáltató objektumot.
+A parancsmag meg kell nyitnia a szolgáltató, a Windows PowerShell-elérési útját jelzi, hogy hozzá tudjon férni az adatokat. A [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) objektum esetében a Providert a futási teret használ, miközben a [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) tulajdonságát a a parancsmag segítségével nyissa meg a szolgáltatót. Az adatszolgáltató által biztosított tartalmakhoz való hozzáférést a [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) megnyitni a szolgáltató objektumot.
 
 Ez a minta kiválasztása – Str parancsmag használja a [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) megvizsgálja a tartalom elérhetővé tulajdonság. Ezt követően meghívhatja a [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) módszer, átadja a szükséges Windows PowerShell-útvonal.
 
@@ -436,7 +436,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// This parameter must specify a PowerShell that indicates the
     /// PowerShell provider that is used to access the objects to be
     /// searched for matching patterns. This parameter should also have
-    /// a PSPath alias to provide consistancy with other cmdlets that use
+    /// a PSPath alias to provide consistency with other cmdlets that use
     /// PowerShell providers.
     /// </summary>
     /// <value>Path of the object(s) to search.</value>
@@ -517,7 +517,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Declare a switch parameter that specifies if a case-sensitive
     /// search is performed.  If not (default), a case-insensitive search
-    /// is perfored.
+    /// is performed.
     /// </summary>
     /// <value>If True, a case-sensitive search is made.</value>
     [Parameter]
@@ -689,7 +689,7 @@ namespace Microsoft.Samples.PowerShell.Commands
         {
           WriteVerbose("Processing path " + path.Path);
 
-          // Check if the path represens one of the items to be
+          // Check if the path represents one of the items to be
           // excluded. If so, continue to next path.
           if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
              continue;
@@ -745,7 +745,7 @@ namespace Microsoft.Samples.PowerShell.Commands
               }
               else
               {
-                // Add the block(line) that did notmatch to the
+                // Add the block(line) that did not match to the
                 // collection of non matches , which will be stored
                 // in the SessionState variable $NonMatches
                 nonMatches.Add(items[0]);
@@ -874,7 +874,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Check whether the supplied name meets the include/exclude criteria.
     /// That is - it's on the include list if the include list was
-    /// specified, and not on the exclude list if the explude list was specified.
+    /// specified, and not on the exclude list if the exclude list was specified.
     /// </summary>
     /// <param name="path">path to validate</param>
     /// <returns>True if the path is acceptable.</returns>
@@ -1078,7 +1078,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     }
 
     /// <summary>
-    /// Specifiy the description of the PowerShell snap-in.
+    /// Specify the description of the PowerShell snap-in.
     /// </summary>
     public override string Description
     {
