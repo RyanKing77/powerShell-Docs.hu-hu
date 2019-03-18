@@ -2,18 +2,18 @@
 ms.date: 08/23/2017
 keywords: PowerShell, a parancsmag
 title: telepítheti és használhatja a windows powershell-elérés
-ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404315"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056719"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Webes Windows PowerShell-elérés telepítése és használata
 
 Frissítve: 2013. novemberi 5 (szerkesztett: 2017. augusztus 23.)
 
-Érvényes: A Windows Server 2012 R2, Windows Server 2012-ben
+Érvényes: Windows Server 2012 R2, Windows Server 2012
 
 ## <a name="introduction"></a>Bevezetés
 
@@ -97,7 +97,7 @@ Telepíthető a Windows PowerShell-elérés átjáró egy kiszolgálót, amelyen
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
    > [!NOTE]
-   > Windows PowerShell-elérés telepítése a Windows PowerShell-parancsmagok használatával nem ad hozzá webkiszolgáló (IIS) felügyeleti eszközök alapértelmezés szerint. Ha szeretné telepíteni a kezelőeszközöket ugyanarra a kiszolgálóra, mint a Windows PowerShell-elérés átjáró, vegye fel a `-IncludeManagementTools` paramétert a telepítési parancshoz (ebben a lépésben ismertetett). Ha a Windows PowerShell-elérés webhely egy távoli számítógépről kezeli, telepítse az IIS-kezelő beépülő modul telepítésével [távoli kiszolgáló felügyeleti Toolsfor Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) vagy [távoli kiszolgáló felügyelete A Windows 8 rendszerű eszközök](https://www.microsoft.com/en-us/download/details.aspx?id=28972) azon a számítógépen, amelyről szeretné az átjáró felügyeletére.
+   > Windows PowerShell-elérés telepítése a Windows PowerShell-parancsmagok használatával nem ad hozzá webkiszolgáló (IIS) felügyeleti eszközök alapértelmezés szerint. Ha szeretné telepíteni a kezelőeszközöket ugyanarra a kiszolgálóra, mint a Windows PowerShell-elérés átjáró, vegye fel a `-IncludeManagementTools` paramétert a telepítési parancshoz (ebben a lépésben ismertetett). Ha a Windows PowerShell-elérés webhely egy távoli számítógépről kezeli, telepítse az IIS-kezelő beépülő modul telepítésével [távoli kiszolgáló felügyeleti eszközei a Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) vagy [távoli kiszolgáló felügyelete A Windows 8 rendszerű eszközök](https://www.microsoft.com/en-us/download/details.aspx?id=28972) azon a számítógépen, amelyről szeretné az átjáró felügyeletére.
 
    Szerepkörök és szolgáltatások offline virtuális merevlemezen történő telepítéséhez hozzá kell adnia a `-ComputerName` és a `-VHD` paramétert is. A(z) `-ComputerName` paraméter a kiszolgáló nevét tartalmazza, amelyhez a VHD-t csatlakoztatni kívánja, a(z) `-VHD` paraméter pedig a VHD-fájl elérési útvonalát tartalmazza a megadott kiszolgálón.
 
@@ -133,10 +133,10 @@ Alapértelmezés szerint a parancsmag telepíti a webalkalmazás **pswa** (és a
 
    A következő beállítások a parancsmag futtatásával konfigurálhatók. Ezeket az adatokat, ha szükséges, az IIS-kezelő konzolján manuálisan módosítani tudja.
 
-   - Elérési útja: /pswa
+   - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
    **Példa**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
@@ -158,10 +158,10 @@ Alapértelmezés szerint a parancsmag telepíti a webalkalmazás **pswa** (és a
 
    A következő átjáróbeállítások a parancsmag futtatásával konfigurálhatók. Ezeket az adatokat, ha szükséges, az IIS-kezelő konzolján manuálisan módosítani tudja. Megadhat értékeket az `Install-PswaWebApplication` parancsmag `WebsiteName` és `WebApplicationName` paramétereihez is.
 
-   - Elérési útja: /pswa
+   - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
 3. Nyissa meg az IIS-kezelő konzolját a következő módszerek valamelyikével.
 
@@ -178,7 +178,7 @@ Alapértelmezés szerint a parancsmag telepíti a webalkalmazás **pswa** (és a
 7. Az a **hely kötésének hozzáadása** párbeszédpanel a **típus** mezőben válassza **https**.
 
 8. Az a **SSL-tanúsítvány** mezőben válassza ki a megfelelő aláírt tanúsítványt a legördülő menüből.
-   Kattintson az **OK** gombra. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
+   Kattintson az **OK** gombra. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
 
    A Windows PowerShell-elérés webes alkalmazás most már az aláírt SSL-tanúsítvány használatára van konfigurálva.
 
@@ -232,7 +232,7 @@ Windows PowerShell-elérés telepítése után testreszabhatja az átjáró az I
 
 2. Az a **kezelés** menüben kattintson a **szerepkörök és szolgáltatások hozzáadása**.
 
-3. Az a **telepítés típusának kiválasztása** lapra, jelölje be **szerepköralapú vagy szolgáltatásalapú telepítés**.
+3. A **Telepítés típusának kiválasztása** lapon kattintson a **Szerepköralapú vagy szolgáltatásalapú telepítés** elemre.
    Kattintson a **Tovább** gombra.
 
 4. Az a **célkiszolgáló kijelölése** oldalon válassza ki a kiszolgálót a kiszolgálókészletből, vagy offline VHD kiválasztásához. Offline VHD célkiszolgálóként történő kiválasztásához először válassza ki a kiszolgálót, amelyhez csatlakoztatni kívánja a VHD-t, majd válassza ki a VHD-fájlt. Kiszolgálók a kiszolgálókészlethez adásával kapcsolatos információkért tekintse meg a Kiszolgálókezelő segítségével. Miután kiválasztotta a célkiszolgálón, kattintson a **tovább**.
@@ -271,9 +271,9 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
 
 7. Az a **alkalmazáskészlet** mezőben válassza ki a 3. lépésben létrehozott alkalmazáskészletet.
 
-8. Az a **fizikai elérési út** mezőben tallózással keresse meg az alkalmazás helyét. Használhatja az alapértelmezett hely `%windir%/Web/PowerShellWebAccess/wwwroot`. Kattintson az **OK** gombra.
+8. Az a **fizikai elérési út** mezőben tallózással keresse meg az alkalmazás helyét. Használhatja az alapértelmezett hely `$env:windir/Web/PowerShellWebAccess/wwwroot`. Kattintson az **OK** gombra.
 
-9. Az eljárás lépéseit kövesse [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) ebben a témakörben.
+9. Az eljárás lépéseit kövesse [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-manager) ebben a témakörben.
 
 10. ![](images/SecurityNote.jpeg) Nem kötelező biztonsági lépés:
 
@@ -318,7 +318,7 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
 
 1. A rendszer automatikusan létrehoz egy alkalmazáskészletet az új webhelyhez. Másik alkalmazáskészlet használatához kattintson **kiválasztása** az új webhelyhez társítandó alkalmazáskészlet kiválasztásához. Válassza ki a másik alkalmazáskészletet az a **alkalmazáskészlet kiválasztása** párbeszédpanel, és kattintson **OK**.
 
-1. Az a **fizikai elérési út** szöveg gombra, lépjen a %*windir*% / Web/PowerShellWebAccess/wwwroot.
+1. Az a **fizikai elérési út** szöveg gombra, lépjen a % windir%/Web/PowerShellWebAccess/wwwroot.
 
 1. Az a **típus** mezőjében a **kötés** területen válassza **https**.
 
@@ -329,7 +329,7 @@ Jelen szakaszban található útmutatásokat is telepíthető a Windows PowerShe
 
 1. Ha a szervezet számára szükséges, megadhat egy állomásnevet, amely logikus a szervezet és a felhasználó számára, mint például **`www.contoso.com`**. Kattintson az **OK** gombra.
 
-1. A biztonságosabb éles környezet érdekében határozottan javasoljuk egy érvényes, hitelesítésszolgáltató által aláírt tanúsítványt biztosítását. SSL-tanúsítványt kell megadnia, mivel a felhasználók csak a Windows PowerShell-elérés keresztül kapcsolódhatnak egy HTTPS-webhelyen. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-Manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
+1. A biztonságosabb éles környezet érdekében határozottan javasoljuk egy érvényes, hitelesítésszolgáltató által aláírt tanúsítványt biztosítását. SSL-tanúsítványt kell megadnia, mivel a felhasználók csak a Windows PowerShell-elérés keresztül kapcsolódhatnak egy HTTPS-webhelyen. Lásd: [SSL-tanúsítvány konfigurálása az IIS-kezelőben](#to-configure-an-ssl-certificate-in-iis-manager) tanúsítvány beszerzéséről további információt ebben a témakörben.
 
 1. Kattintson a **OK** gombra kattintva zárja be a **webhely hozzáadása** párbeszédpanel bezárásához.
 
