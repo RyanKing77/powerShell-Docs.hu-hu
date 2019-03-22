@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: A kimeneti nézet módosítása formázási parancsokkal
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 97d3a9e04abb61bb80a0b8c67d9fb9e885a0b91b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 35ccd2525d40ffd5e3f25a1abfa38904a109bde5
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686452"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320421"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>A kimeneti nézet módosítása formázási parancsokkal
 
@@ -49,10 +49,20 @@ PS> Get-Process -Name powershell | Format-Wide -Property Id
 
 #### <a name="controlling-format-wide-display-with-column"></a>Formátum kiterjedő megjelenítendő oszlop szabályozása
 
-Az a **formátum kiterjedő** parancsmagot egyszerre csak megjelenítheti egy-egy tulajdonság. Így egyszerű listák, azt mutatják be, soronként csak egy elem megjelenítése esetén hasznos. Egyszerű lista kapni, állítsa a **oszlop** paraméter 1 beírásával:
+Az a `Format-Wide` parancsmagot egyszerre csak megjelenítheti egy-egy tulajdonság.
+Így egyszerű listák, azt mutatják be, soronként csak egy elem megjelenítése esetén hasznos.
+Egyszerű lista kapni, állítsa a **oszlop** paraméter 1 beírásával:
 
 ```powershell
-Get-Command Format-Wide -Property Name -Column 1
+Get-Command -Verb Format | Format-Wide -Property Noun -Column 1
+```
+
+```output
+Custom
+Hex
+List
+Table
+Wide
 ```
 
 ### <a name="using-format-list-for-a-list-view"></a>Az adott nézet használata a Format-List
