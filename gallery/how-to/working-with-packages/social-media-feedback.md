@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Visszajelzés küldése a közösségi médiában vagy megjegyzésekkel
-ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055002"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623891"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Visszajelzés küldése a közösségi médiában vagy megjegyzésekkel
 
@@ -29,6 +29,10 @@ A PowerShell-galériából ellenőrzi a csomag "megosztások" közösségi helye
 Mivel ez jeleníti meg. csak alkalommal valami meg van osztva, ki lesz értelmezve, más felhasználók "liking" a csomagot.
 
 ## <a name="comments"></a>Megjegyzések
+
+> [!IMPORTANT]
+> A Livefyre-megjegyzéseket egy harmadik fél által biztosított, és már nem támogatott.
+> A Livefyre-megjegyzéseket már nem lesz elérhető a PowerShell-galériából kezdő 05/01/2019. 
 
 A PowerShell-galériából a LiveFyre szolgáltatást használja, hogy a felhasználók számára a Megjegyzések a csomagokat.
 Javaslatok és visszajelzés rendelkező felhasználók számára ez a funkció használatával, amely mindenki számára, aki a csomag lapon látogatások visszajelzést.

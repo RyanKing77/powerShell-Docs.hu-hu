@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell, a parancsmag
 title: PowerShell-folyamatok ismertetése
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: fc7c7f57bdce458185a0f5bdb8bc1fbbd81d0d61
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686193"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623959"
 ---
 # <a name="understanding-pipelines"></a>A folyamatok ismertetése
 
@@ -63,6 +63,18 @@ CPU-kihasználtság lapozást is csökkenti, mert a feldolgozás továbbítja a 
 
 A különbség a Windows Feladatkezelő figyelése a PowerShell által használt Processzor- és tekintheti meg. Futtassa a következő parancsot: `Get-ChildItem C:\Windows -Recurse`. A parancs a Processzor- és használati összehasonlítása: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
 
+> [!NOTE]
+> A **lapozás** paraméter minden PowerShell-gazdagép nem támogatja. Például, amikor a próbálja használni a **lapozás** paramétert a PowerShell ISE-ben, az alábbi hibát látja:
+>
+> ```Output
+> out-lineoutput : The method or operation is not implemented.
+> At line:1 char:1
+> + Get-ChildItem C:\Windows -Recurse | Out-Host -Paging
+> + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>     + CategoryInfo          : NotSpecified: (:) [out-lineoutput], NotImplementedException
+>     + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
+> ```
+
 ## <a name="objects-in-the-pipeline"></a>A folyamat objektumok
 
 A PowerShell-parancsmag futtatásakor a szöveges kimenet látja, mert a szükséges objektumokat képviseli a konzolablakban szövegként. A szöveges kimenet előfordulhat, hogy nem jeleníthető meg az összes, a kimeneti objektum tulajdonságait.
@@ -82,7 +94,7 @@ A szöveges kimenet található egy összefoglaló az információ nem teljes re
 Amikor irányítsa a kimenetét a `Get-Member` parancsmag által visszaadott objektumra vonatkozó információ első `Get-Location`.
 
 ```powershell
-PS> Get-Location | Get-Member
+Get-Location | Get-Member
 ```
 
 ```Output

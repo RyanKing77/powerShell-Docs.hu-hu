@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: PowerShell, a parancsmag
 title: PowerShell-parancs nevek elsajátítása
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688937"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623721"
 ---
 # <a name="learning-powershell-command-names"></a>PowerShell-parancs nevek elsajátítása
 
@@ -25,7 +25,7 @@ Ezek a parancsok is szabálytalan paraméter előírásoknak. Nem használhatja 
 A lista DC01 futó feladatokat, használhatja a **/S** paraméter és a fordított perjelek nélkül a számítógép nevét. Például: `tasklist /S DC01`.
 
 > [!NOTE]
-> PowerShell 6-os verziójának előtt `sc` alias lett a `Set-Content` parancsmagot. Futtatásához a **sc.exe** parancsot, akkor tartalmaznia kell a fájl kiterjesztése.
+> PowerShell 6-os verziójának előtt `sc` alias lett a `Set-Content` parancsmagot. Ezért futtatásához a **sc.exe** parancsot a PowerShell 6-os verziójának, előtti verziót meg kell adni a teljes fájlnév **sc.exe** a kiterjesztéssel együtt **exe**.
 
 Szolgáltatások és -folyamatok felügyelhető elemek egy számítógépen, amelyek jól definiált életciklusait példák. Indítása vagy leállítása, szolgáltatások és -folyamatok, vagy jelenleg futó szolgáltatások vagy folyamatok listájának lekérése. Bár vannak fontos technikai különbség közöttük, a szolgáltatások és -folyamatok hajt végre műveleteket ugyanazok a koncepciót tekintve. Ezenkívül a választási lehetőségek létrehozunk egy művelet paramétereinek megadása testre szabható lehet tárolókéhoz hasonló is.
 

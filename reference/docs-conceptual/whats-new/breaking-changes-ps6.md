@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, a core
 title: PowerShell 6.0 használhatatlanná tévő változásai
-ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795691"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623925"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 használhatatlanná tévő változásai
 
@@ -61,6 +61,15 @@ Ehelyett azt javasoljuk, hogy Ön a (más néven WMI v2) CIM-parancsmagok, amely
 ### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
 
 Nem támogatott API-k használata miatt `Microsoft.PowerShell.LocalAccounts` el lett távolítva a PowerShell Core mindaddig, amíg egy jobb megoldás található.
+
+### <a name="-computer-cmdlets"></a>`*-Computer` parancsmagjai
+
+Nem támogatott API-k használatát, mert a következő parancsmagokat el lettek távolítva a PowerShell Core mindaddig, amíg egy jobb megoldás található.
+
+- Add-Computer
+- Checkpoint-Computer
+- Remove-Computer
+- Visszaállítás – számítógép
 
 ### <a name="-counter-cmdlets"></a>`*-Counter` parancsmagjai
 
