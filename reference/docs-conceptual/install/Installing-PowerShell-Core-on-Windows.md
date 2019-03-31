@@ -2,18 +2,18 @@
 title: A PowerShell Core telepítése Windows rendszerre
 description: Információ a Windows PowerShell Core telepítése
 ms.date: 08/06/2018
-ms.openlocfilehash: 7c109c7e1848af2349092c1e70fe4a7a25be54b8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
+ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688055"
+ms.lasthandoff: 03/30/2019
+ms.locfileid: "58748958"
 ---
 # <a name="installing-powershell-core-on-windows"></a>A PowerShell Core telepítése Windows rendszerre
 
 ## <a name="msi"></a>MSI
 
-PowerShell telepíthető a Windows ügyfél vagy a Windows Server (a Windows 7 SP1, Server 2008 R2 esetében használható, és újabb verziók), töltse le az MSI-csomag github [kiadások][] lap.
+PowerShell telepíthető a Windows ügyfél vagy a Windows Server (a Windows 7 SP1, Server 2008 R2 esetében használható, és újabb verziók), töltse le az MSI-csomag github [kiadások][] lap.  Görgessen le a **eszközök** telepíteni szeretné a kiadás szakaszában.  Az eszközök szakaszban össze lehet csukni, ezért szükség lehet annak kibontásához kattintson.
 
 Az MSI-fájlt a következőhöz hasonló- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -56,7 +56,7 @@ A Windows PowerShell-lel történő üzembe helyezése a PowerShell Core 6-os ha
    # change the destination to however you had partitioned it with sufficient
    # space for the zip and the unzipped contents
    # the path should be local to the device
-   Copy-Item .\PowerShell-6.1.0-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
+   Copy-Item .\PowerShell-<version>-win-<os-arch>.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
 3. Az eszköz csatlakozik, és bontsa ki az archívum
@@ -64,13 +64,13 @@ A Windows PowerShell-lel történő üzembe helyezése a PowerShell Core 6-os ha
    ```powershell
    Enter-PSSession $s
    Set-Location u:\users\administrator\downloads
-   Expand-Archive .\PowerShell-6.1.0-win-arm32.zip
+   Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
 4. A telepítő távoli eljáráshívás a PowerShell Core 6-os
 
    ```powershell
-   Set-Location .\PowerShell-6.1.0-win-arm32
+   Set-Location .\PowerShell-<version>-win-<os-arch>
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
@@ -81,7 +81,7 @@ A Windows PowerShell-lel történő üzembe helyezése a PowerShell Core 6-os ha
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
-   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.1.0
+   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
 ## <a name="deploying-on-nano-server"></a>A Nano Server üzembe helyezése
@@ -153,7 +153,7 @@ A PowerShell Core telepítése a coreclr-nek összetevő:
 
 <!-- [download-center]: TODO -->
 
-[kiadások]: https://github.com/PowerShell/PowerShell/releases
+[Kiadások]: https://github.com/PowerShell/PowerShell/releases
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
