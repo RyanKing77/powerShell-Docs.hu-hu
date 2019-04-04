@@ -1,10 +1,15 @@
 ---
 ms.date: 08/12/2017
 ms.topic: conceptual
-keywords: 'WMF, powershell, beállítás'
+keywords: WMF, powershell, beállítás
 title: A WMF 5.1 kibocsátási megjegyzései
+ms.openlocfilehash: dd68f101e6f21256f966f7472dabc273a475a25e
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795334"
 ---
-
 # <a name="windows-management-framework-wmf-51"></a><span data-ttu-id="a73b4-103">Windows Management Framework (WMF) 5.1</span><span class="sxs-lookup"><span data-stu-id="a73b4-103">Windows Management Framework (WMF) 5.1</span></span>
 
 <span data-ttu-id="a73b4-104">A WMF-fel a felhasználók frissíthetik meglévő Windowsos rendszereiket a PowerShell-, a WMI-, a WinRM- és a Szoftverleltár-naplózási (SIL) összetevő a Windows Server 2016-ban kiadott verzióira.</span><span class="sxs-lookup"><span data-stu-id="a73b4-104">WMF provides users with the ability to update existing Windows systems to the versions of PowerShell, WMI, WinRM, and Software Inventory Logging (SIL) components that were released with Windows Server 2016.</span></span>
