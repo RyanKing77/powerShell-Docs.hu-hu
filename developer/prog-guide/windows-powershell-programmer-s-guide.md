@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 1f7b5b60b202f4de0cf3d44b65057f5edd41f2b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849643"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920390"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell programozói&#39;s útmutató
 
@@ -57,7 +57,7 @@ Ha egy adattár, amelyeket a felhasználónak el kell elérhetővé teszi, szük
 
 Windows PowerShell az alapértelmezett gazdagép alkalmazás powershell.exe, amely egy konzolalkalmazást, amely a felhasználó kommunikál, és a Windows PowerShell modul használatával a konzolablakban gazdagépeket tartalmaz.
 
-Csak ritkán lesz kell írnia a Windows PowerShell környezethez, a saját gazdaalkalmazást testreszabási támogatják. Egyetlen esetet tartalmaz, amelyekben szüksége lehet a saját alkalmazás akkor, ha rendelkezik egy grafikus felhasználói felület, amely gazdagabb, mint az alapértelmezett gazdagép-alkalmazás által biztosított csatoló előfeltétele. Is érdemes egy egyéni alkalmazást, ha a parancssorban a grafikus felhasználói Felülettel készül. További információkért lásd:[hogyan hozhat létre egy Windows PowerShell gazdaalkalmazást](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Csak ritkán lesz kell írnia a Windows PowerShell környezethez, a saját gazdaalkalmazást testreszabási támogatják. Egyetlen esetet tartalmaz, amelyekben szüksége lehet a saját alkalmazás akkor, ha rendelkezik egy grafikus felhasználói felület, amely gazdagabb, mint az alapértelmezett gazdagép-alkalmazás által biztosított csatoló előfeltétele. Is érdemes egy egyéni alkalmazást, ha a parancssorban a grafikus felhasználói Felülettel készül. További információkért lásd: [hogyan hozhat létre egy Windows PowerShell gazdaalkalmazást](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
 
 ### <a name="windows-powershell-runtime"></a>Windows PowerShell-modul
 
@@ -99,11 +99,11 @@ A Windows PowerShell-rendszerhéj használata indításával kapcsolatos tovább
 
 |Témakör|Meghatározás|
 |-----------|----------------|
-|[A Windows PowerShell-szolgáltató létrehozása](./how-to-create-a-windows-powershell-provider.md)|Ez a szakasz ismerteti, hogyan hozhat létre egy Windows PowerShell-szolgáltatóban, a Windows PowerShell környezethez.|
+|[Windows PowerShell-szolgáltató létrehozása](./how-to-create-a-windows-powershell-provider.md)|Ez a szakasz ismerteti, hogyan hozhat létre egy Windows PowerShell-szolgáltatóban, a Windows PowerShell környezethez.|
 |[A Windows PowerShell-gazdagépet alkalmazás létrehozása](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Ez a szakasz ismerteti, hogyan írhat egy fogadó alkalmazás, amely kezeli a futási térben és a egy fogadó alkalmazás, amely megvalósítja a saját egyéni gazdagép írásával.|
-|[Egy Windows PowerShell beépülő modul létrehozása](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Ez a szakasz ismerteti, hogyan hozhat létre beépülő modul szerelvények regisztrálható az összes parancsmagok és szolgáltatók és a egy egyéni beépülő modul létrehozása.|
-|[A konzol rendszerhéj létrehozása](./how-to-create-a-console-shell.md)|Ez a szakasz ismerteti, hogyan hozhat létre egy konzol rendszerhéj, amely nem bővíthető.|
-|[Windows PowerShell alapfogalmai](./windows-powershell-concepts.md)|Ez a szakasz tartalmazza a elméleti információk segítségével megismerheti a Windows PowerShell a fejlesztők szempontjából.|
+|[Windows PowerShelles beépülő modul létrehozása](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Ez a szakasz ismerteti, hogyan hozhat létre beépülő modul szerelvények regisztrálható az összes parancsmagok és szolgáltatók és a egy egyéni beépülő modul létrehozása.|
+|[Konzolfelület létrehozása](./how-to-create-a-console-shell.md)|Ez a szakasz ismerteti, hogyan hozhat létre egy konzol rendszerhéj, amely nem bővíthető.|
+|[Windows PowerShell – Fogalmak](./windows-powershell-concepts.md)|Ez a szakasz tartalmazza a elméleti információk segítségével megismerheti a Windows PowerShell a fejlesztők szempontjából.|
 
 ## <a name="see-also"></a>Lásd még:
 
