@@ -2,10 +2,10 @@ items:
 - name: Áttekintés
   href: overview.md
 - name: Telepítés
-  href: install/installing-powershell.md
   items:
+  - name: PowerShell-verziók telepítése
+    href: install/installing-powershell.md
   - name: PowerShell Core
-    href: ''
     items:
     - name: A PowerShell Core telepítése Windows rendszerre
       href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,6 @@ items:
     - name: A PowerShell Core telepítése ARM rendszerre
       href: install/powershell-core-on-arm.md
   - name: Windows PowerShell
-    href: ''
     items:
     - name: A Windows PowerShell telepítése
       href: install/installing-windows-powershell.md
@@ -25,15 +24,17 @@ items:
     - name: A Windows PowerShell rendszerkövetelményei
       href: install/windows-powershell-system-requirements.md
 - name: Első lépések
-  href: getting-started/getting-started-with-windows-powershell.md
   items:
+  - name: Bevezetés a PowerShell használatába
+    href: getting-started/getting-started-with-windows-powershell.md
   - name: A Windows PowerShell indítása
     href: getting-started/starting-windows-powershell.md
   - name: A Windows PowerShell 2.0 motor indítása
     href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: A PowerShell megismerése
-  href: learn/understanding-important-powershell-concepts.md
   items:
+  - name: A PowerShell legfontosabb fogalmainak megértése
+    href: learn/understanding-important-powershell-concepts.md
   - name: A PowerShell-nevek elsajátítása
     href: learn/learning-powershell-names.md
   - name: Jól ismert parancsnevek használata
@@ -50,9 +51,10 @@ items:
     href: learn/more-powershell-learning.md
   - name: Hordozható modulok írása
     href: learn/writing-portable-modules.md
-  - name: Távoli parancsok futtatása
-    href: learn/remoting/running-remote-commands.md
+  - name: PowerShell távoli eljáráshívás
     items:
+    - name: Távoli parancsok futtatása
+      href: learn/remoting/running-remote-commands.md
     - name: PowerShell távoli eljáráshívás SSH-n keresztül
       href: learn/remoting/ssh-remoting-in-powershell-core.md
     - name: WS-Management (WSMan) távoli eljáráshívás a PowerShell Core-ban
@@ -64,22 +66,20 @@ items:
   - name: Szószedet
     href: learn/windows-powershell-glossary.md
 - name: Összetevők
-  href: ''
   items:
   - name: Konzol
-    href: ''
     items:
     - name: A PowerShell.exe parancssori súgója
       href: components/console/powershell.exe-command-line-help.md
     - name: A parancssorbővítés használata
       href: components/console/using-tab-expansion.md
   - name: ISE
-    href: components/ise/introducing-the-windows-powershell-ise.md
     items:
+    - name: A Windows PowerShell ISE bemutatása
+      href: components/ise/introducing-the-windows-powershell-ise.md
     - name: Windows PowerShell integrált parancsfájlkezelési környezet (ISE)
       href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
     - name: A Windows PowerShell ISE használata
-      href: ''
       items:
       - name: A Windows PowerShell ISE felfedezése
         href: components/ise/exploring-the-windows-powershell-ise.md
@@ -100,7 +100,6 @@ items:
       - name: A Windows PowerShell ISE kisegítő lehetőségei
         href: components/ise/accessibility-in-windows-powershell-ise.md
     - name: Az ISE parancsfájl-kezelési objektummodell
-      href: ''
       items:
       - name: A Windows PowerShell ISE parancsfájl-kezelési objektummodelljének célja
         href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
@@ -133,8 +132,9 @@ items:
       - name: A PowerShellTab objektum
         href: components/ise/object-model/the-powershelltab-object.md
   - name: Visual Studio Code
-    href: components/vscode/using-vscode.md
     items:
+    - name: A Visual Studio Code használata
+      href: components/vscode/using-vscode.md
     - name: Az ISE-élmény replikálása a Visual Studio Code-ban
       href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
     - name: A Visual Studio Code használata távoli szerkesztéshez és hibakereséshez
@@ -142,7 +142,6 @@ items:
     - name: A VSCode-ban és a PowerShellben történő fájlkódolás megértése
       href: components/vscode/understanding-file-encoding.md
   - name: Webes elérés
-    href: ''
     items:
     - name: Engedélyezési szabályok és biztonsági funkciók
       href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
@@ -157,20 +156,21 @@ items:
   - name: A munkafolyamatok útmutatója
     href: components/workflows-guide.md
 - name: Újdonságok
-  href: ''
   items:
-  - name: A PowerShell Core 6.1 újdonságai
-    href: whats-new/what-s-new-in-powershell-core-61.md
-  - name: A PowerShell Core 6.0 újdonságai
-    href: whats-new/what-s-new-in-powershell-core-60.md
+  - name: A PowerShell Core 6.x újdonságai
     items:
+    - name: A PowerShell Core 6.1 újdonságai
+      href: whats-new/what-s-new-in-powershell-core-61.md
+    - name: A PowerShell Core 6.0 újdonságai
+      href: whats-new/what-s-new-in-powershell-core-60.md
     - name: Meghibásodást okozó változások a PowerShell Core 6.0-ban
       href: whats-new/breaking-changes-ps6.md
     - name: A PowerShell Core 6.0 ismert problémái
       href: whats-new/known-issues-ps6.md
-  - name: A PowerShell 5.0 újdonságai
-    href: whats-new/what-s-new-with-powershell.md
+  - name: A PowerShell 5.x újdonságai
     items:
+    - name: A PowerShell 5.0 újdonságai
+      href: whats-new/what-s-new-with-powershell.md
     - name: A Windows PowerShell 5.0 újdonságai
       href: whats-new/what-s-new-in-windows-powershell-50.md
     - name: A PowerShell 5.0 ISE újdonságai
@@ -178,8 +178,9 @@ items:
 - name: A PowerShell Core támogatási életciklusa
   href: powershell-support-lifecycle.md
 - name: Mintaparancsfájlok
-  href: samples/sample-scripts-for-administration.md
   items:
+  - name: Mintaszkriptek felügyeleti célokra
+    href: samples/sample-scripts-for-administration.md
   - name: A számítógép állapotának módosítása
     href: samples/changing-computer-state.md
   - name: Adatgyűjtés a számítógépekről
@@ -187,7 +188,6 @@ items:
   - name: Get-WinEvent lekérdezések létrehozása FilterHashtable használatával
     href: samples/creating-get-winEvent-queries-with-filterhashtable.md
   - name: Felhasználói felületi elemek létrehozása
-    href: ''
     items:
     - name: Egyéni beviteli mező létrehozása
       href: samples/creating-a-custom-input-box.md
@@ -220,7 +220,6 @@ items:
   - name: Fájlmappák és beállításkulcsok használata
     href: samples/working-with-files-folders-and-registry-keys.md
   - name: Objektumok használata
-    href: samples/working-with-objects.md
     items:
     - name: WMI-objektumok lékérése – Get-WmiObject
       href: samples/getting-wmi-objects--get-wmiobject-.md
@@ -252,9 +251,9 @@ items:
     href: samples/appendix-1---compatibility-aliases.md
   - name: '2. függelék: Egyéni PowerShell-parancsikon létrehozása'
     href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: dd9cac7e7570d6ff4c58b0255a3909f3f0612605
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 3894ca88d01d4f84742321445b0b1e962631c10d
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320387"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920458"
