@@ -2,43 +2,57 @@
 title: A PowerShell Core telepítése Windows rendszerre
 description: Információ a Windows PowerShell Core telepítése
 ms.date: 08/06/2018
-ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
-ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
+ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58748958"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293010"
 ---
 # <a name="installing-powershell-core-on-windows"></a>A PowerShell Core telepítése Windows rendszerre
 
-## <a name="msi"></a>MSI
+A Windows PowerShell Core telepítése többféle módon lehet.
 
-PowerShell telepíthető a Windows ügyfél vagy a Windows Server (a Windows 7 SP1, Server 2008 R2 esetében használható, és újabb verziók), töltse le az MSI-csomag github [kiadások][] lap.  Görgessen le a **eszközök** telepíteni szeretné a kiadás szakaszában.  Az eszközök szakaszban össze lehet csukni, ezért szükség lehet annak kibontásához kattintson.
+## <a name="prerequisites"></a>Előfeltételek
+
+PowerShell-távelérés engedélyezése a WSMan felett, a következő előfeltételeknek kell teljesülniük:
+
+- Telepítse a [Universal C futásidejű](https://www.microsoft.com/download/details.aspx?id=50410) előtt a Windows 10-es Windows-verzión. Közvetlen letöltésére vagy a Windows Update-n keresztül érhető el. Teljes mértékben javítva (választható csomagot is beleértve), a támogatott rendszerek már rendelkezik a telepített.
+- Telepítse a Windows Management Framework (WMF) 4.0-s vagy újabb Windows 7 és Windows Server 2008 R2.
+
+## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Az MSI-csomag telepítése
+
+PowerShell telepíthető a Windows ügyfél vagy a Windows Server (működik a Windows 7 SP1, Server 2008 R2 és újabb verziók), az MSI-csomag letöltése a Githubról [kiadások] [] oldalát. Görgessen le a **eszközök** telepíteni szeretné a kiadás szakaszában. Az eszközök szakaszban össze lehet csukni, ezért szükség lehet annak kibontásához kattintson.
 
 Az MSI-fájlt a következőhöz hasonló- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 A letöltést követően kattintson duplán a, és kövesse az utasításokat.
 
-Nincs egy helyi helyezi el a Start menüben a telepítés után.
+A telepítő létrehoz egy parancsikont a Windows Start menü.
 
 - Alapértelmezés szerint a csomag telepítése `$env:ProgramFiles\PowerShell\<version>`
 - PowerShell a Start menü használatával indíthatja el vagy `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
-### <a name="prerequisites"></a>Előfeltételek
+### <a name="administrative-install-from-the-command-line"></a>Felügyeleti telepítése a parancssorból
 
-PowerShell-távelérés engedélyezése a WSMan felett, a következő előfeltételeknek kell teljesülniük:
+MSI-csomagok a parancssorból is telepíthető. Ez lehetővé teszi a rendszergazdák felhasználói beavatkozás nélkül-csomagok üzembe helyezése. PowerShell az MSI-csomag tartalmazza a következő tulajdonságokat a telepítési beállítások:
 
-- Telepítse a [Universal C futásidejű](https://www.microsoft.com/download/details.aspx?id=50410) előtt a Windows 10-es Windows-verzión.
-  Közvetlen letöltésére vagy a Windows Update-n keresztül érhető el.
-  Teljes mértékben javítva (választható csomagot is beleértve), a támogatott rendszerek már rendelkezik a telepített.
-- Telepítse a Windows Management Framework (WMF) 4.0-s vagy újabb Windows 7 és Windows Server 2008 R2.
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** – Ez a tulajdonság azt szabályozza, a beállítás hozzáadásához a **megnyitott PowerShell** elemet a helyi menüben, a Windows Intézőben.
+- **ENABLE_PSREMOTING** – Ez a tulajdonság azt szabályozza, a beállítást, a PowerShell-távelérés engedélyezése a telepítés során.
+- **REGISTER_MANIFEST** – Ez a tulajdonság azt szabályozza, a Windows Eseménynapló jegyzékfájl regisztrálása a kívánt beállítást.
 
-## <a name="zip"></a>ZIP
+A következő példa bemutatja, hogyan csendes telepítésére a PowerShell Core engedélyezve van az összes telepítési lehetőségekkel.
 
-PowerShell-bináris ZIP-archívumok állnak rendelkezésre a speciális telepítési forgatókönyvek megvalósítását teszik lehetővé.
-Fontos megjegyezni, hogy a ZIP-archívumot használata esetén nem jelenik meg az Előfeltételek ellenőrzése, mint az MSI-csomag.
-Ezért ahhoz a wsman által használt keresztül távelérése megfelelő működéséhez a Windows 10-es előtti Windows-verzión, győződjön meg arról, hogy kell a [Előfeltételek](#prerequisites) teljesülnek-e.
+```powershell
+msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+```
+
+Msiexec.exe parancssori kapcsolók teljes listáját lásd: [parancssori kapcsolók](/windows/desktop/Msi/command-line-options).
+
+## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />A ZIP-csomag telepítése
+
+PowerShell-bináris ZIP-archívumok állnak rendelkezésre a speciális telepítési forgatókönyvek megvalósítását teszik lehetővé. Fontos megjegyezni, hogy a ZIP-archívumot használata esetén nem jelenik meg az Előfeltételek ellenőrzése, mint az MSI-csomag. A távoli eljáráshívás keresztül WSMan megfelelően működjön, győződjön meg arról, hogy teljesül-e a [Előfeltételek](#prerequisites).
 
 ## <a name="deploying-on-windows-iot"></a>A Windows IoT üzembe helyezése
 
@@ -132,28 +146,12 @@ A következő lépések végigvezetik a PowerShell Core telepítése a Nano Serv
 
 - Ha azt szeretné, hogy a WSMan-alapú távoli eljáráshívás, kövesse az utasításokat hozzon létre egy távoli eljáráshívás végpont a ["egy másik példány technikával"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-## <a name="instructions-to-create-a-remoting-endpoint"></a>A távoli eljáráshívás végpont létrehozására vonatkozó utasításokat
+## <a name="how-to-create-a-remoting-endpoint"></a>A távoli eljáráshívás-végpont létrehozása
 
-A PowerShell Core a PowerShell távoli eljáráshívás protokoll (PSRP) támogatja a wsman által használt és az SSH keresztül.
-További információ:
+A PowerShell Core a PowerShell távoli eljáráshívás protokoll (PSRP) támogatja a wsman által használt és az SSH keresztül. További információ:
 
-- [SSH távoli eljáráshívás a PowerShell Core][ssh-remoting]
-- [A PowerShell Core a wsman által használt távoli eljáráshívás][wsman-remoting]
-
-## <a name="artifact-installation-instructions"></a>Összetevő telepítési utasításokat
-
-Coreclr-nek bits minden CI-build-a az archívumot közzétesszük [AppVeyor][].
-
-A PowerShell Core telepítése a coreclr-nek összetevő:
-
-1. Töltse le a ZIP-csomagját **összetevők** az adott build lapján.
-2. Feloldása ZIP-fájl: kattintson a jobb gombbal a Fájlkezelőben -> Properties -> box -> feloldása a alkalmazni ellenőrzése
-3. Bontsa ki a zip-fájlt `bin` könyvtár
-4. `./bin/pwsh.exe`
+- [SSH távoli eljáráshívás a PowerShell Core] [ssh-távoli eljáráshívás]
+- [A PowerShell Core a wsman által használt távoli eljáráshívás] [a wsman-távelérése]
 
 <!-- [download-center]: TODO -->
-
-[Kiadások]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[kiadások]: https://github.com/PowerShell/PowerShell/releases [ssh-távoli eljáráshívás]:... [a wsman-távelérése] /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.md:... [AppVeyor] /Core-PowerShell/WSMan-Remoting-in-PowerShell-Core.md: https://ci.appveyor.com/project/PowerShell/powershell
