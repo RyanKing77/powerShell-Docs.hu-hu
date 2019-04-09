@@ -2,101 +2,101 @@
 title: A PowerShell Core 6.1 újdonságai
 description: Új szolgáltatásaival és módosításaival, amely a PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687894"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293316"
 ---
-# <a name="whats-new-in-powershell-core-61"></a><span data-ttu-id="1ff07-103">A PowerShell Core 6.1 újdonságai</span><span class="sxs-lookup"><span data-stu-id="1ff07-103">What's New in PowerShell Core 6.1</span></span>
+# <a name="whats-new-in-powershell-core-61"></a><span data-ttu-id="5ba23-103">A PowerShell Core 6.1 újdonságai</span><span class="sxs-lookup"><span data-stu-id="5ba23-103">What's New in PowerShell Core 6.1</span></span>
 
-<span data-ttu-id="1ff07-104">Alább néhány fontos új szolgáltatásokat és módosításokat vezettek be a PowerShell Core 6.1 egy kijelölt van.</span><span class="sxs-lookup"><span data-stu-id="1ff07-104">Below is a selection of some of the major new features and changes that have been introduced in PowerShell Core 6.1.</span></span>
+<span data-ttu-id="5ba23-104">Alább néhány fontos új szolgáltatásokat és módosításokat vezettek be a PowerShell Core 6.1 egy kijelölt van.</span><span class="sxs-lookup"><span data-stu-id="5ba23-104">Below is a selection of some of the major new features and changes that have been introduced in PowerShell Core 6.1.</span></span>
 
-<span data-ttu-id="1ff07-105">Is **tonna** "unalmas szolgáltatáshasználatot", amelyek gyorsabb és stabilabb (és sok és számos hibajavítás) PowerShell!</span><span class="sxs-lookup"><span data-stu-id="1ff07-105">There's also **tons** of "boring stuff" that make PowerShell faster and more stable (plus lots and lots of bug fixes)!</span></span>
-<span data-ttu-id="1ff07-106">Változások teljes listájához tekintse meg a [a Githubon változásnaplójában](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).</span><span class="sxs-lookup"><span data-stu-id="1ff07-106">For a full list of changes, check out our [changelog on GitHub](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).</span></span>
+<span data-ttu-id="5ba23-105">Is **tonna** "unalmas szolgáltatáshasználatot", amelyek gyorsabb és stabilabb (és sok és számos hibajavítás) PowerShell!</span><span class="sxs-lookup"><span data-stu-id="5ba23-105">There's also **tons** of "boring stuff" that make PowerShell faster and more stable (plus lots and lots of bug fixes)!</span></span>
+<span data-ttu-id="5ba23-106">Változások teljes listájához tekintse meg a [a Githubon változásnaplójában](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).</span><span class="sxs-lookup"><span data-stu-id="5ba23-106">For a full list of changes, check out our [changelog on GitHub](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md).</span></span>
 
-<span data-ttu-id="1ff07-107">És közben ki az alábbi néhány nevet nevezzük, Köszönjük, hogy [összes a közösségi közreműködők](https://github.com/PowerShell/PowerShell/graphs/contributors) , amely ebben a kiadásban lehetővé tenni.</span><span class="sxs-lookup"><span data-stu-id="1ff07-107">And while we call out some names below, thank you to [all of the community contributors](https://github.com/PowerShell/PowerShell/graphs/contributors) that made this release possible.</span></span>
+<span data-ttu-id="5ba23-107">És közben ki az alábbi néhány nevet nevezzük, Köszönjük, hogy [összes a közösségi közreműködők](https://github.com/PowerShell/PowerShell/graphs/contributors) , amely ebben a kiadásban lehetővé tenni.</span><span class="sxs-lookup"><span data-stu-id="5ba23-107">And while we call out some names below, thank you to [all of the community contributors](https://github.com/PowerShell/PowerShell/graphs/contributors) that made this release possible.</span></span>
 
-## <a name="net-core-21"></a><span data-ttu-id="1ff07-108">.NET Core 2.1</span><span class="sxs-lookup"><span data-stu-id="1ff07-108">.NET Core 2.1</span></span>
+## <a name="net-core-21"></a><span data-ttu-id="5ba23-108">.NET Core 2.1</span><span class="sxs-lookup"><span data-stu-id="5ba23-108">.NET Core 2.1</span></span>
 
-<span data-ttu-id="1ff07-109">Után, a .NET Core 2.1 átkerül PowerShell Core 6.1 [májusban, amely a](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), számos fejlesztéssel a Powershellbe, így többek között:</span><span class="sxs-lookup"><span data-stu-id="1ff07-109">PowerShell Core 6.1 moved to .NET Core 2.1 after it was [released in May](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), resulting in a number of improvements to PowerShell, including:</span></span>
+<span data-ttu-id="5ba23-109">Után, a .NET Core 2.1 átkerül PowerShell Core 6.1 [májusban, amely a](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), számos fejlesztéssel a Powershellbe, így többek között:</span><span class="sxs-lookup"><span data-stu-id="5ba23-109">PowerShell Core 6.1 moved to .NET Core 2.1 after it was [released in May](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), resulting in a number of improvements to PowerShell, including:</span></span>
 
-- <span data-ttu-id="1ff07-110">teljesítménnyel kapcsolatos fejlesztések (lásd: [alábbi](#performance-improvements))</span><span class="sxs-lookup"><span data-stu-id="1ff07-110">performance improvements (see [below](#performance-improvements))</span></span>
-- <span data-ttu-id="1ff07-111">Az Alpine Linux-támogatás (előzetes verzió)</span><span class="sxs-lookup"><span data-stu-id="1ff07-111">Alpine Linux support (preview)</span></span>
-- <span data-ttu-id="1ff07-112">[Globális eszköz támogatott .NET](/dotnet/core/tools/global-tools) – hamarosan a PowerShell az elkövetkező</span><span class="sxs-lookup"><span data-stu-id="1ff07-112">[.NET global tool support](/dotnet/core/tools/global-tools) - coming soon to PowerShell</span></span>
+- <span data-ttu-id="5ba23-110">teljesítménnyel kapcsolatos fejlesztések (lásd: [alábbi](#performance-improvements))</span><span class="sxs-lookup"><span data-stu-id="5ba23-110">performance improvements (see [below](#performance-improvements))</span></span>
+- <span data-ttu-id="5ba23-111">Az Alpine Linux-támogatás (előzetes verzió)</span><span class="sxs-lookup"><span data-stu-id="5ba23-111">Alpine Linux support (preview)</span></span>
+- <span data-ttu-id="5ba23-112">[Globális eszköz támogatott .NET](/dotnet/core/tools/global-tools) – hamarosan a PowerShell az elkövetkező</span><span class="sxs-lookup"><span data-stu-id="5ba23-112">[.NET global tool support](/dotnet/core/tools/global-tools) - coming soon to PowerShell</span></span>
 - [`Span<T>`](/dotnet/api/system.span-1?view=netcore-2.1)
 
-## <a name="windows-compatibility-pack-for-net-core"></a><span data-ttu-id="1ff07-113">.NET Core for Windows kompatibilitási csomag</span><span class="sxs-lookup"><span data-stu-id="1ff07-113">Windows Compatibility Pack for .NET Core</span></span>
+## <a name="windows-compatibility-pack-for-net-core"></a><span data-ttu-id="5ba23-113">.NET Core for Windows kompatibilitási csomag</span><span class="sxs-lookup"><span data-stu-id="5ba23-113">Windows Compatibility Pack for .NET Core</span></span>
 
-<span data-ttu-id="1ff07-114">A Windows, a .NET-csapattal szállított a [Windows kompatibilitási csomag a .NET Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/), szerelvényeket, amelyek számos hozzáadása egy készletét vissza a .NET Core Windows API-k eltávolítása.</span><span class="sxs-lookup"><span data-stu-id="1ff07-114">On Windows, the .NET team shipped the [Windows Compatibility Pack for .NET Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/), a set of assemblies that add a number of removed APIs back to .NET Core on Windows.</span></span>
+<span data-ttu-id="5ba23-114">A Windows, a .NET-csapattal szállított a [Windows kompatibilitási csomag a .NET Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/), szerelvényeket, amelyek számos hozzáadása egy készletét vissza a .NET Core Windows API-k eltávolítása.</span><span class="sxs-lookup"><span data-stu-id="5ba23-114">On Windows, the .NET team shipped the [Windows Compatibility Pack for .NET Core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/), a set of assemblies that add a number of removed APIs back to .NET Core on Windows.</span></span>
 
-<span data-ttu-id="1ff07-115">Lehetőségekkel bővült a Windows-kompatibilitási csomag PowerShell Core 6.1-es kiadásra, hogy bármilyen modulok vagy ezekkel az API-parancsprogramok is használhatók legyenek elérhetők.</span><span class="sxs-lookup"><span data-stu-id="1ff07-115">We've added the Windows Compatibility Pack to PowerShell Core 6.1 release so that any modules or scripts that use these APIs can rely on them being available.</span></span>
+<span data-ttu-id="5ba23-115">Lehetőségekkel bővült a Windows-kompatibilitási csomag PowerShell Core 6.1-es kiadásra, hogy bármilyen modulok vagy ezekkel az API-parancsprogramok is használhatók legyenek elérhetők.</span><span class="sxs-lookup"><span data-stu-id="5ba23-115">We've added the Windows Compatibility Pack to PowerShell Core 6.1 release so that any modules or scripts that use these APIs can rely on them being available.</span></span>
 
-<span data-ttu-id="1ff07-116">A Windows-kompatibilitási csomag lehetővé teszi, hogy a PowerShell Core használata **több mint 1900 parancsmagok a Windows rendszerrel szállított 2018. október 10. és a Windows Server 2019**.</span><span class="sxs-lookup"><span data-stu-id="1ff07-116">The Windows Compatibility Pack enables PowerShell Core to use **more than 1900 cmdlets that ship with Windows 10 October 2018 Update and Windows Server 2019**.</span></span>
+<span data-ttu-id="5ba23-116">A Windows-kompatibilitási csomag lehetővé teszi, hogy a PowerShell Core használata **több mint 1900 parancsmagok a Windows rendszerrel szállított 2018. október 10. és a Windows Server 2019**.</span><span class="sxs-lookup"><span data-stu-id="5ba23-116">The Windows Compatibility Pack enables PowerShell Core to use **more than 1900 cmdlets that ship with Windows 10 October 2018 Update and Windows Server 2019**.</span></span>
 
-## <a name="support-for-application-whitelisting"></a><span data-ttu-id="1ff07-117">Az alkalmazások engedélyezési listáinak támogatása</span><span class="sxs-lookup"><span data-stu-id="1ff07-117">Support for Application Whitelisting</span></span>
+## <a name="support-for-application-whitelisting"></a><span data-ttu-id="5ba23-117">Az alkalmazások engedélyezési listáinak támogatása</span><span class="sxs-lookup"><span data-stu-id="5ba23-117">Support for Application Whitelisting</span></span>
 
-<span data-ttu-id="1ff07-118">PowerShell Core 6.1 rendelkezik a Windows PowerShell 5.1 támogatása paritásos [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) és [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) alkalmazásengedélyezés bevezetését.</span><span class="sxs-lookup"><span data-stu-id="1ff07-118">PowerShell Core 6.1 has parity with Windows PowerShell 5.1 supporting [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) and [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) application whitelisting.</span></span>
-<span data-ttu-id="1ff07-119">Az alkalmazások engedélyezési listáinak lehetővé teszi, hogy a szabályozhatja a melyik bináris fájlokat engedélyezett hajtható végre, a PowerShell-lel használt [korlátozott nyelvmód](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).</span><span class="sxs-lookup"><span data-stu-id="1ff07-119">Application whitelisting allows granular control of what binaries are allowed to be executed used with PowerShell [Constrained Language mode](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).</span></span>
+<span data-ttu-id="5ba23-118">PowerShell Core 6.1 rendelkezik a Windows PowerShell 5.1 támogatása paritásos [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) és [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) alkalmazásengedélyezés bevezetését.</span><span class="sxs-lookup"><span data-stu-id="5ba23-118">PowerShell Core 6.1 has parity with Windows PowerShell 5.1 supporting [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) and [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) application whitelisting.</span></span>
+<span data-ttu-id="5ba23-119">Az alkalmazások engedélyezési listáinak lehetővé teszi, hogy a szabályozhatja a melyik bináris fájlokat engedélyezett hajtható végre, a PowerShell-lel használt [korlátozott nyelvmód](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).</span><span class="sxs-lookup"><span data-stu-id="5ba23-119">Application whitelisting allows granular control of what binaries are allowed to be executed used with PowerShell [Constrained Language mode](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).</span></span>
 
-## <a name="performance-improvements"></a><span data-ttu-id="1ff07-120">Teljesítménnyel kapcsolatos fejlesztések</span><span class="sxs-lookup"><span data-stu-id="1ff07-120">Performance improvements</span></span>
+## <a name="performance-improvements"></a><span data-ttu-id="5ba23-120">Teljesítménnyel kapcsolatos fejlesztések</span><span class="sxs-lookup"><span data-stu-id="5ba23-120">Performance improvements</span></span>
 
-<span data-ttu-id="1ff07-121">A PowerShell Core 6.0 végzett néhány jelentős teljesítménybeli fejlesztései.</span><span class="sxs-lookup"><span data-stu-id="1ff07-121">PowerShell Core 6.0 made some significant performance improvements.</span></span>
-<span data-ttu-id="1ff07-122">PowerShell Core 6.1 továbbfejleszti bizonyos műveletek sebessége.</span><span class="sxs-lookup"><span data-stu-id="1ff07-122">PowerShell Core 6.1 continues to improve the speed of certain operations.</span></span>
+<span data-ttu-id="5ba23-121">A PowerShell Core 6.0 végzett néhány jelentős teljesítménybeli fejlesztései.</span><span class="sxs-lookup"><span data-stu-id="5ba23-121">PowerShell Core 6.0 made some significant performance improvements.</span></span>
+<span data-ttu-id="5ba23-122">PowerShell Core 6.1 továbbfejleszti bizonyos műveletek sebessége.</span><span class="sxs-lookup"><span data-stu-id="5ba23-122">PowerShell Core 6.1 continues to improve the speed of certain operations.</span></span>
 
-<span data-ttu-id="1ff07-123">Ha például `Group-Object` 66 %-kal rendelkezik lett felgyorsul:</span><span class="sxs-lookup"><span data-stu-id="1ff07-123">For example, `Group-Object` has been sped up by 66%:</span></span>
+<span data-ttu-id="5ba23-123">Ha például `Group-Object` 66 %-kal rendelkezik lett felgyorsul:</span><span class="sxs-lookup"><span data-stu-id="5ba23-123">For example, `Group-Object` has been sped up by 66%:</span></span>
 
 ```powershell
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | <span data-ttu-id="1ff07-124">Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="1ff07-124">Windows PowerShell 5.1</span></span> | <span data-ttu-id="1ff07-125">A PowerShell Core 6.0</span><span class="sxs-lookup"><span data-stu-id="1ff07-125">PowerShell Core 6.0</span></span> | <span data-ttu-id="1ff07-126">A PowerShell Core 6.1</span><span class="sxs-lookup"><span data-stu-id="1ff07-126">PowerShell Core 6.1</span></span> |
+|              | <span data-ttu-id="5ba23-124">Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="5ba23-124">Windows PowerShell 5.1</span></span> | <span data-ttu-id="5ba23-125">A PowerShell Core 6.0</span><span class="sxs-lookup"><span data-stu-id="5ba23-125">PowerShell Core 6.0</span></span> | <span data-ttu-id="5ba23-126">A PowerShell Core 6.1</span><span class="sxs-lookup"><span data-stu-id="5ba23-126">PowerShell Core 6.1</span></span> |
 |--------------|------------------------|---------------------|---------------------|
-| <span data-ttu-id="1ff07-127">Idő (mp)</span><span class="sxs-lookup"><span data-stu-id="1ff07-127">Time (sec)</span></span>   | <span data-ttu-id="1ff07-128">25.178</span><span class="sxs-lookup"><span data-stu-id="1ff07-128">25.178</span></span>                 | <span data-ttu-id="1ff07-129">19.653</span><span class="sxs-lookup"><span data-stu-id="1ff07-129">19.653</span></span>              | <span data-ttu-id="1ff07-130">6.641</span><span class="sxs-lookup"><span data-stu-id="1ff07-130">6.641</span></span>               |
-| <span data-ttu-id="1ff07-131">Gyorsulás figyelhető meg (%)</span><span class="sxs-lookup"><span data-stu-id="1ff07-131">Speed-up (%)</span></span> | <span data-ttu-id="1ff07-132">N.a.</span><span class="sxs-lookup"><span data-stu-id="1ff07-132">N/A</span></span>                    | <span data-ttu-id="1ff07-133">21.9%</span><span class="sxs-lookup"><span data-stu-id="1ff07-133">21.9%</span></span>               | <span data-ttu-id="1ff07-134">66.2%</span><span class="sxs-lookup"><span data-stu-id="1ff07-134">66.2%</span></span>               |
+| <span data-ttu-id="5ba23-127">Idő (mp)</span><span class="sxs-lookup"><span data-stu-id="5ba23-127">Time (sec)</span></span>   | <span data-ttu-id="5ba23-128">25.178</span><span class="sxs-lookup"><span data-stu-id="5ba23-128">25.178</span></span>                 | <span data-ttu-id="5ba23-129">19.653</span><span class="sxs-lookup"><span data-stu-id="5ba23-129">19.653</span></span>              | <span data-ttu-id="5ba23-130">6.641</span><span class="sxs-lookup"><span data-stu-id="5ba23-130">6.641</span></span>               |
+| <span data-ttu-id="5ba23-131">Gyorsulás figyelhető meg (%)</span><span class="sxs-lookup"><span data-stu-id="5ba23-131">Speed-up (%)</span></span> | <span data-ttu-id="5ba23-132">N.a.</span><span class="sxs-lookup"><span data-stu-id="5ba23-132">N/A</span></span>                    | <span data-ttu-id="5ba23-133">21.9%</span><span class="sxs-lookup"><span data-stu-id="5ba23-133">21.9%</span></span>               | <span data-ttu-id="5ba23-134">66.2%</span><span class="sxs-lookup"><span data-stu-id="5ba23-134">66.2%</span></span>               |
 
-<span data-ttu-id="1ff07-135">Hasonlóképpen az alábbihoz hasonló rendezési forgatókönyvek javult több mint 15 %-kal:</span><span class="sxs-lookup"><span data-stu-id="1ff07-135">Similarly, sorting scenarios like this one have improved by more than 15%:</span></span>
+<span data-ttu-id="5ba23-135">Hasonlóképpen az alábbihoz hasonló rendezési forgatókönyvek javult több mint 15 %-kal:</span><span class="sxs-lookup"><span data-stu-id="5ba23-135">Similarly, sorting scenarios like this one have improved by more than 15%:</span></span>
 
 ```powershell
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | <span data-ttu-id="1ff07-136">Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="1ff07-136">Windows PowerShell 5.1</span></span> | <span data-ttu-id="1ff07-137">A PowerShell Core 6.0</span><span class="sxs-lookup"><span data-stu-id="1ff07-137">PowerShell Core 6.0</span></span> | <span data-ttu-id="1ff07-138">A PowerShell Core 6.1</span><span class="sxs-lookup"><span data-stu-id="1ff07-138">PowerShell Core 6.1</span></span> |
+|              | <span data-ttu-id="5ba23-136">Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="5ba23-136">Windows PowerShell 5.1</span></span> | <span data-ttu-id="5ba23-137">A PowerShell Core 6.0</span><span class="sxs-lookup"><span data-stu-id="5ba23-137">PowerShell Core 6.0</span></span> | <span data-ttu-id="5ba23-138">A PowerShell Core 6.1</span><span class="sxs-lookup"><span data-stu-id="5ba23-138">PowerShell Core 6.1</span></span> |
 |--------------|------------------------|---------------------|---------------------|
-| <span data-ttu-id="1ff07-139">Idő (mp)</span><span class="sxs-lookup"><span data-stu-id="1ff07-139">Time (sec)</span></span>   | <span data-ttu-id="1ff07-140">12.170</span><span class="sxs-lookup"><span data-stu-id="1ff07-140">12.170</span></span>                 | <span data-ttu-id="1ff07-141">8.493</span><span class="sxs-lookup"><span data-stu-id="1ff07-141">8.493</span></span>               | <span data-ttu-id="1ff07-142">7.08</span><span class="sxs-lookup"><span data-stu-id="1ff07-142">7.08</span></span>                |
-| <span data-ttu-id="1ff07-143">Gyorsulás figyelhető meg (%)</span><span class="sxs-lookup"><span data-stu-id="1ff07-143">Speed-up (%)</span></span> | <span data-ttu-id="1ff07-144">N.a.</span><span class="sxs-lookup"><span data-stu-id="1ff07-144">N/A</span></span>                    | <span data-ttu-id="1ff07-145">30.2%</span><span class="sxs-lookup"><span data-stu-id="1ff07-145">30.2%</span></span>               | <span data-ttu-id="1ff07-146">16.6%</span><span class="sxs-lookup"><span data-stu-id="1ff07-146">16.6%</span></span>               |
+| <span data-ttu-id="5ba23-139">Idő (mp)</span><span class="sxs-lookup"><span data-stu-id="5ba23-139">Time (sec)</span></span>   | <span data-ttu-id="5ba23-140">12.170</span><span class="sxs-lookup"><span data-stu-id="5ba23-140">12.170</span></span>                 | <span data-ttu-id="5ba23-141">8.493</span><span class="sxs-lookup"><span data-stu-id="5ba23-141">8.493</span></span>               | <span data-ttu-id="5ba23-142">7.08</span><span class="sxs-lookup"><span data-stu-id="5ba23-142">7.08</span></span>                |
+| <span data-ttu-id="5ba23-143">Gyorsulás figyelhető meg (%)</span><span class="sxs-lookup"><span data-stu-id="5ba23-143">Speed-up (%)</span></span> | <span data-ttu-id="5ba23-144">N.a.</span><span class="sxs-lookup"><span data-stu-id="5ba23-144">N/A</span></span>                    | <span data-ttu-id="5ba23-145">30.2%</span><span class="sxs-lookup"><span data-stu-id="5ba23-145">30.2%</span></span>               | <span data-ttu-id="5ba23-146">16.6%</span><span class="sxs-lookup"><span data-stu-id="5ba23-146">16.6%</span></span>               |
 
-<span data-ttu-id="1ff07-147">`Import-Csv` azt is lett felgyorsul jelentősen regresszió után a Windows PowerShellben.</span><span class="sxs-lookup"><span data-stu-id="1ff07-147">`Import-Csv` has also been sped up significantly after a regression from Windows PowerShell.</span></span>
-<span data-ttu-id="1ff07-148">Az alábbi példa egy teszt CSV 26,616 sorok és oszlopok hat használja:</span><span class="sxs-lookup"><span data-stu-id="1ff07-148">The following example uses a test CSV with 26,616 rows and six columns:</span></span>
+`Import-Csv` <span data-ttu-id="5ba23-147">azt is lett felgyorsul jelentősen regresszió után a Windows PowerShellben.</span><span class="sxs-lookup"><span data-stu-id="5ba23-147">has also been sped up significantly after a regression from Windows PowerShell.</span></span>
+<span data-ttu-id="5ba23-148">Az alábbi példa egy teszt CSV 26,616 sorok és oszlopok hat használja:</span><span class="sxs-lookup"><span data-stu-id="5ba23-148">The following example uses a test CSV with 26,616 rows and six columns:</span></span>
 
 ```powershell
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | <span data-ttu-id="1ff07-149">Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="1ff07-149">Windows PowerShell 5.1</span></span> | <span data-ttu-id="1ff07-150">A PowerShell Core 6.0</span><span class="sxs-lookup"><span data-stu-id="1ff07-150">PowerShell Core 6.0</span></span> | <span data-ttu-id="1ff07-151">A PowerShell Core 6.1</span><span class="sxs-lookup"><span data-stu-id="1ff07-151">PowerShell Core 6.1</span></span>    |
+|              | <span data-ttu-id="5ba23-149">Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="5ba23-149">Windows PowerShell 5.1</span></span> | <span data-ttu-id="5ba23-150">A PowerShell Core 6.0</span><span class="sxs-lookup"><span data-stu-id="5ba23-150">PowerShell Core 6.0</span></span> | <span data-ttu-id="5ba23-151">A PowerShell Core 6.1</span><span class="sxs-lookup"><span data-stu-id="5ba23-151">PowerShell Core 6.1</span></span>    |
 |--------------|------------------------|---------------------|------------------------|
-| <span data-ttu-id="1ff07-152">Idő (mp)</span><span class="sxs-lookup"><span data-stu-id="1ff07-152">Time (sec)</span></span>   | <span data-ttu-id="1ff07-153">0.441</span><span class="sxs-lookup"><span data-stu-id="1ff07-153">0.441</span></span>                  | <span data-ttu-id="1ff07-154">1.069</span><span class="sxs-lookup"><span data-stu-id="1ff07-154">1.069</span></span>               | <span data-ttu-id="1ff07-155">0.268</span><span class="sxs-lookup"><span data-stu-id="1ff07-155">0.268</span></span>                  |
-| <span data-ttu-id="1ff07-156">Gyorsulás figyelhető meg (%)</span><span class="sxs-lookup"><span data-stu-id="1ff07-156">Speed-up (%)</span></span> | <span data-ttu-id="1ff07-157">N.a.</span><span class="sxs-lookup"><span data-stu-id="1ff07-157">N/A</span></span>                    | <span data-ttu-id="1ff07-158">-142.4%</span><span class="sxs-lookup"><span data-stu-id="1ff07-158">-142.4%</span></span>             | <span data-ttu-id="1ff07-159">74.9 % (39.2 % WPS)</span><span class="sxs-lookup"><span data-stu-id="1ff07-159">74.9% (39.2% from WPS)</span></span> |
+| <span data-ttu-id="5ba23-152">Idő (mp)</span><span class="sxs-lookup"><span data-stu-id="5ba23-152">Time (sec)</span></span>   | <span data-ttu-id="5ba23-153">0.441</span><span class="sxs-lookup"><span data-stu-id="5ba23-153">0.441</span></span>                  | <span data-ttu-id="5ba23-154">1.069</span><span class="sxs-lookup"><span data-stu-id="5ba23-154">1.069</span></span>               | <span data-ttu-id="5ba23-155">0.268</span><span class="sxs-lookup"><span data-stu-id="5ba23-155">0.268</span></span>                  |
+| <span data-ttu-id="5ba23-156">Gyorsulás figyelhető meg (%)</span><span class="sxs-lookup"><span data-stu-id="5ba23-156">Speed-up (%)</span></span> | <span data-ttu-id="5ba23-157">N.a.</span><span class="sxs-lookup"><span data-stu-id="5ba23-157">N/A</span></span>                    | <span data-ttu-id="5ba23-158">-142.4%</span><span class="sxs-lookup"><span data-stu-id="5ba23-158">-142.4%</span></span>             | <span data-ttu-id="5ba23-159">74.9 % (39.2 % WPS)</span><span class="sxs-lookup"><span data-stu-id="5ba23-159">74.9% (39.2% from WPS)</span></span> |
 
-<span data-ttu-id="1ff07-160">Végül, a JSON-t átalakítás `PSObject` rendelkezik lett felgyorsul több mint 50 %-kal Windows PowerShell óta.</span><span class="sxs-lookup"><span data-stu-id="1ff07-160">Lastly, conversion from JSON into `PSObject` has been sped up by more than 50% since Windows PowerShell.</span></span>
-<span data-ttu-id="1ff07-161">Az alábbi példa ~ 2 MB-os teszt JSON-fájlt használ:</span><span class="sxs-lookup"><span data-stu-id="1ff07-161">The following example uses a ~2MB test JSON file:</span></span>
+<span data-ttu-id="5ba23-160">Végül, a JSON-t átalakítás `PSObject` rendelkezik lett felgyorsul több mint 50 %-kal Windows PowerShell óta.</span><span class="sxs-lookup"><span data-stu-id="5ba23-160">Lastly, conversion from JSON into `PSObject` has been sped up by more than 50% since Windows PowerShell.</span></span>
+<span data-ttu-id="5ba23-161">Az alábbi példa ~ 2 MB-os teszt JSON-fájlt használ:</span><span class="sxs-lookup"><span data-stu-id="5ba23-161">The following example uses a ~2MB test JSON file:</span></span>
 
 ```powershell
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | <span data-ttu-id="1ff07-162">Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="1ff07-162">Windows PowerShell 5.1</span></span> | <span data-ttu-id="1ff07-163">A PowerShell Core 6.0</span><span class="sxs-lookup"><span data-stu-id="1ff07-163">PowerShell Core 6.0</span></span> | <span data-ttu-id="1ff07-164">A PowerShell Core 6.1</span><span class="sxs-lookup"><span data-stu-id="1ff07-164">PowerShell Core 6.1</span></span>    |
+|              | <span data-ttu-id="5ba23-162">Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="5ba23-162">Windows PowerShell 5.1</span></span> | <span data-ttu-id="5ba23-163">A PowerShell Core 6.0</span><span class="sxs-lookup"><span data-stu-id="5ba23-163">PowerShell Core 6.0</span></span> | <span data-ttu-id="5ba23-164">A PowerShell Core 6.1</span><span class="sxs-lookup"><span data-stu-id="5ba23-164">PowerShell Core 6.1</span></span>    |
 |--------------|------------------------|---------------------|------------------------|
-| <span data-ttu-id="1ff07-165">Idő (mp)</span><span class="sxs-lookup"><span data-stu-id="1ff07-165">Time (sec)</span></span>   | <span data-ttu-id="1ff07-166">0.259</span><span class="sxs-lookup"><span data-stu-id="1ff07-166">0.259</span></span>                  | <span data-ttu-id="1ff07-167">0.577</span><span class="sxs-lookup"><span data-stu-id="1ff07-167">0.577</span></span>               | <span data-ttu-id="1ff07-168">0.125</span><span class="sxs-lookup"><span data-stu-id="1ff07-168">0.125</span></span>                  |
-| <span data-ttu-id="1ff07-169">Gyorsulás figyelhető meg (%)</span><span class="sxs-lookup"><span data-stu-id="1ff07-169">Speed-up (%)</span></span> | <span data-ttu-id="1ff07-170">N.a.</span><span class="sxs-lookup"><span data-stu-id="1ff07-170">N/A</span></span>                    | <span data-ttu-id="1ff07-171">-122.8%</span><span class="sxs-lookup"><span data-stu-id="1ff07-171">-122.8%</span></span>             | <span data-ttu-id="1ff07-172">78.3 % (51.7 % WPS)</span><span class="sxs-lookup"><span data-stu-id="1ff07-172">78.3% (51.7% from WPS)</span></span> |
+| <span data-ttu-id="5ba23-165">Idő (mp)</span><span class="sxs-lookup"><span data-stu-id="5ba23-165">Time (sec)</span></span>   | <span data-ttu-id="5ba23-166">0.259</span><span class="sxs-lookup"><span data-stu-id="5ba23-166">0.259</span></span>                  | <span data-ttu-id="5ba23-167">0.577</span><span class="sxs-lookup"><span data-stu-id="5ba23-167">0.577</span></span>               | <span data-ttu-id="5ba23-168">0.125</span><span class="sxs-lookup"><span data-stu-id="5ba23-168">0.125</span></span>                  |
+| <span data-ttu-id="5ba23-169">Gyorsulás figyelhető meg (%)</span><span class="sxs-lookup"><span data-stu-id="5ba23-169">Speed-up (%)</span></span> | <span data-ttu-id="5ba23-170">N.a.</span><span class="sxs-lookup"><span data-stu-id="5ba23-170">N/A</span></span>                    | <span data-ttu-id="5ba23-171">-122.8%</span><span class="sxs-lookup"><span data-stu-id="5ba23-171">-122.8%</span></span>             | <span data-ttu-id="5ba23-172">78.3 % (51.7 % WPS)</span><span class="sxs-lookup"><span data-stu-id="5ba23-172">78.3% (51.7% from WPS)</span></span> |
 
-## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a><span data-ttu-id="1ff07-173">Ellenőrizze `system32` a Windows kompatibilis beépített modulok</span><span class="sxs-lookup"><span data-stu-id="1ff07-173">Check `system32` for compatible in-box modules on Windows</span></span>
+## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a><span data-ttu-id="5ba23-173">Ellenőrizze `system32` a Windows kompatibilis beépített modulok</span><span class="sxs-lookup"><span data-stu-id="5ba23-173">Check `system32` for compatible in-box modules on Windows</span></span>
 
-<span data-ttu-id="1ff07-174">A Windows 10-es 1809 update és a Windows Server 2019 számos beépített kell megjelölni kompatibilis PowerShell Core a PowerShell-modulok frissítve.</span><span class="sxs-lookup"><span data-stu-id="1ff07-174">In the Windows 10 1809 update and Windows Server 2019, we updated a number of in-box PowerShell modules to mark them as compatible with PowerShell Core.</span></span>
+<span data-ttu-id="5ba23-174">A Windows 10-es 1809 update és a Windows Server 2019 számos beépített kell megjelölni kompatibilis PowerShell Core a PowerShell-modulok frissítve.</span><span class="sxs-lookup"><span data-stu-id="5ba23-174">In the Windows 10 1809 update and Windows Server 2019, we updated a number of in-box PowerShell modules to mark them as compatible with PowerShell Core.</span></span>
 
-<span data-ttu-id="1ff07-175">PowerShell Core 6.1 indulásakor, automatikus módon kiegészül `$windir\System32` részeként a `PSModulePath` környezeti változót.</span><span class="sxs-lookup"><span data-stu-id="1ff07-175">When PowerShell Core 6.1 starts up, it will automatically include `$windir\System32` as part of the `PSModulePath` environment variable.</span></span>
-<span data-ttu-id="1ff07-176">Azonban csak jelezzék modulok `Get-Module` és `Import-Module` ha annak `CompatiblePSEdition` kompatibilis van megjelölve `Core`.</span><span class="sxs-lookup"><span data-stu-id="1ff07-176">However, it only exposes modules to `Get-Module` and `Import-Module` if its `CompatiblePSEdition` is marked as compatible with `Core`.</span></span>
+<span data-ttu-id="5ba23-175">PowerShell Core 6.1 indulásakor, automatikus módon kiegészül `$windir\System32` részeként a `PSModulePath` környezeti változót.</span><span class="sxs-lookup"><span data-stu-id="5ba23-175">When PowerShell Core 6.1 starts up, it will automatically include `$windir\System32` as part of the `PSModulePath` environment variable.</span></span>
+<span data-ttu-id="5ba23-176">Azonban csak jelezzék modulok `Get-Module` és `Import-Module` ha annak `CompatiblePSEdition` kompatibilis van megjelölve `Core`.</span><span class="sxs-lookup"><span data-stu-id="5ba23-176">However, it only exposes modules to `Get-Module` and `Import-Module` if its `CompatiblePSEdition` is marked as compatible with `Core`.</span></span>
 
 
 ```powershell
@@ -104,7 +104,7 @@ Get-Module -ListAvailable
 ```
 
 > [!NOTE]
-> <span data-ttu-id="1ff07-177">Attól függően, hogy milyen szerepkörök és szolgáltatások telepítve vannak a különböző elérhető modulok jelenhet meg.</span><span class="sxs-lookup"><span data-stu-id="1ff07-177">You may see different available modules depending on what roles and features are installed.</span></span>
+> <span data-ttu-id="5ba23-177">Attól függően, hogy milyen szerepkörök és szolgáltatások telepítve vannak a különböző elérhető modulok jelenhet meg.</span><span class="sxs-lookup"><span data-stu-id="5ba23-177">You may see different available modules depending on what roles and features are installed.</span></span>
 
 ```Output
 ...
@@ -130,8 +130,8 @@ Manifest   2.0.0.0    TrustedPlatformModule               Core,Desk {Get-Tpm, In
 ...
 ```
 
-<span data-ttu-id="1ff07-178">Minden modul használatával megjeleníthető a viselkedést felülírhatja a `-SkipEditionCheck` paraméter váltani.</span><span class="sxs-lookup"><span data-stu-id="1ff07-178">You can override this behavior to show all modules using the `-SkipEditionCheck` switch parameter.</span></span>
-<span data-ttu-id="1ff07-179">Is elérhetővé tettünk egy `PSEdition` tulajdonság a táblázatos kimenetéhez.</span><span class="sxs-lookup"><span data-stu-id="1ff07-179">We've also added a `PSEdition` property to the table output.</span></span>
+<span data-ttu-id="5ba23-178">Minden modul használatával megjeleníthető a viselkedést felülírhatja a `-SkipEditionCheck` paraméter váltani.</span><span class="sxs-lookup"><span data-stu-id="5ba23-178">You can override this behavior to show all modules using the `-SkipEditionCheck` switch parameter.</span></span>
+<span data-ttu-id="5ba23-179">Is elérhetővé tettünk egy `PSEdition` tulajdonság a táblázatos kimenetéhez.</span><span class="sxs-lookup"><span data-stu-id="5ba23-179">We've also added a `PSEdition` property to the table output.</span></span>
 
 ```powershell
 Get-Module Net* -ListAvailable -SkipEditionCheck
@@ -158,76 +158,76 @@ Manifest   1.0.0.0    NetworkSwitchManager        Core,Desk {Disable-NetworkSwit
 Manifest   1.0.0.0    NetworkTransition           Core,Desk {Add-NetIPHttpsCertBinding, Disable-NetDnsTransi...
 ```
 
-<span data-ttu-id="1ff07-180">Ezzel a viselkedéssel kapcsolatos további információkért tekintse meg [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).</span><span class="sxs-lookup"><span data-stu-id="1ff07-180">For more information about this behavior, check out [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).</span></span>
+<span data-ttu-id="5ba23-180">Ezzel a viselkedéssel kapcsolatos további információkért tekintse meg [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).</span><span class="sxs-lookup"><span data-stu-id="5ba23-180">For more information about this behavior, check out [PowerShell RFC0025](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-PSCore6-and-Windows-Modules.md).</span></span>
 
-## <a name="markdown-cmdlets-and-rendering"></a><span data-ttu-id="1ff07-181">Markdown-parancsmagok és megjelenítési szoftverek</span><span class="sxs-lookup"><span data-stu-id="1ff07-181">Markdown cmdlets and rendering</span></span>
+## <a name="markdown-cmdlets-and-rendering"></a><span data-ttu-id="5ba23-181">Markdown-parancsmagok és megjelenítési szoftverek</span><span class="sxs-lookup"><span data-stu-id="5ba23-181">Markdown cmdlets and rendering</span></span>
 
-<span data-ttu-id="1ff07-182">Markdown a olvasható egyszerű szöveges dokumentumok létrehozásának alapszintű formázását, amely szabványos HTML be jeleníthetők meg.</span><span class="sxs-lookup"><span data-stu-id="1ff07-182">Markdown is a standard for creating readable plaintext documents with basic formatting that can be rendered into HTML.</span></span>
+<span data-ttu-id="5ba23-182">Markdown a olvasható egyszerű szöveges dokumentumok létrehozásának alapszintű formázását, amely szabványos HTML be jeleníthetők meg.</span><span class="sxs-lookup"><span data-stu-id="5ba23-182">Markdown is a standard for creating readable plaintext documents with basic formatting that can be rendered into HTML.</span></span>
 
-<span data-ttu-id="1ff07-183">Bizonyos parancsmagok tettünk elérhetővé, amelyek lehetővé teszik az átalakítás és a konzolon Markdown-dokumentumok 6.1 többek között:</span><span class="sxs-lookup"><span data-stu-id="1ff07-183">We've added some cmdlets in 6.1 that allow you to convert and render Markdown documents in the console, including:</span></span>
+<span data-ttu-id="5ba23-183">Bizonyos parancsmagok tettünk elérhetővé, amelyek lehetővé teszik az átalakítás és a konzolon Markdown-dokumentumok 6.1 többek között:</span><span class="sxs-lookup"><span data-stu-id="5ba23-183">We've added some cmdlets in 6.1 that allow you to convert and render Markdown documents in the console, including:</span></span>
 
 - `ConvertFrom-Markdown`
 - `Get-MarkdownOption`
 - `Set-MarkdownOption`
 - `Show-Markdown`
 
-<span data-ttu-id="1ff07-184">Ha például `Show-Markdown` megjelenítve egy Markdown-fájlt a konzolon:</span><span class="sxs-lookup"><span data-stu-id="1ff07-184">For example, `Show-Markdown` renders a Markdown file in the console:</span></span>
+<span data-ttu-id="5ba23-184">Ha például `Show-Markdown` megjelenítve egy Markdown-fájlt a konzolon:</span><span class="sxs-lookup"><span data-stu-id="5ba23-184">For example, `Show-Markdown` renders a Markdown file in the console:</span></span>
 
 ![Show-Markdown-példa](./images/markdown_example.png)
 
-<span data-ttu-id="1ff07-186">Hogyan működnek a ezekkel a parancsmagokkal kapcsolatos további információkért tekintse meg [az RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md).</span><span class="sxs-lookup"><span data-stu-id="1ff07-186">For more information about how these cmdlets work, check out [this RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md).</span></span>
+<span data-ttu-id="5ba23-186">Hogyan működnek a ezekkel a parancsmagokkal kapcsolatos további információkért tekintse meg [az RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md).</span><span class="sxs-lookup"><span data-stu-id="5ba23-186">For more information about how these cmdlets work, check out [this RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md).</span></span>
 
-## <a name="experimental-feature-flags"></a><span data-ttu-id="1ff07-187">Kísérleti funkció jelzők</span><span class="sxs-lookup"><span data-stu-id="1ff07-187">Experimental feature flags</span></span>
+## <a name="experimental-feature-flags"></a><span data-ttu-id="5ba23-187">Kísérleti funkció jelzők</span><span class="sxs-lookup"><span data-stu-id="5ba23-187">Experimental feature flags</span></span>
 
-<span data-ttu-id="1ff07-188">Kísérleti funkció jelzők engedélyezése a felhasználók számára, kapcsolja be, amely még nem lett véglegesítése funkciókat.</span><span class="sxs-lookup"><span data-stu-id="1ff07-188">Experimental feature flags enable users to turn on features that haven't been finalized.</span></span>
-<span data-ttu-id="1ff07-189">Ezek kísérleti funkciók nem támogatottak, és előfordulhat, hogy hibák.</span><span class="sxs-lookup"><span data-stu-id="1ff07-189">These experimental features aren't supported and may have bugs.</span></span>
+<span data-ttu-id="5ba23-188">Kísérleti funkció jelzők engedélyezése a felhasználók számára, kapcsolja be, amely még nem lett véglegesítése funkciókat.</span><span class="sxs-lookup"><span data-stu-id="5ba23-188">Experimental feature flags enable users to turn on features that haven't been finalized.</span></span>
+<span data-ttu-id="5ba23-189">Ezek kísérleti funkciók nem támogatottak, és előfordulhat, hogy hibák.</span><span class="sxs-lookup"><span data-stu-id="5ba23-189">These experimental features aren't supported and may have bugs.</span></span>
 
-<span data-ttu-id="1ff07-190">További információ ennek a funkciónak a [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).</span><span class="sxs-lookup"><span data-stu-id="1ff07-190">You can learn more about this feature in [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).</span></span>
+<span data-ttu-id="5ba23-190">További információ ennek a funkciónak a [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).</span><span class="sxs-lookup"><span data-stu-id="5ba23-190">You can learn more about this feature in [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).</span></span>
 
-## <a name="web-cmdlet-improvements"></a><span data-ttu-id="1ff07-191">Webes parancsmag fejlesztései</span><span class="sxs-lookup"><span data-stu-id="1ff07-191">Web cmdlet improvements</span></span>
+## <a name="web-cmdlet-improvements"></a><span data-ttu-id="5ba23-191">Webes parancsmag fejlesztései</span><span class="sxs-lookup"><span data-stu-id="5ba23-191">Web cmdlet improvements</span></span>
 
-<span data-ttu-id="1ff07-192">Köszönhetően [ @markekraus ](https://github.com/markekraus), egy teljes slew kapcsolatos fejlesztések történtek-e a webalkalmazás-parancsmagok: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)</span><span class="sxs-lookup"><span data-stu-id="1ff07-192">Thanks to [@markekraus](https://github.com/markekraus), a whole slew of improvements have been made to our web cmdlets: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)</span></span>
-<span data-ttu-id="1ff07-193">és [ `Invoke-RestMethod` ](/powershell/module/microsoft.powershell.utility/invoke-restmethod).</span><span class="sxs-lookup"><span data-stu-id="1ff07-193">and [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-restmethod).</span></span>
+<span data-ttu-id="5ba23-192">Köszönhetően [ @markekraus ](https://github.com/markekraus), egy teljes slew kapcsolatos fejlesztések történtek-e a webalkalmazás-parancsmagok: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)</span><span class="sxs-lookup"><span data-stu-id="5ba23-192">Thanks to [@markekraus](https://github.com/markekraus), a whole slew of improvements have been made to our web cmdlets: [`Invoke-WebRequest`](/powershell/module/microsoft.powershell.utility/invoke-webrequest)</span></span>
+<span data-ttu-id="5ba23-193">és [ `Invoke-RestMethod` ](/powershell/module/microsoft.powershell.utility/invoke-restmethod).</span><span class="sxs-lookup"><span data-stu-id="5ba23-193">and [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-restmethod).</span></span>
 
-- <span data-ttu-id="1ff07-194">[Lekéréses kérelem #6109](https://github.com/PowerShell/PowerShell/pull/6109) -kódolási értéke UTF-8 az alapértelmezett `application-json` válaszok</span><span class="sxs-lookup"><span data-stu-id="1ff07-194">[PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) - default encoding set to UTF-8 for `application-json` responses</span></span>
-- <span data-ttu-id="1ff07-195">[Lekéréses kérelem #6018](https://github.com/PowerShell/PowerShell/pull/6018)  -  `-SkipHeaderValidation` , hogy a paraméter `Content-Type` fejlécek, amelyek nem szabványokkal kompatibilis</span><span class="sxs-lookup"><span data-stu-id="1ff07-195">[PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation` parameter to allow `Content-Type` headers that aren't standards-compliant</span></span>
-- <span data-ttu-id="1ff07-196">[Lekéréses kérelem #5972](https://github.com/PowerShell/PowerShell/pull/5972)  -  `Form` paraméter támogatása egyszerűsített `multipart/form-data` támogatása</span><span class="sxs-lookup"><span data-stu-id="1ff07-196">[PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form` parameter to support simplified `multipart/form-data` support</span></span>
-- <span data-ttu-id="1ff07-197">[Lekéréses kérelem #6338](https://github.com/PowerShell/PowerShell/pull/6338) – megfelelő, a kis-és kapcsolat kulcsok kezelése</span><span class="sxs-lookup"><span data-stu-id="1ff07-197">[PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - Compliant, case-insensitive handling of relation keys</span></span>
-- <span data-ttu-id="1ff07-198">[Lekéréses kérelem #6447](https://github.com/PowerShell/PowerShell/pull/6447) -hozzáadása `-Resume` paraméter webes parancsmagok esetében</span><span class="sxs-lookup"><span data-stu-id="1ff07-198">[PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) - Add `-Resume` parameter for web cmdlets</span></span>
+- <span data-ttu-id="5ba23-194">[Lekéréses kérelem #6109](https://github.com/PowerShell/PowerShell/pull/6109) -kódolási értéke UTF-8 az alapértelmezett `application-json` válaszok</span><span class="sxs-lookup"><span data-stu-id="5ba23-194">[PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) - default encoding set to UTF-8 for `application-json` responses</span></span>
+- <span data-ttu-id="5ba23-195">[Lekéréses kérelem #6018](https://github.com/PowerShell/PowerShell/pull/6018)  -  `-SkipHeaderValidation` , hogy a paraméter `Content-Type` fejlécek, amelyek nem szabványokkal kompatibilis</span><span class="sxs-lookup"><span data-stu-id="5ba23-195">[PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation` parameter to allow `Content-Type` headers that aren't standards-compliant</span></span>
+- <span data-ttu-id="5ba23-196">[Lekéréses kérelem #5972](https://github.com/PowerShell/PowerShell/pull/5972)  -  `Form` paraméter támogatása egyszerűsített `multipart/form-data` támogatása</span><span class="sxs-lookup"><span data-stu-id="5ba23-196">[PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form` parameter to support simplified `multipart/form-data` support</span></span>
+- <span data-ttu-id="5ba23-197">[Lekéréses kérelem #6338](https://github.com/PowerShell/PowerShell/pull/6338) – megfelelő, a kis-és kapcsolat kulcsok kezelése</span><span class="sxs-lookup"><span data-stu-id="5ba23-197">[PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - Compliant, case-insensitive handling of relation keys</span></span>
+- <span data-ttu-id="5ba23-198">[Lekéréses kérelem #6447](https://github.com/PowerShell/PowerShell/pull/6447) -hozzáadása `-Resume` paraméter webes parancsmagok esetében</span><span class="sxs-lookup"><span data-stu-id="5ba23-198">[PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) - Add `-Resume` parameter for web cmdlets</span></span>
 
-## <a name="remoting-improvements"></a><span data-ttu-id="1ff07-199">Távoli eljáráshívás fejlesztései</span><span class="sxs-lookup"><span data-stu-id="1ff07-199">Remoting improvements</span></span>
+## <a name="remoting-improvements"></a><span data-ttu-id="5ba23-199">Távoli eljáráshívás fejlesztései</span><span class="sxs-lookup"><span data-stu-id="5ba23-199">Remoting improvements</span></span>
 
-### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a><span data-ttu-id="1ff07-200">A tárolók a PowerShell Directet elsőként próbálja használni a PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="1ff07-200">PowerShell Direct for Containers tries to use PowerShell Core first</span></span>
+### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a><span data-ttu-id="5ba23-200">A tárolók a PowerShell Directet elsőként próbálja használni a PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="5ba23-200">PowerShell Direct for Containers tries to use PowerShell Core first</span></span>
 
-<span data-ttu-id="1ff07-201">[PowerShell Directet](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) PowerShell és a egy Hyper-V virtuális gép vagy a tároló nincs hálózati kapcsolat vagy más távoli felügyeleti szolgáltatások összekapcsolhatók a Hyper-V szolgáltatása.</span><span class="sxs-lookup"><span data-stu-id="1ff07-201">[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) is a feature of PowerShell and Hyper-V that allows you to connect to a Hyper-V VM or Container without network connectivity or other remote management services.</span></span>
+<span data-ttu-id="5ba23-201">[PowerShell Directet](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) PowerShell és a egy Hyper-V virtuális gép vagy a tároló nincs hálózati kapcsolat vagy más távoli felügyeleti szolgáltatások összekapcsolhatók a Hyper-V szolgáltatása.</span><span class="sxs-lookup"><span data-stu-id="5ba23-201">[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) is a feature of PowerShell and Hyper-V that allows you to connect to a Hyper-V VM or Container without network connectivity or other remote management services.</span></span>
 
-<span data-ttu-id="1ff07-202">Múltbeli időpont a PowerShell Directet csatlakoztatva a tárolón a Beérkezett fájlok Windows PowerShell-példány használatával.</span><span class="sxs-lookup"><span data-stu-id="1ff07-202">In the past, PowerShell Direct connected using the inbox Windows PowerShell instance on the Container.</span></span>
-<span data-ttu-id="1ff07-203">Most, PowerShell Direct először használatával próbál kapcsolódni az elérhető `pwsh.exe` a a `PATH` környezeti változót.</span><span class="sxs-lookup"><span data-stu-id="1ff07-203">Now, PowerShell Direct first attempts to connect using any available `pwsh.exe` on the `PATH` environment variable.</span></span>
-<span data-ttu-id="1ff07-204">Ha `pwsh.exe` nem érhető el, PowerShell Direct visszavált használandó `powershell.exe`.</span><span class="sxs-lookup"><span data-stu-id="1ff07-204">If `pwsh.exe` isn't available, PowerShell Direct falls back to use `powershell.exe`.</span></span>
+<span data-ttu-id="5ba23-202">Múltbeli időpont a PowerShell Directet csatlakoztatva a tárolón a Beérkezett fájlok Windows PowerShell-példány használatával.</span><span class="sxs-lookup"><span data-stu-id="5ba23-202">In the past, PowerShell Direct connected using the inbox Windows PowerShell instance on the Container.</span></span>
+<span data-ttu-id="5ba23-203">Most, PowerShell Direct először használatával próbál kapcsolódni az elérhető `pwsh.exe` a a `PATH` környezeti változót.</span><span class="sxs-lookup"><span data-stu-id="5ba23-203">Now, PowerShell Direct first attempts to connect using any available `pwsh.exe` on the `PATH` environment variable.</span></span>
+<span data-ttu-id="5ba23-204">Ha `pwsh.exe` nem érhető el, PowerShell Direct visszavált használandó `powershell.exe`.</span><span class="sxs-lookup"><span data-stu-id="5ba23-204">If `pwsh.exe` isn't available, PowerShell Direct falls back to use `powershell.exe`.</span></span>
 
-### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a><span data-ttu-id="1ff07-205">`Enable-PSRemoting` ekkor létrehozza az előzetes verziókban külön távoli eljáráshívás végpontok</span><span class="sxs-lookup"><span data-stu-id="1ff07-205">`Enable-PSRemoting` now creates separate remoting endpoints for preview versions</span></span>
+### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a><span data-ttu-id="5ba23-205">`Enable-PSRemoting` ekkor létrehozza az előzetes verziókban külön távoli eljáráshívás végpontok</span><span class="sxs-lookup"><span data-stu-id="5ba23-205">`Enable-PSRemoting` now creates separate remoting endpoints for preview versions</span></span>
 
-<span data-ttu-id="1ff07-206">`Enable-PSRemoting` most létrehoz két távoli eljáráshívás munkamenet-konfigurációk:</span><span class="sxs-lookup"><span data-stu-id="1ff07-206">`Enable-PSRemoting` now creates two remoting session configurations:</span></span>
+`Enable-PSRemoting` <span data-ttu-id="5ba23-206">most létrehoz két távoli eljáráshívás munkamenet-konfigurációk:</span><span class="sxs-lookup"><span data-stu-id="5ba23-206">now creates two remoting session configurations:</span></span>
 
-- <span data-ttu-id="1ff07-207">Egy a PowerShell főverziója.</span><span class="sxs-lookup"><span data-stu-id="1ff07-207">One for the major version of PowerShell.</span></span> <span data-ttu-id="1ff07-208">Például: `PowerShell.6`.</span><span class="sxs-lookup"><span data-stu-id="1ff07-208">For example, `PowerShell.6`.</span></span> <span data-ttu-id="1ff07-209">Ezt a végpontot, amely képes lehet hivatkozni alverzió frissítések között, a "rendszerszintű" PowerShell 6-os munkamenet-konfiguráció</span><span class="sxs-lookup"><span data-stu-id="1ff07-209">This endpoint that can be relied upon across minor version updates as the "system-wide" PowerShell 6 session configuration</span></span>
-- <span data-ttu-id="1ff07-210">Egy verzióspecifikus munkamenet-konfiguráció, például: `PowerShell.6.1.0`</span><span class="sxs-lookup"><span data-stu-id="1ff07-210">One version-specific session configuration, for example: `PowerShell.6.1.0`</span></span>
+- <span data-ttu-id="5ba23-207">Egy a PowerShell főverziója.</span><span class="sxs-lookup"><span data-stu-id="5ba23-207">One for the major version of PowerShell.</span></span> <span data-ttu-id="5ba23-208">Például: `PowerShell.6`.</span><span class="sxs-lookup"><span data-stu-id="5ba23-208">For example, `PowerShell.6`.</span></span> <span data-ttu-id="5ba23-209">Ezt a végpontot, amely képes lehet hivatkozni alverzió frissítések között, a "rendszerszintű" PowerShell 6-os munkamenet-konfiguráció</span><span class="sxs-lookup"><span data-stu-id="5ba23-209">This endpoint that can be relied upon across minor version updates as the "system-wide" PowerShell 6 session configuration</span></span>
+- <span data-ttu-id="5ba23-210">Egy verzióspecifikus munkamenet-konfiguráció, például:</span><span class="sxs-lookup"><span data-stu-id="5ba23-210">One version-specific session configuration, for example:</span></span> `PowerShell.6.1.0`
 
-<span data-ttu-id="1ff07-211">Ez a viselkedés akkor hasznos, ha ugyanazon a gépen több PowerShell 6-os verzió telepítve, és elérhető legyen.</span><span class="sxs-lookup"><span data-stu-id="1ff07-211">This behavior is useful if you want to have multiple PowerShell 6 versions installed and accessible on the same machine.</span></span>
+<span data-ttu-id="5ba23-211">Ez a viselkedés akkor hasznos, ha ugyanazon a gépen több PowerShell 6-os verzió telepítve, és elérhető legyen.</span><span class="sxs-lookup"><span data-stu-id="5ba23-211">This behavior is useful if you want to have multiple PowerShell 6 versions installed and accessible on the same machine.</span></span>
 
-<span data-ttu-id="1ff07-212">Továbbá PowerShell előzetes verziója mostantól igénybe a saját távoli eljáráshívás a munkamenet-konfigurációk futtatása után a `Enable-PSRemoting` parancsmagot:</span><span class="sxs-lookup"><span data-stu-id="1ff07-212">Additionally, preview versions of PowerShell now get their own remoting session configurations after running the `Enable-PSRemoting` cmdlet:</span></span>
+<span data-ttu-id="5ba23-212">Továbbá PowerShell előzetes verziója mostantól igénybe a saját távoli eljáráshívás a munkamenet-konfigurációk futtatása után a `Enable-PSRemoting` parancsmagot:</span><span class="sxs-lookup"><span data-stu-id="5ba23-212">Additionally, preview versions of PowerShell now get their own remoting session configurations after running the `Enable-PSRemoting` cmdlet:</span></span>
 
 ```powershell
 C:\WINDOWS\system32> Enable-PSRemoting
 ```
 
-<span data-ttu-id="1ff07-213">A kimeneti eltérő, ha még nem állított be a Rendszerfelügyeleti webszolgáltatások előtt lehet.</span><span class="sxs-lookup"><span data-stu-id="1ff07-213">Your output may be different if you haven't set up WinRM before.</span></span>
+<span data-ttu-id="5ba23-213">A kimeneti eltérő, ha még nem állított be a Rendszerfelügyeleti webszolgáltatások előtt lehet.</span><span class="sxs-lookup"><span data-stu-id="5ba23-213">Your output may be different if you haven't set up WinRM before.</span></span>
 
 ```Output
 WinRM is already set up to receive requests on this computer.
 WinRM is already set up for remote management on this computer.
 ```
 
-<span data-ttu-id="1ff07-214">Ezután láthatja, hogy külön PowerShell-munkamenet konfigurációk az előzetes verzióra, és stabil összeállítja a PowerShell 6-os, és minden egyes adott verziójához.</span><span class="sxs-lookup"><span data-stu-id="1ff07-214">Then you can see separate PowerShell session configurations for the preview and stable builds of PowerShell 6, and for each specific version.</span></span>
+<span data-ttu-id="5ba23-214">Ezután láthatja, hogy külön PowerShell-munkamenet konfigurációk az előzetes verzióra, és stabil összeállítja a PowerShell 6-os, és minden egyes adott verziójához.</span><span class="sxs-lookup"><span data-stu-id="5ba23-214">Then you can see separate PowerShell session configurations for the preview and stable builds of PowerShell 6, and for each specific version.</span></span>
 
 ```powershell
 Get-PSSessionConfiguration
@@ -259,28 +259,28 @@ RunAsUser     :
 Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators AccessAllowed, BUILTIN\Remote Management Users AccessAllowed
 ```
 
-### <a name="userhostport-syntax-supported-for-ssh"></a><span data-ttu-id="1ff07-215">`user@host:port` az SSH-hoz támogatott szintaxis</span><span class="sxs-lookup"><span data-stu-id="1ff07-215">`user@host:port` syntax supported for SSH</span></span>
+### <a name="userhostport-syntax-supported-for-ssh"></a><span data-ttu-id="5ba23-215">`user@host:port` az SSH-hoz támogatott szintaxis</span><span class="sxs-lookup"><span data-stu-id="5ba23-215">`user@host:port` syntax supported for SSH</span></span>
 
-<span data-ttu-id="1ff07-216">SSH ügyfelek általában támogatja a kapcsolati karakterlánc a következő formátumban `user@host:port`.</span><span class="sxs-lookup"><span data-stu-id="1ff07-216">SSH clients typically support a connection string in the format `user@host:port`.</span></span>
-<span data-ttu-id="1ff07-217">Igény szerinti hozzáadásával SSH protokollt a PowerShell-táveléréssel lehetőségekkel bővült a kapcsolati karakterlánc-formátum támogatása:</span><span class="sxs-lookup"><span data-stu-id="1ff07-217">With the addition of SSH as a protocol for PowerShell Remoting, we've added support for this format of connection string:</span></span>
+<span data-ttu-id="5ba23-216">SSH ügyfelek általában támogatja a kapcsolati karakterlánc a következő formátumban `user@host:port`.</span><span class="sxs-lookup"><span data-stu-id="5ba23-216">SSH clients typically support a connection string in the format `user@host:port`.</span></span>
+<span data-ttu-id="5ba23-217">Igény szerinti hozzáadásával SSH protokollt a PowerShell-táveléréssel lehetőségekkel bővült a kapcsolati karakterlánc-formátum támogatása:</span><span class="sxs-lookup"><span data-stu-id="5ba23-217">With the addition of SSH as a protocol for PowerShell Remoting, we've added support for this format of connection string:</span></span>
 
 `Enter-PSSession -HostName fooUser@ssh.contoso.com:2222`
 
-## <a name="msi-option-to-add-explorer-shell-context-menu-on-windows"></a><span data-ttu-id="1ff07-218">MSI lehetőség a Windows Intéző rendszerhéj helyi menüjének hozzáadása</span><span class="sxs-lookup"><span data-stu-id="1ff07-218">MSI option to add explorer shell context menu on Windows</span></span>
+## <a name="msi-option-to-add-explorer-shell-context-menu-on-windows"></a><span data-ttu-id="5ba23-218">MSI lehetőség a Windows Intéző rendszerhéj helyi menüjének hozzáadása</span><span class="sxs-lookup"><span data-stu-id="5ba23-218">MSI option to add explorer shell context menu on Windows</span></span>
 
-<span data-ttu-id="1ff07-219">Köszönhetően [ @bergmeister ](https://github.com/bergmeister), engedélyezheti a Windows egy helyi menüjében.</span><span class="sxs-lookup"><span data-stu-id="1ff07-219">Thanks to [@bergmeister](https://github.com/bergmeister), now you can enable a context menu on Windows.</span></span> <span data-ttu-id="1ff07-220">Most megnyithatja a PowerShell 6.1 a rendszerre telepített bármely mappából a Windows Explorerben:</span><span class="sxs-lookup"><span data-stu-id="1ff07-220">Now you can open your system-wide installation of PowerShell 6.1 from any folder in the Windows Explorer:</span></span>
+<span data-ttu-id="5ba23-219">Köszönhetően [ @bergmeister ](https://github.com/bergmeister), engedélyezheti a Windows egy helyi menüjében.</span><span class="sxs-lookup"><span data-stu-id="5ba23-219">Thanks to [@bergmeister](https://github.com/bergmeister), now you can enable a context menu on Windows.</span></span> <span data-ttu-id="5ba23-220">Most megnyithatja a PowerShell 6.1 a rendszerre telepített bármely mappából a Windows Explorerben:</span><span class="sxs-lookup"><span data-stu-id="5ba23-220">Now you can open your system-wide installation of PowerShell 6.1 from any folder in the Windows Explorer:</span></span>
 
 ![A PowerShell 6-os rendszerhéj helyi menü](./images/shell_context_menu.png)
 
-## <a name="goodies"></a><span data-ttu-id="1ff07-222">Hasznos eszközök</span><span class="sxs-lookup"><span data-stu-id="1ff07-222">Goodies</span></span>
+## <a name="goodies"></a><span data-ttu-id="5ba23-222">Hasznos eszközök</span><span class="sxs-lookup"><span data-stu-id="5ba23-222">Goodies</span></span>
 
-### <a name="run-as-administrator-in-the-windows-shortcut-jump-list"></a><span data-ttu-id="1ff07-223">"Futtatás rendszergazdaként" a Windows helyi jump listában</span><span class="sxs-lookup"><span data-stu-id="1ff07-223">"Run as Administrator" in the Windows shortcut jump list</span></span>
+### <a name="run-as-administrator-in-the-windows-shortcut-jump-list"></a><span data-ttu-id="5ba23-223">"Futtatás rendszergazdaként" a Windows helyi jump listában</span><span class="sxs-lookup"><span data-stu-id="5ba23-223">"Run as Administrator" in the Windows shortcut jump list</span></span>
 
-<span data-ttu-id="1ff07-224">Köszönhetően [ @bergmeister ](https://github.com/bergmeister), a PowerShell Core helyi jump listában mostantól tartalmazza a "Futtatás mint rendszergazda":</span><span class="sxs-lookup"><span data-stu-id="1ff07-224">Thanks to [@bergmeister](https://github.com/bergmeister), the PowerShell Core shortcut's jump list now includes "Run as Administrator":</span></span>
+<span data-ttu-id="5ba23-224">Köszönhetően [ @bergmeister ](https://github.com/bergmeister), a PowerShell Core helyi jump listában mostantól tartalmazza a "Futtatás mint rendszergazda":</span><span class="sxs-lookup"><span data-stu-id="5ba23-224">Thanks to [@bergmeister](https://github.com/bergmeister), the PowerShell Core shortcut's jump list now includes "Run as Administrator":</span></span>
 
 ![Futtatás a PowerShell 6-os helyettesítő listában rendszergazdaként](./images/jumplist.png)
 
-### <a name="cd---returns-to-previous-directory"></a><span data-ttu-id="1ff07-226">`cd -` adja vissza az előző könyvtár</span><span class="sxs-lookup"><span data-stu-id="1ff07-226">`cd -` returns to previous directory</span></span>
+### <a name="cd---returns-to-previous-directory"></a><span data-ttu-id="5ba23-226">`cd -` adja vissza az előző könyvtár</span><span class="sxs-lookup"><span data-stu-id="5ba23-226">`cd -` returns to previous directory</span></span>
 
 ```powershell
 C:\Windows\System32> cd C:\
@@ -288,7 +288,7 @@ C:\> cd -
 C:\Windows\System32>
 ```
 
-<span data-ttu-id="1ff07-227">Vagy a Linux rendszeren:</span><span class="sxs-lookup"><span data-stu-id="1ff07-227">Or on Linux:</span></span>
+<span data-ttu-id="5ba23-227">Vagy a Linux rendszeren:</span><span class="sxs-lookup"><span data-stu-id="5ba23-227">Or on Linux:</span></span>
 
 ```ShellSession
 PS /etc> cd /usr/bin
@@ -296,21 +296,21 @@ PS /usr/bin> cd -
 PS /etc>
 ```
 
-<span data-ttu-id="1ff07-228">Ezenkívül `cd` és `cd --` módosítsa `$HOME`.</span><span class="sxs-lookup"><span data-stu-id="1ff07-228">Also, `cd` and `cd --` change to `$HOME`.</span></span>
+<span data-ttu-id="5ba23-228">Ezenkívül `cd` és `cd --` módosítsa `$HOME`.</span><span class="sxs-lookup"><span data-stu-id="5ba23-228">Also, `cd` and `cd --` change to `$HOME`.</span></span>
 
 ### `Test-Connection`
 
-<span data-ttu-id="1ff07-229">Köszönhetően [ @iSazonov ](https://github.com/iSazonov), a [ `Test-Connection` ](/powershell/module/microsoft.powershell.management/test-connection) parancsmag rendelkezik már a PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="1ff07-229">Thanks to [@iSazonov](https://github.com/iSazonov), the [`Test-Connection`](/powershell/module/microsoft.powershell.management/test-connection) cmdlet has been ported to PowerShell Core.</span></span>
+<span data-ttu-id="5ba23-229">Köszönhetően [ @iSazonov ](https://github.com/iSazonov), a [ `Test-Connection` ](/powershell/module/microsoft.powershell.management/test-connection) parancsmag rendelkezik már a PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="5ba23-229">Thanks to [@iSazonov](https://github.com/iSazonov), the [`Test-Connection`](/powershell/module/microsoft.powershell.management/test-connection) cmdlet has been ported to PowerShell Core.</span></span>
 
-### <a name="update-help-as-non-admin"></a><span data-ttu-id="1ff07-230">`Update-Help` a nem rendszergazda</span><span class="sxs-lookup"><span data-stu-id="1ff07-230">`Update-Help` as non-admin</span></span>
+### <a name="update-help-as-non-admin"></a><span data-ttu-id="5ba23-230">`Update-Help` a nem rendszergazda</span><span class="sxs-lookup"><span data-stu-id="5ba23-230">`Update-Help` as non-admin</span></span>
 
-<span data-ttu-id="1ff07-231">Kérték `Update-Help` már nem kell rendszergazdaként kell futtatnia.</span><span class="sxs-lookup"><span data-stu-id="1ff07-231">By popular demand, `Update-Help` no longer needs to be run as an administrator.</span></span>
-<span data-ttu-id="1ff07-232">`Update-Help` Mostantól alapértelmezés szerint súgó, felhasználói hatókörbe tartozó mappába menti.</span><span class="sxs-lookup"><span data-stu-id="1ff07-232">`Update-Help` now defaults to saving help to a user-scoped folder.</span></span>
+<span data-ttu-id="5ba23-231">Kérték `Update-Help` már nem kell rendszergazdaként kell futtatnia.</span><span class="sxs-lookup"><span data-stu-id="5ba23-231">By popular demand, `Update-Help` no longer needs to be run as an administrator.</span></span>
+`Update-Help` <span data-ttu-id="5ba23-232">Mostantól alapértelmezés szerint súgó, felhasználói hatókörbe tartozó mappába menti.</span><span class="sxs-lookup"><span data-stu-id="5ba23-232">now defaults to saving help to a user-scoped folder.</span></span>
 
-### <a name="new-methodsproperties-on-pscustomobject"></a><span data-ttu-id="1ff07-233">Új módszerek/tulajdonságai `PSCustomObject`</span><span class="sxs-lookup"><span data-stu-id="1ff07-233">New methods/properties on `PSCustomObject`</span></span>
+### <a name="new-methodsproperties-on-pscustomobject"></a><span data-ttu-id="5ba23-233">Új módszerek/tulajdonságai `PSCustomObject`</span><span class="sxs-lookup"><span data-stu-id="5ba23-233">New methods/properties on `PSCustomObject`</span></span>
 
-<span data-ttu-id="1ff07-234">Köszönhetően [ @iSazonov ](https://github.com/iSazonov), új módszerek és a Tulajdonságok hozzáadtunk `PSCustomObject`.</span><span class="sxs-lookup"><span data-stu-id="1ff07-234">Thanks to [@iSazonov](https://github.com/iSazonov), we've added new methods and properties to `PSCustomObject`.</span></span>
-<span data-ttu-id="1ff07-235">`PSCustomObject` most már tartalmaz egy `Count` / `Length` tulajdonsága mint más objektumok.</span><span class="sxs-lookup"><span data-stu-id="1ff07-235">`PSCustomObject` now includes a `Count`/`Length` property like other objects.</span></span>
+<span data-ttu-id="5ba23-234">Köszönhetően [ @iSazonov ](https://github.com/iSazonov), új módszerek és a Tulajdonságok hozzáadtunk `PSCustomObject`.</span><span class="sxs-lookup"><span data-stu-id="5ba23-234">Thanks to [@iSazonov](https://github.com/iSazonov), we've added new methods and properties to `PSCustomObject`.</span></span>
+`PSCustomObject` <span data-ttu-id="5ba23-235">most már tartalmaz egy `Count` / `Length` tulajdonsága mint más objektumok.</span><span class="sxs-lookup"><span data-stu-id="5ba23-235">now includes a `Count`/`Length` property like other objects.</span></span>
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -330,7 +330,7 @@ $PSCustomObject.Count
 1
 ```
 
-<span data-ttu-id="1ff07-236">Ezt a munkát is tartalmaz `ForEach` és `Where` módszereket, amelyek lehetővé teszik, hogy működjön, és szűrheti a `PSCustomObject` elemek:</span><span class="sxs-lookup"><span data-stu-id="1ff07-236">This work also includes `ForEach` and `Where` methods that allow you to operate and filter on `PSCustomObject` items:</span></span>
+<span data-ttu-id="5ba23-236">Ezt a munkát is tartalmaz `ForEach` és `Where` módszereket, amelyek lehetővé teszik, hogy működjön, és szűrheti a `PSCustomObject` elemek:</span><span class="sxs-lookup"><span data-stu-id="5ba23-236">This work also includes `ForEach` and `Where` methods that allow you to operate and filter on `PSCustomObject` items:</span></span>
 
 ```powershell
 $PSCustomObject.ForEach({$_.foo + 1})
@@ -352,23 +352,23 @@ foo
 
 ### `Where-Object -Not`
 
-<span data-ttu-id="1ff07-237">Köszönhetően @SimonWahlin, tettünk elérhetővé a `-Not` paramétert `Where-Object`.</span><span class="sxs-lookup"><span data-stu-id="1ff07-237">Thanks to @SimonWahlin, we've added the `-Not` parameter to `Where-Object`.</span></span>
-<span data-ttu-id="1ff07-238">Egy objektum, a folyamat meglétét, tulajdonság vagy egy NULL értékű vagy üres tulajdonság értéke most már szűrheti.</span><span class="sxs-lookup"><span data-stu-id="1ff07-238">Now you can filter an object at the pipeline for the non-existence of a property, or a null/empty property value.</span></span>
+<span data-ttu-id="5ba23-237">Köszönhetően @SimonWahlin, tettünk elérhetővé a `-Not` paramétert `Where-Object`.</span><span class="sxs-lookup"><span data-stu-id="5ba23-237">Thanks to @SimonWahlin, we've added the `-Not` parameter to `Where-Object`.</span></span>
+<span data-ttu-id="5ba23-238">Egy objektum, a folyamat meglétét, tulajdonság vagy egy NULL értékű vagy üres tulajdonság értéke most már szűrheti.</span><span class="sxs-lookup"><span data-stu-id="5ba23-238">Now you can filter an object at the pipeline for the non-existence of a property, or a null/empty property value.</span></span>
 
-<span data-ttu-id="1ff07-239">Ez a parancs például minden olyan szolgáltatás, amely nincs definiálva a függő szolgáltatások adja vissza:</span><span class="sxs-lookup"><span data-stu-id="1ff07-239">For example, this command returns all services that don't have any dependent services defined:</span></span>
+<span data-ttu-id="5ba23-239">Ez a parancs például minden olyan szolgáltatás, amely nincs definiálva a függő szolgáltatások adja vissza:</span><span class="sxs-lookup"><span data-stu-id="5ba23-239">For example, this command returns all services that don't have any dependent services defined:</span></span>
 
 ```powershell
 Get-Service | Where-Object -Not DependentServices
 ```
 
-### <a name="new-modulemanifest-creates-a-bom-less-utf-8-document"></a><span data-ttu-id="1ff07-240">`New-ModuleManifest` AJ nélküli UTF-8 dokumentum létrehozása</span><span class="sxs-lookup"><span data-stu-id="1ff07-240">`New-ModuleManifest` creates a BOM-less UTF-8 document</span></span>
+### <a name="new-modulemanifest-creates-a-bom-less-utf-8-document"></a><span data-ttu-id="5ba23-240">`New-ModuleManifest` AJ nélküli UTF-8 dokumentum létrehozása</span><span class="sxs-lookup"><span data-stu-id="5ba23-240">`New-ModuleManifest` creates a BOM-less UTF-8 document</span></span>
 
-<span data-ttu-id="1ff07-241">Adja meg az áthelyezés AJ nélküli UTF-8, a PowerShell 6.0-s, frissítettük a `New-ModuleManifest` parancsmaggal hozzon létre egy egyik UTF-16 helyett AJ nélküli UTF-8-dokumentumot.</span><span class="sxs-lookup"><span data-stu-id="1ff07-241">Given our move to BOM-less UTF-8 in PowerShell 6.0, we've updated the `New-ModuleManifest` cmdlet to create a BOM-less UTF-8 document instead of a UTF-16 one.</span></span>
+<span data-ttu-id="5ba23-241">Adja meg az áthelyezés AJ nélküli UTF-8, a PowerShell 6.0-s, frissítettük a `New-ModuleManifest` parancsmaggal hozzon létre egy egyik UTF-16 helyett AJ nélküli UTF-8-dokumentumot.</span><span class="sxs-lookup"><span data-stu-id="5ba23-241">Given our move to BOM-less UTF-8 in PowerShell 6.0, we've updated the `New-ModuleManifest` cmdlet to create a BOM-less UTF-8 document instead of a UTF-16 one.</span></span>
 
-### <a name="conversions-from-psmethod-to-delegate"></a><span data-ttu-id="1ff07-242">Átváltás a PSMethod delegálása</span><span class="sxs-lookup"><span data-stu-id="1ff07-242">Conversions from PSMethod to Delegate</span></span>
+### <a name="conversions-from-psmethod-to-delegate"></a><span data-ttu-id="5ba23-242">Átváltás a PSMethod delegálása</span><span class="sxs-lookup"><span data-stu-id="5ba23-242">Conversions from PSMethod to Delegate</span></span>
 
-<span data-ttu-id="1ff07-243">Köszönhetően [ @powercode ](https://github.com/powercode), mostantól támogatjuk a átalakítása egy `PSMethod` delegált be.</span><span class="sxs-lookup"><span data-stu-id="1ff07-243">Thanks to [@powercode](https://github.com/powercode), we now support the conversion of a `PSMethod` into a delegate.</span></span>
-<span data-ttu-id="1ff07-244">Ez lehetővé teszi, hogy többek között a megadásának `PSMethod` `[M]::DoubleStrLen` be delegált értékként `[M]::AggregateString`:</span><span class="sxs-lookup"><span data-stu-id="1ff07-244">This allows you to do things like passing `PSMethod` `[M]::DoubleStrLen` as a delegate value into `[M]::AggregateString`:</span></span>
+<span data-ttu-id="5ba23-243">Köszönhetően [ @powercode ](https://github.com/powercode), mostantól támogatjuk a átalakítása egy `PSMethod` delegált be.</span><span class="sxs-lookup"><span data-stu-id="5ba23-243">Thanks to [@powercode](https://github.com/powercode), we now support the conversion of a `PSMethod` into a delegate.</span></span>
+<span data-ttu-id="5ba23-244">Ez lehetővé teszi, hogy többek között a megadásának `PSMethod` `[M]::DoubleStrLen` be delegált értékként `[M]::AggregateString`:</span><span class="sxs-lookup"><span data-stu-id="5ba23-244">This allows you to do things like passing `PSMethod` `[M]::DoubleStrLen` as a delegate value into `[M]::AggregateString`:</span></span>
 
 ```powershell
 class M {
@@ -386,11 +386,11 @@ class M {
 [M]::AggregateString((gci).Name, [M]::DoubleStrLen)
 ```
 
-<span data-ttu-id="1ff07-245">További információ az ezt a módosítást, tekintse meg [PR #5287](https://github.com/PowerShell/PowerShell/pull/5287).</span><span class="sxs-lookup"><span data-stu-id="1ff07-245">For more info on this change, check out [PR #5287](https://github.com/PowerShell/PowerShell/pull/5287).</span></span>
+<span data-ttu-id="5ba23-245">További információ az ezt a módosítást, tekintse meg [PR #5287](https://github.com/PowerShell/PowerShell/pull/5287).</span><span class="sxs-lookup"><span data-stu-id="5ba23-245">For more info on this change, check out [PR #5287](https://github.com/PowerShell/PowerShell/pull/5287).</span></span>
 
-### <a name="standard-deviation-in-measure-object"></a><span data-ttu-id="1ff07-246">Szórás `Measure-Object`</span><span class="sxs-lookup"><span data-stu-id="1ff07-246">Standard deviation in `Measure-Object`</span></span>
+### <a name="standard-deviation-in-measure-object"></a><span data-ttu-id="5ba23-246">Szórás `Measure-Object`</span><span class="sxs-lookup"><span data-stu-id="5ba23-246">Standard deviation in `Measure-Object`</span></span>
 
-<span data-ttu-id="1ff07-247">Köszönhetően [ @CloudyDino ](https://github.com/CloudyDino), hozzáadtunk egy `StandardDeviation` tulajdonságot `Measure-Object`:</span><span class="sxs-lookup"><span data-stu-id="1ff07-247">Thanks to [@CloudyDino](https://github.com/CloudyDino), we've added a `StandardDeviation` property to `Measure-Object`:</span></span>
+<span data-ttu-id="5ba23-247">Köszönhetően [ @CloudyDino ](https://github.com/CloudyDino), hozzáadtunk egy `StandardDeviation` tulajdonságot `Measure-Object`:</span><span class="sxs-lookup"><span data-stu-id="5ba23-247">Thanks to [@CloudyDino](https://github.com/CloudyDino), we've added a `StandardDeviation` property to `Measure-Object`:</span></span>
 
 ```powershell
 Get-Process | Measure-Object -Property CPU -AllStats
@@ -408,7 +408,7 @@ Property          : CPU
 
 ### `GetPfxCertificate -Password`
 
-<span data-ttu-id="1ff07-248">Köszönhetően [ @maybe-hello-world ](https://github.com/maybe-hello-world), `Get-PfxCertificate` most már rendelkezik a `Password` paraméter, amely egy `SecureString`.</span><span class="sxs-lookup"><span data-stu-id="1ff07-248">Thanks to [@maybe-hello-world](https://github.com/maybe-hello-world), `Get-PfxCertificate` now has the `Password` parameter, which takes a `SecureString`.</span></span> <span data-ttu-id="1ff07-249">Ez lehetővé teszi, hogy azt nem interaktív módon:</span><span class="sxs-lookup"><span data-stu-id="1ff07-249">This allows you to use it non-interactively:</span></span>
+<span data-ttu-id="5ba23-248">Köszönhetően [ @maybe-hello-world ](https://github.com/maybe-hello-world), `Get-PfxCertificate` most már rendelkezik a `Password` paraméter, amely egy `SecureString`.</span><span class="sxs-lookup"><span data-stu-id="5ba23-248">Thanks to [@maybe-hello-world](https://github.com/maybe-hello-world), `Get-PfxCertificate` now has the `Password` parameter, which takes a `SecureString`.</span></span> <span data-ttu-id="5ba23-249">Ez lehetővé teszi, hogy azt nem interaktív módon:</span><span class="sxs-lookup"><span data-stu-id="5ba23-249">This allows you to use it non-interactively:</span></span>
 
 ```powershell
 $certFile = '\\server\share\pwd-protected.pfx'
@@ -417,40 +417,40 @@ $certPass = Read-Host -AsSecureString -Prompt 'Enter the password for certificat
 $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).ThumbPrint
 ```
 
-### <a name="removal-of-the-more-function"></a><span data-ttu-id="1ff07-250">Eltávolítását a `more` függvény</span><span class="sxs-lookup"><span data-stu-id="1ff07-250">Removal of the `more` function</span></span>
+### <a name="removal-of-the-more-function"></a><span data-ttu-id="5ba23-250">Eltávolítását a `more` függvény</span><span class="sxs-lookup"><span data-stu-id="5ba23-250">Removal of the `more` function</span></span>
 
-<span data-ttu-id="1ff07-251">A múltban PowerShell tartalmazza a szükséges a Windows nevű függvény `more` , hogy a burkolt be `more.com`.</span><span class="sxs-lookup"><span data-stu-id="1ff07-251">In the past, PowerShell shipped a function on Windows called `more` that wrapped `more.com`.</span></span>
-<span data-ttu-id="1ff07-252">Ez a függvény már el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="1ff07-252">That function has now been removed.</span></span>
+<span data-ttu-id="5ba23-251">A múltban PowerShell tartalmazza a szükséges a Windows nevű függvény `more` , hogy a burkolt be `more.com`.</span><span class="sxs-lookup"><span data-stu-id="5ba23-251">In the past, PowerShell shipped a function on Windows called `more` that wrapped `more.com`.</span></span>
+<span data-ttu-id="5ba23-252">Ez a függvény már el lett távolítva.</span><span class="sxs-lookup"><span data-stu-id="5ba23-252">That function has now been removed.</span></span>
 
-<span data-ttu-id="1ff07-253">Emellett a `help` függvény módosítása, hogy `more.com` Windows vagy a rendszer alapértelmezett személyi hívó által megadott `$env:PAGER` nem Windows platformokon.</span><span class="sxs-lookup"><span data-stu-id="1ff07-253">Also, the `help` function changed to use `more.com` on Windows, or the system's default pager specified by `$env:PAGER` on non-Windows platforms.</span></span>
+<span data-ttu-id="5ba23-253">Emellett a `help` függvény módosítása, hogy `more.com` Windows vagy a rendszer alapértelmezett személyi hívó által megadott `$env:PAGER` nem Windows platformokon.</span><span class="sxs-lookup"><span data-stu-id="5ba23-253">Also, the `help` function changed to use `more.com` on Windows, or the system's default pager specified by `$env:PAGER` on non-Windows platforms.</span></span>
 
-### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a><span data-ttu-id="1ff07-254">`cd DriveName:` most adja vissza a felhasználók a meghajtón található az aktuális munkakönyvtár</span><span class="sxs-lookup"><span data-stu-id="1ff07-254">`cd DriveName:` now returns users to the current working directory in that drive</span></span>
+### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a><span data-ttu-id="5ba23-254">`cd DriveName:` most adja vissza a felhasználók a meghajtón található az aktuális munkakönyvtár</span><span class="sxs-lookup"><span data-stu-id="5ba23-254">`cd DriveName:` now returns users to the current working directory in that drive</span></span>
 
-<span data-ttu-id="1ff07-255">Korábban, a `Set-Location` vagy `cd` térjen vissza a felhasználók az alapértelmezett hely a meghajtó küldött PSDrive.</span><span class="sxs-lookup"><span data-stu-id="1ff07-255">Previously, using `Set-Location` or `cd` to return to a PSDrive sent users to the default location for that drive.</span></span>
+<span data-ttu-id="5ba23-255">Korábban, a `Set-Location` vagy `cd` térjen vissza a felhasználók az alapértelmezett hely a meghajtó küldött PSDrive.</span><span class="sxs-lookup"><span data-stu-id="5ba23-255">Previously, using `Set-Location` or `cd` to return to a PSDrive sent users to the default location for that drive.</span></span>
 
-<span data-ttu-id="1ff07-256">Köszönhetően [ @mcbobke ](https://github.com/mcbobke), felhasználók ekkor elküldi az utolsó ismert aktuális munkakönyvtár az adott munkamenethez.</span><span class="sxs-lookup"><span data-stu-id="1ff07-256">Thanks to [@mcbobke](https://github.com/mcbobke), users are now sent to the last known current working directory for that session.</span></span>
+<span data-ttu-id="5ba23-256">Köszönhetően [ @mcbobke ](https://github.com/mcbobke), felhasználók ekkor elküldi az utolsó ismert aktuális munkakönyvtár az adott munkamenethez.</span><span class="sxs-lookup"><span data-stu-id="5ba23-256">Thanks to [@mcbobke](https://github.com/mcbobke), users are now sent to the last known current working directory for that session.</span></span>
 
-### <a name="windows-powershell-type-accelerators"></a><span data-ttu-id="1ff07-257">Windows PowerShell-típus megoldásgyorsítók</span><span class="sxs-lookup"><span data-stu-id="1ff07-257">Windows PowerShell type accelerators</span></span>
+### <a name="windows-powershell-type-accelerators"></a><span data-ttu-id="5ba23-257">Windows PowerShell-típus megoldásgyorsítók</span><span class="sxs-lookup"><span data-stu-id="5ba23-257">Windows PowerShell type accelerators</span></span>
 
-<span data-ttu-id="1ff07-258">A Windows PowerShellben amelyet hozzáadott a következő típusú megoldásgyorsítók könnyebb megfelelő adattípusukkal együtt működik:</span><span class="sxs-lookup"><span data-stu-id="1ff07-258">In Windows PowerShell, we included the following type accelerators to make it easier to work with their respective types:</span></span>
+<span data-ttu-id="5ba23-258">A Windows PowerShellben amelyet hozzáadott a következő típusú megoldásgyorsítók könnyebb megfelelő adattípusukkal együtt működik:</span><span class="sxs-lookup"><span data-stu-id="5ba23-258">In Windows PowerShell, we included the following type accelerators to make it easier to work with their respective types:</span></span>
 
-- <span data-ttu-id="1ff07-259">`[adsi]`: `System.DirectoryServices.DirectoryEntry`</span><span class="sxs-lookup"><span data-stu-id="1ff07-259">`[adsi]`: `System.DirectoryServices.DirectoryEntry`</span></span>
-- <span data-ttu-id="1ff07-260">`[adsisearcher]`: `System.DirectoryServices.DirectorySearcher`</span><span class="sxs-lookup"><span data-stu-id="1ff07-260">`[adsisearcher]`: `System.DirectoryServices.DirectorySearcher`</span></span>
-- <span data-ttu-id="1ff07-261">`[wmi]`: `System.Management.ManagementObject`</span><span class="sxs-lookup"><span data-stu-id="1ff07-261">`[wmi]`: `System.Management.ManagementObject`</span></span>
-- <span data-ttu-id="1ff07-262">`[wmiclass]`: `System.Management.ManagementClass`</span><span class="sxs-lookup"><span data-stu-id="1ff07-262">`[wmiclass]`: `System.Management.ManagementClass`</span></span>
-- <span data-ttu-id="1ff07-263">`[wmisearcher]`: `System.Management.ManagementObjectSearcher`</span><span class="sxs-lookup"><span data-stu-id="1ff07-263">`[wmisearcher]`: `System.Management.ManagementObjectSearcher`</span></span>
+- `[adsi]`<span data-ttu-id="5ba23-259">:</span><span class="sxs-lookup"><span data-stu-id="5ba23-259">:</span></span> `System.DirectoryServices.DirectoryEntry`
+- `[adsisearcher]`<span data-ttu-id="5ba23-260">:</span><span class="sxs-lookup"><span data-stu-id="5ba23-260">:</span></span> `System.DirectoryServices.DirectorySearcher`
+- `[wmi]`<span data-ttu-id="5ba23-261">:</span><span class="sxs-lookup"><span data-stu-id="5ba23-261">:</span></span> `System.Management.ManagementObject`
+- `[wmiclass]`<span data-ttu-id="5ba23-262">:</span><span class="sxs-lookup"><span data-stu-id="5ba23-262">:</span></span> `System.Management.ManagementClass`
+- `[wmisearcher]`<span data-ttu-id="5ba23-263">:</span><span class="sxs-lookup"><span data-stu-id="5ba23-263">:</span></span> `System.Management.ManagementObjectSearcher`
 
-<span data-ttu-id="1ff07-264">A típus gyorsítók nem szereplő PowerShell 6-os, de a futó Windows PowerShell 6.1 lettek hozzáadva.</span><span class="sxs-lookup"><span data-stu-id="1ff07-264">These type accelerators were not included in PowerShell 6, but have been added to PowerShell 6.1 running on Windows.</span></span>
+<span data-ttu-id="5ba23-264">A típus gyorsítók nem szereplő PowerShell 6-os, de a futó Windows PowerShell 6.1 lettek hozzáadva.</span><span class="sxs-lookup"><span data-stu-id="5ba23-264">These type accelerators were not included in PowerShell 6, but have been added to PowerShell 6.1 running on Windows.</span></span>
 
-<span data-ttu-id="1ff07-265">Ezek a típusok lehetnek hasznosak könnyedén hozhat létre, amely az AD és a WMI-objektumok.</span><span class="sxs-lookup"><span data-stu-id="1ff07-265">These types are useful in easily constructing AD and WMI objects.</span></span>
+<span data-ttu-id="5ba23-265">Ezek a típusok lehetnek hasznosak könnyedén hozhat létre, amely az AD és a WMI-objektumok.</span><span class="sxs-lookup"><span data-stu-id="5ba23-265">These types are useful in easily constructing AD and WMI objects.</span></span>
 
-<span data-ttu-id="1ff07-266">Ha például lekérdezheti, ha az LDAP:</span><span class="sxs-lookup"><span data-stu-id="1ff07-266">For example, you can query using LDAP:</span></span>
+<span data-ttu-id="5ba23-266">Ha például lekérdezheti, ha az LDAP:</span><span class="sxs-lookup"><span data-stu-id="5ba23-266">For example, you can query using LDAP:</span></span>
 
 ```powershell
 [adsi]'LDAP://CN=FooUse,OU=People,DC=contoso,DC=com'
 ```
 
-<span data-ttu-id="1ff07-267">A következő példában egy Win32_OperatingSystem CIM-objektumot hoz létre:</span><span class="sxs-lookup"><span data-stu-id="1ff07-267">Following example creates a Win32_OperatingSystem CIM object:</span></span>
+<span data-ttu-id="5ba23-267">A következő példában egy Win32_OperatingSystem CIM-objektumot hoz létre:</span><span class="sxs-lookup"><span data-stu-id="5ba23-267">Following example creates a Win32_OperatingSystem CIM object:</span></span>
 
 ```powershell
 [wmi]"Win32_OperatingSystem=@"
@@ -465,7 +465,7 @@ SerialNumber    : 12345-67890-ABCDE-F0123
 Version         : 10.0.18234
 ```
 
-<span data-ttu-id="1ff07-268">Ebben a példában egy Win32_OperatingSystem osztály ManagementClass objektumot ad vissza.</span><span class="sxs-lookup"><span data-stu-id="1ff07-268">This example returns a ManagementClass object for Win32_OperatingSystem class.</span></span>
+<span data-ttu-id="5ba23-268">Ebben a példában egy Win32_OperatingSystem osztály ManagementClass objektumot ad vissza.</span><span class="sxs-lookup"><span data-stu-id="5ba23-268">This example returns a ManagementClass object for Win32_OperatingSystem class.</span></span>
 
 ```powershell
 [wmiclass]"Win32_OperatingSystem"
@@ -479,40 +479,47 @@ Name                                Methods              Properties
 Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumber, BuildType, Caption...}
 ```
 
-### <a name="-lp-alias-for-all--literalpath-parameters"></a><span data-ttu-id="1ff07-269">`-lp` az összes alias `-LiteralPath` paraméterek</span><span class="sxs-lookup"><span data-stu-id="1ff07-269">`-lp` alias for all `-LiteralPath` parameters</span></span>
+### <a name="-lp-alias-for-all--literalpath-parameters"></a><span data-ttu-id="5ba23-269">`-lp` az összes alias `-LiteralPath` paraméterek</span><span class="sxs-lookup"><span data-stu-id="5ba23-269">`-lp` alias for all `-LiteralPath` parameters</span></span>
 
-<span data-ttu-id="1ff07-270">Köszönhetően [ @kvprasoon ](https://github.com/kvprasoon), hogy most már megvannak a paraméter-alias `-lp` minden a beépített PowerShell-parancsmagok, amelyek rendelkeznek egy `-LiteralPath` paraméter.</span><span class="sxs-lookup"><span data-stu-id="1ff07-270">Thanks to [@kvprasoon](https://github.com/kvprasoon), we now have a parameter alias `-lp` for all the built-in PowerShell cmdlets that have a `-LiteralPath` parameter.</span></span>
+<span data-ttu-id="5ba23-270">Köszönhetően [ @kvprasoon ](https://github.com/kvprasoon), hogy most már megvannak a paraméter-alias `-lp` minden a beépített PowerShell-parancsmagok, amelyek rendelkeznek egy `-LiteralPath` paraméter.</span><span class="sxs-lookup"><span data-stu-id="5ba23-270">Thanks to [@kvprasoon](https://github.com/kvprasoon), we now have a parameter alias `-lp` for all the built-in PowerShell cmdlets that have a `-LiteralPath` parameter.</span></span>
 
-## <a name="breaking-changes"></a><span data-ttu-id="1ff07-271">Használhatatlanná tévő változásai</span><span class="sxs-lookup"><span data-stu-id="1ff07-271">Breaking Changes</span></span>
+## <a name="breaking-changes"></a><span data-ttu-id="5ba23-271">Kompatibilitástörő változások</span><span class="sxs-lookup"><span data-stu-id="5ba23-271">Breaking Changes</span></span>
 
-### <a name="msi-based-installation-paths-on-windows"></a><span data-ttu-id="1ff07-272">MSI-alapú telepítési elérési utak a Windows</span><span class="sxs-lookup"><span data-stu-id="1ff07-272">MSI-based installation paths on Windows</span></span>
+### <a name="msi-based-installation-paths-on-windows"></a><span data-ttu-id="5ba23-272">MSI-alapú telepítési elérési utak a Windows</span><span class="sxs-lookup"><span data-stu-id="5ba23-272">MSI-based installation paths on Windows</span></span>
 
-<span data-ttu-id="1ff07-273">A Windows az MSI-csomag most telepíti a következő elérési utat:</span><span class="sxs-lookup"><span data-stu-id="1ff07-273">On Windows, the MSI package now installs to the following path:</span></span>
+<span data-ttu-id="5ba23-273">A Windows az MSI-csomag most telepíti a következő elérési utat:</span><span class="sxs-lookup"><span data-stu-id="5ba23-273">On Windows, the MSI package now installs to the following path:</span></span>
 
-- <span data-ttu-id="1ff07-274">`$env:ProgramFiles\PowerShell\6\` 6.x stabil telepítéséhez</span><span class="sxs-lookup"><span data-stu-id="1ff07-274">`$env:ProgramFiles\PowerShell\6\` for the stable installation of 6.x</span></span>
-- <span data-ttu-id="1ff07-275">`$env:ProgramFiles\PowerShell\6-preview\` az előzetes verzió telepítésének 6.x</span><span class="sxs-lookup"><span data-stu-id="1ff07-275">`$env:ProgramFiles\PowerShell\6-preview\` for the preview installation of 6.x</span></span>
+- `$env:ProgramFiles\PowerShell\6\` <span data-ttu-id="5ba23-274">6.x stabil telepítéséhez</span><span class="sxs-lookup"><span data-stu-id="5ba23-274">for the stable installation of 6.x</span></span>
+- `$env:ProgramFiles\PowerShell\6-preview\` <span data-ttu-id="5ba23-275">az előzetes verzió telepítésének 6.x</span><span class="sxs-lookup"><span data-stu-id="5ba23-275">for the preview installation of 6.x</span></span>
 
-<span data-ttu-id="1ff07-276">Ez a változás biztosítja, hogy a PowerShell Core, hogy a Microsoft Update frissíteni/szolgáltatója.</span><span class="sxs-lookup"><span data-stu-id="1ff07-276">This change ensures that PowerShell Core can be updated/serviced by Microsoft Update.</span></span>
+<span data-ttu-id="5ba23-276">Ez a változás biztosítja, hogy a PowerShell Core, hogy a Microsoft Update frissíteni/szolgáltatója.</span><span class="sxs-lookup"><span data-stu-id="5ba23-276">This change ensures that PowerShell Core can be updated/serviced by Microsoft Update.</span></span>
 
-<span data-ttu-id="1ff07-277">További információkért tekintse meg [PowerShell RFC0026](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0026-MSI-Installation-Path.md).</span><span class="sxs-lookup"><span data-stu-id="1ff07-277">For more information, check out [PowerShell RFC0026](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0026-MSI-Installation-Path.md).</span></span>
+<span data-ttu-id="5ba23-277">További információkért tekintse meg [PowerShell RFC0026](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0026-MSI-Installation-Path.md).</span><span class="sxs-lookup"><span data-stu-id="5ba23-277">For more information, check out [PowerShell RFC0026](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0026-MSI-Installation-Path.md).</span></span>
 
-### <a name="telemetry-can-only-be-disabled-with-an-environment-variable"></a><span data-ttu-id="1ff07-278">Telemetria csak letiltható a környezeti változó</span><span class="sxs-lookup"><span data-stu-id="1ff07-278">Telemetry can only be disabled with an environment variable</span></span>
+### <a name="telemetry-can-only-be-disabled-with-an-environment-variable"></a><span data-ttu-id="5ba23-278">Telemetria csak letiltható a környezeti változó</span><span class="sxs-lookup"><span data-stu-id="5ba23-278">Telemetry can only be disabled with an environment variable</span></span>
 
-<span data-ttu-id="1ff07-279">A PowerShell Core alapvető telemetriai adatokat küld a Microsoftnak, amikor indul el.</span><span class="sxs-lookup"><span data-stu-id="1ff07-279">PowerShell Core sends basic telemetry data to Microsoft when it is launched.</span></span> <span data-ttu-id="1ff07-280">Az operációs rendszer neve, az operációs rendszer verziójára és a PowerShell-verzió szerepel.</span><span class="sxs-lookup"><span data-stu-id="1ff07-280">The data includes the OS name, OS version, and PowerShell version.</span></span> <span data-ttu-id="1ff07-281">Ezek az adatok jobb megértése érdekében a környezetekben, ahol a PowerShell szolgál, és lehetővé teszi számunkra, új funkciókkal és javításokkal rangsorolására tesz lehetővé.</span><span class="sxs-lookup"><span data-stu-id="1ff07-281">This data allows us to better understand the environments where PowerShell is used and enables us to prioritize new features and fixes.</span></span>
+<span data-ttu-id="5ba23-279">A PowerShell Core alapvető telemetriai adatokat küld a Microsoftnak, amikor indul el.</span><span class="sxs-lookup"><span data-stu-id="5ba23-279">PowerShell Core sends basic telemetry data to Microsoft when it is launched.</span></span> <span data-ttu-id="5ba23-280">Az operációs rendszer neve, az operációs rendszer verziójára és a PowerShell-verzió szerepel.</span><span class="sxs-lookup"><span data-stu-id="5ba23-280">The data includes the OS name, OS version, and PowerShell version.</span></span> <span data-ttu-id="5ba23-281">Ezek az adatok jobb megértése érdekében a környezetekben, ahol a PowerShell szolgál, és lehetővé teszi számunkra, új funkciókkal és javításokkal rangsorolására tesz lehetővé.</span><span class="sxs-lookup"><span data-stu-id="5ba23-281">This data allows us to better understand the environments where PowerShell is used and enables us to prioritize new features and fixes.</span></span>
 
-<span data-ttu-id="1ff07-282">Kapcsolnia ezt a telemetriát, állítsa be a környezeti változó `POWERSHELL_TELEMETRY_OPTOUT` való `true`, `yes`, vagy `1`.</span><span class="sxs-lookup"><span data-stu-id="1ff07-282">To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`.</span></span> <span data-ttu-id="1ff07-283">Már nem támogatjuk a fájl törlésének `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` telemetria letiltása.</span><span class="sxs-lookup"><span data-stu-id="1ff07-283">We no longer support deletion of the file `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` to disable telemetry.</span></span>
+<span data-ttu-id="5ba23-282">Kapcsolnia ezt a telemetriát, állítsa be a környezeti változó `POWERSHELL_TELEMETRY_OPTOUT` való `true`, `yes`, vagy `1`.</span><span class="sxs-lookup"><span data-stu-id="5ba23-282">To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`.</span></span> <span data-ttu-id="5ba23-283">Már nem támogatjuk a fájl törlésének `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` telemetria letiltása.</span><span class="sxs-lookup"><span data-stu-id="5ba23-283">We no longer support deletion of the file `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` to disable telemetry.</span></span>
 
-### <a name="disallowed-basic-auth-over-http-in-powershell-remoting-on-unix-platforms"></a><span data-ttu-id="1ff07-284">Alapszintű hitelesítés PowerShell-táveléréssel a HTTP-kapcsolaton keresztül a UNIX rendszerű platformokon nem engedélyezett</span><span class="sxs-lookup"><span data-stu-id="1ff07-284">Disallowed Basic Auth over HTTP in PowerShell Remoting on Unix platforms</span></span>
+### <a name="disallowed-basic-auth-over-http-in-powershell-remoting-on-unix-platforms"></a><span data-ttu-id="5ba23-284">Alapszintű hitelesítés PowerShell-táveléréssel a HTTP-kapcsolaton keresztül a UNIX rendszerű platformokon nem engedélyezett</span><span class="sxs-lookup"><span data-stu-id="5ba23-284">Disallowed Basic Auth over HTTP in PowerShell Remoting on Unix platforms</span></span>
 
-<span data-ttu-id="1ff07-285">Letilthatja a nem titkosított forgalmat, a PowerShell-táveléréssel a UNIX rendszerű platformokon mostantól csak NTLM/egyeztetés vagy a HTTPS használatát.</span><span class="sxs-lookup"><span data-stu-id="1ff07-285">To prevent the use of unencrypted traffic, PowerShell Remoting on Unix platforms now requires usage of NTLM/Negotiate or HTTPS.</span></span>
+<span data-ttu-id="5ba23-285">Letilthatja a nem titkosított forgalmat, a PowerShell-táveléréssel a UNIX rendszerű platformokon mostantól csak NTLM/egyeztetés vagy a HTTPS használatát.</span><span class="sxs-lookup"><span data-stu-id="5ba23-285">To prevent the use of unencrypted traffic, PowerShell Remoting on Unix platforms now requires usage of NTLM/Negotiate or HTTPS.</span></span>
 
-<span data-ttu-id="1ff07-286">További információ ezekről a változásokról, tekintse meg [probléma #6779](https://github.com/PowerShell/PowerShell/issues/6779).</span><span class="sxs-lookup"><span data-stu-id="1ff07-286">For more information on these changes, check out [Issue #6779](https://github.com/PowerShell/PowerShell/issues/6779).</span></span>
+<span data-ttu-id="5ba23-286">További információ ezekről a változásokról, tekintse meg [probléma #6779](https://github.com/PowerShell/PowerShell/issues/6779).</span><span class="sxs-lookup"><span data-stu-id="5ba23-286">For more information on these changes, check out [Issue #6779](https://github.com/PowerShell/PowerShell/issues/6779).</span></span>
 
-### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a><span data-ttu-id="1ff07-287">Eltávolított `VisualBasic` egy támogatott nyelv az Add-Type</span><span class="sxs-lookup"><span data-stu-id="1ff07-287">Removed `VisualBasic` as a supported language in Add-Type</span></span>
+### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a><span data-ttu-id="5ba23-287">Eltávolított `VisualBasic` egy támogatott nyelv az Add-Type</span><span class="sxs-lookup"><span data-stu-id="5ba23-287">Removed `VisualBasic` as a supported language in Add-Type</span></span>
 
-<span data-ttu-id="1ff07-288">A múltban sikerült összeállíthatja a Visual Basic-kód használatával a `Add-Type` parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="1ff07-288">In the past, you could compile Visual Basic code using the `Add-Type` cmdlet.</span></span>
-<span data-ttu-id="1ff07-289">A Visual Basic a ritkán használt `Add-Type`.</span><span class="sxs-lookup"><span data-stu-id="1ff07-289">Visual Basic was rarely used with `Add-Type`.</span></span> <span data-ttu-id="1ff07-290">Ez a funkció PowerShell méretének csökkentésére eltávolítottuk.</span><span class="sxs-lookup"><span data-stu-id="1ff07-290">We removed this feature to reduce the size of PowerShell.</span></span>
+<span data-ttu-id="5ba23-288">A múltban sikerült összeállíthatja a Visual Basic-kód használatával a `Add-Type` parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="5ba23-288">In the past, you could compile Visual Basic code using the `Add-Type` cmdlet.</span></span>
+<span data-ttu-id="5ba23-289">A Visual Basic a ritkán használt `Add-Type`.</span><span class="sxs-lookup"><span data-stu-id="5ba23-289">Visual Basic was rarely used with `Add-Type`.</span></span> <span data-ttu-id="5ba23-290">Ez a funkció PowerShell méretének csökkentésére eltávolítottuk.</span><span class="sxs-lookup"><span data-stu-id="5ba23-290">We removed this feature to reduce the size of PowerShell.</span></span>
 
-### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a><span data-ttu-id="1ff07-291">Használati tisztítani `CommandTypes.Workflow` és `WorkflowInfoCleaned`</span><span class="sxs-lookup"><span data-stu-id="1ff07-291">Cleaned up uses of `CommandTypes.Workflow` and `WorkflowInfoCleaned`</span></span>
+### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a><span data-ttu-id="5ba23-291">Használati tisztítani `CommandTypes.Workflow` és `WorkflowInfoCleaned`</span><span class="sxs-lookup"><span data-stu-id="5ba23-291">Cleaned up uses of `CommandTypes.Workflow` and `WorkflowInfoCleaned`</span></span>
 
-<span data-ttu-id="1ff07-292">További információ ezekről a változásokról, tekintse meg [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).</span><span class="sxs-lookup"><span data-stu-id="1ff07-292">For more information on these changes, check out [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).</span></span>
+<span data-ttu-id="5ba23-292">További információ ezekről a változásokról, tekintse meg [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).</span><span class="sxs-lookup"><span data-stu-id="5ba23-292">For more information on these changes, check out [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).</span></span>
+
+### <a name="group-object-now-sorts-the-groups"></a><span data-ttu-id="5ba23-293">Csoportházirend-objektum most már a csoportok rendezése</span><span class="sxs-lookup"><span data-stu-id="5ba23-293">Group-Object now sorts the groups</span></span>
+
+<span data-ttu-id="5ba23-294">A teljesítmény fokozása részeként `Group-Object` most adja vissza a csoportok rendezett listája.</span><span class="sxs-lookup"><span data-stu-id="5ba23-294">As part of the performance improvement, `Group-Object` now returns a sorted listing of the groups.</span></span>
+<span data-ttu-id="5ba23-295">Bár a sorrend nem támaszkodhat, sikerült bonthatók Ez a módosítás az első csoport egységben.</span><span class="sxs-lookup"><span data-stu-id="5ba23-295">Although you should not rely on the order, you could be broken by this change if you wanted the first group.</span></span> <span data-ttu-id="5ba23-296">Azt határozza meg, hogy a a teljesítmény fokozása érdemes a módosítás volt, mert folyamatban van a korábbi működése függ a hatását, alacsony.</span><span class="sxs-lookup"><span data-stu-id="5ba23-296">We decided that this performance improvement was worth the change since the impact of being dependent on previous behavior is low.</span></span>
+
+<span data-ttu-id="5ba23-297">Ezt a módosítást a további információkért lásd: [probléma #7409](https://github.com/PowerShell/PowerShell/issues/7409).</span><span class="sxs-lookup"><span data-stu-id="5ba23-297">For more information on this change, see [Issue #7409](https://github.com/PowerShell/PowerShell/issues/7409).</span></span>
