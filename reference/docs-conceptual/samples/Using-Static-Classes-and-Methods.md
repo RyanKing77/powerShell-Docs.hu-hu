@@ -3,14 +3,15 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Statikus osztályok és módszerek használata
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e4caff63a1ec7295b6fe450c2915baf0cc7e31af
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687033"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293112"
 ---
 # <a name="using-static-classes-and-methods"></a>Statikus osztályok és módszerek használata
+
 Nem minden .NET-keretrendszer osztály használatával hozható létre **New-Object**. Például, ha megpróbál létrehozni egy **System.Environment** vagy egy **System.Math** rendelkező objektum **New-Object**, a következő hibaüzeneteket kap:
 
 ```
@@ -29,10 +30,12 @@ At line:1 char:11
 
 Ezek a hibák akkor fordul elő, mert nem lehet új objektum létrehozása a ezeket az osztályokat. Ezeket az osztályokat olyan referencia könyvtárak metódusok és tulajdonságok, amelyek nem változtatja az állapotát. Nem kell létrehoznia őket, akkor egyszerűen használja. Osztályok és módszerek, például a következő nevű *statikus osztályok* azok nem jönnek létre, mert megsemmisül, vagy módosítani. Ez egyértelművé teszi példák statikus osztályokat használó biztosít.
 
-### <a name="getting-environment-data-with-systemenvironment"></a>A System.Environment környezet adatainak lekérése
+## <a name="getting-environment-data-with-systemenvironment"></a>A System.Environment környezet adatainak lekérése
+
 Általában az első lépés a Windows PowerShell-objektum használata, hogy a Get-Member segítségével megtudhatja, milyen tagokat tartalmaz. A statikus osztályok esetében való kissé eltérő, mert a tényleges osztály, amely nem objektum.
 
-#### <a name="referring-to-the-static-systemenvironment-class"></a>A statikus System.Environment osztály hivatkozó
+### <a name="referring-to-the-static-systemenvironment-class"></a>A statikus System.Environment osztály hivatkozó
+
 Az osztály nevét a szögletes zárójelek közé téve egy statikus osztályt is hivatkozunk. Például, olvassa el **System.Environment** zárójelben a név beírásával. Ezzel néhány általános típusú információkat jeleníti meg:
 
 ```
@@ -89,7 +92,7 @@ TickCount                               ExitCode
 
 Tulajdonságok megtekintése a System.Environment most kiválaszthatja.
 
-#### <a name="displaying-static-properties-of-systemenvironment"></a>System.Environment statikus tulajdonságainak megjelenítése
+### <a name="displaying-static-properties-of-systemenvironment"></a>System.Environment statikus tulajdonságainak megjelenítése
 
 System.Environment tulajdonságait is statikus, és meg kell adni, mint a normál tulajdonságok eltérő módon. Használjuk a **::** jelzi, amelyet meg szeretnénk dolgozni egy statická metoda nebo vlastnost Windows powershellt. Tekintse meg a parancsot, amellyel indítsa el a Windows Powershellt, hogy ellenőrizze a **CommandLine** tulajdonság beírásával:
 
@@ -115,7 +118,7 @@ PS> [System.Environment]::HasShutdownStarted
 False
 ```
 
-### <a name="doing-math-with-systemmath"></a>Ennek során a System.Math matematikai
+## <a name="doing-math-with-systemmath"></a>Ennek során a System.Math matematikai
 
 A statikus System.Math osztály hasznos néhány matematikai műveletek végrehajtása. A fontos tagjai **System.Math** leginkább, módszerek használatával is meg vannak **Get-Member**.
 

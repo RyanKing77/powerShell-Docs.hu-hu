@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Aktuális hely kezelése
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: d1ebc9507a45841e6d4d8219e45c002990e1328c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686508"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293184"
 ---
 # <a name="managing-current-location"></a>Aktuális hely kezelése
 
@@ -16,7 +16,7 @@ A Fájlkezelőben mappa rendszerek navigáláskor általában rendelkeznek egy a
 
 Windows PowerShell használja a főnév **hely** lehet hivatkozni a munkakönyvtárban és valósítja meg a családba tartozó parancsmagok vizsgálja meg, és a hely kezeléséhez.
 
-### <a name="getting-your-current-location-get-location"></a>Bevezetés az aktuális tartózkodási helyét (Get-hely)
+## <a name="getting-your-current-location-get-location"></a>Bevezetés az aktuális tartózkodási helyét (Get-hely)
 
 Annak megállapításához, az aktuális könyvtár hely elérési útja, adja meg a **Get-Location** parancsot:
 
@@ -30,7 +30,7 @@ C:\Documents and Settings\PowerUser
 > [!NOTE]
 > A Get-Location parancsmag hasonlít a **pwd** parancs a bash. A hely beállítása parancsmag hasonlít a **cd** Cmd.exe parancsot.
 
-### <a name="setting-your-current-location-set-location"></a>Az aktuális tartózkodási helyét (hely beállítása) beállítást
+## <a name="setting-your-current-location-set-location"></a>Az aktuális tartózkodási helyét (hely beállítása) beállítást
 
 A **Get-Location** parancs szolgál a **hely beállítása** parancsot. A **hely beállítása** parancs lehetővé teszi, hogy adja meg az aktuális könyvtár helyet.
 
@@ -96,7 +96,7 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-### <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Mentés és a legutóbbi helyek (a leküldéses-hely és a csatlakozási pont – hely) visszahívása
+## <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Mentés és a legutóbbi helyek (a leküldéses-hely és a csatlakozási pont – hely) visszahívása
 
 Helyek módosításakor hasznos, ahol rendelkezik-e nyomon, és térjen vissza az előző helyre lehessen. A **leküldéses helymeghatározás** a Windows PowerShell parancsmag létrehoz egy rendezett előzmények (a "verem"), ahol rendelkezik-e, és Ön visszaléphet az elérési utak előzményeit a kiegészítő használatával elérési utak  **Csatlakozási pont – hely** parancsmagot.
 

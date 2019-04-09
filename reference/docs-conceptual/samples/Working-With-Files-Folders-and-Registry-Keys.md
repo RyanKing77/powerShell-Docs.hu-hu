@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Fájlmappák és beállításkulcsok használata
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685731"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293095"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Fájlok, mappák és beállításkulcsok használata
 
 Windows PowerShell használja a főnév **elem** egy Windows PowerShell-meghajtón található elemekre utal. A Windows PowerShell fájlrendszer szolgáltató esetén egy **elem** lehet, hogy egy fájl, mappa vagy a Windows PowerShell meghajtót. Listázás, és ezek az elemek használata a kritikus alapszintű tevékenység a legtöbb felügyeleti beállítások, így szeretnénk ezeket a feladatokat részletesen ismertetjük.
 
-### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Fájlok, mappák és beállításkulcsok (Get-ChildItem) számbavétele
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Fájlok, mappák és beállításkulcsok (Get-ChildItem) számbavétele
 
 Mivel az elemgyűjtemény lekérése egy adott helyen az ilyen gyakori feladat, a **Get-ChildItem** parancsmag célja kifejezetten olyan tárolóban, például egy mappában található összes elemet adja vissza.
 
@@ -42,7 +42,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 Ezeket a paramétereket is lehet vegyes és nagymértékben testre szabott kimeneti első megegyeznek.
 
-#### <a name="listing-all-contained-items--recurse"></a>Az összes tárolt elemek listázása (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>Az összes tárolt elemek listázása (-Recurse)
 
 A Windows mappában található elemek és a az almappák belüli lemezképcsomagban elemek megtekintéséhez használja a **Recurse** paraméterében **Get-ChildItem**. A listában jeleníti meg minden belül a Windows mappa és annak almappáiban található elemek. Például:
 
@@ -57,7 +57,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### <a name="filtering-items-by-name--name"></a>A Szűrés név alapján (-név)
+### <a name="filtering-items-by-name--name"></a>A Szűrés név alapján (-név)
 
 Csak a nevek elemek megjelenítéséhez használja a **neve** paraméterében **Get-Childitem**:
 
@@ -69,7 +69,7 @@ assembly
 ...
 ```
 
-#### <a name="forcibly-listing-hidden-items--force"></a>Rejtett elemek kényszerített listázása (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>Rejtett elemek kényszerített listázása (-Force)
 
 Elemek, amelyek normál esetben nem látható a fájlkezelő vagy a Cmd.exe nem jelennek meg a kimenetét egy **Get-ChildItem** parancsot. Rejtett elemek megjelenítéséhez használja a **kényszerített** paraméterében **Get-ChildItem**. Például:
 
@@ -79,7 +79,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 Ez a paraméter neve kényszerített mert kényszerített felül lehet bírálni a normál viselkedését a **Get-ChildItem** parancsot. Kényszerített egy széles körben használt paraméter, amely arra kényszeríti a egy műveletet, amely a parancsmag nem megfelelően szeretné végrehajtani, de nem hajt végre semmilyen műveletet, amely a károsan befolyásolja a rendszer a biztonsági.
 
-#### <a name="matching-item-names-with-wildcards"></a>A helyettesítő karakterek az egyező elemek nevei
+### <a name="matching-item-names-with-wildcards"></a>A helyettesítő karakterek az egyező elemek nevei
 
 **A Get-ChildItem** parancs elfogadja a helyettesítő karaktereket a következő elérési az elemek listázásához.
 
@@ -122,7 +122,7 @@ Keresse meg az összes kezdődő **x** vagy **z**, írja be:
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### <a name="excluding-items--exclude"></a>Elemek kizárása (-kizárása)
+### <a name="excluding-items--exclude"></a>Elemek kizárása (-kizárása)
 
 Használatával zárhat ki adott elemeket a **kizárása** Get-ChildItem paraméterében. Ez lehetővé teszi összetett szűrését egy utasítás végrehajtásához.
 
@@ -147,7 +147,7 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-#### <a name="mixing-get-childitem-parameters"></a>Get-ChildItem paraméterek keverése
+### <a name="mixing-get-childitem-parameters"></a>Get-ChildItem paraméterek keverése
 
 Több paramétereit a **Get-ChildItem** parancsmagja ugyanezt a parancsot. Mielőtt vegyesen paramétert figyeljen arra, hogy ismernie a helyettesítő karakterek megfeleltetése. Az alábbi parancs például nincs eredményeket ad vissza:
 

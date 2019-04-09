@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Elemek közvetlen módosítása
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685192"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293265"
 ---
 # <a name="manipulating-items-directly"></a>Elemek közvetlen módosítása
 
@@ -32,7 +32,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### <a name="creating-new-items-new-item"></a>Új elemek (új elem) létrehozása
+## <a name="creating-new-items-new-item"></a>Új elemek (új elem) létrehozása
 
 A fájlrendszer egy új elem létrehozásához használja a **New-cikk** parancsmagot. Tartalmazza a **elérési** paramétert az elem elérési útja és a **ItemType** paraméter "fájl" vagy "könyvtár" értékkel.
 
@@ -75,7 +75,7 @@ SKC  VC Name                           Property
 
 Amikor beírja egy beállításjegyzékbeli elérési út, így feltétlenül foglalja bele a kettőspont (**:**) a Windows PowerShellben meghajtó a nevek, HKLM: és HKCU:. Windows PowerShell a kettőspont nélkül nem ismeri fel a meghajtó nevét, az elérési út.
 
-### <a name="why-registry-values-are-not-items"></a>Miért beállításjegyzék értékei nem elemek
+## <a name="why-registry-values-are-not-items"></a>Miért beállításjegyzék értékei nem elemek
 
 Használatakor a **Get-ChildItem** parancsmaggal azon elemeinek megkeresése egy beállításkulcsot, soha nem láthatja tényleges beállításjegyzék-bejegyzések és azok értékei.
 
@@ -95,7 +95,7 @@ SKC  VC Name                           Property
 
 Annak ellenére, hogy szeretné kezelni a beállításjegyzék-bejegyzések elemek kényelmes, úgy, hogy gondoskodik róla, hogy azt az egyedi nem adható meg a egy beállításjegyzékbeli bejegyzést elérési útját. Az elérési út jelölés nem különbözteti meg a beállításkulcsot nevű **futtatása** és a **(alapértelmezett)** beállításjegyzékbeli bejegyzést a **futtatása** alkulcs. Továbbá mert a beállításjegyzék-bejegyzések neve tartalmazhat fordított perjellel (**\\**), ha beállításjegyzék-bejegyzések elemet, majd különbséget tenni egy nevű beállításjegyzék-bejegyzés nem tudta használni az elérési út jelöléssel  **Windows\\CurrentVersion\\futtatása** származó az alkulcs az adott elérési úton található.
 
-### <a name="renaming-existing-items-rename-item"></a>Meglévő elemeket (Rename-elem) átnevezése
+## <a name="renaming-existing-items-rename-item"></a>Meglévő elemeket (Rename-elem) átnevezése
 
 Egy fájl vagy mappa neve módosításához használja a **Rename-cikk** parancsmagot. A következő parancs módosítja a nevét a **file1.txt** fájlt **fileOne.txt**.
 
@@ -112,7 +112,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### <a name="moving-items-move-item"></a>Elemek (elem áthelyezése)
+## <a name="moving-items-move-item"></a>Elemek (elem áthelyezése)
 
 Egy fájl vagy mappa áthelyezéséhez használja a **elem áthelyezése** parancsmagot.
 
@@ -128,7 +128,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### <a name="copying-items-copy-item"></a>(Copy-Item) elemek másolása
+## <a name="copying-items-copy-item"></a>(Copy-Item) elemek másolása
 
 Ha ismeri a másolási műveletek más ismertetése, viselkedését találhatja a **Copy-Item** parancsmagot a Windows PowerShell a szokatlan. Ha az egyik helyről egy elem másolása egy másik, Copy-Item nem másolja a tartalmát alapértelmezés szerint.
 
@@ -167,7 +167,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### <a name="deleting-items-remove-item"></a>Elemek (Remove-elem) törlése
+## <a name="deleting-items-remove-item"></a>Elemek (Remove-elem) törlése
 
 Fájlok és mappák törléséhez használja a **Remove-cikk** parancsmagot. Windows PowerShell-parancsmagok, például **Remove-cikk**, végezhetnek jelentős, a végleges módosítások gyakran felkéri megerősítést kér a parancs beírásakor. Például, ha el szeretné távolítani a **New.Directory** mappában, kérni fogja, erősítse meg a parancsot, mert a mappa fájlokat tartalmazza:
 
@@ -188,7 +188,7 @@ Mivel **Igen** az alapértelmezett válasz, törölje a mappát és annak fájlj
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### <a name="executing-items-invoke-item"></a>Elemek (Invoke-elem) végrehajtása
+## <a name="executing-items-invoke-item"></a>Elemek (Invoke-elem) végrehajtása
 
 Használja a Windows PowerShell a **Invoke-cikk** parancsmag egy fájlhoz vagy mappához tartozó alapértelmezett művelet végrehajtásához. Ez az alapértelmezett művelet határozza meg az alapértelmezett alkalmazás kezelő a beállításjegyzék; a hatás megegyezik szerint, ha duplán kattint a cikk a Fájlkezelőben.
 

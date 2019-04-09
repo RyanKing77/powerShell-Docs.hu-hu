@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Nyomtatók használata
 ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
-ms.openlocfilehash: 5638629fdf79371c8eff9ee9194b642034250fff
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 77ebb26369b6a40e9c8c7bbbc52347d614cbf083
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686956"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59292993"
 ---
 # <a name="working-with-printers"></a>Nyomtatók használata
 
 Windows PowerShell segítségével nyomtatók kezelése a WMI és a WSH WScript.Network COM objektum használatával. Mindkét eszköz kombinációját használjuk meghatározott feladatok bemutatásához.
 
-### <a name="listing-printer-connections"></a>Nyomtatókapcsolatok listázása
+## <a name="listing-printer-connections"></a>Nyomtatókapcsolatok listázása
 
 A nyomtatókat, a számítógépen telepített listában legegyszerűbb módja az, hogy a WMI-vel **Win32_Printer** osztály:
 
@@ -30,7 +30,7 @@ A nyomtatók használatával is listázhatja a **WScript.Network** COM-objektum,
 
 Mivel ez a parancs a port és nyomtató eszköz nevének megkülönböztető címkék nélkül egyszerű karakterlánc gyűjteményét adja vissza, akkor sem könnyen értelmezni.
 
-### <a name="adding-a-network-printer"></a>A hálózati nyomtatók hozzáadása
+## <a name="adding-a-network-printer"></a>A hálózati nyomtatók hozzáadása
 
 Segítségével adhat hozzá egy új hálózati nyomtató **WScript.Network**:
 
@@ -38,7 +38,7 @@ Segítségével adhat hozzá egy új hálózati nyomtató **WScript.Network**:
 (New-Object -ComObject WScript.Network).AddWindowsPrinterConnection("\\Printserver01\Xerox5")
 ```
 
-### <a name="setting-a-default-printer"></a>Alapértelmezett nyomtató beállítása
+## <a name="setting-a-default-printer"></a>Alapértelmezett nyomtató beállítása
 
 Az alapértelmezett nyomtató beállítása a WMI használatával, keresse meg a nyomtatót a a **Win32_Printer** gyűjteményt, és ezután meghívja a **SetDefaultPrinter** módszer:
 
@@ -52,7 +52,7 @@ Az alapértelmezett nyomtató beállítása a WMI használatával, keresse meg a
 (New-Object -ComObject WScript.Network).SetDefaultPrinter('HP LaserJet 5Si')
 ```
 
-### <a name="removing-a-printer-connection"></a>A nyomtató-kapcsolat eltávolítása
+## <a name="removing-a-printer-connection"></a>A nyomtató-kapcsolat eltávolítása
 
 Nyomtatási kapcsolat eltávolításához használja a **WScript.Network RemovePrinterConnection** módszer:
 

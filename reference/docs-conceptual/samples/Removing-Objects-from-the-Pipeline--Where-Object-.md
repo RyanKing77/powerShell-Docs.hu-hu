@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Objektumok eltávolítása az adatcsatornából Where-Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1f7d064c7bf2dd551ea96b29762fbccad8174084
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685724"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293146"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Objektumok eltávolítása az adatcsatornából (Where-Object)
 
@@ -16,7 +16,7 @@ A Windows PowerShellben Ön gyakran hozza létre és azt szeretné, hogy egy fol
 
 Windows PowerShell tartalmaz egy `Where-Object` parancsmagot, amely lehetővé teszi, hogy a folyamat minden egyes objektum tesztelése, és csak azt adják át a folyamat megfelel egy adott teszt feltételt. Objektumok, amelyek nem adnak át a vizsgálat a folyamat törlődnek. A feltétel értékeként adja meg a `Where-Object` **FilterScript** paraméter.
 
-### <a name="performing-simple-tests-with-where-object"></a>A Where-Object egyszerű tesztek végrehajtása
+## <a name="performing-simple-tests-with-where-object"></a>A Where-Object egyszerű tesztek végrehajtása
 
 Értékét **FilterScript** van egy *parancsfájlblokkban* – egy vagy több Windows PowerShell-parancsok csúcsos zárójelek között {} –, amely kiértékeli a true vagy FALSE (hamis). Lehet, hogy a parancsfájl-blokkokban nagyon egyszerű, de tudomása a másik a Windows PowerShell-fogalmat, összehasonlító operátorok hozza létre őket igényel. Egy összehasonlító operátor hasonlítja össze az egyes oldalán megjelenő elemek. Összehasonlító operátorok kezdődik a "-" karakter, és a egy neve követi. Alapszintű összehasonlító operátorok szinte bármilyen típusú objektumot működik. A speciális összehasonlító operátorok csak a szöveges vagy tömbök előfordulhat, hogy működik.
 
@@ -29,14 +29,14 @@ Megfontolandó szempontok elemzés, mert szimbólumokat <>, például és = öss
 |-----------------------|-----------|--------------------------|
 |-eq|egyenlő|1 -eq 1|
 |-ne|Nem egyenlő|1 - ne 2|
-|-lt|a kisebb, mint|1 – lt 2|
-|-le|Kisebb vagy egyenlő|1 – le 2|
-|-gt|nagyobb, mint|2 – gt 1|
-|-ge|Nagyobb vagy egyenlő|2 -ge 1|
+|-lt|A kisebb, mint|1 – lt 2|
+|-le|kisebb vagy egyenlő|1 – le 2|
+|-gt|Nagyobb, mint|2 – gt 1|
+|-ge|nagyobb vagy egyenlő|2 -ge 1|
 |– például a|Hasonló (helyettesítő összehasonlítás szöveg)|"file.doc" – például "f\*.do?"|
 |-notlike|Nem hasonló (helyettesítő összehasonlítás szöveg)|"file.doc"-notlike "p\*.doc"|
 |-tartalmaz|tartalmaz|1,2,3 – 1 tartalmaz|
-|-notcontains|nem tartalmazza|1,2,3 - notcontains 4|
+|-notcontains|Nem tartalmazza|1,2,3 - notcontains 4|
 
 Where-Object parancsfájl-blokkokban használja a speciális változó `$_` , tekintse meg a folyamat az aktuális objektum. Íme egy példa annak működését. Ha rendelkezik egy számokból álló listát, és csak be szeretné olvasni azokat, amelyek kevesebb mint 3, használhatja a Where-Object számok szűréséhez írja be:
 
@@ -46,7 +46,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-### <a name="filtering-based-on-object-properties"></a>Szűrés alapján objektum tulajdonságai
+## <a name="filtering-based-on-object-properties"></a>Szűrés alapján objektum tulajdonságai
 
 Mivel `$_` hivatkozik a jelenlegi folyamat objektumba, elérheti a tulajdonságait a tesztek.
 

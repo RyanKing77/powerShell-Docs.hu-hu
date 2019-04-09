@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: A kimeneti nézet módosítása formázási parancsokkal
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 35ccd2525d40ffd5e3f25a1abfa38904a109bde5
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: fba37b1d0479bf605d8f2171da27cd1bceb9976e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320421"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293044"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>A kimeneti nézet módosítása formázási parancsokkal
 
@@ -29,25 +29,34 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 Ez a szakasz a többi tárgyaljuk fog használata **formátum** parancsmagok megváltoztatni a parancs kimenetének jelenik meg.
 
-### <a name="using-format-wide-for-single-item-output"></a>Egyetlen elemből kimeneti formátum kiterjedő használatával
+## <a name="using-format-wide-for-single-item-output"></a>Egyetlen elemből kimeneti formátum kiterjedő használatával
 
-A **formátum kiterjedő** parancsmag alapértelmezés szerint jeleníti meg az objektumok csak az alapértelmezett tulajdonságait. Az egyes objektumok társított információkat egy oszlopban jelenik meg:
+A `Format-Wide` parancsmag alapértelmezés szerint jeleníti meg az objektumok csak az alapértelmezett tulajdonságait.
+Az egyes objektumok társított információkat egy oszlopban jelenik meg:
 
+```powershell
+Get-Command -Verb Format | Format-Wide
 ```
-PS> Get-Process -Name powershell | Format-Wide
 
-powershell                              powershell
+```output
+Format-Custom                          Format-Hex
+Format-List                            Format-Table
+Format-Wide
 ```
 
 Megadhat egy nem alapértelmezett tulajdonságot is:
 
-```
-PS> Get-Process -Name powershell | Format-Wide -Property Id
-
-2760                                    3448
+```powershell
+Get-Command -Verb Format | Format-Wide -Property Noun
 ```
 
-#### <a name="controlling-format-wide-display-with-column"></a>Formátum kiterjedő megjelenítendő oszlop szabályozása
+```output
+Custom                                 Hex
+List                                   Table
+Wide
+```
+
+### <a name="controlling-format-wide-display-with-column"></a>Formátum kiterjedő megjelenítendő oszlop szabályozása
 
 Az a `Format-Wide` parancsmagot egyszerre csak megjelenítheti egy-egy tulajdonság.
 Így egyszerű listák, azt mutatják be, soronként csak egy elem megjelenítése esetén hasznos.
@@ -65,7 +74,7 @@ Table
 Wide
 ```
 
-### <a name="using-format-list-for-a-list-view"></a>Az adott nézet használata a Format-List
+## <a name="using-format-list-for-a-list-view"></a>Az adott nézet használata a Format-List
 
 A **Format-List** címkével ellátott és a egy külön sorban jelenik meg minden egyes tulajdonság parancsmag megjeleníti az egy lista formájában objektum:
 
@@ -100,7 +109,7 @@ StartTime   : 2006-05-24 13:54:28
 Id          : 3448
 ```
 
-#### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Kezdeti lépéseket ismertető részletes információkat a helyettesítő karakterek használatával Format-List
+### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Kezdeti lépéseket ismertető részletes információkat a helyettesítő karakterek használatával Format-List
 
 A **Format-List** parancsmag használatát teszi lehetővé egy helyettesítő karaktert tartalmazó értéket annak **tulajdonság** paraméter. Ezáltal részletes információk megjelenítéséhez. Objektumok tartozhat több információt van szüksége, ezért a Windows PowerShell nem jeleníti meg az összes tulajdonságértékek alapértelmezés szerint. Az összes objektum tulajdonságainak megjelenítéséhez használja a **Format-List-tulajdonság \&#42;** parancsot. A következő parancsot a folyamat egyetlen kimeneti több mint 60 sor hoz létre:
 
@@ -110,7 +119,7 @@ Get-Process -Name powershell | Format-List -Property *
 
 Bár a **Format-List** parancs hasznos, hogy a részletes, ha azt szeretné, hogy hány elemet tartalmazó kimeneti áttekintése, egy egyszerűbb táblázatos nézet gyakran több hasznos.
 
-### <a name="using-format-table-for-tabular-output"></a>A táblázatos kimenet Format-Table használatával
+## <a name="using-format-table-for-tabular-output"></a>A táblázatos kimenet Format-Table használatával
 
 Ha használja a **Format-Table** nincs tulajdonságnevekkel rendelkező parancsmag kimenetének formázására megadott a **Get-Process** parancsot, ugyanúgy mint formázás végrehajtása nélkül kimeneti kap. Az oka, hogy a folyamatok általában megjelenik, táblázatos formában, amelyek a legtöbb Windows PowerShell-objektumok.
 
@@ -123,7 +132,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     332       9    23140        632   141     1.06   3448 powershell
 ```
 
-#### <a name="improving-format-table-output-autosize"></a>Format-Table kimeneti (automatikus méretezése) javítása
+### <a name="improving-format-table-output-autosize"></a>Format-Table kimeneti (automatikus méretezése) javítása
 
 Bár egy táblázatos nézetben sok összehasonlítható adat megjelenítése esetén hasznos, nehéz értelmezni, ha a megjelenített adatok túl keskeny lehet. Például ha folyamat útvonala, Azonosítóját, nevét és a vállalat megjelenítéséhez, megkapja rövidített kimenet a folyamat elérési út és a vállalati oszlopot:
 
@@ -173,7 +182,7 @@ Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
 
 A fenti kimenetben a rendszer csonkolja az azonosító oszlop, hogy a listaelem illik, és az oszlopfejlécek vannak halmozott. Automatikus méretezés, az oszlopok nem mindig mit szeretne.
 
-#### <a name="wrapping-format-table-output-in-columns-wrap"></a>Alkalmazásburkoló Format-Table kimeneti oszlopok (sortörés)
+### <a name="wrapping-format-table-output-in-columns-wrap"></a>Alkalmazásburkoló Format-Table kimeneti oszlopok (sortörés)
 
 Kényszerítheti hosszadalmas **Format-Table** burkolása belül a megjelenítendő oszlop használatával az adatokat a **burkolása** paraméter. Használatával a **burkolása** önálló paraméter nem feltétlenül tesz program működésére nézve, mivel ha akkor is nem ad meg alapértelmezett beállításokat használja **AutoSize**:
 
@@ -216,7 +225,7 @@ C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
                                                              ion
 ```
 
-#### <a name="organizing-table-output--groupby"></a>Tábla kimeneti rendszerezése (-GroupBy)
+### <a name="organizing-table-output--groupby"></a>Tábla kimeneti rendszerezése (-GroupBy)
 
 Táblázatos kimenet ellenőrzése egy másik hasznos paraméter értéke nem **GroupBy**. Már táblázatos listaelemek különösen nehezen hasonlítsa össze lehet. A **GroupBy** paraméter kimenete egy tulajdonság értéke alapján csoportosítja. Például hogy csoportosíthatók a folyamatok könnyebb vizsgálatra kihagyása a cég érték a tulajdonság lista a vállalat által:
 

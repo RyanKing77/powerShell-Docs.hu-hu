@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], verb names
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
-ms.openlocfilehash: d8a0561d6fbb4447a691c434e0518e3e16ce41e7
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56852177"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293350"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>A PowerShell-parancsok jóváhagyott igék
 
@@ -94,7 +94,7 @@ A következő táblázat felsorolja a meghatározott HTTP-parancsokat a legtöbb
 |[Kilépés](/dotnet/api/System.Management.Automation.VerbsCommon.Exit) (például)|Az aktuális környezet vagy a környezet beállítása a legutóbb használt környezetet. Ha például a `Exit-PSSession` parancsmag helyezi el a felhasználó a munkamenet az interaktív munkamenet indításához használt. Ez a művelet az régiójával `Enter`.|Ez a művelet ne használja a műveletek, például a Pop- illetve Felskálázni.|
 |[Keresés](/dotnet/api/System.Management.Automation.VerbsCommon.Find) (fd)|Úgy tűnik, az objektum, amely ismeretlen, vélelmezett, kötelező vagy megadott tárolóban.||
 |[Formátum](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f)|A megadott alakban vagy elrendezés objektumok elrendezése.||
-|[Első](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Itt adható meg egy műveletet, amely egy erőforrás beolvasása. Ez a művelet az régiójával `Set`.|Ez a művelet ne használja a műveletek, például olvasási, nyílt, Cat, típusa, Dir, beszerzése, memóriakép, beolvasás, vizsgálja meg, keresse meg vagy keresse meg ezt a műveletet.|
+|[Első](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Itt adható meg egy műveletet, amely egy erőforrás beolvasása. Ez a művelet az régiójával `Set`.|Ez a művelet ne használja a műveletek, például olvasási, nyílt, Cat, típus, Dir, beszerzése, memóriakép, beolvasás, vizsgálja meg, keresse meg vagy keresési.|
 |[Elrejtése](/dotnet/api/System.Management.Automation.VerbsCommon.Hide) (óra)|Lehetővé teszi egy erőforrás összefüggések tárhatók fel. Például az olyan parancsmagot, amelynek a neve tartalmazza a elrejtése művelet előfordulhat, hogy elrejtése az szolgáltatás felhasználói. Ez a művelet az régiójával `Show`.|Ez a művelet ne használjon olyan műveleteket, mint a blokkban.|
 |[Csatlakozás](/dotnet/api/System.Management.Automation.VerbsCommon.Join) (j)|Erőforrások egyesít egy erőforrást. Ha például a `Join-Path` parancsmag egyesít egyetlen elérési utat hoz létre, a gyermek elérési utak egyik elérési utat. Ez a művelet az régiójával `Split`.|Ez a művelet ne használja a műveletek, például az összevonás, a Unite, a csatlakozás vagy a társítás.|
 |[Zárolási](/dotnet/api/System.Management.Automation.VerbsCommon.Lock) (lk)|Védelemmel látja el egy erőforrást. Ez a művelet az régiójával `Unlock`.|Ez a művelet ne használja a műveletek, például korlátozása vagy biztonságos.|
@@ -149,7 +149,7 @@ A következő táblázat felsorolja a meghatározott HTTP-parancsokat a legtöbb
 |[ConvertFrom](/dotnet/api/System.Management.Automation.VerbsData.ConvertFrom) (Cf-hez)|Bemenet (a parancsmag főnév jelzi a bemeneti) elsődleges egyfajta alakítja át egy vagy több támogatott kimeneti típusokat.|Ez a művelet ne használja a műveletek, például exportálási, kimeneti vagy ki.|
 |[ConvertTo](/dotnet/api/System.Management.Automation.VerbsData.ConvertTo) (z)|Egy vagy több típusú bemeneti (a parancsmag főnév jelzi a kimeneti típus) elsődleges kimenet típusra konvertál.|Ez a művelet ne használja a műveletek, például importálás, adjon meg, vagy a.|
 |[Leválasztja a](/dotnet/api/System.Management.Automation.VerbsData.Dismount) (dm)|Leválasztja a valamilyen elnevezett entitást helyről. Ez a művelet az régiójával `Mount`.|Ez a művelet ne használja például a leválasztás vagy a leválasztás művelet.|
-|[Szerkesztés](/dotnet/api/System.Management.Automation.VerbsData.Edit) (ed)|Módosítja a meglévő adatok hozzáadásával vagy eltávolításával a tartalmat.|Ez a művelet ne használja a műveletek, például a változás, frissítése vagy módosítása a művelet.|
+|[Szerkesztés](/dotnet/api/System.Management.Automation.VerbsData.Edit) (ed)|Módosítja a meglévő adatok hozzáadásával vagy eltávolításával a tartalmat.|Ez a művelet ne használja a műveletek, például a változás, frissítése vagy módosítása.|
 |[Bontsa ki a](/dotnet/api/System.Management.Automation.VerbsData.Expand) (en)|Az adatok egy adott erőforrás, amely már tömörített visszaállítása az eredeti állapotba. Ez a művelet az régiójával `Compress`.|Ez a művelet ne használja a műveletek, például alábontása vagy a kibontás.|
 |[Exportálás](/dotnet/api/System.Management.Automation.VerbsData.Export) (ep)|Magában foglalja az elsődleges bemenet egy állandó adattárolóban tárol, például egy fájl vagy egy adatcsere-formátumot. Ez a művelet az régiójával `Import`.|Ez a művelet ne használja a műveletek, például a kinyerési, vagy a biztonsági mentést.|
 |[Csoport](/dotnet/api/System.Management.Automation.VerbsData.Group) (gp)|Rendezi, vagy egy vagy több erőforrást társítja.|Ez a művelet nem műveletek, például az összesítést, elrendezése, amennyiben használja, vagy összekapcsolását.|
@@ -251,6 +251,6 @@ PowerShell használja a [System.Management.Automation.VerbsOther](/dotnet/api/Sy
 
 [A parancsmag Deklarace](./cmdlet-class-declaration.md)
 
-[Windows PowerShell programozói útmutató](../prog-guide/windows-powershell-programmer-s-guide.md)
+[Windows PowerShell – programozói útmutató](../prog-guide/windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

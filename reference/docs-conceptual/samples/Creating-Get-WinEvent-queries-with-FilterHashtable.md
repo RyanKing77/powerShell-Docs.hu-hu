@@ -1,14 +1,14 @@
 ---
 ms.date: 3/18/2019
-title: Get-WinEvent lekérdezések FilterHashtable létrehozása
-ms.openlocfilehash: fae01cc8be5c1805e2aae008e1f21ed387efa325
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+title: Get-WinEvent lekérdezések létrehozása FilterHashtable használatával
+ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320487"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293282"
 ---
-# <a name="creating-get-winevent-queries-with-filterhashtable"></a>Get-WinEvent lekérdezések FilterHashtable létrehozása
+# <a name="creating-get-winevent-queries-with-filterhashtable"></a>Get-WinEvent lekérdezések létrehozása FilterHashtable használatával
 
 Olvassa el az eredeti 2014. június 3, a **Scripting Guy** blog post, lásd: [használata FilterHashTable szűrő eseménynaplóba való a PowerShell-lel](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).
 
@@ -29,12 +29,12 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="blog-posts-about-enumeration"></a>Enumerálás információ blogbejegyzések
+## <a name="blog-posts-about-enumeration"></a>Enumerálás információ blogbejegyzések
 
 Ez a cikk egy kivonattáblát a felsorolt értékek használata adatait jeleníti meg. Az enumerálás kapcsolatos további információkért olvassa el ezeket **Scripting Guy** blogbejegyzések. Függvény, amely visszaadja a felsorolt értékek létrehozásához lásd: [enumerálások és értékek](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values).
 További információkért lásd: a [Scripting Guy sorozatát blogon tesz közzé, enumerálás kapcsolatos](https://devblogs.microsoft.com/scripting/?s=about+enumeration).
 
-### <a name="hash-table-keyvalue-pairs"></a>Ujjlenyomat-tábla, kulcs/érték párok
+## <a name="hash-table-keyvalue-pairs"></a>Ujjlenyomat-tábla, kulcs/érték párok
 
 Hatékony lekérdezések felépítését, használja a `Get-WinEvent` parancsmagot a **FilterHashtable** paraméter.
 **FilterHashtable** fogad el egy kivonattáblát információkat lehet lekérni a Windows-eseménynaplók szűrőként. Egy kivonattáblát használ **kulcs/érték** párokat. Kivonattáblákkal kapcsolatos további információkért lásd: [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
@@ -62,7 +62,7 @@ Az alábbi táblázatban láthatók a kulcsnevek, adattípusok, és hogy helyett
 | Adatok         | `<String[]>`       | Nem  |
 | *            | `<String[]>`       | Nem  |
 
-### <a name="building-a-query-with-a-hash-table"></a>Egy kivonattáblát a lekérdezés létrehozása
+## <a name="building-a-query-with-a-hash-table"></a>Egy kivonattáblát a lekérdezés létrehozása
 
 Ellenőrizze az eredményeket, és problémák elhárításához, hozhat létre a kivonattábla egy segít **kulcs/érték** pár egyszerre. A lekérdezés lekérdezi az adatokat a **alkalmazás** napló. A kivonattáblában 03T00 `Get-WinEvent –LogName Application`.
 
@@ -89,7 +89,7 @@ Get-WinEvent -FilterHashtable @{
 
 Ha a lekérdezés adatokat kíván gyűjteni archivált eseménynaplók van szüksége, használja a **elérési út** kulcsot. A **elérési út** az érték határozza meg a naplófájl teljes elérési útja. További információkért lásd: a **Scripting Guy** blogbejegyzésben [használja a Powershellt, elemezni a mentett eseménynaplóiban hibák](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors).
 
-### <a name="using-enumerated-values-in-a-hash-table"></a>Egy kivonattáblát a felsorolt értékek használatával
+## <a name="using-enumerated-values-in-a-hash-table"></a>Egy kivonattáblát a felsorolt értékek használatával
 
 **A kulcsszavak** a következő kulcs van a kivonattáblában. A **kulcsszavak** adattípusa tömbjét a `[long]` értéktípus sok társításához. Keresse meg a maximális értéke a következő paranccsal `[long]`:
 
@@ -156,7 +156,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="keywords-static-property-value-optional"></a>A kulcsszavak statikus tulajdonság értéke (nem kötelező)
+### <a name="keywords-static-property-value-optional"></a>A kulcsszavak statikus tulajdonság értéke (nem kötelező)
 
 A **kulcsszavak** kulcs számbavétele megtörtént, de a Jelszókivonat-tábla lekérdezése a statikus tulajdonság nevét is használhatja.
 Ahelyett, hogy a visszaadott karakterláncban használja, a tulajdonság nevét kell konvertálni egy értéket a **Value__** tulajdonság.
@@ -172,7 +172,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-event-id"></a>Eseményazonosító szerinti szűrés
+## <a name="filtering-by-event-id"></a>Eseményazonosító szerinti szűrés
 
 Részletesebb adatok lekéréséhez a lekérdezési eredmények alapján vannak szűrve **eseményazonosító**. A **eseményazonosító** hivatkozik a kivonattábla kulcsa **azonosító** és a egy adott érték **eseményazonosító**. A **Windows Eseménynapló** jeleníti meg a **eseményazonosító**. Ez a példa **Event Id 1023**.
 
@@ -187,7 +187,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-level"></a>Szűrési szint szerint
+## <a name="filtering-by-level"></a>Szűrési szint szerint
 
 További eredmények szűkítéséhez, és csak a hibák események tartalmazzák, használja a **szint** kulcsot.
 **Windows-Eseménynapló** jeleníti meg a **szint** , karakterlánc-értékeket, de a felsorolt értékek. A kivonattáblában, ha a **szint** kulcsot karakterlánc-érték, egy hibaüzenet jelenik meg.
@@ -236,7 +236,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="level-static-property-in-enumeration-optional"></a>Szolgáltatói statikus tulajdonság frissítése az enumerálás (nem kötelező)
+### <a name="level-static-property-in-enumeration-optional"></a>Szolgáltatói statikus tulajdonság frissítése az enumerálás (nem kötelező)
 
 A **szint** kulcs számbavétele megtörtént, de a Jelszókivonat-tábla lekérdezése a statikus tulajdonság nevét is használhatja.
 Ahelyett, hogy a visszaadott karakterláncban használja, a tulajdonság nevét kell konvertálni egy értéket a **Value__** tulajdonság.

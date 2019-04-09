@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Windows PowerShell-meghajtók kezelése
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685185"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293248"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell-meghajtók kezelése
 
@@ -82,7 +82,7 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Hozzáadás, új Windows PowerShell-meghajtók (új PSDrive)
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Hozzáadás, új Windows PowerShell-meghajtók (új PSDrive)
 
 A saját Windows PowerShell-meghajtók használatával adhat hozzá a **New-PSDrive** parancsot. A szintaxisának lekérése a **New-PSDrive** parancshoz, írja be a **Get-Command** parancsot a **szintaxis** paramétert:
 
@@ -146,7 +146,7 @@ cvkey:\
 
 A New-PsDrive parancsmag hozzáadja az új meghajtó csak az aktuális Windows PowerShell-munkamenetben. Ha bezárja a Windows PowerShell-ablakot, az új meghajtó elveszik. Szeretné menteni egy Windows PowerShell meghajtót, az Export-konzol parancsmaggal exportálhatja a jelenlegi Windows PowerShell-munkamenetet, és használja a PowerShell.exe **PSConsoleFile** paraméter importálásához. Vagy az új meghajtó felvétele a Windows PowerShell-profilt.
 
-### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Törlése a Windows PowerShell-meghajtók (Remove-PSDrive)
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Törlése a Windows PowerShell-meghajtók (Remove-PSDrive)
 
 A Windows powershellből meghajtók segítségével törölheti a **Remove-PSDrive** parancsmagot. A **Remove-PSDrive** parancsmag könnyen használható; Ha törölni szeretné egy adott Windows PowerShell-meghajtón, csak megadni a Windows PowerShell-meghajtó nevét.
 
@@ -172,6 +172,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-### <a name="adding-and-removing-drives-outside-windows-powershell"></a>-Meghajtók kívül a Windows PowerShell hozzáadása és eltávolítása
+## <a name="adding-and-removing-drives-outside-windows-powershell"></a>-Meghajtók kívül a Windows PowerShell hozzáadása és eltávolítása
 
 Windows PowerShell hozzáadásakor vagy eltávolításakor a Windows, beleértve a csatlakoztatott hálózati meghajtók, a csatlakoztatott USB-meghajtók és a meghajtók, a törölt fájl rendszermeghajtók észleli a **használata net** parancsot vagy a  **WScript.NetworkMapNetworkDrive** és **RemoveNetworkDrive** módszerek a Windows Script Host (WSH) parancsfájlt.

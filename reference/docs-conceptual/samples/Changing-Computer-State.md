@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: A számítógép állapotának módosítása
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687390"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293061"
 ---
 # <a name="changing-computer-state"></a>A számítógép állapotának módosítása
 
 Alaphelyzetbe állítani a számítógépet a Windows PowerShellben, használhatja a szabványos parancssori eszköz vagy egy WMI-osztály. Windows PowerShell csak az eszköz futtatásához használ, bár egyes külső eszközök a Windows PowerShell használatával kapcsolatos fontos részleteket megtudhatja, hogyan kell módosítani a Windows PowerShellben a számítógép energiaállapotát szemlélteti.
 
-### <a name="locking-a-computer"></a>A számítógép zárolása
+## <a name="locking-a-computer"></a>A számítógép zárolása
 
 Közvetlenül a szabványos elérhető eszközöket a számítógép zárolása csak úgy, hogy hívja a **LockWorkstation()** függvényével **user32.dll**:
 
@@ -28,7 +28,7 @@ Ha zárolja munkaállomás gyors felhasználóváltás engedélyezve van, péld�
 
 Állítsa le a Terminálszolgáltatások kiszolgáló adott munkamenetek, használja a **tsshutdn.exe** parancssori eszköz.
 
-### <a name="logging-off-the-current-session"></a>Az aktuális munkamenet kijelentkeztetése
+## <a name="logging-off-the-current-session"></a>Az aktuális munkamenet kijelentkeztetése
 
 Számos különböző módszer használatával a helyi rendszer egy munkamenetet kijelentkeztetni. A legegyszerűbb módja, ha a távoli asztal/Terminálszolgáltatások parancssori eszköz **logoff.exe** (részletek, a Windows PowerShell parancssorába írja be a következőt **kijelentkezési /?**). Kijelentkezés az aktuális aktív munkamenet, írja be a **kijelentkezési** argumentumok nélkül.
 
@@ -46,7 +46,7 @@ Egy harmadik lehetőség, hogy a WMI használható. A Win32_OperatingSystem oszt
 
 További információt, és egyéb funkciók Win32Shutdown metody található tekintse meg a "Win32Shutdown metódus, a Win32_OperatingSystem osztály" az MSDN webhelyen.
 
-### <a name="shutting-down-or-restarting-a-computer"></a>Leállítás vagy a számítógép újraindítása
+## <a name="shutting-down-or-restarting-a-computer"></a>Leállítás vagy a számítógép újraindítása
 
 Leállítása vagy újraindítása a számítógépek olyan általánosan feladat azonos típusú. Eszközök, amelyek a számítógép leállítása általában újraindul, valamint – és fordítva. A Windows PowerShell a számítógép újraindítása két egyszerű lehetőség van. Használhatja a Tsshutdn.exe vagy Shutdown.exe megfelelő argumentumokkal. A részletes használati információkat szerezhet a **tsshutdn.exe /?** vagy **shutdown.exe /?**.
 

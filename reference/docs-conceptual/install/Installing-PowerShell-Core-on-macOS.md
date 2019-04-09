@@ -2,12 +2,12 @@
 title: A PowerShell Core telepítése macOS rendszerre
 description: Információ a PowerShell Core telepítése macOS rendszeren
 ms.date: 12/12/2018
-ms.openlocfilehash: 91e64cace7d4ed988da56109dde9bf2a80528eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688482"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293401"
 ---
 # <a name="installing-powershell-core-on-macos"></a>A PowerShell Core telepítése macOS rendszerre
 
@@ -84,13 +84,14 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Telepítési keresztül közvetlen letöltésére
 
-A csomag-csomag letöltése `powershell-6.1.0-osx-x64.pkg`
+A csomag-csomag letöltése
+`powershell-6.2.0-osx-x64.pkg`
 az a [kiadások][] lap a macOS-számítógépre.
 
 Kattintson duplán a fájlra, és kövesse az utasításokat, vagy telepítheti a terminálról:
 
 ```sh
-sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 
 Telepítés [OpenSSL](#install-openssl). PowerShell távvezérlése és CIM-műveletek OpenSSL van szükség.
@@ -103,19 +104,19 @@ PowerShell bináris `tar.gz` archívumok biztosított speciális üzembe helyez�
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.1.0
+sudo mkdir -p /usr/local/microsoft/powershell/6.2.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.1.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.2.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.2.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/6.2.0/pwsh /usr/local/bin/pwsh
 ```
 
 Telepítés [OpenSSL](#install-openssl). PowerShell távvezérlése és CIM-műveletek OpenSSL van szükség.
@@ -174,7 +175,7 @@ Távolítsa el a további PowerShell-elérési utak, tekintse meg a [elérési u
 
 ## <a name="paths"></a>Elérési utak
 
-* `$PSHOME` van `/usr/local/microsoft/powershell/6.1.0/`
+* `$PSHOME` van `/usr/local/microsoft/powershell/6.2.0/`
 * Felhasználói profilokat fog olvasni `~/.config/powershell/profile.ps1`
 * Alapértelmezett profilokat fog olvasni `$PSHOME/profile.ps1`
 * Felhasználói modulok fog olvasni `~/.local/share/powershell/Modules`
@@ -188,7 +189,7 @@ Az alapértelmezett gazdagép-specifikus profil létezik így `Microsoft.PowerSh
 PowerShell tiszteletben tartja a [XDG alap könyvtár megadása] [ xdg-bds] macOS rendszeren.
 
 Mivel a macOS BSD, az előtag típusából származtatott `/usr/local` helyett használja `/opt`.
-Tehát `$PSHOME` van `/usr/local/microsoft/powershell/6.1.0/`, és a szimbolikus hivatkozást van elhelyezve `/usr/local/bin/pwsh`.
+Tehát `$PSHOME` van `/usr/local/microsoft/powershell/6.2.0/`, és a szimbolikus hivatkozást van elhelyezve `/usr/local/bin/pwsh`.
 
 ## <a name="additional-resources"></a>Egyéb források
 
@@ -200,5 +201,5 @@ Tehát `$PSHOME` van `/usr/local/microsoft/powershell/6.1.0/`, és a szimbolikus
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[kiadások]: https://github.com/PowerShell/PowerShell/releases/latest
+[Kiadások]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Fájlok és mappák használata
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: a8d57a1c269d95e692db6c3f1ae10df49e305e4e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 393e886a4945222198d9b81019250c5d5b905ad3
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685052"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293219"
 ---
 # <a name="working-with-files-and-folders"></a>Fájlok és mappák használata
 
 Navigálás a Windows PowerShell-meghajtók és a rajtuk az elemek módosítása kezelésére szolgáló fizikai merevlemezek Windows található fájlok és mappák hasonlít. Ez a szakasz leírja, hogyan meghatározott fájl- és fájlkezelési feladatok PowerShell-lel kezelésére.
 
-### <a name="listing-all-the-files-and-folders-within-a-folder"></a>A fájlok és a egy mappában található mappák listázása
+## <a name="listing-all-the-files-and-folders-within-a-folder"></a>A fájlok és a egy mappában található mappák listázása
 
 A közvetlenül egy mappában található minden elemet is kap **Get-ChildItem**. Adja hozzá a választható **kényszerített** rejtettek megjelenítése vagy rendszer elemek paramétert. Ez a parancs például a Windows PowerShell meghajtót C (Ez ugyanaz, mint a Windows fizikai meghajtó C) a közvetlen tartalmát jeleníti meg:
 
@@ -36,7 +36,7 @@ A következő parancsot, amely utoljára módosítva 2005. október 1. után, é
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt '2005-10-01') -and ($_.Length -ge 1mb) -and ($_.Length -le 10mb)}
 ```
 
-### <a name="copying-files-and-folders"></a>Fájlok és mappák másolása
+## <a name="copying-files-and-folders"></a>Fájlok és mappák másolása
 
 Másolás végzett **Copy-Item**. C: készít biztonsági másolatot a következő parancs\\Boot.ini fájlt a C:\\boot.bak:
 
@@ -70,7 +70,7 @@ Más eszközök segítségével továbbra is rendszer fájlmásolás hajtható v
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
-### <a name="creating-files-and-folders"></a>Fájlok és mappák létrehozása
+## <a name="creating-files-and-folders"></a>Fájlok és mappák létrehozása
 
 Új elemek létrehozását ugyanúgy működik az összes Windows PowerShell-szolgáltató. Ha egy Windows PowerShell-szolgáltatóval rendelkezik-e egynél több elem típusa – például a fájlrendszer Windows PowerShell-szolgáltatóban megkülönbözteti könyvtárak és fájlok – meg kell adni az elem típusa.
 
@@ -86,7 +86,7 @@ Ez a parancs létrehoz egy új üres fájlt C:\\temp\\új mappa\\file.txt
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 ```
 
-### <a name="removing-all-files-and-folders-within-a-folder"></a>Összes fájlt és mappát egy mappában lévő eltávolítása
+## <a name="removing-all-files-and-folders-within-a-folder"></a>Összes fájlt és mappát egy mappában lévő eltávolítása
 
 Eltávolíthatja a benne lévő elemek használatával **Remove-cikk**, de meg kell adnia az eltávolítás megerősítéséhez, ha az elem tartalmaz bármi más. Például, ha törli a mappát a C: próbál\\temp\\más elemeket tartalmazó DeleteMe, Windows PowerShell megerősítést kér a felhasználótól a mappa törlése előtt:
 
@@ -107,7 +107,7 @@ Ha nem szeretné, hogy a rendszer minden egyes tartalmazott cikkhez, adja meg a 
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Elérhető Windows meghajtóként egy helyi mappába leképezése
+## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Elérhető Windows meghajtóként egy helyi mappába leképezése
 
 Emellett leképezhet egy helyi mappába használatával a **subst** parancsot. A következő parancs létrehoz egy helyi meghajtóra P: feltörték a helyi programfájlok könyvtárban:
 
@@ -117,7 +117,7 @@ subst p: $env:programfiles
 
 Ugyanúgy mint a hálózati meghajtó, a meghajtók leképezve belül a Windows PowerShell használatával **subst** azonnal láthatók a Windows PowerShell parancshéj.
 
-### <a name="reading-a-text-file-into-an-array"></a>Egy tömbbe egy szöveges fájl olvasása
+## <a name="reading-a-text-file-into-an-array"></a>Egy tömbbe egy szöveges fájl olvasása
 
 A gyakori tároló formátumok szöveges adatok egyik, egy fájlban, a különböző adatelemek számít külön sorban. A **Get-tartalom** parancsmag is használható egy teljes fájl egy lépésben elolvasható itt látható módon:
 

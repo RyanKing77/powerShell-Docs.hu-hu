@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Szoftvertelepítések használata
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686725"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293231"
 ---
 # <a name="working-with-software-installations"></a>Szoftvertelepítések használata
 
@@ -17,7 +17,7 @@ WMI keresztül érhetők el az alkalmazásokat, amelyek célja, hogy használja 
 > [!NOTE]
 > Az alkalmazás fájljai általában másolja arra a számítógépre telepített alkalmazások nem kezelhető itt tárgyalt technikák használatával. A "Használata a fájlok és mappák" szakaszban leírt módszerek segítségével kezelheti ezeket az alkalmazásokat, a fájlok és mappák.
 
-### <a name="listing-windows-installer-applications"></a>Windows Installer-alkalmazások listázása
+## <a name="listing-windows-installer-applications"></a>Windows Installer-alkalmazások listázása
 
 A helyi vagy távoli számítógépen a Windows Installer telepített alkalmazások listájában, használja a következő egyszerű WMI-lekérdezést:
 
@@ -85,7 +85,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 Bár több módszert is, és tekintse meg az alkalmazásokat, amelyek a Windows Installer telepítéshez használt most megvalósult azt más alkalmazások nem rendelkeznek tekinthető. Mivel a legtöbb standard szintű alkalmazások Windows regisztrálja az eltávolítást, használhatnánk azok helyben felderítésével azokat a Windows beállításjegyzékben.
 
-### <a name="listing-all-uninstallable-applications"></a>Az összes távolíthatónak alkalmazások listázása
+## <a name="listing-all-uninstallable-applications"></a>Az összes távolíthatónak alkalmazások listázása
 
 Nincs garantált lehetőség a minden alkalmazás megtalálja a rendszer, bár minden program találni a listaelemek a Programok hozzáadása vagy eltávolítása párbeszédpanel jelenik meg. Adja hozzá, vagy a programok megkeresi ezeket az alkalmazásokat a következő beállításkulcsot:
 
@@ -142,7 +142,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### <a name="installing-applications"></a>Alkalmazások telepítése
+## <a name="installing-applications"></a>Alkalmazások telepítése
 
 Használhatja a **Win32_Product** osztály telepítése a Windows Installer-csomagokat, helyileg vagy távolról.
 
@@ -157,7 +157,7 @@ Távoli telepítése, ha egy univerzális elnevezési konvenció (UNC) hálózat
 
 Előfordulhat, hogy az alkalmazásokat, amelyek nem használják a Windows Installer technológia automatizált üzembehelyezési elérhető alkalmazás-specifikus módszerek. Annak megállapításához, hogy van-e az üzembe helyezés automatizálásának módját, az alkalmazás dokumentációban, vagy tekintse meg az alkalmazás gyártójától támogatási rendszerben. Bizonyos esetekben akkor is, ha az alkalmazás gyártójától nem fejeződött kifejezetten megtervezni az alkalmazást a telepítés automatizálása, a telepítő szoftvereket gyártó lehet néhány automation technikákat.
 
-### <a name="removing-applications"></a>Alkalmazások eltávolítása
+## <a name="removing-applications"></a>Alkalmazások eltávolítása
 
 Körülbelül ugyanúgy, mint a csomag telepítése Windows Installer-csomag eltávolítása Windows PowerShell használatával működik. Íme egy példa, amely alapján az nevét; a csomag eltávolítása kiválasztása bizonyos esetekben szűrése az egyszerűbb lehet a **IdentifyingNumber**:
 
@@ -179,7 +179,7 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('Displ
 
 Ezek a karakterláncok azonban nem lehet közvetlenül használható a Windows PowerShell parancssorában néhány módosítás nélkül.
 
-### <a name="upgrading-windows-installer-applications"></a>Windows Installer-alkalmazások frissítése
+## <a name="upgrading-windows-installer-applications"></a>Windows Installer-alkalmazások frissítése
 
 Alkalmazások frissítése, az alkalmazás frissítési csomag nevét az alkalmazás és az elérési út ismernie kell. Ezzel az információval frissíthet egy alkalmazás egyetlen Windows PowerShell-paranccsal:
 

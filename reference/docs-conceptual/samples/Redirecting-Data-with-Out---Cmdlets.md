@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Adatátirányítás az Out-parancsmagokkal
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687138"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293299"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Adatátirányítás az Out-* parancsmagokkal
 
@@ -68,7 +68,7 @@ Ez vonatkozik az összes a **ki** parancsmagok. Egy **ki** parancsmag mindig meg
 > [!NOTE]
 > Az összes a **ki** parancsmagok az kimeneti használatával a formázás érvényben a konzolablakban, beleértve a sor hosszának korlátozása, szöveges formában jelennek meg.
 
-#### <a name="paging-console-output-out-host"></a>Lapozófájl-konzolkimenet (élekről gazdagép)
+## <a name="paging-console-output-out-host"></a>Lapozófájl-konzolkimenet (élekről gazdagép)
 
 Alapértelmezés szerint Windows PowerShell a gazdagép ablak, amely pontosan mit küld adatokat a kimenő irányú gazdagép parancsmag biztosítja. Az elsődleges funkciója a élekről gazdagép parancsmag a már volt szó korábbi lapozófájlok lehetőség. A következő parancsot használja például élekről tárolni a lapon a Get-Command parancsmag kimenete:
 
@@ -93,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### <a name="discarding-output-out-null"></a>Kimeneti elvetése (élekről Null)
+## <a name="discarding-output-out-null"></a>Kimeneti elvetése (élekről Null)
 
 A **élekről Null** célja, hogy a parancsmag azonnal elveti fogad semmilyen bemenetet. Ez akkor hasznos, ami miatt elvetette a szükségtelen adatokat, mellékhatása futtat egy parancsot kap. Amikor beírja a következő parancsot, nem kap semmit újra a parancsot:
 
@@ -111,7 +111,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### <a name="printing-data-out-printer"></a>Nyomtatás adatok (Out-nyomtató)
+## <a name="printing-data-out-printer"></a>Nyomtatás adatok (Out-nyomtató)
 
 Adatok használatával kinyomtathatja a **Out-nyomtató** parancsmagot. A **Out-nyomtató** parancsmag fogja használni az alapértelmezett nyomtató, ha nem ad meg a nyomtató neve. Bármely Windows-alapú nyomtató használhatja a megjelenített név megadásával. Hiba esetén nem kell a nyomtató- vagy a tényleges fizikai nyomtató bármilyen típusú. Például ha rendelkezik a Microsoft Office dokumentum lemezkép-készítési eszközök telepíteni, elküldheti az adatok képfájlra mutató beírásával:
 
@@ -119,7 +119,7 @@ Adatok használatával kinyomtathatja a **Out-nyomtató** parancsmagot. A **Out-
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### <a name="saving-data-out-file"></a>Adatok mentése (out-File)
+## <a name="saving-data-out-file"></a>Adatok mentése (out-File)
 
 Egy fájl helyett a konzolablakban kimeneti a használatával küldhet a **out-File** parancsmagot. A következő parancsot a folyamatok listáját küld a fájl **C:\\temp\\processlist.txt**:
 

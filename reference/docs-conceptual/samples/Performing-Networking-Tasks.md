@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Hálózati feladatok végrehajtása
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 64c57c95a70bc4cad4b695a59d96673ed18afdf4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 250ae6e5f6431ce659b3600188d7e30e501c3247
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688244"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293129"
 ---
 # <a name="performing-networking-tasks"></a>Hálózati feladatok végrehajtása
 
 Mert ez a leggyakrabban használt hálózati protokoll, az alacsony szintű hálózati protokoll adminisztrációs feladatainak TCP/IP magában foglalja. Ebben a szakaszban használjuk Windows PowerShell és WMI ezekhez a feladatokhoz.
 
-### <a name="listing-ip-addresses-for-a-computer"></a>IP-címeit számítógép
+## <a name="listing-ip-addresses-for-a-computer"></a>IP-címeit számítógép
 
 Használja a helyi számítógép összes IP-cím lekéréséhez használja a következő parancsot:
 
@@ -48,7 +48,7 @@ IPAddress Property   System.String[] IPAddress {get;}
 
 Minden egyes hálózati adapter IP-cím tulajdonság valójában egy tömb. A zárójelek a definícióban jelzi, hogy **IP-cím** nem egy **System.String** érték, de a tömb **System.String** értékeket.
 
-### <a name="listing-ip-configuration-data"></a>IP-konfigurációs adatokat listázása
+## <a name="listing-ip-configuration-data"></a>IP-konfigurációs adatokat listázása
 
 Részletes IP-konfigurációs adatokat az összes hálózati adapter megjelenítéséhez használja a következő parancsot:
 
@@ -66,7 +66,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 Ez a parancs visszaadja a DHCP, DNS, Útválasztás részletes információkat, és a többi másodlagos IP-konfiguráció tulajdonságai.
 
-### <a name="pinging-computers"></a>Számítógép pingelése
+## <a name="pinging-computers"></a>Számítógép pingelése
 
 Egy számítógép használatával egy egyszerű pingelést hajthat végre **Win32_PingStatus**. A következő parancs hajtja végre a ping parancsra, de hosszadalmas kimenetet ad vissza:
 
@@ -106,7 +106,7 @@ Vegye figyelembe, hogy ezt a technikát címtartományt létrehozásához a más
 $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 ```
 
-### <a name="retrieving-network-adapter-properties"></a>Hálózati Adapter tulajdonságainak beolvasása
+## <a name="retrieving-network-adapter-properties"></a>Hálózati Adapter tulajdonságainak beolvasása
 
 A felhasználói útmutató, a korábban említettük, hogy általános konfigurációs tulajdonságok beolvasása használatával **Win32_NetworkAdapterConfiguration**. Bár nem kimondottan a TCP/IP információkat, hálózati adapter adatai, például a MAC-címek és adapter típusú megértésében, hogy mi történik egy olyan számítógéppel hasznos lehet. Ezek az információk összegzését lekéréséhez használja a következő parancsot:
 
@@ -114,7 +114,7 @@ A felhasználói útmutató, a korábban említettük, hogy általános konfigur
 Get-WmiObject -Class Win32_NetworkAdapter -ComputerName .
 ```
 
-### <a name="assigning-the-dns-domain-for-a-network-adapter"></a>A DNS-tartomány hozzárendelése egy hálózati adapter
+## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>A DNS-tartomány hozzárendelése egy hálózati adapter
 
 Automatikus névfeloldás a DNS-tartomány hozzárendelése, használja a **Win32_NetworkAdapterConfiguration SetDNSDomain** metódust. Egymástól függetlenül rendeli a DNS-tartományt, az egyes hálózati adapter konfigurációja, mivel kell használnia egy **ForEach-Object** utasítással a tartomány hozzárendelése az egyes adapterek:
 
@@ -130,11 +130,11 @@ A parancs segítségével szűrheti a **Where-Object** parancsmag használata he
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -ComputerName . | Where-Object -FilterScript {$_.IPEnabled} | ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
 ```
 
-### <a name="performing-dhcp-configuration-tasks"></a>DHCP-konfigurálási feladatok végrehajtása
+## <a name="performing-dhcp-configuration-tasks"></a>DHCP-konfigurálási feladatok végrehajtása
 
 DHCP Részletek módosítása magában foglalja a működik együtt a hálózati adapterek, ahogy a DNS-konfigurációt is teszi. Több különálló műveletből WMI használatával is elvégezheti, és azt fogja végighaladhat a gyakori példa néhány.
 
-#### <a name="determining-dhcp-enabled-adapters"></a>DHCP-kompatibilis adapterek meghatározása
+### <a name="determining-dhcp-enabled-adapters"></a>DHCP-kompatibilis adapterek meghatározása
 
 A számítógép a DHCP-kompatibilis adapterek megkereséséhez használja a következő parancsot:
 
@@ -148,7 +148,7 @@ Az adapter IP-konfigurációs problémák kizárása, csak az IP-kompatibilis ad
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName .
 ```
 
-#### <a name="retrieving-dhcp-properties"></a>DHCP-tulajdonságainak beolvasása
+### <a name="retrieving-dhcp-properties"></a>DHCP-tulajdonságainak beolvasása
 
 -Adapter tulajdonságainak DHCP-vel kapcsolatos általánosan kezdődik "DHCP", mert a tulajdonság paraméterének Format-Table használhatja csak azokat a tulajdonságokat a megjelenítendő:
 
@@ -156,7 +156,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true 
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName . | Format-Table -Property DHCP*
 ```
 
-#### <a name="enabling-dhcp-on-each-adapter"></a>A hálózati adapterek DHCP engedélyezése
+### <a name="enabling-dhcp-on-each-adapter"></a>A hálózati adapterek DHCP engedélyezése
 
 Az összes adapter DHCP engedélyezéséhez használja a következő parancsot:
 
@@ -166,7 +166,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 Használhatja a **szűrő** utasítás "IPEnabled = $true és DHCPEnabled = $false" elkerülése érdekében, amely lehetővé teszi a DHCP, amelyen már engedélyezve van, de ez a lépés kihagyása nem okoznak hibákat.
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Ad ki, és adott adaptert a DHCP-Bérleteket megújítása
+### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Ad ki, és adott adaptert a DHCP-Bérleteket megújítása
 
 A **Win32_NetworkAdapterConfiguration** osztály rendelkezik **ReleaseDHCPLease** és **RenewDHCPLease** módszereket. Mindkettő ugyanúgy használhatók. Ha csak kell kiadási vagy újítsa meg az adapter egy bizonyos alhálózat címtartományát általában ezen metódusok használatát. Egy alhálózaton szűrő adapterek legegyszerűbb módja, hogy csak a hálózatiadapter-konfigurációk, hogy az átjáró használata az adott alhálózat kiválasztása. Például a következő parancs kiadja adaptereken a helyi számítógépen, amely a DHCP-bérleteket beszerzésekor 192.168.1.254 az összes DHCP-bérleteket:
 
@@ -183,7 +183,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true 
 > [!NOTE]
 > Ezek a metódusok használata a távoli számítógépen, ügyeljen arra, hogy is nem fér hozzá a távoli rendszer, ha csatlakozik, akkor a kiadott vagy megújított bérleti az adapteren keresztül.
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Ad ki, és az összes adapter DHCP-címbérlet megújítása
+### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Ad ki, és az összes adapter DHCP-címbérlet megújítása
 
 Is globális DHCP cím kiadások vagy megújítás hajt végre az összes adapter használatával a **Win32_NetworkAdapterConfiguration** módszerek **ReleaseDHCPLeaseAll** és **RenewDHCPLeaseAll** . Azonban a parancs a WMI-osztály, nem pedig egy adott adapterhez, a alkalmazni kell, mert ad ki, és az osztály nem egy adott adaptert a címbérlet megújítása globálisan történik.
 
@@ -205,7 +205,7 @@ A parancs formátuma segítségével meghívása a **RenewDHCPLeaseAll** módsze
 ( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).RenewDHCPLeaseAll()
 ```
 
-### <a name="creating-a-network-share"></a>Egy hálózati megosztás létrehozása
+## <a name="creating-a-network-share"></a>Egy hálózati megosztás létrehozása
 
 Hozzon létre egy hálózati megosztást, használja a **Win32_Share létrehozása** módszer:
 
@@ -219,7 +219,7 @@ A megosztás használatával is létrehozhat **hálózati megosztás** a Windows
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 ```
 
-### <a name="removing-a-network-share"></a>Hálózati megosztások eltávolítása
+## <a name="removing-a-network-share"></a>Hálózati megosztások eltávolítása
 
 Eltávolíthatja a hálózati megosztás **Win32_Share**, de a folyamat kissé eltérő, hozzon létre egy megosztáshoz, ki kell olvasnia az adott megosztás távolítható el, mert helyett a **Win32_Share** osztály. Az alábbi utasítás törli a megosztást "TempShare":
 
@@ -235,7 +235,7 @@ PS> net share tempshare /delete
 tempshare was deleted successfully.
 ```
 
-### <a name="connecting-a-windows-accessible-network-drive"></a>A Windows elérhető hálózati meghajtó csatlakoztatása
+## <a name="connecting-a-windows-accessible-network-drive"></a>A Windows elérhető hálózati meghajtó csatlakoztatása
 
 A **New-PSDrive** parancsmagok a Windows PowerShell meghajtót hoz létre, de az ilyen módon létrehozott meghajtó áll rendelkezésre, csak a Windows PowerShell. Hozzon létre egy új hálózati meghajtó, használhatja a **WScript.Network** COM-objektummal. A következő parancsot a megosztás térképek \\ \\FPS01\\helyi meghajtóra "b" felhasználó
 

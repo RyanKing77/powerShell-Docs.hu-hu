@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Adatgyűjtés a számítógépekről
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: 99125ef701705c20d4e955c79eaa3469ce4d58fb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688944"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293163"
 ---
 # <a name="collecting-information-about-computers"></a>Adatgyűjtés a számítógépekről
 
@@ -22,7 +22,7 @@ Adja meg, hogy a **ComputerName** pont értékű paraméter (**.**), amely jelö
 Megadhat egy nevet vagy a WMI-n keresztül érhető el minden olyan számítógéphez társított IP-cím.
 A helyi számítógép adatainak beolvasásához, sikerült kihagyja a **ComputerName** paraméter.
 
-### <a name="listing-desktop-settings"></a>Asztali beállítások listázása
+## <a name="listing-desktop-settings"></a>Asztali beállítások listázása
 
 Tudjuk, hogy az asztali adatokat gyűjt a helyi számítógépen paranccsal megkezdheti.
 
@@ -44,7 +44,7 @@ Get-CimInstance -ClassName Win32_Desktop -ComputerName . | Select-Object -Exclud
 
 Szűrje ki a metaadatokat, a csővezeték-kezelőt (|) használatával küldjön eredményeit a `Get-CimInstance` parancsot a `Select-Object -ExcludeProperty "CIM*"`.
 
-### <a name="listing-bios-information"></a>BIOS adatainak listázása
+## <a name="listing-bios-information"></a>BIOS adatainak listázása
 
 A WMI **Win32_BIOS** osztály adja vissza a rendszer BIOS viszonylag kompakt és teljes körű információkat a helyi számítógépen:
 
@@ -52,7 +52,7 @@ A WMI **Win32_BIOS** osztály adja vissza a rendszer BIOS viszonylag kompakt és
 Get-CimInstance -ClassName Win32_BIOS -ComputerName .
 ```
 
-### <a name="listing-processor-information"></a>A processzor adatai listázása
+## <a name="listing-processor-information"></a>A processzor adatai listázása
 
 A WMI használatával kérheti le általános processzoradatokat **Win32_Processor** osztályhoz, noha valószínűleg érdemes szűri az információkat:
 
@@ -70,7 +70,7 @@ SystemType
 X86-based PC
 ```
 
-### <a name="listing-computer-manufacturer-and-model"></a>Számítógép gyártója és modellje listázása
+## <a name="listing-computer-manufacturer-and-model"></a>Számítógép gyártója és modellje listázása
 
 Számítógépadatok modell érhető el is **Win32_ComputerSystem**.
 A megjelenített normál a kimenetbe nem kell a megadott szűréseket OEM-adatok:
@@ -88,7 +88,7 @@ MyPC Jane Doe         WORKGROUP 804765696           DA243A-ABA 6415cl NA910 Comp
 Csak akkor megegyezik az adatokat, hogy a parancsok, amely információkat ad vissza közvetlenül az egyes hardverekről, a kimenete.
 Bizonyos adatok nem megfelelően van konfigurálva a hardvergyártók által, és ezért nem érhető el.
 
-### <a name="listing-installed-hotfixes"></a>A telepített gyorsjavítások listázása
+## <a name="listing-installed-hotfixes"></a>A telepített gyorsjavítások listázása
 
 Használatával listázhatja az összes telepített gyorsjavítások **Win32_QuickFixEngineering**:
 
@@ -143,7 +143,7 @@ HotFixId
 KB4048951
 ```
 
-### <a name="listing-operating-system-version-information"></a>Operációsrendszer-Verziószámukat listázása
+## <a name="listing-operating-system-version-information"></a>Operációsrendszer-Verziószámukat listázása
 
 A **Win32_OperatingSystem** osztálytulajdonságokat verziója és a service pack információval.
 Explicit módon kiválaszthatja a fájlverzió-információkat a összefoglalójának lekérése a tulajdonságok csak **Win32_OperatingSystem**:
@@ -167,7 +167,7 @@ ServicePackMajorVersion : 0
 ServicePackMinorVersion : 0
 ```
 
-### <a name="listing-local-users-and-owner"></a>A helyi felhasználók és a tulajdonos listázása
+## <a name="listing-local-users-and-owner"></a>A helyi felhasználók és a tulajdonos listázása
 
 Helyi általános információkat – licenccel rendelkező felhasználók száma, a felhasználók és a tulajdonos neve aktuális száma – között található egy kijelölt **Win32_OperatingSystem**' osztálytulajdonságokat.
 Explicit módon kiválaszthatja a tulajdonságok alapján a következőképpen jelenik meg:
@@ -182,7 +182,7 @@ A helyettesítő karakterek használatával több állapotára verziója van:
 Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
 ```
 
-### <a name="getting-available-disk-space"></a>Bevezetés a szabad lemezterület
+## <a name="getting-available-disk-space"></a>Bevezetés a szabad lemezterület
 
 Tekintse meg a lemezterület és a szabad terület a helyi meghajtókra, használhatja a Win32_LogicalDisk WMI-osztályt.
 Meg kell tekintenie csak 3 és a egy DriveType példányok – WMI használja az érték rögzített merevlemez.
@@ -203,7 +203,7 @@ FreeSpace 109839607808
 Size      326846914560
 ```
 
-### <a name="getting-logon-session-information"></a>Bejelentkezési munkamenet-információk lekérése
+## <a name="getting-logon-session-information"></a>Bejelentkezési munkamenet-információk lekérése
 
 Társított keresztül a felhasználó bejelentkezési munkamenetek kapcsolatos általános információkat szerezhet a **Win32_LogonSession** WMI-osztály:
 
@@ -211,7 +211,7 @@ Társított keresztül a felhasználó bejelentkezési munkamenetek kapcsolatos 
 Get-CimInstance -ClassName Win32_LogonSession -ComputerName .
 ```
 
-### <a name="getting-the-user-logged-on-to-a-computer"></a>Bevezetés a számítógépre bejelentkezett felhasználó
+## <a name="getting-the-user-logged-on-to-a-computer"></a>Bevezetés a számítógépre bejelentkezett felhasználó
 
 A felhasználó jelentkezett be egy adott számítógép rendszer Win32_ComputerSystem használatával jeleníthet meg.
 Ez a parancs csak a felhasználó bejelentkezett a rendszert asztal adja vissza:
@@ -220,7 +220,7 @@ Ez a parancs csak a felhasználó bejelentkezett a rendszert asztal adja vissza:
 Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName -ComputerName .
 ```
 
-### <a name="getting-local-time-from-a-computer"></a>Egy számítógép helyi ideje beolvasása
+## <a name="getting-local-time-from-a-computer"></a>Egy számítógép helyi ideje beolvasása
 
 Egy adott számítógépen az aktuális helyi idő használatával lekérheti a **Win32_LocalTime** WMI-osztály.
 
@@ -240,7 +240,7 @@ Year         : 2017
 PSComputerName : .
 ```
 
-### <a name="displaying-service-status"></a>Szolgáltatás állapotának megjelenítése
+## <a name="displaying-service-status"></a>Szolgáltatás állapotának megjelenítése
 
 Az összes szolgáltatás állapotának megjelenítése egy adott számítógépen, helyben használhatja a `Get-Service` parancsmagot.
 Távoli rendszerek esetén használhatja a **Win32_Service** WMI-osztály.

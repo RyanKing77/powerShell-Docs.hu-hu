@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Beállításkulcsok használata
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: a9d08f2f6b5803980dec45a4e266ad66879c8c8d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686949"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293197"
 ---
 # <a name="working-with-registry-keys"></a>Beállításkulcsok használata
 
 Mivel beállításkulcsok a Windows PowerShell-meghajtókon lévő elemek, a használatukat a nagyon hasonló fájlok és mappák használata. Egy fontos különbséggel, hogy minden eleme egy beállításjegyzék-alapú Windows PowerShell-meghajtón egy tárolóban, csakúgy, mint a fájlrendszer meghajtóján az egyik mappájába. Azonban a beállításjegyzék-bejegyzések és a hozzájuk tartozó értékek azok az elemek nem különálló elemek tulajdonságai.
 
-### <a name="listing-all-subkeys-of-a-registry-key"></a>Egy beállításkulcs alkulcsait összes listázása
+## <a name="listing-all-subkeys-of-a-registry-key"></a>Egy beállításkulcs alkulcsait összes listázása
 
 Közvetlenül egy beállításkulcs található minden elem megjelenítése használatával **Get-ChildItem**. Adja hozzá a választható **kényszerített** rejtettek megjelenítése vagy rendszer elemek paramétert. Ha például a parancs megjeleníti a közvetlenül a Windows PowerShell meghajtót HKCU található elem:, amely megfelel a HKEY_CURRENT_USER beállításjegyzék-struktúrát:
 
@@ -58,7 +58,7 @@ Get-ChildItem -Path hkcu:\ -Recurse
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### <a name="copying-keys"></a>Kulcsok másolása
+## <a name="copying-keys"></a>Kulcsok másolása
 
 Másolás végzett **Copy-Item**. A következő parancsot, másolja át HKLM:\\szoftver\\Microsoft\\Windows\\CurrentVersion és az összes hozzá tartozó tulajdonságok HKCU:\\, "CurrentVersion" nevű új kulcs létrehozása:
 
@@ -74,7 +74,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 Már elérhető fájlrendszer másolatok végrehajtásához más eszközök továbbra is használhatja. Minden olyan beállításjegyzék szerkesztőeszközeihez – beleértve a beállításjegyzék szerkesztése (például WScript.Shell és a WMI StdRegProv osztály) támogató reg.exe regini.exe és regedit.exe—and COM-objektumok is használható a Windows PowerShell.
 
-### <a name="creating-keys"></a>Kulcsok létrehozása
+## <a name="creating-keys"></a>Kulcsok létrehozása
 
 Új kulcsok létrehozása a beállításjegyzékben egyszerűbb, mint a fájlrendszer egy új elem létrehozása. Mivel az összes beállításkulcsok tárolók, nem kell megadnia a elemtípus; egyszerűen adhat meg explicit elérési utat, mint például:
 
@@ -88,7 +88,7 @@ Olyan szolgáltató alapú elérési út használatával adja meg a kulcs:
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### <a name="deleting-keys"></a>Kulcsok törlése
+## <a name="deleting-keys"></a>Kulcsok törlése
 
 Elemek törlése lényegében ugyanúgy történik minden szolgáltató számára. Elemek csendes eltávolítja a következő parancsokat:
 
@@ -97,7 +97,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### <a name="removing-all-keys-under-a-specific-key"></a>Egy adott kulcs alapján minden kulcs eltávolítása
+## <a name="removing-all-keys-under-a-specific-key"></a>Egy adott kulcs alapján minden kulcs eltávolítása
 
 Eltávolíthatja a benne lévő elemek használatával **Remove-cikk**, de meg kell adnia az eltávolítás megerősítéséhez, ha az elem tartalmaz bármi más. Ha például azt próbál meg törölni a HKCU:\\CurrentVersion alkulcs hoztunk létre, ez látható:
 

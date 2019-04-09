@@ -2,12 +2,12 @@
 title: A PowerShell Core 6.1 újdonságai
 description: Új szolgáltatásaival és módosításaival, amely a PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687894"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293316"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>A PowerShell Core 6.1 újdonságai
 
@@ -483,7 +483,7 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 Köszönhetően [ @kvprasoon ](https://github.com/kvprasoon), hogy most már megvannak a paraméter-alias `-lp` minden a beépített PowerShell-parancsmagok, amelyek rendelkeznek egy `-LiteralPath` paraméter.
 
-## <a name="breaking-changes"></a>Használhatatlanná tévő változásai
+## <a name="breaking-changes"></a>Kompatibilitástörő változások
 
 ### <a name="msi-based-installation-paths-on-windows"></a>MSI-alapú telepítési elérési utak a Windows
 
@@ -516,3 +516,10 @@ A Visual Basic a ritkán használt `Add-Type`. Ez a funkció PowerShell méreté
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Használati tisztítani `CommandTypes.Workflow` és `WorkflowInfoCleaned`
 
 További információ ezekről a változásokról, tekintse meg [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+
+### <a name="group-object-now-sorts-the-groups"></a>Csoportházirend-objektum most már a csoportok rendezése
+
+A teljesítmény fokozása részeként `Group-Object` most adja vissza a csoportok rendezett listája.
+Bár a sorrend nem támaszkodhat, sikerült bonthatók Ez a módosítás az első csoport egységben. Azt határozza meg, hogy a a teljesítmény fokozása érdemes a módosítás volt, mert folyamatban van a korábbi működése függ a hatását, alacsony.
+
+Ezt a módosítást a további információkért lásd: [probléma #7409](https://github.com/PowerShell/PowerShell/issues/7409).
