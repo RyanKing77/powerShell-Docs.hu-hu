@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Windows PowerShell 5.0 újdonságai
-ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
+ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055104"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59363530"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 újdonságai
 
@@ -210,7 +210,7 @@ A Windows 8.1 és Windows Server 2012 R2 alapértelmezés szerint telepítve van
 
 Windows PowerShell 4.0 a következő új funkciókat tartalmaz.
 
-### <a name="new-features-in-windows-powershell"></a>Új szolgáltatások a Windows PowerShellben
+### <a name="a-namenew-features-in-windows-powershell-1-new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Új szolgáltatások a Windows PowerShellben
 
 - **Windows PowerShell Desired State Configuration** (DSC) egy olyan új felügyeleti rendszer a Windows PowerShell 4.0-s verzióját, amely lehetővé teszi a központi telepítési és konfigurációs adatok szoftveres szolgáltatások és a környezetben, ahol ezek a szolgáltatások futnak a felügyeletét. DSC kapcsolatos további információkért lásd: [Ismerkedés a Windows PowerShell Desired State Configuration](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
 - **Save-Help** mostantól lehetővé teszi a távoli számítógépekre telepített modulok súgója menti. Save-Help használatával töltse le a modul súgó az internethez csatlakozó ügyféltől (amelyen nem az összes, amelyhez segítségre van szüksége a modulok feltétlenül telepítve van), és másolja a mentett súgó egy távoli megosztott mappa vagy egy távoli számítógépen, amelyen nincs Internet a hozzáférés.
@@ -290,7 +290,7 @@ Windows PowerShell 4.0 a következő új funkciókat tartalmaz.
 Windows PowerShell 3.0 a következő új funkciókat is tartalmaz.
 
 - [Windows PowerShell-munkafolyamat](#windows-powershell-workflow)
-- [Windows PowerShell-Elérésbe](#windows-powershell-web-access)
+- [Webes Windows PowerShell-elérés](#windows-powershell-web-access)
 - [Új Windows PowerShell ISE-ben szolgáltatások](#new-windows-powershell-ise-features)
 - [A Microsoft .NET-keretrendszer 4.0-s támogatása](#support-for-microsoft-net-framework-4)
 - [Windows előtelepítési környezet támogatása](#support-for-windows-preinstallation-environment)
