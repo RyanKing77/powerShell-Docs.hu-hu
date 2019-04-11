@@ -101,7 +101,7 @@ A modul mappa tartalma
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-Contents of PSScriptAnalyzer.psd1 file
+PSScriptAnalyzer.psd1 fájl tartalma
 
 ```powershell
 @{
