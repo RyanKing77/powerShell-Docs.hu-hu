@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Ismerkedés a Desired State Configuration (DSC) rétegen a Linux rendszeren
-ms.openlocfilehash: 69f087434455aae8e97ea07c79c52e493412d134
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a18b226d4b2d8b8e1ba8b4168ec6ad8f73c73c42
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686599"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506835"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Ismerkedés a Desired State Configuration (DSC) rétegen a Linux rendszeren
 
@@ -115,25 +115,25 @@ A következő kód bemutatja a DSC-CIMSession létrehozása Linux rendszeren.
 
 ```powershell
 $Node = "ostc-dsc-01"
-$Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
+$Credential = Get-Credential -UserName "root" -Message "Enter Password:"
 
 #Ignore SSL certificate validation
-#$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
+#$opt = New-CimSessionOption -UseSsl $true -SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
+$opt = New-CimSessionOption -UseSsl $true
+$Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Authentication basic -SessionOption $opt -OperationTimeoutSec 90
 ```
 
 > [!NOTE]
 > "Push" mód a felhasználó hitelesítő adatait a gyökér szintű felhasználó a Linux rendszerű számítógépen kell lennie.
 > Csak az SSL/TLS-kapcsolatok támogatottak DSC Linux rendszeren a `New-CimSession` – UseSSL paraméter $true értékűre kell használni.
 > Az SSL-tanúsítvány által használt OMI (DSC) a fájlban megadott: `/opt/omi/etc/omiserver.conf` a tulajdonságokkal: pemfile és kulcsfájl.
-> Ha ez a tanúsítvány nem megbízható által a Windows-számítógép, amely futtatja a [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) parancsmagot, ha szeretné, figyelmen kívül hagyja a tanúsítványok ellenőrzését a CIMSession beállításokkal: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+> Ha ez a tanúsítvány nem megbízható által a Windows-számítógép, amely futtatja a [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) parancsmagot, ha szeretné, figyelmen kívül hagyja a tanúsítványok ellenőrzését a CIMSession beállításokkal: `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
 
 A következő paranccsal küldje le a DSC-konfiguráció a Linux-csomópont.
 
-`Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
+`Start-DscConfiguration -Path:"C:\temp" -CimSession $Sess -Wait -Verbose`
 
 ### <a name="distribute-the-configuration-with-a-pull-server"></a>A konfigurációt egy pull-kiszolgálóval
 

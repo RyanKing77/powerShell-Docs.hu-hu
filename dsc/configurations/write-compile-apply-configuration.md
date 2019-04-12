@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfiguráció, a szolgáltatás, a telepítő
 title: Konfiguráció írása, fordítása és alkalmazása
-ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795419"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506818"
 ---
 > Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
@@ -65,8 +65,8 @@ További információkért lásd: [about_Scripts](/powershell/module/microsoft.p
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
-. C:\Scripts\WebsiteTest.ps1
-HelloWolrd
+. C:\Scripts\HelloWorld.ps1
+HelloWorld
 ```
 
 Ez létrehozza a következő kimenet:
