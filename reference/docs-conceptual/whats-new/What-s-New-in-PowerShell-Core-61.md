@@ -3,10 +3,10 @@ title: A PowerShell Core 6.1 újdonságai
 description: Új szolgáltatásaival és módosításaival, amely a PowerShell Core 6.1
 ms.date: 09/13/2018
 ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59293316"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>A PowerShell Core 6.1 újdonságai

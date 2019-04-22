@@ -3,10 +3,10 @@ title: A PowerShell Core telepítése macOS rendszerre
 description: Információ a PowerShell Core telepítése macOS rendszeren
 ms.date: 12/12/2018
 ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59293401"
 ---
 # <a name="installing-powershell-core-on-macos"></a>A PowerShell Core telepítése macOS rendszerre
@@ -84,8 +84,7 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Telepítési keresztül közvetlen letöltésére
 
-A csomag-csomag letöltése
-`powershell-6.2.0-osx-x64.pkg`
+A csomag-csomag letöltése `powershell-6.2.0-osx-x64.pkg`
 az a [kiadások][] lap a macOS-számítógépre.
 
 Kattintson duplán a fájlra, és kövesse az utasításokat, vagy telepítheti a terminálról:

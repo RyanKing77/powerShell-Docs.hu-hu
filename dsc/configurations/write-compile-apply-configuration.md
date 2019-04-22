@@ -3,13 +3,13 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfiguráció, a szolgáltatás, a telepítő
 title: Konfiguráció írása, fordítása és alkalmazása
 ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59506818"
 ---
-> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 # <a name="write-compile-and-apply-a-configuration"></a>Konfiguráció írása, fordítása és alkalmazása
 

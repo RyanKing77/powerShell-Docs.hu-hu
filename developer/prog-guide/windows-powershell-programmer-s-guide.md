@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58920390"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell programozói&#39;s útmutató
@@ -99,11 +99,11 @@ A Windows PowerShell-rendszerhéj használata indításával kapcsolatos tovább
 
 |Témakör|Meghatározás|
 |-----------|----------------|
-|[Windows PowerShell-szolgáltató létrehozása](./how-to-create-a-windows-powershell-provider.md)|Ez a szakasz ismerteti, hogyan hozhat létre egy Windows PowerShell-szolgáltatóban, a Windows PowerShell környezethez.|
+|[A Windows PowerShell-szolgáltató létrehozása](./how-to-create-a-windows-powershell-provider.md)|Ez a szakasz ismerteti, hogyan hozhat létre egy Windows PowerShell-szolgáltatóban, a Windows PowerShell környezethez.|
 |[A Windows PowerShell-gazdagépet alkalmazás létrehozása](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Ez a szakasz ismerteti, hogyan írhat egy fogadó alkalmazás, amely kezeli a futási térben és a egy fogadó alkalmazás, amely megvalósítja a saját egyéni gazdagép írásával.|
-|[Windows PowerShelles beépülő modul létrehozása](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Ez a szakasz ismerteti, hogyan hozhat létre beépülő modul szerelvények regisztrálható az összes parancsmagok és szolgáltatók és a egy egyéni beépülő modul létrehozása.|
-|[Konzolfelület létrehozása](./how-to-create-a-console-shell.md)|Ez a szakasz ismerteti, hogyan hozhat létre egy konzol rendszerhéj, amely nem bővíthető.|
-|[Windows PowerShell – Fogalmak](./windows-powershell-concepts.md)|Ez a szakasz tartalmazza a elméleti információk segítségével megismerheti a Windows PowerShell a fejlesztők szempontjából.|
+|[Egy Windows PowerShell beépülő modul létrehozása](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Ez a szakasz ismerteti, hogyan hozhat létre beépülő modul szerelvények regisztrálható az összes parancsmagok és szolgáltatók és a egy egyéni beépülő modul létrehozása.|
+|[A konzol rendszerhéj létrehozása](./how-to-create-a-console-shell.md)|Ez a szakasz ismerteti, hogyan hozhat létre egy konzol rendszerhéj, amely nem bővíthető.|
+|[Windows PowerShell alapfogalmai](./windows-powershell-concepts.md)|Ez a szakasz tartalmazza a elméleti információk segítségével megismerheti a Windows PowerShell a fejlesztők szempontjából.|
 
 ## <a name="see-also"></a>Lásd még:
 

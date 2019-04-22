@@ -3,10 +3,10 @@ title: A PowerShell Core telepítése Linux rendszerre
 description: Információ a különböző Linux-disztribúciókon a PowerShell Core telepítése
 ms.date: 08/06/2018
 ms.openlocfilehash: 06194550f4e73f9dd38f8cdc25f6c7f698cafce2
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59293333"
 ---
 # <a name="installing-powershell-core-on-linux"></a>A PowerShell Core telepítése Linux rendszerre
@@ -75,8 +75,7 @@ Ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` friss
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Telepítési közvetlen letöltése – Ubuntu 14.04-n keresztül
 
-A Debian-csomag letöltése
-`powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
+A Debian-csomag letöltése `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
 az a [kiadások][] az Ubuntu-gép oldalon.
 
 Ezután hajtsa végre a következő billentyűparancsot a terminálon:
@@ -124,8 +123,7 @@ A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdv
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Telepítési közvetlen letöltése – Ubuntu 16.04-n keresztül
 
-A Debian-csomag letöltése
-`powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
+A Debian-csomag letöltése `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
 az a [kiadások][] az Ubuntu-gép oldalon.
 
 Ezután hajtsa végre a következő billentyűparancsot a terminálon:
@@ -176,8 +174,7 @@ A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdv
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Telepítési közvetlen letöltése – Ubuntu 18.04-n keresztül
 
-A Debian-csomag letöltése
-`powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
+A Debian-csomag letöltése `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
 az a [kiadások][] az Ubuntu-gép oldalon.
 
 Ezután hajtsa végre a következő billentyűparancsot a terminálon:
@@ -266,8 +263,7 @@ A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdv
 
 ### <a name="installation-via-direct-download---debian-9"></a>Telepítési közvetlen letöltése – Debian 9-n keresztül
 
-A Debian-csomag letöltése
-`powershell_6.2.0-1.debian.9_amd64.deb`
+A Debian-csomag letöltése `powershell_6.2.0-1.debian.9_amd64.deb`
 az a [kiadások][] oldal arra a Debian gépre.
 
 Ezután hajtsa végre a következő billentyűparancsot a terminálon:
@@ -307,8 +303,7 @@ A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ugyanúgy ke
 
 ### <a name="installation-via-direct-download---centos-7"></a>Keresztül közvetlen letöltése – CentOS 7 telepítése
 
-Használatával [CentOS 7][], töltse le az RPM-csomagot
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+Használatával [CentOS 7][], töltse le az RPM-csomagot `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 az a [kiadások][] oldal arra a CentOS-gépre.
 
 Ezután hajtsa végre a következő billentyűparancsot a terminálon:
@@ -352,8 +347,7 @@ A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ugyanúgy ke
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Telepítési közvetlen letöltése – Red Hat Enterprise Linux (RHEL) 7-n keresztül
 
-Töltse le az RPM-csomagot
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+Töltse le az RPM-csomagot `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 az a [kiadások][] oldal arra a Red Hat Enterprise Linux-gépre.
 
 Ezután hajtsa végre a következő billentyűparancsot a terminálon:
@@ -463,8 +457,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Telepítési közvetlen letöltése – Fedora 27, Fedora 28-n keresztül
 
-Töltse le az RPM-csomagot
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+Töltse le az RPM-csomagot `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 az a [kiadások][] oldal arra a Fedora gépre.
 
 Ezután hajtsa végre a következő billentyűparancsot a terminálon:

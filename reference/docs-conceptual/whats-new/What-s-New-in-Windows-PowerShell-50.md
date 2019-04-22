@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Windows PowerShell 5.0 újdonságai
 ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363530"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 újdonságai
@@ -290,7 +290,7 @@ Windows PowerShell 4.0 a következő új funkciókat tartalmaz.
 Windows PowerShell 3.0 a következő új funkciókat is tartalmaz.
 
 - [Windows PowerShell-munkafolyamat](#windows-powershell-workflow)
-- [Webes Windows PowerShell-elérés](#windows-powershell-web-access)
+- [Windows PowerShell-Elérésbe](#windows-powershell-web-access)
 - [Új Windows PowerShell ISE-ben szolgáltatások](#new-windows-powershell-ise-features)
 - [A Microsoft .NET-keretrendszer 4.0-s támogatása](#support-for-microsoft-net-framework-4)
 - [Windows előtelepítési környezet támogatása](#support-for-windows-preinstallation-environment)
