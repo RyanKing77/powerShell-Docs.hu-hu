@@ -3,15 +3,15 @@ ms.date: 08/24/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-Script erőforrás
 ms.openlocfilehash: 4eee5625add4d96ade7ababf7f534f597a26712d
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920356"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984289"
 ---
 # <a name="dsc-script-resource"></a>DSC-Script erőforrás
 
-> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.x
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.x
 
 A **parancsfájl** erőforrás a Windows PowerShell Desired State Configuration (DSC) csomópontokon való futtatáshoz Windows PowerShell parancsfájl-blokkokban cél mechanizmust biztosít. A **parancsfájl** erőforrás-felhasználási `GetScript`, `SetScript`, és `TestScript` való hajtsa végre a megfelelő DSC parancsfájl-blokkokban tartalmazó tulajdonságok állapot műveleteket.
 

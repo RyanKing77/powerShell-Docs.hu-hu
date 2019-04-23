@@ -2,12 +2,12 @@
 title: A PowerShell Core 6.1 újdonságai
 description: Új szolgáltatásaival és módosításaival, amely a PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
-ms.translationtype: MT
+ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293316"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984510"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>A PowerShell Core 6.1 újdonságai
 
@@ -179,8 +179,9 @@ Hogyan működnek a ezekkel a parancsmagokkal kapcsolatos további információk
 
 ## <a name="experimental-feature-flags"></a>Kísérleti funkció jelzők
 
-Kísérleti funkció jelzők engedélyezése a felhasználók számára, kapcsolja be, amely még nem lett véglegesítése funkciókat.
-Ezek kísérleti funkciók nem támogatottak, és előfordulhat, hogy hibák.
+Lehetővé tettük támogatása [kísérleti funkciók][]. Ez lehetővé teszi a PowerShell a fejlesztők új funkciókat és visszajelzéseket kaphat a tervezés befejezése előtt. Ezzel a módszerrel azt kerülje el, hogy kompatibilitástörő változásokat, a Tervező haladásával.
+
+Használat `Get-ExperimentalFeature` elérhető kísérleti funkciók listáját. Engedélyezheti vagy letilthatja ezeket a funkciókat `Enable-ExperimentalFeature` és `Disable-ExperimentalFeature`.
 
 További információ ennek a funkciónak a [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
@@ -523,3 +524,6 @@ A teljesítmény fokozása részeként `Group-Object` most adja vissza a csoport
 Bár a sorrend nem támaszkodhat, sikerült bonthatók Ez a módosítás az első csoport egységben. Azt határozza meg, hogy a a teljesítmény fokozása érdemes a módosítás volt, mert folyamatban van a korábbi működése függ a hatását, alacsony.
 
 Ezt a módosítást a további információkért lásd: [probléma #7409](https://github.com/PowerShell/PowerShell/issues/7409).
+
+<!-- URL references -->
+[Kísérleti funkciók]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features

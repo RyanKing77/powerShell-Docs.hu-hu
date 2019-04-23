@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Objektumok eltávolítása az adatcsatornából Where-Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ms.openlocfilehash: 1f7d064c7bf2dd551ea96b29762fbccad8174084
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293146"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984153"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Objektumok eltávolítása az adatcsatornából (Where-Object)
 

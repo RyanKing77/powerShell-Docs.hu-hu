@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Beállításkulcsok használata
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
 ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293197"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59983762"
 ---
 # <a name="working-with-registry-keys"></a>Beállításkulcsok használata
 

@@ -2,11 +2,11 @@
 ms.date: 3/18/2019
 title: Get-WinEvent lekérdezések létrehozása FilterHashtable használatával
 ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293282"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984221"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Get-WinEvent lekérdezések létrehozása FilterHashtable használatával
 
@@ -48,12 +48,12 @@ Az elfogadott **kulcs/érték** párok az alábbi táblázatban láthatók, és 
 
 Az alábbi táblázatban láthatók a kulcsnevek, adattípusok, és hogy helyettesítő karakterek az adatértéket elfogadás.
 
-| Kulcs neve     | Adatok értéktípusa    | Elfogadja a helyettesítő karakterek? |
+| Kulcsnév     | Adatok értéktípusa    | Elfogadja a helyettesítő karakterek? |
 |------------- | ------------------ | ---------------------------- |
 | Naplónév      | `<String[]>`       | Igen |
 | ProviderName | `<String[]>`       | Igen |
 | Elérési út         | `<String[]>`       | Nem  |
-| Kulcsszavak     | `<Long[]>`         | Nem  |
+| a kulcsszavak     | `<Long[]>`         | Nem  |
 | ID           | `<Int32[]>`        | Nem  |
 | Szint        | `<Int32[]>`        | Nem  |
 | Kezdés időpontja    | `<DateTime>`       | Nem  |
