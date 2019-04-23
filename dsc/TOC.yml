@@ -1,293 +1,286 @@
-items:
 - name: Áttekintés
   items:
-  - name: A célállapot-konfiguráció áttekintése fejlesztők számára
-    href: overview/overview.md
-  - name: A célállapot-konfiguráció áttekintése döntéshozók számára
-    href: overview/decisionMaker.md
-  - name: A célállapot-konfiguráció áttekintése mérnökök számára
-    href: overview/DscForEngineers.md
-  - name: A DSC CI/CD-folyamatokban játszott szerepének megismerése
-    href: overview/authoringAdvanced.md
+    - name: A célállapot-konfiguráció áttekintése fejlesztők számára
+      href: overview/overview.md
+    - name: A célállapot-konfiguráció áttekintése döntéshozók számára
+      href: overview/decisionMaker.md
+    - name: A célállapot-konfiguráció áttekintése mérnökök számára
+      href: overview/DscForEngineers.md
+    - name: A DSC CI/CD-folyamatokban játszott szerepének megismerése
+      href: overview/authoringAdvanced.md
 - name: Első lépések
   items:
-  - name: Linuxhoz készült DSC – első lépések
-    href: getting-started/lnxGettingStarted.md
-  - name: DSC a Nanón – első lépések
-    href: getting-started/nanoDSC.md
-  - name: DSC az Azure Automationben – első lépések
-    href: getting-started/azureDSC.md
-  - name: DSC az Azure Virtual Machinesben – első lépések
-    href: getting-started/azureDSCexthistory.md
+    - name: Linuxhoz készült DSC – első lépések
+      href: getting-started/lnxGettingStarted.md
+    - name: DSC a Nanón – első lépések
+      href: getting-started/nanoDSC.md
+    - name: DSC az Azure Automationben – első lépések
+      href: getting-started/azureDSC.md
+    - name: DSC az Azure Virtual Machinesben – első lépések
+      href: getting-started/azureDSCexthistory.md
 - name: Rövid útmutatók
   items:
-  - name: Webhely létrehozása DSC-vel
-    href: quickstarts/website-quickStart.md
+    - name: Webhely létrehozása DSC-vel
+      href: quickstarts/website-quickStart.md
 - name: Konfigurációk
   items:
-  - name: Fogalmak
-    items:
-    - name: Mit jelet a konfiguráció?
-      href: configurations/configurations.md
-  - name: Útmutatók
-    items:
-    - name: Konfiguráció írása, fordítása és alkalmazása
-      href: configurations/write-compile-apply-configuration.md
-    - name: Erőforrások használata konfigurációkban
+    - name: Fogalmak
       items:
-      - name: Az Import-DSCResource használata
-        href: configurations/import-dscresource.md
-      - name: További DSC-erőforrások telepítése
-        href: configurations/install-additional-dsc-resources.md
-      - name: Telepített erőforrás meghatározott verziójának importálása
-        href: configurations/sxsResource.md
-      - name: Hitelesítő adatok használata DSC-erőforrásokkal
-        href: configurations/runAsUser.md
-    - name: Dinamikus konfigurációk írása
+        - name: Mit jelet a konfiguráció?
+          href: configurations/configurations.md
+    - name: Útmutatók
       items:
-      - name: Paraméterek hozzáadása konfigurációkhoz
-        href: configurations/add-parameters-to-a-configuration.md
-      - name: Feltételes utasítások és ciklusok a konfigurációkban
-        href: configurations/flow-control-in-configurations.md
-      - name: DSC-konfigurációk súgóinak írása
-        href: configurations/configHelp.md
-      - name: Konfigurációs adatok beágyazása
-        href: configurations/compositeconfigs.md
-    - name: Konfigurációs adatok
-      items:
-      - name: Konfigurációs adatok elkülönítése a konfigurációktól
-        href: configurations/configData.md
-      - name: Konfigurációk és környezeti adatok (psd1) elkülönítése
-        href: configurations/separatingEnvData.md
-      - name: A konfigurációs adatok hitelesítőadat-beállításai
-        href: configurations/configDataCredentials.md
-    - name: Függőségek a konfigurációkban
-      items:
-      - name: Erőforrás-függőségek DependsOn használatával
-        href: configurations/resource-depends-on.md
-      - name: Csomópontok közötti függőségek
-        href: configurations/crossNodeDependencies.md
-      - name: Csomópont újraindítása
-        href: configurations/reboot-a-node.md
+        - name: 'Konfiguráció írása, fordítása és alkalmazása'
+          href: configurations/write-compile-apply-configuration.md
+        - name: Erőforrások használata konfigurációkban
+          items:
+            - name: Az Import-DSCResource használata
+              href: configurations/import-dscresource.md
+            - name: További DSC-erőforrások telepítése
+              href: configurations/install-additional-dsc-resources.md
+            - name: Telepített erőforrás meghatározott verziójának importálása
+              href: configurations/sxsResource.md
+            - name: Hitelesítő adatok használata DSC-erőforrásokkal
+              href: configurations/runAsUser.md
+        - name: Dinamikus konfigurációk írása
+          items:
+            - name: Paraméterek hozzáadása konfigurációkhoz
+              href: configurations/add-parameters-to-a-configuration.md
+            - name: Feltételes utasítások és ciklusok a konfigurációkban
+              href: configurations/flow-control-in-configurations.md
+            - name: DSC-konfigurációk súgóinak írása
+              href: configurations/configHelp.md
+            - name: Konfigurációs adatok beágyazása
+              href: configurations/compositeconfigs.md
+        - name: Konfigurációs adatok
+          items:
+            - name: Konfigurációs adatok elkülönítése a konfigurációktól
+              href: configurations/configData.md
+            - name: Konfigurációk és környezeti adatok (psd1) elkülönítése
+              href: configurations/separatingEnvData.md
+            - name: A konfigurációs adatok hitelesítőadat-beállításai
+              href: configurations/configDataCredentials.md
+        - name: Függőségek a konfigurációkban
+          items:
+            - name: Erőforrás-függőségek DependsOn használatával
+              href: configurations/resource-depends-on.md
+            - name: Csomópontok közötti függőségek
+              href: configurations/crossNodeDependencies.md
+            - name: Csomópont újraindítása
+              href: configurations/reboot-a-node.md
 - name: Erőforrások
   items:
-  - name: Fogalmak
-    items:
-    - name: Mik azok az erőforrások?
-      href: resources/resources.md
-    - name: Get, Test és Set
-      href: resources/get-test-set.md
-    - name: Egyéni erőforrások
-      href: resources/authoringresource.md
-    - name: Egypéldányos DSC-erőforrás írása (ajánlott eljárás)
-      href: resources/singleInstance.md
-    - name: Erőforrás-készítési ellenőrzőlista
-      href: resources/resourceAuthoringChecklist.md
-  - name: Útmutatók
-    items:
-    - name: MOF-alapú erőforrások írása a PowerShellben
-      href: resources/authoringResourceMOF.md
-    - name: Osztályalapú erőforrások írása a PowerShellben
-      href: resources/authoringResourceClass.md
-    - name: Kompozit erőforrások írása a PowerShellben
-      href: resources/authoringResourceComposite.md
-    - name: MOF-alapú erőforrások írása C#-ban
-      href: resources/authoringResourceMofCS.md
-    - name: Az erőforrás-tervező eszköz használata
-      href: resources/authoringResourceMofDesigner.md
+    - name: Fogalmak
+      items:
+        - name: Mik azok az erőforrások?
+          href: resources/resources.md
+        - name: 'Get, Test és Set'
+          href: resources/get-test-set.md
+        - name: Egyéni erőforrások
+          href: resources/authoringresource.md
+        - name: Egypéldányos DSC-erőforrás írása (ajánlott eljárás)
+          href: resources/singleInstance.md
+        - name: Erőforrás-készítési ellenőrzőlista
+          href: resources/resourceAuthoringChecklist.md
+    - name: Útmutatók
+      items:
+        - name: MOF-alapú erőforrások írása a PowerShellben
+          href: resources/authoringResourceMOF.md
+        - name: Osztályalapú erőforrások írása a PowerShellben
+          href: resources/authoringResourceClass.md
+        - name: Kompozit erőforrások írása a PowerShellben
+          href: resources/authoringResourceComposite.md
+        - name: 'MOF-alapú erőforrások írása C#-ban'
+          href: resources/authoringResourceMofCS.md
+        - name: Az erőforrás-tervező eszköz használata
+          href: resources/authoringResourceMofDesigner.md
 - name: Csomópontok kezelése
   items:
-  - name: Útmutatók
-    items:
-    - name: Apply, Get és Test konfigurációk csomóponton
-      href: managing-nodes/apply-get-test.md
-    - name: A Local Configuration Manager (v5) konfigurálása
-      href: managing-nodes/metaConfig.md
-    - name: A Local Configuration Manager (v4) konfigurálása
-      href: managing-nodes/metaConfig4.md
-    - name: DSC-erőforrások metódusainak közvetlen hívása
-      href: managing-nodes/directCallResource.md
+    - name: Útmutatók
+      items:
+        - name: 'Apply, Get és Test konfigurációk csomóponton'
+          href: managing-nodes/apply-get-test.md
+        - name: A Local Configuration Manager (v5) konfigurálása
+          href: managing-nodes/metaConfig.md
+        - name: A Local Configuration Manager (v4) konfigurálása
+          href: managing-nodes/metaConfig4.md
+        - name: DSC-erőforrások metódusainak közvetlen hívása
+          href: managing-nodes/directCallResource.md
 - name: Lekérési kiszolgáló
   items:
-  - name: Fogalmak
-    items:
-    - name: Push/Pull Modell
-      href: pull-server/enactingConfigurations.md
-  - name: Útmutatók
-    items:
-    - name: Lekérési kiszolgáló beállítása
+    - name: Fogalmak
       items:
-      - name: DSC SMB lekérési kiszolgáló beállítása
-        href: pull-server/pullServerSMB.md
-      - name: DSC HTTP lekérési kiszolgáló beállítása
-        href: pull-server/pullServer.md
-    - name: Csomópont regisztrálása lekérési kiszolgálóval
+        - name: Push/Pull Modell
+          href: pull-server/enactingConfigurations.md
+    - name: Útmutatók
       items:
-      - name: DSC lekérési ügyfél beállítása
-        href: pull-server/pullClient.md
-      - name: Lekérési ügyfél beállítása konfigurációs nevekkel (v5)
-        href: pull-server/pullClientConfigNames.md
-      - name: Lekérési ügyfél beállítása konfigurációs azonosítókkal (v5)
-        href: pull-server/pullClientConfigID.md
-      - name: Lekérési ügyfél beállítása konfigurációs azonosítókkal (v4)
-        href: pull-server/pullClientConfigID4.md
-      - name: Részleges konfigurációk
-        href: pull-server/partialconfigs.md
-    - name: Konfigurációk üzembe helyezése lekérési kiszolgálóval
-      items:
-      - name: Konfigurációk közzététele lekérési kiszolgálóval (v4/v5)
-        href: pull-server/publishConfigs.md
-      - name: Erőforrások csomagolása és feltöltése lekérési kiszolgálóra (v4)
-        href: pull-server/package-upload-resources.md
-      - name: Csomópontok frissítése lekérési kiszolgálóról
-        href: pull-server/update-nodes-manually.md
-      - name: A DSC jelentéskészítő kiszolgálójának használata
-        href: pull-server/reportServer.md
-    - name: A lekérési kiszolgáló biztonságossá tétele
-      items:
-      - name: A lekérési kiszolgáló biztonsága
-        href: pull-server/secureServer.md
-      - name: MOF-fájlok biztonságossá tétele tanúsítványokkal
-        href: pull-server/secureMOF.md
+        - name: Lekérési kiszolgáló beállítása
+          items:
+            - name: DSC SMB lekérési kiszolgáló beállítása
+              href: pull-server/pullServerSMB.md
+            - name: DSC HTTP lekérési kiszolgáló beállítása
+              href: pull-server/pullServer.md
+        - name: Csomópont regisztrálása lekérési kiszolgálóval
+          items:
+            - name: DSC lekérési ügyfél beállítása
+              href: pull-server/pullClient.md
+            - name: Lekérési ügyfél beállítása konfigurációs nevekkel (v5)
+              href: pull-server/pullClientConfigNames.md
+            - name: Lekérési ügyfél beállítása konfigurációs azonosítókkal (v5)
+              href: pull-server/pullClientConfigID.md
+            - name: Lekérési ügyfél beállítása konfigurációs azonosítókkal (v4)
+              href: pull-server/pullClientConfigID4.md
+            - name: Részleges konfigurációk
+              href: pull-server/partialconfigs.md
+        - name: Konfigurációk üzembe helyezése lekérési kiszolgálóval
+          items:
+            - name: Konfigurációk közzététele lekérési kiszolgálóval (v4/v5)
+              href: pull-server/publishConfigs.md
+            - name: Erőforrások csomagolása és feltöltése lekérési kiszolgálóra (v4)
+              href: pull-server/package-upload-resources.md
+            - name: Csomópontok frissítése lekérési kiszolgálóról
+              href: pull-server/update-nodes-manually.md
+            - name: A DSC jelentéskészítő kiszolgálójának használata
+              href: pull-server/reportServer.md
+        - name: A lekérési kiszolgáló biztonságossá tétele
+          items:
+            - name: A lekérési kiszolgáló biztonsága
+              href: pull-server/secureServer.md
+            - name: MOF-fájlok biztonságossá tétele tanúsítványokkal
+              href: pull-server/secureMOF.md
 - name: Oktatóanyagok
   items:
-  - name: Folyamatos integrációs és folyamatos üzembe helyezési folyamat fejlesztése a DSC, a Pester és a Visual Studio Team Services szolgáltatással
-    href: tutorials/dscCiCd.md
-  - name: Virtuális gép konfigurálása DSC-vel az első indításkor
-    href: tutorials/bootstrapDsc.md
-  - name: DSCAutomationHostEnabled beállításkulcs konfigurálása
-    href: tutorials/DSCAutomationHostEnabled.md
+    - name: 'Folyamatos integrációs és folyamatos üzembe helyezési folyamat fejlesztése a DSC, a Pester és a Visual Studio Team Services szolgáltatással'
+      href: tutorials/dscCiCd.md
+    - name: Virtuális gép konfigurálása DSC-vel az első indításkor
+      href: tutorials/bootstrapDsc.md
+    - name: DSCAutomationHostEnabled beállításkulcs konfigurálása
+      href: tutorials/DSCAutomationHostEnabled.md
 - name: Hibaelhárítás
   items:
-  - name: Ismert problémák
-    href: troubleshooting/troubleshooting.md
-  - name: DSC-erőforrások hibakeresése
-    href: troubleshooting/debugResource.md
+    - name: Ismert problémák
+      href: troubleshooting/troubleshooting.md
+    - name: DSC-erőforrások hibakeresése
+      href: troubleshooting/debugResource.md
 - name: Referencia
   items:
-  - name: A Windows beépített erőforrásai
-    items:
-    - name: Archív erőforrás
-      href: reference/resources/windows/archiveResource.md
-    - name: Környezeti erőforrás
-      href: reference/resources/windows/environmentResource.md
-    - name: File erőforrás
-      href: reference/resources/windows/fileResource.md
-    - name: Group erőforrás
-      href: reference/resources/windows/groupResource.md
-    - name: GroupSet erőforrás
-      href: reference/resources/windows/groupSetResource.md
-    - name: Log erőforrás
-      href: reference/resources/windows/logResource.md
-    - name: Package erőforrás
-      href: reference/resources/windows/packageResource.md
-    - name: ProcessSet erőforrás
-      href: reference/resources/windows/processSetResource.md
-    - name: Registry erőforrás
-      href: reference/resources/windows/registryResource.md
-    - name: Script erőforrás
-      href: reference/resources/windows/scriptResource.md
-    - name: Service erőforrás
-      href: reference/resources/windows/serviceResource.md
-    - name: ServiceSet erőforrás
-      href: reference/resources/windows/serviceSetResource.md
-    - name: User erőforrás
-      href: reference/resources/windows/userResource.md
-    - name: WaitForAllResource
-      href: reference/resources/windows/waitForAllResource.md
-    - name: WaitForAnyResource
-      href: reference/resources/windows/waitForAnyResource.md
-    - name: WaitForSomeResource
-      href: reference/resources/windows/waitForSomeResource.md
-    - name: WindowsFeature erőforrás
-      href: reference/resources/windows/windowsfeatureResource.md
-    - name: WindowsFeatureSet erőforrás
-      href: reference/resources/windows/windowsFeatureSetResource.md
-    - name: WindowsOptionalFeature erőforrás
-      href: reference/resources/windows/windowsOptionalFeatureResource.md
-    - name: WindowsOptionalFeatureSet erőforrás
-      href: reference/resources/windows/windowsOptionalFeatureSetResource.md
-    - name: WindowsPackageCab erőforrás
-      href: reference/resources/windows/windowsPackageCabResource.md
-    - name: WindowsProcess erőforrás
-      href: reference/resources/windows/windowsProcessResource.md
-  - name: A Linux beépített erőforrásai
-    items:
-    - name: nxArchive erőforrás
-      href: reference/resources/linux/lnxArchiveResource.md
-    - name: nxEnvironment erőforrás
-      href: reference/resources/linux/lnxEnvironmentResource.md
-    - name: nxFile erőforrás
-      href: reference/resources/linux/lnxFileResource.md
-    - name: nxFileLine erőforrás
-      href: reference/resources/linux/lnxFileLineResource.md
-    - name: nxGroup erőforrás
-      href: reference/resources/linux/lnxGroupResource.md
-    - name: nxPackage erőforrás
-      href: reference/resources/linux/lnxPackageResource.md
-    - name: nxScript erőforrás
-      href: reference/resources/linux/lnxScriptResource.md
-    - name: nxService erőforrás
-      href: reference/resources/linux/lnxServiceResource.md
-    - name: nxSshAuthorizedKeys erőforrás
-      href: reference/resources/linux/lnxSshAuthorizedKeysResource.md
-    - name: nxUser erőforrás
-      href: reference/resources/linux/lnxUserResource.md
-  - name: A PackageManagement beépített erőforrásai
-    items:
-    - name: PackageManagementDsc erőforrás
-      href: reference/resources/packagemanagement/PackageManagementDscResource.md
-    - name: PackageManagementSourceDsc erőforrás
-      href: reference/resources/packagemanagement/PackageManagementSourceDscResource.md
-  - name: MSFT_DSCLocalConfigurationManager osztály
-    items:
-    - name: Áttekintés
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály ApplyConfiguration metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály DisableDebugConfiguration metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály EnableDebugConfiguration metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály GetConfiguration metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály GetConfigurationResultOutput metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály GetConfigurationStatus metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály GetMetaConfiguration metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály PerformRequiredConfigurationChecks metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály RemoveConfiguration metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály ResourceGet metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály ResourceSet metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály ResourceTest metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály RollBack metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály SendConfiguration metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály SendConfigurationApply metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály SendConfigurationApplyAsync metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály SendMetaConfigurationApply metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály StopConfiguration metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
-    - name: Az MSFT_DSCLocalConfigurationManager osztály TestConfiguration metódusa
-      href: reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
+    - name: A Windows beépített erőforrásai
+      items:
+        - name: Archív erőforrás
+          href: reference/resources/windows/archiveResource.md
+        - name: Környezeti erőforrás
+          href: reference/resources/windows/environmentResource.md
+        - name: File erőforrás
+          href: reference/resources/windows/fileResource.md
+        - name: Group erőforrás
+          href: reference/resources/windows/groupResource.md
+        - name: GroupSet erőforrás
+          href: reference/resources/windows/groupSetResource.md
+        - name: Log erőforrás
+          href: reference/resources/windows/logResource.md
+        - name: Package erőforrás
+          href: reference/resources/windows/packageResource.md
+        - name: ProcessSet erőforrás
+          href: reference/resources/windows/processSetResource.md
+        - name: Registry erőforrás
+          href: reference/resources/windows/registryResource.md
+        - name: Script erőforrás
+          href: reference/resources/windows/scriptResource.md
+        - name: Service erőforrás
+          href: reference/resources/windows/serviceResource.md
+        - name: ServiceSet erőforrás
+          href: reference/resources/windows/serviceSetResource.md
+        - name: User erőforrás
+          href: reference/resources/windows/userResource.md
+        - name: WaitForAllResource
+          href: reference/resources/windows/waitForAllResource.md
+        - name: WaitForAnyResource
+          href: reference/resources/windows/waitForAnyResource.md
+        - name: WaitForSomeResource
+          href: reference/resources/windows/waitForSomeResource.md
+        - name: WindowsFeature erőforrás
+          href: reference/resources/windows/windowsfeatureResource.md
+        - name: WindowsFeatureSet erőforrás
+          href: reference/resources/windows/windowsFeatureSetResource.md
+        - name: WindowsOptionalFeature erőforrás
+          href: reference/resources/windows/windowsOptionalFeatureResource.md
+        - name: WindowsOptionalFeatureSet erőforrás
+          href: reference/resources/windows/windowsOptionalFeatureSetResource.md
+        - name: WindowsPackageCab erőforrás
+          href: reference/resources/windows/windowsPackageCabResource.md
+        - name: WindowsProcess erőforrás
+          href: reference/resources/windows/windowsProcessResource.md
+    - name: A Linux beépített erőforrásai
+      items:
+        - name: nxArchive erőforrás
+          href: reference/resources/linux/lnxArchiveResource.md
+        - name: nxEnvironment erőforrás
+          href: reference/resources/linux/lnxEnvironmentResource.md
+        - name: nxFile erőforrás
+          href: reference/resources/linux/lnxFileResource.md
+        - name: nxFileLine erőforrás
+          href: reference/resources/linux/lnxFileLineResource.md
+        - name: nxGroup erőforrás
+          href: reference/resources/linux/lnxGroupResource.md
+        - name: nxPackage erőforrás
+          href: reference/resources/linux/lnxPackageResource.md
+        - name: nxScript erőforrás
+          href: reference/resources/linux/lnxScriptResource.md
+        - name: nxService erőforrás
+          href: reference/resources/linux/lnxServiceResource.md
+        - name: nxSshAuthorizedKeys erőforrás
+          href: reference/resources/linux/lnxSshAuthorizedKeysResource.md
+        - name: nxUser erőforrás
+          href: reference/resources/linux/lnxUserResource.md
+    - name: A PackageManagement beépített erőforrásai
+      items:
+        - name: PackageManagementDsc erőforrás
+          href: reference/resources/packagemanagement/PackageManagementDscResource.md
+        - name: PackageManagementSourceDsc erőforrás
+          href: reference/resources/packagemanagement/PackageManagementSourceDscResource.md
+    - name: MSFT_DSCLocalConfigurationManager osztály
+      items:
+        - name: Áttekintés
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály ApplyConfiguration metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály DisableDebugConfiguration metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály EnableDebugConfiguration metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály GetConfiguration metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály GetConfigurationResultOutput metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály GetConfigurationStatus metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály GetMetaConfiguration metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály PerformRequiredConfigurationChecks metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály RemoveConfiguration metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály ResourceGet metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály ResourceSet metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály ResourceTest metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály RollBack metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály SendConfiguration metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály SendConfigurationApply metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály SendConfigurationApplyAsync metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály SendMetaConfigurationApply metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály StopConfiguration metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
+        - name: Az MSFT_DSCLocalConfigurationManager osztály TestConfiguration metódusa
+          href: reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: További információ
   items:
-  - name: Tanulmányok
-    href: further-reading/whitepapers.md
-ms.openlocfilehash: 68096f26178d4c33fd78e6051a3cc071bd749210
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
-ms.translationtype: HT
-ms.contentlocale: hu-HU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920339"
+    - name: Tanulmányok
+      href: further-reading/whitepapers.md
