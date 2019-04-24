@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2018
+ms.date: 04/19/2019
 keywords: WMF, powershell, beállítás
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: f279f975527dc198dd9b47ca1dc4258f54fafef5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MT
+ms.openlocfilehash: 6d25b4025bbc86f6be0e5c74db9f1fbe6705d816
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684436"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984312"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -16,9 +16,9 @@ Windows Management Framework (WMF) konzisztens felügyeleti felületet biztosít
 A WMF telepítése hozzáadja és/vagy frissíti a következő funkciókat:
 
 - Windows PowerShell
-- Windows PowerShell célállapot konfiguráló szolgáltatása (DSC)
+- Windows PowerShell Desired State Configuration (DSC)
 - Windows PowerShell integrált parancsfájl-környezet (ISE)
-- Rendszerfelügyeleti webszolgáltatások (WinRM)
+- Windows Rendszerfelügyeleti (webszolgáltatások WinRM)
 - Windows Management Instrumentation (WMI)
 - Windows PowerShell webszolgáltatások (felügyeleti OData IIS kiterjesztés)
 - Szoftverleltár-naplózás (SIL)
@@ -35,26 +35,30 @@ Számos bővítést tartalmaz, a PowerShell és más összetevőket egy adott WM
 
 ## <a name="wmf-availability-across-windows-operating-systems"></a>A WMF rendelkezésre állása a Windows operációs rendszerek
 
-|Operációs rendszer verziója  |[WMF 5.1][] |[WMF 5.0][] |[WMF 4.0][] |[WMF 3.0][]  |[A WMF 2.0][] |
-|--------------------------|------------|------------|------------|-------------|------------|
-|Windows Server 2019       |Beépített részeként szerezhető be|            |            |             |            |
-|Windows Server 2016       |Beépített részeként szerezhető be|            |            |             |            |
-|Windows 10                |Beépített részeként szerezhető be|Beépített részeként szerezhető be|            |             |            |
-|Windows Server 2012 R2    |Igen         |Igen         |Beépített részeként szerezhető be|             |            |
-|Windows 8.1               |Igen         |Igen         |Beépített részeként szerezhető be|             |            |
-|Windows Server 2012       |Igen         |Igen         |Igen         |Beépített részeként szerezhető be |            |
-|Windows 8                 |            |            |            |Beépített részeként szerezhető be |            |
-|Windows Server 2008 R2 SP1|Igen         |Igen         |Igen         |Igen          |Beépített részeként szerezhető be|
-|Windows 7 SP1             |Igen         |Igen         |Igen         |Igen          |Beépített részeként szerezhető be|
-|Windows Server 2008 SP2   |            |            |            |Igen          |Igen         |
-|Windows Vista             |            |            |            |             |Igen         |
-|Windows Server 2003       |            |            |            |             |Igen         |
-|Windows XP                |            |            |            |Igen          |            |
+|        Operációs rendszer verziója         | [WMF 5.1][]  | WMF 5.0<br>*Nem támogatott* | [WMF 4.0][]  | [WMF 3.0][]  | [A WMF 2.0][]  |
+| --------------------------------------- | ------------ | --------------------------- | ------------ | ------------ | ------------ |
+| A Windows Server 2019                     | Beépített részeként szerezhető be |                             |              |              |              |
+| Windows Server 2016                     | Beépített részeként szerezhető be |                             |              |              |              |
+| Windows 10                              | Beépített részeként szerezhető be | Beépített részeként szerezhető be                |              |              |              |
+| Windows Server 2012 R2                  | Igen          | Igen                         | Beépített részeként szerezhető be |              |              |
+| Windows 8.1                             | Igen          | Igen                         | Beépített részeként szerezhető be |              |              |
+| Windows Server 2012                     | Igen          | Igen                         | Igen          | Beépített részeként szerezhető be |              |
+| Windows 8<br>*Nem támogatott*           |              |                             |              | Beépített részeként szerezhető be |              |
+| Windows Server 2008 R2 SP1              | Igen          | Igen                         | Igen          | Igen          | Beépített részeként szerezhető be |
+| Windows 7 SP1                           | Igen          | Igen                         | Igen          | Igen          | Beépített részeként szerezhető be |
+| Windows Server 2008 SP2                 |              |                             |              | Igen          | Igen          |
+| Windows Vista<br>*Nem támogatott*       |              |                             |              |              | Igen          |
+| Windows Server 2003<br>*Nem támogatott* |              |                             |              |              | Igen          |
+| Windows XP<br>*Nem támogatott*          |              |                             |              | Igen          | Igen          |
 
-**A beépített mobilplatform**: A megadott verzióját, a WMF funkcióját Windows ügyfél- vagy Windows Server jelzett verziójában voltak Önnek.
+- **A beépített mobilplatform**: A megadott verzióját, a WMF funkcióját Windows ügyfél- vagy Windows Server jelzett verziójában voltak Önnek.
+- **Nem támogatott**: Ezeket a termékeket a Microsoft már nem támogatottak. Frissítenie kell egy új verzióra támogatott. További információkért lásd: a [A Microsoft életciklus-szabályzat][] lapot.
 
+> [!NOTE]
+> A telepítő a WMF 5.0, már nem érhető el vagy nem támogatott. A WMF 5.1 váltotta fel.
+
+[A Microsoft életciklus-szabályzat]: https://support.microsoft.com/lifecycle
 [WMF 5.1]: https://aka.ms/wmf51download
-[WMF 5.0]: https://aka.ms/wmf5download
 [WMF 4.0]: https://aka.ms/wmf4download
 [WMF 3.0]: https://aka.ms/wmf3download
 [A WMF 2.0]: https://aka.ms/wmf2download

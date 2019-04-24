@@ -2,12 +2,12 @@
 title: A VSCode-ban és a PowerShellben történő fájlkódolás megértése
 description: Fájlkódolás VSCode, a PowerShell konfigurálása
 ms.date: 02/28/2019
-ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
-ms.translationtype: MT
+ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320404"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984119"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>A VSCode-ban és a PowerShellben történő fájlkódolás megértése
 
@@ -102,7 +102,7 @@ AJ megadása nem kötelező, és azok elfogadását nem, népszerű Linux világ
 
 VSCode az alapértelmezett kódolás az UTF-8 AJ nélkül.
 
-Beállítása [VSCode kódolását][], nyissa meg a VSCode-beállításokat (<kbd>Ctrl<kbd>+</kbd>,</kbd>) és állítsa be a `"files.encoding"` beállítást:
+Beállítása [A VSCode-kódolás][], nyissa meg a VSCode-beállításokat (<kbd>Ctrl</kbd>+<kbd>,</kbd>) és állítsa be a `"files.encoding"` beállítást:
 
 ```json
 "files.encoding": "utf8bom"
@@ -110,8 +110,8 @@ Beállítása [VSCode kódolását][], nyissa meg a VSCode-beállításokat (<kb
 
 Néhány lehetséges értékei a következők:
 
-- `utf8`: Az [UTF-8] AJ nélkül
-- `utf8bom`: Az [UTF-8] az Anyagjegyzék
+- `utf8`: [UTF-8] AJ nélkül
+- `utf8bom`: [UTF-8] az Anyagjegyzék
 - `utf16le`: Little endian [UTF-16]
 - `utf16be`: A big endian [UTF-16]
 - `windows1252`: [Windows-1252]
@@ -194,7 +194,7 @@ Nem alkalmas kényszerítése a PowerShell használata az adott bemeneti kódol�
 
 ### <a name="existing-scripts"></a>Meglévő parancsfájlok
 
-Már a fájlrendszerben parancsfájlok kell újra értéket kódolni kell az új választott kódolás. VSCode alsó sáv látni fogja a címkét az UTF-8. A gombra kattintva nyissa meg a művelet sávon és **kódolással mentése**. Most kiválaszthatja, hogy a fájl egy új kódolást. Lásd: [VSCode kódolását][] teljes útmutatás.
+Már a fájlrendszerben parancsfájlok kell újra értéket kódolni kell az új választott kódolás. VSCode alsó sáv látni fogja a címkét az UTF-8. A gombra kattintva nyissa meg a művelet sávon és **kódolással mentése**. Most kiválaszthatja, hogy a fájl egy új kódolást. Lásd: [A VSCode-kódolás][] teljes útmutatás.
 
 Ha újra kódolása több fájl van szüksége, használhatja az alábbi parancsfájlt:
 
@@ -274,4 +274,4 @@ Van néhány egyéb hasznos bejegyzések kódolás és a kódolás a PowerShell 
 [bájtsorrendjelző]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [Nyelvi protokoll]: https://microsoft.github.io/language-server-protocol/
-[VSCode kódolását]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[A VSCode-kódolás]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
