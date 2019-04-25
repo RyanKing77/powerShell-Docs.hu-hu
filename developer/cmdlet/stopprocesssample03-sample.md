@@ -9,63 +9,63 @@ ms.topic: article
 ms.assetid: 31298f1b-8b76-4637-8406-863f5ad27e53
 caps.latest.revision: 8
 ms.openlocfilehash: 91b56a78f878e0d9c0fc11e4b882399bdfb108ac
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067283"
 ---
-# <a name="stopprocesssample03-sample"></a><span data-ttu-id="fa983-102">StopProcessSample03 – minta</span><span class="sxs-lookup"><span data-stu-id="fa983-102">StopProcessSample03 Sample</span></span>
+# <a name="stopprocesssample03-sample"></a><span data-ttu-id="df7cb-102">StopProcessSample03 – minta</span><span class="sxs-lookup"><span data-stu-id="df7cb-102">StopProcessSample03 Sample</span></span>
 
-<span data-ttu-id="fa983-103">Ez a példa bemutatja, hogyan írhat egy parancsmag, amelyek paraméterei aliasok rendelkezik, és amelynek paramétereket támogatja a helyettesítő karaktereket.</span><span class="sxs-lookup"><span data-stu-id="fa983-103">This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters.</span></span> <span data-ttu-id="fa983-104">Ez a parancsmag hasonlít a `Stop-Process` parancsmag Windows PowerShell 2.0 által biztosított.</span><span class="sxs-lookup"><span data-stu-id="fa983-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="df7cb-103">Ez a példa bemutatja, hogyan írhat egy parancsmag, amelyek paraméterei aliasok rendelkezik, és amelynek paramétereket támogatja a helyettesítő karaktereket.</span><span class="sxs-lookup"><span data-stu-id="df7cb-103">This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters.</span></span> <span data-ttu-id="df7cb-104">Ez a parancsmag hasonlít a `Stop-Process` parancsmag Windows PowerShell 2.0 által biztosított.</span><span class="sxs-lookup"><span data-stu-id="df7cb-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="fa983-105">Hogyan hozhat létre a mintát a Visual Studio használatával.</span><span class="sxs-lookup"><span data-stu-id="fa983-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="df7cb-105">Hogyan hozhat létre a mintát a Visual Studio használatával.</span><span class="sxs-lookup"><span data-stu-id="df7cb-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="fa983-106">A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a StopProcessSample03 mappát.</span><span class="sxs-lookup"><span data-stu-id="fa983-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder.</span></span> <span data-ttu-id="fa983-107">Az alapértelmezett hely a C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span><span class="sxs-lookup"><span data-stu-id="fa983-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span></span>
+1. <span data-ttu-id="df7cb-106">A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a StopProcessSample03 mappát.</span><span class="sxs-lookup"><span data-stu-id="df7cb-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder.</span></span> <span data-ttu-id="df7cb-107">Az alapértelmezett hely a C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span><span class="sxs-lookup"><span data-stu-id="df7cb-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span></span>
 
-2. <span data-ttu-id="fa983-108">A megoldásfájlt (.sln) ikonra.</span><span class="sxs-lookup"><span data-stu-id="fa983-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="fa983-109">Ekkor megnyílik a mintaprojektet a Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="fa983-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="df7cb-108">A megoldásfájlt (.sln) ikonra.</span><span class="sxs-lookup"><span data-stu-id="df7cb-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="df7cb-109">Ekkor megnyílik a mintaprojektet a Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="df7cb-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="fa983-110">Az a **összeállítása** menüjében válassza **megoldás fordítása**.</span><span class="sxs-lookup"><span data-stu-id="fa983-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="df7cb-110">Az a **összeállítása** menüjében válassza **megoldás fordítása**.</span><span class="sxs-lookup"><span data-stu-id="df7cb-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="fa983-111">A könyvtárban, a minta az alapértelmezett \bin vagy \bin\debug mappákat a lesz felépítve.</span><span class="sxs-lookup"><span data-stu-id="fa983-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="df7cb-111">A könyvtárban, a minta az alapértelmezett \bin vagy \bin\debug mappákat a lesz felépítve.</span><span class="sxs-lookup"><span data-stu-id="df7cb-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="fa983-112">A minta futtatása</span><span class="sxs-lookup"><span data-stu-id="fa983-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="df7cb-112">A minta futtatása</span><span class="sxs-lookup"><span data-stu-id="df7cb-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="fa983-113">Hozza létre a következő modul mappát:</span><span class="sxs-lookup"><span data-stu-id="fa983-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="df7cb-113">Hozza létre a következő modul mappát:</span><span class="sxs-lookup"><span data-stu-id="df7cb-113">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample03`
 
-2. <span data-ttu-id="fa983-114">A minta szerelvény a modul mappába másolja.</span><span class="sxs-lookup"><span data-stu-id="fa983-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="df7cb-114">A minta szerelvény a modul mappába másolja.</span><span class="sxs-lookup"><span data-stu-id="df7cb-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="fa983-115">Indítsa el a Windows PowerShellt.</span><span class="sxs-lookup"><span data-stu-id="fa983-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="df7cb-115">Indítsa el a Windows PowerShellt.</span><span class="sxs-lookup"><span data-stu-id="df7cb-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="fa983-116">Futtassa a következő szerelvény betöltése a Windows PowerShell parancsot:</span><span class="sxs-lookup"><span data-stu-id="fa983-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="df7cb-116">Futtassa a következő szerelvény betöltése a Windows PowerShell parancsot:</span><span class="sxs-lookup"><span data-stu-id="df7cb-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample03`
 
-5. <span data-ttu-id="fa983-117">Futtassa a következő parancsot a parancsmag futtatásához:</span><span class="sxs-lookup"><span data-stu-id="fa983-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="df7cb-117">Futtassa a következő parancsot a parancsmag futtatásához:</span><span class="sxs-lookup"><span data-stu-id="df7cb-117">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="fa983-118">Követelmények</span><span class="sxs-lookup"><span data-stu-id="fa983-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="df7cb-118">Követelmények</span><span class="sxs-lookup"><span data-stu-id="df7cb-118">Requirements</span></span>
 
-<span data-ttu-id="fa983-119">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="fa983-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="df7cb-119">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="df7cb-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="fa983-120">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="fa983-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="df7cb-120">Azt ismerteti</span><span class="sxs-lookup"><span data-stu-id="df7cb-120">Demonstrates</span></span>
 
-<span data-ttu-id="fa983-121">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="fa983-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="df7cb-121">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="df7cb-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="fa983-122">Egy parancsmag osztály deklaráló parancsmag attribútumával.</span><span class="sxs-lookup"><span data-stu-id="fa983-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="df7cb-122">Egy parancsmag osztály deklaráló parancsmag attribútumával.</span><span class="sxs-lookup"><span data-stu-id="df7cb-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="fa983-123">Deklaráló a parancsmag paramétereit a paraméter-attribútumhoz használatával.</span><span class="sxs-lookup"><span data-stu-id="fa983-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="df7cb-123">Deklaráló a parancsmag paramétereit a paraméter-attribútumhoz használatával.</span><span class="sxs-lookup"><span data-stu-id="df7cb-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="fa983-124">Az aliasok paraméter deklarációinak hozzáadása...</span><span class="sxs-lookup"><span data-stu-id="fa983-124">Adding aliases to parameter declarations..</span></span>
+- <span data-ttu-id="df7cb-124">Az aliasok paraméter deklarációinak hozzáadása...</span><span class="sxs-lookup"><span data-stu-id="df7cb-124">Adding aliases to parameter declarations..</span></span>
 
-- <span data-ttu-id="fa983-125">Paraméterek hozzáadása helyettesítő karakterek használatát.</span><span class="sxs-lookup"><span data-stu-id="fa983-125">Adding wildcard support to parameters.</span></span>
+- <span data-ttu-id="df7cb-125">Paraméterek hozzáadása helyettesítő karakterek használatát.</span><span class="sxs-lookup"><span data-stu-id="df7cb-125">Adding wildcard support to parameters.</span></span>
 
-## <a name="example"></a><span data-ttu-id="fa983-126">Példa</span><span class="sxs-lookup"><span data-stu-id="fa983-126">Example</span></span>
+## <a name="example"></a><span data-ttu-id="df7cb-126">Példa</span><span class="sxs-lookup"><span data-stu-id="df7cb-126">Example</span></span>
 
-<span data-ttu-id="fa983-127">Ez a példa bemutatja, hogyan deklarálja a paraméter-aliasok és támogatja a helyettesítő karaktereket.</span><span class="sxs-lookup"><span data-stu-id="fa983-127">This sample shows how to declare parameter aliases and support wildcards.</span></span>
+<span data-ttu-id="df7cb-127">Ez a példa bemutatja, hogyan deklarálja a paraméter-aliasok és támogatja a helyettesítő karaktereket.</span><span class="sxs-lookup"><span data-stu-id="df7cb-127">This sample shows how to declare parameter aliases and support wildcards.</span></span>
 
 ```csharp
 using System;
@@ -350,6 +350,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 } // namespace Microsoft.Samples.PowerShell.Commands
 ```
 
-## <a name="see-also"></a><span data-ttu-id="fa983-128">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="fa983-128">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="df7cb-128">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="df7cb-128">See Also</span></span>
 
-[<span data-ttu-id="fa983-129">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="fa983-129">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="df7cb-129">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="df7cb-129">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

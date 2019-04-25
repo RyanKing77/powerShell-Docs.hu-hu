@@ -9,27 +9,27 @@ ms.topic: article
 ms.assetid: ebc0d538-69ac-43d5-837d-b6f47344fc6a
 caps.latest.revision: 5
 ms.openlocfilehash: 4d921dd62999bc68b80838bafa2a3da8d4df3ebb
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081518"
 ---
-# <a name="getproc03-c-sample-code"></a><span data-ttu-id="2f097-102">GetProc03 (C#) – mintakód</span><span class="sxs-lookup"><span data-stu-id="2f097-102">GetProc03 (C#) Sample Code</span></span>
+# <a name="getproc03-c-sample-code"></a><span data-ttu-id="20d9c-102">GetProc03 (C#) – mintakód</span><span class="sxs-lookup"><span data-stu-id="20d9c-102">GetProc03 (C#) Sample Code</span></span>
 
-<span data-ttu-id="2f097-103">Az alábbi kód megvalósítását mutatja be egy `Get-Process` parancsmag, amely elfogadja a bemeneti vagyok.</span><span class="sxs-lookup"><span data-stu-id="2f097-103">The following code shows the implementation of a `Get-Process` cmdlet that can accept pipelined input.</span></span> <span data-ttu-id="2f097-104">Ez a megvalósítás meghatározása egy `Name` paraméter, amely elfogadja a folyamat bemeneti, folyamat adatait kérdezi le a helyi számítógép megadott neve alapján, és ezután a [System.Management.Automation.Cmdlet.WriteObject% 28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) metódus objektumok küld el a folyamat a kimeneti mechanizmusként.</span><span class="sxs-lookup"><span data-stu-id="2f097-104">This implementation defines a `Name` parameter that accepts pipeline input, retrieves process information from the local computer based on the supplied names, and then uses the [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) method as the output mechanism for sending objects to the pipeline.</span></span>
+<span data-ttu-id="20d9c-103">Az alábbi kód megvalósítását mutatja be egy `Get-Process` parancsmag, amely elfogadja a bemeneti vagyok.</span><span class="sxs-lookup"><span data-stu-id="20d9c-103">The following code shows the implementation of a `Get-Process` cmdlet that can accept pipelined input.</span></span> <span data-ttu-id="20d9c-104">Ez a megvalósítás meghatározása egy `Name` paraméter, amely elfogadja a folyamat bemeneti, folyamat adatait kérdezi le a helyi számítógép megadott neve alapján, és ezután a [System.Management.Automation.Cmdlet.WriteObject% 28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) metódus objektumok küld el a folyamat a kimeneti mechanizmusként.</span><span class="sxs-lookup"><span data-stu-id="20d9c-104">This implementation defines a `Name` parameter that accepts pipeline input, retrieves process information from the local computer based on the supplied names, and then uses the [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) method as the output mechanism for sending objects to the pipeline.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="2f097-105">Letöltheti a C# forrásfájl (getprov03.cs) a Get-Proc parancsmag használatával a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői.</span><span class="sxs-lookup"><span data-stu-id="2f097-105">You can download the C# source file (getprov03.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="2f097-106">Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="2f097-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="20d9c-105">Letöltheti a C# forrásfájl (getprov03.cs) a Get-Proc parancsmag használatával a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a .NET Framework 3.0 futtatási összetevői.</span><span class="sxs-lookup"><span data-stu-id="20d9c-105">You can download the C# source file (getprov03.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="20d9c-106">Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="20d9c-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="2f097-107">A letöltött forrásfájlok érhetők el a  **\<PowerShell-minták >** könyvtár.</span><span class="sxs-lookup"><span data-stu-id="2f097-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="20d9c-107">A letöltött forrásfájlok érhetők el a  **\<PowerShell-minták >** könyvtár.</span><span class="sxs-lookup"><span data-stu-id="20d9c-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="2f097-108">Kódminta</span><span class="sxs-lookup"><span data-stu-id="2f097-108">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="20d9c-108">Kódminta</span><span class="sxs-lookup"><span data-stu-id="20d9c-108">Code Sample</span></span>
 
 [!code-csharp[GetProcessSample03.cs](../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs#L11-L78 "GetProcessSample03.cs")]
 
-## <a name="see-also"></a><span data-ttu-id="2f097-109">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="2f097-109">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="20d9c-109">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="20d9c-109">See Also</span></span>
 
-[<span data-ttu-id="2f097-110">Windows PowerShell programozói útmutató</span><span class="sxs-lookup"><span data-stu-id="2f097-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="20d9c-110">Windows PowerShell programozói útmutató</span><span class="sxs-lookup"><span data-stu-id="20d9c-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="2f097-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="2f097-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="20d9c-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="20d9c-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

@@ -9,37 +9,37 @@ ms.topic: article
 ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
 caps.latest.revision: 7
 ms.openlocfilehash: 70577a6a42ce26e9791360fa30baae9d7a492daf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082636"
 ---
-# <a name="runspace08-sample"></a><span data-ttu-id="59448-102">Runspace08 – minta</span><span class="sxs-lookup"><span data-stu-id="59448-102">Runspace08 Sample</span></span>
+# <a name="runspace08-sample"></a><span data-ttu-id="53c2d-102">Runspace08 – minta</span><span class="sxs-lookup"><span data-stu-id="53c2d-102">Runspace08 Sample</span></span>
 
-<span data-ttu-id="59448-103">Ez a példa bemutatja, hogyan parancsokat és argumentumokat adhat hozzá, a folyamat egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum és a parancsok futtatása szinkron módon történik.</span><span class="sxs-lookup"><span data-stu-id="59448-103">This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.</span></span>
+<span data-ttu-id="53c2d-103">Ez a példa bemutatja, hogyan parancsokat és argumentumokat adhat hozzá, a folyamat egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum és a parancsok futtatása szinkron módon történik.</span><span class="sxs-lookup"><span data-stu-id="53c2d-103">This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="59448-104">Követelmények</span><span class="sxs-lookup"><span data-stu-id="59448-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="53c2d-104">Követelmények</span><span class="sxs-lookup"><span data-stu-id="53c2d-104">Requirements</span></span>
 
-<span data-ttu-id="59448-105">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="59448-105">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="53c2d-105">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="53c2d-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="59448-106">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="59448-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="53c2d-106">Azt ismerteti</span><span class="sxs-lookup"><span data-stu-id="53c2d-106">Demonstrates</span></span>
 
-<span data-ttu-id="59448-107">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="59448-107">This sample demonstrates the following.</span></span>
+<span data-ttu-id="53c2d-107">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="53c2d-107">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="59448-108">Létrehozás egy [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objektum használatával a [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) osztály.</span><span class="sxs-lookup"><span data-stu-id="59448-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
+- <span data-ttu-id="53c2d-108">Létrehozás egy [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objektum használatával a [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) osztály.</span><span class="sxs-lookup"><span data-stu-id="53c2d-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
 
-- <span data-ttu-id="59448-109">Létrehozás egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum, amely a futási teret használ.</span><span class="sxs-lookup"><span data-stu-id="59448-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="53c2d-109">Létrehozás egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum, amely a futási teret használ.</span><span class="sxs-lookup"><span data-stu-id="53c2d-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="59448-110">A folyamat a parancsmagok hozzáadása a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="59448-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="53c2d-110">A folyamat a parancsmagok hozzáadása a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="53c2d-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="59448-111">A parancsmagok futtatása a szinkron módon történik.</span><span class="sxs-lookup"><span data-stu-id="59448-111">Running the cmdlets synchronously.</span></span>
+- <span data-ttu-id="53c2d-111">A parancsmagok futtatása a szinkron módon történik.</span><span class="sxs-lookup"><span data-stu-id="53c2d-111">Running the cmdlets synchronously.</span></span>
 
-- <span data-ttu-id="59448-112">A Tulajdonságok beolvasása a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) a parancs által visszaadott objektum.</span><span class="sxs-lookup"><span data-stu-id="59448-112">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="53c2d-112">A Tulajdonságok beolvasása a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) a parancs által visszaadott objektum.</span><span class="sxs-lookup"><span data-stu-id="53c2d-112">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="59448-113">Példa</span><span class="sxs-lookup"><span data-stu-id="59448-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="53c2d-113">Példa</span><span class="sxs-lookup"><span data-stu-id="53c2d-113">Example</span></span>
 
-<span data-ttu-id="59448-114">Ez a minta futtatása a [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) és [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) parancsmagok használatával egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="59448-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="53c2d-114">Ez a minta futtatása a [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) és [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) parancsmagok használatával egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="53c2d-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -120,6 +120,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="59448-115">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="59448-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="53c2d-115">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="53c2d-115">See Also</span></span>
 
-[<span data-ttu-id="59448-116">A Windows PowerShell-gazdagépet alkalmazás írása</span><span class="sxs-lookup"><span data-stu-id="59448-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="53c2d-116">A Windows PowerShell-gazdagépet alkalmazás írása</span><span class="sxs-lookup"><span data-stu-id="53c2d-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

@@ -9,71 +9,71 @@ ms.topic: article
 ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
 caps.latest.revision: 6
 ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068011"
 ---
-# <a name="getprocesssample05-sample"></a><span data-ttu-id="3f558-102">GetProcessSample05 – minta</span><span class="sxs-lookup"><span data-stu-id="3f558-102">GetProcessSample05 Sample</span></span>
+# <a name="getprocesssample05-sample"></a><span data-ttu-id="a06fc-102">GetProcessSample05 – minta</span><span class="sxs-lookup"><span data-stu-id="a06fc-102">GetProcessSample05 Sample</span></span>
 
-<span data-ttu-id="3f558-103">Ez a példa bemutatja egy a Get-Proc parancsmag teljes verzióját.</span><span class="sxs-lookup"><span data-stu-id="3f558-103">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
+<span data-ttu-id="a06fc-103">Ez a példa bemutatja egy a Get-Proc parancsmag teljes verzióját.</span><span class="sxs-lookup"><span data-stu-id="a06fc-103">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
 
-## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="3f558-104">Hogyan hozhat létre a mintát a Visual Studio használatával.</span><span class="sxs-lookup"><span data-stu-id="3f558-104">How to build the sample using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="a06fc-104">Hogyan hozhat létre a mintát a Visual Studio használatával.</span><span class="sxs-lookup"><span data-stu-id="a06fc-104">How to build the sample using Visual Studio.</span></span>
 
-1. <span data-ttu-id="3f558-105">Nyissa meg a Windows Intézőt, és keresse meg a mintákat a könyvtárban a GetProcessSample05 könyvtárát.</span><span class="sxs-lookup"><span data-stu-id="3f558-105">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="a06fc-105">Nyissa meg a Windows Intézőt, és keresse meg a mintákat a könyvtárban a GetProcessSample05 könyvtárát.</span><span class="sxs-lookup"><span data-stu-id="a06fc-105">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
 
-   <span data-ttu-id="3f558-106">A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a GetProcessSample05 mappát.</span><span class="sxs-lookup"><span data-stu-id="3f558-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="3f558-107">Az alapértelmezett hely a C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="3f558-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
+   <span data-ttu-id="a06fc-106">A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a GetProcessSample05 mappát.</span><span class="sxs-lookup"><span data-stu-id="a06fc-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="a06fc-107">Az alapértelmezett hely a C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="a06fc-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
 
-2. <span data-ttu-id="3f558-108">A megoldásfájlt (.sln) ikonra.</span><span class="sxs-lookup"><span data-stu-id="3f558-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="3f558-109">Ekkor megnyílik a mintaprojektet a Visual Studióban.</span><span class="sxs-lookup"><span data-stu-id="3f558-109">This opens the sample project in Visual Studio.</span></span>
+2. <span data-ttu-id="a06fc-108">A megoldásfájlt (.sln) ikonra.</span><span class="sxs-lookup"><span data-stu-id="a06fc-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="a06fc-109">Ekkor megnyílik a mintaprojektet a Visual Studióban.</span><span class="sxs-lookup"><span data-stu-id="a06fc-109">This opens the sample project in Visual Studio.</span></span>
 
-3. <span data-ttu-id="3f558-110">Az a **összeállítása** menüjében válassza **megoldás fordítása**.</span><span class="sxs-lookup"><span data-stu-id="3f558-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="a06fc-110">Az a **összeállítása** menüjében válassza **megoldás fordítása**.</span><span class="sxs-lookup"><span data-stu-id="a06fc-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-   <span data-ttu-id="3f558-111">A könyvtár a minta az alapértelmezett \bin vagy \bin\debug könyvtárakat a lesz felépítve.</span><span class="sxs-lookup"><span data-stu-id="3f558-111">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
+   <span data-ttu-id="a06fc-111">A könyvtár a minta az alapértelmezett \bin vagy \bin\debug könyvtárakat a lesz felépítve.</span><span class="sxs-lookup"><span data-stu-id="a06fc-111">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="3f558-112">A minta futtatása</span><span class="sxs-lookup"><span data-stu-id="3f558-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="a06fc-112">A minta futtatása</span><span class="sxs-lookup"><span data-stu-id="a06fc-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="3f558-113">Hozza létre a következő modul mappát:</span><span class="sxs-lookup"><span data-stu-id="3f558-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="a06fc-113">Hozza létre a következő modul mappát:</span><span class="sxs-lookup"><span data-stu-id="a06fc-113">Create the following module folder:</span></span>
 
    `[user]/documents/windowspowershell/modules/GetProcessSample05`
 
-2. <span data-ttu-id="3f558-114">A minta szerelvény a modul mappába másolja.</span><span class="sxs-lookup"><span data-stu-id="3f558-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="a06fc-114">A minta szerelvény a modul mappába másolja.</span><span class="sxs-lookup"><span data-stu-id="a06fc-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="3f558-115">Indítsa el a Windows PowerShellt.</span><span class="sxs-lookup"><span data-stu-id="3f558-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="a06fc-115">Indítsa el a Windows PowerShellt.</span><span class="sxs-lookup"><span data-stu-id="a06fc-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="3f558-116">Futtassa a következő szerelvény betöltése a Windows PowerShell parancsot:</span><span class="sxs-lookup"><span data-stu-id="3f558-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="a06fc-116">Futtassa a következő szerelvény betöltése a Windows PowerShell parancsot:</span><span class="sxs-lookup"><span data-stu-id="a06fc-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
    `Import-module getprossessample05`
 
-5. <span data-ttu-id="3f558-117">Futtassa a következő parancsot a parancsmag futtatásához:</span><span class="sxs-lookup"><span data-stu-id="3f558-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="a06fc-117">Futtassa a következő parancsot a parancsmag futtatásához:</span><span class="sxs-lookup"><span data-stu-id="a06fc-117">Run the following command to run the cmdlet:</span></span>
 
    `get-proc`
 
-## <a name="requirements"></a><span data-ttu-id="3f558-118">Követelmények</span><span class="sxs-lookup"><span data-stu-id="3f558-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="a06fc-118">Követelmények</span><span class="sxs-lookup"><span data-stu-id="a06fc-118">Requirements</span></span>
 
-<span data-ttu-id="3f558-119">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="3f558-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="a06fc-119">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="a06fc-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="3f558-120">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="3f558-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="a06fc-120">Azt ismerteti</span><span class="sxs-lookup"><span data-stu-id="a06fc-120">Demonstrates</span></span>
 
-<span data-ttu-id="3f558-121">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="3f558-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="a06fc-121">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="a06fc-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="3f558-122">A parancsmag attribútum használata a parancsmag osztály deklaráló.</span><span class="sxs-lookup"><span data-stu-id="3f558-122">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="a06fc-122">A parancsmag attribútum használata a parancsmag osztály deklaráló.</span><span class="sxs-lookup"><span data-stu-id="a06fc-122">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="3f558-123">A paraméter attribútum használatával egy parancsmag-paraméterben deklaráló.</span><span class="sxs-lookup"><span data-stu-id="3f558-123">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
+- <span data-ttu-id="a06fc-123">A paraméter attribútum használatával egy parancsmag-paraméterben deklaráló.</span><span class="sxs-lookup"><span data-stu-id="a06fc-123">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="3f558-124">Pozíciók paraméterek megadása.</span><span class="sxs-lookup"><span data-stu-id="3f558-124">Specifying positions for parameters.</span></span>
+- <span data-ttu-id="a06fc-124">Pozíciók paraméterek megadása.</span><span class="sxs-lookup"><span data-stu-id="a06fc-124">Specifying positions for parameters.</span></span>
 
-- <span data-ttu-id="3f558-125">Adja meg, hogy a paraméterek az a folyamat bemeneti is eltarthat.</span><span class="sxs-lookup"><span data-stu-id="3f558-125">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="3f558-126">A bemeneti elvégezhet egy objektum vagy egy értéket egy tulajdonságot egy objektum, amelynek tulajdonság neve megegyezik a paraméter neve.</span><span class="sxs-lookup"><span data-stu-id="3f558-126">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
+- <span data-ttu-id="a06fc-125">Adja meg, hogy a paraméterek az a folyamat bemeneti is eltarthat.</span><span class="sxs-lookup"><span data-stu-id="a06fc-125">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="a06fc-126">A bemeneti elvégezhet egy objektum vagy egy értéket egy tulajdonságot egy objektum, amelynek tulajdonság neve megegyezik a paraméter neve.</span><span class="sxs-lookup"><span data-stu-id="a06fc-126">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
 
-- <span data-ttu-id="3f558-127">A bemeneti paraméter egy ellenőrző attribútuma deklaráló.</span><span class="sxs-lookup"><span data-stu-id="3f558-127">Declaring a validation attribute for the parameter input.</span></span>
+- <span data-ttu-id="a06fc-127">A bemeneti paraméter egy ellenőrző attribútuma deklaráló.</span><span class="sxs-lookup"><span data-stu-id="a06fc-127">Declaring a validation attribute for the parameter input.</span></span>
 
-- <span data-ttu-id="3f558-128">Hibák és kivételek kezelése.</span><span class="sxs-lookup"><span data-stu-id="3f558-128">Handling errors and exceptions.</span></span>
+- <span data-ttu-id="a06fc-128">Hibák és kivételek kezelése.</span><span class="sxs-lookup"><span data-stu-id="a06fc-128">Handling errors and exceptions.</span></span>
 
-- <span data-ttu-id="3f558-129">Írás hibakeresési üzeneteket.</span><span class="sxs-lookup"><span data-stu-id="3f558-129">Writing debug messages.</span></span>
+- <span data-ttu-id="a06fc-129">Írás hibakeresési üzeneteket.</span><span class="sxs-lookup"><span data-stu-id="a06fc-129">Writing debug messages.</span></span>
 
-## <a name="example"></a><span data-ttu-id="3f558-130">Példa</span><span class="sxs-lookup"><span data-stu-id="3f558-130">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a06fc-130">Példa</span><span class="sxs-lookup"><span data-stu-id="a06fc-130">Example</span></span>
 
-<span data-ttu-id="3f558-131">Ez a példa bemutatja, hogyan hozhat létre olyan parancsmagot, amely a megadott folyamatok listáját jeleníti meg.</span><span class="sxs-lookup"><span data-stu-id="3f558-131">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
+<span data-ttu-id="a06fc-131">Ez a példa bemutatja, hogyan hozhat létre olyan parancsmagot, amely a megadott folyamatok listáját jeleníti meg.</span><span class="sxs-lookup"><span data-stu-id="a06fc-131">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands
@@ -479,6 +479,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="3f558-132">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="3f558-132">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a06fc-132">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="a06fc-132">See Also</span></span>
 
-[<span data-ttu-id="3f558-133">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="3f558-133">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="a06fc-133">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="a06fc-133">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

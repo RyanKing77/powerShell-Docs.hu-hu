@@ -9,41 +9,41 @@ ms.topic: article
 ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
 caps.latest.revision: 8
 ms.openlocfilehash: 3cb370cd1bfe9ce7198980cc1c26fafb126d00a3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082674"
 ---
-# <a name="runspace04-sample"></a><span data-ttu-id="6699b-102">Runspace04 – minta</span><span class="sxs-lookup"><span data-stu-id="6699b-102">Runspace04 Sample</span></span>
+# <a name="runspace04-sample"></a><span data-ttu-id="27a05-102">Runspace04 – minta</span><span class="sxs-lookup"><span data-stu-id="27a05-102">Runspace04 Sample</span></span>
 
-<span data-ttu-id="6699b-103">Ez a példa bemutatja, hogyan használhatja a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) osztály parancsokat futtathat, és hogyan catch okozott a parancsok futtatásakor megszakítást hibák.</span><span class="sxs-lookup"><span data-stu-id="6699b-103">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run commands, and how to catch terminating errors that are thrown when running the commands.</span></span> <span data-ttu-id="6699b-104">Két parancsok futtatása, és az utolsó parancs, amely nem érvényes a paraméter argumentumként átadott.</span><span class="sxs-lookup"><span data-stu-id="6699b-104">Two commands are run, and the last command is passed a parameter argument that is not valid.</span></span> <span data-ttu-id="6699b-105">Ennek eredményeképpen nem lesznek visszaadva, és a megszakító hiba lépett fel.</span><span class="sxs-lookup"><span data-stu-id="6699b-105">As a result, no objects are returned and a terminating error is thrown.</span></span>
+<span data-ttu-id="27a05-103">Ez a példa bemutatja, hogyan használhatja a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) osztály parancsokat futtathat, és hogyan catch okozott a parancsok futtatásakor megszakítást hibák.</span><span class="sxs-lookup"><span data-stu-id="27a05-103">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run commands, and how to catch terminating errors that are thrown when running the commands.</span></span> <span data-ttu-id="27a05-104">Két parancsok futtatása, és az utolsó parancs, amely nem érvényes a paraméter argumentumként átadott.</span><span class="sxs-lookup"><span data-stu-id="27a05-104">Two commands are run, and the last command is passed a parameter argument that is not valid.</span></span> <span data-ttu-id="27a05-105">Ennek eredményeképpen nem lesznek visszaadva, és a megszakító hiba lépett fel.</span><span class="sxs-lookup"><span data-stu-id="27a05-105">As a result, no objects are returned and a terminating error is thrown.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="6699b-106">Követelmények</span><span class="sxs-lookup"><span data-stu-id="6699b-106">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="27a05-106">Követelmények</span><span class="sxs-lookup"><span data-stu-id="27a05-106">Requirements</span></span>
 
-<span data-ttu-id="6699b-107">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="6699b-107">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="27a05-107">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="27a05-107">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="6699b-108">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="6699b-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="27a05-108">Azt ismerteti</span><span class="sxs-lookup"><span data-stu-id="27a05-108">Demonstrates</span></span>
 
-<span data-ttu-id="6699b-109">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="6699b-109">This sample demonstrates the following.</span></span>
+<span data-ttu-id="27a05-109">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="27a05-109">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="6699b-110">Létrehozás egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="6699b-110">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="27a05-110">Létrehozás egy [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="27a05-110">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="6699b-111">Parancsok hozzáadása a folyamathoz, a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="6699b-111">Adding commands to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="27a05-111">Parancsok hozzáadása a folyamathoz, a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) objektum.</span><span class="sxs-lookup"><span data-stu-id="27a05-111">Adding commands to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="6699b-112">Paraméter argumentumok hozzáadva a folyamat.</span><span class="sxs-lookup"><span data-stu-id="6699b-112">Adding parameter arguments to the pipeline.</span></span>
+- <span data-ttu-id="27a05-112">Paraméter argumentumok hozzáadva a folyamat.</span><span class="sxs-lookup"><span data-stu-id="27a05-112">Adding parameter arguments to the pipeline.</span></span>
 
-- <span data-ttu-id="6699b-113">Vyvolání szinkron módon történik a parancsokat.</span><span class="sxs-lookup"><span data-stu-id="6699b-113">Invoking the commands synchronously.</span></span>
+- <span data-ttu-id="27a05-113">Vyvolání szinkron módon történik a parancsokat.</span><span class="sxs-lookup"><span data-stu-id="27a05-113">Invoking the commands synchronously.</span></span>
 
-- <span data-ttu-id="6699b-114">Használatával [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objektumok kinyerése és a parancsok által visszaadott objektumokhoz a tulajdonságainak megjelenítéséhez.</span><span class="sxs-lookup"><span data-stu-id="6699b-114">Using [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the commands.</span></span>
+- <span data-ttu-id="27a05-114">Használatával [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objektumok kinyerése és a parancsok által visszaadott objektumokhoz a tulajdonságainak megjelenítéséhez.</span><span class="sxs-lookup"><span data-stu-id="27a05-114">Using [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the commands.</span></span>
 
-- <span data-ttu-id="6699b-115">Beolvasása és a parancsok futtatása során generált hibarekordjainak megjelenítése.</span><span class="sxs-lookup"><span data-stu-id="6699b-115">Retrieving and displaying error records that were generated during the running of the commands.</span></span>
+- <span data-ttu-id="27a05-115">Beolvasása és a parancsok futtatása során generált hibarekordjainak megjelenítése.</span><span class="sxs-lookup"><span data-stu-id="27a05-115">Retrieving and displaying error records that were generated during the running of the commands.</span></span>
 
-- <span data-ttu-id="6699b-116">Kölcsönhatásai és megjelenítése a megszakító által okozott kivételek feldolgozását a parancsokat.</span><span class="sxs-lookup"><span data-stu-id="6699b-116">Catching and displaying terminating exceptions thrown by the commands.</span></span>
+- <span data-ttu-id="27a05-116">Kölcsönhatásai és megjelenítése a megszakító által okozott kivételek feldolgozását a parancsokat.</span><span class="sxs-lookup"><span data-stu-id="27a05-116">Catching and displaying terminating exceptions thrown by the commands.</span></span>
 
-## <a name="example"></a><span data-ttu-id="6699b-117">Példa</span><span class="sxs-lookup"><span data-stu-id="6699b-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="27a05-117">Példa</span><span class="sxs-lookup"><span data-stu-id="27a05-117">Example</span></span>
 
-<span data-ttu-id="6699b-118">Ez a minta futási térben parancsok szinkron módon történik az alapértelmezett Windows PowerShell által biztosított.</span><span class="sxs-lookup"><span data-stu-id="6699b-118">This sample runs commands synchronously in the default runspace provided by Windows PowerShell.</span></span> <span data-ttu-id="6699b-119">Az utolsó parancs egy hibát jelez, mert egy paraméter argumentum, amely nem érvényes a parancsnak átadott.</span><span class="sxs-lookup"><span data-stu-id="6699b-119">The last command throws a terminating error because a parameter argument that is not valid is passed to the command.</span></span> <span data-ttu-id="6699b-120">Hibát elfogott és jelenik meg.</span><span class="sxs-lookup"><span data-stu-id="6699b-120">The terminating error is trapped and displayed.</span></span>
+<span data-ttu-id="27a05-118">Ez a minta futási térben parancsok szinkron módon történik az alapértelmezett Windows PowerShell által biztosított.</span><span class="sxs-lookup"><span data-stu-id="27a05-118">This sample runs commands synchronously in the default runspace provided by Windows PowerShell.</span></span> <span data-ttu-id="27a05-119">Az utolsó parancs egy hibát jelez, mert egy paraméter argumentum, amely nem érvényes a parancsnak átadott.</span><span class="sxs-lookup"><span data-stu-id="27a05-119">The last command throws a terminating error because a parameter argument that is not valid is passed to the command.</span></span> <span data-ttu-id="27a05-120">Hibát elfogott és jelenik meg.</span><span class="sxs-lookup"><span data-stu-id="27a05-120">The terminating error is trapped and displayed.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -123,6 +123,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="6699b-121">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="6699b-121">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="27a05-121">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="27a05-121">See Also</span></span>
 
-[<span data-ttu-id="6699b-122">A Windows PowerShell-gazdagépet alkalmazás írása</span><span class="sxs-lookup"><span data-stu-id="6699b-122">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="27a05-122">A Windows PowerShell-gazdagépet alkalmazás írása</span><span class="sxs-lookup"><span data-stu-id="27a05-122">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

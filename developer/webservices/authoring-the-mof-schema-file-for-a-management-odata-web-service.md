@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
 ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080764"
 ---
-# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="9f199-102">Egy Management OData webszolgáltatás MOF-sémájának szerkesztése</span><span class="sxs-lookup"><span data-stu-id="9f199-102">Authoring the MOF schema file for a Management OData web service</span></span>
+# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="08eb2-102">Egy Management OData webszolgáltatás MOF-sémájának szerkesztése</span><span class="sxs-lookup"><span data-stu-id="08eb2-102">Authoring the MOF schema file for a Management OData web service</span></span>
 
-<span data-ttu-id="9f199-103">Meghatározhatja az erőforrásokat, amelyek a felügyeleti OData webszolgáltatást tesz elérhetővé az erőforrás nyilvános séma használt MOF-fájl létrehozásával.</span><span class="sxs-lookup"><span data-stu-id="9f199-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="9f199-104">Az egyes erőforrások számít, ha a fájl egy osztályt, és osztálytagjaihoz tulajdonságok vannak meghatározva.</span><span class="sxs-lookup"><span data-stu-id="9f199-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="9f199-105">A séma a MOF-fájlban használt kapcsolatos további információkért lásd: [nyilvános erőforrás séma](./public-resource-schema.md).</span><span class="sxs-lookup"><span data-stu-id="9f199-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
+<span data-ttu-id="08eb2-103">Meghatározhatja az erőforrásokat, amelyek a felügyeleti OData webszolgáltatást tesz elérhetővé az erőforrás nyilvános séma használt MOF-fájl létrehozásával.</span><span class="sxs-lookup"><span data-stu-id="08eb2-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="08eb2-104">Az egyes erőforrások számít, ha a fájl egy osztályt, és osztálytagjaihoz tulajdonságok vannak meghatározva.</span><span class="sxs-lookup"><span data-stu-id="08eb2-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="08eb2-105">A séma a MOF-fájlban használt kapcsolatos további információkért lásd: [nyilvános erőforrás séma](./public-resource-schema.md).</span><span class="sxs-lookup"><span data-stu-id="08eb2-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
 
-## <a name="example-mof-file"></a><span data-ttu-id="9f199-106">Példa a MOF-fájl</span><span class="sxs-lookup"><span data-stu-id="9f199-106">Example MOF file</span></span>
+## <a name="example-mof-file"></a><span data-ttu-id="08eb2-106">Példa a MOF-fájl</span><span class="sxs-lookup"><span data-stu-id="08eb2-106">Example MOF file</span></span>
 
-<span data-ttu-id="9f199-107">Az alábbi fájl határozza meg a szolgáltatás és a Folyamatkiszolgáló erőforrások.</span><span class="sxs-lookup"><span data-stu-id="9f199-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="9f199-108">Ezen erőforrások mindegyike megfelel olyan objektum, amely egy készletét a Windows PowerShell-parancsmagot is lehet kezelni.</span><span class="sxs-lookup"><span data-stu-id="9f199-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="9f199-109">Azok a parancsmagok által használt paraméterek a Tulajdonságok megegyeznek.</span><span class="sxs-lookup"><span data-stu-id="9f199-109">The properties correspond to parameters used by those cmdlets.</span></span>
+<span data-ttu-id="08eb2-107">Az alábbi fájl határozza meg a szolgáltatás és a Folyamatkiszolgáló erőforrások.</span><span class="sxs-lookup"><span data-stu-id="08eb2-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="08eb2-108">Ezen erőforrások mindegyike megfelel olyan objektum, amely egy készletét a Windows PowerShell-parancsmagot is lehet kezelni.</span><span class="sxs-lookup"><span data-stu-id="08eb2-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="08eb2-109">Azok a parancsmagok által használt paraméterek a Tulajdonságok megegyeznek.</span><span class="sxs-lookup"><span data-stu-id="08eb2-109">The properties correspond to parameters used by those cmdlets.</span></span>
 
-<span data-ttu-id="9f199-110">A két erőforrás mindegyike tartalmaz összetett típusú tulajdonságokhoz.</span><span class="sxs-lookup"><span data-stu-id="9f199-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="9f199-111">A komplex típusok a meghatározott módosított osztályokat a `ComplexType` minősítője.</span><span class="sxs-lookup"><span data-stu-id="9f199-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
+<span data-ttu-id="08eb2-110">A két erőforrás mindegyike tartalmaz összetett típusú tulajdonságokhoz.</span><span class="sxs-lookup"><span data-stu-id="08eb2-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="08eb2-111">A komplex típusok a meghatározott módosított osztályokat a `ComplexType` minősítője.</span><span class="sxs-lookup"><span data-stu-id="08eb2-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
 
 ```csharp
 
@@ -209,8 +209,8 @@ class PswsTest_Stream
 
 ```
 
-## <a name="see-also"></a><span data-ttu-id="9f199-112">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="9f199-112">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="08eb2-112">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="08eb2-112">See Also</span></span>
 
-[<span data-ttu-id="9f199-113">Felügyeleti OData webes szolgáltatás létrehozása</span><span class="sxs-lookup"><span data-stu-id="9f199-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="08eb2-113">Felügyeleti OData webes szolgáltatás létrehozása</span><span class="sxs-lookup"><span data-stu-id="08eb2-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
 
-[<span data-ttu-id="9f199-114">Nyilvános séma</span><span class="sxs-lookup"><span data-stu-id="9f199-114">Public Resource Schema</span></span>](./public-resource-schema.md)
+[<span data-ttu-id="08eb2-114">Nyilvános séma</span><span class="sxs-lookup"><span data-stu-id="08eb2-114">Public Resource Schema</span></span>](./public-resource-schema.md)

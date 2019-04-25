@@ -9,35 +9,35 @@ ms.topic: article
 ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
 caps.latest.revision: 14
 ms.openlocfilehash: 9a4b7c842c6222fa2e9f1c14f37f45d7a5158107
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56852198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082840"
 ---
-# <a name="host01-sample"></a><span data-ttu-id="a1c5e-102">Host01 – minta</span><span class="sxs-lookup"><span data-stu-id="a1c5e-102">Host01 Sample</span></span>
+# <a name="host01-sample"></a><span data-ttu-id="3453d-102">Host01 – minta</span><span class="sxs-lookup"><span data-stu-id="3453d-102">Host01 Sample</span></span>
 
-<span data-ttu-id="a1c5e-103">Ez a példa bemutatja, hogyan valósíthat meg egy egyéni gazdagép használó gazdagép-alkalmazás.</span><span class="sxs-lookup"><span data-stu-id="a1c5e-103">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="a1c5e-104">A mintában egy futási teret jön létre, amely az egyéni gazdagépet használ, majd a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API segítségével futtassa a parancsfájlt, amely meghívja a "kilép."</span><span class="sxs-lookup"><span data-stu-id="a1c5e-104">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="a1c5e-105">A gazdaalkalmazást majd megvizsgálja a szkript a kimenetét, és az eredményeket kiírja.</span><span class="sxs-lookup"><span data-stu-id="a1c5e-105">The host application then looks at the output of the script and prints out the results.</span></span>
+<span data-ttu-id="3453d-103">Ez a példa bemutatja, hogyan valósíthat meg egy egyéni gazdagép használó gazdagép-alkalmazás.</span><span class="sxs-lookup"><span data-stu-id="3453d-103">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="3453d-104">A mintában egy futási teret jön létre, amely az egyéni gazdagépet használ, majd a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API segítségével futtassa a parancsfájlt, amely meghívja a "kilép."</span><span class="sxs-lookup"><span data-stu-id="3453d-104">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="3453d-105">A gazdaalkalmazást majd megvizsgálja a szkript a kimenetét, és az eredményeket kiírja.</span><span class="sxs-lookup"><span data-stu-id="3453d-105">The host application then looks at the output of the script and prints out the results.</span></span>
 
- <span data-ttu-id="a1c5e-106">Ebben a példában a Windows PowerShell által biztosított alapértelmezett felhasználói felületi funkciók.</span><span class="sxs-lookup"><span data-stu-id="a1c5e-106">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="a1c5e-107">A felhasználói felületi funkciók egyéni gazdagép megvalósításával kapcsolatos további információkért lásd: [Host02 minta](./host02-sample.md).</span><span class="sxs-lookup"><span data-stu-id="a1c5e-107">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
+ <span data-ttu-id="3453d-106">Ebben a példában a Windows PowerShell által biztosított alapértelmezett felhasználói felületi funkciók.</span><span class="sxs-lookup"><span data-stu-id="3453d-106">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="3453d-107">A felhasználói felületi funkciók egyéni gazdagép megvalósításával kapcsolatos további információkért lásd: [Host02 minta](./host02-sample.md).</span><span class="sxs-lookup"><span data-stu-id="3453d-107">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="a1c5e-108">Követelmények</span><span class="sxs-lookup"><span data-stu-id="a1c5e-108">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="3453d-108">Követelmények</span><span class="sxs-lookup"><span data-stu-id="3453d-108">Requirements</span></span>
 
- <span data-ttu-id="a1c5e-109">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="a1c5e-109">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="3453d-109">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="3453d-109">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="a1c5e-110">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="a1c5e-110">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="3453d-110">Azt ismerteti</span><span class="sxs-lookup"><span data-stu-id="3453d-110">Demonstrates</span></span>
 
-- <span data-ttu-id="a1c5e-111">Gazdagép egyéni osztály létrehozása származik a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztály.</span><span class="sxs-lookup"><span data-stu-id="a1c5e-111">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
+- <span data-ttu-id="3453d-111">Gazdagép egyéni osztály létrehozása származik a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztály.</span><span class="sxs-lookup"><span data-stu-id="3453d-111">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
 
-- <span data-ttu-id="a1c5e-112">Használó egyéni birtokló osztály egy futási teret létrehozása.</span><span class="sxs-lookup"><span data-stu-id="a1c5e-112">Creating a runspace that uses the custom host class.</span></span>
+- <span data-ttu-id="3453d-112">Használó egyéni birtokló osztály egy futási teret létrehozása.</span><span class="sxs-lookup"><span data-stu-id="3453d-112">Creating a runspace that uses the custom host class.</span></span>
 
-- <span data-ttu-id="a1c5e-113">Létrehozás egy [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) objektum, amely egy parancsfájlt, amely meghívja a kilépési.</span><span class="sxs-lookup"><span data-stu-id="a1c5e-113">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
+- <span data-ttu-id="3453d-113">Létrehozás egy [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) objektum, amely egy parancsfájlt, amely meghívja a kilépési.</span><span class="sxs-lookup"><span data-stu-id="3453d-113">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
 
-- <span data-ttu-id="a1c5e-114">Annak ellenőrzése, hogy a megfelelő kilépési kód használták a kilépési folyamat.</span><span class="sxs-lookup"><span data-stu-id="a1c5e-114">Verifying that the correct exit code was used in the exit process.</span></span>
+- <span data-ttu-id="3453d-114">Annak ellenőrzése, hogy a megfelelő kilépési kód használták a kilépési folyamat.</span><span class="sxs-lookup"><span data-stu-id="3453d-114">Verifying that the correct exit code was used in the exit process.</span></span>
 
-## <a name="example"></a><span data-ttu-id="a1c5e-115">Példa</span><span class="sxs-lookup"><span data-stu-id="a1c5e-115">Example</span></span>
+## <a name="example"></a><span data-ttu-id="3453d-115">Példa</span><span class="sxs-lookup"><span data-stu-id="3453d-115">Example</span></span>
 
- <span data-ttu-id="a1c5e-116">A következő kódot egy gazdagép egy egyszerű egyéni állomás felületet használó alkalmazások megvalósítását mutatja be.</span><span class="sxs-lookup"><span data-stu-id="a1c5e-116">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
+ <span data-ttu-id="3453d-116">A következő kódot egy gazdagép egy egyszerű egyéni állomás felületet használó alkalmazások megvalósítását mutatja be.</span><span class="sxs-lookup"><span data-stu-id="3453d-116">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -137,9 +137,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="a1c5e-117">Példa</span><span class="sxs-lookup"><span data-stu-id="a1c5e-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="3453d-117">Példa</span><span class="sxs-lookup"><span data-stu-id="3453d-117">Example</span></span>
 
- <span data-ttu-id="a1c5e-118">A következő kódot a megvalósítása a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="a1c5e-118">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="a1c5e-119">Ezen elemek nincs megvalósított kivételt, vagy nem ad vissza semmit.</span><span class="sxs-lookup"><span data-stu-id="a1c5e-119">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="3453d-118">A következő kódot a megvalósítása a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="3453d-118">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="3453d-119">Ezen elemek nincs megvalósított kivételt, vagy nem ad vissza semmit.</span><span class="sxs-lookup"><span data-stu-id="3453d-119">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -308,4 +308,4 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="a1c5e-120">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="a1c5e-120">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3453d-120">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="3453d-120">See Also</span></span>

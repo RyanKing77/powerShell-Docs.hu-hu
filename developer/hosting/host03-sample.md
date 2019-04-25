@@ -9,29 +9,29 @@ ms.topic: article
 ms.assetid: c9864f46-200d-422e-86ed-2fddcb5b7503
 caps.latest.revision: 12
 ms.openlocfilehash: 202f6ea0521c7c053d5a01314fb44bd1806abab3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082855"
 ---
-# <a name="host03-sample"></a><span data-ttu-id="9897d-102">Host03 – minta</span><span class="sxs-lookup"><span data-stu-id="9897d-102">Host03 Sample</span></span>
+# <a name="host03-sample"></a><span data-ttu-id="a188e-102">Host03 – minta</span><span class="sxs-lookup"><span data-stu-id="a188e-102">Host03 Sample</span></span>
 
-<span data-ttu-id="9897d-103">Ez a példa bemutatja, hogyan hozhat létre olyan interaktív konzol-alapú gazdagép alkalmazás, amely beolvassa a parancsok a parancssorból, a parancsok végrehajtása és az eredményeket a konzolon jeleníti meg.</span><span class="sxs-lookup"><span data-stu-id="9897d-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span>
+<span data-ttu-id="a188e-103">Ez a példa bemutatja, hogyan hozhat létre olyan interaktív konzol-alapú gazdagép alkalmazás, amely beolvassa a parancsok a parancssorból, a parancsok végrehajtása és az eredményeket a konzolon jeleníti meg.</span><span class="sxs-lookup"><span data-stu-id="a188e-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="9897d-104">Követelmények</span><span class="sxs-lookup"><span data-stu-id="9897d-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="a188e-104">Követelmények</span><span class="sxs-lookup"><span data-stu-id="a188e-104">Requirements</span></span>
 
- <span data-ttu-id="9897d-105">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="9897d-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="a188e-105">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="a188e-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="9897d-106">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="9897d-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="a188e-106">Azt ismerteti</span><span class="sxs-lookup"><span data-stu-id="a188e-106">Demonstrates</span></span>
 
-- <span data-ttu-id="9897d-107">Egy egyéni gazdagépre, amelynek osztályok származtatást létrehozása a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztályt, a [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) osztály, valamint a [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) osztály.</span><span class="sxs-lookup"><span data-stu-id="9897d-107">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="a188e-107">Egy egyéni gazdagépre, amelynek osztályok származtatást létrehozása a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztályt, a [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) osztály, valamint a [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) osztály.</span><span class="sxs-lookup"><span data-stu-id="a188e-107">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="9897d-108">Egy olyan konzolalkalmazást készít, amelyeknek ezeket gazdagép-osztályokat használja a Windows PowerShell interaktív shell hozhat létre.</span><span class="sxs-lookup"><span data-stu-id="9897d-108">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
+- <span data-ttu-id="a188e-108">Egy olyan konzolalkalmazást készít, amelyeknek ezeket gazdagép-osztályokat használja a Windows PowerShell interaktív shell hozhat létre.</span><span class="sxs-lookup"><span data-stu-id="a188e-108">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
 
-## <a name="example"></a><span data-ttu-id="9897d-109">Példa</span><span class="sxs-lookup"><span data-stu-id="9897d-109">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a188e-109">Példa</span><span class="sxs-lookup"><span data-stu-id="a188e-109">Example</span></span>
 
- <span data-ttu-id="9897d-110">Ebben a példában lehetővé teszi, hogy a felhasználónak meg kell adnia a parancsokat a parancssorba, dolgozza fel azokat a parancsokat, és ezután az eredményeket kiírja.</span><span class="sxs-lookup"><span data-stu-id="9897d-110">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
+ <span data-ttu-id="a188e-110">Ebben a példában lehetővé teszi, hogy a felhasználónak meg kell adnia a parancsokat a parancssorba, dolgozza fel azokat a parancsokat, és ezután az eredményeket kiírja.</span><span class="sxs-lookup"><span data-stu-id="a188e-110">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -317,9 +317,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="9897d-111">Példa</span><span class="sxs-lookup"><span data-stu-id="9897d-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a188e-111">Példa</span><span class="sxs-lookup"><span data-stu-id="a188e-111">Example</span></span>
 
- <span data-ttu-id="9897d-112">A következő kódot a megvalósítása a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="9897d-112">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="9897d-113">Ezen elemek nincs megvalósított kivételt, vagy nem ad vissza semmit.</span><span class="sxs-lookup"><span data-stu-id="9897d-113">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="a188e-112">A következő kódot a megvalósítása a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="a188e-112">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="a188e-113">Ezen elemek nincs megvalósított kivételt, vagy nem ad vissza semmit.</span><span class="sxs-lookup"><span data-stu-id="a188e-113">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -558,9 +558,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="9897d-114">Példa</span><span class="sxs-lookup"><span data-stu-id="9897d-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a188e-114">Példa</span><span class="sxs-lookup"><span data-stu-id="a188e-114">Example</span></span>
 
- <span data-ttu-id="9897d-115">A következő kódot a megvalósítása a [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="9897d-115">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="a188e-115">A következő kódot a megvalósítása a [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="a188e-115">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -963,9 +963,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="9897d-116">Példa</span><span class="sxs-lookup"><span data-stu-id="9897d-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a188e-116">Példa</span><span class="sxs-lookup"><span data-stu-id="a188e-116">Example</span></span>
 
- <span data-ttu-id="9897d-117">A következő kódot a megvalósítása a [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="9897d-117">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="9897d-118">Ezen elemek nincs megvalósított kivételt, vagy nem ad vissza semmit.</span><span class="sxs-lookup"><span data-stu-id="9897d-118">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="a188e-117">A következő kódot a megvalósítása a [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) osztály, amely a gazdaalkalmazást használják.</span><span class="sxs-lookup"><span data-stu-id="a188e-117">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="a188e-118">Ezen elemek nincs megvalósított kivételt, vagy nem ad vissza semmit.</span><span class="sxs-lookup"><span data-stu-id="a188e-118">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1175,10 +1175,10 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="9897d-119">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="9897d-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a188e-119">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="a188e-119">See Also</span></span>
 
- [<span data-ttu-id="9897d-120">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="9897d-120">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="a188e-120">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="a188e-120">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="9897d-121">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="9897d-121">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="a188e-121">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="a188e-121">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="9897d-122">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="9897d-122">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="a188e-122">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="a188e-122">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

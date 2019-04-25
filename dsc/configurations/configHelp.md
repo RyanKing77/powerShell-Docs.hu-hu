@@ -3,25 +3,25 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-konfigurációk súgóinak összeállítása
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080183"
 ---
-# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="55af3-103">DSC-konfigurációk súgóinak összeállítása</span><span class="sxs-lookup"><span data-stu-id="55af3-103">Writing help for DSC configurations</span></span>
+# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="58cac-103">DSC-konfigurációk súgóinak összeállítása</span><span class="sxs-lookup"><span data-stu-id="58cac-103">Writing help for DSC configurations</span></span>
 
-><span data-ttu-id="55af3-104">Érvényes: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="55af3-104">Applies To: Windows PowerShell 5.0</span></span>
+><span data-ttu-id="58cac-104">A következőkre vonatkozik: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="58cac-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="55af3-105">A DSC-konfigurációk Megjegyzés-alapú súgó is használhatja.</span><span class="sxs-lookup"><span data-stu-id="55af3-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="55af3-106">Felhasználók férhetnek hozzá a Súgó hívása a **konfigurációs** a `-?`, vagy a [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="55af3-106">Users can access the help by calling the **Configuration** with `-?`, or by using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.</span></span> <span data-ttu-id="55af3-107">Helyezze el a Megjegyzés-alapú súgó közvetlenül a fenti a `Configuration` kulcsszót.</span><span class="sxs-lookup"><span data-stu-id="55af3-107">Place your Comment-based help directly above the `Configuration` keyword.</span></span>
-<span data-ttu-id="55af3-108">A megjegyzésblokkot, közvetlenül a paraméterdeklarációhoz vagy mindkettő az alábbi példában látható módon fölött a paraméter súgó beágyazott helyezheti.</span><span class="sxs-lookup"><span data-stu-id="55af3-108">You can place parameter help in-line with your comment block, directly above the parameter declaration, or both as in the example below.</span></span>
+<span data-ttu-id="58cac-105">A DSC-konfigurációk Megjegyzés-alapú súgó is használhatja.</span><span class="sxs-lookup"><span data-stu-id="58cac-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="58cac-106">Felhasználók férhetnek hozzá a Súgó hívása a **konfigurációs** a `-?`, vagy a [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="58cac-106">Users can access the help by calling the **Configuration** with `-?`, or by using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.</span></span> <span data-ttu-id="58cac-107">Helyezze el a Megjegyzés-alapú súgó közvetlenül a fenti a `Configuration` kulcsszót.</span><span class="sxs-lookup"><span data-stu-id="58cac-107">Place your Comment-based help directly above the `Configuration` keyword.</span></span>
+<span data-ttu-id="58cac-108">A megjegyzésblokkot, közvetlenül a paraméterdeklarációhoz vagy mindkettő az alábbi példában látható módon fölött a paraméter súgó beágyazott helyezheti.</span><span class="sxs-lookup"><span data-stu-id="58cac-108">You can place parameter help in-line with your comment block, directly above the parameter declaration, or both as in the example below.</span></span>
 
-<span data-ttu-id="55af3-109">További információ a PowerShell Megjegyzés-alapú súgó: [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="55af3-109">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
+<span data-ttu-id="58cac-109">További információ a PowerShell Megjegyzés-alapú súgó: [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="58cac-109">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="55af3-110">PowerShell fejlesztési környezetekben, például a VSCode és az ISE-ben is kódrészletek automatikus beszúrását Megjegyzés blokk sablonok lehetővé teszi.</span><span class="sxs-lookup"><span data-stu-id="55af3-110">PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.</span></span>
+> <span data-ttu-id="58cac-110">PowerShell fejlesztési környezetekben, például a VSCode és az ISE-ben is kódrészletek automatikus beszúrását Megjegyzés blokk sablonok lehetővé teszi.</span><span class="sxs-lookup"><span data-stu-id="58cac-110">PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.</span></span>
 
-<span data-ttu-id="55af3-111">Az alábbi példa bemutatja egy parancsfájlt, amely tartalmazza a konfigurációs és a hozzá tartozó megjegyzés-alapú súgó.</span><span class="sxs-lookup"><span data-stu-id="55af3-111">The following example shows a script that contains a configuration and comment-based help for it.</span></span> <span data-ttu-id="55af3-112">Ez a példa bemutatja egy konfigurációt a paramétereket.</span><span class="sxs-lookup"><span data-stu-id="55af3-112">This example shows a Configuration with parameters.</span></span> <span data-ttu-id="55af3-113">A konfigurációk a paraméterek használatával kapcsolatos további tudnivalókért lásd: [paraméterek hozzáadása a konfigurációk](add-parameters-to-a-configuration.md).</span><span class="sxs-lookup"><span data-stu-id="55af3-113">To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-a-configuration.md).</span></span>
+<span data-ttu-id="58cac-111">Az alábbi példa bemutatja egy parancsfájlt, amely tartalmazza a konfigurációs és a hozzá tartozó megjegyzés-alapú súgó.</span><span class="sxs-lookup"><span data-stu-id="58cac-111">The following example shows a script that contains a configuration and comment-based help for it.</span></span> <span data-ttu-id="58cac-112">Ez a példa bemutatja egy konfigurációt a paramétereket.</span><span class="sxs-lookup"><span data-stu-id="58cac-112">This example shows a Configuration with parameters.</span></span> <span data-ttu-id="58cac-113">A konfigurációk a paraméterek használatával kapcsolatos további tudnivalókért lásd: [paraméterek hozzáadása a konfigurációk](add-parameters-to-a-configuration.md).</span><span class="sxs-lookup"><span data-stu-id="58cac-113">To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-a-configuration.md).</span></span>
 
 ```powershell
 <#
@@ -75,9 +75,9 @@ configuration HelpSample1
 }
 ```
 
-## <a name="viewing-configuration-help"></a><span data-ttu-id="55af3-114">Konfigurációs súgó megtekintése</span><span class="sxs-lookup"><span data-stu-id="55af3-114">Viewing configuration help</span></span>
+## <a name="viewing-configuration-help"></a><span data-ttu-id="58cac-114">Konfigurációs súgó megtekintése</span><span class="sxs-lookup"><span data-stu-id="58cac-114">Viewing configuration help</span></span>
 
-<span data-ttu-id="55af3-115">Egy konfigurációs súgójának megtekintéséhez használja a `Get-Help` parancsmag és a függvény vagy a típus neve, amelyre a függvény neve követ `-?`.</span><span class="sxs-lookup"><span data-stu-id="55af3-115">To view the help for a configuration, use the `Get-Help` cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="55af3-116">Az alábbiakban található a korábbi konfiguráció átadott kimenete `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="55af3-116">The following is the output of the previous Configuration passed to `Get-Help`.</span></span>
+<span data-ttu-id="58cac-115">Egy konfigurációs súgójának megtekintéséhez használja a `Get-Help` parancsmag és a függvény vagy a típus neve, amelyre a függvény neve követ `-?`.</span><span class="sxs-lookup"><span data-stu-id="58cac-115">To view the help for a configuration, use the `Get-Help` cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="58cac-116">Az alábbiakban található a korábbi konfiguráció átadott kimenete `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="58cac-116">The following is the output of the previous Configuration passed to `Get-Help`.</span></span>
 
 ```powershell
 Get-Help HelpSample1 -Detailed
@@ -157,10 +157,10 @@ REMARKS
 ```
 
 > [!NOTE]
-> <span data-ttu-id="55af3-117">Szintaxis mezőket és a paraméter-attribútumok automatikusan jönnek létre az Ön számára PowerShell.</span><span class="sxs-lookup"><span data-stu-id="55af3-117">Syntax fields and parameter attributes are automatically generated for you by PowerShell.</span></span>
+> <span data-ttu-id="58cac-117">Szintaxis mezőket és a paraméter-attribútumok automatikusan jönnek létre az Ön számára PowerShell.</span><span class="sxs-lookup"><span data-stu-id="58cac-117">Syntax fields and parameter attributes are automatically generated for you by PowerShell.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="55af3-118">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="55af3-118">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="58cac-118">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="58cac-118">See Also</span></span>
 
-- [<span data-ttu-id="55af3-119">DSC-konfigurációk</span><span class="sxs-lookup"><span data-stu-id="55af3-119">DSC Configurations</span></span>](configurations.md)
-- [<span data-ttu-id="55af3-120">Írási, fordítsa le és a konfiguráció alkalmazása</span><span class="sxs-lookup"><span data-stu-id="55af3-120">Write, Compile, and Apply a Configuration</span></span>](write-compile-apply-configuration.md)
-- [<span data-ttu-id="55af3-121">A konfigurációs paraméterek hozzáadása</span><span class="sxs-lookup"><span data-stu-id="55af3-121">Add Parameters to a Configuration</span></span>](add-parameters-to-a-configuration.md)
+- [<span data-ttu-id="58cac-119">DSC-konfigurációk</span><span class="sxs-lookup"><span data-stu-id="58cac-119">DSC Configurations</span></span>](configurations.md)
+- [<span data-ttu-id="58cac-120">Írási, fordítsa le és a konfiguráció alkalmazása</span><span class="sxs-lookup"><span data-stu-id="58cac-120">Write, Compile, and Apply a Configuration</span></span>](write-compile-apply-configuration.md)
+- [<span data-ttu-id="58cac-121">A konfigurációs paraméterek hozzáadása</span><span class="sxs-lookup"><span data-stu-id="58cac-121">Add Parameters to a Configuration</span></span>](add-parameters-to-a-configuration.md)

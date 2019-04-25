@@ -2,15 +2,15 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: e61f59f8f7634853c9f6e0d3923939543ff04f20
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085660"
 ---
-# <a name="information-stream"></a><span data-ttu-id="d92c3-102">Információfolyam</span><span class="sxs-lookup"><span data-stu-id="d92c3-102">Information Stream</span></span>
+# <a name="information-stream"></a><span data-ttu-id="e5eef-102">Információfolyam</span><span class="sxs-lookup"><span data-stu-id="e5eef-102">Information Stream</span></span>
 
-<span data-ttu-id="d92c3-103">Egy új strukturált információfolyam most már használható parancsfájl és a gazdagép közötti strukturált adatok továbbítására.</span><span class="sxs-lookup"><span data-stu-id="d92c3-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="d92c3-104">**Write-Host** is frissítve lett, hogy gridre bocsáthatja ki az adatfolyamot, most rögzítése és csend azt a kimenetet.</span><span class="sxs-lookup"><span data-stu-id="d92c3-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="d92c3-105">Az új **írási-információk** parancsmag (és egy megfelelő WriteInformation API-val) együttes **- InformationVariable** és **- InformationAction** általános paraméterek lehetővé teszi a nagyobb rugalmasságot és képességet.</span><span class="sxs-lookup"><span data-stu-id="d92c3-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
+<span data-ttu-id="e5eef-103">Egy új strukturált információfolyam most már használható parancsfájl és a gazdagép közötti strukturált adatok továbbítására.</span><span class="sxs-lookup"><span data-stu-id="e5eef-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="e5eef-104">**Write-Host** is frissítve lett, hogy gridre bocsáthatja ki az adatfolyamot, most rögzítése és csend azt a kimenetet.</span><span class="sxs-lookup"><span data-stu-id="e5eef-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="e5eef-105">Az új **írási-információk** parancsmag (és egy megfelelő WriteInformation API-val) együttes **- InformationVariable** és **- InformationAction** általános paraméterek lehetővé teszi a nagyobb rugalmasságot és képességet.</span><span class="sxs-lookup"><span data-stu-id="e5eef-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script

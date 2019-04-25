@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 42c40c7f-1ee7-4021-950c-2e013c8f2a4a
 caps.latest.revision: 4
 ms.openlocfilehash: 606a2ee4e70d303bf1b1d69b7523eb8649f9be0c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082957"
 ---
-# <a name="creating-multiple-runspaces"></a><span data-ttu-id="f3279-102">Több futási tér létrehozása</span><span class="sxs-lookup"><span data-stu-id="f3279-102">Creating multiple runspaces</span></span>
+# <a name="creating-multiple-runspaces"></a><span data-ttu-id="ebc49-102">Több futási tér létrehozása</span><span class="sxs-lookup"><span data-stu-id="ebc49-102">Creating multiple runspaces</span></span>
 
-<span data-ttu-id="f3279-103">Ha nagy számú futási terek hoz létre, akkor érdemes egy futási térben készletet hoz létre.</span><span class="sxs-lookup"><span data-stu-id="f3279-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="f3279-104">Használatával egy [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) objektum ahelyett, hogy az azonos tulajdonságokkal rendelkező nagy számú egyéni futási terek létrehozása javíthatja a teljesítményt.</span><span class="sxs-lookup"><span data-stu-id="f3279-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
+<span data-ttu-id="ebc49-103">Ha nagy számú futási terek hoz létre, akkor érdemes egy futási térben készletet hoz létre.</span><span class="sxs-lookup"><span data-stu-id="ebc49-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="ebc49-104">Használatával egy [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) objektum ahelyett, hogy az azonos tulajdonságokkal rendelkező nagy számú egyéni futási terek létrehozása javíthatja a teljesítményt.</span><span class="sxs-lookup"><span data-stu-id="ebc49-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
 
-## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="f3279-105">Létrehozásához, és a futási térben tárolókészletet használja.</span><span class="sxs-lookup"><span data-stu-id="f3279-105">Creating and using a runspace pool.</span></span>
+## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="ebc49-105">Létrehozásához, és a futási térben tárolókészletet használja.</span><span class="sxs-lookup"><span data-stu-id="ebc49-105">Creating and using a runspace pool.</span></span>
 
- <span data-ttu-id="f3279-106">Az alábbi példa bemutatja a futási térben készlet létrehozása és a egy parancs futtatása egy futási teret a készlet aszinkron módon.</span><span class="sxs-lookup"><span data-stu-id="f3279-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
+ <span data-ttu-id="ebc49-106">Az alábbi példa bemutatja a futási térben készlet létrehozása és a egy parancs futtatása egy futási teret a készlet aszinkron módon.</span><span class="sxs-lookup"><span data-stu-id="ebc49-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
 
 ```csharp
 namespace HostRunspacePool
@@ -79,6 +79,6 @@ namespace HostRunspacePool
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="f3279-107">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="f3279-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ebc49-107">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="ebc49-107">See Also</span></span>
 
- [<span data-ttu-id="f3279-108">Egy InitialSessionState létrehozása</span><span class="sxs-lookup"><span data-stu-id="f3279-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="ebc49-108">Egy InitialSessionState létrehozása</span><span class="sxs-lookup"><span data-stu-id="ebc49-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)

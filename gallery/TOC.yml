@@ -1,4 +1,3 @@
-items:
 - name: Áttekintés
   href: overview.md
 - name: A PowerShellGet telepítése
@@ -7,95 +6,89 @@ items:
   href: getting-started.md
 - name: Útmutató
   items:
-  - name: Csomagok keresése a katalógusban
-    items:
-    - name: Csomagok keresése
-      href: how-to/finding-packages/search-syntax.md
-    - name: Keresés kompatibilitás szerint
-      href: how-to/finding-packages/searching-by-compatibility.md
-    - name: Keresési találatok szűrése
-      href: how-to/finding-packages/filtering-packages.md
-  - name: Közzététel a katalógusban
-    items:
-    - name: Csomagok létrehozása és közzététele
-      href: how-to/publishing-packages/publishing-a-package.md
-    - name: PowerShell-galériabeli fiók létrehozása
-      href: how-to/publishing-packages/creating-an-account.md
-    - name: Csomagok eltávolítása a listáról
-      href: how-to/publishing-packages/unlisting-packages.md
-    - name: Csomagok törlése
-      href: how-to/publishing-packages/deleting-packages.md
-    - name: A csomagok tulajdonosának kezelése
-      href: how-to/publishing-packages/managing-package-owners.md
-  - name: A csomagok használata
-    items:
-    - name: Fájllistanézet
-      href: how-to/working-with-packages/filelist-view.md
-    - name: Üzembe helyezés az Azure Automation szolgáltatásban
-      href: how-to/working-with-packages/deploy-to-azure-automation.md
-    - name: Csomagok manuális letöltése
-      href: how-to/working-with-packages/manual-download.md
-    - name: Licencfeltételek elfogadását megkövetelő csomagok
-      href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-    - name: Kapcsolatfelvétel a csomagok tulajdonosával
-      href: how-to/working-with-packages/contacting-package-owners.md
-    - name: Visszajelzés küldése a közösségi médiában vagy megjegyzésekkel
-      href: how-to/working-with-packages/social-media-feedback.md
-  - name: Fiókprofil kezelése
-    items:
-    - name: PowerShell-galéria fiókjának beállításai
-      href: how-to/managing-profile/managing-account.md
-    - name: API-kulcsok kezelése
-      href: how-to/managing-profile/creating-apikeys.md
-  - name: Helyi PowerShellGet-tárházak használata
-    href: how-to/working-with-local-psrepositories.md
+    - name: Csomagok keresése a katalógusban
+      items:
+        - name: Csomagok keresése
+          href: how-to/finding-packages/search-syntax.md
+        - name: Keresés kompatibilitás szerint
+          href: how-to/finding-packages/searching-by-compatibility.md
+        - name: Keresési találatok szűrése
+          href: how-to/finding-packages/filtering-packages.md
+    - name: Közzététel a katalógusban
+      items:
+        - name: Csomagok létrehozása és közzététele
+          href: how-to/publishing-packages/publishing-a-package.md
+        - name: PowerShell-galériabeli fiók létrehozása
+          href: how-to/publishing-packages/creating-an-account.md
+        - name: Csomagok eltávolítása a listáról
+          href: how-to/publishing-packages/unlisting-packages.md
+        - name: Csomagok törlése
+          href: how-to/publishing-packages/deleting-packages.md
+        - name: A csomagok tulajdonosának kezelése
+          href: how-to/publishing-packages/managing-package-owners.md
+    - name: A csomagok használata
+      items:
+        - name: Fájllistanézet
+          href: how-to/working-with-packages/filelist-view.md
+        - name: Üzembe helyezés az Azure Automation szolgáltatásban
+          href: how-to/working-with-packages/deploy-to-azure-automation.md
+        - name: Csomagok manuális letöltése
+          href: how-to/working-with-packages/manual-download.md
+        - name: Licencfeltételek elfogadását megkövetelő csomagok
+          href: how-to/working-with-packages/packages-that-require-license-acceptance.md
+        - name: Kapcsolatfelvétel a csomagok tulajdonosával
+          href: how-to/working-with-packages/contacting-package-owners.md
+        - name: Visszajelzés küldése a közösségi médiában vagy megjegyzésekkel
+          href: how-to/working-with-packages/social-media-feedback.md
+    - name: Fiókprofil kezelése
+      items:
+        - name: PowerShell-galéria fiókjának beállításai
+          href: how-to/managing-profile/managing-account.md
+        - name: API-kulcsok kezelése
+          href: how-to/managing-profile/creating-apikeys.md
+    - name: Helyi PowerShellGet-tárházak használata
+      href: how-to/working-with-local-psrepositories.md
 - name: Fogalmak
   items:
-  - name: A közzététellel kapcsolatos irányelvek és gyakorlati tanácsok
-    href: concepts/publishing-guidelines.md
-  - name: Csomagok jegyzéke és a katalógus felhasználói felülete
-    href: concepts/package-manifest-affecting-ui.md
-  - name: Meghatározott PSEdition kiadások használatának megkövetelése
-    items:
-    - name: PSEdition-támogatást biztosító szkriptek írása
-      href: concepts/script-psedition-support.md
-    - name: PSEdition-támogatást biztosító modulok írása
-      href: concepts/module-psedition-support.md
-  - name: Licencfeltételek elfogadásának megkövetelése
-    items:
-    - name: Licencfeltételek elfogadásának megkövetelése szkriptek esetén
-      href: concepts/script-license-acceptance.md
-    - name: Licencfeltételek elfogadásának megkövetelése modulok esetén
-      href: concepts/module-license-acceptance.md
-  - name: Csomagok definiálása előzetes kiadásúként
-    items:
-    - name: Modulok definiálása előzetes kiadásúként
-      href: concepts/module-prerelease-support.md
-    - name: Szkriptek definiálása előzetes kiadásúként
-      href: concepts/script-prerelease-support.md
-  - name: A PSScriptAnalyzer szabályprofil
-    href: concepts/scriptanalyzer-rule-profile.md
+    - name: A közzététellel kapcsolatos irányelvek és gyakorlati tanácsok
+      href: concepts/publishing-guidelines.md
+    - name: Csomagok jegyzéke és a katalógus felhasználói felülete
+      href: concepts/package-manifest-affecting-ui.md
+    - name: Meghatározott PSEdition kiadások használatának megkövetelése
+      items:
+        - name: PSEdition-támogatást biztosító szkriptek írása
+          href: concepts/script-psedition-support.md
+        - name: PSEdition-támogatást biztosító modulok írása
+          href: concepts/module-psedition-support.md
+    - name: Licencfeltételek elfogadásának megkövetelése
+      items:
+        - name: Licencfeltételek elfogadásának megkövetelése szkriptek esetén
+          href: concepts/script-license-acceptance.md
+        - name: Licencfeltételek elfogadásának megkövetelése modulok esetén
+          href: concepts/module-license-acceptance.md
+    - name: Csomagok definiálása előzetes kiadásúként
+      items:
+        - name: Modulok definiálása előzetes kiadásúként
+          href: concepts/module-prerelease-support.md
+        - name: Szkriptek definiálása előzetes kiadásúként
+          href: concepts/script-prerelease-support.md
+    - name: A PSScriptAnalyzer szabályprofil
+      href: concepts/scriptanalyzer-rule-profile.md
 - name: Támogatás kérése
   items:
-  - name: Visszaélés jelentése
-    href: how-to/getting-support/report-abuse.md
-  - name: A jogviták rendezése
-    href: how-to/getting-support/dispute-resolution.md
-  - name: Rendszergazdák felkeresése
-    href: how-to/getting-support/contacting-administrators.md
-  - name: Hibaelhárítás
-    href: how-to/getting-support/troubleshooting-cmdlets.md
-  - name: A NuGet-szolgáltató és a NuGet.exe rendszerindítása
-    href: how-to/getting-support/bootstrapping-nuget.md
-  - name: GDPR-megfelelőség
-    href: how-to/getting-support/gdpr-dsr-policy.md
+    - name: Visszaélés jelentése
+      href: how-to/getting-support/report-abuse.md
+    - name: A jogviták rendezése
+      href: how-to/getting-support/dispute-resolution.md
+    - name: Rendszergazdák felkeresése
+      href: how-to/getting-support/contacting-administrators.md
+    - name: Hibaelhárítás
+      href: how-to/getting-support/troubleshooting-cmdlets.md
+    - name: A NuGet-szolgáltató és a NuGet.exe rendszerindítása
+      href: how-to/getting-support/bootstrapping-nuget.md
+    - name: GDPR-megfelelőség
+      href: how-to/getting-support/gdpr-dsr-policy.md
 - name: Katalógus – gyakori kérdések
   href: faqs.md
 - name: PowerShellGet-parancsmagok
-  href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 8b3d2d121c167f3677d3691c8bc481644b95b204
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: HT
-ms.contentlocale: hu-HU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655310"
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'

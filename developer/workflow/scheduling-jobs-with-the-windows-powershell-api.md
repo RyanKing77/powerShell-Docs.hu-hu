@@ -9,23 +9,23 @@ ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
 ms.openlocfilehash: 8e1d2feff0665f169966f7d5e99540088e66bdfb
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080356"
 ---
-# <a name="scheduling-jobs-with-the-powershell-api"></a><span data-ttu-id="aedbc-102">A PowerShell API-val feladatok ütemezése</span><span class="sxs-lookup"><span data-stu-id="aedbc-102">Scheduling jobs with the PowerShell API</span></span>
+# <a name="scheduling-jobs-with-the-powershell-api"></a><span data-ttu-id="31398-102">A PowerShell API-val feladatok ütemezése</span><span class="sxs-lookup"><span data-stu-id="31398-102">Scheduling jobs with the PowerShell API</span></span>
 
-<span data-ttu-id="aedbc-103">Az objektumok által elérhetővé tett is használhatja a **Microsoft.PowerShell.ScheduledJob** névtér, tegye a következőket:</span><span class="sxs-lookup"><span data-stu-id="aedbc-103">You can use the objects exposed by the **Microsoft.PowerShell.ScheduledJob** namespace to do the following:</span></span>
+<span data-ttu-id="31398-103">Az objektumok által elérhetővé tett is használhatja a **Microsoft.PowerShell.ScheduledJob** névtér, tegye a következőket:</span><span class="sxs-lookup"><span data-stu-id="31398-103">You can use the objects exposed by the **Microsoft.PowerShell.ScheduledJob** namespace to do the following:</span></span>
 
-- <span data-ttu-id="aedbc-104">Hozzon létre egy ütemezett feladatot.</span><span class="sxs-lookup"><span data-stu-id="aedbc-104">Create a scheduled job.</span></span>
-- <span data-ttu-id="aedbc-105">Adja meg a feladat futtatásakor.</span><span class="sxs-lookup"><span data-stu-id="aedbc-105">Define when the job runs.</span></span>
-- <span data-ttu-id="aedbc-106">Tudnivalók a befejezett feladat eredményeinek beolvasása.</span><span class="sxs-lookup"><span data-stu-id="aedbc-106">Get results about the completed job.</span></span>
+- <span data-ttu-id="31398-104">Hozzon létre egy ütemezett feladatot.</span><span class="sxs-lookup"><span data-stu-id="31398-104">Create a scheduled job.</span></span>
+- <span data-ttu-id="31398-105">Adja meg a feladat futtatásakor.</span><span class="sxs-lookup"><span data-stu-id="31398-105">Define when the job runs.</span></span>
+- <span data-ttu-id="31398-106">Tudnivalók a befejezett feladat eredményeinek beolvasása.</span><span class="sxs-lookup"><span data-stu-id="31398-106">Get results about the completed job.</span></span>
 
-## <a name="triggering-the-job"></a><span data-ttu-id="aedbc-107">A feladat elindítása</span><span class="sxs-lookup"><span data-stu-id="aedbc-107">Triggering the job</span></span>
+## <a name="triggering-the-job"></a><span data-ttu-id="31398-107">A feladat elindítása</span><span class="sxs-lookup"><span data-stu-id="31398-107">Triggering the job</span></span>
 
-<span data-ttu-id="aedbc-108">Ütemezett feladatok létrehozásának első lépése van adja meg, amikor a feladatnak futnia kell.</span><span class="sxs-lookup"><span data-stu-id="aedbc-108">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="aedbc-109">Ehhez létrehozása és konfigurálása egy **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** objektum.</span><span class="sxs-lookup"><span data-stu-id="aedbc-109">Do this by creating and configuring a **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** object.</span></span> <span data-ttu-id="aedbc-110">Az alábbi kód létrehoz egy eseményindítót, amely úgy ütemezi a feladatot egy alkalommal a jövőben 20 másodperc.</span><span class="sxs-lookup"><span data-stu-id="aedbc-110">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
+<span data-ttu-id="31398-108">Ütemezett feladatok létrehozásának első lépése van adja meg, amikor a feladatnak futnia kell.</span><span class="sxs-lookup"><span data-stu-id="31398-108">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="31398-109">Ehhez létrehozása és konfigurálása egy **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** objektum.</span><span class="sxs-lookup"><span data-stu-id="31398-109">Do this by creating and configuring a **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** object.</span></span> <span data-ttu-id="31398-110">Az alábbi kód létrehoz egy eseményindítót, amely úgy ütemezi a feladatot egy alkalommal a jövőben 20 másodperc.</span><span class="sxs-lookup"><span data-stu-id="31398-110">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -38,20 +38,20 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ```
 
-## <a name="defining-the-job"></a><span data-ttu-id="aedbc-111">A feladat meghatározása</span><span class="sxs-lookup"><span data-stu-id="aedbc-111">Defining the job</span></span>
+## <a name="defining-the-job"></a><span data-ttu-id="31398-111">A feladat meghatározása</span><span class="sxs-lookup"><span data-stu-id="31398-111">Defining the job</span></span>
 
-<span data-ttu-id="aedbc-112">Megadhat egy PowerShell-feladat egy paraméter szótár létrehozásával.</span><span class="sxs-lookup"><span data-stu-id="aedbc-112">You define a PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="aedbc-113">Az alábbi paramétereket támogatja:</span><span class="sxs-lookup"><span data-stu-id="aedbc-113">The following parameters are supported:</span></span>
+<span data-ttu-id="31398-112">Megadhat egy PowerShell-feladat egy paraméter szótár létrehozásával.</span><span class="sxs-lookup"><span data-stu-id="31398-112">You define a PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="31398-113">Az alábbi paramétereket támogatja:</span><span class="sxs-lookup"><span data-stu-id="31398-113">The following parameters are supported:</span></span>
 
-|<span data-ttu-id="aedbc-114">Paraméter neve</span><span class="sxs-lookup"><span data-stu-id="aedbc-114">Parameter Name</span></span>|<span data-ttu-id="aedbc-115">Leírás</span><span class="sxs-lookup"><span data-stu-id="aedbc-115">Description</span></span>|
+|<span data-ttu-id="31398-114">Paraméter neve</span><span class="sxs-lookup"><span data-stu-id="31398-114">Parameter Name</span></span>|<span data-ttu-id="31398-115">Leírás</span><span class="sxs-lookup"><span data-stu-id="31398-115">Description</span></span>|
 |--------------------|-----------------|
-|<span data-ttu-id="aedbc-116">**Name (Név)**</span><span class="sxs-lookup"><span data-stu-id="aedbc-116">**Name**</span></span>|<span data-ttu-id="aedbc-117">A feladat neve.</span><span class="sxs-lookup"><span data-stu-id="aedbc-117">The name of the job.</span></span>|
-|<span data-ttu-id="aedbc-118">**ScriptBock**</span><span class="sxs-lookup"><span data-stu-id="aedbc-118">**ScriptBock**</span></span>|<span data-ttu-id="aedbc-119">PowerShell parancsprogram-blokkot, amely meghatározza, hogy a feladat célja.</span><span class="sxs-lookup"><span data-stu-id="aedbc-119">A PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="aedbc-120">**FilePath**</span><span class="sxs-lookup"><span data-stu-id="aedbc-120">**FilePath**</span></span>|<span data-ttu-id="aedbc-121">Adja meg a feladat célja a PowerShell parancsprogram-blokkot tartalmazó fájl elérési útja.</span><span class="sxs-lookup"><span data-stu-id="aedbc-121">Path to a file that contains a PowerShell script block to specify what the job does.</span></span>|
-|<span data-ttu-id="aedbc-122">**InitializationScript**</span><span class="sxs-lookup"><span data-stu-id="aedbc-122">**InitializationScript**</span></span>|<span data-ttu-id="aedbc-123">PowerShell parancsprogram-blokkot, inicializálja a feladatot.</span><span class="sxs-lookup"><span data-stu-id="aedbc-123">A PowerShell script block that initializes the job.</span></span>|
-|<span data-ttu-id="aedbc-124">**ArgumentList**</span><span class="sxs-lookup"><span data-stu-id="aedbc-124">**ArgumentList**</span></span>|<span data-ttu-id="aedbc-125">Adja meg, ez a feladat-objektumok tömbje.</span><span class="sxs-lookup"><span data-stu-id="aedbc-125">An array of objects that specify arguments that the job takes.</span></span>|
-|<span data-ttu-id="aedbc-126">**RunAs32**</span><span class="sxs-lookup"><span data-stu-id="aedbc-126">**RunAs32**</span></span>|<span data-ttu-id="aedbc-127">Logikai érték, amely megadja, hogy a feladat futtatása egy 32 bites folyamatban.</span><span class="sxs-lookup"><span data-stu-id="aedbc-127">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
+|<span data-ttu-id="31398-116">**Name (Név)**</span><span class="sxs-lookup"><span data-stu-id="31398-116">**Name**</span></span>|<span data-ttu-id="31398-117">A feladat neve.</span><span class="sxs-lookup"><span data-stu-id="31398-117">The name of the job.</span></span>|
+|<span data-ttu-id="31398-118">**ScriptBock**</span><span class="sxs-lookup"><span data-stu-id="31398-118">**ScriptBock**</span></span>|<span data-ttu-id="31398-119">PowerShell parancsprogram-blokkot, amely meghatározza, hogy a feladat célja.</span><span class="sxs-lookup"><span data-stu-id="31398-119">A PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="31398-120">**FilePath**</span><span class="sxs-lookup"><span data-stu-id="31398-120">**FilePath**</span></span>|<span data-ttu-id="31398-121">Adja meg a feladat célja a PowerShell parancsprogram-blokkot tartalmazó fájl elérési útja.</span><span class="sxs-lookup"><span data-stu-id="31398-121">Path to a file that contains a PowerShell script block to specify what the job does.</span></span>|
+|<span data-ttu-id="31398-122">**InitializationScript**</span><span class="sxs-lookup"><span data-stu-id="31398-122">**InitializationScript**</span></span>|<span data-ttu-id="31398-123">PowerShell parancsprogram-blokkot, inicializálja a feladatot.</span><span class="sxs-lookup"><span data-stu-id="31398-123">A PowerShell script block that initializes the job.</span></span>|
+|<span data-ttu-id="31398-124">**ArgumentList**</span><span class="sxs-lookup"><span data-stu-id="31398-124">**ArgumentList**</span></span>|<span data-ttu-id="31398-125">Adja meg, ez a feladat-objektumok tömbje.</span><span class="sxs-lookup"><span data-stu-id="31398-125">An array of objects that specify arguments that the job takes.</span></span>|
+|<span data-ttu-id="31398-126">**RunAs32**</span><span class="sxs-lookup"><span data-stu-id="31398-126">**RunAs32**</span></span>|<span data-ttu-id="31398-127">Logikai érték, amely megadja, hogy a feladat futtatása egy 32 bites folyamatban.</span><span class="sxs-lookup"><span data-stu-id="31398-127">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
 
-<span data-ttu-id="aedbc-128">Az alábbi kód létrehoz egy paraméter szótárobjektum, és beállítja a **neve** és **ScriptBlock** paramétereket.</span><span class="sxs-lookup"><span data-stu-id="aedbc-128">The following code creates a parameter dictionary object and sets the **Name** and **ScriptBlock** parameters.</span></span>
+<span data-ttu-id="31398-128">Az alábbi kód létrehoz egy paraméter szótárobjektum, és beállítja a **neve** és **ScriptBlock** paramétereket.</span><span class="sxs-lookup"><span data-stu-id="31398-128">The following code creates a parameter dictionary object and sets the **Name** and **ScriptBlock** parameters.</span></span>
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -64,9 +64,9 @@ string schedJobDefName = "MySampleSchedJob";
 
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="aedbc-129">A meghívási és a feladat definíciója-objektumok létrehozása</span><span class="sxs-lookup"><span data-stu-id="aedbc-129">Creating the invocation and job definition objects</span></span>
+## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="31398-129">A meghívási és a feladat definíciója-objektumok létrehozása</span><span class="sxs-lookup"><span data-stu-id="31398-129">Creating the invocation and job definition objects</span></span>
 
-<span data-ttu-id="aedbc-130">Ezután létre fog hozni `ScheduledJobInvocationInfo` és `ScheduledJobDefinition` objektumok a feladat futtatásához a következő példában látható módon:</span><span class="sxs-lookup"><span data-stu-id="aedbc-130">You then create `ScheduledJobInvocationInfo` and `ScheduledJobDefinition` objects to run the job as shown in the following example:</span></span>
+<span data-ttu-id="31398-130">Ezután létre fog hozni `ScheduledJobInvocationInfo` és `ScheduledJobDefinition` objektumok a feladat futtatásához a következő példában látható módon:</span><span class="sxs-lookup"><span data-stu-id="31398-130">You then create `ScheduledJobInvocationInfo` and `ScheduledJobDefinition` objects to run the job as shown in the following example:</span></span>
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -82,9 +82,9 @@ ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
 
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="aedbc-131">A feladat Regisztrálás a Feladatütemező</span><span class="sxs-lookup"><span data-stu-id="aedbc-131">Registering the job with the task scheduler</span></span>
+## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="31398-131">A feladat Regisztrálás a Feladatütemező</span><span class="sxs-lookup"><span data-stu-id="31398-131">Registering the job with the task scheduler</span></span>
 
-<span data-ttu-id="aedbc-132">A következő kódot a feladatban regisztrál a [Windows Feladatütemező](http://go.microsoft.com/fwlink/?LinkId=251817).</span><span class="sxs-lookup"><span data-stu-id="aedbc-132">The following code registers the job with the [Windows Task Scheduler](http://go.microsoft.com/fwlink/?LinkId=251817).</span></span>
+<span data-ttu-id="31398-132">A következő kódot a feladatban regisztrál a [Windows Feladatütemező](http://go.microsoft.com/fwlink/?LinkId=251817).</span><span class="sxs-lookup"><span data-stu-id="31398-132">The following code registers the job with the [Windows Task Scheduler](http://go.microsoft.com/fwlink/?LinkId=251817).</span></span>
 
 ```csharp
 schedJobDefinition.Register();
@@ -93,9 +93,9 @@ schedJobDefinition.Register();
 
 ```
 
-## <a name="complete-code-example"></a><span data-ttu-id="aedbc-133">Példa teljes kódját</span><span class="sxs-lookup"><span data-stu-id="aedbc-133">Complete code Example</span></span>
+## <a name="complete-code-example"></a><span data-ttu-id="31398-133">Példa teljes kódját</span><span class="sxs-lookup"><span data-stu-id="31398-133">Complete code Example</span></span>
 
-<span data-ttu-id="aedbc-134">Az alábbiakban látható a teljes kód példa, amelyről az előző kódrészletek származnak.</span><span class="sxs-lookup"><span data-stu-id="aedbc-134">The following is the complete code example from which the previous snippets were taken.</span></span>
+<span data-ttu-id="31398-134">Az alábbiakban látható a teljes kód példa, amelyről az előző kódrészletek származnak.</span><span class="sxs-lookup"><span data-stu-id="31398-134">The following is the complete code example from which the previous snippets were taken.</span></span>
 
 ```csharp
 using System;

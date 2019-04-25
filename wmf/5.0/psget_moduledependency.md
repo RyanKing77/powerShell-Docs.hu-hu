@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: 0d3a87f3a9c3409656ea7f7263723436e1f9d48f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688916"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057362"
 ---
-# <a name="installation-of-module-dependencies"></a><span data-ttu-id="616b6-102">Modulfüggőségek telepítése</span><span class="sxs-lookup"><span data-stu-id="616b6-102">Installation of Module Dependencies</span></span>
+# <a name="installation-of-module-dependencies"></a><span data-ttu-id="0f2c2-102">Modulfüggőségek telepítése</span><span class="sxs-lookup"><span data-stu-id="0f2c2-102">Installation of Module Dependencies</span></span>
 
-<span data-ttu-id="616b6-103">A rendszer mostantól egymás mellett (SxS) modul verziója támogatja az Install-Module Update-modult, és a Publish-Module-parancsmagok a Windows PowerShell 5.0-s vagy újabb rendszerű.</span><span class="sxs-lookup"><span data-stu-id="616b6-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
-<span data-ttu-id="616b6-104">Is azt hozzáadta a - RequiredVersion paraméterrel adja meg a verziót, hogy közzé kell tenni a Publish-Module parancsmaggal.</span><span class="sxs-lookup"><span data-stu-id="616b6-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="616b6-105">Az elérési út paraméter mostantól támogatja a modul alapútvonal a mappát.</span><span class="sxs-lookup"><span data-stu-id="616b6-105">The Path parameter now supports the module base path with the version folder.</span></span>
+<span data-ttu-id="0f2c2-103">A rendszer mostantól egymás mellett (SxS) modul verziója támogatja az Install-Module Update-modult, és a Publish-Module-parancsmagok a Windows PowerShell 5.0-s vagy újabb rendszerű.</span><span class="sxs-lookup"><span data-stu-id="0f2c2-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
+<span data-ttu-id="0f2c2-104">Is azt hozzáadta a - RequiredVersion paraméterrel adja meg a verziót, hogy közzé kell tenni a Publish-Module parancsmaggal.</span><span class="sxs-lookup"><span data-stu-id="0f2c2-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="0f2c2-105">Az elérési út paraméter mostantól támogatja a modul alapútvonal a mappát.</span><span class="sxs-lookup"><span data-stu-id="0f2c2-105">The Path parameter now supports the module base path with the version folder.</span></span>
 
-<span data-ttu-id="616b6-106">**Install-Module példák:**</span><span class="sxs-lookup"><span data-stu-id="616b6-106">**Install-Module examples:**</span></span>
+<span data-ttu-id="0f2c2-106">**Install-Module példák:**</span><span class="sxs-lookup"><span data-stu-id="0f2c2-106">**Install-Module examples:**</span></span>
 ```powershell
 PS C:\windows\system32> Install-Module -Name ContosoServer -RequiredVersion 1.0 -Repository MSPSGallery
 
@@ -37,7 +37,7 @@ Version Name          Repository  Description
 2.0     ContosoServer MSPSGallery ContosoServer
 ```
 
-<span data-ttu-id="616b6-107">**A modul telepítése függőségekkel:**</span><span class="sxs-lookup"><span data-stu-id="616b6-107">**Install a module with dependencies:**</span></span>
+<span data-ttu-id="0f2c2-107">**A modul telepítése függőségekkel:**</span><span class="sxs-lookup"><span data-stu-id="0f2c2-107">**Install a module with dependencies:**</span></span>
 ```powershell
 PS C:\windows\system32> Get-InstalledModule
 PS C:\windows\system32> Find-Module -Repository GalleryINT -Name ModuleWithDependencies2 -IncludeDependencies
@@ -79,7 +79,7 @@ ModuleType Version Name                    ExportedCommands
 Manifest   2.0     ModuleWithDependencies2 {Get-NestedRequiredModule1, Get-NestedRequiredModule2, Get-NestedRequiredModule3, Get-NestedRequiredModule4...}
 ```
 
-<span data-ttu-id="616b6-108">**ModuleWithDependencies2 a modul tartalmának jegyzékfájl:**</span><span class="sxs-lookup"><span data-stu-id="616b6-108">**Contents of ModuleWithDependencies2 module manifest file:**</span></span>
+<span data-ttu-id="0f2c2-108">**ModuleWithDependencies2 a modul tartalmának jegyzékfájl:**</span><span class="sxs-lookup"><span data-stu-id="0f2c2-108">**Contents of ModuleWithDependencies2 module manifest file:**</span></span>
 ```powershell
 @{
 # Version number of this module.
@@ -149,7 +149,7 @@ PrivateData = @{
 }
 ```
 
-<span data-ttu-id="616b6-109">**Frissítés-Module példák:**</span><span class="sxs-lookup"><span data-stu-id="616b6-109">**Update-Module examples:**</span></span>
+<span data-ttu-id="0f2c2-109">**Frissítés-Module példák:**</span><span class="sxs-lookup"><span data-stu-id="0f2c2-109">**Update-Module examples:**</span></span>
 ```powershell
 PS C:\windows\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
 PS C:\windows\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
@@ -191,7 +191,7 @@ Version Name          Repository  Description
 2.8.1   ContosoServer MSPSGallery ContosoServer
 ```
 
-<span data-ttu-id="616b6-110">**Közzététel modul példák:**</span><span class="sxs-lookup"><span data-stu-id="616b6-110">**Publish-Module examples:**</span></span>
+<span data-ttu-id="0f2c2-110">**Közzététel modul példák:**</span><span class="sxs-lookup"><span data-stu-id="0f2c2-110">**Publish-Module examples:**</span></span>
 ```powershell
 ContosoServer module with different versions to be published.
 PS C:\windows\system32> Get-Module -Name ContosoServer -ListAvailable
