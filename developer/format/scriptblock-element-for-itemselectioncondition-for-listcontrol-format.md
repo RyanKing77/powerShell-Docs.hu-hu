@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c929a6df-d050-416a-9de0-e913dd5a035c
 caps.latest.revision: 8
 ms.openlocfilehash: a0768a9c1ac66cd9dcf1848c4b031ccbc722b4c2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064407"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-listcontrol-format"></a>A ListControl elemhez tartozó ItemSelectionCondition ScriptBlock eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A ListControl (formátum) ListItem ItemSelectionCondition eleme](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)|Határozza meg azt a feltételt, amelyet a listaelem használandó léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a parancsfájl, amely ki lesz értékelve.
 

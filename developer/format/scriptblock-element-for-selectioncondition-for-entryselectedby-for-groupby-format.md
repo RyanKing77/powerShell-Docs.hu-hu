@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e01344bd-ad69-4789-8e9f-2e79880c3a33
 caps.latest.revision: 6
 ms.openlocfilehash: cb79fb942111cee89c6b2abba75de4c494082b7e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56844764"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064341"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format"></a>Az GroupBy EntrySelectedBy eleméhez tartozó SelectionCondition S eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A GroupBy (formátum) EntrySelectedBy SelectionCondition elem.](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|Határozza meg egy feltételt, amely a vezérlőelem definíciójában használt léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a parancsfájl, amely ki lesz értékelve.
 

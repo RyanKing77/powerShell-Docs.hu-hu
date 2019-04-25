@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: A Windows PowerShell használatának első lépései
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
 ms.openlocfilehash: 8a158427d319e43ec011898fe4e1826d48d5b951
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086578"
 ---
 # <a name="getting-started-with-windows-powershell"></a>A Windows PowerShell használatának első lépései
 Windows PowerShell az egy Windows parancssori rendszerhéj, különösen a rendszergazdák számára terveztek. Windows PowerShell tartalmaz egy interaktív kérdés és a egy parancsfájl-kezelési környezet, amely önállóan vagy együtt is használhatók.

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f2b12006-8d52-486b-91a3-e6224ca80e56
 caps.latest.revision: 6
 ms.openlocfilehash: 52d0b0816eaef6752220e0c3b1249e5a0e44a3ee
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845961"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064866"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format"></a>A Nézet CustomControl eleméhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A nézet (formátum) kifejezés CustomControl kötésének ItemSelectionCondition elem](./itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md)|Határozza meg azt a feltételt, amelyet Pro tento ovládací prvek használandó léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a .NET-tulajdonság, amely elindítja a feltétel nevét.
 

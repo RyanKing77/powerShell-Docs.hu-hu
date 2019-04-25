@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7b7af0b2-68e6-43c3-adcc-7c58007fced8
 caps.latest.revision: 13
 ms.openlocfilehash: 6f7c8d9af3c1c2fbda0208148b0088161701fdbe
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850462"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063860"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>Az EnumerableExpansion EntrySelectedBy eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A EnumerableExpansion (formátum) EntrySelectedBy SelectionCondition elem.](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|Határozza meg azt a feltételt, amelyet a bontsa ki a gyűjtemény objektumokat, ez a definíció léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a kijelölt csoport nevét.
 

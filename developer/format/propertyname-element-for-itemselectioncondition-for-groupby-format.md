@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 221cbdc2-f794-4f3a-9d40-bfdd8cba1013
 caps.latest.revision: 6
 ms.openlocfilehash: aae65789cf5572cbcc9251eca802a2d43065e49f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064764"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-groupby-format"></a>A GroupBy elemhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A GroupBy (formátum) ExpressionBinding ItemSelectionCondition elem.](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)|Határozza meg azt a feltételt, amelyet Pro tento ovládací prvek használandó léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a .NET-tulajdonság, amely elindítja a feltétel nevét.
 

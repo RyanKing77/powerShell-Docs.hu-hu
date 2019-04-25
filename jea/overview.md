@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: Éppen elég felügyelettel áttekintése
 ms.openlocfilehash: c097838fb25a63d42502eebf751c64c537bdd077
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084912"
 ---
 # <a name="just-enough-administration"></a>Just Enough Administration
 

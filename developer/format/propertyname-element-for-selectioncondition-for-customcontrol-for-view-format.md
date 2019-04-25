@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: fc48a417-2083-46d4-ac38-16c12e65b6b9
 caps.latest.revision: 7
 ms.openlocfilehash: e08037d5d051d3be51e90193c7e87cc2e738f78a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064696"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-customcontrol-for-view-format"></a>A Nézet CustomControl eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A nézet (formátum) CustomControl EntrySelectedBy SelectionCondition elem.](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|Határozza meg egy feltételt, amely a vezérlőelem definíciójában használt léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a .NET-tulajdonság neve.
 

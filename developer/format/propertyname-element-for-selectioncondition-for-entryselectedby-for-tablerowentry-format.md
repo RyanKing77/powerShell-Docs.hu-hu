@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ba3b4d9b-2b8c-4a3a-8887-6c606eb9d490
 caps.latest.revision: 10
 ms.openlocfilehash: 48011950ed64e78a84292762f2c7779003dc59fd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064662"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format"></a>Az TableRowEntry EntrySelectedBy eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A TableRowEntry (formátum) EntrySelectedBy SelectionCondition elem.](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|Határozza meg azt a feltételt, amelyet a használandó tábla bejegyzéshez tartozó léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a .NET-tulajdonság neve.
 

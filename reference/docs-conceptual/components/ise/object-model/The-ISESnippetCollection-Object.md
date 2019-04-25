@@ -4,17 +4,17 @@ keywords: PowerShell, a parancsmag
 title: Az ISESnippetCollection objektum
 ms.assetid: ae974955-4282-4cbc-8c42-0fff1904ef32
 ms.openlocfilehash: bd5ed4a1f15e0a398b7c6a17f0071cad889be4a7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086670"
 ---
 # <a name="the-isesnippetcollection-object"></a>Az ISESnippetCollection objektum
 
 A **ISESnippetCollection** objektum olyan gyűjteménye, **ISESnippet** objektumokat. A fájlok gyűjteményt, amelyhez társítva van egy **PowerShellTab** objektum a tagja, ez az osztály. Például a **$psISE.CurrentPowerShellTab.Files** gyűjtemény.
 
-## <a name="methods"></a>Metódusok
+## <a name="methods"></a>Módszerek
 
 ### <a name="load-filepathname-"></a>Load\( FilePathName \)
 

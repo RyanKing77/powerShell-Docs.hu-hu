@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ad8ab181-c559-492e-a0cf-299e381fdcc3
 caps.latest.revision: 6
 ms.openlocfilehash: ce25789bdfc2679372ca9e42f99dcc6a30ae2def
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850259"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064903"
 ---
 # <a name="propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format"></a>A Konfiguráció Vezérlők eleméhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[Konfiguráció (formátum) vezérlők ExpressionBinding ItemSelectionCondition elem.](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)|Határozza meg azt a feltételt, amelyet Pro tento ovládací prvek használandó léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a .NET-tulajdonság, amely elindítja a feltétel nevét.
 

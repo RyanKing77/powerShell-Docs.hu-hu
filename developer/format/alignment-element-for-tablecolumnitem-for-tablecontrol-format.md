@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b07a53df-64f1-49b0-8cea-c993b3f1f76b
 caps.latest.revision: 10
 ms.openlocfilehash: 1bc936b94ee6fd6239e9e3c4afcdb8f14fbe36eb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848355"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066940"
 ---
 # <a name="alignment-element-for-tablecolumnitem-for-tablecontrol-format"></a>A TableControl TableColumnItem elemének igazítási eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[TableColumnItem elem (formátum)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Egy címke, a szélesség és az adatok egy oszlop a tábla zarovnání határozza meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a következő értékek egyikét. (Ezek az értékek nem számítanak különbözőnek.)
 

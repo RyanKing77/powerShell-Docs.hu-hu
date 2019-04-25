@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3a6cedcc-0437-4312-961e-0845cc249532
 caps.latest.revision: 8
 ms.openlocfilehash: 9d8779c90421145b40d7b6b537686caf1ccd2a09
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064832"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-configuration-format"></a>A Konfiguráció Vezérlők eleméhez tartozó Keret RightIndent eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[Keret eleme CustomItem vezérlők konfiguráció (formátum)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|Határozza meg, hogyan egy jelennek meg, például az adatok pótlása jobbra vagy balra.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg, hogy az adatok shift jobb kívánt karakterek száma.
 

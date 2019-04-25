@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 5bc6ea26-3ca6-4bab-8a13-29189821ba15
 caps.latest.revision: 7
 ms.openlocfilehash: a1dc145864a6904fd4af6c3b9187819c49e224b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065682"
 ---
 # <a name="formatstring-element-for-wideitem-for-widecontrol-format"></a>A WideControl WideItem elemének FormatString eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[WideItem eleme WideControl (formátum)](./wideitem-element-for-widecontrol-format.md)|A tulajdonság, vagy a parancsfájl, amelynek értéke megjelenik a lista nézet sorában lévő határoz meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg az adatok formázásához használt mintáját. Például használhatja ezt a mintát bármilyen típusú tulajdonság értékének [System.Timespan](/dotnet/api/System.TimeSpan): {0: MMM} {0:dd} {0:HH}: {0:mm}.
 

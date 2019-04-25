@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 93a8c11099a9883127bca87422e1acaebfd2c093
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082296"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Bináris PowerShell-moduljegyzék írása
 
@@ -80,7 +80,7 @@ A következő táblázat ismerteti az elemek egy moduljegyzék használhat
 |DotNetFrameworkVersion<br /><br /> Típus: karakterlánc|' '|Ez a modul által igényelt, a Microsoft .NET-keretrendszer minimális verziója.<br /><br /> Példa: `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> Típus: karakterlánc|' '|A közös nyelvi futtatókörnyezet (CLR) Ez a modul által megkövetelt minimális verzióját.<br /><br /> Példa: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> Típus: karakterlánc|' '|Processzor architektúrája (nincs, X86, AMD64-es) Ez a modul által igényelt. Érvényes értékek a következők x86, AMD64 IA64 operációs rendszerben, és egyik sem (ismeretlen vagy meghatározatlan).<br /><br /> Példa: `ProcessorArchitecture = 'x86'`|
-|RequiredModules<br /><br /> Típus: [string []]|@()|Olyan modulok, ez a modul importálása előtt a globális környezetbe kell importálni. Így betöltődik, kivéve, ha azok már betöltött felsorolt modulokat. (Például egyes modulok esetleg már tölthető be egy másik modul.). Adjon meg egy adott verziót, a betöltés, lehetőség arra is `RequiredVersion` helyett `ModuleVersion`. Használata esetén `ModuleVersion` , betölti a megadott verzió legalább elérhető legújabb verzióra.<br /><br /> Példa: `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Példa: `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
+|RequiredModules<br /><br /> Típus: [string []]|@()|Olyan modulok, ez a modul importálása előtt a globális környezetbe kell importálni. Így betöltődik, kivéve, ha azok már betöltött felsorolt modulokat. (Például egyes modulok esetleg már tölthető be egy másik modul.). Adjon meg egy adott verziót, a betöltés, lehetőség arra is `RequiredVersion` helyett `ModuleVersion`. Használata esetén `ModuleVersion` , betölti a megadott verzió legalább elérhető legújabb verzióra.<br /><br /> Példa: `RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Példa: `RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
 |RequiredAssemblies<br /><br /> Típus: [string []]|@()|Ez a modul importálása előtt kell betölteni, szerelvényeket.<br /><br /> Vegye figyelembe, hogy RequiredModules eltérően, PowerShell betölti a RequiredAssemblies, ha azok nem már betöltött.|
 |ScriptsToProcess<br /><br /> Típus: [string []]|@()|A modul importálása a hívónak a munkamenet-állapot futó parancsprogramnak (.ps1) fájlok. Ez az állapot vagy a beágyazott modulok, a munkamenet-állapot egy másik modul globális munkamenet lehet. Ezek a parancsfájlok segítségével-környezet előkészítése a hasonlóan használhatja egy bejelentkezési parancsfájl.<br /><br /> Ezek a szkriptek előtt töltődnek be a modulok a jegyzékfájlban szereplő valamelyik futnak.|
 |TypesToProcess<br /><br /> Típus: [Object []]|@()|Írja be a fájlokat (.ps1xml), ez a modul importálása során nem tölthető be.|

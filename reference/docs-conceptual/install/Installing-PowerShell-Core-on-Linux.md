@@ -3,11 +3,11 @@ title: A PowerShell Core telepítése Linux rendszerre
 description: Információ a különböző Linux-disztribúciókon a PowerShell Core telepítése
 ms.date: 08/06/2018
 ms.openlocfilehash: 06194550f4e73f9dd38f8cdc25f6c7f698cafce2
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086561"
 ---
 # <a name="installing-powershell-core-on-linux"></a>A PowerShell Core telepítése Linux rendszerre
 

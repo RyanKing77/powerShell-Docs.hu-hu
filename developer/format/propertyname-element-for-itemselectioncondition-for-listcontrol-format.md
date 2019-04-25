@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d5e707ae-3c84-4ceb-ba31-56b3ffde6d6c
 caps.latest.revision: 7
 ms.openlocfilehash: b15e26e18126f69eee7c3a857f9a461d4bdf5848
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064747"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-listcontrol-format"></a>A ListControl elemhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A ListControl (formátum) ListItem ItemSelectionCondition eleme](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)||
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg, amelynek értéke megjelenik a tulajdonság nevét.
 

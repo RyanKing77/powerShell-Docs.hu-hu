@@ -3,11 +3,11 @@ ms.date: 08/09/2017
 keywords: PowerShell, parancsmag, letöltése, telepítése, a telepítő, windows 10, windows 8.1, windows 8.0-s, windows 7
 title: A Windows PowerShell telepítése
 ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086476"
 ---
 # <a name="installing-windows-powershell"></a>A Windows PowerShell telepítése
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: df90dfe1-991f-43cb-a522-4cab7e8daa49
 caps.latest.revision: 6
 ms.openlocfilehash: 6e33f85a9066a78e35823961123bb015cc025a0c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064798"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-controls-for-configuration-format"></a>A Konfiguráció Vezérlők eleméhez tartozó ExpressionBinding ScriptBlock eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[Konfiguráció (formátum) vezérlők CustomItem ExpressionBinding elem.](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Határozza meg a közös vezérlő által megjelenített adatokat.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a parancsfájl, amelynek értéke megjelenik a vezérlőelem által.
 

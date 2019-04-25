@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: faa0314b-f6f1-44fd-ad2b-b00cbe38923f
 caps.latest.revision: 9
 ms.openlocfilehash: 8b924c989133b47e4d95d8429778003c76595d58
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066005"
 ---
 # <a name="expand-element-format"></a>Elem kibontása (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[EnumerableExpansion elem (formátum)](./enumerableexpansion-element-format.md)|Határozza meg, hogyan adott .NET gyűjtemény objektumok kibontott nézetben megjelenésekor.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a következő értékek egyikét:
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c9c6e18f-6cca-465c-bd20-3969e7897a96
 caps.latest.revision: 10
 ms.openlocfilehash: 6b6a4a4647412d11d947f1dc4ea12d1e05ff536e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064027"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-widecontrol-format"></a>A WideControl elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
 
@@ -46,7 +46,7 @@ Nincs.
 |-------------|-----------------|
 |[EntrySelectedBy eleme WideEntry (formátum)](./entryselectedby-element-for-wideentry-format.md)|A .NET-típusokat, amelyek a széles körű bejegyzés vagy a feltétellel, hogy léteznie kell használni a bejegyzés határozza meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a kijelölt csoport nevét.
 
