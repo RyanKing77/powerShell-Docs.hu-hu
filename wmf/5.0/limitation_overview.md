@@ -2,114 +2,114 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: 3d74217621d00dfd68cad1c45d187a9c2ffb9980
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085275"
 ---
-# <a name="known-issues-and-limitations"></a><span data-ttu-id="4605e-102">Ismert problémák és korlátozások</span><span class="sxs-lookup"><span data-stu-id="4605e-102">Known Issues and Limitations</span></span>
+# <a name="known-issues-and-limitations"></a><span data-ttu-id="b868c-102">Ismert problémák és korlátozások</span><span class="sxs-lookup"><span data-stu-id="b868c-102">Known Issues and Limitations</span></span>
 
-## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a><span data-ttu-id="4605e-103">PowerShell-parancsikon nem működik, ha először használja</span><span class="sxs-lookup"><span data-stu-id="4605e-103">PowerShell Shortcuts are broken when used for the first time</span></span>
+## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a><span data-ttu-id="b868c-103">PowerShell-parancsikon nem működik, ha először használja</span><span class="sxs-lookup"><span data-stu-id="b868c-103">PowerShell Shortcuts are broken when used for the first time</span></span>
 
-<span data-ttu-id="4605e-104">**Megoldás:** Hajtsa végre az alábbi műveletek egyikét:</span><span class="sxs-lookup"><span data-stu-id="4605e-104">**Resolution:** Perform one of the following actions:</span></span>
+<span data-ttu-id="b868c-104">**Megoldás:** Hajtsa végre az alábbi műveletek egyikét:</span><span class="sxs-lookup"><span data-stu-id="b868c-104">**Resolution:** Perform one of the following actions:</span></span>
 
-1. <span data-ttu-id="4605e-105">Kattintson a jobb gombbal a PowerShell-parancsikon.</span><span class="sxs-lookup"><span data-stu-id="4605e-105">Right click on the PowerShell shortcut.</span></span> <span data-ttu-id="4605e-106">Válassza ki a "Windows PowerShell" nem emelt szintű üzemmódban indult el.</span><span class="sxs-lookup"><span data-stu-id="4605e-106">Select “Windows PowerShell” to launch in a non-elevated mode.</span></span>
-2. <span data-ttu-id="4605e-107">Kattintson a jobb gombbal a PowerShell-parancsikon.</span><span class="sxs-lookup"><span data-stu-id="4605e-107">Right click on the PowerShell shortcut.</span></span> <span data-ttu-id="4605e-108">A jobb gombbal a "Windows PowerShell", és válassza ki a "Futtatás rendszergazdaként" egy emelt jogosultságszintű módban indult el.</span><span class="sxs-lookup"><span data-stu-id="4605e-108">Right click on “Windows PowerShell” and select “Run As Administrator” to launch in an elevated mode.</span></span>
+1. <span data-ttu-id="b868c-105">Kattintson a jobb gombbal a PowerShell-parancsikon.</span><span class="sxs-lookup"><span data-stu-id="b868c-105">Right click on the PowerShell shortcut.</span></span> <span data-ttu-id="b868c-106">Válassza ki a "Windows PowerShell" nem emelt szintű üzemmódban indult el.</span><span class="sxs-lookup"><span data-stu-id="b868c-106">Select “Windows PowerShell” to launch in a non-elevated mode.</span></span>
+2. <span data-ttu-id="b868c-107">Kattintson a jobb gombbal a PowerShell-parancsikon.</span><span class="sxs-lookup"><span data-stu-id="b868c-107">Right click on the PowerShell shortcut.</span></span> <span data-ttu-id="b868c-108">A jobb gombbal a "Windows PowerShell", és válassza ki a "Futtatás rendszergazdaként" egy emelt jogosultságszintű módban indult el.</span><span class="sxs-lookup"><span data-stu-id="b868c-108">Right click on “Windows PowerShell” and select “Run As Administrator” to launch in an elevated mode.</span></span>
 
-<span data-ttu-id="4605e-109">Miután elvégezte a fenti műveletek valamelyikét, a PowerShell-parancsikon fog működni.</span><span class="sxs-lookup"><span data-stu-id="4605e-109">Once you have performed either of the above actions, the PowerShell shortcuts will work.</span></span> <span data-ttu-id="4605e-110">Ezek a műveletek kell csak egyszer kell elvégezni.</span><span class="sxs-lookup"><span data-stu-id="4605e-110">These actions need to be performed only once.</span></span>
+<span data-ttu-id="b868c-109">Miután elvégezte a fenti műveletek valamelyikét, a PowerShell-parancsikon fog működni.</span><span class="sxs-lookup"><span data-stu-id="b868c-109">Once you have performed either of the above actions, the PowerShell shortcuts will work.</span></span> <span data-ttu-id="b868c-110">Ezek a műveletek kell csak egyszer kell elvégezni.</span><span class="sxs-lookup"><span data-stu-id="b868c-110">These actions need to be performed only once.</span></span>
 
-## <a name="powershell-modules-and-dsc-resources-report-errors-about-executionpolicy-on-windows-7"></a><span data-ttu-id="4605e-111">Windows 7-es ExecutionPolicy kapcsolatos hibák PowerShell-modulok és a DSC-erőforrások jelentése</span><span class="sxs-lookup"><span data-stu-id="4605e-111">PowerShell Modules and DSC Resources report errors about ExecutionPolicy on Windows 7</span></span>
+## <a name="powershell-modules-and-dsc-resources-report-errors-about-executionpolicy-on-windows-7"></a><span data-ttu-id="b868c-111">Windows 7-es ExecutionPolicy kapcsolatos hibák PowerShell-modulok és a DSC-erőforrások jelentése</span><span class="sxs-lookup"><span data-stu-id="b868c-111">PowerShell Modules and DSC Resources report errors about ExecutionPolicy on Windows 7</span></span>
 
-<span data-ttu-id="4605e-112">Windows 7, a PowerShell-modulok és a DSC-erőforrások használatának kapcsolatos ExecutionPolicy jelentett hibákat eredményezhet.</span><span class="sxs-lookup"><span data-stu-id="4605e-112">On Windows 7, the use of PowerShell modules and DSC resources may result in errors reported about ExecutionPolicy.</span></span>
+<span data-ttu-id="b868c-112">Windows 7, a PowerShell-modulok és a DSC-erőforrások használatának kapcsolatos ExecutionPolicy jelentett hibákat eredményezhet.</span><span class="sxs-lookup"><span data-stu-id="b868c-112">On Windows 7, the use of PowerShell modules and DSC resources may result in errors reported about ExecutionPolicy.</span></span>
 
-<span data-ttu-id="4605e-113">**Megoldás:** Állítsa be a ExecutionPolicy RemoteSigned értékre a következő parancs futtatásával egy rendszergazda jogú PowerShell-munkamenetben (Futtatás rendszergazdaként):</span><span class="sxs-lookup"><span data-stu-id="4605e-113">**Resolution:** Set the ExecutionPolicy to RemoteSigned by running the following command in an elevated PowerShell session (Run as Administrator):</span></span>
+<span data-ttu-id="b868c-113">**Megoldás:** Állítsa be a ExecutionPolicy RemoteSigned értékre a következő parancs futtatásával egy rendszergazda jogú PowerShell-munkamenetben (Futtatás rendszergazdaként):</span><span class="sxs-lookup"><span data-stu-id="b868c-113">**Resolution:** Set the ExecutionPolicy to RemoteSigned by running the following command in an elevated PowerShell session (Run as Administrator):</span></span>
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
 
-## <a name="connecting-to-an-old-remote-exchange-endpoint-causes-a-crash"></a><span data-ttu-id="4605e-114">Csatlakozik a távoli régi Exchange végpont hatására összeomlás</span><span class="sxs-lookup"><span data-stu-id="4605e-114">Connecting to an old remote Exchange endpoint causes a crash</span></span>
+## <a name="connecting-to-an-old-remote-exchange-endpoint-causes-a-crash"></a><span data-ttu-id="b868c-114">Csatlakozik a távoli régi Exchange végpont hatására összeomlás</span><span class="sxs-lookup"><span data-stu-id="b868c-114">Connecting to an old remote Exchange endpoint causes a crash</span></span>
 
-<span data-ttu-id="4605e-115">A régi Exchange végpont átirányítja a felhasználókat az új végpont.</span><span class="sxs-lookup"><span data-stu-id="4605e-115">The old Exchange endpoint redirects to a new endpoint.</span></span> <span data-ttu-id="4605e-116">Nincs hibát az átirányítás logika az adott eredmények összeomlás.</span><span class="sxs-lookup"><span data-stu-id="4605e-116">There is a bug in the redirection logic that results in a crash.</span></span>
+<span data-ttu-id="b868c-115">A régi Exchange végpont átirányítja a felhasználókat az új végpont.</span><span class="sxs-lookup"><span data-stu-id="b868c-115">The old Exchange endpoint redirects to a new endpoint.</span></span> <span data-ttu-id="b868c-116">Nincs hibát az átirányítás logika az adott eredmények összeomlás.</span><span class="sxs-lookup"><span data-stu-id="b868c-116">There is a bug in the redirection logic that results in a crash.</span></span>
 
-<span data-ttu-id="4605e-117">**Megoldás:** Közvetlenül csatlakozhat az új végpont.</span><span class="sxs-lookup"><span data-stu-id="4605e-117">**Resolution:** Connect directly to the new endpoint.</span></span>
+<span data-ttu-id="b868c-117">**Megoldás:** Közvetlenül csatlakozhat az új végpont.</span><span class="sxs-lookup"><span data-stu-id="b868c-117">**Resolution:** Connect directly to the new endpoint.</span></span>
 
-## <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a><span data-ttu-id="4605e-118">Szoftver a szoftverleltár-naplózás szolgáltatás hibásan le van állítva a Windows Server 2012 R2 a WMF 5.0-s a telepítést követően</span><span class="sxs-lookup"><span data-stu-id="4605e-118">Software Inventory Logging feature is erroneously stopped after WMF 5.0 installation on Windows Server 2012 R2</span></span>
+## <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a><span data-ttu-id="b868c-118">Szoftver a szoftverleltár-naplózás szolgáltatás hibásan le van állítva a Windows Server 2012 R2 a WMF 5.0-s a telepítést követően</span><span class="sxs-lookup"><span data-stu-id="b868c-118">Software Inventory Logging feature is erroneously stopped after WMF 5.0 installation on Windows Server 2012 R2</span></span>
 
-<span data-ttu-id="4605e-119">A WMF 5.0 telepíti egy Windows Server 2012 R2, a szoftverleltár-Naplózás már futó, amikor a szoftverleltár-naplózás szolgáltatás hibásan leállt a telepítés után.</span><span class="sxs-lookup"><span data-stu-id="4605e-119">When installing WMF 5.0 on a Windows Server 2012 R2 that is already running SIL, the Software Inventory Logging feature is erroneously stopped after installation.</span></span>
+<span data-ttu-id="b868c-119">A WMF 5.0 telepíti egy Windows Server 2012 R2, a szoftverleltár-Naplózás már futó, amikor a szoftverleltár-naplózás szolgáltatás hibásan leállt a telepítés után.</span><span class="sxs-lookup"><span data-stu-id="b868c-119">When installing WMF 5.0 on a Windows Server 2012 R2 that is already running SIL, the Software Inventory Logging feature is erroneously stopped after installation.</span></span>
 
-<span data-ttu-id="4605e-120">**Megoldás:** A Start-SilLogging parancsmag a telepítési folyamat protokollüzenetet le fog állni a szoftverleltár-naplózás funkció a WMF telepítése után egyszer fut.</span><span class="sxs-lookup"><span data-stu-id="4605e-120">**Resolution:** Run the Start-SilLogging cmdlet once after the WMF installation, as the installation process will errantly stop the Software Inventory Logging feature.</span></span>
+<span data-ttu-id="b868c-120">**Megoldás:** A Start-SilLogging parancsmag a telepítési folyamat protokollüzenetet le fog állni a szoftverleltár-naplózás funkció a WMF telepítése után egyszer fut.</span><span class="sxs-lookup"><span data-stu-id="b868c-120">**Resolution:** Run the Start-SilLogging cmdlet once after the WMF installation, as the installation process will errantly stop the Software Inventory Logging feature.</span></span>
 
-## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a><span data-ttu-id="4605e-121">`Get-ChildItem` nem működik – LiteralPath és - Recurse együttes használatakor</span><span class="sxs-lookup"><span data-stu-id="4605e-121">`Get-ChildItem` does not work if -LiteralPath and -Recurse are used together</span></span>
+## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a><span data-ttu-id="b868c-121">`Get-ChildItem` nem működik – LiteralPath és - Recurse együttes használatakor</span><span class="sxs-lookup"><span data-stu-id="b868c-121">`Get-ChildItem` does not work if -LiteralPath and -Recurse are used together</span></span>
 
-<span data-ttu-id="4605e-122">Ha a könyvtár neve érvénytelen helyettesítő karaktert tartalmaz, majd `Get-ChildItem` nem tudott várt eredmény, mind - LiteralPath és - Recurse együtt használva.</span><span class="sxs-lookup"><span data-stu-id="4605e-122">If a directory name contains an invalid wildcard character, then `Get-ChildItem` will not produce expected results when both -LiteralPath and -Recurse are used together.</span></span>
+<span data-ttu-id="b868c-122">Ha a könyvtár neve érvénytelen helyettesítő karaktert tartalmaz, majd `Get-ChildItem` nem tudott várt eredmény, mind - LiteralPath és - Recurse együtt használva.</span><span class="sxs-lookup"><span data-stu-id="b868c-122">If a directory name contains an invalid wildcard character, then `Get-ChildItem` will not produce expected results when both -LiteralPath and -Recurse are used together.</span></span>
 
-<span data-ttu-id="4605e-123">**Megoldás:** Nem ideális, de a jelenlegi megkerülő megoldás, hogy a rekurzió megvalósítása a szkriptben a parancsmag támaszkodjon helyett.</span><span class="sxs-lookup"><span data-stu-id="4605e-123">**Resolution:** Not ideal, but current workaround is to implement recursion in the script rather than rely on the cmdlet.</span></span>
+<span data-ttu-id="b868c-123">**Megoldás:** Nem ideális, de a jelenlegi megkerülő megoldás, hogy a rekurzió megvalósítása a szkriptben a parancsmag támaszkodjon helyett.</span><span class="sxs-lookup"><span data-stu-id="b868c-123">**Resolution:** Not ideal, but current workaround is to implement recursion in the script rather than rely on the cmdlet.</span></span>
 
-## <a name="sysprep-fails-after-wmf-50-installation"></a><span data-ttu-id="4605e-124">A Sysprep nem sikerül, a WMF 5.0-s a telepítést követően</span><span class="sxs-lookup"><span data-stu-id="4605e-124">Sysprep fails after WMF 5.0 installation</span></span>
+## <a name="sysprep-fails-after-wmf-50-installation"></a><span data-ttu-id="b868c-124">A Sysprep nem sikerül, a WMF 5.0-s a telepítést követően</span><span class="sxs-lookup"><span data-stu-id="b868c-124">Sysprep fails after WMF 5.0 installation</span></span>
 
-<span data-ttu-id="4605e-125">Nincsenek futtatja a Windows Server verziójától függően a probléma két lehetséges megoldásai.</span><span class="sxs-lookup"><span data-stu-id="4605e-125">There are two workarounds for this issue depending on the version of Windows Server you are running.</span></span>
+<span data-ttu-id="b868c-125">Nincsenek futtatja a Windows Server verziójától függően a probléma két lehetséges megoldásai.</span><span class="sxs-lookup"><span data-stu-id="b868c-125">There are two workarounds for this issue depending on the version of Windows Server you are running.</span></span>
 
-<span data-ttu-id="4605e-126">**Megoldás:**</span><span class="sxs-lookup"><span data-stu-id="4605e-126">**Resolution:**</span></span>
+<span data-ttu-id="b868c-126">**Megoldás:**</span><span class="sxs-lookup"><span data-stu-id="b868c-126">**Resolution:**</span></span>
 
-- <span data-ttu-id="4605e-127">Operációs rendszer **Windows Server 2008 R2**</span><span class="sxs-lookup"><span data-stu-id="4605e-127">For systems running **Windows Server 2008 R2**</span></span>
-  1. <span data-ttu-id="4605e-128">Nyissa meg a Powershellt rendszergazdaként</span><span class="sxs-lookup"><span data-stu-id="4605e-128">Open PowerShell as an administrator</span></span>
-  2. <span data-ttu-id="4605e-129">A következő parancs futtatásával</span><span class="sxs-lookup"><span data-stu-id="4605e-129">Run the following command</span></span>
+- <span data-ttu-id="b868c-127">Operációs rendszer **Windows Server 2008 R2**</span><span class="sxs-lookup"><span data-stu-id="b868c-127">For systems running **Windows Server 2008 R2**</span></span>
+  1. <span data-ttu-id="b868c-128">Nyissa meg a Powershellt rendszergazdaként</span><span class="sxs-lookup"><span data-stu-id="b868c-128">Open PowerShell as an administrator</span></span>
+  2. <span data-ttu-id="b868c-129">A következő parancs futtatásával</span><span class="sxs-lookup"><span data-stu-id="b868c-129">Run the following command</span></span>
 
      ```powershell
      Set-SilLogging –TargetUri https://BlankTarget –CertificateThumbprint 0123456789
      ```
 
-  3. <span data-ttu-id="4605e-130">Futtassa a parancsot, és a hiba figyelmen kívül hagyja a rendszer elvárt.</span><span class="sxs-lookup"><span data-stu-id="4605e-130">Run the command and ignore the error, as they are expected.</span></span>
+  3. <span data-ttu-id="b868c-130">Futtassa a parancsot, és a hiba figyelmen kívül hagyja a rendszer elvárt.</span><span class="sxs-lookup"><span data-stu-id="b868c-130">Run the command and ignore the error, as they are expected.</span></span>
 
      ```powershell
      Publish-SilData
      ```
 
-  4. <span data-ttu-id="4605e-131">A \Windows\System32\Logfiles\SIL\ könyvtárban található fájlok törlése</span><span class="sxs-lookup"><span data-stu-id="4605e-131">Delete the files in  \Windows\System32\Logfiles\SIL\ directory</span></span>
+  4. <span data-ttu-id="b868c-131">A \Windows\System32\Logfiles\SIL\ könyvtárban található fájlok törlése</span><span class="sxs-lookup"><span data-stu-id="b868c-131">Delete the files in  \Windows\System32\Logfiles\SIL\ directory</span></span>
 
      ```powershell
      Remove-Item -Recurse $env:SystemRoot\System32\Logfiles\SIL\
      ```
 
-  5. <span data-ttu-id="4605e-132">Telepítse az összes rendelkezésre álló fontos Windows frissítést, és Sysyprep művelet általában megkezdéséhez.</span><span class="sxs-lookup"><span data-stu-id="4605e-132">Install all available important Windows Updates, and begin Sysyprep operation normally.</span></span>
+  5. <span data-ttu-id="b868c-132">Telepítse az összes rendelkezésre álló fontos Windows frissítést, és Sysyprep művelet általában megkezdéséhez.</span><span class="sxs-lookup"><span data-stu-id="b868c-132">Install all available important Windows Updates, and begin Sysyprep operation normally.</span></span>
 
-- <span data-ttu-id="4605e-133">Operációs rendszer **Windows Server 2012**</span><span class="sxs-lookup"><span data-stu-id="4605e-133">For systems running **Windows Server 2012**</span></span>
-  1. <span data-ttu-id="4605e-134">A kiszolgálóra, hogy a WMF 5.0 telepítését követően a Sysprep d, bejelentkezés rendszergazdaként.</span><span class="sxs-lookup"><span data-stu-id="4605e-134">After installing WMF 5.0 on the server to be Sysprep’d, login as administrator.</span></span>
-  2. <span data-ttu-id="4605e-135">Directory \Windows\System32\Sysprep\ActionFiles\ Generize.xml másolja a Windows könyvtárban, a C:\ kívüli helyre például.</span><span class="sxs-lookup"><span data-stu-id="4605e-135">Copy Generize.xml from directory \Windows\System32\Sysprep\ActionFiles\ to a location outside of the Windows directory, C:\ for example.</span></span>
-  3. <span data-ttu-id="4605e-136">Nyissa meg a Generalize.xml Másolás a Jegyzettömb alkalmazásban.</span><span class="sxs-lookup"><span data-stu-id="4605e-136">Open your Generalize.xml copy with notepad.</span></span>
-  4. <span data-ttu-id="4605e-137">Keresse meg, és távolítsa el a következő szöveget, minden egyes kell törölni egy példányát (fogják a dokumentum végén).</span><span class="sxs-lookup"><span data-stu-id="4605e-137">Find and remove the following text, one instance of each needs to be deleted (they will be near the end of the document).</span></span>
+- <span data-ttu-id="b868c-133">Operációs rendszer **Windows Server 2012**</span><span class="sxs-lookup"><span data-stu-id="b868c-133">For systems running **Windows Server 2012**</span></span>
+  1. <span data-ttu-id="b868c-134">A kiszolgálóra, hogy a WMF 5.0 telepítését követően a Sysprep d, bejelentkezés rendszergazdaként.</span><span class="sxs-lookup"><span data-stu-id="b868c-134">After installing WMF 5.0 on the server to be Sysprep’d, login as administrator.</span></span>
+  2. <span data-ttu-id="b868c-135">Directory \Windows\System32\Sysprep\ActionFiles\ Generize.xml másolja a Windows könyvtárban, a C:\ kívüli helyre például.</span><span class="sxs-lookup"><span data-stu-id="b868c-135">Copy Generize.xml from directory \Windows\System32\Sysprep\ActionFiles\ to a location outside of the Windows directory, C:\ for example.</span></span>
+  3. <span data-ttu-id="b868c-136">Nyissa meg a Generalize.xml Másolás a Jegyzettömb alkalmazásban.</span><span class="sxs-lookup"><span data-stu-id="b868c-136">Open your Generalize.xml copy with notepad.</span></span>
+  4. <span data-ttu-id="b868c-137">Keresse meg, és távolítsa el a következő szöveget, minden egyes kell törölni egy példányát (fogják a dokumentum végén).</span><span class="sxs-lookup"><span data-stu-id="b868c-137">Find and remove the following text, one instance of each needs to be deleted (they will be near the end of the document).</span></span>
 
      ```xml
      <sysprepOrder order="0x3200"></sysprepOrder>
      <sysprepOrder order="0x3300"></sysprepOrder>
      ```
 
-  5. <span data-ttu-id="4605e-138">A módosított tartalom mentéséhez Generalize.xml, és zárja be a fájlt.</span><span class="sxs-lookup"><span data-stu-id="4605e-138">Save the edited copy of Generalize.xml and close the file.</span></span>
-  6. <span data-ttu-id="4605e-139">Nyisson meg egy parancssort rendszergazdaként</span><span class="sxs-lookup"><span data-stu-id="4605e-139">Open a command prompt as administrator</span></span>
-  7. <span data-ttu-id="4605e-140">Futtassa a következő parancsot a system32 mappába a Generalize.xml fájl saját tulajdonba:</span><span class="sxs-lookup"><span data-stu-id="4605e-140">Run the following command to take ownership of the Generalize.xml file in system32 folder:</span></span>
+  5. <span data-ttu-id="b868c-138">A módosított tartalom mentéséhez Generalize.xml, és zárja be a fájlt.</span><span class="sxs-lookup"><span data-stu-id="b868c-138">Save the edited copy of Generalize.xml and close the file.</span></span>
+  6. <span data-ttu-id="b868c-139">Nyisson meg egy parancssort rendszergazdaként</span><span class="sxs-lookup"><span data-stu-id="b868c-139">Open a command prompt as administrator</span></span>
+  7. <span data-ttu-id="b868c-140">Futtassa a következő parancsot a system32 mappába a Generalize.xml fájl saját tulajdonba:</span><span class="sxs-lookup"><span data-stu-id="b868c-140">Run the following command to take ownership of the Generalize.xml file in system32 folder:</span></span>
 
      ```powershell
      Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
      ```
 
-  8. <span data-ttu-id="4605e-141">Futtassa a következő parancsot a fájl a megfelelő engedély beállítása:</span><span class="sxs-lookup"><span data-stu-id="4605e-141">Run the following command to set appropriate permission on the file:</span></span>
+  8. <span data-ttu-id="b868c-141">Futtassa a következő parancsot a fájl a megfelelő engedély beállítása:</span><span class="sxs-lookup"><span data-stu-id="b868c-141">Run the following command to set appropriate permission on the file:</span></span>
 
      ```powershell
      Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F
      ```
 
-     - <span data-ttu-id="4605e-142">Igennel amikor a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="4605e-142">Answer Yes at the prompt for confirmation.</span></span>
-     - <span data-ttu-id="4605e-143">Vegye figyelembe, hogy `<AdministratorUserName>` a felhasználónevet, a rendszergazda a számítógépen kell helyettesíteni.</span><span class="sxs-lookup"><span data-stu-id="4605e-143">Note that `<AdministratorUserName>` should be replaced by the username who is administrator on the machine.</span></span> <span data-ttu-id="4605e-144">Például "Administrator".</span><span class="sxs-lookup"><span data-stu-id="4605e-144">For example, "Administrator".</span></span>
+     - <span data-ttu-id="b868c-142">Igennel amikor a rendszer megerősítést kér.</span><span class="sxs-lookup"><span data-stu-id="b868c-142">Answer Yes at the prompt for confirmation.</span></span>
+     - <span data-ttu-id="b868c-143">Vegye figyelembe, hogy `<AdministratorUserName>` a felhasználónevet, a rendszergazda a számítógépen kell helyettesíteni.</span><span class="sxs-lookup"><span data-stu-id="b868c-143">Note that `<AdministratorUserName>` should be replaced by the username who is administrator on the machine.</span></span> <span data-ttu-id="b868c-144">Például "Administrator".</span><span class="sxs-lookup"><span data-stu-id="b868c-144">For example, "Administrator".</span></span>
 
-  9. <span data-ttu-id="4605e-145">Másolja a fájlt, szerkeszthetők, és a mentett keresztül a Sysprep-könyvtár a következő paranccsal:</span><span class="sxs-lookup"><span data-stu-id="4605e-145">Copy the file you edited and saved over to the Sysprep directory using the following command:</span></span>
+  9. <span data-ttu-id="b868c-145">Másolja a fájlt, szerkeszthetők, és a mentett keresztül a Sysprep-könyvtár a következő paranccsal:</span><span class="sxs-lookup"><span data-stu-id="b868c-145">Copy the file you edited and saved over to the Sysprep directory using the following command:</span></span>
 
      ```powershell
      xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
      ```
 
-     - <span data-ttu-id="4605e-146">Igen választja, felülírja (vegye figyelembe, hogy ha a kérés nem azt felülírni, gondosan ellenőrizze a megadott elérési).</span><span class="sxs-lookup"><span data-stu-id="4605e-146">Answer Yes to overwrite (note that if there is no prompt to overwrite, double check the path entered).</span></span>
-     - <span data-ttu-id="4605e-147">Azt feltételezi, hogy a Generalize.xml szerkesztett másolatát másolta C:\.</span><span class="sxs-lookup"><span data-stu-id="4605e-147">Assumes your edited copy of Generalize.xml was copied to C:\ .</span></span>
+     - <span data-ttu-id="b868c-146">Igen választja, felülírja (vegye figyelembe, hogy ha a kérés nem azt felülírni, gondosan ellenőrizze a megadott elérési).</span><span class="sxs-lookup"><span data-stu-id="b868c-146">Answer Yes to overwrite (note that if there is no prompt to overwrite, double check the path entered).</span></span>
+     - <span data-ttu-id="b868c-147">Azt feltételezi, hogy a Generalize.xml szerkesztett másolatát másolta C:\.</span><span class="sxs-lookup"><span data-stu-id="b868c-147">Assumes your edited copy of Generalize.xml was copied to C:\ .</span></span>
 
-  10. <span data-ttu-id="4605e-148">Generalize.XML most frissült a megkerülő megoldás.</span><span class="sxs-lookup"><span data-stu-id="4605e-148">Generalize.xml is now updated with the workaround.</span></span> <span data-ttu-id="4605e-149">Futtassa a Sysprep a generalize beállítás engedélyezve van.</span><span class="sxs-lookup"><span data-stu-id="4605e-149">Please run Sysprep with the generalize option enabled.</span></span>
+  10. <span data-ttu-id="b868c-148">Generalize.XML most frissült a megkerülő megoldás.</span><span class="sxs-lookup"><span data-stu-id="b868c-148">Generalize.xml is now updated with the workaround.</span></span> <span data-ttu-id="b868c-149">Futtassa a Sysprep a generalize beállítás engedélyezve van.</span><span class="sxs-lookup"><span data-stu-id="b868c-149">Please run Sysprep with the generalize option enabled.</span></span>

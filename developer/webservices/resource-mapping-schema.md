@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: a7b2cc4d-292f-4714-888b-3b81536bef5d
 caps.latest.revision: 7
 ms.openlocfilehash: 0a71167926a39c821d25228825297e924e9682bd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080560"
 ---
-# <a name="resource-mapping-schema"></a><span data-ttu-id="8ce6d-102">Erőforrás-leképezési séma</span><span class="sxs-lookup"><span data-stu-id="8ce6d-102">Resource Mapping Schema</span></span>
+# <a name="resource-mapping-schema"></a><span data-ttu-id="6adee-102">Erőforrás-leképezési séma</span><span class="sxs-lookup"><span data-stu-id="6adee-102">Resource Mapping Schema</span></span>
 
-<span data-ttu-id="8ce6d-103">Felügyeleti OData IIS kiterjesztés definiálásához az erőforrás-leképezés XML-fájlokat használja.</span><span class="sxs-lookup"><span data-stu-id="8ce6d-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="8ce6d-104">A következő XSD e fájlok esetében használatos sémát határozza meg.</span><span class="sxs-lookup"><span data-stu-id="8ce6d-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="6adee-103">Felügyeleti OData IIS kiterjesztés definiálásához az erőforrás-leképezés XML-fájlokat használja.</span><span class="sxs-lookup"><span data-stu-id="6adee-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="6adee-104">A következő XSD e fájlok esetében használatos sémát határozza meg.</span><span class="sxs-lookup"><span data-stu-id="6adee-104">The following XSD defines the schema used for these files.</span></span>
 
-## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="8ce6d-105">Erőforrás-megfeleltetési fájlt XSD</span><span class="sxs-lookup"><span data-stu-id="8ce6d-105">Resource Mapping File XSD</span></span>
+## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="6adee-105">Erőforrás-megfeleltetési fájlt XSD</span><span class="sxs-lookup"><span data-stu-id="6adee-105">Resource Mapping File XSD</span></span>
 
-<span data-ttu-id="8ce6d-106">A következő XSD Management OData IIS kiterjesztés erőforrás leképezési fájlok a séma határozza meg.</span><span class="sxs-lookup"><span data-stu-id="8ce6d-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
+<span data-ttu-id="6adee-106">A következő XSD Management OData IIS kiterjesztés erőforrás leképezési fájlok a séma határozza meg.</span><span class="sxs-lookup"><span data-stu-id="6adee-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
