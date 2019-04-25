@@ -3,11 +3,11 @@ ms.date: 08/09/2018
 keywords: telepítés, a windows, linux, macOS, ARM, raspbian
 title: A PowerShell telepítése
 ms.openlocfilehash: b89f11c36459bd0b03693d89ae3ff6f1327ea755
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059032"
 ---
 # <a name="installing-various-versions-of-powershell"></a>PowerShell-verziók telepítése
 

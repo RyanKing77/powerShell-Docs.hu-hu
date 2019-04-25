@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Windows PowerShell-szószedet
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686333"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057352"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell-szószedet
 
@@ -22,7 +22,7 @@ ms.locfileid: "55686333"
 |dinamikus paraméterek|Ez a paraméter adnak hozzá egy Windows PowerShell-parancsmagot, függvény vagy parancsfájl bizonyos körülmények között. Parancsmagok, függvények, szolgáltatók és -parancsfájlok dinamikus paramétereket adhat hozzá.|
 |fájl formázása|A Windows PowerShell XML-fájl, amely rendelkezik a. format.ps1xml bővítményt, és határozza meg, hogyan jeleníti meg a Windows PowerShell-objektumot a .NET-keretrendszer típusa alapján.|
 |globális munkamenet-állapot|A munkamenet-állapot, amely tartalmazza az adatokat, amely hozzáférhető annak a felhasználónak egy Windows PowerShell-munkamenetet.|
-|Gazdagép|A felület, amely a Windows PowerShell motor segítségével a felhasználó kommunikál. Például az állomás kérések kezelésének módja Windows PowerShell és a felhasználó között.|
+|gazdagép|A felület, amely a Windows PowerShell motor segítségével a felhasználó kommunikál. Például az állomás kérések kezelésének módja Windows PowerShell és a felhasználó között.|
 |gazdagép-alkalmazás|A program, amely betölti a Windows PowerShell-motor és a folyamatot, és használja a műveletek végrehajtásához.|
 |a bemeneti metódus feldolgozása|Ez a módszer a parancsmag segítségével feldolgozásához bemenetként fogadott rekordokat. A bemeneti feldolgozási módszerek közé tartozik a BeginProcessing metódus, a ProcessRecord metódus, a EndProcessing módszer és a StopProcessing metódus.|
 |a modul manifest|A Windows PowerShell-modul, amely rendelkezik egy jegyzéket, amelynek RootModule kulcs értéke üres.|
@@ -30,26 +30,26 @@ ms.locfileid: "55686333"
 |a modul munkamenet-állapot|A munkamenet-állapot, amely egy Windows PowerShell-modul nyilvános és titkos adatait tartalmazza. Egy Windows PowerShell-munkamenet a felhasználó személyes adatait a munkamenet-állapot nem érhető el.|
 |megszakítást nem okozó hiba|Egy hiba, amely nem áll le a Windows PowerShell, a parancs feldolgozása továbbra is.|
 |főnév|A kötőjel egy Windows PowerShell-parancsmag neve a következő szót. A főnév ismerteti az erőforrásokat, amelyen a parancsmag funkcionál.|
-|paraméterkészlet|Egy csoport, amely ugyanazt a parancsot egy adott művelet végrehajtására használható paraméterek.|
+|Paraméterkészlet|Egy csoport, amely ugyanazt a parancsot egy adott művelet végrehajtására használható paraméterek.|
 |függőleges vonal|A Windows PowerShell, az előző parancs eredményének küldése a következő parancsot a folyamat bemenetként.|
 |Folyamat|Köti a csővezeték operátorral egymáshoz csatolt parancsokat (&#124;) (ASCII 124). Minden egyes csővezeték-kezelőt bemenetként a következő parancsot az előző parancs eredményének küld.|
 |PSSession|Egy Windows PowerShell-munkamenetben létrehozott, felügyelt, és a felhasználó által lezárt típusú.|
 |legfelső szintű modul|Egy moduljegyzék a RootModule kulcsot a megadott modul.|
-|futási térben|A Windows PowerShell, a üzemeltetési környezet, amelyben a folyamat minden parancs végrehajtásakor.|
+|Futási térben|A Windows PowerShell, a üzemeltetési környezet, amelyben a folyamat minden parancs végrehajtásakor.|
 |parancsprogram-blokkot|A Windows PowerShellben programozási nyelv, az utasítások vagy egyetlen egységként használt kifejezések gyűjteménye. Parancsprogram-blokkot fogadhat argumentumok és értéket ad vissza.|
 |modul skriptu|A Windows PowerShell-modul amelynek gyökérmodult modul parancsfájl (.psm1). Előfordulhat, hogy egy szkriptmodulba, vagy egy moduljegyzék nem feltétlenül tartalmazzák.|
 |parancsfájl-modul|Egy Windows PowerShell-parancsfájlt tartalmazó fájl. A parancsfájl, amely a modul skriptu exportálja tagokat definiálja. Parancsfájlok modul .psm1 fájlnévkiterjesztéssel rendelkezik.|
 |Rendszerhéj|A parancsértelmezőt, amellyel parancsokat át az operációs rendszer.|
 |új kapcsolóparaméter|Egy paraméter, amely nem vesz egy argumentum.|
 |megszakítást okozó hiba|Egy hiba, amely leállítja a Windows PowerShell, a parancs feldolgozása.|
-|tranzakció|Egy atomi munkaegysége. A munka egy tranzakcióban kell végezni, teljes; Ha a tranzakció bármelyik részét nem sikerül, a teljes tranzakció sikertelen lesz.|
+|Tranzakció|Egy atomi munkaegysége. A munka egy tranzakcióban kell végezni, teljes; Ha a tranzakció bármelyik részét nem sikerül, a teljes tranzakció sikertelen lesz.|
 |a fájl típusa|A Windows PowerShell XML-fájl, amely .ps1xml kiterjesztése, és, amely kiterjeszti a Windows PowerShell a Microsoft .NET-keretrendszer típusok tulajdonságait.|
-|verb|A szó, amely megelőzi a kötőjel a egy Windows PowerShell-parancsmag neve. A művelet azt ismerteti, hogy a, a parancsmag által végrehajtandó műveletet.|
+|művelet|A szó, amely megelőzi a kötőjel a egy Windows PowerShell-parancsmag neve. A művelet azt ismerteti, hogy a, a parancsmag által végrehajtandó műveletet.|
 |Windows PowerShell|Egy parancssori rendszerhéj és feladatalapú parancsprogramozási technológiát, amely biztosítja az informatikai rendszergazdák teljes körű vezérlését és automatizálási rendszer felügyeleti feladatokat.|
 |Windows PowerShell-paranccsal|Az elemek a folyamat, amely olyan műveleteket kell elvégezni. Windows PowerShell-parancsok vannak, vagy a billentyűzet begépelt vagy programozott módon meghívott.|
 |Windows PowerShell-adatfájlt|Egy szöveges fájl, amely a .psd1 fájlnévkiterjesztéssel rendelkezik. Windows PowerShell modul jegyzékfájl adatok tárolására, és tárolja a lefordított sztringeket a parancsfájl nemzetközivé például különböző célú adatfájlok használ.|
 |Windows PowerShell meghajtót|Egy virtuális meghajtó, amely egy adattár közvetlen hozzáférést biztosít. Ez egy Windows PowerShell-szolgáltató által definiált vagy létrehozása a parancssorból. A parancssorban létrehozott meghajtók a munkamenet-specifikus meghajtó, és elvesznek, ha a munkamenet lezárult.|
-|Windows PowerShell integrált parancsfájlkezelési környezet (ISE)|Amely lehetővé teszi, hogy a parancsok futtatását, valamint hogy írni, tesztelése és szkriptek hibakeresése egy barátságos és a szintaxis-színes, Unicode-kompatibilis környezetben a Windows PowerShell gazdaalkalmazást.|
+|Windows PowerShell integrált parancsfájl-kezelési környezet ISE|Amely lehetővé teszi, hogy a parancsok futtatását, valamint hogy írni, tesztelése és szkriptek hibakeresése egy barátságos és a szintaxis-színes, Unicode-kompatibilis környezetben a Windows PowerShell gazdaalkalmazást.|
 |Windows PowerShell-modul|Önálló újrafelhasználható egység, amely lehetővé teszi, hogy a partíció, rendezése és a Windows PowerShell-kód absztrakt. Egy modul parancsmagok, a szolgáltatók, a Funkciók, a változók és a más típusú erőforrás, amelyet aztán egyetlen egységként is tartalmazhat.|
 |Windows PowerShell-szolgáltató|A Microsoft .NET-keretrendszer-alapú program, amely egy speciális adattárban elérhetővé teszi a Windows PowerShellben, hogy megtekintheti és felügyelheti azokat.|
 |Windows PowerShell-parancsfájl|A Windows PowerShell nyelven írt parancsprogram.|

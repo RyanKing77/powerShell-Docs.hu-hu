@@ -3,11 +3,11 @@ title: A PowerShell Core 6.2 újdonságai
 description: Új szolgáltatásaival és módosításaival, amely a PowerShell Core 6.2
 ms.date: 03/28/2019
 ms.openlocfilehash: 6a0da8a410e602ae3963e0bc7bace745317d7d4b
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984493"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058097"
 ---
 # <a name="whats-new-in-powershell-core-62"></a>A PowerShell Core 6.2 újdonságai
 

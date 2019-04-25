@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-File erőforrás
 ms.openlocfilehash: b5bc2c305b8cfccbd044274811df631264a24279
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077330"
 ---
 # <a name="dsc-file-resource"></a>DSC-File erőforrás
 
-> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 A fájl erőforrás a Windows PowerShell Desired State Configuration (DSC) lehetővé teszi a fájlok és mappák célcsomóponton kezeléséhez. A **DestinationPath** és **SourcePath** mindkét által elérhetőnek kell lennie a cél csomópont.
 

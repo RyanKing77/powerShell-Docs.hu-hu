@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Az ISEOptions objektum
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ms.openlocfilehash: e756da21aaa5465f7fa6a90563b4180f0c89e87b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057774"
 ---
 # <a name="the-iseoptions-object"></a>Az ISEOptions objektum
 
@@ -16,7 +16,7 @@ A **ISEOptions** objektum képviseli a Windows PowerShell ISE-ben különböző 
 
 A **ISEOptions** objektum tartalmazza a következő metódusokat és tulajdonságokat.
 
-## <a name="methods"></a>Metódusok
+## <a name="methods"></a>Módszerek
 
 ### <a name="restoredefaultconsoletokencolors"></a>RestoreDefaultConsoleTokenColors\(\)
 

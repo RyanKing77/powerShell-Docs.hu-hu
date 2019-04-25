@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: A parancsokkal kapcsolatos információk lekérése
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057706"
 ---
 # <a name="getting-information-about-commands"></a>A parancsokkal kapcsolatos információk lekérése
 
@@ -74,7 +74,7 @@ Több hasznos, és tekintse meg a parancsok csökkentett készletét.
 > A csillag (\*) helyettesítő karakterek használata a PowerShell-parancs argumentumainak szolgál. A \* azt jelenti, hogy egyezik"egy vagy több bármilyen karaktert". Beírhatja `Get-Command a*` található betűvel kezdődő összes parancs "a". Ellentétben a helyettesítő karakterek megfeleltetése **cmd.exe**, a PowerShell a helyettesítő karakter is egyezni fog a egy ideig.
 
 Használja a **CommandType** paraméterében `Get-Command` beolvasni a más típusú natív parancsokat.
--parancsmag futtatási eredményei között.
+a parancsmag.
 
 Első parancsaliasok, amelyek a hozzárendelt beceneveinek parancsokat, írja be:
 

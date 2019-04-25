@@ -4,17 +4,17 @@ keywords: PowerShell, a parancsmag
 title: Az PowerShellTab objektum
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: 577e2aaaddf3071801816d9ae91dbf0006dd5072
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687600"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057672"
 ---
 # <a name="the-powershelltab-object"></a>Az PowerShellTab objektum
 
 A **PowerShellTab** objektum képviseli egy Windows PowerShell-modul környezetben.
 
-## <a name="methods"></a>Metódusok
+## <a name="methods"></a>Módszerek
 
 ### <a name="invoke-script-"></a>Meghívása\( parancsfájl \)
 
@@ -166,7 +166,7 @@ A csak olvasható tulajdonság, amely lekérdezi a Tesztkimenet ablaktáblán, a
 $psISE.CurrentPowerShellTab.output.clear()
 ```
 
-### <a name="prompt"></a>Rákérdezés
+### <a name="prompt"></a>Kérdés
 
 A Windows PowerShell ISE 2.0-s és újabb verzióiban támogatott.
 

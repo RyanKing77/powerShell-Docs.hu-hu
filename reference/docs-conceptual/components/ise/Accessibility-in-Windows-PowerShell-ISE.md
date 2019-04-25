@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: A Windows PowerShell ISE kisegítő lehetőségei
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058454"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>A Windows PowerShell ISE kisegítő lehetőségei
 

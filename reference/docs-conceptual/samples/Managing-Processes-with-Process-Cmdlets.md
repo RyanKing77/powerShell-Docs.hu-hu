@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Folyamatok kezelése folyamatparancsmagokkal
 ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
 ms.openlocfilehash: 741a3464bce6284c4933384398c4e9ddcca2572c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058709"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>Folyamatok kezelése folyamatparancsmagokkal
 

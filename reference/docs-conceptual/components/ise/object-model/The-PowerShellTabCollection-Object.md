@@ -4,17 +4,17 @@ keywords: PowerShell, a parancsmag
 title: Az PowerShellTabCollection objektum
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
 ms.openlocfilehash: d9088b26de35360b8258d3f15924b3010a986d15
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086614"
 ---
 # <a name="the-powershelltabcollection-object"></a>Az PowerShellTabCollection objektum
 
 A **PowerShellTab** objektum olyan gyűjteménye, **PowerShellTab** objektumokat. Minden egyes **PowerShellTab** objektum egy önálló futtatókörnyezet funkcionál. Fontos Microsoft.PowerShell.Host.ISE.PowerShellTabs osztály egy példányát. Például a **$psISE.PowerShellTabs** objektum.
 
-## <a name="methods"></a>Metódusok
+## <a name="methods"></a>Módszerek
 
 ### <a name="add"></a>Hozzáadása\(\)
 

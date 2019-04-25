@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Az ISESnippetObject
 ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
 ms.openlocfilehash: f80080f4207cf226fb7466c4842446d08c081347
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057978"
 ---
 # <a name="the-isesnippetobject"></a>Az ISESnippetObject
 

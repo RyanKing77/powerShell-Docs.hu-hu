@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
 ms.openlocfilehash: d9109e8d5b69a25ad52b90bcaff9628b01067211
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081021"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
 Ez a példa bemutatja, hogyan tároló módszerek támogatásához a hívásokat írja felül a `Copy-Item`, `Get-ChildItem`, `New-Item`, és `Remove-Item` parancsmagok. Ezek a metódusok kell végrehajtani, ha az adattár tartalmaz, amelyek olyan tárolók elemek. A tároló egy olyan csoport gyermekelemek egy közös szülő elem alatt. Ebben a példában a szolgáltató osztálya származik a [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) osztály.
 
-## <a name="demonstrates"></a>Bemutatók
+## <a name="demonstrates"></a>Azt ismerteti
 
 > [!IMPORTANT]
 > A szolgáltató osztálya nagy valószínűséggel lesz származtatva a [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)

@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Keresési eredmények szűrése
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084402"
 ---
 # <a name="filtering-search-results"></a>Keresési eredmények szűrése
 
@@ -29,12 +29,12 @@ A jelölőnégyzetek alatt a legördülő engedélyezése a felhasználók álta
 - A csomagok
   - Modul
   - Parancsfájl
-- Kategóriák
+- Categories
   - Parancsmag
   - DSC-erőforrás
   - Függvény
   - Szerepkör-képesség
-  - A munkafolyamat
+  - Munkafolyamat
 
 Csak a PowerShell-galériából a modulok megtekintéséhez ellenőrizze a csomag típusok modul.
 Ehhez hasonlóan a szeretné csak a PowerShell-galériából a parancsfájlokat, ellenőrizze a csomag típusok parancsfájlt.

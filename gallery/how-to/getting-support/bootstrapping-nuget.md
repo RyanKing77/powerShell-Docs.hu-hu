@@ -4,11 +4,11 @@ contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: NuGet rendszerindítása
 ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084385"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>A NuGet-szolgáltató és a NuGet.exe bootstrap
 

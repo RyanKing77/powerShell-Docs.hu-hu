@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: A PowerShell.exe parancssori súgója
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
 ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058513"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe parancssori súgója
 
@@ -137,7 +137,7 @@ Egy karakterláncot, definiált beágyazott parancsprogram-blokkot végrehajtás
 Powershell.exe szintaxisát jeleníti meg. Ha elkezdi beírni a PowerShell.exe parancsot a PowerShellben, illesztenie a parancs paraméterei a kötőjel (-), nem perjellel (/). A Cmd.exe egy kötőjel vagy a perjelet is használható.
 
 > [!NOTE]
-> Hibaelhárítási megjegyzés: A PowerShell 2.0 néhány program, a Windows PowerShell konzol sikertelen kezdve egy LastExitCode, 0xc0000142.
+> Hibaelhárítási Megjegyzés: A PowerShell 2.0 néhány program, a Windows PowerShell konzol sikertelen kezdve egy LastExitCode, 0xc0000142.
 
 ## <a name="examples"></a>EXAMPLES
 

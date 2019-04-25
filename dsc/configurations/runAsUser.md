@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Hitelesítő adatok használata DSC-erőforrásokkal
 ms.openlocfilehash: af54c286ce744cd7db0b0e2d05087f60cdf1a33c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080050"
 ---
 # <a name="use-credentials-with-dsc-resources"></a>Hitelesítő adatok használata DSC-erőforrásokkal
 
-> Érvényes: Windows PowerShell 5.0, 5.1 Windows PowerShell
+> A következőkre vonatkozik: Windows PowerShell 5.0, 5.1 Windows PowerShell
 
 Az automatikus használatával futtathatja egy meghatározott hitelesítő adatokat a DSC erőforrás **PsDscRunAsCredential** tulajdonság a konfigurációban.
 Alapértelmezés szerint DSC fut az egyes erőforrások a system fiók.

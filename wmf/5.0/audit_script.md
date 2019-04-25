@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: 28cd186ab3a08a0da4ff81f5a21514f239770d13
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058080"
 ---
 # <a name="script-tracing-and-logging"></a>Parancsfájlok nyomkövetése és naplózása
 
@@ -21,7 +21,7 @@ Az események a következők:
 | Szint   | Részletes                                     |
 | Opcode  | Létrehozás                                      |
 | Művelet    | CommandStart                                |
-| Kulcsszó | futási térben                                    |
+| Kulcsszó | Futási térben                                    |
 | EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
 | Üzenet | Hozza létre a scriptblock kulcsszót szöveg (%1 % 2): </br> %3 </br> ScriptBlock azonosítója: %4 |
 
@@ -35,7 +35,7 @@ Ha engedélyezi a részletes naplózást, funkció kezdő és záró jelölők:
 | Szint   | Részletes                                                |
 | Opcode  | Nyissa meg a (/ bezárása)                                         |
 | Művelet    | CommandStart (/ CommandStop)                           |
-| Kulcsszó | futási térben                                               |
+| Kulcsszó | Futási térben                                               |
 | EventId | ScriptBlock\_meghívása\_Start\_Detail (0x1009 = 4105) / </br> ScriptBlock\_meghívása\_teljes\_Detail (0x100A Határolók = 4106) |
 | Üzenet | Elindítva (/ befejezett) hívja meg a scriptblock kulcsszó-azonosító: %1 </br> Futási térben azonosítója: %2 |
 

@@ -5,11 +5,11 @@ keywords: WMF, powershell, beállítás
 contributor: jianyunt, quoctruong
 title: A WMF 5.1 csomagkezelés fejlesztései
 ms.openlocfilehash: 30ef59ed9dc0d56636d85cc6e53523a9a73963a4
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055615"
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>A WMF 5.1 csomagkezelés fejlesztései
 

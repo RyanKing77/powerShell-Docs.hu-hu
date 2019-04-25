@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: A Windows PowerShell indítása
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
 ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058352"
 ---
 # <a name="starting-windows-powershell"></a>A Windows PowerShell indítása
 PowerShell parancsfájl-kezelési motor dll, amely több gazdagép be lesz ágyazva az.  A leggyakoribb gazdagépet meg fogja kezdeni a következők: interaktív a PowerShell.exe parancssori és az interaktív parancsfájl-kezelési környezet PowerShell_ISE.exe.
@@ -96,7 +96,7 @@ Egy Windows PowerShell 32 bites verziójának indítása, használja az alábbi 
 - Az asztalon vigye a kurzort a jobb felső sarokban, kattintson **keresési**, típus **PowerShell x86** majd **Windows PowerShell (x86)**.
 - A parancssorban adja meg: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### <a name="in-windows-server-2012"></a>A Windows Server® 2012
+#### <a name="in-windows-server-2012"></a>In Windows Server® 2012
 
 - Az a **Start** írja be **PowerShell** majd **Windows PowerShell (x86)**.
 - A **Kiszolgálókezelő**, az a **eszközök** menüjében válassza **Windows PowerShell (x86)**.

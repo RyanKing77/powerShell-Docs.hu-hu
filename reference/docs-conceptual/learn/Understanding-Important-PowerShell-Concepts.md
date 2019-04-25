@@ -1,16 +1,16 @@
 ---
 ms.date: 08/23/2018
 keywords: PowerShell, a parancsmag
-title: Fontos PowerShell fogalmainak megértése
+title: A PowerShell legfontosabb fogalmainak megértése
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
 ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058590"
 ---
-# <a name="understanding-important-powershell-concepts"></a>Fontos PowerShell fogalmainak megértése
+# <a name="understanding-important-powershell-concepts"></a>A PowerShell legfontosabb fogalmainak megértése
 
 A PowerShell-tervezési fogalmak számos különböző környezetekben történő integrálható. A fogalmak számos parancskörnyezet vagy programozási környezetben kezelőfelülettel személyek ismerős lesz. Azonban néhány személy fog tudni ezek mindegyike. Ezek a fogalmak némelyike megnézzük a rendszerhéj hasznos áttekintést nyújt.
 
@@ -38,6 +38,6 @@ Mivel PowerShell automatikusan elemzi, és feldolgozza a parancssorban a **-?** 
 > Ha egy grafikus alkalmazást futtatja a PowerShell, az alkalmazás az ablak nyílik meg.
 > PowerShell inkonzisztensek, csak ha feldolgozása a parancssori bemenet, ellátási vagy az alkalmazás kimenete a konzolablakban vissza. Hogyan működik az alkalmazás belső nincs hatással.
 
-## <a name="powershell-uses-some-c-syntax"></a>PowerShell néhány C# szintaxisát használja.
+## <a name="powershell-uses-some-c-syntax"></a>PowerShell használ az egyes C# szintaxis
 
-PowerShell a .NET-keretrendszer épül. Egyes szintaxis szolgáltatások és a kulcsszavak azt megosztja a C# programozási nyelv. PowerShell megismeréséhez teheti, hogy sokkal könnyebben tanulhatja a C#. Ha már ismeri a C#, ezek Hasonlóságok teheti könnyebben PowerShell megismeréséhez.
+PowerShell a .NET-keretrendszer épül. Egyes szintaxis szolgáltatások és a egy kulcsszót, közös a C# programozási nyelv. PowerShell megismeréséhez sokkal egyszerűbbé teheti további C#. Ha már ismeri a C#, ezek Hasonlóságok teheti könnyebben PowerShell megismeréséhez.

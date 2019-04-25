@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: A WMF 5.1 PowerShell motor fejlesztései
 ms.openlocfilehash: 738f72b910de7d44f48309013237d523d0dd40a4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055564"
 ---
 # <a name="powershell-engine-improvements"></a>PowerShell motor fejlesztései
 
@@ -32,7 +32,7 @@ Néhány példa fejlesztései (a az eredményeket a hardverektől függően vál
 
 > [!Note]
 > Indítási kapcsolatos egy módosítása hatással lehet a bizonyos nem támogatott forgatókönyveket.
-> PowerShell már nem olvassa a fájlokat `$pshome\*.ps1xml` – ezek a fájlok lett konvertálva a C# elkerülése érdekében néhány fájlt, és a CPU-terhelés az XML feldolgozási fájlokat.
+> PowerShell már nem olvassa a fájlokat `$pshome\*.ps1xml` – ezek a fájlok konvertált C# néhány fájl és a Processzor terhelését az XML-fájlok feldolgozásának elkerülése érdekében.
 > A fájlok továbbra is léteznek támogatási V2 egymás mellett, így a fájl tartalmának módosítása esetén ez nem lesz bármilyen hatása V5 verzióra, csak V2.
 > Vegye figyelembe, hogy ezek a fájlok tartalmának módosítása soha nem volt támogatott.
 

@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058369"
 ---
 # <a name="new-language-features-in-powershell-50"></a>A PowerShell 5.0 új nyelvi funkciók
 
@@ -132,7 +132,7 @@ hashtable new(int capacity)
 hashtable new(int capacity, float loadFactor)
 ```
 
-## <a name="methods"></a>Metódusok
+## <a name="methods"></a>Módszerek
 
 A Windows PowerShell-osztály metódusának a scriptblock kulcsszót, amelynek csak egy záró blokk van megvalósítva. Az összes módszer nyilvánosak legyenek. A következő nevű metódus meghatározása példán látható **DoSomething**.
 
@@ -170,7 +170,7 @@ Rejtett tagok nyilvános, de nem jelennek meg a Get-Member kimenetét, kivéve, 
 
 A tagok nem tartoznak mikor rejtett lapon befejezése vagy az IntelliSense segítségével, kivéve, ha az osztály a rejtett tag meghatározása befejezése után történik.
 
-Egy új attribútum **System.Management.Automation.HiddenAttribute** , hogy a C#-kód azonos szemantikáját Windows Powershellen belülről lehet hozzá lett adva.
+Egy új attribútum **System.Management.Automation.HiddenAttribute** hozzá lett adva, hogy C# kódot a Windows Powershellen belülről azonos szemantikát is rendelkezhet.
 
 ## <a name="return-types"></a>Návratové typy
 

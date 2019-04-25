@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: A Konzol panel használata a Windows PowerShell ISE-ben
 ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
 ms.openlocfilehash: 5bbbdd3b1f0324ff1a4f2298459f58640c4dc9a6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688720"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057397"
 ---
 # <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>A Konzol panel használata a Windows PowerShell ISE-ben
 
@@ -18,7 +18,7 @@ Futtassa a parancsot a konzolablakban, írja be a parancsot, és nyomja le az EN
 
 A parancs, az eszköztáron leállításához kattintson **leállítása műveletet**, vagy nyomja le a CTRL + BREAK billentyűkombinációt. CTRL + C használatával állítsa le a parancsot, ha a környezet egyértelmű. Például ha valamilyen szöveget a jelenlegi panelen van jelölve, majd CTRL + C hozzárendeli a másolási művelet.
 
-Windows PowerShell v3 kezdve a Tesztkimenet ablaktáblán lett egyesítve a konzol ablaktáblában. Ez az előnye, hogy viselkedik, mint például az önálló Windows PowerShell-konzolt, és használata esetén nem volt szükség, ha a különálló eljárásokban közötti különbségeket. képes vagy:
+Windows PowerShell v3 kezdve a Tesztkimenet ablaktáblán lett egyesítve a konzol ablaktáblában. Ez az előnye, hogy viselkedik, mint például az önálló Windows PowerShell-konzolt, és használata esetén nem volt szükség, ha a különálló eljárásokban közötti különbségeket. A következőket teheti:
 
 - Válassza ki, és a konzol panelen szöveg másolása a vágólapra a Beillesztés bármely más ablakban. Szöveg kijelöléséhez kattintson, és tartsa az egérrel a tesztkimenet ablaktáblán, miközben az egérrel húzza a rögzíteni kívánt szöveg. Használhatja a kurzor nyílbillentyűk üzem közben **SHIFT** szöveg kijelöléséhez. Ezután nyomja le a CTRL + C billentyűt, vagy kattintson a **másolási** ikonra az eszköztárban.
 

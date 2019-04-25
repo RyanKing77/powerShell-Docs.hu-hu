@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Üzembe helyezés az Azure Automation szolgáltatásban
 ms.openlocfilehash: dc382b1cf3ceaa787f54c555d01e6bd9ba70e680
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687943"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084900"
 ---
 # <a name="deploy-to-azure-automation"></a>Üzembe helyezés az Azure Automation szolgáltatásban
 

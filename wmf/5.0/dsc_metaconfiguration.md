@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: 3c6a409a53ee88528a2109d8b007663d7fcc5288
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057878"
 ---
 # <a name="configure-dsc-lcm-with-new-meta-configuration-attribute"></a>DSC LCM konfigurálása meta-konfigurálása új attribútummal
 
