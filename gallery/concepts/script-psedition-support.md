@@ -4,11 +4,11 @@ contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: Parancsfájl-kompatibilis PowerShell-kiadások
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084691"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Parancsfájl-kompatibilis PowerShell-kiadások
 

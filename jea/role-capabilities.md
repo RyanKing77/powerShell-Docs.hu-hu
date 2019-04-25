@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: A JEA szerepköri funkciók
 ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084793"
 ---
 # <a name="jea-role-capabilities"></a>A JEA szerepköri funkciók
 

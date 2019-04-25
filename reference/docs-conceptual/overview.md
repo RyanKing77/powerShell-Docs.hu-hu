@@ -3,11 +3,11 @@ ms.date: 08/27/2018
 keywords: PowerShell, a parancsmag
 title: PowerShell-parancsprogramok
 ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058488"
 ---
 # <a name="powershell"></a>PowerShell
 

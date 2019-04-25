@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Új objektum .NET- és COM-objektumok létrehozása
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
 ms.openlocfilehash: ef8215303aacd90536d3c2ae57bc3629e202f318
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086366"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>.NET- és COM-objektumok (új objektum) létrehozása
 

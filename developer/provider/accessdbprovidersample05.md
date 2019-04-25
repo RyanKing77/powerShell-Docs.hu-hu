@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: a26661f2-a63c-4ca7-ad3e-dcb4d32ce5a1
 caps.latest.revision: 8
 ms.openlocfilehash: d7d6d3b377a0089bcf96d0ea46e866321441b537
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56852261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081002"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
 Ez a példa bemutatja, hogyan tároló módszerek támogatásához a hívásokat írja felül a `Move-Item` és `Join-Path` parancsmagok. Ezek a metódusok kell végrehajtani, amikor a felhasználónak szüksége van a tárolóban lévő elemek áthelyezése, és ha az adattár tartalmaz beágyazott tárolók. Ebben a példában a szolgáltató osztálya származik a [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) osztály.
 
-## <a name="demonstrates"></a>Bemutatók
+## <a name="demonstrates"></a>Azt ismerteti
 
 > [!IMPORTANT]
 > A szolgáltató osztálya nagy valószínűséggel célosztályából származik a következő osztályok egyike, és a valószínűleg az egyéb szolgáltató felületek megvalósításához:

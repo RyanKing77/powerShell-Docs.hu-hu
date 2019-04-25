@@ -3,11 +3,11 @@ title: A PowerShell Core telepítése macOS rendszerre
 description: Információ a PowerShell Core telepítése macOS rendszeren
 ms.date: 12/12/2018
 ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086459"
 ---
 # <a name="installing-powershell-core-on-macos"></a>A PowerShell Core telepítése macOS rendszerre
 

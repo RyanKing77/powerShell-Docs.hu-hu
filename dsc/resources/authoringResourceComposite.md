@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Összetett erőforrások – erőforrásként a DSC-konfiguráció használata
 ms.openlocfilehash: 2823d05e0c8feb2933ca691f9ab5149ace2f7ee3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076684"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Összetett erőforrások: A DSC-konfiguráció használata erőforrásként
 
-> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 A való életből vett helyzetekben a konfigurációk válhat a hosszú és összetett, számos különböző erőforrás hívása és a egy hatalmas tulajdonságainak beállítása. Annak érdekében, oldja meg ezt a komplexitást, egy Windows PowerShell Desired State Configuration (DSC) konfigurációt használhatja erőforrásként más konfigurációk esetén. Ezt nevezzük egy összetett erőforrást. Egy összetett erőforrás egy DSC-konfiguráció, amely a paramétereket. A konfiguráció paraméterei az erőforrás tulajdonságainak szerepét. A konfigurációs fájlba mentett egy **. schema.psm1** bővítményt, és vesz igénybe egy jellemző DSC-erőforrás szkriptet a MOF-séma- és az erőforráscsoport helye (DSC-erőforrások kapcsolatos további információkért lásd: [Windows PowerShell Desired State Configuration erőforrások](resources.md).
 

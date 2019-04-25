@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell, a core
 title: PowerShell 6.0 kapcsolatos ismert problémák
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085966"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 kapcsolatos ismert problémák
 
@@ -21,7 +21,7 @@ Megjegyzés: PowerShell a Linux és MacOS rendszeren miatt számos mögöttes al
 
 PowerShell hagyományosan le lett egységesen kis-és nagybetűket, néhány kivétellel. A UNIX-hoz hasonló operációs rendszerek esetében a fájlrendszer az túlnyomórészt kis-és nagybetűket, és a PowerShell betartja a szabványt, a fájlrendszer; Ez számos módon, nyilvánvaló, és nem nyilvánvaló-n keresztül teszi közzé.
 
-#### <a name="directly"></a>Közvetlenül
+#### <a name="directly"></a>közvetlenül
 
 - Adjon meg egy fájlt a PowerShell, ha az megfelelő esetben kell használni.
 

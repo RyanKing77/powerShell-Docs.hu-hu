@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSCAutomationHostEnabled beállításkulcs
 ms.openlocfilehash: 2bccd2738b9f61efd656fdf0f98cf71affdbe781
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076485"
 ---
 >Érintett kiadások: Windows PowerShell 5.0
 

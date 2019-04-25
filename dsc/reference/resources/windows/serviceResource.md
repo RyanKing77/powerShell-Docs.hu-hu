@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC szolgáltatás-erőforrás
 ms.openlocfilehash: 09571bd0eaa428e7d0bb7a533d6ad1c0c936e2cf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076894"
 ---
 # <a name="dsc-service-resource"></a>DSC szolgáltatás-erőforrás
 
-> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 
 A **szolgáltatás** erőforrás a Windows PowerShell Desired State Configuration (DSC) lehetővé teszi a célcsomóponton szolgáltatások kezelésére.

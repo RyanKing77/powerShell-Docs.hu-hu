@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: PowerShell-galériából – gyakori kérdések
 ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084628"
 ---
 # <a name="frequently-asked-questions"></a>Gyakori kérdések
 
@@ -150,7 +150,7 @@ A PackageManagement csomag szolgáltató rétegben az PSModule csomag szolgálta
 
 ![A PowerShellGet-architektúra](Images/powershellgetArchitecture.png)
 
-1. ábra. A PowerShellGet-architektúra
+1. ábra: A PowerShellGet-architektúra
 
 ## <a name="what-is-required-to-run-powershellget"></a>Mi szükséges a PowerShellGet futtatásához?
 

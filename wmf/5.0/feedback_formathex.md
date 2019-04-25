@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: 32a1a10ac30f4bccfdbdd4a1e4ca4ea9459a19af
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058063"
 ---
 # <a name="format-hex"></a>Format-Hex
 **Hexadecimális formátumú** lehetővé teszi a szöveges vagy bináris adatok megtekintése az hexadecimális formátumban, tanulmányozza a [hexadecimális formátumban](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)

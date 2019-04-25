@@ -4,17 +4,17 @@ keywords: PowerShell, a parancsmag
 title: Az ISEFileCollection objektum
 ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
 ms.openlocfilehash: eb4b2784820cbe51f662fd2fd945d8760ef9dbff
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086748"
 ---
 # <a name="the-isefilecollection-object"></a>Az ISEFileCollection objektum
 
 A **ISEFileCollection** objektum olyan gyűjteménye, **ISEFile** objektumokat. An example is the $psISE.CurrentPowerShellTab.Files collection.
 
-## <a name="methods"></a>Metódusok
+## <a name="methods"></a>Módszerek
 
 ### <a name="add-fullpath-"></a>Adjon hozzá\( \[fullPath\] \)
 

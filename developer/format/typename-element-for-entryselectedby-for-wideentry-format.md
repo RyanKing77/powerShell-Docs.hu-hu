@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 81a91c74-6229-4b64-aa2b-9123e8b7e9e5
 caps.latest.revision: 11
 ms.openlocfilehash: be35f6e9e2ad0b2d9a21a91c053aa0f70cafaf9c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083926"
 ---
 # <a name="typename-element-for-entryselectedby-for-wideentry-format"></a>A WideEntry elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[EntrySelectedBy eleme WideEntry (formátum)](./entryselectedby-element-for-wideentry-format.md)|A .NET-típusokat, amelyek a széles körű bejegyzés vagy a feltétellel, hogy léteznie kell használni a bejegyzés határozza meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a teljes nevet, a .NET-típus, például `System.IO.DirectoryInfo`.
 

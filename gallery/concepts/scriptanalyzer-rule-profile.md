@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Katalógus ScriptAnalyzer szabály profil
 ms.openlocfilehash: 939f01dece56b283dbe6e03c888f42ff866707af
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084589"
 ---
 # <a name="scriptanalyzer-rule-profile-for-gallery"></a>Katalógus ScriptAnalyzer szabály profil
 

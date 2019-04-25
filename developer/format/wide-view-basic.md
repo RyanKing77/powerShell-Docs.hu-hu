@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 9abb63b8-6d02-4e24-9c0e-2d15a04e9051
 caps.latest.revision: 8
 ms.openlocfilehash: 7a36f548a3eccdf2c9cad04a8bfe28bf4e8d6dfd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083739"
 ---
 # <a name="wide-view-basic"></a>Széles nézet (Alapszintű)
 
@@ -30,7 +30,7 @@ Ez a példa bemutatja, hogyan valósíthat meg egy alapszintű széles nézet, a
    > [!WARNING]
    > A formázási fájl olyan objektum, amely már definiálva van egy Windows PowerShell formázási fájl megjelenítését határozza meg. Kell használnia a `prependPath` paramétert, ha futtatja a parancsmagot, és nem tölthető be, a formázást modulként fájlt.
 
-## <a name="demonstrates"></a>Bemutatók
+## <a name="demonstrates"></a>Azt ismerteti
 
 Ez a fájl formázási mutat be a következő XML-elemeket:
 

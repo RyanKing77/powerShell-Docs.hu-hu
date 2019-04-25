@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ddcecc46-ac75-43fa-b03a-802a68524ec3
 caps.latest.revision: 10
 ms.openlocfilehash: da6ac5abe7acbbee8f57b3e81529664f81800b86
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075868"
 ---
 # <a name="propertyname-element-for-groupby-format"></a>A GroupBy PropertyName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[GroupBy elem nézet (formátum)](./groupby-element-for-view-format.md)|Határozza meg, hogyan jelenjen meg a .NET-objektumokká csoportja.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a .NET-tulajdonság neve.
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 859d2335-7fcd-4efd-b1cc-3d171e334c6b
 caps.latest.revision: 7
 ms.openlocfilehash: f4bf820be88919af43eeaf043b3ed8b9c06e1bf2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063974"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format"></a>A Nézet CustomControl eleméhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A nézet (formátum) CustomEntry EntrySelectedBy elem](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|A .NET-típusokat, amelyek egyéni tételhez vagy a feltétellel, hogy léteznie kell használni a bejegyzés határozza meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a kijelölt csoport nevét.
 

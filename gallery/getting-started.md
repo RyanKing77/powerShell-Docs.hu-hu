@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: A PowerShell-galériából használatának első lépései
 ms.openlocfilehash: c8beba3009e462ce52cdecd34fc0313d9234f289
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084759"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>A PowerShell-galériából – első lépések
 
@@ -29,11 +29,11 @@ A katalógus eredményeit az alábbi paraméterek használatával szűrheti:
 - MinimumVersion
 - RequiredVersion
 - Címke
-- Magában foglalja
+- Tartalmazza
 - DscResource
 - RoleCapability
 - Parancs
-- Szűrő
+- Szűrés
 
 Ha érdekli csak a katalógus adott DSC-erőforrások felderítéséhez, akkor futtathatja a [Find-DscResource] parancsmagot. Find-DscResource DSC-erőforrások a katalógusban szereplő adatokat ad vissza.
 DSC-erőforrások mindig érkezzenek a modul részét képező, mert továbbra is szeretné futtatni [Install-Module][] ezen DSC-erőforrások telepítéséhez.

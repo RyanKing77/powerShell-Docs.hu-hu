@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC WindowsFeatureSet erőforrás
 ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076786"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet erőforrás
 
-> Érvényes: Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
 A **WindowsFeatureSet** erőforrás a Windows PowerShell Desired State Configuration (DSC), győződjön meg arról, hogy szerepkörök és funkciók hozzáadásakor vagy eltávolításakor a cél csomópont mechanizmust biztosít.
 Ez az erőforrás egy [összetett erőforrás](../../../resources/authoringResourceComposite.md) , amely meghívja a [WindowsFeature erőforrás](windowsfeatureResource.md) az egyes szolgáltatásokhoz, megadva a `Name` tulajdonság.

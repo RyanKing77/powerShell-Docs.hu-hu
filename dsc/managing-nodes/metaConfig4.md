@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A Local Configuration Manager konfigurálása a Windows PowerShell korábbi verziói
 ms.openlocfilehash: cea32c9aa8144bc52f3d44f2ad852f577f6a5e6d
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079608"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>A Local Configuration Manager konfigurálása a Windows PowerShell korábbi verziói
 
->Érvényes: Windows PowerShell 4.0
+>A következőkre vonatkozik: Windows PowerShell 4.0-s verzióját
 
 **Windows PowerShell 5.0-s vagy újabb kapcsolatos információkért lásd: [a Local Configuration Manager](metaConfig.md).**
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 08512496-5682-4539-ab56-0c5394ce1f01
 caps.latest.revision: 6
 ms.openlocfilehash: 0137886437f01518f396613c564517e7910e657a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064390"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-controls-for-view-format"></a>A Nézet Vezérlők eleméhez tartozó SelectionCondition ScriptBlock eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[Nézet (formátum) vezérlők EntrySelectedBy SelectionCondition elem.](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)|Határozza meg egy feltételt, amely a vezérlőelem definíciójában használt léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a parancsfájl, amely ki lesz értékelve.
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: Naplózás és a JEA-jelentések
 ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084079"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Naplózás és a JEA-jelentések
 

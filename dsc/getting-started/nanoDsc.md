@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC használata a Nano Serveren
 ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079727"
 ---
 # <a name="using-dsc-on-nano-server"></a>A DSC használata a Nano Serveren
 
-> Érvényes: Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
 **A Nano Serveren DSC** a választható csomag létezik a `NanoServer\Packages` mappájában, a Windows Server 2016 adathordozójáról. A csomag létrehozásakor egy virtuális Merevlemezt a Nano Server megadásával telepíthető **Microsoft-NanoServer-DSC-Package** értékeként a **csomagok** paraméterében a **New-NanoServerImage**  függvény. Ha például egy virtuális Merevlemezt a virtuális gép létrehozásakor, a parancs lenne a következőhöz hasonló:
 

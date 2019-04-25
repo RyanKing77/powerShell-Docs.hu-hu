@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 459b6d0f-d596-4269-9113-915a283c1e28
 caps.latest.revision: 10
 ms.openlocfilehash: 8b89d7bf8a69626dc3e6bd566dab7951a4c7c5ab
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082872"
 ---
 # <a name="host06-sample"></a>Host06 – minta
 
@@ -25,7 +25,7 @@ Ez a példa bemutatja, hogyan hozhat létre olyan interaktív konzol-alapú gazd
 
 - Ez az alkalmazás emelt jogosultságszintű módban (Futtatás rendszergazdaként) kell futnia.
 
-## <a name="demonstrates"></a>Bemutatók
+## <a name="demonstrates"></a>Azt ismerteti
 
 - Egy egyéni gazdagépre, amelynek osztályok származtatást létrehozása a [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) osztályt, a [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) osztály, valamint a [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) osztály.
 

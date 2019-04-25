@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Erőforrás-készítési ellenőrzőlista
 ms.openlocfilehash: 7b1a096bba1b729c096b6689178ee022e12e4634
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076582"
 ---
 # <a name="resource-authoring-checklist"></a>Erőforrás-készítési ellenőrzőlista
 

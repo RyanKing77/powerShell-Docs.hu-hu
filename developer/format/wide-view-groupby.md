@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 39388197-4ff9-4889-aa32-526011afa1f6
 caps.latest.revision: 6
 ms.openlocfilehash: e95ec550a7815a76a8bd7f9526dfa405a9644360
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083654"
 ---
 # <a name="wide-view-groupby"></a>Széles nézet (GroupBy)
 
@@ -30,7 +30,7 @@ Ez a példa bemutatja, hogyan valósíthat meg a csoportjait megjelenítő szél
    > [!WARNING]
    > Ez a formázási fájl olyan objektum, amely már definiálva van egy Windows PowerShell formázás fájlok megjelenítését határozza meg. Kell használnia a `prependPath` paramétert, ha futtatja a parancsmagot, és nem tölthető be, a formázást modulként fájlt.
 
-## <a name="demonstrates"></a>Bemutatók
+## <a name="demonstrates"></a>Azt ismerteti
 
 Ez a fájl formázási mutat be a következő XML-elemeket:
 

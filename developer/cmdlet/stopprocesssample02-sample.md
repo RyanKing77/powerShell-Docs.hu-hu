@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
 caps.latest.revision: 10
 ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067303"
 ---
 # <a name="stopprocesssample02-sample"></a>StopProcessSample02 – minta
 
@@ -53,7 +53,7 @@ Ez a példa bemutatja, hogyan írhat olyan parancsmagot, amely a hibakeresési (
 
 Ez a minta Windows PowerShell 2.0 szükséges.
 
-## <a name="demonstrates"></a>Bemutatók
+## <a name="demonstrates"></a>Azt ismerteti
 
 Ez a minta bemutatja a következő.
 

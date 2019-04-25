@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 6e4e0cf6-19e0-44b8-8b40-d6f6075276cf
 caps.latest.revision: 5
 ms.openlocfilehash: 489d8bcdabe904d6a3d2bc6cdb9d7e23d09cbef2
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075188"
 ---
 # <a name="activity-parameters"></a>Tevékenység-paraméterek
 
@@ -39,7 +39,7 @@ A következő táblázat felsorolja a javasolt nevek és a funkciók a tevékeny
 |**Kényszerített**<br>Adattípus: SwitchParameter|Ez a paraméter jelzi, hogy a felhasználó egy művelet hajtható végre, akkor is, ha korlátozások vannak észlelt, amikor a paraméter meg van adva megvalósításához. A paraméter nem engedélyezi a biztonsági legyen feltörni. Például ez a paraméter lehetővé teszi, hogy egy felhasználó egy csak olvasható fájl felülírása.|
 |**Belefoglalása**<br>Adattípus: String]|Ez a paraméter valósítja meg, hogy a felhasználó belefoglalhatja a hiba egy tevékenységet. A bemeneti szűrők használatával kapcsolatos további információkért lásd: [bemeneti Szűrőparaméterrel](input-filter-parameters.md).|
 |**Növekményes**<br>Adattípus: SwitchParameter|Ez a paraméter jelzi, hogy a feldolgozás történik növekményes paraméter megadásakor megvalósításához. Például ez a paraméter lehetővé teszi, hogy a felhasználók, fájlok biztonsági mentése a legutóbbi biztonsági mentés óta csak növekményes biztonsági mentések végrehajtásához.|
-|**InputObject**<br>Adattípus: Objektum|A parancsmag bemenete más parancsmagoknak a megvalósítási ezt a paramétert. Amikor határoz meg egy **InputObject** paramétert, mindig adja meg a **ValueFromPipeline** deklarálásakor kulcsszó a **paraméter** attribútum. A bemeneti szűrők használatával kapcsolatos további információkért lásd: [bemeneti Szűrőparaméterrel](./input-filter-parameters.md).|
+|**InputObject**<br>Adattípus: Object|A parancsmag bemenete más parancsmagoknak a megvalósítási ezt a paramétert. Amikor határoz meg egy **InputObject** paramétert, mindig adja meg a **ValueFromPipeline** deklarálásakor kulcsszó a **paraméter** attribútum. A bemeneti szűrők használatával kapcsolatos további információkért lásd: [bemeneti Szűrőparaméterrel](./input-filter-parameters.md).|
 |**Beszúrása**<br>Adattípus: SwitchParameter|Ez a paraméter valósítja meg, hogy a parancsmag egy elemet szúr be, ha a paraméter meg van adva.|
 |**Interaktív**<br>Adattípus: SwitchParameter|Ez a paraméter valósítja meg, hogy a parancsmag működését interaktív módon a felhasználóval, ha a paraméter meg van adva.|
 |**időköz**<br>Adattípus: Kivonattábla|Ez a paraméter valósítja meg, hogy a felhasználó úgy adhat meg a kulcsszavak egy kivonattábla, amely tartalmazza az értékeket. Az alábbi példa bemutatja mintaértékek a **időköz** paraméter: `-interval @{ResumeScan=15; Retry=3}`.|

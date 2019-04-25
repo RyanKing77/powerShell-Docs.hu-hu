@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 01ae8cbe-acdc-4043-bd6e-1118a5691a55
 caps.latest.revision: 12
 ms.openlocfilehash: 405184f7bdbf1955f1df7766bf2723c244dcc27f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064917"
 ---
 # <a name="propertyname-element-for-listitem-for-listcontrol-format"></a>A ListControl elemhez tartozó ListItem PropertyName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[Listaelem elem (formátum)](./listitem-element-for-listitems-for-listcontrol-format.md)|A tulajdonság, vagy a parancsfájl, amelynek értéke megjelenik a lista nézet sorában határoz meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg, amelynek értéke megjelenik a tulajdonság nevét.
 

@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: WMF, powershell, beállítás
 title: Hibajavításokat tartalmaz a WMF 5.1
 ms.openlocfilehash: f53fc40b79a3906ac2025b0eff342c0705b82655
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085048"
 ---
 # <a name="bug-fixes-in-wmf-51"></a>Hibajavításokat tartalmaz a WMF 5.1
 

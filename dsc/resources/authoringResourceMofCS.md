@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC-erőforrás a szerzői műveletekC#
 ms.openlocfilehash: 6f2bb4d411237f13e2735c2e5f630b4f40dc6842
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076650"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>A DSC-erőforrás C nyelven készítése\#
 
-> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 Általában egy Windows PowerShell Desired State Configuration (DSC) egyéni erőforrás implementálva van a PowerShell-parancsfájlt. Azonban is alkalmazhat a DSC egyéni erőforrás funkcióit, ha a parancsmagokat C#. Parancsmagok írásáról bemutatását C#, lásd: [írása egy Windows PowerShell-parancsmag](/powershell/developer/windows-powershell).
 

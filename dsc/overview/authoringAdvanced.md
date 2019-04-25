@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC-szerepkör a CI/CD-folyamat ismertetése
 ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56803378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079828"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>A DSC-szerepkör a CI/CD-folyamat ismertetése
 

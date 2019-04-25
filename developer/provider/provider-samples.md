@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c4933dad-fec9-4337-a1a9-9dc16ee87cc3
 caps.latest.revision: 9
 ms.openlocfilehash: 1e7aeb5bcb6bd5a2845648c3327e2245e6c428ba
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56844799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080934"
 ---
 # <a name="provider-samples"></a>Szolgáltatói minták
 
@@ -21,7 +21,7 @@ Ez a szakasz tartalmazza a minta-szolgáltató, amely egy Microsoft Access-adatb
 
 ## <a name="in-this-section"></a>A szakasz tartalma
 
-Ez a témakör az alábbi részekből áll:
+Ez a szakasz az alábbi témaköröket tartalmazza:
 
 [AccessDBProviderSample01 minta](./accessdbprovidersample01.md) Ez a példa bemutatja, hogyan deklarálja a szolgáltató osztályt, amely közvetlenül a [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) osztály. Része Itt csak a teljesség.
 

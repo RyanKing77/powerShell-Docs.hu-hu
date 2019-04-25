@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell, a core
 title: PowerShell 6.0 használhatatlanná tévő változásai
 ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085932"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 használhatatlanná tévő változásai
 
@@ -62,7 +62,7 @@ Ehelyett azt javasoljuk, hogy Ön a (más néven WMI v2) CIM-parancsmagok, amely
 
 Nem támogatott API-k használata miatt `Microsoft.PowerShell.LocalAccounts` el lett távolítva a PowerShell Core mindaddig, amíg egy jobb megoldás található.
 
-### <a name="-computer-cmdlets"></a>`*-Computer` parancsmagjai
+### <a name="-computer-cmdlets"></a>`*-Computer` Parancsmagok
 
 Nem támogatott API-k használatát, mert a következő parancsmagokat el lettek távolítva a PowerShell Core mindaddig, amíg egy jobb megoldás található.
 
@@ -71,11 +71,11 @@ Nem támogatott API-k használatát, mert a következő parancsmagokat el lettek
 - Remove-Computer
 - Visszaállítás – számítógép
 
-### <a name="-counter-cmdlets"></a>`*-Counter` parancsmagjai
+### <a name="-counter-cmdlets"></a>`*-Counter` Parancsmagok
 
 Nem támogatott API-k használata miatt a `*-Counter` el lett távolítva a PowerShell Core mindaddig, amíg egy jobb megoldás található.
 
-### <a name="-eventlog-cmdlets"></a>`*-EventLog` parancsmagjai
+### <a name="-eventlog-cmdlets"></a>`*-EventLog` Parancsmagok
 
 Nem támogatott API-k használata miatt a `*-EventLog` a PowerShell Core el lett távolítva. amíg nem jobb megoldás található. `Get-WinEvent` és `Create-WinEvent` érhetők el, és a Windows eseményeket létrehozásához.
 

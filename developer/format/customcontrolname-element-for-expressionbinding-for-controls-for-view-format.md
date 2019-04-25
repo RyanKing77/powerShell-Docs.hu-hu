@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4b6ee11e-9086-41d2-afd3-42fb9f24da69
 caps.latest.revision: 7
 ms.openlocfilehash: bf1d57447f9018f1535af14466427aaeabc048f3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066651"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-controls-for-view-format"></a>A Nézet Vezérlők eleméhez tartozó ExpressionBinding CustomControlName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[Nézet (formátum) vezérlők CustomItem ExpressionBinding elem.](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)|Határozza meg a vezérlő által megjelenített adatokat.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a vezérlő nevét.
 

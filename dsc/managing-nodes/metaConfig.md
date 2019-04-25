@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A helyi Configuration Manager
 ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079676"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>A helyi Configuration Manager
 
-> Érvényes: Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
 A helyi Configuration Manager (LCM) Konfigurálása a Desired State Configuration (DSC) rétegen a motor.
 Az LCM minden célként megadott csomóponton fut, és -elemzés és a csomópont küldött konfigurációk életbe léptetése.
@@ -65,7 +65,7 @@ A rendelkezésre álló erőforrások a következők:
 * **ReportServerWeb**: Itt adhatja meg egy HTTP-lekéréses szolgáltatás, amely jelentések küldik.
 * **PartialConfiguration**: ahhoz, hogy részleges konfigurációk adatokat biztosít.
 
-## <a name="basic-settings"></a>Alapszintű beállítások
+## <a name="basic-settings"></a>Alapbeállítások
 
 Eltérő lekéréses szolgáltatás végpontok/elérési utakat és részleges konfigurációk megadása, mind az LCM tulajdonságainak konfigurált egy **beállítások** letiltása.
 A következő tulajdonságok érhetők el egy **beállítások** letiltása.
@@ -73,14 +73,14 @@ A következő tulajdonságok érhetők el egy **beállítások** letiltása.
 |  Tulajdonság  |  Típus  |  Leírás   |
 |----------- |------- |--------------- |
 | ActionAfterReboot| sztring| Itt adhatja meg, mi történik a számítógép újraindítása után a beállítások alkalmazása során. A lehetséges értékek a következők __"ContinueConfiguration"__ és __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: Továbbra is a számítógép újraindítása után az aktuális konfiguráció alkalmazása. Ez az az alapértelmezett érték</li><li>__StopConfiguration__: Állítsa le a számítógép újraindítása után az aktuális konfigurációt.</li></ul>|
-| AllowModuleOverwrite| logikai| __$TRUE__ Ha a lekéréses szolgáltatásból letöltött új konfigurációk engedélyezettek-e a régieket célcsomóponton felülírásához. Más esetekben $FALSE.|
+| AllowModuleOverwrite| bool| __$TRUE__ Ha a lekéréses szolgáltatásból letöltött új konfigurációk engedélyezettek-e a régieket célcsomóponton felülírásához. Más esetekben $FALSE.|
 | CertificateID| sztring| A konfigurációban az átadott hitelesítő adatok védelmére szolgáló tanúsítvány ujjlenyomatát. További információ: [hitelesítő adatai a Windows PowerShell Desired State Configuration engedélyezzen](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Megjegyzés:__ automatikusan ez történik, ha az Azure Automation DSC lekéréses szolgáltatás segítségével.|
 | ConfigurationDownloadManagers| CimInstance[]| Elavult. Használat __ConfigurationRepositoryWeb__ és __ConfigurationRepositoryShare__ érdekében adja meg a konfigurációs lekérési szolgáltatásvégpontokat.|
 | ConfigurationID| sztring| Visszamenőleges kompatibilitáshoz régebbi lekéréses Service a verziók. Egy GUID Azonosítót, amely azonosítja a konfigurációs fájl egy lekéréses szolgáltatásból való beolvasására. A konfiguráció nevét MOF ConfigurationID.mof neve a csomópont konfigurációk fogja lekérni a lekéréses szolgáltatás.<br> __Megjegyzés:__ Ha ezt a tulajdonságot, a csomópont történő regisztrációt egy lekéréses szolgáltatás használatával __RegistrationKey__ nem működik. További információkért lásd: [konfigurációs nevekkel lekérési ügyfél beállítása](../pull-server/pullClientConfigNames.md).|
 | ConfigurationMode| sztring | Itt adhatja meg, hogyan az LCM ténylegesen alkalmazza a konfigurációt, a célcsomópontokat. Lehetséges értékek a következők __"ApplyOnly"__,__"ApplyAndMonitor"__, és __"ApplyAndAutoCorrect"__. <ul><li>__ApplyOnly__: DSC konfigurációjának alkalmazására szolgál, és nem módosítja a további, kivéve, ha egy új konfiguráció leküldéssel a célcsomópont, vagy ha egy új konfigurációt a szolgáltatástól kéri le. Új konfiguráció kezdeti léptetés DSC nem ellenőrzi az előzőleg konfigurált állapotba való eltéréseket. Vegye figyelembe, hogy a alkalmazni a konfigurációt, egészen addig, amíg a sikeres előtt megkísérli DSC __ApplyOnly__ lép érvénybe. </li><li> __ApplyAndMonitor__: Ez az alapértelmezett érték. Az LCM vonatkozik minden új konfigurációt. Új konfiguráció, kezdeti alkalmazása után a a célcsomópont drifts a kívánt állapotból, ha DSC jelentések naplók az eltérést. Vegye figyelembe, hogy a alkalmazni a konfigurációt, egészen addig, amíg a sikeres előtt megkísérli DSC __ApplyAndMonitor__ lép érvénybe.</li><li>__ApplyAndAutoCorrect__: DSC vonatkozik minden új konfigurációt. Kezdeti alkalmazását követően az új konfiguráció a célcsomópont drifts a kívánt állapotból, ha DSC-jelentések a naplókban az eltérés, és majd újra alkalmazza a jelenlegi konfiguráció.</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| Milyen gyakran percek alatt, a jelenlegi konfiguráció be van jelölve és alkalmazása. A rendszer figyelmen kívül hagyja ezt a tulajdonságot, ha a ConfigurationMode tulajdonsága ApplyOnly. Az alapértelmezett érték 15.|
 | DebugMode| sztring| Lehetséges értékek a következők __nincs__, __ForceModuleImport__, és __összes__. <ul><li>Állítsa be __None__ a gyorsítótárazott erőforrások. Ez az alapértelmezett beállítás, és éles forgatókönyvekben használjon.</li><li>Beállítás __ForceModuleImport__, ide az újrabetöltéshez DSC erőforrás modulokat, még akkor is, ha azokat korábban már betöltötte és gyorsítótárba helyezték a LCM okoz. Ez hatással van DSC műveletek teljesítményének, minden egyes modul újbóli felhasználására. Általában használna az ezt az értéket egy erőforrás-hibakeresés közben</li><li>Ebben a kiadásban __összes__ azonos __ForceModuleImport__</li></ul> |
-| RebootNodeIfNeeded| logikai| Állítsa a bestattempt értékre `$true` lehetővé teszik az erőforrások újraindításához, a Node használatával, a `$global:DSCMachineStatus` jelzőt. Ellenkező esetben el manuálisan indítsa újra a csomópont minden olyan konfiguráció, amely ezt megköveteli. Az alapértelmezett érték: `$false`. Használja ezt a beállítást, ha újraindítás feltétel nem DSC (például a Windows Installer) szerint van gyakorlatokkal, kombinálja együtt a [xPendingReboot](https://github.com/powershell/xpendingreboot) modul.|
+| RebootNodeIfNeeded| bool| Állítsa a bestattempt értékre `$true` lehetővé teszik az erőforrások újraindításához, a Node használatával, a `$global:DSCMachineStatus` jelzőt. Ellenkező esetben el manuálisan indítsa újra a csomópont minden olyan konfiguráció, amely ezt megköveteli. Az alapértelmezett érték: `$false`. Használja ezt a beállítást, ha újraindítás feltétel nem DSC (például a Windows Installer) szerint van gyakorlatokkal, kombinálja együtt a [xPendingReboot](https://github.com/powershell/xpendingreboot) modul.|
 | A RefreshMode| sztring| Itt adhatja meg, hogyan az LCM lekéri a konfigurációt. A lehetséges értékek a következők __"Letiltva"__, __"Push"__, és __"Lekérés"__. <ul><li>__Letiltott__: DSC-konfigurációk le van tiltva ezen a csomóponton.</li><li> __Leküldéses__: Konfigurációk meghívásával kezdeményezett a [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) parancsmagot. A konfiguráció alkalmazása azonnal megtörténik a csomópontra. Ez az alapértelmezett érték.</li><li>__Kérje le:__ A csomópont rendszeresen ellenőrzi a lekérési szolgáltatást vagy az SMB elérési konfigurációk van konfigurálva. Ha ez a tulajdonság értéke __lekéréses__, (szolgáltatás) HTTP- vagy SMB (megosztás) elérési utat adjon meg egy __ConfigurationRepositoryWeb__ vagy __ConfigurationRepositoryShare__ letiltása.</li></ul>|
 | RefreshFrequencyMins| Uint32| Az időintervallum, percek alatt, ahol az LCM lekéréses szolgáltatásával a szükséges frissített konfigurációk ellenőrzi. A rendszer figyelmen kívül hagyja ezt az értéket, ha az LCM lekéréses módban nincs konfigurálva. Az alapértelmezett érték 30.|
 | ReportManagers| CimInstance[]| Elavult. Használat __ReportServerWeb__ küldése végpontokat blokkolja egy lekéréses szolgáltatás számára.|
@@ -116,7 +116,7 @@ A **ConfigurationRepositoryWeb** határozza meg az alábbi tulajdonságokat.
 
 |Tulajdonság|Típus|Leírás|
 |---|---|---|
-|AllowUnsecureConnection|logikai|Állítsa be **$TRUE** , hogy a kiszolgáló hitelesítése nélkül csatlakozhat a csomópontról. Állítsa be **$FALSE** hitelesítést igényel.|
+|AllowUnsecureConnection|bool|Állítsa be **$TRUE** , hogy a kiszolgáló hitelesítése nélkül csatlakozhat a csomópontról. Állítsa be **$FALSE** hitelesítést igényel.|
 |CertificateID|sztring|A kiszolgáló hitelesítésére használt tanúsítvány ujjlenyomatát.|
 |ConfigurationNames|String]|Le kell kérnie a cél csomópont-konfigurációk nevek tömbje. Ezek használhatók csak akkor, ha a csomópont regisztrálva van a lekéréses szolgáltatás segítségével egy **RegistrationKey**. További információkért lásd: [konfigurációs nevekkel lekérési ügyfél beállítása](../pull-server/pullClientConfigNames.md).|
 |RegistrationKey|sztring|Regisztrálja a csomópontot a lekéréses szolgáltatás GUID azonosítója. További információkért lásd: [konfigurációs nevekkel lekérési ügyfél beállítása](../pull-server/pullClientConfigNames.md).|
@@ -139,7 +139,7 @@ A **ResourceRepositoryWeb** határozza meg az alábbi tulajdonságokat.
 
 |Tulajdonság|Típus|Leírás|
 |---|---|---|
-|AllowUnsecureConnection|logikai|Állítsa be **$TRUE** , hogy a kiszolgáló hitelesítése nélkül csatlakozhat a csomópontról. Állítsa be **$FALSE** hitelesítést igényel.|
+|AllowUnsecureConnection|bool|Állítsa be **$TRUE** , hogy a kiszolgáló hitelesítése nélkül csatlakozhat a csomópontról. Állítsa be **$FALSE** hitelesítést igényel.|
 |CertificateID|sztring|A kiszolgáló hitelesítésére használt tanúsítvány ujjlenyomatát.|
 |RegistrationKey|sztring|Egy GUID Azonosítót, amely azonosítja a csomópont a pull-szolgáltatáshoz.|
 |ServerURL|sztring|A konfigurációs kiszolgáló URL-címe|
@@ -162,7 +162,7 @@ A jelentéskészítő kiszolgálói szerepkör, ezért nem kompatibilis az SMB-a
 
 |Tulajdonság|Típus|Leírás|
 |---|---|---|
-|AllowUnsecureConnection|logikai|Állítsa be **$TRUE** , hogy a kiszolgáló hitelesítése nélkül csatlakozhat a csomópontról. Állítsa be **$FALSE** hitelesítést igényel.|
+|AllowUnsecureConnection|bool|Állítsa be **$TRUE** , hogy a kiszolgáló hitelesítése nélkül csatlakozhat a csomópontról. Állítsa be **$FALSE** hitelesítést igényel.|
 |CertificateID|sztring|A kiszolgáló hitelesítésére használt tanúsítvány ujjlenyomatát.|
 |RegistrationKey|sztring|Egy GUID Azonosítót, amely azonosítja a csomópont a pull-szolgáltatáshoz.|
 |ServerURL|sztring|A konfigurációs kiszolgáló URL-címe|

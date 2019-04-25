@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Csomópontok közötti függőségek megadása
 ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080203"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Csomópontok közötti függőségek megadása
 
-> Érvényes: Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
 DSC biztosít speciális erőforrások **WaitForAll**, **WaitForAny**, és **WaitForSome** , amely használható a konfigurációkban függőségeinek megadása a további beállításai csomópontok. Ezek az erőforrások viselkedését a következőképpen történik:
 

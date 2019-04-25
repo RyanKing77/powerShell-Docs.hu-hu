@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC, a Linux nxService erőforrás
 ms.openlocfilehash: fe8043995205649378725f2ab0a78e19313739c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077693"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC, a Linux nxService erőforrás
 
@@ -31,7 +31,7 @@ nxService <string> #ResourceName
 | Tulajdonság | Leírás |
 |---|---|
 | Név| A szolgáltatás/démon konfigurálása neve.|
-| Tartományvezérlő| A szolgáltatás konfigurálásakor használandó szolgáltatásvezérlő típusa.|
+| tartományvezérlő| A szolgáltatás konfigurálásakor használandó szolgáltatásvezérlő típusa.|
 | Engedélyezve| Azt jelzi, hogy a szolgáltatás elindul, a rendszerindító.|
 | Állapot| Azt jelzi, hogy a szolgáltatás fut-e. Ez annak biztosítása érdekében, hogy a szolgáltatás nem fut a "Stopped" tulajdonság értéke. Állítsa be, győződjön meg arról, hogy a szolgáltatás nem fut a "fut".|
 | DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például ha a **azonosító** az erőforrás, amely a futtatni kívánt konfigurációs parancsprogram-blokkot első az **ResourceName** és a típusa **ResourceType**, ezzel esetén a tulajdonság `DependsOn = "[ResourceType]ResourceName"`.|

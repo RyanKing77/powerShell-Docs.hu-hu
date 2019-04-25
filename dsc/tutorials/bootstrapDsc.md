@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Konfigurálása a virtuális gépek első indításkor DSC használatával
 ms.openlocfilehash: f9634c330832e23fb2c6f08c5b299b55a5505ac9
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076514"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurálása a virtuális gépek első indításkor DSC használatával
 
 > [!IMPORTANT]
-> Érvényes: Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
 ## <a name="requirements"></a>Követelmények
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 76548af7-05bd-4d12-bf71-6fb69c434ef2
 caps.latest.revision: 10
 ms.openlocfilehash: c3dd761cd9b6c468d4833ea35b897ba5d425f598
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848796"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083977"
 ---
 # <a name="typename-element-for-entryselectedby-for-customentry-for-view-format"></a>A Nézet CustomEntry eleméhez tartozó EntrySelectedBy TypeName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A nézet (formátum) CustomEntry EntrySelectedBy elem](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|A .NET-típusokat, amelyek az egyéni vezérlő nézetdefinícióban, vagy a feltétellel, hogy léteznie kell a definíció használandó határoz meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a teljes nevet, a .NET-típus, például `System.IO.DirectoryInfo`.
 

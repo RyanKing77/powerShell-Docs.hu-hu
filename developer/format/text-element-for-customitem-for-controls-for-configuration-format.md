@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 87a4079e-602c-42de-9de5-9b59df986caa
 caps.latest.revision: 6
 ms.openlocfilehash: b45e96252672a872023a5eb698ffe22d677c5468
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075307"
 ---
 # <a name="text-element-for-customitem-for-controls-for-configuration-format"></a>A Konfiguráció Vezérlők eleméhez tartozó CustomItem Szöveg eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[Konfiguráció vezérlők CustomEntry CustomItem elem.](./customitem-element-for-customentry-for-controls-for-configuration-format.md)|Határozza meg a vezérlő által megjelenített adatokat, és hogyan jelenik meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a megjeleníteni kívánt adatokat egy vezérlőelem szövege.
 

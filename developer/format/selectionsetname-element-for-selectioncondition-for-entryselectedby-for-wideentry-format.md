@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a13a429c-a31b-4e29-828c-c0c0917b5415
 caps.latest.revision: 11
 ms.openlocfilehash: baea89e4b259611dfa45b6bcf94fa0bf2df6b9de
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075477"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format"></a>Az WideEntry EntrySelectedBy eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A WideEntry (formátum) EntrySelectedBy SelectionCondition elem.](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|Határozza meg azt a feltételt, amelyet a definíció használandó léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a kijelölt csoport nevét.
 

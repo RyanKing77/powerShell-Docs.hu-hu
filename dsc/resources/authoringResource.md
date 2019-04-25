@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Egyéni Windows PowerShell Desired State Configuration erőforrások létrehozása
 ms.openlocfilehash: 882b6efed4564d2354183d7472b301e1e1758335
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076871"
 ---
 # <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>Egyéni Windows PowerShell Desired State Configuration erőforrások létrehozása
 
-> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) rendelkezik beépített erőforrások, amelyek segítségével konfigurálja a környezetet. Ez a témakör áttekintést erőforrások és a konkrét információk és példák témakörökre mutató hivatkozásokat.
 

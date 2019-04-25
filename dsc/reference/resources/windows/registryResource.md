@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-Registry erőforrás
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076956"
 ---
 # <a name="dsc-registry-resource"></a>DSC-Registry erőforrás
 
@@ -35,7 +35,7 @@ Registry [string] #ResourceName
 
 | Tulajdonság | Leírás |
 | --- | --- |
-| Billentyű| Azt jelzi, hogy az elérési útját, amelyhez szeretne biztosítani adott állapotú beállításkulcs. Ezt az elérési utat tartalmaznia kell a struktúra.|
+| Kulcs| Azt jelzi, hogy az elérési útját, amelyhez szeretne biztosítani adott állapotú beállításkulcs. Ezt az elérési utat tartalmaznia kell a struktúra.|
 | Értéknév| A beállításazonosító nevét jelzi. Hozzáadhat és eltávolíthat egy beállításkulcsot, adja meg a tulajdonság egy üres karakterlánccal ValueType vagy értékadat megadása nélkül. Módosíthatja, vagy távolítsa el az alapértelmezett érték egy beállításkulcs, adja meg, ez a tulajdonság egy üres karakterlánccal ValueType vagy értékadat megadása során.|
 | Győződjön meg, hogy| Azt jelzi, ha a kulcs-érték létezik-e. Annak érdekében, hogy tesznek, a "E" tulajdonság értéke. Győződjön meg arról, hogy azok nem léteznek, hogy a "Hiányzó" tulajdonság értéke. Az alapértelmezett érték: "E".|
 | Force| Ha a megadott beállításkulcs megtalálható, **kényszerített** felülírja azt az új értéket. Ha a beállításkulcs törlése az alkulcsok, ez kell lennie **$true** |

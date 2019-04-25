@@ -4,17 +4,17 @@ keywords: PowerShell, a parancsmag
 title: Az ISEFile objektum
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057553"
 ---
 # <a name="the-isefile-object"></a>Az ISEFile objektum
 
 Egy **ISEFile** objektum egy fájlt a Windows PowerShell® integrált parancsfájl-kezelési környezet (ISE) jelöl. Fontos a Microsoft.PowerShell.Host.ISE.ISEFile osztály egy példányát. Ez a témakör felsorolja a tag módszerek és a tag tulajdonságait. A **$psISE.CurrentFile** , és a fájlok a fájlok gyűjteményben, a PowerShell-lap Microsoft.PowerShell.Host.ISE.ISEFile osztály összes példányánál.
 
-## <a name="methods"></a>Metódusok
+## <a name="methods"></a>Módszerek
 
 ### <a name="save-saveencoding-"></a>Mentés\( \[saveEncoding\] \)
 

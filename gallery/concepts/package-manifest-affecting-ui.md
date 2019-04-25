@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: PowerShell
 title: Jegyzékfájl értékek csomagot, amely hatással van a PowerShell-galéria felhasználói felülete
 ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084708"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Jegyzékfájl értékek csomagot, amely hatással van a PowerShell-galéria felhasználói felülete
 

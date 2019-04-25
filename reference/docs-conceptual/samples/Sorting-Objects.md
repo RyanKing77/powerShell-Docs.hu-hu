@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Objektumok rendezése
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
 ms.openlocfilehash: 06aa15d89888f1ecbe60b8e1dfb4efebb1d73673
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086051"
 ---
 # <a name="sorting-objects"></a>Objektumok rendezése
 

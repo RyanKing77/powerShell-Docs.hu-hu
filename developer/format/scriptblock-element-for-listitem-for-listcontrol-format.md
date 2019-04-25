@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 74e30938-00ef-46fd-84e5-f0a83706a50e
 caps.latest.revision: 11
 ms.openlocfilehash: 76b600256af3f957f7fe0578f9fef810262aa5d5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064577"
 ---
 # <a name="scriptblock-element-for-listitem-for-listcontrol-format"></a>A ListControl elemhez tartozó ListItem ScriptBlock eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[Listaelem elem (formátum)](./listitem-element-for-listitems-for-listcontrol-format.md)|A tulajdonság, vagy a parancsfájl, amelynek értéke megjelenik a lista nézet sorában lévő határoz meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a parancsfájl, amelynek értéke megjelenik a sorban.
 

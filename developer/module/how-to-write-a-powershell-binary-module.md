@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
 ms.openlocfilehash: 9ddb3bc172c66314603d2be4df5192a76c92e05d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082226"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Bináris PowerShell-modul írása
 

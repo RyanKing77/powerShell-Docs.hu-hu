@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 936d09f2-2c48-49e8-ab2d-0c8729199a2e
 caps.latest.revision: 8
 ms.openlocfilehash: 8ba8931ea5e34f610878351396cad42023393ad6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076259"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format"></a>Az EnumerableExpansion elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
 
@@ -46,7 +46,7 @@ Nincs.
 |-------------|-----------------|
 |[EntrySelectedBy eleme EnumerableExpansion (formátum)](./entryselectedby-element-for-enumerableexpansion-format.md)|Meghatározza a .NET-gyűjtemény objektumok, amelyek a definíció szerint bontva.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a kijelölt csoport nevét.
 

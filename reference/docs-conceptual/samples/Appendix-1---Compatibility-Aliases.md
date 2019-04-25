@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: '1. függelék: Kompatibilitási aliasok'
 ms.assetid: 96ad921e-1a57-463e-8e60-424faf8b6ef8
 ms.openlocfilehash: 113bbee1af185f98777df5767022d54accb69447
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086306"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>Függelék: 1 – kompatibilitási aliasok
 
@@ -30,7 +30,7 @@ Alias           cls                             Clear-Host
 |**Másolás**|**cp**|**Copy-Item**|**ci**|
 |**move**|**mv**|**Elem áthelyezése**|**mi**|
 |**Nevezze át**|**mv**|**Rename-Item**|**rni**|
-|**Típusa**|**cat**|**Get-Content**|**globális katalógus**|
+|**type**|**cat**|**Get-Content**|**globális katalógus**|
 |**cd**|**cd**|**Set-Location**|**sl**|
 |**md**|**mkdir**|**New-Item**|**ni**|
 |**pushd**|**pushd**|**Leküldéses-helye**|**pushd**|

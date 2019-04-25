@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 30abae8f-c7f7-479d-ad85-19e07ddef204
 caps.latest.revision: 10
 ms.openlocfilehash: 81eca4f66f0057074612f2d60482b45adc36357b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066294"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>A Konfiguráció Vezérlők eleméhez tartozó CustomEntry EntrySelectedBy eleme (Formátum)
 

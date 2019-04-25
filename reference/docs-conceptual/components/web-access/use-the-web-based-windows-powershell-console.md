@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: PowerShell, a parancsmag
 title: a webes alapú windows powershell-konzol használata
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086651"
 ---
-# <a name="use-the-web-based-windows-powershell-console"></a>A webalapú Windows PowerShell konzol használata
+# <a name="use-the-web-based-windows-powershell-console"></a>A webes Windows PowerShell-konzol használata
 
 Frissítve: 2013. június 24-én
 
-Érvényes: Windows Server 2012 R2, Windows Server 2012
+A következőkre vonatkozik: Windows Server 2012 R2, Windows Server 2012
 
 Windows PowerShell-elérés lehetővé teszi a felhasználóknak, jelentkezzen be a biztonságos webhelyek; annak érdekében, hogy a Windows PowerShell-munkamenetek, a parancsmagok és parancsfájlok segítségével egy távoli számítógép kezeléséhez.
 
@@ -30,7 +30,7 @@ Windows PowerShell és programozási erőforrások használatával kapcsolatos i
 
 Windows PowerShell-elérés a következő webböngészőket támogatja.
 Bár a mobilböngészők hivatalosan nem támogatottak, számos lehet képes a webalapú Windows PowerShell-konzol futtatásához.
-Egyéb, cookie-kat elfogadó, JavaScriptet és HTTPS-webhelyeket futtató böngészők valószínűleg képesek a konzol használatára, de hivatalosan még nem lettek tesztelve.
+Más böngészők, amely elfogadja a cookie-kat, JavaScriptet és HTTPS-webhelyeket futtató várható, de hivatalosan nem teszteltük.
 
 ### <a name="supported-desktop-computer-browsers"></a>Támogatott asztali számítógépes böngészők
 
@@ -47,26 +47,26 @@ Egyéb, cookie-kat elfogadó, JavaScriptet és HTTPS-webhelyeket futtató böng�
 - Apple Safari 5.0.1-es iPhone operációs rendszerhez
 - Apple Safari 5.0.1-es iPad 2 operációs rendszerhez
 
-### <a name="browser-requirements"></a>Böngészőkre vonatkozó követelmények
+### <a name="browser-requirements"></a>Webböngészőkre vonatkozó követelmények
 
 A Windows PowerShell-elérés webalapú konzol használatához böngészők a következőket kell tennie.
 
 - Cookie-k a Windows PowerShell-elérés átjáró webhelyéről.
-- HTTPS-lapok megnyitása és olvasása.
-- JavaScriptet használó webhelyek megnyitása és futtatása.
+- Tudni megnyitása és olvasása a HTTPS-lapok.
+- Nyissa meg, és futtassa a JavaScriptet használó webhelyek.
 
-## <a name="signing-in-to-windows-powershell-web-access"></a>Bejelentkezés a webes Windows PowerShell-elérésbe
+## <a name="signing-in-to-windows-powershell-web-access"></a>Bejelentkezés a Windows PowerShell-Elérésbe
 
 A Windows PowerShell-elérés rendszergazdájától kaphatja meg azt a szervezet Windows PowerShell-elérés átjáró webhelyének címe URL-címet.
 Alapértelmezés szerint ez a cím a *https://\<kiszolgáló_neve\>/pswa*.
 
 Amikor bejelentkezik a Windows PowerShell-elérés, lehet, hogy rendelkezik-e a neve vagy a felügyelni kívánt távoli számítógép IP-címét.
-Jogosult felhasználónak kell lennie a távoli számítógépen, amelyet úgy kell konfigurálni, hogy engedélyezze a távoli felügyeletet.
+Egy jogosult felhasználó a távoli számítógépen kell lennie, és a távoli felügyelet engedélyezésére kell konfigurálni.
 A számítógép a távoli felügyelet engedélyezésére konfigurálásával kapcsolatos további információkért lásd: [a Windows PowerShell használata a távoli parancsok engedélyezése és](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting).
 
 A számítógép a távoli felügyelet engedélyezésére konfigurálásának legegyszerűbb módja az, hogy futtassa a **Enable-PSRemoting - force** parancsmagot a számítógépen egy megnyitott Windows PowerShell-munkamenetet emelt szintű felhasználói jogosultságokkal (**Futtatás rendszergazdaként**).
 
-### <a name="to-sign-in-to-windows-powershell-web-access"></a>Bejelentkezés a webes Windows PowerShell-elérésbe
+### <a name="to-sign-in-to-windows-powershell-web-access"></a>A Windows PowerShell-elérés bejelentkezni
 
 1. Nyissa meg a Windows PowerShell-elérés webhely egy böngészőablakban vagy lapon.
 
@@ -80,7 +80,7 @@ A számítógép a távoli felügyelet engedélyezésére konfigurálásának le
 
 1. A **választható kapcsolati beállítások** szakasz a felügyelni kívánt távoli számítógép engedélyezési követelményeihez kapcsolódik. Választható kapcsolati beállításokkal egyenértékű paraméterekre vonatkozó további információkért lásd: a [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) parancsmag súgóját.
 
-    Általában a Windows PowerShell-elérés átjárón keresztül használt hitelesítő adatok megegyeznek a felügyelni kívánt távoli számítógép által elfogadottakkal. Azonban ha eltérő hitelesítő adatok használata a távoli számítógép kezeléséhez, amely a 2. lépésben megadott, bontsa ki a **választható kapcsolati beállítások** szakaszt, és adja meg a másodlagos hitelesítő adatokat. Egyéb esetben folytassa a 6. lépéssel.
+    Általában a Windows PowerShell-elérés átjárón keresztül használt hitelesítő adatok megegyeznek a felügyelni kívánt távoli számítógép által elfogadottakkal. Azonban ha eltérő hitelesítő adatok használata a távoli számítógép kezeléséhez, amely a 2. lépésben megadott, bontsa ki a **választható kapcsolati beállítások** szakaszt, és adja meg a másodlagos hitelesítő adatokat. Egyéb esetben folytassa a 6. lépés.
 
 1. Ha a Windows PowerShell-elérés rendszergazda hozott létre egy egyéni munkamenet-konfiguráció a Windows PowerShell-elérés felhasználók számára, írja be a munkamenet-konfiguráció nevét a nevét a **konfiguráció neve** mező. Munkamenet-konfigurációkkal kapcsolatos további információkért lásd: [about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
@@ -94,31 +94,31 @@ Az alábbi kijelentkezik, a webes Windows PowerShell-munkamenetben.
 
 - Kattintson a **Kijelentkezés** a konzol jobb alsó sarkában található. (Csak Windows Server 2012)
 
-- Kattintson a **mentése** vagy **kilépési** a (csak Windows Server 2012 R2) konzol jobb alsó sarkában található. Kattintson a **mentése** ezzel menti és bezárja a Windows PowerShell-elérés munkamenet; a munkamenethez később újra. Amikor bejelentkezik a Windows PowerShell-elérés újra, a Windows PowerShell-elérés a mentett munkamenetek listáját jeleníti meg akkor válassza ki, és az egy mentett munkamenetet csatlakozni, vagy új munkamenet indításához. Az egyes felhasználók számára engedélyezett mentett és aktív munkamenetek maximális számát az átjáró rendszergazdája határozza meg.
+- Kattintson a **mentése** vagy **kilépési** a (csak Windows Server 2012 R2) konzol jobb alsó sarkában található. Kattintson a **mentése** ezzel menti és bezárja a Windows PowerShell-elérés munkamenet; a munkamenethez később újra. Amikor bejelentkezik a Windows PowerShell-elérés újra, a Windows PowerShell-elérés a mentett munkamenetek listáját jeleníti meg akkor válassza ki, és az egy mentett munkamenetet csatlakozni, vagy új munkamenet indításához. Nyissa meg, amelyeket a felhasználók, mind a mentett, és az aktív munkamenetek maximális számát az átjáró rendszergazdája van konfigurálva.
 
     Kattintson a **kilépési** kijelentkezik, a Windows PowerShell-elérés munkamenet, mentés nélkül.
 
-- Megpróbálhat bejelentkezni egy másik távoli számítógép kezeléséhez ugyanazon a böngészői munkameneten belül, vagy a böngészői munkamenet egy új lapjáról. (Ez nem érvényes, ha az átjáró-kiszolgálót futtató Windows Server 2012 R2; Windows a Windows Server 2012 R2 rendszeren futó PowerShell-elérés engedélyezése több felhasználói munkamenet új lapjain az ugyanazon böngésző-munkamenet.) Ugyanazon a számítógépen egynél több aktív munkamenet használatával kapcsolatos további információkért lásd: csatlakozás több célszámítógéphez egyszerre a a [a webalapú konzol korlátozásai](#limitations-of-the-web-based-console) című szakaszát.
+- Egy másik távoli számítógép kezeléséhez ugyanazon böngésző-munkamenet, vagy ugyanazon böngésző-munkamenet egy új lapjáról a bejelentkezési kísérlet. (Ez nem érvényes, ha az átjáró-kiszolgálót futtató Windows Server 2012 R2; Windows a Windows Server 2012 R2 rendszeren futó PowerShell-elérés engedélyezése több felhasználói munkamenet új lapjain az ugyanazon böngésző-munkamenet.) Ugyanazon a számítógépen egynél több aktív munkamenet használatával kapcsolatos további információkért lásd: csatlakozás több célszámítógéphez egyszerre a a [a webalapú konzol korlátozásai](#limitations-of-the-web-based-console) című szakaszát.
 
-- 20 percig ne végezzen semmilyen tevékenységet a munkameneten belül. Az átjáró rendszergazdája testreszabhatja az inaktivitás időkorlátját További információkért lásd: [munkamenet-kezelés](authorization-rules-and-security-features-of-windows-powershell-web-access.md#session-management).
+- 20 perc inaktivitás a munkamenetben. Az átjáró rendszergazdája testreszabhatja az inaktivitás időkorlátját További információkért lásd: [munkamenet-kezelés](authorization-rules-and-security-features-of-windows-powershell-web-access.md#session-management).
 
-    - Ha hálózati hiba vagy egyéb nem tervezett leállás vagy hiba miatt kapcsolata egy munkamenettel a webalapú konzol a, és nem azért, mert a munkamenet bezárása saját maga is a Windows PowerShell-elérés továbbra is fut, csatlakoztatja a cél számítógép, amíg az ügyfél oldalán le nem telik időkorlát. Alapértelmezés szerint ez az időkorlát 20 perc, amelyet az átjáró rendszergazdája konfigurál. A munkamenet leválasztása vagy az alapértelmezett 20 perc lejárata után, vagy az átjáró rendszergazdája által megadott időtartam lejárata után (amelyik rövidebb) történik meg.
+    - Ha hálózati hiba vagy egyéb nem tervezett leállás vagy hiba miatt kapcsolata egy munkamenettel a webalapú konzol a, és nem azért, mert a munkamenet bezárása saját maga is a Windows PowerShell-elérés továbbra is fut, csatlakoztatja a cél számítógép, amíg az ügyfél oldalán le nem telik időkorlát. Alapértelmezés szerint ez az időkorlát 20 perc alatt, és az átjáró rendszergazdája van konfigurálva. A munkamenet leválasztása után, vagy az alapértelmezett 20 perc alatt, vagy az átjáró rendszergazdája által meghatározott időkorlát időtartama, amelyik rövidebb.
 
         Ha az átjáró-kiszolgálót futtat Windows Server 2012 R2, Windows PowerShell-elérés lehetővé teszi a felhasználóknak a mentett munkamenetekhez, egy későbbi időpontban újra csatlakozni, de nem látható vagy mentett munkamenetekhez, amíg az átjáró által meghatározott időkorlát időtartama után a rendszergazda lejárt.
 
-- Zárja be a böngészőablakot vagy -lapot.
+- Bezárja a böngészőablakban vagy lapon.
 
-- Kapcsolja ki azt az ügyféleszközt, amelyen a böngésző fut, vagy válassza le a hálózatról.
+- Kikapcsolja az ügyféleszközön, amelyen a böngésző fut, vagy a hálózatról való leválasztás.
 
 - Fut a **kilépési** parancsot a webkonzolon. Ez a parancs nem működik, ha a munkamenet-konfiguráció, amelyhez csatlakozik, támogatására van konfigurálva [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx) módban, vagy korlátozott futási térben van.
 
 Ha azt szeretné, újra be kell jelentkezni, nyissa meg újra a Windows PowerShell-elérés weblap, és a lépéseket követve jelentkezzen be [bejelentkezés a Windows PowerShell-elérés](#signing-in-to-windows-powershell-web-access) ebben a témakörben.
 
-## <a name="differences-in-the-web-based-windows-powershell-console"></a>A webalapú Windows PowerShell konzolok közötti különbségek
+## <a name="differences-in-the-web-based-windows-powershell-console"></a>A webes Windows PowerShell-konzol közötti különbségek
 
 Miután bejelentkezett a Windows PowerShell-elérés, a webes Windows PowerShell-konzolt a böngészőablakban vagy lapon nyílik meg. Mivel a konzol a bejelentkezési folyamat során megadott távoli számítógép csatlakoztatva van, csak ezeket a Windows PowerShell-parancsmagok vagy parancsfájlok, amelyek elérhetők a távoli számítógépen is használható a konzolon. Ez a szakasz ismerteti a Windows PowerShell-elérés konzolok és a telepített és a Windows PowerShell-elérés konzolok közötti különbségek más korlátozásai **PowerShell.exe** konzolon.
 
-### <a name="functional-disparity-with-powershellexe"></a>Funkcióbeli eltérések a PowerShell.exe konzolhoz képest
+### <a name="functional-disparity-with-powershellexe"></a>Funkcióbeli eltérések a PowerShell.exe
 
 Windows PowerShell gazdagép funkciók legnagyobb részét a webes Windows PowerShell-elérés konzolon érhető el, de néhány szolgáltatás, amely nem érhetők el.
 
@@ -128,7 +128,7 @@ Windows PowerShell gazdagép funkciók legnagyobb részét a webes Windows Power
 
 - Bemeneti szín módosítása.
 
-  A bemeneti színt (az előtér és a háttér színét) nem lehet módosítani. A kimenet, a figyelmeztetés, a részletes és a hibaüzenetek stílusát egy parancsfájl futtatásával lehet módosítani.
+  A bemeneti színt (előtérbeli és háttérbeli) nem módosítható. Kimeneti, figyelmeztetés, a részletes és hibaüzenetek stílusát is az összes módosítható egy parancsfájl futtatásával.
 
 - PSHostRawUserInterface.
 
@@ -143,23 +143,23 @@ Windows PowerShell gazdagép funkciók legnagyobb részét a webes Windows Power
 Billentyűt | Művelet
 -- | --
 Ctrl+C | A Windows PowerShell-elérés **Ctrl + C** másolhatják a tartalmat a böngészőben használják. A konzolon egy **Mégse** gomb, valamint a felhasználók is használhatja **Ctrl + Q** parancsok visszavonásához.
-Alt+szóköz, e, l | A képernyőpuffer görgetése
-Alt+szóköz, e, f | Szöveg keresése a képernyőpufferen
-Alt+szóköz, e, k | Szöveg kijelölése másolásra a képernyőpufferen
-Alt+szóköz, e, p | A vágólap tartalmának illessze be a Windows PowerShell-konzol
-Alt+szóköz, c | Zárja be a Windows PowerShell-konzol
-Ctrl+Break | A Windows PowerShell ablak bezárásához kényszerítése
-Ctrl+Home | Törlés az aktuális parancssor elejétől
-Ctrl+End | Törlés a parancssor végéig
-F1 | A kurzor mozgatása egy karakterrel jobbra a parancssorban
-F2 | Új parancs létrehozása az utolsó parancs másolásával az éppen gépelt karakterig
-F3 | A parancssor kiegészítése az utolsó parancssorból származó tartalommal
-F4 | Karakterek törlése a kurzor helyétől kezdve
-F5 | Keresés a parancselőzményekben. Parancsok a parancselőzményekben szereplő Windows PowerShell-elérés az eléréséhez kattintson a **előzmények** görgetőgombokra a webalapú konzolon.
+ALT + SZÓKÖZ, e, l | A képernyőpuffer görgetése
+ALT + SZÓKÖZ, e, f | Keresse meg a szöveget a képernyőpufferen
+ALT + SZÓKÖZ, e, k | Válassza ki a szöveget, másolja a képernyőpufferen
+ALT + SZÓKÖZ, e, p | A vágólap tartalmának illessze be a Windows PowerShell-konzol
+ALT + SZÓKÖZ, c | Zárja be a Windows PowerShell-konzol
+A Ctrl + Break | A Windows PowerShell ablak bezárásához kényszerítése
+Ctrl+Home | Törli az aktuális parancssor elejétől
+Ctrl+End | Törli a parancssor végéig
+F1 | Kurzor mozgatása egy karakterrel jobbra a parancssorban
+F2 | Új parancs létrehozza a karakter, amely, írja be az utolsó parancs másolásával
+F3 | Fejezze be a parancssor az utolsó parancssorból származó tartalommal
+F4 | Karakterek törlése a kurzor pozíciója
+F5 | Az eszközparancs-előzmények keresés a parancselőzményekben. Parancsok a parancselőzményekben szereplő Windows PowerShell-elérés az eléréséhez kattintson a **előzmények** görgetőgombokra a webalapú konzolon.
 F7 | Parancs interaktív kiválasztása a parancselőzményekben
-F8 | Keresés az előzményekben az aktuális szöveggel egyező parancsok megjelenítéséhez
+F8 | Vizsgálati előzmények aktuális szöveggel egyező parancsok megjelenítéséhez
 F9 | Adott számozású parancs futtatása az előzményekből
-Page Up | Az előzményekben található első parancs futtatása
+Stránku Nahoru | Az előzményekben található első parancs futtatása
 Page Down | Az előzményekben található utolsó parancs futtatása
 Alt+F7 | A parancselőzmények listájának törlése
 
@@ -169,15 +169,15 @@ Alt+F7 | A parancselőzmények listájának törlése
 
     Akkor találkozhat a két Ugrás (vagy csatlakozás egy második számítógéphez az első kapcsolatról) korlátozásával, próbál létrehozni munkamenetet vagy dolgozni rajta egy új Windows PowerShell-elérés használatával. Windows PowerShell-elérés egy távoli futási teret használ, és jelenleg **PowerShell.exe** nem támogatja a távoli kapcsolat létrehozása egy második számítógéphez egy távoli futási térből. Ha egy második távoli számítógéphez való csatlakozás meglévő kapcsolat használatával kísérli meg a **Enter-PSSession** parancsmagot, például akkor különböző hibákat kaphat, például a "œCannot beolvasása a hálózati erőforrásokhoz.
 
-    Két ugrásos hibák elkerülése érdekében a rendszergazdának konfigurálnia kell a CredSSP-hitelesítést a szervezet hálózati környezetében. A CredSSP-hitelesítés konfigurálásával kapcsolatos további információkért lásd: [CredSSP for second-hop remoting](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) a Microsoft webhelyén. Ha egy második távoli számítógépet is szeretne felügyelni, érdemes explicit módon megadott hitelesítő adatokat használni; az implicit módon megadott hitelesítő adatok általában nem engedélyezik a kétugrásos kapcsolatot.
+    Két ugrásos hibák elkerülése érdekében a rendszergazdának konfigurálnia kell a CredSSP-hitelesítést a szervezet hálózati környezetében. A CredSSP-hitelesítés konfigurálásával kapcsolatos további információkért lásd: [CredSSP for second-hop remoting](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) a Microsoft webhelyén. Megadhatja explicit hitelesítő adatok is, ha szeretne kezelni egy második távoli számítógépet; implicit hitelesítő adatok általában nem engedélyezik a kétugrásos.
 
 - Távoli eljáráshívás
 
-    Windows PowerShell-elérés használja, és a egy távoli Windows PowerShell-munkamenetet, ugyanazokkal a korlátozásokkal rendelkezik. A Windows-konzol API-jait közvetlenül hívó parancsok – például a konzolalapú szerkesztők vagy szöveges menüprogramok parancsai – nem működnek, mert a parancsok nem olvasnak vagy írnak szabványos bemeneti, kimeneti és hibafolyamatokba. Ezért egy végrehajtható fájl elindító parancsok fájlt, mint például **notepad.exe**, vagy a grafikus felhasználói Felülettel, például a megjelenítendő `OpenGridView` vagy `ogv`, nem működnek. Ez a viselkedés; hatással van a felhasználói élmény Ön úgy tűnik, hogy a Windows PowerShell-elérés nem válaszol a parancshoz.
+    Windows PowerShell-elérés használja, és a egy távoli Windows PowerShell-munkamenetet, ugyanazokkal a korlátozásokkal rendelkezik. Windows konzol API-k, például a Konzolalapú szerkesztők vagy szöveges menü programjainak, közvetlenül hívó parancsok nem működnek, mert a parancsok nem olvasnak vagy írnak szabványos bemeneti, kimeneti és hibafolyamatokba. Ezért egy végrehajtható fájl elindító parancsok fájlt, mint például **notepad.exe**, vagy a grafikus felhasználói Felülettel, például a megjelenítendő `OpenGridView` vagy `ogv`, nem működnek. Ez a viselkedés; hatással van a felhasználói élmény Ön úgy tűnik, hogy a Windows PowerShell-elérés nem válaszol a parancshoz.
 
 - Kiegészítés
 
-    Kiegészítés funkció nem működik a munkamenet-konfigurációban, vagy egy korlátozott futási térrel, amely a **NoLanguage** mód. Bár a rendszergazdák konfigurálhatnak úgy egy munkamenetet, hogy az támogassa a parancssori kiegészítést, ez biztonsági okokból nem javasolt, mivel a következő információkat jogosulatlan felhasználók számára is elérhetővé teheti.
+    Kiegészítés funkció nem működik a munkamenet-konfigurációban, vagy egy korlátozott futási térrel, amely a **NoLanguage** mód. Bár a rendszergazdák konfigurálhatnak úgy egy munkamenetet, hogy az támogassa, azt nem ajánlott biztonsági okokból, mert a következő információkat jogosulatlan felhasználók számára is elérhetővé teheti.
 
     - Belső fájlrendszeri elérési utak
 
@@ -185,7 +185,7 @@ Alt+F7 | A parancselőzmények listájának törlése
 
     - A futási térben található változók
 
-    - Betöltött típusok vagy a .NET-keretrendszer névterei
+    - Betöltött típusok vagy a.NET keretrendszer névterei
 
     - Környezeti változók
 
@@ -201,7 +201,7 @@ Alt+F7 | A parancselőzmények listájának törlése
 
 - Állandó Windows PowerShell-munkamenetek (újracsatlakozás).
 
-    A távoli kapcsolat az átjárón és a célszámítógép között, időtúllépésekor a Windows PowerShell-elérés átjáró után le van zárva. Ilyenkor az éppen futó parancsmagok és parancsfájlok leállnak. Javasoljuk, hogy a Windows PowerShell-lel Ön **-feladat** infrastruktúra végrehajtásakor hosszan futó feladatokat, így a feladatok indításához, válassza le a számítógépről, később újracsatlakozzon, és a feladatok Mindeközben megmaradjanak. Használatának másik előnye **-feladat** parancsmagok, hogy meg tudja elindítani ezeket a Windows PowerShell-elérés, jelentkezzen ki, és majd később újra futó Windows PowerShell-elérés vagy egy másik gazdagépre (például a Windows PowerShell Integrált parancsfájl-kezelési környezet (ISE)).
+    A távoli kapcsolat az átjárón és a célszámítógép között, időtúllépésekor a Windows PowerShell-elérés átjáró után le van zárva. Ezzel leállítja a parancsmagok és parancsfájlok, amelyek jelenleg folyamatban van. Javasoljuk, hogy a Windows PowerShell-lel Ön **-feladat** infrastruktúra végrehajtásakor hosszan futó feladatokat, így a feladatok indításához, válassza le a számítógépről, később újracsatlakozzon, és a feladatok Mindeközben megmaradjanak. Használatának másik előnye **-feladat** parancsmagok, hogy meg tudja elindítani ezeket a Windows PowerShell-elérés, jelentkezzen ki, és majd később újra futó Windows PowerShell-elérés vagy egy másik gazdagépre (például a Windows PowerShell Integrált parancsfájl-kezelési környezet (ISE)).
 
 - Konzol átméretezése.
 
@@ -209,9 +209,9 @@ Alt+F7 | A parancselőzmények listájának törlése
 
     - Húzza és módosítsa a konzolablak méretét az egérrel
 
-    - Módosítsa a magassági és szélességi tulajdonságot a konzol tulajdonságainak grafikus felhasználói felületén
+    - Módosítsa a magassági és szélességi tulajdonságot a konzol tulajdonságainak grafikus felhasználói felület használatával
 
-    - Módosítsa a konzolablak magasságát és szélességét egy parancsmaggal
+    - Magasságát és szélességét egy parancsmaggal a konzol Windows módosítása
 
         A konzolablakban a Windows PowerShell-elérés a következő parancsmagok segítségével konfigurálhatók. A következő példában a felhasználó módosítja a Windows PowerShell-elérés konzol szélessége **20**.
 
@@ -222,7 +222,7 @@ Alt+F7 | A parancselőzmények listájának törlése
 
             $Host.UI.RawUI.WindowSize = $newSize
 
-        A konzol magassága hasonló módon változtatható.
+        Módosíthatja a konzol magassága hasonló módon.
 
         A konzol Nézet testreszabására vonatkozó további példákat érhetők el a [Windows PowerShell csapatának blogját](https://blogs.msdn.com/b/powershell/).
 

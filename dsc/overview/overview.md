@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Windows PowerShell Desired State Configuration áttekintése
 ms.openlocfilehash: 3e4f0afa17ab60bfa98f1b86b9830462a7c8e1cf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079971"
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Windows PowerShell Desired State Configuration áttekintése
 
-> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 DSC egy felügyeleti platform, amely lehetővé teszi, hogy az informatikai RÉSZLEG felügyelete PowerShell és a fejlesztési infrastruktúra mint kód konfigurációval.
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC ProcessSet erőforrás
 ms.openlocfilehash: 91a2d5b562864addcb8e11062916d291448bbf57
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688839"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077109"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess erőforrás
 

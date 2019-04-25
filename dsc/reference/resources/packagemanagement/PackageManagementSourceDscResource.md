@@ -3,15 +3,15 @@ ms.date: 06/20/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC PackageManagementSource erőforrás
 ms.openlocfilehash: e51b5318288bef458567dd4b58d17caaea3ed69b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077585"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource erőforrás
 
-> Érvényes: Windows PowerShell 4.0-s, Windows PowerShell 5.0, 5.1 Windows PowerShell
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, Windows PowerShell 5.0, 5.1 Windows PowerShell
 
 A **PackageManagementSource** erőforrás a Windows PowerShell Desired State Configuration (DSC) regisztrálásához vagy regisztrációjának törlése a csomagkezelés forrásból a célként megadott csomóponton mechanizmust biztosít. **Ezzel a módszerrel regisztrált felügyeleti csomagforrások rendszer környezetében, a rendszer fiók vagy a DSC motor által használható vannak regisztrálva.** Ezt az erőforrást igényel a **PackageManagement** modulban elérhető http://PowerShellGallery.com.
 
@@ -40,7 +40,7 @@ PackageManagementSource [String] #ResourceName
 |---|---|
 | Név| A neve, a csomag forrásához – regisztrálva vagy nem regisztrált a rendszeren.|
 | ProviderName| Megadja a OneGet szolgáltatója, amelyen keresztül a csomag forrás-mel is nevét.|
-| SourceLocation| Adja meg az URI-ját a csomag forrásához.|
+| Forráshely| Adja meg az URI-ját a csomag forrásához.|
 | Győződjön meg, hogy| Meghatározza, hogy a csomag forrásához regisztrálva vagy nem regisztrált.|
 | InstallationPolicy| Szolgáltatók, például a beépített Nuget-szolgáltató által használt. Azt határozza meg, hogy megbízható-e a csomag forrásához. Egyike: "Nem megbízható", "megbízható".|
 | SourceCredential| A csomag hozzáférést biztosít a távoli forrás.|

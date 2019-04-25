@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: A JEA biztonsági szempontok
-ms.openlocfilehash: ede727f0f30412d520712d6ba855ba2008375d9a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084776"
 ---
 # <a name="jea-security-considerations"></a>A JEA biztonsági szempontok
 
@@ -127,7 +127,7 @@ Vegyük példaként a következő szerepkör-képesség bejegyzés:
 ```
 
 Ez a szerepkör funkció lehetővé teszi a felhasználóknak minden olyan PowerShell-parancsmaggal futtassa a főnév "Folyamat" a Microsoft.PowerShell.Management modulból.
-Felhasználók valószínűleg eléréséhez, például a parancsmagok `Get-Process` megérteni, milyen alkalmazások vannak a rendszeren futó és `Stop-Process` leállítása bármelyik lefagyott alkalmazásokat.
+Felhasználók valószínűleg eléréséhez, például a parancsmagok `Get-Process` megérteni, milyen alkalmazások vannak a rendszeren futó és `Stop-Process` le olyan alkalmazásokat, amelyek nem válaszolnak.
 Azonban ez a bejegyzés is lehetővé teszi, hogy `Start-Process`, teljes körű rendszergazda engedélyekkel rendelkező egy tetszőleges program elindításához használható.
 A program nem kell helyileg kell telepíteni a rendszerre, hogy egy támadó egyszerűen sikerült elindítani a program, amely lehetővé teszi a csatlakozó felhasználó helyi rendszergazdai jogosultságokat, futtatások kártevők és más fájlmegosztáson. "
 

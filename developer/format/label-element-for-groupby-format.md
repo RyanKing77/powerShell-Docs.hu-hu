@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3351d237-e8c2-4ec5-9500-4eceadb407c2
 caps.latest.revision: 11
 ms.openlocfilehash: e7158711c60d13c745bbdfab9b1b9fc7d98b34e2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065410"
 ---
 # <a name="label-element-for-groupby-format"></a>A GroupBy Címke eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[GroupBy elem nézet (formátum)](./groupby-element-for-view-format.md)|Határozza meg, hogyan jelenjen meg az objektumok egy új csoportot.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a szöveg, amelyet minden alkalommal, amikor Windows PowerShell találkozik egy új tulajdonság vagy parancsfájl érték jelenik meg.
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: MSFT_DSCLocalConfigurationManager osztály
 ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078061"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager osztály
 
@@ -30,7 +30,7 @@ A **MSFT_DSCLocalConfigurationManager** osztályt a következő tagja van:
 
 - [Módszerek] []
 
-### <a name="methods"></a>Metódusok
+### <a name="methods"></a>Módszerek
 
 A **MSFT_DSCLocalConfigurationManager** osztály rendelkezik, ezek a módszerek.
 
@@ -48,7 +48,7 @@ A **MSFT_DSCLocalConfigurationManager** osztály rendelkezik, ezek a módszerek.
 | [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| Közvetlenül meghívja a **első** metódus a DSC-erőforrás.|
 | [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Közvetlenül meghívja a **beállítása** metódus a DSC-erőforrás.|
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Közvetlenül meghívja a **teszt** metódus a DSC-erőforrás.|
-| [Visszaállítás](msft-dsclocalconfigurationmanager-rollback.md)| Vissza az előző konfigurációs tekercsben.|
+| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| Vissza az előző konfigurációs tekercsben.|
 | [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| A konfigurációs dokumentum a felügyelt csomópont küld, és menti azt egy függőben lévő módosítást.|
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| A konfigurációs dokumentum a felügyelt csomópont küld, és a konfigurációs ügynök használja a alkalmazni a konfigurációt.|
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| A konfigurációs dokumentum küldése a felügyelt csomóponthoz, és indítsa el a alkalmazni a konfigurációt a konfigurációs ügynök használatával. GetConfigurationResultOutput használatával lekérheti az eredmény kimeneti.|

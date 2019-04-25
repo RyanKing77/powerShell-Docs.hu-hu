@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
 ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080446"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Munkafolyamat létrehozása Windows PowerShell-tevékenységekkel
 
@@ -69,8 +69,8 @@ Az alábbi eljárásokból megtudhatja, hogyan hozhat létre egy munkafolyamatot
     |**Számítógépnév**|{comp}|
     |**Hitelesítő adatok**|MachineCred|
     |**a**|Microsoft.PowerShell.Commands.WaitForServiceTypes.PowerShell|
-    |**Kényszerített**|Igaz|
-    |várj|Igaz|
+    |**Kényszerített**|True|
+    |várj|True|
     |PSComputerName|{""}|
 
 13. Adjon hozzá egy **GetWmiObject** tevékenység, amely a **JoinDomain** előkészítése után a **RestartComputer** tevékenység. Ugyanaz, mint az előző lehet a tulajdonságainak szerkesztése **GetWmiObject** tevékenység.

@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC-konfigurációk súgóinak összeállítása
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080183"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>DSC-konfigurációk súgóinak összeállítása
 
->Érvényes: Windows PowerShell 5.0
+>A következőkre vonatkozik: Windows PowerShell 5.0
 
 A DSC-konfigurációk Megjegyzés-alapú súgó is használhatja. Felhasználók férhetnek hozzá a Súgó hívása a **konfigurációs** a `-?`, vagy a [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) parancsmagot. Helyezze el a Megjegyzés-alapú súgó közvetlenül a fenti a `Configuration` kulcsszót.
 A megjegyzésblokkot, közvetlenül a paraméterdeklarációhoz vagy mindkettő az alábbi példában látható módon fölött a paraméter súgó beágyazott helyezheti.

@@ -4,11 +4,11 @@ contributor: manikb
 keywords: katalógus, powershell, a parancsmag, psget
 title: Kompatibilis PowerShell-kiadások rendelkező modulok
 ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084725"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Kompatibilis PowerShell-kiadások rendelkező modulok
 
@@ -79,7 +79,7 @@ A modul szerzők esetleg mindkét PowerShell-kiadások (asztalon és Core) célz
 
 Egy modul dolgozhat asztali és a Core kiadás, az adott modul Szerző hozzáadásához szükséges logikát, vagy a RootModule, vagy a moduljegyzékben $PSEdition változóval rendelkezik. Modulok lefordított DLL-ek CoreCLR-és FullCLR két készletnyi is rendelkezhet. Az alábbiakban a több, a modul megfelelő DLL betöltésére szolgáló logikai csomag lehetőség közül választhat.
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>1. lehetőség: A célcsoport-kezelési több verziói és több a PowerShell modul csomagolása
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Option 1: A célcsoport-kezelési több verziói és több a PowerShell modul csomagolása
 
 A modul mappa tartalma
 
@@ -101,7 +101,7 @@ A modul mappa tartalma
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-PSScriptAnalyzer.psd1 fájl tartalma
+Contents of PSScriptAnalyzer.psd1 file
 
 ```powershell
 @{

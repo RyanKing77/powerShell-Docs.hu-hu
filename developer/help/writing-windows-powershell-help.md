@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 20cbf009-9633-476e-b0b3-5604117ef2dd
 caps.latest.revision: 4
 ms.openlocfilehash: adde7c205f26c9bb87307f7eaa56988cefccdeaf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083059"
 ---
 # <a name="writing-windows-powershell-help"></a>Írás Windows PowerShell súgója
 

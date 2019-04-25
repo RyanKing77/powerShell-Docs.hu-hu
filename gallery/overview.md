@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalógus, powershell, a parancsmag, psgallery, psget
 title: A PowerShell-galéria
 ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076021"
 ---
 # <a name="the-powershell-gallery"></a>A PowerShell-galéria
 
@@ -36,7 +36,7 @@ Egy megfelelő verziója **Windows PowerShell** ezen operációs rendszerekhez �
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
 - Windows 7 SP1
-- Windows Server 2019
+- A Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1

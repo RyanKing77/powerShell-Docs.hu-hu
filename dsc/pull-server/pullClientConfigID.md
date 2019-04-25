@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Konfigurációs azonosítók PowerShell 5.0-s és újabb verziók használata lekérési ügyfél beállítása
 ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079489"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Konfigurációs azonosítók PowerShell 5.0-s és újabb verziók használata lekérési ügyfél beállítása
 
-> Érvényes: Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > A lekéréses kiszolgálón (Windows-szolgáltatás *DSC-szolgáltatás*), a Windows Server támogatott összetevője létezik azonban tervekben sem funkciókat és képességeket kínálnak. Javasoljuk, hogy helyeződnek felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (beleértve a lekéréses kiszolgálón a Windows Server csomagban) vagy a közösségi megoldások felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).

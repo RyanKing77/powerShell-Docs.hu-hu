@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: fd872ada-d476-4c4d-a788-ccac3f983070
 caps.latest.revision: 10
 ms.openlocfilehash: 7bbb47268a23fcb37a34e2287a6ce949313a13bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083960"
 ---
 # <a name="typename-element-for-entryselectedby-for-tablecontrol-format"></a>A TableControl elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[EntrySelectedBy elem (formátum)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|A .NET-típusokat, amelyek ezt a bejegyzést, vagy a feltétellel, hogy léteznie kell használni a bejegyzés határozza meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a .NET-típus nevét.
 

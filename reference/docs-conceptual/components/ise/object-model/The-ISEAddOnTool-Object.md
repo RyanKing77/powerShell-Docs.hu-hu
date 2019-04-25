@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Az ISEAddOnTool objektum
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 ms.openlocfilehash: e091f37601c7a4fdaf5deff8c668b18ee7369e74
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086799"
 ---
 # <a name="the-iseaddontool-object"></a>Az ISEAddOnTool objektum
 
@@ -18,7 +18,7 @@ Minden egyes bővítménye, amellyel a függőleges vagy vízszintes ablaktábl�
 
 Egyes PowerShell-lap, a Windows PowerShell ISE-ben is rendelkezik a saját telepített kiegészítő eszközök. Lásd: [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md) és [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md) eléréséhez a jelenleg kijelölt lapon elérhető eszközök gyűjteményét, vagy a azonos tulajdonságokkal bármelyik a **PowerShellTab** az objektumok a [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) gyűjtemény objektumra vonatkozóan.
 
-## <a name="methods"></a>Metódusok
+## <a name="methods"></a>Módszerek
 
 Nincsenek elérhető a osztályú objektumok nem Windows PowerShell ISE-specifikus módszereket.
 

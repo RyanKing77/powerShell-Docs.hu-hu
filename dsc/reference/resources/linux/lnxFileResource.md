@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC, a Linux nxFile erőforrás
 ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078027"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC, a Linux nxFile erőforrás
 
@@ -57,7 +57,7 @@ nxFile <string> #ResourceName
 
 A Linux és a Windows különböző sortörés karakterek található szöveges fájlok alapértelmezés szerint, és ez pedig váratlan helyzeteket eredményezhet, egy Linux rendszerű számítógépen az egyes fájlok konfigurálásakor __nxFile__. Kezelheti egy Linux-fájl tartalma váratlan sortörés karakterek által okozott problémák elkerülésével több módja is van:
 
-1. lépés: Másolja a fájlt egy távoli forrásból (http, https vagy ftp): hozzon létre egy Linux rendszeren a kívánt tartalma, és előkészítéséhez, web- vagy FTP-kiszolgálón elérhető konfigurálni fogja a csomópont. Adja meg a __SourcePath__ tulajdonságot a __nxFile__ erőforrás a web- vagy ftp URL-címet, a fájl.
+1. lépés: Másolja a fájlt egy távoli forrásból (http, https vagy ftp): hozzon létre egy Linux rendszeren a kívánt tartalma, és előkészítéséhez, web- vagy FTP-kiszolgálón elérhető konfigurálni fogja a csomópont. Adja meg a __SourcePath__ tulajdonságot a __nxFile__ erőforrás a web- vagy ftp URL-címet, a fájl.
 
 ```
 Import-DSCResource -Module nx

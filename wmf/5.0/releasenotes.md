@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: 07ebcfd37cc3e1f38a9434ffa8d86f479b89ee0f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085218"
 ---
 # <a name="windows-management-framework-wmf-50-rtm-release-notes-overview"></a>Windows Management Framework (WMF) 5.0 RTM kibocsátási megjegyzések – áttekintés
 
@@ -16,10 +16,10 @@ Windows Management Framework (WMF) 5.0 RTM elérhetővé teszi a Funkciók, amel
 
 - Windows PowerShell
 - Just Enough Administration (JEA)
-- Windows PowerShell célállapot konfiguráló szolgáltatása (DSC)
-- Windows PowerShell integrált parancsfájlkezelési környezet (ISE)
+- Windows PowerShell Desired State Configuration (DSC)
+- Windows PowerShell integrált parancsfájl-kezelési környezet ISE
 - Windows PowerShell webszolgáltatások (felügyeleti OData IIS kiterjesztés)
-- Rendszerfelügyeleti webszolgáltatások (WinRM)
+- Windows Rendszerfelügyeleti (webszolgáltatások WinRM)
 - Windows Management Instrumentation (WMI)
 
 A WMF 5.0 RTM-re váltja fel a [WMF 5.0 éles előzetes](http://blogs.msdn.com/b/powershell/archive/2015/08/31/windows-management-framework-5-0-production-preview-is-now-available.aspx). Telepítheti a WMF 5.0 RTM-re a WMF 5.0 éles előzetes eltávolítása nélkül, de a WMF 5.0 RTM telepítése előtt el kell távolítania minden régebbi kiadásokban a WMF 5.0 előnézetek.

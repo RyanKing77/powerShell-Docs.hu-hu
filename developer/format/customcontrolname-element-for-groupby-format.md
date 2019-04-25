@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 473d9b56-521b-479a-8010-67fe9f040063
 caps.latest.revision: 8
 ms.openlocfilehash: 3a386eff95044eae573c255a451c5c8b8f16714d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066540"
 ---
 # <a name="customcontrolname-element-for-groupby-format"></a>A GroupBy CustomControlName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[GroupBy elem nézet (formátum)](./groupby-element-for-view-format.md)|Határozza meg, hogyan jeleníti meg a Windows PowerShell-objektumok egy új csoportot.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg az egyéni vezérlő, amellyel új csoport megjelenítendő nevét.
 

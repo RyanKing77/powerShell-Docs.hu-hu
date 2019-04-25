@@ -3,17 +3,17 @@ title: Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846360"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080458"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
 Frissítve: 2013. július 8.
 
-A Windows PowerShell® egy feladatalapú parancssori rendszerhéj és programozási nyelv, amelyet kifejezetten rendszergazdák számára terveztek. A .NET-keretrendszer épülő Windows PowerShell® segítségével az informatikai szakemberek, valamint a kiemelt felhasználók vezérlő és automatizálják a Windows operációs rendszer és a Windows rendszeren futó alkalmazások.
+Windows PowerShell® egy feladatalapú parancshéj és parancsnyelv, amely kifejezetten rendszer. A .NET-keretrendszer épülő Windows PowerShell® segítségével az informatikai szakemberek, valamint a kiemelt felhasználók vezérlő és automatizálják a Windows operációs rendszer és a Windows rendszeren futó alkalmazások.
 
 Az itt közzétett dokumentumok elsősorban parancsmagot, a szolgáltató és a gazdagép alkalmazásfejlesztők számára szükséges információk a Windows PowerShell által biztosított API-k készültek.
 A rendszergazdák azonban is találhat hasznos dokumentumok által biztosított információkkal.

@@ -3,15 +3,15 @@ ms.date: 10/31/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A MOF-fájl biztonságossá tétele
 ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079341"
 ---
 # <a name="securing-the-mof-file"></a>A MOF-fájl biztonságossá tétele
 
-> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 DSC MOF-fájlt, ahol a helyi Configuration Manager (LCM) valósítja meg a kívánt cél állapot tárolt adatokat alkalmazása a konfigurációs kiszolgáló-csomópontok kezeli.
 Ez a fájl tartalmazza a konfigurációs részleteit, mivel fontos tárolja biztonságos helyen.
@@ -84,7 +84,7 @@ Az alábbi példában:
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>A cél csomóponton: hozzon létre, és exportálja a tanúsítványt
 
-> Cél csomópont: Windows Server 2016 és Windows 10-es
+> Cél csomópont: Windows Server 2016 és Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -151,7 +151,7 @@ Az alábbi példában:
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>A szerzői műveletek csomóponton: hozzon létre, és exportálja a tanúsítványt
 
-> Cél csomópont: Windows Server 2016 és Windows 10-es
+> Cél csomópont: Windows Server 2016 és Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session

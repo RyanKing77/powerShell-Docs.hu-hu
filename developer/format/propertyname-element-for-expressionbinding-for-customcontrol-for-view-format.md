@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1fa3b699-d36e-47a2-b671-a313ba091aaa
 caps.latest.revision: 6
 ms.openlocfilehash: edd8c4b39f56be6b8658db46050bcce33db9cebd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064968"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-customcontrol-for-view-format"></a>A Nézet CustomControl eleméhez tartozó ExpressionBinding PropertyName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A nézet (formátum) CustomControl CustomItem ExpressionBinding elem.](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|Határozza meg a vezérlő által megjelenített adatokat.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a nevét, amelynek értéke megjelenik a vezérlő .NET tulajdonság.
 

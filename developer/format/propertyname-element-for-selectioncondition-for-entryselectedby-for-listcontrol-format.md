@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 71c3f1f6-6fe2-42f1-8260-6974d3871748
 caps.latest.revision: 11
 ms.openlocfilehash: 7d526372cf80327b3fb9b79b6e83429c57780183
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064891"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>Az ListControl EntrySelectedBy eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A ListEntry (formátum) EntrySelectedBy SelectionCondition elem.](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Meghatározza a feltétellel, hogy a lista bejegyzés használandó léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a .NET-tulajdonság neve.
 

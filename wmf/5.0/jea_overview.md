@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 ms.openlocfilehash: 0bc085588190f134c4a687c952509aa256b5f840
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085201"
 ---
 # <a name="just-enough-administration-jea"></a>Just Enough Administration (JEA)
 Just Enough Administration új funkciója a WMF 5.0-s, amely lehetővé teszi, hogy a szerepkör alapú felügyelet a PowerShell távoli eljáráshívás segítségével.  Kibővíti a meglévő infrastruktúra korlátozott végpontot azáltal, hogy nem rendszergazdák számára a parancsok, parancsprogramok és végrehajtható fájlok futtassa rendszergazdaként.  Ez lehetővé teszi, hogy a rendszergazdák a környezetében számának csökkentése és a biztonság növelése.  A JEA működik minden felügyelt; Powershellen keresztül Ha valami, a PowerShell-lel is kezelni, JEA segítségére lehet így biztonságosan.  Just Enough Administration részletes tekintse meg, tekintse meg a [útmutató élmény](http://aka.ms/JEA).

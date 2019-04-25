@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Windows PowerShell 5.0 újdonságai
 ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59363530"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085949"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 újdonságai
 

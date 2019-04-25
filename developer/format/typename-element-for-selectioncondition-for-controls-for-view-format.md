@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7141aefc-6656-4c52-8a9c-c2bfc9c87be9
 caps.latest.revision: 6
 ms.openlocfilehash: 7a697c286ec9efe750930739cdfa2580003365dd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083907"
 ---
 # <a name="typename-element-for-selectioncondition-for-controls-for-view-format"></a>A Nézet Vezérlők eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
 
@@ -46,7 +46,7 @@ Nincs.
 |-------------|-----------------|
 |[Nézet (formátum) vezérlők EntrySelectedBy SelectionCondition elem.](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)|Határozza meg egy feltételt, amely a vezérlőelem definíciójában használt léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a teljes nevet, a .NET-típus, például `System.IO.DirectoryInfo`.
 
