@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
 caps.latest.revision: 9
 ms.openlocfilehash: d732bce1af446090c3e5741eebeba737f86c7ca8
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067960"
 ---
-# <a name="how-to-support-jobs"></a><span data-ttu-id="b226b-102">Feladatok támogatása</span><span class="sxs-lookup"><span data-stu-id="b226b-102">How to Support Jobs</span></span>
+# <a name="how-to-support-jobs"></a><span data-ttu-id="90b7d-102">Feladatok támogatása</span><span class="sxs-lookup"><span data-stu-id="90b7d-102">How to Support Jobs</span></span>
 
-<span data-ttu-id="b226b-103">Ez a példa bemutatja, hogyan támogatják a feladatok parancsmagok írásakor.</span><span class="sxs-lookup"><span data-stu-id="b226b-103">This example shows how to support jobs when you write cmdlets.</span></span> <span data-ttu-id="b226b-104">Ha azt szeretné, hogy a felhasználók számára, hogy futtassa a parancsmagot háttérfeladatként, meg kell adnia a kódot az alábbi eljárásban leírtak.</span><span class="sxs-lookup"><span data-stu-id="b226b-104">If you want users to run your cmdlet as a background job, you must include the code described in the following procedure.</span></span> <span data-ttu-id="b226b-105">Háttér-feladatokkal kapcsolatos további információkért lásd: [a háttérben futó feladatok](./background-jobs.md).</span><span class="sxs-lookup"><span data-stu-id="b226b-105">For more information about background jobs, see [Background Jobs](./background-jobs.md).</span></span>
+<span data-ttu-id="90b7d-103">Ez a példa bemutatja, hogyan támogatják a feladatok parancsmagok írásakor.</span><span class="sxs-lookup"><span data-stu-id="90b7d-103">This example shows how to support jobs when you write cmdlets.</span></span> <span data-ttu-id="90b7d-104">Ha azt szeretné, hogy a felhasználók számára, hogy futtassa a parancsmagot háttérfeladatként, meg kell adnia a kódot az alábbi eljárásban leírtak.</span><span class="sxs-lookup"><span data-stu-id="90b7d-104">If you want users to run your cmdlet as a background job, you must include the code described in the following procedure.</span></span> <span data-ttu-id="90b7d-105">Háttér-feladatokkal kapcsolatos további információkért lásd: [a háttérben futó feladatok](./background-jobs.md).</span><span class="sxs-lookup"><span data-stu-id="90b7d-105">For more information about background jobs, see [Background Jobs](./background-jobs.md).</span></span>
 
-## <a name="to-support-jobs"></a><span data-ttu-id="b226b-106">Feladatok támogatása</span><span class="sxs-lookup"><span data-stu-id="b226b-106">To support jobs</span></span>
+## <a name="to-support-jobs"></a><span data-ttu-id="90b7d-106">Feladatok támogatása</span><span class="sxs-lookup"><span data-stu-id="90b7d-106">To support jobs</span></span>
 
-1. <span data-ttu-id="b226b-107">Adja meg egy `AsJob` váltson paramétert, hogy a felhasználó eldöntheti, a parancsmag futtatása feladatként.</span><span class="sxs-lookup"><span data-stu-id="b226b-107">Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a job.</span></span>
+1. <span data-ttu-id="90b7d-107">Adja meg egy `AsJob` váltson paramétert, hogy a felhasználó eldöntheti, a parancsmag futtatása feladatként.</span><span class="sxs-lookup"><span data-stu-id="90b7d-107">Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a job.</span></span>
 
-    <span data-ttu-id="b226b-108">Az alábbi példa bemutatja az-AsJob paraméter nyilatkozatot.</span><span class="sxs-lookup"><span data-stu-id="b226b-108">The following example shows an AsJob parameter declaration.</span></span>
+    <span data-ttu-id="90b7d-108">Az alábbi példa bemutatja az-AsJob paraméter nyilatkozatot.</span><span class="sxs-lookup"><span data-stu-id="90b7d-108">The following example shows an AsJob parameter declaration.</span></span>
 
     ```csharp
     [Parameter()]
@@ -37,9 +37,9 @@ ms.locfileid: "58058011"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06AsJobParam](msh_samplesGetProc06#GetProc06AsJobParam)]  -->
 
-2. <span data-ttu-id="b226b-109">Hozzon létre egy objektumot származó a [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) osztály.</span><span class="sxs-lookup"><span data-stu-id="b226b-109">Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) class.</span></span> <span data-ttu-id="b226b-110">Ez az objektum egy egyéni feladatobjektumot, vagy egy Windows PowerShell, a megadott feladat objektum lehet például egy [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) objektum.</span><span class="sxs-lookup"><span data-stu-id="b226b-110">This object can be a custom job object or one of the job objects provided by Windows PowerShell, such a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) object.</span></span>
+2. <span data-ttu-id="90b7d-109">Hozzon létre egy objektumot származó a [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) osztály.</span><span class="sxs-lookup"><span data-stu-id="90b7d-109">Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) class.</span></span> <span data-ttu-id="90b7d-110">Ez az objektum egy egyéni feladatobjektumot, vagy egy Windows PowerShell, a megadott feladat objektum lehet például egy [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) objektum.</span><span class="sxs-lookup"><span data-stu-id="90b7d-110">This object can be a custom job object or one of the job objects provided by Windows PowerShell, such a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) object.</span></span>
 
-    <span data-ttu-id="b226b-111">Az alábbi példa bemutatja egy egyéni feladatobjektumot.</span><span class="sxs-lookup"><span data-stu-id="b226b-111">The following example shows a custom job object.</span></span>
+    <span data-ttu-id="90b7d-111">Az alábbi példa bemutatja egy egyéni feladatobjektumot.</span><span class="sxs-lookup"><span data-stu-id="90b7d-111">The following example shows a custom job object.</span></span>
 
     ```csharp
     private SampleJob job = new SampleJob("Get-ProcAsJob");
@@ -47,7 +47,7 @@ ms.locfileid: "58058011"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. <span data-ttu-id="b226b-112">A rekord a feldolgozási mód, adjon hozzá egy `if` utasítás észlelése, a parancsmag futtasson e feladatként.</span><span class="sxs-lookup"><span data-stu-id="b226b-112">In a record processing method, add an `if` statement to detect whether the cmdlet should run as a job.</span></span> <span data-ttu-id="b226b-113">A következő kódban a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust.</span><span class="sxs-lookup"><span data-stu-id="b226b-113">The following code uses the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span>
+3. <span data-ttu-id="90b7d-112">A rekord a feldolgozási mód, adjon hozzá egy `if` utasítás észlelése, a parancsmag futtasson e feladatként.</span><span class="sxs-lookup"><span data-stu-id="90b7d-112">In a record processing method, add an `if` statement to detect whether the cmdlet should run as a job.</span></span> <span data-ttu-id="90b7d-113">A következő kódban a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust.</span><span class="sxs-lookup"><span data-stu-id="90b7d-113">The following code uses the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span>
 
     ```csharp
     protected override void ProcessRecord()
@@ -74,7 +74,7 @@ ms.locfileid: "58058011"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06ProcessRecord](msh_samplesGetProc06#GetProc06ProcessRecord)]  -->
 
-4. <span data-ttu-id="b226b-114">Egyéni feladat objektumok a feladat osztály megvalósításához.</span><span class="sxs-lookup"><span data-stu-id="b226b-114">For custom job objects, implement the job class.</span></span>
+4. <span data-ttu-id="90b7d-114">Egyéni feladat objektumok a feladat osztály megvalósításához.</span><span class="sxs-lookup"><span data-stu-id="90b7d-114">For custom job objects, implement the job class.</span></span>
 
     ```csharp
     private class SampleJob : Job
@@ -131,7 +131,7 @@ ms.locfileid: "58058011"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. <span data-ttu-id="b226b-115">A parancsmag elvégzi a munka, ha a [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metódus a folyamat számára egy folyamat objektumot ad vissza.</span><span class="sxs-lookup"><span data-stu-id="b226b-115">If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline.</span></span> <span data-ttu-id="b226b-116">A munkahelyi feladatként hajtja végre, ha gyermekfeladatot hozzá a feladatot.</span><span class="sxs-lookup"><span data-stu-id="b226b-116">If the work is performed as a job, add child job to the job.</span></span>
+5. <span data-ttu-id="90b7d-115">A parancsmag elvégzi a munka, ha a [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metódus a folyamat számára egy folyamat objektumot ad vissza.</span><span class="sxs-lookup"><span data-stu-id="90b7d-115">If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline.</span></span> <span data-ttu-id="90b7d-116">A munkahelyi feladatként hajtja végre, ha gyermekfeladatot hozzá a feladatot.</span><span class="sxs-lookup"><span data-stu-id="90b7d-116">If the work is performed as a job, add child job to the job.</span></span>
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -154,9 +154,9 @@ ms.locfileid: "58058011"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06Output](msh_samplesGetProc06#GetProc06Output)]  -->
 
-## <a name="example"></a><span data-ttu-id="b226b-117">Példa</span><span class="sxs-lookup"><span data-stu-id="b226b-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="90b7d-117">Példa</span><span class="sxs-lookup"><span data-stu-id="90b7d-117">Example</span></span>
 
-<span data-ttu-id="b226b-118">Az alábbi mintakód bemutatja a kódot egy **Get-Proc** parancsmagot, amely lekérheti a folyamatok cégen belül vagy a háttérfeladat használatával.</span><span class="sxs-lookup"><span data-stu-id="b226b-118">The following sample code shows the code for a **Get-Proc** cmdlet that can retrieve processes internally or by using a background job.</span></span>
+<span data-ttu-id="90b7d-118">Az alábbi mintakód bemutatja a kódot egy **Get-Proc** parancsmagot, amely lekérheti a folyamatok cégen belül vagy a háttérfeladat használatával.</span><span class="sxs-lookup"><span data-stu-id="90b7d-118">The following sample code shows the code for a **Get-Proc** cmdlet that can retrieve processes internally or by using a background job.</span></span>
 
 ```csharp
 using System;

@@ -4,86 +4,86 @@ contributor: JKeithB
 keywords: katalógus, a powershell, a parancsmag, a psgallery
 title: Katalóguskeresési szintaxis
 ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084300"
 ---
-# <a name="gallery-search-syntax"></a><span data-ttu-id="abc57-103">Katalóguskeresési szintaxis</span><span class="sxs-lookup"><span data-stu-id="abc57-103">Gallery Search Syntax</span></span>
+# <a name="gallery-search-syntax"></a><span data-ttu-id="b2514-103">Katalóguskeresési szintaxis</span><span class="sxs-lookup"><span data-stu-id="b2514-103">Gallery Search Syntax</span></span>
 
-<span data-ttu-id="abc57-104">A PowerShell-galériából használatával kereshet a [PowerShell-galériából webhely](https://www.powershellgallery.com/).</span><span class="sxs-lookup"><span data-stu-id="abc57-104">You can search the PowerShell Gallery using the [PowerShell Gallery's web site](https://www.powershellgallery.com/).</span></span>
-<span data-ttu-id="abc57-105">PowerShell-galériából webhely kínál egy szöveges searchbox, ahol szavak, kifejezéseket és kulcsszó kifejezések használhatja meg a keresési eredmények szűkítéséhez.</span><span class="sxs-lookup"><span data-stu-id="abc57-105">PowerShell Gallery web site offers a text searchbox where you can use words, phrases and keyword expressions to narrow down search results.</span></span>
+<span data-ttu-id="b2514-104">A PowerShell-galériából használatával kereshet a [PowerShell-galériából webhely](https://www.powershellgallery.com/).</span><span class="sxs-lookup"><span data-stu-id="b2514-104">You can search the PowerShell Gallery using the [PowerShell Gallery's web site](https://www.powershellgallery.com/).</span></span>
+<span data-ttu-id="b2514-105">PowerShell-galériából webhely kínál egy szöveges searchbox, ahol szavak, kifejezéseket és kulcsszó kifejezések használhatja meg a keresési eredmények szűkítéséhez.</span><span class="sxs-lookup"><span data-stu-id="b2514-105">PowerShell Gallery web site offers a text searchbox where you can use words, phrases and keyword expressions to narrow down search results.</span></span>
 
-## <a name="search-by-keywords"></a><span data-ttu-id="abc57-106">Keresés kulcsszavak szerint</span><span class="sxs-lookup"><span data-stu-id="abc57-106">Search by Keywords</span></span>
+## <a name="search-by-keywords"></a><span data-ttu-id="b2514-106">Keresés kulcsszavak szerint</span><span class="sxs-lookup"><span data-stu-id="b2514-106">Search by Keywords</span></span>
 
     dsc azure sql
 
-<span data-ttu-id="abc57-107">Keresési megpróbálja megkeresni a megfelelő, az összes 3 kulcsszavakat tartalmazó dokumentumok, és megfelelő dokumentumokat.</span><span class="sxs-lookup"><span data-stu-id="abc57-107">Search attempts to find relevant documents containing all 3 keywords, and return matching documents.</span></span>
+<span data-ttu-id="b2514-107">Keresési megpróbálja megkeresni a megfelelő, az összes 3 kulcsszavakat tartalmazó dokumentumok, és megfelelő dokumentumokat.</span><span class="sxs-lookup"><span data-stu-id="b2514-107">Search attempts to find relevant documents containing all 3 keywords, and return matching documents.</span></span>
 
-## <a name="search-using-phrases-and-keywords"></a><span data-ttu-id="abc57-108">Mondatok és a kulcsszavak keresése</span><span class="sxs-lookup"><span data-stu-id="abc57-108">Search using Phrases and keywords</span></span>
+## <a name="search-using-phrases-and-keywords"></a><span data-ttu-id="b2514-108">Mondatok és a kulcsszavak keresése</span><span class="sxs-lookup"><span data-stu-id="b2514-108">Search using Phrases and keywords</span></span>
 
     "azure sql" deployment
 
-<span data-ttu-id="abc57-109">Írja be egy kifejezést idézőjelek között ("") módosítsa a keresési, keresse meg az adott kifejezést külön kulcsszavak helyett.</span><span class="sxs-lookup"><span data-stu-id="abc57-109">Entering a phrase between quotation marks ("") change the search to look for the particular phrase instead of separate keywords.</span></span>
-<span data-ttu-id="abc57-110">Egyező dokumentumok általában tartalmaznia kell a pontos kifejezés "az azure sql", így például a kis-és nagybetűk változata "Az azure SQL", és a "telepítés" szó általában is tartalmaznak.</span><span class="sxs-lookup"><span data-stu-id="abc57-110">Matching documents should usually contain the exact phrase "azure sql", including variations on capitalization e.g. "Azure SQL", and also usually contain the word 'deployment'.</span></span>
+<span data-ttu-id="b2514-109">Írja be egy kifejezést idézőjelek között ("") módosítsa a keresési, keresse meg az adott kifejezést külön kulcsszavak helyett.</span><span class="sxs-lookup"><span data-stu-id="b2514-109">Entering a phrase between quotation marks ("") change the search to look for the particular phrase instead of separate keywords.</span></span>
+<span data-ttu-id="b2514-110">Egyező dokumentumok általában tartalmaznia kell a pontos kifejezés "az azure sql", így például a kis-és nagybetűk változata "Az azure SQL", és a "telepítés" szó általában is tartalmaznak.</span><span class="sxs-lookup"><span data-stu-id="b2514-110">Matching documents should usually contain the exact phrase "azure sql", including variations on capitalization e.g. "Azure SQL", and also usually contain the word 'deployment'.</span></span>
 
-## <a name="filtering-on-fields"></a><span data-ttu-id="abc57-111">A mezők szűrése</span><span class="sxs-lookup"><span data-stu-id="abc57-111">Filtering on fields</span></span>
+## <a name="filtering-on-fields"></a><span data-ttu-id="b2514-111">A mezők szűrése</span><span class="sxs-lookup"><span data-stu-id="b2514-111">Filtering on fields</span></span>
 
-<span data-ttu-id="abc57-112">Kereshet egy adott csomag azonosítója (vagy "Id" vagy "id"), vagy bizonyos más mezők illesztésével keresse a mező nevét a kifejezéseket.</span><span class="sxs-lookup"><span data-stu-id="abc57-112">You can search for a specific package ID (or 'Id' or 'id'), or certain other fields by prefixing search terms with the field name.</span></span>
+<span data-ttu-id="b2514-112">Kereshet egy adott csomag azonosítója (vagy "Id" vagy "id"), vagy bizonyos más mezők illesztésével keresse a mező nevét a kifejezéseket.</span><span class="sxs-lookup"><span data-stu-id="b2514-112">You can search for a specific package ID (or 'Id' or 'id'), or certain other fields by prefixing search terms with the field name.</span></span>
 
-<span data-ttu-id="abc57-113">A kereshető mezők jelenleg "Id", "Verziójú", "Címke", "Szerző", "Tulajdonos", "Függvények", 'Parancsmagok', "DscResources" és "PowerShellVersion".</span><span class="sxs-lookup"><span data-stu-id="abc57-113">Currently the searchable fields are 'Id', 'Version', 'Tags', 'Author', 'Owner', 'Functions', 'Cmdlets', 'DscResources' and 'PowerShellVersion'.</span></span>
+<span data-ttu-id="b2514-113">A kereshető mezők jelenleg "Id", "Verziójú", "Címke", "Szerző", "Tulajdonos", "Függvények", 'Parancsmagok', "DscResources" és "PowerShellVersion".</span><span class="sxs-lookup"><span data-stu-id="b2514-113">Currently the searchable fields are 'Id', 'Version', 'Tags', 'Author', 'Owner', 'Functions', 'Cmdlets', 'DscResources' and 'PowerShellVersion'.</span></span>
 
-<span data-ttu-id="abc57-114">[Mi a különbség a között Azonosítóját és címét?</span><span class="sxs-lookup"><span data-stu-id="abc57-114">[What's the difference between ID and Title?</span></span> <span data-ttu-id="abc57-115">ID az a név, használja a konzolon.</span><span class="sxs-lookup"><span data-stu-id="abc57-115">ID is the name you use in the console.</span></span> <span data-ttu-id="abc57-116">Cím értéke: Mi látható az oldal felső részén található a csomagot a keresési eredmények között.]</span><span class="sxs-lookup"><span data-stu-id="abc57-116">Title is what is shown at the top of the package page in search results.]</span></span>
+<span data-ttu-id="b2514-114">[Mi a különbség a között Azonosítóját és címét?</span><span class="sxs-lookup"><span data-stu-id="b2514-114">[What's the difference between ID and Title?</span></span> <span data-ttu-id="b2514-115">ID az a név, használja a konzolon.</span><span class="sxs-lookup"><span data-stu-id="b2514-115">ID is the name you use in the console.</span></span> <span data-ttu-id="b2514-116">Cím értéke: Mi látható az oldal felső részén található a csomagot a keresési eredmények között.]</span><span class="sxs-lookup"><span data-stu-id="b2514-116">Title is what is shown at the top of the package page in search results.]</span></span>
 
-## <a name="examples"></a><span data-ttu-id="abc57-117">Példák</span><span class="sxs-lookup"><span data-stu-id="abc57-117">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="b2514-117">Példák</span><span class="sxs-lookup"><span data-stu-id="b2514-117">Examples</span></span>
 
     ID:PSReadline
     
-<span data-ttu-id="abc57-118">megtalálja a csomagokat tartalmazó "PSReadline" azonosítóval.</span><span class="sxs-lookup"><span data-stu-id="abc57-118">finds packages with an ID containing "PSReadline".</span></span>
+<span data-ttu-id="b2514-118">megtalálja a csomagokat tartalmazó "PSReadline" azonosítóval.</span><span class="sxs-lookup"><span data-stu-id="b2514-118">finds packages with an ID containing "PSReadline".</span></span>
 
     Id:"AzureRM.Profile"
 
-<span data-ttu-id="abc57-119">az azonosító mezőben keresse meg a csomagokat az "AzureRM.Profile" egy másik módja van.</span><span class="sxs-lookup"><span data-stu-id="abc57-119">is another way to find packages with "AzureRM.Profile" in their ID field.</span></span>
+<span data-ttu-id="b2514-119">az azonosító mezőben keresse meg a csomagokat az "AzureRM.Profile" egy másik módja van.</span><span class="sxs-lookup"><span data-stu-id="b2514-119">is another way to find packages with "AzureRM.Profile" in their ID field.</span></span>
 
-<span data-ttu-id="abc57-120">Az "Id" szűrő abban az esetben egy karakterláncrészletet egyeznek, így ha, keresse meg a következő:</span><span class="sxs-lookup"><span data-stu-id="abc57-120">The 'Id' filter is a substring match, so if you search for the following:</span></span>
+<span data-ttu-id="b2514-120">Az "Id" szűrő abban az esetben egy karakterláncrészletet egyeznek, így ha, keresse meg a következő:</span><span class="sxs-lookup"><span data-stu-id="b2514-120">The 'Id' filter is a substring match, so if you search for the following:</span></span>
 
     Id:"azure"
 
-<span data-ttu-id="abc57-121">Ez biztosítja, hogy eredmények, amelyek tartalmazzák az AzureRM.Profile "és"Azure.Storage".</span><span class="sxs-lookup"><span data-stu-id="abc57-121">This provides results that include AzureRM.Profile' and 'Azure.Storage'.</span></span>
+<span data-ttu-id="b2514-121">Ez biztosítja, hogy eredmények, amelyek tartalmazzák az AzureRM.Profile "és"Azure.Storage".</span><span class="sxs-lookup"><span data-stu-id="b2514-121">This provides results that include AzureRM.Profile' and 'Azure.Storage'.</span></span>
 
-<span data-ttu-id="abc57-122">Egyetlen mezőben több kulcsszavak alapján is kereshet.</span><span class="sxs-lookup"><span data-stu-id="abc57-122">You can also search for multiple keywords in a single field.</span></span> 
+<span data-ttu-id="b2514-122">Egyetlen mezőben több kulcsszavak alapján is kereshet.</span><span class="sxs-lookup"><span data-stu-id="b2514-122">You can also search for multiple keywords in a single field.</span></span> 
 
     id:azure tags:intellisense
 
-<span data-ttu-id="abc57-123">És kifejezés kereshet idézőjelek használata:</span><span class="sxs-lookup"><span data-stu-id="abc57-123">And you can perform phrase searches using double quotes:</span></span>
+<span data-ttu-id="b2514-123">És kifejezés kereshet idézőjelek használata:</span><span class="sxs-lookup"><span data-stu-id="b2514-123">And you can perform phrase searches using double quotes:</span></span>
 
     id:"azure.storage"
 
-<span data-ttu-id="abc57-124">DSC-címkével ellátott összes csomagok keresése.</span><span class="sxs-lookup"><span data-stu-id="abc57-124">To search all packages with DSC tag.</span></span>
+<span data-ttu-id="b2514-124">DSC-címkével ellátott összes csomagok keresése.</span><span class="sxs-lookup"><span data-stu-id="b2514-124">To search all packages with DSC tag.</span></span>
 
     Tags:DSC
 
-<span data-ttu-id="abc57-125">Keresés a megadott függvény az összes csomagot.</span><span class="sxs-lookup"><span data-stu-id="abc57-125">To search all packages with the specified function.</span></span>
+<span data-ttu-id="b2514-125">Keresés a megadott függvény az összes csomagot.</span><span class="sxs-lookup"><span data-stu-id="b2514-125">To search all packages with the specified function.</span></span>
 
     Functions:Get-TreeSize
 
-<span data-ttu-id="abc57-126">Keresés a megadott parancsmag az összes csomagot.</span><span class="sxs-lookup"><span data-stu-id="abc57-126">To search all packages with the specified cmdlet.</span></span>
+<span data-ttu-id="b2514-126">Keresés a megadott parancsmag az összes csomagot.</span><span class="sxs-lookup"><span data-stu-id="b2514-126">To search all packages with the specified cmdlet.</span></span>
 
     Cmdlets:Get-AzureRmEnvironment
 
-<span data-ttu-id="abc57-127">Keresés az összes csomag DSC erőforrás a megadott névvel.</span><span class="sxs-lookup"><span data-stu-id="abc57-127">To search all packages with the specified DSC Resource name.</span></span>
+<span data-ttu-id="b2514-127">Keresés az összes csomag DSC erőforrás a megadott névvel.</span><span class="sxs-lookup"><span data-stu-id="b2514-127">To search all packages with the specified DSC Resource name.</span></span>
 
     DscResources:xArchive
 
-<span data-ttu-id="abc57-128">A megadott PowerShellVersion az összes csomag keresése</span><span class="sxs-lookup"><span data-stu-id="abc57-128">To search all packages with the specified PowerShellVersion</span></span>
+<span data-ttu-id="b2514-128">A megadott PowerShellVersion az összes csomag keresése</span><span class="sxs-lookup"><span data-stu-id="b2514-128">To search all packages with the specified PowerShellVersion</span></span>
 
     PowerShellVersion:2.0
 
-<span data-ttu-id="abc57-129">Végül ha egy mező nem támogatjuk, például a "parancs", azt fogja csak figyelmen kívül hagyhatja azt és a Keresés az összes mezőt.</span><span class="sxs-lookup"><span data-stu-id="abc57-129">Finally, if you use a field we don't support, such as 'commands', we'll just ignore it and search all the fields.</span></span> <span data-ttu-id="abc57-130">Ezért a következő lekérdezést</span><span class="sxs-lookup"><span data-stu-id="abc57-130">So the following query</span></span>
+<span data-ttu-id="b2514-129">Végül ha egy mező nem támogatjuk, például a "parancs", azt fogja csak figyelmen kívül hagyhatja azt és a Keresés az összes mezőt.</span><span class="sxs-lookup"><span data-stu-id="b2514-129">Finally, if you use a field we don't support, such as 'commands', we'll just ignore it and search all the fields.</span></span> <span data-ttu-id="b2514-130">Ezért a következő lekérdezést</span><span class="sxs-lookup"><span data-stu-id="b2514-130">So the following query</span></span>
 
     commands:blobs storage
 
-<span data-ttu-id="abc57-131">Az értelmezett pontosan ugyanaz, mint ez a lekérdezés:</span><span class="sxs-lookup"><span data-stu-id="abc57-131">Is interpreted exactly the same as this query:</span></span>
+<span data-ttu-id="b2514-131">Az értelmezett pontosan ugyanaz, mint ez a lekérdezés:</span><span class="sxs-lookup"><span data-stu-id="b2514-131">Is interpreted exactly the same as this query:</span></span>
 
     blobs storage

@@ -4,19 +4,19 @@ keywords: PowerShell, a parancsmag
 title: Szolgáltatások kezelése
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
 ms.openlocfilehash: 81fd8802215da80ce22fa3fd4750b1df6efe8206
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086187"
 ---
-# <a name="managing-services"></a><span data-ttu-id="266ae-103">Szolgáltatások kezelése</span><span class="sxs-lookup"><span data-stu-id="266ae-103">Managing Services</span></span>
+# <a name="managing-services"></a><span data-ttu-id="66977-103">Szolgáltatások kezelése</span><span class="sxs-lookup"><span data-stu-id="66977-103">Managing Services</span></span>
 
-<span data-ttu-id="266ae-104">Nincsenek nyolc core parancsmagok, számos szolgáltatás feladatai tervezve.</span><span class="sxs-lookup"><span data-stu-id="266ae-104">There are eight core Service cmdlets, designed for a wide range of service tasks .</span></span> <span data-ttu-id="266ae-105">Csak az ajánlati és módosítása a futó állapotú szolgáltatások tekintsük meg, de használatával megtekintheti a parancsmagok listáját `Get-Help \*-Service`, és annak minden egyes szolgáltatás parancsmaggal kapcsolatos információkat a `Get-Help <Cmdlet-Name>`, mint például `Get-Help New-Service`.</span><span class="sxs-lookup"><span data-stu-id="266ae-105">We will look only at listing and changing running state for services, but you can get a list of Service cmdlets by using `Get-Help \*-Service`, and you can find information about each Service cmdlet by using `Get-Help <Cmdlet-Name>`, such as `Get-Help New-Service`.</span></span>
+<span data-ttu-id="66977-104">Nincsenek nyolc core parancsmagok, számos szolgáltatás feladatai tervezve.</span><span class="sxs-lookup"><span data-stu-id="66977-104">There are eight core Service cmdlets, designed for a wide range of service tasks .</span></span> <span data-ttu-id="66977-105">Csak az ajánlati és módosítása a futó állapotú szolgáltatások tekintsük meg, de használatával megtekintheti a parancsmagok listáját `Get-Help \*-Service`, és annak minden egyes szolgáltatás parancsmaggal kapcsolatos információkat a `Get-Help <Cmdlet-Name>`, mint például `Get-Help New-Service`.</span><span class="sxs-lookup"><span data-stu-id="66977-105">We will look only at listing and changing running state for services, but you can get a list of Service cmdlets by using `Get-Help \*-Service`, and you can find information about each Service cmdlet by using `Get-Help <Cmdlet-Name>`, such as `Get-Help New-Service`.</span></span>
 
-## <a name="getting-services"></a><span data-ttu-id="266ae-106">Szolgáltatás beolvasása</span><span class="sxs-lookup"><span data-stu-id="266ae-106">Getting Services</span></span>
+## <a name="getting-services"></a><span data-ttu-id="66977-106">Szolgáltatás beolvasása</span><span class="sxs-lookup"><span data-stu-id="66977-106">Getting Services</span></span>
 
-<span data-ttu-id="266ae-107">A helyi vagy távoli számítógépen a szolgáltatások is kap a `Get-Service` parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="266ae-107">You can get the services on a local or remote computer by using the `Get-Service` cmdlet.</span></span> <span data-ttu-id="266ae-108">A `Get-Process`révén a `Get-Service` paraméterek nélkül parancs visszaadja az összes szolgáltatás.</span><span class="sxs-lookup"><span data-stu-id="266ae-108">As with `Get-Process`, using the `Get-Service` command without parameters returns all services.</span></span> <span data-ttu-id="266ae-109">Név, szűrheti, még akkor is használatával helyettesítő karakterként csillagot:</span><span class="sxs-lookup"><span data-stu-id="266ae-109">You can filter by name, even using an asterisk as a wildcard:</span></span>
+<span data-ttu-id="66977-107">A helyi vagy távoli számítógépen a szolgáltatások is kap a `Get-Service` parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="66977-107">You can get the services on a local or remote computer by using the `Get-Service` cmdlet.</span></span> <span data-ttu-id="66977-108">A `Get-Process`révén a `Get-Service` paraméterek nélkül parancs visszaadja az összes szolgáltatás.</span><span class="sxs-lookup"><span data-stu-id="66977-108">As with `Get-Process`, using the `Get-Service` command without parameters returns all services.</span></span> <span data-ttu-id="66977-109">Név, szűrheti, még akkor is használatával helyettesítő karakterként csillagot:</span><span class="sxs-lookup"><span data-stu-id="66977-109">You can filter by name, even using an asterisk as a wildcard:</span></span>
 
 ```powershell
 PS> Get-Service -Name se*
@@ -28,7 +28,7 @@ Running  SENS               System Event Notification
 Stopped  ServiceLayer       ServiceLayer
 ```
 
-<span data-ttu-id="266ae-110">Mert nem mindig nyilvánvaló Mi az a szolgáltatás valódi neve, azt tapasztalhatja, meg kell keresnie a szolgáltatások által megjelenített neve.</span><span class="sxs-lookup"><span data-stu-id="266ae-110">Because it is not always obvious what the real name for the service is, you may find you need to find services by display name.</span></span> <span data-ttu-id="266ae-111">Ezt megteheti is egyedi neve, helyettesítő karakterek használatával, vagy a megjelenített nevek listája segítségével:</span><span class="sxs-lookup"><span data-stu-id="266ae-111">You can do this by specific name, using wildcards, or using a list of display names:</span></span>
+<span data-ttu-id="66977-110">Mert nem mindig nyilvánvaló Mi az a szolgáltatás valódi neve, azt tapasztalhatja, meg kell keresnie a szolgáltatások által megjelenített neve.</span><span class="sxs-lookup"><span data-stu-id="66977-110">Because it is not always obvious what the real name for the service is, you may find you need to find services by display name.</span></span> <span data-ttu-id="66977-111">Ezt megteheti is egyedi neve, helyettesítő karakterek használatával, vagy a megjelenített nevek listája segítségével:</span><span class="sxs-lookup"><span data-stu-id="66977-111">You can do this by specific name, using wildcards, or using a list of display names:</span></span>
 
 ```powershell
 PS> Get-Service -DisplayName se*
@@ -49,19 +49,19 @@ Running  lanmanserver       Server
 Stopped  ServiceLayer       ServiceLayer
 ```
 
-<span data-ttu-id="266ae-112">A ComputerName paramétert a Get-Service-parancsmag használatával a szolgáltatások beolvasása a távoli számítógépeken.</span><span class="sxs-lookup"><span data-stu-id="266ae-112">You can use the ComputerName parameter of the Get-Service cmdlet to get the services on remote computers.</span></span> <span data-ttu-id="266ae-113">A ComputerName paraméter több értéket és helyettesítő karaktereket, fogad el, így a szolgáltatásokat több számítógépen egyetlen paranccsal.</span><span class="sxs-lookup"><span data-stu-id="266ae-113">The ComputerName parameter accepts multiple values and wildcard characters, so you can get the services on multiple computers with a single command.</span></span> <span data-ttu-id="266ae-114">Például a következő parancsot a szolgáltatások beolvassa a kiszolgalo01 távoli számítógépen.</span><span class="sxs-lookup"><span data-stu-id="266ae-114">For example, the following command gets the services on the Server01 remote computer.</span></span>
+<span data-ttu-id="66977-112">A ComputerName paramétert a Get-Service-parancsmag használatával a szolgáltatások beolvasása a távoli számítógépeken.</span><span class="sxs-lookup"><span data-stu-id="66977-112">You can use the ComputerName parameter of the Get-Service cmdlet to get the services on remote computers.</span></span> <span data-ttu-id="66977-113">A ComputerName paraméter több értéket és helyettesítő karaktereket, fogad el, így a szolgáltatásokat több számítógépen egyetlen paranccsal.</span><span class="sxs-lookup"><span data-stu-id="66977-113">The ComputerName parameter accepts multiple values and wildcard characters, so you can get the services on multiple computers with a single command.</span></span> <span data-ttu-id="66977-114">Például a következő parancsot a szolgáltatások beolvassa a kiszolgalo01 távoli számítógépen.</span><span class="sxs-lookup"><span data-stu-id="66977-114">For example, the following command gets the services on the Server01 remote computer.</span></span>
 
 ```powershell
 Get-Service -ComputerName Server01
 ```
 
-## <a name="getting-required-and-dependent-services"></a><span data-ttu-id="266ae-115">Első szükséges, és a függő szolgáltatások</span><span class="sxs-lookup"><span data-stu-id="266ae-115">Getting Required and Dependent Services</span></span>
+## <a name="getting-required-and-dependent-services"></a><span data-ttu-id="66977-115">Első szükséges, és a függő szolgáltatások</span><span class="sxs-lookup"><span data-stu-id="66977-115">Getting Required and Dependent Services</span></span>
 
-<span data-ttu-id="266ae-116">A Get-Service parancsmag rendelkezik, amelyek rendkívül hasznosak lehetnek a szolgáltatás felügyeleti két paramétert.</span><span class="sxs-lookup"><span data-stu-id="266ae-116">The Get-Service cmdlet has two parameters that are very useful in service administration.</span></span> <span data-ttu-id="266ae-117">A DependentServices paraméter szerzi meg szolgáltatás, amely a szolgáltatás függ.</span><span class="sxs-lookup"><span data-stu-id="266ae-117">The DependentServices parameter gets services that depend on the service.</span></span> <span data-ttu-id="266ae-118">A RequiredServices paraméter szerzi meg szolgáltatásokat, amelyektől Ez a szolgáltatás függ.</span><span class="sxs-lookup"><span data-stu-id="266ae-118">The RequiredServices parameter gets services upon which this service depends.</span></span>
+<span data-ttu-id="66977-116">A Get-Service parancsmag rendelkezik, amelyek rendkívül hasznosak lehetnek a szolgáltatás felügyeleti két paramétert.</span><span class="sxs-lookup"><span data-stu-id="66977-116">The Get-Service cmdlet has two parameters that are very useful in service administration.</span></span> <span data-ttu-id="66977-117">A DependentServices paraméter szerzi meg szolgáltatás, amely a szolgáltatás függ.</span><span class="sxs-lookup"><span data-stu-id="66977-117">The DependentServices parameter gets services that depend on the service.</span></span> <span data-ttu-id="66977-118">A RequiredServices paraméter szerzi meg szolgáltatásokat, amelyektől Ez a szolgáltatás függ.</span><span class="sxs-lookup"><span data-stu-id="66977-118">The RequiredServices parameter gets services upon which this service depends.</span></span>
 
-<span data-ttu-id="266ae-119">Ezek a paraméterek csak a DependentServices és ServicesDependedOn értékeinek megjelenítése (alias = RequiredServices), amelyek megkönnyítik a Get-Service értéket ad vissza, de System.ServiceProcess.ServiceController objektum tulajdonságainak parancsokat, és győződjön meg arról, az első Ezt az információt sokkal egyszerűbbek.</span><span class="sxs-lookup"><span data-stu-id="266ae-119">These parameters just display the values of the DependentServices and ServicesDependedOn (alias=RequiredServices) properties of the System.ServiceProcess.ServiceController object that Get-Service returns, but they simplify commands and make getting this information much simpler.</span></span>
+<span data-ttu-id="66977-119">Ezek a paraméterek csak a DependentServices és ServicesDependedOn értékeinek megjelenítése (alias = RequiredServices), amelyek megkönnyítik a Get-Service értéket ad vissza, de System.ServiceProcess.ServiceController objektum tulajdonságainak parancsokat, és győződjön meg arról, az első Ezt az információt sokkal egyszerűbbek.</span><span class="sxs-lookup"><span data-stu-id="66977-119">These parameters just display the values of the DependentServices and ServicesDependedOn (alias=RequiredServices) properties of the System.ServiceProcess.ServiceController object that Get-Service returns, but they simplify commands and make getting this information much simpler.</span></span>
 
-<span data-ttu-id="266ae-120">Az alábbi parancs lekéri a szolgáltatásokat, amelyek a LanmanWorkstation szolgáltatás megköveteli.</span><span class="sxs-lookup"><span data-stu-id="266ae-120">The following command gets the services that the LanmanWorkstation service requires.</span></span>
+<span data-ttu-id="66977-120">Az alábbi parancs lekéri a szolgáltatásokat, amelyek a LanmanWorkstation szolgáltatás megköveteli.</span><span class="sxs-lookup"><span data-stu-id="66977-120">The following command gets the services that the LanmanWorkstation service requires.</span></span>
 
 ```powershell
 PS> Get-Service -Name LanmanWorkstation -RequiredServices
@@ -74,7 +74,7 @@ Running  MRxSmb10           SMB 1.x MiniRedirector
 Running  NSI                Network Store Interface Service
 ```
 
-<span data-ttu-id="266ae-121">Az alábbi parancs lekéri a szolgáltatások igénylik a LanmanWorkstation szolgáltatás.</span><span class="sxs-lookup"><span data-stu-id="266ae-121">The following command gets the services that require the LanmanWorkstation service.</span></span>
+<span data-ttu-id="66977-121">Az alábbi parancs lekéri a szolgáltatások igénylik a LanmanWorkstation szolgáltatás.</span><span class="sxs-lookup"><span data-stu-id="66977-121">The following command gets the services that require the LanmanWorkstation service.</span></span>
 
 ```powershell
 PS> Get-Service -Name LanmanWorkstation -DependentServices
@@ -87,33 +87,33 @@ Stopped  Browser            Computer Browser
 Running  BITS               Background Intelligent Transfer Ser...
 ```
 
-<span data-ttu-id="266ae-122">Minden függőségeket tartalmazó szolgáltatásokat is kaphat.</span><span class="sxs-lookup"><span data-stu-id="266ae-122">You can even get all services that have dependencies.</span></span> <span data-ttu-id="266ae-123">A következő parancs nem éppen ezt, és majd a Format-Table parancsmagot használja a szolgáltatások állapotát, a neve, a RequiredServices és DependentServices tulajdonságainak megjelenítéséhez a számítógépen.</span><span class="sxs-lookup"><span data-stu-id="266ae-123">The following command does just that, and then it uses the Format-Table cmdlet to display the Status, Name, RequiredServices and DependentServices properties of the services on the computer.</span></span>
+<span data-ttu-id="66977-122">Minden függőségeket tartalmazó szolgáltatásokat is kaphat.</span><span class="sxs-lookup"><span data-stu-id="66977-122">You can even get all services that have dependencies.</span></span> <span data-ttu-id="66977-123">A következő parancs nem éppen ezt, és majd a Format-Table parancsmagot használja a szolgáltatások állapotát, a neve, a RequiredServices és DependentServices tulajdonságainak megjelenítéséhez a számítógépen.</span><span class="sxs-lookup"><span data-stu-id="66977-123">The following command does just that, and then it uses the Format-Table cmdlet to display the Status, Name, RequiredServices and DependentServices properties of the services on the computer.</span></span>
 
 ```powershell
 Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
-## <a name="stopping-starting-suspending-and-restarting-services"></a><span data-ttu-id="266ae-124">Leállítása, indítása, felfüggesztése és szolgáltatások újraindítása</span><span class="sxs-lookup"><span data-stu-id="266ae-124">Stopping, Starting, Suspending, and Restarting Services</span></span>
+## <a name="stopping-starting-suspending-and-restarting-services"></a><span data-ttu-id="66977-124">Leállítása, indítása, felfüggesztése és szolgáltatások újraindítása</span><span class="sxs-lookup"><span data-stu-id="66977-124">Stopping, Starting, Suspending, and Restarting Services</span></span>
 
-<span data-ttu-id="266ae-125">Az összes parancsmagok általános a vezetéknévhez rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="266ae-125">The Service cmdlets all have the same general form.</span></span> <span data-ttu-id="266ae-126">Szolgáltatások köznapi név vagy a megjelenített név alapján adható meg, és listák és értékekként helyettesítő karaktereket.</span><span class="sxs-lookup"><span data-stu-id="266ae-126">Services can be specified by common name or display name, and take lists and wildcards as values.</span></span> <span data-ttu-id="266ae-127">A nyomtatási várólista leállításához használja:</span><span class="sxs-lookup"><span data-stu-id="266ae-127">To stop the print spooler, use:</span></span>
+<span data-ttu-id="66977-125">Az összes parancsmagok általános a vezetéknévhez rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="66977-125">The Service cmdlets all have the same general form.</span></span> <span data-ttu-id="66977-126">Szolgáltatások köznapi név vagy a megjelenített név alapján adható meg, és listák és értékekként helyettesítő karaktereket.</span><span class="sxs-lookup"><span data-stu-id="66977-126">Services can be specified by common name or display name, and take lists and wildcards as values.</span></span> <span data-ttu-id="66977-127">A nyomtatási várólista leállításához használja:</span><span class="sxs-lookup"><span data-stu-id="66977-127">To stop the print spooler, use:</span></span>
 
 ```powershell
 Stop-Service -Name spooler
 ```
 
-<span data-ttu-id="266ae-128">Miután leállt a nyomtatási várólista indításához használja:</span><span class="sxs-lookup"><span data-stu-id="266ae-128">To start the print spooler after it is stopped, use:</span></span>
+<span data-ttu-id="66977-128">Miután leállt a nyomtatási várólista indításához használja:</span><span class="sxs-lookup"><span data-stu-id="66977-128">To start the print spooler after it is stopped, use:</span></span>
 
 ```powershell
 Start-Service -Name spooler
 ```
 
-<span data-ttu-id="266ae-129">A nyomtatási várólista felfüggesztéséhez használja:</span><span class="sxs-lookup"><span data-stu-id="266ae-129">To suspend the print spooler, use:</span></span>
+<span data-ttu-id="66977-129">A nyomtatási várólista felfüggesztéséhez használja:</span><span class="sxs-lookup"><span data-stu-id="66977-129">To suspend the print spooler, use:</span></span>
 
 ```powershell
 Suspend-Service -Name spooler
 ```
 
-<span data-ttu-id="266ae-130">A `Restart-Service` parancsmag a Service egyéb parancsmagokhoz hasonlóan azonos módon működik, de, majd bemutatunk néhány összetettebb példa.</span><span class="sxs-lookup"><span data-stu-id="266ae-130">The `Restart-Service` cmdlet works in the same manner as the other Service cmdlets, but we will show some more complex examples for it.</span></span> <span data-ttu-id="266ae-131">A legegyszerűbb használja adja meg a szolgáltatás neve:</span><span class="sxs-lookup"><span data-stu-id="266ae-131">In the simplest use, you specify the name of the service:</span></span>
+<span data-ttu-id="66977-130">A `Restart-Service` parancsmag a Service egyéb parancsmagokhoz hasonlóan azonos módon működik, de, majd bemutatunk néhány összetettebb példa.</span><span class="sxs-lookup"><span data-stu-id="66977-130">The `Restart-Service` cmdlet works in the same manner as the other Service cmdlets, but we will show some more complex examples for it.</span></span> <span data-ttu-id="66977-131">A legegyszerűbb használja adja meg a szolgáltatás neve:</span><span class="sxs-lookup"><span data-stu-id="66977-131">In the simplest use, you specify the name of the service:</span></span>
 
 ```powershell
 PS> Restart-Service -Name spooler
@@ -123,9 +123,9 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 PS>
 ```
 
-<span data-ttu-id="266ae-132">Megfigyelheti, hogy a nyomtatási sorkezelő kapcsolatos ismétlődő figyelmeztető üzenetet kap: indul el.</span><span class="sxs-lookup"><span data-stu-id="266ae-132">You will notice that you get a repeated warning message about the Print Spooler starting up.</span></span> <span data-ttu-id="266ae-133">Amikor egy műveletet, bizonyos idő elteltével végez, a Windows PowerShell értesíti Önt, hogy továbbra is megpróbálja elvégezni a feladatot.</span><span class="sxs-lookup"><span data-stu-id="266ae-133">When you perform a service operation that takes some time, Windows PowerShell will notify you that it is still attempting to perform the task.</span></span>
+<span data-ttu-id="66977-132">Megfigyelheti, hogy a nyomtatási sorkezelő kapcsolatos ismétlődő figyelmeztető üzenetet kap: indul el.</span><span class="sxs-lookup"><span data-stu-id="66977-132">You will notice that you get a repeated warning message about the Print Spooler starting up.</span></span> <span data-ttu-id="66977-133">Amikor egy műveletet, bizonyos idő elteltével végez, a Windows PowerShell értesíti Önt, hogy továbbra is megpróbálja elvégezni a feladatot.</span><span class="sxs-lookup"><span data-stu-id="66977-133">When you perform a service operation that takes some time, Windows PowerShell will notify you that it is still attempting to perform the task.</span></span>
 
-<span data-ttu-id="266ae-134">Ha azt szeretné, több szolgáltatás újraindítását, szolgáltatások listáját, szűrheti őket, és végezze el az újraindítást:</span><span class="sxs-lookup"><span data-stu-id="266ae-134">If you want to restart multiple services, you can get a list of services, filter them, and then perform the restart:</span></span>
+<span data-ttu-id="66977-134">Ha azt szeretné, több szolgáltatás újraindítását, szolgáltatások listáját, szűrheti őket, és végezze el az újraindítást:</span><span class="sxs-lookup"><span data-stu-id="66977-134">If you want to restart multiple services, you can get a list of services, filter them, and then perform the restart:</span></span>
 
 ```powershell
 PS> Get-Service | Where-Object -FilterScript {$_.CanStop} | Restart-Service
@@ -140,24 +140,24 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 ```
 
-<span data-ttu-id="266ae-135">Ezen parancsmagok nem rendelkezik a ComputerName paraméter, de futtathatja őket egy távoli számítógépen az Invoke-Command parancsmaggal.</span><span class="sxs-lookup"><span data-stu-id="266ae-135">These Service cmdlets do not have a ComputerName parameter, but you can run them on a remote computer by using the Invoke-Command cmdlet.</span></span> <span data-ttu-id="266ae-136">Például az a következő parancsot a kiszolgalo01 távoli számítógépen a nyomtatásisor-kezelő szolgáltatás újraindul.</span><span class="sxs-lookup"><span data-stu-id="266ae-136">For example, the following command restarts the Spooler service on the Server01 remote computer.</span></span>
+<span data-ttu-id="66977-135">Ezen parancsmagok nem rendelkezik a ComputerName paraméter, de futtathatja őket egy távoli számítógépen az Invoke-Command parancsmaggal.</span><span class="sxs-lookup"><span data-stu-id="66977-135">These Service cmdlets do not have a ComputerName parameter, but you can run them on a remote computer by using the Invoke-Command cmdlet.</span></span> <span data-ttu-id="66977-136">Például az a következő parancsot a kiszolgalo01 távoli számítógépen a nyomtatásisor-kezelő szolgáltatás újraindul.</span><span class="sxs-lookup"><span data-stu-id="66977-136">For example, the following command restarts the Spooler service on the Server01 remote computer.</span></span>
 
 ```powershell
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
-## <a name="setting-service-properties"></a><span data-ttu-id="266ae-137">A beállítás szolgáltatás tulajdonságai</span><span class="sxs-lookup"><span data-stu-id="266ae-137">Setting Service Properties</span></span>
+## <a name="setting-service-properties"></a><span data-ttu-id="66977-137">A beállítás szolgáltatás tulajdonságai</span><span class="sxs-lookup"><span data-stu-id="66977-137">Setting Service Properties</span></span>
 
-<span data-ttu-id="266ae-138">A `Set-Service` parancsmag módosítja egy helyi vagy távoli számítógépen valamelyik szolgáltatás tulajdonságait.</span><span class="sxs-lookup"><span data-stu-id="266ae-138">The `Set-Service` cmdlet changes the properties of a service on a local or remote computer.</span></span> <span data-ttu-id="266ae-139">Mivel a szolgáltatás állapotát a tulajdonsággal, ez a parancsmag segítségével indítása, leállítása és a egy szolgáltatást.</span><span class="sxs-lookup"><span data-stu-id="266ae-139">Because the service status is a property, you can use this cmdlet to start, stop, and suspend a service.</span></span>
-<span data-ttu-id="266ae-140">A Set-Service parancsmag paramétere egy indítási típusa, amely lehetővé teszi a szolgáltatás indítási típusának módosítását.</span><span class="sxs-lookup"><span data-stu-id="266ae-140">The Set-Service cmdlet also has a StartupType parameter that lets you change the service startup type.</span></span>
+<span data-ttu-id="66977-138">A `Set-Service` parancsmag módosítja egy helyi vagy távoli számítógépen valamelyik szolgáltatás tulajdonságait.</span><span class="sxs-lookup"><span data-stu-id="66977-138">The `Set-Service` cmdlet changes the properties of a service on a local or remote computer.</span></span> <span data-ttu-id="66977-139">Mivel a szolgáltatás állapotát a tulajdonsággal, ez a parancsmag segítségével indítása, leállítása és a egy szolgáltatást.</span><span class="sxs-lookup"><span data-stu-id="66977-139">Because the service status is a property, you can use this cmdlet to start, stop, and suspend a service.</span></span>
+<span data-ttu-id="66977-140">A Set-Service parancsmag paramétere egy indítási típusa, amely lehetővé teszi a szolgáltatás indítási típusának módosítását.</span><span class="sxs-lookup"><span data-stu-id="66977-140">The Set-Service cmdlet also has a StartupType parameter that lets you change the service startup type.</span></span>
 
-<span data-ttu-id="266ae-141">Használandó `Set-Service` a Windows Vista és Windows újabb verziói, nyissa meg a Windows Powershellt a "Futtatás rendszergazdaként" lehetőséggel.</span><span class="sxs-lookup"><span data-stu-id="266ae-141">To use `Set-Service` on Windows Vista and later versions of Windows, open Windows PowerShell with the "Run as administrator" option.</span></span>
+<span data-ttu-id="66977-141">Használandó `Set-Service` a Windows Vista és Windows újabb verziói, nyissa meg a Windows Powershellt a "Futtatás rendszergazdaként" lehetőséggel.</span><span class="sxs-lookup"><span data-stu-id="66977-141">To use `Set-Service` on Windows Vista and later versions of Windows, open Windows PowerShell with the "Run as administrator" option.</span></span>
 
-<span data-ttu-id="266ae-142">További információkért lásd: [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)</span><span class="sxs-lookup"><span data-stu-id="266ae-142">For more information, see [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)</span></span>
+<span data-ttu-id="66977-142">További információkért lásd: [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)</span><span class="sxs-lookup"><span data-stu-id="66977-142">For more information, see [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="266ae-143">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="266ae-143">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="66977-143">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="66977-143">See Also</span></span>
 
-- <span data-ttu-id="266ae-144">[Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)</span><span class="sxs-lookup"><span data-stu-id="266ae-144">[Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)</span></span>
-- <span data-ttu-id="266ae-145">[Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)</span><span class="sxs-lookup"><span data-stu-id="266ae-145">[Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)</span></span>
-- <span data-ttu-id="266ae-146">[Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)</span><span class="sxs-lookup"><span data-stu-id="266ae-146">[Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)</span></span>
-- <span data-ttu-id="266ae-147">[Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)</span><span class="sxs-lookup"><span data-stu-id="266ae-147">[Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)</span></span>
+- <span data-ttu-id="66977-144">[Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)</span><span class="sxs-lookup"><span data-stu-id="66977-144">[Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)</span></span>
+- <span data-ttu-id="66977-145">[Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)</span><span class="sxs-lookup"><span data-stu-id="66977-145">[Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)</span></span>
+- <span data-ttu-id="66977-146">[Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)</span><span class="sxs-lookup"><span data-stu-id="66977-146">[Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)</span></span>
+- <span data-ttu-id="66977-147">[Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)</span><span class="sxs-lookup"><span data-stu-id="66977-147">[Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)</span></span>
