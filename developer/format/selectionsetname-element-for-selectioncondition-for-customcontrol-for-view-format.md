@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a52b05a9-762e-4f1c-ad57-9d1710149722
 caps.latest.revision: 10
 ms.openlocfilehash: 25d46665ca5df3ddf49af5718d513b84c77988c8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075579"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format"></a>A Nézet CustomControl eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[A nézet (formátum) CustomControl EntrySelectedBy SelectionCondition elem.](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|Határozza meg egy feltételt, amely a vezérlőelem definíciójában használt léteznie kell.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a kijelölt csoport nevét.
 
