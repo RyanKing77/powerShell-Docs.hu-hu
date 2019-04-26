@@ -5,11 +5,11 @@ keywords: katalógus, a powershell, a parancsmag, a psgallery
 description: A kiadók irányelvek
 title: PowerShell-galériából közzétételi irányelvek és bevált gyakorlatok
 ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084657"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell-Galériabeli közzétételi irányelvek és bevált gyakorlatok
 

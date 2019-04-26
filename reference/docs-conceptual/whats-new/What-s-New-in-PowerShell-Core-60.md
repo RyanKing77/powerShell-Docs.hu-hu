@@ -3,11 +3,11 @@ title: A PowerShell Core 6.0 újdonságai
 description: Új szolgáltatásokat és módosításokat jelent meg a PowerShell Core 6.0
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059015"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>A PowerShell Core 6.0 újdonságai
 
@@ -15,7 +15,7 @@ ms.locfileid: "46289242"
 
 ## <a name="moved-from-net-framework-to-net-core"></a>A .NET-keretrendszer átkerülnek a .NET Core
 
-Használja a PowerShell Core [A .NET core 2.0][] , a modul.
+Használja a PowerShell Core [.NET Core 2.0][] , a modul.
 .NET core 2.0 lehetővé teszi, hogy a PowerShell Core (Windows, macOS és Linux), több platformon működik.
 A PowerShell Core is elérhetővé teszi a .NET Core 2.0 használható a PowerShell-parancsmagok és parancsfájlok által nyújtott API-készlet.
 
@@ -50,7 +50,7 @@ Közösségünkhöz is hozzájárult a csomagok a következő platformokhoz, de 
 Kísérleti (nem támogatott) kiadások, az alábbi platformokon van:
 
 - A ARM32/ARM64 Windows
-- Raspbian (Nyújtás)
+- Raspbian (Stretch)
 
 A módosítások számát történtek a PowerShell Core 6.0-s helyes működéséhez jobban nem Windows rendszereken.
 Ezek közül néhányat a rendszer használhatatlanná tévő változásai, amely arra is hatással lehet a Windows.
@@ -129,7 +129,7 @@ Használja a PowerShell Core [.NET Standard][] 2.0 meglévő .NET-szerelvények 
 Sok PowerShell-modul függenek ezekkel a szerelvényekkel (gyakran időpontokban DLL-ek), így a .NET Standard lehetővé teszi, hogy a .NET Core használatának folytatásához.
 A PowerShell Core, nézze meg jól ismert mappák – például a globális szerelvény-gyorsítótár általában tartalmazó lemez – a keresendő függőségek .NET-keretrendszer DLL heurisztikát is tartalmaz.
 
-További információ a .NET Standard az a [.NET Blog][], a jelen [YouTube-on][] video- és keresztül ez [GYAKORI KÉRDÉSEK][] a Githubon.
+További információ a .NET Standard az a [.NET Blog][], a jelen [YouTube][] video- és keresztül ez [GYAKORI KÉRDÉSEK][] a Githubon.
 
 Ajánlott erőfeszítéseket annak érdekében, hogy a PowerShell nyelv és a "beépített" modulokat (például `Microsoft.PowerShell.Management`, `Microsoft.PowerShell.Utility`használatához és így tovább) azonos működik, mint a Windows PowerShellben.
 Sok esetben a Közösség segítségével hozzáadtunk azok a parancsmagok új funkciókat és hibajavításokat tartalmaz.
@@ -183,8 +183,8 @@ A PowerShell Core módosítja az alapértelmezett kódolási megfelel a szélese
 Ez azt jelenti, hogy minden beépített parancsmag, amely használja a `-Encoding` paraméterrel használja a `UTF8NoBOM` az érték alapértelmezés szerint.
 A következő parancsmagokat érinti a változás:
 
-- Tartalom hozzáadása
-- Exportálás – Clixml
+- Add-Content
+- Export-Clixml
 - Export-Csv
 - Export-PSSession
 - Format-Hex
@@ -274,7 +274,7 @@ PowerShell-feladatokkal kapcsolatos további információkért lásd: [about_Job
 - Adjon hozzá `-SkipHeaderValidation` váltson webes parancsmagok támogatják a fejlécek hozzáadása a fejléc értéke ellenőrzése nélkül. (#4085)
 - Engedélyezze a webes parancsmagok nem érvényesíti a HTTPS-tanúsítvány a kiszolgáló, ha szükséges.
 - Hitelesítési paraméterek hozzáadása a webes parancsmagok. (#5052) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus))
-  - Adjon hozzá `-Authentication` , amely három lehetőséget kínál: alapszintű, OAuth és tulajdonosi.
+  - Adjon hozzá `-Authentication` , amely három lehetőséget kínál: Alapszintű, OAuth hitelesítéssel és tulajdonosi.
   - Adjon hozzá `-Token` beolvasni a tulajdonosi jogkivonatot OAuth és tulajdonosi beállításait.
   - Adjon hozzá `-AllowUnencryptedAuthentication` a HTTPS-től eltérő bármely átviteli séma biztosított authentication kihagyásához.
 - Adjon hozzá `-ResponseHeadersVariable` való `Invoke-RestMethod` válaszfejlécek rögzítését engedélyezéséhez. (#4888) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus))
@@ -343,7 +343,7 @@ PowerShell-feladatokkal kapcsolatos további információkért lásd: [about_Job
 - Argument automatikus kiegészítését a engedélyezése `-ExcludeProperty` és `-ExpandProperty` , `Select-Object`. (#3443) (Köszönhetően [ @iSazonov ](https://github.com/iSazonov)!)
 - Javításra került egy kiegészítés győződjön meg arról, hogy a `native.exe --<tab>` fejeznie natív könyvtárba. (#3633) (Köszönhetően [ @powercode ](https://github.com/powercode)!)
 
-## <a name="breaking-changes"></a>Használhatatlanná tévő változásai
+## <a name="breaking-changes"></a>Kompatibilitástörő változások
 
 A PowerShell Core 6.0-s kompatibilitástörő változásokat számos jelentettük be.
 További őket részletes információ: [használhatatlanná tévő változások a PowerShell Core 6.0-s][breaking-changes].
@@ -379,8 +379,8 @@ Is tervezzük a telemetriai adatok és az elemzések, mi az a telemetriai adatok
 További információk a módját a jelen használjuk ezeket az adatokat annak [blogbejegyzés][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
-[A .NET core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
@@ -388,12 +388,12 @@ További információk a módját a jelen használjuk ezeket az adatokat annak [
 [változásnaplójában]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
-[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
-[YouTube-on]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
+[YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [GYAKORI KÉRDÉSEK]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
-[Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
+[docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
