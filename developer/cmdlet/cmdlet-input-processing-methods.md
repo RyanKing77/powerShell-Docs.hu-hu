@@ -10,83 +10,81 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: 065214647dfa6d376b727930fe75140911095faf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068487"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Parancsmag bemeneti feldolgozási módszerei
 
-Parancsmagok felül kell írnia a bemeneti adatok feldolgozása a munkájuk elvégzéséhez ebben a témakörben ismertetett módszerek valamelyikét. Ezek a metódusok lehetővé teszik a parancsmag előfeldolgozási művelet, bemeneti feldolgozási műveletekhez és utáni feldolgozási műveletek végrehajtásához. Ezek a módszerek is lehetővé teszik a parancsmag feldolgozás megállítása.
+Parancsmagok felül kell írnia a bemeneti adatok feldolgozása a munkájuk elvégzéséhez ebben a témakörben ismertetett módszerek valamelyikét.
+Ezek a metódusok lehetővé teszik a parancsmag előfeldolgozásához, bemeneti feldolgozási és utáni feldolgozási műveletek végrehajtásához.
+Ezek a módszerek is lehetővé teszik a parancsmag feldolgozás megállítása.
+Ezek a módszerek használatát bemutató részletes példa: [SelectStr oktatóanyag](selectstr-tutorial.md).
 
-## <a name="pre-processing-tasks"></a>Előfeldolgozási feladatok
+## <a name="pre-processing-operations"></a>Előfeldolgozási műveletek
 
-Parancsmagok felül kell írni a [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) adható hozzá, amelyek érvényesek a parancsmag által később feldolgozandó összes rekordjára vonatkozóan előfeldolgozási műveleteket. Ha a Windows PowerShell parancs folyamat feldolgozza, Windows PowerShell meghívja ezt a módszert egyszer a parancsmag a folyamat minden példánya esetében. Hogyan hívja meg a Windows PowerShell parancs folyamat kapcsolatos további információkért lásd: [parancsmag feldolgozása életciklus](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
+Parancsmagok felül kell írni a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) adható hozzá, amelyek érvényesek a parancsmag által később feldolgozandó összes rekordjára vonatkozóan előfeldolgozási műveleteket.
+Amikor az PowerShell paranccsal folyamat, PowerShell meghívja ezt a metódust egyszer a parancsmag a folyamat minden példánya esetében.
+Hogyan PowerShell hívja meg a parancs folyamat kapcsolatos további információkért lásd: [parancsmag feldolgozása életciklus](/previous-versions/ms714429(v=vs.85)).
 
-A következő kódot egy megvalósítását mutatja be a [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) metódust.
+A következő kódot a BeginProcessing metódus megvalósítását mutatja be.
 
 ```csharp
 protected override void BeginProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the BeginProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the BeginProcessing template.");
 }
 ```
 
-Részletesebb példát, hogyan használható a [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) metódus, lásd: [SelectStr oktatóanyag](./selectstr-tutorial.md). Ebben az oktatóanyagban a **Select-Str** parancsmagot használja a [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) létrehozni a reguláris kifejezés, amely a bemeneti rekordjának segítségével módszert.
+## <a name="input-processing-operations"></a>Adjon meg feldolgozási műveletek
 
-## <a name="input-processing-tasks"></a>Adjon meg feldolgozási feladatok
+Parancsmagok felül lehet bírálni a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) feldolgozni a parancsmaghoz küldött bemeneti metódus.
+Amikor az PowerShell paranccsal folyamat, PowerShell meghívja ezt a metódust a parancsmag által feldolgozott bemeneti rekordonként.
+Hogyan PowerShell hívja meg a parancs folyamat kapcsolatos további információkért lásd: [parancsmag feldolgozása életciklus](/previous-versions/ms714429(v=vs.85)).
 
-Parancsmagok felül lehet bírálni a [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) feldolgozni a parancsmaghoz küldött bemeneti metódus. Windows PowerShell parancs folyamat dolgozza fel, ha a Windows PowerShell meghívja ezt a metódust a parancsmag által feldolgozott bemeneti rekordonként. Hogyan hívja meg a Windows PowerShell parancs folyamat kapcsolatos további információkért lásd: [parancsmag feldolgozása életciklus](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
-
-A következő kódot egy megvalósítását mutatja be a [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) metódust.
+A következő kódot a ProcessRecord metódus megvalósítását mutatja be.
 
 ```csharp
 protected override void ProcessRecord()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the ProcessRecord template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the ProcessRecord template.");
 }
 ```
 
-Részletesebb példát, hogyan használható a [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) metódus, lásd: [SelectStr oktatóanyag](./selectstr-tutorial.md).
+## <a name="post-processing-operations"></a>Utólagos feldolgozási műveletek
 
-## <a name="post-processing-tasks"></a>Utólagos feldolgozási feladatokat
+Parancsmagok felül kell írni a [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) adható hozzá, amelyek érvényesek a parancsmag által feldolgozott összes rekordjára vonatkozóan utólagos feldolgozási műveleteket.
+Például a parancsmag karbantartása objektum változók a befejezése után lehet feldolgozása.
 
-Parancsmagok felül kell írni a [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) adható hozzá, amelyek érvényesek a parancsmag által feldolgozott összes rekordjára vonatkozóan utólagos feldolgozási műveleteket. Például a parancsmag karbantartása objektum változók a befejezése után lehet feldolgozása.
+Amikor az PowerShell paranccsal folyamat, PowerShell meghívja ezt a metódust egyszer a parancsmag a folyamat minden példánya esetében.
+Azonban fontos megjegyezni, hogy a PowerShell-modul nem hívja a EndProcessing módszert, ha a parancsmag midway megszakad a bemeneti feldolgozást keresztül, vagy ha a megszakító hiba akkor fordul elő, a parancsmag bármely részén.
+Ebből kifolyólag objektum karbantartási igénylő parancsmag meg kell valósítania a teljes [System.IDisposable](/dotnet/api/System.IDisposable) minta, beleértve a egy befejezővel, hogy a futtatókörnyezet segítségével meghívhatja a mindkét EndProcessing és [ System.IDisposable.Dispose](/dotnet/api/System.IDisposable.Dispose) módszerek feldolgozás végén.
+Hogyan PowerShell hívja meg a parancs folyamat kapcsolatos további információkért lásd: [parancsmag feldolgozása életciklus](/previous-versions/ms714429(v=vs.85)).
 
-Ha a Windows PowerShell parancs folyamat feldolgozza, Windows PowerShell meghívja ezt a módszert egyszer a parancsmag a folyamat minden példánya esetében. Azonban fontos megjegyezni, hogy a Windows PowerShell-modul nem meghívja a [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) módszert, ha a parancsmagot a bemeneti feldolgozást keresztül midway megszakadt, vagy ha egy megszakítást okozó hiba jelenik meg a parancsmag bármely részén. Ebből kifolyólag objektum karbantartási igénylő parancsmag meg kell valósítania a teljes [System.IDisposable](/dotnet/api/System.IDisposable) minta, beleértve a egy befejezővel, hogy a futtatókörnyezet is meghívhatja a [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) és [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) módszerek feldolgozás végén. Hogyan hívja meg a Windows PowerShell parancs folyamat kapcsolatos további információkért lásd: [parancsmag feldolgozása életciklus](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
-
-A következő kódot egy megvalósítását mutatja be a [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) metódust.
+A következő kódot a EndProcessing metódus megvalósítását mutatja be.
 
 ```csharp
 protected override void EndProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the EndProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the EndProcessing template.");
 }
 ```
 
-Részletesebb példát, hogyan használható a [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) metódus, lásd: [SelectStr oktatóanyag](./selectstr-tutorial.md).
-
 ## <a name="see-also"></a>Lásd még:
 
-[System.Management.Automation.Cmdlet.Beginprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 
-[System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 
-[System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
+
+[SelectStr oktatóanyag](selectstr-tutorial.md)
 
 [System.IDisposable](/dotnet/api/System.IDisposable)
 

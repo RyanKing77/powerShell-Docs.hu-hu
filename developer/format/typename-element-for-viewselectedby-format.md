@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0ad807a9-d7d8-4e96-b799-9c6a7677cc2d
 caps.latest.revision: 12
 ms.openlocfilehash: e2028c479103cc414295dc24a0f9bb69190bfc66
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083756"
 ---
 # <a name="typename-element-for-viewselectedby-format"></a>A ViewSelectedBy elem TypeName eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[ViewSelectedBy elem (formátum)](./viewselectedby-element-format.md)|A .NET-objektumokat a nézet által megjelenített határozza meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a teljes nevet, a .NET-típus, például `System.IO.DirectoryInfo`.
 

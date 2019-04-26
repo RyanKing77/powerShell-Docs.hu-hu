@@ -4,11 +4,11 @@ ms.date: 06/21/2018
 keywords: dsc, powershell, azure, extension
 title: Az Azure DSC-bővítmény a korábbi verziók
 ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079744"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration bővítmény korábbi verziók
 
@@ -24,7 +24,7 @@ Ez a cikk az Azure DSC Virtuálisgép-bővítmény, az egyes verziójával kapcs
   - 2018. május 9,. (Azure) |} 21 2018 június (az Azure China, az Azure Government)
 - **Operációsrendszer-támogatást:**
   - Windows Server 2016
-  - Windows Server 2012 R2
+  - Windows Server 2012 R2
   - Windows Server 2012
   - Windows Server 2008 R2 SP1
   - Windows ügyfél 7/8.1/10
@@ -49,7 +49,7 @@ Ez a cikk az Azure DSC Virtuálisgép-bővítmény, az egyes verziójával kapcs
 
 ### <a name="version-275"></a>Verzió 2,75
 
-- **Kiadás dátuma:** 5, 2018. március
+- **Kiadás dátuma:** 2018. március 5.
 - **Operációsrendszer-támogatást:** A Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1, Windows-ügyfél 7/8.1/10, a Nano Server
 - **A WMF-támogatás:** A WMF 5.1, a WMF 5.0 RTM-re, a WMF 4.0 frissítést, a WMF 4.0
 - **Környezet:** Azure

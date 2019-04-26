@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Feladatok megismétlése több objektumon ForEach-Object
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
 ms.openlocfilehash: 64d85edad4a6931b2376b95b6d1f5b4d5194399f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086170"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Feladatok megismétlése több objektumon (ForEach-Object)
 

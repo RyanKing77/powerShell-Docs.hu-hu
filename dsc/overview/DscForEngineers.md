@@ -3,11 +3,11 @@ ms.date: 10/13/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A célállapot-konfiguráció áttekintése mérnökök számára
 ms.openlocfilehash: 0e599c2218cd2df29dbd0529006be5e1ef17ce5f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079982"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>A célállapot-konfiguráció áttekintése mérnökök számára
 

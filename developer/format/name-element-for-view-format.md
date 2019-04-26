@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3a31010d-1db9-44ae-a7f3-6ed32cb641cb
 caps.latest.revision: 16
 ms.openlocfilehash: 097d20cb6a04635124d1f96823248df6095ca1af
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065070"
 ---
 # <a name="name-element-for-view-format"></a>A Nézet Név eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[Nézet elem (formátum)](./view-element-format.md)|Meghatározza egy nézetet, amely legalább egy .NET-objektumokká tagjai megjelenítésére szolgál.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adjon meg egy egyedi rövid nevet a nézetet. Ez a név tartalmazhat egy hivatkozást a nézet (például egy táblázat vagy lista nézetben), mely objektum vagy objektumcsoport használja a nézetet, mely a parancs visszaadja az objektumokat, vagy ezek kombinációja típusát.
 

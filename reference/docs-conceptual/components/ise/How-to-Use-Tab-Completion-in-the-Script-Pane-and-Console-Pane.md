@@ -4,11 +4,11 @@ keywords: PowerShell, a parancsmag
 title: Parancssori kiegészítés használata a Parancsfájl panelen és a Konzol panelen
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 ms.openlocfilehash: 24a3f00987ff5ca4bf82d1a3206857ec3c4b3f09
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086884"
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a>Parancssori kiegészítés használata a Parancsfájl panelen és a Konzol panelen
 

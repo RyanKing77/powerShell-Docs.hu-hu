@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 53442bb1-74a3-49f9-9150-3bc3081a7565
 caps.latest.revision: 6
 ms.openlocfilehash: 27de41c88e224f7610c10a764e51524016ecc8cb
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794824"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065274"
 ---
 # <a name="list-view-labels"></a>Listanézet (Címkék)
 
@@ -30,7 +30,7 @@ Ez a példa bemutatja, hogyan valósíthat meg, amely megjeleníti az egyéni c�
    > [!WARNING]
    > A formázási fájl olyan objektum, amely már definiálva van egy Windows PowerShell formázási fájl megjelenítését határozza meg. Kell használnia a `prependPath` paramétert, ha futtatja a parancsmagot, és nem tölthető be, a formázást modulként fájlt.
 
-## <a name="demonstrates"></a>Bemutatók
+## <a name="demonstrates"></a>Azt ismerteti
 
 Ez a fájl formázási mutat be a következő XML-elemeket:
 

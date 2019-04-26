@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e00e8f36-76f2-49a0-9b02-3a2a7fceb2dd
 caps.latest.revision: 8
 ms.openlocfilehash: 6534e9dbfbe0dedf60dadd6467cff9ad9b447ba4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064203"
 ---
 # <a name="scriptblock-element-for-wideitem-for-widecontrol-format"></a>A WideControl WideControl elemének ScriptBlock eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[WideItem elem (formátum)](./wideitem-element-for-widecontrol-format.md)|Meghatározza a tulajdonság, vagy parancsprogram blokkot, amelynek az értéke az széles nézetben jelenik meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a parancsfájl, amelynek értéke megjelenik.
 

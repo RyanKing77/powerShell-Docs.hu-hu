@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
 caps.latest.revision: 15
 ms.openlocfilehash: 29dbdbd335511e4ca2706a625541554825838f23
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065155"
 ---
 # <a name="name-element-for-selectionset-format"></a>A SelectionSet Név eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[SelectionSet elem (formátum)](./selectionset-element-format.md)|Meghatároz egy egységes .NET-objektumokat a készlet neve szerint lehet hivatkozni.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a nevét, a kijelölés set hivatkozni. Nincsenek nem korlátozza a feltárhatja, hogy mely karakterek használhatók.
 

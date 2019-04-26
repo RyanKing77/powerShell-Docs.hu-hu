@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080781"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>Erőforrások hozzáadása egy Management OData webszolgáltatáshoz
 
@@ -51,7 +51,7 @@ Az első lépés, hogy a meglévő felügyeleti OData-végpont a séma importál
 
 3. Győződjön meg arról, hogy a Windows PowerShell-modul telepítve van-e kiválasztva, és a legördülő listából válassza ki a Hyper-V. Kattintson a **tovább**. Kattintson a **Tovább** gombra.
 
-4. Az a **parancsmag főnév** listáról válassza ki **VM**. Kattintson a **Next** (Tovább) gombra.
+4. Az a **parancsmag főnév** listáról válassza ki **VM**. Kattintson a **tovább**
 
 5. Ebben a példában azt csak a Get és Delete parancsok parancsmagokban fog kötődni. Törölje a **létrehozása** és **frissítés** jelölőnégyzeteket, és győződjön meg arról, a **első** és **törlése** jelölőnégyzetek be vannak jelölve. Győződjön meg arról, hogy a `Get-VM` parancsmag van kiválasztva a **első**, és a `Remove-VM` parancsmag van kiválasztva a **törlése**.
 
