@@ -1,1149 +1,1142 @@
-items:
 - name: Windows PowerShell SDK
   href: windows-powershell.md
   items:
-  - name: A Windows PowerShell SDK telepítése
-    href: installing-the-windows-powershell-sdk.md
-  - name: Windows PowerShell-modul írása
-    href: ./module/writing-a-windows-powershell-module.md
-    items:
-    - name: A Windows PowerShell-modulok megértése
-      href: ./module/understanding-a-windows-powershell-module.md
-    - name: PowerShell-szkriptmodul írása
-      href: ./module/how-to-write-a-powershell-script-module.md
-    - name: Bináris PowerShell-modul írása
-      href: ./module/how-to-write-a-powershell-binary-module.md
-    - name: Bináris PowerShell-moduljegyzék írása
-      href: ./module/how-to-write-a-powershell-module-manifest.md
-    - name: PowerShell-modul telepítése
-      href: ./module/installing-a-powershell-module.md
-    - name: A PSModulePath telepítési útvonalának módosítása
-      href: ./module/modifying-the-psmodulepath-installation-path.md
-    - name: PowerShell-modul importálása
-      href: ./module/importing-a-powershell-module.md
-    - name: Windows PowerShell-modulok írása – súgó
-      href: ./module/writing-help-for-windows-powershell-modules.md
+    - name: A Windows PowerShell SDK telepítése
+      href: installing-the-windows-powershell-sdk.md
+    - name: Windows PowerShell-modul írása
+      href: ./module/writing-a-windows-powershell-module.md
       items:
-      - name: Elnevezési súgófájlok
-        href: ./module/naming-help-files.md
-      - name: Frissíthető súgó támogatása
-        href: ./module/supporting-updatable-help.md
-        items:
-        - name: Frissíthető súgó – áttekintés
-          href: ./module/updatable-help-overview.md
-        - name: 'Frissíthető súgó írása: Részletes útmutató'
-          href: ./module/updatable-help-authoring-step-by-step.md
-        - name: A frissíthető súgó működése
-          href: ./module/how-updatable-help-works.md
-        - name: HelpInfo XML-fájl létrehozása
-          href: ./module/how-to-create-a-helpinfo-xml-file.md
+        - name: A Windows PowerShell-modulok megértése
+          href: ./module/understanding-a-windows-powershell-module.md
+        - name: PowerShell-szkriptmodul írása
+          href: ./module/how-to-write-a-powershell-script-module.md
+        - name: Bináris PowerShell-modul írása
+          href: ./module/how-to-write-a-powershell-binary-module.md
+        - name: Bináris PowerShell-moduljegyzék írása
+          href: ./module/how-to-write-a-powershell-module-manifest.md
+        - name: PowerShell-modul telepítése
+          href: ./module/installing-a-powershell-module.md
+        - name: A PSModulePath telepítési útvonalának módosítása
+          href: ./module/modifying-the-psmodulepath-installation-path.md
+        - name: PowerShell-modul importálása
+          href: ./module/importing-a-powershell-module.md
+        - name: Windows PowerShell-modulok írása – súgó
+          href: ./module/writing-help-for-windows-powershell-modules.md
           items:
-          - name: HelpInfo XML-séma
-            href: ./module/helpinfo-xml-schema.md
-          - name: HelpInfo XML-mintafájl
-            href: ./module/helpinfo-xml-sample-file.md
-          - name: HelpInfo XML-fájl elnevezése
-            href: ./module/how-to-name-a-helpinfo-xml-file.md
-          - name: HelpInfo XML-verziószámok beállítása
-            href: ./module/how-to-set-helpinfo-xml-version-numbers.md
-        - name: Frissíthető CAB-súgófájlok előkészítése
-          href: ./module/how-to-prepare-updatable-help-cab-files.md
+            - name: Elnevezési súgófájlok
+              href: ./module/naming-help-files.md
+            - name: Frissíthető súgó támogatása
+              href: ./module/supporting-updatable-help.md
+              items:
+                - name: Frissíthető súgó – áttekintés
+                  href: ./module/updatable-help-overview.md
+                - name: 'Frissíthető súgó írása: Részletes útmutató'
+                  href: ./module/updatable-help-authoring-step-by-step.md
+                - name: A frissíthető súgó működése
+                  href: ./module/how-updatable-help-works.md
+                - name: HelpInfo XML-fájl létrehozása
+                  href: ./module/how-to-create-a-helpinfo-xml-file.md
+                  items:
+                    - name: HelpInfo XML-séma
+                      href: ./module/helpinfo-xml-schema.md
+                    - name: HelpInfo XML-mintafájl
+                      href: ./module/helpinfo-xml-sample-file.md
+                    - name: HelpInfo XML-fájl elnevezése
+                      href: ./module/how-to-name-a-helpinfo-xml-file.md
+                    - name: HelpInfo XML-verziószámok beállítása
+                      href: ./module/how-to-set-helpinfo-xml-version-numbers.md
+                - name: Frissíthető CAB-súgófájlok előkészítése
+                  href: ./module/how-to-prepare-updatable-help-cab-files.md
+                  items:
+                    - name: CAB-fájlok létrehozása és feltöltése
+                      href: ./module/how-to-create-and-upload-cab-files.md
+                    - name: Frissíthető CAB-súgófájlok elnevezése
+                      href: ./module/how-to-name-an-updatable-help-cab-file.md
+                    - name: Frissíthető CAB-súgófájlok megengedett fájltípusai
+                      href: ./module/file-types-permitted-in-an-updatable-help-cab-file.md
+                - name: Súgófájlok frissítése
+                  href: ./module/how-to-update-help-files.md
+                - name: Frissíthető súgó tesztelése
+                  href: ./module/how-to-test-updatable-help.md
+            - name: Online súgó támogatása
+              href: ./module/supporting-online-help.md
+    - name: Windows PowerShell-parancsmag írása
+      href: ./cmdlet/writing-a-windows-powershell-cmdlet.md
+      items:
+        - name: Parancsmag – áttekintés
+          href: ./cmdlet/cmdlet-overview.md
+        - name: Windows PowerShell-parancsmagok – Fogalmak
+          href: ./cmdlet/windows-powershell-cmdlet-concepts.md
           items:
-          - name: CAB-fájlok létrehozása és feltöltése
-            href: ./module/how-to-create-and-upload-cab-files.md
-          - name: Frissíthető CAB-súgófájlok elnevezése
-            href: ./module/how-to-name-an-updatable-help-cab-file.md
-          - name: Frissíthető CAB-súgófájlok megengedett fájltípusai
-            href: ./module/file-types-permitted-in-an-updatable-help-cab-file.md
-        - name: Súgófájlok frissítése
-          href: ./module/how-to-update-help-files.md
-        - name: Frissíthető súgó tesztelése
-          href: ./module/how-to-test-updatable-help.md
-      - name: Online súgó támogatása
-        href: ./module/supporting-online-help.md
-  - name: Windows PowerShell-parancsmag írása
-    href: ./cmdlet/writing-a-windows-powershell-cmdlet.md
-    items:
-    - name: Parancsmag – áttekintés
-      href: ./cmdlet/cmdlet-overview.md
-    - name: Windows PowerShell-parancsmagok – Fogalmak
-      href: ./cmdlet/windows-powershell-cmdlet-concepts.md
-      items:
-      - name: Parancsmagfejlesztői útmutató
-        href: ./cmdlet/cmdlet-development-guidelines.md
-        items:
-        - name: Kötelező fejlesztői útmutató
-          href: ./cmdlet/required-development-guidelines.md
-        - name: Javasolt fejlesztői útmutató
-          href: ./cmdlet/strongly-encouraged-development-guidelines.md
-        - name: Tanácsolt fejlesztői útmutató
-          href: ./cmdlet/advisory-development-guidelines.md
-      - name: Parancsmag osztálydeklarációja
-        href: ./cmdlet/cmdlet-class-declaration.md
-      - name: A Windows PowerShell-parancsok jóváhagyott igéi
-        href: ./cmdlet/approved-verbs-for-windows-powershell-commands.md
-      - name: Parancsmag bemeneti feldolgozási módszerei
-        href: ./cmdlet/cmdlet-input-processing-methods.md
-      - name: Parancsmag-paraméterek
-        href: ./cmdlet/cmdlet-parameters.md
-        items:
-        - name: Tulajdonságok deklarálása paraméterekként
-          href: ./cmdlet/declaring-properties-as-parameters.md
-        - name: Parancsmag-paraméterek típusai
-          href: ./cmdlet/types-of-cmdlet-parameters.md
-        - name: Parancsmag-paraméterek szabványos nevei és típusai
-          href: ./cmdlet/standard-cmdlet-parameter-names-and-types.md
+            - name: Parancsmagfejlesztői útmutató
+              href: ./cmdlet/cmdlet-development-guidelines.md
+              items:
+                - name: Kötelező fejlesztői útmutató
+                  href: ./cmdlet/required-development-guidelines.md
+                - name: Javasolt fejlesztői útmutató
+                  href: ./cmdlet/strongly-encouraged-development-guidelines.md
+                - name: Tanácsolt fejlesztői útmutató
+                  href: ./cmdlet/advisory-development-guidelines.md
+            - name: Parancsmag osztálydeklarációja
+              href: ./cmdlet/cmdlet-class-declaration.md
+            - name: A Windows PowerShell-parancsok jóváhagyott igéi
+              href: ./cmdlet/approved-verbs-for-windows-powershell-commands.md
+            - name: Parancsmag bemeneti feldolgozási módszerei
+              href: ./cmdlet/cmdlet-input-processing-methods.md
+            - name: Parancsmag-paraméterek
+              href: ./cmdlet/cmdlet-parameters.md
+              items:
+                - name: Tulajdonságok deklarálása paraméterekként
+                  href: ./cmdlet/declaring-properties-as-parameters.md
+                - name: Parancsmag-paraméterek típusai
+                  href: ./cmdlet/types-of-cmdlet-parameters.md
+                - name: Parancsmag-paraméterek szabványos nevei és típusai
+                  href: ./cmdlet/standard-cmdlet-parameter-names-and-types.md
+                  items:
+                    - name: Tevékenység-paraméterek
+                      href: ./cmdlet/activity-parameters.md
+                    - name: Dátum- és időparaméterek
+                      href: ./cmdlet/date-and-time-parameters.md
+                    - name: Formátumparaméterek
+                      href: ./cmdlet/format-parameters.md
+                    - name: Tulajdonságparaméterek
+                      href: ./cmdlet/property-parameters.md
+                    - name: Mennyiségparaméterek
+                      href: ./cmdlet/quantity-parameters.md
+                    - name: Erőforrás-paraméterek
+                      href: ./cmdlet/resource-parameters.md
+                    - name: Biztonsági paraméterek
+                      href: ./cmdlet/security-parameters.md
+                - name: Paraméteraliasok
+                  href: ./cmdlet/parameter-aliases.md
+                - name: Gyakori paraméternevek
+                  href: ./cmdlet/common-parameter-names.md
+                - name: Parancsmagok paraméterkészletei
+                  href: ./cmdlet/cmdlet-parameter-sets.md
+                - name: Parancsmagok dinamikus paraméterei
+                  href: ./cmdlet/cmdlet-dynamic-parameters.md
+                - name: Helyettesítő karakterek támogatása parancsmag-paraméterekben
+                  href: ./cmdlet/supporting-wildcard-characters-in-cmdlet-parameters.md
+                - name: Paraméterbevitel érvényesítése
+                  href: ./cmdlet/validating-parameter-input.md
+                - name: Bemeneti szűrőparaméterek
+                  href: ./cmdlet/input-filter-parameters.md
+            - name: Parancsmag-attribútumok
+              href: ./cmdlet/cmdlet-attributes.md
+              items:
+                - name: Parancsmagkódok attribútumai
+                  href: ./cmdlet/attributes-in-cmdlet-code.md
+                - name: Attribútumtípusok
+                  href: ./cmdlet/attribute-types.md
+                - name: Aliasok attribútumdeklarációja
+                  href: ./cmdlet/alias-attribute-declaration.md
+                - name: Parancsmagok attribútumdeklarációja
+                  href: ./cmdlet/cmdlet-attribute-declaration.md
+                - name: Hitelesítő adatok attribútumdeklarációja
+                  href: ./cmdlet/credential-attribute-declaration.md
+                - name: OutputType adatok attribútumdeklarációja
+                  href: ./cmdlet/outputtype-attribute-declaration.md
+                - name: Paraméterek attribútumdeklarációja
+                  href: ./cmdlet/parameter-attribute-declaration.md
+                - name: ValidateCount attribútumdeklarációja
+                  href: ./cmdlet/validatecount-attribute-declaration.md
+                - name: ValidateLength attribútumdeklarációja
+                  href: ./cmdlet/validatelength-attribute-declaration.md
+                - name: ValidatePattern attribútumdeklarációja
+                  href: ./cmdlet/validatepattern-attribute-declaration.md
+                - name: ValidateRange attribútumdeklarációja
+                  href: ./cmdlet/validaterange-attribute-declaration.md
+                - name: ValidateSet attribútumdeklarációja
+                  href: ./cmdlet/validateset-attribute-declaration.md
+            - name: Parancsmagaliasok
+              href: ./cmdlet/cmdlet-aliases.md
+            - name: Parancsmagkimenet
+              href: ./cmdlet/cmdlet-output.md
+              items:
+                - name: Parancsmagkimenetek típusai
+                  href: ./cmdlet/types-of-cmdlet-output.md
+                - name: Parancsmagok hibajelentése
+                  href: ./cmdlet/cmdlet-error-reporting.md
+                - name: Kimeneti objektumok kiterjesztése
+                  href: ./cmdlet/extending-output-objects.md
+                  items:
+                    - name: Objektumtulajdonságok kiterjesztése
+                      href: ./cmdlet/extending-properties-for-objects.md
+                    - name: Objektumok alapértelmezett módszereinek definiálása
+                      href: ./cmdlet/defining-default-methods-for-objects.md
+                    - name: Objektumok alapértelmezett tagkészleteinek definiálása
+                      href: ./cmdlet/defining-default-member-sets-for-objects.md
+                - name: Egyéni formázási fájlok
+                  href: ./cmdlet/custom-formatting-files.md
+            - name: Parancsmagok regisztrálása
+              href: ./cmdlet/registering-cmdlets.md
+              items:
+                - name: Modulok és beépülő modulok
+                  href: ./cmdlet/modules-and-snap-ins.md
+                - name: Parancsmagok importálása modulokkal
+                  href: ./cmdlet/how-to-import-cmdlets-using-modules.md
+                - name: Windows PowerShelles beépülő modul létrehozása
+                  href: ./cmdlet/how-to-create-a-windows-powershell-snap-in.md
+                  items:
+                    - name: Windows PowerShelles beépülő modul írása
+                      href: ./cmdlet/writing-a-windows-powershell-snap-in.md
+                    - name: Egyéni Windows PowerShelles beépülő modul írása
+                      href: ./cmdlet/writing-a-custom-windows-powershell-snap-in.md
+            - name: Megerősítés kérése
+              href: ./cmdlet/requesting-confirmation.md
+              items:
+                - name: Megerősítés kérése parancsmagoktól
+                  href: ./cmdlet/requesting-confirmation-from-cmdlets.md
+                - name: Megerősítést kérő felhasználók
+                  href: ./cmdlet/users-requesting-confirmation.md
+                - name: Megerősítő üzenetek
+                  href: ./cmdlet/confirmation-messages.md
+            - name: Windows PowerShell hibajelentés
+              href: ./cmdlet/windows-powershell-error-reporting.md
+              items:
+                - name: Hibajelentés – Fogalmak
+                  href: ./cmdlet/error-reporting-concepts.md
+                - name: Megszakítást okozó hibák
+                  href: ./cmdlet/terminating-errors.md
+                - name: Megszakítást nem okozó hibák
+                  href: ./cmdlet/non-terminating-errors.md
+                - name: Hibaadatok megjelenítése
+                  href: ./cmdlet/displaying-error-information.md
+                - name: Windows PowerShelles hibarekordok
+                  href: ./cmdlet/windows-powershell-error-records.md
+                - name: ErrorRecord objektumok értelmezése
+                  href: ./cmdlet/interpreting-errorrecord-objects.md
+            - name: Háttérfeladatok
+              href: ./cmdlet/background-jobs.md
+            - name: Parancsmagok és szkriptek meghívása parancsmagokon belül
+              href: ./cmdlet/invoking-cmdlets-and-scripts-within-a-cmdlet.md
+            - name: Parancsmagkészletek
+              href: ./cmdlet/cmdlet-sets.md
+            - name: Windows PowerShell-munkamenet állapota
+              href: ./cmdlet/windows-powershell-session-state.md
+        - name: Példák parancsmagkódokra
+          href: ./cmdlet/examples-of-cmdlet-code.md
           items:
-          - name: Tevékenység-paraméterek
-            href: ./cmdlet/activity-parameters.md
-          - name: Dátum- és időparaméterek
-            href: ./cmdlet/date-and-time-parameters.md
-          - name: Formátumparaméterek
-            href: ./cmdlet/format-parameters.md
-          - name: Tulajdonságparaméterek
-            href: ./cmdlet/property-parameters.md
-          - name: Mennyiségparaméterek
-            href: ./cmdlet/quantity-parameters.md
-          - name: Erőforrás-paraméterek
-            href: ./cmdlet/resource-parameters.md
-          - name: Biztonsági paraméterek
-            href: ./cmdlet/security-parameters.md
-        - name: Paraméteraliasok
-          href: ./cmdlet/parameter-aliases.md
-        - name: Gyakori paraméternevek
-          href: ./cmdlet/common-parameter-names.md
-        - name: Parancsmagok paraméterkészletei
-          href: ./cmdlet/cmdlet-parameter-sets.md
-        - name: Parancsmagok dinamikus paraméterei
-          href: ./cmdlet/cmdlet-dynamic-parameters.md
-        - name: Helyettesítő karakterek támogatása parancsmag-paraméterekben
-          href: ./cmdlet/supporting-wildcard-characters-in-cmdlet-parameters.md
-        - name: Paraméterbevitel érvényesítése
-          href: ./cmdlet/validating-parameter-input.md
-        - name: Bemeneti szűrőparaméterek
-          href: ./cmdlet/input-filter-parameters.md
-      - name: Parancsmag-attribútumok
-        href: ./cmdlet/cmdlet-attributes.md
-        items:
-        - name: Parancsmagkódok attribútumai
-          href: ./cmdlet/attributes-in-cmdlet-code.md
-        - name: Attribútumtípusok
-          href: ./cmdlet/attribute-types.md
-        - name: Aliasok attribútumdeklarációja
-          href: ./cmdlet/alias-attribute-declaration.md
-        - name: Parancsmagok attribútumdeklarációja
-          href: ./cmdlet/cmdlet-attribute-declaration.md
-        - name: Hitelesítő adatok attribútumdeklarációja
-          href: ./cmdlet/credential-attribute-declaration.md
-        - name: OutputType adatok attribútumdeklarációja
-          href: ./cmdlet/outputtype-attribute-declaration.md
-        - name: Paraméterek attribútumdeklarációja
-          href: ./cmdlet/parameter-attribute-declaration.md
-        - name: ValidateCount attribútumdeklarációja
-          href: ./cmdlet/validatecount-attribute-declaration.md
-        - name: ValidateLength attribútumdeklarációja
-          href: ./cmdlet/validatelength-attribute-declaration.md
-        - name: ValidatePattern attribútumdeklarációja
-          href: ./cmdlet/validatepattern-attribute-declaration.md
-        - name: ValidateRange attribútumdeklarációja
-          href: ./cmdlet/validaterange-attribute-declaration.md
-        - name: ValidateSet attribútumdeklarációja
-          href: ./cmdlet/validateset-attribute-declaration.md
-      - name: Parancsmagaliasok
-        href: ./cmdlet/cmdlet-aliases.md
-      - name: Parancsmagkimenet
-        href: ./cmdlet/cmdlet-output.md
-        items:
-        - name: Parancsmagkimenetek típusai
-          href: ./cmdlet/types-of-cmdlet-output.md
-        - name: Parancsmagok hibajelentése
-          href: ./cmdlet/cmdlet-error-reporting.md
-        - name: Kimeneti objektumok kiterjesztése
-          href: ./cmdlet/extending-output-objects.md
+            - name: Egyszerű parancsmag írása
+              href: ./cmdlet/how-to-write-a-simple-cmdlet.md
+            - name: Parancsmag-paraméterek deklarálása
+              href: ./cmdlet/how-to-declare-cmdlet-parameters.md
+            - name: Paraméterkészletek deklarálása
+              href: ./cmdlet/how-to-declare-parameter-sets.md
+            - name: Paraméterbemenetek ellenőrzése
+              href: ./cmdlet/how-to-validate-parameter-input.md
+              items:
+                - name: Argumentumkészlet ellenőrzése
+                  href: ./cmdlet/how-to-validate-an-argument-set.md
+                - name: Argumentumtartomány ellenőrzése
+                  href: ./cmdlet/how-to-validate-an-argument-range.md
+                - name: Argumentumminta ellenőrzése
+                  href: ./cmdlet/how-to-validate-an-argument-pattern.md
+                - name: Argumentumhossz ellenőrzése
+                  href: ./cmdlet/how-to-validate-the-argument-length.md
+                - name: Argumentumszám ellenőrzése
+                  href: ./cmdlet/how-to-validate-an-argument-count.md
+            - name: Dinamikus paraméterek deklarálása
+              href: ./cmdlet/how-to-declare-dynamic-parameters.md
+            - name: Parancsmagok és szkriptek meghívása parancsmagokon belül
+              href: ./cmdlet/how-to-invoke-scripts-within-a-cmdlet.md
+            - name: Bemeneti feldolgozási módszerek felülbírálása
+              href: ./cmdlet/how-to-override-input-processing-methods.md
+            - name: Megerősítés kérése
+              href: ./cmdlet/how-to-request-confirmations.md
+            - name: Tranzakciók támogatása
+              href: ./cmdlet/how-to-support-transactions.md
+            - name: Feladatok támogatása
+              href: ./cmdlet/how-to-support-jobs.md
+            - name: Parancsmagok meghívása parancsmagokon belül
+              href: ./cmdlet/how-to-invoke-a-cmdlet-from-within-a-cmdlet.md
+        - name: Parancsmagok írása – oktatóanyagok
+          href: ./cmdlet/tutorials-for-writing-cmdlets.md
           items:
-          - name: Objektumtulajdonságok kiterjesztése
-            href: ./cmdlet/extending-properties-for-objects.md
-          - name: Objektumok alapértelmezett módszereinek definiálása
-            href: ./cmdlet/defining-default-methods-for-objects.md
-          - name: Objektumok alapértelmezett tagkészleteinek definiálása
-            href: ./cmdlet/defining-default-member-sets-for-objects.md
-        - name: Egyéni formázási fájlok
-          href: ./cmdlet/custom-formatting-files.md
-      - name: Parancsmagok regisztrálása
-        href: ./cmdlet/registering-cmdlets.md
-        items:
-        - name: Modulok és beépülő modulok
-          href: ./cmdlet/modules-and-snap-ins.md
-        - name: Parancsmagok importálása modulokkal
-          href: ./cmdlet/how-to-import-cmdlets-using-modules.md
-        - name: Windows PowerShelles beépülő modul létrehozása
-          href: ./cmdlet/how-to-create-a-windows-powershell-snap-in.md
+            - name: GetProc-oktatóanyag
+              href: ./cmdlet/getproc-tutorial.md
+              items:
+                - name: Paraméterek nélküli parancsmag létrehozása
+                  href: ./cmdlet/creating-a-cmdlet-without-parameters.md
+                - name: Parancssori bemenetet feldolgozó paraméterek hozzáadása
+                  href: ./cmdlet/adding-parameters-that-process-command-line-input.md
+                - name: Láncbemenetet feldolgozó paraméterek hozzáadása
+                  href: ./cmdlet/adding-parameters-that-process-pipeline-input.md
+                - name: Megszakítást nem okozó hibajelentések hozzáadása a parancsmaghoz
+                  href: ./cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md
+            - name: StopProc-oktatóanyag
+              href: ./cmdlet/stopproc-tutorial.md
+              items:
+                - name: Rendszermódosító parancsmag létrehozása
+                  href: ./cmdlet/creating-a-cmdlet-that-modifies-the-system.md
+                - name: Felhasználói üzenetek hozzáadása a parancsmaghoz
+                  href: ./cmdlet/adding-user-messages-to-your-cmdlet.md
+                - name: 'Aliasok, helyettesítő bővítők és súgó hozzáadása a parancsmag-paraméterekhez'
+                  href: ./cmdlet/adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters.md
+                - name: Paraméterkészletek hozzáadása parancsmagokhoz
+                  href: ./cmdlet/adding-parameter-sets-to-a-cmdlet.md
+            - name: SelectStr-oktatóanyag
+              href: ./cmdlet/selectstr-tutorial.md
+              items:
+                - name: Parancsmag létrehozása adattár eléréséhez
+                  href: ./cmdlet/creating-a-cmdlet-to-access-a-data-store.md
+        - name: Parancsmagminták
+          href: ./cmdlet/cmdlet-samples.md
           items:
-          - name: Windows PowerShelles beépülő modul írása
-            href: ./cmdlet/writing-a-windows-powershell-snap-in.md
-          - name: Egyéni Windows PowerShelles beépülő modul írása
-            href: ./cmdlet/writing-a-custom-windows-powershell-snap-in.md
-      - name: Megerősítés kérése
-        href: ./cmdlet/requesting-confirmation.md
-        items:
-        - name: Megerősítés kérése parancsmagoktól
-          href: ./cmdlet/requesting-confirmation-from-cmdlets.md
-        - name: Megerősítést kérő felhasználók
-          href: ./cmdlet/users-requesting-confirmation.md
-        - name: Megerősítő üzenetek
-          href: ./cmdlet/confirmation-messages.md
-      - name: Windows PowerShell hibajelentés
-        href: ./cmdlet/windows-powershell-error-reporting.md
-        items:
-        - name: Hibajelentés – Fogalmak
-          href: ./cmdlet/error-reporting-concepts.md
-        - name: Megszakítást okozó hibák
-          href: ./cmdlet/terminating-errors.md
-        - name: Megszakítást nem okozó hibák
-          href: ./cmdlet/non-terminating-errors.md
-        - name: Hibaadatok megjelenítése
-          href: ./cmdlet/displaying-error-information.md
-        - name: Windows PowerShelles hibarekordok
-          href: ./cmdlet/windows-powershell-error-records.md
-        - name: ErrorRecord objektumok értelmezése
-          href: ./cmdlet/interpreting-errorrecord-objects.md
-      - name: Háttérfeladatok
-        href: ./cmdlet/background-jobs.md
-      - name: Parancsmagok és szkriptek meghívása parancsmagokon belül
-        href: ./cmdlet/invoking-cmdlets-and-scripts-within-a-cmdlet.md
-      - name: Parancsmagkészletek
-        href: ./cmdlet/cmdlet-sets.md
-      - name: Windows PowerShell-munkamenet állapota
-        href: ./cmdlet/windows-powershell-session-state.md
-    - name: Példák parancsmagkódokra
-      href: ./cmdlet/examples-of-cmdlet-code.md
+            - name: GetProcessSample01 – minta
+              href: ./cmdlet/getprocesssample01-sample.md
+            - name: GetProcessSample02 – minta
+              href: ./cmdlet/getprocesssample02-sample.md
+            - name: GetProcessSample03 – minta
+              href: ./cmdlet/getprocesssample03-sample.md
+            - name: GetProcessSample04 – minta
+              href: ./cmdlet/getprocesssample04-sample.md
+            - name: GetProcessSample05 – minta
+              href: ./cmdlet/getprocesssample05-sample.md
+            - name: StopProcessSample01 – minta
+              href: ./cmdlet/stopprocesssample01-sample.md
+            - name: StopProcessSample02 – minta
+              href: ./cmdlet/stopprocesssample02-sample.md
+            - name: StopProcessSample03 – minta
+              href: ./cmdlet/stopprocesssample03-sample.md
+            - name: StopProcessSample04 – minta
+              href: ./cmdlet/stopprocesssample04-sample.md
+            - name: Events01 – minta
+              href: ./cmdlet/events01-sample.md
+    - name: Windows PowerShell-szolgáltató írása
+      href: ./provider/writing-a-windows-powershell-provider.md
       items:
-      - name: Egyszerű parancsmag írása
-        href: ./cmdlet/how-to-write-a-simple-cmdlet.md
-      - name: Parancsmag-paraméterek deklarálása
-        href: ./cmdlet/how-to-declare-cmdlet-parameters.md
-      - name: Paraméterkészletek deklarálása
-        href: ./cmdlet/how-to-declare-parameter-sets.md
-      - name: Paraméterbemenetek ellenőrzése
-        href: ./cmdlet/how-to-validate-parameter-input.md
-        items:
-        - name: Argumentumkészlet ellenőrzése
-          href: ./cmdlet/how-to-validate-an-argument-set.md
-        - name: Argumentumtartomány ellenőrzése
-          href: ./cmdlet/how-to-validate-an-argument-range.md
-        - name: Argumentumminta ellenőrzése
-          href: ./cmdlet/how-to-validate-an-argument-pattern.md
-        - name: Argumentumhossz ellenőrzése
-          href: ./cmdlet/how-to-validate-the-argument-length.md
-        - name: Argumentumszám ellenőrzése
-          href: ./cmdlet/how-to-validate-an-argument-count.md
-      - name: Dinamikus paraméterek deklarálása
-        href: ./cmdlet/how-to-declare-dynamic-parameters.md
-      - name: Parancsmagok és szkriptek meghívása parancsmagokon belül
-        href: ./cmdlet/how-to-invoke-scripts-within-a-cmdlet.md
-      - name: Bemeneti feldolgozási módszerek felülbírálása
-        href: ./cmdlet/how-to-override-input-processing-methods.md
-      - name: Megerősítés kérése
-        href: ./cmdlet/how-to-request-confirmations.md
-      - name: Tranzakciók támogatása
-        href: ./cmdlet/how-to-support-transactions.md
-      - name: Feladatok támogatása
-        href: ./cmdlet/how-to-support-jobs.md
-      - name: Parancsmagok meghívása parancsmagokon belül
-        href: ./cmdlet/how-to-invoke-a-cmdlet-from-within-a-cmdlet.md
-    - name: Parancsmagok írása – oktatóanyagok
-      href: ./cmdlet/tutorials-for-writing-cmdlets.md
+        - name: Windows PowerShell-szolgáltató – Gyors üzembe helyezés
+          href: ./provider/windows-powershell-provider-quickstart.md
+        - name: Windows PowerShell-szolgáltató – Áttekintés
+          href: ./provider/windows-powershell-provider-overview.md
+          items:
+            - name: Szolgáltatótípusok
+              href: ./provider/provider-types.md
+            - name: Szolgáltatói parancsmagok
+              href: ./provider/provider-cmdlets.md
+            - name: Szolgáltatói parancsmag-paraméterek
+              href: ./provider/provider-cmdlet-parameters.md
+            - name: Szolgáltatói dinamikus parancsmag-paraméterek
+              href: ./provider/provider-cmdlet-dynamic-parameters.md
+        - name: Elemszolgáltató írása
+          href: ./provider/writing-an-item-provider.md
+        - name: Tárolószolgáltató írása
+          href: ./provider/writing-a-container-provider.md
+        - name: Navigációszolgáltató írása
+          href: ./provider/writing-a-navigation-provider.md
+        - name: Szolgáltatói minták
+          href: ./provider/provider-samples.md
+          items:
+            - name: AccessDBProviderSample01
+              href: ./provider/accessdbprovidersample01.md
+            - name: AccessDBProviderSample02
+              href: ./provider/accessdbprovidersample02.md
+            - name: AccessDBProviderSample03
+              href: ./provider/accessdbprovidersample03.md
+            - name: AccessDBProviderSample04
+              href: ./provider/accessdbprovidersample04.md
+            - name: AccessDBProviderSample05
+              href: ./provider/accessdbprovidersample05.md
+            - name: AccessDBProviderSample06
+              href: ./provider/accessdbprovidersample06.md
+    - name: Windows PowerShelles gazdaalkalmazás írása
+      href: ./hosting/writing-a-windows-powershell-host-application.md
       items:
-      - name: GetProc-oktatóanyag
-        href: ./cmdlet/getproc-tutorial.md
-        items:
-        - name: Paraméterek nélküli parancsmag létrehozása
-          href: ./cmdlet/creating-a-cmdlet-without-parameters.md
-        - name: Parancssori bemenetet feldolgozó paraméterek hozzáadása
-          href: ./cmdlet/adding-parameters-that-process-command-line-input.md
-        - name: Láncbemenetet feldolgozó paraméterek hozzáadása
-          href: ./cmdlet/adding-parameters-that-process-pipeline-input.md
-        - name: Megszakítást nem okozó hibajelentések hozzáadása a parancsmaghoz
-          href: ./cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md
-      - name: StopProc-oktatóanyag
-        href: ./cmdlet/stopproc-tutorial.md
-        items:
-        - name: Rendszermódosító parancsmag létrehozása
-          href: ./cmdlet/creating-a-cmdlet-that-modifies-the-system.md
-        - name: Felhasználói üzenetek hozzáadása a parancsmaghoz
-          href: ./cmdlet/adding-user-messages-to-your-cmdlet.md
-        - name: Aliasok, helyettesítő bővítők és súgó hozzáadása a parancsmag-paraméterekhez
-          href: ./cmdlet/adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters.md
-        - name: Paraméterkészletek hozzáadása parancsmagokhoz
-          href: ./cmdlet/adding-parameter-sets-to-a-cmdlet.md
-      - name: SelectStr-oktatóanyag
-        href: ./cmdlet/selectstr-tutorial.md
-        items:
-        - name: Parancsmag létrehozása adattár eléréséhez
-          href: ./cmdlet/creating-a-cmdlet-to-access-a-data-store.md
-    - name: Parancsmagminták
-      href: ./cmdlet/cmdlet-samples.md
+        - name: Windows PowerShell-gazda – Gyors üzembe helyezés
+          href: ./hosting/windows-powershell-host-quickstart.md
+        - name: Futási terek létrehozása
+          href: ./hosting/creating-runspaces.md
+          items:
+            - name: InitialSessionState létrehozása
+              href: ./hosting/creating-an-initialsessionstate.md
+            - name: Korlátozott futási tér létrehozása
+              href: ./hosting/creating-a-constrained-runspace.md
+            - name: Több futási tér létrehozása
+              href: ./hosting/creating-multiple-runspaces.md
+        - name: Meghívó parancsok hozzáadása
+          href: ./hosting/adding-and-invoking-commands.md
+        - name: Távoli futási terek létrehozása
+          href: ./hosting/creating-remote-runspaces.md
+        - name: Egyéni felhasználói felület létrehozása
+          href: ./hosting/creating-a-custom-user-interface.md
+        - name: Gazdaalkalmazás mintái
+          href: ./hosting/host-application-samples.md
+          items:
+            - name: Windows PowerSheles API-minták
+              href: ./hosting/windows-powershell-api-samples.md
+              items:
+                - name: Windows PowerShell01 – minta
+                  href: ./hosting/windows-powershell01-sample.md
+                - name: Windows PowerShell02 – minta
+                  href: ./hosting/windows-powershell02-sample.md
+            - name: Egyéni gazdaminták
+              href: ./hosting/custom-host-samples.md
+              items:
+                - name: Host01 – minta
+                  href: ./hosting/host01-sample.md
+                - name: Host02 – minta
+                  href: ./hosting/host02-sample.md
+                - name: Host03 – minta
+                  href: ./hosting/host03-sample.md
+                - name: Host04 – minta
+                  href: ./hosting/host04-sample.md
+                - name: Host05 – minta
+                  href: ./hosting/host05-sample.md
+                - name: Host06 – minta
+                  href: ./hosting/host06-sample.md
+            - name: Futási tér – minták
+              href: ./hosting/runspace-samples.md
+              items:
+                - name: Runspace01 – minta
+                  href: ./hosting/runspace01-sample.md
+                - name: Runspace02 – minta
+                  href: ./hosting/runspace02-sample.md
+                - name: Runspace03 – minta
+                  href: ./hosting/runspace03-sample.md
+                - name: Runspace04 – minta
+                  href: ./hosting/runspace04-sample.md
+                - name: Runspace05 – minta
+                  href: ./hosting/runspace05-sample.md
+                - name: Runspace06 – minta
+                  href: ./hosting/runspace06-sample.md
+                - name: Runspace07 – minta
+                  href: ./hosting/runspace07-sample.md
+                - name: Runspace08 – minta
+                  href: ./hosting/runspace08-sample.md
+                - name: Runspace09 – minta
+                  href: ./hosting/runspace09-sample.md
+                - name: Runspace10 – minta
+                  href: ./hosting/runspace10-sample.md
+                - name: Runspace11 – minta
+                  href: ./hosting/runspace11-sample.md
+            - name: Távoli futási terek mintái
+              href: ./hosting/remote-runspace-samples.md
+              items:
+                - name: RemoteRunspace01 – minta
+                  href: ./hosting/remoterunspace01-sample.md
+                - name: RemoteRunspacePool01 – minta
+                  href: ./hosting/remoterunspacepool01-sample.md
+    - name: PowerShelles formázási fájl írása
+      href: ./format/writing-a-powershell-formatting-file.md
       items:
-      - name: GetProcessSample01 – minta
-        href: ./cmdlet/getprocesssample01-sample.md
-      - name: GetProcessSample02 – minta
-        href: ./cmdlet/getprocesssample02-sample.md
-      - name: GetProcessSample03 – minta
-        href: ./cmdlet/getprocesssample03-sample.md
-      - name: GetProcessSample04 – minta
-        href: ./cmdlet/getprocesssample04-sample.md
-      - name: GetProcessSample05 – minta
-        href: ./cmdlet/getprocesssample05-sample.md
-      - name: StopProcessSample01 – minta
-        href: ./cmdlet/stopprocesssample01-sample.md
-      - name: StopProcessSample02 – minta
-        href: ./cmdlet/stopprocesssample02-sample.md
-      - name: StopProcessSample03 – minta
-        href: ./cmdlet/stopprocesssample03-sample.md
-      - name: StopProcessSample04 – minta
-        href: ./cmdlet/stopprocesssample04-sample.md
-      - name: Events01 – minta
-        href: ./cmdlet/events01-sample.md
-  - name: Windows PowerShell-szolgáltató írása
-    href: ./provider/writing-a-windows-powershell-provider.md
-    items:
-    - name: Windows PowerShell-szolgáltató – Gyors üzembe helyezés
-      href: ./provider/windows-powershell-provider-quickstart.md
-    - name: Windows PowerShell-szolgáltató – Áttekintés
-      href: ./provider/windows-powershell-provider-overview.md
-      items:
-      - name: Szolgáltatótípusok
-        href: ./provider/provider-types.md
-      - name: Szolgáltatói parancsmagok
-        href: ./provider/provider-cmdlets.md
-      - name: Szolgáltatói parancsmag-paraméterek
-        href: ./provider/provider-cmdlet-parameters.md
-      - name: Szolgáltatói dinamikus parancsmag-paraméterek
-        href: ./provider/provider-cmdlet-dynamic-parameters.md
-    - name: Elemszolgáltató írása
-      href: ./provider/writing-an-item-provider.md
-    - name: Tárolószolgáltató írása
-      href: ./provider/writing-a-container-provider.md
-    - name: Navigációszolgáltató írása
-      href: ./provider/writing-a-navigation-provider.md
-    - name: Szolgáltatói minták
-      href: ./provider/provider-samples.md
-      items:
-      - name: AccessDBProviderSample01
-        href: ./provider/accessdbprovidersample01.md
-      - name: AccessDBProviderSample02
-        href: ./provider/accessdbprovidersample02.md
-      - name: AccessDBProviderSample03
-        href: ./provider/accessdbprovidersample03.md
-      - name: AccessDBProviderSample04
-        href: ./provider/accessdbprovidersample04.md
-      - name: AccessDBProviderSample05
-        href: ./provider/accessdbprovidersample05.md
-      - name: AccessDBProviderSample06
-        href: ./provider/accessdbprovidersample06.md
-  - name: Windows PowerShelles gazdaalkalmazás írása
-    href: ./hosting/writing-a-windows-powershell-host-application.md
-    items:
-    - name: Windows PowerShell-gazda – Gyors üzembe helyezés
-      href: ./hosting/windows-powershell-host-quickstart.md
-    - name: Futási terek létrehozása
-      href: ./hosting/creating-runspaces.md
-      items:
-      - name: InitialSessionState létrehozása
-        href: ./hosting/creating-an-initialsessionstate.md
-      - name: Korlátozott futási tér létrehozása
-        href: ./hosting/creating-a-constrained-runspace.md
-      - name: Több futási tér létrehozása
-        href: ./hosting/creating-multiple-runspaces.md
-    - name: Meghívó parancsok hozzáadása
-      href: ./hosting/adding-and-invoking-commands.md
-    - name: Távoli futási terek létrehozása
-      href: ./hosting/creating-remote-runspaces.md
-    - name: Egyéni felhasználói felület létrehozása
-      href: ./hosting/creating-a-custom-user-interface.md
-    - name: Gazdaalkalmazás mintái
-      href: ./hosting/host-application-samples.md
-      items:
-      - name: Windows PowerSheles API-minták
-        href: ./hosting/windows-powershell-api-samples.md
-        items:
-        - name: Windows PowerShell01 – minta
-          href: ./hosting/windows-powershell01-sample.md
-        - name: Windows PowerShell02 – minta
-          href: ./hosting/windows-powershell02-sample.md
-      - name: Egyéni gazdaminták
-        href: ./hosting/custom-host-samples.md
-        items:
-        - name: Host01 – minta
-          href: ./hosting/host01-sample.md
-        - name: Host02 – minta
-          href: ./hosting/host02-sample.md
-        - name: Host03 – minta
-          href: ./hosting/host03-sample.md
-        - name: Host04 – minta
-          href: ./hosting/host04-sample.md
-        - name: Host05 – minta
-          href: ./hosting/host05-sample.md
-        - name: Host06 – minta
-          href: ./hosting/host06-sample.md
-      - name: Futási tér – minták
-        href: ./hosting/runspace-samples.md
-        items:
-        - name: Runspace01 – minta
-          href: ./hosting/runspace01-sample.md
-        - name: Runspace02 – minta
-          href: ./hosting/runspace02-sample.md
-        - name: Runspace03 – minta
-          href: ./hosting/runspace03-sample.md
-        - name: Runspace04 – minta
-          href: ./hosting/runspace04-sample.md
-        - name: Runspace05 – minta
-          href: ./hosting/runspace05-sample.md
-        - name: Runspace06 – minta
-          href: ./hosting/runspace06-sample.md
-        - name: Runspace07 – minta
-          href: ./hosting/runspace07-sample.md
-        - name: Runspace08 – minta
-          href: ./hosting/runspace08-sample.md
-        - name: Runspace09 – minta
-          href: ./hosting/runspace09-sample.md
-        - name: Runspace10 – minta
-          href: ./hosting/runspace10-sample.md
-        - name: Runspace11 – minta
-          href: ./hosting/runspace11-sample.md
-      - name: Távoli futási terek mintái
-        href: ./hosting/remote-runspace-samples.md
-        items:
-        - name: RemoteRunspace01 – minta
-          href: ./hosting/remoterunspace01-sample.md
-        - name: RemoteRunspacePool01 – minta
-          href: ./hosting/remoterunspacepool01-sample.md
-  - name: PowerShelles formázási fájl írása
-    href: ./format/writing-a-powershell-formatting-file.md
-    items:
-    - name: Formázási fájl – Áttekintés
-      href: ./format/formatting-file-overview.md
-    - name: Formázási fájl – Fogalmak
-      href: ./format/formatting-file-concepts.md
-      items:
-      - name: Tábla nézet létrehozása
-        href: ./format/creating-a-table-view.md
-      - name: Listanézet létrehozása
-        href: ./format/creating-a-list-view.md
-      - name: Széles nézet létrehozása
-        href: ./format/creating-a-wide-view.md
-      - name: Egyéni vezérlők létrehozása
-        href: ./format/creating-custom-controls.md
-      - name: Formázási adatok betöltése és exportálása
-        href: ./format/loading-and-exporting-formatting-data.md
-      - name: Gyakori konfigurációs funkciók definiálása
-        href: ./format/defining-common-configuration-features.md
-      - name: Kijelölési csoportok definiálása
-        href: ./format/defining-selection-sets.md
-      - name: Adatok megjelenítésére vonatkozó feltételek definiálása
-        href: ./format/defining-conditions-for-displaying-data.md
-      - name: Megjelenített adatok formázása
-        href: ./format/formatting-displayed-data.md
-      - name: PowerShelles formázási fájlok
-        href: ./format/powershell-formatting-files.md
-    - name: Formázási fájlok példái
-      href: ./format/examples-of-formatting-files.md
-      items:
-      - name: Formázási fájl létrehozása (.format.ps1xml)
-        href: ./format/how-to-create-a-formatting-file-format-ps1xml.md
-      - name: Széles nézet (Alapszintű)
-        href: ./format/wide-view-basic.md
-      - name: Széles nézet (GroupBy)
-        href: ./format/wide-view-groupby.md
-      - name: Listanézet (Alapszintű)
-        href: ./format/list-view-basic.md
-      - name: Listanézet (Címkék)
-        href: ./format/list-view-labels.md
-      - name: Listanézet (GroupBy)
-        href: ./format/list-view-groupby.md
-    - name: Séma XML-referenciájának formázása
-      href: ./format/format-schema-xml-reference.md
-      items:
-      - name: A TableControl TableColumnHeader elemének igazítási eleme (Formátum)
-        href: ./format/alignment-element-for-tablecolumnheader-for-tablecontrol-format.md
-      - name: A TableControl TableColumnItem elemének igazítási eleme (Formátum)
-        href: ./format/alignment-element-for-tablecolumnitem-for-tablecontrol-format.md
-      - name: A TableControl AutoSize eleme (Formátum)
-        href: ./format/autosize-element-for-tablecontrol-format.md
-      - name: A WideControl AutoSize eleme (Formátum)
-        href: ./format/autosize-element-for-widecontrol-format.md
-      - name: A WideControl ColumnNumber eleme (Formátum)
-        href: ./format/columnnumber-element-for-widecontrol-format.md
-      - name: Konfigurációs elem (Formátum)
-        href: ./format/configuration-element-format.md
-      - name: A Konfiguráció Vezérlők elemének vezérlőeleme (Formátum)
-        href: ./format/control-element-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők elemének vezérlőeleme (Formátum)
-        href: ./format/control-element-for-controls-for-view-format.md
-      - name: A Konfiguráció elem Vezérlők eleme (Formátum)
-        href: ./format/controls-element-for-configuration-format.md
-      - name: A Nézet elem Vezérlők eleme (Formátum)
-        href: ./format/controls-element-for-view-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó Vezérlő CustomControl eleme (Formátum)
-        href: ./format/customcontrol-element-for-control-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó Vezérlő CustomControl eleme (Formátum)
-        href: ./format/customcontrol-element-for-control-for-controls-for-view-format.md
-      - name: A GroupBy CustomControl eleme (Formátum)
-        href: ./format/customcontrol-element-for-groupby-format.md
-      - name: A Nézet CustomControl eleme (Formátum)
-        href: ./format/customcontrol-element-for-view-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó ExpressionBinding CustomControlName eleme (Formátum)
-        href: ./format/customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó ExpressionBinding CustomControlName eleme (Formátum)
-        href: ./format/customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó ExpressionBinding CustomControlName eleme (Formátum)
-        href: ./format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-      - name: A GroupBy elem ExpressionBinding CustomControlName eleme (Formátum)
-        href: ./format/customcontrolname-element-for-expressionbinding-for-groupby-format.md
-      - name: A GroupBy CustomControlName eleme (Formátum)
-        href: ./format/customcontrolname-element-for-groupby-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó CustomControl CustomEntry eleme (Formátum)
-        href: ./format/customentry-element-for-customcontrol-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó CustomEntries CustomEntry eleme (Formátum)
-        href: ./format/customentry-element-for-customentries-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó CustomEntries CustomEntry eleme (Formátum)
-        href: ./format/customentry-element-for-customentries-for-customcontrol-for-view-format.md
-      - name: A GroupBy CustomControl elemének CustomEntry eleme (Formátum)
-        href: ./format/customentry-element-for-customcontrol-for-groupby-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó CustomControl CustomEntries eleme (Formátum)
-        href: ./format/customentries-element-for-customcontrol-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó CustomControl CustomEntries eleme (Formátum)
-        href: ./format/customentries-element-for-customcontrol-for-controls-for-view-format.md
-      - name: A GroupBy CustomControl elemének CustomEntries eleme (Formátum)
-        href: ./format/customentries-element-for-customcontrol-for-groupby-format.md
-      - name: A Nézet CustomControl elemének CustomEntries eleme (Formátum)
-        href: ./format/customentries-element-for-customcontrol-for-view-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó CustomEntry CustomItem eleme (Formátum)
-        href: ./format/customitem-element-for-customentry-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó CustomEntry CustomItem eleme (Formátum)
-        href: ./format/customitem-element-for-customentry-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó CustomEntry CustomItem eleme (Formátum)
-        href: ./format/customitem-element-for-customentry-for-customcontrol-for-view-format.md
-      - name: A GroupBy CustomEntry elemének CustomItem eleme (Formátum)
-        href: ./format/customitem-element-for-customentry-for-groupby-format.md
-      - name: DefaultSettings elem (Formátum)
-        href: ./format/defaultsettings-element-format.md
-      - name: DisplayError elem (Formátum)
-        href: ./format/displayerror-element-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó CustomEntry EntrySelectedBy eleme (Formátum)
-        href: ./format/entryselectedby-element-for-customentry-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó CustomEntry EntrySelectedBy eleme (Formátum)
-        href: ./format/entryselectedby-element-for-customentry-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó CustomEntry EntrySelectedBy eleme (Formátum)
-        href: ./format/entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md
-      - name: Az EnumerableExpansion EntrySelectedBy eleme (Formátum)
-        href: ./format/entryselectedby-element-for-enumerableexpansion-format.md
-      - name: A GroupBy elemhez tartozó CustomEntry EntrySelectedBy eleme (Formátum)
-        href: ./format/entryselectedby-element-for-customentry-for-groupby-format.md
-      - name: A ListControl elemhez tartozó ListEntry EntrySelectedBy eleme (Formátum)
-        href: ./format/entryselectedby-element-for-listentry-for-listcontrol-format.md
-      - name: A TableControl elemhez tartozó TableRowEntry EntrySelectedBy eleme (Formátum)
-        href: ./format/entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md
-      - name: A WideEntry elem EntrySelectedBy eleme (Formátum)
-        href: ./format/entryselectedby-element-for-wideentry-format.md
-      - name: EnumerableExpansion elem (Formátum)
-        href: ./format/enumerableexpansion-element-format.md
-      - name: EnumerableExpansions elem (Formátum)
-        href: ./format/enumerableexpansions-element-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó ExpressionBinding EnumerateCollection eleme (Formátum)
-        href: ./format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó ExpressionBinding EnumerateCollection eleme (Formátum)
-        href: ./format/enumeratecollection-element-for-expressionbinding-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó ExpressionBinding EnumerateCollection eleme (Formátum)
-        href: ./format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó ExpressionBinding EnumerateCollection eleme (Formátum)
-        href: ./format/enumeratecollection-element-for-expressionbinding-for-groupby-format.md
-      - name: Elem kibontása (Formátum)
-        href: ./format/expand-element-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó CustomItem ExpressionBinding eleme (Formátum)
-        href: ./format/expressionbinding-element-for-customitem-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó CustomItem ExpressionBinding eleme (Formátum)
-        href: ./format/expressionbinding-element-for-customitem-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó CustomItem ExpressionBinding eleme (Formátum)
-        href: ./format/expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó CustomItem ExpressionBinding eleme (Formátum)
-        href: ./format/expressionbinding-element-for-customitem-for-groupby-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó Keret FirstLineHanging eleme (Formátum)
-        href: ./format/firstlinehanging-element-for-frame-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó Keret FirstLineHanging eleme (Formátum)
-        href: ./format/firstlinehanging-element-for-frame-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó Keret FirstLineHanging eleme (Formátum)
-        href: ./format/firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó Keret FirstLineHanging eleme (Formátum)
-        href: ./format/firstlinehanging-element-for-frame-for-groupby-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó Keret FirstLineIndent eleme (Formátum)
-        href: ./format/firstlineindent-element-for-frame-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó Keret FirstLineIndent eleme (Formátum)
-        href: ./format/firstlineindent-element-for-frame-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó Keret FirstLineIndent eleme (Formátum)
-        href: ./format/firstlineindent-element-for-frame-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó Keret FirstLineIndent eleme (Formátum)
-        href: ./format/firstlineindent-element-for-frame-for-groupby-format.md
-      - name: A ListControl ListItem eleméhez tartozó FormatString elem (Formátum)
-        href: ./format/formatstring-element-for-listitem-for-listcontrol-format.md
-      - name: A TableControl TableColumnItem elemének FormatString eleme (Formátum)
-        href: ./format/formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md
-      - name: A WideControl WideItem elemének FormatString eleme (Formátum)
-        href: ./format/formatstring-element-for-wideitem-for-widecontrol-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó CustomItem Keret eleme (Formátum)
-        href: ./format/frame-element-for-customitem-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó CustomItem Keret eleme (Formátum)
-        href: ./format/frame-element-for-customitem-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó CustomItem Keret eleme (Formátum)
-        href: ./format/frame-element-for-customitem-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó CustomItem Keret eleme (Formátum)
-        href: ./format/frame-element-for-customitem-for-groupby-format.md
-      - name: A Nézet GroupBy eleme (Formátum)
-        href: ./format/groupby-element-for-view-format.md
-      - name: HideTableHeaders elem (Formátum)
-        href: ./format/hidetableheaders-element-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó ExpressionBinding ItemSelectionCondition eleme (Formátum)
-        href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó ExpressionBinding ItemSelectionCondition eleme (Formátum)
-        href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-      - name: A CustomControl elemhez tartozó ExpressionBinding ItemSelectionCondition eleme (Formátum)
-        href: ./format/itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md
-      - name: A GroupBy elemhez tartozó ExpressionBinding ItemSelectionCondition eleme (Formátum)
-        href: ./format/itemselectioncondition-element-for-expressionbinding-for-groupby-format.md
-      - name: A ListControl elemhez tartozó ListItem ItemSelectionCondition eleme (Formátum)
-        href: ./format/itemselectioncondition-element-for-listitem-for-listcontrol-format.md
-      - name: A ListControl elemhez tartozó ListItem Címke eleme (Formátum)
-        href: ./format/label-element-for-listitem-for-listcontrol-format.md
-      - name: A GroupBy Címke eleme (Formátum)
-        href: ./format/label-element-for-groupby-format.md
-      - name: A TableControl TableColumnHeader elemének Címke eleme (Formátum)
-        href: ./format/label-element-for-tablecolumnheader-for-tablecontrol-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó Keret LeftIndent eleme (Formátum)
-        href: ./format/leftindent-element-for-frame-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó Keret LeftIndent eleme (Formátum)
-        href: ./format/leftindent-element-for-frame-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó Keret LeftIndent eleme (Formátum)
-        href: ./format/leftindent-element-for-frame-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó Keret LeftIndent eleme (Formátum)
-        href: ./format/leftindent-element-for-frame-for-groupby-format.md
-      - name: ListControl elem (Formátum)
-        href: ./format/listcontrol-element-format.md
-      - name: A ListControl elemhez tartozó ListEntry elem (Formátum)
-        href: ./format/listentry-element-for-listcontrol-format.md
-      - name: A ListControl elemhez tartozó ListEntries elem (Formátum)
-        href: ./format/listentries-element-for-listcontrol-format.md
-      - name: A ListControl elemhez tartozó ListItems ListItem eleme (Formátum)
-        href: ./format/listitem-element-for-listitems-for-listcontrol-format.md
-      - name: A ListControl elemhez tartozó ListEntry ListItems eleme (Formátum)
-        href: ./format/listitems-element-for-listentry-for-listcontrol-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó Vezérlő Név eleme (Formátum)
-        href: ./format/name-element-for-control-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó Vezérlő Név eleme (Formátum)
-        href: ./format/name-element-for-control-for-controls-for-view-format.md
-      - name: A SelectionSet Név eleme (Formátum)
-        href: ./format/name-element-for-selectionset-format.md
-      - name: A Nézet Név eleme (Formátum)
-        href: ./format/name-element-for-view-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó CustomItem NewLine eleme (Formátum)
-        href: ./format/newline-element-for-customitem-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó CustomItem NewLine eleme (Formátum)
-        href: ./format/newline-element-for-customitem-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó CustomItem NewLine eleme (Formátum)
-        href: ./format/newline-element-for-customitem-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó CustomItem NewLine eleme (Formátum)
-        href: ./format/newline-element-for-customitem-for-groupby-format.md
-      - name: PropertyCountForTable elem (Formátum)
-        href: ./format/propertycountfortable-element-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó ExpressionBinding PropertyName eleme (Formátum)
-        href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó ExpressionBinding PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-expressionbinding-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó ExpressionBinding PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó ExpressionBinding PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-expressionbinding-for-groupby-format.md
-      - name: A GroupBy PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-groupby-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
-        href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-itemselectioncondition-for-groupby-format.md
-      - name: A ListControl elemhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-itemselectioncondition-for-listcontrol-format.md
-      - name: A ListControl elemhez tartozó ListItem PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-listitem-for-listcontrol-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-selectioncondition-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md
-      - name: Az EnumerableExpansion EntrySelectedBy eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
-      - name: A GroupBy elemhez tartozó SelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-selectioncondition-for-groupby-format.md
-      - name: Az ListControl EntrySelectedBy eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
-      - name: Az TableRowEntry EntrySelectedBy eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md
-      - name: Az WideEntry EntrySelectedBy eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md
-      - name: A TableControl TableColumnItem elemének PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md
-      - name: A WideControl WideItem elemének PropertyName eleme (Formátum)
-        href: ./format/propertyname-element-for-wideitem-for-widecontrol-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó Keret RightIndent eleme (Formátum)
-        href: ./format/rightindent-element-for-frame-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó Keret RightIndent eleme (Formátum)
-        href: ./format/rightindent-element-for-frame-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó Keret RightIndent eleme (Formátum)
-        href: ./format/rightindent-element-for-frame-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó Keret RightIndent eleme (Formátum)
-        href: ./format/rightindent-element-for-frame-for-groupby-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó ExpressionBinding ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó ExpressionBinding ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-expressionbinding-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó ExpressionBinding ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó ExpressionBinding ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-expressionbinding-for-groupby-format.md
-      - name: A GroupBy ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-groupby-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó ItemSelectionCondition ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó ItemSelectionCondition ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó ItemSelectionCondition ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó ItemSelectionCondition ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-itemselectioncondition-for-groupby-format.md
-      - name: A ListControl elemhez tartozó ItemSelectionCondition ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md
-      - name: A ListControl elemhez tartozó ListItem ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-listitem-for-listcontrol-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó SelectionCondition ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó SelectionCondition ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-selectioncondition-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó SelectionCondition ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md
-      - name: Az EnumerableExpansion EntrySelectedBy eleméhez tartozó SelectionCondition ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
-      - name: Az GroupBy EntrySelectedBy eleméhez tartozó SelectionCondition S eleme (Formátum)
-        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-      - name: Az ListControl EntrySelectedBy eleméhez tartozó SelectionCondition S eleme (Formátum)
-        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-      - name: Az TableControl EntrySelectedBy eleméhez tartozó SelectionCondition S eleme (Formátum)
-        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-      - name: Az WideControl EntrySelectedBy eleméhez tartozó SelectionCondition S eleme (Formátum)
-        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-      - name: A TableControl TableColumnItem elemének ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md
-      - name: A WideControl WideControl elemének ScriptBlock eleme (Formátum)
-        href: ./format/scriptblock-element-for-wideitem-for-widecontrol-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
-        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
-        href: ./format/selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md
-      - name: A CustomControl elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
-        href: ./format/selectioncondition-element-for-entryselectedby-for-customcontrol-format.md
-      - name: Az EnumerableExpansion elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
-        href: ./format/selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md
-      - name: A GroupBy elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
-        href: ./format/selectioncondition-element-for-entryselectedby-for-groupby-format.md
-      - name: A ListControl elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
-        href: ./format/selectioncondition-element-for-entryselectedby-for-listcontrol-format.md
-      - name: A TableControl elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
-        href: ./format/selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md
-      - name: A WideControl elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
-        href: ./format/selectioncondition-element-for-entryselectedby-for-widecontrol-format.md
-      - name: SelectionSet elem (Formátum)
-        href: ./format/selectionset-element-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
-        href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md
-      - name: Az EnumerableExpansion elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md
-      - name: A GroupBy elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-entryselectedby-for-groupby-format.md
-      - name: A ListControl elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-entryselectedby-for-listcontrol-format.md
-      - name: A TableControl elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md
-      - name: A WideControl elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-entryselectedby-for-widecontrol-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
-      - name: Az EnumerableExpansion EntrySelectedBy eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
-      - name: A GroupBy elemhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-selectioncondition-for-groupby-format.md
-      - name: Az ListEntry EntrySelectedBy eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-      - name: Az TableControl EntrySelectedBy eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-      - name: Az WideEntry EntrySelectedBy eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-      - name: A ViewSelectedBy elem SelectionSetName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-viewselectedby-format.md
-      - name: SelectionSets elem (Formátum)
-        href: ./format/selectionsets-element-format.md
-      - name: ShowError elem (Formátum)
-        href: ./format/showerror-element-format.md
-      - name: TableColumnHeader elem (Formátum)
-        href: ./format/tablecolumnheader-element-format.md
-      - name: A TableControl TableColumnItems elemének TableColumnItem eleme (Formátum)
-        href: ./format/tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md
-      - name: A TableControl TableRowEntry elemének TableColumnItems eleme (Formátum)
-        href: ./format/tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md
-      - name: TableControl elem (Formátum)
-        href: ./format/tablecontrol-element-format.md
-      - name: TableHeaders elem (Formátum)
-        href: ./format/tableheaders-element-format.md
-      - name: A TableControl TableRowEntries eleme (Formátum)
-        href: ./format/tablerowentries-element-for-tablecontrol-format.md
-      - name: A TableControl elemhez tartozó TableRowEntries TableRowEntry eleme (Formátum)
-        href: ./format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó CustomItem Szöveg eleme (Formátum)
-        href: ./format/text-element-for-customitem-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó CustomItem Szöveg eleme (Formátum)
-        href: ./format/text-element-for-customitem-for-controls-for-view-format.md
-      - name: A Nézet CustomView eleméhez tartozó CustomItem Szöveg eleme (Formátum)
-        href: ./format/text-element-for-customitem-for-customview-for-view-format.md
-      - name: A GroupBy elemhez tartozó CustomItem Szöveg eleme (Formátum)
-        href: ./format/text-element-for-customitem-for-groupby-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó EntrySelectedBy TypeName eleme (Formátum)
-        href: ./format/typename-element-for-entryselectedby-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó EntrySelectedBy TypeName eleme (Formátum)
-        href: ./format/typename-element-for-entryselectedby-for-controls-for-view-format.md
-      - name: A Nézet CustomEntry eleméhez tartozó EntrySelectedBy TypeName eleme (Formátum)
-        href: ./format/typename-element-for-entryselectedby-for-customentry-for-view-format.md
-      - name: Az EnumerableExpansion elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
-        href: ./format/typename-element-for-entryselectedby-for-enumerableexpansion-format.md
-      - name: A GroupBy elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
-        href: ./format/typename-element-for-entryselectedby-for-groupby-format.md
-      - name: A ListControl elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
-        href: ./format/typename-element-for-entryselectedby-for-listcontrol-format.md
-      - name: A TableControl elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
-        href: ./format/typename-element-for-entryselectedby-for-tablecontrol-format.md
-      - name: A WideEntry elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
-        href: ./format/typename-element-for-entryselectedby-for-wideentry-format.md
-      - name: A Konfiguráció Vezérlők eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
-        href: ./format/typename-element-for-selectioncondition-for-controls-for-configuration-format.md
-      - name: A Nézet Vezérlők eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
-        href: ./format/typename-element-for-selectioncondition-for-controls-for-view-format.md
-      - name: A Nézet CustomControl eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
-        href: ./format/typename-element-for-selectioncondition-for-customcontrol-for-view-format.md
-      - name: Az EnumerableExpansion EntrySelectedBy eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-      - name: A GroupBy elemhez tartozó SelectionCondition TypeName eleme (Formátum)
-        href: ./format/typename-element-for-selectioncondition-for-groupby-format.md
-      - name: Az ListControl EntrySelectedBy eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-      - name: Az TableControl EntrySelectedBy eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
-        href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-      - name: Az WideControl EntrySelectedBy eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
-        href: ./format/typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
-      - name: A Típusok TypeName eleme (Formátum)
-        href: ./format/typename-element-for-types-format.md
-      - name: A ViewSelectedBy elem TypeName eleme (Formátum)
-        href: ./format/typename-element-for-viewselectedby-format.md
-      - name: A SelectionSet Típusok eleme (Formátum)
-        href: ./format/types-element-for-selectionset-format.md
-      - name: Nézet elem (Formátum)
-        href: ./format/view-element-format.md
-      - name: ViewDefinitions elem (Formátum)
-        href: ./format/viewdefinitions-element-format.md
-      - name: ViewSelectedBy elem (Formátum)
-        href: ./format/viewselectedby-element-format.md
-      - name: WideControl elem (Formátum)
-        href: ./format/widecontrol-element-format.md
-      - name: A WideControl WideEntries eleme (Formátum)
-        href: ./format/wideentries-element-for-widecontrol-format.md
-      - name: A WideControl WideEntry eleme (Formátum)
-        href: ./format/wideentry-element-for-widecontrol-format.md
-      - name: A WideControl WideItem eleme (Formátum)
-        href: ./format/wideitem-element-for-widecontrol-format.md
-      - name: A TableControl TableColumnHeader elemének Szélesség eleme (Formátum)
-        href: ./format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
-      - name: A TableControl TableRowEntry elemének Wrap eleme (Formátum)
-        href: ./format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
-      - name: WrapTables elem (Format)
-        href: ./format/wraptables-element-format.md
-  - name: Megjegyzésalapú súgótémakörök írása
-    href: ./help/writing-comment-based-help-topics.md
-    items:
-    - name: Súgócikkek írása Windows PowerShell-parancsmagokhoz
-      href: ./help/writing-help-for-windows-powershell-cmdlets.md
-    - name: Súgócikkek írása Windows PowerShell-szolgáltatókhoz
-      href: ./help/writing-help-for-windows-powershell-providers.md
-      items:
-      - name: Szolgáltatói súgótémakör létrehozása
-        href: ./help/how-to-create-a-provider-help-topic.md
-      - name: A szolgáltató nevének hozzáadása
-        href: ./help/how-to-add-the-provider-name.md
-      - name: A szolgáltató meghajtóinak hozzáadása
-        href: ./help/how-to-add-the-provider-drives.md
-      - name: A szolgáltató összefoglalójának hozzáadása
-        href: ./help/how-to-add-the-provider-synopsis.md
-      - name: A szolgáltató leírásának hozzáadása
-        href: ./help/how-to-add-a-provider-description.md
-      - name: Funkciók hozzáadása
-        href: ./help/how-to-add-capabilities.md
-      - name: Feladatok hozzáadása egy szolgáltatói súgótémakörhöz
-        href: ./help/how-to-add-tasks-to-a-provider-help-topic.md
-      - name: Dinamikus paraméterek hozzáadása egy szolgáltatói súgótémakörhöz
-        href: ./help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-      - name: Jegyzetek hozzáadása egy szolgáltatói súgótémakörhöz
-        href: ./help/how-to-add-notes-to-a-provider-help-topic.md
-      - name: „Lásd még” szakasz hozzáadása egy szolgáltatói súgótémakörhöz
-        href: ./help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
-    - name: Súgócikkek írása Windows PowerShelles szkriptekhez és függvényekhez
-      href: ./help/writing-help-for-windows-powershell-scripts-and-functions.md
-      items:
-      - name: XML-alapú súgótémakörök írása szkriptekhez és függvényekhez
-        href: ./help/writing-xml-based-help-topics-for-scripts-and-functions.md
-    - name: Súgócikkek írása Windows PowerShelles beépülő modulokhoz
-      href: ./help/writing-help-for-windows-powershell-snap-ins.md
-    - name: Egyéni parancsmagokról szóló súgócikkek írása Windows PowerShell-szolgáltatókhoz
-      href: ./help/writing-custom-cmdlet-help-for-windows-powershell-providers.md
-    - name: Windows PowerShelles „About” súgótémakörök írása
-      href: ./help/writing-windows-powershell-about-help.md
+        - name: Formázási fájl – Áttekintés
+          href: ./format/formatting-file-overview.md
+        - name: Formázási fájl – Fogalmak
+          href: ./format/formatting-file-concepts.md
+          items:
+            - name: Tábla nézet létrehozása
+              href: ./format/creating-a-table-view.md
+            - name: Listanézet létrehozása
+              href: ./format/creating-a-list-view.md
+            - name: Széles nézet létrehozása
+              href: ./format/creating-a-wide-view.md
+            - name: Egyéni vezérlők létrehozása
+              href: ./format/creating-custom-controls.md
+            - name: Formázási adatok betöltése és exportálása
+              href: ./format/loading-and-exporting-formatting-data.md
+            - name: Gyakori konfigurációs funkciók definiálása
+              href: ./format/defining-common-configuration-features.md
+            - name: Kijelölési csoportok definiálása
+              href: ./format/defining-selection-sets.md
+            - name: Adatok megjelenítésére vonatkozó feltételek definiálása
+              href: ./format/defining-conditions-for-displaying-data.md
+            - name: Megjelenített adatok formázása
+              href: ./format/formatting-displayed-data.md
+            - name: PowerShelles formázási fájlok
+              href: ./format/powershell-formatting-files.md
+        - name: Formázási fájlok példái
+          href: ./format/examples-of-formatting-files.md
+          items:
+            - name: Formázási fájl létrehozása (.format.ps1xml)
+              href: ./format/how-to-create-a-formatting-file-format-ps1xml.md
+            - name: Széles nézet (Alapszintű)
+              href: ./format/wide-view-basic.md
+            - name: Széles nézet (GroupBy)
+              href: ./format/wide-view-groupby.md
+            - name: Listanézet (Alapszintű)
+              href: ./format/list-view-basic.md
+            - name: Listanézet (Címkék)
+              href: ./format/list-view-labels.md
+            - name: Listanézet (GroupBy)
+              href: ./format/list-view-groupby.md
+        - name: Séma XML-referenciájának formázása
+          href: ./format/format-schema-xml-reference.md
+          items:
+            - name: A TableControl TableColumnHeader elemének igazítási eleme (Formátum)
+              href: ./format/alignment-element-for-tablecolumnheader-for-tablecontrol-format.md
+            - name: A TableControl TableColumnItem elemének igazítási eleme (Formátum)
+              href: ./format/alignment-element-for-tablecolumnitem-for-tablecontrol-format.md
+            - name: A TableControl AutoSize eleme (Formátum)
+              href: ./format/autosize-element-for-tablecontrol-format.md
+            - name: A WideControl AutoSize eleme (Formátum)
+              href: ./format/autosize-element-for-widecontrol-format.md
+            - name: A WideControl ColumnNumber eleme (Formátum)
+              href: ./format/columnnumber-element-for-widecontrol-format.md
+            - name: Konfigurációs elem (Formátum)
+              href: ./format/configuration-element-format.md
+            - name: A Konfiguráció Vezérlők elemének vezérlőeleme (Formátum)
+              href: ./format/control-element-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők elemének vezérlőeleme (Formátum)
+              href: ./format/control-element-for-controls-for-view-format.md
+            - name: A Konfiguráció elem Vezérlők eleme (Formátum)
+              href: ./format/controls-element-for-configuration-format.md
+            - name: A Nézet elem Vezérlők eleme (Formátum)
+              href: ./format/controls-element-for-view-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó Vezérlő CustomControl eleme (Formátum)
+              href: ./format/customcontrol-element-for-control-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó Vezérlő CustomControl eleme (Formátum)
+              href: ./format/customcontrol-element-for-control-for-controls-for-view-format.md
+            - name: A GroupBy CustomControl eleme (Formátum)
+              href: ./format/customcontrol-element-for-groupby-format.md
+            - name: A Nézet CustomControl eleme (Formátum)
+              href: ./format/customcontrol-element-for-view-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó ExpressionBinding CustomControlName eleme (Formátum)
+              href: ./format/customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó ExpressionBinding CustomControlName eleme (Formátum)
+              href: ./format/customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó ExpressionBinding CustomControlName eleme (Formátum)
+              href: ./format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+            - name: A GroupBy elem ExpressionBinding CustomControlName eleme (Formátum)
+              href: ./format/customcontrolname-element-for-expressionbinding-for-groupby-format.md
+            - name: A GroupBy CustomControlName eleme (Formátum)
+              href: ./format/customcontrolname-element-for-groupby-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó CustomControl CustomEntry eleme (Formátum)
+              href: ./format/customentry-element-for-customcontrol-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó CustomEntries CustomEntry eleme (Formátum)
+              href: ./format/customentry-element-for-customentries-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó CustomEntries CustomEntry eleme (Formátum)
+              href: ./format/customentry-element-for-customentries-for-customcontrol-for-view-format.md
+            - name: A GroupBy CustomControl elemének CustomEntry eleme (Formátum)
+              href: ./format/customentry-element-for-customcontrol-for-groupby-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó CustomControl CustomEntries eleme (Formátum)
+              href: ./format/customentries-element-for-customcontrol-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó CustomControl CustomEntries eleme (Formátum)
+              href: ./format/customentries-element-for-customcontrol-for-controls-for-view-format.md
+            - name: A GroupBy CustomControl elemének CustomEntries eleme (Formátum)
+              href: ./format/customentries-element-for-customcontrol-for-groupby-format.md
+            - name: A Nézet CustomControl elemének CustomEntries eleme (Formátum)
+              href: ./format/customentries-element-for-customcontrol-for-view-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó CustomEntry CustomItem eleme (Formátum)
+              href: ./format/customitem-element-for-customentry-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó CustomEntry CustomItem eleme (Formátum)
+              href: ./format/customitem-element-for-customentry-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó CustomEntry CustomItem eleme (Formátum)
+              href: ./format/customitem-element-for-customentry-for-customcontrol-for-view-format.md
+            - name: A GroupBy CustomEntry elemének CustomItem eleme (Formátum)
+              href: ./format/customitem-element-for-customentry-for-groupby-format.md
+            - name: DefaultSettings elem (Formátum)
+              href: ./format/defaultsettings-element-format.md
+            - name: DisplayError elem (Formátum)
+              href: ./format/displayerror-element-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó CustomEntry EntrySelectedBy eleme (Formátum)
+              href: ./format/entryselectedby-element-for-customentry-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó CustomEntry EntrySelectedBy eleme (Formátum)
+              href: ./format/entryselectedby-element-for-customentry-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó CustomEntry EntrySelectedBy eleme (Formátum)
+              href: ./format/entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md
+            - name: Az EnumerableExpansion EntrySelectedBy eleme (Formátum)
+              href: ./format/entryselectedby-element-for-enumerableexpansion-format.md
+            - name: A GroupBy elemhez tartozó CustomEntry EntrySelectedBy eleme (Formátum)
+              href: ./format/entryselectedby-element-for-customentry-for-groupby-format.md
+            - name: A ListControl elemhez tartozó ListEntry EntrySelectedBy eleme (Formátum)
+              href: ./format/entryselectedby-element-for-listentry-for-listcontrol-format.md
+            - name: A TableControl elemhez tartozó TableRowEntry EntrySelectedBy eleme (Formátum)
+              href: ./format/entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md
+            - name: A WideEntry elem EntrySelectedBy eleme (Formátum)
+              href: ./format/entryselectedby-element-for-wideentry-format.md
+            - name: EnumerableExpansion elem (Formátum)
+              href: ./format/enumerableexpansion-element-format.md
+            - name: EnumerableExpansions elem (Formátum)
+              href: ./format/enumerableexpansions-element-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó ExpressionBinding EnumerateCollection eleme (Formátum)
+              href: ./format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó ExpressionBinding EnumerateCollection eleme (Formátum)
+              href: ./format/enumeratecollection-element-for-expressionbinding-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó ExpressionBinding EnumerateCollection eleme (Formátum)
+              href: ./format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó ExpressionBinding EnumerateCollection eleme (Formátum)
+              href: ./format/enumeratecollection-element-for-expressionbinding-for-groupby-format.md
+            - name: Elem kibontása (Formátum)
+              href: ./format/expand-element-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó CustomItem ExpressionBinding eleme (Formátum)
+              href: ./format/expressionbinding-element-for-customitem-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó CustomItem ExpressionBinding eleme (Formátum)
+              href: ./format/expressionbinding-element-for-customitem-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó CustomItem ExpressionBinding eleme (Formátum)
+              href: ./format/expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó CustomItem ExpressionBinding eleme (Formátum)
+              href: ./format/expressionbinding-element-for-customitem-for-groupby-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó Keret FirstLineHanging eleme (Formátum)
+              href: ./format/firstlinehanging-element-for-frame-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó Keret FirstLineHanging eleme (Formátum)
+              href: ./format/firstlinehanging-element-for-frame-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó Keret FirstLineHanging eleme (Formátum)
+              href: ./format/firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó Keret FirstLineHanging eleme (Formátum)
+              href: ./format/firstlinehanging-element-for-frame-for-groupby-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó Keret FirstLineIndent eleme (Formátum)
+              href: ./format/firstlineindent-element-for-frame-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó Keret FirstLineIndent eleme (Formátum)
+              href: ./format/firstlineindent-element-for-frame-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó Keret FirstLineIndent eleme (Formátum)
+              href: ./format/firstlineindent-element-for-frame-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó Keret FirstLineIndent eleme (Formátum)
+              href: ./format/firstlineindent-element-for-frame-for-groupby-format.md
+            - name: A ListControl ListItem eleméhez tartozó FormatString elem (Formátum)
+              href: ./format/formatstring-element-for-listitem-for-listcontrol-format.md
+            - name: A TableControl TableColumnItem elemének FormatString eleme (Formátum)
+              href: ./format/formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md
+            - name: A WideControl WideItem elemének FormatString eleme (Formátum)
+              href: ./format/formatstring-element-for-wideitem-for-widecontrol-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó CustomItem Keret eleme (Formátum)
+              href: ./format/frame-element-for-customitem-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó CustomItem Keret eleme (Formátum)
+              href: ./format/frame-element-for-customitem-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó CustomItem Keret eleme (Formátum)
+              href: ./format/frame-element-for-customitem-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó CustomItem Keret eleme (Formátum)
+              href: ./format/frame-element-for-customitem-for-groupby-format.md
+            - name: A Nézet GroupBy eleme (Formátum)
+              href: ./format/groupby-element-for-view-format.md
+            - name: HideTableHeaders elem (Formátum)
+              href: ./format/hidetableheaders-element-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó ExpressionBinding ItemSelectionCondition eleme (Formátum)
+              href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó ExpressionBinding ItemSelectionCondition eleme (Formátum)
+              href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
+            - name: A CustomControl elemhez tartozó ExpressionBinding ItemSelectionCondition eleme (Formátum)
+              href: ./format/itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md
+            - name: A GroupBy elemhez tartozó ExpressionBinding ItemSelectionCondition eleme (Formátum)
+              href: ./format/itemselectioncondition-element-for-expressionbinding-for-groupby-format.md
+            - name: A ListControl elemhez tartozó ListItem ItemSelectionCondition eleme (Formátum)
+              href: ./format/itemselectioncondition-element-for-listitem-for-listcontrol-format.md
+            - name: A ListControl elemhez tartozó ListItem Címke eleme (Formátum)
+              href: ./format/label-element-for-listitem-for-listcontrol-format.md
+            - name: A GroupBy Címke eleme (Formátum)
+              href: ./format/label-element-for-groupby-format.md
+            - name: A TableControl TableColumnHeader elemének Címke eleme (Formátum)
+              href: ./format/label-element-for-tablecolumnheader-for-tablecontrol-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó Keret LeftIndent eleme (Formátum)
+              href: ./format/leftindent-element-for-frame-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó Keret LeftIndent eleme (Formátum)
+              href: ./format/leftindent-element-for-frame-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó Keret LeftIndent eleme (Formátum)
+              href: ./format/leftindent-element-for-frame-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó Keret LeftIndent eleme (Formátum)
+              href: ./format/leftindent-element-for-frame-for-groupby-format.md
+            - name: ListControl elem (Formátum)
+              href: ./format/listcontrol-element-format.md
+            - name: A ListControl elemhez tartozó ListEntry elem (Formátum)
+              href: ./format/listentry-element-for-listcontrol-format.md
+            - name: A ListControl elemhez tartozó ListEntries elem (Formátum)
+              href: ./format/listentries-element-for-listcontrol-format.md
+            - name: A ListControl elemhez tartozó ListItems ListItem eleme (Formátum)
+              href: ./format/listitem-element-for-listitems-for-listcontrol-format.md
+            - name: A ListControl elemhez tartozó ListEntry ListItems eleme (Formátum)
+              href: ./format/listitems-element-for-listentry-for-listcontrol-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó Vezérlő Név eleme (Formátum)
+              href: ./format/name-element-for-control-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó Vezérlő Név eleme (Formátum)
+              href: ./format/name-element-for-control-for-controls-for-view-format.md
+            - name: A SelectionSet Név eleme (Formátum)
+              href: ./format/name-element-for-selectionset-format.md
+            - name: A Nézet Név eleme (Formátum)
+              href: ./format/name-element-for-view-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó CustomItem NewLine eleme (Formátum)
+              href: ./format/newline-element-for-customitem-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó CustomItem NewLine eleme (Formátum)
+              href: ./format/newline-element-for-customitem-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó CustomItem NewLine eleme (Formátum)
+              href: ./format/newline-element-for-customitem-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó CustomItem NewLine eleme (Formátum)
+              href: ./format/newline-element-for-customitem-for-groupby-format.md
+            - name: PropertyCountForTable elem (Formátum)
+              href: ./format/propertycountfortable-element-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó ExpressionBinding PropertyName eleme (Formátum)
+              href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó ExpressionBinding PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-expressionbinding-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó ExpressionBinding PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó ExpressionBinding PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-expressionbinding-for-groupby-format.md
+            - name: A GroupBy PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-groupby-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
+              href: ./format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-itemselectioncondition-for-groupby-format.md
+            - name: A ListControl elemhez tartozó ItemSelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-itemselectioncondition-for-listcontrol-format.md
+            - name: A ListControl elemhez tartozó ListItem PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-listitem-for-listcontrol-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-selectioncondition-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md
+            - name: Az EnumerableExpansion EntrySelectedBy eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
+            - name: A GroupBy elemhez tartozó SelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-selectioncondition-for-groupby-format.md
+            - name: Az ListControl EntrySelectedBy eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
+            - name: Az TableRowEntry EntrySelectedBy eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md
+            - name: Az WideEntry EntrySelectedBy eleméhez tartozó SelectionCondition PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md
+            - name: A TableControl TableColumnItem elemének PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md
+            - name: A WideControl WideItem elemének PropertyName eleme (Formátum)
+              href: ./format/propertyname-element-for-wideitem-for-widecontrol-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó Keret RightIndent eleme (Formátum)
+              href: ./format/rightindent-element-for-frame-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó Keret RightIndent eleme (Formátum)
+              href: ./format/rightindent-element-for-frame-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó Keret RightIndent eleme (Formátum)
+              href: ./format/rightindent-element-for-frame-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó Keret RightIndent eleme (Formátum)
+              href: ./format/rightindent-element-for-frame-for-groupby-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó ExpressionBinding ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó ExpressionBinding ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-expressionbinding-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó ExpressionBinding ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó ExpressionBinding ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-expressionbinding-for-groupby-format.md
+            - name: A GroupBy ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-groupby-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó ItemSelectionCondition ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó ItemSelectionCondition ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó ItemSelectionCondition ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó ItemSelectionCondition ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-itemselectioncondition-for-groupby-format.md
+            - name: A ListControl elemhez tartozó ItemSelectionCondition ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md
+            - name: A ListControl elemhez tartozó ListItem ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-listitem-for-listcontrol-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó SelectionCondition ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó SelectionCondition ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-selectioncondition-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó SelectionCondition ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md
+            - name: Az EnumerableExpansion EntrySelectedBy eleméhez tartozó SelectionCondition ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
+            - name: Az GroupBy EntrySelectedBy eleméhez tartozó SelectionCondition S eleme (Formátum)
+              href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+            - name: Az ListControl EntrySelectedBy eleméhez tartozó SelectionCondition S eleme (Formátum)
+              href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+            - name: Az TableControl EntrySelectedBy eleméhez tartozó SelectionCondition S eleme (Formátum)
+              href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+            - name: Az WideControl EntrySelectedBy eleméhez tartozó SelectionCondition S eleme (Formátum)
+              href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+            - name: A TableControl TableColumnItem elemének ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md
+            - name: A WideControl WideControl elemének ScriptBlock eleme (Formátum)
+              href: ./format/scriptblock-element-for-wideitem-for-widecontrol-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
+              href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
+              href: ./format/selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md
+            - name: A CustomControl elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
+              href: ./format/selectioncondition-element-for-entryselectedby-for-customcontrol-format.md
+            - name: Az EnumerableExpansion elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
+              href: ./format/selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md
+            - name: A GroupBy elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
+              href: ./format/selectioncondition-element-for-entryselectedby-for-groupby-format.md
+            - name: A ListControl elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
+              href: ./format/selectioncondition-element-for-entryselectedby-for-listcontrol-format.md
+            - name: A TableControl elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
+              href: ./format/selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md
+            - name: A WideControl elemhez tartozó EntrySelectedBy SelectionCondition eleme (Formátum)
+              href: ./format/selectioncondition-element-for-entryselectedby-for-widecontrol-format.md
+            - name: SelectionSet elem (Formátum)
+              href: ./format/selectionset-element-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
+              href: ./format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md
+            - name: Az EnumerableExpansion elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md
+            - name: A GroupBy elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-entryselectedby-for-groupby-format.md
+            - name: A ListControl elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-entryselectedby-for-listcontrol-format.md
+            - name: A TableControl elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md
+            - name: A WideControl elemhez tartozó EntrySelectedBy SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-entryselectedby-for-widecontrol-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
+            - name: Az EnumerableExpansion EntrySelectedBy eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
+            - name: A GroupBy elemhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-selectioncondition-for-groupby-format.md
+            - name: Az ListEntry EntrySelectedBy eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+            - name: Az TableControl EntrySelectedBy eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+            - name: Az WideEntry EntrySelectedBy eleméhez tartozó SelectionCondition SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+            - name: A ViewSelectedBy elem SelectionSetName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-viewselectedby-format.md
+            - name: SelectionSets elem (Formátum)
+              href: ./format/selectionsets-element-format.md
+            - name: ShowError elem (Formátum)
+              href: ./format/showerror-element-format.md
+            - name: TableColumnHeader elem (Formátum)
+              href: ./format/tablecolumnheader-element-format.md
+            - name: A TableControl TableColumnItems elemének TableColumnItem eleme (Formátum)
+              href: ./format/tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md
+            - name: A TableControl TableRowEntry elemének TableColumnItems eleme (Formátum)
+              href: ./format/tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md
+            - name: TableControl elem (Formátum)
+              href: ./format/tablecontrol-element-format.md
+            - name: TableHeaders elem (Formátum)
+              href: ./format/tableheaders-element-format.md
+            - name: A TableControl TableRowEntries eleme (Formátum)
+              href: ./format/tablerowentries-element-for-tablecontrol-format.md
+            - name: A TableControl elemhez tartozó TableRowEntries TableRowEntry eleme (Formátum)
+              href: ./format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó CustomItem Szöveg eleme (Formátum)
+              href: ./format/text-element-for-customitem-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó CustomItem Szöveg eleme (Formátum)
+              href: ./format/text-element-for-customitem-for-controls-for-view-format.md
+            - name: A Nézet CustomView eleméhez tartozó CustomItem Szöveg eleme (Formátum)
+              href: ./format/text-element-for-customitem-for-customview-for-view-format.md
+            - name: A GroupBy elemhez tartozó CustomItem Szöveg eleme (Formátum)
+              href: ./format/text-element-for-customitem-for-groupby-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó EntrySelectedBy TypeName eleme (Formátum)
+              href: ./format/typename-element-for-entryselectedby-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó EntrySelectedBy TypeName eleme (Formátum)
+              href: ./format/typename-element-for-entryselectedby-for-controls-for-view-format.md
+            - name: A Nézet CustomEntry eleméhez tartozó EntrySelectedBy TypeName eleme (Formátum)
+              href: ./format/typename-element-for-entryselectedby-for-customentry-for-view-format.md
+            - name: Az EnumerableExpansion elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
+              href: ./format/typename-element-for-entryselectedby-for-enumerableexpansion-format.md
+            - name: A GroupBy elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
+              href: ./format/typename-element-for-entryselectedby-for-groupby-format.md
+            - name: A ListControl elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
+              href: ./format/typename-element-for-entryselectedby-for-listcontrol-format.md
+            - name: A TableControl elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
+              href: ./format/typename-element-for-entryselectedby-for-tablecontrol-format.md
+            - name: A WideEntry elemhez tartozó EntrySelectedBy TypeName eleme (Formátum)
+              href: ./format/typename-element-for-entryselectedby-for-wideentry-format.md
+            - name: A Konfiguráció Vezérlők eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
+              href: ./format/typename-element-for-selectioncondition-for-controls-for-configuration-format.md
+            - name: A Nézet Vezérlők eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
+              href: ./format/typename-element-for-selectioncondition-for-controls-for-view-format.md
+            - name: A Nézet CustomControl eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
+              href: ./format/typename-element-for-selectioncondition-for-customcontrol-for-view-format.md
+            - name: Az EnumerableExpansion EntrySelectedBy eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+            - name: A GroupBy elemhez tartozó SelectionCondition TypeName eleme (Formátum)
+              href: ./format/typename-element-for-selectioncondition-for-groupby-format.md
+            - name: Az ListControl EntrySelectedBy eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+            - name: Az TableControl EntrySelectedBy eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
+              href: ./format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+            - name: Az WideControl EntrySelectedBy eleméhez tartozó SelectionCondition TypeName eleme (Formátum)
+              href: ./format/typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
+            - name: A Típusok TypeName eleme (Formátum)
+              href: ./format/typename-element-for-types-format.md
+            - name: A ViewSelectedBy elem TypeName eleme (Formátum)
+              href: ./format/typename-element-for-viewselectedby-format.md
+            - name: A SelectionSet Típusok eleme (Formátum)
+              href: ./format/types-element-for-selectionset-format.md
+            - name: Nézet elem (Formátum)
+              href: ./format/view-element-format.md
+            - name: ViewDefinitions elem (Formátum)
+              href: ./format/viewdefinitions-element-format.md
+            - name: ViewSelectedBy elem (Formátum)
+              href: ./format/viewselectedby-element-format.md
+            - name: WideControl elem (Formátum)
+              href: ./format/widecontrol-element-format.md
+            - name: A WideControl WideEntries eleme (Formátum)
+              href: ./format/wideentries-element-for-widecontrol-format.md
+            - name: A WideControl WideEntry eleme (Formátum)
+              href: ./format/wideentry-element-for-widecontrol-format.md
+            - name: A WideControl WideItem eleme (Formátum)
+              href: ./format/wideitem-element-for-widecontrol-format.md
+            - name: A TableControl TableColumnHeader elemének Szélesség eleme (Formátum)
+              href: ./format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
+            - name: A TableControl TableRowEntry elemének Wrap eleme (Formátum)
+              href: ./format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
+            - name: WrapTables elem (Format)
+              href: ./format/wraptables-element-format.md
     - name: Megjegyzésalapú súgótémakörök írása
       href: ./help/writing-comment-based-help-topics.md
       items:
-      - name: Megjegyzésalapú súgótémakörök szintaxisa
-        href: ./help/syntax-of-comment-based-help.md
-      - name: Megjegyzésalapú súgótémakörök – kulcsszavak
-        href: ./help/comment-based-help-keywords.md
-      - name: Megjegyzésalapú súgótémakörök elhelyezése függvényekben
-        href: ./help/placing-comment-based-help-in-functions.md
-      - name: Megjegyzésalapú súgótémakörök elhelyezése szkriptekben
-        href: ./help/placing-comment-based-help-in-scripts.md
-      - name: A megjegyzésalapú súgó automatikusan létrehozott elemei
-        href: ./help/autogenerated-elements-of-comment-based-help.md
-      - name: Megjegyzésalapú súgótémakörök példái
-        href: ./help/examples-of-comment-based-help.md
-    - name: XML-alapú súgótémakörök írása parancsokhoz
-      href: ./help/writing-xml-based-help-topics-for-commands.md
+        - name: Súgócikkek írása Windows PowerShell-parancsmagokhoz
+          href: ./help/writing-help-for-windows-powershell-cmdlets.md
+        - name: Súgócikkek írása Windows PowerShell-szolgáltatókhoz
+          href: ./help/writing-help-for-windows-powershell-providers.md
+          items:
+            - name: Szolgáltatói súgótémakör létrehozása
+              href: ./help/how-to-create-a-provider-help-topic.md
+            - name: A szolgáltató nevének hozzáadása
+              href: ./help/how-to-add-the-provider-name.md
+            - name: A szolgáltató meghajtóinak hozzáadása
+              href: ./help/how-to-add-the-provider-drives.md
+            - name: A szolgáltató összefoglalójának hozzáadása
+              href: ./help/how-to-add-the-provider-synopsis.md
+            - name: A szolgáltató leírásának hozzáadása
+              href: ./help/how-to-add-a-provider-description.md
+            - name: Funkciók hozzáadása
+              href: ./help/how-to-add-capabilities.md
+            - name: Feladatok hozzáadása egy szolgáltatói súgótémakörhöz
+              href: ./help/how-to-add-tasks-to-a-provider-help-topic.md
+            - name: Dinamikus paraméterek hozzáadása egy szolgáltatói súgótémakörhöz
+              href: ./help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
+            - name: Jegyzetek hozzáadása egy szolgáltatói súgótémakörhöz
+              href: ./help/how-to-add-notes-to-a-provider-help-topic.md
+            - name: „Lásd még” szakasz hozzáadása egy szolgáltatói súgótémakörhöz
+              href: ./help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
+        - name: Súgócikkek írása Windows PowerShelles szkriptekhez és függvényekhez
+          href: ./help/writing-help-for-windows-powershell-scripts-and-functions.md
+          items:
+            - name: XML-alapú súgótémakörök írása szkriptekhez és függvényekhez
+              href: ./help/writing-xml-based-help-topics-for-scripts-and-functions.md
+        - name: Súgócikkek írása Windows PowerShelles beépülő modulokhoz
+          href: ./help/writing-help-for-windows-powershell-snap-ins.md
+        - name: Egyéni parancsmagokról szóló súgócikkek írása Windows PowerShell-szolgáltatókhoz
+          href: ./help/writing-custom-cmdlet-help-for-windows-powershell-providers.md
+        - name: Windows PowerShelles „About” súgótémakörök írása
+          href: ./help/writing-windows-powershell-about-help.md
+        - name: Megjegyzésalapú súgótémakörök írása
+          href: ./help/writing-comment-based-help-topics.md
+          items:
+            - name: Megjegyzésalapú súgótémakörök szintaxisa
+              href: ./help/syntax-of-comment-based-help.md
+            - name: Megjegyzésalapú súgótémakörök – kulcsszavak
+              href: ./help/comment-based-help-keywords.md
+            - name: Megjegyzésalapú súgótémakörök elhelyezése függvényekben
+              href: ./help/placing-comment-based-help-in-functions.md
+            - name: Megjegyzésalapú súgótémakörök elhelyezése szkriptekben
+              href: ./help/placing-comment-based-help-in-scripts.md
+            - name: A megjegyzésalapú súgó automatikusan létrehozott elemei
+              href: ./help/autogenerated-elements-of-comment-based-help.md
+            - name: Megjegyzésalapú súgótémakörök példái
+              href: ./help/examples-of-comment-based-help.md
+        - name: XML-alapú súgótémakörök írása parancsokhoz
+          href: ./help/writing-xml-based-help-topics-for-commands.md
+          items:
+            - name: Parancsmag súgófájljának létrehozása
+              href: ./help/how-to-create-the-cmdlet-help-file.md
+            - name: Parancsmag nevének és összefoglalójának hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
+              href: ./help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
+            - name: A parancsmag leírásának hozzáadása
+              href: ./help/how-to-add-a-cmdlet-description.md
+            - name: Szintaxis hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
+              href: ./help/how-to-add-syntax-to-a-cmdlet-help-topic.md
+            - name: Paraméteradatok hozzáadása
+              href: ./help/how-to-add-parameter-information.md
+            - name: Bemeneti típusok hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
+              href: ./help/how-to-add-input-types-to-a-cmdlet-help-topic.md
+            - name: Visszatérési értékek hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
+              href: ./help/how-to-add-return-values-to-a-cmdlet-help-topic.md
+            - name: Jegyzetek hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
+              href: ./help/how-to-add-notes-to-a-cmdlet-help-topic.md
+            - name: Példák hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
+              href: ./help/how-to-add-examples-to-a-cmdlet-help-topic.md
+            - name: Kapcsolódó hivatkozások hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
+              href: ./help/how-to-add-related-links-to-a-cmdlet-help-topic.md
+    - name: Management OData webszolgáltatás létrehozása
+      href: ./webservices/creating-a-management-odata-web-service.md
       items:
-      - name: Parancsmag súgófájljának létrehozása
-        href: ./help/how-to-create-the-cmdlet-help-file.md
-      - name: Parancsmag nevének és összefoglalójának hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
-        href: ./help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
-      - name: A parancsmag leírásának hozzáadása
-        href: ./help/how-to-add-a-cmdlet-description.md
-      - name: Szintaxis hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
-        href: ./help/how-to-add-syntax-to-a-cmdlet-help-topic.md
-      - name: Paraméteradatok hozzáadása
-        href: ./help/how-to-add-parameter-information.md
-      - name: Bemeneti típusok hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
-        href: ./help/how-to-add-input-types-to-a-cmdlet-help-topic.md
-      - name: Visszatérési értékek hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
-        href: ./help/how-to-add-return-values-to-a-cmdlet-help-topic.md
-      - name: Jegyzetek hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
-        href: ./help/how-to-add-notes-to-a-cmdlet-help-topic.md
-      - name: Példák hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
-        href: ./help/how-to-add-examples-to-a-cmdlet-help-topic.md
-      - name: Kapcsolódó hivatkozások hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
-        href: ./help/how-to-add-related-links-to-a-cmdlet-help-topic.md
-  - name: Management OData webszolgáltatás létrehozása
-    href: ./webservices/creating-a-management-odata-web-service.md
-    items:
-    - name: Erőforrások hozzáadása egy Management OData webszolgáltatáshoz
-      href: ./webservices/adding-resources-to-a-management-odata-web-service.md
-    - name: Egyéni hitelesítés implementálása egy Management OData webszolgáltatásban
-      href: ./webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
+        - name: Erőforrások hozzáadása egy Management OData webszolgáltatáshoz
+          href: ./webservices/adding-resources-to-a-management-odata-web-service.md
+        - name: Egyéni hitelesítés implementálása egy Management OData webszolgáltatásban
+          href: ./webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
+          items:
+            - name: A szerepköralapú hitelesítés konfigurálása
+              href: ./webservices/configuring-role-based-authorization.md
+              items:
+                - name: A szerepköralapú hitelesítés konfigurációs sémája
+                  href: ./webservices/role-based-authorization-configuration-schema.md
+        - name: SessionConfiguration implementálása egy Management OData webszolgáltatásban
+          href: ./webservices/implementing-sessionconfiguration-for-a-management-odata-web-service.md
+        - name: Egy Management OData webszolgáltatás MOF-sémájának szerkesztése
+          href: ./webservices/authoring-the-mof-schema-file-for-a-management-odata-web-service.md
+        - name: Egy Management OData webszolgáltatás XML-sémájának szerkesztése
+          href: ./webservices/authoring-the-xml-schema-file-for-a-management-odata-web-service.md
+        - name: Egy Management OData webszolgáltatás Web.config-fájljának szerkesztése
+          href: ./webservices/authoring-the-web-config-file-for-a-management-odata-web-service.md
+        - name: Egy Management OData webszolgáltatás üzembe helyezése
+          href: ./webservices/deploying-a-management-odata-web-service.md
+        - name: Management OData-entitások társítása
+          href: ./webservices/associating-management-odata-entities.md
+        - name: Windows PowerShell-parancsmagok meghívása Management OData-szolgáltatásokkal
+          href: ./webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
+        - name: Management OData IIS-kiterjesztés – sémafájlok
+          href: ./webservices/management-odata-iis-extension-schema-files.md
+          items:
+            - name: Erőforrás-leképezési séma
+              href: ./webservices/resource-mapping-schema.md
+            - name: Nyilvános erőforrások sémája
+              href: ./webservices/public-resource-schema.md
+    - name: Windows PowerShell-munkafolyamat írása
+      href: ./workflow/writing-a-windows-powershell-workflow.md
       items:
-      - name: A szerepköralapú hitelesítés konfigurálása
-        href: ./webservices/configuring-role-based-authorization.md
-        items:
-        - name: A szerepköralapú hitelesítés konfigurációs sémája
-          href: ./webservices/role-based-authorization-configuration-schema.md
-    - name: SessionConfiguration implementálása egy Management OData webszolgáltatásban
-      href: ./webservices/implementing-sessionconfiguration-for-a-management-odata-web-service.md
-    - name: Egy Management OData webszolgáltatás MOF-sémájának szerkesztése
-      href: ./webservices/authoring-the-mof-schema-file-for-a-management-odata-web-service.md
-    - name: Egy Management OData webszolgáltatás XML-sémájának szerkesztése
-      href: ./webservices/authoring-the-xml-schema-file-for-a-management-odata-web-service.md
-    - name: Egy Management OData webszolgáltatás Web.config-fájljának szerkesztése
-      href: ./webservices/authoring-the-web-config-file-for-a-management-odata-web-service.md
-    - name: Egy Management OData webszolgáltatás üzembe helyezése
-      href: ./webservices/deploying-a-management-odata-web-service.md
-    - name: Management OData-entitások társítása
-      href: ./webservices/associating-management-odata-entities.md
-    - name: Windows PowerShell-parancsmagok meghívása Management OData-szolgáltatásokkal
-      href: ./webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
-    - name: Management OData IIS-kiterjesztés – sémafájlok
-      href: ./webservices/management-odata-iis-extension-schema-files.md
+        - name: Windows PowerShell-tevékenységek hozzáadása a Visual Studio Toolboxhoz
+          href: ./workflow/adding-windows-powershell-activities-to-the-visual-studio-toolbox.md
+        - name: Gyakori munkafolyamat-paraméterek
+          href: ./workflow/common-workflow-parameters.md
+        - name: Munkafolyamat-tevékenységek létrehozása egy Windows PowerShell-parancsmagban
+          href: ./workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
+        - name: Munkafolyamat létrehozása egy Windows PowerShell-szkripttel
+          href: ./workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
+        - name: Munkafolyamat létrehozása Windows PowerShell-tevékenységekkel
+          href: ./workflow/creating-a-workflow-with-windows-powershell-activities.md
+        - name: Windows PowerShell munkafolyamat importálása és meghívása
+          href: ./workflow/importing-and-invoking-a-windows-powershell-workflow.md
+        - name: Feladatok ütemezése a Windows PowerShell API-val
+          href: ./workflow/scheduling-jobs-with-the-windows-powershell-api.md
+    - name: Windows PowerShell – programozói útmutató
+      href: ./prog-guide/windows-powershell-programmer-s-guide.md
       items:
-      - name: Erőforrás-leképezési séma
-        href: ./webservices/resource-mapping-schema.md
-      - name: Nyilvános erőforrások sémája
-        href: ./webservices/public-resource-schema.md
-  - name: Windows PowerShell-munkafolyamat írása
-    href: ./workflow/writing-a-windows-powershell-workflow.md
-    items:
-    - name: Windows PowerShell-tevékenységek hozzáadása a Visual Studio Toolboxhoz
-      href: ./workflow/adding-windows-powershell-activities-to-the-visual-studio-toolbox.md
-    - name: Gyakori munkafolyamat-paraméterek
-      href: ./workflow/common-workflow-parameters.md
-    - name: Munkafolyamat-tevékenységek létrehozása egy Windows PowerShell-parancsmagban
-      href: ./workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
-    - name: Munkafolyamat létrehozása egy Windows PowerShell-szkripttel
-      href: ./workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
-    - name: Munkafolyamat létrehozása Windows PowerShell-tevékenységekkel
-      href: ./workflow/creating-a-workflow-with-windows-powershell-activities.md
-    - name: Windows PowerShell munkafolyamat importálása és meghívása
-      href: ./workflow/importing-and-invoking-a-windows-powershell-workflow.md
-    - name: Feladatok ütemezése a Windows PowerShell API-val
-      href: ./workflow/scheduling-jobs-with-the-windows-powershell-api.md
-  - name: Windows PowerShell – programozói útmutató
-    href: ./prog-guide/windows-powershell-programmer-s-guide.md
-    items:
-    - name: Windows PowerShell-szolgáltató létrehozása
-      href: ./prog-guide/how-to-create-a-windows-powershell-provider.md
+        - name: Windows PowerShell-szolgáltató létrehozása
+          href: ./prog-guide/how-to-create-a-windows-powershell-provider.md
+          items:
+            - name: A Windows PowerShell-szolgáltató tervezése
+              href: ./prog-guide/designing-your-windows-powershell-provider.md
+            - name: Alapszintű Windows PowerShell-szolgáltató létrehozása
+              href: ./prog-guide/creating-a-basic-windows-powershell-provider.md
+            - name: Windows PowerShelles meghajtószolgáltató létrehozása
+              href: ./prog-guide/creating-a-windows-powershell-drive-provider.md
+            - name: Windows PowerShelles elemszolgáltató létrehozása
+              href: ./prog-guide/creating-a-windows-powershell-item-provider.md
+            - name: Windows PowerShelles tárolószolgáltató létrehozása
+              href: ./prog-guide/creating-a-windows-powershell-container-provider.md
+            - name: Windows PowerShelles navigációszolgáltató létrehozása
+              href: ./prog-guide/creating-a-windows-powershell-navigation-provider.md
+            - name: Windows PowerShelles tartalomszolgáltató létrehozása
+              href: ./prog-guide/creating-a-windows-powershell-content-provider.md
+            - name: Windows PowerShelles tulajdonságszolgáltató létrehozása
+              href: ./prog-guide/creating-a-windows-powershell-property-provider.md
+        - name: Konzolfelület létrehozása
+          href: ./prog-guide/how-to-create-a-console-shell.md
+        - name: Windows PowerShell – Fogalmak
+          href: ./prog-guide/windows-powershell-concepts.md
+        - name: Windows PowerShell – Mintakód
+          href: ./prog-guide/windows-powershell-sample-code.md
+          items:
+            - name: AccessDbProviderSample01 – kódminta
+              href: ./prog-guide/accessdbprovidersample01-code-sample.md
+            - name: AccessDbProviderSample02 – kódminta
+              href: ./prog-guide/accessdbprovidersample02-code-sample.md
+            - name: AccessDbProviderSample03 – kódminta
+              href: ./prog-guide/accessdbprovidersample03-code-sample.md
+            - name: AccessDbProviderSample04 – kódminta
+              href: ./prog-guide/accessdbprovidersample04-code-sample.md
+            - name: AccessDbProviderSample05 – kódminta
+              href: ./prog-guide/accessdbprovidersample05-code-sample.md
+            - name: AccessDbProviderSample06 – kódminta
+              href: ./prog-guide/accessdbprovidersample06-code-sample.md
+            - name: GetProc01 – Kódminták
+              href: ./prog-guide/getproc01-code-samples.md
+              items:
+                - name: 'GetProc01 (C#) – mintakód'
+                  href: ./prog-guide/getproc01-csharp-sample-code.md
+                - name: GetProc01 (VB.NET) Sample Code – mintakód
+                  href: ./prog-guide/getproc01-vb-net-sample-code.md
+            - name: GetProc02 – Kódminták
+              href: ./prog-guide/getproc02-code-samples.md
+              items:
+                - name: 'GetProc02 (C#) – mintakód'
+                  href: ./prog-guide/getproc02-csharp-sample-code.md
+                - name: GetProc02 (VB.NET) Sample Code – mintakód
+                  href: ./prog-guide/getproc02-vb-net-sample-code.md
+            - name: GetProc03 – Kódminták
+              href: ./prog-guide/getproc03-code-samples.md
+              items:
+                - name: 'GetProc03 (C#) – mintakód'
+                  href: ./prog-guide/getproc03-csharp-sample-code.md
+                - name: GetProc03 (VB.NET) Sample Code – mintakód
+                  href: ./prog-guide/getproc03-vb-net-sample-code.md
+            - name: GetProc04 – Kódminták
+              href: ./prog-guide/getproc04-code-samples.md
+              items:
+                - name: 'GetProc04 (C#) – mintakód'
+                  href: ./prog-guide/getproc04-csharp-sample-code.md
+                - name: GetProc04 (VB.NET) Sample Code – mintakód
+                  href: ./prog-guide/getproc04-vb-net-sample-code.md
+            - name: GetProc05 – Kódminták
+              href: ./prog-guide/getproc05-code-samples.md
+              items:
+                - name: 'GetProc05 (C#) – mintakód'
+                  href: ./prog-guide/getproc05-csharp-sample-code.md
+                - name: GetProc05 (VB.NET) Sample Code – mintakód
+                  href: ./prog-guide/getproc05-vb-net-sample-code.md
+            - name: StopProc01 – Kódminták
+              href: ./prog-guide/stopproc01-code-samples.md
+              items:
+                - name: 'StopProc01 (C#) – mintakód'
+                  href: ./prog-guide/stopproc01-csharp-sample-code.md
+            - name: StopProcessSample04 – kódminták
+              href: ./prog-guide/stopprocesssample04-code-samples.md
+              items:
+                - name: 'StopProcessSample04 (C#) – mintakód'
+                  href: ./prog-guide/stopprocesssample04-csharp-sample-code.md
+                - name: StopProcessSample04 (VB.NET) – mintakód
+                  href: ./prog-guide/stopprocesssample04-vb-net-sample-code.md
+            - name: Runspace01 – Kódminták
+              href: ./prog-guide/runspace01-code-samples.md
+              items:
+                - name: 'Runspace01 (C#) – Kódminta'
+                  href: ./prog-guide/runspace01-csharp-code-sample.md
+                - name: Runspace01 (VB.NET) – Kódminta
+                  href: ./prog-guide/runspace01-vb-net-code-sample.md
+            - name: Runspace02 – Kódminták
+              href: ./prog-guide/runspace02-code-samples.md
+              items:
+                - name: 'Runspace02 (C#) – Kódminta'
+                  href: ./prog-guide/runspace02-csharp-code-sample.md
+                - name: Runspace02 (VB.NET) – Kódminta
+                  href: ./prog-guide/runspace02-vb-net-code-sample.md
+            - name: Runspace03 – Kódminták
+              href: ./prog-guide/runspace03-code-samples.md
+              items:
+                - name: 'Runspace03 (C#) – Kódminta'
+                  href: ./prog-guide/runspace03-csharp-code-sample.md
+                - name: Runspace03 (VB.NET) – Kódminta
+                  href: ./prog-guide/runspace03-vb-net-code-sample.md
+            - name: Runspace04 – Kódminták
+              href: ./prog-guide/runspace04-code-samples.md
+              items:
+                - name: Runspace04 (VB.NET) – Kódminta
+                  href: ./prog-guide/runspace04-vb-net-code-sample.md
+            - name: Runspace05 – Kódminta
+              href: ./prog-guide/runspace05-code-sample.md
+            - name: Runspace06 – Kódminta
+              href: ./prog-guide/runspace06-code-sample.md
+            - name: Runspace07 – Kódminta
+              href: ./prog-guide/runspace07-code-sample.md
+            - name: Runspace08 – Kódminta
+              href: ./prog-guide/runspace08-code-sample.md
+            - name: Runspace09 – Kódminta
+              href: ./prog-guide/runspace09-code-sample.md
+            - name: Runspace10 – Kódminta
+              href: ./prog-guide/runspace10-code-sample.md
+    - name: Windows PowerShell-referencia
+      href: windows-powershell-reference.md
       items:
-      - name: A Windows PowerShell-szolgáltató tervezése
-        href: ./prog-guide/designing-your-windows-powershell-provider.md
-      - name: Alapszintű Windows PowerShell-szolgáltató létrehozása
-        href: ./prog-guide/creating-a-basic-windows-powershell-provider.md
-      - name: Windows PowerShelles meghajtószolgáltató létrehozása
-        href: ./prog-guide/creating-a-windows-powershell-drive-provider.md
-      - name: Windows PowerShelles elemszolgáltató létrehozása
-        href: ./prog-guide/creating-a-windows-powershell-item-provider.md
-      - name: Windows PowerShelles tárolószolgáltató létrehozása
-        href: ./prog-guide/creating-a-windows-powershell-container-provider.md
-      - name: Windows PowerShelles navigációszolgáltató létrehozása
-        href: ./prog-guide/creating-a-windows-powershell-navigation-provider.md
-      - name: Windows PowerShelles tartalomszolgáltató létrehozása
-        href: ./prog-guide/creating-a-windows-powershell-content-provider.md
-      - name: Windows PowerShelles tulajdonságszolgáltató létrehozása
-        href: ./prog-guide/creating-a-windows-powershell-property-provider.md
-    - name: Konzolfelület létrehozása
-      href: ./prog-guide/how-to-create-a-console-shell.md
-    - name: Windows PowerShell – Fogalmak
-      href: ./prog-guide/windows-powershell-concepts.md
-    - name: Windows PowerShell – Mintakód
-      href: ./prog-guide/windows-powershell-sample-code.md
-      items:
-      - name: AccessDbProviderSample01 – kódminta
-        href: ./prog-guide/accessdbprovidersample01-code-sample.md
-      - name: AccessDbProviderSample02 – kódminta
-        href: ./prog-guide/accessdbprovidersample02-code-sample.md
-      - name: AccessDbProviderSample03 – kódminta
-        href: ./prog-guide/accessdbprovidersample03-code-sample.md
-      - name: AccessDbProviderSample04 – kódminta
-        href: ./prog-guide/accessdbprovidersample04-code-sample.md
-      - name: AccessDbProviderSample05 – kódminta
-        href: ./prog-guide/accessdbprovidersample05-code-sample.md
-      - name: AccessDbProviderSample06 – kódminta
-        href: ./prog-guide/accessdbprovidersample06-code-sample.md
-      - name: GetProc01 – Kódminták
-        href: ./prog-guide/getproc01-code-samples.md
-        items:
-        - name: GetProc01 (C#) – mintakód
-          href: ./prog-guide/getproc01-csharp-sample-code.md
-        - name: GetProc01 (VB.NET) Sample Code – mintakód
-          href: ./prog-guide/getproc01-vb-net-sample-code.md
-      - name: GetProc02 – Kódminták
-        href: ./prog-guide/getproc02-code-samples.md
-        items:
-        - name: GetProc02 (C#) – mintakód
-          href: ./prog-guide/getproc02-csharp-sample-code.md
-        - name: GetProc02 (VB.NET) Sample Code – mintakód
-          href: ./prog-guide/getproc02-vb-net-sample-code.md
-      - name: GetProc03 – Kódminták
-        href: ./prog-guide/getproc03-code-samples.md
-        items:
-        - name: GetProc03 (C#) – mintakód
-          href: ./prog-guide/getproc03-csharp-sample-code.md
-        - name: GetProc03 (VB.NET) Sample Code – mintakód
-          href: ./prog-guide/getproc03-vb-net-sample-code.md
-      - name: GetProc04 – Kódminták
-        href: ./prog-guide/getproc04-code-samples.md
-        items:
-        - name: GetProc04 (C#) – mintakód
-          href: ./prog-guide/getproc04-csharp-sample-code.md
-        - name: GetProc04 (VB.NET) Sample Code – mintakód
-          href: ./prog-guide/getproc04-vb-net-sample-code.md
-      - name: GetProc05 – Kódminták
-        href: ./prog-guide/getproc05-code-samples.md
-        items:
-        - name: GetProc05 (C#) – mintakód
-          href: ./prog-guide/getproc05-csharp-sample-code.md
-        - name: GetProc05 (VB.NET) Sample Code – mintakód
-          href: ./prog-guide/getproc05-vb-net-sample-code.md
-      - name: StopProc01 – Kódminták
-        href: ./prog-guide/stopproc01-code-samples.md
-        items:
-        - name: StopProc01 (C#) – mintakód
-          href: ./prog-guide/stopproc01-csharp-sample-code.md
-      - name: StopProcessSample04 – kódminták
-        href: ./prog-guide/stopprocesssample04-code-samples.md
-        items:
-        - name: StopProcessSample04 (C#) – mintakód
-          href: ./prog-guide/stopprocesssample04-csharp-sample-code.md
-        - name: StopProcessSample04 (VB.NET) – mintakód
-          href: ./prog-guide/stopprocesssample04-vb-net-sample-code.md
-      - name: Runspace01 – Kódminták
-        href: ./prog-guide/runspace01-code-samples.md
-        items:
-        - name: Runspace01 (C#) – Kódminta
-          href: ./prog-guide/runspace01-csharp-code-sample.md
-        - name: Runspace01 (VB.NET) – Kódminta
-          href: ./prog-guide/runspace01-vb-net-code-sample.md
-      - name: Runspace02 – Kódminták
-        href: ./prog-guide/runspace02-code-samples.md
-        items:
-        - name: Runspace02 (C#) – Kódminta
-          href: ./prog-guide/runspace02-csharp-code-sample.md
-        - name: Runspace02 (VB.NET) – Kódminta
-          href: ./prog-guide/runspace02-vb-net-code-sample.md
-      - name: Runspace03 – Kódminták
-        href: ./prog-guide/runspace03-code-samples.md
-        items:
-        - name: Runspace03 (C#) – Kódminta
-          href: ./prog-guide/runspace03-csharp-code-sample.md
-        - name: Runspace03 (VB.NET) – Kódminta
-          href: ./prog-guide/runspace03-vb-net-code-sample.md
-      - name: Runspace04 – Kódminták
-        href: ./prog-guide/runspace04-code-samples.md
-        items:
-        - name: Runspace04 (VB.NET) – Kódminta
-          href: ./prog-guide/runspace04-vb-net-code-sample.md
-      - name: Runspace05 – Kódminta
-        href: ./prog-guide/runspace05-code-sample.md
-      - name: Runspace06 – Kódminta
-        href: ./prog-guide/runspace06-code-sample.md
-      - name: Runspace07 – Kódminta
-        href: ./prog-guide/runspace07-code-sample.md
-      - name: Runspace08 – Kódminta
-        href: ./prog-guide/runspace08-code-sample.md
-      - name: Runspace09 – Kódminta
-        href: ./prog-guide/runspace09-code-sample.md
-      - name: Runspace10 – Kódminta
-        href: ./prog-guide/runspace10-code-sample.md
-  - name: Windows PowerShell-referencia
-    href: windows-powershell-reference.md
-    items:
-    - name: Újdonságok
-      href: windows-powershell-reference-whats-new.md
-ms.openlocfilehash: 1ccdff0cabb81cbd68ecbfbdae69672463f9c4e8
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
-ms.translationtype: HT
-ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056617"
+        - name: Újdonságok
+          href: windows-powershell-reference-whats-new.md
