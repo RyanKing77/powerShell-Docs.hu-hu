@@ -9,31 +9,31 @@ ms.topic: article
 ms.assetid: bcf0739e-920e-4dd8-afca-2c6d6927bc2a
 caps.latest.revision: 10
 ms.openlocfilehash: ef3b5bab5dcafc578397bcb4f071776bbdeaced1
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068385"
 ---
-# <a name="cmdlet-sets"></a><span data-ttu-id="bdce8-102">Parancsmagkészletek</span><span class="sxs-lookup"><span data-stu-id="bdce8-102">Cmdlet Sets</span></span>
+# <a name="cmdlet-sets"></a><span data-ttu-id="8e6a2-102">Parancsmagkészletek</span><span class="sxs-lookup"><span data-stu-id="8e6a2-102">Cmdlet Sets</span></span>
 
-<span data-ttu-id="bdce8-103">A parancsmagok tervezésekor esetekben kell bizonyos műveletek végrehajtását az adott adatok a merülhetnek fel.</span><span class="sxs-lookup"><span data-stu-id="bdce8-103">When you design your cmdlets, you might encounter cases in which you need to perform several actions on the same piece of data.</span></span> <span data-ttu-id="bdce8-104">Szüksége lehet például beolvasása és adatok vagy elindításához és a folyamat leállítása.</span><span class="sxs-lookup"><span data-stu-id="bdce8-104">For example, you might need to get and set data or start and stop a process.</span></span> <span data-ttu-id="bdce8-105">Annak ellenére, hozhat létre külön parancsmagok minden művelet végrehajtására, a parancsmag megtervezésekor osztály, amely az egyes parancsmagok osztályok származnak.</span><span class="sxs-lookup"><span data-stu-id="bdce8-105">Although you will need to create separate cmdlets to perform each action, your cmdlet design should include a base class from which the classes for the individual cmdlets are derived.</span></span>
+<span data-ttu-id="8e6a2-103">A parancsmagok tervezésekor esetekben kell bizonyos műveletek végrehajtását az adott adatok a merülhetnek fel.</span><span class="sxs-lookup"><span data-stu-id="8e6a2-103">When you design your cmdlets, you might encounter cases in which you need to perform several actions on the same piece of data.</span></span> <span data-ttu-id="8e6a2-104">Szüksége lehet például beolvasása és adatok vagy elindításához és a folyamat leállítása.</span><span class="sxs-lookup"><span data-stu-id="8e6a2-104">For example, you might need to get and set data or start and stop a process.</span></span> <span data-ttu-id="8e6a2-105">Annak ellenére, hozhat létre külön parancsmagok minden művelet végrehajtására, a parancsmag megtervezésekor osztály, amely az egyes parancsmagok osztályok származnak.</span><span class="sxs-lookup"><span data-stu-id="8e6a2-105">Although you will need to create separate cmdlets to perform each action, your cmdlet design should include a base class from which the classes for the individual cmdlets are derived.</span></span>
 
-<span data-ttu-id="bdce8-106">Vegye figyelembe az alábbiakat, osztály végrehajtása során.</span><span class="sxs-lookup"><span data-stu-id="bdce8-106">Keep the following things in mind when implementing a base class.</span></span>
+<span data-ttu-id="8e6a2-106">Vegye figyelembe az alábbiakat, osztály végrehajtása során.</span><span class="sxs-lookup"><span data-stu-id="8e6a2-106">Keep the following things in mind when implementing a base class.</span></span>
 
-- <span data-ttu-id="bdce8-107">Deklarálja a származtatott parancsmagok az alaposztályban által használt bármilyen általános paramétert.</span><span class="sxs-lookup"><span data-stu-id="bdce8-107">Declare any common parameters used by all the derived cmdlets in the base class.</span></span>
+- <span data-ttu-id="8e6a2-107">Deklarálja a származtatott parancsmagok az alaposztályban által használt bármilyen általános paramétert.</span><span class="sxs-lookup"><span data-stu-id="8e6a2-107">Declare any common parameters used by all the derived cmdlets in the base class.</span></span>
 
-- <span data-ttu-id="bdce8-108">Parancsmag-specifikus paramétereket adhat hozzá a megfelelő parancsmag osztályhoz.</span><span class="sxs-lookup"><span data-stu-id="bdce8-108">Add cmdlet-specific parameters to the appropriate cmdlet class.</span></span>
+- <span data-ttu-id="8e6a2-108">Parancsmag-specifikus paramétereket adhat hozzá a megfelelő parancsmag osztályhoz.</span><span class="sxs-lookup"><span data-stu-id="8e6a2-108">Add cmdlet-specific parameters to the appropriate cmdlet class.</span></span>
 
-- <span data-ttu-id="bdce8-109">Bírálja felül a megfelelő bemeneti metódus az alaposztály feldolgozása.</span><span class="sxs-lookup"><span data-stu-id="bdce8-109">Override the appropriate input processing method in the base class.</span></span>
+- <span data-ttu-id="8e6a2-109">Bírálja felül a megfelelő bemeneti metódus az alaposztály feldolgozása.</span><span class="sxs-lookup"><span data-stu-id="8e6a2-109">Override the appropriate input processing method in the base class.</span></span>
 
-- <span data-ttu-id="bdce8-110">Deklarálja a [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) lévő összes parancsmag osztály attribútumot, de nem deklarálja a az alaposztály alaposztályát.</span><span class="sxs-lookup"><span data-stu-id="bdce8-110">Declare the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute on all cmdlet classes, but do not declare it on the base class.</span></span>
+- <span data-ttu-id="8e6a2-110">Deklarálja a [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) lévő összes parancsmag osztály attribútumot, de nem deklarálja a az alaposztály alaposztályát.</span><span class="sxs-lookup"><span data-stu-id="8e6a2-110">Declare the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute on all cmdlet classes, but do not declare it on the base class.</span></span>
 
-- <span data-ttu-id="bdce8-111">Alkalmazzon egy [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) vagy [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) osztályt, amelynek a neve és leírása parancsmagok készletét tartalmazza.</span><span class="sxs-lookup"><span data-stu-id="bdce8-111">Implement a [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class whose name and description reflects the set of cmdlets.</span></span>
+- <span data-ttu-id="8e6a2-111">Alkalmazzon egy [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) vagy [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) osztályt, amelynek a neve és leírása parancsmagok készletét tartalmazza.</span><span class="sxs-lookup"><span data-stu-id="8e6a2-111">Implement a [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class whose name and description reflects the set of cmdlets.</span></span>
 
-## <a name="example"></a><span data-ttu-id="bdce8-112">Példa</span><span class="sxs-lookup"><span data-stu-id="bdce8-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="8e6a2-112">Példa</span><span class="sxs-lookup"><span data-stu-id="8e6a2-112">Example</span></span>
 
-<span data-ttu-id="bdce8-113">Az alábbi példa egy alaposztály, amelyet a Get-Proc és Stop-Proc parancsmag alaposztályból származik az azonos megvalósítását mutatja be.</span><span class="sxs-lookup"><span data-stu-id="bdce8-113">The following example shows the implementation of a base class that is used by Get-Proc and Stop-Proc cmdlet that derive from the same base class.</span></span>
+<span data-ttu-id="8e6a2-113">Az alábbi példa egy alaposztály, amelyet a Get-Proc és Stop-Proc parancsmag alaposztályból származik az azonos megvalósítását mutatja be.</span><span class="sxs-lookup"><span data-stu-id="8e6a2-113">The following example shows the implementation of a base class that is used by Get-Proc and Stop-Proc cmdlet that derive from the same base class.</span></span>
 
 ```csharp
 using System;
@@ -170,6 +170,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="bdce8-114">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="bdce8-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8e6a2-114">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="8e6a2-114">See Also</span></span>
 
-[<span data-ttu-id="bdce8-115">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="bdce8-115">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="8e6a2-115">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="8e6a2-115">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

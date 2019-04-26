@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
 caps.latest.revision: 8
 ms.openlocfilehash: 2d634e7638ec0e0117d65ca0b2d08e68f0068a03
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068249"
 ---
-# <a name="defining-default-member-sets-for-objects"></a><span data-ttu-id="e239f-102">Objektumok alapértelmezett tagkészleteinek definiálása</span><span class="sxs-lookup"><span data-stu-id="e239f-102">Defining Default Member Sets for Objects</span></span>
+# <a name="defining-default-member-sets-for-objects"></a><span data-ttu-id="a68fb-102">Objektumok alapértelmezett tagkészleteinek definiálása</span><span class="sxs-lookup"><span data-stu-id="a68fb-102">Defining Default Member Sets for Objects</span></span>
 
-<span data-ttu-id="e239f-103">A tag PSStandardMembers set meghatározásához az alapértelmezett tulajdonság beállítása az adott objektumhoz tartozó Windows PowerShell használják.</span><span class="sxs-lookup"><span data-stu-id="e239f-103">The PSStandardMembers member set is used by Windows PowerShell to define the default property sets for an object.</span></span> <span data-ttu-id="e239f-104">Az alapértelmezett tulajdonság beállítása csak azokat a tulajdonságokat a tulajdonság beállítása által meghatározott megjelenítéséhez is használható parancsok, mint a formázási parancsmagok.</span><span class="sxs-lookup"><span data-stu-id="e239f-104">The default property sets can be used by commands such as the formatting cmdlets to display only those properties that are defined by the property set.</span></span> <span data-ttu-id="e239f-105">Az alapértelmezett tulajdonság beállítása DefaultDisplayProperty DefaultDisplayPropertySet és DefaultKeyPropertySet tartalmazza.</span><span class="sxs-lookup"><span data-stu-id="e239f-105">The default property sets include DefaultDisplayProperty, DefaultDisplayPropertySet, and DefaultKeyPropertySet.</span></span> <span data-ttu-id="e239f-106">Windows PowerShell figyelmen kívül hagyja az összes többi tag adatkészleteket és a többi tulajdonság beállítása hozzá a PSStandardMembers tag.</span><span class="sxs-lookup"><span data-stu-id="e239f-106">Windows PowerShell ignores all other member sets and any other property sets added to the PSStandardMembers member set.</span></span>
+<span data-ttu-id="a68fb-103">A tag PSStandardMembers set meghatározásához az alapértelmezett tulajdonság beállítása az adott objektumhoz tartozó Windows PowerShell használják.</span><span class="sxs-lookup"><span data-stu-id="a68fb-103">The PSStandardMembers member set is used by Windows PowerShell to define the default property sets for an object.</span></span> <span data-ttu-id="a68fb-104">Az alapértelmezett tulajdonság beállítása csak azokat a tulajdonságokat a tulajdonság beállítása által meghatározott megjelenítéséhez is használható parancsok, mint a formázási parancsmagok.</span><span class="sxs-lookup"><span data-stu-id="a68fb-104">The default property sets can be used by commands such as the formatting cmdlets to display only those properties that are defined by the property set.</span></span> <span data-ttu-id="a68fb-105">Az alapértelmezett tulajdonság beállítása DefaultDisplayProperty DefaultDisplayPropertySet és DefaultKeyPropertySet tartalmazza.</span><span class="sxs-lookup"><span data-stu-id="a68fb-105">The default property sets include DefaultDisplayProperty, DefaultDisplayPropertySet, and DefaultKeyPropertySet.</span></span> <span data-ttu-id="a68fb-106">Windows PowerShell figyelmen kívül hagyja az összes többi tag adatkészleteket és a többi tulajdonság beállítása hozzá a PSStandardMembers tag.</span><span class="sxs-lookup"><span data-stu-id="a68fb-106">Windows PowerShell ignores all other member sets and any other property sets added to the PSStandardMembers member set.</span></span>
 
-## <a name="member-set-for-systemdiagnosticsprocess"></a><span data-ttu-id="e239f-107">Tag beállítása a System.Diagnostics.Process</span><span class="sxs-lookup"><span data-stu-id="e239f-107">Member Set for System.Diagnostics.Process</span></span>
+## <a name="member-set-for-systemdiagnosticsprocess"></a><span data-ttu-id="a68fb-107">Tag beállítása a System.Diagnostics.Process</span><span class="sxs-lookup"><span data-stu-id="a68fb-107">Member Set for System.Diagnostics.Process</span></span>
 
-<span data-ttu-id="e239f-108">A következő példában a PSStandardMembers tag beállítása határozza meg a beállított DefaultDisplayPropertySet tulajdonság [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objektumokat.</span><span class="sxs-lookup"><span data-stu-id="e239f-108">In the following example, the PSStandardMembers member set defines the DefaultDisplayPropertySet property set for [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects.</span></span> <span data-ttu-id="e239f-109">Ez a tulajdonság beállítása használják a [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="e239f-109">This property set is used by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.</span></span>
+<span data-ttu-id="a68fb-108">A következő példában a PSStandardMembers tag beállítása határozza meg a beállított DefaultDisplayPropertySet tulajdonság [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objektumokat.</span><span class="sxs-lookup"><span data-stu-id="a68fb-108">In the following example, the PSStandardMembers member set defines the DefaultDisplayPropertySet property set for [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects.</span></span> <span data-ttu-id="a68fb-109">Ez a tulajdonság beállítása használják a [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="a68fb-109">This property set is used by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.</span></span>
 
 ```xml
 <Type>
@@ -43,7 +43,7 @@ ms.locfileid: "57794909"
   </MemberSet>
 ```
 
-<span data-ttu-id="e239f-110">A következő kimenetet jeleníti meg az alapértelmezett tulajdonság által visszaadott a [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="e239f-110">The following output shows the default properties returned by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.</span></span> <span data-ttu-id="e239f-111">Csak a `Id`, `Handles`, `CPU`, és `Name` tulajdonságait adja vissza minden egyes folyamat objektumról.</span><span class="sxs-lookup"><span data-stu-id="e239f-111">Only the `Id`, `Handles`, `CPU`, and `Name` properties are returned for each process object.</span></span>
+<span data-ttu-id="a68fb-110">A következő kimenetet jeleníti meg az alapértelmezett tulajdonság által visszaadott a [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) parancsmagot.</span><span class="sxs-lookup"><span data-stu-id="a68fb-110">The following output shows the default properties returned by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet.</span></span> <span data-ttu-id="a68fb-111">Csak a `Id`, `Handles`, `CPU`, és `Name` tulajdonságait adja vissza minden egyes folyamat objektumról.</span><span class="sxs-lookup"><span data-stu-id="a68fb-111">Only the `Id`, `Handles`, `CPU`, and `Name` properties are returned for each process object.</span></span>
 
 ```powershell
 Get-Process | format-list
@@ -62,6 +62,6 @@ Name    : agrsmsvc
 ...
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e239f-112">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="e239f-112">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a68fb-112">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="a68fb-112">See Also</span></span>
 
-[<span data-ttu-id="e239f-113">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="e239f-113">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="a68fb-113">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="a68fb-113">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
