@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Lekérési kiszolgáló – ajánlott eljárások
 ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079200"
 ---
 # <a name="pull-server-best-practices"></a>Lekérési kiszolgáló – ajánlott eljárások
 
-Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > A lekéréses kiszolgálón (Windows-szolgáltatás *DSC-szolgáltatás*), a Windows Server támogatott összetevője létezik azonban tervekben sem funkciókat és képességeket kínálnak. Javasoljuk, hogy helyeződnek felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (beleértve a lekéréses kiszolgálón a Windows Server csomagban) vagy a közösségi megoldások felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
 
-Összegzés: Ez a dokumentum célja a folyamat és bővíthetőség felhőkarrierre készítik megoldás-mérnökök segítségét. Részletek ajánlott eljárásokat kell biztosítania, ügyfél által azonosított, és a termék csapatától javaslatok jövőbeli irányuló és stabil tekinthető majd érvényesíteni.
+Összefoglalás: Ez a dokumentum célja a folyamat és bővíthetőség felhőkarrierre készítik megoldás-mérnökök segítségét. Részletek ajánlott eljárásokat kell biztosítania, ügyfél által azonosított, és a termék csapatától javaslatok jövőbeli irányuló és stabil tekinthető majd érvényesíteni.
 
 | |Dokumentum adatai|
 |:---|:---|
@@ -104,7 +104,7 @@ Rendelkeznek hozzáféréssel a Windows Server telepítési fájlok, amelyek má
 
 Kérje le a telepítések támogatottak a fizikai és virtuális kiszolgáló. A lekéréses kiszolgálón méretezési követelményei összhangba kerüljenek a Windows Server 2012 R2 követelményei.
 
-Processzor: 1,4 GHz-es 64 bites processzor, memória: 512 MB szabad lemezterület: 32 GB-os hálózati: Gigabit Ethernet Adapter
+CPU: 1,4 GHz-es 64 bites processzor, memória: 512 MB szabad lemezterület: 32 GB-os hálózati: Gigabit Ethernet Adapter
 
 A tervezési feladat|
 ---|

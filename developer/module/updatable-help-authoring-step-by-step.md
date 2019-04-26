@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
 caps.latest.revision: 13
 ms.openlocfilehash: fbc77cc0fafce93d239da1c459d4b761b21ef3cb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849832"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082124"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>Frissíthető súgó írása: Részletes útmutató
 
@@ -25,7 +25,7 @@ Frissíthető súgó célja a végfelhasználók számára, de jelentős előny�
 
 Az alábbi lépéseket nyújt áttekintést a folyamat a frissíthető súgó támogatása.
 
-### <a name="step-1-find-an-internet-site-for-your-help-files"></a>1. lépés: A súgófájlok internetes hely keresése
+### <a name="step-1-find-an-internet-site-for-your-help-files"></a>1. lépés: A súgófájlok internetes hely keresése
 
 Frissíthető súgó létrehozásának első lépése, hogy az interneten található, a modul Súgó fájlok megtalálja. Valójában két különböző helyen is használhatja. A modul súgó információs fájl (HelpInfo XML - alább ismertetett) is megőrizheti az Internet egyetlen helyen, és a súgó tartalom CAB-fájlok internetes egy másik helyen. Súgó CAB tartozó összes tartalomfájlt modul ugyanazon a helyen kell lennie. Súgó tartalma CAB-fájlok eltérő modulok helyezheti ugyanazon a helyen.
 
