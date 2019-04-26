@@ -1,46 +1,46 @@
 ---
 ms.date: 06/12/2017
-keywords: a DSC, a powershell, a konfiguráció, a beállítása
-title: Konfigurációs adatokat a hitelesítő adatok beállításai
+keywords: DSC, powershell, a konfigurációt, a beállítása
+title: A konfigurációs adatok hitelesítő adatok beállításai
 ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "55686375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080152"
 ---
-# <a name="credentials-options-in-configuration-data"></a>Konfigurációs adatokat a hitelesítő adatok beállításai
+# <a name="credentials-options-in-configuration-data"></a>A konfigurációs adatok hitelesítő adatok beállításai
 
->Érvényes: Windows PowerShell 5.0
+>A következőkre vonatkozik: Windows PowerShell 5.0
 
 ## <a name="plain-text-passwords-and-domain-users"></a>Egyszerű szöveges jelszavak és a tartományi felhasználók
 
-A DSC-konfigurációk titkosítás nélkül hitelesítő adatokat tartalmazó hoz létre egy egyszerű szöveges jelszavak hibaüzenet.
-Is DSC állít elő egy figyelmeztetés, ha a tartományi hitelesítő adatok használatával.
-Ne jelenjen meg többé a hibaüzenetek és figyelmeztető üzenetek használja a DSC-konfigurációs adatok kulcsszavak:
+DSC-konfigurációkat titkosítás nélküli hitelesítő adatot tartalmazó egyszerű szöveges jelszavak kapcsolatos hibaüzenet hoz létre.
+DSC is generál egy figyelmeztetés, tartományi hitelesítő adatok használata esetén.
+Le ezeket a hibaüzenetek és figyelmeztető üzenetek használata a DSC-konfigurációs adatok kulcsszavakat:
 
 - **PsDscAllowPlainTextPassword**
 - **PsDscAllowDomainUser**
 
 > [!NOTE]
-> Egyszerű szöveges jelszavak titkosítás nélkül tárolja/továbbítása általában nem biztonságos. Ebben a témakörben ismertetett módszerek használatával biztonságossá tétele a hitelesítő adatok használata ajánlott.
-> Az Azure Automation DSC szolgáltatás konfigurációk fordítása és biztonságosan tárolt hitelesítő adatok központi kezelését teszi lehetővé.
-> Információkért lásd: [A DSC-konfigurációk fordítása / hitelesítőadat-eszközök](/azure/automation/automation-dsc-compile#credential-assets)
+> Nem titkosított szöveges jelszavak tárolására és továbbítására használata általában nem biztonságos. Hitelesítő adatok védelme az ebben a témakörben ismertetett technikák használatával használata javasolt.
+> Az Azure Automation DSC szolgáltatás lehetővé teszi, hogy központilag kezelheti a lefordított konfigurációk és biztonságosan tárolt hitelesítő adatokat.
+> Információkért lásd: [DSC-konfigurációk fordítása / hitelesítő objektumai](/azure/automation/automation-dsc-compile#credential-assets)
 
 ## <a name="handling-credentials-in-dsc"></a>A DSC hitelesítő adatok kezelése
 
-A DSC-konfiguráció erőforrások futtató `Local System` alapértelmezés szerint.
-Azonban bizonyos erőforrások szükséges hitelesítő adatokat, például amikor a `Package` egy adott felhasználói fiókhoz tartozó szoftver telepítéséhez szükséges erőforrás.
+DSC-konfiguráció erőforrásokat futtató `Local System` alapértelmezés szerint.
+Azonban bizonyos erőforrások szükséges hitelesítő adatokat, például amikor a `Package` erőforrás van szüksége egy adott felhasználói fiók alatt a szoftverek telepítését.
 
-Korábbi erőforrást használja a kódolt `Credential` kezeléséhez, ez a tulajdonság neve.
-WMF 5.0 hozzáadott automatikus `PsDscRunAsCredential` összes erőforrás tulajdonság.
-További információ `PsDscRunAsCredential`, lásd: [felhasználói hitelesítő adatokkal rendelkező futtató DSC](runAsUser.md).
-Egyéni erőforrásokat és újabb tulajdonsággal Ez automatikus létrehozása a hitelesítő adatokat a saját tulajdonság helyett.
+Korábbi erőforrást használja, a szokott `Credential` kezeléséhez, ez a tulajdonság neve.
+A WMF 5.0 hozzáadva egy automatikus `PsDscRunAsCredential` tulajdonság minden erőforráshoz.
+További információ `PsDscRunAsCredential`, lásd: [DSC futtatása felhasználói hitelesítő adatokkal](runAsUser.md).
+Egyéni erőforrásokat és újabb tulajdonsággal a automatikus létrehozása a hitelesítő adatokat a saját tulajdonság helyett.
 
 > [!NOTE]
-> Az egyes erőforrások terv bizonyos okból többféle hitelesítő adatot használnak, és saját hitelesítő adat tulajdonságokkal rendelkeznek.
+> Bizonyos erőforrások kialakítása több hitelesítő adatok használata valamilyen konkrét érv amellett, és a saját hitelesítő adat tulajdonságainak rendelkeznek.
 
-A rendelkezésre álló hitelesítő adat található erőforrás tulajdonságainak bármelyikével `Get-DscResource -Name ResourceName -Syntax` vagy az Intellisense a ISE (`CTRL+SPACE`).
+A rendelkezésre álló hitelesítő adat található erőforrás tulajdonságainak bármelyikkel `Get-DscResource -Name ResourceName -Syntax` vagy az ISE-ben az Intellisense (`CTRL+SPACE`).
 
 ```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
@@ -58,26 +58,26 @@ Group [String] #ResourceName
 }
 ```
 
-Ez a példa egy [csoport](../resources/resources.md) erőforrást a `PSDesiredStateConfiguration` DSC beépített erőforrás-modul.
-Ez lehet helyi csoportok létrehozása és tagok hozzáadása vagy eltávolítása.
-Mindkét fogadja el a `Credential` tulajdonság és az automatikus `PsDscRunAsCredential` tulajdonság.
-Azonban, hogy az erőforrás használja-e csak a `Credential` tulajdonság.
+Ez a példa egy [csoport](../resources/resources.md) erőforrásban a `PSDesiredStateConfiguration` DSC-erőforrás beépített modul.
+Azt is létre helyi csoportok és tagok hozzáadása vagy eltávolítása.
+Mindkettő elfogadja a `Credential` tulajdonság és az automatikus `PsDscRunAsCredential` tulajdonság.
+Azonban az erőforrás csak használja a `Credential` tulajdonság.
 
-További információ a `PsDscRunAsCredential` tulajdonság, lásd: [felhasználói hitelesítő adatokkal rendelkező futtató DSC](runAsUser.md).
+További információ a `PsDscRunAsCredential` tulajdonságot használja, lásd: [DSC futtatása felhasználói hitelesítő adatokkal](runAsUser.md).
 
-## <a name="example-the-group-resource-credential-property"></a>Példa: A Credential tulajdonság csoporterőforrás
+## <a name="example-the-group-resource-credential-property"></a>Példa: A csoport erőforrás hitelesítő adatok a tulajdonság
 
-A DSC fut a `Local System`, így az engedélyek módosítása a helyi felhasználók és csoportok már rendelkezik.
-Ha a hozzáadott tagja a helyi fiók, akkor nem hitelesítő adatok szükségesek.
-Ha a `Group` erőforrás egy olyan tartományi fiók hozzáadása a helyi csoport, akkor szükség a hitelesítő adatokat.
+DSC fut a `Local System`, így már rendelkezik a helyi felhasználók és csoportok módosításához.
+Ha a tag hozzáadva egy helyi fiókot, akkor nem hitelesítő adatok nem szükséges.
+Ha a `Group` erőforrás egy tartományi fiókot ad a helyi csoport, akkor szükség egy hitelesítő adatot.
 
 Az Active Directory névtelen lekérdezések nem engedélyezettek.
-A `Credential` tulajdonsága a `Group` erőforrás lekérdezés Active Directory tartományi fiók.
-A legtöbb célra ez lehet egy általános felhasználói fiókot, mert alapértelmezés szerint a felhasználók *olvasási* nagy része a objektumok az Active Directoryban.
+A `Credential` tulajdonságát a `Group` erőforrás az Active Directory lekérdezéséhez használt tartományi fiókhoz.
+A legtöbb célra ez lehet egy általános felhasználói fiókot, mert alapértelmezés szerint a felhasználók *olvasási* nagy része az objektumok az Active Directoryban.
 
-## <a name="example-configuration"></a>Példa konfiguráció
+## <a name="example-configuration"></a>Konfigurálása – példa
 
-Az alábbi példakód egy helyi csoport számára a tartományi felhasználók feltöltéséhez DSC használja:
+Az alábbi példakód egy tartományi felhasználót egy helyi csoport feltöltéséhez használja a DSC:
 
 ```powershell
 Configuration DomainCredentialExample
@@ -103,7 +103,7 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred
 ```
 
-Ezt a kódot állít elő, egy hibaüzenet és a figyelmeztető üzenet:
+Ez a kód egy hiba- és a figyelmeztető üzenetet hoz létre:
 
 ```
 ConvertTo-MOFInstance : System.InvalidOperationException error processing property 'Credential' OF
@@ -132,20 +132,20 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : FailToProcessConfiguration
 ```
 
-Ebben a példában két problémákkal rendelkezik:
+Ebben a példában két veti fel:
 
-1. Hiba ismerteti, hogy a jelszavakat egyszerű szöveges formában nem támogatottak
-2. Figyelmeztetés tesz elérhetővé a tartományi hitelesítő adatokkal szemben
+1. Hiba történt ismerteti, hogy egyszerű szöveges jelszavak használata nem ajánlott
+2. Figyelmeztetés tanácsolja elleni tartományi hitelesítő adatok használatával
 
-A jelzők **PSDSCAllowPlainTextPassword** és **PSDSCAllowDomainUser** hiba és figyelmeztetés, amely tájékoztatja a felhasználót a járulékos kockázatok, elhagyása.
+A jelzők **PSDSCAllowPlainTextPassword** és **PSDSCAllowDomainUser** mellőzése a hiba és figyelmeztetés, amely tájékoztatja a felhasználót az azzal járó kockázat.
 
 ## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
-Az első hibaüzenet rendelkezik olyan dokumentáció URL-címe.
-Ez a hivatkozás a jelszavak titkosítása ismerteti egy [ConfigurationData](./configData.md) struktúra és a tanúsítvány.
-További információ a tanúsítványok és DSC [olvassa el a feladás egy vagy több](http://aka.ms/certs4dsc).
+Az első hibaüzenet-dokumentáció URL-címet tartalmaz.
+Ez a hivatkozás ismerteti a jelszavak titkosítása egy [ConfigurationData](./configData.md) struktúra és a egy tanúsítványt.
+További információ a tanúsítványok és a DSC [blogbejegyzésből](http://aka.ms/certs4dsc).
 
-Az erőforrás megköveteli, hogy egy egyszerű szöveges jelszó, a `PsDscAllowPlainTextPassword` kulcsszó a konfigurációs adatokat a következő szakaszban:
+Egyszerű szöveges jelszó kényszerítése, a erőforrás igényel a `PsDscAllowPlainTextPassword` kulcsszót a konfigurációs adatokat a következő szakaszban:
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
@@ -181,7 +181,7 @@ DomainCredentialExample -ConfigurationData $cd
 
 ### <a name="localhostmof"></a>localhost.mof
 
-A **PSDSCAllowPlainTextPassword** jelző megköveteli, hogy a felhasználó megerősíti a jelszavakat egyszerű szöveges formában tárolja a MOF-fájlban kockázatát. A generált MOF-fájlban annak ellenére, hogy egy **PSCredential** objektumot tartalmazó egy **SecureString** lett megadva, a jelszavak továbbra is egyszerű szövegként jelenik meg. Ez az az egyetlen alkalom érhetők el a hitelesítő adatokat. A MOF fájl által biztosított mindenki számára hozzáférést a rendszergazdai fiók hozzáférjenek.
+A **PSDSCAllowPlainTextPassword** jelző megköveteli, hogy a felhasználó elfogadja a MOF-fájlnak egyszerű szöveges jelszavak tárolására kockázatát. A létrehozott MOF-fájlnak annak ellenére, hogy egy **PSCredential** tulajdonságot tartalmazó objektumra egy **SecureString** lett megadva, a jelszavak továbbra is egyszerű szövegként jelenik meg. Ez az az egyetlen alkalom, a hitelesítő adatok érhetők el. Hozzáférjenek a MOF-fájl biztosít, bárki hozzáférhet a rendszergazdai fiókhoz.
 
 ```
 /*
@@ -216,33 +216,33 @@ ModuleVersion = "1.0";
 };
 ```
 
-### <a name="credentials-in-transit-and-at-rest"></a>Az átvitel során, és a hitelesítő adatok
+### <a name="credentials-in-transit-and-at-rest"></a>Hitelesítő adatok átvitel és inaktív
 
-- A **PSDscAllowPlainTextPassword** jelző lehetővé teszi, hogy a jelszavakat egyszerű szöveges tartalmazó MOF-fájlok összeállítása.
+- A **PSDscAllowPlainTextPassword** jelző lehetővé teszi, hogy a tiszta szöveges jelszavak tartalmazó MOF-fájlok összeállítása.
   Intézkedésekre tiszta szöveges jelszavak tartalmazó MOF-fájlok tárolásakor.
-- Ha a a MOF-fájlt egy csomópontot a rendszer **leküldéses** módban, a Rendszerfelügyeleti webszolgáltatások titkosítja a kommunikációt a tiszta szöveges jelszavak védelmére, kivéve, ha felülírja az alapértelmezett a **AllowUnencrypted** paraméter.
-  - A MOF-fájlban található, aktívan tanúsítvánnyal MOF titkosított védi, mielőtt telepítve van a csomópont.
-- A **lekéréses** módban Windows lekérési kiszolgálójával, hogy HTTPS használatával titkosítja a forgalmat az Internet Information Server megadott protokoll használatával konfigurálható. További információkért lásd: a cikkek [ügyféltelepítéshez DSC lekérési](../pull-server/pullclient.md) és [biztonságossá tétele MOF-fájlok tanúsítványokkal](../pull-server/secureMOF.md).
-  - Az a [Azure Automation Állapotkonfiguráció](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) szolgáltatás, lekéréses mindig titkosítja a forgalmat.
-- A csomópont MOF-fájlok titkosított aktívan PowerShell 5.0 kezdve.
-  - A PowerShell 4.0 MOF fájlok titkosítatlan aktívan kivéve, ha azok titkosíthatók a tanúsítvánnyal leküldött, vagy le kell a csomópontot.
+- Ha a MOF-fájl kézbesíti a rendszer egy csomópontja **leküldéses** mód, a Rendszerfelügyeleti webszolgáltatások titkosítja a kommunikációt a tiszta szöveges jelszavak védelmére, kivéve, ha az alapértelmezés felülbírálása a **AllowUnencrypted** paraméter.
+  - A MOF-fájlban található, aktívan titkosítása a MOF-tanúsítvánnyal védi, mielőtt egy csomópontjára telepítve van.
+- A **lekéréses** mód, a Windows-lekérési kiszolgálójával, hogy a forgalom az Internet Information Server megadott protokoll használatával titkosítja a HTTPS használatával konfigurálhatja. További információkért tekintse meg a cikkeket [DSC lekérési ügyfél beállítása](../pull-server/pullclient.md) és [biztonságossá tétele MOF-fájlok tanúsítványokkal](../pull-server/secureMOF.md).
+  - Az a [Azure Automation Állapotkonfiguráció](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) szolgáltatás, lekéréses forgalmat a rendszer mindig titkosítja.
+- Inaktív titkosított MOF-fájlok a csomóponton, a PowerShell 5.0-s verziójától.
+  - A PowerShell 4.0-s MOF fájlokhoz nem titkosított inaktív, kivéve, ha azok van titkosítva, egy tanúsítványt, ha leküldött vagy lekérte a csomópontra.
 
-**A Microsoft tesz elérhetővé elkerülése formázatlan szöveges jelszavak miatt a jelentős biztonsági kockázatot jelent.**
+**Egyszerű szöveges jelszavak miatt a jelentős biztonsági kockázat elkerülése érdekében a Microsoft azt ajánlja.**
 
 ## <a name="domain-credentials"></a>Tartományi hitelesítő adatok
 
-A példa konfigurációs parancsprogram újra fut (a vagy titkosítás nélkül), továbbra is a figyelmeztetést, hogy egy tartomány használata nem ajánlott a fiókhoz tartozó hitelesítő adatokat állít elő.
-Helyi fiók használatával nem tartományi hitelesítő adatok, amelyek felhasználhatók a többi kiszolgáló azok elérhetővé tegyék.
+A példa konfigurációs parancsprogram újra fut (a vagy titkosítás nélkül), továbbra is figyelmeztetést hoz létre, a használata egy tartományi fiók a hitelesítő adatait nem javasolt.
+Helyi fiók használatával kiküszöböli a tartományi hitelesítő adatok, amelyek felhasználhatók a többi kiszolgáló lehetséges vannak kitéve.
 
-**Hitelesítő adatok használata a DSC-erőforrásokkal, inkább egy helyi fiók alatt egy olyan tartományi fiók, amikor lehetséges.**
+**Hitelesítő adatok a DSC-erőforrások használatakor egy helyi fiók előnyben részesítése egy tartományi fiókot, amikor csak lehetséges.**
 
-Ha van egy "\\"vagy"\@" a a `Username` tartományi fiókként tulajdonság a hitelesítő adat, akkor a DSC fogják kezelni.
-A "localhost", "127.0.0.1", kivétel és a ":: 1" a felhasználónév, a tartomány része.
+Ha van egy "\\"vagy"\@" az a `Username` tartományi fiókként tulajdonság a hitelesítő adatokat, majd a DSC-rendszer kezeli.
+Nincs a kivételt a "localhost", "127.0.0.1", és a ":: 1 – az a felhasználó nevét tartomány része.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-A DSC a `Group` erőforrás a fenti példában egy Active Directory-tartomány lekérdezése *szükséges* egy olyan tartományi fiók.
-Ebben az esetben vegye fel a `PSDscAllowDomainUser` tulajdonságot a `ConfigurationData` blokkolja az alábbiak szerint:
+A DSC a `Group` erőforrás a fenti példában egy Active Directory-tartomány lekérdezése *igényel* egy tartományi fiókot.
+Ebben az esetben adja hozzá a `PSDscAllowDomainUser` tulajdonságot a `ConfigurationData` letiltása az alábbiak szerint:
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
@@ -277,4 +277,4 @@ $cd = @{
 DomainCredentialExample -ConfigurationData $cd
 ```
 
-A konfigurációs parancsfájl most hibák és figyelmeztetések nélkül a MOF-fájlt hoz létre.
+Most már a konfigurációs parancsfájlt a MOF-fájlt, hibák és figyelmeztetések nélkül hoz létre.

@@ -17,11 +17,11 @@ helpviewer_keywords:
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
 ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068402"
 ---
 # <a name="cmdlet-parameters"></a>Parancsmag-paraméterek
 
@@ -49,7 +49,7 @@ Parancsmag-paraméterek adja meg a mechanizmus, amely lehetővé teszi a parancs
 
 [Adjon meg szűrési paraméterekhez](./input-filter-parameters.md) foglalkozik a `Filter`, `Include`, és `Exclude` szűrése, amely befolyásolja a parancsmag bemeneti objektumok készlete paramétereket.
 
-## <a name="related-sections"></a>Kapcsolódó témakörök
+## <a name="related-sections"></a>Kapcsolódó szakaszok
 
 [A paraméter bemeneti ellenőrzése](./how-to-validate-parameter-input.md)
 

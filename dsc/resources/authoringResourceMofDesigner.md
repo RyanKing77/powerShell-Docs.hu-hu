@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Az erőforrás-tervező eszköz használata
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076667"
 ---
 # <a name="using-the-resource-designer-tool"></a>Az erőforrás-tervező eszköz használata
 
-> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 Az erőforrás-tervező eszköz egy olyan parancsmagok által elérhetővé tett a **xDscResourceDesigner** modul, amely megkönnyíti a Windows PowerShell Desired State Configuration (DSC) erőforrások létrehozásához. Ennek az erőforrásnak a parancsmagok segítségével a MOF-sémát, a parancsfájl modul és a könyvtárstruktúra, az új erőforrás létrehozása. DSC-erőforrások kapcsolatos további információkért lásd: [hozhat létre egyéni Windows PowerShell Desired State Configuration erőforrások](authoringResource.md).
 Ebben a témakörben létre fogunk hozni egy DSC-erőforrás, amely felügyeli az Active Directory-felhasználók.

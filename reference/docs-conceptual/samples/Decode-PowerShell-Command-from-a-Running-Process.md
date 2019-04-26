@@ -4,16 +4,16 @@ keywords: PowerShell, a parancsmag
 title: PowerShell-parancs dekódolása futó folyamatból
 author: randomnote1
 ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404170"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086238"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>PowerShell-parancs dekódolása futó folyamatból
 
 Időnként szükség lehet egy PowerShell-folyamat fut, amely nagy mennyiségű erőforrást másolatot tart.
-Ez a folyamat keretében is futhat egy [Feladatütemező][] feladat vagy egy [SQL Server Agent][] feladat. Amennyiben több PowerShell processzorához, nehéz meghatározni, melyik folyamat jelenti. a probléma lehet. Ez a cikk bemutatja, hogyan való dekódolandó egy PowerShell-folyamat éppen futó parancsprogram-blokkot.
+Ez a folyamat keretében is futhat egy [A Feladatütemező][] feladat vagy egy [SQL Server Agent][] feladat. Amennyiben több PowerShell processzorához, nehéz meghatározni, melyik folyamat jelenti. a probléma lehet. Ez a cikk bemutatja, hogyan való dekódolandó egy PowerShell-folyamat éppen futó parancsprogram-blokkot.
 
 ## <a name="create-a-long-running-process"></a>Hozzon létre egy hosszú ideig futó folyamatot
 
@@ -104,7 +104,7 @@ DecodedCommand :
                      }
 ```
 
-[Feladatütemező]: /windows/desktop/TaskSchd/task-scheduler-start-page
+[A Feladatütemező]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
 [parancs kódolású]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

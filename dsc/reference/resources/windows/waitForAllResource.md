@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC WaitForAll erőforrás
 ms.openlocfilehash: 1e891f1aecbdbe641973669f71f22664ad8ea16c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686074"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076922"
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll erőforrás
 
-> Érvényes: Windows PowerShell 5.0-s és újabb verziók
+> A következőkre vonatkozik: Windows PowerShell 5.0-s és újabb verziók
 
 A **WaitForAll** egy csomópont letiltása a Desired State Configuration (DSC) erőforrás használható egy [DSC-konfiguráció](../../../configurations/configurations.md) függőségeinek megadása a konfigurációk a többi csomóponton.
 
@@ -38,7 +38,7 @@ WaitForAll [string] #ResourceName
 | ResourceName| Az erőforrásnév függenek. Ha az erőforrás tartozik egy másik konfigurációs, formázhatja a nevet a következőként "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "|
 | Csomópontnév| Az erőforrás függenek a célcsomópontokat.|
 | RetryIntervalSec| Mielőtt újra próbálkozna másodpercek számát. Minimális érték 1.|
-| retryCount| Az újrapróbálkozások maximális száma.|
+| RetryCount| Az újrapróbálkozások maximális száma.|
 | ThrottleLimit| Egyidejű csatlakozás gépek száma. Alapértelmezés szerint új cimsession alapértelmezett.|
 | DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például, ha az erőforrás-konfiguráció azonosítója letiltása, a futtatni kívánt parancsfájl először van __ResourceName__ és a típusa __ResourceType__, ez a tulajdonság használata esetén `DependsOn = "[ResourceType]ResourceName"`.|
 

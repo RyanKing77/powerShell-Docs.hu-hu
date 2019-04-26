@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d17e0d66-42ea-4e4c-a85b-3ca09b146492
 caps.latest.revision: 6
 ms.openlocfilehash: cc0742b86a7a36e5712707c077fd1952691f3f4b
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067569"
 ---
 # <a name="property-parameters"></a>Tulajdonságparaméterek
 
@@ -36,7 +36,7 @@ A következő táblázat felsorolja a javasolt nevei és -funkcióinak tulajdons
 |**Regex**<br>Adattípus: SwitchParameter|Ez a paraméter valósítja meg, hogy a reguláris kifejezések használhatók, ha a paraméter meg van adva. Ha ez a paraméter meg van adva, a helyettesítő karakterek nem oldja fel.|
 |**sebesség**<br>Adattípus: Int32|Ez a paraméter valósítja meg, hogy a felhasználó megadhatja az átviteli sebesség. A felhasználó sebességétől, az erőforrás-ra állítja ezt a paramétert.|
 |**állapot**<br>Adattípus: Kulcsszó tömb|Ez a paraméter valósítja meg, hogy a felhasználó úgy adhat meg az államok, például a KEYDOWN nevei.|
-|**Érték**<br>Adattípus: Objektum|Ez a paraméter valósítja meg, hogy a felhasználó megadhatja a parancsmaghoz adja meg egy értéket.|
+|**Érték**<br>Adattípus: Object|Ez a paraméter valósítja meg, hogy a felhasználó megadhatja a parancsmaghoz adja meg egy értéket.|
 |**Verzió**<br>Adattípus: Sztring|Ez a paraméter valósítja meg, hogy a felhasználó megadhatja a tulajdonság verzióját.|
 
 ## <a name="see-also"></a>Lásd még:

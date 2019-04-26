@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ff85e83a-c9c2-4c37-accc-e6a27c182f3c
 caps.latest.revision: 19
 ms.openlocfilehash: 16b41535109ca503e679a135f5ba30054e33de5b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067008"
 ---
 # <a name="alignment-element-for-tablecolumnheader-for-tablecontrol-format"></a>A TableControl TableColumnHeader elemének igazítási eleme (Formátum)
 
@@ -45,7 +45,7 @@ Nincs.
 |-------------|-----------------|
 |[TableColumnHeader elem (formátum)](./tablecolumnheader-element-format.md)|Egy címke, a szélesség és az adatok egy oszlop a tábla zarovnání határozza meg.|
 
-## <a name="text-value"></a>Szöveges érték
+## <a name="text-value"></a>A szöveges érték
 
 Adja meg a következő értékek egyikét. Ezek az értékek nem különböznek.
 

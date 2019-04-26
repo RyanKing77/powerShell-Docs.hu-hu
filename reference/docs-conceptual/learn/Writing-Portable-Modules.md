@@ -3,15 +3,15 @@ ms.date: 12/14/2018
 keywords: PowerShell, a parancsmag
 title: Hordozható modulok írása
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086408"
 ---
 # <a name="portable-modules"></a>Hordozható modulok
 
-Windows PowerShell íródott [.NET Framework][]][] Bár a PowerShell Core íródott [.NET Core][]. Hordozható modulok olyan modulok, amelyek a Windows PowerShell és a PowerShell Core. .NET-keretrendszer és a .NET Core erősen kompatibilis, amelyek nincsenek az elérhető API-kat a kettő közötti különbségeket. Emellett különbségek vannak az API-k a Windows PowerShell és a PowerShell Core. Mindkét környezetben használandó modulok kell figyelembe venni a különbségeket.
+Windows PowerShell íródott [.NET-keretrendszer][] Bár a PowerShell Core íródott [.NET Core][]. Hordozható modulok olyan modulok, amelyek a Windows PowerShell és a PowerShell Core. .NET-keretrendszer és a .NET Core erősen kompatibilis, amelyek nincsenek az elérhető API-kat a kettő közötti különbségeket. Emellett különbségek vannak az API-k a Windows PowerShell és a PowerShell Core. Mindkét környezetben használandó modulok kell figyelembe venni a különbségeket.
 
 ## <a name="porting-an-existing-module"></a>Egy meglévő modul portolása
 
@@ -25,13 +25,13 @@ A `RootModule` a moduljegyzékben tulajdonság állítható a parancsmagok végr
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>A .NET-hordozhatóságot Analyzer (más néven APIPort)
 
-Port modulokkal készült Windows PowerShell használata a PowerShell Core, kezdje a [.NET hordozhatóságot Analyzer][]. Futtassa ezt az eszközt annak meghatározásához, hogy a .NET API-k, a modul használt kompatibilisek-e a .NET-keretrendszer, a .NET Core és az egyéb .NET-modulok a lefordított szerelvényben. Az eszköz másik API-k javasol, ha vannak ilyenek. Ellenkező esetben előfordulhat, hogy hozzá kell [futásidejű ellenőrzés][] , és korlátozhatja a funkciókat adott modulok nem érhetők el.
+Port modulokkal készült Windows PowerShell használata a PowerShell Core, kezdje a [.NET hordozhatóságot elemző][]. Futtassa ezt az eszközt annak meghatározásához, hogy a .NET API-k, a modul használt kompatibilisek-e a .NET-keretrendszer, a .NET Core és az egyéb .NET-modulok a lefordított szerelvényben. Az eszköz másik API-k javasol, ha vannak ilyenek. Ellenkező esetben előfordulhat, hogy hozzá kell [futásidejű ellenőrzés][] , és korlátozhatja a funkciókat adott modulok nem érhetők el.
 
 ## <a name="creating-a-new-module"></a>Új modul létrehozása
 
 Új modul létrehozása, ha a javaslat használatára-e a [.NET CLI][].
 
-### <a name="installing-the-powershell-standard-module-template"></a>A PowerShell Standard modul sablon telepítése
+### <a name="installing-the-powershell-standard-module-template"></a>A PowerShell szabványos modul sablon telepítése
 
 A .NET parancssori felület telepítése után telepítse a könyvtár létrehozni egy egyszerű PowerShell-modul.
 A modul Windows PowerShell, a PowerShell Core, Windows, Linux és macOS kompatibilis lesz.
@@ -178,10 +178,10 @@ Azonban nem szükséges a .NET Standard-modul a Windows PowerShell és a PowerSh
 
 A [PowerShell Standard][] könyvtár a PowerShell API-k elérhető az összes PowerShell nagyobb vagy egyenlő a verzióra, a standard verzióban formális meghatározását.
 
-Ha például [PowerShell Standard 5.1][] kompatibilis a Windows PowerShell 5.1-es és a PowerShell Core 6.0 vagy újabb.
+Ha például [PowerShell szabványos 5.1][] kompatibilis a Windows PowerShell 5.1-es és a PowerShell Core 6.0 vagy újabb.
 
 Azt javasoljuk, hogy a modul PowerShell Standard kódtár használatával összeállíthatja. A kódtár biztosítja, hogy az API-k rendelkezésre álló és a Windows PowerShell és a PowerShell Core 6-os megvalósított.
-Mindig legyen továbbítást-kompatibilis PowerShell Standard célja. A modul PowerShell Standard könyvtár 5.1 használatával létrehozott mindig lesz kompatibilis PowerShell jövőbeli verzióiban.
+Mindig legyen továbbítást-kompatibilis PowerShell szabványos célja. A modul PowerShell szabványos könyvtár 5.1 használatával létrehozott mindig lesz kompatibilis PowerShell jövőbeli verzióiban.
 
 ## <a name="module-manifest"></a>Moduljegyzék
 
@@ -254,15 +254,15 @@ Példa:
 ```
 
 <!-- reference links -->
-[.NET Framework]: /dotnet/framework/
+[.NET-keretrendszer]: /dotnet/framework/
 [.NET Core]: /dotnet/core/
 [PSSnapIn]: /dotnet/api/system.management.automation.pssnapin
 [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [futásidejű ellenőrzés]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
-[.NET standard]: /dotnet/standard/net-standard
+[.NET Standard]: /dotnet/standard/net-standard
 [PowerShell Standard]: https://github.com/PowerShell/PowerShellStandard
-[PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
+[PowerShell szabványos 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell-galéria]: https://www.powershellgallery.com
-[.NET hordozhatóságot Analyzer]: https://github.com/Microsoft/dotnet-apiport
+[.NET hordozhatóságot elemző]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support

@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, erőforrás, katalógus, beállítása
 title: További DSC-erőforrások telepítése
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080081"
 ---
 # <a name="install-additional-dsc-resources"></a>További DSC-erőforrások telepítése
 
@@ -22,12 +22,12 @@ Ez az a PowerShell 4.0-s verzióját és leírását, az erőforrás-funkciókat
 |---------|---------|
 |**Fájl**|Fájlok és könyvtárak állapotát vezérli. Átmásolja a fájlokat egy **forrás** , egy **cél** frissíti őket, és amikor a **forrás** módosítások összehasonlítja a dátumok, az ellenőrzőösszegek és kivonatokat.|
 |**Archívum**|Kibontja a archívumok és a egy adott helyre. Ellenőrzi a megadott archívum **ellenőrzőösszeg**.|
-|**Környezet**|Kezeli a környezeti változókat.|
+|**környezet**|Kezeli a környezeti változókat.|
 |**Csoport**|Helyi csoportok kezeli, és ellenőrzi a csoport tagságát.|
 |**Log**|Írja az üzeneteket a `Microsoft-Windows-Desired State Configuration/Analytic` Eseménynapló.|
 |**Csomag**|Telepíti vagy eltávolítja a csomagokat **argumentumok**, **LogPath**, **ReturnCode**, egyéb beállításokat.|
 |**Registry**|Kezeli a beállításjegyzék-kulcsokat és értékeket.|
-|**Parancsfájl**|Lehetővé teszi, hogy tervezheti meg a saját [get-teszt – set](../resources/get-test-set.md) parancsfájl-blokk.|
+|**parancsfájl**|Lehetővé teszi, hogy tervezheti meg a saját [get-teszt – set](../resources/get-test-set.md) parancsfájl-blokk.|
 |**Service**|Konfigurálja a Windows-szolgáltatások.|
 |**Felhasználó** |A helyi felhasználók és attribútumok kezeli.|
 |**WindowsFeature**|Szerepkörök és szolgáltatások kezelése.|
