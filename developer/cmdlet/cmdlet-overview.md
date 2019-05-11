@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], described
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
-ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068470"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229362"
 ---
 # <a name="cmdlet-overview"></a>Parancsmag – áttekintés
 
@@ -38,19 +38,53 @@ Az osztály segítségével közvetlenül tartalmazó szerelvény betöltése a 
 
 Az alábbi feltételek gyakran használják a Windows PowerShell-parancsmag dokumentáció:
 
-- **A parancsmag attribútum**: A .NET-keretrendszer attribútum, amely szerint a parancsmag egy parancsmag osztály kódcsomagjaihoz. Bár Windows PowerShell számos más attribútum megadása nem kötelező, a parancsmag attribútumot kötelező megadni. Ez az attribútum kapcsolatos további információkért lásd: [parancsmag típusattribútum-deklaráció](./cmdlet-attribute-declaration.md).
+### <a name="cmdlet-attribute"></a>A parancsmag attribútum
 
-- **Parancsmag-paraméterben**: A nyilvános tulajdonságok, amelyek meghatározzák a paramétereket, vagy az alkalmazásban, amelyek a parancsmagot a felhasználó számára elérhető. Parancsmagok is szükséges, nevesített, Helyzetbeállító, és *váltson* paramétereket. Kapcsolóparaméterek lehetővé teszik a kiértékelt csak akkor, ha a paraméterek vannak megadva a hívás paramétereit. A különböző típusú paraméterekkel kapcsolatos további információkért lásd: [parancsmag-paraméterek](./cmdlet-parameters.md).
+A .NET-keretrendszer attribútum, amely szerint a parancsmag egy parancsmag osztály kódcsomagjaihoz.
+Bár a PowerShell egyéb attribútumok megadása nem kötelező használ, a parancsmag attribútumot kötelező megadni.
+Ez az attribútum kapcsolatos további információkért lásd: [parancsmag típusattribútum-deklaráció](cmdlet-attribute-declaration.md).
 
-- **Paraméterkészlet**: Egy csoport, amely ugyanazt a parancsot egy adott művelet végrehajtására használható paraméterek. A parancsmag több paraméterkészlettel is rendelkezhet, de egyes paraméterkészletet rendelkeznie kell legalább egy paramétert, amely egyedi. Jó parancsmag tervezési erősen javasolja, hogy az egyedi paramétereket is kell-e egy szükséges paraméter. Paraméterkészlettel kapcsolatos további információkért lásd: [parancsmag paraméterkészletek](./cmdlet-parameter-sets.md).
+### <a name="cmdlet-parameter"></a>Parancsmag-paraméterben
 
-- **Dinamikus paraméterek**: Egy paraméter, amely a futásidőben a parancsmag kerül. Általában a dinamikus paramétereket a parancsmaghoz, ha egy másik paraméter egy adott értékre van állítva. Dinamikus paraméterekkel kapcsolatos további információkért lásd: [dinamikus parancsmag-paraméterek](./cmdlet-dynamic-parameters.md).
+A nyilvános tulajdonságok, amelyek meghatározzák a paramétereket, vagy az alkalmazásban, amelyek a parancsmagot a felhasználó számára elérhető.
+Parancsmagok is szükséges, nevesített, Helyzetbeállító, és *váltson* paramétereket.
+Kapcsolóparaméterek lehetővé teszik a kiértékelt csak akkor, ha a paraméterek vannak megadva a hívás paramétereit.
+A különböző típusú paraméterekkel kapcsolatos további információkért lásd: [parancsmag-paraméterek](cmdlet-parameters.md).
 
-- **Bemeneti metódusához feldolgozási**: Ez a módszer a parancsmag segítségével feldolgozásához bemenetként fogadott rekordokat. A bemeneti feldolgozási módszerek közé tartozik a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metódus, a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódus, a [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódust, és a [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metódust. A parancsmag megvalósításakor, felül kell írnia legalább egyike a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), és [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) módszereket. Általában a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) módszer esetében a módszert, bírálhatja felül, mert a parancsmag rekordot nevezzük. Ezzel szemben a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) módszer és a [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódus végrehajtásához nevezzük egyszer előzetesen feldolgozni, vagy a rekordok utófeldolgozása. Ezek a metódusok kapcsolatos további információkért lásd: [bemenet feldolgozása módszerek](./cmdlet-input-processing-methods.md).
+### <a name="parameter-set"></a>Paraméterkészlet
 
-- **A szolgáltatás ShouldProcess**: Windows PowerShell-parancsmagokkal kéri a felhasználótól a visszajelzéseket, mielőtt a parancsmag egy módosítást hajt végre a rendszer létrehozását teszi lehetővé. Ez a funkció használatához a parancsmag deklarálni kell, hogy a parancsmag attribútum deklarálhatja, és hívja meg, a parancsmag a ShouldProcess funkció támogatja a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) módszerek a feldolgozási mód egy bemeneti adatban. A ShouldProcess funkciót kapcsolatos további információkért lásd: [megerősítést kérő](./requesting-confirmation-from-cmdlets.md).
+Egy csoport, amely ugyanazt a parancsot egy adott művelet végrehajtására használható paraméterek.
+A parancsmag több paraméterkészlettel is rendelkezhet, de egyes paraméterkészletet rendelkeznie kell legalább egy paramétert, amely egyedi.
+Jó parancsmag tervezési erősen javasolja, hogy az egyedi paramétereket is kell-e egy szükséges paraméter.
+Paraméterkészlettel kapcsolatos további információkért lásd: [parancsmag paraméterkészletek](cmdlet-parameter-sets.md).
 
-- **Tranzakció**: Logikai csoport, amely egyetlen feladat számít. A feladat automatikusan sikertelen lesz, ha a csoportban lévő bármely parancs meghiúsul, és a felhasználónak a választás elfogadja vagy elutasítja a tranzakción belül végrehajtott műveleteket. A tranzakcióban részt, a parancsmag deklarálni kell, hogy amikor a parancsmag attribútum lett deklarálva tranzakciók támogatja. Tranzakciók támogatása Windows PowerShell 2.0-s verziójában jelent meg. Tranzakciókkal kapcsolatos további információkért lásd: [Windows PowerShell-tranzakciók](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
+### <a name="dynamic-parameter"></a>dinamikus paraméterek
+
+Egy paraméter, amely a futásidőben a parancsmag kerül.
+Általában a dinamikus paramétereket a parancsmaghoz, ha egy másik paraméter egy adott értékre van állítva.
+Dinamikus paraméterekkel kapcsolatos további információkért lásd: [dinamikus parancsmag-paraméterek](cmdlet-dynamic-parameters.md).
+
+### <a name="input-processing-method"></a>a bemeneti metódus feldolgozása
+
+Ez a módszer a parancsmag segítségével feldolgozásához bemenetként fogadott rekordokat.
+A bemeneti feldolgozási módszerek közé tartozik a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metódus, a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódus, a [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódust, és a [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metódust. A parancsmag megvalósításakor, felül kell írnia legalább egyike a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), és [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) módszereket.
+Általában a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) módszer esetében a módszert, bírálhatja felül, mert a parancsmag rekordot nevezzük.
+Ezzel szemben a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) módszer és a [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódus végrehajtásához nevezzük egyszer előzetesen feldolgozni, vagy a rekordok utófeldolgozása.
+Ezek a metódusok kapcsolatos további információkért lásd: [bemenet feldolgozása módszerek](cmdlet-input-processing-methods.md).
+
+### <a name="shouldprocess-feature"></a>ShouldProcess funkció
+
+PowerShell-parancsmagokkal kéri a felhasználótól a visszajelzéseket, mielőtt a parancsmag egy módosítást hajt végre a rendszer létrehozását teszi lehetővé.
+Ez a funkció használatához a parancsmag deklarálni kell, hogy a parancsmag attribútum deklarálhatja, és hívja meg, a parancsmag a ShouldProcess funkció támogatja a [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) és [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) módszerek a feldolgozási mód egy bemeneti adatban.
+A ShouldProcess funkciót kapcsolatos további információkért lásd: [megerősítést kérő](requesting-confirmation-from-cmdlets.md).
+
+### <a name="transaction"></a>Tranzakció
+
+Logikai csoport, amely egyetlen feladat számít.
+A feladat automatikusan sikertelen lesz, ha a csoportban lévő bármely parancs meghiúsul, és a felhasználónak a választás elfogadja vagy elutasítja a tranzakción belül végrehajtott műveleteket.
+A tranzakcióban részt, a parancsmag deklarálni kell, hogy amikor a parancsmag attribútum lett deklarálva tranzakciók támogatja.
+Tranzakciók támogatása Windows PowerShell 2.0-s verziójában jelent meg.
+Tranzakciókkal kapcsolatos további információkért lásd: [támogatási tranzakciók hogyan](how-to-support-transactions.md).
 
 ## <a name="how-cmdlets-differ-from-commands"></a>Hogyan parancsmagok eltérnek-e a parancsok
 

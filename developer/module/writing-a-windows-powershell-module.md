@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bfbccc5b-2b2b-432a-a971-9f8ab503cdc3
 caps.latest.revision: 17
-ms.openlocfilehash: 3c6d8e410427d6cfaa1c15db421b3fe935f7d322
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0b7263ea19745e902fff04b993933e443d4d6333
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082056"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229344"
 ---
 # <a name="writing-a-windows-powershell-module"></a>Windows PowerShell-modul írása
 
@@ -43,7 +43,7 @@ A parancsmag és a szolgáltató fejlesztők modulok segítségével tesztelése
 
 [Egy bináris PowerShell-modul írása](./how-to-write-a-powershell-binary-module.md)
 
-[A PowerShell-modul jegyzék írása](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6)
+[A PowerShell-modul jegyzék írása](how-to-write-a-powershell-module-manifest.md)
 
 [A PSModulePath telepítési elérési út módosítása](./modifying-the-psmodulepath-installation-path.md)
 

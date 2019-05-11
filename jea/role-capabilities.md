@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: a jea, powershell, biztonsági
 title: A JEA szerepköri funkciók
-ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 528b41c0e2ffdcfed3251fb0f714c649e7290761
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084793"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229547"
 ---
 # <a name="jea-role-capabilities"></a>A JEA szerepköri funkciók
 
@@ -183,6 +183,8 @@ A JEA munkamenetben korlátozott parancsmagokhoz fog ugyanígy viselkednek, a Po
 
 Ha egyéni függvények rengeteg, állítsa őket az egyszerűbb lehet egy [PowerShell-parancsfájl modul](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx).
 Majd ezekhez a függvényekhez láthatóvá teheti a JEA-munkamenet VisibleFunctions mező használatával, mint a beépített és külső modulok.
+
+A lap megfelelő működéséhez a JEA-munkamenetekben, befejezési tartalmaznia kell a beépített függvény `tabexpansion2` a a **VisibleFunctions** listája.
 
 ## <a name="place-role-capabilities-in-a-module"></a>Szerepköri funkciók helyezze egy modulban
 

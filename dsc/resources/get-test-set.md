@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Get-teszt – Set
-ms.openlocfilehash: 6d059518a49926bc5fb56e37e7d3d4d2c66bddec
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e4aa7770bb5fc8b916b0c0a6488b1ccc0ef0ade9
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076599"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229516"
 ---
 # <a name="get-test-set"></a>Get-teszt – Set
 
->A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+>Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 ![Get, Test és Set](/media/get-test-set.png)
 
@@ -121,7 +121,7 @@ ModuleVersion = "1.0";
 };
 ```
 
-Alkalmazásakor a [helyi Configuration Manager](../managing-nodes/metaConfig.md) olvassa el az értéket "Nyomtatásisor-kezelő" a ".mof" fájlból, majd adja azt át a `-Name` paraméterében a **első**, **teszt**, és **beállítása** módszerek "MyService" példányának a **szolgáltatás** erőforrás.
+Alkalmazásakor a [helyi Configuration Manager](../managing-nodes/metaConfig.md) (LCM) olvassa el az értéket "Nyomtatásisor-kezelő" a ".mof" fájlból, majd adja azt át a `-Name` paraméterében a **első**, **teszt**, és **beállítása** módszerek "MyService" példányának a **szolgáltatás** erőforrás.
 
 ## <a name="get"></a>Lekérés
 
@@ -175,7 +175,7 @@ Service [String] #ResourceName
 }
 ```
 
-## <a name="test"></a>Teszt
+## <a name="test"></a>Tesztelés
 
 A **teszt** módszer egy adott erőforrás meghatározza, hogy a célcsomópont jelenleg felelnek meg az erőforrás *kívánt állapot*. A **teszt** metódus visszatért `$True` vagy `$False` , csak adja meg, hogy a csomópont megfelelő.
 Meghívásakor [a Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration), a LCM meghívja a **teszt** metódus az egyes erőforrások jelenleg alkalmazott konfigurációjában. Az LCM paraméterekként minden kapcsolódó erőforrás-példányra ".mof" fájljában tárolt kulcs értékeit használja.

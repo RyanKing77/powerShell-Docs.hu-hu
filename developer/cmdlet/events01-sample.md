@@ -8,26 +8,29 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068130"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229302"
 ---
 # <a name="events01-sample"></a>Events01 – minta
 
-Ez a példa bemutatja, hogyan hozhat létre olyan parancsmagot, amely lehetővé teszi, hogy a felhasználó regisztrálhatja által előállított eseményeket [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Ezzel a parancsmaggal a felhasználók regisztrálhatnak egy művelet hajtható végre, ha létrejön egy fájl egy adott könyvtárban. Ez a minta származik a [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) alaposztály.
+Ez a példa bemutatja, hogyan hozhat létre olyan parancsmagot, amely lehetővé teszi, hogy a felhasználó regisztrálhatja által előállított eseményeket [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
+Ezzel a parancsmaggal a felhasználók regisztrálhatnak egy művelet hajtható végre, ha létrejön egy fájl egy adott könyvtárban.
+Ez a minta származik a [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) alaposztály.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Hogyan hozhat létre a mintát a Visual Studio használatával.
 
-1. A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a Events01 mappát. Az alapértelmezett hely a C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.
+1. A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a Events01 mappát.
+   Az alapértelmezett hely a `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
 
-2. A megoldásfájlt (.sln) ikonra. Ekkor megnyílik a mintaprojektet a Microsoft Visual Studio.
+2. A megoldásfájlt (.sln) ikonra.
+   Ekkor megnyílik a mintaprojektet a Microsoft Visual Studio.
 
 3. Az a **összeállítása** menüjében válassza **megoldás fordítása**.
-
-    A könyvtárban, a minta az alapértelmezett \bin vagy \bin\debug mappákat a lesz felépítve.
+   A minta a könyvtár alapértelmezés szerint a lesz felépítve `\bin` vagy `\bin\debug` mappákat.
 
 ### <a name="how-to-run-the-sample"></a>A minta futtatása
 
@@ -78,11 +81,14 @@ Ez a minta Windows PowerShell 2.0 szükséges.
 
 Ez a minta bemutatja a következő.
 
-- Hogyan írható-eseményregisztráció parancsmag. A parancsmag származik a [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) osztály, amely támogatja a gyakori paraméterek a Register-* esemény parancsmagok. Parancsmagok származó [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) csak definiálnia kell a adott paramétereikről bírálja felül a `GetSourceObject` és `GetSourceObjectEventName` módszerek absztrakt.
+### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Hogyan írható-eseményregisztráció parancsmag
+
+A parancsmag származik a [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) osztály, amely támogatja a közös paraméterek a `Register-*Event` parancsmagok.
+Parancsmagok származó [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) csak definiálnia kell a adott paramétereikről bírálja felül a `GetSourceObject` és `GetSourceObjectEventName` módszerek absztrakt.
 
 ## <a name="example"></a>Példa
 
-Ez a példa bemutatja, hogyan regisztrálhat az események által kiváltott [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).
+Ez a példa bemutatja, hogyan regisztrálhat az események által kiváltott [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
 
 ```csharp
 namespace Sample
@@ -183,4 +189,4 @@ namespace Sample
 
 ## <a name="see-also"></a>Lásd még:
 
-[Egy Windows PowerShell-parancsmag írása](./writing-a-windows-powershell-cmdlet.md)
+[Egy Windows PowerShell-parancsmag írása](writing-a-windows-powershell-cmdlet.md)

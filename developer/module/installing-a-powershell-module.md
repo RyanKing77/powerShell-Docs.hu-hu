@@ -8,26 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082192"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229447"
 ---
 # <a name="installing-a-powershell-module"></a>PowerShell-modul telepítése
 
-Miután létrehozta a PowerShell-modult, valószínűleg érdemes a modul telepítése a rendszerben, hogy Ön vagy mások által a előfordulhat, hogy használhassák. Általánosan fogalmazva ez egyszerűen áll a modul fájlok másolása (ie, a .psm1 vagy bináris szerelvény, a moduljegyzékben és a kapcsolódó fájlokat) egy könyvtárat a számítógépen. Nagyon kis projekthez másolása és beillesztése a fájlokat egy távoli számítógépen; a Windows Explorer egyszerűen lehet azonban nagyobb megoldások, előfordulhat, hogy szeretne használni egy bonyolultabb telepítési folyamatot. Függetlenül attól, hogyan juthat a modul be a rendszerbe a PowerShell használhatja módszer, amely lehetővé teszi a felhasználók kereséséhez és a modulok használatához. (További információkért lásd: [egy PowerShell-modul importálása](./importing-a-powershell-module.md).) Ezért a telepítés fő probléma annak ellenőrzése, hogy a modul talált lesz-e a PowerShell.
-
-Ez a témakör alábbi részeket tartalmazza:
-
-- Modulok telepítésére vonatkozó szabályok
-
-- Hol-modulok telepítése
-
-- Egy modul több verziójának telepítése
-
-- A parancs névütközések kezelése
+Miután létrehozta a PowerShell-modult, valószínűleg érdemes a modul telepítése a rendszerben, hogy Ön vagy mások által a előfordulhat, hogy használhassák. Általánosan fogalmazva ez áll a modul fájlok másolása (ie, a .psm1 vagy bináris szerelvény, a moduljegyzékben és a kapcsolódó fájlokat) egy könyvtárat a számítógépen. Nagyon kis projekthez másolása és beillesztése a fájlokat egy távoli számítógépen; a Windows Explorer egyszerűen lehet azonban nagyobb megoldások, előfordulhat, hogy szeretne használni egy bonyolultabb telepítési folyamatot. Függetlenül attól, hogyan juthat a modul be a rendszerbe a PowerShell használhatja módszer, amely lehetővé teszi a felhasználók kereséséhez és a modulok használatához. Ezért a telepítés fő probléma annak ellenőrzése, hogy a modul talált lesz-e a PowerShell. További információkért lásd: [egy PowerShell-modul importálása](./importing-a-powershell-module.md).
 
 ## <a name="rules-for-installing-modules"></a>Modulok telepítésére vonatkozó szabályok
 
@@ -41,14 +31,14 @@ A **PSModulePath** környezeti változót ($Env: PSModulePath) a Windows PowerSh
 
 Alapértelmezés szerint a **PSModulePath** környezeti változó értékét a következő rendszert és a felhasználói modul könyvtárakat tartalmazza, de a hozzá, és szerkessze a értéket.
 
-- $PSHome\Modules (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
+- `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
 
   > [!WARNING]
   > Ez a hely modulok, a Windows számára van fenntartva. Ne telepítse a modulok ezen a helyen.
 
-- $Home\Documents\WindowsPowerShell\Modules (% UserProfile%\Documents\WindowsPowerShell\Modules)
+- `$Home\Documents\WindowsPowerShell\Modules` (% UserProfile%\Documents\WindowsPowerShell\Modules)
 
-- $Env:ProgramFiles\WindowsPowerShell\Modules (%ProgramFiles%\WindowsPowerShell\Modules)
+- `$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)
 
   Értékének beolvasásához a **PSModulePath** környezeti változót, használja a következő parancsok egyikét.
 
@@ -60,7 +50,6 @@ Alapértelmezés szerint a **PSModulePath** környezeti változó értékét a k
   Vegye fel a modul elérési utat értékét a **PSModulePath** környezeti változó értékét, használja a következő parancs formátuma. Ezt a formátumot használja a **SetEnvironmentVariable** módszere a **System.Environment** munkamenet független módosítást az osztály a **PSModulePath** környezet a változó.
 
   ```powershell
-
   #Save the current value in the $p variable.
   $p = [Environment]::GetEnvironmentVariable("PSModulePath")
 
@@ -77,7 +66,7 @@ Alapértelmezés szerint a **PSModulePath** környezeti változó értékét a k
 
 ### <a name="use-the-correct-module-directory-name"></a>Használja a megfelelő modul könyvtár neve
 
-Egy "szabályos" modul az a modul, amely egy könyvtárban, amelynek a neve megegyezik a alapneveként modulkönyvtárat legalább egy fájlt tárolja. Ha egy modul nem megfelelően formázott, Windows PowerShell nem ismeri fel modulként.
+Egy megfelelően formázott modul az a modul, amely rendelkezik legalább egy fájlt a modulkönyvtárat alapneveként megegyező nevű címtárban tárolt. Ha egy modul nem megfelelően formázott, Windows PowerShell nem ismeri fel modulként.
 
 A "base"fájl nevéhez, az a név nélkül a fájlnévkiterjesztést. Egy megfelelően formázott modulban neve a modul fájlokat tartalmazó könyvtárba egyeznie kell legalább egy fájlt a modul alapneveként.
 
@@ -122,9 +111,7 @@ Ez a szakasz azt ismerteti, hol a fájlrendszer, a Windows PowerShell-modulok te
 
 Hozzon létre saját modult, vagy a modul le egy másik entitás, például a Windows PowerShell-Közösség webhelyén, és azt szeretné, hogy a modul csak a felhasználói fiókjához elérhető legyen, ha a modul telepítése a felhasználó-specifikus modulokat címtárban.
 
-```
-$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 A felhasználó-specifikus modulokat könyvtár értéke kerül a **PSModulePath** alapértelmezés szerint a környezeti változót.
 
@@ -132,9 +119,7 @@ A felhasználó-specifikus modulokat könyvtár értéke kerül a **PSModulePath
 
 Ha azt szeretné, hogy a számítógép minden felhasználója számára elérhetővé válnak a modul, a modul a Program Files helyre fogja telepíteni.
 
-```
-$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 > [!NOTE]
 > A Windows PowerShell 4.0-s és újabb verziók alapértelmezés szerint a Program Files helyen a PSModulePath környezeti változó értéke kerül. Windows PowerShell korábbi verziói esetén manuálisan létrehozhat a Program Files helyen ((%ProgramFiles%\WindowsPowerShell\Modules) és az elérési út hozzáadása a PSModulePath környezeti változót a fent leírtak szerint.
@@ -160,7 +145,7 @@ Ahhoz, hogy a Windows PowerShell modul felderítési szolgáltatások a Fabrikam
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
+$p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -168,7 +153,7 @@ $p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 Ha egy modul több összetevőből egy termék vagy egy termék több verzióját használja, a modul telepítése egy modul-specifikus alkönyvtár %ProgramFiles%\Common Files\Modules alkönyvtár.
 
-A következő példában a Fabrikam modul Fabrikam alkönyvtárban %ProgramFiles%\Common Files\Modules alkönyvtár van telepítve. Vegye figyelembe, hogy mindegyik modul saját alkönyvtárában található cikkre hivatkozik, a modulok alkönyvtárban található.
+A következő példában a Fabrikam modul Fabrikam alkönyvtára települ a `%ProgramFiles%\Common Files\Modules` alkönyvtárat. Vegye figyelembe, hogy mindegyik modul saját alkönyvtárában található cikkre hivatkozik, a modulok alkönyvtárban található.
 
 ```
 C:\Program Files
@@ -177,7 +162,6 @@ C:\Program Files
       Fabrikam
         Fabrikam.psd1 (module manifest)
         Fabrikam.dll (module assembly)
-
 ```
 
 Ezt követően a telepítő biztosítja a értékét a **PSModulePath** környezeti változó tartalmazza a közös fájlok modulok alkönyvtár elérési útját.
@@ -198,9 +182,7 @@ $p = $q -join ';'
 Az alábbi eljárással ugyanazon modul több verziójának telepítéséhez.
 
 1. Hozzon létre egy könyvtárat a modul minden egyes verzióját. Vegye fel a verziószámot a könyvtár nevét.
-
 2. Hozzon létre egy moduljegyzék a modul minden egyes verziójához. Az értékét a **ModuleVersion** a jegyzékfájlban kulcsban, adja meg a modul verziószámát. Mentse a jegyzékfájlt (.psd1) a modul verzióspecifikus könyvtárában.
-
 3. A modul gyökérmappa elérési útja hozzá értékét a **PSModulePath** környezeti változót, a következő példákban szemléltetett módon.
 
 A modul egy adott verziót importált, a végfelhasználó használható a `MinimumVersion` vagy `RequiredVersion` paramétereit a [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) parancsmagot.
