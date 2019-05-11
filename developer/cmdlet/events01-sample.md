@@ -8,52 +8,55 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068130"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229302"
 ---
-# <a name="events01-sample"></a><span data-ttu-id="ad8a2-102">Events01 – minta</span><span class="sxs-lookup"><span data-stu-id="ad8a2-102">Events01 Sample</span></span>
+# <a name="events01-sample"></a><span data-ttu-id="7af9d-102">Events01 – minta</span><span class="sxs-lookup"><span data-stu-id="7af9d-102">Events01 Sample</span></span>
 
-<span data-ttu-id="ad8a2-103">Ez a példa bemutatja, hogyan hozhat létre olyan parancsmagot, amely lehetővé teszi, hogy a felhasználó regisztrálhatja által előállított eseményeket [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span><span class="sxs-lookup"><span data-stu-id="ad8a2-103">This sample shows how to create a cmdlet that allows the user to register for events that are raised by [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span></span> <span data-ttu-id="ad8a2-104">Ezzel a parancsmaggal a felhasználók regisztrálhatnak egy művelet hajtható végre, ha létrejön egy fájl egy adott könyvtárban.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-104">With this cmdlet, users can register an action to execute when a file is created under a specific directory.</span></span> <span data-ttu-id="ad8a2-105">Ez a minta származik a [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) alaposztály.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-105">This sample derives from the [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) base class.</span></span>
+<span data-ttu-id="7af9d-103">Ez a példa bemutatja, hogyan hozhat létre olyan parancsmagot, amely lehetővé teszi, hogy a felhasználó regisztrálhatja által előállított eseményeket [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).</span><span class="sxs-lookup"><span data-stu-id="7af9d-103">This sample shows how to create a cmdlet that allows the user to register for events that are raised by [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).</span></span>
+<span data-ttu-id="7af9d-104">Ezzel a parancsmaggal a felhasználók regisztrálhatnak egy művelet hajtható végre, ha létrejön egy fájl egy adott könyvtárban.</span><span class="sxs-lookup"><span data-stu-id="7af9d-104">With this cmdlet, users can register an action to execute when a file is created under a specific directory.</span></span>
+<span data-ttu-id="7af9d-105">Ez a minta származik a [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) alaposztály.</span><span class="sxs-lookup"><span data-stu-id="7af9d-105">This sample derives from the [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) base class.</span></span>
 
-## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="ad8a2-106">Hogyan hozhat létre a mintát a Visual Studio használatával.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-106">How to build the sample by using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="7af9d-106">Hogyan hozhat létre a mintát a Visual Studio használatával.</span><span class="sxs-lookup"><span data-stu-id="7af9d-106">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="ad8a2-107">A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a Events01 mappát.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-107">With the Windows PowerShell 2.0 SDK installed, navigate to the Events01 folder.</span></span> <span data-ttu-id="ad8a2-108">Az alapértelmezett hely a C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.</span></span>
+1. <span data-ttu-id="7af9d-107">A Windows PowerShell 2.0 SDK telepítve van, és keresse meg a Events01 mappát.</span><span class="sxs-lookup"><span data-stu-id="7af9d-107">With the Windows PowerShell 2.0 SDK installed, navigate to the Events01 folder.</span></span>
+   <span data-ttu-id="7af9d-108">Az alapértelmezett hely a `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.</span><span class="sxs-lookup"><span data-stu-id="7af9d-108">The default location is `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.</span></span>
 
-2. <span data-ttu-id="ad8a2-109">A megoldásfájlt (.sln) ikonra.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="ad8a2-110">Ekkor megnyílik a mintaprojektet a Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-110">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="7af9d-109">A megoldásfájlt (.sln) ikonra.</span><span class="sxs-lookup"><span data-stu-id="7af9d-109">Double-click the icon for the solution (.sln) file.</span></span>
+   <span data-ttu-id="7af9d-110">Ekkor megnyílik a mintaprojektet a Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="7af9d-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="ad8a2-111">Az a **összeállítása** menüjében válassza **megoldás fordítása**.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-111">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="7af9d-111">Az a **összeállítása** menüjében válassza **megoldás fordítása**.</span><span class="sxs-lookup"><span data-stu-id="7af9d-111">In the **Build** menu, select **Build Solution**.</span></span>
+   <span data-ttu-id="7af9d-112">A minta a könyvtár alapértelmezés szerint a lesz felépítve `\bin` vagy `\bin\debug` mappákat.</span><span class="sxs-lookup"><span data-stu-id="7af9d-112">The library for the sample will be built in the default `\bin` or `\bin\debug` folders.</span></span>
 
-    <span data-ttu-id="ad8a2-112">A könyvtárban, a minta az alapértelmezett \bin vagy \bin\debug mappákat a lesz felépítve.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="7af9d-113">A minta futtatása</span><span class="sxs-lookup"><span data-stu-id="7af9d-113">How to run the sample</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="ad8a2-113">A minta futtatása</span><span class="sxs-lookup"><span data-stu-id="ad8a2-113">How to run the sample</span></span>
-
-1. <span data-ttu-id="ad8a2-114">Hozza létre a következő modul mappát:</span><span class="sxs-lookup"><span data-stu-id="ad8a2-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="7af9d-114">Hozza létre a következő modul mappát:</span><span class="sxs-lookup"><span data-stu-id="7af9d-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/events01`
 
-2. <span data-ttu-id="ad8a2-115">A minta a könyvtárfájl a modul mappába másolja.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-115">Copy the library file for the sample to the module folder.</span></span>
+2. <span data-ttu-id="7af9d-115">A minta a könyvtárfájl a modul mappába másolja.</span><span class="sxs-lookup"><span data-stu-id="7af9d-115">Copy the library file for the sample to the module folder.</span></span>
 
-3. <span data-ttu-id="ad8a2-116">Indítsa el a Windows PowerShellt.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="7af9d-116">Indítsa el a Windows PowerShellt.</span><span class="sxs-lookup"><span data-stu-id="7af9d-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="ad8a2-117">Futtassa a parancsmagot betöltése a Windows PowerShell a következő parancsot:</span><span class="sxs-lookup"><span data-stu-id="ad8a2-117">Run the following command to load the cmdlet into Windows PowerShell:</span></span>
+4. <span data-ttu-id="7af9d-117">Futtassa a parancsmagot betöltése a Windows PowerShell a következő parancsot:</span><span class="sxs-lookup"><span data-stu-id="7af9d-117">Run the following command to load the cmdlet into Windows PowerShell:</span></span>
 
     ```powershell
     import-module events01
     ```
 
-5. <span data-ttu-id="ad8a2-118">Használja a Register-FileSystemEvent parancsmagot egy műveletet, amely egy üzenetet fog kiírni, amikor létrejön egy fájl a TEMP könyvtár alá regisztrálni.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-118">Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a file is created under the TEMP directory.</span></span>
+5. <span data-ttu-id="7af9d-118">Használja a Register-FileSystemEvent parancsmagot egy műveletet, amely egy üzenetet fog kiírni, amikor létrejön egy fájl a TEMP könyvtár alá regisztrálni.</span><span class="sxs-lookup"><span data-stu-id="7af9d-118">Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a file is created under the TEMP directory.</span></span>
 
     ```powershell
     Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }
     ```
 
-6. <span data-ttu-id="ad8a2-119">Hozzon létre egy fájlt a TEMP könyvtár alá, és vegye figyelembe, hogy végrehajtja-e a művelet (az üzenet jelenik meg).</span><span class="sxs-lookup"><span data-stu-id="ad8a2-119">Create a file under the TEMP directory and note that the action is executed (the message is displayed).</span></span>
+6. <span data-ttu-id="7af9d-119">Hozzon létre egy fájlt a TEMP könyvtár alá, és vegye figyelembe, hogy végrehajtja-e a művelet (az üzenet jelenik meg).</span><span class="sxs-lookup"><span data-stu-id="7af9d-119">Create a file under the TEMP directory and note that the action is executed (the message is displayed).</span></span>
 
-<span data-ttu-id="ad8a2-120">Ez a kimenet az eredmények az alábbi lépéseket.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-120">This is a sample output that results by following these steps.</span></span>
+<span data-ttu-id="7af9d-120">Ez a kimenet az eredmények az alábbi lépéseket.</span><span class="sxs-lookup"><span data-stu-id="7af9d-120">This is a sample output that results by following these steps.</span></span>
 
 ```output
 Id              Name            State      HasMoreData     Location             Command
@@ -70,19 +73,22 @@ Set-Content $env:temp\test.txt "This is a test file"
 A file was created in the TEMP directory
 ```
 
-## <a name="requirements"></a><span data-ttu-id="ad8a2-121">Követelmények</span><span class="sxs-lookup"><span data-stu-id="ad8a2-121">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="7af9d-121">Követelmények</span><span class="sxs-lookup"><span data-stu-id="7af9d-121">Requirements</span></span>
 
-<span data-ttu-id="ad8a2-122">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-122">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="7af9d-122">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="7af9d-122">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="ad8a2-123">Azt ismerteti</span><span class="sxs-lookup"><span data-stu-id="ad8a2-123">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="7af9d-123">Azt ismerteti</span><span class="sxs-lookup"><span data-stu-id="7af9d-123">Demonstrates</span></span>
 
-<span data-ttu-id="ad8a2-124">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-124">This sample demonstrates the following.</span></span>
+<span data-ttu-id="7af9d-124">Ez a minta bemutatja a következő.</span><span class="sxs-lookup"><span data-stu-id="7af9d-124">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="ad8a2-125">Hogyan írható-eseményregisztráció parancsmag.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-125">How to write a cmdlet for event registration.</span></span> <span data-ttu-id="ad8a2-126">A parancsmag származik a [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) osztály, amely támogatja a gyakori paraméterek a Register-\* esemény parancsmagok.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-126">The cmdlet derives from the [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) class, which provides support for parameters common to the Register-\*Event cmdlets.</span></span> <span data-ttu-id="ad8a2-127">Parancsmagok származó [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) csak definiálnia kell a adott paramétereikről bírálja felül a `GetSourceObject` és `GetSourceObjectEventName` módszerek absztrakt.</span><span class="sxs-lookup"><span data-stu-id="ad8a2-127">Cmdlets that are derived from [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) need only to define their particular parameters and override the `GetSourceObject` and `GetSourceObjectEventName` abstract methods.</span></span>
+### <a name="how-to-write-a-cmdlet-for-event-registration"></a><span data-ttu-id="7af9d-125">Hogyan írható-eseményregisztráció parancsmag</span><span class="sxs-lookup"><span data-stu-id="7af9d-125">How to write a cmdlet for event registration</span></span>
 
-## <a name="example"></a><span data-ttu-id="ad8a2-128">Példa</span><span class="sxs-lookup"><span data-stu-id="ad8a2-128">Example</span></span>
+<span data-ttu-id="7af9d-126">A parancsmag származik a [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) osztály, amely támogatja a közös paraméterek a `Register-*Event` parancsmagok.</span><span class="sxs-lookup"><span data-stu-id="7af9d-126">The cmdlet derives from the [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) class, which provides support for parameters common to the `Register-*Event` cmdlets.</span></span>
+<span data-ttu-id="7af9d-127">Parancsmagok származó [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) csak definiálnia kell a adott paramétereikről bírálja felül a `GetSourceObject` és `GetSourceObjectEventName` módszerek absztrakt.</span><span class="sxs-lookup"><span data-stu-id="7af9d-127">Cmdlets that are derived from [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) need only to define their particular parameters and override the `GetSourceObject` and `GetSourceObjectEventName` abstract methods.</span></span>
 
-<span data-ttu-id="ad8a2-129">Ez a példa bemutatja, hogyan regisztrálhat az események által kiváltott [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span><span class="sxs-lookup"><span data-stu-id="ad8a2-129">This sample shows how to register for events raised by [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span></span>
+## <a name="example"></a><span data-ttu-id="7af9d-128">Példa</span><span class="sxs-lookup"><span data-stu-id="7af9d-128">Example</span></span>
+
+<span data-ttu-id="7af9d-129">Ez a példa bemutatja, hogyan regisztrálhat az események által kiváltott [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).</span><span class="sxs-lookup"><span data-stu-id="7af9d-129">This sample shows how to register for events raised by [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).</span></span>
 
 ```csharp
 namespace Sample
@@ -181,6 +187,6 @@ namespace Sample
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="ad8a2-130">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="ad8a2-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7af9d-130">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="7af9d-130">See Also</span></span>
 
-[<span data-ttu-id="ad8a2-131">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="ad8a2-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="7af9d-131">Egy Windows PowerShell-parancsmag írása</span><span class="sxs-lookup"><span data-stu-id="7af9d-131">Writing a Windows PowerShell Cmdlet</span></span>](writing-a-windows-powershell-cmdlet.md)

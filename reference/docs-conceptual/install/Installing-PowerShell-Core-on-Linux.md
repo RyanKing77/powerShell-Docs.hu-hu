@@ -2,22 +2,22 @@
 title: A PowerShell Core telepítése Linux rendszerre
 description: Információ a különböző Linux-disztribúciókon a PowerShell Core telepítése
 ms.date: 08/06/2018
-ms.openlocfilehash: 06194550f4e73f9dd38f8cdc25f6c7f698cafce2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0a7c9549c37222bf599e4bdb9e36c91288191bb3
+ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086561"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64530636"
 ---
-# <a name="installing-powershell-core-on-linux"></a><span data-ttu-id="51c38-103">A PowerShell Core telepítése Linux rendszerre</span><span class="sxs-lookup"><span data-stu-id="51c38-103">Installing PowerShell Core on Linux</span></span>
+# <a name="installing-powershell-core-on-linux"></a><span data-ttu-id="fa726-103">A PowerShell Core telepítése Linux rendszerre</span><span class="sxs-lookup"><span data-stu-id="fa726-103">Installing PowerShell Core on Linux</span></span>
 
-<span data-ttu-id="51c38-104">Támogatja a [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04] [ u1804], [Ubuntu 18.10][u1810], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [ Leap 15 openSUSE][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], és [Arch Linux][arch].</span><span class="sxs-lookup"><span data-stu-id="51c38-104">Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].</span></span>
+<span data-ttu-id="fa726-104">Támogatja a [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04] [ u1804], [Ubuntu 18.10][u1810], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [ Leap 15 openSUSE][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], és [Arch Linux][arch].</span><span class="sxs-lookup"><span data-stu-id="fa726-104">Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].</span></span>
 
-<span data-ttu-id="51c38-105">A hivatalosan nem támogatott Linux-disztribúció, megpróbálhatja használatával a [PowerShell beépülő modul csomag][snap].</span><span class="sxs-lookup"><span data-stu-id="51c38-105">For Linux distributions that are not officially supported, you can try using the [PowerShell Snap Package][snap].</span></span>
-<span data-ttu-id="51c38-106">Üzembe helyezése a PowerShell bináris fájlokat közvetlenül a a Linux használatával is megpróbálhatja [ `tar.gz` archív][tar], de állítsa be a szükséges függőségek az operációs rendszer a különálló lépések alapján kell.</span><span class="sxs-lookup"><span data-stu-id="51c38-106">You can also try deploying PowerShell binaries directly using the Linux [`tar.gz` archive][tar], but you would need to set up the necessary dependencies based on the OS in separate steps.</span></span>
+<span data-ttu-id="fa726-105">A hivatalosan nem támogatott Linux-disztribúció, megpróbálhatja használatával a [PowerShell beépülő modul csomag][snap].</span><span class="sxs-lookup"><span data-stu-id="fa726-105">For Linux distributions that are not officially supported, you can try using the [PowerShell Snap Package][snap].</span></span>
+<span data-ttu-id="fa726-106">Üzembe helyezése a PowerShell bináris fájlokat közvetlenül a a Linux használatával is megpróbálhatja [ `tar.gz` archív][tar], de állítsa be a szükséges függőségek az operációs rendszer a különálló lépések alapján kell.</span><span class="sxs-lookup"><span data-stu-id="fa726-106">You can also try deploying PowerShell binaries directly using the Linux [`tar.gz` archive][tar], but you would need to set up the necessary dependencies based on the OS in separate steps.</span></span>
 
-<span data-ttu-id="51c38-107">A githubon érhető el az összes csomag [kiadások][] lapot.</span><span class="sxs-lookup"><span data-stu-id="51c38-107">All packages are available on our GitHub [releases][] page.</span></span>
-<span data-ttu-id="51c38-108">A csomag telepítése után futtassa `pwsh` parancsot egy terminálról.</span><span class="sxs-lookup"><span data-stu-id="51c38-108">Once the package is installed, run `pwsh` from a terminal.</span></span>
+<span data-ttu-id="fa726-107">A githubon érhető el az összes csomag [kiadások][] lapot.</span><span class="sxs-lookup"><span data-stu-id="fa726-107">All packages are available on our GitHub [releases][] page.</span></span>
+<span data-ttu-id="fa726-108">A csomag telepítése után futtassa `pwsh` parancsot egy terminálról.</span><span class="sxs-lookup"><span data-stu-id="fa726-108">Once the package is installed, run `pwsh` from a terminal.</span></span>
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
@@ -32,26 +32,26 @@ ms.locfileid: "62086561"
 [snap]: #snap-package
 [tar]: #binary-archives
 
-## <a name="installing-preview-releases"></a><span data-ttu-id="51c38-109">Előzetes verziók telepítése</span><span class="sxs-lookup"><span data-stu-id="51c38-109">Installing Preview Releases</span></span>
+## <a name="installing-preview-releases"></a><span data-ttu-id="fa726-109">Előzetes verziók telepítése</span><span class="sxs-lookup"><span data-stu-id="fa726-109">Installing Preview Releases</span></span>
 
-<span data-ttu-id="51c38-110">A PowerShell Core előzetes kiadás telepítése Linux rendszeren keresztül egy Csomagtárház esetén a csomag nevét a változik `powershell` való `powershell-preview`.</span><span class="sxs-lookup"><span data-stu-id="51c38-110">When installing a PowerShell Core Preview release for Linux via a Package Repository, the package name changes from `powershell` to `powershell-preview`.</span></span>
+<span data-ttu-id="fa726-110">A PowerShell Core előzetes kiadás telepítése Linux rendszeren keresztül egy Csomagtárház esetén a csomag nevét a változik `powershell` való `powershell-preview`.</span><span class="sxs-lookup"><span data-stu-id="fa726-110">When installing a PowerShell Core Preview release for Linux via a Package Repository, the package name changes from `powershell` to `powershell-preview`.</span></span>
 
-<span data-ttu-id="51c38-111">Közvetlen letöltésére keresztül telepítése nem változik, a fájl neve eltérő.</span><span class="sxs-lookup"><span data-stu-id="51c38-111">Installing via direct download does not change, other than the file name.</span></span>
+<span data-ttu-id="fa726-111">Közvetlen letöltésére keresztül telepítése nem változik, a fájl neve eltérő.</span><span class="sxs-lookup"><span data-stu-id="fa726-111">Installing via direct download does not change, other than the file name.</span></span>
 
-<span data-ttu-id="51c38-112">Íme egy táblát a parancsokat a különböző csomagkezelőinek használatával stabil és előzetes csomagok telepítéséhez:</span><span class="sxs-lookup"><span data-stu-id="51c38-112">Here is a table of the commands to install the stable and preview packages using the various package managers:</span></span>
+<span data-ttu-id="fa726-112">Íme egy táblát a parancsokat a különböző csomagkezelőinek használatával stabil és előzetes csomagok telepítéséhez:</span><span class="sxs-lookup"><span data-stu-id="fa726-112">Here is a table of the commands to install the stable and preview packages using the various package managers:</span></span>
 
-|<span data-ttu-id="51c38-113">Distribution(s)</span><span class="sxs-lookup"><span data-stu-id="51c38-113">Distribution(s)</span></span>|<span data-ttu-id="51c38-114">Stabil parancs</span><span class="sxs-lookup"><span data-stu-id="51c38-114">Stable Command</span></span> | <span data-ttu-id="51c38-115">A parancs előzetes verzió</span><span class="sxs-lookup"><span data-stu-id="51c38-115">Preview Command</span></span> |
+|<span data-ttu-id="fa726-113">Distribution(s)</span><span class="sxs-lookup"><span data-stu-id="fa726-113">Distribution(s)</span></span>|<span data-ttu-id="fa726-114">Stabil parancs</span><span class="sxs-lookup"><span data-stu-id="fa726-114">Stable Command</span></span> | <span data-ttu-id="fa726-115">A parancs előzetes verzió</span><span class="sxs-lookup"><span data-stu-id="fa726-115">Preview Command</span></span> |
 |---------------|---------------|-----------------|
-| <span data-ttu-id="51c38-116">Ubuntu, a Debian</span><span class="sxs-lookup"><span data-stu-id="51c38-116">Ubuntu, Debian</span></span> |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| <span data-ttu-id="51c38-117">CentOS, RedHat</span><span class="sxs-lookup"><span data-stu-id="51c38-117">CentOS, RedHat</span></span> |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| <span data-ttu-id="51c38-118">Fedora</span><span class="sxs-lookup"><span data-stu-id="51c38-118">Fedora</span></span>   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+| <span data-ttu-id="fa726-116">Ubuntu, a Debian</span><span class="sxs-lookup"><span data-stu-id="fa726-116">Ubuntu, Debian</span></span> |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| <span data-ttu-id="fa726-117">CentOS, RedHat</span><span class="sxs-lookup"><span data-stu-id="fa726-117">CentOS, RedHat</span></span> |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| <span data-ttu-id="fa726-118">Fedora</span><span class="sxs-lookup"><span data-stu-id="fa726-118">Fedora</span></span>   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
-## <a name="ubuntu-1404"></a><span data-ttu-id="51c38-119">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="51c38-119">Ubuntu 14.04</span></span>
+## <a name="ubuntu-1404"></a><span data-ttu-id="fa726-119">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="fa726-119">Ubuntu 14.04</span></span>
 
-### <a name="installation-via-package-repository---ubuntu-1404"></a><span data-ttu-id="51c38-120">Telepítési Csomagtárház - Ubuntu 14.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-120">Installation via Package Repository - Ubuntu 14.04</span></span>
+### <a name="installation-via-package-repository---ubuntu-1404"></a><span data-ttu-id="fa726-120">Telepítési Csomagtárház - Ubuntu 14.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-120">Installation via Package Repository - Ubuntu 14.04</span></span>
 
-<span data-ttu-id="51c38-121">A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="51c38-121">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="51c38-122">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="51c38-122">This is the preferred method.</span></span>
+<span data-ttu-id="fa726-121">A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="fa726-121">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="fa726-122">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="fa726-122">This is the preferred method.</span></span>
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -70,15 +70,15 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="51c38-123">Superuser, mint a Microsoft-tárház regisztrálása.</span><span class="sxs-lookup"><span data-stu-id="51c38-123">As superuser, register the Microsoft repository.</span></span>
-<span data-ttu-id="51c38-124">Ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` frissíteni a telepítés.</span><span class="sxs-lookup"><span data-stu-id="51c38-124">From then on, you just need to use `sudo apt-get upgrade powershell` to update the installation.</span></span>
+<span data-ttu-id="fa726-123">Superuser, mint a Microsoft-tárház regisztrálása.</span><span class="sxs-lookup"><span data-stu-id="fa726-123">As superuser, register the Microsoft repository.</span></span>
+<span data-ttu-id="fa726-124">Ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` frissíteni a telepítés.</span><span class="sxs-lookup"><span data-stu-id="fa726-124">From then on, you just need to use `sudo apt-get upgrade powershell` to update the installation.</span></span>
 
-### <a name="installation-via-direct-download---ubuntu-1404"></a><span data-ttu-id="51c38-125">Telepítési közvetlen letöltése – Ubuntu 14.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-125">Installation via Direct Download - Ubuntu 14.04</span></span>
+### <a name="installation-via-direct-download---ubuntu-1404"></a><span data-ttu-id="fa726-125">Telepítési közvetlen letöltése – Ubuntu 14.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-125">Installation via Direct Download - Ubuntu 14.04</span></span>
 
-<span data-ttu-id="51c38-126">A Debian-csomag letöltése `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="51c38-126">Download the Debian package `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`</span></span>
-<span data-ttu-id="51c38-127">az a [kiadások][] az Ubuntu-gép oldalon.</span><span class="sxs-lookup"><span data-stu-id="51c38-127">from the [releases][] page onto the Ubuntu machine.</span></span>
+<span data-ttu-id="fa726-126">A Debian-csomag letöltése `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="fa726-126">Download the Debian package `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`</span></span>
+<span data-ttu-id="fa726-127">az a [kiadások][] az Ubuntu-gép oldalon.</span><span class="sxs-lookup"><span data-stu-id="fa726-127">from the [releases][] page onto the Ubuntu machine.</span></span>
 
-<span data-ttu-id="51c38-128">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="51c38-128">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="fa726-128">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="fa726-128">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.14.04_amd64.deb
@@ -86,21 +86,21 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> <span data-ttu-id="51c38-129">A `dpkg -i` teljesítetlen függőségekkel parancs meghiúsul.</span><span class="sxs-lookup"><span data-stu-id="51c38-129">The `dpkg -i` command fails with unmet dependencies.</span></span>
-> <span data-ttu-id="51c38-130">A következő parancsot, `apt-get install -f` oldja fel ezeket a problémákat, majd befejezi a PowerShell-csomag konfigurálása.</span><span class="sxs-lookup"><span data-stu-id="51c38-130">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
+> <span data-ttu-id="fa726-129">A `dpkg -i` teljesítetlen függőségekkel parancs meghiúsul.</span><span class="sxs-lookup"><span data-stu-id="fa726-129">The `dpkg -i` command fails with unmet dependencies.</span></span>
+> <span data-ttu-id="fa726-130">A következő parancsot, `apt-get install -f` oldja fel ezeket a problémákat, majd befejezi a PowerShell-csomag konfigurálása.</span><span class="sxs-lookup"><span data-stu-id="fa726-130">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
 
-### <a name="uninstallation---ubuntu-1404"></a><span data-ttu-id="51c38-131">Eltávolítás – Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="51c38-131">Uninstallation - Ubuntu 14.04</span></span>
+### <a name="uninstallation---ubuntu-1404"></a><span data-ttu-id="fa726-131">Eltávolítás – Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="fa726-131">Uninstallation - Ubuntu 14.04</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1604"></a><span data-ttu-id="51c38-132">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="51c38-132">Ubuntu 16.04</span></span>
+## <a name="ubuntu-1604"></a><span data-ttu-id="fa726-132">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="fa726-132">Ubuntu 16.04</span></span>
 
-### <a name="installation-via-package-repository---ubuntu-1604"></a><span data-ttu-id="51c38-133">Telepítési csomag tárház - Ubuntu 16.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-133">Installation via Package Repository - Ubuntu 16.04</span></span>
+### <a name="installation-via-package-repository---ubuntu-1604"></a><span data-ttu-id="fa726-133">Telepítési csomag tárház - Ubuntu 16.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-133">Installation via Package Repository - Ubuntu 16.04</span></span>
 
-<span data-ttu-id="51c38-134">A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="51c38-134">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="51c38-135">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="51c38-135">This is the preferred method.</span></span>
+<span data-ttu-id="fa726-134">A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="fa726-134">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="fa726-135">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="fa726-135">This is the preferred method.</span></span>
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -119,14 +119,14 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="51c38-136">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` frissíteni.</span><span class="sxs-lookup"><span data-stu-id="51c38-136">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="fa726-136">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` frissíteni.</span><span class="sxs-lookup"><span data-stu-id="fa726-136">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-### <a name="installation-via-direct-download---ubuntu-1604"></a><span data-ttu-id="51c38-137">Telepítési közvetlen letöltése – Ubuntu 16.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-137">Installation via Direct Download - Ubuntu 16.04</span></span>
+### <a name="installation-via-direct-download---ubuntu-1604"></a><span data-ttu-id="fa726-137">Telepítési közvetlen letöltése – Ubuntu 16.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-137">Installation via Direct Download - Ubuntu 16.04</span></span>
 
-<span data-ttu-id="51c38-138">A Debian-csomag letöltése `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="51c38-138">Download the Debian package `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`</span></span>
-<span data-ttu-id="51c38-139">az a [kiadások][] az Ubuntu-gép oldalon.</span><span class="sxs-lookup"><span data-stu-id="51c38-139">from the [releases][] page onto the Ubuntu machine.</span></span>
+<span data-ttu-id="fa726-138">A Debian-csomag letöltése `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="fa726-138">Download the Debian package `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`</span></span>
+<span data-ttu-id="fa726-139">az a [kiadások][] az Ubuntu-gép oldalon.</span><span class="sxs-lookup"><span data-stu-id="fa726-139">from the [releases][] page onto the Ubuntu machine.</span></span>
 
-<span data-ttu-id="51c38-140">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="51c38-140">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="fa726-140">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="fa726-140">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.16.04_amd64.deb
@@ -134,21 +134,21 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> <span data-ttu-id="51c38-141">A `dpkg -i` teljesítetlen függőségekkel parancs meghiúsul.</span><span class="sxs-lookup"><span data-stu-id="51c38-141">The `dpkg -i` command fails with unmet dependencies.</span></span>
-> <span data-ttu-id="51c38-142">A következő parancsot, `apt-get install -f` oldja fel ezeket a problémákat, majd befejezi a PowerShell-csomag konfigurálása.</span><span class="sxs-lookup"><span data-stu-id="51c38-142">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
+> <span data-ttu-id="fa726-141">A `dpkg -i` teljesítetlen függőségekkel parancs meghiúsul.</span><span class="sxs-lookup"><span data-stu-id="fa726-141">The `dpkg -i` command fails with unmet dependencies.</span></span>
+> <span data-ttu-id="fa726-142">A következő parancsot, `apt-get install -f` oldja fel ezeket a problémákat, majd befejezi a PowerShell-csomag konfigurálása.</span><span class="sxs-lookup"><span data-stu-id="fa726-142">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
 
-### <a name="uninstallation---ubuntu-1604"></a><span data-ttu-id="51c38-143">Eltávolítás – Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="51c38-143">Uninstallation - Ubuntu 16.04</span></span>
+### <a name="uninstallation---ubuntu-1604"></a><span data-ttu-id="fa726-143">Eltávolítás – Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="fa726-143">Uninstallation - Ubuntu 16.04</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1804"></a><span data-ttu-id="51c38-144">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="51c38-144">Ubuntu 18.04</span></span>
+## <a name="ubuntu-1804"></a><span data-ttu-id="fa726-144">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="fa726-144">Ubuntu 18.04</span></span>
 
-### <a name="installation-via-package-repository---ubuntu-1804"></a><span data-ttu-id="51c38-145">Telepítési csomag tárház - Ubuntu 18.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-145">Installation via Package Repository - Ubuntu 18.04</span></span>
+### <a name="installation-via-package-repository---ubuntu-1804"></a><span data-ttu-id="fa726-145">Telepítési csomag tárház - Ubuntu 18.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-145">Installation via Package Repository - Ubuntu 18.04</span></span>
 
-<span data-ttu-id="51c38-146">A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="51c38-146">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="51c38-147">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="51c38-147">This is the preferred method.</span></span>
+<span data-ttu-id="fa726-146">A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="fa726-146">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="fa726-147">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="fa726-147">This is the preferred method.</span></span>
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -170,14 +170,14 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="51c38-148">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` frissíteni.</span><span class="sxs-lookup"><span data-stu-id="51c38-148">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="fa726-148">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` frissíteni.</span><span class="sxs-lookup"><span data-stu-id="fa726-148">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-### <a name="installation-via-direct-download---ubuntu-1804"></a><span data-ttu-id="51c38-149">Telepítési közvetlen letöltése – Ubuntu 18.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-149">Installation via Direct Download - Ubuntu 18.04</span></span>
+### <a name="installation-via-direct-download---ubuntu-1804"></a><span data-ttu-id="fa726-149">Telepítési közvetlen letöltése – Ubuntu 18.04-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-149">Installation via Direct Download - Ubuntu 18.04</span></span>
 
-<span data-ttu-id="51c38-150">A Debian-csomag letöltése `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="51c38-150">Download the Debian package `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`</span></span>
-<span data-ttu-id="51c38-151">az a [kiadások][] az Ubuntu-gép oldalon.</span><span class="sxs-lookup"><span data-stu-id="51c38-151">from the [releases][] page onto the Ubuntu machine.</span></span>
+<span data-ttu-id="fa726-150">A Debian-csomag letöltése `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="fa726-150">Download the Debian package `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`</span></span>
+<span data-ttu-id="fa726-151">az a [kiadások][] az Ubuntu-gép oldalon.</span><span class="sxs-lookup"><span data-stu-id="fa726-151">from the [releases][] page onto the Ubuntu machine.</span></span>
 
-<span data-ttu-id="51c38-152">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="51c38-152">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="fa726-152">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="fa726-152">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.18.04_amd64.deb
@@ -185,28 +185,28 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> <span data-ttu-id="51c38-153">A `dpkg -i` teljesítetlen függőségekkel parancs meghiúsul.</span><span class="sxs-lookup"><span data-stu-id="51c38-153">The `dpkg -i` command fails with unmet dependencies.</span></span>
-> <span data-ttu-id="51c38-154">A következő parancsot, `apt-get install -f` oldja fel ezeket a problémákat, majd befejezi a PowerShell-csomag konfigurálása.</span><span class="sxs-lookup"><span data-stu-id="51c38-154">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
+> <span data-ttu-id="fa726-153">A `dpkg -i` teljesítetlen függőségekkel parancs meghiúsul.</span><span class="sxs-lookup"><span data-stu-id="fa726-153">The `dpkg -i` command fails with unmet dependencies.</span></span>
+> <span data-ttu-id="fa726-154">A következő parancsot, `apt-get install -f` oldja fel ezeket a problémákat, majd befejezi a PowerShell-csomag konfigurálása.</span><span class="sxs-lookup"><span data-stu-id="fa726-154">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
 
-### <a name="uninstallation---ubuntu-1804"></a><span data-ttu-id="51c38-155">Eltávolítás – Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="51c38-155">Uninstallation - Ubuntu 18.04</span></span>
+### <a name="uninstallation---ubuntu-1804"></a><span data-ttu-id="fa726-155">Eltávolítás – Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="fa726-155">Uninstallation - Ubuntu 18.04</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1810"></a><span data-ttu-id="51c38-156">Ubuntu 18.10</span><span class="sxs-lookup"><span data-stu-id="51c38-156">Ubuntu 18.10</span></span>
+## <a name="ubuntu-1810"></a><span data-ttu-id="fa726-156">Ubuntu 18.10</span><span class="sxs-lookup"><span data-stu-id="fa726-156">Ubuntu 18.10</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="51c38-157">Mivel 18.10 egy [közbenső kiadási](https://www.ubuntu.com/about/release-cycle), csak [támogatott közösségi](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).</span><span class="sxs-lookup"><span data-stu-id="51c38-157">As 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle), it is only [community supported](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).</span></span>
+> <span data-ttu-id="fa726-157">Mivel 18.10 egy [közbenső kiadási](https://www.ubuntu.com/about/release-cycle), csak [támogatott közösségi](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).</span><span class="sxs-lookup"><span data-stu-id="fa726-157">As 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle), it is only [community supported](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).</span></span>
 
-<span data-ttu-id="51c38-158">Keresztül támogatott 18.10 telepítése `snapd`.</span><span class="sxs-lookup"><span data-stu-id="51c38-158">Installing on 18.10 is supported via `snapd`.</span></span> <span data-ttu-id="51c38-159">Lásd: [beépülő csomag] [ snap] teljes útmutatás;</span><span class="sxs-lookup"><span data-stu-id="51c38-159">See [Snap Package][snap] for full instructions;</span></span>
+<span data-ttu-id="fa726-158">Keresztül támogatott 18.10 telepítése `snapd`.</span><span class="sxs-lookup"><span data-stu-id="fa726-158">Installing on 18.10 is supported via `snapd`.</span></span> <span data-ttu-id="fa726-159">Lásd: [beépülő csomag] [ snap] teljes útmutatás;</span><span class="sxs-lookup"><span data-stu-id="fa726-159">See [Snap Package][snap] for full instructions;</span></span>
 
-## <a name="debian-8"></a><span data-ttu-id="51c38-160">Debian 8</span><span class="sxs-lookup"><span data-stu-id="51c38-160">Debian 8</span></span>
+## <a name="debian-8"></a><span data-ttu-id="fa726-160">Debian 8</span><span class="sxs-lookup"><span data-stu-id="fa726-160">Debian 8</span></span>
 
-### <a name="installation-via-package-repository---debian-8"></a><span data-ttu-id="51c38-161">Telepítési Csomagtárház – Debian 8-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-161">Installation via Package Repository - Debian 8</span></span>
+### <a name="installation-via-package-repository---debian-8"></a><span data-ttu-id="fa726-161">Telepítési Csomagtárház – Debian 8-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-161">Installation via Package Repository - Debian 8</span></span>
 
-<span data-ttu-id="51c38-162">A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="51c38-162">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="51c38-163">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="51c38-163">This is the preferred method.</span></span>
+<span data-ttu-id="fa726-162">A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="fa726-162">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="fa726-163">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="fa726-163">This is the preferred method.</span></span>
 
 ```sh
 # Install system components
@@ -229,14 +229,14 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="51c38-164">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` frissíteni.</span><span class="sxs-lookup"><span data-stu-id="51c38-164">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="fa726-164">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` frissíteni.</span><span class="sxs-lookup"><span data-stu-id="fa726-164">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-## <a name="debian-9"></a><span data-ttu-id="51c38-165">Debian 9</span><span class="sxs-lookup"><span data-stu-id="51c38-165">Debian 9</span></span>
+## <a name="debian-9"></a><span data-ttu-id="fa726-165">Debian 9</span><span class="sxs-lookup"><span data-stu-id="fa726-165">Debian 9</span></span>
 
-### <a name="installation-via-package-repository---debian-9"></a><span data-ttu-id="51c38-166">Telepítési csomag tárház – Debian 9-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-166">Installation via Package Repository - Debian 9</span></span>
+### <a name="installation-via-package-repository---debian-9"></a><span data-ttu-id="fa726-166">Telepítési csomag tárház – Debian 9-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-166">Installation via Package Repository - Debian 9</span></span>
 
-<span data-ttu-id="51c38-167">A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="51c38-167">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="51c38-168">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="51c38-168">This is the preferred method.</span></span>
+<span data-ttu-id="fa726-167">A PowerShell Core, Linux, az egyszerű telepítés (és frissítések) csomag tárházak van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="fa726-167">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="fa726-168">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="fa726-168">This is the preferred method.</span></span>
 
 ```sh
 # Install system components
@@ -259,34 +259,34 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="51c38-169">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` frissíteni.</span><span class="sxs-lookup"><span data-stu-id="51c38-169">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="fa726-169">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ettől kezdve az imént kell használnia `sudo apt-get upgrade powershell` frissíteni.</span><span class="sxs-lookup"><span data-stu-id="fa726-169">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-### <a name="installation-via-direct-download---debian-9"></a><span data-ttu-id="51c38-170">Telepítési közvetlen letöltése – Debian 9-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-170">Installation via Direct Download - Debian 9</span></span>
+### <a name="installation-via-direct-download---debian-9"></a><span data-ttu-id="fa726-170">Telepítési közvetlen letöltése – Debian 9-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-170">Installation via Direct Download - Debian 9</span></span>
 
-<span data-ttu-id="51c38-171">A Debian-csomag letöltése `powershell_6.2.0-1.debian.9_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="51c38-171">Download the Debian package `powershell_6.2.0-1.debian.9_amd64.deb`</span></span>
-<span data-ttu-id="51c38-172">az a [kiadások][] oldal arra a Debian gépre.</span><span class="sxs-lookup"><span data-stu-id="51c38-172">from the [releases][] page onto the Debian machine.</span></span>
+<span data-ttu-id="fa726-171">A Debian-csomag letöltése `powershell_6.2.0-1.debian.9_amd64.deb`</span><span class="sxs-lookup"><span data-stu-id="fa726-171">Download the Debian package `powershell_6.2.0-1.debian.9_amd64.deb`</span></span>
+<span data-ttu-id="fa726-172">az a [kiadások][] oldal arra a Debian gépre.</span><span class="sxs-lookup"><span data-stu-id="fa726-172">from the [releases][] page onto the Debian machine.</span></span>
 
-<span data-ttu-id="51c38-173">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="51c38-173">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="fa726-173">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="fa726-173">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-### <a name="uninstallation---debian-9"></a><span data-ttu-id="51c38-174">Eltávolítás – Debian 9</span><span class="sxs-lookup"><span data-stu-id="51c38-174">Uninstallation - Debian 9</span></span>
+### <a name="uninstallation---debian-9"></a><span data-ttu-id="fa726-174">Eltávolítás – Debian 9</span><span class="sxs-lookup"><span data-stu-id="fa726-174">Uninstallation - Debian 9</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="centos-7"></a><span data-ttu-id="51c38-175">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="51c38-175">CentOS 7</span></span>
+## <a name="centos-7"></a><span data-ttu-id="fa726-175">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="fa726-175">CentOS 7</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="51c38-176">Ez a csomag az Oracle Linux 7 is működik.</span><span class="sxs-lookup"><span data-stu-id="51c38-176">This package also works on Oracle Linux 7.</span></span>
+> <span data-ttu-id="fa726-176">Ez a csomag az Oracle Linux 7 is működik.</span><span class="sxs-lookup"><span data-stu-id="fa726-176">This package also works on Oracle Linux 7.</span></span>
 
-### <a name="installation-via-package-repository-preferred---centos-7"></a><span data-ttu-id="51c38-177">Telepítési csomag tárház (preferált) – CentOS 7-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-177">Installation via Package Repository (preferred) - CentOS 7</span></span>
+### <a name="installation-via-package-repository-preferred---centos-7"></a><span data-ttu-id="fa726-177">Telepítési csomag tárház (preferált) – CentOS 7-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-177">Installation via Package Repository (preferred) - CentOS 7</span></span>
 
-<span data-ttu-id="51c38-178">A PowerShell Core for Linux hivatalos Microsoft-tárházak egyszerű telepítéshez (és frissítések) van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="51c38-178">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="fa726-178">A PowerShell Core for Linux hivatalos Microsoft-tárházak egyszerű telepítéshez (és frissítések) van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="fa726-178">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -299,26 +299,26 @@ sudo yum install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="51c38-179">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ugyanúgy kell használnia `sudo yum update powershell` PowerShell frissíteni.</span><span class="sxs-lookup"><span data-stu-id="51c38-179">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
+<span data-ttu-id="fa726-179">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ugyanúgy kell használnia `sudo yum update powershell` PowerShell frissíteni.</span><span class="sxs-lookup"><span data-stu-id="fa726-179">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
 
-### <a name="installation-via-direct-download---centos-7"></a><span data-ttu-id="51c38-180">Keresztül közvetlen letöltése – CentOS 7 telepítése</span><span class="sxs-lookup"><span data-stu-id="51c38-180">Installation via Direct Download - CentOS 7</span></span>
+### <a name="installation-via-direct-download---centos-7"></a><span data-ttu-id="fa726-180">Keresztül közvetlen letöltése – CentOS 7 telepítése</span><span class="sxs-lookup"><span data-stu-id="fa726-180">Installation via Direct Download - CentOS 7</span></span>
 
-<span data-ttu-id="51c38-181">Használatával [CentOS 7][], töltse le az RPM-csomagot `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="51c38-181">Using [CentOS 7][], download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
-<span data-ttu-id="51c38-182">az a [kiadások][] oldal arra a CentOS-gépre.</span><span class="sxs-lookup"><span data-stu-id="51c38-182">from the [releases][] page onto the CentOS machine.</span></span>
+<span data-ttu-id="fa726-181">Használatával [CentOS 7][], töltse le az RPM-csomagot `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="fa726-181">Using [CentOS 7][], download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
+<span data-ttu-id="fa726-182">az a [kiadások][] oldal arra a CentOS-gépre.</span><span class="sxs-lookup"><span data-stu-id="fa726-182">from the [releases][] page onto the CentOS machine.</span></span>
 
-<span data-ttu-id="51c38-183">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="51c38-183">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="fa726-183">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="fa726-183">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="51c38-184">Az RPM anélkül, hogy töltse le a köztes lépés is telepítheti:</span><span class="sxs-lookup"><span data-stu-id="51c38-184">You can also install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="fa726-184">Az RPM anélkül, hogy töltse le a köztes lépés is telepítheti:</span><span class="sxs-lookup"><span data-stu-id="fa726-184">You can also install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---centos-7"></a><span data-ttu-id="51c38-185">Eltávolítás – CentOS 7</span><span class="sxs-lookup"><span data-stu-id="51c38-185">Uninstallation - CentOS 7</span></span>
+### <a name="uninstallation---centos-7"></a><span data-ttu-id="fa726-185">Eltávolítás – CentOS 7</span><span class="sxs-lookup"><span data-stu-id="fa726-185">Uninstallation - CentOS 7</span></span>
 
 ```sh
 sudo yum remove powershell
@@ -326,11 +326,11 @@ sudo yum remove powershell
 
 [CentOS 7]: https://www.centos.org/download/
 
-## <a name="red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="51c38-187">Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="51c38-187">Red Hat Enterprise Linux (RHEL) 7</span></span>
+## <a name="red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="fa726-187">Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="fa726-187">Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="51c38-188">Telepítési csomag tárház (preferált) – Red Hat Enterprise Linux (RHEL) 7-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-188">Installation via Package Repository (preferred) - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="fa726-188">Telepítési csomag tárház (preferált) – Red Hat Enterprise Linux (RHEL) 7-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-188">Installation via Package Repository (preferred) - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-<span data-ttu-id="51c38-189">A PowerShell Core for Linux hivatalos Microsoft-tárházak egyszerű telepítéshez (és frissítések) van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="51c38-189">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="fa726-189">A PowerShell Core for Linux hivatalos Microsoft-tárházak egyszerű telepítéshez (és frissítések) van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="fa726-189">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -343,34 +343,34 @@ sudo yum install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="51c38-190">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ugyanúgy kell használnia `sudo yum update powershell` PowerShell frissíteni.</span><span class="sxs-lookup"><span data-stu-id="51c38-190">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
+<span data-ttu-id="fa726-190">A Microsoft-tárházat a felügyelői, egyszer regisztrálás után ugyanúgy kell használnia `sudo yum update powershell` PowerShell frissíteni.</span><span class="sxs-lookup"><span data-stu-id="fa726-190">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
 
-### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="51c38-191">Telepítési közvetlen letöltése – Red Hat Enterprise Linux (RHEL) 7-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-191">Installation via Direct Download - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="fa726-191">Telepítési közvetlen letöltése – Red Hat Enterprise Linux (RHEL) 7-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-191">Installation via Direct Download - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-<span data-ttu-id="51c38-192">Töltse le az RPM-csomagot `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="51c38-192">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
-<span data-ttu-id="51c38-193">az a [kiadások][] oldal arra a Red Hat Enterprise Linux-gépre.</span><span class="sxs-lookup"><span data-stu-id="51c38-193">from the [releases][] page onto the Red Hat Enterprise Linux machine.</span></span>
+<span data-ttu-id="fa726-192">Töltse le az RPM-csomagot `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="fa726-192">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
+<span data-ttu-id="fa726-193">az a [kiadások][] oldal arra a Red Hat Enterprise Linux-gépre.</span><span class="sxs-lookup"><span data-stu-id="fa726-193">from the [releases][] page onto the Red Hat Enterprise Linux machine.</span></span>
 
-<span data-ttu-id="51c38-194">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="51c38-194">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="fa726-194">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="fa726-194">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="51c38-195">Az RPM anélkül, hogy töltse le a köztes lépés is telepítheti:</span><span class="sxs-lookup"><span data-stu-id="51c38-195">You can also install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="fa726-195">Az RPM anélkül, hogy töltse le a köztes lépés is telepítheti:</span><span class="sxs-lookup"><span data-stu-id="fa726-195">You can also install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="51c38-196">Eltávolítás – Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="51c38-196">Uninstallation - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="fa726-196">Eltávolítás – Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="fa726-196">Uninstallation - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
 ```sh
 sudo yum remove powershell
 ```
 
-## <a name="opensuse"></a><span data-ttu-id="51c38-197">openSUSE</span><span class="sxs-lookup"><span data-stu-id="51c38-197">openSUSE</span></span>
+## <a name="opensuse"></a><span data-ttu-id="fa726-197">openSUSE</span><span class="sxs-lookup"><span data-stu-id="fa726-197">openSUSE</span></span>
 
-### <a name="installation---opensuse-423"></a><span data-ttu-id="51c38-198">Telepítés – openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="51c38-198">Installation - openSUSE 42.3</span></span>
+### <a name="installation---opensuse-423"></a><span data-ttu-id="fa726-198">Telepítés – openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="fa726-198">Installation - openSUSE 42.3</span></span>
 
 ```sh
 # Install dependencies
@@ -395,7 +395,7 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="installation---opensuse-leap-15"></a><span data-ttu-id="51c38-199">Telepítés – openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="51c38-199">Installation - openSUSE Leap 15</span></span>
+### <a name="installation---opensuse-leap-15"></a><span data-ttu-id="fa726-199">Telepítés – openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="fa726-199">Installation - openSUSE Leap 15</span></span>
 
 ```sh
 # Install dependencies
@@ -420,20 +420,20 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a><span data-ttu-id="51c38-200">Eltávolítás – openSUSE 42.3, openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="51c38-200">Uninstallation - openSUSE 42.3, openSUSE Leap 15</span></span>
+### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a><span data-ttu-id="fa726-200">Eltávolítás – openSUSE 42.3, openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="fa726-200">Uninstallation - openSUSE 42.3, openSUSE Leap 15</span></span>
 
 ```sh
 rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
-## <a name="fedora"></a><span data-ttu-id="51c38-201">Fedora</span><span class="sxs-lookup"><span data-stu-id="51c38-201">Fedora</span></span>
+## <a name="fedora"></a><span data-ttu-id="fa726-201">Fedora</span><span class="sxs-lookup"><span data-stu-id="fa726-201">Fedora</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="51c38-202">Fedora 28 csak akkor támogatott, a PowerShell Core 6.1-es és újabb.</span><span class="sxs-lookup"><span data-stu-id="51c38-202">Fedora 28 is only supported in PowerShell Core 6.1 and newer.</span></span>
+> <span data-ttu-id="fa726-202">Fedora 28 csak akkor támogatott, a PowerShell Core 6.1-es és újabb.</span><span class="sxs-lookup"><span data-stu-id="fa726-202">Fedora 28 is only supported in PowerShell Core 6.1 and newer.</span></span>
 
-### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a><span data-ttu-id="51c38-203">Telepítési csomag tárház (preferált) – Fedora 27., Fedora 28-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-203">Installation via Package Repository (preferred) - Fedora 27, Fedora 28</span></span>
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a><span data-ttu-id="fa726-203">Telepítési csomag tárház (preferált) – Fedora 27., Fedora 28-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-203">Installation via Package Repository (preferred) - Fedora 27, Fedora 28</span></span>
 
-<span data-ttu-id="51c38-204">A PowerShell Core for Linux hivatalos Microsoft-tárházak egyszerű telepítéshez (és frissítések) van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="51c38-204">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="fa726-204">A PowerShell Core for Linux hivatalos Microsoft-tárházak egyszerű telepítéshez (és frissítések) van közzétéve.</span><span class="sxs-lookup"><span data-stu-id="fa726-204">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
 
 ```sh
 # Register the Microsoft signature key
@@ -455,62 +455,62 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-27-fedora-28"></a><span data-ttu-id="51c38-205">Telepítési közvetlen letöltése – Fedora 27, Fedora 28-n keresztül</span><span class="sxs-lookup"><span data-stu-id="51c38-205">Installation via Direct Download - Fedora 27, Fedora 28</span></span>
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a><span data-ttu-id="fa726-205">Telepítési közvetlen letöltése – Fedora 27, Fedora 28-n keresztül</span><span class="sxs-lookup"><span data-stu-id="fa726-205">Installation via Direct Download - Fedora 27, Fedora 28</span></span>
 
-<span data-ttu-id="51c38-206">Töltse le az RPM-csomagot `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="51c38-206">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
-<span data-ttu-id="51c38-207">az a [kiadások][] oldal arra a Fedora gépre.</span><span class="sxs-lookup"><span data-stu-id="51c38-207">from the [releases][] page onto the Fedora machine.</span></span>
+<span data-ttu-id="fa726-206">Töltse le az RPM-csomagot `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span><span class="sxs-lookup"><span data-stu-id="fa726-206">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
+<span data-ttu-id="fa726-207">az a [kiadások][] oldal arra a Fedora gépre.</span><span class="sxs-lookup"><span data-stu-id="fa726-207">from the [releases][] page onto the Fedora machine.</span></span>
 
-<span data-ttu-id="51c38-208">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="51c38-208">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="fa726-208">Ezután hajtsa végre a következő billentyűparancsot a terminálon:</span><span class="sxs-lookup"><span data-stu-id="fa726-208">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="51c38-209">Az RPM anélkül, hogy töltse le a köztes lépés is telepítheti:</span><span class="sxs-lookup"><span data-stu-id="51c38-209">You can also install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="fa726-209">Az RPM anélkül, hogy töltse le a köztes lépés is telepítheti:</span><span class="sxs-lookup"><span data-stu-id="fa726-209">You can also install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-27-fedora-28"></a><span data-ttu-id="51c38-210">Eltávolítás – Fedora 27., Fedora 28</span><span class="sxs-lookup"><span data-stu-id="51c38-210">Uninstallation - Fedora 27, Fedora 28</span></span>
+### <a name="uninstallation---fedora-27-fedora-28"></a><span data-ttu-id="fa726-210">Eltávolítás – Fedora 27., Fedora 28</span><span class="sxs-lookup"><span data-stu-id="fa726-210">Uninstallation - Fedora 27, Fedora 28</span></span>
 
 ```sh
 sudo dnf remove powershell
 ```
 
-## <a name="arch-linux"></a><span data-ttu-id="51c38-211">Arch Linux</span><span class="sxs-lookup"><span data-stu-id="51c38-211">Arch Linux</span></span>
+## <a name="arch-linux"></a><span data-ttu-id="fa726-211">Arch Linux</span><span class="sxs-lookup"><span data-stu-id="fa726-211">Arch Linux</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="51c38-212">A rendszer kísérleti emelőkaros támogatja.</span><span class="sxs-lookup"><span data-stu-id="51c38-212">Arch support is experimental.</span></span>
+> <span data-ttu-id="fa726-212">A rendszer kísérleti emelőkaros támogatja.</span><span class="sxs-lookup"><span data-stu-id="fa726-212">Arch support is experimental.</span></span>
 
-<span data-ttu-id="51c38-213">PowerShell érhető el a [Arch Linux][] felhasználói tárház (AUR).</span><span class="sxs-lookup"><span data-stu-id="51c38-213">PowerShell is available from the [Arch Linux][] User Repository (AUR).</span></span>
+<span data-ttu-id="fa726-213">PowerShell érhető el a [Arch Linux][] felhasználói tárház (AUR).</span><span class="sxs-lookup"><span data-stu-id="fa726-213">PowerShell is available from the [Arch Linux][] User Repository (AUR).</span></span>
 
-* <span data-ttu-id="51c38-214">Az összeállítható a [legújabb címkézett kiadás][arch-release]</span><span class="sxs-lookup"><span data-stu-id="51c38-214">It can be compiled with the [latest tagged release][arch-release]</span></span>
-* <span data-ttu-id="51c38-215">Az összeállítható a [fő a legutóbbi véglegesítést][arch-git]</span><span class="sxs-lookup"><span data-stu-id="51c38-215">It can be compiled from the [latest commit to master][arch-git]</span></span>
-* <span data-ttu-id="51c38-216">Használatával telepíthető a [legújabb kibocsátási bináris][arch-bin]</span><span class="sxs-lookup"><span data-stu-id="51c38-216">It can be installed using the [latest release binary][arch-bin]</span></span>
+* <span data-ttu-id="fa726-214">Az összeállítható a [legújabb címkézett kiadás][arch-release]</span><span class="sxs-lookup"><span data-stu-id="fa726-214">It can be compiled with the [latest tagged release][arch-release]</span></span>
+* <span data-ttu-id="fa726-215">Az összeállítható a [fő a legutóbbi véglegesítést][arch-git]</span><span class="sxs-lookup"><span data-stu-id="fa726-215">It can be compiled from the [latest commit to master][arch-git]</span></span>
+* <span data-ttu-id="fa726-216">Használatával telepíthető a [legújabb kibocsátási bináris][arch-bin]</span><span class="sxs-lookup"><span data-stu-id="fa726-216">It can be installed using the [latest release binary][arch-bin]</span></span>
 
-<span data-ttu-id="51c38-217">A AUR csomagok közösségi kezelt – nem hivatalos támogatott.</span><span class="sxs-lookup"><span data-stu-id="51c38-217">Packages in the AUR are community maintained - there is no official support.</span></span>
+<span data-ttu-id="fa726-217">A AUR csomagok közösségi kezelt – nem hivatalos támogatott.</span><span class="sxs-lookup"><span data-stu-id="fa726-217">Packages in the AUR are community maintained - there is no official support.</span></span>
 
-<span data-ttu-id="51c38-218">A AUR a csomagok telepítésével kapcsolatos további információkért lásd: a [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) vagy a Közösség [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span><span class="sxs-lookup"><span data-stu-id="51c38-218">For more information on installing packages from the AUR, see the [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or the community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span></span>
+<span data-ttu-id="fa726-218">A AUR a csomagok telepítésével kapcsolatos további információkért lásd: a [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) vagy a Közösség [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span><span class="sxs-lookup"><span data-stu-id="fa726-218">For more information on installing packages from the AUR, see the [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or the community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span></span>
 
 [Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
-## <a name="snap-package"></a><span data-ttu-id="51c38-220">Snap Package</span><span class="sxs-lookup"><span data-stu-id="51c38-220">Snap Package</span></span>
+## <a name="snap-package"></a><span data-ttu-id="fa726-220">Snap Package</span><span class="sxs-lookup"><span data-stu-id="fa726-220">Snap Package</span></span>
 
-### <a name="getting-snapd"></a><span data-ttu-id="51c38-221">Első snapd</span><span class="sxs-lookup"><span data-stu-id="51c38-221">Getting snapd</span></span>
+### <a name="getting-snapd"></a><span data-ttu-id="fa726-221">Első snapd</span><span class="sxs-lookup"><span data-stu-id="fa726-221">Getting snapd</span></span>
 
-<span data-ttu-id="51c38-222">`snapd` Illesztés futtatásához szükség.</span><span class="sxs-lookup"><span data-stu-id="51c38-222">`snapd` is required to run snaps.</span></span>
-<span data-ttu-id="51c38-223">Használat [ezek az utasítások](https://docs.snapcraft.io/core/install) , ellenőrizze, hogy `snapd` telepítve.</span><span class="sxs-lookup"><span data-stu-id="51c38-223">Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.</span></span>
+<span data-ttu-id="fa726-222">`snapd` Illesztés futtatásához szükség.</span><span class="sxs-lookup"><span data-stu-id="fa726-222">`snapd` is required to run snaps.</span></span>
+<span data-ttu-id="fa726-223">Használat [ezek az utasítások](https://docs.snapcraft.io/core/install) , ellenőrizze, hogy `snapd` telepítve.</span><span class="sxs-lookup"><span data-stu-id="fa726-223">Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.</span></span>
 
-### <a name="installation-via-snap"></a><span data-ttu-id="51c38-224">Keresztül beépülő modul telepítése</span><span class="sxs-lookup"><span data-stu-id="51c38-224">Installation via Snap</span></span>
+### <a name="installation-via-snap"></a><span data-ttu-id="fa726-224">Keresztül beépülő modul telepítése</span><span class="sxs-lookup"><span data-stu-id="fa726-224">Installation via Snap</span></span>
 
-<span data-ttu-id="51c38-225">A PowerShell Core, Linux esetén a rendszer közzéteszi az [beépülő store](https://snapcraft.io/store) egyszerű telepítéshez (és frissítések).</span><span class="sxs-lookup"><span data-stu-id="51c38-225">PowerShell Core, for Linux, is published to the [Snap store](https://snapcraft.io/store) for easy installation (and updates).</span></span>
-<span data-ttu-id="51c38-226">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="51c38-226">This is the preferred method.</span></span>
+<span data-ttu-id="fa726-225">A PowerShell Core, Linux esetén a rendszer közzéteszi az [beépülő store](https://snapcraft.io/store) egyszerű telepítéshez (és frissítések).</span><span class="sxs-lookup"><span data-stu-id="fa726-225">PowerShell Core, for Linux, is published to the [Snap store](https://snapcraft.io/store) for easy installation (and updates).</span></span>
+<span data-ttu-id="fa726-226">Ez az elsődleges módszer.</span><span class="sxs-lookup"><span data-stu-id="fa726-226">This is the preferred method.</span></span>
 
 ```sh
 # Install PowerShell
@@ -520,7 +520,7 @@ sudo snap install powershell --classic
 pwsh
 ```
 
-<span data-ttu-id="51c38-227">Ha szeretne az előzetes verzió telepítése, a következő metódust.</span><span class="sxs-lookup"><span data-stu-id="51c38-227">If you want to install preview version, use following method.</span></span>
+<span data-ttu-id="fa726-227">Ha szeretne az előzetes verzió telepítése, a következő metódust.</span><span class="sxs-lookup"><span data-stu-id="fa726-227">If you want to install preview version, use following method.</span></span>
 
 ```sh
 # Install PowerShell
@@ -530,28 +530,28 @@ sudo snap install powershell-preview --classic
 pwsh-preview
 ```
 
-<span data-ttu-id="51c38-228">Után automatikusan beépülő modul telepítését frissíti, de egy frissítési használatával aktiválhat `sudo snap refresh powershell` vagy `sudo snap refresh powershell-preview`.</span><span class="sxs-lookup"><span data-stu-id="51c38-228">After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.</span></span>
+<span data-ttu-id="fa726-228">Után automatikusan beépülő modul telepítését frissíti, de egy frissítési használatával aktiválhat `sudo snap refresh powershell` vagy `sudo snap refresh powershell-preview`.</span><span class="sxs-lookup"><span data-stu-id="fa726-228">After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.</span></span>
 
-### <a name="uninstallation"></a><span data-ttu-id="51c38-229">Az Eltávolítás</span><span class="sxs-lookup"><span data-stu-id="51c38-229">Uninstallation</span></span>
+### <a name="uninstallation"></a><span data-ttu-id="fa726-229">Az Eltávolítás</span><span class="sxs-lookup"><span data-stu-id="fa726-229">Uninstallation</span></span>
 
 ```sh
 sudo snap remove powershell
 ```
 
-<span data-ttu-id="51c38-230">vagy a</span><span class="sxs-lookup"><span data-stu-id="51c38-230">or</span></span>
+<span data-ttu-id="fa726-230">vagy a</span><span class="sxs-lookup"><span data-stu-id="fa726-230">or</span></span>
 
 ```sh
 sudo snap remove powershell-preview
 ```
 
-## <a name="kali"></a><span data-ttu-id="51c38-231">Kali</span><span class="sxs-lookup"><span data-stu-id="51c38-231">Kali</span></span>
+## <a name="kali"></a><span data-ttu-id="fa726-231">Kali</span><span class="sxs-lookup"><span data-stu-id="fa726-231">Kali</span></span>
 
-### <a name="installation---kali"></a><span data-ttu-id="51c38-232">Telepítés – Kali</span><span class="sxs-lookup"><span data-stu-id="51c38-232">Installation - Kali</span></span>
+### <a name="installation---kali"></a><span data-ttu-id="fa726-232">Telepítés – Kali</span><span class="sxs-lookup"><span data-stu-id="fa726-232">Installation - Kali</span></span>
 
 ```sh
 # Download & Install prerequisites
-wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-9_amd64.deb
-dpkg -i libicu57_57.1-9_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-6+deb9u2_amd64.deb
+dpkg -i libicu57_57.1-6+deb9u2_amd64.deb
 apt-get update && apt-get install -y curl gnupg apt-transport-https
 
 # Add Microsoft public repository key to APT
@@ -567,25 +567,25 @@ apt-get update && apt-get install -y powershell
 pwsh
 ```
 
-### <a name="uninstallation---kali"></a><span data-ttu-id="51c38-233">Eltávolítás – Kali</span><span class="sxs-lookup"><span data-stu-id="51c38-233">Uninstallation - Kali</span></span>
+### <a name="uninstallation---kali"></a><span data-ttu-id="fa726-233">Eltávolítás – Kali</span><span class="sxs-lookup"><span data-stu-id="fa726-233">Uninstallation - Kali</span></span>
 
 ```sh
 # Uninstall PowerShell package
 apt-get remove -y powershell
 ```
 
-## <a name="raspbian"></a><span data-ttu-id="51c38-234">Raspbian</span><span class="sxs-lookup"><span data-stu-id="51c38-234">Raspbian</span></span>
+## <a name="raspbian"></a><span data-ttu-id="fa726-234">Raspbian</span><span class="sxs-lookup"><span data-stu-id="fa726-234">Raspbian</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="51c38-235">Raspbian támogatási je experimentální.</span><span class="sxs-lookup"><span data-stu-id="51c38-235">Raspbian support is experimental.</span></span>
+> <span data-ttu-id="fa726-235">Raspbian támogatási je experimentální.</span><span class="sxs-lookup"><span data-stu-id="fa726-235">Raspbian support is experimental.</span></span>
 
-<span data-ttu-id="51c38-236">PowerShell jelenleg csak a Raspbian Stretch támogatott.</span><span class="sxs-lookup"><span data-stu-id="51c38-236">Currently, PowerShell is only supported on Raspbian Stretch.</span></span>
+<span data-ttu-id="fa726-236">PowerShell jelenleg csak a Raspbian Stretch támogatott.</span><span class="sxs-lookup"><span data-stu-id="fa726-236">Currently, PowerShell is only supported on Raspbian Stretch.</span></span>
 
-<span data-ttu-id="51c38-237">Emellett coreclr-nek (és így a PowerShell Core) csak 2 tartományban és Pi 3 eszközökön módon fog más eszközök, például [Pi nulla](https://github.com/dotnet/coreclr/issues/10605), egy nem támogatott processzorral rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="51c38-237">Also CoreCLR (and thus PowerShell Core) will only work on Pi 2 and Pi 3 devices as other devices, like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), have an unsupported processor.</span></span>
+<span data-ttu-id="fa726-237">Emellett coreclr-nek (és így a PowerShell Core) csak 2 tartományban és Pi 3 eszközökön módon fog más eszközök, például [Pi nulla](https://github.com/dotnet/coreclr/issues/10605), egy nem támogatott processzorral rendelkezik.</span><span class="sxs-lookup"><span data-stu-id="fa726-237">Also CoreCLR (and thus PowerShell Core) will only work on Pi 2 and Pi 3 devices as other devices, like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), have an unsupported processor.</span></span>
 
-<span data-ttu-id="51c38-238">Töltse le [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) , és kövesse a [telepítési utasításokat](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) a Pi eléréséhez.</span><span class="sxs-lookup"><span data-stu-id="51c38-238">Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the [installation instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to get it onto your Pi.</span></span>
+<span data-ttu-id="fa726-238">Töltse le [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) , és kövesse a [telepítési utasításokat](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) a Pi eléréséhez.</span><span class="sxs-lookup"><span data-stu-id="fa726-238">Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the [installation instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to get it onto your Pi.</span></span>
 
-### <a name="installation---raspbian"></a><span data-ttu-id="51c38-239">Telepítés – Raspbian</span><span class="sxs-lookup"><span data-stu-id="51c38-239">Installation - Raspbian</span></span>
+### <a name="installation---raspbian"></a><span data-ttu-id="fa726-239">Telepítés – Raspbian</span><span class="sxs-lookup"><span data-stu-id="fa726-239">Installation - Raspbian</span></span>
 
 ```sh
 # Install prerequisites
@@ -604,7 +604,7 @@ tar -xvf ./powershell-6.2.0-linux-arm32.tar.gz -C ~/powershell
 ~/powershell/pwsh
 ```
 
-<span data-ttu-id="51c38-240">Igény szerint hozhat létre a szimbolikus hivatkozást úgy, hogy tudni indítsa el a Powershellt, a "pwsh" bináris elérési út megadása nélkül</span><span class="sxs-lookup"><span data-stu-id="51c38-240">Optionally you can create a symbolic link to be able to start PowerShell without specifying path to the "pwsh" binary</span></span>
+<span data-ttu-id="fa726-240">Igény szerint hozhat létre a szimbolikus hivatkozást úgy, hogy tudni indítsa el a Powershellt, a "pwsh" bináris elérési út megadása nélkül</span><span class="sxs-lookup"><span data-stu-id="fa726-240">Optionally you can create a symbolic link to be able to start PowerShell without specifying path to the "pwsh" binary</span></span>
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
@@ -616,44 +616,44 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 # Now to start PowerShell you can just run "pwsh"
 ```
 
-### <a name="uninstallation---raspbian"></a><span data-ttu-id="51c38-241">Eltávolítás – Raspbian</span><span class="sxs-lookup"><span data-stu-id="51c38-241">Uninstallation - Raspbian</span></span>
+### <a name="uninstallation---raspbian"></a><span data-ttu-id="fa726-241">Eltávolítás – Raspbian</span><span class="sxs-lookup"><span data-stu-id="fa726-241">Uninstallation - Raspbian</span></span>
 
 ```sh
 rm -rf ~/powershell
 ```
 
-## <a name="binary-archives"></a><span data-ttu-id="51c38-242">Bináris archívum</span><span class="sxs-lookup"><span data-stu-id="51c38-242">Binary Archives</span></span>
+## <a name="binary-archives"></a><span data-ttu-id="fa726-242">Bináris archívum</span><span class="sxs-lookup"><span data-stu-id="fa726-242">Binary Archives</span></span>
 
-<span data-ttu-id="51c38-243">PowerShell bináris `tar.gz` archívumok biztosított Linux-platformokhoz a speciális üzembe helyezési forgatókönyvek megvalósítását teszik lehetővé.</span><span class="sxs-lookup"><span data-stu-id="51c38-243">PowerShell binary `tar.gz` archives are provided for Linux platforms to enable advanced deployment scenarios.</span></span>
+<span data-ttu-id="fa726-243">PowerShell bináris `tar.gz` archívumok biztosított Linux-platformokhoz a speciális üzembe helyezési forgatókönyvek megvalósítását teszik lehetővé.</span><span class="sxs-lookup"><span data-stu-id="fa726-243">PowerShell binary `tar.gz` archives are provided for Linux platforms to enable advanced deployment scenarios.</span></span>
 
-### <a name="dependencies"></a><span data-ttu-id="51c38-244">Függőségek</span><span class="sxs-lookup"><span data-stu-id="51c38-244">Dependencies</span></span>
+### <a name="dependencies"></a><span data-ttu-id="fa726-244">Függőségek</span><span class="sxs-lookup"><span data-stu-id="fa726-244">Dependencies</span></span>
 
-<span data-ttu-id="51c38-245">PowerShell az összes Linux-disztribúciókra vonatkozó hordozható bináris épít fel.</span><span class="sxs-lookup"><span data-stu-id="51c38-245">PowerShell builds portable binaries for all Linux distributions.</span></span>
-<span data-ttu-id="51c38-246">De a .NET Core runtime szükséges különböző disztribúciókon különböző függőségek, és ezért PowerShell pedig ugyanezt.</span><span class="sxs-lookup"><span data-stu-id="51c38-246">But .NET Core runtime requires different dependencies on different distributions, and hence PowerShell does the same.</span></span>
+<span data-ttu-id="fa726-245">PowerShell az összes Linux-disztribúciókra vonatkozó hordozható bináris épít fel.</span><span class="sxs-lookup"><span data-stu-id="fa726-245">PowerShell builds portable binaries for all Linux distributions.</span></span>
+<span data-ttu-id="fa726-246">De a .NET Core runtime szükséges különböző disztribúciókon különböző függőségek, és ezért PowerShell pedig ugyanezt.</span><span class="sxs-lookup"><span data-stu-id="fa726-246">But .NET Core runtime requires different dependencies on different distributions, and hence PowerShell does the same.</span></span>
 
-<span data-ttu-id="51c38-247">A következő diagram a .NET Core 2.0 hivatalosan támogatott különböző Linux-disztribúciókon függőségeit jeleníti meg.</span><span class="sxs-lookup"><span data-stu-id="51c38-247">The following chart shows the .NET Core 2.0 dependencies that are officially supported on different Linux distributions.</span></span>
+<span data-ttu-id="fa726-247">A következő diagram a .NET Core 2.0 hivatalosan támogatott különböző Linux-disztribúciókon függőségeit jeleníti meg.</span><span class="sxs-lookup"><span data-stu-id="fa726-247">The following chart shows the .NET Core 2.0 dependencies that are officially supported on different Linux distributions.</span></span>
 
-| <span data-ttu-id="51c38-248">Operációs rendszer</span><span class="sxs-lookup"><span data-stu-id="51c38-248">OS</span></span>                 | <span data-ttu-id="51c38-249">Függőségek</span><span class="sxs-lookup"><span data-stu-id="51c38-249">Dependencies</span></span> |
+| <span data-ttu-id="fa726-248">Operációs rendszer</span><span class="sxs-lookup"><span data-stu-id="fa726-248">OS</span></span>                 | <span data-ttu-id="fa726-249">Függőségek</span><span class="sxs-lookup"><span data-stu-id="fa726-249">Dependencies</span></span> |
 | ------------------ | ------------ |
-| <span data-ttu-id="51c38-250">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="51c38-250">Ubuntu 14.04</span></span>       | <span data-ttu-id="51c38-251">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="51c38-251">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="51c38-252">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span><span class="sxs-lookup"><span data-stu-id="51c38-252">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
-| <span data-ttu-id="51c38-253">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="51c38-253">Ubuntu 16.04</span></span>       | <span data-ttu-id="51c38-254">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="51c38-254">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="51c38-255">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span><span class="sxs-lookup"><span data-stu-id="51c38-255">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span></span> |
-| <span data-ttu-id="51c38-256">Ubuntu 17.10</span><span class="sxs-lookup"><span data-stu-id="51c38-256">Ubuntu 17.10</span></span>       | <span data-ttu-id="51c38-257">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="51c38-257">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="51c38-258">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span><span class="sxs-lookup"><span data-stu-id="51c38-258">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span></span> |
-| <span data-ttu-id="51c38-259">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="51c38-259">Ubuntu 18.04</span></span>       | <span data-ttu-id="51c38-260">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="51c38-260">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="51c38-261">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span><span class="sxs-lookup"><span data-stu-id="51c38-261">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span></span> |
-| <span data-ttu-id="51c38-262">Debian 8 (Jessie)</span><span class="sxs-lookup"><span data-stu-id="51c38-262">Debian 8 (Jessie)</span></span>  | <span data-ttu-id="51c38-263">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="51c38-263">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="51c38-264">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span><span class="sxs-lookup"><span data-stu-id="51c38-264">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
-| <span data-ttu-id="51c38-265">Debian 9 (Nyújtás)</span><span class="sxs-lookup"><span data-stu-id="51c38-265">Debian 9 (Stretch)</span></span> | <span data-ttu-id="51c38-266">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="51c38-266">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="51c38-267">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span><span class="sxs-lookup"><span data-stu-id="51c38-267">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span></span> |
-| <span data-ttu-id="51c38-268">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="51c38-268">CentOS 7</span></span> <br> <span data-ttu-id="51c38-269">Oracle Linux 7</span><span class="sxs-lookup"><span data-stu-id="51c38-269">Oracle Linux 7</span></span> <br> <span data-ttu-id="51c38-270">RHEL 7</span><span class="sxs-lookup"><span data-stu-id="51c38-270">RHEL 7</span></span> | <span data-ttu-id="51c38-271">libunwind, libcurl, openssl-függvénytárak, libicu</span><span class="sxs-lookup"><span data-stu-id="51c38-271">libunwind, libcurl, openssl-libs, libicu</span></span> |
-| <span data-ttu-id="51c38-272">openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="51c38-272">openSUSE 42.3</span></span> | <span data-ttu-id="51c38-273">libcurl4, libopenssl1_0_0, libicu52_1</span><span class="sxs-lookup"><span data-stu-id="51c38-273">libcurl4, libopenssl1_0_0, libicu52_1</span></span> |
-| <span data-ttu-id="51c38-274">openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="51c38-274">openSUSE Leap 15</span></span> | <span data-ttu-id="51c38-275">libcurl4, libopenssl1_0_0, libicu60_2</span><span class="sxs-lookup"><span data-stu-id="51c38-275">libcurl4, libopenssl1_0_0, libicu60_2</span></span> |
-| <span data-ttu-id="51c38-276">Fedora 27</span><span class="sxs-lookup"><span data-stu-id="51c38-276">Fedora 27</span></span> <br> <span data-ttu-id="51c38-277">Fedora 28</span><span class="sxs-lookup"><span data-stu-id="51c38-277">Fedora 28</span></span> | <span data-ttu-id="51c38-278">libunwind, libcurl, openssl-függvénytárak, libicu, a/compat-openssl10</span><span class="sxs-lookup"><span data-stu-id="51c38-278">libunwind, libcurl, openssl-libs, libicu, compat-openssl10</span></span> |
+| <span data-ttu-id="fa726-250">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="fa726-250">Ubuntu 14.04</span></span>       | <span data-ttu-id="fa726-251">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="fa726-251">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="fa726-252">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span><span class="sxs-lookup"><span data-stu-id="fa726-252">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
+| <span data-ttu-id="fa726-253">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="fa726-253">Ubuntu 16.04</span></span>       | <span data-ttu-id="fa726-254">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="fa726-254">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="fa726-255">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span><span class="sxs-lookup"><span data-stu-id="fa726-255">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span></span> |
+| <span data-ttu-id="fa726-256">Ubuntu 17.10</span><span class="sxs-lookup"><span data-stu-id="fa726-256">Ubuntu 17.10</span></span>       | <span data-ttu-id="fa726-257">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="fa726-257">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="fa726-258">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span><span class="sxs-lookup"><span data-stu-id="fa726-258">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span></span> |
+| <span data-ttu-id="fa726-259">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="fa726-259">Ubuntu 18.04</span></span>       | <span data-ttu-id="fa726-260">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="fa726-260">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="fa726-261">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span><span class="sxs-lookup"><span data-stu-id="fa726-261">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span></span> |
+| <span data-ttu-id="fa726-262">Debian 8 (Jessie)</span><span class="sxs-lookup"><span data-stu-id="fa726-262">Debian 8 (Jessie)</span></span>  | <span data-ttu-id="fa726-263">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="fa726-263">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="fa726-264">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span><span class="sxs-lookup"><span data-stu-id="fa726-264">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
+| <span data-ttu-id="fa726-265">Debian 9 (Nyújtás)</span><span class="sxs-lookup"><span data-stu-id="fa726-265">Debian 9 (Stretch)</span></span> | <span data-ttu-id="fa726-266">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span><span class="sxs-lookup"><span data-stu-id="fa726-266">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="fa726-267">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span><span class="sxs-lookup"><span data-stu-id="fa726-267">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span></span> |
+| <span data-ttu-id="fa726-268">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="fa726-268">CentOS 7</span></span> <br> <span data-ttu-id="fa726-269">Oracle Linux 7</span><span class="sxs-lookup"><span data-stu-id="fa726-269">Oracle Linux 7</span></span> <br> <span data-ttu-id="fa726-270">RHEL 7</span><span class="sxs-lookup"><span data-stu-id="fa726-270">RHEL 7</span></span> | <span data-ttu-id="fa726-271">libunwind, libcurl, openssl-függvénytárak, libicu</span><span class="sxs-lookup"><span data-stu-id="fa726-271">libunwind, libcurl, openssl-libs, libicu</span></span> |
+| <span data-ttu-id="fa726-272">openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="fa726-272">openSUSE 42.3</span></span> | <span data-ttu-id="fa726-273">libcurl4, libopenssl1_0_0, libicu52_1</span><span class="sxs-lookup"><span data-stu-id="fa726-273">libcurl4, libopenssl1_0_0, libicu52_1</span></span> |
+| <span data-ttu-id="fa726-274">openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="fa726-274">openSUSE Leap 15</span></span> | <span data-ttu-id="fa726-275">libcurl4, libopenssl1_0_0, libicu60_2</span><span class="sxs-lookup"><span data-stu-id="fa726-275">libcurl4, libopenssl1_0_0, libicu60_2</span></span> |
+| <span data-ttu-id="fa726-276">Fedora 27</span><span class="sxs-lookup"><span data-stu-id="fa726-276">Fedora 27</span></span> <br> <span data-ttu-id="fa726-277">Fedora 28</span><span class="sxs-lookup"><span data-stu-id="fa726-277">Fedora 28</span></span> | <span data-ttu-id="fa726-278">libunwind, libcurl, openssl-függvénytárak, libicu, a/compat-openssl10</span><span class="sxs-lookup"><span data-stu-id="fa726-278">libunwind, libcurl, openssl-libs, libicu, compat-openssl10</span></span> |
 
-<span data-ttu-id="51c38-279">Nem hivatalosan támogatott Linux-disztribúciókon a PowerShell bináris fájljainak telepítéséhez telepíteni szeretné a cél operációs rendszer szükséges függőséget a különálló lépések.</span><span class="sxs-lookup"><span data-stu-id="51c38-279">To deploy PowerShell binaries on Linux distributions that are not officially supported, you need to install the necessary dependencies for the target OS in separate steps.</span></span>
-<span data-ttu-id="51c38-280">Például a [Amazon Linux dockerfile] [ amazon-dockerfile] először telepíti a függőségeket, és ezt követően kiolvassa a Linuxos `tar.gz` archív.</span><span class="sxs-lookup"><span data-stu-id="51c38-280">For example, our [Amazon Linux dockerfile][amazon-dockerfile] installs dependencies first, and then extracts the Linux `tar.gz` archive.</span></span>
+<span data-ttu-id="fa726-279">Nem hivatalosan támogatott Linux-disztribúciókon a PowerShell bináris fájljainak telepítéséhez telepíteni szeretné a cél operációs rendszer szükséges függőséget a különálló lépések.</span><span class="sxs-lookup"><span data-stu-id="fa726-279">To deploy PowerShell binaries on Linux distributions that are not officially supported, you need to install the necessary dependencies for the target OS in separate steps.</span></span>
+<span data-ttu-id="fa726-280">Például a [Amazon Linux dockerfile] [ amazon-dockerfile] először telepíti a függőségeket, és ezt követően kiolvassa a Linuxos `tar.gz` archív.</span><span class="sxs-lookup"><span data-stu-id="fa726-280">For example, our [Amazon Linux dockerfile][amazon-dockerfile] installs dependencies first, and then extracts the Linux `tar.gz` archive.</span></span>
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
-### <a name="installation---binary-archives"></a><span data-ttu-id="51c38-281">Telepítés – bináris archívum</span><span class="sxs-lookup"><span data-stu-id="51c38-281">Installation - Binary Archives</span></span>
+### <a name="installation---binary-archives"></a><span data-ttu-id="fa726-281">Telepítés – bináris archívum</span><span class="sxs-lookup"><span data-stu-id="fa726-281">Installation - Binary Archives</span></span>
 
-#### <a name="linux"></a><span data-ttu-id="51c38-282">Linux</span><span class="sxs-lookup"><span data-stu-id="51c38-282">Linux</span></span>
+#### <a name="linux"></a><span data-ttu-id="fa726-282">Linux</span><span class="sxs-lookup"><span data-stu-id="fa726-282">Linux</span></span>
 
 ```sh
 # Download the powershell '.tar.gz' archive
@@ -672,25 +672,25 @@ sudo chmod +x /opt/microsoft/powershell/6.2.0/pwsh
 sudo ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 ```
 
-### <a name="uninstalling-binary-archives"></a><span data-ttu-id="51c38-283">Bináris archívum eltávolítása</span><span class="sxs-lookup"><span data-stu-id="51c38-283">Uninstalling binary archives</span></span>
+### <a name="uninstalling-binary-archives"></a><span data-ttu-id="fa726-283">Bináris archívum eltávolítása</span><span class="sxs-lookup"><span data-stu-id="fa726-283">Uninstalling binary archives</span></span>
 
 ```sh
 sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
-## <a name="paths"></a><span data-ttu-id="51c38-284">Elérési utak</span><span class="sxs-lookup"><span data-stu-id="51c38-284">Paths</span></span>
+## <a name="paths"></a><span data-ttu-id="fa726-284">Elérési utak</span><span class="sxs-lookup"><span data-stu-id="fa726-284">Paths</span></span>
 
-* <span data-ttu-id="51c38-285">`$PSHOME` van `/opt/microsoft/powershell/6.2.0/`</span><span class="sxs-lookup"><span data-stu-id="51c38-285">`$PSHOME` is `/opt/microsoft/powershell/6.2.0/`</span></span>
-* <span data-ttu-id="51c38-286">Felhasználói profilokat fog olvasni `~/.config/powershell/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="51c38-286">User profiles will be read from `~/.config/powershell/profile.ps1`</span></span>
-* <span data-ttu-id="51c38-287">Alapértelmezett profilokat fog olvasni `$PSHOME/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="51c38-287">Default profiles will be read from `$PSHOME/profile.ps1`</span></span>
-* <span data-ttu-id="51c38-288">Felhasználói modulok fog olvasni `~/.local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="51c38-288">User modules will be read from `~/.local/share/powershell/Modules`</span></span>
-* <span data-ttu-id="51c38-289">Megosztott modulok fog olvasni `/usr/local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="51c38-289">Shared modules will be read from `/usr/local/share/powershell/Modules`</span></span>
-* <span data-ttu-id="51c38-290">Az alapértelmezett modulokat fog olvasni `$PSHOME/Modules`</span><span class="sxs-lookup"><span data-stu-id="51c38-290">Default modules will be read from `$PSHOME/Modules`</span></span>
-* <span data-ttu-id="51c38-291">PSReadline előzmények lesz rögzítve a `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span><span class="sxs-lookup"><span data-stu-id="51c38-291">PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span></span>
+* <span data-ttu-id="fa726-285">`$PSHOME` van `/opt/microsoft/powershell/6.2.0/`</span><span class="sxs-lookup"><span data-stu-id="fa726-285">`$PSHOME` is `/opt/microsoft/powershell/6.2.0/`</span></span>
+* <span data-ttu-id="fa726-286">Felhasználói profilokat fog olvasni `~/.config/powershell/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="fa726-286">User profiles will be read from `~/.config/powershell/profile.ps1`</span></span>
+* <span data-ttu-id="fa726-287">Alapértelmezett profilokat fog olvasni `$PSHOME/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="fa726-287">Default profiles will be read from `$PSHOME/profile.ps1`</span></span>
+* <span data-ttu-id="fa726-288">Felhasználói modulok fog olvasni `~/.local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="fa726-288">User modules will be read from `~/.local/share/powershell/Modules`</span></span>
+* <span data-ttu-id="fa726-289">Megosztott modulok fog olvasni `/usr/local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="fa726-289">Shared modules will be read from `/usr/local/share/powershell/Modules`</span></span>
+* <span data-ttu-id="fa726-290">Az alapértelmezett modulokat fog olvasni `$PSHOME/Modules`</span><span class="sxs-lookup"><span data-stu-id="fa726-290">Default modules will be read from `$PSHOME/Modules`</span></span>
+* <span data-ttu-id="fa726-291">PSReadline előzmények lesz rögzítve a `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span><span class="sxs-lookup"><span data-stu-id="fa726-291">PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span></span>
 
-<span data-ttu-id="51c38-292">A profilok tiszteletben PowerShell a gazdagép konfiguráció, így az alapértelmezett gazdagép-specifikus profilok létezik `Microsoft.PowerShell_profile.ps1` ugyanazon a helyen.</span><span class="sxs-lookup"><span data-stu-id="51c38-292">The profiles respect PowerShell's per-host configuration, so the default host-specific profiles exists at `Microsoft.PowerShell_profile.ps1` in the same locations.</span></span>
+<span data-ttu-id="fa726-292">A profilok tiszteletben PowerShell a gazdagép konfiguráció, így az alapértelmezett gazdagép-specifikus profilok létezik `Microsoft.PowerShell_profile.ps1` ugyanazon a helyen.</span><span class="sxs-lookup"><span data-stu-id="fa726-292">The profiles respect PowerShell's per-host configuration, so the default host-specific profiles exists at `Microsoft.PowerShell_profile.ps1` in the same locations.</span></span>
 
-<span data-ttu-id="51c38-293">PowerShell tiszteletben tartja a [XDG alap könyvtár megadása] [ xdg-bds] Linux rendszeren.</span><span class="sxs-lookup"><span data-stu-id="51c38-293">PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.</span></span>
+<span data-ttu-id="fa726-293">PowerShell tiszteletben tartja a [XDG alap könyvtár megadása] [ xdg-bds] Linux rendszeren.</span><span class="sxs-lookup"><span data-stu-id="fa726-293">PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.</span></span>
 
 [Kiadások]: https://github.com/PowerShell/PowerShell/releases/latest
 [releases]: https://github.com/PowerShell/PowerShell/releases/latest
