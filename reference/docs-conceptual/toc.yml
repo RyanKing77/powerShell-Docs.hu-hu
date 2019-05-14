@@ -68,7 +68,7 @@
   items:
     - name: Konzol
       items:
-        - name: A PowerShell.exe parancssori súgója
+        - name: A PowerShell parancssori beállításai
           href: components/console/powershell.exe-command-line-help.md
         - name: A parancssorbővítés használata
           href: components/console/using-tab-expansion.md
