@@ -8,24 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083382"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855135"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Szintaxis hozzáadása egy parancsmagokkal kapcsolatos súgótémakörhöz
-
-- [A paraméter-attribútumok](#Parameter-Attributes)
-
-- [A paraméter értéke attribútumok](#Parameter-Value-Attributes)
-
-- [Szintaxis-információk gyűjtése](#Gathering-Syntax-Information)
-
-- [Kódolási Szintaxisdiagramja XML](#Coding-the-Syntax-Diagram-XML)
-
-## <a name="things-to-know-about-the-syntax-diagram-in-cmdlet-help"></a>Tudnivaló a parancsmag súgóját Szintaxisdiagramja kapcsolatban
 
 Olvassa el ezt a szakaszt, hogy milyen típusú adatok törlése képet kapjon a parancsmag súgójában szintaxisdiagramja XML-kód megkezdése előtt meg kell adnia, például a paraméter-attribútumok és hogyan jelenjen meg az adatokat a szintaxisdiagramja...
 
@@ -166,7 +156,7 @@ A paraméter kötelező attribútum jelzi-e a paraméter (és annak értékét) 
 
 ## <a name="coding-the-syntax-diagram-xml"></a>Kódolási Szintaxisdiagramja XML
 
-A leírás csomópont vége után azonnal megkezdődik a szintaxis csomópont XML-kód a \</maml:description > címke. Szintaxisdiagramja használja az adatok összegyűjtésével kapcsolatban lásd: [szintaxis információk összegyűjtéséhez](#Gathering-Syntax-Information).
+A leírás csomópont vége után azonnal megkezdődik a szintaxis csomópont XML-kód a \</maml:description > címke. Szintaxisdiagramja használja az adatok összegyűjtésével kapcsolatban lásd: [szintaxis információk összegyűjtéséhez](#gathering-syntax-information).
 
 ### <a name="adding-a-syntax-node"></a>Szintaxis csomópont hozzáadása
 
@@ -210,7 +200,7 @@ Az alábbi példában megtalálhatja, amely rendelkezik a szintaxis-elem csomóp
 
 Minden egyes paraméter, a szintaxis elem csomópont van megadva egy \<parancsparaméter: > címkéket. Egy kulcspárra van szüksége \<parancsparaméter: > címke szerepel a paraméterkészletet, a következő általános paramétereket, amelyek a Windows PowerShell által biztosított kivételével minden paraméter?.
 
-A nyitó attribútumai \<parancsparaméter: > címke határozza meg, hogyan jelenjen meg a paraméter szintaxisdiagramja. A paraméter-attribútumok kapcsolatos információkért lásd: [paraméter-attribútumok](#Parameter-Attributes).
+A nyitó attribútumai \<parancsparaméter: > címke határozza meg, hogyan jelenjen meg a paraméter szintaxisdiagramja. A paraméter-attribútumok kapcsolatos információkért lásd: [paraméter-attribútumok](#parameter-attributes).
 
 > [!NOTE]
 > A \<parancsparaméter: > címke támogatja a gyermekelem \<maml:description > tartalmú soha nem jelenik meg. A paraméterek leírásait meg van adva a paraméter csomópont XML-kód. A szintaxis elem található információk közötti inkonzisztencia elkerülése érdekében bodes és a paraméter csomópont, hagyja ki a (\<maml:description >, vagy hagyja üresen.

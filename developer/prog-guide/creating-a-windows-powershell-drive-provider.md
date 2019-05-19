@@ -12,38 +12,18 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 2696d78cae7739310b7684161b597ce436dabe92
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055649"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855201"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Windows PowerShelles meghajtószolgáltató létrehozása
 
 Ez a témakör ismerteti, hogyan hozhat létre egy Windows PowerShell meghajtót szolgáltató, amely lehetővé teszi egy data store eléréséhez keresztül egy Windows PowerShell meghajtót. Az ilyen típusú szolgáltató is nevezik szolgáltatók a Windows PowerShell meghajtót. A Windows PowerShell-meghajtók, a szolgáltató által használt adja meg az azt jelenti, hogy csatlakozni az adattárhoz.
 
 Az itt leírtak szerint a Windows PowerShell meghajtószolgáltató egy Microsoft Access-adatbázis hozzáférést biztosít. A szolgáltató, a Windows PowerShell meghajtót jelöl az adatbázisban (lehetőség a meghajtószolgáltató tetszőleges számú meghajtók hozzáadása), a legfelső szintű tárolókat a meghajtó képviselik a táblák az adatbázisban, és a tárolók elemeket képviseli sora a táblák.
-
-Itt van ez a témakör szakaszai listáját. Ha nem ismeri a Windows PowerShell meghajtót szolgáltató írása, olvassa el az ezekben a szakaszokban a sorrendben jelennek meg. Azonban ha ismeri, a meghajtó szolgáltató írása, nyissa meg közvetlenül a keresett információt.
-
-- [A Windows PowerShell-szolgáltatóban osztály meghatározása](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Alapfunkciók meghatározása](#Defining-Base-Functionality)
-
-- [Meghajtó állapota adatok létrehozása](#Creating-Drive-State-Information)
-
-- [A meghajtó létrehozása](#Creating-a-Drive)
-
-- [Dinamikus paraméterek NewDrive csatolása](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [A meghajtó eltávolítása](#Removing-a-Drive)
-
-- [Alapértelmezett inicializálása meghajtók](#Initializing-Default-Drives)
-
-- [Kódminta](#Code-Sample)
-
-- [A Windows PowerShell meghajtót szolgáltató tesztelése](#Testing-the-Windows-PowerShell-Drive-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>A Windows PowerShell-szolgáltatóban osztály meghatározása
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068351"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854856"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Parancsmag létrehozása adattár eléréséhez
 
@@ -22,24 +22,6 @@ Ez a szakasz ismerteti, hogyan hozhat létre olyan parancsmagot, amely hozzáfé
 A Select-Str parancsmag, az itt leírtak szerint is keresse meg és válassza ki a karakterláncok egy fájl vagy az objektum. A karakterlánc azonosításához használt minták keresztül explicit módon adható meg a `Path` paramétert a parancsmag vagy implicit módon keresztül a `Script` paraméter.
 
 A parancsmag úgy tervezték, hogy bármely Windows PowerShell-szolgáltatóval származó [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). A parancsmag megadhatja például, a fájlrendszer-szolgáltatót, vagy a Windows PowerShell által biztosított változó szolgáltató. További információk aboutWindows PowerShell-szolgáltatók, lásd: [tervezése a Windows PowerShell-szolgáltatóban](../prog-guide/designing-your-windows-powershell-provider.md).
-
-Ez a szakasz témakörei a következők:
-
-- [A parancsmag osztály meghatározása](#Defining-the-Cmdlet-Class)
-
-- [Az adatok eléréséhez a paraméterek megadása](#Declaring-the-Path-Parameter)
-
-- [Bemeneti feldolgozási módszerek felülbírálása](#Overriding-Input-Processing-Methods)
-
-- [Tartalom elérése](#Accessing-Content)
-
-- [Kódminta](#Code-Sample)
-
-- [Objektumtípusok definiálása és formázása](#Declaring-Search-Support-Parameters)
-
-- [A parancsmag készítése](#Building-the-Cmdlet)
-
-- [A parancsmag tesztelése](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>A parancsmag osztály meghatározása
 
@@ -397,7 +379,7 @@ Ez a minta kiválasztása – Str parancsmag használja a [System.Management.Aut
 
 ## <a name="code-sample"></a>Kódminta
 
-A következő kód bemutatja ennek a verziónak a kiválasztása – Str parancsmag végrehajtására. Vegye figyelembe, hogy ez a kód tartalmazza a parancsmag osztály, a parancsmag által használt titkos módszerek és a Windows PowerShell beépülő modul kódot a parancsmag regisztrálásához használt. A parancsmag nyilvántartására vonatkozó további információkért lásd: [létrehozásához a parancsmag](#Building-the-Cmdlet).
+A következő kód bemutatja ennek a verziónak a kiválasztása – Str parancsmag végrehajtására. Vegye figyelembe, hogy ez a kód tartalmazza a parancsmag osztály, a parancsmag által használt titkos módszerek és a Windows PowerShell beépülő modul kódot a parancsmag regisztrálásához használt. A parancsmag nyilvántartására vonatkozó további információkért lásd: [létrehozásához a parancsmag](#building-the-cmdlet).
 
 ```csharp
 //

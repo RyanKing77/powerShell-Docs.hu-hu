@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f7a61e261399d3d2abe62fe4523e8c9895d5ad4
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081852"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855176"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Windows PowerShelles navigációszolgáltató létrehozása
 
@@ -33,34 +33,6 @@ Az itt ismertetett szolgáltató a felhasználóazonosító Access-adatbázisok 
 
 > [!CAUTION]
 > Vegye figyelembe, hogy ez a kialakítás feltételezi, hogy egy adatbázis, amely egy mező neve azonosítóval rendelkezik, és hogy a mező típusát LongInteger.
-
-A következők szakaszokat tartalmazza az ebben a témakörben. Ha nem ismeri a Windows PowerShell-navigációs szolgáltató írása, olvassa el ezt az információt a sorrendben, amely akkor jelenik meg. Azonban ha ismeri a Windows PowerShell-navigációs szolgáltató írása, nyissa meg közvetlenül a keresett információt.
-
-- [A PS-navigációs szolgáltató osztálya meghatározása](#Define-the-Windows-PowerShell-provider)
-
-- [Alapfunkciók meghatározása](#Defining-Base-Functionality)
-
-- [A PS-elérési út létrehozása](#Creating-a-Windows-PowerShell-Path)
-
-- [A szülő elérési útjának beolvasása](#Retrieving-the-Parent-Path)
-
-- [A gyermek elérési útja beolvasása](#Retrieve-the-Child-Path-Name)
-
-- [Ha egy elem van-e a tároló](#Determining-if-an-Item-is-a-Container)
-
-- [Egy elem áthelyezése](#Moving-an-Item)
-
-- [Dinamikus paraméterek csatolása a `Move-Item` parancsmag](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [Relatív elérési út normalizálása](#Normalizing-a-Relative-Path)
-
-- [Kódminta](#Code-Sample)
-
-- [Objektumtípusok definiálása és formázása](#Defining-Object-Types-and-Formatting)
-
-- [A Windows PowerShell-szolgáltató létrehozása](#Building-the-Windows-PowerShell-provider)
-
-- [A Windows PowerShell-szolgáltatóban tesztelése](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="define-the-windows-powershell-provider"></a>A Windows PowerShell-szolgáltató megadása
 

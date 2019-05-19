@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c503b17a670a5d1f07aa48e714d8a0eb0aa78ae9
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081835"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855006"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Windows PowerShelles tulajdonságszolgáltató létrehozása
 
@@ -31,26 +31,6 @@ Ez a témakör ismerteti, hogyan hozhat létre olyan szolgáltatót, amely lehet
 
 > [!CAUTION]
 > A módszerek-tulajdonság szolgáltató használatával objektumokat kell írnia a [System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject) metódust.
-
-Az alábbi lista tartalmazza az ebben a témakörben szakaszokban. Ha nem ismeri a Windows PowerShell-tulajdonság szolgáltató írása, olvassa el ezt az információt a sorrendben, amely akkor jelenik meg. Azonban ha ismeri a Windows PowerShell-tulajdonság szolgáltató írása, nyissa meg közvetlenül a keresett információt.
-
-- [A Windows PowerShell-szolgáltatóban meghatározása](#Defining-the-Windows-PowerShell-provider)
-
-- [Alapfunkciók meghatározása](#Defining-Base-Functionality)
-
-- [Tulajdonságainak beolvasása](#Retrieving-Properties)
-
-- [Dinamikus paraméterek csatolása a `Get-ItemProperty` parancsmag](#Attaching-Dynamic-Parameters-to-the-Get-ItemProperty-Cmdlet)
-
-- [Tulajdonságok beállítása](#Setting-Properties)
-
-- [Dinamikus paraméterek csatolása a `Set-ItemProperty` parancsmag](#Attaching-Dynamic-Parameters-for-the-Set-ItemProperty-Cmdlet)
-
-- [Vymazání Vlastnosti egy](#Clearing-Properties)
-
-- [Dinamikus paraméterek csatolása a `Clear-ItemProperty` parancsmag](#Attaching-Dynamic-Parameters-to-the-Clear-ItemProperty-Cmdlet)
-
-- [A Windows PowerShell-szolgáltató létrehozása](#Building-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-provider"></a>A Windows PowerShell-szolgáltatóban meghatározása
 

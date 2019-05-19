@@ -15,34 +15,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: fb113086ce89e4becff9bcaf3232905fde2bf610
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c9ad84c5bcb6826fcf51db9a1f1a578a65a1f275
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068810"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854948"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Parancssori bemenetet feldolgozó paraméterek hozzáadása
 
 A parancsmag bemenete egy forrása a parancssorból. Ez a témakör ismerteti, hogyan adhat hozzá egy paramétert a **Get-Proc** parancsmag (amely leírt [létrehozásához az első parancsmag](./creating-a-cmdlet-without-parameters.md)), hogy a parancsmag bemeneti a helyi számítógépről explicit alapján tud feldolgozni. a parancsmagnak átadott objektum. A **Get-Proc** leírt parancsmag itt lekéri a nevük alapján folyamatok, majd megjeleníti a a folyamatokra vonatkozó parancsot a parancssorba.
-
-A következő szakaszok ebben a témakörben a következők:
-
-- [A parancsmag osztály meghatározása](#Defining-the-Cmdlet-Class)
-
-- [Paraméterek deklaráló](#Declaring-Parameters)
-
-- [Támogató paraméter ellenőrzése](#Supporting-Parameter-Validation)
-
-- [Egy bemeneti metódus feldolgozási felülbírálása](#Overriding-an-Input-Processing-Method)
-
-- [Kódminta](#Code-Sample)
-
-- [Objektumtípusok definiálása és formázása](#Defining-Object-Types-and-Formatting)
-
-- [A parancsmag készítése](#Building-the-Cmdlet)
-
-- [A parancsmag tesztelése](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>A parancsmag osztály meghatározása
 

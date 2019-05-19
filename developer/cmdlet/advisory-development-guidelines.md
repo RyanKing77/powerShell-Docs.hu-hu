@@ -8,42 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068793"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854859"
 ---
 # <a name="advisory-development-guidelines"></a>Tanácsolt fejlesztői útmutató
 
 Ez a szakasz útmutatást is figyelembe kell ahhoz, hogy jó fejlesztői és felhasználói élményt ismerteti. Egyes esetekben előfordulhat, hogy alkalmazza, és egyes esetekben, előfordulhat, hogy nem.
-
-## <a name="design-guidelines"></a>Tervezési útmutató
-
-- [Támogatja egy InputObject paramétert (AD01)](./advisory-development-guidelines.md#AD01)
-
-- [Támogatja a Force paramétert (AD02)](./advisory-development-guidelines.md#AD02)
-
-- [Kezeli a hitelesítő adatokat (AD03) Windows PowerShell-lel](./advisory-development-guidelines.md#AD03)
-
-- [Támogatja a kódolási paramétereket (AD04)](./advisory-development-guidelines.md#AD04)
-
-- [Tesztelési parancsmagok olyan logikai érték (AD05) kell visszaadnia.](./advisory-development-guidelines.md#AD05)
-
-## <a name="code-guidelines"></a>Kód irányelvek
-
-- [Hajtsa végre a parancsmag osztály elnevezési konvenciói (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [Ha nincs adatcsatorna bemenetének bírálja felül a BeginProcessing metódus (AC02)](./advisory-development-guidelines.md#AC02)
-
-- [Kezelni leállítási kérések bírálja felül a StopProcessing metódus (AC03)](./advisory-development-guidelines.md#AC03)
-
-- [Az IDisposable illesztőfelülettel (AC04)](./advisory-development-guidelines.md#AC04)
-
-- [Szerializálási mobilbarát paramétertípusok (AC05) használata](./advisory-development-guidelines.md#AC05)
-
-- [Bizalmas adatok (AC06) SecureString használata](./advisory-development-guidelines.md#AC06)
 
 ## <a name="design-guidelines"></a>Tervezési útmutató
 

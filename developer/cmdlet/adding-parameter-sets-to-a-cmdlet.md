@@ -10,34 +10,14 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6a3b592c5f85c1f065ad4b5b0290cf44dcef484e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068837"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854876"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Paraméterkészletek hozzáadása parancsmagokhoz
-
-Ez a szakasz ismerteti a Stop-Proc parancsmaghoz paraméterkészletek hozzáadása (ismertetett [létrehozása egy parancsmag, amely módosítja a rendszer](./creating-a-cmdlet-that-modifies-the-system.md)). Hasonló a Stop-Proc más parancsmagoknak a programozói útmutatóban leírt, ez a parancsmag megkísérli leállítani folyamatokat, amelyek a Get-Proc parancsmaggal olvassa be (ismertetett [létrehozásához az első parancsmag](./creating-a-cmdlet-without-parameters.md)).
-
-Ez a szakasz témakörei a következők:
-
-- [Tudnivaló paraméterkészlettel kapcsolatban](#Adding-Parameter-Sets-to-a-Cmdlet)
-
-- [A parancsmag osztály deklaráló](#Declaring-the-Cmdlet-Class)
-
-- [A parancsmag paramétereit deklaráló](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [Egy bemeneti metódus feldolgozási felülbírálása](#Overriding-an-Input-Processing-Method)
-
-- [Kódminta](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [Objektumtípusok definiálása és formázása](#Defining-Object-Types-and-Formatting)
-
-- [A parancsmag készítése](#Building-the-Cmdlet)
-
-- [A parancsmag tesztelése](#Testing-the-Cmdlet)
 
 ## <a name="things-to-know-about-parameter-sets"></a>Tudnivaló paraméterkészlettel kapcsolatban
 

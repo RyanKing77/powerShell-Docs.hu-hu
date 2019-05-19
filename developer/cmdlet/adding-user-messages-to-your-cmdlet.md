@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068776"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854937"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Felhasználói üzenetek hozzáadása a parancsmaghoz
 
@@ -51,32 +51,6 @@ Parancsmagok írhat a különböző típusú üzeneteket, amelyek a felhasznál�
 - Mennyi információkat tartalmazó üzenetek működik a parancsmag állapotjelentés befejeződött, amelyek hosszú ideig tart a művelet végrehajtása során.
 
 Nincs korlátozva van, a parancsmag be írni képes üzenetek száma vagy a parancsmag írja az üzeneteket a típusát. Mindegyik üzenet íródik azáltal, hogy egy adott hívás a feldolgozási mód a parancsmag bemeneti adatban.
-
-## <a name="the-stopproc-cmdlet"></a>A StopProc parancsmag
-
-Ez a szakasz témakörei a következők:
-
-- [A parancsmag meghatározása](#Defining-the-Cmdlet)
-
-- [A rendszer módosítás paraméterek megadása](#Defining-Parameters-for-System-Modification)
-
-- [Egy bemeneti metódus feldolgozási felülbírálása](#Overriding-an-Input-Processing-Method)
-
-- [Részletes üzenet írásának](#Writing-a-Verbose-Message)
-
-- [Hibakeresési üzenet írásának](#Writing-a-Debug-Message)
-
-- [Egy figyelmeztető üzenet írása](#Writing-a-Warning-Message)
-
-- [A folyamatállapot-üzenet írása](#Writing-a-Progress-Message)
-
-- [Kódminta](#Code-Sample)
-
-- [Objektumtípusok és formázása](#Define-Object-Types-and-Formatting)
-
-- [A parancsmag készítése](#Building-the-Cmdlet)
-
-- [A parancsmag tesztelése](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>A parancsmag meghatározása
 

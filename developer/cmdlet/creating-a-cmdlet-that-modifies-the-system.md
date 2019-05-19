@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068439"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854918"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Rendszermódosító parancsmag létrehozása
 
@@ -42,28 +42,6 @@ A művelet, "módosítása a rendszer", amely potenciálisan a Windows PowerShel
 ## <a name="the-stopproc-cmdlet"></a>A StopProc parancsmag
 
 Ez a témakör ismerteti, amely megpróbálja leállítani a folyamatokat, amelyek a Get-Proc parancsmaggal olvassa be a Stop-Proc parancsmag (ismertetett [létrehozásához az első parancsmag](./creating-a-cmdlet-without-parameters.md)).
-
-Ez a szakasz témakörei a következők:
-
-- [A parancsmag meghatározása](#Defining-the-Cmdlet)
-
-- [A rendszer módosítás paraméterek megadása](#Defining-Parameters-for-System-Modification)
-
-- [Egy bemeneti metódus feldolgozási felülbírálása](#Overriding-an-Input-Processing-Method)
-
-- [A ShouldProcess metódus hívása](#Calling-the-ShouldProcess-Method)
-
-- [A ShouldContinue metódus hívása](#Calling-the-ShouldContinue-Method)
-
-- [A bemeneti feldolgozó leállítása](#Stopping-Input-Processing)
-
-- [Kódminta](#Code-Sample)
-
-- [Objektumtípusok definiálása és formázása](#Defining-Object-Types-and-Formatting)
-
-- [A parancsmag készítése](#Building-the-Cmdlet)
-
-- [A parancsmag tesztelése](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>A parancsmag meghatározása
 

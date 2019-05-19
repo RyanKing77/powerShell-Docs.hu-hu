@@ -2,12 +2,12 @@
 title: PowerShell-fejlesztéshez a Visual Studio Code használatával
 description: PowerShell-fejlesztéshez a Visual Studio Code használatával
 ms.date: 08/06/2018
-ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0d796460511b273771eacb03d0df4d90e1e9c322
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086736"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854396"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell-fejlesztéshez a Visual Studio Code használatával
 
@@ -82,27 +82,72 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 A program "Szeretné futtatni a szoftvert a nem megbízható közzétételi?"
 Típus `R` , futtassa a fájlt. Ezután nyissa meg a Visual Studio Code-ot, és ellenőrizze, hogy a PowerShell-bővítmény megfelelően működik-e. Ha továbbra is problémákba ütközik bevezetés, ossza meg velünk az [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a>Egy adott PowerShell telepített verziójának használatával
+#### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>A kiterjesztéssel használandó PowerShell-verzió kiválasztása
 
-Ha szeretne egy adott telepítési PowerShell használata a Visual Studio Code, kell új változó hozzáadása a felhasználói beállításokat fájlt.
+A PowerShell Core egymás mellett telepíti a Windows PowerShell-lel azt most már lehetőség van egy adott verzióját PowerShell a PowerShell-bővítmény. Használja az alábbi lépéseket a verzió kiválasztása:
 
-1. Kattintson a **fájl -> Beállítások -> Beállítások**
-1. Két Jelentésszerkesztő paneljei jelennek meg.
-   A jobb szélső ablaktáblán (`settings.json`), helyezze be az alábbi beállítást az operációs rendszer, a két kapcsos zárójelek között megfelelő (`{` és `}`), és cserélje le **\<verzió\>** a PowerShell telepített verziója:
+1. Nyissa meg a parancs raklap (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> a Windows és Linux-alapú <kbd>Cmd</kbd> + <kbd>Shift</kbd>+<kbd>P</kbd> macOS rendszeren).
+1. Keresse meg "Munkamenet".
+1. Kattintson a "PowerShell: Munkamenet menü megjelenítése".
+1. Válassza ki a listából – például "a PowerShell Core" használni kívánt PowerShell verzióját.
 
-   ```json
-    // On Windows:
-    "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
+>[!IMPORTANT]
+> Ez a szolgáltatás néhány jól ismert elérési utak megvizsgálja a különböző operációs rendszerek felderítéséhez PowerShell telepítési helyét. Ha PowerShell-jellemző helyre telepítette, akkor előfordulhat, hogy nem jelennek kezdetben a munkamenet menü. A munkamenet menü által bővítése [hozzáadása a saját egyéni útvonalak](#adding-your-own-powershell-paths-to-the-session-menu) alább leírtak szerint.
 
-    // On Linux:
-    "powershell.powerShellExePath": "/opt/microsoft/powershell/<version>/pwsh"
+>[!NOTE]
+> A munkamenet menüből való másik módja is van. Egy PowerShell-fájlra a szerkesztőben megnyitott, megjelenik egy zöld verziószámot jobb alsó. Ez a verziószám kattintva irányítja a munkamenet menüben.
 
-    // On macOS:
-    "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-   ```
+##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>A saját PowerShell-elérési út hozzáadása a munkamenet menü
 
-1. Cserélje le a beállítás a kívánt PowerShell végrehajtható fájl elérési útja
-1. Mentse a beállításokat fájlt, és indítsa újra a Visual Studio Code
+A munkamenet menü a VS Code beállításnál is hozzáadhat más PowerShell végrehajtható elérési utak.
+
+Vegyen fel egy elemet a listában `powershell.powerShellAdditionalExePaths` lista létrehozása, ha az nem létezik, vagy a `settings.json`:
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    // other settings...
+}
+```
+
+Minden elem kell rendelkeznie:
+
+* `exePath`: Az elérési útját a `pwsh` vagy `powershell` végrehajtható.
+* `versionName`: A szöveg, amely a munkamenet menü fog megjelenni.
+
+Beállíthatja az alapértelmezett PowerShell-verzió használatához használja a `powershell.powerShellDefaultVersion` beállítás szerint a beállítás Ez a szöveg jelenik meg a munkamenet menü (más néven a `versionName` az utolsó beállításai):
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
+    
+    // other settings...
+}
+```
+
+Miután beállította ezt a beállítást, indítsa újra a Visual Studio Code, vagy használja a a "fejlesztői: Töltse be újra az ablakban"parancs raklap művelet az aktuális vscode-ablak.
+
+Ha a munkamenet menü megnyitásához, ekkor megjelenik a további PowerShell-verzió!
+
+> [!NOTE]
+> Forrás PowerShell hoz létre, ez-e a PowerShell helyi build kipróbálásához nagyszerű lehetőséget.
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>A Visual Studio Code-konfigurációs beállítások
 

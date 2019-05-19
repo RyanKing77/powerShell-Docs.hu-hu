@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell, a parancsmag
 title: PowerShell-folyamatok ismertetése
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 10e09fbe8de83eba2473f8f042657f7c80473fbd
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086442"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854351"
 ---
 # <a name="understanding-pipelines"></a>A folyamatok ismertetése
 
@@ -61,7 +61,10 @@ d-----        8/23/2018   5:07 PM                catroot2
 
 CPU-kihasználtság lapozást is csökkenti, mert a feldolgozás továbbítja a `Out-Host` megjelenítésére készen álló teljes oldal, ha a parancsmagot. A parancsmagok, a folyamat az azt megelőző végrehajtási szüneteltetése, amíg a kimenet a következő lapra érhető el.
 
-A különbség a Windows Feladatkezelő figyelése a PowerShell által használt Processzor- és tekintheti meg. Futtassa a következő parancsot: `Get-ChildItem C:\Windows -Recurse`. A parancs a Processzor- és használati összehasonlítása: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
+Láthatja, hogy milyen hatással van a átirányítását a CPU és memória kihasználtsága a Windows Feladatkezelő, összehasonlítása az alábbi parancsokat:
+
+- `Get-ChildItem C:\Windows -Recurse`
+- `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
 > A **lapozás** paraméter minden PowerShell-gazdagép nem támogatja. Például, amikor a próbálja használni a **lapozás** paramétert a PowerShell ISE-ben, az alábbi hibát látja:

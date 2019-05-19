@@ -8,40 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 946b71e4480a47ac6ccd6930be445d7efb4fb62d
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075256"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854893"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Aliasok, helyettesítő bővítők és súgó hozzáadása a parancsmag-paraméterekhez
 
 Ez a szakasz ismerteti, hogyan lehet aliasokat, helyettesítő bővítése, szeretne felvenni, és segítséget a Stop-Proc parancsmag paramétereinek üzenetek (ismertetett [létrehozása egy parancsmag, amely módosítja a rendszer](./creating-a-cmdlet-that-modifies-the-system.md)).
 
 A Stop-Proc parancsmag megkísérli leállítani a folyamatokat, amelyek a Get-Proc parancsmaggal olvassa be (ismertetett [létrehozásához az első parancsmag](./creating-a-cmdlet-without-parameters.md)).
-
-Ez a szakasz témakörei a következők:
-
-- [A parancsmag meghatározása](#Defining-the-Cmdlet)
-
-- [A rendszer módosítás paraméterek megadása](#Defining-Parameters-for-System-Modification)
-
-- [A paraméter-Alias meghatározása](#Defining-a-Parameter-Alias)
-
-- [Paraméterek súgóját létrehozása](#Creating-Help-for-Parameters)
-
-- [Egy bemeneti metódus feldolgozási felülbírálása](#Overriding-an-Input-Processing-Method)
-
-- [Helyettesítő karakteres bővítésének támogatása](#Supporting-Wildcard-Expansion)
-
-- [Kódminta](#Defining-a-Parameter-Alias)
-
-- [Objektumtípusok definiálása és formázása](#Define-Object-Types-and-Formatting)
-
-- [A parancsmag készítése](#Building-the-Cmdlet)
-
-- [A parancsmag tesztelése](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>A parancsmag meghatározása
 

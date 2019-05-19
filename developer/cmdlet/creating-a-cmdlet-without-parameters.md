@@ -11,32 +11,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068334"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854973"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Paraméterek nélküli parancsmag létrehozása
 
 Ez a szakasz ismerteti, hogyan hozhat létre olyan parancsmagot, amely adatait kérdezi le a helyi számítógépen, a paraméterek nélkül, és a folyamat ezután beírja az információkat. A parancsmag az itt leírtak szerint egy Get-Proc parancsmag, amely a folyamatok a helyi számítógép adatait kérdezi le, majd megjeleníti ezt az információt a parancssorból.
-
-Ez a szakasz témakörei a következők:
-
-- [A parancsmag elnevezése](#Naming-the-Cmdlet)
-
-- [A parancsmag osztály meghatározása](#Defining-the-Cmdlet-Class)
-
-- [Egy bemeneti metódus feldolgozási felülbírálása](#Overriding-an-Input-Processing-Method)
-
-- [Kódminta](#Code-Sample)
-
-- [Objektumtípusok definiálása és formázása](#Defining-Object-Types-and-Formatting)
-
-- [A parancsmag készítése](#Building-the-Cmdlet)
-
-- [A parancsmag tesztelése](#Testing-the-Cmdlet)
 
 > [!NOTE]
 > Vegye figyelembe, hogy parancsmagok írásakor, a Windows PowerShell® referenciaszerelvények letöltődnek lemezre (alapértelmezés szerint a C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). A globális szerelvény gyorsítótárban (GAC) a telepítés nem.

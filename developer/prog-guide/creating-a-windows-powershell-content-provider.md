@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d7e237514b4db4bce3366836d3b6e0cd340bf107
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081920"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855020"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Windows PowerShelles tartalomszolgáltató létrehozása
 
@@ -28,36 +28,6 @@ Ez a témakör ismerteti, hogyan hozhat létre egy Windows PowerShell-szolgálta
 > A letöltött forrásfájlok érhetők el a  **\<PowerShell-minták >** könyvtár.
 >
 > Más Windows PowerShell-szolgáltató esetében kapcsolatos további információkért lásd: [tervezése a Windows PowerShell-szolgáltatóban](./designing-your-windows-powershell-provider.md).
-
-Az alábbi lista tartalmazza az ebben a témakörben szakaszokban. Ha nem ismeri a Windows PowerShell-tartalom szolgáltató írása, olvassa el az ezekben a szakaszokban a sorrendben jelennek meg. Azonban ha ismeri, a Windows PowerShell a tartalomszolgáltatón írása, folytassa a szükséges információkat.
-
-- [A Windows PowerShell-tartalmat szolgáltató osztály meghatározása](#Define-the-Windows-PowerShell-Content-Provider-Class)
-
-- [Alapfunkciók meghatározása](#Define-Functionality-of-Base-Class)
-
-- [A tartalom olvasó megvalósítása](#Implementing-a-Content-Reader)
-
-- [A tartalom író megvalósítása](#Implementing-a-Content-Writer)
-
-- [A tartalom olvasó beolvasása](#Retrieving-the-Content-Reader)
-
-- [Dinamikus paraméterek csatolása a `Get-Content` parancsmag](#Attaching-Dynamic-Parameters-to-the-Get-Content-Cmdlet)
-
-- [A tartalom író beolvasása](#Retrieving-the-Content-Writer)
-
-- [Dinamikus paraméterek csatolása a Add_Content és `Set-Content` parancsmagok](#Attaching-Dynamic-Parameters-to-the-Add-Content-and-Set-Content-Cmdlets)
-
-- [Tartalom törlése](#Clearing-Content)
-
-- [Dinamikus paraméterek csatolása a `Clear-Content` parancsmag](#Attaching-Dynamic-Parameters-to-the-Clear-Content-Cmdlet)
-
-- [Kódminta](#Code-Sample)
-
-- [Objektumtípusok definiálása és formázása](#defining-object-types-and-formatting)
-
-- [A Windows PowerShell-szolgáltató létrehozása](#Building-the-Windows-PowerShell-Provider)
-
-- [A Windows PowerShell-szolgáltatóban tesztelése](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>Adja meg a Windows PowerShell-tartalmat szolgáltató osztálya
 

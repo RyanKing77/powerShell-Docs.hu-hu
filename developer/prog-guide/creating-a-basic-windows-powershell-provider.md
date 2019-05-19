@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: 19cc3817016d96e1412a5f3506e9d694ba55b48d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5ebc22067b20f0e1d35d31d5f33e599f50cb7564
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082073"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855066"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Alapszintű Windows PowerShell-szolgáltató létrehozása
 
@@ -26,22 +26,6 @@ A leírt alapszintű szolgáltató korábban említettek szerint itt valósítja
 
 > [!NOTE]
 > A szolgáltató egy minta a Windows PowerShell által biztosított AccessDBSampleProvider01.cs fájlban találja.
-
-A jelen témakör szakaszai a következők:
-
-- [A Windows PowerShell-szolgáltatóban osztály meghatározása](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Szolgáltatóspecifikus állapotinformációkat meghatározása](#Defining-Provider-Specific-State-Information)
-
-- [A szolgáltató inicializálása](#Initializing-the-Provider)
-
-- [Indítsa el a dinamikus paraméterek](#Start-Dynamic-Parameters)
-
-- [A szolgáltató uninitializing](#Uninitializing-the-Provider)
-
-- [Kódminta](#Code-Sample)
-
-- [A Windows PowerShell-szolgáltatóban tesztelése](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>A Windows PowerShell-szolgáltatóban osztály meghatározása
 
@@ -77,7 +61,7 @@ Ez a alapvető szolgáltató nem bírálja felül ezt a módszert. Az alábbi k�
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-A szolgáltató fenntarthatja a szolgáltatóhoz tartozó információk állapotát a leírtak szerint [definiáló szolgáltatóhoz tartozó adatok állapot](#Defining-Provider-Specific-State-Information). Ebben az esetben a megvalósítás felül kell írnia a [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) metódust a származtatott osztály egy példányát adja vissza.
+A szolgáltató fenntarthatja a szolgáltatóhoz tartozó információk állapotát a leírtak szerint [definiáló szolgáltatóhoz tartozó adatok állapot](#defining-provider-specific-state-information). Ebben az esetben a megvalósítás felül kell írnia a [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) metódust a származtatott osztály egy példányát adja vissza.
 
 ## <a name="start-dynamic-parameters"></a>Indítsa el a dinamikus paraméterek
 

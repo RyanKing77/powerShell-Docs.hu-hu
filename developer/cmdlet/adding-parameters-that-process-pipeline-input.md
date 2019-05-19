@@ -11,34 +11,18 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068759"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854982"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Láncbemenetet feldolgozó paraméterek hozzáadása
 
 A parancsmag bemenete egy forrása az objektumot, a folyamat, amely egy felsőbb rétegbeli parancsmag származik. Ez a szakasz ismerteti, hogyan lehet egy paraméter hozzáadása a Get-Proc parancsmag (ismertetett [létrehozásához az első parancsmag](./creating-a-cmdlet-without-parameters.md)), hogy a parancsmag folyamat objektumot tud feldolgozni.
 
 A Get-Proc parancsmagot használja egy `Name` paraméter, amely egy folyamat objektumot a bemenetet elfogadja folyamat adatait kérdezi le a helyi számítógép megadott neve alapján, és ezután megjeleníti a folyamatok adatait a parancssorban.
-
-Ez a szakasz témakörei a következők:
-
-- [A parancsmag osztály meghatározása](#Defining-the-Cmdlet-Class)
-
-- [A bemenetet a folyamat meghatározása](#Defining-Input-from-the-Pipeline)
-
-- [Egy bemeneti metódus feldolgozási felülbírálása](#Overriding-an-Input-Processing-Method)
-
-- [Kódminta](#Code-Sample)
-
-- [Objektumtípusok definiálása és formázása](#Defining-Object-Types-and-Formatting)
-
-- [A parancsmag készítése](#Building-the-Cmdlet)
-
-- [A parancsmag tesztelése](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>A parancsmag osztály meghatározása
 

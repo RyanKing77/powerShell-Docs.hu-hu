@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081869"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855056"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Windows PowerShelles elemszolgáltató létrehozása
 
@@ -30,44 +30,6 @@ Ez a témakör ismerteti, hogyan hozhat létre egy Windows PowerShell-szolgálta
 > Más Windows PowerShell-szolgáltató esetében kapcsolatos további információkért lásd: [tervezése a Windows PowerShell-szolgáltatóban](./designing-your-windows-powershell-provider.md).
 
 A jelen témakörben ismertetett Windows PowerShell elem szolgáltató adatokat olvas be az Access-adatbázisok. Ebben az esetben a "elem" vagy a hozzáférés-adatbázisban lévő táblából vagy egy adatbázistábla.
-
-Az alábbi lista tartalmazza az ebben a témakörben szakaszokban. Ha nem ismeri a Windows PowerShell-elem szolgáltató írása, olvassa el az ezekben a szakaszokban a sorrendben jelennek meg. Azonban ha ismeri a Windows PowerShell-elem szolgáltató írása, folytassa a szükséges információkat:
-
-- [A Windows PowerShell elem szolgáltató osztály meghatározása](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [Alapfunkciók meghatározása](#Defining-Base-Functionality)
-
-- [Elérési út érvényességének ellenőrzése](#Checking-for-Path-Validity)
-
-- [Ha létezik egy elem meghatározása](#Determining-if-an-Item-Exists)
-
-- [Dinamikus paraméterek csatolása a `Test-Path` parancsmag](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [Egy elem beolvasása](#Retrieving-an-Item)
-
-- [Dinamikus paraméterek csatolása a `Get-Item` parancsmag](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [Egy elem beállítása](#Setting-an-Item)
-
-- [Dinamikus paraméterek csatolása a `Set-Item` parancsmag](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [Egy elem törlése](#Clearing-an-Item)
-
-- [Dinamikus paraméterek csatolása a Clear-cikk parancsmaghoz](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [Alapértelmezett művelet végrehajtása egy elem](#Performing-a-Default-Action-for-an-Item)
-
-- [Dinamikus paraméterek InvokeDefaultAction beolvasása](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [Végrehajtási Segédmetódusokat és -osztályok](#Implementing-Helper-Methods-and-Classes)
-
-- [Kódminta](#Code-Sample)
-
-- [Objektumtípusok definiálása és formázása](#Defining-Object-Types-and-Formatting)
-
-- [A Windows PowerShell-szolgáltató létrehozása](#Building-the-Windows-PowerShell-provider)
-
-- [A Windows PowerShell-szolgáltatóban tesztelése](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>A Windows PowerShell elem szolgáltató osztály meghatározása
 
@@ -223,7 +185,7 @@ Ez a cikk szolgáltató nem valósítja meg ezt a módszert. Viszont a következ
 
 ## <a name="implementing-helper-methods-and-classes"></a>Végrehajtási Segédmetódusokat és -osztályok
 
-Ez a cikk szolgáltató számos valósítja meg, és a nyilvános által használt osztályok Windows PowerShell által definiált metódusok felülbírálása. A kód ezen segédmetódusokat és osztályok jelennek meg a [kódminta](#Code-Sample) szakaszban.
+Ez a cikk szolgáltató számos valósítja meg, és a nyilvános által használt osztályok Windows PowerShell által definiált metódusok felülbírálása. A kód ezen segédmetódusokat és osztályok jelennek meg a [kódminta](#code-sample) szakaszban.
 
 ### <a name="normalizepath-method"></a>NormalizePath Method
 

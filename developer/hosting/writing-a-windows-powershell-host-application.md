@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082498"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855084"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Windows PowerShelles gazdaalkalmazás írása
 
 Az alkalmazás a Windows PowerShell is üzemeltethet. A gazdaalkalmazást adhatja meg a futási térrel, ahol parancsok futtatását, nyissa meg a helyi vagy távoli számítógép-munkamenetek és a szinkron vagy aszinkron módon alapján, az alkalmazás igényeinek parancsokat hívhatnak meg-e.
 
-A következő témakörök azt ismertetik, hogyan hozzon létre egy alkalmazást, amely tartalmaz
+A következő témakörök azt ismertetik, hogyan hozhat létre egy alkalmazást üzemeltető Windows PowerShell.
 
 ## <a name="in-this-section"></a>A szakasz tartalma
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 33effed9a96cf1b9ee5f1a50b60a1937526db9d1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e7da13ff559e802d52df475f2a555baeeeef983
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081903"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855185"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Windows PowerShelles tárolószolgáltató létrehozása
 
@@ -35,44 +35,6 @@ Az itt ismertetett Windows PowerShell tároló-szolgáltató határozza meg az e
 
 > [!CAUTION]
 > Vegye figyelembe, hogy ez a kialakítás feltételezi, hogy egy adatbázis, amely egy mező neve azonosítóval rendelkezik, és hogy a mező típusát LongInteger.
-
-Itt van ez a témakör szakaszai listáját. Ha nem ismeri a Windows PowerShell-tároló szolgáltató írása, kérjük, olvassa el ezt az információt a sorrendben, amely akkor jelenik meg. Azonban ha ismeri a Windows PowerShell-tároló szolgáltató írása, nyissa meg közvetlenül a keresett információt.
-
-- [A Windows PowerShell tároló szolgáltató osztálya meghatározása](#Defining-a-Windows-PowerShell-Container-Provider-Class)
-
-- [Alapfunkciók meghatározása](#defining-base-functionality)
-
-- [Gyermek elemek beolvasása](#Retrieving-Child-Items)
-
-- [Dinamikus paraméterek csatolása a `Get-ChildItem` parancsmag](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet)
-
-- [Gyermek-elem nevének beolvasása](#Retrieving-Child-Item-Names)
-
-- [Dinamikus paraméterek csatolása a `Get-ChildItem` parancsmag (név)](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet-(Name))
-
-- [Cikkek átnevezése](#Renaming-Items)
-
-- [Dinamikus paraméterek csatolása a `Rename-Item` parancsmag](#Attaching-Dynamic-Parameters-to-the-Rename-Item-Cmdlet)
-
-- [Új elem létrehozása](#Creating-New-Items)
-
-- [Dinamikus paraméterek csatolása a `New-Item` parancsmag](#Attaching-Dynamic-Parameters-to-the-New-Item-Cmdlet)
-
-- [Egy elemek eltávolítása](#Removing-Items)
-
-- [Dinamikus paraméterek csatolása a `Remove-Item` parancsmag](#Attaching-Dynamic-Parameters-to-the-Remove-Item-Cmdlet)
-
-- [Gyermekelemek lekérdezése](#Querying-for-Child-Items)
-
-- [Másolásának menetét ismerheti elemek](#Copying-Items)
-
-- [Dinamikus paraméterek csatolása a `Copy-Item` parancsmag](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
-
-- [Kódminta](#Code-Sample)
-
-- [A Windows PowerShell-szolgáltató létrehozása](#Building-the-Windows-PowerShell-Provider)
-
-- [A Windows PowerShell-szolgáltatóban tesztelése](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-a-windows-powershell-container-provider-class"></a>A Windows PowerShell tároló szolgáltató osztálya meghatározása
 
@@ -398,7 +360,7 @@ A következő feltételek érvényesek az megvalósítását [System.Management.
 
 - Megvalósítását [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) végtelen rekurzió megakadályozza, hogy ha körkörös hivatkozások és a hasonló felelős. Egy megfelelő megszakítást okozó kivétel történt a kell, hogy ilyen feltétel lépett fel.
 
-- A megvalósítását az [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metódus meg kell hívnia [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) , és ellenőrizze a visszaadott érték az adattár változtatások előtt. Hívása után [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ad vissza IGAZ, a [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) módszer meg kell hívnia a [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) potenciálisan veszélyes rendszermódosítások, egy további ellenőrzési módszert. Ezek a metódusok meghívásával kapcsolatos további információkért lásd: [cikkek átnevezése](#Renaming-Items).
+- A megvalósítását az [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metódus meg kell hívnia [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) , és ellenőrizze a visszaadott érték az adattár változtatások előtt. Hívása után [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ad vissza IGAZ, a [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) módszer meg kell hívnia a [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) potenciálisan veszélyes rendszermódosítások, egy további ellenőrzési módszert. Ezek a metódusok meghívásával kapcsolatos további információkért lásd: [cikkek átnevezése](#renaming-items).
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Dinamikus paraméterek csatolása a Copy-Item parancsmaghoz
 
