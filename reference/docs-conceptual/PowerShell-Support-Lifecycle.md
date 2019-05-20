@@ -2,12 +2,12 @@
 title: A PowerShell Core támogatási életciklusa
 description: A PowerShell Core támogatási szabályzatok betartatását
 ms.date: 08/06/2018
-ms.openlocfilehash: 178e5c43520f9a392ca219b9f785eb18b1ec5436
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b8dd4891ecf245b87c3fe2fa61cd241a12209b57
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086974"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854378"
 ---
 # <a name="powershell-core-support-lifecycle"></a>A PowerShell Core támogatási életciklusa
 
@@ -41,8 +41,6 @@ Például ha a PowerShell Core 6.1-es kiadás dátuma: 2018. július 1., elvárj
 
 Például ha futtatja a PowerShell Core 6.1-es és 6.1.3 fel lett oldva, a 2019. február 19., akkor elvárják, hogy a PowerShell Core 6.1.3 által 2019. március 21., amely támogatás a kiadása után 30 nappal való frissítéséhez.
 Ha bármely javításokat szükség talál, a javítások a következő összegző frissítés elérhető lesz.
-
-![A PowerShell Core ág életciklusa][lifecycle-chart]
 
 A Modern életciklus-szabályzat is megköveteli, hogy a Microsoft értesítést ügyfelek 12 hónapig előtt megszűnő támogatás a termék (azaz a PowerShell Core).
 
@@ -88,7 +86,7 @@ Alapján [a PowerShell Core életciklus](#lifecycle-of-powershell-core), az alá
 |---------|-------------------------------|
 | 6.0     | 2019. február 13.             |
 | 6.1     | 2019. szeptember 28.            |
-| 6.2     | 6 hónapon belül 6.3-kiadások   |
+| 6.2     | 6 hónapon belül 7-kiadások     |
 
 ## <a name="platforms-which-are-out-of-support"></a>A nem támogatott platformokon
 
