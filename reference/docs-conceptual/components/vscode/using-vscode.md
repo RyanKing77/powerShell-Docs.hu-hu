@@ -2,12 +2,12 @@
 title: PowerShell-fejlesztéshez a Visual Studio Code használatával
 description: PowerShell-fejlesztéshez a Visual Studio Code használatával
 ms.date: 08/06/2018
-ms.openlocfilehash: 0d796460511b273771eacb03d0df4d90e1e9c322
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
+ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854396"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882578"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell-fejlesztéshez a Visual Studio Code használatával
 
@@ -84,7 +84,7 @@ Típus `R` , futtassa a fájlt. Ezután nyissa meg a Visual Studio Code-ot, és 
 
 #### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>A kiterjesztéssel használandó PowerShell-verzió kiválasztása
 
-A PowerShell Core egymás mellett telepíti a Windows PowerShell-lel azt most már lehetőség van egy adott verzióját PowerShell a PowerShell-bővítmény. Használja az alábbi lépéseket a verzió kiválasztása:
+A PowerShell Core egymás mellett telepíti a Windows PowerShell-lel azt most már lehetőség van a PowerShell-bővítmény használata a PowerShell egy adott verzióját. Használja az alábbi lépéseket a verzió kiválasztása:
 
 1. Nyissa meg a parancs raklap (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> a Windows és Linux-alapú <kbd>Cmd</kbd> + <kbd>Shift</kbd>+<kbd>P</kbd> macOS rendszeren).
 1. Keresse meg "Munkamenet".

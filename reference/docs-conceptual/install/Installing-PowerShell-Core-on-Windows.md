@@ -2,12 +2,12 @@
 title: A PowerShell Core telepítése Windows rendszerre
 description: Információ a Windows PowerShell Core telepítése
 ms.date: 08/06/2018
-ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058029"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854363"
 ---
 # <a name="installing-powershell-core-on-windows"></a>A PowerShell Core telepítése Windows rendszerre
 
@@ -18,7 +18,7 @@ A Windows PowerShell Core telepítése többféle módon lehet.
 PowerShell-távelérés engedélyezése a WSMan felett, a következő előfeltételeknek kell teljesülniük:
 
 - Telepítse a [Universal C futásidejű](https://www.microsoft.com/download/details.aspx?id=50410) előtt a Windows 10-es Windows-verzión. Közvetlen letöltésére vagy a Windows Update-n keresztül érhető el. Teljes mértékben javítva (választható csomagot is beleértve), a támogatott rendszerek már rendelkezik a telepített.
-- Telepítse a Windows Management Framework (WMF) 4.0-s vagy újabb Windows 7 és Windows Server 2008 R2.
+- Telepítse a Windows Management Framework (WMF) 4.0-s vagy újabb Windows 7 és Windows Server 2008 R2. A WMF kapcsolatos további információkért lásd: [WMF áttekintése](/powershell/wmf/overview).
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Az MSI-csomag telepítése
 
