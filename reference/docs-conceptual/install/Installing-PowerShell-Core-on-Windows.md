@@ -2,12 +2,12 @@
 title: A PowerShell Core telepítése Windows rendszerre
 description: Információ a Windows PowerShell Core telepítése
 ms.date: 08/06/2018
-ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854363"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66471004"
 ---
 # <a name="installing-powershell-core-on-windows"></a>A PowerShell Core telepítése Windows rendszerre
 
