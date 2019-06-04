@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: 77d328bc1cb8cb42d5a10f107a149c05ab270ce3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082107"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470784"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>A Windows PowerShell-modulok megértése
 
@@ -55,7 +55,7 @@ A *jegyzékfájl modul* olyan modul, amely a jegyzékfájlt használ írja le az
 
 ### <a name="dynamic-modules"></a>A dinamikus modulok
 
-A *dynamického modulu* modul nincs betöltve a, vagy, egy fájlba menti. Ehelyett azok dinamikusan által létrehozott egy parancsfájl használatával a [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) parancsmagot. Az ilyen típusú modul lehetővé teszi, hogy a modul létrehozása az igény szerinti igénylő nem tölthető be vagy állandó tárolóba mentett parancsfájlt. Jellegénél fogva egy dinamikus modult kell lenniük a rövid élettartamú, és ezért nem érhető el a `Get-Module` parancsmagot. Hasonlóképpen általában nincs szükségük a modul jegyzékek, és valószínűleg szükségük van a kapcsolódó szerelvényeket tárolására szolgáló állandó mappákat.
+A *dynamického modulu* olyan modul, amely nem a betöltve, vagy, egy fájlba menti. Ehelyett azok dinamikusan által létrehozott egy parancsfájl használatával a [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) parancsmagot. Az ilyen típusú modul lehetővé teszi, hogy a modul létrehozása az igény szerinti igénylő nem tölthető be vagy állandó tárolóba mentett parancsfájlt. Jellegénél fogva egy dinamikus modult kell lenniük a rövid élettartamú, és ezért nem érhető el a `Get-Module` parancsmagot. Hasonlóképpen általában nincs szükségük a modul jegyzékek, és valószínűleg szükségük van a kapcsolódó szerelvényeket tárolására szolgáló állandó mappákat.
 
 ## <a name="module-manifests"></a>A modul jegyzékek
 

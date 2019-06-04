@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: PowerShell, a parancsmag
 title: Hordozható modulok írása
-ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086408"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470978"
 ---
 # <a name="portable-modules"></a>Hordozható modulok
 
@@ -17,11 +17,12 @@ Windows PowerShell íródott [.NET-keretrendszer][] Bár a PowerShell Core író
 
 ### <a name="porting-a-pssnapin"></a>Egy PSSnapIn portolása
 
-A PowerShell Core (PSSnapIn) beépített PowerShell-modulok nem támogatottak. Azt azonban nagyon egyszerű, egy PowerShell-modul egy PSSnapIn átalakítása. A PSSnapIn regisztrációs kód általában egy fájlban egyetlen forrásai osztály származó [PSSnapIn][]. A forrásfájl eltávolítása a build; már nincs rá szükség.
+PowerShell [beépített modulok](/powershell/developer/cmdlet/modules-and-snap-ins) a PowerShell Core nem támogatottak. Azt azonban nagyon egyszerű, egy PowerShell-modul egy PSSnapIn átalakítása. A PSSnapIn regisztrációs kód általában egy fájlban egyetlen forrásai osztály származó [PSSnapIn][].
+A forrásfájl eltávolítása a build; már nincs rá szükség.
 
-Használat [New-ModuleManifest][] hozhat létre egy új moduljegyzék, amely a PSSnapIn regisztrációs kód nincs szükség. Egyes értékek (például leírás) az PSSnapIn a felhasználhatók a modul a jegyzékfájlban.
+Használat [New-ModuleManifest][] hozhat létre egy új moduljegyzék, amely a PSSnapIn regisztrációs kód nincs szükség. Egyes az értékek a **PSSnapIn** (például **leírás**) használható fel újra, a modul a jegyzékfájlban.
 
-A `RootModule` a moduljegyzékben tulajdonság állítható a parancsmagok végrehajtása szerelvényfájlba (dll) nevére.
+A **RootModule** a moduljegyzékben tulajdonság állítható a parancsmagok végrehajtása szerelvényfájlba (dll) nevére.
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>A .NET-hordozhatóságot Analyzer (más néven APIPort)
 

@@ -3,12 +3,12 @@ ms.date: 11/13/2018
 keywords: PowerShell, a parancsmag
 title: PowerShell-parancs dekódolása futó folyamatból
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086238"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470967"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>PowerShell-parancs dekódolása futó folyamatból
 
@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>A folyamat megtekintése
 
-A paranccsal, amely végrehajtja az PowerShell törzse tárolja a **CommandLine** tulajdonságát a [Win32_Process][] osztály. Ha a parancs egy [parancs kódolású][], a **CommandLine** tulajdonság "EncodedCommand" karakterláncot tartalmazza. Ezen információk alapján a kódolt parancs lehet megszüntetéséhez rejtjelezett a következő folyamat-n keresztül.
+A paranccsal, amely végrehajtja az PowerShell törzse tárolja a **CommandLine** tulajdonságát a [Win32_Process][] osztály. Ha a parancs egy kódolt parancsot a **CommandLine** tulajdonság "EncodedCommand" karakterláncot tartalmazza. Ezen információk alapján a kódolt parancs lehet megszüntetéséhez rejtjelezett a következő folyamat-n keresztül.
 
 Indítsa el a Powershellt rendszergazdaként. Rendkívül fontos, hogy rendszergazdaként futtatja-e a PowerShell, ellenkező esetben nem jár eredménnyel a futó folyamatok lekérdezése során.
 
@@ -107,4 +107,3 @@ DecodedCommand :
 [A Feladatütemező]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[parancs kódolású]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

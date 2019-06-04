@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 title: Egyéni típusok létrehozása PowerShell-osztályokkal
-ms.openlocfilehash: 0dd5bbaca50abb746e15a7bb64a706c7eceee905
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856237"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470932"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Egyéni típusok létrehozása PowerShell-osztályokkal
 
@@ -21,7 +21,7 @@ PowerShell 5.0 új lehetőség a teljesen definiálják az osztályokat és a t�
 - Típusok hibakeresés a PowerShell nyelv használatával
 - Hozzon létre, és a kivételek kezelésére, formális mechanizmusok használatával, és a megfelelő szinten
 
-# <a name="declare-base-class"></a>Alaposztály deklarálása
+## <a name="declare-base-class"></a>Alaposztály deklarálása
 
 Egy PowerShell osztály eszközhöz adhat meg, egy másik PowerShell osztály alaptípusa.
 
@@ -54,7 +54,7 @@ $list.Add(100)
 $list[0] # return 100
 ```
 
-# <a name="call-base-class-constructor"></a>Alaposztály konstruktorának hívása
+### <a name="call-base-class-constructor"></a>Alaposztály konstruktorának hívása
 
 Alaposztály konstruktorának hívása egy alosztályt, használja a kulcsszó **alap**:
 
@@ -86,7 +86,7 @@ class C : B
 }
 ```
 
-# <a name="call-base-class-method"></a>Alaposztály metódusának hívása
+### <a name="call-base-class-method"></a>Alaposztály metódusának hívása
 
 A meglévő módszerek az alosztályok felül lehet bírálni. Ehhez deklarálja a módszerek ilyen névvel és aláírás használatával:
 
@@ -135,7 +135,7 @@ $list.Add(100)
 $list[0] # return 200
 ```
 
-# <a name="declare-implemented-interface"></a>Megvalósított interfész deklarálása
+### <a name="declare-implemented-interface"></a>Megvalósított interfész deklarálása
 
 Eszközhöz adhat meg implementovaná rozhraní típusok, vagy közvetlenül egy kettőspontot (:), ha nincs megadva alap típus. Írja be az összes vesszőkkel válassza el egymástól a neveket. Ez hasonlít C# szintaxist.
 
@@ -157,11 +157,11 @@ class MyComparableBar : bar, system.IComparable
 }
 ```
 
-# <a name="new-language-features-in-powershell-50"></a>A PowerShell 5.0 új nyelvi funkciók
+## <a name="new-language-features-in-powershell-50"></a>A PowerShell 5.0 új nyelvi funkciók
 
 PowerShell 5.0 vezet be a következő új nyelvi elemei a PowerShellben:
 
-## <a name="class-keyword"></a>Osztály kulcsszó
+### <a name="class-keyword"></a>Osztály kulcsszó
 
 A `class` kulcsszó határozza meg egy új osztályt. Ez a valódi .NET-keretrendszer típusa. A osztályelemen nyilvános, de csak nyilvános modul hatókörébe. Nem lehet hivatkozni a típusnév karakterláncként (például `New-Object` nem működik), ebben a kiadásban, és nem használhat olyan típusú konstans (például `[MyClass]`) kívül a parancsfájlt vagy modul fájlt, amelyhez az osztály definiálva van.
 
@@ -172,7 +172,7 @@ class MyClass
 }
 ```
 
-## <a name="enum-keyword-and-enumerations"></a>Enum kulcsszó és enumerálásokat tartalmaznak
+### <a name="enum-keyword-and-enumerations"></a>Enum kulcsszó és enumerálásokat tartalmaznak
 
 Támogatja a `enum` kulcsszó hozzá lett adva, melyik soremelés használ elválasztóként. Jelenleg nem lehet definiálni enumerátor maga tekintetében. Azonban egy másik enum tekintetében enum inicializálása, az alábbi példában látható módon. Základní typ is, nem adható meg; a rendszer mindig `[int]`.
 
@@ -202,11 +202,11 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Import-DscResource
+### <a name="import-dscresource"></a>Import-DscResource
 
 `Import-DscResource` már true dinamikus kulcsszó. PowerShell elemzi a megadott modul legfelső szintű modul, osztályban, amelyek tartalmazzák a Keresés a **DscResource** attribútum.
 
-## <a name="implementingassembly"></a>ImplementingAssembly
+### <a name="implementingassembly"></a>ImplementingAssembly
 
 Egy új mezőt **ImplementingAssembly**, hozzá van adva **ModuleInfo**. Azt a dinamikus szerelvény egy szkriptmodulba készült, ha a parancsfájl definiálja azokat az osztályokat, vagy a betöltött szerelvény a bináris modulok van beállítva. Nincs beállítva mikor **ModuleType** van **Manifest**.
 
@@ -232,11 +232,11 @@ $s = "hello"
 
 Minden tag nyilvánosak legyenek.
 
-## <a name="constructors-and-instantiation"></a>Konstruktorok és példányosítás
+### <a name="constructors-and-instantiation"></a>Konstruktorok és példányosítás
 
 PowerShell-osztályok konstruktorok is rendelkezhet. A neve megegyezik az osztály rendelkeznek. Is túlterhelt konstruktorral. Statikus konstruktorok támogatottak. Tulajdonságok inicializálási kifejezésekkel inicializálása konstruktorban kód futtatása előtt. A statikus tulajdonságok inicializálása előtt egy statikus konstruktor törzse, és a példány tulajdonságainak inicializálása előtt nem statikus konstruktor törzse. Jelenleg nincs másik konstruktor konstruktor megismernie szintaxisának (például a C\# szintaxis ": this()"). A megoldás az, hogy egy közös definiálása `Init()` metódust.
 
-### <a name="creating-instances"></a>Példány létrehozása
+#### <a name="creating-instances"></a>Példány létrehozása
 
 > [!NOTE]
 > A PowerShell 5.0-s `New-Object` PowerShell-ben definiált osztályokkal nem működik. Název typu is csak látható betűrendbe, ami azt jelenti, már nem látható a modul vagy a parancsfájl az osztályt definiáló kívül. Függvények PowerShell meghatározott osztály példányainak adhat vissza. Ezekhez a példányokhoz kívül a modul vagy a parancsfájl működik.
@@ -265,7 +265,7 @@ A pszeudo statická metoda `new()` együttműködik a .NET-típusok, az alábbi 
 [hashtable]::new()
 ```
 
-### <a name="discovering-constructors"></a>Konstruktorok felderítése
+#### <a name="discovering-constructors"></a>Konstruktorok felderítése
 
 Most már megtekintheti a konstruktor túlterheléssel `Get-Member`, vagy az ebben a példában látható módon:
 
@@ -280,7 +280,7 @@ hashtable new(int capacity, float loadFactor)
 
 `Get-Member -Static` konstruktorok, sorolja fel, hogy meg tudja tekinteni a túlterhelések, mint bármely más módszerrel. Ez a szintaxis teljesítményét egyben jelentősen gyorsabb, mint `New-Object`.
 
-## <a name="methods"></a>Metódusok
+### <a name="methods"></a>Metódusok
 
 Egy PowerShell-osztály metódusának van megvalósítva egy **ScriptBlock** , amelynek csak egy záró blokk. Az összes módszer nyilvánosak legyenek. A következő nevű metódus meghatározása példán látható **DoSomething**.
 
@@ -304,29 +304,29 @@ $b.DoSomething(42)
 
 Többszörösen definiált metódusok használata is támogatott.
 
-## <a name="properties"></a>Tulajdonságok
+### <a name="properties"></a>Tulajdonságok
 
 Az összes tulajdonság nyilvánosak legyenek. Tulajdonságok szükség soremelés vagy pontosvesszővel válassza el. Ha nincs objektum típus van megadva, a tulajdonság típusának egy objektum.
 
 Érvényesítés vagy argumentum átalakítása attribútum használó tulajdonságok (például `[ValidateSet("aaa")]`) a várt módon működik.
 
-## <a name="hidden"></a>Rejtett
+### <a name="hidden"></a>Rejtett
 
 Egy új kulcsszó, `Hidden`, hozzá van adva. `Hidden` Tulajdonságok és metódusok (beleértve a konstruktorok) alkalmazhatók.
 
-Rejtett tagok nyilvános, de nem jelennek meg a kimenetét `Get-Member` , kivéve, ha a - Force paramétert. A tagok nem tartoznak mikor rejtett lapon befejezése vagy az IntelliSense segítségével, kivéve, ha az osztály a rejtett tag meghatározása befejezése után történik.
+Rejtett tagok nyilvános, de nem jelennek meg a kimenetét `Get-Member` , kivéve, ha a `-Force` paraméter. A tagok nem tartoznak mikor rejtett lapon befejezése vagy az IntelliSense segítségével, kivéve, ha az osztály a rejtett tag meghatározása befejezése után történik.
 
 Egy új attribútum **System.Management.Automation.HiddenAttribute** hozzá lett adva, a C\# kódot a Powershellen belülről azonos szemantikát is rendelkezhet.
 
-## <a name="return-types"></a>Návratové typy
+### <a name="return-types"></a>Návratové typy
 
-Typ vrácené hodnoty je egy szerződést. A visszaadott érték a várt típus alakítja át. Ha nincs visszatérési típus van megadva, a typ vrácené hodnoty je **void**. Nincs nem streaming-objektumok. Bbjects nem lehet írni a folyamat szándékosan vagy véletlenül iratkozott le.
+Typ vrácené hodnoty je egy szerződést. A visszaadott érték a várt típus alakítja át. Ha nincs visszatérési típus van megadva, a typ vrácené hodnoty je **void**. Nincs nem streaming-objektumok. Objektumok nem lehet írni a folyamat szándékosan vagy véletlenül iratkozott le.
 
-## <a name="attributes"></a>Attribútumok
+### <a name="attributes"></a>Attribútumok
 
 Két új attribútum **DscResource** és **DscProperty** lettek hozzáadva.
 
-## <a name="lexical-scoping-of-variables"></a>Lexikális hatókörkezeléséhez kapcsolódó változók
+### <a name="lexical-scoping-of-variables"></a>Lexikális hatókörkezeléséhez kapcsolódó változók
 
 Az alábbi példán látható hogyan lexikai hatókörkezelési működik Ebben a kiadásban.
 

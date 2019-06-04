@@ -2,12 +2,12 @@
 title: Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080458"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470812"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
@@ -22,7 +22,7 @@ A Windows PowerShell használatának megkezdéséhez szükséges alapszintű inf
 
 ## <a name="windows-powershell-documents-on-msdn"></a>Windows PowerShell-dokumentumok az MSDN-en
 
-- [A Windows PowerShell SDK telepítése](https://msdn.microsoft.com/en-us/library/ff458115.aspx) ismerteti a Windows PowerShell SDK telepítése.
+- [A Windows PowerShell SDK telepítése](./installing-the-windows-powershell-sdk.md) ismerteti a Windows PowerShell SDK telepítése.
 
 - [Windows PowerShell-modul írása](./module/writing-a-windows-powershell-module.md) információkat biztosít a rendszergazdák, a parancsfájl a fejlesztők és a parancsmag fejlesztőknek szól, akik kell csomagolása és terjesztése a Windows PowerShell-megoldásaikat.
 

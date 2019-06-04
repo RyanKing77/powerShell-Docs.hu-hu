@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed7645ea-5e52-4a45-81a7-aa3c2d605cde
 caps.latest.revision: 16
-ms.openlocfilehash: e8b7151538235cdf7183b78aa8df7e596d6bcfd9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2a929a1724f77f0516ad24cfd90f6d6053ed19e
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848915"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470798"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>PowerShell-szkriptmodul írása
 
@@ -27,9 +27,9 @@ Létrehozhat egy szkriptmodulba mentése folyamatban van egy érvényes PowerShe
 
 1. Egy meglévő PowerShell-parancsprogramot, és mentse a parancsfájlt egy .psm1 kiterjesztéssel.
 
-   A .psm1 a parancsfájl mentése bővítmény azt jelenti, hogy a modul parancsmagjai például használható [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), rajta. Ezek a parancsmagok elsősorban, hogy könnyen importálhatja és exportálhatja a kód más felhasználó rendszerek alakzatot létezik. (A másik megoldás lenne a kód a más rendszerekkel, és a pont – forrás-ba való betöltésének aktív memória, amely nem egy különösen méretezhető megoldás.) További információ: a **modul parancsmagjai és a változók** szakasz [Windows PowerShell-modulok](./understanding-a-windows-powershell-module.md) vegye figyelembe, hogy alapértelmezés szerint a parancsfájl az összes függvényt lesz elérhető a felhasználók, akik a .psm1 importálása fájl, de a tulajdonságok nem lesz.
+   A .psm1 a parancsfájl mentése bővítmény azt jelenti, hogy a modul parancsmagjai például használható [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), rajta. Ezek a parancsmagok elsősorban, hogy könnyen importálhatja és exportálhatja a kód más felhasználó rendszerek alakzatot létezik. (A másik megoldás lenne a kód a más rendszerekkel, és a pont – forrás-ba való betöltésének aktív memória, amely nem egy különösen méretezhető megoldás.) További információk: a **modul parancsmagjai és a változók** szakasz [Windows PowerShell-modulok](./understanding-a-windows-powershell-module.md) vegye figyelembe, hogy, alapértelmezés szerint a parancsfájl az összes függvényt elérhető-e a felhasználók, akik a .psm1 fájl importálása de tulajdonságait nem.
 
-   Ez a témakör végén található PowerShell-parancsprogram, például Show-naptárban, jogosult érhető el.
+   PowerShell-parancsprogram, például jogosult `Show-Calendar`, ez a témakör végén található érhető el.
 
    ```powershell
    function Show-Calendar {
@@ -45,7 +45,7 @@ Létrehozhat egy szkriptmodulba mentése folyamatban van egy érvényes PowerShe
    }
    ```
 
-2. Ha szeretne az egyes funkciók vagy a Tulajdonságok felhasználók hozzáférését, [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) a szkript végén.
+2. A felhasználói hozzáférésének bizonyos funkciók és a tulajdonságok, hívja [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) a szkript végén.
 
    A lap alján példakód csak egy függvény, amely alapértelmezés szerint lenne kitéve rendelkezik. Ajánlott azonban, hogy explicit módon hívja meg, melyik funkciókat kíván elérhetővé, a következő kód leírtak szerint:
 
@@ -65,9 +65,9 @@ Létrehozhat egy szkriptmodulba mentése folyamatban van egy érvényes PowerShe
    Import-Module GenericModule
    ```
 
-4. Ha azt szeretné, a modul PowerShell súgójában leírására, megteheti a standard szintű súgó megjegyzéseket, a fájl, vagy egy további súgófájl.
+4. A modul PowerShell súgójában leírására, is szabványos súgó megjegyzések használata a fájl, vagy hozzon létre egy további segítséget fájlt.
 
-   A kódminta található, ez a témakör alján a megjegyzéseket a súgó információit tartalmazza. Ha úgy dönt, a bővített, további segítségért tartalmat tartalmazó XML-fájlok is létrehozható. További információkért lásd: [írása érdekében a Windows PowerShell-modulok](./writing-help-for-windows-powershell-modules.md).
+   A kódminta található, ez a témakör alján a megjegyzéseket a súgó információit tartalmazza. Bővített, további segítségért tartalmat tartalmazó XML-fájlok is is írható. További információkért lásd: [írása érdekében a Windows PowerShell-modulok](./writing-help-for-windows-powershell-modules.md).
 
 5. Ha további modulok, XML-fájlok vagy más csomagolnia a modult kívánt tartalmat, és a egy moduljegyzék megteheti.
 
@@ -75,15 +75,17 @@ Létrehozhat egy szkriptmodulba mentése folyamatban van egy érvényes PowerShe
 
 6. Telepítése és futtatása a modul, a modul mentse a megfelelő PowerShell-elérési utak közül, és meghívásához `Import-Module`.
 
-   Az elérési utak, ahol telepítheti a modul találhatók a `$env:PSModulePath` globális változó. Például egy gyakori útvonalat, ahová a modul a rendszer lenne `%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`. Győződjön meg arról, a modul létezik, egy olyan mappa létrehozásához, akkor is, ha csak egy egyetlen .psm1 fájlban. Ha a modul nem mentette az elérési utak egyik, kellene adja át a hívást a modul helye `Import-Module`. (Ellenkező esetben PowerShell nem tudná is megkeresheti.) A PowerShell 3.0, ha bejelölte a modul a PowerShell-modul elérési utak egyik verziótól kezdődően nem explicit módon importálnia kell azt: a függvény meghívása felhasználó rendelkezik automatikusan betölti azt. A modul elérési úton további információkért lásd: [egy PowerShell-modul importálása](./importing-a-powershell-module.md) és [PSModulePath környezeti változó](./modifying-the-psmodulepath-installation-path.md).
+   Az elérési utak, ahol telepítheti a modul találhatók a `$env:PSModulePath` globális változó. Például egy gyakori útvonalat, ahová a modul a rendszer lenne `%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`. Győződjön meg arról, a modul létezik, egy olyan mappa létrehozásához, akkor is, ha csak egy egyetlen .psm1 fájlban. Ha a modul nem mentette az elérési utak egyik, kellene adja át a hívást a modul helye `Import-Module`. (Ellenkező esetben PowerShell nem tudná is megkeresheti.) PowerShell 3.0-s verziójával kezdődően, ha bejelölte a modul PowerShell modul elérési utak egyik, nem kell explicit módon importálásához. Amikor egy felhasználó meghívja a függvényt, a modul automatikusan betöltődik.
+   A modul elérési úton további információkért lásd: [egy PowerShell-modul importálása](./importing-a-powershell-module.md) és [PSModulePath környezeti változó](./modifying-the-psmodulepath-installation-path.md).
 
 7. Aktív szolgáltatás modul eltávolításához meghívásához [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module).
 
-Vegye figyelembe, hogy [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) eltávolítja a modult az aktív memória - nem ténylegesen törli azt, ahová mentette a modul fájlokat.
+   Vegye figyelembe, hogy [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) eltávolítja a modult az aktív memória - nem ténylegesen törli azt, ahová mentette a modul fájlokat.
 
 ### <a name="show-calendar-code-example"></a>Példakód show-naptár
 
-Az alábbi példában egy egyszerű szkript modul, amely tartalmaz egy adott függvény Show-naptár nevű. Ez a funkció egy adott naptári vizuálisan jeleníti meg. Emellett a minta tartalmaz a szinopszist, a leírás, a paraméterértékek és a példa a PowerShell súgója karakterláncok. Vegye figyelembe, hogy az utolsó kódsort azt jelzi, hogy a modul tagként a Show-Calendar függvénynek lesznek exportálva, a modul importálása.
+Az alábbi példában egy egyszerű szkript modul, amely tartalmaz egy adott függvény nevű `Show-Calendar`.
+Ez a funkció egy adott naptári vizuálisan jeleníti meg. Emellett a minta tartalmaz a szinopszist, a leírás, a paraméterértékek és a példa a PowerShell súgója karakterláncok. Vegye figyelembe, hogy az utolsó kódsort biztosítja, hogy a `Show-Calendar` függvény modul tagjaként van exportálva, a modul importálása.
 
 ```powershell
 <#
@@ -217,10 +219,10 @@ while($start -le $end)
     $calendar = $weeks | Format-Table $dayNames -AutoSize | Out-String
 
     ## Add a centered header.
-    $width = ($calendar.Split("'n") | Measure-Object -Maximum Length).Maximum
+    $width = ($calendar.Split("`n") | Measure-Object -Maximum Length).Maximum
     $header = "{0:MMMM yyyy}" -f $start
     $padding = " " * (($width - $header.Length) / 2)
-    $displayCalendar = " 'n" + $padding + $header + "'n " + $calendar
+    $displayCalendar = " `n" + $padding + $header + "`n " + $calendar
     $displayCalendar.TrimEnd()
 
     ## Move to the next month.
