@@ -2,12 +2,12 @@
 title: A PowerShell Core telepítése Windows rendszerre
 description: Információ a Windows PowerShell Core telepítése
 ms.date: 08/06/2018
-ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 3f21761037311891162f1083234edb0aca80d28b
+ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66471004"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830230"
 ---
 # <a name="installing-powershell-core-on-windows"></a>A PowerShell Core telepítése Windows rendszerre
 
@@ -22,7 +22,7 @@ PowerShell-távelérés engedélyezése a WSMan felett, a következő előfelté
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Az MSI-csomag telepítése
 
-PowerShell telepíthető a Windows ügyfél vagy a Windows Server (működik a Windows 7 SP1, Server 2008 R2 és újabb verziók), az MSI-csomag letöltése a Githubról [kiadások] [] oldalát. Görgessen le a **eszközök** telepíteni szeretné a kiadás szakaszában. Az eszközök szakaszban össze lehet csukni, ezért szükség lehet annak kibontásához kattintson.
+PowerShell telepíthető a Windows ügyfél vagy a Windows Server (a Windows 7 SP1, Server 2008 R2 esetében használható, és újabb verziók), töltse le az MSI-csomag github [kiadások] [ releases] lap. Görgessen le a **eszközök** telepíteni szeretné a kiadás szakaszában. Az eszközök szakaszban össze lehet csukni, ezért szükség lehet annak kibontásához kattintson.
 
 Az MSI-fájlt a következőhöz hasonló- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -150,8 +150,12 @@ A következő lépések végigvezetik a PowerShell Core telepítése a Nano Serv
 
 A PowerShell Core a PowerShell távoli eljáráshívás protokoll (PSRP) támogatja a wsman által használt és az SSH keresztül. További információ:
 
-- [SSH távoli eljáráshívás a PowerShell Core] [ssh-távoli eljáráshívás]
-- [A PowerShell Core a wsman által használt távoli eljáráshívás] [a wsman-távelérése]
+- [SSH távoli eljáráshívás a PowerShell Core][ssh-remoting]
+- [A PowerShell Core a wsman által használt távoli eljáráshívás][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[kiadások]: https://github.com/PowerShell/PowerShell/releases [ssh-távoli eljáráshívás]:... [a wsman-távelérése] /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.md:... [AppVeyor] /Core-PowerShell/WSMan-Remoting-in-PowerShell-Core.md: https://ci.appveyor.com/project/PowerShell/powershell
+
+[releases]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
