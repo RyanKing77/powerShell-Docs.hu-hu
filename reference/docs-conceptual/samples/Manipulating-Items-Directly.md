@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Elemek közvetlen módosítása
-ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086221"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030124"
 ---
 # <a name="manipulating-items-directly"></a>Elemek közvetlen módosítása
 
@@ -73,7 +72,7 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-Amikor beírja egy beállításjegyzékbeli elérési út, így feltétlenül foglalja bele a kettőspont (**:**) a Windows PowerShellben meghajtó a nevek, HKLM: és HKCU:. Windows PowerShell a kettőspont nélkül nem ismeri fel a meghajtó nevét, az elérési út.
+Amikor beírja egy beállításjegyzékbeli elérési út, így feltétlenül foglalja bele a kettőspont ( **:** ) a Windows PowerShellben meghajtó a nevek, HKLM: és HKCU:. Windows PowerShell a kettőspont nélkül nem ismeri fel a meghajtó nevét, az elérési út.
 
 ## <a name="why-registry-values-are-not-items"></a>Miért beállításjegyzék értékei nem elemek
 
@@ -93,7 +92,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Annak ellenére, hogy szeretné kezelni a beállításjegyzék-bejegyzések elemek kényelmes, úgy, hogy gondoskodik róla, hogy azt az egyedi nem adható meg a egy beállításjegyzékbeli bejegyzést elérési útját. Az elérési út jelölés nem különbözteti meg a beállításkulcsot nevű **futtatása** és a **(alapértelmezett)** beállításjegyzékbeli bejegyzést a **futtatása** alkulcs. Továbbá mert a beállításjegyzék-bejegyzések neve tartalmazhat fordított perjellel (**\\**), ha beállításjegyzék-bejegyzések elemet, majd különbséget tenni egy nevű beállításjegyzék-bejegyzés nem tudta használni az elérési út jelöléssel  **Windows\\CurrentVersion\\futtatása** származó az alkulcs az adott elérési úton található.
+Annak ellenére, hogy szeretné kezelni a beállításjegyzék-bejegyzések elemek kényelmes, úgy, hogy gondoskodik róla, hogy azt az egyedi nem adható meg a egy beállításjegyzékbeli bejegyzést elérési útját. Az elérési út jelölés nem különbözteti meg a beállításkulcsot nevű **futtatása** és a **(alapértelmezett)** beállításjegyzékbeli bejegyzést a **futtatása** alkulcs. Továbbá mert a beállításjegyzék-bejegyzések neve tartalmazhat fordított perjellel ( **\\** ), ha beállításjegyzék-bejegyzések elemet, majd különbséget tenni egy nevű beállításjegyzék-bejegyzés nem tudta használni az elérési út jelöléssel  **Windows\\CurrentVersion\\futtatása** származó az alkulcs az adott elérési úton található.
 
 ## <a name="renaming-existing-items-rename-item"></a>Meglévő elemeket (Rename-elem) átnevezése
 

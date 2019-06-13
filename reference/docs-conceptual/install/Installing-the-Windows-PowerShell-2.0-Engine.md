@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: A Windows PowerShell 2.0 motor telepítése
-ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: b625b61b4e191402074f57ea2e942f800dbbcd53
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a2b78755e7e44e2523baee5477fadc94eab485b1
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058318"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030959"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>A Windows PowerShell 2.0 motor telepítése
 Ez a témakör ismerteti a Windows PowerShell 2.0 motor telepítése.
@@ -53,7 +52,7 @@ A következő eljárásokat követve adja hozzá a Windows PowerShell 2.0 motor 
 
 2. Az a **telepítési típus** lapon jelölje be **szerepköralapú vagy szolgáltatásalapú telepítés**.
 
-3. Az a **funkciók** lapon, bontsa ki a **.NET-keretrendszer 3.5 szolgáltatásai** csomópontra, és válassza **.NET-keretrendszer 3.5 (tartalmazza a .NET 2.0 és 3.0 verziót)**.
+3. Az a **funkciók** lapon, bontsa ki a **.NET-keretrendszer 3.5 szolgáltatásai** csomópontra, és válassza **.NET-keretrendszer 3.5 (tartalmazza a .NET 2.0 és 3.0 verziót)** .
 
     A Windows PowerShell 2.0 motor nem szükségesek, hogy a csomópont alatt a többi beállítást.
 

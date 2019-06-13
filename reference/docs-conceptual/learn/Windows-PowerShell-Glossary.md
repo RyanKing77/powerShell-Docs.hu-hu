@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Windows PowerShell-szószedet
-ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057352"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030359"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell-szószedet
 
@@ -22,7 +21,7 @@ ms.locfileid: "62057352"
 |dinamikus paraméterek|Ez a paraméter adnak hozzá egy Windows PowerShell-parancsmagot, függvény vagy parancsfájl bizonyos körülmények között. Parancsmagok, függvények, szolgáltatók és -parancsfájlok dinamikus paramétereket adhat hozzá.|
 |fájl formázása|A Windows PowerShell XML-fájl, amely rendelkezik a. format.ps1xml bővítményt, és határozza meg, hogyan jeleníti meg a Windows PowerShell-objektumot a .NET-keretrendszer típusa alapján.|
 |globális munkamenet-állapot|A munkamenet-állapot, amely tartalmazza az adatokat, amely hozzáférhető annak a felhasználónak egy Windows PowerShell-munkamenetet.|
-|gazdagép|A felület, amely a Windows PowerShell motor segítségével a felhasználó kommunikál. Például az állomás kérések kezelésének módja Windows PowerShell és a felhasználó között.|
+|host|A felület, amely a Windows PowerShell motor segítségével a felhasználó kommunikál. Például az állomás kérések kezelésének módja Windows PowerShell és a felhasználó között.|
 |gazdagép-alkalmazás|A program, amely betölti a Windows PowerShell-motor és a folyamatot, és használja a műveletek végrehajtásához.|
 |a bemeneti metódus feldolgozása|Ez a módszer a parancsmag segítségével feldolgozásához bemenetként fogadott rekordokat. A bemeneti feldolgozási módszerek közé tartozik a BeginProcessing metódus, a ProcessRecord metódus, a EndProcessing módszer és a StopProcessing metódus.|
 |a modul manifest|A Windows PowerShell-modul, amely rendelkezik egy jegyzéket, amelynek RootModule kulcs értéke üres.|

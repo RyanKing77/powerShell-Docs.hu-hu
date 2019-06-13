@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Adatgyűjtés a számítógépekről
-ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dc8fcc5f12fdf9e3fc8151d3e50b8b660262c62
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058335"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030850"
 ---
 # <a name="collecting-information-about-computers"></a>Adatgyűjtés a számítógépekről
 
@@ -18,7 +17,7 @@ Ezenkívül WMI adatok, amelyek a gyűjtemények egy vagy több elem objektumké
 Windows PowerShell is működik együtt az objektumok és a egy folyamatot, amely lehetővé teszi, hogy ugyanolyan módon való kezelése egyetlen vagy több objektum van, mert általános WMI hozzáférés lehetővé teszi a nagyon kevés munkát speciális feladatok elvégzésére.
 
 Az alábbi példák bemutatják, hogyan lehet adott információk gyűjtése használatával `Get-CimInstance` egy tetszőleges számítógép ellen.
-Adja meg, hogy a **ComputerName** pont értékű paraméter (**.**), amely jelöli, hogy a helyi számítógépen.
+Adja meg, hogy a **ComputerName** pont értékű paraméter ( **.** ), amely jelöli, hogy a helyi számítógépen.
 Megadhat egy nevet vagy a WMI-n keresztül érhető el minden olyan számítógéphez társított IP-cím.
 A helyi számítógép adatainak beolvasásához, sikerült kihagyja a **ComputerName** paraméter.
 

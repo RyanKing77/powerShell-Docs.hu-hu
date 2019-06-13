@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Beállításjegyzék-bejegyzések használata
-ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086034"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030733"
 ---
 # <a name="working-with-registry-entries"></a>Beállításjegyzék-bejegyzések használata
 
@@ -197,7 +196,7 @@ A **%d{PropertyType/** nevének kell lennie egy **Microsoft.Win32.RegistryValueK
 |DWord|Egy szám, amely egy érvényes UInt32|
 |ExpandString|Egy karakterlánc, amely dinamikusan bontva környezeti változókat is tartalmazhat.|
 |MultiString|Egy többsoros karakterlánc|
-|Sztring|Bármilyen karakterlánc típusú értéket|
+|Sztring|bármilyen karakterlánc típusú értéket|
 |QWord|8 bájtos bináris adatok|
 
 > [!NOTE]

@@ -2,13 +2,12 @@
 ms.date: 08/23/2018
 keywords: PowerShell, a parancsmag
 title: A PowerShell legfontosabb fogalmainak megértése
-ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f9af370db46ea47dbccbabb7cc90fc27b8f2765
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058590"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030984"
 ---
 # <a name="understanding-important-powershell-concepts"></a>A PowerShell legfontosabb fogalmainak megértése
 
@@ -31,7 +30,7 @@ A natív parancsokat a PowerShell nevezzük *parancsmagok* (ejtsd parancs-lehet�
 
 A parancs beírásakor PowerShell mindig dolgozza fel a parancssori bemenet közvetlenül. PowerShell is formázza a kimenet a képernyőn látható. Ez a különbség azért fontos, mert csökkentik az egyes parancsmag szükséges munkát. Ez biztosítja, hogy mindig műveleteket végezheti el bármilyen parancsmaggal ugyanúgy. A parancsmag a fejlesztők nem kell elemezni a parancssori argumentumokat, vagy formázza a kimeneti kód írása.
 
-A hagyományos parancssori eszközökkel rendelkezik saját rendszerek és a Súgó megjelenítése. Egyes parancssori eszközök használata **/?** a Súgó megjelenített; aktiválásához mások **-?**, **/H**, vagy akár **//**. Néhány súgó jelenik meg a grafikus felhasználói felület ablakban, és nem jelennek meg a konzolon. Használja a megfelelő paramétert, ha az eszköz előfordulhat, hogy hagyja figyelmen kívül mit írt be, és automatikusan a feladat végrehajtásának elindításához.
+A hagyományos parancssori eszközökkel rendelkezik saját rendszerek és a Súgó megjelenítése. Egyes parancssori eszközök használata **/?** a Súgó megjelenített; aktiválásához mások **-?** , **/H**, vagy akár **//** . Néhány súgó jelenik meg a grafikus felhasználói felület ablakban, és nem jelennek meg a konzolon. Használja a megfelelő paramétert, ha az eszköz előfordulhat, hogy hagyja figyelmen kívül mit írt be, és automatikusan a feladat végrehajtásának elindításához.
 Mivel PowerShell automatikusan elemzi, és feldolgozza a parancssorban a **-?** paraméter mindig jelenti a "show me Súgó parancs".
 
 > [!NOTE]

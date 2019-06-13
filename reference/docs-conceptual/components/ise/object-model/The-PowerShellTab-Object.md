@@ -2,19 +2,18 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Az PowerShellTab objektum
-ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: 577e2aaaddf3071801816d9ae91dbf0006dd5072
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057672"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028900"
 ---
 # <a name="the-powershelltab-object"></a>Az PowerShellTab objektum
 
 A **PowerShellTab** objektum képviseli egy Windows PowerShell-modul környezetben.
 
-## <a name="methods"></a>Módszerek
+## <a name="methods"></a>Metódusok
 
 ### <a name="invoke-script-"></a>Meghívása\( parancsfájl \)
 

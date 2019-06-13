@@ -2,19 +2,18 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Az ISESnippetCollection objektum
-ms.assetid: ae974955-4282-4cbc-8c42-0fff1904ef32
-ms.openlocfilehash: bd5ed4a1f15e0a398b7c6a17f0071cad889be4a7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6c392c08767fba004f63155d5a469777856a0b59
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086670"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030499"
 ---
 # <a name="the-isesnippetcollection-object"></a>Az ISESnippetCollection objektum
 
 A **ISESnippetCollection** objektum olyan gyűjteménye, **ISESnippet** objektumokat. A fájlok gyűjteményt, amelyhez társítva van egy **PowerShellTab** objektum a tagja, ez az osztály. Például a **$psISE.CurrentPowerShellTab.Files** gyűjtemény.
 
-## <a name="methods"></a>Módszerek
+## <a name="methods"></a>Metódusok
 
 ### <a name="load-filepathname-"></a>Load\( FilePathName \)
 

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: A számítógép állapotának módosítása
-ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086323"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030281"
 ---
 # <a name="changing-computer-state"></a>A számítógép állapotának módosítása
 
@@ -30,7 +29,7 @@ Ha zárolja munkaállomás gyors felhasználóváltás engedélyezve van, péld�
 
 ## <a name="logging-off-the-current-session"></a>Az aktuális munkamenet kijelentkeztetése
 
-Számos különböző módszer használatával a helyi rendszer egy munkamenetet kijelentkeztetni. A legegyszerűbb módja, ha a távoli asztal/Terminálszolgáltatások parancssori eszköz **logoff.exe** (részletek, a Windows PowerShell parancssorába írja be a következőt **kijelentkezési /?**). Kijelentkezés az aktuális aktív munkamenet, írja be a **kijelentkezési** argumentumok nélkül.
+Számos különböző módszer használatával a helyi rendszer egy munkamenetet kijelentkeztetni. A legegyszerűbb módja, ha a távoli asztal/Terminálszolgáltatások parancssori eszköz **logoff.exe** (részletek, a Windows PowerShell parancssorába írja be a következőt **kijelentkezési /?** ). Kijelentkezés az aktuális aktív munkamenet, írja be a **kijelentkezési** argumentumok nélkül.
 
 Is használhatja a **shutdown.exe** eszközben a kijelentkezési lehetőséget:
 
@@ -48,7 +47,7 @@ További információt, és egyéb funkciók Win32Shutdown metody található te
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>Leállítás vagy a számítógép újraindítása
 
-Leállítása vagy újraindítása a számítógépek olyan általánosan feladat azonos típusú. Eszközök, amelyek a számítógép leállítása általában újraindul, valamint – és fordítva. A Windows PowerShell a számítógép újraindítása két egyszerű lehetőség van. Használhatja a Tsshutdn.exe vagy Shutdown.exe megfelelő argumentumokkal. A részletes használati információkat szerezhet a **tsshutdn.exe /?** vagy **shutdown.exe /?**.
+Leállítása vagy újraindítása a számítógépek olyan általánosan feladat azonos típusú. Eszközök, amelyek a számítógép leállítása általában újraindul, valamint – és fordítva. A Windows PowerShell a számítógép újraindítása két egyszerű lehetőség van. Használhatja a Tsshutdn.exe vagy Shutdown.exe megfelelő argumentumokkal. A részletes használati információkat szerezhet a **tsshutdn.exe /?** vagy **shutdown.exe /?** .
 
 Hajtsa végre a leállítási is, és indítsa újra közvetlenül a Windows PowerShell, valamint a műveletek.
 

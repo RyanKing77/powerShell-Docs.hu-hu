@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Aktuális hely kezelése
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086255"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030201"
 ---
 # <a name="managing-current-location"></a>Aktuális hely kezelése
 
@@ -50,9 +49,9 @@ C:\WINDOWS
 
 A **- PassThru** paraméter az eredmény információt ad vissza, amelyben nem nincs alapértelmezett kimenet esetekben használható a Windows PowerShell számos Set-parancsokkal.
 
-Megadhat elérési utak viszonyított jelenlegi tartózkodási ugyanúgy szerint, akkor a legtöbb UNIX- és Windows parancs ismertetése. A relatív elérési utakat, a standard szintű jelölésrendszerben időszak (**.**) az aktuális mappában, és a egy doubled időszak jelöli (**...** ) szülőkönyvtára az aktuális tartózkodási helyét jelöli.
+Megadhat elérési utak viszonyított jelenlegi tartózkodási ugyanúgy szerint, akkor a legtöbb UNIX- és Windows parancs ismertetése. A relatív elérési utakat, a standard szintű jelölésrendszerben időszak ( **.** ) az aktuális mappában, és a egy doubled időszak jelöli ( **...** ) szülőkönyvtára az aktuális tartózkodási helyét jelöli.
 
-Például, ha a **C:\\Windows** mappa, pont (**.**) jelöli **C:\\Windows** és időszakok duplán (**...** ) képviselő **C:**. Módosíthatja az aktuális helyről a C: meghajtó gyökerébe beírásával:
+Például, ha a **C:\\Windows** mappa, pont ( **.** ) jelöli **C:\\Windows** és időszakok duplán ( **...** ) képviselő **C:** . Módosíthatja az aktuális helyről a C: meghajtó gyökerébe beírásával:
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -62,7 +61,7 @@ Path
 C:\
 ```
 
-Ugyanezen technika működik, amelyek nem akkor a fájl rendszert tartalmazó meghajtókon, például a Windows PowerShell-meghajtók **HKLM:**. A HKLM is beállíthatja az helyet\\szoftverkulcs írja be a beállításjegyzékben:
+Ugyanezen technika működik, amelyek nem akkor a fájl rendszert tartalmazó meghajtókon, például a Windows PowerShell-meghajtók **HKLM:** . A HKLM is beállíthatja az helyet\\szoftverkulcs írja be a beállításjegyzékben:
 
 ```
 PS> Set-Location -Path HKLM:\SOFTWARE -PassThru

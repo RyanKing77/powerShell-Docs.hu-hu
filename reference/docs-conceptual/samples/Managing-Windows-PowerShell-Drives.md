@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Windows PowerShell-meghajtók kezelése
-ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057825"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030147"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell-meghajtók kezelése
 
@@ -117,7 +116,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > Általánosságban véve az elérési utakat nem kis-és nagybetűket.
 
-Az új Windows PowerShell meghajtót mint Önnek az összes Windows PowerShell-meghajtó – egy kettőspontot a név alapján hivatkozhat (**:**).
+Az új Windows PowerShell meghajtót mint Önnek az összes Windows PowerShell-meghajtó – egy kettőspontot a név alapján hivatkozhat ( **:** ).
 
 A Windows PowerShell meghajtót számos feladatot teheti sokkal egyszerűbbek. Például néhány, a legfontosabb kulcsokat, a Windows beállításjegyzékben kell rendkívül hosszú elérési utak teszi őket a hozzáférés nehézkes és nehezen ne felejtse el. Nagyon fontos konfigurációs adatok alatt találhatók **HKEY_LOCAL_MACHINE\\szoftver\\Microsoft\\Windows\\CurrentVersion**. Megtekintése és módosítása CurrentVersion beállításkulcs elemek, hozhat létre egy Windows PowerShell meghajtót, amely feltörték ezt a kulcsot a beírásával:
 

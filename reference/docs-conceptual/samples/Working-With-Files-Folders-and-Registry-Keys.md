@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, a parancsmag
 title: Fájlmappák és beállításkulcsok használata
-ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0c8716c384827d0816e2847ff81232c14638681b
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086006"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030755"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Fájlok, mappák és beállításkulcsok használata
 
@@ -128,7 +127,7 @@ Használatával zárhat ki adott elemeket a **kizárása** Get-ChildItem paramé
 
 Tegyük fel például, próbált keresse meg a Windows idő DLL-t a System32 mappába, és minden DLL nevéről emlékszik, amellyel kezdődik "W" és "32" szerepel.
 
-Egy kifejezés, például **w\&#42; 32\&#42;. dll** található összes DLL-fájl, amely megfelel a feltételeknek, de azt is visszaadhatnak a Windows 95 és 16-bites Windows kompatibilitási DLL-fájlok, amelyek tartalmazzák a "95" vagy "16" nevükben. Fájlok, amelyek ezeket a számokat a nevükben használatával, akkor kihagyhatja a **kizárása** mintával rendelkező paraméter  **\&#42;\[ 9516]\&#42;**:
+Egy kifejezés, például **w\&#42; 32\&#42;. dll** található összes DLL-fájl, amely megfelel a feltételeknek, de azt is visszaadhatnak a Windows 95 és 16-bites Windows kompatibilitási DLL-fájlok, amelyek tartalmazzák a "95" vagy "16" nevükben. Fájlok, amelyek ezeket a számokat a nevükben használatával, akkor kihagyhatja a **kizárása** mintával rendelkező paraméter  **\&#42;\[ 9516]\&#42;** :
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
