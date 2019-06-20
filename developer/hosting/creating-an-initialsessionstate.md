@@ -8,27 +8,32 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
 caps.latest.revision: 5
-ms.openlocfilehash: 3a7c47487b632d00643fce0aa082e0dc9a9bb626
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082991"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263830"
 ---
-# <a name="creating-an-initialsessionstate"></a><span data-ttu-id="c96e7-102">InitialSessionState létrehozása</span><span class="sxs-lookup"><span data-stu-id="c96e7-102">Creating an InitialSessionState</span></span>
+# <a name="creating-an-initialsessionstate"></a><span data-ttu-id="ffcaf-102">InitialSessionState létrehozása</span><span class="sxs-lookup"><span data-stu-id="ffcaf-102">Creating an InitialSessionState</span></span>
 
-<span data-ttu-id="c96e7-103">Windows PowerShell-parancsok egy futási térben fut.</span><span class="sxs-lookup"><span data-stu-id="c96e7-103">Windows PowerShell commands run in a runspace.</span></span> <span data-ttu-id="c96e7-104">Az alkalmazás futtatásához a Windows PowerShell, létre kell hoznia egy [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objektum.</span><span class="sxs-lookup"><span data-stu-id="c96e7-104">To host Windows PowerShell in your application, you must create a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span> <span data-ttu-id="c96e7-105">Minden futási térben van egy [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) hozzá társított objektumot.</span><span class="sxs-lookup"><span data-stu-id="c96e7-105">Every runspace has an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it.</span></span> <span data-ttu-id="c96e7-106">A [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) megadja a futási térből, például, hogy melyik parancsok, változók és a modulok érhetők el, hogy futási térben jellemzőit.</span><span class="sxs-lookup"><span data-stu-id="c96e7-106">The [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) specifies characteristics of the runspace, such as which commands, variables, and modules are available for that runspace.</span></span>
+<span data-ttu-id="ffcaf-103">PowerShell-parancsok egy futási térben fut.</span><span class="sxs-lookup"><span data-stu-id="ffcaf-103">PowerShell commands run in a runspace.</span></span>
+<span data-ttu-id="ffcaf-104">Az alkalmazás futtatásához a PowerShell, létre kell hoznia egy [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objektum.</span><span class="sxs-lookup"><span data-stu-id="ffcaf-104">To host PowerShell in your application, you must create a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
+<span data-ttu-id="ffcaf-105">Minden futási térben van egy [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) hozzá társított objektumot.</span><span class="sxs-lookup"><span data-stu-id="ffcaf-105">Every runspace has an [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it.</span></span>
+<span data-ttu-id="ffcaf-106">A InitialSessionState megadja a futási térből, például, hogy melyik parancsok, változók és a modulok érhetők el, hogy futási térben jellemzőit.</span><span class="sxs-lookup"><span data-stu-id="ffcaf-106">The InitialSessionState specifies characteristics of the runspace, such as which commands, variables, and modules are available for that runspace.</span></span>
 
-## <a name="create-a-default-initialsessionstate"></a><span data-ttu-id="c96e7-107">Hozzon létre egy alapértelmezett InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="c96e7-107">Create a default InitialSessionState</span></span>
+## <a name="create-a-default-initialsessionstate"></a><span data-ttu-id="ffcaf-107">Hozzon létre egy alapértelmezett InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="ffcaf-107">Create a default InitialSessionState</span></span>
 
- <span data-ttu-id="c96e7-108">A [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)és [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) módszerek használhatók. hozhat létre [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektumokat.</span><span class="sxs-lookup"><span data-stu-id="c96e7-108">The [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)and [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods can be used to create [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objects.</span></span> <span data-ttu-id="c96e7-109">[System.Management.Automation.Runspaces.Initialsessionstate.Createdefault\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) hoz létre egy InitialSessionState a beépített parancsok mindegyike közben betöltött [ System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) csak a gazdagép (a parancsok a Microsoft.PowerShell.Core modulból Windows PowerShell szükséges parancsokat betöltődik.</span><span class="sxs-lookup"><span data-stu-id="c96e7-109">[System.Management.Automation.Runspaces.Initialsessionstate.Createdefault\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) creates an InitialSessionState with all of the built-in commands loaded, while [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) loads only the commands required to host Windows PowerShell (the commands from the Microsoft.PowerShell.Core module.</span></span>
+<span data-ttu-id="ffcaf-108">A [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) és [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) módszerek a **InitialSessionState** osztály segítségével hozzon létre egy **InitialSessionState**objektum.</span><span class="sxs-lookup"><span data-stu-id="ffcaf-108">The [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) and [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods of the **InitialSessionState** class can be used to create an **InitialSessionState** object.</span></span>
+<span data-ttu-id="ffcaf-109">A **CreateDefault** metódus hoz létre egy **InitialSessionState** az összes, a beépített parancsok betöltött, miközben a **CreateDefault2** metódus csak a parancsok tölti be. állomás (a parancsok a Microsoft.PowerShell.Core modulból) PowerShell szükséges.</span><span class="sxs-lookup"><span data-stu-id="ffcaf-109">The **CreateDefault** method creates an **InitialSessionState** with all of the built-in commands loaded, while the **CreateDefault2** method loads only the commands required to host PowerShell (the commands from the Microsoft.PowerShell.Core module).</span></span>
 
- <span data-ttu-id="c96e7-110">Ha azt szeretné, korlátozhatja a gazdaalkalmazásban elérhető parancsai szeretne létrehozni egy korlátozott futási térrel.</span><span class="sxs-lookup"><span data-stu-id="c96e7-110">If you want to further limit the commands available in your host application you need to create a constrained runspace.</span></span> <span data-ttu-id="c96e7-111">Információkért lásd: létrehozásához egy korlátozott futási térrel.</span><span class="sxs-lookup"><span data-stu-id="c96e7-111">For information, see Creating a constrained runspace.</span></span>
+<span data-ttu-id="ffcaf-110">Ha azt szeretné, korlátozhatja a gazdaalkalmazásban elérhető parancsai szeretne létrehozni egy korlátozott futási térrel.</span><span class="sxs-lookup"><span data-stu-id="ffcaf-110">If you want to further limit the commands available in your host application you need to create a constrained runspace.</span></span>
+<span data-ttu-id="ffcaf-111">További információ: [létrehozása egy korlátozott futási térrel](creating-a-constrained-runspace.md).</span><span class="sxs-lookup"><span data-stu-id="ffcaf-111">For information, see [Creating a constrained runspace](creating-a-constrained-runspace.md).</span></span>
 
- <span data-ttu-id="c96e7-112">A következő kód bemutatja, hogyan hozzon létre egy InitialSessionState, rendelje hozzá egy futási teret, a folyamat a futási térben parancsok hozzáadása és a parancsokat hívhatnak meg.</span><span class="sxs-lookup"><span data-stu-id="c96e7-112">The following code shows how to create an InitialSessionState, assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands.</span></span> <span data-ttu-id="c96e7-113">Hozzáadásával és a parancsok meghívása kapcsolatos további információkért tekintse meg és parancsok meghívása hozzáadását.</span><span class="sxs-lookup"><span data-stu-id="c96e7-113">For more information about adding and invoking commands, see Adding and invoking commands.</span></span>
+<span data-ttu-id="ffcaf-112">A következő kód bemutatja, hogyan hozhat létre egy **InitialSessionState**, rendelje hozzá egy futási teret, a folyamat a futási térben parancsok hozzáadása és a parancsokat hívhatnak meg.</span><span class="sxs-lookup"><span data-stu-id="ffcaf-112">The following code shows how to create an **InitialSessionState**, assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands.</span></span>
+<span data-ttu-id="ffcaf-113">Hozzáadásával és a parancsok meghívása kapcsolatos további információkért lásd: [és parancsok meghívása felvétele](adding-and-invoking-commands.md).</span><span class="sxs-lookup"><span data-stu-id="ffcaf-113">For more information about adding and invoking commands, see [Adding and invoking commands](adding-and-invoking-commands.md).</span></span>
 
 ```csharp
-
 namespace SampleHost
 {
   using System;
@@ -60,9 +65,9 @@ namespace SampleHost
       Runspace rs = RunspaceFactory.CreateRunspace(iss);
       rs.Open();
 
-      // Call the PowerShell.Create() method to create the PowerShell
-      // object,and then specify the runspace and commands to the pipeline.
-      // and  create the command pipeline.
+      // Call the PowerShell.Create() method to create the PowerShell object,
+      // and then specify the runspace and commands to the pipeline.
+      // and create the command pipeline.
       PowerShell ps = PowerShell.Create();
       ps.Runspace = rs;
       ps.AddCommand("Get-Variable");
@@ -73,21 +78,23 @@ namespace SampleHost
 
       // Call the PowerShell.Invoke() method to run
       // the pipeline synchronously.
-        foreach (PSObject result in ps.Invoke())
-        {
-          Console.WriteLine("{0,-20}{1}",
-                  result.Members["Name"].Value,
-                  result.Members["Value"].Value);
-        } // End foreach.
+      foreach (PSObject result in ps.Invoke())
+      {
+        Console.WriteLine("{0,-20}{1}",
+            result.Members["Name"].Value,
+            result.Members["Value"].Value);
+      } // End foreach.
 
-        // Close the runspace to free resources.
-        rs.Close();
+      // Close the runspace to free resources.
+      rs.Close();
 
     } // End Main.
   } // End SampleHost.
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c96e7-114">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="c96e7-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ffcaf-114">Lásd még:</span><span class="sxs-lookup"><span data-stu-id="ffcaf-114">See Also</span></span>
 
- [<span data-ttu-id="c96e7-115">Egy korlátozott futási térrel létrehozása</span><span class="sxs-lookup"><span data-stu-id="c96e7-115">Creating a constrained runspace</span></span>](./creating-a-constrained-runspace.md)
+[<span data-ttu-id="ffcaf-115">Egy korlátozott futási térrel létrehozása</span><span class="sxs-lookup"><span data-stu-id="ffcaf-115">Creating a constrained runspace</span></span>](creating-a-constrained-runspace.md)
+
+[<span data-ttu-id="ffcaf-116">Hozzáadásával és a parancsok meghívása</span><span class="sxs-lookup"><span data-stu-id="ffcaf-116">Adding and invoking commands</span></span>](adding-and-invoking-commands.md)
