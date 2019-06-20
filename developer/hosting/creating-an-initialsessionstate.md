@@ -8,27 +8,32 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
 caps.latest.revision: 5
-ms.openlocfilehash: 3a7c47487b632d00643fce0aa082e0dc9a9bb626
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082991"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263830"
 ---
 # <a name="creating-an-initialsessionstate"></a>InitialSessionState létrehozása
 
-Windows PowerShell-parancsok egy futási térben fut. Az alkalmazás futtatásához a Windows PowerShell, létre kell hoznia egy [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objektum. Minden futási térben van egy [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) hozzá társított objektumot. A [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) megadja a futási térből, például, hogy melyik parancsok, változók és a modulok érhetők el, hogy futási térben jellemzőit.
+PowerShell-parancsok egy futási térben fut.
+Az alkalmazás futtatásához a PowerShell, létre kell hoznia egy [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) objektum.
+Minden futási térben van egy [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) hozzá társított objektumot.
+A InitialSessionState megadja a futási térből, például, hogy melyik parancsok, változók és a modulok érhetők el, hogy futási térben jellemzőit.
 
 ## <a name="create-a-default-initialsessionstate"></a>Hozzon létre egy alapértelmezett InitialSessionState
 
- A [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)és [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) módszerek használhatók. hozhat létre [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objektumokat. [System.Management.Automation.Runspaces.Initialsessionstate.Createdefault*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) hoz létre egy InitialSessionState a beépített parancsok mindegyike közben betöltött [ System.Management.Automation.Runspaces.Initialsessionstate.Createdefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) csak a gazdagép (a parancsok a Microsoft.PowerShell.Core modulból Windows PowerShell szükséges parancsokat betöltődik.
+A [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) és [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) módszerek a **InitialSessionState** osztály segítségével hozzon létre egy **InitialSessionState**objektum.
+A **CreateDefault** metódus hoz létre egy **InitialSessionState** az összes, a beépített parancsok betöltött, miközben a **CreateDefault2** metódus csak a parancsok tölti be. állomás (a parancsok a Microsoft.PowerShell.Core modulból) PowerShell szükséges.
 
- Ha azt szeretné, korlátozhatja a gazdaalkalmazásban elérhető parancsai szeretne létrehozni egy korlátozott futási térrel. Információkért lásd: létrehozásához egy korlátozott futási térrel.
+Ha azt szeretné, korlátozhatja a gazdaalkalmazásban elérhető parancsai szeretne létrehozni egy korlátozott futási térrel.
+További információ: [létrehozása egy korlátozott futási térrel](creating-a-constrained-runspace.md).
 
- A következő kód bemutatja, hogyan hozzon létre egy InitialSessionState, rendelje hozzá egy futási teret, a folyamat a futási térben parancsok hozzáadása és a parancsokat hívhatnak meg. Hozzáadásával és a parancsok meghívása kapcsolatos további információkért tekintse meg és parancsok meghívása hozzáadását.
+A következő kód bemutatja, hogyan hozhat létre egy **InitialSessionState**, rendelje hozzá egy futási teret, a folyamat a futási térben parancsok hozzáadása és a parancsokat hívhatnak meg.
+Hozzáadásával és a parancsok meghívása kapcsolatos további információkért lásd: [és parancsok meghívása felvétele](adding-and-invoking-commands.md).
 
 ```csharp
-
 namespace SampleHost
 {
   using System;
@@ -60,9 +65,9 @@ namespace SampleHost
       Runspace rs = RunspaceFactory.CreateRunspace(iss);
       rs.Open();
 
-      // Call the PowerShell.Create() method to create the PowerShell
-      // object,and then specify the runspace and commands to the pipeline.
-      // and  create the command pipeline.
+      // Call the PowerShell.Create() method to create the PowerShell object,
+      // and then specify the runspace and commands to the pipeline.
+      // and create the command pipeline.
       PowerShell ps = PowerShell.Create();
       ps.Runspace = rs;
       ps.AddCommand("Get-Variable");
@@ -73,15 +78,15 @@ namespace SampleHost
 
       // Call the PowerShell.Invoke() method to run
       // the pipeline synchronously.
-        foreach (PSObject result in ps.Invoke())
-        {
-          Console.WriteLine("{0,-20}{1}",
-                  result.Members["Name"].Value,
-                  result.Members["Value"].Value);
-        } // End foreach.
+      foreach (PSObject result in ps.Invoke())
+      {
+        Console.WriteLine("{0,-20}{1}",
+            result.Members["Name"].Value,
+            result.Members["Value"].Value);
+      } // End foreach.
 
-        // Close the runspace to free resources.
-        rs.Close();
+      // Close the runspace to free resources.
+      rs.Close();
 
     } // End Main.
   } // End SampleHost.
@@ -90,4 +95,6 @@ namespace SampleHost
 
 ## <a name="see-also"></a>Lásd még:
 
- [Egy korlátozott futási térrel létrehozása](./creating-a-constrained-runspace.md)
+[Egy korlátozott futási térrel létrehozása](creating-a-constrained-runspace.md)
+
+[Hozzáadásával és a parancsok meghívása](adding-and-invoking-commands.md)
