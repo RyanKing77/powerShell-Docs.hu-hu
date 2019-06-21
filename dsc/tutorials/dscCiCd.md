@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat felépítésével bajlódnia
-ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076475"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301495"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>A DSC folyamatos integrációt és folyamatos üzembe helyezési folyamat felépítésével bajlódnia
 
@@ -22,10 +22,10 @@ Egy automatizált CI/CD-folyamat segítségével gyorsabban szoftverek frissít�
 
 Ebben a példában használatához ismernie kell a következőkkel:
 
-- CI-CD fogalmakat. Útmutatással található [a kiadási adatfolyamat-modell](http://aka.ms/thereleasepipelinemodelpdf).
+- CI-CD fogalmakat. Útmutatással található [a kiadási adatfolyamat-modell](https://aka.ms/thereleasepipelinemodelpdf).
 - [A Git](https://git-scm.com/) verziókövetés
 - A [Pester](https://github.com/pester/Pester) tesztelési keretrendszerének
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## <a name="what-you-will-need"></a>Mit kell
 
@@ -44,7 +44,7 @@ Az ügyfélszámítógépen kell telepíteni az alábbi Windows számítógép:
 ### <a name="tfssrv1"></a>TFSSrv1
 
 A számítógép, amelyen a TFS-kiszolgálónak, ahol a build meghatározzuk és kiadása.
-Ezen a számítógépen telepítve kell [Team Foundation Server 2017](https://www.visualstudio.com/tfs/) telepítve.
+Ezen a számítógépen telepítve kell [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) telepítve.
 
 ### <a name="buildagent"></a>BuildAgent
 
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 Ez olyan csomópontokat, hogy az egyik szerepköre, definiált megkeresi `DNSServer` a a [konfigurációs adatok](../configurations/configData.md), által létrehozott a `DevEnv.ps1` parancsfájlt.
 
-További információ a `Where` metódus az [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+További információ a `Where` metódus az [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 Konfigurációs adatok segítségével határozza meg a csomópontok akkor fontos, ha ezzel a CI, mivel a csomópont-információk valószínűleg változni fognak a környezetek között, és a konfigurációs adatok használata lehetővé teszi, hogy egyszerűen módosításokat csomópontjának adatait a konfigurációs programkód módosítása nélkül.
 
@@ -319,7 +319,7 @@ Az integrációs teszt szkriptjét használ vegyesen [Pester](https://github.com
 
 Most, hogy mi feltöltötte a kódban, TFS és tekintett meg, mire, határozzon meg a build.
 
-Itt csak a fogja hozzáadni a buildre létrehozási lépések lesz szó. Builddefiníció létrehozása a TFS-ben, lásd: [létrehozása és a várólista builddefiníció](/azure/devops/pipelines/get-started-designer).
+Itt csak a fogja hozzáadni a buildre létrehozási lépések lesz szó. Builddefiníció létrehozása a TFS-ben, lásd: [létrehozása és a várólista builddefiníció](/azure/devops/pipelines/create-first-pipeline).
 
 Hozzon létre egy új builddefiníció (válassza ki a **üres** sablon) "InfraDNS" nevű.
 Adja hozzá az alábbi lépések végrehajtásával, build definíciója:
@@ -377,7 +377,7 @@ Most beállítjuk egy eseményindítót, amely miatt a projekt felépítéséhez
 1. A TFS-ben, kattintson a **Build & Release** lap
 1. Válassza ki a `DNS Infra` builddefiníció, majd kattintson az **szerkesztése**
 1. Kattintson a **eseményindítók** lap
-1. Válassza ki **folyamatos integrációs (CI)**, és válassza ki `refs/heads/ci-cd-example` a fiókiroda legördülő lista
+1. Válassza ki **folyamatos integrációs (CI)** , és válassza ki `refs/heads/ci-cd-example` a fiókiroda legördülő lista
 1. Kattintson a **mentése** , majd **OK**
 
 Most már minden változása a TFS git-tárház eseményindítók egy automatizált összeállítási.
@@ -388,7 +388,7 @@ Kiadási definíció hozzunk létre úgy, hogy a projekt rendszerbe minden kód 
 
 Ehhez adja hozzá társított új kiadási definíciót a `InfraDNS` hozhat létre a korábban létrehozott builddefiníciót.
 Ügyeljen arra, hogy válasszon **folyamatos üzembe helyezés** úgy, hogy az új kiadás akkor aktiválódik, amikor elkészül egy új build.
-([Mik azok a folyamatok kiadását? ](/azure/devops/pipelines/release/what-is-release-management)) és a következőképpen konfigurálja:
+([Mik azok a folyamatok kiadását? ](/azure/devops/pipelines/release/)) és a következőképpen konfigurálja:
 
 Adja hozzá a kiadási definíció az alábbi lépéseket:
 

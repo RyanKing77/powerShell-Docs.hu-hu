@@ -11,12 +11,12 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 34643d20c16f8cc45e7fb20dc2a87d78b18bbf10
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854982"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298629"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Láncbemenetet feldolgozó paraméterek hozzáadása
 
@@ -77,7 +77,7 @@ Az előző deklarace készleteket a `ValueFromPipeline` kulcsszó használatáva
 
 Ha a parancsmagot, a folyamat bemeneti kezelni, kell a megfelelő bemenet feldolgozása metódusok felülbírálása. Az alapszintű bemeneti feldolgozási módszerek jelennek meg a [létrehozásához az első parancsmag](./creating-a-cmdlet-without-parameters.md).
 
-A Get-Proc parancsmag felülbírálja a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust a `Name` paraméter megadott információ a felhasználó vagy egy parancsfájlt. Ez a módszer a folyamatok minden kért Folyamatnév vagy az összes folyamat fog kapni, ha nincs név megadva. Figyelje meg, hogy belül [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), a hívást [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) a kimenete a folyamat küld kimeneti mechanizmus objektumokat. A második paraméter a hívás `enumerateCollection`, értékre van állítva `true` állapítható meg, hogy a Windows PowerShell modul enumerálása folyamat objektumok tömbje, és a egy folyamat egyszerre írni a parancssorból.
+A Get-Proc parancsmag felülbírálja a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust a `Name` paraméter megadott információ a felhasználó vagy egy parancsfájlt. Ez a módszer a folyamatok minden kért Folyamatnév vagy az összes folyamat fog kapni, ha nincs név megadva. Figyelje meg, hogy belül [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), a hívást [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) az kimeneti objektumok küld kimeneti mechanizmusa a folyamat. A második paraméter a hívás `enumerateCollection`, értékre van állítva `true` állapítható meg, hogy a Windows PowerShell modul enumerálása folyamat objektumok tömbje, és a egy folyamat egyszerre írni a parancssorból.
 
 ```csharp
 protected override void ProcessRecord()
@@ -130,11 +130,11 @@ A teljes C# mintakód, lásd: [GetProcessSample03 minta](./getprocesssample03-sa
 
 ## <a name="defining-object-types-and-formatting"></a>Objektumtípusok definiálása és formázása
 
-Windows PowerShell parancsmagok használatával a .net-objektumokká közötti továbbítja. Ennek következtében a parancsmag előfordulhat, hogy meg kell határoznia a saját típusát, vagy a parancsmag előfordulhat, hogy ki kell terjesztenie egy másik parancsmag által biztosított meglévő típus. Új típusok meghatározása, vagy meglévő típusok bővítésével kapcsolatos további információkért lásd: [objektumtípusok kiterjesztése és formázás](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell parancsmagok használatával a .net-objektumokká közötti továbbítja. Ennek következtében a parancsmag előfordulhat, hogy meg kell határoznia a saját típusát, vagy a parancsmag előfordulhat, hogy ki kell terjesztenie egy másik parancsmag által biztosított meglévő típus. Új típusok meghatározása, vagy meglévő típusok bővítésével kapcsolatos további információkért lásd: [objektumtípusok kiterjesztése és formázás](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>A parancsmag készítése
 
-A parancsmag megvalósítása után regisztrálni kell a Windows PowerShell-lel a Windows PowerShell beépülő modullal. Parancsmagok regisztrálásával kapcsolatos további információkért lásd: [parancsmagjainak regisztrálásához, a szolgáltatók és az alkalmazások üzemeltetése hogyan](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+A parancsmag megvalósítása után regisztrálni kell a Windows PowerShell-lel a Windows PowerShell beépülő modullal. Parancsmagok regisztrálásával kapcsolatos további információkért lásd: [parancsmagjainak regisztrálásához, a szolgáltatók és az alkalmazások üzemeltetése hogyan](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>A parancsmag tesztelése
 
@@ -180,9 +180,9 @@ A következő eredmény jelenik meg.
 
 [Az első parancsmag létrehozása](./creating-a-cmdlet-without-parameters.md)
 
-[Objektumtípusok kiterjesztése és formázása](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Objektumtípusok kiterjesztése és formázása](/previous-versions//ms714665(v=vs.85))
 
-[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell-referencia](../windows-powershell-reference.md)
 

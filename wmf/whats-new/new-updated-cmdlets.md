@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: WMF, powershell, beállítás
 title: Új és frissített parancsmagok
-ms.openlocfilehash: 9ec31c89c0bc4b111b40e2d4725fa0782a573204
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856244"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298654"
 ---
 # <a name="new-and-updated-cmdlets"></a>Új és frissített parancsmagok
 
@@ -39,7 +39,7 @@ További információ:
 
 ## <a name="cryptographic-message-syntax-cms-cmdlets"></a>Titkosítási üzenet szintaxis-(CMS-) parancsmagok
 
-A titkosítási üzenet szintaxis parancsmagok támogatják a titkosítási és visszafejtési a IETF szabvány formátum használatával titkosítási szempontból védelme érdekében üzenetet megfelelően tartalom [RFC5652](https://tools.ietf.org/html/rfc5652).
+A titkosítási üzenet szintaxis parancsmagok támogatják a titkosítási és visszafejtési a IETF szabvány formátum használatával titkosítási szempontból védelme érdekében üzenetet megfelelően tartalom [RFC5652](https://tools.ietf.org/html/rfc5652.html).
 
 A standard szintű tartalomkezelő rendszer titkosítási valósítja meg a nyilvános kulcsú titkosítás, ahol a kulcsot használja a tartalom titkosításához (a *nyilvános kulcs*) és a kulcs használatával fejti vissza a tartalom (a *titkos kulcs*) jelennek meg.
 
@@ -47,9 +47,9 @@ A nyilvános kulcs széles körben történő megosztásának, és nem érzéken
 
 További információk:
 
-- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage.md)
-- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage.md)
-- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/rotect-CmsMessage.md)
+- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
+- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
+- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
 Tanúsítványok egyedi kulcshasználat azonosítója (EKU), például a "Kód aláírása" vagy 'Titkosítva Mail', azonosításához azokat az adatokat titkosítási tanúsítványok a PowerShell szükséges. A tanúsítványszolgáltató dokumentum titkosítási tanúsítványok megtekintéséhez használja a **DocumentEncryptionCert** dinamikus paraméterét `Get-ChildItem`:
 
@@ -145,6 +145,7 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 "a single " | Add-Content -Path Example.txt -NoNewline
 "sentence." | Add-Content -Path Example.txt -NoNewline
 Get-Content .\Example.txt
+```
 
 ```Output
 This is a single sentence.
@@ -268,7 +269,7 @@ A hálózati kapcsoló, a WMF 5.0-s-ben bevezetett parancsmagjaival kapcsoló, a
   - VLAN számbavétele
   - Rövid név beállítása egy VLAN-hoz
 
-- 2. rétegbeli port konfigurációja:
+- 2\. rétegbeli port konfigurációja:
   - Portok számbavétele
   - Engedélyezheti vagy tilthatja le a portok
   - Beállított port módok és tulajdonságai

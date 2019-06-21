@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854918"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301389"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Rendszermódosító parancsmag létrehozása
 
@@ -59,7 +59,7 @@ Vegye figyelembe, hogy a [System.Management.Automation.CmdletAttribute](/dotnet/
 
 ### <a name="extremely-destructive-actions"></a>Rendkívül felülíró művelet
 
-Egyes műveletek károsak rendkívül, például egy aktív merevlemez-partíciók újraformázást. Ezekben az esetekben a parancsmag kell beállítania `ConfirmImpact`  =  `ConfirmImpact.High` deklarálásakor a [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribútum. Ez a beállítás kényszeríti a parancsmag kérelem felhasználói jóváhagyás, akkor is, ha a felhasználó nem adta meg a `Confirm` paraméter. Azonban a parancsmag a fejlesztők kerülendő túlzott mértékű használata `ConfirmImpact` műveletek, amelyek csak potenciálisan ártalmas, például a felhasználói fiók törlése. Ne feledje, hogy `ConfirmImpact` értékre van állítva [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
+Egyes műveletek károsak rendkívül, például egy aktív merevlemez-partíciók újraformázást. Ezekben az esetekben a parancsmag kell beállítania `ConfirmImpact`  =  `ConfirmImpact.High` deklarálásakor a [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribútum. Ez a beállítás kényszeríti a parancsmag kérelem felhasználói jóváhagyás, akkor is, ha a felhasználó nem adta meg a `Confirm` paraméter. Azonban a parancsmag a fejlesztők kerülendő túlzott mértékű használata `ConfirmImpact` műveletek, amelyek csak potenciálisan ártalmas, például a felhasználói fiók törlése. Ne feledje, hogy `ConfirmImpact` értékre van állítva [System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **magas**.
 
 Egyes műveletekre hasonló módon, nagy valószínűséggel nem romboló, Bár elméletben módosíthatják kívül a Windows PowerShell rendszert a futó állapotot. Az ilyen parancsmagok állíthatja `ConfirmImpact` való [System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Ez fog kerülni eseménymegerősítési kéréseknek, ahol a felhasználó erősítse meg a csak a közepes hatású és a nagy hatású műveletek kérte.
 
@@ -278,11 +278,11 @@ A teljes C# mintakód, lásd: [StopProcessSample01 minta](./stopprocesssample01-
 
 ## <a name="defining-object-types-and-formatting"></a>Objektumtípusok definiálása és formázása
 
-Windows PowerShell parancsmagok használatával a .net-objektumokká közötti továbbítja. Ennek következtében a parancsmag előfordulhat, hogy meg kell határoznia a saját típusát, vagy a parancsmag előfordulhat, hogy ki kell terjesztenie egy másik parancsmag által biztosított meglévő típus. Új típusok meghatározása, vagy meglévő típusok bővítésével kapcsolatos további információkért lásd: [objektumtípusok kiterjesztése és formázás](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell parancsmagok használatával a .net-objektumokká közötti továbbítja. Ennek következtében a parancsmag előfordulhat, hogy meg kell határoznia a saját típusát, vagy a parancsmag előfordulhat, hogy ki kell terjesztenie egy másik parancsmag által biztosított meglévő típus. Új típusok meghatározása, vagy meglévő típusok bővítésével kapcsolatos további információkért lásd: [objektumtípusok kiterjesztése és formázás](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>A parancsmag készítése
 
-Parancsmag-k megvalósítása után regisztrálni kell a Windows PowerShell-lel a Windows PowerShell beépülő modullal. Parancsmagok regisztrálásával kapcsolatos további információkért lásd: [parancsmagjainak regisztrálásához, a szolgáltatók és az alkalmazások üzemeltetése hogyan](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Parancsmag-k megvalósítása után regisztrálni kell a Windows PowerShell-lel a Windows PowerShell beépülő modullal. Parancsmagok regisztrálásával kapcsolatos további információkért lásd: [parancsmagjainak regisztrálásához, a szolgáltatók és az alkalmazások üzemeltetése hogyan](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>A parancsmag tesztelése
 
@@ -354,9 +354,9 @@ A következő eredmény jelenik meg.
 
 [Parancssori bemenet feldolgozása paraméterek hozzáadása](./adding-parameters-that-process-command-line-input.md)
 
-[Objektumtípusok kiterjesztése és formázása](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Objektumtípusok kiterjesztése és formázása](/previous-versions//ms714665(v=vs.85))
 
-[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

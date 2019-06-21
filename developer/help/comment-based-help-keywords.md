@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
-ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 534a6c9a43326c8a01b2181c7a799286fa4d3997
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083535"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301534"
 ---
 # <a name="comment-based-help-keywords"></a>Megjegyzésalapú súgótémakörök – kulcsszavak
 
@@ -23,7 +23,7 @@ Ez a témakör felsorolja, és a kulcsszavak a Megjegyzés-alapú súgó ismerte
 
 Az alábbiakban érvényes Megjegyzés-alapú súgó kulcsszavakat. Általában szerepelnek együtt rendeltetése a súgótémakörök sorrendben szerepelnek. Ezek a kulcsszavak jelenhetnek meg a Megjegyzés-alapú súgó bármilyen sorrendben, és azok nem kis-és nagybetűket.
 
-Vegye figyelembe, hogy a `.ExternalHelp` kulcsszó elsőbbséget élvez az összes megjegyzés-alapú súgó kulcsszó. Amikor `.ExternalHelp` szerepel, a [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) parancsmag nem jelennek meg megjegyzés-alapú segítségre van szüksége, akkor is, ha nem találja a súgófájlban, amely megfelel a kulcsszó értékét.
+Vegye figyelembe, hogy a `.ExternalHelp` kulcsszó elsőbbséget élvez az összes megjegyzés-alapú súgó kulcsszó. Amikor `.ExternalHelp` szerepel, a [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) parancsmag nem jelennek meg megjegyzés-alapú segítségre van szüksége, akkor is, ha nem találja a súgófájlban, amely megfelel a kulcsszó értékét.
 
 `.Synopsis` A függvény vagy parancsfájl rövid leírását. Ezt a kulcsszót az alábbi témakörök csak egyszer használható.
 
@@ -61,9 +61,9 @@ A `.Link` kulcsszó tartalom tartalmazhat egy egységes erőforrás-azonosító 
 
 `.ExternalHelp` `<XML Help File>` Adja meg az elérési út és/vagy XML-alapú súgófájlban a parancsfájlt vagy függvény neve.
 
-A `.ExternalHelp` kulcsszó arra utasítja a [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) parancsmag súgójának a parancsfájlokban vagy függvényekhez egy XML-alapú-fájlban. A **. ExternalHelp** kulcsszó használata szükséges, amikor egy XML-alapú súgó fájlt használ a parancsfájlokban vagy függvényekhez. Ennek hiányában `Get-Help` nem találja a súgófájlt a függvény vagy parancsfájl.
+A `.ExternalHelp` kulcsszó arra utasítja a [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) parancsmag súgójának a parancsfájlokban vagy függvényekhez egy XML-alapú-fájlban. A **. ExternalHelp** kulcsszó használata szükséges, amikor egy XML-alapú súgó fájlt használ a parancsfájlokban vagy függvényekhez. Ennek hiányában `Get-Help` nem találja a súgófájlt a függvény vagy parancsfájl.
 
-A `.ExternalHelp` kulcsszó elsőbbséget élvez az összes megjegyzés-alapú súgó kulcsszó. Amikor `.ExternalHelp` szerepel, a [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) parancsmag nem jelennek meg megjegyzés-alapú segítségre van szüksége, akkor is, ha nem találja a súgófájlban, amely megfelel a kulcsszó értékét.
+A `.ExternalHelp` kulcsszó elsőbbséget élvez az összes megjegyzés-alapú súgó kulcsszó. Amikor `.ExternalHelp` szerepel, a [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) parancsmag nem jelennek meg megjegyzés-alapú segítségre van szüksége, akkor is, ha nem találja a súgófájlban, amely megfelel a kulcsszó értékét.
 
 Ha a funkció exportálja egy szkriptmodulba értékét `.ExternalHelp` elérési út nélküli fájl-névnek kell lennie. `Get-Help` úgy tűnik, a modul a területibeállítás-specifikus alkönyvtára a fájlt. Nem vonatkoznak követelmények a fájlnévhez tartozó fájlszűrőkben, de az ajánlott eljárás, hogy használja a következő fájl nevének formátuma: `<ScriptModule>.psm1-help.xml`.
 
