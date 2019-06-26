@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a82aba91-71af-447d-b9ef-b6b6ac7d9de4
 caps.latest.revision: 19
-ms.openlocfilehash: 743efcf23174a9521925c5c19dd670979bc0c523
-ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
+ms.openlocfilehash: 1b8ff219e275279fdf603fc2336a8052e64f3a95
+ms.sourcegitcommit: b8427ec6fbacee08da1a580743c338524179d0cc
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67263813"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67389083"
 ---
 # <a name="writing-a-windows-powershell-cmdlet"></a>Windows PowerShell-parancsmag írása
 
@@ -26,8 +26,6 @@ ms.locfileid: "67263813"
 [Windows PowerShell-parancsmag fogalmak](./windows-powershell-cmdlet-concepts.md) Ez a szakasz ismerteti a parancsmagok olyan és azok működéséről.
 
 [Példák a parancsmag kód](./examples-of-cmdlet-code.md) ebben a szakaszban írhat saját parancsmagok használó példakódot tartalmaz.
-
-[A parancsmag kimeneti formázás fájlok írása](../format/writing-a-powershell-formatting-file.md) ebben a szakaszban azt ismertetik, hogyan hozhat létre a formázási fájlokat. Formázási fájlokat adja meg, hogyan PowerShell objektumokat jeleníti meg a parancssorban.
 
 [Írás parancsmagok oktatóanyagok](./tutorials-for-writing-cmdlets.md) ebben a szakaszban található oktatóanyagok, amelyek segítségével ismerje meg a parancsmag kód mögé alapjait mutatja be.
 
