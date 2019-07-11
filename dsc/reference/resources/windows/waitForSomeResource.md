@@ -2,21 +2,24 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC WaitForSome Resource
-ms.openlocfilehash: 888da1810f0a9233579bad5eef8d5dd556947c61
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2260f37002171154a6f2c3996b2af1bd9120039d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076854"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726768"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome Resource
 
-> A következőkre vonatkozik: Windows PowerShell 5.0-s és újabb verziók
+> Érvényes: Windows PowerShell 5.0-s és újabb verziók
 
 A **WaitForSome** egy csomópont letiltása a Desired State Configuration (DSC) erőforrás használható egy [DSC-konfiguráció](../../../configurations/configurations.md) függőségeinek megadása a konfigurációk a többi csomóponton.
 
 Ehhez az erőforráshoz sikeres lesz, abban az esetben, ha az erőforrás által meghatározott a **ResourceName** tulajdonság a kívánt állapotban lévő csomópontok minimális száma (által megadott **NodeCount**) által meghatározott a **csomópontnév**  tulajdonság.
 
+> [!NOTE]
+> **WaitForSome** erőforrás használja a Windows távoli felügyeleti ellenőrzéséhez más csomópontok állapotát.
+> A Rendszerfelügyeleti webszolgáltatások port és a biztonsági követelményeivel kapcsolatos további információkért lásd: [PowerShell távoli eljáráshívásainak biztonsági megfontolásai](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="syntax"></a>Szintaxis
 

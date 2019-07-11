@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 12d2cb8c40c9fd6278bb964a6259d03167536195
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080815"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734720"
 ---
 # <a name="writing-an-item-provider"></a>Elemszolgáltató írása
 
@@ -25,7 +25,7 @@ További információ a Windows PowerShell-szolgáltatók: [Windows PowerShell-s
 
 ## <a name="implementing-item-methods"></a>Elem-metódusokat megvalósítása
 
-A [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) osztály többféle módszer is használható a tárolóban található elemek érje el vagy tesz elérhetővé. Ezek a metódusok teljes listáját lásd: [ItemCmdletProvider módszerek](http://msdn.microsoft.com/library/system.management.automation.provider.itemcmdletprovider_methods\(v=vs.85\).aspx). Ebben a példában fog megvalósítása négy ezen metódusok közül. [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) egy elem beolvasása a megadott elérési úton. [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) a megadott elem értékét. [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) ellenőrzi, hogy létezik-e egy elemet a megadott elérési úton. [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) ellenőrzi a elérési útját, tekintse meg, ha vannak leképezve az adattár egy helyre.
+A [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) osztály többféle módszer is használható a tárolóban található elemek érje el vagy tesz elérhetővé. Ezek a metódusok teljes listáját lásd: [ItemCmdletProvider módszerek](/dotnet/api/system.management.automation.provider.itemcmdletprovider?view=pscore-6.2.0#methods). Ebben a példában fog megvalósítása négy ezen metódusok közül. [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) egy elem beolvasása a megadott elérési úton. [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) a megadott elem értékét. [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) ellenőrzi, hogy létezik-e egy elemet a megadott elérési úton. [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) ellenőrzi a elérési útját, tekintse meg, ha vannak leképezve az adattár egy helyre.
 
 > [!NOTE]
 > Ebben a témakörben található információk épül [Windows PowerShell szolgáltató a rövid útmutató](./windows-powershell-provider-quickstart.md). Ez a témakör nem terjed ki a szolgáltató projekt beállítása alapjait, vagy a módszerek megvalósításának öröklődés forrása a [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) osztály létrehozása, és távolítsa el a meghajtókat.
@@ -46,7 +46,7 @@ A szolgáltató származtassa deklarálja a [System.Management.Automation.Provid
 
 ### <a name="implementing-getitem"></a>Végrehajtási GetItem
 
-A [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) nevezzük a PowerShell motor, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.Get-cikk](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) parancsmagot a szolgáltató. A metódus a megadott elérési úton elemét adja vissza. A hozzáférés adatbázis példában a metódus ellenőrzi, hogy a cikk a meghajtó, egy táblát az adatbázisban, vagy egy sor az adatbázisban. A metódus az elem küldi a PowerShell motor meghívásával a [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metódust.
+A [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) nevezzük a PowerShell motor, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.GetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.getitemcommand) parancsmag a szolgáltató. A metódus a megadott elérési úton elemét adja vissza. A hozzáférés adatbázis példában a metódus ellenőrzi, hogy a cikk a meghajtó, egy táblát az adatbázisban, vagy egy sor az adatbázisban. A metódus az elem küldi a PowerShell motor meghívásával a [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metódust.
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,9 +85,9 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>Végrehajtási SetItem
 
-A [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metódust hívja meg, a PowerShell motor hívások amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.Set-cikk](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) parancsmag . A megadott elérési úton, beállítja az elem értékét.
+A [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metódust hívja meg, a PowerShell motor hívások amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.SetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.setitemcommand) a parancsmag. A megadott elérési úton, beállítja az elem értékét.
 
-A hozzáférés adatbázis példában logikus elem értéke állítható be, csak ha a elem egy sort, a metódus jelez [NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx) Ha ez az elem nem egy sort.
+A hozzáférés adatbázis példában logikus elem értéke állítható be, csak ha a elem egy sort, a metódus jelez [NotSupportedException](/dotnet/api/system.notsupportedexception?view=netframework-4.8) Ha ez az elem nem egy sort.
 
 ```csharp
 protected override void SetItem(string path, object values)
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>Végrehajtási ItemExists
 
-A [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) metódus a PowerShell motor nevezzük, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.Test-Path](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) parancsmagot. A módszer határozza meg, hogy van-e egy elemet a megadott elérési úton. Ha az elem létezik, a metódus továbbítja azt vissza a PowerShell motor meghívásával [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
+A [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) metódus a PowerShell motor nevezzük, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.TestPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.Testpathcommand) a parancsmag. A módszer határozza meg, hogy van-e egy elemet a megadott elérési úton. Ha az elem létezik, a metódus továbbítja azt vissza a PowerShell motor meghívásával [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
 
 ```csharp
 protected override bool ItemExists(string path)

@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: DSC WindowsFeatureSet erőforrás
-ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8a64168d9ad0d6a6c40eb0398cc734fa93a247dc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076786"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726791"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet erőforrás
 
-> A következőkre vonatkozik: Windows PowerShell 5.0
+> Érvényes: Windows PowerShell 5.0
 
 A **WindowsFeatureSet** erőforrás a Windows PowerShell Desired State Configuration (DSC), győződjön meg arról, hogy szerepkörök és funkciók hozzáadásakor vagy eltávolításakor a cél csomópont mechanizmust biztosít.
 Ez az erőforrás egy [összetett erőforrás](../../../resources/authoringResourceComposite.md) , amely meghívja a [WindowsFeature erőforrás](windowsfeatureResource.md) az egyes szolgáltatásokhoz, megadva a `Name` tulajdonság.
@@ -36,9 +36,9 @@ WindowsFeatureSet [string] #ResourceName
 
 ## <a name="properties"></a>Tulajdonságok
 
-|  Tulajdonság  |  Leírás   |
+|  Tulajdonság  |  Description   |
 |---|---|
-| Név| A szerepkörök vagy szolgáltatások biztosítására kívánt nevei hozzáadásakor vagy eltávolításakor. Ez ugyanaz, mint az a **neve** tulajdonsága a [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) parancsmagot, és nem a megjelenített nevet a szerepkörök vagy funkciók.|
+| Név| A szerepkörök vagy szolgáltatások biztosítására kívánt nevei hozzáadásakor vagy eltávolításakor. Ez ugyanaz, mint az a **neve** tulajdonsága a [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) parancsmagot, és nem a megjelenített nevet a szerepkörök vagy funkciók.|
 | Hitelesítő adatok| A hitelesítő adatok hozzáadása vagy eltávolítása a szerepkörök vagy szolgáltatások használata.|
 | Győződjön meg, hogy| Azt jelzi-e a szerepkörök vagy szolgáltatások kerülnek. Annak érdekében, hogy a szerepkörök vagy szolgáltatások hozzá, állítsa be ezt a tulajdonságot a "E" annak érdekében, hogy eltávolítja a szerepkörök vagy szolgáltatások, a tulajdonság értéke "Hiányzik".|
 | IncludeAllSubFeature| Ez a tulajdonság beállítása **$true** adja meg, ha a szolgáltatásokat az összes szükséges alfunkció tartalmazza a **neve** tulajdonság.|

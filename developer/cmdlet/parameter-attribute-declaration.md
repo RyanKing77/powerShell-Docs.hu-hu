@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Parameter attribute
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
-ms.openlocfilehash: a3488d5fb3f7eb3df28d0242d6c39d07145a3c8d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067552"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735137"
 ---
 # <a name="parameter-attribute-declaration"></a>Paraméterek attribútumdeklarációja
 
@@ -36,7 +36,7 @@ A paraméter-attribútumhoz azonosítja a parancsmag osztály nyilvános tulajdo
 
 `ParameterSetName` ([System.String](/dotnet/api/System.String)) nevű paraméter nem kötelező. Adja meg a paraméter beállítása, hogy ez a parancsmag a paraméter tartozik. Ha nincs paraméterkészletet van megadva, a paraméter az összes paraméterkészlettel tartozik.
 
-`Position` ([System.Integer](/dotnet/api/System.Integer)) nevű paraméter nem kötelező. Megadja az a paraméter egy Windows PowerShell-parancsot.
+`Position` ([System.Int32](/dotnet/api/System.Int32)) nevű paraméter nem kötelező. Megadja az a paraméter egy Windows PowerShell-parancsot.
 
 `ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean)) nevű paraméter nem kötelező. `True` azt jelzi, hogy a parancsmag paraméterrel egy folyamat objektumot az értékét. Adja meg ezt a kulcsszót, ha a parancsmag fér hozzá a teljes objektumot, nem csak az objektum osztályát. Az alapértelmezett érték `false`.
 
@@ -58,7 +58,7 @@ A paraméter-attribútumhoz azonosítja a parancsmag osztály nyilvános tulajdo
 
 - Paraméterek deklarálni kell a nyilvános nem statikus mezők vagy tulajdonságai. A Tulajdonságok je nutné deklarovat paramétereket. A tulajdonság rendelkeznie kell egy nyilvános hozzáférő, ha a `ValueFromPipeline` vagy `ValueFromPipelineByPropertyName` kulcsszó, a tulajdonság rendelkeznie kell egy nyilvános get hozzáférő.
 
-- Pozícióparaméterek megadása esetén egy paraméterben, kevesebb mint öt pozícióparaméterek számának korlátozásához. És pozícióparaméterek nem kell összefüggőnek lennie. 5., 100, és 250 azonos működik, mint 0, 1 és 2.
+- Pozícióparaméterek megadása esetén egy paraméterben, kevesebb mint öt pozícióparaméterek számának korlátozásához. És pozícióparaméterek nem kell összefüggőnek lennie. 5\., 100, és 250 azonos működik, mint 0, 1 és 2.
 
 - Ha a `Position` kulcsszó nincs megadva, a parancsmag-paraméterrel lehet hivatkozni a neve.
 

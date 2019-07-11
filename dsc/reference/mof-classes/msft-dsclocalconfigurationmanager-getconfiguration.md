@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
-title: Az MSFT_DSCLocalConfigurationManager osztály GetConfiguration metódusa
-ms.openlocfilehash: ae31ac30c152c96707b764ddaf00c924806afcfc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: GetConfiguration metódusa
+ms.openlocfilehash: eabc536cfe69abe1144ff031a6f64c09a772e638
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078653"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734525"
 ---
-# <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály GetConfiguration metódusa
+# <a name="getconfiguration-method"></a>GetConfiguration metódusa
 
 A konfigurációs dokumentum küldése a felügyelt csomóponthoz, és használja a **első** metódus a alkalmazni a konfigurációt a konfigurációs ügynök.
 

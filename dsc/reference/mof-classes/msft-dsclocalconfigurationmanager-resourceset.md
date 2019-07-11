@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
-title: Az MSFT_DSCLocalConfigurationManager osztály ResourceSet metódusa
-ms.openlocfilehash: 2712b7ff0a19e643c1f343d436c084f8970c9dd4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: ResourceSet metódusa
+ms.openlocfilehash: 18364027b249e502e1f0b8802d9f3e031c7b07ce
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078401"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727091"
 ---
-# <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>Az MSFT_DSCLocalConfigurationManager osztály ResourceSet metódusa
+# <a name="resourceset-method"></a>ResourceSet metódusa
 
 Közvetlenül meghívja a **beállítása** metódus a DSC-erőforrás.
 

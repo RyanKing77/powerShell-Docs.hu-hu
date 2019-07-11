@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 2685215f41c96955fc662d5eee27fc0e7a31da83
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854973"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733968"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Paraméterek nélküli parancsmag létrehozása
 
@@ -71,7 +71,7 @@ Használja a Windows PowerShell a [Microsoft.PowerShell.Commands](/dotnet/api/Mi
 
 ## <a name="overriding-an-input-processing-method"></a>Egy bemeneti metódus feldolgozási felülbírálása
 
-A [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) osztály, amely legalább egy a parancsmag felül kell írnia, három bemeneti feldolgozás fő metódusokat biztosít. Hogyan dolgozza fel a Windows PowerShell a rekordok kapcsolatos további információkért lásd: [Windows PowerShell működése](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+A [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) osztály, amely legalább egy a parancsmag felül kell írnia, három bemeneti feldolgozás fő metódusokat biztosít. Hogyan dolgozza fel a Windows PowerShell a rekordok kapcsolatos további információkért lásd: [Windows PowerShell működése](/previous-versions//ms714658(v=vs.85)).
 
 Bemeneti minden típusú, a Windows PowerShell-modult meghívja [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) feldolgozási engedélyezéséhez. A parancsmag néhány előfeldolgozása vagy a telepítő kell végrehajtania, ha azt teheti ezt a módszert felülbírálja.
 
@@ -135,11 +135,11 @@ A teljes C# mintakód, lásd: [GetProcessSample01 minta](./getprocesssample01-sa
 
 ## <a name="defining-object-types-and-formatting"></a>Objektumtípusok definiálása és formázása
 
-Windows PowerShell parancsmagok használatával a .NET-objektumokká közötti továbbítja. Ennek következtében a parancsmag előfordulhat, hogy meg kell határoznia a saját típusát, vagy a parancsmag előfordulhat, hogy ki kell terjesztenie egy másik parancsmag által biztosított meglévő típus. Új típusok meghatározása, vagy meglévő típusok bővítésével kapcsolatos további információkért lásd: [objektumtípusok kiterjesztése és formázás](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell parancsmagok használatával a .NET-objektumokká közötti továbbítja. Ennek következtében a parancsmag előfordulhat, hogy meg kell határoznia a saját típusát, vagy a parancsmag előfordulhat, hogy ki kell terjesztenie egy másik parancsmag által biztosított meglévő típus. Új típusok meghatározása, vagy meglévő típusok bővítésével kapcsolatos további információkért lásd: [objektumtípusok kiterjesztése és formázás](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>A parancsmag készítése
 
-Parancsmag-k megvalósítása után regisztrálnia kell azt a Windows PowerShell-lel a Windows PowerShell beépülő modullal. Parancsmagok regisztrálásával kapcsolatos további információkért lásd: [parancsmagjainak regisztrálásához, a szolgáltatók és az alkalmazások üzemeltetése hogyan](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Parancsmag-k megvalósítása után regisztrálnia kell azt a Windows PowerShell-lel a Windows PowerShell beépülő modullal. Parancsmagok regisztrálásával kapcsolatos további információkért lásd: [parancsmagjainak regisztrálásához, a szolgáltatók és az alkalmazások üzemeltetése hogyan](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>A parancsmag tesztelése
 
@@ -260,13 +260,13 @@ Ha a parancsmagot a Windows PowerShell-lel regisztrálva lett, azt a parancssorb
 
 [Adatcsatorna bemenetének feldolgozni a parancsmag létrehozása](./adding-parameters-that-process-pipeline-input.md)
 
-[Hogyan hozhat létre egy Windows PowerShell-parancsmag](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Hogyan hozhat létre egy Windows PowerShell-parancsmag](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Objektumtípusok kiterjesztése és formázása](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Objektumtípusok kiterjesztése és formázása](/previous-versions//ms714665(v=vs.85))
 
-[Hogyan működik a Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Hogyan működik a Windows PowerShell](/previous-versions//ms714658(v=vs.85))
 
-[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell-referencia](../windows-powershell-reference.md)
 

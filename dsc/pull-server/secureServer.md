@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Lekérési kiszolgáló – ajánlott eljárások
-ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079200"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727195"
 ---
 # <a name="pull-server-best-practices"></a>Lekérési kiszolgáló – ajánlott eljárások
 
-A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> A lekéréses kiszolgálón (Windows-szolgáltatás *DSC-szolgáltatás*), a Windows Server támogatott összetevője létezik azonban tervekben sem funkciókat és képességeket kínálnak. Javasoljuk, hogy helyeződnek felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (beleértve a lekéréses kiszolgálón a Windows Server csomagban) vagy a közösségi megoldások felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
+> A lekéréses kiszolgálón (Windows-szolgáltatás *DSC-szolgáltatás*), a Windows Server támogatott összetevője létezik azonban tervekben sem funkciókat és képességeket kínálnak. Javasoljuk, hogy helyeződnek felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (beleértve a lekéréses kiszolgálón a Windows Server csomagban) vagy a közösségi megoldások felsorolt [Itt](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service).
 
 Összefoglalás: Ez a dokumentum célja a folyamat és bővíthetőség felhőkarrierre készítik megoldás-mérnökök segítségét. Részletek ajánlott eljárásokat kell biztosítania, ügyfél által azonosított, és a termék csapatától javaslatok jövőbeli irányuló és stabil tekinthető majd érvényesíteni.
 
@@ -50,9 +50,9 @@ Windows PowerShell egy nyelvet bővítménycsomag biztosít a Desired State Conf
 Egy lekéréses kiszolgálót biztosít lesznek elérhetőek a célcsomópontokat konfigurációk tárolásához egy központosított szolgáltatásba.
 
 A pull-kiszolgálói szerepkör egy Web Server-példányt vagy SMB-fájlmegosztásra is telepíthető. A web server funkció OData illesztőfelületet tartalmazza, és szükség esetén belefoglalhatja vissza erősítse meg a sikeres vagy sikertelen jelentés, mivel a beállítások vannak érvényben a célcsomópontokat képességeit. Ez a funkció olyan környezetben hasznos, ahol sok célcsomópontokat.
-Egy célcsomóponttal (más néven ügyfél) konfigurálását, hogy a lekéréses kiszolgálóra mutasson a legújabb konfigurációt követő adatokat, és minden szükséges szkriptek vannak letöltésére és alkalmazására. Ez akkor fordulhat elő, egy egyszeri központi telepítést, vagy egy újra előforduló feladatot, amely is lehetővé teszi a lekéréses kiszolgálón fontos eszközt nagy mennyiségű módosítás kezeléséhez. További információkért lásd: [Windows PowerShell Desired State Configuration lekéréses kiszolgálók](/powershell/dsc/pullServer) és
+Egy célcsomóponttal (más néven ügyfél) konfigurálását, hogy a lekéréses kiszolgálóra mutasson a legújabb konfigurációt követő adatokat, és minden szükséges szkriptek vannak letöltésére és alkalmazására. Ez akkor fordulhat elő, egy egyszeri központi telepítést, vagy egy újra előforduló feladatot, amely is lehetővé teszi a lekéréses kiszolgálón fontos eszközt nagy mennyiségű módosítás kezeléséhez. További információkért lásd: [Windows PowerShell Desired State Configuration lekéréses kiszolgálók](/powershell/dsc/pullServer/pullserver) és
 
-[Leküldéses és lekéréses konfigurációs módjai](/powershell/dsc/pullServer).
+[Leküldéses és lekéréses konfigurációs módjai](/powershell/dsc/pullServer/pullserver).
 
 ## <a name="configuration-planning"></a>Konfiguráció tervezése
 

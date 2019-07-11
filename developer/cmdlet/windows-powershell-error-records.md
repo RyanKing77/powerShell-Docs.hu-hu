@@ -13,12 +13,12 @@ helpviewer_keywords:
 - error category string [PowerShell SDK]
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
-ms.openlocfilehash: f6f5e50c55b477cbbeeaaf4f3ea665d5dc07758c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067042"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735064"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShelles hibarekordok
 
@@ -60,9 +60,9 @@ Hiba-bejegyzések létrehozásakor hiba azonosítók létrehozásához használj
 
 ## <a name="error-category"></a>Hibakategória
 
-Egy hiba rekord létrehozásakor meg kell adnia a kategóriát adta meg a hiba az egyik az állandók határozzák meg a [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumerálása. Windows PowerShell használja a hibakategória jelenítsen meg hibaüzenetet, ha a felhasználók meg a `$ErrorView` változó `"CategoryView"`.
+Egy hiba rekord létrehozásakor meg kell adnia a kategóriát adta meg a hiba az egyik az állandók határozzák meg a [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) enumerálása. Windows PowerShell használja a hibakategória jelenítsen meg hibaüzenetet, ha a felhasználók meg a `$ErrorView` változó `"CategoryView"`.
 
-Kerülje a [System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified) konstans. Ha a hiba vagy a művelet a hibát okozó minden olyan információt, válassza ki a hiba vagy a művelet legjobban illő kategóriát, még ha a kategória nem tökéletes.
+Kerülje a [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified** konstans. Ha a hiba vagy a művelet a hibát okozó minden olyan információt, válassza ki a hiba vagy a művelet legjobban illő kategóriát, még ha a kategória nem tökéletes.
 
 A Windows PowerShell által megjelenített adatok a kategória-view-karakterlánc neve és tulajdonságai alapján készült a [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) osztály. (Ez az osztály a hiba keresztül elérhető [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) tulajdonság.)
 
@@ -72,7 +72,7 @@ A Windows PowerShell által megjelenített adatok a kategória-view-karakterlán
 
 Az alábbi lista ismerteti a megjelenő információk:
 
-- Kategória: A Windows PowerShell által meghatározott [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) konstans.
+- Kategória: A Windows PowerShell által meghatározott [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) konstans.
 
 - TargetName: Alapértelmezés szerint az objektum nevét a parancsmag volt feldolgozással, ha a hiba történt. Vagy egy másik, a parancsmag által meghatározott karakterlánc.
 
@@ -88,9 +88,9 @@ A parancsmag egy hibarekord fejlesztésekor a hiba az alapértelmezett hibaüzen
 
 A csere üzenet által biztosított egy [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) objektum. Használja az objektum a következő konstruktorok egyikét, mert ezek biztosítanak, amelyek a Windows PowerShell által használható további lokalizációs információ.
 
-- [ErrorDetails.ErrorDetails (parancsmagot, a karakterlánc, karakterlánc, objektum\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Ez a konstruktor használja, ha a sablon karakterlánc ugyanazt a szerelvényt, amelyben implementálva van a parancsmag egy erőforrás-karakterlánc, vagy ha a sablon karakterlánc keresztül egy felülbírálást a betölteni kívánt a [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) metódust.
+- [ErrorDetails (parancsmag, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): Ez a konstruktor használja, ha a sablon karakterlánc ugyanazt a szerelvényt, amelyben implementálva van a parancsmag egy erőforrás-karakterlánc, vagy ha a sablon karakterlánc keresztül egy felülbírálást a betölteni kívánt a [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) metódust.
 
-- [ErrorDetails.ErrorDetails (szerelvény, karakterlánc, karakterlánc, objektum\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Ez a konstruktor használja, ha a sablon karakterlánc szerepel egy másik szerelvény, és ne töltsön fel azt a felülbírálás keresztül [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
+- [ErrorDetails (szerelvény, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): Ez a konstruktor használja, ha a sablon karakterlánc szerepel egy másik szerelvény, és ne töltsön fel azt a felülbírálás keresztül [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
 A csere üzenetet meg kell felelnie a .NET-keretrendszer tervezési útmutatást az a különbség a kis kivétel üzeneteket írna. Kivétel üzeneteinek fejlesztőknek irányelvek állapota. A csere üzeneteinek a parancsmag felhasználó.
 
@@ -110,7 +110,7 @@ Amikor a parancsmag használja [System.Management.Automation.Cmdlet.WriteError](
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
+[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 

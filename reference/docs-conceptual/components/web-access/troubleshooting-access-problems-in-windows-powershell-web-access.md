@@ -2,18 +2,18 @@
 ms.date: 08/23/2017
 keywords: PowerShell, a parancsmag
 title: a windows powershell-elérés hozzáférési problémák hibaelhárítása
-ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086595"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733864"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Hozzáférési problémák hibaelhárítása a Webes Windows PowerShell-elérésben
 
 Frissítve: Június 24 2013 (2017. augusztus 23 módosított)
 
-A következőkre vonatkozik: Windows Server 2012 R2, Windows Server 2012
+Érvényes: Windows Server 2012 R2, Windows Server 2012
 
 Az alábbi szakaszok néhány gyakori problémák azonosítása a Windows PowerShell-elérés használatával távoli számítógéphez való csatlakozásra tett kísérlet közben, és a problémák megoldásához javaslatokat tartalmaz.
 
@@ -35,7 +35,7 @@ A hiba oka a következők bármelyike lehet.
 
   Ellenőrizze a távoli felügyelet engedélyezve van a számítógépen, amelyre a felhasználó csatlakozni próbál.
 
-  További információkért lásd: [hogyan konfigurálja a számítógépet a távelérése](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  További információkért lásd: [hogyan konfigurálja a számítógépet a távelérése](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## <a name="internal-server-error"></a>Belső kiszolgálóhiba
 
@@ -101,13 +101,13 @@ ComputerGroup | Kiszolgáló\_neve\\számítógép\_csoport<br/>Localhost\\compu
 
 Paraméter | Érték
 -- | --
-Számítógépnév | Az átjárókiszolgáló teljes neve vagy Localhost
+ComputerName | Az átjárókiszolgáló teljes neve vagy Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Az átjárókiszolgáló egy munkacsoporthoz tartozik
 
 Paraméter | Érték
 -- | --
-Számítógépnév | Kiszolgálónév
+ComputerName | Kiszolgálónév
 
 ### <a name="gateway-credentials"></a>Átjáró hitelesítő adatok
 

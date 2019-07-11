@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080866"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734725"
 ---
 # <a name="writing-a-navigation-provider"></a>Navigációszolgáltató írása
 
@@ -25,7 +25,7 @@ További információ a Windows PowerShell-szolgáltatók: [Windows PowerShell-s
 
 ## <a name="implementing-navigation-methods"></a>Navigációs módszereket megvalósítása
 
-A [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) osztálya határozza meg, amely támogatja a beágyazott tárolók, relatív útvonalakat és a cikkek mozgatása módszerek. Ezek a metódusok teljes listáját lásd: [NavigationCmdletProvider módszerek](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx).
+A [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) osztálya határozza meg, amely támogatja a beágyazott tárolók, relatív útvonalakat és a cikkek mozgatása módszerek. Ezek a metódusok teljes listáját lásd: [NavigationCmdletProvider módszerek](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods).
 
 > [!NOTE]
 > Ebben a témakörben található információk épül [Windows PowerShell szolgáltató a rövid útmutató](./windows-powershell-provider-quickstart.md). Ez a témakör nem terjed ki a szolgáltató projekt beállítása alapjait, vagy a módszerek megvalósításának öröklődés forrása a [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) osztály létrehozása, és távolítsa el a meghajtókat. Ez a témakör nem fedi módszerek által elérhetővé tett megvalósítása a [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) vagy [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) osztályokat. Példa bemutatja, hogyan valósíthat meg az item-parancsmagokkal, lásd: [egy elem szolgáltató írása](./writing-an-item-provider.md). Példa bemutatja, hogyan valósíthat meg a tároló-parancsmagok, lásd: [egy tároló-szolgáltató írása](./writing-a-container-provider.md).
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>Végrehajtási MakePath
 
-A [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) metódus csatlakozik a megadott szülő elérési útját és a provider – belső elérési utat határozza meg (az elérési út információ típusokat, amelyeket ebbe hoz létre a megadott gyermek elérési útja szolgáltatók is támogatják, lásd: [Windows PowerShell-szolgáltató áttekintése](./windows-powershell-provider-overview.md). A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) parancsmagot.
+A [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) metódus csatlakozik a megadott szülő elérési útját és a provider – belső elérési utat határozza meg (az elérési út információ típusokat, amelyeket ebbe hoz létre a megadott gyermek elérési útja szolgáltatók is támogatják, lásd: [Windows PowerShell-szolgáltató áttekintése](./windows-powershell-provider-overview.md). A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) parancsmagot.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>Végrehajtási MoveItem
 
-A [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metódus a megadott elérési út egy elem helyez át a megadott célhely elérési útja. A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.Move-cikk](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) parancsmagot.
+A [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metódus a megadott elérési út egy elem helyez át a megadott célhely elérési útja. A PowerShell motor meghívja ezt a metódust, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.MoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand) parancsmagot.
 
 ```csharp
 protected override void MoveItem(string path, string destination)

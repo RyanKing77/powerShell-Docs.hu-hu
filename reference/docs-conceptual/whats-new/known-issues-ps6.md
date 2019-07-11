@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, a core
 title: PowerShell 6.0 kapcsolatos ismert problémák
-ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 502143b660204edada6a9e62bdf6b260a384a078
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085966"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733825"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 kapcsolatos ismert problémák
 
@@ -55,7 +55,7 @@ Lásd: [#954](https://github.com/PowerShell/PowerShell/issues/954) visszajelzés
 
 PowerShell a Linux/MacOS rendszeren használja a .NET Core, amely a teljes .NET-keretrendszer Microsoft Windows részhalmaza. Ez azért fontos, mert a PowerShell közvetlen hozzáférést biztosít az alapul szolgáló keretrendszer típusok, módszerekkel, stb. Ennek eredményeképpen Windows futtatott parancsfájlok, előfordulhat, hogy fut a nem Windows platformokon a keretrendszereket különbségek miatt. További információ a .NET Core-keretrendszer: <https://dotnetfoundation.org/net-core>
 
-Létrejöttével [.NET Standard2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/), .NET Core 2.0 tartalomtérkép vissza számos hagyományos típusok és módszerek a teljes .NET-keretrendszer szerepelnek. Ez azt jelenti, hogy a PowerShell Core tudják betölteni a sok hagyományos Windows PowerShell-modul módosítás nélkül. Kövesse a .NET Standard 2.0-s kapcsolódó munkahelyi [Itt](https://github.com/PowerShell/PowerShell/projects/4).
+Létrejöttével [.NET Standard2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/), .NET Core 2.0 tartalomtérkép vissza számos hagyományos típusok és módszerek a teljes .NET-keretrendszer szerepelnek. Ez azt jelenti, hogy a PowerShell Core tudják betölteni a sok hagyományos Windows PowerShell-modul módosítás nélkül. Kövesse a .NET Standard 2.0-s kapcsolódó munkahelyi [Itt](https://github.com/PowerShell/PowerShell/projects/4).
 
 ### <a name="redirection-issues"></a>Átirányítási hibáinak
 
@@ -82,7 +82,7 @@ Jelenleg a PowerShell Core támogatja a PowerShell távoli eljáráshívás (PSR
 
 A WSMan-alapú távelérése alatt végezhető el a [psl omi-szolgáltató](https://github.com/PowerShell/psl-omi-provider) adattárat.
 
-A PowerShell Core is támogatja a PowerShell távoli eljáráshívás (PSRP) ssh-n keresztül minden platformon (Windows, macOS és Linux). Miközben jelenleg nem támogatott éles környezetben, ez további információ a beállításra [Itt](../core-powershell/ssh-remoting-in-powershell-core.md).
+A PowerShell Core is támogatja a PowerShell távoli eljáráshívás (PSRP) ssh-n keresztül minden platformon (Windows, macOS és Linux). Miközben jelenleg nem támogatott éles környezetben, ez további információ a beállításra [Itt](../learn/remoting/SSH-Remoting-in-PowerShell-Core.md).
 
 ### <a name="just-enough-administration-jea-support"></a>Csak-elegendő-felügyelet (JEA) támogatása
 

@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: A DSC használata a Nano Serveren
-ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079727"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734610"
 ---
 # <a name="using-dsc-on-nano-server"></a>A DSC használata a Nano Serveren
 
-> A következőkre vonatkozik: Windows PowerShell 5.0
+> Érvényes: Windows PowerShell 5.0
 
 **A Nano Serveren DSC** a választható csomag létezik a `NanoServer\Packages` mappájában, a Windows Server 2016 adathordozójáról. A csomag létrehozásakor egy virtuális Merevlemezt a Nano Server megadásával telepíthető **Microsoft-NanoServer-DSC-Package** értékeként a **csomagok** paraméterében a **New-NanoServerImage**  függvény. Ha például egy virtuális Merevlemezt a virtuális gép létrehozásakor, a parancs lenne a következőhöz hasonló:
 
@@ -44,7 +44,7 @@ Leküldéses és lekéréses módok
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
 - [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+- [Find-DscResource](/powershell/module/powershellget/find-dscresource?view=powershell-6)
 - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
 - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
@@ -56,7 +56,7 @@ Leküldéses és lekéréses módok
 
 - Egy erőforrás felhasználó környezetében fut (lásd: [DSC futtatása felhasználói hitelesítő adatokkal (RunAs)](../configurations/runAsUser.md))
 
-- Osztályalapú erőforrások (lásd: [PowerShell-osztályokkal egyéni DSC-erőforrás írása](../resources/authoringResourceClass.md))
+- Osztályalapú erőforrások (lásd: [PowerShell-osztályokkal egyéni DSC-erőforrás írása](/previous-versions//dn948461(v=technet.10)))
 
 - DSC-erőforrások hibakeresés (lásd: [hibakeresés DSC-erőforrások](../troubleshooting/debugResource.md))
 

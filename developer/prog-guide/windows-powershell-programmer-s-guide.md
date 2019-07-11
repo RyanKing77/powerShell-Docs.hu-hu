@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 44a9c970d32dc6f98456227f8b02101280541dd9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081087"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734885"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell programozói&#39;s útmutató
 
@@ -37,7 +37,7 @@ A parancs a hagyományos fejlesztési kell írni az egyik paraméter elemző, eg
 
 Windows PowerShell parancsokat, amelyekkel számos különböző típusú fejlesztési határozza meg. Ezek a parancsok a következők: funkciók, a szűrők, a parancsfájlok, az aliasok és a végrehajtható fájlok (alkalmazások). A jelen útmutatóban tárgyalt fő parancstípus "parancsmag" nevű egyszerű, kis parancs. Windows PowerShell parancsmagok egy halmaza bizonyítékot szolgáltat, és teljes mértékben támogatja a környezethez illeszkedve kell parancsmag testreszabása. A Windows PowerShell-modul összes típusú dolgozza fel, ugyanúgy, ahogy parancsmagot folyamatok használatával.
 
-Parancsok mellett Windows PowerShell támogatja az elérhető adott csoportok parancsmagokat, amelyek különféle testre szabható Windows PowerShell szolgáltatókat. A rendszerhéj a Windows PowerShell által biztosított gazdaalkalmazást (Windows PowerShell.exe) belül működik, de egyéni gazdagép-alkalmazás, amely az adott igényeknek is fejleszthet egyaránt elérhető. További információkért lásd: [Windows PowerShell működése](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Parancsok mellett Windows PowerShell támogatja az elérhető adott csoportok parancsmagokat, amelyek különféle testre szabható Windows PowerShell szolgáltatókat. A rendszerhéj a Windows PowerShell által biztosított gazdaalkalmazást (Windows PowerShell.exe) belül működik, de egyéni gazdagép-alkalmazás, amely az adott igényeknek is fejleszthet egyaránt elérhető. További információkért lásd: [Windows PowerShell működése](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-cmdlets"></a>Windows PowerShell-parancsmagok
 
@@ -51,17 +51,17 @@ A rendszergazdai feladatok, a felhasználó szükségessé (például a fájlren
 
 Windows PowerShell a Windows PowerShell-szolgáltató több alapértelmezett biztosít. Például a beállításjegyzék-szolgáltatója támogatja a navigációs és a Windows beállításjegyzék kezelését végzi. Beállításkulcsok elemek helyettesítik, és a beállításkulcs-értékeket számít tulajdonságait.
 
-Ha egy adattár, amelyeket a felhasználónak el kell elérhetővé teszi, szükség lehet a saját Windows PowerShell-szolgáltató írása leírtak szerint [létrehozása Windows PowerShell-szolgáltatók](./how-to-create-a-windows-powershell-provider.md). További információk aboutWindows PowerShell-szolgáltatók, lásd: [Windows PowerShell működése](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Ha egy adattár, amelyeket a felhasználónak el kell elérhetővé teszi, szükség lehet a saját Windows PowerShell-szolgáltató írása leírtak szerint [létrehozása Windows PowerShell-szolgáltatók](./how-to-create-a-windows-powershell-provider.md). További információk aboutWindows PowerShell-szolgáltatók, lásd: [Windows PowerShell működése](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="host-application"></a>Gazdagép-alkalmazás
 
 Windows PowerShell az alapértelmezett gazdagép alkalmazás powershell.exe, amely egy konzolalkalmazást, amely a felhasználó kommunikál, és a Windows PowerShell modul használatával a konzolablakban gazdagépeket tartalmaz.
 
-Csak ritkán lesz kell írnia a Windows PowerShell környezethez, a saját gazdaalkalmazást testreszabási támogatják. Egyetlen esetet tartalmaz, amelyekben szüksége lehet a saját alkalmazás akkor, ha rendelkezik egy grafikus felhasználói felület, amely gazdagabb, mint az alapértelmezett gazdagép-alkalmazás által biztosított csatoló előfeltétele. Is érdemes egy egyéni alkalmazást, ha a parancssorban a grafikus felhasználói Felülettel készül. További információkért lásd: [hogyan hozhat létre egy Windows PowerShell gazdaalkalmazást](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Csak ritkán lesz kell írnia a Windows PowerShell környezethez, a saját gazdaalkalmazást testreszabási támogatják. Egyetlen esetet tartalmaz, amelyekben szüksége lehet a saját alkalmazás akkor, ha rendelkezik egy grafikus felhasználói felület, amely gazdagabb, mint az alapértelmezett gazdagép-alkalmazás által biztosított csatoló előfeltétele. Is érdemes egy egyéni alkalmazást, ha a parancssorban a grafikus felhasználói Felülettel készül. További információkért lásd: [hogyan hozhat létre egy Windows PowerShell gazdaalkalmazást](/powershell/developer/hosting/writing-a-windows-powershell-host-application).
 
 ### <a name="windows-powershell-runtime"></a>Windows PowerShell-modul
 
-A Windows PowerShell-modul az a-végrehajtó motor, amely megvalósítja a parancs feldolgozása. Ez magában foglalja az osztályokat, amelyek a gazdagép-alkalmazás és a Windows PowerShell-parancsokat és szolgáltatók közötti illesztőfelületet biztosítanak. A Windows PowerShell-modul van, a üzemeltetési környezet, amelyben a rendszerhéjat, és a parancsok végrehajtása aktuális Windows PowerShell-munkamenet a futási térben objektum van megvalósítva. Működési részletekért lásd: [Windows PowerShell működése](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+A Windows PowerShell-modul az a-végrehajtó motor, amely megvalósítja a parancs feldolgozása. Ez magában foglalja az osztályokat, amelyek a gazdagép-alkalmazás és a Windows PowerShell-parancsokat és szolgáltatók közötti illesztőfelületet biztosítanak. A Windows PowerShell-modul van, a üzemeltetési környezet, amelyben a rendszerhéjat, és a parancsok végrehajtása aktuális Windows PowerShell-munkamenet a futási térben objektum van megvalósítva. Működési részletekért lásd: [Windows PowerShell működése](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-language"></a>Windows PowerShell nyelv
 
@@ -81,7 +81,7 @@ Windows PowerShell számos különböző objektumok, például a .NET és az XML
 
   Használatával ETS, hozhat létre rugalmas új "típusú", amely kompatibilis a Windows PowerShell nyelv. Ha .NET-fejlesztők, le is tudja meghatározni, ha egy objektum kiértékelése, objektumok segítségével azonos, a Windows PowerShell nyelv vonatkozik, a parancsprogramok, például `true`.
 
-  ETS, és hogyan használja a Windows PowerShell az objektumok kapcsolatos további információkért lásd: [Windows PowerShell objektum fogalmak](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353).
+  ETS, és hogyan használja a Windows PowerShell az objektumok kapcsolatos további információkért lásd: [Windows PowerShell objektum fogalmak](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
 
 ## <a name="programming-for-windows-powershell"></a>Windows PowerShell-alapú programozása
 
@@ -100,7 +100,7 @@ A Windows PowerShell-rendszerhéj használata indításával kapcsolatos tovább
 |Témakör|Meghatározás|
 |-----------|----------------|
 |[A Windows PowerShell-szolgáltató létrehozása](./how-to-create-a-windows-powershell-provider.md)|Ez a szakasz ismerteti, hogyan hozhat létre egy Windows PowerShell-szolgáltatóban, a Windows PowerShell környezethez.|
-|[A Windows PowerShell-gazdagépet alkalmazás létrehozása](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Ez a szakasz ismerteti, hogyan írhat egy fogadó alkalmazás, amely kezeli a futási térben és a egy fogadó alkalmazás, amely megvalósítja a saját egyéni gazdagép írásával.|
+|[A Windows PowerShell-gazdagépet alkalmazás létrehozása](/powershell/developer/hosting/writing-a-windows-powershell-host-application)|Ez a szakasz ismerteti, hogyan írhat egy fogadó alkalmazás, amely kezeli a futási térben és a egy fogadó alkalmazás, amely megvalósítja a saját egyéni gazdagép írásával.|
 |[Egy Windows PowerShell beépülő modul létrehozása](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Ez a szakasz ismerteti, hogyan hozhat létre beépülő modul szerelvények regisztrálható az összes parancsmagok és szolgáltatók és a egy egyéni beépülő modul létrehozása.|
 |[A konzol rendszerhéj létrehozása](./how-to-create-a-console-shell.md)|Ez a szakasz ismerteti, hogyan hozhat létre egy konzol rendszerhéj, amely nem bővíthető.|
 |[Windows PowerShell alapfogalmai](./windows-powershell-concepts.md)|Ez a szakasz tartalmazza a elméleti információk segítségével megismerheti a Windows PowerShell a fejlesztők szempontjából.|

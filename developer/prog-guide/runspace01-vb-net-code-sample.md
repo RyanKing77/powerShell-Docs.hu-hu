@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081441"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735012"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01 (VB.NET) – Kódminta
 
-Íme a mintakódokat, a futási térben ismertetett [létrehozása egy Console Application, hogy fut a megadott parancs](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). Ehhez az alkalmazás hív meg egy futási teret, és ezután meghívja a parancsot. (Vegye figyelembe, hogy az alkalmazás nem ad meg futási térben konfigurációs adatokat, és nem, explicit módon létrehoz egy folyamatot.) A parancs, amely meghívja a `Get-Process` parancsmagot.
+Íme a mintakódokat, a futási térben ismertetett [létrehozása egy Console Application, hogy fut a megadott parancs](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Ehhez az alkalmazás hív meg egy futási teret, és ezután meghívja a parancsot. (Vegye figyelembe, hogy az alkalmazás nem ad meg futási térben konfigurációs adatokat, és nem, explicit módon létrehoz egy folyamatot.) A parancs, amely meghívja a `Get-Process` parancsmagot.
 
 ## <a name="code-sample"></a>Kódminta
 

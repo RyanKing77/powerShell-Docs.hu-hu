@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080907"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734868"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell-szolgáltató – Áttekintés
 
@@ -27,7 +27,7 @@ Ha egy szolgáltató ír, alapértelmezett meghajtó-meghajtó, amely automatiku
 
 ## <a name="type-of-providers"></a>Szolgáltató típusa
 
-Nincsenek számos különböző típusú szolgáltatók esetén, amelyek mindegyike különböző szintű funkciókat biztosít. A szolgáltató leszármazottai közül egyik osztálynak van megvalósítva a [System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider) osztály. A különböző típusú szolgáltatót kapcsolatos információkért lásd: [szolgáltatótípus](./provider-types.md).
+Nincsenek számos különböző típusú szolgáltatók esetén, amelyek mindegyike különböző szintű funkciókat biztosít. A szolgáltató leszármazottai közül egyik osztálynak van megvalósítva a [System.Management.Automation.SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider** osztály. A különböző típusú szolgáltatót kapcsolatos információkért lásd: [szolgáltatótípus](./provider-types.md).
 
 ## <a name="provider-cmdlets"></a>Szolgáltatói parancsmagok
 
@@ -63,7 +63,7 @@ Dinamikus paraméterek, amikor a felhasználó adja meg a statikus paraméterek,
 
 ## <a name="provider-capabilities"></a>Szolgáltató képességei
 
-A [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumerálás szolgáltatók által támogatott funkciók számos határozza meg. Ezek közé tartozik a helyettesítő karaktereket, elemek szűrése és a tranzakciók támogatása lehetővé teszi. Adja meg a szolgáltató képességei, adja hozzá az értékek listáját a [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) felsorolásból, egy logikai kombinálva `OR` művelet, mint a [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (az attribútum a második paraméter) tulajdonságát a [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) a szolgáltató osztálya attribútuma. Például a következő attribútum meghatározza, hogy a szolgáltató támogatja-e a [System.Management.Automation.Provider.Providercapabilities.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.ShouldProcess) és [ System.Management.Automation.Provider.Providercapabilities.Transactions](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.Transactions) képességeket.
+A [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumerálás szolgáltatók által támogatott funkciók számos határozza meg. Ezek közé tartozik a helyettesítő karaktereket, elemek szűrése és a tranzakciók támogatása lehetővé teszi. Adja meg a szolgáltató képességei, adja hozzá az értékek listáját a [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) felsorolásból, egy logikai kombinálva `OR` művelet, mint a [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (az attribútum a második paraméter) tulajdonságát a [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) a szolgáltató osztálya attribútuma. Például a következő attribútum meghatározza, hogy a szolgáltató támogatja-e a [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** és [ System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **tranzakciók** képességeket.
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

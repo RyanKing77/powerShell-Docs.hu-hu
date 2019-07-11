@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854856"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733950"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Parancsmag létrehozása adattár eléréséhez
 
@@ -72,7 +72,7 @@ Vegye figyelembe, hogy ez a paraméter két különböző paraméterkészlettel 
 
 Két [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribútumok deklarálja, hogy a `Path` paraméter tartozik a `ScriptParameterSet` és a `PatternParameterSet`. Paraméterkészlettel kapcsolatos további információkért lásd: [hozzáadása paraméterkészletek parancsmag](./adding-parameter-sets-to-a-cmdlet.md).
 
-A [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribútum deklarálja a `PSPath` aliasa a `Path` paraméter. Ezt az aliast deklaráló erősen ajánlott a konzisztencia, a többi parancsmag, amely a Windows PowerShell-szolgáltató elérésére. További információk aboutWindows PowerShell elérési utak, lásd: "PowerShell-elérési út fogalmak" a [Windows PowerShell működése](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+A [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribútum deklarálja a `PSPath` aliasa a `Path` paraméter. Ezt az aliast deklaráló erősen ajánlott a konzisztencia, a többi parancsmag, amely a Windows PowerShell-szolgáltató elérésére. További információk aboutWindows PowerShell elérési utak, lásd: "PowerShell-elérési út fogalmak" a [Windows PowerShell működése](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="declaring-the-pattern-parameter"></a>A minta paraméterét deklaráló
 
@@ -379,7 +379,7 @@ Ez a minta kiválasztása – Str parancsmag használja a [System.Management.Aut
 
 ## <a name="code-sample"></a>Kódminta
 
-A következő kód bemutatja ennek a verziónak a kiválasztása – Str parancsmag végrehajtására. Vegye figyelembe, hogy ez a kód tartalmazza a parancsmag osztály, a parancsmag által használt titkos módszerek és a Windows PowerShell beépülő modul kódot a parancsmag regisztrálásához használt. A parancsmag nyilvántartására vonatkozó további információkért lásd: [létrehozásához a parancsmag](#building-the-cmdlet).
+A következő kód bemutatja ennek a verziónak a kiválasztása – Str parancsmag végrehajtására. Vegye figyelembe, hogy ez a kód tartalmazza a parancsmag osztály, a parancsmag által használt titkos módszerek és a Windows PowerShell beépülő modul kódot a parancsmag regisztrálásához használt. A parancsmag nyilvántartására vonatkozó további információkért lásd: [létrehozásához a parancsmag](#Defining-the-Cmdlet-Class).
 
 ```csharp
 //
@@ -1090,7 +1090,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="building-the-cmdlet"></a>A parancsmag készítése
 
-Parancsmag-k megvalósítása után regisztrálnia kell azt a Windows PowerShell-lel a Windows PowerShell beépülő modullal. Parancsmagok regisztrálásával kapcsolatos további információkért lásd: [parancsmagjainak regisztrálásához, a szolgáltatók és az alkalmazások üzemeltetése hogyan](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Parancsmag-k megvalósítása után regisztrálnia kell azt a Windows PowerShell-lel a Windows PowerShell beépülő modullal. Parancsmagok regisztrálásával kapcsolatos további információkért lásd: [parancsmagjainak regisztrálásához, a szolgáltatók és az alkalmazások üzemeltetése hogyan](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>A parancsmag tesztelése
 
@@ -1214,7 +1214,7 @@ Ha a parancsmagot a Windows PowerShell-lel regisztrálva lett, azt a parancssorb
 
 ## <a name="see-also"></a>Lásd még:
 
-[Hogyan hozhat létre egy Windows PowerShell-parancsmag](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Hogyan hozhat létre egy Windows PowerShell-parancsmag](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [Az első parancsmag létrehozása](./creating-a-cmdlet-without-parameters.md)
 
@@ -1222,8 +1222,8 @@ Ha a parancsmagot a Windows PowerShell-lel regisztrálva lett, azt a parancssorb
 
 [A Windows PowerShell-szolgáltató tervezése](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Hogyan működik a Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Hogyan működik a Windows PowerShell](/previous-versions//ms714658(v=vs.85))
 
-[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

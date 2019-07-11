@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, a konfigurációt, a beállítása
 title: Konfigurációs adatok használatával
-ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080220"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727220"
 ---
 # <a name="using-configuration-data-in-dsc"></a>A DSC használata a konfigurációs adatok
 
-> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
 
 A beépített DSC használatával **ConfigurationData** paraméterrel határozhatja meg belül a konfigurációs adatokat.
 Ez lehetővé teszi, hogy hozzon létre egy egyetlen konfigurációs több csomópont, vagy különböző környezetekben használható.
@@ -187,11 +187,11 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 DSC biztosít a következő különleges változók konfigurációs parancsfájl használható:
 
-- **$AllNodes** hivatkozik a teljes gyűjteményt a meghatározott csomópontok **ConfigurationData**. Szűrheti a **AllNodes** gyűjtemény használatával **. WHERE()** és **. ForEach()**.
+- **$AllNodes** hivatkozik a teljes gyűjteményt a meghatározott csomópontok **ConfigurationData**. Szűrheti a **AllNodes** gyűjtemény használatával **. WHERE()** és **. ForEach()** .
 - **ConfigurationData** hivatkozik a teljes kivonattáblában, amikor fordításáról átadott paraméterként.
 - **MyTypeName** tartalmazza a [konfigurációs](configurations.md) használt változó neve. Például a konfigurációban `MyDscConfiguration`, a `$MyTypeName` fog rendelkezni a egy értéke `MyDscConfiguration`.
-- **Csomópont** hivatkozik egy adott bejegyzést a **AllNodes** gyűjtemény után az szűrve van **. WHERE()** vagy **. ForEach()**.
-  - Tudjon meg többet ezekről az eljárásokról a [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+- **Csomópont** hivatkozik egy adott bejegyzést a **AllNodes** gyűjtemény után az szűrve van **. WHERE()** vagy **. ForEach()** .
+  - Tudjon meg többet ezekről az eljárásokról a [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 ## <a name="using-non-node-data"></a>Nem csomópont adatait használatával
 

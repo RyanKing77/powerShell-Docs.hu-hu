@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 151b7125afe1b0d386467a0e5f89225716857ac2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080883"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734846"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell-szolgáltató – Gyors üzembe helyezés
 
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>Végrehajtási NewDrive
 
-A [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) módszer a Windows PowerShell motor nevezzük, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.New-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.New-PSDrive)parancsmagot, adja meg a szolgáltató neve. A PSDriveInfo paramétert a Windows PowerShell-motor, és a módszer a Windows PowerShell-motor az új meghajtó adja vissza. Ez a módszer a fent létrehozott osztályon belül kell deklarálni.
+A [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) módszer a Windows PowerShell motor nevezzük, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) parancsmagot, adja meg a szolgáltató neve. A PSDriveInfo paramétert a Windows PowerShell-motor, és a módszer a Windows PowerShell-motor az új meghajtó adja vissza. Ez a módszer a fent létrehozott osztályon belül kell deklarálni.
 
 A metódus először ellenőrzi, hogy mind a meghajtó objektum létezik, és a meghajtó, amely lettek átadva a legfelső szintű, visszaadó `null` Ha valamelyiken nem. Majd használatával a belső osztály AccessDBPSDriveInfo konstruktor hozzon létre egy új meghajtót, és a egy kapcsolatot az Access-adatbázishoz a meghajtót jelöli.
 
@@ -147,7 +147,7 @@ internal class AccessDBPSDriveInfo : PSDriveInfo
 
 ### <a name="implementing-removedrive"></a>Végrehajtási RemoveDrive
 
-A [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) módszer a Windows PowerShell motor nevezzük, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.Remove-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.Remove-PSDrive) parancsmagot. Ez a szolgáltató metódus lezárja a kapcsolatot az Access-adatbázishoz.
+A [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) módszer a Windows PowerShell motor nevezzük, amikor egy felhasználó meghívja a [Microsoft.PowerShell.Commands.RemovePSDriveCommand ](/dotnet/api/Microsoft.PowerShell.Commands.removepsdrivecommand) parancsmagot. Ez a szolgáltató metódus lezárja a kapcsolatot az Access-adatbázishoz.
 
 ```csharp
 protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)

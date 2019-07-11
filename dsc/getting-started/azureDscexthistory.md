@@ -3,12 +3,12 @@ description: További információ az Azure-ban a Desired State Configuration (D
 ms.date: 06/21/2018
 keywords: dsc, powershell, azure, extension
 title: Az Azure DSC-bővítmény a korábbi verziók
-ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6d821e53e9206d99425e8c83f6d90986c7c28b63
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079744"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734664"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration bővítmény korábbi verziók
 
@@ -164,7 +164,7 @@ Ez a cikk az Azure DSC Virtuálisgép-bővítmény, az egyes verziójával kapcs
 - **Környezet:** Azure
 - **Megjegyzés:** Ez a verzió DSC használ, a Windows Server 2016 Technical Preview; részeként a többi Windows OSE-kre, telepíti a [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (újraindítást igényel WMF telepítése).
 - **Új funkciók:**
-  - Támogatják a WMF 5.1-es előzetes verzió. Az első közzététel, amikor ez a verzió lett-e a nem kötelező frissítés, és adja meg a Wmfversion kellett = "5.1PP' a Resource Manager-sablonok a WMF 5.1-es előzetes verzió telepítéséhez. Wmfversion = "latest" továbbra is telepíti a [WMF 5.0 RTM-re](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). További információ a WMF 5.1-es előzetes verzió: [ebben a blogbejegyzésben]( https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
+  - Támogatják a WMF 5.1-es előzetes verzió. Az első közzététel, amikor ez a verzió lett-e a nem kötelező frissítés, és adja meg a Wmfversion kellett = "5.1PP' a Resource Manager-sablonok a WMF 5.1-es előzetes verzió telepítéséhez. Wmfversion = "latest" továbbra is telepíti a [WMF 5.0 RTM-re](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). További információ a WMF 5.1-es előzetes verzió: [ebben a blogbejegyzésben](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
   - Kisebb más javításokat, és fejlesztések lettek hozzáadva.
 
 ### <a name="version--219"></a>Verzió 2.19
