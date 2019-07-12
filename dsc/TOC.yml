@@ -19,7 +19,10 @@
     - name: DSC az Azure Virtual Machinesben – első lépések
       href: getting-started/azureDSCexthistory.md
 - name: Rövid útmutatók
+  expanded: true
   items:
+    - name: Konfiguráció létrehozása csoportházirendből
+      href: quickstarts/gpo-quickstart.md
     - name: Webhely létrehozása DSC-vel
       href: quickstarts/website-quickStart.md
 - name: Konfigurációk
@@ -102,7 +105,7 @@
           href: managing-nodes/apply-get-test.md
         - name: A Local Configuration Manager (v5) konfigurálása
           href: managing-nodes/metaConfig.md
-        - name: A Local Configuration Manager (v4) konfigurálása
+        - name: Az LCM konfigurálása a PowerShell 4.0-ban
           href: managing-nodes/metaConfig4.md
         - name: DSC-erőforrások metódusainak közvetlen hívása
           href: managing-nodes/directCallResource.md
@@ -242,43 +245,43 @@
       items:
         - name: Áttekintés
           href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály ApplyConfiguration metódusa
+        - name: ApplyConfiguration metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály DisableDebugConfiguration metódusa
+        - name: DisableDebugConfiguration metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály EnableDebugConfiguration metódusa
+        - name: EnableDebugConfiguration metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály GetConfiguration metódusa
+        - name: GetConfiguration metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály GetConfigurationResultOutput metódusa
+        - name: GetConfigurationResultOutput metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály GetConfigurationStatus metódusa
+        - name: GetConfigurationStatus metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály GetMetaConfiguration metódusa
+        - name: GetMetaConfiguration metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály PerformRequiredConfigurationChecks metódusa
+        - name: PerformRequiredConfigurationChecks metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály RemoveConfiguration metódusa
+        - name: RemoveConfiguration metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály ResourceGet metódusa
+        - name: ResourceGet metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály ResourceSet metódusa
+        - name: ResourceSet metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály ResourceTest metódusa
+        - name: ResourceTest metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály RollBack metódusa
+        - name: RollBack metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály SendConfiguration metódusa
+        - name: SendConfiguration metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály SendConfigurationApply metódusa
+        - name: SendConfigurationApply metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály SendConfigurationApplyAsync metódusa
+        - name: SendConfigurationApplyAsync metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály SendMetaConfigurationApply metódusa
+        - name: SendMetaConfigurationApply metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály StopConfiguration metódusa
+        - name: StopConfiguration metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
-        - name: Az MSFT_DSCLocalConfigurationManager osztály TestConfiguration metódusa
+        - name: TestConfiguration metódus
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: További információ
   items:
