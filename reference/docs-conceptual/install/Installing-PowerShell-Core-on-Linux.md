@@ -2,16 +2,18 @@
 title: A PowerShell Core telepítése Linux rendszerre
 description: Információ a különböző Linux-disztribúciókon a PowerShell Core telepítése
 ms.date: 08/06/2018
-ms.openlocfilehash: 0a7c9549c37222bf599e4bdb9e36c91288191bb3
-ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
+ms.openlocfilehash: 32d6c0e718ca798af2f6a5d796c3ca362e7befd9
+ms.sourcegitcommit: 13e170e8bff29d3d5f854c874de88f53c5e5ef20
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64530636"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829439"
 ---
 # <a name="installing-powershell-core-on-linux"></a>A PowerShell Core telepítése Linux rendszerre
 
-Támogatja a [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [ Leap 15 openSUSE][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], és [Arch Linux][arch].
+Támogatja a [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9],
+[CentOS 7][cos], [piros Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse],
+[Fedora 27][fedora], [Fedora 28] [fedora], és [Arch Linux][arch].
 
 A hivatalosan nem támogatott Linux-disztribúció, megpróbálhatja használatával a [PowerShell beépülő modul csomag][snap].
 Üzembe helyezése a PowerShell bináris fájlokat közvetlenül a a Linux használatával is megpróbálhatja [ `tar.gz` archív][tar], de állítsa be a szükséges függőségek az operációs rendszer a különálló lépések alapján kell.
@@ -199,7 +201,7 @@ sudo apt-get remove powershell
 > [!NOTE]
 > Mivel 18.10 egy [közbenső kiadási](https://www.ubuntu.com/about/release-cycle), csak [támogatott közösségi](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
 
-Keresztül támogatott 18.10 telepítése `snapd`. Lásd: [beépülő csomag] [ snap] teljes útmutatás;
+Keresztül támogatott 18.10 telepítése `snapd`. Lásd: [beépülő csomag][snap] teljes útmutatás;
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -588,8 +590,18 @@ Töltse le [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) ,
 ### <a name="installation---raspbian"></a>Telepítés – Raspbian
 
 ```sh
-# Install prerequisites
-sudo apt-get install libunwind8
+###################################
+# Prerequisites
+
+# Update package lists
+sudo apt-get update
+
+# Install libunwind8 and libssl1.0
+# Regex is used to ensure that we do not install libssl1.0-dev, as it is a variant that is not required
+sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
+
+###################################
+# Download and extract PowerShell
 
 # Grab the latest tar.gz
 wget https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-linux-arm32.tar.gz
@@ -647,7 +659,7 @@ A következő diagram a .NET Core 2.0 hivatalosan támogatott különböző Linu
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-függvénytárak, libicu, a/compat-openssl10 |
 
 Nem hivatalosan támogatott Linux-disztribúciókon a PowerShell bináris fájljainak telepítéséhez telepíteni szeretné a cél operációs rendszer szükséges függőséget a különálló lépések.
-Például a [Amazon Linux dockerfile] [ amazon-dockerfile] először telepíti a függőségeket, és ezt követően kiolvassa a Linuxos `tar.gz` archív.
+Például a [Amazon Linux dockerfile][amazon-dockerfile] először telepíti a függőségeket, és ezt követően kiolvassa a Linuxos `tar.gz` archív.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
@@ -690,7 +702,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 A profilok tiszteletben PowerShell a gazdagép konfiguráció, így az alapértelmezett gazdagép-specifikus profilok létezik `Microsoft.PowerShell_profile.ps1` ugyanazon a helyen.
 
-PowerShell tiszteletben tartja a [XDG alap könyvtár megadása] [ xdg-bds] Linux rendszeren.
+PowerShell tiszteletben tartja a [XDG alap könyvtár megadása][xdg-bds] Linux rendszeren.
 
 [Kiadások]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

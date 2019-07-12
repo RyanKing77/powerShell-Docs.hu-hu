@@ -2,16 +2,16 @@
 title: A PowerShell Core 6.0 újdonságai
 description: Új szolgáltatásokat és módosításokat jelent meg a PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1218a38398f4d86829cf2b4ba6a3a882675eaab
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059015"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843921"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>A PowerShell Core 6.0 újdonságai
 
-[A PowerShell Core 6.0] [ github] van egy új PowerShell kiadása, amely cross-platform (Windows, macOS és Linux), nyílt forráskódú és a heterogén környezetek és a hibrid felhő tervezve.
+[A PowerShell Core 6.0][github] van egy új PowerShell kiadása, amely cross-platform (Windows, macOS és Linux), nyílt forráskódú és a heterogén környezetek és a hibrid felhő tervezve.
 
 ## <a name="moved-from-net-framework-to-net-core"></a>A .NET-keretrendszer átkerülnek a .NET Core
 
@@ -139,7 +139,7 @@ A legtöbb, a Windows részét képezi, amelyek (például `DnsClient`, `Hyper-V
 A PowerShell csapatának érvényesítéséhez és a meglévő modulokat a PowerShell Core port termék csoportok és csapatok dolgoznak.
 A .NET Standard és a [CDXML][], számos, a hagyományos Windows PowerShell-modulok működik a Microsoft a PowerShell Core, de azok nem hivatalosan ellenőrzése és hivatalosan nem támogatják.
 
-Telepítse a [ `WindowsPSModulePath` ] [ windowspsmodulepath] modult, a használható Windows PowerShell-modulok a Windows PowerShell hozzáfűzésével `PSModulePath` , a PowerShell Core `PSModulePath`.
+Telepítse a [ `WindowsPSModulePath` ][windowspsmodulepath] modult, a használható Windows PowerShell-modulok a Windows PowerShell hozzáfűzésével `PSModulePath` , a PowerShell Core `PSModulePath`.
 
 Először telepítse a `WindowsPSModulePath` modul a PowerShell-galériából:
 
@@ -295,9 +295,10 @@ PowerShell-feladatokkal kapcsolatos további információkért lásd: [about_Job
 
 ### <a name="csv-cmdlets"></a>CSV-parancsmagok
 
+- `Import-Csv` most már támogatja a W3C bővített naplófájlformátum (#2482) (Köszönjük, hogy [ @iSazonov ](https://github.com/iSazonov)!)
 - Adjon hozzá `PSTypeName` támogatása `Import-Csv` és `ConvertFrom-Csv`. (#5389) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus)!)
 - Győződjön meg arról, `Import-Csv` támogatja `CR`, `LF`, és `CRLF` as sor elválasztó. (#5363) (Köszönjük, hogy [ @iSazonov ](https://github.com/iSazonov)!)
-- Győződjön meg arról, `-NoTypeInformation` az alapértelmezett `Export-Csv` és `ConvertTo-Csv`. (#5164) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus))
+- Győződjön meg arról, `-NoTypeInformation` az alapértelmezett `Export-Csv` és `ConvertTo-Csv`. (#5164) (Köszönjük, hogy [ @markekraus ](https://github.com/markekraus)!)
 
 ### <a name="service-cmdlets"></a>Parancsmagok
 

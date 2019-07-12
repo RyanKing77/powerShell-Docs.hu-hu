@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell, a core
 title: PowerShell 6.0 használhatatlanná tévő változásai
-ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085932"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843941"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 használhatatlanná tévő változásai
 
@@ -15,7 +15,7 @@ ms.locfileid: "62085932"
 
 ### <a name="powershell-workflow"></a>PowerShell-munkafolyamat
 
-[PowerShell-munkafolyamat] [ workflow] funkció a Windows PowerShellben, amely összeállítja a [Windows Workflow Foundation (WF)] [ workflow-foundation] , amely lehetővé teszi a létrehozása robusztus runbookok hosszan futó vagy párhuzamos feladatok.
+[PowerShell-munkafolyamat][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] , amely lehetővé teszi a hosszan futó vagy párhuzamos feladatok hatékony runbookok létrehozása.
 
 A Windows Workflow Foundation a .NET Core támogatása hiánya miatt nem folytatjuk a PowerShell Core a PowerShell-munkafolyamat támogatásához.
 
@@ -26,7 +26,7 @@ A későbbiekben szeretnénk natív PowerShell-munkafolyamat nélkül PowerShell
 
 ### <a name="custom-snap-ins"></a>Egyéni beépülő modulok
 
-[PowerShell beépülő modulok] [ snapin] vannak a megelőző, a PowerShell-modulokat, amelyek nem rendelkeznek széles körű bevezetési a PowerShell-Közösségben.
+[PowerShell beépülő modulok][snapin] vannak a megelőző, a PowerShell-modulokat, amelyek nem rendelkeznek széles körű bevezetési a PowerShell-Közösségben.
 
 A beépülő modulok és használati hiánya miatt a közösségi összetettsége miatt már nem támogatott egyéni beépülő modulokat a PowerShell Core.
 
@@ -113,9 +113,13 @@ Korábban Ha `-Verbose` vagy `-Debug` van megadva, akkor overrode viselkedését
 
 Ha egy API-t csak adja vissza `null`, Invoke-RestMethod szerializálása volt ez a karakterlánc `"null"` helyett `$null`. Ez a változás javítja a logika `Invoke-RestMethod` megfelelően szerializálni az egyetlen érvényes érték JSON `null` szöveges `$null`.
 
-### <a name="remove--computername-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Távolítsa el `-ComputerName` a `*-Computer` parancsmagok [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Távolítsa el `-Protocol` a `*-Computer` parancsmagok [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-RPC-táveléréssel CoreFX (különösen a nem Windows platformokon) és a egy egységes távelérése a PowerShellben, biztosítva a problémák miatt a `-ComputerName` paraméter el lett távolítva a `\*-Computer` parancsmagok. Használat `Invoke-Command` inkább távolról végrehajtani a parancsmagok segítségével is.
+RPC-táveléréssel CoreFX (különösen a nem Windows platformokon) és a egy egységes távelérése a PowerShellben, biztosítva a problémák miatt a `-Protocol` paraméter el lett távolítva a `\*-Computer` parancsmagok. A DCOM már nem támogatott a távelérése. A következő parancsmagokat csak a wsman által használt távoli eljáráshívás támogatják:
+
+- Rename-Computer
+- Számítógép újraindítása
+- Stop-Computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Távolítsa el `-ComputerName` a `*-Service` parancsmagok [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
@@ -159,7 +163,7 @@ A következő szolgáltatások eltávolítása nem támogatott a PowerShell Core
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Eltávolított `RunspaceConfiguration` támogatja [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-Korábban a programozott módon a PowerShell futási térben létrehozásakor az API-val is használhat a régebbi [ `RunspaceConfiguration` ] [ runspaceconfig] és az újabb [ `InitialSessionState` ] [ iss]. Ez a változás nem támogatja az `RunspaceConfiguration` , és csak támogatja `InitialSessionState`.
+Korábban a programozott módon a PowerShell futási térben létrehozásakor az API-val is használhat a régebbi [ `RunspaceConfiguration` ][runspaceconfig] or the newer [`InitialSessionState`][iss]. Ez a változás nem támogatja az `RunspaceConfiguration` , és csak támogatja `InitialSessionState`.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
