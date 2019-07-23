@@ -1,32 +1,32 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, a konfiguráció, a szolgáltatás, a telepítő
+keywords: DSC, PowerShell, konfigurálás, szolgáltatás, beállítás
 title: Konfiguráció írása, fordítása és alkalmazása
-ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8bcd55518b0409b9a4b02ca95f027a0a77eb5300
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080016"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372177"
 ---
-> A következőkre vonatkozik: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+> Érvényes: Windows PowerShell 4,0, Windows PowerShell 5,0
 
 # <a name="write-compile-and-apply-a-configuration"></a>Konfiguráció írása, fordítása és alkalmazása
 
-Ebben a gyakorlatban létrehozásával és alkalmazásával a Desired State Configuration (DSC) konfigurációs elejétől a végéig ismerteti.
-A következő példában, megtudhatja, hogyan írhat, és a egy nagyon egyszerű konfiguráció alkalmazása. A konfiguráció biztosítja, hogy a "HelloWorld.txt" fájl létezik a helyi gépen. Ha a fájl törléséhez DSC létrehozza azt a következő alkalommal, amikor frissíti.
+Ez a gyakorlat végigvezeti a kívánt állapot-konfiguráció (DSC) konfigurációjának a kezdéstől a befejezésig történő létrehozásán és alkalmazásán.
+Az alábbi példában megtudhatja, hogyan írhat és alkalmazhat egy nagyon egyszerű konfigurációt. A konfiguráció biztosítja, hogy a "HelloWorld. txt" fájl létezik a helyi gépen. Ha törli a fájlt, a DSC a következő frissítésekor újra létrehozza azt.
 
-DSC és működésének áttekintését lásd: [Desired State Configuration áttekintése fejlesztők számára](../overview/overview.md).
+A DSC és annak működésének áttekintését lásd: [a fejlesztők számára a kívánt állapot konfigurációjának áttekintése](../overview/overview.md).
 
 ## <a name="requirements"></a>Követelmények
 
-Ez a példa futtatásához szüksége lesz a futtató PowerShell 4.0-s vagy újabb.
+A példa futtatásához a PowerShell 4,0-es vagy újabb verzióját futtató számítógépre lesz szüksége.
 
-## <a name="write-the-configuration"></a>A konfiguráció írása
+## <a name="write-the-configuration"></a>A konfiguráció megírása
 
-A DSC [konfigurációs](configurations.md) egy külön PowerShell-függvény, amely meghatározza, hogyan szeretné konfigurálni egy vagy több cél számítógépek (csomópontok).
+A DSC- [konfiguráció](configurations.md) egy speciális PowerShell-függvény, amely meghatározza, hogyan szeretné konfigurálni egy vagy több célszámítógépet (csomópontot).
 
-A PowerShell ISE-ben, vagy más PowerShell-szerkesztő írja be a következőt:
+A PowerShell ISE vagy más PowerShell-szerkesztőben írja be a következőt:
 
 ```powershell
 Configuration HelloWorld {
@@ -47,21 +47,33 @@ Configuration HelloWorld {
 }
 ```
 
-Mentse a fájlt "HelloWorld.ps1".
+> ! Fontos olyan speciális forgatókönyvekben, ahol több modult kell importálni, hogy ugyanabban a konfigurációban több DSC-erőforrással is működjön, ügyeljen arra, hogy minden modult külön sorba helyezzen `Import-DscResource`a használatával.
+> Ez könnyebben karbantartható a verziókövetés és a szükséges, ha a DSC-t az Azure-beli állapot konfigurációjában kell megtartani.
+>
+> ```powershell
+>  Configuration HelloWorld {
+>
+>   # Import the module that contains the File resource.
+>   Import-DscResource -ModuleName PsDesiredStateConfiguration
+>   Import-DscResource -ModuleName xWebAdministration
+>
+> ```
 
-Konfiguráció definiálása olyan, mint egy függvény meghatározása. A **csomópont** letiltása, adja meg a célcsomópont konfigurálását, ebben az esetben `localhost`.
+Mentse a fájlt "HelloWorld. ps1" néven.
 
-A konfiguráció meghívja az egyiket [erőforrások](../resources/resources.md), a `File` erőforrás. Erőforrások teheti meg, hiszen a munkát, a célcsomópont a konfiguráció által meghatározott állapotban van.
+A konfiguráció definiálása hasonló a függvények definiálásához. A **csomópont** -blokk meghatározza a konfigurálni kívánt célként megadott csomópontot, ebben `localhost`az esetben.
+
+A [konfiguráció egy](../resources/resources.md)erőforrást, az `File` erőforrást hívja meg. Az erőforrások feladata annak biztosítása, hogy a cél csomópont a konfiguráció által meghatározott állapotban legyen.
 
 ## <a name="compile-the-configuration"></a>A konfiguráció fordítása
 
-DSC csomópont alkalmazandó konfiguráció azt először kell összeállítani egy MOF-fájlba.
-A konfiguráció, például egy függvényt, futtató lefordítása fog egy ".mof" fájl által definiált minden csomópont esetében a `Node` letiltása.
-Futtassa a konfigurációt, kell *pont forrás* a "HelloWorld.ps1" parancsfájlt az aktuális hatókörben.
-További információkért lásd: [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
+Ahhoz, hogy egy DSC-konfigurációt egy csomóponton lehessen alkalmazni, először egy MOF-fájlba kell lefordítani.
+A konfiguráció, például egy függvény futtatása lefordít egy ". MOF" fájlt a `Node` blokk által meghatározott összes csomóponthoz.
+A konfiguráció futtatásához a "HelloWorld. ps1" parancsfájlt az aktuális hatókörbe kell *leadnia* .
+További információ: [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
 
 <!-- markdownlint-disable MD038 -->
-*Pont forrás* az elérési út helyétől, után írja be a "HelloWorld.ps1" parancsfájl a `. ` (pont, terület). A következő lehetőségekkel, majd futtassa a konfiguráció például függvény meghívásával.
+*Adja meg* a "HelloWorld. ps1" parancsfájlt úgy, hogy beírja azt az elérési utat, `. ` ahol a tárolta, a (pont, szóköz) után. Ezután futtathatja a konfigurációt úgy, hogy a függvényt hívja meg.
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
@@ -69,7 +81,7 @@ További információkért lásd: [about_Scripts](/powershell/module/microsoft.p
 HelloWorld
 ```
 
-Ez létrehozza a következő kimenet:
+Ez a következő kimenetet hozza létre:
 
 ```output
 Directory: C:\Scripts\HelloWorld
@@ -80,17 +92,17 @@ Mode                LastWriteTime         Length Name
 -a----        3/13/2017   5:20 PM           2746 localhost.mof
 ```
 
-## <a name="apply-the-configuration"></a>A konfiguráció alkalmazásához
+## <a name="apply-the-configuration"></a>A konfiguráció alkalmazása
 
-Most, hogy a lefordított MOF, alkalmazhat a konfigurációt a célcsomópont (ebben az esetben az a helyi számítógép) meghívásával a [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) parancsmagot.
+Most, hogy már rendelkezik a lefordított MOF-vel, a konfigurációt alkalmazhatja a cél csomópontra (ebben az esetben a helyi számítógépre) a [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) parancsmag meghívásával.
 
-A `Start-DscConfiguration` arra utasítja a parancsmag a [helyi Configuration Manager (LCM) Konfigurálása](../managing-nodes/metaConfig.md), DSC, a alkalmazni a konfigurációt motorját.
-Az LCM Konfigurálása a alkalmazni a konfigurációt a DSC-erőforrások hívása működik.
+A `Start-DscConfiguration` parancsmag a konfiguráció alkalmazásához megadja a [helyi Configuration Manager (LCD ChipOnGlas)](../managing-nodes/metaConfig.md), a DSC motorját.
+Az LCD-eszközök meghívja a DSC-erőforrásokat a konfiguráció alkalmazásához.
 
-Az alábbi kód használatával hajtsa végre a `Start-DSCConfiguration` parancsmagot. Adja meg a könyvtár elérési útja a "localhost.mof" tárolódnak, a `-Path` paraméter. A `Start-DSCConfiguration` parancsmag átvizsgálja a megadott "\<computername\>.mof" fájlokat. A `Start-DSCConfiguration` parancsmag megkísérli minden ".mof" fájlt megtalálta a alkalmazni a számítógépnév, a fájlnév ("localhost", "kiszolgalo01", "tartományvezérlő-02", stb.) által meghatározott.
+Az alábbi kód használatával hajtsa végre `Start-DSCConfiguration` a parancsmagot. Adja meg a könyvtár elérési útját, ahol a "localhost. MOF `-Path` " a paraméterre van tárolva. A `Start-DSCConfiguration` parancsmag a "\<számítógépnév\>. MOF" fájlokhoz megadott könyvtárat vizsgálja. A `Start-DSCConfiguration` parancsmag megpróbálja alkalmazni az összes olyan ". MOF" fájlt, amely a fájlnévben ("localhost", "kiszolgalo01", "DC-02" stb.) megadott számítógépnévre hivatkozik.
 
 > [!NOTE]
-> Ha a `-Wait` paraméter nincs megadva, `Start-DSCConfiguration` létrehoz egy háttérben futó feladatot, a művelet végrehajtásához. Adja meg a `-Verbose` paraméter lehetővé teszi, hogy tekintse meg a **részletes** a művelet kimenetét. `-Wait`, és `-Verbose` mindkét opcionális paraméterek.
+> Ha a `-Wait` paraméter nincs megadva, `Start-DSCConfiguration` a létrehoz egy háttér-feladatot a művelet végrehajtásához. A `-Verbose` paraméter megadásával megtekintheti a művelet **részletes** kimenetét. `-Wait`a és `-Verbose` a választható paraméterek is.
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
@@ -98,11 +110,11 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 ## <a name="test-the-configuration"></a>A konfiguráció tesztelése
 
-Miután a `Start-DSCConfiguration` parancsmag befejeződött, megjelenik egy "HelloWorld.txt" fájlt a megadott helyen. A tartalmak ellenőrizheti a [Get-tartalom](/powershell/module/microsoft.powershell.management/get-content) parancsmagot.
+A `Start-DSCConfiguration` parancsmag befejezését követően egy "HelloWorld. txt" fájlt kell látnia a megadott helyen. A tartalmat a [Get-Content](/powershell/module/microsoft.powershell.management/get-content) parancsmaggal ellenőrizheti.
 
-Emellett *tesztelése* az aktuális állapot használatával [a Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).
+Tesztelheti az *aktuális* állapotot a [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)használatával is.
 
-A kimenet lehet "True", ha a csomópont jelenleg felel meg az alkalmazott konfiguráció.
+Ha a csomópont jelenleg megfelel az alkalmazott konfigurációnak, a kimenetnek "true" értékűnek kell lennie.
 
 ```powershell
 Test-DSCConfiguration
@@ -120,9 +132,9 @@ Get-Content -Path C:\Temp\HelloWorld.txt
 Hello World from DSC!
 ```
 
-## <a name="re-applying-the-configuration"></a>A beállítások újbóli alkalmazásával
+## <a name="re-applying-the-configuration"></a>A konfiguráció újbóli alkalmazása
 
-A konfiguráció újra alkalmazva megtekintéséhez, eltávolíthatja a hozta létre a konfigurációs szövegfájlban. A használatát a `Start-DSCConfiguration` parancsmagot a `-UseExisting` paraméter. A `-UseExisting` paraméter utasítja `Start-DSCConfiguration` újból a alkalmazni az "current.mof" fájlt, amely jelöli a legutóbb sikeresen alkalmazott konfigurációs.
+A konfiguráció ismételt alkalmazásának megtekintéséhez eltávolíthatja a konfiguráció által létrehozott szövegfájlt. A használja `Start-DSCConfiguration` a parancsmagot a `-UseExisting` paraméterrel. A `-UseExisting` paraméter `Start-DSCConfiguration` arra utasítja, hogy újra alkalmazza a "current. MOF" fájlt, amely a legutóbb sikeresen alkalmazott konfigurációt jelképezi.
 
 ```powershell
 Remove-Item -Path C:\Temp\HelloWorld.txt
@@ -130,6 +142,6 @@ Remove-Item -Path C:\Temp\HelloWorld.txt
 
 ## <a name="next-steps"></a>További lépések
 
-- További információk a DSC-konfigurációk [DSC-konfigurációk](configurations.md).
-- Megtudhatja, milyen DSC-erőforrás áll rendelkezésre, és hogyan hozhat létre egyéni DSC-erőforrásokat, [DSC-erőforrások](../resources/resources.md).
-- DSC-konfigurációkat és erőforrásokat a [PowerShell-galériából](https://www.powershellgallery.com/).
+- Tudjon meg többet a DSC-konfigurációkról a [DSC](configurations.md)-konfigurációknál.
+- Ismerje meg, hogy milyen DSC-erőforrások érhetők el, és hogyan hozhat létre egyéni DSC-erőforrásokat a [DSC](../resources/resources.md)-erőforrásokon.
+- Keresse meg a DSC-konfigurációkat és-erőforrásokat a [PowerShell-Galéria](https://www.powershellgallery.com/).
