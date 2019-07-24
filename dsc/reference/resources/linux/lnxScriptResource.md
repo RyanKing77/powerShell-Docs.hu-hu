@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, a konfigurációt, a beállítása
-title: DSC Linux nxScript erőforrás számára
-ms.openlocfilehash: 339968512ab1c16c4c3785a3a19b00c3fbbf9ea1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, PowerShell, konfigurálás, beállítás
+title: DSC Linux nxScript-erőforráshoz
+ms.openlocfilehash: 0ad0530f1de7b86ff48c4eb1f79870f6682894a1
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077823"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372166"
 ---
-# <a name="dsc-for-linux-nxscript-resource"></a>DSC Linux nxScript erőforrás számára
+# <a name="dsc-for-linux-nxscript-resource"></a>DSC Linux nxScript-erőforráshoz
 
-A **nxScript** erőforrás a PowerShell Desired State Configuration (DSC) Linux parancsfájlok futtatása egy Linux-csomóponton mechanizmust biztosít.
+A **nxScript** -erőforrás a PowerShell desired State CONFIGURATION (DSC) szolgáltatásban a Linux-parancsfájlok Linux-csomóponton való futtatására szolgáló mechanizmust biztosít.
 
 ## <a name="syntax"></a>Szintaxis
 
@@ -32,16 +32,16 @@ nxScript <string> #ResourceName
 
 |  Tulajdonság |  Leírás |
 |---|---|
-| GetScript| Egy parancsfájl, amely akkor fut, amikor indít el a [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521625.aspx) parancsmagot. A szkript egy shebangje határoz meg, például # kell kezdődnie! / bin/bash.|
-| SetScript| Egy parancsfájlt tartalmaz. Amikor meghívása a [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) parancsmagot, a **TestScript** első futtatja. Ha a **TestScript** blokk 0, eltérő kilépési kódot ad vissza a **SetScript** blokk fog futni. Ha a **TestScript** , a 0 kilépési kódot ad vissza a **SetScript** nem fog futni. A parancsfájl a következővel kell kezdődnie shebangje határoz meg, mint például `#!/bin/bash`.|
-| TestScript| Egy parancsfájlt tartalmaz. Amikor meghívása a [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) parancsmag, ez a szkript futtatása. 0-tól eltérő kilépési kódot ad vissza, ha a SetScript fog futni. Ha a 0 kilépési kódot ad vissza a **SetScript** nem fog futni. A **TestScript** is fut, amikor indít el a [a Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) parancsmagot. Azonban ebben az esetben az a **SetScript** nem fog futni, függetlenül attól, hogy milyen kilépési kód érkezésekor a a **TestScript**. A **TestScript** kell a 0 kilépési kódot ad vissza, ha a tényleges konfigurációja megegyezik a jelenlegi állapotkonfigurációs, és a egy kilépési kód más, mint 0, ha nem felel meg. (A jelenlegi kívánt állapot konfigurációs a csomópont által használt DSC gyakorlatokkal utolsó konfiguráció). A szkript egy shebangje határoz meg, például a 1#!/bin/bash.1 kell kezdődnie.|
-| Felhasználó| A felhasználó, a parancsfájl futtatásához.|
-| Csoport| A csoport, a parancsfájl futtatásához.|
-| DependsOn | Azt jelzi, hogy a konfigurációt egy másik erőforrás futtatnia kell, mielőtt az erőforrás konfigurálva van. Például ha a **azonosító** az erőforrás, amely a futtatni kívánt konfigurációs parancsprogram-blokkot első az **ResourceName** és a típusa **ResourceType**, ezzel esetén a tulajdonság `DependsOn = "[ResourceType]ResourceName"`.|
+| GetScript| Parancsfájlt biztosít a gép aktuális állapotának visszaküldéséhez.  Ez a szkript a [GetDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) parancsfájl meghívásakor fut. A szkriptnek egy shebangje kell kezdődnie, például #!/bin/bash.|
+| SetScript| Egy olyan parancsfájlt biztosít, amely megfelelő állapotba helyezi a gépet. A [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) parancsfájl meghívásakor a **TestScript** először fut. Ha a **TestScript** blokk a 0-tól eltérő kilépési kódot ad vissza, akkor a **SetScript** -blokk fut. Ha a **TestScript** 0 kilépési kódot ad vissza, a **SetScript** nem fog futni. A szkriptnek egy shebangje kell kezdődnie, például `#!/bin/bash`:.|
+| TestScript| Egy olyan parancsfájlt biztosít, amely kiértékeli, hogy a csomópont jelenleg megfelelő állapotban van-e. A [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) parancsfájl meghívásakor ez a szkript fut. Ha nullától eltérő kilépési kódot ad vissza, a SetScript futni fog. Ha 0 kilépési kódot ad vissza, a **SetScript** nem fog futni. A **TestScript** a [TestDscConfiguration](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) parancsfájl meghívásakor is fut. Ebben az esetben azonban a **SetScript** nem fog futni, függetlenül attól, hogy milyen kilépési kódot ad vissza a **TestScript**. A **TestScript** tartalmaznia kell a tartalmat, és 0 kilépési kódot kell visszaadnia, ha a tényleges konfiguráció megegyezik a jelenlegi kívánt állapot-konfigurációval, és a kilépési kód nullától eltérő, ha nem egyezik. (A jelenlegi kívánt állapot-konfiguráció a DSC-t használó csomópont utolsó konfigurációja. A szkriptnek egy shebangje kell kezdődnie, például 1 #!/bin/bash.1|
+| Felhasználó| A felhasználó, aki a parancsfájlt futtatja.|
+| Csoport| A parancsfájl futtatására szolgáló csoport.|
+| DependsOn | Azt jelzi, hogy egy másik erőforrás konfigurációjának futnia kell az erőforrás konfigurálása előtt. Ha például az az erőforrás  -konfigurációs parancsfájl blokkja, amelyet először szeretne futtatni, **resourcename** , és a típusa **resourcetype**, a tulajdonság `DependsOn = "[ResourceType]ResourceName"`használatának szintaxisa a következő:.|
 
 ## <a name="example"></a>Példa
 
-Az alábbi példa bemutatja, hogy a **nxScript** erőforrás további konfigurációfelügyeleti végrehajtásához.
+Az alábbi példa bemutatja, hogyan használhatja a **nxScript** -erőforrást további konfigurálási műveletek végrehajtásához.
 
 ```
 Import-DSCResource -Module nx
