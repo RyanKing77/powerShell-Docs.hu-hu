@@ -6,13 +6,12 @@ ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
 ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68372195"
 ---
 # <a name="installing-powershell-core-on-linux"></a>A PowerShell Core telepítése Linux rendszerre
 
-Támogatja az [Ubuntu 16,04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18,10][u1810], [Debian 9][deb9],
- [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE LEAP 15][opensuse] , [Fedora 27][fedora], [Fedora 28][Fedora]és [Arch Linux][arch].
+Támogatja az [ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE LEAP 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], és az [Arch Linux][arch].
 
 A hivatalosan nem támogatott Linux-disztribúciók esetében a PowerShell [beépülő modullal][snap]próbálhatja meg telepíteni a PowerShellt. A PowerShell bináris fájljait közvetlenül a Linux [ `tar.gz` Archive][tar]használatával is kipróbálhatja, de az operációs rendszertől eltérő lépések alapján kell beállítania a szükséges függőségeket.
 
