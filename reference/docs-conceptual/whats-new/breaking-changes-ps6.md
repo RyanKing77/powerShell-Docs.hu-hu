@@ -1,49 +1,49 @@
 ---
 ms.date: 05/17/2018
-keywords: PowerShell, a core
-title: PowerShell 6.0 használhatatlanná tévő változásai
+keywords: PowerShell, mag
+title: A PowerShell 6,0-es feltörésének változásai
 ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67843941"
 ---
-# <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 használhatatlanná tévő változásai
+# <a name="breaking-changes-for-powershell-60"></a>A PowerShell 6,0-es feltörésének változásai
 
-## <a name="features-no-longer-available-in-powershell-core"></a>A funkciók már nem érhető el, a PowerShell Core
+## <a name="features-no-longer-available-in-powershell-core"></a>A szolgáltatás már nem érhető el a PowerShell Core-ban
 
 ### <a name="powershell-workflow"></a>PowerShell-munkafolyamat
 
-[PowerShell-munkafolyamat][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] , amely lehetővé teszi a hosszan futó vagy párhuzamos feladatok hatékony runbookok létrehozása.
+A [PowerShell-munkafolyamat][workflow] a Windows PowerShell egyik funkciója, amely [Windows Workflow Foundation (WF)][workflow-foundation] épül, amely lehetővé teszi robusztus runbookok létrehozását a hosszan futó vagy párhuzamos feladatokhoz.
 
-A Windows Workflow Foundation a .NET Core támogatása hiánya miatt nem folytatjuk a PowerShell Core a PowerShell-munkafolyamat támogatásához.
+A .NET Core-Windows Workflow Foundation támogatásának hiánya miatt a PowerShell Core-ban nem folytatjuk a PowerShell-munkafolyamat támogatását.
 
-A későbbiekben szeretnénk natív PowerShell-munkafolyamat nélkül PowerShell nyelven párhuzamosság/egyidejűségi engedélyezéséhez.
+A jövőben azt szeretnénk, hogy a PowerShell-munkafolyamatok szükségessége nélkül engedélyezzük a natív párhuzamosságot/párhuzamosságot a PowerShell nyelvén.
 
 [workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
 ### <a name="custom-snap-ins"></a>Egyéni beépülő modulok
 
-[PowerShell beépülő modulok][snapin] vannak a megelőző, a PowerShell-modulokat, amelyek nem rendelkeznek széles körű bevezetési a PowerShell-Közösségben.
+A PowerShell beépülő modulok olyan PowerShell [-][snapin] modulok elődje, amelyek nem rendelkeznek széleskörű bevezetéssel a PowerShell-Közösségben.
 
-A beépülő modulok és használati hiánya miatt a közösségi összetettsége miatt már nem támogatott egyéni beépülő modulokat a PowerShell Core.
+A beépülő modulok és a Közösségen belüli használat hiányának összetettsége miatt a PowerShell Core-ban már nem támogatottak az egyéni beépülő modulok.
 
-Jelenleg ez megszünteti a `ActiveDirectory` és `DnsClient` modulok a Windows és Windows Server.
+Napjainkban ez megszakítja `DnsClient` a Windows és a `ActiveDirectory` Windows Server-modulokat.
 
 [snapin]: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins
 
-### <a name="wmi-v1-cmdlets"></a>A WMI v1-parancsmagok
+### <a name="wmi-v1-cmdlets"></a>WMI v1-parancsmagok
 
-WMI-alapú modulok két csoportját támogató összetettsége miatt a WMI v1-parancsmagok a PowerShell Core eltávolítottuk:
+A WMI-alapú modulok két csoportja támogatásának összetettsége miatt a PowerShell Core-ból eltávolította a WMI v1-parancsmagokat:
 
 - `Get-WmiObject`
 - `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
 
-Ehelyett azt javasoljuk, hogy Ön a (más néven WMI v2) CIM-parancsmagok, amelyek ugyanazt a funkcionalitást biztosítják rendelkező új funkciókat és a egy áttervezett szintaxis használata:
+Ehelyett azt javasoljuk, hogy használja a CIM (aka WMI v2) parancsmagokat, amelyek ugyanazt a funkciót biztosítják az új funkciókkal és az újratervezett szintaxissal:
 
 - `Get-CimAssociatedInstance`
 - `Get-CimClass`
@@ -58,194 +58,194 @@ Ehelyett azt javasoljuk, hogy Ön a (más néven WMI v2) CIM-parancsmagok, amely
 - `Remove-CimSession`
 - `Set-CimInstance`
 
-### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
+### <a name="microsoftpowershelllocalaccounts"></a>Microsoft. PowerShell. LocalAccounts
 
-Nem támogatott API-k használata miatt `Microsoft.PowerShell.LocalAccounts` el lett távolítva a PowerShell Core mindaddig, amíg egy jobb megoldás található.
+A nem támogatott API-k használata miatt a rendszer `Microsoft.PowerShell.LocalAccounts` eltávolította a PowerShell Core-ból, amíg jobb megoldást nem talál.
 
-### <a name="-computer-cmdlets"></a>`*-Computer` Parancsmagok
+### <a name="-computer-cmdlets"></a>`*-Computer`parancsmagok
 
-Nem támogatott API-k használatát, mert a következő parancsmagokat el lettek távolítva a PowerShell Core mindaddig, amíg egy jobb megoldás található.
+A nem támogatott API-k használata miatt a következő parancsmagok el lettek távolítva a PowerShell Core-ból, amíg nem talál jobb megoldást.
 
-- Add-Computer
+- Számítógép hozzáadása
 - Checkpoint-Computer
-- Remove-Computer
+- Számítógép eltávolítása
 - Visszaállítás – számítógép
 
-### <a name="-counter-cmdlets"></a>`*-Counter` Parancsmagok
+### <a name="-counter-cmdlets"></a>`*-Counter`parancsmagok
 
-Nem támogatott API-k használata miatt a `*-Counter` el lett távolítva a PowerShell Core mindaddig, amíg egy jobb megoldás található.
+A nem támogatott API-k használata miatt a `*-Counter` el lett távolítva a PowerShell Core-ból, amíg nem talál jobb megoldást.
 
-### <a name="-eventlog-cmdlets"></a>`*-EventLog` Parancsmagok
+### <a name="-eventlog-cmdlets"></a>`*-EventLog`parancsmagok
 
-Nem támogatott API-k használata miatt a `*-EventLog` a PowerShell Core el lett távolítva. amíg nem jobb megoldás található. `Get-WinEvent` és `Create-WinEvent` érhetők el, és a Windows eseményeket létrehozásához.
+A nem támogatott API-k használata miatt a `*-EventLog` el lett távolítva a PowerShell Core-ból. egészen addig, amíg nem talál jobb megoldást. `Get-WinEvent`és `Create-WinEvent` elérhetők a Windows rendszerű események beszerzéséhez és létrehozásához.
 
-## <a name="enginelanguage-changes"></a>Összetevő/nyelvi változások
+## <a name="enginelanguage-changes"></a>Motor/nyelvi változások
 
-### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>Nevezze át `powershell.exe` való `pwsh.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
+### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>`powershell.exe`Átnevezés#5101 `pwsh.exe` [](https://github.com/PowerShell/PowerShell/issues/5101)
 
-Annak érdekében, hogy a felhasználóknak engedélyezi a Windows (ellentétben a Windows PowerShell) a PowerShell Core meghívásához determinisztikus módon, a PowerShell Core bináris módosult a `pwsh.exe` a Windows és `pwsh` nem Windows platformokon.
+Ahhoz, hogy a felhasználók determinisztikus a PowerShell Core-t a Windowsban (a Windows PowerShell helyett), a PowerShell Core bináris fájl a Windows és `pwsh.exe` `pwsh` a nem Windows rendszerű platformokra változott.
 
-Akkor használhatja rövidített nevét is – nem Windows platformokon ismertetése az elnevezési összhangban.
+A lerövidített név is konzisztens a nem Windows platformokon lévő rendszerhéjok elnevezésével.
 
-### <a name="dont-insert-line-breaks-to-output-except-for-tables-5193httpsgithubcompowershellpowershellissues5193"></a>Ne szúrjon be a sortörések (kivéve a táblák) kimeneti [#5193](https://github.com/PowerShell/PowerShell/issues/5193)
+### <a name="dont-insert-line-breaks-to-output-except-for-tables-5193httpsgithubcompowershellpowershellissues5193"></a>Ne szúrjon be sortörést a kimenetbe (táblák kivételével) [#5193](https://github.com/PowerShell/PowerShell/issues/5193)
 
-Korábban a szélességét, a konzol kimenete lett igazítva, és sortörések, azaz a kimenet nem get újraformázta várható, ha a terminálon lett méretezve, a konzol tartomány zárószélessége lettek hozzáadva. Ez a változás nem alkalmazták táblákat, a sortörések az oszlopokat, igazítva, szükség szerint.
+A kimenetet korábban a konzol szélessége és a sortörések a konzol végéhez igazították, ami azt jelenti, hogy a kimenet átméretezése nem a várt módon történt, ha a terminál át lett méretezve. Ez a módosítás nem lett alkalmazva a táblákra, mivel a sortörések szükségesek ahhoz, hogy az oszlopok összhangban maradjanak.
 
-### <a name="skip-null-element-check-for-collections-with-a-value-type-element-type-5432httpsgithubcompowershellpowershellissues5432"></a>Hagyja ki a gyűjteményeket, amelyek egy értéktípus elem típusa null-elem keresése [#5432](https://github.com/PowerShell/PowerShell/issues/5432)
+### <a name="skip-null-element-check-for-collections-with-a-value-type-element-type-5432httpsgithubcompowershellpowershellissues5432"></a>NULL értékű elemek keresésének kihagyása az érték típusú elem típusával [#5432](https://github.com/PowerShell/PowerShell/issues/5432)
 
-Az a `Mandatory` paraméter és `ValidateNotNull` és `ValidateNotNullOrEmpty` attribútumok, az elemhez null-ellenőrzés kihagyása, ha a gyűjtemény elem típusa typ hodnoty.
+A paraméter `Mandatory` `ValidateNotNull`ésazattribútumokesetében hagyja ki a null értékű elemet, ha a gyűjtemény elemének típusa értéktípus. `ValidateNotNullOrEmpty`
 
-### <a name="change-outputencoding-to-use-utf-8-nobom-encoding-rather-than-ascii-5369httpsgithubcompowershellpowershellissues5369"></a>Változás `$OutputEncoding` használandó `UTF-8 NoBOM` ASCII helyett kódolás [#5369](https://github.com/PowerShell/PowerShell/issues/5369)
+### <a name="change-outputencoding-to-use-utf-8-nobom-encoding-rather-than-ascii-5369httpsgithubcompowershellpowershellissues5369"></a>Az ASCII- `UTF-8 NoBOM` #5369 helyett használja a kódolást [](https://github.com/PowerShell/PowerShell/issues/5369) `$OutputEncoding`
 
-Az előző kódolással, ASCII (7 bites), a kimenet bizonyos esetekben helytelen lapjával eredményez. Ez a változás, hogy `UTF-8 NoBOM` alapértelmezett, amely Unicode kimeneti megőrzi a legtöbb eszközöket és operációs rendszerek által támogatott kódolást.
+Az előző kódolás, az ASCII (7 bites) helytelenül változtatja meg a kimenetet bizonyos esetekben. Ez a módosítás az `UTF-8 NoBOM` alapértelmezett beállítás, amely a legtöbb eszköz és operációs rendszer által támogatott kódolással megőrzi a Unicode-kimenetet.
 
-### <a name="remove-allscope-from-most-default-aliases-5268httpsgithubcompowershellpowershellissues5268"></a>Távolítsa el `AllScope` a legtöbb alapértelmezett aliasok [#5268](https://github.com/PowerShell/PowerShell/issues/5268)
+### <a name="remove-allscope-from-most-default-aliases-5268httpsgithubcompowershellpowershellissues5268"></a>A `AllScope` legtöbb alapértelmezett alias eltávolítása [#5268](https://github.com/PowerShell/PowerShell/issues/5268)
 
-Hatókör létrehozása, felgyorsítása érdekében `AllScope` legtöbb alapértelmezett aliasok el lett távolítva. `AllScope` maradt néhány gyakran használt aliasok ahol a keresési gyorsabb lett.
+A hatókör-létrehozás `AllScope` felgyorsításához a legtöbb alapértelmezett alias el lett távolítva. `AllScope`néhány gyakran használt alias maradt, ahol a keresés gyorsabb volt.
 
-### <a name="-verbose-and--debug-no-longer-overrides-erroractionpreference-5113httpsgithubcompowershellpowershellissues5113"></a>`-Verbose` és `-Debug` már nem felülbírálások `$ErrorActionPreference` [#5113](https://github.com/PowerShell/PowerShell/issues/5113)
+### <a name="-verbose-and--debug-no-longer-overrides-erroractionpreference-5113httpsgithubcompowershellpowershellissues5113"></a>`-Verbose`és `-Debug` már nem `$ErrorActionPreference` felülbírálja [#5113](https://github.com/PowerShell/PowerShell/issues/5113)
 
-Korábban Ha `-Verbose` vagy `-Debug` van megadva, akkor overrode viselkedését `$ErrorActionPreference`. Ezzel `-Verbose` és `-Debug` már nem befolyásolja a működését `$ErrorActionPreference`.
+Korábban, ha `-Verbose` vagy `-Debug` meg lett adva, a viselkedését `$ErrorActionPreference`átlovagolta. Ezzel a módosítással `-Verbose` `-Debug` a `$ErrorActionPreference`továbbiakban nem befolyásolja a viselkedését.
 
 ## <a name="cmdlet-changes"></a>Parancsmag módosításai
 
-### <a name="invoke-restmethod-doesnt-return-useful-info-when-no-data-is-returned-5320httpsgithubcompowershellpowershellissues5320"></a>Meghívása RestMethod nem ad vissza hasznos információ, ha nem ad vissza. [#5320](https://github.com/PowerShell/PowerShell/issues/5320)
+### <a name="invoke-restmethod-doesnt-return-useful-info-when-no-data-is-returned-5320httpsgithubcompowershellpowershellissues5320"></a>Meghívás – a RestMethod nem ad vissza hasznos információt, ha nem ad vissza adatokat. [#5320](https://github.com/PowerShell/PowerShell/issues/5320)
 
-Ha egy API-t csak adja vissza `null`, Invoke-RestMethod szerializálása volt ez a karakterlánc `"null"` helyett `$null`. Ez a változás javítja a logika `Invoke-RestMethod` megfelelően szerializálni az egyetlen érvényes érték JSON `null` szöveges `$null`.
+Ha egy API `null`-t ad vissza, a meghívó-RestMethod ezt a karakterláncot a `$null`helyett sztringként `"null"` szerializálja. Ez a változás javítja a logikát, hogy megfelelően szerializálja egy érvényes `Invoke-RestMethod` , `null` `$null`egyértékű JSON-literálot a következőként:.
 
-### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Távolítsa el `-Protocol` a `*-Computer` parancsmagok [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Eltávolítás `-Protocol` a`*-Computer` parancsmagokból [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-RPC-táveléréssel CoreFX (különösen a nem Windows platformokon) és a egy egységes távelérése a PowerShellben, biztosítva a problémák miatt a `-Protocol` paraméter el lett távolítva a `\*-Computer` parancsmagok. A DCOM már nem támogatott a távelérése. A következő parancsmagokat csak a wsman által használt távoli eljáráshívás támogatják:
+A CoreFX-alapú RPC távoli eljáráshívás (különösen a nem Windows platformokon) és a PowerShell konzisztens távelérési felületének biztosítása miatt a `-Protocol` paraméter el lett távolítva `\*-Computer` a parancsmagokból. A DCOM már nem támogatott a táveléréshez. A következő parancsmagok csak a WSMAN távelérését támogatják:
 
-- Rename-Computer
-- Számítógép újraindítása
-- Stop-Computer
+- Számítógép átnevezése
+- Újraindítás – számítógép
+- Számítógép leállítása
 
-### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Távolítsa el `-ComputerName` a `*-Service` parancsmagok [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
+### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Eltávolítás `-ComputerName` a`*-Service` parancsmagokból [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
-Annak érdekében, hogy PSRP, konzisztens használatát javasoljuk a `-ComputerName` paraméter el lett távolítva `*-Service` parancsmagok.
+A PSRP egységes használatának elősegítése érdekében a `-ComputerName` paraméter `*-Service` el lett távolítva a parancsmagokból.
 
-### <a name="fix-get-item--literalpath-ab-if-ab-doesnt-actually-exist-to-return-error-5197httpsgithubcompowershellpowershellissues5197"></a>Javítsa ki `Get-Item -LiteralPath a*b` Ha `a*b` ténylegesen nem létezik, hibaüzenetet ad vissza [#5197](https://github.com/PowerShell/PowerShell/issues/5197)
+### <a name="fix-get-item--literalpath-ab-if-ab-doesnt-actually-exist-to-return-error-5197httpsgithubcompowershellpowershellissues5197"></a>Javítsa `Get-Item -LiteralPath a*b` a `a*b` hibát, ha valójában nem létezik a hiba [#5197](https://github.com/PowerShell/PowerShell/issues/5197)
 
-Korábban a `-LiteralPath` helyettesítő karakter a megadott szeretné kezelni, azonos `-Path` , és ha a helyettesítő karakter található fájlokat, a lenne csendes kilép. Megfelelő viselkedését kell lennie, amely `-LiteralPath` egy egyszerű érték, ha a fájl nem létezik, hibát kell végrehajtania. Változás az, hogy kezelje a helyettesítő karakterek használják `-Literal` szerint szövegkonstans.
+Korábban, `-LiteralPath` mivel a helyettesítő karakter ugyanúgy kezeli azt, mint `-Path` ha a helyettesítő karakter nem talált fájlt, a rendszer csendben kizárja. A helyes viselkedésnek konstansnak kell lennie `-LiteralPath` , tehát ha a fájl nem létezik, akkor hiba történik. A módosítás a literálként használt `-Literal` helyettesítő karakterek kezelése.
 
-### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134httpsgithubcompowershellpowershellissues5134"></a>`Import-Csv` a alkalmazni kell `PSTypeNames` típussal kapcsolatos információk esetén a Megosztott fürtköteten importálását követően [#5134](https://github.com/PowerShell/PowerShell/issues/5134)
+### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134httpsgithubcompowershellpowershellissues5134"></a>`Import-Csv`importáláskor `PSTypeNames` kell alkalmazni, ha a típus adatai szerepelnek a CSV- [#5134](https://github.com/PowerShell/PowerShell/issues/5134)
 
-Korábban az exportált objektumokat használatával `Export-CSV` a `TypeInformation` együtt importálja `ConvertFrom-Csv` nem lett megőrizve a típussal kapcsolatos információk. Ez a módosítás hozzáadja a típussal kapcsolatos információk a `PSTypeNames` tag ha rendelkezésre áll a CSV-fájlból.
+Korábban a használatával `Export-CSV` `TypeInformation` exportáltobjektumoknemőrzikmegatípusinformációit.`ConvertFrom-Csv` Ez a változás adja hozzá a típus `PSTypeNames` adatait a tagnak, ha elérhető a csv-fájlból.
 
-### <a name="-notypeinformation-should-be-default-on-export-csv-5131httpsgithubcompowershellpowershellissues5131"></a>`-NoTypeInformation` alapértelmezett kell lennie a `Export-Csv` [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
+### <a name="-notypeinformation-should-be-default-on-export-csv-5131httpsgithubcompowershellpowershellissues5131"></a>`-NoTypeInformation`alapértelmezett értéknek `Export-Csv` kell lennie [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
 
-Ezt a módosítást hajtottak végre a alapértelmezett viselkedését, az ügyfélvisszajelzésekre `Export-CSV` típus információval.
+Ez a módosítás történt a felhasználói visszajelzések megadására az alapértelmezett `Export-CSV` viselkedésével kapcsolatban, hogy tartalmazza a típussal kapcsolatos információkat.
 
-Korábban a parancsmag lenne a kimeneti megjegyzést, az első sor tartalmazza az objektum nevét. A módosítás, akkor nem tudja értelmezni a legtöbb eszközök letiltásához ez alapértelmezés szerint. Használat `-IncludeTypeInformation` megőrzi a korábbi működése.
+Korábban a parancsmag az objektum típusának nevét tartalmazó első sorban kiírja a megjegyzést. A módosítás alapértelmezés szerint letiltja ezt a beállítást, mert a legtöbb eszköz nem értelmezi. A `-IncludeTypeInformation` használatával megtarthatja az előző viselkedést.
 
-### <a name="web-cmdlets-should-warn-when--credential-is-sent-over-unencrypted-connections-5112httpsgithubcompowershellpowershellissues5112"></a>Webes parancsmagok figyelmeztetnek, ha `-Credential` titkosítatlan kapcsolaton keresztül zajlik [#5112](https://github.com/PowerShell/PowerShell/issues/5112)
+### <a name="web-cmdlets-should-warn-when--credential-is-sent-over-unencrypted-connections-5112httpsgithubcompowershellpowershellissues5112"></a>A webes parancsmagoknak figyelmeztetést `-Credential` kell kapniuk, ha titkosítatlan kapcsolaton keresztül küldenek [#5112](https://github.com/PowerShell/PowerShell/issues/5112)
 
-HTTP használata esetén a tartalmat, beleértve a jelszavak tiszta szövegként érkeznek. Ez a változás, hogy nem engedélyezze ez alapértelmezés szerint, és hibát adhat vissza, ha az nem biztonságos módon, hogy átadta a hitelesítő adatok. Felhasználók használatával elkerülheti ezt a `-AllowUnencryptedAuthentication` váltani.
+HTTP használata esetén a tartalmat, beleértve a jelszavakat is, a rendszer tiszta szövegként továbbítja. Ez a módosítás nem engedélyezi ezt alapértelmezés szerint, és nem ad vissza hibát, ha a hitelesítő adatok nem biztonságos módon jutnak át. Ezt a kapcsoló használatával a `-AllowUnencryptedAuthentication` felhasználók kihagyhatják.
 
-## <a name="api-changes"></a>API-módosítás
+## <a name="api-changes"></a>API-változások
 
-### <a name="remove-addtypecommandbase-class-5407httpsgithubcompowershellpowershellissues5407"></a>Távolítsa el `AddTypeCommandBase` osztály [#5407](https://github.com/PowerShell/PowerShell/issues/5407)
+### <a name="remove-addtypecommandbase-class-5407httpsgithubcompowershellpowershellissues5407"></a>Osztály `AddTypeCommandBase` eltávolítása [#5407](https://github.com/PowerShell/PowerShell/issues/5407)
 
-A `AddTypeCommandBase` osztály el lett távolítva `Add-Type` teljesítmény javítása érdekében. Ez az osztály csak az Add-Type parancsmagot használja, és a felhasználók nem érinti.
+Az `AddTypeCommandBase` osztály`Add-Type` el lett távolítva a teljesítmény javítása érdekében. Ezt az osztályt csak az Add-Type parancsmag használja, és nem befolyásolhatja a felhasználókat.
 
-### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080httpsgithubcompowershellpowershellissues5080"></a>Használja őket egységes előtérrendszerként paraméterrel parancsmagok `-Encoding` típusú `System.Text.Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
+### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080httpsgithubcompowershellpowershellissues5080"></a>A (z) paraméterrel `-Encoding` `System.Text.Encoding` rendelkező parancsmagok egyesítése [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
 
-A `-Encoding` érték `Byte` a fájlrendszer-szolgáltató parancsmagjai el lett távolítva. Egy új paraméter `-AsByteStream`, most azt adhatja meg, hogy egy bájt stream szükség, mint bemenet vagy az, hogy a kimenet a stream bájt.
+Az `-Encoding` érték`Byte` el lett távolítva a fájlrendszer-szolgáltatói parancsmagokból. A (z) `-AsByteStream`új paraméterrel megadható, hogy egy bájtos adatfolyam kötelező legyen bemenetként, vagy hogy a kimenet egy bájtos stream.
 
-### <a name="add-better-error-message-for-empty-and-null--uformat-parameter-5055httpsgithubcompowershellpowershellissues5055"></a>Jobb hibaüzenet üres és null hozzáadása `-UFormat` paraméter [#5055](https://github.com/PowerShell/PowerShell/issues/5055)
+### <a name="add-better-error-message-for-empty-and-null--uformat-parameter-5055httpsgithubcompowershellpowershellissues5055"></a>Adjon hozzá jobb hibaüzenetet az üres és `-UFormat` a null paraméterhez [#5055](https://github.com/PowerShell/PowerShell/issues/5055)
 
-Korábban, ha átadja egy üres formázó karakterlánc `-UFormat`, unhelpful hibaüzenet jelent. A kifejezőbb hiba lett hozzáadva.
+Korábban, ha üres formázó karakterláncot adott `-UFormat`át a értékre, egy nem megfelelő hibaüzenet jelenik meg. További leíró hiba lett hozzáadva.
 
-### <a name="clean-up-console-code-4995httpsgithubcompowershellpowershellissues4995"></a>Távolítsa el a konzol kód [#4995](https://github.com/PowerShell/PowerShell/issues/4995)
+### <a name="clean-up-console-code-4995httpsgithubcompowershellpowershellissues4995"></a>A konzol kódjának tisztítása [#4995](https://github.com/PowerShell/PowerShell/issues/4995)
 
-A következő szolgáltatások eltávolítása nem támogatott a PowerShell Core, és nem is léteznek régi okokból Windows PowerShell-támogatás hozzáadása tervezzük: `-psconsolefile` kapcsoló és a kódot, `-importsystemmodules` kapcsoló és a kódot, és a betűtípus módosítása a kódot.
+A következő szolgáltatások el lettek távolítva, mivel azok a PowerShell Core-ban nem támogatottak, és a Windows PowerShell `-psconsolefile` `-importsystemmodules` korábbi okaihoz nem biztosítunk támogatást
 
-### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Eltávolított `RunspaceConfiguration` támogatja [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
+### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>A `RunspaceConfiguration` támogatási [#4942](https://github.com/PowerShell/PowerShell/issues/4942) eltávolítva
 
-Korábban a programozott módon a PowerShell futási térben létrehozásakor az API-val is használhat a régebbi [ `RunspaceConfiguration` ][runspaceconfig] or the newer [`InitialSessionState`][iss]. Ez a változás nem támogatja az `RunspaceConfiguration` , és csak támogatja `InitialSessionState`.
+Korábban, ha az API-val programozott módon hoz létre egy PowerShell-RunSpace, használhatja az [`RunspaceConfiguration`][runspaceconfig] örökölt vagy [`InitialSessionState`][iss]az újabbt. Ez a módosítás eltávolítja a `RunspaceConfiguration` támogatást, és `InitialSessionState`csak a támogatott.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
 
-### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923httpsgithubcompowershellpowershellissues4923"></a>`CommandInvocationIntrinsics.InvokeScript` argumenty kötési `$input` helyett `$args` [#4923](https://github.com/PowerShell/PowerShell/issues/4923)
+### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923httpsgithubcompowershellpowershellissues4923"></a>`CommandInvocationIntrinsics.InvokeScript`argumentumok `$input` kötése [#4923](https://github.com/PowerShell/PowerShell/issues/4923) helyett `$args`
 
-Egy paraméter helytelen pozícióját az átadott argumentum, helyett bemeneti argumentum eredményezett.
+A paraméter helytelen pozíciója az argumentumként átadott argumentumokat eredményezett.
 
-### <a name="remove-unsupported--showwindow-switch-from-get-help-4903httpsgithubcompowershellpowershellissues4903"></a>Távolítsa el a nem támogatott `-showwindow` átállás `Get-Help` [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
+### <a name="remove-unsupported--showwindow-switch-from-get-help-4903httpsgithubcompowershellpowershellissues4903"></a>Nem támogatott `-showwindow` `Get-Help` kapcsoló eltávolítása [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
 
-`-showwindow` WPF-, amely nem támogatott coreclr-nek a támaszkodik.
+`-showwindow`a WPF-re támaszkodik, amely nem támogatott a CoreCLR.
 
-### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>Lehetővé teszi * beállításjegyzékbeli elérési út a használandó `Remove-Item` [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
+### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>A * `Remove-Item` [#4866](https://github.com/PowerShell/PowerShell/issues/4866) beállításjegyzékbeli elérési útján való használatának engedélyezése
 
-Korábban a `-LiteralPath` helyettesítő karakter a megadott szeretné kezelni, azonos `-Path` , és ha a helyettesítő karakter található fájlokat, a lenne csendes kilép. Megfelelő viselkedését kell lennie, amely `-LiteralPath` egy egyszerű érték, ha a fájl nem létezik, hibát kell végrehajtania. Változás az, hogy kezelje a helyettesítő karakterek használják `-Literal` szerint szövegkonstans.
+Korábban, `-LiteralPath` mivel a helyettesítő karakter ugyanúgy kezeli azt, mint `-Path` ha a helyettesítő karakter nem talált fájlt, a rendszer csendben kizárja. A helyes viselkedésnek konstansnak kell lennie `-LiteralPath` , tehát ha a fájl nem létezik, akkor hiba történik. A módosítás a literálként használt `-Literal` helyettesítő karakterek kezelése.
 
-### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Javítsa ki `Set-Service` sikertelen teszt [#4802](https://github.com/PowerShell/PowerShell/issues/4802)
+### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Sikertelen `Set-Service` tesztelési [#4802](https://github.com/PowerShell/PowerShell/issues/4802) javítása
 
-Korábban Ha `New-Service -StartupType foo` használták, `foo` figyelmen kívül lett hagyva, és a szolgáltatás néhány alapértelmezett indítási típus lett létrehozva. Ez a változás, hogy explicit módon throw egy érvénytelen indítási típus hiba.
+Korábban a használatakor a rendszer `foo` figyelmen kívül hagyta a szolgáltatást, és az alapértelmezett indítási típussal lett létrehozva. `New-Service -StartupType foo` Ez a változás egy érvénytelen indítási típus hibájának kifejezett eldobása.
 
-### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>Nevezze át `$IsOSX` való `$IsMacOS` [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
+### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>`$IsOSX`Átnevezés#4700 `$IsMacOS` [](https://github.com/PowerShell/PowerShell/issues/4700)
 
-A PowerShellben elnevezési kell konzisztensek legyenek a kiosztási és felelnek meg az Apple OSX helyett macOS használatát. Azonban az olvashatóság érdekében és következetesen azt tartózkodó Pascal a kis-és nagybetűhasználatot.
+A PowerShellben való elnevezésnek konzisztensnek kell lennie az elnevezéssel, és meg kell felelnie az Apple által az OSX helyett a macOS használatának. Azonban az olvashatóság és a következetesen a Pascal ház marad.
 
-### <a name="make-error-message-consistent-when-invalid-script-is-passed-to--file-better-error-when-passed-ambiguous-argument-4573httpsgithubcompowershellpowershellissues4573"></a>Győződjön meg arról, hibaüzenet jelenik meg konzisztens amikor átadott érvénytelen parancsprogram-fájlt, a hiba, ha a nem egyértelmű argumentum jobb [#4573](https://github.com/PowerShell/PowerShell/issues/4573)
+### <a name="make-error-message-consistent-when-invalid-script-is-passed-to--file-better-error-when-passed-ambiguous-argument-4573httpsgithubcompowershellpowershellissues4573"></a>A hibaüzenet akkor konzisztens, ha a rendszer érvénytelen parancsfájlt ad át a fájlnak, ami jobb, ha kétértelmű argumentumot adott át [#4573](https://github.com/PowerShell/PowerShell/issues/4573)
 
-Módosítsa a kilépési kódot `pwsh.exe` igazodva Unix konvenciók
+A kilépési kódok `pwsh.exe` módosítása a UNIX-egyezményekhez való igazításhoz
 
-### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302httpsgithubcompowershellpowershellissues4302-4303httpsgithubcompowershellpowershellissues4303"></a>Eltávolításának `LocalAccount` és parancsmagjait `Diagnostics` modulok. [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
+### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302httpsgithubcompowershellpowershellissues4302-4303httpsgithubcompowershellpowershellissues4303"></a>A `LocalAccount` és a parancsmagok `Diagnostics` eltávolítása a modulokból. [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
 
-Nem támogatott API-kat, mert a `LocalAccounts` modul és a `Counter` parancsmagok a a `Diagnostics` modul el lettek távolítva, amíg nem jobb megoldás található.
+A nem támogatott API-k miatt a `LocalAccounts` modul és a `Counter` `Diagnostics` modul parancsmagjai el lettek távolítva, amíg nem talál jobb megoldást.
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Logikai paraméter a PowerShell-parancsprogram futtatása nem működik [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>A PowerShell-parancsfájl a bool paraméterrel való végrehajtása nem működik [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Korábban, a **powershell.exe** (mostantól **pwsh.exe**) végrehajtásához egy PowerShell szkriptet az `-File` semmilyen módon nem lehet átadni megadott `$true` / `$false` paraméterként értékek. Támogatja a `$true` / `$false` elemzett értékeket a paraméterekhez hozzá lett adva. Kapcsoló értékeket is támogatottak, ahogy jelenleg dokumentált szintaxis nem működik.
+Korábban a **PowerShell. exe** (most **pwsh. exe**) használatával hajtson végre `-File` egy PowerShell-parancsfájlt a megadott módon `$true` / `$false` a paraméter értékének megadásával. A rendszer `$true` / hozzáadtaaparamétereketazelemzettértékekhez`$false` a paraméterekhez. A váltási értékek is támogatottak, mert a jelenleg dokumentált szintaxis nem működik.
 
-### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Távolítsa el `ClrVersion` tulajdonságot `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
+### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Tulajdonság `ClrVersion` eltávolítása#4027`$PSVersionTable` [](https://github.com/PowerShell/PowerShell/issues/4027)
 
-A `ClrVersion` tulajdonságát `$PSVersionTable` van coreclr-nek nem használható, a végfelhasználók kell nem használja ezt az értéket a kompatibilitás meghatározása.
+`ClrVersion` A`$PSVersionTable` tulajdonsága nem hasznos a CoreCLR, ezért a végfelhasználóknak nem szabad ezt az értéket használni a kompatibilitás megállapításához.
 
-### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019httpsgithubcompowershellpowershellissues4019"></a>Módosítsa a Helyzetbeállító paramétere `powershell.exe` a `-Command` való `-File` [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
+### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019httpsgithubcompowershellpowershellissues4019"></a>Pozíciós paraméter `powershell.exe` módosítása a `-File` - `-Command` ből [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
 
-A nem Windows platformokon shebangje határoz meg PowerShell használatának engedélyezése. Ez azt jelenti, hogy a Unix-alapú rendszerek esetében szeretné meghívni a PowerShell parancsfájl végrehajtható teheti automatikusan ahelyett, hogy explicit módon meghívása `pwsh`. Ez azt is jelenti, hogy most már elvégezhető többek között `powershell foo.ps1` vagy `powershell fooScript` megadása nélkül `-File`. Azonban ez a változás most megköveteli, hogy Ön kifejezetten megad `-c` vagy `-Command` többek között a tett kísérlet során `powershell.exe Get-Command`.
+Engedélyezze a PowerShell shebangje használatát a nem Windows platformokon. Ez azt jelenti, hogy UNIX-alapú rendszereken olyan végrehajtható parancsfájl futtatható, amely nem explicit módon `pwsh`hívja meg a PowerShellt. Ez azt is jelenti, hogy mostantól hasonló `powershell foo.ps1` módon vagy `powershell fooScript` anélkül teheti meg `-File`a műveleteket. Ez a módosítás azonban azt igényli, hogy explicit módon megadhatja `-c` , vagy `-Command` ha olyan műveleteket `powershell.exe Get-Command`próbál végrehajtani, mint a.
 
-### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Unicode escape-elemzés megvalósítása [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
+### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Unicode Escape-elemzési [#3958](https://github.com/PowerShell/PowerShell/issues/3958) implementálása
 
-`` `u####`` vagy `` `u{####}`` megfelelő Unicode-karaktert alakítja át. A kimenetben szövegkonstans `` `u``, a használni kívánt szintaxiskiemelést escape: ``` ``u```.
+`` `u####``vagy `` `u{####}`` a rendszer a megfelelő Unicode-karakterre konvertálja. Egy literál `` `u``kimenetének megmeneküléséhez a kezdő ``` ``u```:.
 
-### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Változás `New-ModuleManifest` kódolási `UTF8NoBOM` nem Windows platformokon [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
+### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>A kódolás módosítása `New-ModuleManifest` a nem Windows platformokra [#3940](https://github.com/PowerShell/PowerShell/issues/3940) `UTF8NoBOM`
 
-Korábban a `New-ModuleManifest` psd1 kiterjesztésű jegyzékek létrehoz az UTF-16-AJ, Linux rendszerű eszközök kerülni létrehozásával. Ez használhatatlanná tévő változás módosítja a kódolását `New-ModuleManifest` UTF (nincs AJ) kell a nem Windows platformokon.
+Korábban a psd1-jegyzékeket hozlétreUTF-16-banazAJ-vel,ésproblémátokozaLinux-eszközökhöz.`New-ModuleManifest` Ez a feltörési változás megváltoztatja `New-ModuleManifest` a kódolást, hogy UTF legyen (nincs AJ) a nem Windows platformokon.
 
-### <a name="prevent-get-childitem-from-recursing-into-symlinks-1875-3780httpsgithubcompowershellpowershellissues3780"></a>Megakadályozása `Get-ChildItem` származó be symlinks recursing (#1875). [#3780](https://github.com/PowerShell/PowerShell/issues/3780)
+### <a name="prevent-get-childitem-from-recursing-into-symlinks-1875-3780httpsgithubcompowershellpowershellissues3780"></a>A `Get-ChildItem` symlink-re való rekurzív (#1875) használatának megakadályozása. [#3780](https://github.com/PowerShell/PowerShell/issues/3780)
 
-Ez a változás csökkenti a `Get-ChildItem` Unix megfelelően további `ls -r` és a Windows `dir /s` natív parancsokat. Az említett parancsokat, mint például a parancsmag jeleníti meg a szimbolikus hivatkozásokat a rekurzió során találhatók címtárak, de nem recurse be őket.
+Ez a változás `Get-ChildItem` többek között a UNIX `ls -r` és a Windows `dir /s` natív parancsaival összhangban áll. Az említett parancsokhoz hasonlóan a parancsmag a rekurzió során talált címtárak szimbolikus hivatkozásait jeleníti meg, de nem veszi át őket.
 
-### <a name="fix-get-content--delimiter-to-not-include-the-delimiter-in-the-returned-lines-3706httpsgithubcompowershellpowershellissues3706"></a>Javítsa ki `Get-Content -Delimiter` nem tartalmazza a kivonni kívánt a visszaadott sorok [#3706](https://github.com/PowerShell/PowerShell/issues/3706)
+### <a name="fix-get-content--delimiter-to-not-include-the-delimiter-in-the-returned-lines-3706httpsgithubcompowershellpowershellissues3706"></a>Javítsa `Get-Content -Delimiter` ki, hogy ne szerepeljen a visszaadott sorok elválasztója [#3706](https://github.com/PowerShell/PowerShell/issues/3706)
 
-Korábban, a kimeneti használata során `Get-Content -Delimiter` inkonzisztens és kényelmetlen lehet, ahogy ez szükséges az elválasztó karakter eltávolítása az adatok további feldolgozás céljából. Ez a változás a elválasztó eltávolítja a visszaadott sorok.
+Korábban a használata `Get-Content -Delimiter` során a kimenet inkonzisztens és nem megfelelő volt, mivel az adatokat további feldolgozást igényel az elválasztó eltávolításához. Ez a módosítás eltávolítja a határolójeleket a visszaadott sorokban.
 
-### <a name="implement-format-hex-in-c-3320httpsgithubcompowershellpowershellissues3320"></a>Hexadecimális formátumban, a megvalósítása C# [#3320](https://github.com/PowerShell/PowerShell/issues/3320)
+### <a name="implement-format-hex-in-c-3320httpsgithubcompowershellpowershellissues3320"></a>Format-HEX C# implementálása [#3320](https://github.com/PowerShell/PowerShell/issues/3320)
 
-A `-Raw` paraméter már "műveletvégzés" (abban, hogy ezt nem semmi sem). Módosítástól minden, a kimenet jelenik meg, amely tartalmazza az összes ehhez a típushoz a bájtok számok igaz reprezentációját (Mi a `-Raw` paraméter hivatalosan ennek során ez a módosítás előtt).
+A `-Raw` paraméter most már "No-op" (nem pedig semmi). Az összes kimenet továbbítása olyan számok valódi ábrázolásával fog megjelenni, amelyek a típushoz tartozó összes bájtot tartalmazzák (amit a `-Raw` paraméter a módosítás előtt formálisan végzett).
 
-### <a name="powershell-as-a-default-shell-doesnt-work-with-script-command-3319httpsgithubcompowershellpowershellissues3319"></a>Egy alapértelmezett rendszerhéját, PowerShell-parancsprogram-utasítás nem működik [#3319](https://github.com/PowerShell/PowerShell/issues/3319)
+### <a name="powershell-as-a-default-shell-doesnt-work-with-script-command-3319httpsgithubcompowershellpowershellissues3319"></a>A PowerShell alapértelmezett rendszerhéjként nem működik a parancsfájl-paranccsal [#3319](https://github.com/PowerShell/PowerShell/issues/3319)
 
-A Unix és a egy fogadására parancsikonja egyezmény `-i` az interaktív shell és a számos eszköz Ez a viselkedés várható (`script` például és beállítása a PowerShell, az alapértelmezett rendszerhéját) és a rendszerhéj-meghívja a `-i` váltson. Ez a változás, amely a megsérti `-i` korábban volt használható rövid aktuális megfelelően `-inputformat`, így kell lennie `-in`.
+UNIX rendszeren a rendszerhéjak egyezménye, amely egy interaktív `-i` rendszerhéj fogadására szolgál, és számos eszköz várja ezt a`script` viselkedést (például a PowerShell alapértelmezett rendszerhéjként való beállításakor), és a `-i` kapcsolóval hívja meg a rendszerhéjat. Ez a változás abban az esetben `-i` kerül betörésre, hogy a korábban a `-inputformat`lehető legrövidebb megegyezéssel `-in`használható.
 
-### <a name="typo-fix-in-get-computerinfo-property-name-3167httpsgithubcompowershellpowershellissues3167"></a>Elírta javítása a Get-ComputerInfo tulajdonságnév [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
+### <a name="typo-fix-in-get-computerinfo-property-name-3167httpsgithubcompowershellpowershellissues3167"></a>Sajtóhiba-javítás a Get-ComputerInfo tulajdonság nevében [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
 
-`BiosSerialNumber` lett írva `BiosSeralNumber` és helyesen van beállítva.
+`BiosSerialNumber`a helytelenül lett beírva, `BiosSeralNumber` és a helyes helyesírásra módosult.
 
-### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Adjon hozzá `Get-StringHash` és `Get-FileHash` parancsmagok [#3024](https://github.com/PowerShell/PowerShell/issues/3024)
+### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Hozzáadás `Get-StringHash` és`Get-FileHash` parancsmagok [#3024](https://github.com/PowerShell/PowerShell/issues/3024)
 
-Ez a változás, hogy néhány kivonatoló algoritmusok CoreFX által nem támogatott, ezért azok már nem érhetők el:
+Ez a változás azt jelenti, hogy egyes kivonatoló algoritmusok nem támogatottak a CoreFX, ezért már nem érhetők el:
 
 - `MACTripleDES`
 - `RIPEMD160`
 
-### <a name="add-validation-on-get--cmdlets-where-passing-null-returns-all-objects-instead-of-error-2672httpsgithubcompowershellpowershellissues2672"></a>Ellenőrzés bekapcsolása `Get-*` parancsmagok, ahol passing $null adja vissza a hiba helyett az összes objektum [#2672](https://github.com/PowerShell/PowerShell/issues/2672)
+### <a name="add-validation-on-get--cmdlets-where-passing-null-returns-all-objects-instead-of-error-2672httpsgithubcompowershellpowershellissues2672"></a>Adja meg `Get-*` az érvényesítést olyan parancsmagokon, amelyeknél a $null a hiba helyett az összes objektumot visszaadja [#2672](https://github.com/PowerShell/PowerShell/issues/2672)
 
-Átmenő `$null` valamelyik a következő egyelőre hibát jelez:
+A `$null` következők valamelyikére való továbbításkor hiba történt:
 
 - `Get-Credential -UserName`
 - `Get-Event -SourceIdentifier`
@@ -263,29 +263,29 @@ Ez a változás, hogy néhány kivonatoló algoritmusok CoreFX által nem támog
 - `Get-WmiObject -Class`
 - `Get-WmiObject -Property`
 
-### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482httpsgithubcompowershellpowershellissues2482"></a>Adja hozzá a W3C bővített naplófájlformátum az támogatási `Import-Csv` [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
+### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482httpsgithubcompowershellpowershellissues2482"></a>A W3C bővített naplófájl-formátum hozzáadása a `Import-Csv` [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
 
-Korábban a `Import-Csv` parancsmag nem használható közvetlenül importálhat a W3C bővített naplóformátumban naplófájlokat, és további művelet lenne szükséges. Ez a változás a W3C bővített naplóformátumban támogatott.
+Korábban a `Import-Csv` parancsmag nem használható a naplófájlok közvetlen importálására a W3C bővített naplózási formátumában, és további műveletre lenne szükség. Ezzel a módosítással a W3C bővített naplózási formátuma támogatott.
 
-### <a name="parameter-binding-problem-with-valuefromremainingarguments-in-ps-functions-2035httpsgithubcompowershellpowershellissues2035"></a>Paraméter kötés problémájára `ValueFromRemainingArguments` a PS-függvények [#2035](https://github.com/PowerShell/PowerShell/issues/2035)
+### <a name="parameter-binding-problem-with-valuefromremainingarguments-in-ps-functions-2035httpsgithubcompowershellpowershellissues2035"></a>Paraméter kötési probléma a `ValueFromRemainingArguments` PS functions-ben [#2035](https://github.com/PowerShell/PowerShell/issues/2035)
 
-`ValueFromRemainingArguments` most adja vissza az értékeket egy tömbként helyett egy érték osztályon van egy tömb.
+`ValueFromRemainingArguments`a most egy tömbként adja vissza az értékeket tömbként, egyetlen érték helyett.
 
-### <a name="buildversion-is-removed-from-psversiontable-1415httpsgithubcompowershellpowershellissues1415"></a>`BuildVersion` eltávolítják az `$PSVersionTable` [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
+### <a name="buildversion-is-removed-from-psversiontable-1415httpsgithubcompowershellpowershellissues1415"></a>`BuildVersion`eltávolítva a `$PSVersionTable` következőből: [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
 
-Távolítsa el a `BuildVersion` tulajdonságot `$PSVersionTable`. Ez a tulajdonság a Windows build-verziószáma kötött. Ehelyett azt javasoljuk, hogy használjon `GitCommitId` a PowerShell Core pontos buildverziója lekéréséhez.
+Távolítsa `BuildVersion` el a `$PSVersionTable`tulajdonságot a következőből:. Ez a tulajdonság a Windows Build verziójához lett kötve. Ehelyett azt javasoljuk, hogy a paranccsal `GitCommitId` kérje le a PowerShell Core pontos Build verzióját.
 
 ### <a name="changes-to-web-cmdlets"></a>Webes parancsmagok módosításai
 
-Az alapul szolgáló .NET API a webes parancsmagok értékre változott `System.Net.Http.HttpClient`. Ez a változás üzenetcsere számos előnnyel jár. Azonban ezt a módosítást, és az Internet Explorer együttműködés hiánya belül több kompatibilitástörő változásokat eredményezték `Invoke-WebRequest` és `Invoke-RestMethod`.
+A webes parancsmagok mögöttes .NET API-t `System.Net.Http.HttpClient`módosították. Ez a változás számos előnyt biztosít. Azonban ez a változás, valamint az Internet Explorer együttműködésének hiánya miatt több megszakítási módosítást eredményezett a `Invoke-WebRequest` és `Invoke-RestMethod`a között.
 
-- `Invoke-WebRequest` mostantól támogatja az alapszintű HTML elemzése csak. `Invoke-WebRequest` mindig adja vissza egy `BasicHtmlWebResponseObject` objektum. A `ParsedHtml` és `Forms` tulajdonságai el lettek távolítva.
-- `BasicHtmlWebResponseObject.Headers` értékek: mostantól `String[]` helyett `String`.
-- `BasicHtmlWebResponseObject.BaseResponse` mostantól egy `System.Net.Http.HttpResponseMessage` objektum.
-- A `Response` webes parancsmag kivételek a tulajdonság már egy `System.Net.Http.HttpResponseMessage` objektum.
-- Az alapértelmezett szigorú RFC fejléc elemzés már a `-Headers` és `-UserAgent` paraméter. Ez is művelet megkerülését eredményezte az `-SkipHeaderValidation`.
-- `file://` és `ftp://` URI sémák nem támogatottak.
-- `System.Net.ServicePointManager` beállítások a rendszer már nem figyelembe véve.
-- Jelenleg nincs Tanúsítványalapú hitelesítés elérhető MacOS-gépeken.
-- Felhasználása `-Credential` keresztül egy `http://` URI-t egy hibát eredményez. Használata egy `https://` URI-t, vagy adja meg a `-AllowUnencryptedAuthentication` paramétert a hibát.
-- `-MaximumRedirection` most hoz létre egy hibát, átirányítás kísérletek-nál nagyobb a megadott korlátot, az utolsó átirányítás eredményeinek visszaadása helyett.
+- `Invoke-WebRequest`a mostantól csak az alapszintű HTML-elemzést támogatja. `Invoke-WebRequest`mindig egy `BasicHtmlWebResponseObject` objektumot ad vissza. A `ParsedHtml` és`Forms` a tulajdonságok el lettek távolítva.
+- `BasicHtmlWebResponseObject.Headers`az értékek mostantól `String[]` a `String`helyett vannak.
+- `BasicHtmlWebResponseObject.BaseResponse`most egy `System.Net.Http.HttpResponseMessage` objektum.
+- A `Response` web cmdlet-kivételek tulajdonsága mostantól egy `System.Net.Http.HttpResponseMessage` objektum.
+- Az RFC-fejléc szigorú elemzése mostantól alapértelmezett a `-Headers` és `-UserAgent` a paraméter esetében. Ezt kihagyhatja a `-SkipHeaderValidation`használatával.
+- `file://`és `ftp://` az URI-sémák már nem támogatottak.
+- `System.Net.ServicePointManager`a beállítások már nem teljesülnek.
+- Jelenleg nem érhető el tanúsítvány alapú hitelesítés macOS rendszeren.
+- Az URI-n `-Credential` `http://` keresztüli használat hibát eredményez. Használjon URI-t, vagy `-AllowUnencryptedAuthentication` adja meg a paramétert a hiba letiltásához. `https://`
+- `-MaximumRedirection`a mostantól megszakítási hibát eredményez, ha az átirányítási kísérletek túllépik a megadott korlátot a legutóbbi átirányítás eredményeinek visszaadása helyett.
