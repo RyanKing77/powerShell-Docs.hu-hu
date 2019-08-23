@@ -1,26 +1,26 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, a konfigurációt, a beállítása
-title: A lekéréses kiszolgálóra konfigurációs azonosítókat (v4 vagy v5) használatával közzététele
-ms.openlocfilehash: 0144fec43d7a8d65b79891567cc0dc3952175343
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, PowerShell, konfigurálás, beállítás
+title: Közzététel a lekérési kiszolgálón konfigurációs azonosítók (v4/V5) használatával
+ms.openlocfilehash: c258814f480b91eba75c7ce9abf70c558f1f469e
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079506"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986574"
 ---
-# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>A lekéréses kiszolgálóra konfigurációs azonosítókat (v4 vagy v5) használatával közzététele
+# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Közzététel a lekérési kiszolgálón konfigurációs azonosítók (v4/V5) használatával
 
-Az alábbi szakaszok azt feltételezik, hogy Ön már beállított egy lekéréses kiszolgálón. Ha nincs beállítva a lekéréses kiszolgálón, használhatja a következő útmutatókat:
+Az alábbi fejezetek feltételezik, hogy már beállított egy lekéréses kiszolgálót. Ha még nem állította be a lekéréses kiszolgálót, az alábbi útmutatók használhatók:
 
 - [DSC SMB-lekérési kiszolgáló beállítása](pullServerSmb.md)
-- [A DSC HTTP-lekérési kiszolgáló beállítása](pullServer.md)
+- [DSC HTTP lekérési kiszolgáló beállítása](pullServer.md)
 
-Minden egyes célcsomóponttal konfigurálható töltse le a konfigurációk, az erőforrásokat, és még jelentést annak állapotát. Ebből a cikkből megtudhatja, hogyan tölthet fel erőforrásokat, így elérhetők tölthető le, és konfigurálja az ügyfeleket, automatikusan erőforrások letöltéséhez. Amikor a csomópont kap keresztül egy hozzárendelt konfigurációs **lekéréses** vagy **leküldéses** (v5), automatikusan letölti az konfigurációjában megadott helyen található az LCM Konfigurálása a szükséges erőforrásokat.
+Mindegyik cél csomópont beállítható úgy, hogy a konfigurációkat, erőforrásokat és az állapotukat is letöltsön. Ebből a cikkből megtudhatja, hogyan tölthet fel erőforrásokat, így letöltheti őket, és konfigurálhatja az ügyfeleket az erőforrások automatikus letöltéséhez. Ha a csomópont kap egy hozzárendelt konfigurációt a lekéréses vagy leküldéses (V5) kapcsolaton keresztül, akkor automatikusan letölti a konfiguráció által igényelt erőforrásokat a helyi Configuration Manager (LCD ChipOnGlas) mezőben megadott helyről.
 
-## <a name="compile-configurations"></a>Compile Configurations
+## <a name="compile-configurations"></a>Konfigurációk fordítása
 
-Az első lépés tárolásához [konfigurációk](../configurations/configurations.md) lekéréses kiszolgálón, hogy ".mof" fájlokba fordítsa őket. Általános, és több ügyfélre vonatkozik, hogy a konfigurációt, használja a `localhost` a csomópont blokkban. Az alábbi példában látható egy konfigurációs shell által használt `localhost` egy adott ügyfél neve helyett.
+A [konfigurációk](../configurations/configurations.md) egy lekéréses kiszolgálón való tárolásának első lépése a `.mof` fájlokba való fordítás. Ahhoz, hogy egy konfiguráció általános legyen, és több ügyfélre is `localhost` érvényes legyen, használja a csomópont-blokkban. Az alábbi példában egy adott ügyfél neve `localhost` helyett egy konfigurációs rendszerhéj látható.
 
 ```powershell
 Configuration GenericConfig
@@ -33,39 +33,39 @@ Configuration GenericConfig
 GenericConfig
 ```
 
-Az általános konfigurációs van lefordítva, miután rendelkeznie kell egy "localhost.mof" fájlt.
+Miután lefordította az általános konfigurációt, rendelkeznie kell egy `localhost.mof` fájllal.
 
 ## <a name="renaming-the-mof-file"></a>A MOF-fájl átnevezése
 
-A lekérési kiszolgálón Configuration ".mof" fájlok **ConfigurationName** vagy **ConfigurationID**. Attól függően, hogy mire szeretné a lekérési ügyfél beállítása lehetősége van egy megfelelően nevezze át a lefordított ".mof" fájlokat az alábbi szakaszt.
+A konfigurációs `.mof` fájlokat a **ConfigurationName** vagy a **ConfigurationID**használatával tárolhatja egy lekérési kiszolgálón. Attól függően, hogy miként szeretné beállítani a lekéréses ügyfeleket, az alábbi szakaszból választhatja ki a lefordított `.mof` fájlok megfelelő átnevezését.
 
 ### <a name="configuration-ids-guid"></a>Konfigurációs azonosítók (GUID)
 
-Nevezze át a "localhost.mof" fájlt kell "<GUID>.mof" fájl. Létrehozhat egy véletlenszerű **Guid** alább, vagy használja a példánál a [új GUID-azonosítója](/powershell/module/microsoft.powershell.utility/new-guid) parancsmagot.
+`localhost.mof` A`<GUID>.mof` fájl átnevezéséhez át kell neveznie a fájlt. Létrehozhat egy véletlenszerű **GUID azonosítót** az alábbi példában vagy a [New-GUID](/powershell/module/microsoft.powershell.utility/new-guid) parancsmag használatával.
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-Kimeneti példa
+Minta kimenete
 
-```output
+```Output
 Guid
 ----
 64856475-939e-41fb-aba5-4469f4006059
 ```
 
-A ".mof" fájlt bármilyen megfelelő módszerrel majd át lehet nevezni. Az alábbi példa a [Rename-cikk](/powershell/module/microsoft.powershell.management/rename-item) parancsmagot.
+Ezt követően bármely elfogadható módszer `.mof` használatával átnevezheti a fájlt. Az alábbi példa az [Átnevezés-Item](/powershell/module/microsoft.powershell.management/rename-item) parancsmagot használja.
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-Használatával kapcsolatos további részletekért **GUID** a környezetben, lásd: [GUID tervezése](/powershell/dsc/secureserver#guids).
+A **GUID** -azonosítók a környezetben történő használatáról további információt a [következő](/powershell/dsc/secureserver#guids)témakörben talál: guids.
 
 ### <a name="configuration-names"></a>Konfigurációs nevek
 
-Nevezze át a "localhost.mof" fájlt kell "<Configuration Name>.mof" fájl. A következő példában az előző szakaszban a konfiguráció nevét használja. A ".mof" fájlt bármilyen megfelelő módszerrel majd át lehet nevezni. Az alábbi példa a [Rename-cikk](/powershell/module/microsoft.powershell.management/rename-item) parancsmagot.
+`localhost.mof` A`<Configuration Name>.mof` fájl átnevezéséhez át kell neveznie a fájlt. A következő példában a rendszer az előző szakasz konfigurációs nevét használja. Ezt követően bármely elfogadható módszer `.mof` használatával átnevezheti a fájlt. Az alábbi példa az [Átnevezés-Item](/powershell/module/microsoft.powershell.management/rename-item) parancsmagot használja.
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
@@ -73,21 +73,23 @@ Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 
 ## <a name="create-the-checksum"></a>Az ellenőrzőösszeg létrehozása
 
-Minden egyes ".mof" fájlt tárolja egy lekéréses kiszolgálón, vagy az SMB-megosztás szükség van még egy társított ".checksum" fájl. Ez a fájl lehetővé teszi, hogy az ügyfelek számára, amikor a társított ".mof" fájl módosult, és újra le kell tölteni.
+A lekéréses kiszolgálón tárolt `.checksum` fájloknak,vagyazSMB-megosztásnakhozzákellrendelnieegytársítottfájlt.`.mof`
+Ez a fájl lehetővé teszi, hogy az `.mof` ügyfelek tudják, mikor módosult a társított fájl, és újra le kell tölteni.
 
-Létrehozhat egy **ellenőrzőösszeg** az a [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) parancsmagot. Futtathat `New-DSCCheckSum` ellen a fájlok egy könyvtárat a `-Path` paraméter. Ha már létezik egy ellenőrzőösszeg, kényszerítheti, hogy az újból létrehozza azt a `-Force` paraméter. Az alábbi példa az előző szakaszban a ".mof" fájlt tartalmazó könyvtár megadva, és használja a `-Force` paraméter.
+A [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) parancsmaggal létrehozhat egy **ellenőrzőösszeget** . `New-DSCCheckSum` A`-Path` paraméter használatával a fájlok könyvtára is futtatható.
+Ha egy ellenőrzőösszeg már létezik, akkor kényszerítheti, hogy újra létrehozza a `-Force` paraméterrel. A következő példa egy könyvtárat adott meg, `.mof` amely az előző szakaszban található fájlt tartalmazza, és `-Force` a paramétert használja.
 
 ```powershell
 New-DscChecksum -Path '.\' -Force
 ```
 
-Nincs kimenet nem jelenik meg, de meg kell jelennie egy "<GUID or Configuration Name>. mof.checksum" fájl.
+A rendszer nem jelenít meg kimenetet, de most egy `<GUID or Configuration Name>.mof.checksum` fájlt kell látnia.
 
-## <a name="where-to-store-mof-files-and-checksums"></a>MOF-fájlok és az ellenőrzőösszegeket tárolására
+## <a name="where-to-store-mof-files-and-checksums"></a>A MOF-fájlok és-ellenőrzőösszegek tárolása
 
-### <a name="on-a-dsc-http-pull-server"></a>On a DSC HTTP Pull Server
+### <a name="on-a-dsc-http-pull-server"></a>DSC HTTP lekéréses kiszolgálón
 
-Amint azt a HTTP-lekérési kiszolgáló beállításakor [DSC HTTP-lekérési kiszolgáló beállítása](pullServer.md), adja meg a könyvtárakat a **ModulePath** és **ConfigurationPath** kulcsok. A **ConfigurationPath** kulcs azt jelzi, ahol minden ".mof" fájlokat kell tárolni. A **ConfigurationPath** azt jelzi, ahol minden ".mof" és ".checksum" fájlok kell tárolni.
+A HTTP lekéréses kiszolgáló beállításakor a [DSC http lekérési kiszolgáló beállítása](pullServer.md)című részben leírtaknak megfelelően meg kell adnia a **ModulePath** és a **ConfigurationPath** kulcsokhoz tartozó címtárakat. A **ModulePath** kulcs azt jelzi, hogy hol kell `.zip` tárolni a modul csomagolt fájljait. A **ConfigurationPath** jelzi, hogy `.mof` hol kell `.checksum` tárolni a fájlokat és a fájlokat.
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -102,7 +104,8 @@ Amint azt a HTTP-lekérési kiszolgáló beállításakor [DSC HTTP-lekérési k
 
 ### <a name="on-an-smb-share"></a>SMB-megosztáson
 
-Lekérési ügyfél SMB-megosztáson használandó beállításakor megadhatja egy **ConfigurationRepositoryShare**. ".Mof" fájlok és a ".checksum" fájlokat kell majd tárolni a **SourcePath** könyvtárat abból a **ConfigurationRepositoryShare** letiltása.
+Ha a lekéréses ügyfelet SMB-megosztás használatára állítja be, akkor meg kell adnia egy **ConfigurationRepositoryShare**.
+Az `.mof` összes fájlt `.checksum` és fájlt a **ConfigurationRepositoryShare** blokkból kell tárolni a **SourcePath** könyvtárban.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -111,16 +114,16 @@ ConfigurationRepositoryShare SMBPullServer
 }
 ```
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-Következő lépésként érdemes lekérni a megadott konfiguráció Pull-ügyfelek konfigurálása. További információkért tekintse meg a következő útmutatókat:
+Ezután konfigurálnia kell a lekéréses ügyfeleket a megadott konfiguráció lekéréséhez. További információkért lásd az alábbi útmutatók egyikét:
 
-- [Konfigurációs azonosítókat (v4) használatával lekérési ügyfél beállítása](pullClientConfigId4.md)
-- [Konfigurációs azonosítókat (v5) használatával lekérési ügyfél beállítása](pullClientConfigId.md)
-- [Konfigurációs nevekkel (v5) lekérési ügyfél beállítása](pullClientConfigNames.md)
+- [Lekérési ügyfél beállítása konfigurációs azonosítók (v4) használatával](pullClientConfigId4.md)
+- [Lekérési ügyfél beállítása konfigurációs azonosítók (V5) használatával](pullClientConfigId.md)
+- [Lekérési ügyfél beállítása konfigurációs nevek (V5) használatával](pullClientConfigNames.md)
 
 ## <a name="see-also"></a>Lásd még:
 
 - [DSC SMB-lekérési kiszolgáló beállítása](pullServerSmb.md)
-- [A DSC HTTP-lekérési kiszolgáló beállítása](pullServer.md)
-- [Csomag és a egy lekéréses kiszolgálót erőforrás feltöltése](package-upload-resources.md)
+- [DSC HTTP lekérési kiszolgáló beállítása](pullServer.md)
+- [Erőforrások becsomagolása és feltöltése egy lekérési kiszolgálóra](package-upload-resources.md)

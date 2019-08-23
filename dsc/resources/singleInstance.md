@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, a konfigurációt, a beállítása
+keywords: DSC, PowerShell, konfigurálás, beállítás
 title: Egypéldányos DSC-erőforrás írása (ajánlott eljárás)
-ms.openlocfilehash: 9494964b1b13eaa082ad5cbc279b4586bb7211cc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4d9e07c6aaa064f808a03d4252e8d352b82183ec
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076565"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986520"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Egypéldányos DSC-erőforrás írása (ajánlott eljárás)
 
->**Megjegyzés:** Ez a témakör ismerteti az ajánlott eljárás, amely lehetővé teszi, hogy csak egy példányban konfigurációban DSC erőforrás meghatározása. Jelenleg nincs ehhez beépített DSC szolgáltatás. Amely a későbbiekben változhatnak.
+>**Megjegyzés:** Ez a témakör egy olyan DSC-erőforrás definiálásának ajánlott eljárását ismerteti, amely csak egyetlen példányt engedélyez a konfigurációban. Jelenleg nincs ilyen beépített DSC-funkció. A későbbiekben változhatnak.
 
-Vannak helyzetek, ahol nem szeretné, hogy a többször használható konfigurációban egy erőforrást. Például az előző megvalósítását a [xTimeZone](https://github.com/PowerShell/xTimeZone) , egy konfigurációt sikerült erőforráshívásnak felelnek meg az erőforrás többször, különböző beállítását minden egyes erőforrás blokkban az időzóna beállítása:
+Vannak olyan helyzetek, amikor nem szeretné, hogy egy erőforrás többször is felhasználható legyen a konfigurációban. Például a [xTimeZone](https://github.com/PowerShell/xTimeZone) erőforrás egy korábbi implementációjában a konfiguráció többször is meghívhatja az erőforrást, és az egyes erőforrás-blokkokban egy másikra állíthatja az időzónát:
 
 ```powershell
 Configuration SetTimeZone
@@ -46,10 +46,10 @@ Configuration SetTimeZone
 }
 ```
 
-Ez a DSC-erőforrás kulcsainak működik módja miatt. Egy erőforrás rendelkeznie kell legalább egy tulajdonsággal. Egy erőforrás-példány egyedi, ha az érték az összes kulcsfontosságú tulajdonságainak egyedi számít. Előző végrehajtása során a [xTimeZone](https://github.com/PowerShell/xTimeZone) erőforrás korábban csak az egyik tulajdonság--**időzóna**, amely szükséges kulcsként. Emiatt egy konfigurációjára, például a fenti lenne fordítása és futtatása figyelmeztetés nélkül. Minden egyes a **xTimeZone** erőforrás blokkok egyedinek számít. Emiatt a konfigurációt a csomópont, oda-vissza az időzóna recyklování többször is alkalmazható.
+Ennek az az oka, hogy a DSC-erőforrás kulcsainak működése folyamatban van. Egy erőforrásnak legalább egy Key tulajdonsággal kell rendelkeznie. Az erőforrás-példány akkor minősül egyedinek, ha az összes kulcsfontosságú tulajdonság értékének kombinációja egyedi. A korábbi implementációjában a [xTimeZone](https://github.com/PowerShell/xTimeZone) -erőforrásnak csak egy tulajdonsága volt – az időzóna, amely szükséges a kulcs megadásához. Emiatt egy konfiguráció, például a fenti, figyelmeztetés nélkül lesz lefordítva és futtatva. A **xTimeZone** összes erőforrás-blokkja egyedinek számít. Ez azt eredményezi, hogy a konfigurációt ismételten alkalmazni kell a csomópontra, majd az időzónát oda-vissza kell tekerni.
 
-Annak érdekében, hogy csak egyszer, az erőforrás egy második tulajdonság hozzáadása megtörtént egy konfigurációt sikerült beállítani egy célcsomóponttal időzónáját **IsSingleInstance**, hogy a kulcstulajdonság vált.
-A **IsSingleInstance** korlátozódott, egyetlen érték "Yes" használatával egy **ValueMap**. Az erőforrás a régi MOF-séma a következő:
+Annak biztosítása érdekében, hogy egy konfiguráció csak egyszer állítsa be a célként megadott csomópont időzónáját, a rendszer frissítette az erőforrást egy második tulajdonság ( **IsSingleInstance**) hozzáadásával, amely a Key tulajdonság lett.
+A **IsSingleInstance** egyetlen értékre (igen) korlátozódott egy **ValueMap**használatával. Az erőforrás régi MOF-sémája a következő volt:
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -59,7 +59,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-Az erőforrás a frissített MOF-séma a következő:
+Az erőforrás frissített MOF-sémája a következő:
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -70,7 +70,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-Az erőforrás-parancsfájl használata az új paramétert is frissítve lett. Itt látható a régi erőforrás parancsfájlt:
+Az erőforrás-parancsfájl az új paraméter használatára is frissült. Az erőforrás-parancsfájl módosítása:
 
 ```powershell
 function Get-TargetResource
@@ -102,10 +102,9 @@ function Get-TargetResource
     $returnValue
 }
 
-
 function Set-TargetResource
 {
-    [CmdletBinding(SupportsShouldProcess=$true)]
+    [CmdletBinding()]
     param
     (
         [parameter(Mandatory = $true)]
@@ -122,24 +121,24 @@ function Set-TargetResource
     #Output the result of Get-TargetResource function.
     $CurrentTimeZone = Get-TimeZone
 
-    if($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
+    Write-Verbose -Message "Replace the System Time Zone to $TimeZone"
+    
+    try
     {
-        try
+        if($CurrentTimeZone -ne $TimeZone)
         {
-            if($CurrentTimeZone -ne $TimeZone)
-            {
-                Write-Verbose -Verbose "Setting the TimeZone"
-                Set-TimeZone -TimeZone $TimeZone}
-            else
-            {
-                Write-Verbose -Verbose "TimeZone already set to $TimeZone"
-            }
+            Write-Verbose -Verbose "Setting the TimeZone"
+            Set-TimeZone -TimeZone $TimeZone
         }
-        catch
+        else
         {
-            $ErrorMsg = $_.Exception.Message
-            Write-Verbose -Verbose $ErrorMsg
+            Write-Verbose -Verbose "TimeZone already set to $TimeZone"
         }
+    }
+    catch
+    {
+        $ErrorMsg = $_.Exception.Message
+        Write-Verbose -Verbose $ErrorMsg
     }
 }
 
@@ -203,7 +202,7 @@ Function Set-TimeZone {
 Export-ModuleMember -Function *-TargetResource
 ```
 
-Figyelje meg, hogy a **időzóna** tulajdonság már nem egy kulcsot. Most, ha egy konfigurációs próbál meg kétszer az időzóna beállítása (a két különböző **xTimeZone** az eltérő blokkokat **időzóna** értékek), konfiguráció fordítása kísérlet hiba miatt:
+Figyelje meg, hogy az időzóna tulajdonság már nem kulcs. Most, ha egy konfiguráció kétszer próbálkozik az időzóna beállításával (két különböző, eltérő időzóna- értékkel rendelkező **xTimeZone** -blokk használatával), a konfiguráció fordítására tett kísérlet hibát okoz:
 
 ```powershell
 Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and

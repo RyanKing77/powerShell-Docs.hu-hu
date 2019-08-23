@@ -1,136 +1,125 @@
 ---
 title: A PowerShell Core támogatási életciklusa
-description: A PowerShell Core támogatási szabályzatok betartatását
+description: A PowerShell Core támogatását szabályozó házirendek
 ms.date: 08/06/2018
-ms.openlocfilehash: b8dd4891ecf245b87c3fe2fa61cd241a12209b57
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 60999ed54ca3be15232ffee3ab0c49cb94873a8f
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854378"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986735"
 ---
 # <a name="powershell-core-support-lifecycle"></a>A PowerShell Core támogatási életciklusa
 
-A PowerShell Core a meghatározott készletét eszközök és -összetevők, amely tartalmazza a szükséges, telepítve van, és külön konfigurálni a Windows Powershellből.
-Így a PowerShell Core nem szerepel a Windows 7/8.1/10 vagy Windows Server licencelési megállapodások.
+A PowerShell Core a Windows PowerShelltől különállóan szállított, telepített és konfigurált eszközök és összetevők különálló készlete. Így a PowerShell Core nem szerepel a Windows 7/8.1/10 vagy a Windows Server licencszerződésekben.
 
-Azonban a PowerShell Core a hagyományos Microsoft támogatási szerződés, beleértve a támogatott [A Premier szintű][], [Microsoft Enterprise-megállapodások][enterprise-agreement], és [Microsoft frissítési garanciával rendelkező][assurance].
-Is fizethet a szolgáltatásért [tanácsadással][] a PowerShell Core ügyfélszolgálatunknak küldött támogatási kérelmet a problémát.
+A PowerShell Core azonban a hagyományos Microsoft-támogatási szerződések keretében támogatott, beleértve a [Premier][], a [Microsoft][enterprise-agreement]nagyvállalati szerződéseit és a [Microsoft frissítési garanciát][assurance].
+A PowerShell Core-hoz nyújtott [segítséget][] a támogatási kérelem bejelentésével is kifizetheti a problémához.
 
 ## <a name="community-support"></a>Közösségi támogatás
 
-Emellett [közösségi támogatás][] a Githubon, ahol egy problémát, programhiba vagy funkcióigénylés fájlt is.
-Ezenkívül előfordulhat, a Közösség más tagjai segítséget az általános [A Microsoft Community][] vagy a Microsoft [PowerShell technikai Közösség][].
-Nincs garancia van, hogy a Közösség cím vagy a probléma megoldásához időben nem kínál.
-Ha azonnali figyelmet igénylő problémával rendelkezik, használja a hagyományos, fizetős támogatási lehetőségek.
+Emellett [közösségi támogatást][] is kínálunk a githubon, ahol a probléma, a hiba vagy a szolgáltatásra vonatkozó kérések is beszerezhetők.
+Emellett a Közösség más tagjaitól is találhat segítséget az általános [Microsoft Közösség][] vagy a Microsoft [PowerShell-technikai Közösség][]számára. Nem vállalunk garanciát arra, hogy a Közösség kellő időben kezeli vagy megoldja a problémát. Ha probléma merül fel, azonnali figyelmet igényel, használja a hagyományos, fizetős támogatási lehetőségeket.
 
-## <a name="lifecycle-of-powershell-core"></a>A PowerShell Core élettartama
+## <a name="lifecycle-of-powershell-core"></a>A PowerShell Core életciklusa
 
-A PowerShell Core kíván bevezetni a [Microsoft Modern életciklus-szabályzat][modern].
-A támogatási életciklusa célja, hogy az ügyfelek naprakészen tartása a legújabb verzióra.
+A PowerShell Core a [Microsoft modern életciklus][modern]-szabályzatát fogadja el. A támogatási életciklus célja, hogy az ügyfelek naprakészen maradjanak a legújabb verziókkal.
 
-A PowerShell Core verzió 6.x ága körülbelül hat havonta frissül (példák: 6.0-s, 6.1, 6.2, stb.)
+A PowerShell Core 6-os. x verziójú ága körülbelül hat havonta frissül (például: 6,0, 6,1, 6,2 stb.)
 
 > [!IMPORTANT]
-> Miután minden egyes új alverzió kiadási támogatás folytatásához hat hónapon belül kell frissíteni.
+> Az új alverziók kiadása után hat hónapon belül frissítenie kell a támogatás folytatását.
 
-Például ha a PowerShell Core 6.1-es kiadás dátuma: 2018. július 1., elvárják, hogy a PowerShell Core 6.1-es verzióját 2019. január 1. támogatás frissítéséhez.
+Ha például a PowerShell Core 6,1-es verziójának kiadása a 2018-es július 1-jén történik, akkor a támogatás fenntartása érdekében várhatóan a PowerShell Core 6,1-ra kell frissítenie. január 2019 1-től.
 
 > [!IMPORTANT]
-> Minden egyes új javítás verziója engedje támogatás folytatásához követő 30 napon belül kell frissíteni.
+> Az új javítások kiadása után 30 napon belül frissítenie kell a támogatást.
 
-Például ha futtatja a PowerShell Core 6.1-es és 6.1.3 fel lett oldva, a 2019. február 19., akkor elvárják, hogy a PowerShell Core 6.1.3 által 2019. március 21., amely támogatás a kiadása után 30 nappal való frissítéséhez.
-Ha bármely javításokat szükség talál, a javítások a következő összegző frissítés elérhető lesz.
+Ha például a PowerShell Core 6,1-et futtatja, és a 6.1.3 a 2019-es február 19-én adták ki, a PowerShell Core 6.1.3-re a 2019-as március 21-én kell frissíteni, amely a kiadás után 30 nappal a támogatás fenntartásához szükséges. Ha a rendszer a szükséges javításokat kéri, a javítások a következő összesített frissítésben jelennek meg.
 
-A Modern életciklus-szabályzat is megköveteli, hogy a Microsoft értesítést ügyfelek 12 hónapig előtt megszűnő támogatás a termék (azaz a PowerShell Core).
+A modern életciklus-szabályzat azt is megköveteli, hogy a Microsoft az ügyfelek számára 12 hónapos értesítést nyújtson a termék (azaz a PowerShell Core) támogatásának megszüntetése előtt.
 
-Idővel várhatóan a alkalmazni a PowerShell Core, a "hosszú távú karbantartási" megközelítést.
-A karbantartási módszert használja, az csak karbantartási és biztonsági frissítések belül egy adott ág/verzióját 6.x támogatását lenne szükség van.
+Végül a PowerShell Core várhatóan a hosszú távú karbantartási megközelítést fogja alkalmazni. Ebben a karbantartási megközelítésben csak a karbantartási és biztonsági frissítéseket kell megkövetelni a 6. x adott ág/verziójának támogatásában.
 
 ## <a name="supported-platforms"></a>Támogatott platformok
 
-Az alábbi táblázat segítségével tekintse meg a platform a verzióját használja a PowerShell Core hivatalosan támogatott.
+Annak ellenőrzéséhez, hogy a PowerShell Core platformja és verziója hivatalosan támogatott-e, tekintse meg a következő táblázatot.
 
-Közösségünkhöz is hozzájárult a csomagokat, az egyes platformok esetében, de ez nem hivatalosan támogatott.
-Ezek a csomagok vannak megjelölve `Community` a táblában.
+A Közösség bizonyos platformokhoz is felvette a csomagokat, de hivatalosan nem támogatott. Ezek a csomagok a táblázatban `Community` látható módon vannak megjelölve.
 
-Felsorolt platformok `Experimental` hivatalosan nem támogatottak, de a Kísérletezési és visszajelzés elérhető.
+A felsorolt `Experimental` platformok nem támogatottak, de kísérletezéshez és visszajelzésekhez is elérhetők.
 
-|                                                   | 6.1         | 6.2         |
+| Platform                                          | 6.1         | 6.2         |
 |---------------------------------------------------|:-----------:|:-----------:|
-| Windows 7, 8.1 és 10                            | Támogatott   | Támogatott   |
+| Windows 7, 8,1 és 10                            | Támogatott   | Támogatott   |
 | Windows Server 2008 R2, 2012 R2, 2016             | Támogatott   | Támogatott   |
-| [A Windows Server féléves csatorna][semi-annual] | Támogatott   | Támogatott   |
-| Ubuntu 16.04 és 18.04                            | Támogatott   | Támogatott   |
-| Ubuntu 18.10 (keresztül Számértékekhez igazodnak, a csomag)                   | Közösségi   | Közösségi   |
+| [Windows Server féléves csatorna][semi-annual] | Támogatott   | Támogatott   |
+| Ubuntu 16,04 és 18,04                            | Támogatott   | Támogatott   |
+| Ubuntu 18,10 (snap-csomagon keresztül)                   | Közösségi   | Közösségi   |
+| Ubuntu 19,04 (snap-csomagon keresztül)                   | Közösségi   | Közösségi   |
 | Debian 9                                          | Támogatott   | Támogatott   |
 | CentOS 7                                          | Támogatott   | Támogatott   |
 | Red Hat Enterprise Linux 7                        | Támogatott   | Támogatott   |
-| openSUSE 42.3                                     | Támogatott   | Támogatott   |
+| openSUSE 42,3                                     | Támogatott   | Támogatott   |
 | Fedora 28                                         | Támogatott   | Támogatott   |
 | macOS 10.12 +                                      | Támogatott   | Támogatott   |
 | Arch                                              | Közösségi   | Közösségi   |
 | Raspbian                                          | Közösségi   | Közösségi   |
 | Kali                                              | Közösségi   | Közösségi   |
-| AppImage (több Linux platformon működik)     | Közösségi   | Közösségi   |
-| [Oszlopokhoz illesztés csomag](https://snapcraft.io/powershell)   | Lásd a megjegyzést    | Lásd a megjegyzést    |
+| AppImage (több Linux platformon is működik)      | Közösségi   | Közösségi   |
+| [Csomag igazítása](https://snapcraft.io/powershell)   | Lásd: Megjegyzés    | Lásd: Megjegyzés    |
 
 > [!NOTE]
-> Oszlopokhoz illesztés csomagok támogatottak ugyanaz, mint a terjesztési futtat a csomagot.
+> Az illesztési csomagok ugyanúgy működnek, mint a csomagot futtató disztribúció.
 
-## <a name="powershell-release-end-of-life"></a>PowerShell kiadás végéhez közeledik
+## <a name="powershell-releases-end-of-life"></a>A PowerShell élettartama megszűnik
 
-Alapján [a PowerShell Core életciklus](#lifecycle-of-powershell-core), az alábbi táblázat tartalmazza a dátumokat, amikor különböző kiadás már nem lesz támogatott.
+A [PowerShell Core életciklusa](#lifecycle-of-powershell-core)alapján a következő táblázat felsorolja azokat a dátumokat, amikor a különböző kiadások már nem lesznek támogatottak.
 
-| Verzió | Élettartam végéhez közeledik                   |
+| Verzió | Élettartam vége                   |
 |---------|-------------------------------|
-| 6.0     | 2019. február 13.             |
-| 6.1     | 2019. szeptember 28.            |
-| 6.2     | 6 hónapon belül 7-kiadások     |
+| 6.0     | Február 13., 2019             |
+| 6.1     | Szeptember 28., 2019            |
+| 6.2     | 6 hónappal 7 kiadás után     |
 
-## <a name="platforms-which-are-out-of-support"></a>A nem támogatott platformokon
+## <a name="unsupported-platforms"></a>Nem támogatott platformok
 
-Amikor egy platformverzió eléri a teljes életciklusa, a platform tulajdonosa által meghatározott, a PowerShell Core is megszűnik a platform verzió támogatására.
-Korábban kiadott csomagok továbbra is elérhető marad a hozzáférés, de a hivatalos támogatási ügyfeleket, és bármilyen típusú frissítések már nem adható meg.
+Ha egy platform verziója a platform tulajdonosa által meghatározott élettartamot ér el, a PowerShell Core is megszűnik a platform verziójának támogatásához. A korábban kiadott csomagok továbbra is elérhetők lesznek azon ügyfelek számára, akiknek hozzáférésre van szükségük, de a formális támogatás és az ilyen jellegű frissítések már nem lesznek biztosítva.
 
-Így a terjesztési tulajdonosai a következő verziók támogatása véget ért, és nem támogatottak.
+Így a terjesztési tulajdonosok a következő verziókra vonatkozóan befejezték a támogatást, és nem támogatottak.
 
-| Operációs rendszer       | Verzió | Élettartam végéhez közeledik                                                                                 |
+| Platform | Verzió | Elhasználódott                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 24      | [2017. augusztus](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| Fedora   | 25      | [2017. december](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 24      | [Augusztus 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| Fedora   | 25      | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 26      | [2018. május](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | openSUSE | 42.1    | [2017. május](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| openSUSE | 42.2    | [2018. január](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
-| Ubuntu   | 16.10   | [2017. július](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
-| Ubuntu   | 17.04   | [2018. január](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
-| Ubuntu   | 17.10   | [2018. július](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
-| Debian   | 8       | [2018. június](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
-| Fedora   | 27      | [A 2018. november](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
+| openSUSE | 42,2    | [Január 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Ubuntu   | 16,10   | [Július 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17,04   | [Január 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17,10   | [Július 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
+| Debian   | 8       | [Június 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
+| Fedora   | 27      | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
 | Ubuntu   | 14.04   | [Április 2019](https://wiki.ubuntu.com/Releases)                                              |
 
-## <a name="notes-on-licensing"></a>Tudnivalók a licencelés
+## <a name="notes-on-licensing"></a>Megjegyzések a licenceléshez
 
-A PowerShell Core alatt jelent a [MIT licenccel][].
-Jelen licenc, és egy fizetős támogatási megállapodás nélkül, a felhasználók korlátozva, [közösségi támogatás][].
-Közösségi támogatás, a Microsoft nem vállal garanciát válaszkészségének vagy javításokat nem.
+A PowerShell Core az [mit licenc][]alatt jelenik meg. A licenc keretében és a fizetős támogatási szerződés nélkül a felhasználók a [közösségi támogatást][]korlátozódnak. A közösségi támogatással a Microsoft nem vállal garanciát a válaszadásra vagy a javításokra.
 
 ## <a name="windows-powershell-module"></a>Windows PowerShell-modul
 
-Támogatja a PowerShell Core nem tartalmazza a termék-modulok, ha az ilyen modulokhoz explicit módon támogatja a PowerShell Core.
-Például a `ActiveDirectory` modul részét képező Windows Server része nem támogatott forgatókönyv szerint.
+A PowerShell Core-támogatás nem tartalmazza a termék moduljait, kivéve, ha ezek a modulok kifejezetten támogatják a PowerShell Core-t. Például a `ActiveDirectory` Windows Server részét képező modul használata nem támogatott forgatókönyv.
 
-Előfordulhat azonban, a PowerShell Core explicit módon nem támogató modulok kompatibilis bizonyos esetekben.
-Telepítse a [ `WindowsPSModulePath` ][] modult, hozzáadhatja a Windows PowerShell `PSModulePath` , a PowerShell Core `PSModulePath`.
+Bizonyos esetekben azonban a PowerShell Core-t nem támogató modulok is kompatibilisek lehetnek. A [`WindowsPSModulePath`][] modul telepítésével felveheti a Windows PowerShellt `PSModulePath` a PowerShell Core `PSModulePath`-ba.
 
-Először telepítse a `WindowsPSModulePath` modul a PowerShell-galériából:
+Először telepítse a `WindowsPSModulePath` modult a PowerShell-galériaról:
 
 ```powershell
 # Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
-Ez a modul telepítése után futtassa a `Add-WindowsPSModulePath` adja hozzá a Windows PowerShell-parancsmagot `PSModulePath` a PowerShell Core:
+A modul telepítése után a `Add-WindowsPSModulePath` parancsmag futtatásával adja hozzá a Windows PowerShellt `PSModulePath` a PowerShell Core-hoz:
 
 ```powershell
 # Add this line to your profile if you always want Windows PowerShell PSModulePath
@@ -139,18 +128,18 @@ Add-WindowsPSModulePath
 
 ## <a name="experimental-features"></a>Kísérleti funkciók
 
-[Kísérleti funkciók][] korlátozódnak [közösségi támogatás](#community-support).
+A [kísérleti funkciók][] a [közösségi támogatásra](#community-support)korlátozódnak.
 
-[A Premier szintű]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
+[Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
-[Közösségi támogatás]: https://github.com/powershell/powershell/issues
-[A Microsoft Community]: https://answers.microsoft.com/
-[PowerShell technikai Közösség]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
-[tanácsadással]: https://support.microsoft.com/assistedsupportproducts
+[közösségi támogatást]: https://github.com/powershell/powershell/issues
+[Microsoft Közösség]: https://answers.microsoft.com/
+[PowerShell-technikai Közösség]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[segítséget]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
-[MIT licenccel]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[MIT licenc]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+['WindowsPSModulePath']: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Kísérleti funkciók]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures

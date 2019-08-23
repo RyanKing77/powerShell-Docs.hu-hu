@@ -1,33 +1,33 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, a konfigurációt, a beállítása
+keywords: DSC, PowerShell, konfigurálás, beállítás
 title: A DSC jelentéskészítő kiszolgálójának használata
-ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1ccd4f96b782b41b7d7c953735cb41b3ba3d2bce
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079234"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986549"
 ---
 # <a name="using-a-dsc-report-server"></a>A DSC jelentéskészítő kiszolgálójának használata
 
-A következőkre vonatkozik: Windows PowerShell 5.0
+Érvényes: Windows PowerShell 5,0
 
 > [!IMPORTANT]
-> A lekéréses kiszolgálón (Windows-szolgáltatás *DSC-szolgáltatás*), a Windows Server támogatott összetevője létezik azonban tervekben sem funkciókat és képességeket kínálnak. Javasoljuk, hogy helyeződnek felügyelt ügyfelek [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (beleértve a lekéréses kiszolgálón a Windows Server csomagban) vagy a közösségi megoldások felsorolt [Itt](pullserver.md#community-solutions-for-pull-service).
+> A lekérési kiszolgáló (Windows *-szolgáltatás DSC-Service*) a Windows Server támogatott összetevője, azonban nincsenek új funkciók vagy képességek kínáló csomagok. Ajánlott megkezdeni a felügyelt ügyfelek átváltását [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) -re (beleértve a Windows Serveren futó lekéréses kiszolgálón túli szolgáltatásokat) vagy az [itt](pullserver.md#community-solutions-for-pull-service)felsorolt közösségi megoldások egyikét.
 >
 > [!NOTE]
-> A jelen témakörben található jelentéskészítő kiszolgáló nem érhető el a PowerShell 4.0-s verzióját.
+> A jelen témakörben ismertetett jelentéskészítő kiszolgáló nem érhető el a PowerShell 4,0-ben.
 
-A helyi Configuration Manager (LCM) Konfigurálása a csomópont beállítható úgy, hogy a konfiguráció állapotára vonatkozó jelentések küldése egy lekéréses kiszolgálóra, amely lekérdezhetők az adatok lekéréséhez. Minden alkalommal, amikor a csomópont ellenőrzi, és alkalmazza a konfigurációt, küld egy jelentést a jelentéskészítő kiszolgálón. Ezek a jelentések egy adatbázist a kiszolgálón vannak tárolva, és a jelentéskészítő webszolgáltatáshoz meghívásával lekérhető. Az egyes jelentések tartalmaz információkat, például alkalmazott mely konfigurációkat, és azok sikeres volt-e, használja az erőforrásokat, esetlegesen előforduló hibák fordultak elő, és indítsa el, és a befejezési idő.
+A csomópontok helyi Configuration Manager (LCD ChipOnGlas) beállítható úgy, hogy a konfigurációs állapotáról jelentéseket küldjön egy lekéréses kiszolgálónak, amely ezután lekérdezhető az adott adat lekéréséhez. Minden alkalommal, amikor a csomópont ellenőrzi és alkalmazza a konfigurációt, jelentést küld a jelentéskészítő kiszolgálónak. Ezeket a jelentéseket a rendszer egy adatbázisban tárolja a-kiszolgálón, és a jelentéskészítő webszolgáltatás meghívásával kérhető le. Minden jelentés olyan információkat tartalmaz, mint például az alkalmazott konfigurációk, és hogy sikeresek voltak-e, a felhasznált erőforrások, az eldobott hibák, valamint az Indítás és a Befejezés időpontja.
 
-## <a name="configuring-a-node-to-send-reports"></a>Egy csomópont küldeni a jelentéseket konfigurálása
+## <a name="configuring-a-node-to-send-reports"></a>Csomópont konfigurálása jelentések küldéséhez
 
-Egy csomópont küldeni a jelentéseket egy kiszolgálót a használatával megadhatja egy **ReportServerWeb** blokkolja a csomópont LCM konfigurálása a (További információ az LCM konfigurálása: [a Local Configuration Manager](../managing-nodes/metaConfig.md) ). Lekérési kiszolgáló (nem küld jelentéseket egy SMB-megosztás), a kiszolgáló, amelyhez a csomópont küld jelentéseket kell beállítani. Lekérési kiszolgáló beállításával kapcsolatos további információkért lásd: [DSC lekérési kiszolgáló beállítása](pullServer.md). A jelentéskészítő kiszolgáló ugyanazt a szolgáltatást, amelyből a csomópont lekéri a konfigurációt, és megjeleníti az erőforrást, vagy lehet egy másik szolgáltatás.
+Ha azt szeretné, hogy egy csomópont egy **ReportServerWeb** blokk használatával küldjön jelentéseket egy kiszolgálónak a csomópont LCD-konfigurációjában (az LCD-k konfigurálásával kapcsolatban lásd: [a helyi Configuration Manager konfigurálása](../managing-nodes/metaConfig.md)). A kiszolgálót, amelyhez a csomópont küld jelentéseket, webes lekéréses kiszolgálónak kell beállítani (nem küldhet jelentéseket SMB-megosztásra). A lekéréses kiszolgáló beállításával kapcsolatos információkért lásd: [DSC webes lekéréses kiszolgáló beállítása](pullServer.md). A jelentéskészítő kiszolgáló lehet ugyanaz a szolgáltatás, amelyről a csomópont lekéri a konfigurációkat, és erőforrásokat kap, vagy más szolgáltatás lehet.
 
-Az a **ReportServerWeb** letiltása, akkor adja meg az URL-címét a lekérési szolgáltatást és az ismert, hogy a kiszolgáló regisztrációs kulcsot.
+A **ReportServerWeb** blokkban meg kell adnia a lekéréses szolgáltatás URL-címét és a kiszolgáló által ismert regisztrációs kulcsot.
 
-Az alábbi beállításokkal konfigurálja a pull-konfigurációkat csomópont egy szolgáltatásból, és küldeni a jelentéseket a szolgáltatás egy másik kiszolgálóra.
+A következő konfiguráció úgy konfigurálja a csomópontot, hogy lekérje a konfigurációk egyik szolgáltatásból való lekérését, és jelentéseket küldjön egy másik kiszolgálón lévő szolgáltatásnak.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ configuration ReportClientConfig
 
         ReportServerWeb CONTOSO-ReportSrv
         {
-            ServerURL               = 'http://CONTOSO-REPORT:8080/PSDSCReportServer.svc'
+            ServerURL               = 'http://CONTOSO-REPORT:8080/PSDSCPullServer.svc'
             RegistrationKey         = 'ba39daaa-96c5-4f2f-9149-f95c46460faa'
             AllowUnsecureConnection = $true
         }
@@ -61,7 +61,7 @@ configuration ReportClientConfig
 ReportClientConfig
 ```
 
-A következő konfigurációt konfigurálja egy csomópontot egy egykiszolgálós használandó konfigurációk, az erőforrások és a jelentéskészítés.
+A következő konfiguráció úgy konfigurálja a csomópontot, hogy egyetlen kiszolgálót használjon a konfigurációkhoz, az erőforrásokhoz és a jelentéskészítéshez.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -94,16 +94,16 @@ PullClientConfig
 ```
 
 > [!NOTE]
-> Nevet adhat a webszolgáltatás akármilyen területen is szüksége van, amikor egy lekéréses kiszolgálót beállította, de a **ServerURL** tulajdonságának meg kell egyeznie a szolgáltatás nevét.
+> A webszolgáltatást a lekéréses kiszolgáló beállításakor is elnevezheti, de a **ServerURL** tulajdonságnak meg kell egyeznie a szolgáltatás nevével.
 
-## <a name="getting-report-data"></a>A jelentés adatainak lekérése
+## <a name="getting-report-data"></a>Jelentésadatok beolvasása
 
-A lekéréses kiszolgálóra küldött jelentések bekerülnek egy adatbázist a kiszolgálón. A jelentések a webszolgáltatás hívásainak keresztül érhetők el. Egy adott csomópont jelentések lekéréséhez a HTTP-kérelem küldése a jelentéskészítő webszolgáltatás a következő formátumban: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
-ahol `MyNodeAgentId` a csomópont, amelynek meg szeretné jelentések lekérése a ügynökazonosító van. Megtekintheti a ügynökazonosító egy csomópont meghívásával [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) ezen a csomóponton.
+A lekérési kiszolgálónak elküldett jelentéseket a rendszer egy adatbázisba írja be a kiszolgálón. A jelentések a webszolgáltatás hívásával érhetők el. Egy adott csomópont jelentésének lekéréséhez küldjön egy HTTP-kérelmet a jelentés webszolgáltatásának a következő formában:`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+ahol `MyNodeAgentId` az a csomópont ügynökazonosító, amelyhez jelentést szeretne kapni. A csomópont ügynökazonosító lekéréséhez hívja meg a [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) ezen a csomóponton.
 
-A jelentéseket a rendszer JSON-objektumok tömbjeként adja vissza.
+A jelentések JSON-objektumok tömbje lesznek visszaadva.
 
-A következő parancsfájl a csomópont, amelyen fut a jelentések adja vissza:
+A következő parancsfájl a futtatott csomópont jelentéseit adja vissza:
 
 ```powershell
 function GetReport
@@ -123,9 +123,9 @@ function GetReport
 }
 ```
 
-## <a name="viewing-report-data"></a>A jelentés adatainak megtekintése
+## <a name="viewing-report-data"></a>Jelentési információ megtekintése
 
-Ha a változó eredménye a **GetReport** függvény, megtekintheti az egyes mezők a visszaadott tömb elem:
+Ha változót állít be a **GetReport** függvény eredményére, megtekintheti az egyes mezőket a visszaadott tömb elemeiben:
 
 ```powershell
 $reports = GetReport
@@ -166,14 +166,14 @@ StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Ad
 AdditionalData       : {}
 ```
 
-Alapértelmezés szerint a jelentések szerint vannak rendezve **JobID**. A legutolsó jelentés lekéréséhez a jelentések szerint rendezve csökkenő **StartTime** tulajdonság, majd a get az első elem a tömb:
+Alapértelmezés szerint a jelentések a **JobID**szerint vannak rendezve. A legfrissebb jelentés beszerzéséhez rendezheti a jelentéseket csökkenő kezdési tulajdonság szerint , majd beolvashatja a tömb első elemét:
 
 ```powershell
 $reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
-Figyelje meg, hogy a **StatusData** tulajdonság számos tulajdonságot tartalmazó objektumot. Ez a ahol szinte a jelentési adatokat. Az egyes mezőkhöz, nézzük meg a **StatusData** tulajdonság a legutóbbi jelentés:
+Figyelje meg, hogy a **StatusData** tulajdonság számos tulajdonsággal rendelkező objektum. A jelentéskészítési adatmennyiség nagy része. Nézzük meg a legutóbbi jelentés **StatusData** tulajdonságának egyes mezőit:
 
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
@@ -213,7 +213,7 @@ Locale                     : en-US
 Mode                       : Pull
 ```
 
-Ez a többek között a, hogy a legfrissebb konfigurálási nevű két erőforrás és, hogy az egyiket a kívánt állapotban volt, és nem volt az egyiket jeleníti meg. Beszerezheti a tárolópéldányhoz kimenete csak a **ResourcesNotInDesiredState** tulajdonság:
+Ez többek között azt mutatja, hogy a legújabb konfiguráció két erőforrásnak nevezett, és hogy ezek egyike a kívánt állapotban volt, és egyikük sem volt. A **ResourcesNotInDesiredState** tulajdonságnak csak olvasható kimenete lehet:
 
 ```powershell
 $statusData.ResourcesInDesiredState
@@ -233,12 +233,12 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-Vegye figyelembe, hogy ezek a példák van kialakítva, hogy kiválasztani, mire képes a jelentés adataival. Megismerni a JSON a PowerShellben való használatáról, tekintse meg [JSON és a PowerShell segítségével játszott](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
+Vegye figyelembe, hogy ezek a példák azt mutatják be, hogy mit tehet a jelentésekkel kapcsolatos adattal. A JSON a PowerShellben való használatáról további információt a következő témakörben talál: a [JSON és a PowerShell lejátszása](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
 ## <a name="see-also"></a>Lásd még:
 
-[A helyi Configuration Manager](../managing-nodes/metaConfig.md)
+[A helyi Configuration Manager konfigurálása](../managing-nodes/metaConfig.md)
 
-[DSC lekérési kiszolgáló beállítása](pullServer.md)
+[DSC web pull-kiszolgáló beállítása](pullServer.md)
 
 [Lekérési ügyfél beállítása konfigurációs nevekkel](pullClientConfigNames.md)

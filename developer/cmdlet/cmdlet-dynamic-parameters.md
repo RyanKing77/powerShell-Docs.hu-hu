@@ -1,5 +1,5 @@
 ---
-title: A parancsmag dinamikus paraméterek |} A Microsoft Docs
+title: Parancsmag dinamikus paramétereinek | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,44 +8,44 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
 caps.latest.revision: 13
-ms.openlocfilehash: 2fc73b6ef5a862fafb7a3c8fe3da19ac71bafc05
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19d31f6b619dff23e7e35bb53d2397f4f41eb728
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068538"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986252"
 ---
-# <a name="cmdlet-dynamic-parameters"></a>Parancsmagok dinamikus paraméterei
+# <a name="cmdlet-dynamic-parameters"></a>Parancsmag dinamikus paraméterei
 
-Parancsmagok speciális körülmények, például ha egy másik paraméter argumentuma egy adott érték a felhasználó számára elérhető paramétereket adhatja meg. Ezek a paraméterek futásidőben kerülnek, és nevezzük *dinamikus paraméterek* mert csak szükség esetén kerül. Például, amely hozzáad számos paraméter csak akkor, ha egy adott kapcsoló paraméter meg van adva a parancsmag is tervezhet.
+A parancsmagok meghatározhatják azokat a paramétereket, amelyek a felhasználó számára speciális feltételek mellett érhetők el, például ha egy másik paraméter argumentuma egy adott érték. Ezeket a paramétereket a rendszer futásidőben adja hozzá, és dinamikus paramétereknek nevezzük, mivel ezek csak szükség esetén lesznek hozzáadva. Tervezhet például olyan parancsmagot, amely több paramétert ad meg, ha meg van adva egy adott kapcsoló paraméter.
 
 > [!NOTE]
-> A szolgáltatók és a Windows PowerShell-funkciók is megadhatók a dinamikus paraméterek.
+> A szolgáltatók és a PowerShell-függvények dinamikus paramétereket is meghatározhatnak.
 
-## <a name="dynamic-parameters-in-windows-powershell-cmdlets"></a>Dinamikus paraméterek a Windows PowerShell-parancsmagok
+## <a name="dynamic-parameters-in-powershell-cmdlets"></a>Dinamikus paraméterek a PowerShell-parancsmagokban
 
-Windows PowerShell számos, a szolgáltató parancsmagjai a dinamikus paramétereket használja. Például a `Get-Item` és `Get-ChildItem` parancsmagok hozzáadása egy `CodeSigningCert` futásidőben paraméter során a `Path` a parancsmag tanúsítvány szolgáltató elérési útját adja meg. Ha a `Path` a parancsmag elérési útja a másik szolgáltatóhoz, a `CodeSigningCert` paraméter nem érhető el.
+A PowerShell dinamikus paramétereket használ számos szolgáltatói parancsmagban. A és `Get-Item` `Get-ChildItem` a parancsmag például a **CodeSigningCert** paramétert adja hozzá futásidőben, ha a **path** paraméter megadja a **hitelesítésszolgáltató** elérési útját. Ha a **path** paraméter egy másik szolgáltató elérési útját határozza meg, a **CodeSigningCert** paraméter nem érhető el.
 
-Az alábbi példák mutatják a `CodeSigningCert` paraméter futásidőben kerül során a `Get-Item` parancsmagot futtatja.
+Az alábbi példák `Get-Item` azt mutatják be, hogy a **CodeSigningCert** paraméter Hogyan vehető fel futásidőben a futtatáskor.
 
-Az első példában a Windows PowerShell-modul hozzá van adva a paramétert, és a parancsmag sikeres.
+Ebben a példában a PowerShell-futtatókörnyezet hozzáadta a paramétert, és a parancsmag sikeres.
 
 ```powershell
-Get-Item -Path cert:\CurrentUser -codesigningcert
+Get-Item -Path cert:\CurrentUser -CodeSigningCert
 ```
 
-```output
+```Output
 Location   : CurrentUser
 StoreNames : {SmartCardRoot, UserDS, AuthRoot, CA...}
 ```
 
-A második példában egy fájlrendszer meghajtón van megadva, és hibát ad vissza. A hibaüzenet azt jelzi, hogy a `CodeSigningCert` paraméter nem található.
+Ebben a példában egy **fájlrendszer** -meghajtó van megadva, és a rendszer hibát ad vissza. A hibaüzenet azt jelzi, hogy a **CodeSigningCert** paraméter nem található.
 
 ```powershell
-Get-Item -Path C:\ -codesigningcert
+Get-Item -Path C:\ -CodeSigningCert
 ```
 
-```output
+```Output
 Get-Item : A parameter cannot be found that matches parameter name 'codesigningcert'.
 At line:1 char:37
 +  get-item -path C:\ -codesigningcert <<<<
@@ -56,17 +56,23 @@ At line:1 char:37
 
 ## <a name="support-for-dynamic-parameters"></a>Dinamikus paraméterek támogatása
 
-Támogatja a dinamikus paraméterek, a parancsmag kódot a következő elemeket kell tartalmaznia.
+A dinamikus paraméterek támogatásához a következő elemeknek szerepelniük kell a parancsmag kódjában.
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters) Ez az interfész biztosít a módszert, amelyet a dinamikus paraméterek kérdezi le.
+### <a name="interface"></a>Interfész
 
-Példa:
+[System. Management. Automation. IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters).
+Ez az interfész biztosítja a dinamikus paraméterek lekérésére szolgáló metódust.
+
+Például:
 
 `public class SendGreetingCommand : Cmdlet, IDynamicParameters`
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) a metódus lekér az objektum, amely a dinamikus paraméterek kapcsolatos definíciókat tartalmazza.
+### <a name="method"></a>Módszer
 
-Példa:
+[System. Management. Automation. IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters).
+Ez a metódus lekéri a dinamikus paraméterek definícióit tartalmazó objektumot.
+
+Például:
 
 ```csharp
  public object GetDynamicParameters()
@@ -81,9 +87,11 @@ Példa:
 private SendGreetingCommandDynamicParameters context;
 ```
 
-Dinamikus paraméter osztály Ez az osztály a paraméterek hozzáadandó határozza meg. Ez az osztály egyes paramétereket és a nem kötelező Alias és az érvényesítési attribútumokat, amelyek szükségesek a parancsmag egy paraméter attribútum tartalmaznia kell.
+### <a name="class"></a>Osztály
 
-Példa:
+Egy osztály, amely meghatározza a hozzáadandó dinamikus paramétereket. Ennek az osztálynak tartalmaznia kell egy **paraméter** -attribútumot az egyes paraméterekhez, valamint a parancsmaghoz szükséges nem kötelező **aliasokat** és **érvényesítési** attribútumokat.
+
+Például:
 
 ```csharp
 public class SendGreetingCommandDynamicParameters
@@ -99,14 +107,14 @@ public class SendGreetingCommandDynamicParameters
 }
 ```
 
-Egy parancsmag, amely támogatja a dinamikus paraméterek egy teljes példa: [deklarálja a dinamikus paraméterek hogyan](./how-to-declare-dynamic-parameters.md).
+A dinamikus paramétereket támogató parancsmagok teljes példáját a [dinamikus paraméterek deklarálása](./how-to-declare-dynamic-parameters.md)című témakörben tekintheti meg.
 
 ## <a name="see-also"></a>Lásd még:
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
+[System. Management. Automation. IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
+[System. Management. Automation. IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
 
-[Hogyan deklarálja a dinamikus paraméterek](./how-to-declare-dynamic-parameters.md)
+[Dinamikus paraméterek deklarálása](./how-to-declare-dynamic-parameters.md)
 
-[Egy Windows PowerShell-parancsmag írása](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell-parancsmag írása](./writing-a-windows-powershell-cmdlet.md)

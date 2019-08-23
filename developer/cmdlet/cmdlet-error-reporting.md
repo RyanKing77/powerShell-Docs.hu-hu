@@ -1,5 +1,5 @@
 ---
-title: A parancsmag a hibajelentés |} A Microsoft Docs
+title: Parancsmag-hibajelentés | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -14,79 +14,80 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068589"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986319"
 ---
-# <a name="cmdlet-error-reporting"></a>Parancsmagok hibajelentése
+# <a name="cmdlet-error-reporting"></a>Parancsmag-hibajelentés
 
-Parancsmagok jelentse függően eltérően e hibák a rendszer lezárja a hibák vagy nonterminating hibaüzeneteket. Megszakítást hibák a következők: a folyamat azonnali megszakítandó kiváltó hibák vagy fordulhat elő, ha nem folytatja a feldolgozást OK hibákról. Nonterminating hibák ezeket a hibákat, amelyek a jelentés egy aktuális hibaállapot, de a parancsmag továbbra is a bemeneti objektumok feldolgozásához. Nonterminating hibák esetén a felhasználónak általában értesítést kap a probléma, de a parancsmag folytassa a következő bemeneti objektum.
+A parancsmagok a hibákat eltérő módon jelentik, attól függően, hogy a hibák hibák vagy megszakítások megszakítása miatt jelentkeznek-e. A leállítási hibák olyan hibák, amelyek hatására a folyamat azonnal leáll, vagy olyan hibák, amelyek akkor jelentkeznek, ha nincs ok a feldolgozás folytatására. A nem lezáró hibák olyan hibák, amelyek aktuális hibát jelentenek, de a parancsmag továbbra is feldolgozhatja a bemeneti objektumokat. A nem lezáró hibák esetén a felhasználó általában értesítést kap a problémáról, de a parancsmag továbbra is feldolgozza a következő bemeneti objektumot.
 
-## <a name="terminating-and-nonterminating-errors"></a>Megszakítást és Nonterminating hibák
+## <a name="terminating-and-nonterminating-errors"></a>Hibák megszakítása és megszakítása
 
-A következőkre használható annak megállapításához, hogy hiba történik egy hibát vagy nonterminating hiba.
+A következő irányelvek segítségével határozható meg, hogy a hiba feltétele megszakítási hiba vagy megszakítás nélküli hiba.
 
-- A hibaállapot akadályozza meg a parancsmag minden olyan további bemeneti objektumok sikeresen feldolgozása? Ha igen, ez a megszakító hibát.
+- A hiba feltétele megakadályozza, hogy a parancsmag sikeresen dolgozza fel a további bemeneti objektumokat? Ha igen, ez egy megszakítási hiba.
 
-- A hibajelzést kiváltó körülmény kapcsolódik egy adott bemeneti objektumot vagy bemeneti objektumok egy részét? Ha igen, ez a nonterminating hiba.
+- A hiba feltétele egy adott bemeneti objektummal vagy a bemeneti objektumok egy részhalmazával kapcsolatos? Ha igen, ez egy nem megszakítást okozó hiba.
 
-- A parancsmag nem fogadja el több bemeneti objektumot, például, hogy egy másik bemeneti objektuma feldolgozási sikerülhet? Ha igen, ez a nonterminating hiba.
+- A parancsmag több bemeneti objektumot is elfogad, így a feldolgozás sikeres lehet egy másik bemeneti objektumon? Ha igen, ez egy nem megszakítást okozó hiba.
 
-- Parancsmagok, amelyek több bemeneti objektumot tud fogadni mi is leáll, és nonterminating hibák között meg kell határoznia, akkor is, ha egy adott helyzet csak egyetlen bemeneti objektumra vonatkozik.
+- Azok a parancsmagok, amelyeknek több bemeneti objektumot is el kell fogadniuk, el kell dönteniük a leállítási és a nem lezáró hibák között, még akkor is, ha egy adott helyzet csak egyetlen bemeneti objektumra vonatkozik.
 
-- Parancsmagok tetszőleges számú bemeneti objektumok és -küldésre használható tetszőleges számú objektum siker vagy a hiba előtt a megszakítást okozó kivétel történt kivétel. Nincs a kapott bemeneti objektumok száma és az elküldött sikerességről és hibáról objektumok száma közötti kapcsolat.
+- A parancsmagok tetszőleges számú bemeneti objektumot kaphatnak, és tetszőleges számú sikeres vagy hibás objektumot küldhetnek a megszakítást okozó kivételek eldobása előtt. A fogadott bemeneti objektumok száma és a sikeres és a hibás objektumok száma között nincs kapcsolat.
 
-- Parancsmagok, amelyek csak 0 és 1 bemeneti objektumokat, és csak 0 és 1 készítése elfogadhat kimeneti objektumok kell hibaként hibák megszakítást és megszakítást kivételeket.
+- Azok a parancsmagok, amelyek csak 0-1 bemeneti objektumokat fogadhatnak el, és csak 0-1 kimeneti objektumokat hoznak ki, a hibák leállításával és a megszakítási kivételek előállításával kezelhetik a hibákat.
 
-## <a name="reporting-nonterminating-errors"></a>Nonterminating hibát jelentett
+## <a name="reporting-nonterminating-errors"></a>Nem lezáró hibák jelentése
 
-A jelentéskészítési nonterminating hiba mindig végezhető belül a parancsmag végrehajtásának a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metódus, a [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) módszert, vagy a [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódust. Az ilyen típusú hibákat jelentett meghívásával a [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódushoz, amely ezután elküldi a hibafolyam egy.
+A nem lezáró hibák jelentését mindig el kell végezni a [System. Management. Automation. parancsmag. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metódus, a [System. Management. Automation. parancsmag. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódus vagy a [System. Management. Automation. parancsmag. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metódusa. Az ilyen típusú hibák jelentése a [System. Management. Automation. parancsmag. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódus meghívásával történik, amely egy hibaüzenetet küld a hiba adatfolyamának.
 
-## <a name="reporting-terminating-errors"></a>Leállítási hibát jelentett
+## <a name="reporting-terminating-errors"></a>Jelentéskészítési hibák
 
-Megszakítást hibákat jelentett kivételeket dob, vagy hívja a [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metódust. Vegye figyelembe, hogy parancsmagokat is feltárhatja és újbóli throw OutOfMemory például a kivételeket, azonban ezek nem szükséges újra throw kivételek, a Windows PowerShell-modul fog catch azokat is.
+A leállítási hibák a kivételek vagy a [System. Management. Automation. parancsmag. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metódus meghívásával jelentenek. Vegye figyelembe, hogy a parancsmagok olyan kivételeket is megadhatnak és Visszaállíthatnak, mint például a **OutOfMemory**, azonban nem szükségesek a kivételek kiváltására, mivel a PowerShell-futtatókörnyezet is megfogja őket.
 
-A saját kivételek esetén fellépő specifikus problémákhoz meghatározása az adott helyzethez, vagy további információkat a hiba használatával meglévő kivétel hozzáadása is.
+Meghatározhatja a saját helyzetére jellemző problémákra vonatkozó kivételeket is, vagy hozzáadhat további információkat egy meglévő kivételhez a hiba rekordjának használatával.
 
-## <a name="error-records"></a>Hiba a rekordok
+## <a name="error-records"></a>Hibák rekordjai
 
-Windows PowerShell használatával egy nonterminating hibaállapotot ismerteti [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektumokat. Minden egyes [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum tartalmazza a hiba szoftverkategória-adatok, egy nem kötelező célobjektum és a hibajelzést kiváltó körülmény részleteit.
+A PowerShell egy nem lezáró hiba feltételét írja le a [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektumokkal. Minden objektum tartalmazza a hibák kategóriájának adatait, a nem kötelező célként megadott objektumot, valamint a hiba feltételének részleteit.
 
-### <a name="error-identifiers"></a>Hiba azonosítója
+### <a name="error-identifiers"></a>Hibák azonosítói
 
-Hiba azonosítója: egyszerű karakterlánc, amely azonosítja a hibajelzést kiváltó körülmény belül a parancsmagot. Windows PowerShell parancsmaggal hozhat létre egy teljesen minősített hiba azonosító használható később szűrési hibaadatfolyamok vagy hibák naplózása, amikor válaszol azokra a konkrét hibákat azonosító, vagy más felhasználó-specifikus tevékenységek Ez az azonosító egyesíti.
+A hiba azonosítója egy egyszerű karakterlánc, amely a parancsmagon belüli hiba feltételét azonosítja.
+A PowerShell egy parancsmag-azonosítóval kombinálja ezt az azonosítót, hogy olyan teljes értékű hibaértéket hozzon létre, amely később felhasználható a hibák vagy a naplózási hibák szűrésére, ha adott hibákra vagy más felhasználóspecifikus tevékenységekre válaszol.
 
-Hiba azonosítók megadása esetén a következő irányelveket kell követni.
+A következő irányelveket kell követni a hibák azonosítóinak megadásakor:
 
-- Különböző, rendkívül specifikus hiba azonosítók hozzárendelése másik kódhoz tartozó elérési út. Minden kódelérési út, amely meghívja ezt [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) vagy [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) saját hiba azonosítóval kell rendelkeznie.
+- Rendeljen különböző, különösen specifikus, hibás azonosítókat a kódok különböző elérési útjaihoz. Minden olyan elérési út, amely a [System. Management. Automation. parancsmag. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) vagy a [System. Management. Automation. parancsmag. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) hívja meg a saját hibakódját.
 
-- Hiba azonosítók, mind a megszakítást, mind a nonterminating hibák CLR-beli kivételtípusok egyedinek kell lennie.
+- A hiba-azonosítóknak egyedieknek kell lenniük a közös nyelvi futtatókörnyezet (CLR) kivételi típusainál mind a leállítási, mind a Megszakításos hibák esetén.
 
-- Ne módosítsa a parancsmag vagy a Windows PowerShell-szolgáltató verziói között hiba azonosítója szemantikáját. Hiba azonosítója szemantikáját létrejötte után a parancsmag életciklusa során állandó kell maradnia.
+- Ne módosítsa a hiba-azonosító szemantikai adatait a parancsmag vagy a PowerShell-szolgáltató verziói között. A hiba-azonosító szemantikai megalapítása után a parancsmag teljes életciklusa során állandónak kell maradnia.
 
-- A megszakítást hibákat egy adott CLR-beli kivétel típusa egy hiba egyedi azonosító használata. Ha módosítja a kivétel típusa, használja egy új hiba azonosítója.
+- A hibák megszüntetéséhez használjon egyedi hibát az adott CLR-beli kivétel típusához. Ha a kivétel típusa megváltozik, használjon új hibaértéket.
 
-- Nonterminating hibákat és a egy adott bemeneti objektumra egy adott hiba azonosítója használja.
+- A nem lezáró hibák esetén használjon egy adott bemeneti objektumhoz tartozó hibaértéket.
 
-- Válassza ki az azonosító, termékről a jelentett hiba szövege. Ne használjon szóközöket vagy absztrakt.
+- Válassza ki az azonosító szövegét, amelyet a tersely a jelentett hibának felel meg. Ne használjon szóközöket vagy írásjeleket.
 
-- Nem hoznak létre, amelyek nem reprodukálható hiba azonosítók. Ha például nem hoznak létre azonosítók, amelyek tartalmazzák a folyamat azonosítója. Hiba azonosítók hasznosak, csak akkor, ha azok megegyeznek-azonosítók, amelyeket más, azonos problémát tapasztalt felhasználók által is látható.
+- Ne állítson elő nem reprodukálható azonosítójú hibákat. Például ne állítson be olyan azonosítókat, amelyek tartalmazzák a folyamat azonosítóját. A hibás azonosítók csak akkor hasznosak, ha azok a többi felhasználó által látott azonosítóknak felelnek meg, akik ugyanazt a problémát tapasztalják.
 
-### <a name="error-categories"></a>Hiba – kategóriák
+### <a name="error-categories"></a>Hibák kategóriái
 
-A végfelhasználó kapcsolatos hiba hibakategóriák használhatók. Windows PowerShell meghatározza a kategóriára, és a parancsmagok és Windows PowerShell-szolgáltatók közöttük hibarekord létrehozásakor ki kell választania.
+A hibák kategóriái a felhasználó hibáinak csoportosítására szolgálnak. A PowerShell definiálja ezeket a kategóriákat és parancsmagokat, a PowerShell-szolgáltatókat pedig a hibai rekord létrehozásakor kell választaniuk.
 
-A rendelkezésre álló hiba kategóriák közül, olvassa el a [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumerálása. Általánosságban elmondható akkor ne NoError UndefinedError és GenericError, amikor csak lehetséges.
+Az elérhető hibakódok leírását a [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumerálásban tekintheti meg. Általánosságban elkerülheti, hogy ha lehetséges, kerülje a **hiba**, a **UndefinedError**és a **GenericError** használatát.
 
-Hibák kategória alapján, ha azok a felhasználók megtekinthetik "`$ErrorView`", "CategoryView".
+A felhasználók a kategória alapján tekinthetik meg a hibákat `$ErrorView` , amikor a **CategoryView**értékre vannak állítva.
 
 ## <a name="see-also"></a>Lásd még:
 
-[Windows PowerShell-parancsmagok](./cmdlet-overview.md)
+[Parancsmag áttekintése](./cmdlet-overview.md)
 
-[A parancsmag kimenete](./types-of-cmdlet-output.md)
+[A parancsmagok kimenetének típusai](./types-of-cmdlet-output.md)
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell-dokumentáció](../windows-powershell-reference.md)

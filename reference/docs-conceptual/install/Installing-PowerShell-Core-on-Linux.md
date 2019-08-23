@@ -2,16 +2,16 @@
 title: A PowerShell Core telepítése Linux rendszerre
 description: Információk a PowerShell Core különböző Linux-disztribúciókban való telepítéséről
 ms.date: 07/19/2019
-ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: be11a2a873af71c193730d0a9e723da2dc70a62d
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68372195"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986728"
 ---
 # <a name="installing-powershell-core-on-linux"></a>A PowerShell Core telepítése Linux rendszerre
 
-Támogatja az [ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE LEAP 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], és az [Arch Linux][arch].
+Támogatja az [ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE LEAP 15][opensuse], [Fedora 27 ][fedora], [Fedora 28][fedora]és [Arch Linux][arch].
 
 A hivatalosan nem támogatott Linux-disztribúciók esetében a PowerShell [beépülő modullal][snap]próbálhatja meg telepíteni a PowerShellt. A PowerShell bináris fájljait közvetlenül a Linux [ `tar.gz` Archive][tar]használatával is kipróbálhatja, de az operációs rendszertől eltérő lépések alapján kell beállítania a szükséges függőségeket.
 
@@ -20,6 +20,7 @@ Minden csomag elérhető a GitHub- [releases][] oldalán. A csomag telepítése 
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
+[u1904]: #ubuntu-1904
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
@@ -142,10 +143,17 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1810"></a>Ubuntu 18,10
 
-> [!NOTE]
-> Mivel a 18,10 egy [közbenső kiadás](https://www.ubuntu.com/about/release-cycle), csak a [Közösség támogatja](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
+A telepítés a- `snapd`on keresztül támogatott. Útmutatásért lásd: [snap csomag][snap].
 
-A (z `snapd`) 18,10-es telepítése a rendszeren támogatott. A teljes körű utasításokért lásd a [snap csomag][snap] című témakört.
+> [!NOTE]
+> Az Ubuntu 18,10 egy [átmeneti kiadás](https://www.ubuntu.com/about/release-cycle) , amelyet a [Közösség támogat](../powershell-support-lifecycle.md).
+
+## <a name="ubuntu-1904"></a>Ubuntu 19,04
+
+A telepítés a- `snapd`on keresztül támogatott. Útmutatásért lásd: [snap csomag][snap].
+
+> [!NOTE]
+> Az Ubuntu 19,04 egy [átmeneti kiadás](https://www.ubuntu.com/about/release-cycle) , amelyet a [Közösség támogat](../powershell-support-lifecycle.md).
 
 ## <a name="debian-8"></a>Debian 8
 

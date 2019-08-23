@@ -1,5 +1,5 @@
 ---
-title: Fejlesztői útmutató szükséges |} A Microsoft Docs
+title: Szükséges fejlesztési irányelvek | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,212 +8,212 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e68e43a91f9139e8d3dc636b5740121515aab2e6
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067467"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986682"
 ---
 # <a name="required-development-guidelines"></a>Kötelező fejlesztői útmutató
 
-A parancsmagok írásakor a következő irányelveket kell követni. Útmutató a parancsmagok és a parancsmag kód írására vonatkozó irányelvek tervezése oszthatók. Ha nem követi ezeket az irányelveket, a parancsmagok sikertelen lehet, és a felhasználók előfordulhat, hogy rendelkezik egy rossz élmény, a parancsmagok használata esetén.
+A parancsmagok írásakor a következő irányelveket kell követni. A parancsmagok megtervezéséhez és a parancsmag kódjának írásához szükséges irányelvek elválasztásához vannak elkülönítve. Ha nem követi ezeket az irányelveket, a parancsmagok sikertelenek lehetnek, és előfordulhat, hogy a felhasználók a parancsmagok használata során gyenge élményben vannak.
 
 ## <a name="in-this-topic"></a>Ebben a témakörben
 
-### <a name="design-guidelines"></a>Tervezési útmutató
+### <a name="design-guidelines"></a>Tervezési irányelvek
 
-- [Csak a jóváhagyott igék (RD01) használata](./required-development-guidelines.md#use-only-approved-verbs-rd01)
+- [Csak jóváhagyott műveletek használata (RD01)](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
-- [A parancsmag neve: Az karakter, amely nem használható (RD02)](./required-development-guidelines.md#cmdlet-names-characters-that-cannot-be-used-rd02)
+- [Parancsmagok nevei: Nem használható karakterek (RD02)](./required-development-guidelines.md#cmdlet-names-characters-that-cannot-be-used-rd02)
 
-- [Paraméter neve, amely nem használható (RD03)](./required-development-guidelines.md#parameters-names-that-cannot-be-used-rd03)
+- [Nem használható paraméterek nevei (RD03)](./required-development-guidelines.md#parameters-names-that-cannot-be-used-rd03)
 
-- [Megerősítési kérések (RD04) támogatása](./required-development-guidelines.md#support-confirmation-requests-rd04)
+- [Megerősítő kérelmek támogatása (RD04)](./required-development-guidelines.md#support-confirmation-requests-rd04)
 
-- [Az interaktív munkamenetek (RD05) támogatja a Force paramétert](./required-development-guidelines.md#support-force-parameter-for-interactive-sessions-rd05)
+- [Támogatási kényszerítő paraméter az interaktív munkamenetekhez (RD05)](./required-development-guidelines.md#support-force-parameter-for-interactive-sessions-rd05)
 
-- [A dokumentum kimeneti objektumok (RD06)](./required-development-guidelines.md#document-output-objects-rd06)
+- [Kimeneti objektumok dokumentálása (RD06)](./required-development-guidelines.md#document-output-objects-rd06)
 
 ### <a name="code-guidelines"></a>Kód irányelvek
 
-- [A parancsmag vagy PSCmdlet osztályok (RC01) származtassa.](./required-development-guidelines.md#derive-from-the-cmdlet-or-pscmdlet-classes-rc01)
+- [Származtatása a parancsmag vagy a PSCmdlet osztályból (RC01)](./required-development-guidelines.md#derive-from-the-cmdlet-or-pscmdlet-classes-rc01)
 
-- [Adja meg a parancsmag attribútumot (RC02)](./required-development-guidelines.md#specify-the-cmdlet-attribute-rc02)
+- [A parancsmag attribútum (RC02) meghatározása](./required-development-guidelines.md#specify-the-cmdlet-attribute-rc02)
 
-- [Bírálja felül egy bemeneti metódus (RC03) feldolgozása](./required-development-guidelines.md#override-an-input-processing-method-rc03)
+- [Bemeneti feldolgozási módszer felülbírálása (RC03)](./required-development-guidelines.md#override-an-input-processing-method-rc03)
 
-- [Adja meg az OutputType attribútummal (RC04)](./required-development-guidelines.md#specify-the-outputtype-attribute-rc04)
+- [A OutputType attribútum (RC04) meghatározása](./required-development-guidelines.md#specify-the-outputtype-attribute-rc04)
 
-- [Nem őrzi meg a kimeneti objektumok (RC05) kezeli](./required-development-guidelines.md#do-not-retain-handles-to-output-objects-rc05)
+- [Ne őrizze meg a leírókat a kimeneti objektumokra (RC05)](./required-development-guidelines.md#do-not-retain-handles-to-output-objects-rc05)
 
-- [Hatékonyabban dolgozhatók hibáinak kezelése (RC06)](./required-development-guidelines.md#handle-errors-robustly-rc06)
+- [Hibák kezelése robusztusan (RC06)](./required-development-guidelines.md#handle-errors-robustly-rc06)
 
-- [A parancsmagok (RC07) telepíthető a Windows PowerShell-modul segítségével](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
+- [Parancsmagok üzembe helyezése Windows PowerShell-modul használatával (RC07)](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
-## <a name="design-guidelines"></a>Tervezési útmutató
+## <a name="design-guidelines"></a>Tervezési irányelvek
 
-A parancsmagokkal és más parancsmagok közötti egységes felhasználói élmény biztosításához parancsmagok tervezésekor a következő irányelveket kell követnie. Ha megtalálta a tervezési útmutató arra az esetre, amely a helyzetére vonatkozik, mindenképpen tekintse meg hasonló irányelvek kód irányelvei.
+A parancsmagok tervezésekor a következő irányelveket kell követni, hogy konzisztens felhasználói élményt biztosítson a parancsmagok és más parancsmagok használata között. Ha olyan tervezési útmutatót talál, amely az adott helyzetre vonatkozik, tekintse meg a hasonló irányelvek kódját ismertető útmutatót.
 
-### <a name="use-only-approved-verbs-rd01"></a>Csak a jóváhagyott igék (RD01) használata
+### <a name="use-only-approved-verbs-rd01"></a>Csak jóváhagyott műveletek használata (RD01)
 
-A parancsmag attribútum a megadott művelet a Windows PowerShell által biztosított műveletek felismert készletét kell származnia. Nem lehet tiltott a szinonimák egyikét. Használja a konstans karakterláncokat, a következő parancsmag-utasítások megadása enumerálások által meghatározott:
+A parancsmag attribútumban megadott műveletnek a Windows PowerShell által megadott ismert műveletekből kell származnia. Nem lehet a tiltott szinonimák egyike. A következő enumerálások által definiált állandó karakterláncok használatával adhatja meg a parancsmagok műveleteit:
 
-- [System.Management.Automation.VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon)
+- [System. Management. Automation. VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon)
 
-- [System.Management.Automation.VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
+- [System. Management. Automation. VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
 
-- [System.Management.Automation.VerbsData](/dotnet/api/System.Management.Automation.VerbsData)
+- [System. Management. Automation. VerbsData](/dotnet/api/System.Management.Automation.VerbsData)
 
-- [System.Management.Automation.VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
+- [System. Management. Automation. VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
 
-- [System.Management.Automation.VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
+- [System. Management. Automation. VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
 
-- [System.Management.Automation.VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
+- [System. Management. Automation. VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
 
-- [System.Management.Automation.VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)
+- [System. Management. Automation. VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)
 
-A jóváhagyott igét nevek kapcsolatos további információkért lásd: [parancsmag-utasítások](./approved-verbs-for-windows-powershell-commands.md).
+További információ a jóváhagyott műveletek neveiről: parancsmag- [műveletek](./approved-verbs-for-windows-powershell-commands.md).
 
-Felhasználók egy felderíthető és várt parancsmagok neveivel készletére lesz szükség. Hogy a felhasználó végezhet egy gyors értékelést parancsmag funkciója, valamint egyszerűen fedezheti fel a rendszer képességeit, használja a megfelelő műveletet. Például a következő parancssori paranccsal olvassa be az összes parancs a rendszeren a "start" kezdődő: `get-command start-*`. A parancsmagok megkereshetők a főnevek használatával a parancsmagok megkülönböztessük más parancsmagok. A főnév az erőforrást, amelyre a művelet történik jelöli. Maga a művelet a műveletet jelöl.
+A felhasználóknak felderíthető és várt parancsmag-neveket kell létrehozniuk. Használja a megfelelő műveletet, hogy a felhasználó gyors értékelést végezzen a parancsmag működéséről, és hogy könnyedén felderítse a rendszer képességeit. Például a következő parancssori parancs lekéri a rendszer összes olyan parancsát, amelynek neve a "Start" kifejezéssel kezdődik: `get-command start-*`. A parancsmagok más parancsmagokból való megkülönböztetéséhez használja a-parancsmagok szótárait. A főnév azt az erőforrást jelöli, amelyen a művelet el lesz hajtva. Magát a műveletet a művelet jelképezi.
 
-### <a name="cmdlet-names-characters-that-cannot-be-used-rd02"></a>A parancsmag neve: Az karakter, amely nem használható (RD02)
+### <a name="cmdlet-names-characters-that-cannot-be-used-rd02"></a>Parancsmagok nevei: Nem használható karakterek (RD02)
 
-Parancsmagok elnevezésekor ne használja a következő speciális karaktereket.
+A-parancsmagok használatakor ne használja a következő speciális karakterek egyikét sem.
 
 |Karakter|Név|
 |---------------|----------|
-|#|keresztet|
-|; |vesszővel tagolt|
+|#|szám aláírása|
+|;|vesszővel|
 |()|zárójelek|
-|{}|kapcsos zárójelek|
-|[]|zárójelek|
-|&|és jel|
-|-|kötőjel **Megjegyzés:**  A kötőjel használható a művelet a főnév a különálló, de a főnév vagy a művelet nem használható.|
-|/|perjel|
-|\|Fordított perjel|
-|$|dollárjel|
-|^|jel|
-|;|pontosvesszővel válassza el|
-|:|pontosvesszővel|
-|"|dupla idézőjelet|
-|'|egyszeres idézőjel vagy aposztróf|
-|<>|csúcsos zárójelek|
-|&#124;|függőleges vonal|
+|{}|nadrágtartó|
+|[]|zárójelben|
+|&|jel|
+|-|kötőjel **Megjegyzés:**  A kötőjel segítségével elkülönítheti a főnévi műveletet, de nem használható a főnév vagy a műveleten belül.|
+|/|perjel jelölés|
+|\\| fordított perjel|
+|$|dollár-aláírás|
+|^|kalap jel|
+|;|pontosvesszővel|
+|:|kettőspont|
+|"|dupla idézőjel|
+|'|szimpla idézőjel|
+|<>|szögletes zárójelek|
+|&#124;|függőleges sáv|
 |?|kérdőjel|
-|@|jel|
-|"|} biztonsági osztásjelek (aposztróf)|
+|@|bejelentkezéskor|
+|`|vissza ketyeg (súlyos akcentus)|
 |*|csillag|
-|%|százalékjelet|
+|%|százalék aláírása|
 |+|pluszjel|
 |=|egyenlőségjel|
-|~|tilde|
+|~|hullámos vonallal|
 
-### <a name="parameters-names-that-cannot-be-used-rd03"></a>Paraméter neve, amely nem használható (RD03)
+### <a name="parameters-names-that-cannot-be-used-rd03"></a>Nem használható paraméterek nevei (RD03)
 
-Windows PowerShell nyújt a közös, minden parancsmag-paraméterek és további paraméterek, az adott helyzetekben hozzáadott. A saját parancsmagok tervezésekor a következő nevek nem használhatók: Győződjön meg arról, hibakeresési, ErrorAction, ErrorVariable, OutBuffer OutVariable, WarningAction, WarningVariable, WhatIf, UseTransaction, és részletes. További információ ezekről a paraméterekről: [közös paraméterneveket](./common-parameter-names.md).
+A Windows PowerShell egy közös paramétereket biztosít az összes parancsmaghoz, valamint az adott helyzetekben hozzáadott további paramétereket. Saját parancsmagok tervezésekor a következő nevek nem használhatók: Erősítse meg, hibakeresés, ErrorAction, ErrorVariable, kiegyenlítő, előváltozó, WarningAction, WarningVariable, WhatIf, UseTransaction és verbose. További információ ezekről a paraméterekről: [köznapi paraméterek nevei](./common-parameter-names.md).
 
-### <a name="support-confirmation-requests-rd04"></a>Megerősítési kérések (RD04) támogatása
+### <a name="support-confirmation-requests-rd04"></a>Megerősítő kérelmek támogatása (RD04)
 
-Parancsmagok esetében, amelyek végrehajtania egy műveletet, amely a rendszer módosítja, akkor meg kell hívnia a [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) módszer megerősítés kérése, bizonyos esetekben hívja a [ System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódust. (A [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódus csak azután hívható a [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) módszert hívja meg.)
+A rendszer módosítását végző műveleteket végrehajtó parancsmagok esetén a rendszernek meg kell hívnia a [System. Management. Automation. parancsmag. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódust a megerősítéshez, és különleges esetekben hívja meg a [következőt: System. Management. Automation. parancsmag. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódus. (A [System. Management. Automation. parancsmag. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódust csak a [System. Management. Automation. parancsmag. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódus meghívása után kell meghívni.)
 
-Ezek a parancsmag meg kell adnia, hogy támogatja a megerősítési kérések beállításával hívásokat a `SupportsShouldProcess` kulcsszó a parancsmag attribútum. Ez az attribútum beállításával kapcsolatos további információkért lásd: [parancsmag típusattribútum-deklaráció](./cmdlet-attribute-declaration.md).
+A hívások végrehajtásához a parancsmagnak meg kell határoznia, hogy támogatja a megerősítő kérelmeket a parancsmag attribútum `SupportsShouldProcess` kulcsszójának beállításával. További információ az attribútum beállításáról: parancsmag- [attribútum deklarációja](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
-> Ha a parancsmag osztály a parancsmag attribútum jelzi, hogy a parancsmag támogatja-e a hívásokat a [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódust, és a parancsmag nem sikerül, a hívást a [ System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódus, a felhasználók módosíthatják a rendszer váratlanul.
+> Ha a parancsmag osztály parancsmag attribútuma azt jelzi, hogy a parancsmag támogatja a [System. Management. Automation. parancsmag. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódus hívásait, és a parancsmag nem tudja kezdeményezni a hívást [ System. Management. Automation. parancsmag. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódus, a felhasználó váratlanul módosíthatja a rendszerét.
 
-Használja a [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) bármilyen rendszer módosításának módszere. Egy felhasználói beállítás szerint, és a `WhatIf` paramétervezérlő a [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódust. Ezzel szemben a [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) hívás potenciálisan veszélyes módosításokat egy további ellenőrzést hajt végre. Bármely felhasználói beállítás szerint nem szabályozza ezt a módszert, vagy a `WhatIf` paraméter. Ha a parancsmagot hívja a [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódus, rendelkeznie kell egy `Force` paraméter, amely figyelmen kívül hagyja a két módszer közül hívásokat és, hogy folytatja a műveletet. Ez azért fontos, mert lehetővé teszi a parancsmag nem interaktív parancsfájlok és a gazdagépek használhatók.
+Használja a [System. Management. Automation. parancsmag. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódust bármely rendszermódosításhoz. A felhasználói beállítások és a `WhatIf` paraméter a [System. Management. Automation. parancsmag. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódust vezérli. Ezzel szemben a [System. Management. Automation. parancsmag. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) hívás további ellenőrzéseket végez a potenciálisan veszélyes módosításokkal kapcsolatban. Ezt a metódust nem a felhasználói preferencia vagy a `WhatIf` paraméter vezérli. Ha a parancsmag a [System. Management. Automation. parancsmag. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódust hívja meg, akkor olyan `Force` paraméterrel kell rendelkeznie, amely megkerüli a két metódus hívásait, és a műveletet folytatja. Ez azért fontos, mert lehetővé teszi, hogy a parancsmag a nem interaktív parancsfájlokban és gazdagépeken is használható legyen.
 
-A parancsmagok támogatják ezeket a hívásokat, ha a felhasználó határozhatja meg, hogy a művelet ténylegesen hajtható végre. Például a [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) parancsmag hívások a [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódus, mielőtt leállítja az folyamatokat, a rendszer, a Winlogon, beleértve egy készletét, és A nyomtatásisor-folyamatokat.
+Ha a parancsmagok támogatják ezeket a hívásokat, a felhasználó megállapíthatja, hogy a műveletet ténylegesen kell-e végrehajtani. A [stop-Process](/powershell/module/microsoft.powershell.management/stop-process) parancsmag például meghívja a [System. Management. Automation. parancsmag. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metódust, mielőtt leállítja a kritikus folyamatok készletét, beleértve a rendszer-, a Winlogon-és a spoolsv-folyamatokat.
 
-Ezek a metódusok támogatásával kapcsolatos további információkért lásd: [megerősítést kérő](./requesting-confirmation-from-cmdlets.md).
+További információ a módszerek támogatásáról: [megerősítés kérése](./requesting-confirmation-from-cmdlets.md).
 
-### <a name="support-force-parameter-for-interactive-sessions-rd05"></a>Az interaktív munkamenetek (RD05) támogatja a Force paramétert
+### <a name="support-force-parameter-for-interactive-sessions-rd05"></a>Támogatási kényszerítő paraméter az interaktív munkamenetekhez (RD05)
 
-Ha a parancsmag interaktív módon használja, mindig adja meg a-Force paramétert bírálja felül az interaktív műveletek, például a kérések vagy a bemeneti sorok olvasása). Ez azért fontos, mert lehetővé teszi a parancsmag nem interaktív parancsfájlok és a gazdagépek használhatók. Az alábbi módszerek egy interaktív állomás valósítható meg.
+Ha a parancsmag interaktív módon van használatban, mindig adjon meg egy kényszerítő paramétert az interaktív műveletek felülbírálásához, például a promptot vagy a bemeneti sorok olvasását. Ez azért fontos, mert lehetővé teszi, hogy a parancsmag a nem interaktív parancsfájlokban és gazdagépeken is használható legyen. Az interaktív gazdagépek a következő metódusokat tudják megvalósítani.
 
-- [System.Management.Automation.Host.PSHostUserInterface.Prompt*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.Prompt)
+- [System. Management. Automation. host. PSHostUserInterface. prompt *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.Prompt)
 
-- [System.Management.Automation.Host.Pshostuserinterface.PromptForChoice](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForChoice)
+- [System. Management. Automation. host. Pshostuserinterface. PromptForChoice](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForChoice)
 
-- [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection.PromptForChoice](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection.PromptForChoice)
+- [System. Management. Automation. host. Ihostuisupportsmultiplechoiceselection. PromptForChoice](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection.PromptForChoice)
 
-- [System.Management.Automation.Host.Pshostuserinterface.PromptForCredential*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
+- [System. Management. Automation. host. Pshostuserinterface. PromptForCredential *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
 
-- [System.Management.Automation.Host.Pshostuserinterface.ReadLine*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
+- [System. Management. Automation. host. Pshostuserinterface. ReadLine *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
 
-- [System.Management.Automation.Host.Pshostuserinterface.ReadLineAsSecureString*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLineAsSecureString)
+- [System. Management. Automation. host. Pshostuserinterface. ReadLineAsSecureString *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLineAsSecureString)
 
-### <a name="document-output-objects-rd06"></a>A dokumentum kimeneti objektumok (RD06)
+### <a name="document-output-objects-rd06"></a>Kimeneti objektumok dokumentálása (RD06)
 
-Windows PowerShell az objektumok, a folyamat írt használ. Ahhoz, hogy a felhasználók számára az objektumok minden parancsmag által visszaadott előnyeit a visszaadott objektumok dokumentálni kell, és mi használt visszaadott objektumok szerepének tagja kell dokumentálni.
+A Windows PowerShell a folyamatba írt objektumokat használja. Ahhoz, hogy a felhasználók ki tudják használni az egyes parancsmagok által visszaadott objektumokat, dokumentálnia kell a visszaadott objektumokat, és dokumentálnia kell a visszaadott objektumok tagjait.
 
 ## <a name="code-guidelines"></a>Kód irányelvek
 
-A következő irányelveket kell követni, parancsmag használt kód írásakor. Ha megtalálta, amely a helyzetére vonatkozik kód útmutatásként, mindenképpen tekintse meg a tervezési útmutató hasonló szakaszát.
+A parancsmag kódjának írásakor a következő irányelveket kell követni. Ha olyan kódrészletet talál, amely az adott helyzetre vonatkozik, tekintse meg a hasonló irányelvek tervezési irányelveit.
 
-### <a name="derive-from-the-cmdlet-or-pscmdlet-classes-rc01"></a>A parancsmag vagy PSCmdlet osztályok (RC01) származtassa.
+### <a name="derive-from-the-cmdlet-or-pscmdlet-classes-rc01"></a>Származtatása a parancsmag vagy a PSCmdlet osztályból (RC01)
 
-A parancsmag kell származniuk, vagy a [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) vagy [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) alaposztály. Parancsmagok, amelyek célosztályából származik a [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) osztály nem függ a Windows PowerShell-modul. Közvetlenül a Microsoft .NET-keretrendszer programnyelvtől hívható. Parancsmagok, amelyek célosztályából származik a [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztály a Windows PowerShell-modul függenek. Ezért, hajtsa végre a futási térben belül.
+A parancsmagnak a [System. Management. Automation. parancsmag](/dotnet/api/System.Management.Automation.Cmdlet) vagy a [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) alaposztályból kell származnia. A [System. Management. Automation. parancsmag](/dotnet/api/System.Management.Automation.Cmdlet) osztályból származtatott parancsmagok nem a Windows PowerShell futtatókörnyezettől függenek. A felhasználók meghívhatók közvetlenül bármely Microsoft .NET-keretrendszer nyelvétől. A [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztályból származtatott parancsmagok a Windows PowerShell futtatókörnyezettől függenek. Ezért egy RunSpace belül futnak.
 
-Minden parancsmagot osztály, amely meg, hogy nyilvános osztályok kell lennie. Ezen parancsmag osztályok kapcsolatos további információkért lásd: [parancsmag áttekintése](./cmdlet-overview.md).
+Az összes implementált parancsmagnak nyilvános osztálynak kell lennie. További információ ezekről a parancsmag-osztályokról: [parancsmagok áttekintése](./cmdlet-overview.md).
 
-### <a name="specify-the-cmdlet-attribute-rc02"></a>Adja meg a parancsmag attribútumot (RC02)
+### <a name="specify-the-cmdlet-attribute-rc02"></a>A parancsmag attribútum (RC02) meghatározása
 
-Hogy a Windows PowerShell parancsmag rendelkeznie kell a .NET-keretrendszer osztály a parancsmag attribútummal. Ez az attribútum meghatározza a parancsmag a következő funkciókat.
+Ahhoz, hogy a Windows PowerShell el lehessen ismerni a parancsmagot, a .NET-keretrendszer osztályát a parancsmag attribútummal kell megdíszíteni. Ez az attribútum a parancsmag következő szolgáltatásait határozza meg.
 
-- A ige-főnév pár, amely azonosítja a parancsmagot.
+- A parancsmagot azonosító művelet-és főnévi pár.
 
-- Ha több paraméterkészlettel megadott használt alapértelmezett paraméterkészletet. Az alapértelmezett paraméterkészletet használatos Windows PowerShell nem rendelkezik elegendő információt határozza meg a használandó paraméterkészlet.
+- Az alapértelmezett paraméterérték, amelyet a rendszer több paraméter megadásakor használ. Az alapértelmezett paramétert akkor használja a rendszer, ha a Windows PowerShell nem rendelkezik elegendő információval a használni kívánt paraméter meghatározásához.
 
-- Azt jelzi, ha a parancsmag támogatja a hívásokat a [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódust. Ezt a módszert ahhoz a parancsmag egy módosítást hajt végre a rendszer megjeleníti a felhasználó egy megerősítő üzenetet. Megerősítési kérések hogyan kapcsolatos további információkért lásd: [megerősítést kérő](./requesting-confirmation-from-cmdlets.md).
+- Azt jelzi, hogy a parancsmag támogatja-e a [System. Management. Automation. parancsmag. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metódus hívásait. Ez a metódus egy megerősítő üzenetet jelenít meg a felhasználónak, mielőtt a parancsmag módosítja a rendszerét. További információ a megerősítő kérelmekről: [megerősítés](./requesting-confirmation-from-cmdlets.md)kérése.
 
-- Adja meg a művelet a megerősítést kérő üzenet társított hatás szintje (vagy súlyosság). A legtöbb esetben a közepes az alapértelmezett értéket kell használni. Hogyan befolyásolja a hatás szintje az a eseménymegerősítési kéréseknek a felhasználó számára megjelenített kapcsolatos további információkért lásd: [megerősítést kérő](./requesting-confirmation-from-cmdlets.md).
+- A megerősítő üzenethez társított művelet hatásának szintjét (vagy súlyosságát) adja meg. A legtöbb esetben a közepes alapértelmezett értéket kell használni. Ha többet szeretne megtudni arról, hogy a hatás szintje milyen hatással van a felhasználó számára megjelenített megerősítő kérelmekre, olvassa el a [megerősítés kérése](./requesting-confirmation-from-cmdlets.md)című témakört.
 
-Deklarálja a parancsmag attribútum kapcsolatos további információkért lásd: [CmdletAttribute Deklarace](./cmdlet-attribute-declaration.md).
+További információ a parancsmag-attribútum deklaráláról: [CmdletAttribute deklaráció](./cmdlet-attribute-declaration.md).
 
-### <a name="override-an-input-processing-method-rc03"></a>Bírálja felül egy bemeneti metódus (RC03) feldolgozása
+### <a name="override-an-input-processing-method-rc03"></a>Bemeneti feldolgozási módszer felülbírálása (RC03)
 
-A parancsmag részt venni a Windows PowerShell környezetben, azt felül kell írnia a következők közül legalább egy *feldolgozási módszerek bemeneti*.
+Ahhoz, hogy a parancsmag részt vehessen a Windows PowerShell-környezetben, a következő *bemeneti feldolgozási módszerek*közül legalább egyet felül kell bírálni.
 
-[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) ezt a metódust meghívják egyszer, és előre feldolgozási funkcionalitással használja fel azokat.
+[System. Management. Automation. parancsmag. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) ezt a metódust egyszer kell meghívni, és az előfeldolgozási funkciók biztosítására szolgál.
 
-[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ezt a metódust meghívják többször is feldolgozza, és a rekord-rekord funkciók biztosításához használja fel azokat.
+[System. Management. Automation. parancsmag. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ezt a metódust többször kell meghívni, és a rendszer a rekordokat rögzítő funkciók biztosítására szolgál.
 
-[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) ezt a metódust meghívják egyszer, és az utólagos feldolgozási funkcionalitással szolgál.
+[System. Management. Automation. parancsmag. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) ezt a metódust egyszer kell meghívni, és a rendszer a feldolgozás utáni funkció biztosítására szolgál.
 
-### <a name="specify-the-outputtype-attribute-rc04"></a>Adja meg az OutputType attribútummal (RC04)
+### <a name="specify-the-outputtype-attribute-rc04"></a>A OutputType attribútum (RC04) meghatározása
 
-(A Windows PowerShell 2.0-s verziójában jelent meg) OutputType attribútum meghatározza a .NET-keretrendszer, amely a parancsmag visszaadja a folyamat. Adja meg a kimeneti típus a parancsmag által visszaadott objektumokhoz a parancsmag által könnyebben felfedezhetővé teheti más parancsmagokkal választja ki. Ez az attribútum a parancsmag osztályt dekorálása kapcsolatos további információkért lásd: [OutputType típusattribútum-deklaráció](./outputtype-attribute-declaration.md).
+A OutputType attribútum (a Windows PowerShell 2,0-ben jelent meg) Megadja azt a .NET-keretrendszert, amelyet a parancsmag a folyamatnak ad vissza. A parancsmagok kimeneti típusának megadásával a parancsmag által visszaadott objektumokat más parancsmagok is felderíthetővé teszik. A parancsmag osztály ezzel az attribútummal való díszítésével kapcsolatos további információkért lásd: [OutputType-attribútum deklarációja](./outputtype-attribute-declaration.md).
 
-### <a name="do-not-retain-handles-to-output-objects-rc05"></a>Nem őrzi meg a kimeneti objektumok (RC05) kezeli
+### <a name="do-not-retain-handles-to-output-objects-rc05"></a>Ne őrizze meg a leírókat a kimeneti objektumokra (RC05)
 
-A parancsmag nem fenn kell tartaniuk az átadott objektumok minden olyan kezeli a [System.Management.Automation.Cmdlet.WriteObject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metódust. Ezek az objektumok lesznek átadva a folyamat a következő parancsmagot, vagy egy parancsfájlt használta azokat. Ha megőrzi a kezeli az objektumok, a két entitás fogja saját minden egyes objektum, amely a hibát.
+A parancsmagnak nem szabad megtartania a [System. Management. Automation. parancsmag. WriteObject *](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metódusnak átadott objektumok leíróit. Ezeket az objektumokat a folyamat következő parancsmagjának adja át, vagy egy parancsfájl használja. Ha megtartja a leírókat az objektumokhoz, a két entitás az összes objektumhoz tartozik, ami hibákat okoz.
 
-### <a name="handle-errors-robustly-rc06"></a>Hatékonyabban dolgozhatók hibáinak kezelése (RC06)
+### <a name="handle-errors-robustly-rc06"></a>Hibák kezelése robusztusan (RC06)
 
-Felügyeleti környezet természetüknél fogva észleli, és fontos módosítást hajt végre a rendszer, amely felügyeli. Ezért elengedhetetlen, hogy parancsmagok megfelelően kezeli-e hibák. Hiba a rekordok kapcsolatos további információkért lásd: [Windows PowerShell hibajelentés](./error-reporting-concepts.md).
+A felügyeleti környezet eredendően észleli és fontos módosításokat végez a felügyelt rendszeren. Ezért fontos, hogy a parancsmagok helyesen kezeljék a hibákat. További információ a hibajelentésekről: [Windows PowerShell hibajelentés](./error-reporting-concepts.md).
 
-- Hiba megakadályozza, hogy a parancsmag minden olyan további rekordok feldolgozása továbbra is, ha egy hibát. Hívja meg, a parancsmag a [System.Management.Automation.Cmdlet.ThrowTerminatingError*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metódushoz, amely hivatkozik egy [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum. A parancsmag nem történt kivétel, ha a Windows PowerShell-modul maga jelez egy hibát, amely kevesebb információt tartalmazza.
+- Ha egy hiba megakadályozza, hogy egy parancsmag folytassa a további rekordok feldolgozását, akkor ez egy megszakítási hiba. A parancsmagnak hívnia kell a System. Management. [Automation. parancsmag. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metódust, amely egy [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektumra hivatkozik. Ha a parancsmag nem veszi fel a kivételt, a Windows PowerShell futásidejű modulja olyan megszakítási hibát jelez, amely kevesebb információt tartalmaz.
 
-- Egy nem megszakító hiba, amely nem áll le a következő műveletet a rekordot, amely érkezik a folyamat (például egy rekordot egy másik folyamat által létrehozott), a parancsmag kell meghívnia a [System.Management.Automation.Cmdlet.WriteError*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódushoz, amely hivatkozik egy [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum. Például egy nem megszakító hiba akkor fordul elő, ha egy adott folyamat nem tudja leállítani a hiba akkor. Hívása a [System.Management.Automation.Cmdlet.WriteError*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) módszer lehetővé teszi, hogy a felhasználó következetesen hajtsa végre a kért műveletek és fenntartani az információkat, amelyek nem adott műveletek esetében. A parancsmag minden rekord lehető egymástól függetlenül kell kezelni.
+- Olyan megszakítást nem okozó hiba esetén, amely nem állítja le a folyamatot (például egy másik folyamat által létrehozott rekordot) a következő rekordon, a parancsmagnak meg kell hívnia a [System. Management. Automation. parancsmag. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódust, amely egy [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektumra hivatkozik. Nem lezáró hiba például az a hiba, amely akkor fordul elő, ha egy adott folyamat leáll. A [System. Management. Automation. parancsmag. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódus meghívásával lehetővé teszi, hogy a felhasználó következetesen végrehajtsa a kért műveleteket, és megőrizze a sikertelen műveletekkel kapcsolatos információkat. A parancsmagnak az egyes rekordokat a lehetségestől függetlenül kell kezelnie.
 
-- A [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) által hivatkozott objektum a [System.Management.Automation.Cmdlet.ThrowTerminatingError*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) és [ System.Management.Automation.Cmdlet.WriteError*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) módszerek maga kivétel van szükség. Kövesse a .NET-keretrendszer tervezési útmutató, amikor meghatározza a használandó kivétel. Ha a hiba szemantikailag ugyanaz, mint a meglévő kivételt a kivétel használata, vagy származtassa. a kivétel. Ellenkező esetben a egy új kivétel vagy közvetlenül a kivétel hierarchia származtatni a [System.Exception](/dotnet/api/System.Exception) típusa.
+- A System. Management. Automation. [parancsmag. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) és a [System. Management. Automation. parancsmag. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metódusok által hivatkozott [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektumhoz a következők szükségesek: kivétel a magja alapján. A használat kivételének meghatározásakor kövesse a .NET-keretrendszer tervezési irányelveit. Ha a hiba szemantikailag megegyezik egy meglévő kivétellel, használja ezt a kivételt, vagy ebből a kivételből származik. Ellenkező esetben egy új kivétel vagy kivétel-hierarchia származtatása közvetlenül a [System. Exception](/dotnet/api/System.Exception) típusból.
 
-Egy [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektum is igényli egy hibakategória, amely csoportosítja a felhasználó által jelzett hibákat. A felhasználó megtekintheti a hibákat a kategória alapján értékének beállításával a `$ErrorView` CategoryView rendszerhéj változót. A lehetséges kategóriák határozzák meg a [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumerálása.
+A [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objektumhoz olyan hibaszám is szükséges, amely a felhasználóhoz tartozó hibákat csoportosítja. A felhasználó a kategória alapján megtekintheti a hibákat úgy, hogy a `$ErrorView` rendszerhéj változó értékét a CategoryView értékre állítja. A lehetséges kategóriákat a [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) enumerálás határozza meg.
 
-- Ha a parancsmag létrehoz egy új szálat, és a kódot, amely az adott szálon fut-e a nem kezelt kivételt jelez, a Windows PowerShell nem képes a hibát, és a folyamat leáll.
+- Ha egy parancsmag új szálat hoz létre, és ha az abban a szálban futó kód kezeletlen kivételt jelez, a Windows PowerShell nem fogja megfogni a hibát, és leállítja a folyamatot.
 
-- Ha egy objektum a nem kezelt kivételt okozó destruktoru kódot tartalmaz, Windows PowerShell nem képes a hibát, és a folyamat leáll. Ez akkor is előfordul, ha egy objektum nem kezelt kivételt kiváltó Dispose függvényhez-módszereket hív meg.
+- Ha egy objektum olyan kóddal rendelkezik a destruktorban, amely kezeletlen kivételt okoz, a Windows PowerShell nem fogja elkapni a hibát, és leállítja a folyamatot. Ez akkor is előfordulhat, ha egy objektum olyan elvetési metódusokat hív meg, amelyek kezeletlen kivételt okoznak.
 
-### <a name="use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07"></a>A parancsmagok (RC07) telepíthető a Windows PowerShell-modul segítségével
+### <a name="use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07"></a>Parancsmagok üzembe helyezése Windows PowerShell-modul használatával (RC07)
 
-Hozzon létre egy Windows PowerShell-modul csomagolása és üzembe helyezése a parancsmagokat. Modulok támogatása Windows PowerShell 2.0-s verziójában jelent meg. A szerelvényeket, amelyek tartalmazzák a parancsmag osztályok közvetlenül, a modul bináris fájlokat (Ez nagyon hasznos a parancsmagok tesztelésekor) is használhatja, vagy létrehozhat egy moduljegyzék, amely hivatkozik a parancsmag szerelvényeket. (Is hozzáadhat meglévő beépülő modul szerelvények modulok használata esetén.) Modulok kapcsolatos további információkért lásd: [Windows PowerShell-modul írása](../module/writing-a-windows-powershell-module.md).
+Hozzon létre egy Windows PowerShell-modult a parancsmagok előkészítéséhez és üzembe helyezéséhez. A modulok támogatása a Windows PowerShell 2,0-ben jelent meg. A parancsmag-osztályokat tartalmazó szerelvényeket közvetlenül a bináris modul fájljaiként használhatja (ez nagyon hasznos a parancsmagok tesztelésekor), vagy létrehozhat egy modul-jegyzékfájlt, amely a parancsmag-szerelvényekre hivatkozik. (Modulok használatakor hozzáadhat meglévő beépülőmodul-szerelvényeket is.) A modulokkal kapcsolatos további információkért lásd: [Windows PowerShell-modul írása](../module/writing-a-windows-powershell-module.md).
 
 ## <a name="see-also"></a>Lásd még:
 
-[Erősen javasolt fejlesztői útmutató](./strongly-encouraged-development-guidelines.md)
+[Erősen ajánlott fejlesztési irányelvek](./strongly-encouraged-development-guidelines.md)
 
-[Tanácsadói fejlesztői útmutató](./advisory-development-guidelines.md)
+[Tanácsadási fejlesztési irányelvek](./advisory-development-guidelines.md)
 
-[Egy Windows PowerShell-parancsmag írása](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell-parancsmag írása](./writing-a-windows-powershell-cmdlet.md)
