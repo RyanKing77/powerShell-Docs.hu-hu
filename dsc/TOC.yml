@@ -12,6 +12,8 @@
   items:
     - name: Linuxhoz készült DSC – első lépések
       href: getting-started/lnxGettingStarted.md
+    - name: Windowshoz készült DSC – első lépések
+      href: getting-started/winGettingStarted.md
     - name: DSC a Nanón – első lépések
       href: getting-started/nanoDSC.md
     - name: DSC az Azure Automationben – első lépések

@@ -52,6 +52,24 @@
       href: learn/writing-portable-modules.md
     - name: PowerShell távoli eljáráshívás
       items:
+        - name: Just Enough Administration (JEA)
+          items:
+            - name: Áttekintés
+              href: learn/remoting/jea/overview.md
+            - name: Előfeltételek
+              href: learn/remoting/jea/prerequisites.md
+            - name: Szerepköri funkciók
+              href: learn/remoting/jea/role-capabilities.md
+            - name: Munkafolyamatok konfigurációi
+              href: learn/remoting/jea/session-configurations.md
+            - name: A JEA regisztrálása
+              href: learn/remoting/jea/register-jea.md
+            - name: A JEA használata
+              href: learn/remoting/jea/using-jea.md
+            - name: Biztonsági szempontok
+              href: learn/remoting/jea/security-considerations.md
+            - name: A JEA naplózása és jelentései
+              href: learn/remoting/jea/audit-and-report.md
         - name: Távoli parancsok futtatása
           href: learn/remoting/running-remote-commands.md
         - name: PowerShell távoli eljáráshívás SSH-n keresztül
