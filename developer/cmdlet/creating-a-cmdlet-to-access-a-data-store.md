@@ -1,53 +1,51 @@
 ---
-title: A parancsmag egy Data Store eléréséhez létrehozása |} A Microsoft Docs
+title: Parancsmag létrehozása adattár eléréséhez
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
-caps.latest.revision: 8
-ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 7acccbd48dcfb654b11e448a1f24835ad3668fae
+ms.sourcegitcommit: a02ccbeaa17c0e513d6c4a21b877c88ac7725458
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733950"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104468"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Parancsmag létrehozása adattár eléréséhez
 
-Ez a szakasz ismerteti, hogyan hozhat létre olyan parancsmagot, amely hozzáfér a tárolt adatokat, de a Windows PowerShell-szolgáltatóban. Az ilyen típusú parancsmagot használja a Windows PowerShell-modul a Windows PowerShell szolgáltató infrastruktúra, és ezért a parancsmag osztályból kell származnia a [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) alaposztály.
+Ez a szakasz azt ismerteti, hogyan hozható létre olyan parancsmag, amely egy Windows PowerShell-szolgáltató segítségével fér hozzá a tárolt adatmennyiségekhez. Ez a típusú parancsmag a Windows PowerShell futtatókörnyezet Windows PowerShell-szolgáltatói infrastruktúráját használja, ezért a parancsmag osztálynak a [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) alaposztályból kell származnia.
 
-A Select-Str parancsmag, az itt leírtak szerint is keresse meg és válassza ki a karakterláncok egy fájl vagy az objektum. A karakterlánc azonosításához használt minták keresztül explicit módon adható meg a `Path` paramétert a parancsmag vagy implicit módon keresztül a `Script` paraméter.
+Az itt leírt Select-Str parancsmag megkeresheti és kiválaszthatja a karakterláncokat egy fájlban vagy objektumban. A karakterlánc azonosítására szolgáló mintázatok explicit módon megadhatók a parancsmag `Path` paraméterén keresztül, vagy implicit módon a `Script` paraméterrel.
 
-A parancsmag úgy tervezték, hogy bármely Windows PowerShell-szolgáltatóval származó [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). A parancsmag megadhatja például, a fájlrendszer-szolgáltatót, vagy a Windows PowerShell által biztosított változó szolgáltató. További információk aboutWindows PowerShell-szolgáltatók, lásd: [tervezése a Windows PowerShell-szolgáltatóban](../prog-guide/designing-your-windows-powershell-provider.md).
+A parancsmagot úgy tervezték, hogy bármely, a [System. Management. Automation. Provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)származtatott Windows PowerShell-szolgáltatót használja. A parancsmag például megadhatja a fájlrendszer-szolgáltatót vagy a Windows PowerShell által biztosított változó szolgáltatót. További információ a PowerShell-szolgáltatók aboutWindows: [a Windows PowerShell-szolgáltató](../prog-guide/designing-your-windows-powershell-provider.md)megtervezése.
 
-## <a name="defining-the-cmdlet-class"></a>A parancsmag osztály meghatározása
+## <a name="defining-the-cmdlet-class"></a>A parancsmag osztályának meghatározása
 
-Mindig a parancsmag elnevezési és a .NET-osztály, amely megvalósítja a parancsmag deklaráló parancsmag létrehozásának első lépése. Ez a parancsmag észleli a "Kiválasztás", tehát a művelet nevét itt választott által meghatározott egyes karakterláncok a [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) osztály. A főnév neve "Str" használata a parancsmag közvetítőtől karakterláncokat. Az alábbi nyilatkozatot jegyezze fel, hogy a parancsmag ige és főnév neve jelennek-e be a parancsmag az osztály nevét. A parancsmag jóváhagyott igék kapcsolatos további információkért lásd: [művelet neve](./approved-verbs-for-windows-powershell-commands.md).
+A parancsmag létrehozásának első lépése mindig a parancsmag elnevezése, és a parancsmagot implementáló .NET-osztály deklarálása. Ez a parancsmag bizonyos karakterláncokat észlel, így az itt választott művelet neve a [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) osztály által definiált "Select". A rendszer a "Str" főnévi nevet használja, mert a parancsmag karakterláncokat használ. Az alábbi deklarációban vegye figyelembe, hogy a parancsmag-utasítás és a főnév neve a parancsmag osztályának nevében jelenik meg. További információ a jóváhagyott parancsmag-műveletekről: [parancsmag-műveletek nevei](./approved-verbs-for-windows-powershell-commands.md).
 
-Ez a parancsmag a .NET-osztály származhat a [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) alaposztály, mert a Windows PowerShell-modul által közzé kellett tenni a Windows PowerShell-szolgáltató támogatja infrastruktúra. Vegye figyelembe, hogy ez a parancsmag emellett lehetővé teszi például használja a .NET-keretrendszer reguláris kifejezések osztályok [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+Az ehhez a parancsmaghoz tartozó .NET-osztálynak a [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) alaposztályból kell származnia, mivel a Windows PowerShell-futtatókörnyezet számára szükséges támogatást biztosít a Windows PowerShell-szolgáltatói infrastruktúra elérhetővé tétele érdekében. Vegye figyelembe, hogy ez a parancsmag a .NET-keretrendszer reguláris kifejezéseit is használja, például a [System. Text. RegularExpressions. regex](/dotnet/api/System.Text.RegularExpressions.Regex)osztályt.
 
-A következő kódot a Select-Str parancsmag osztálydefiníció.
+Az alábbi kód a Select-Str parancsmag osztályának definíciója.
 
 ```csharp
 [Cmdlet(VerbsCommon.Select, "Str", DefaultParameterSetName="PatternParameterSet")]
 public class SelectStringCommand : PSCmdlet
 ```
 
-Ez a parancsmag határozza meg az alapértelmezett paraméterek hozzáadásával állítsa be a `DefaultParameterSetName` az osztálydeklaráció kulcsszó attribútumot. Az alapértelmezett paraméterkészletet `PatternParameterSet` mikor szolgál a `Script` paraméter nincs megadva. Ez a paraméter beállítása kapcsolatos további információkért lásd: a `Pattern` és `Script` paraméter vitafórum a következő szakaszban.
+Ez a parancsmag egy alapértelmezett paramétert határoz meg úgy `DefaultParameterSetName` , hogy hozzáadja az attribútum kulcsszót az osztály deklarációjában. Ha a `PatternParameterSet` `Script` paraméter nincs megadva, a rendszer az alapértelmezett paramétert használja. A paraméterrel kapcsolatos további információkért tekintse meg a `Pattern` és `Script` a paramétert a következő szakaszban.
 
-## <a name="defining-parameters-for-data-access"></a>Az adatok eléréséhez a paraméterek megadása
+## <a name="defining-parameters-for-data-access"></a>Paraméterek definiálása adateléréshez
 
-Ez a parancsmag, amely engedélyezi a felhasználó elérheti, és vizsgálja meg a tárolt adatok számos paraméter határozza meg. Ezek a paraméterek közé tartozik egy `Path` paraméter, amely azt jelzi, hogy a hely az adattár egy `Pattern` paraméter, amely a mintát használni a Keresés és számos más paramétereket, amelyek támogatják a hogyan megy végbe a keresést.
+Ez a parancsmag számos olyan paramétert definiál, amely lehetővé teszi a felhasználó számára a tárolt adatok elérését és vizsgálatát. Ezek a paraméterek egy `Path` olyan paramétert tartalmaznak, amely megadja az adattár helyét, `Pattern` egy paramétert, amely meghatározza a keresésben használandó mintát, és számos más paramétert, amelyek támogatják a keresés végrehajtását.
 
 > [!NOTE]
-> A paraméterek meghatározása az alapokat kapcsolatos további információkért lásd: [a folyamat parancssori bemenet-paramétereket adunk hozzá](./adding-parameters-that-process-command-line-input.md).
+> További információ a paraméterek definiálásának alapjairól: [Paraméterek hozzáadása a parancssori bemenet feldolgozásához](./adding-parameters-that-process-command-line-input.md).
 
-### <a name="declaring-the-path-parameter"></a>Az elérési út paraméter deklaráló
+### <a name="declaring-the-path-parameter"></a>A Path paraméter deklarálása
 
-Keresse meg az adattár, ezt a parancsmagot kell használnia a egy Windows PowerShell-elérési út azonosíthatja a Windows PowerShell-szolgáltatóban, amelyek célja, hogy az adattár eléréséhez. Azt határozza meg, ezért egy `Path` paraméterében helyének megadására a szolgáltató típusú karakterlánc-tömbben.
+Az adattár megkereséséhez a parancsmagnak egy Windows PowerShell-elérési utat kell használnia az adattár elérésére tervezett Windows PowerShell-szolgáltató azonosításához. Ezért egy `Path` String Array típusú paramétert határoz meg a szolgáltató helyének jelzéséhez.
 
 ```csharp
 [Parameter(
@@ -68,15 +66,15 @@ public string[] Path
 private string[] paths;
 ```
 
-Vegye figyelembe, hogy ez a paraméter két különböző paraméterkészlettel tartozik, és arról, hogy vannak-e egy aliast.
+Vegye figyelembe, hogy ez a paraméter két különböző paraméterhez tartozik, és aliassal rendelkezik.
 
-Két [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribútumok deklarálja, hogy a `Path` paraméter tartozik a `ScriptParameterSet` és a `PatternParameterSet`. Paraméterkészlettel kapcsolatos további információkért lásd: [hozzáadása paraméterkészletek parancsmag](./adding-parameter-sets-to-a-cmdlet.md).
+Két [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribútum deklarálja, hogy `Path` a paraméter a `ScriptParameterSet` és a `PatternParameterSet`közé tartozik. További információ a paraméterekről: [Paraméterek beállítása parancsmaghoz](./adding-parameter-sets-to-a-cmdlet.md).
 
-A [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribútum deklarálja a `PSPath` aliasa a `Path` paraméter. Ezt az aliast deklaráló erősen ajánlott a konzisztencia, a többi parancsmag, amely a Windows PowerShell-szolgáltató elérésére. További információk aboutWindows PowerShell elérési utak, lásd: "PowerShell-elérési út fogalmak" a [Windows PowerShell működése](/previous-versions//ms714658(v=vs.85)).
+A [System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribútum deklarálja `PSPath` a `Path` paraméter aliasát. Az alias deklarálása kifejezetten ajánlott a Windows PowerShell-szolgáltatókat elérő más parancsmagokkal való konzisztencia érdekében. A PowerShell elérési útjaival kapcsolatos további információkért tekintse meg a [Windows PowerShell működése](/previous-versions//ms714658(v=vs.85))a PowerShell-aboutWindows című témakört.
 
-### <a name="declaring-the-pattern-parameter"></a>A minta paraméterét deklaráló
+### <a name="declaring-the-pattern-parameter"></a>A minta paraméter deklarálása
 
-Annak megadásához, keresse meg a mintákat, ez a parancsmag deklarálja a `Pattern` paraméter, amely egy karakterláncokból álló tömbre van. Egy pozitív eredményt adja vissza, ha bármelyik mintát az adattárban találhatók. Vegye figyelembe, hogy ezek a minták állíthatók össze egy tömböt a lefordított reguláris kifejezéseket, vagy helyettesítő mintákat a konstans-keresésekhez tömbjét.
+A keresendő mintázatok megadásához a parancsmag olyan `Pattern` paramétert deklarál, amely karakterláncok tömbje. A rendszer pozitív eredményt ad vissza, ha bármelyik minta megtalálható az adattárban. Vegye figyelembe, hogy ezek a minták lefordított reguláris kifejezéseket tartalmazó tömbbe vagy literális keresésekhez használt helyettesítő mintázatokból állnak.
 
 ```csharp
 [Parameter(
@@ -93,13 +91,13 @@ private Regex[] regexPattern;
 private WildcardPattern[] wildcardPattern;
 ```
 
-Ha ez a paraméter meg van adva, a parancsmag használja az alapértelmezett paraméterkészletet `PatternParameterSet`. Ebben az esetben a parancsmagot használja, a karakterláncok jelölje be az itt megadott minták. Ezzel szemben a `Script` paraméter is használható, adja meg a mintákat tartalmazó parancsfájl. A `Script` és `Pattern` paraméterek megadása két külön paraméterkészlettel, így ezek kölcsönösen kizárják egymást.
+Ha ez a paraméter meg `PatternParameterSet`van adva, a parancsmag az alapértelmezett paramétert használja. Ebben az esetben a parancsmag az itt megadott mintákat használja a karakterláncok kiválasztásához. Ezzel szemben a `Script` paramétert a mintákat tartalmazó parancsfájl megadására is felhasználhatja. A `Script` és`Pattern` a paraméterek két külön paramétert határoznak meg, így kölcsönösen kizárják egymást.
 
-### <a name="declaring-search-support-parameters"></a>Jelentést készítő keresési támogatási paraméterek
+### <a name="declaring-search-support-parameters"></a>Keresési támogatási paraméterek deklarálása
 
-Ez a parancsmag a következő támogatási paramétereket, hogy módosítsa a keresési funkciókat, a parancsmag segítségével határozza meg.
+Ez a parancsmag az alábbi támogatási paramétereket határozza meg, amelyek segítségével módosíthatja a parancsmag keresési képességeit.
 
-A `Script` paraméter adja meg a parancsmag egy másik keresési mechanizmust biztosít használható parancsprogram-blokkot. A parancsfájl kell tartalmaznia a megfelelő használt minták, és adja vissza egy [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objektum. Vegye figyelembe, hogy ezt a paramétert is az egyedi paraméter, amely azonosítja a `ScriptParameterSet` paraméterkészletet. Amikor a Windows PowerShell-modul látja ezt a paramétert, akkor használja, csak a tartoznak paraméterek a `ScriptParameterSet` paraméterkészletet.
+A `Script` paraméter egy parancsfájl-blokkot határoz meg, amely a parancsmag alternatív keresési mechanizmusának biztosítására használható. A szkriptnek tartalmaznia kell a megfeleltetéshez használt mintákat, és vissza kell adni a [System. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) objektumot. Vegye figyelembe, hogy ez a paraméter a beállított `ScriptParameterSet` paramétert azonosító egyedi paraméter is. Ha a Windows PowerShell-futtatókörnyezet ezt a paramétert látja, csak a `ScriptParameterSet` beállított paraméterekhez tartozó paramétereket használja.
 
 ```csharp
 [Parameter(
@@ -114,7 +112,7 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-A `SimpleMatch` egy kapcsoló paraméter, amely azt jelzi, hogy a parancsmag az explicit módon felel meg a mintákat, ezek végzik. Amikor a felhasználó adja meg a paraméter a parancssorban (`true`), a parancsmag használja a mintákat, ezek végzik. Ha a paraméter nincs megadva (`false`), a parancsmag reguláris kifejezéseket használ. Ez a paraméter alapértelmezett értéke `false`.
+A `SimpleMatch` paraméter egy switch paraméter, amely azt jelzi, hogy a parancsmag explicit módon egyezik-e a megadott mintákkal. Ha a felhasználó megadja a paramétert a parancssorban (`true`), a parancsmag a megadott mintákat használja. Ha a paraméter nincs megadva (`false`), a parancsmag reguláris kifejezéseket használ. A paraméter alapértelmezett értéke `false`a következő:.
 
 ```csharp
 [Parameter]
@@ -126,7 +124,7 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-A `CaseSensitive` egy kapcsoló paraméter, amely azt jelzi, hogy történik-e a kis-és nagybetűket keresési. Amikor a felhasználó adja meg a paraméter a parancssorban (`true`), a parancsmag ellenőrzi a nagybetűs és kisbetűs karakterek összehasonlításakor mintáit. Ha a paraméter nincs megadva (`false`), a parancsmag nem tesz különbséget a kis- és nagybetűk között. Például "MyFile" és "myfile" mindkettő rendszer visszaadna, pozitív találatok. Ez a paraméter alapértelmezett értéke `false`.
+A `CaseSensitive` paraméter egy switch paraméter, amely jelzi, hogy a rendszer megkülönbözteti-e a kis-és nagybetűket. Ha a felhasználó megadja a paramétert a parancssorban (`true`), a parancsmag a minták összehasonlításakor a karakterek kis-és nagybetűjét is ellenőrzi. Ha a paraméter nincs megadva (`false`), a parancsmag nem különbözteti meg a kis-és nagybetűket. Például a "sajat" és a "sajat" is pozitív találatként lesz visszaadva. A paraméter alapértelmezett értéke `false`a következő:.
 
 ```csharp
 [Parameter]
@@ -138,7 +136,7 @@ public SwitchParameter CaseSensitive
 private bool caseSensitive;
 ```
 
-A `Exclude` és `Include` paraméterek azonosítják, amelyek kifejezetten zárva vagy a keresés szereplő elemek. Alapértelmezés szerint a parancsmag fog minden elem szerepel az adattárban. Azonban korlátozhatja a keresést, a parancsmag által végrehajtott, ezeket a paramétereket lehet explicit módon jelezni a keresés foglalandó elemek vagy nincs megadva.
+A `Exclude` és`Include` paraméterek azonosítják azokat az elemeket, amelyeket kifejezetten kizárnak a keresésből vagy azokból. Alapértelmezés szerint a parancsmag az adattár összes elemét keresi. A parancsmag által végrehajtott keresés korlátozásához azonban ezek a paraméterek használhatók a keresésbe foglalandó vagy kihagyott elemek explicit jelzésére.
 
 ```csharp
 [Parameter]
@@ -175,15 +173,15 @@ internal string[] includeStrings = null;
 internal WildcardPattern[] include = null;
 ```
 
-### <a name="declaring-parameter-sets"></a>Jelentést készítő paraméterkészlettel
+### <a name="declaring-parameter-sets"></a>Paraméter-készletek deklarálása
 
-Ez a parancsmag két paraméterkészlettel használ (`ScriptParameterSet` és `PatternParameterSet`, az alapértelmezett), az adatok elérésére használt két paraméterkészlettel nevei. `PatternParameterSet` az alapértelmezett paraméterkészletet, és ha használható a `Pattern` paraméter meg van adva. `ScriptParameterSet` használatos, amikor a felhasználó egy másik keresési mechanizmussal adja meg a `Script` paraméter. Paraméterkészlettel kapcsolatos további információkért lásd: [hozzáadása paraméterkészletek parancsmag](./adding-parameter-sets-to-a-cmdlet.md).
+Ez a parancsmag két paraméter-készletet `PatternParameterSet`használ (`ScriptParameterSet` és ez az alapértelmezett beállítás), amely az adatelérés során használt két paraméterérték neve. `PatternParameterSet`az alapértelmezett paraméter van beállítva, és a `Pattern` paraméter megadásakor használatos. `ScriptParameterSet`akkor használható, ha a felhasználó egy másik keresési mechanizmust ad `Script` meg a paraméter használatával. További információ a paraméterekről: [Paraméterek beállítása parancsmaghoz](./adding-parameter-sets-to-a-cmdlet.md).
 
 ## <a name="overriding-input-processing-methods"></a>Bemeneti feldolgozási módszerek felülbírálása
 
-Parancsmagok egy vagy több módszert feldolgozása a bemeneti felül kell írnia a [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztály. A bemeneti feldolgozási módszerekkel kapcsolatos további információkért lásd: [létrehozásához az első parancsmag](./creating-a-cmdlet-without-parameters.md).
+A parancsmagoknak felül kell bírálni a [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) osztály egy vagy több bemeneti feldolgozási módszerét. További információ a bemeneti feldolgozási módszerekről: [az első parancsmag létrehozása](./creating-a-cmdlet-without-parameters.md).
 
-Ez a parancsmag felülbírálja a [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) hozhat létre egy tömbjét metódus lefordított indításkor reguláris kifejezéseket. Ez növeli a teljesítményt, hogy ne használjon egyszerű megfelelő keresések során.
+Ez a parancsmag felülbírálja a [System. Management. Automation. parancsmag. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metódust, amely lefordított reguláris kifejezések tömbjét hozza létre indításkor. Ez növeli a teljesítményt a nem egyszerű egyezést nem használó keresések során.
 
 ```csharp
 protected override void BeginProcessing()
@@ -262,7 +260,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-Ez a parancsmag emellett felülbírálja a [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódus feldolgozása a karakterlánc-beállításokat a felhasználó által a parancssoron. Karakterlánc kijelölés eredményét egy egyéni objektum formájában privát meghívásával ír **MatchString** metódust.
+Ez a parancsmag felülbírálja a [System. Management. Automation. parancsmag. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metódust is, amellyel feldolgozhatja azokat a karakterlánc-beállításokat, amelyeket a felhasználó a parancssorban végrehajt. A karakterlánc-kijelölés eredményét egyéni objektum formájában írja le egy privát **MatchString** metódus meghívásával.
 
 ```csharp
 protected override void ProcessRecord()
@@ -373,13 +371,13 @@ protected override void ProcessRecord()
 
 ## <a name="accessing-content"></a>Tartalom elérése
 
-A parancsmag meg kell nyitnia a szolgáltató, a Windows PowerShell-elérési útját jelzi, hogy hozzá tudjon férni az adatokat. A [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) objektum esetében a Providert a futási teret használ, miközben a [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) tulajdonságát a a parancsmag segítségével nyissa meg a szolgáltatót. Az adatszolgáltató által biztosított tartalmakhoz való hozzáférést a [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) megnyitni a szolgáltató objektumot.
+A parancsmagnak meg kell nyitnia a Windows PowerShell elérési útja által jelzett szolgáltatót, hogy hozzáférhessen az adataihoz. A RunSpace [System. Management. Automation. sessionstate](/dotnet/api/System.Management.Automation.SessionState) objektuma a szolgáltatóhoz való hozzáféréshez használatos, míg a (z) parancsmag [System. Management. Automation. PSCmdlet. Invokeprovider *](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) tulajdonsága a szolgáltató megnyitására szolgál. A tartalomhoz való hozzáférést a [System. Management. Automation. Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) objektum lekérésével lehet megnyitva a szolgáltató számára.
 
-Ez a minta kiválasztása – Str parancsmag használja a [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) megvizsgálja a tartalom elérhetővé tulajdonság. Ezt követően meghívhatja a [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) módszer, átadja a szükséges Windows PowerShell-útvonal.
+Ez a minta Select-Str parancsmag a [System. Management. Automation. Providerintrinsics. Content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) tulajdonság használatával teszi elérhetővé a tartalmat a vizsgálathoz. Ezután meghívhatja a [System. Management. Automation. Contentcmdletproviderintrinsics. Getreader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) metódust, átadva a szükséges Windows PowerShell-elérési utat.
 
-## <a name="code-sample"></a>Kódminta
+## <a name="code-sample"></a>Mintakód
 
-A következő kód bemutatja ennek a verziónak a kiválasztása – Str parancsmag végrehajtására. Vegye figyelembe, hogy ez a kód tartalmazza a parancsmag osztály, a parancsmag által használt titkos módszerek és a Windows PowerShell beépülő modul kódot a parancsmag regisztrálásához használt. A parancsmag nyilvántartására vonatkozó további információkért lásd: [létrehozásához a parancsmag](#Defining-the-Cmdlet-Class).
+A következő kód a Select-Str parancsmag ezen verziójának megvalósítását mutatja be. Vegye figyelembe, hogy ez a kód tartalmazza a parancsmag osztályt, a parancsmag által használt privát metódusokat, valamint a parancsmag regisztrálásához használt Windows PowerShell beépülő modul kódját. A parancsmag regisztrálásával kapcsolatos további információkért lásd: [a parancsmag felépítése](#defining-the-cmdlet-class).
 
 ```csharp
 //
@@ -1088,21 +1086,21 @@ namespace Microsoft.Samples.PowerShell.Commands
 } //namespace Microsoft.Samples.PowerShell.Commands;
 ```
 
-## <a name="building-the-cmdlet"></a>A parancsmag készítése
+## <a name="building-the-cmdlet"></a>A parancsmag felépítése
 
-Parancsmag-k megvalósítása után regisztrálnia kell azt a Windows PowerShell-lel a Windows PowerShell beépülő modullal. Parancsmagok regisztrálásával kapcsolatos további információkért lásd: [parancsmagjainak regisztrálásához, a szolgáltatók és az alkalmazások üzemeltetése hogyan](/previous-versions//ms714644(v=vs.85)).
+A parancsmag implementálása után regisztrálnia kell a Windows PowerShell-lel egy Windows PowerShell beépülő modullal. A parancsmagok regisztrálásával kapcsolatos további információkért lásd: [parancsmagok, szolgáltatók és gazdagép-alkalmazások regisztrálása](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>A parancsmag tesztelése
 
-Ha a parancsmagot a Windows PowerShell-lel regisztrálva lett, azt a parancssorból való futtatásával tesztelheti. A következő eljárás használható a Select-Str parancsmagra teszteléséhez.
+Ha a parancsmag regisztrálva van a Windows PowerShellben, tesztelheti azt a parancssorban futtatva. A következő eljárással ellenőrizheti a minta Select-Str parancsmagot.
 
-1. Indítsa el a Windows Powershellt, és keresse meg a ".NET" kifejezést tartalmazó sorok előfordulását a megjegyzések fájlban. Vegye figyelembe, hogy az elérési út nevét tegye idézőjelbe szükségesek, csak akkor, ha az elérési út egynél több szóból áll.
+1. Indítsa el a Windows PowerShellt, és keresse meg a megjegyzések fájlt a ".NET" kifejezéssel rendelkező sorok előfordulásainak kereséséhez. Vegye figyelembe, hogy az útvonal neve körüli idézőjelek csak akkor szükségesek, ha az elérési út egynél több szóból áll.
 
     ```powershell
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
     ```
 
-    A következő eredmény jelenik meg.
+    A következő kimenet jelenik meg.
 
     ```output
     IgnoreCase   : True
@@ -1117,13 +1115,13 @@ Ha a parancsmagot a Windows PowerShell-lel regisztrálva lett, azt a parancssorb
     Pattern      : .NET
     ```
 
-2. Keresse meg a megjegyzések fájlban szót tartalmazó sorok előfordulását "keresztül", bármely más szöveg követ. A `SimpleMatch` paraméter alapértelmezett értékét használja `false`. A keresés megkülönbözteti a kis-és mivel a `CaseSensitive` paraméter értéke `false`.
+2. Keresse meg a megjegyzések fájljában a "over" szót tartalmazó sorok előfordulásait, majd a többi szöveget. A `SimpleMatch` paraméter az alapértelmezett `false`értéket használja. A keresés megkülönbözteti a kis-és `CaseSensitive` `false`nagybetűket, mert a paraméter értéke a következő:.
 
     ```powershell
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
     ```
 
-    A következő eredmény jelenik meg.
+    A következő kimenet jelenik meg.
 
     ```output
     IgnoreCase   : True
@@ -1138,13 +1136,13 @@ Ha a parancsmagot a Windows PowerShell-lel regisztrálva lett, azt a parancssorb
     Pattern      : over*
     ```
 
-3. Keresse meg a megjegyzések fájlban, a minta egy reguláris kifejezést használ. A parancsmag rákeres a alfabetikus karaktereket és szóközöket zárójelek között.
+3. A Notes-fájlban reguláris kifejezéssel keresheti meg a mintát. A parancsmag a betűket és az üres szóközöket keresi zárójelek közé.
 
     ```powershell
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
     ```
 
-    A következő eredmény jelenik meg.
+    A következő kimenet jelenik meg.
 
     ```output
     IgnoreCase   : True
@@ -1159,13 +1157,13 @@ Ha a parancsmagot a Windows PowerShell-lel regisztrálva lett, azt a parancssorb
     Pattern      : \([A-Za-z:blank:]
     ```
 
-4. A megjegyzések fájl kis-és nagybetűket keresést végrehajtani az előfordulások "Paraméter" szó.
+4. A megjegyzések fájljának kis-és nagybetűket megkülönböztető keresését hajtsa végre a "paraméter" szó előfordulása esetén.
 
     ```powershell
     select-str -Path notes -Pattern Parameter -CaseSensitive
     ```
 
-    A következő eredmény jelenik meg.
+    A következő kimenet jelenik meg.
 
     ```output
     IgnoreCase   : False
@@ -1180,13 +1178,13 @@ Ha a parancsmagot a Windows PowerShell-lel regisztrálva lett, azt a parancssorb
     Pattern      : Parameter
     ```
 
-5. Keresés a változó szolgáltató Önnek a Windows PowerShell-lel változók, amelyek rendelkeznek a 0 – 9 numerikus értékeket.
+5. A 0 és 9 közötti numerikus értékkel rendelkező változóknál keresse meg a Windows PowerShell által szállított változót.
 
     ```powershell
     select-str -Path * -Pattern "[0-9]"
     ```
 
-    A következő eredmény jelenik meg.
+    A következő kimenet jelenik meg.
 
     ```output
     IgnoreCase   : True
@@ -1196,13 +1194,13 @@ Ha a parancsmagot a Windows PowerShell-lel regisztrálva lett, azt a parancssorb
     Pattern      : [0-9]
     ```
 
-6. Parancsprogram-blokkot használatával keresse meg a fájlban SelectStrCommandSample.cs "Pos" karakterláncnak. A **cmatch** függvény esetében a szkript hajt végre egy kis-és névminta egyeztetésével.
+6. Egy parancsfájl-blokk használatával keresse meg a "POS" karakterlánc SelectStrCommandSample.cs. A parancsfájl **cmatch** funkciója kis-és nagybetűket nem megkülönböztető mintázatot hajt végre.
 
     ```powershell
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
     ```
 
-    A következő eredmény jelenik meg.
+    A következő kimenet jelenik meg.
 
     ```output
     IgnoreCase   : True
@@ -1214,16 +1212,16 @@ Ha a parancsmagot a Windows PowerShell-lel regisztrálva lett, azt a parancssorb
 
 ## <a name="see-also"></a>Lásd még:
 
-[Hogyan hozhat létre egy Windows PowerShell-parancsmag](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[Windows PowerShell-parancsmag létrehozása](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [Az első parancsmag létrehozása](./creating-a-cmdlet-without-parameters.md)
 
-[A parancsmag létrehozása, amely módosítja a rendszer](./creating-a-cmdlet-that-modifies-the-system.md)
+[A rendszer módosítását módosító parancsmag létrehozása](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[A Windows PowerShell-szolgáltató tervezése](../prog-guide/designing-your-windows-powershell-provider.md)
+[A Windows PowerShell-szolgáltató megtervezése](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Hogyan működik a Windows PowerShell](/previous-versions//ms714658(v=vs.85))
+[A Windows PowerShell működése](/previous-versions//ms714658(v=vs.85))
 
-[How to Register parancsmagok, a szolgáltatók és az alkalmazások üzemeltetéséhez](/previous-versions//ms714644(v=vs.85))
+[Parancsmagok, szolgáltatók és gazdagép-alkalmazások regisztrálása](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -1,73 +1,83 @@
 ---
-title: A helyettesítő karakterek támogató parancsmag-paraméterek |} A Microsoft Docs
+title: Helyettesítő karakterek támogatása parancsmag-paraméterekben
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/26/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- wildcards [PowerShell Programmer's Guide]
-- parameters [PowerShell Programmer's Guide], wildcards
-ms.assetid: 9b26e1e9-9350-4a5a-aad5-ddcece658d93
-caps.latest.revision: 12
-ms.openlocfilehash: 6c762d3889bc4b649252390625525db4735f4c1d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
+ms.sourcegitcommit: a02ccbeaa17c0e513d6c4a21b877c88ac7725458
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067399"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104448"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Helyettesítő karakterek támogatása parancsmag-paraméterekben
 
-Gyakran előfordul akkor tervezhet a parancsmag futtatásához az erőforrások csoportjához, nem pedig egy egyetlen erőforrás ellen. Például a parancsmag található összes fájl egy azonos nevű vagy kiterjesztéssel rendelkező adattárban előfordulhat, hogy kell. Egy parancsmag, amely akkor erőforrások csoportjához kialakításakor kell biztosítanak támogatást a helyettesítő karakterek.
+Gyakran olyan parancsmagot kell megterveznie, amely egy erőforrás-csoporton fut ahelyett, hogy egyetlen erőforrásra lenne szüksége. Előfordulhat például, hogy egy parancsmagnak meg kell keresnie egy azonos nevű vagy kiterjesztésű adattár összes fájlját. Meg kell adnia a helyettesítő karakterek támogatását, ha olyan parancsmagot tervez, amely egy erőforrás-csoporton fog futni.
 
 > [!NOTE]
-> A helyettesítő karakterek használatával van más néven *helyettesítés*.
+> A helyettesítő karakterek használata más néven *globbing*.
 
-## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>A helyettesítő karakterek használata, a Windows PowerShell-parancsmagok
+## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Helyettesítő karaktereket használó Windows PowerShell-parancsmagok
 
- Számos Windows PowerShell-parancsmagok a helyettesítő karakterek támogatása a paraméterértékeket. Ha például szinte minden parancsmag, amely rendelkezik egy `Name` vagy `Path` paraméter támogatja a helyettesítő karakterek ezeket a paramétereket. (Bár a legtöbb parancsmag, amely rendelkezik egy `Path` paraméter is rendelkezik egy `LiteralPath` paraméter, amely nem támogatja a helyettesítő karakterek.) A következő parancs bemutatja, hogyan helyettesítő karaktert adja vissza az összes parancsmagot a jelenlegi munkamenet, amelynek a neve tartalmazza a Get-verb szolgál.
+ Számos Windows PowerShell-parancsmag támogatja a helyettesítő karaktereket a paraméter értékeinél. Például szinte minden olyan parancsmag, amely a vagy `Name` `Path` a paraméterrel rendelkezik, helyettesítő karaktereket is támogat ezekhez a paraméterekhez. (Habár a `Path` paraméterrel rendelkező legtöbb parancsmag olyan paraméterrel is `LiteralPath` rendelkezik, amely nem támogatja a helyettesítő karaktereket.) A következő parancs bemutatja, hogyan használható helyettesítő karakter az aktuális munkamenetben lévő összes olyan parancsmag visszaküldéséhez, amelynek a neve tartalmazza a Get műveletet.
 
- **PS > get-command get -\***
+ `Get-Command get-*`
 
 ## <a name="supported-wildcard-characters"></a>Támogatott helyettesítő karakterek
 
-Windows PowerShell támogatja a következő helyettesítő karaktereket.
+A Windows PowerShell a következő helyettesítő karaktereket támogatja.
 
-|Helyettesítő karakter|Leírás|Példa|Egyezik|Nem egyezik|
-|------------------------|-----------------|-------------|-------------|--------------------|
-|*|A megadott pozíciótól kezdődően nulla vagy több karakterre illeszkedik|a*|A, ag, Apple||
-|?|A megadott pozíciónál található egyezés anycharacter|?n|Egy, a, a|futott|
-|[ ]|Egy karaktertartományt megfelel|[a-l]ook|könyv, cook, tekintse meg|tartott|
-|[ ]|A megadott karakterre illeszkedik|[bc]ook|könyv, cook|nézd|
+| Helyettesítő |                             Leírás                             |  Példa   |     Egyezik      | Nem egyezik |
+| -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
+| *        | Nulla vagy több karakternek felel meg, a megadott pozíciótól kezdve | `a*`       | A, AG, Apple     |                |
+| ?        | Minden karakternek megfelel a megadott pozícióban                     | `?n`       | Egy, a, be       | futott            |
+| [ ]      | Számos karakterből áll                                       | `[a-l]ook` | könyv, Cook, Look | Zug, elvitt     |
+| [ ]      | Megfelel a megadott karaktereknek                                    | `[bn]ook`  | könyv, Zug       | Cook, Look     |
 
-A helyettesítő karakterek támogató parancsmagok tervezésekor lehetővé teszi a helyettesítő karakterek kombinációját. Használja az alábbi parancs például a `Get-ChildItem` parancsmag a .txt fájlok, amelyek a c:\Techdocs mappában, és, betűkkel kezdődik "a" és "l."
+A helyettesítő karaktereket támogató parancsmagok tervezésekor engedélyezze a helyettesítő karakterek kombinációját. A következő parancs például a `Get-ChildItem` parancsmag használatával kéri le a c:\Techdocs mappában található összes. txt fájlt, amely az "a" betűvel kezdődik az "l" értékkel.
 
-**Get-childitem c:\techdocs\\[a-l]\*.txt**
+`Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-Az előző parancs használja a tartomány helyettesítő **[a-l]** megadásához, hogy a fájl nevét kell karakterekkel kezdődnek "a" és "l." A parancsot, majd használja a * helyettesítő karaktert bármely karakter között a fájl nevének első betűje és a .txt kiterjesztése helyettesíti.
+Az előző parancs a tartomány helyettesítő karakterét `[a-l]` használja annak megadásához, hogy a fájl nevének az "a" karakterrel kell kezdődnie, és a `*` helyettesítő karaktert használja helyőrzőként a fájlnév első betűje és a a **. txt** kiterjesztés.
 
-Az alábbi példában egy tartomány helyettesítő karakterrel, amely nem tartalmazza a "d" betű, de a "a" és "f." az összes többi betűt tartalmaz
+Az alábbi példa egy tartományhoz tartozó helyettesítő karaktert használ, amely kizárja a "d" betűt, de az "a" és az "f" közötti összes többi betűt is tartalmazza.
 
-**Get-childitem c:\techdocs\\[a-cef]\*.txt**
+`Get-ChildItem c:\techdocs\[a-cef]\*.txt`
 
-## <a name="handling-literal-characters-in-wildcard-patterns"></a>Helyettesítő karakterek mintái literális karakter kezelése
+## <a name="handling-literal-characters-in-wildcard-patterns"></a>Literális karakterek használata helyettesítő karakteres mintákban
 
-Ha a helyettesítő karakterrel megadott szövegkonstans karaktereket tartalmaz, használja a használni kívánt szintaxiskiemelést karaktert (') escape-karakter. Ha programozott módon adja meg a literális karakter, használja egy egyetlen használni kívánt szintaxiskiemelést. A parancssorban literális karakter megadása esetén két backticks használja. A következő mintát tartalmazza például két zárójelben, amely szerint kell értelmezni.
+Ha a megadott helyettesítő karakter olyan literál karaktereket tartalmaz, amelyek nem értelmezendő helyettesítő karakterként, használja a kezdő karaktert (`` ` ``) Escape-karakterként. Ha literál karaktereket ad meg a PowerShell API-val, egyetlen kezdő használjon. Ha literál karaktereket ad meg a PowerShell parancssorába, használjon két aposztrófokkal.
 
-"John Smith \`[*"] "(megadott programozott módon)
+Az alábbi minta például két zárójelet tartalmaz, amelyeket szó szerint kell elvégeznie.
 
-"John Smith \` \`[*\`"] "(a parancssorban megadott)
+A PowerShell API használatakor használja a következőket:
 
-Ez a minta illeszkedik "John Smith [Marketing]" vagy "John Smith [fejlesztési]".
+- "John Smith \`[*"] "
 
-## <a name="cmdlet-output-and-wildcard-characters"></a>A parancsmag kimenete és a helyettesítő karakterek
+A PowerShell-parancssorból való használat esetén:
 
-Parancsmag-paraméterek támogatja a helyettesítő karaktereket, amikor egy parancsmag-műveletet, az általában egy tömb kimeneti állít elő. Néha előfordul logikus nem támogatja a kimeneti, mert a felhasználó egyszerre csak egy elemet lehet, hogy használ egy tömb. Ha például a `Set-Location` parancsmag támogatja a tömb kimeneti, mert a felhasználó csak egyetlen helyen állítja. Ebben a példában a parancsmag továbbra is támogatja a helyettesítő karaktereket, de feloldási kényszerül, egyetlen helyen.
+- "John Smith \` \`[*\`"] "
+
+Ez a minta a következőnek felel meg: "John Smith [marketing]" vagy "John Smith [Development]". Például:
+
+```
+PS> "John Smith [Marketing]" -like "John Smith ``[*``]"
+True
+
+PS> "John Smith [Development]" -like "John Smith ``[*``]"
+True
+```
+
+## <a name="cmdlet-output-and-wildcard-characters"></a>Parancsmag kimenete és helyettesítő karakterei
+
+Ha a parancsmag paraméterei helyettesítő karaktereket is támogatnak, a művelet általában egy tömb kimenetét állítja elő.
+Alkalmanként a tömb kimenetét nem érdemes támogatni, mivel a felhasználó csak egyetlen elem használatát teszi lehetővé. A `Set-Location` parancsmag például nem támogatja a tömb kimenetét, mert a felhasználó csak egyetlen helyet állít be. Ebben az esetben a parancsmag továbbra is támogatja a helyettesítő karaktereket, de egyetlen helyre kényszeríti a feloldást.
 
 ## <a name="see-also"></a>Lásd még:
 
-[Egy Windows PowerShell-parancsmag írása](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell-parancsmag írása](./writing-a-windows-powershell-cmdlet.md)
 
-[WildcardPattern osztályban](/dotnet/api/system.management.automation.wildcardpattern)
+[WildcardPattern osztály](/dotnet/api/system.management.automation.wildcardpattern)
