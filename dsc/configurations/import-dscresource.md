@@ -1,19 +1,19 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, a konfigurációt, a beállítása
+keywords: DSC, PowerShell, konfigurálás, beállítás
 title: Az Import-DSCResource használata
-ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080101"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215398"
 ---
 # <a name="using-import-dscresource"></a>Az Import-DSCResource használata
 
-`Import-DScResource` van egy dinamikus kulcsszóval, amely csak egy konfigurációs parancsfájl-blokkon belül használható. A `Import-DSCResource` kulcsszó használatával importálja a konfigurációt a szükséges erőforrásokat. Alatt lévő erőforrások `$pshome` importálása automatikusan történik, de továbbra is ajánlott explicit módon importálja az összes erőforrás használatban a [konfigurációs](Configurations.md).
+`Import-DScResource`egy dinamikus kulcsszó, amely csak a konfigurációs parancsfájlok blokkjában használható. A `Import-DSCResource` konfigurációban szükséges erőforrások importálására szolgáló kulcsszó. A rendszer automatikusan importálja az erőforrásokat, de az ajánlott eljárás a konfigurációban használt összes erőforrás explicit módon történő importálása is. [](Configurations.md) `$pshome`
 
-A szintaxist a `Import-DSCResource` alább találja.  Modulok megadása név szerint, mert listában minden új sorban kell.
+A szintaxisa `Import-DSCResource` alább látható.  A modulok név szerint történő megadásakor követelmény, hogy mindegyiket egy új sorba sorolja.
 
 ```syntax
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
@@ -21,14 +21,14 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 
 |Paraméter  |Leírás  |
 |---------|---------|
-|`-Name`|A DSC erőforrás neve, amely importálnia kell. Ha a modul neve van megadva, a parancs megkeresi ezen DSC-erőforrások belül ez a modul; Ellenkező esetben a parancs a DSC-erőforrások keresés minden DSC-erőforrás elérési utat. A helyettesítő karakterek használata támogatott.|
-|`-ModuleName`|A modul neve, vagy a modul specifikációnak.  Erőforrások importálása a modul adja meg, ha a parancs megpróbál importálása csak azokat az erőforrásokat. Ha csak a modul adja meg, a parancs importálja a modult a DSC-erőforrások.|
+|`-Name`|A DSC-erőforrás neve (i), amelyet importálnia kell. Ha a modul neve meg van adva, a parancs ezen a modulon belül keresi a DSC-erőforrásokat. Ellenkező esetben a parancs az összes DSC-erőforrás elérési útján keresi a DSC-erőforrásokat. A helyettesítő karakterek használata támogatott.|
+|`-ModuleName`|A modul neve vagy a modul specifikációja.  Ha egy modulból importálandó erőforrásokat ad meg, a parancs csak ezeket az erőforrásokat fogja importálni. Ha csak a modult adta meg, a parancs a modulban lévő összes DSC-erőforrást importálja.|
 
 ```powershell
 Import-DscResource -ModuleName xActiveDirectory;
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>Példa: Az Import-DSCResource használja a konfiguráció belül
+## <a name="example-use-import-dscresource-within-a-configuration"></a>Példa: Az import-DSCResource használata egy konfiguráción belül
 
 ```powershell
 Configuration MSDSCConfiguration
@@ -52,45 +52,45 @@ Configuration MSDSCConfiguration
 ```
 
 > [!NOTE]
-> Több érték erőforrás és modulok nevének megadása a ugyanazt a parancsot nem támogatottak. Lehet, hogy a nem determinisztikus viselkedés kapcsolatos melyik erőforrást kell betölteni a modul, abban az esetben, ha ugyanazon az erőforráson több modul megtalálható. Alább parancs hibát eredményez a fordítás közben.
+> Ha több értéket ad meg az erőforrás-nevekhez és a modulok nevéhez, a parancs nem támogatott. Nem determinisztikus-viselkedéssel rendelkezik arról, hogy melyik erőforrást kell betölteni, ha az adott erőforrás több modulban is megtalálható. Az alábbi parancs hibát okoz a fordítás során.
 >
 > ```powershell
 > Import-DscResource -Name UserConfigProvider*,TestLogger1 -ModuleName UserConfigProv,PsModuleForTestLogger
 > ```
 
-Csak a Name paraméter használatakor figyelembe kell dolgot:
+Csak a name paraméter használata esetén megfontolandó szempontok:
 
-- Egy erőforrás-igényes művelet gépen telepített modul számától függően.
-- Az első erőforrás található a megadott nevű betölti azt. Abban az esetben, ahol egynél több erőforrás azonos nevű telepítve van, akkor sikerült betölteni a helytelen erőforrás.
+- Ez egy erőforrás-igényes művelet a gépen telepített modulok számától függően.
+- A rendszer betölti a megadott névvel rendelkező első erőforrást. Abban az esetben, ha egynél több azonos nevű erőforrás van telepítve, akkor a hibás erőforrást is betöltheti.
 
-A javasolt felhasználás az, hogy adja meg `–ModuleName` együtt a `-Name` paramétert, az alábbiakban leírtak szerint.
+Az ajánlott használatot a paraméterrel kell `-Name` megadni `–ModuleName` az alább leírtak szerint.
 
-A szintaxis a következő előnyökkel jár:
+Ez a használat a következő előnyökkel jár:
 
-- Csökkenti a teljesítményre gyakorolt hatás, a keresés hatókörét, a megadott erőforrás korlátozza.
-- Explicit módon a modult, amely meghatározza az erőforrást, biztosítva a megfelelő erőforrás betöltött határozza meg.
-
-> [!NOTE]
-> A PowerShell 5.0-s DSC-erőforrásokat több verziója is rendelkezik, és verziók egy számítógép egymás mellett telepíthető. Ez valósul meg kellene resource modul több verzióját, a modul mappájában található.
-> További információkért lásd: [eltérő verziójú erőforrások használata](sxsresource.md).
-
-## <a name="intellisense-with-import-dscresource"></a>Az Import-DSCResource az IntelliSense
-
-Szerzői műveletek a DSC-konfiguráció ISE-ben, ha a PowerShell IntelliSence biztosít az erőforrások és erőforrás-tulajdonságok. Erőforrás-definíciók alapján a `$pshome` modul elérési útja automatikusan töltődnek be. Erőforrások importálásakor a `Import-DSCResource` kulcsszó, az adott erőforrás-definíciókban hozzáadja, és az Intellisense tartalmazza az importált erőforrás-séma ki van bontva.
-
-![Erőforrás Intellisense](/media/resource-intellisense.png)
+- A megadott erőforrás keresési hatókörének korlátozásával csökkenti a teljesítményre gyakorolt hatást.
+- Explicit módon definiálja az erőforrást meghatározó modult, amely biztosítja a megfelelő erőforrás betöltését.
 
 > [!NOTE]
-> A PowerShell 5.0-es verziótól kezdve kiegészítés hozzáadva a DSC-erőforrások és a hozzájuk tartozó tulajdonságok ISE-ben. További információkért lásd: [erőforrások](../resources/resources.md).
+> A PowerShell 5,0-ben a DSC-erőforrások több verzióval is rendelkezhetnek, és a verziók a számítógépen egymás mellett telepíthetők. Ez egy olyan erőforrás-modul több verziójával valósul meg, amely ugyanabban a modul mappában található.
+> További információ: [erőforrások használata több verzióval](sxsresource.md).
 
-A konfiguráció összeállításakor PowerShell ellenőrzése a konfiguráció az összes erőforrás blokkokat használja az importált erőforrás-definíciókban.
-Minden erőforrás blokk érvényesítve, az erőforrás sémadefiníciót, használja a következő szabályokat.
+## <a name="intellisense-with-import-dscresource"></a>IntelliSense importálással – DSCResource
 
-- Csak a sémában definiált tulajdonságok szolgálnak.
-- Az adattípusok minden egyes tulajdonság megfelelőek-e.
-- Kulcsok tulajdonságok vannak megadva.
-- Nem csak olvasható tulajdonság használható.
-- A maps-típusok érvényesítése értéknek.
+A DSC-konfiguráció ISE-ben történő létrehozásakor a PowerShell IntelliSence biztosít az erőforrásokhoz és az erőforrás-tulajdonságokhoz. A `$pshome` modul elérési útjának erőforrás-definíciói automatikusan betöltődik. Ha a `Import-DSCResource` kulcsszó használatával importál erőforrásokat, a rendszer hozzáadja a megadott erőforrás-definíciókat, az IntelliSense kibontása pedig az importált erőforrás sémájának belefoglalásához.
+
+![Erőforrás IntelliSense](../media/resource-intellisense.png)
+
+> [!NOTE]
+> A PowerShell 5,0-től kezdve a TAB befejezését a DSC-erőforrásokhoz és azok tulajdonságaihoz adta hozzá a rendszer. További információ: [erőforrások](../resources/resources.md).
+
+A konfiguráció fordításakor a PowerShell az importált erőforrás-definíciók használatával ellenőrzi a konfigurációban lévő összes erőforrás-blokkot.
+Az egyes erőforrás-blokkokat az erőforrás sémájának definíciója alapján érvényesíti a következő szabályokhoz.
+
+- Csak a sémában definiált tulajdonságok használatosak.
+- Az egyes tulajdonságok adattípusai helyesek.
+- A kulcsok tulajdonságai meg vannak adva.
+- A rendszer nem használ írásvédett tulajdonságot.
+- Érvényesítés az érték térképek típusain.
 
 Vegye figyelembe a következő konfigurációt:
 
@@ -111,41 +111,41 @@ Configuration SchemaValidationInCorrectEnumValue
 }
 ```
 
-Hiba történt a konfiguráció eredményez fordítása.
+A konfiguráció fordítása hibát eredményez.
 
 ```output
 PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
 ```
 
-Az IntelliSense és a séma érvényesítése elkerülése futási időben elemzési és fordítási idő alatt további hibák észlelését teszi lehetővé.
+Az IntelliSense és a séma érvényesítése lehetővé teszi, hogy több hibát kapjon az elemzési és a fordítási idő során, és elkerülve a szövődmények futási idejét.
 
 > [!NOTE]
-> Az egyes DSC-erőforrások is rendelkezik egy névvel, és a egy **FriendlyName** az erőforrás-séma határozza meg. Az alábbiakban "MSFT_ServiceResource.shema.mof" első két sorát.
+> Minden DSC-erőforrás rendelkezhet egy névvel, és az erőforrás sémája által definiált **FriendlyName** is. Az alábbiakban a "MSFT_ServiceResource. shema. MOF" első két sora látható.
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
-> Az erőforrás-konfiguráció használatakor megadhatja **MSFT_ServiceResource** vagy **szolgáltatás**.
+> Ha ezt az erőforrást egy konfigurációban használja, megadhatja a **MSFT_ServiceResource** vagy a **szolgáltatást**.
 
-## <a name="powershell-v4-and-v5-differences"></a>PowerShell v4 és 5-ös verziójának különbségek
+## <a name="powershell-v4-and-v5-differences"></a>PowerShell v4 és V5 különbségek
 
-Amikor a jelentéskészítési konfigurációk a PowerShell 4.0 VS-ben több különbségek vannak. A PowerShell 5.0-s és újabb verziók. Ez a szakasz kiemeli a különbségeket, hogy megjelenik-e ez a cikk a.
+A PowerShell 4,0-ben és a-ben a konfigurációk létrehozásakor több különbség jelenik meg. PowerShell 5,0 és újabb verziók. Ebben a szakaszban a jelen cikkhez kapcsolódó különbségek láthatók.
 
 ### <a name="multiple-resource-versions"></a>Több erőforrás-verzió
 
-Különböző verzióinak egymás melletti erőforrások telepítéséről és a PowerShell 4.0-s nem támogatott. Ha azt tapasztalja, erőforrások importálása a konfigurációs problémákat, győződjön meg arról, hogy csak egy verziója van telepítve az erőforrás.
+A PowerShell 4,0 nem támogatja az erőforrások különböző verzióinak egyoldalas telepítését és használatát. Ha az erőforrások a konfigurációba való importálásával kapcsolatos problémákat tapasztal, győződjön meg arról, hogy az erőforrásnak csak egy verziója van telepítve.
 
-A két verziója az alábbi képen a **xPSDesiredStateConfiguration** modulnak vannak telepítve.
+Az alábbi képen a **xPSDesiredStateConfiguration** modul két verziója van telepítve.
 
-![Rögzített több erőforrás-verzió](/media/multiple-resource-versions-broken.md)
+![Több erőforrás-verzió javítva](../media/multiple-resource-versions-broken.png)
 
-Másolja a tartalmát a kívánt modul verzióját a legfelső szintű modulkönyvtárat.
+Másolja a kívánt modul verziójának tartalmát a modul könyvtárának legfelső szintjére.
 
-![Rögzített több erőforrás-verzió](/media/multiple-resource-versions-fixed.md)
+![Több erőforrás-verzió javítva](../media/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>Erőforrás helye
 
-Amikor szerzői és konfigurációk fordítása, az erőforrások bármely által megadott könyvtárban tárolható a [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). A PowerShell 4.0-s, az LCM Konfigurálása szükséges minden DSC-erőforrás modulok "Program Files\WindowsPowerShell\Modules" alapján kell tárolni, vagy `$pshome\Modules`. A PowerShell 5.0-es verziótól kezdve ez a követelmény el lett távolítva, és az erőforrás-modulokat bármilyen által megadott könyvtárban tárolható `PSModulePath`.
+Konfigurációk létrehozásakor és fordításakor az erőforrások a [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path)által meghatározott bármely könyvtárban tárolhatók. A PowerShell 4,0-ben a teljes DSC-erőforrás modulokat a "program Files\WindowsPowerShell\Modules" vagy `$pshome\Modules`a (z) alatt kell tárolni. A PowerShell 5,0-es verziójától kezdve ez a követelmény el lett távolítva, és az erőforrás-modulok `PSModulePath`a által meghatározott bármely könyvtárban tárolhatók.
 
 ## <a name="see-also"></a>Lásd még:
 

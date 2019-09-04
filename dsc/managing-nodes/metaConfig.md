@@ -1,38 +1,38 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, a konfigurációt, a beállítása
-title: A helyi Configuration Manager
-ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+keywords: DSC, PowerShell, konfigurálás, beállítás
+title: A helyi Configuration Manager konfigurálása
+ms.openlocfilehash: 42544036d87fcea3189fd6d2e55579fe87f137e1
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229493"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215388"
 ---
-# <a name="configuring-the-local-configuration-manager"></a>A helyi Configuration Manager
+# <a name="configuring-the-local-configuration-manager"></a>A helyi Configuration Manager konfigurálása
 
-> Érvényes: Windows PowerShell 5.0
+> Érvényes: Windows PowerShell 5,0
 
-A helyi Configuration Manager (LCM) Konfigurálása a Desired State Configuration (DSC) rétegen a motor.
-Az LCM minden célként megadott csomóponton fut, és -elemzés és a csomópont küldött konfigurációk életbe léptetése.
-Feladata még számos egyéb aspektusait DSC, többek között a következőket.
+A helyi Configuration Manager (LCD ChipOnGlas) a kívánt állapot-konfiguráció (DSC) motorja.
+Az LCD ChipOnGlas minden cél csomóponton fut, és felelős a csomópontnak eljuttatott konfigurációk elemzéséhez és létrehozásához.
+A DSC számos más aspektusa is felelős, beleértve az alábbiakat is.
 
-- Frissítési mód (leküldéses és lekéréses) meghatározása.
-- Adja meg, milyen gyakran egy csomópont lekéri és konfigurációk ír elő.
-- A csomópont társítása lekérési szolgáltatást.
+- A frissítési mód (leküldéses vagy lekéréses) meghatározása.
+- Annak megadása, hogy a csomópont milyen gyakran kér le és hozza meg a konfigurációkat.
+- A csomópont társítása a lekéréses szolgáltatással.
 - Részleges konfigurációk megadása.
 
-Egy speciális típusú konfigurációs használatával minden egyes ezen viselkedés megadása az LCM konfigurálása.
-A következő szakaszok ismertetik az LCM konfigurálása.
+Egy speciális konfiguráció használatával konfigurálhatja az LCD ChipOnGlas-t az egyes viselkedések megadásához.
+Az alábbi szakaszok azt ismertetik, hogyan konfigurálható az LCD ChipOnGlas.
 
-Windows PowerShell 5.0 bevezetett új beállítások kezeléséhez a Local Configuration Manager.
-Az LCM konfigurálása a Windows PowerShell 4.0 kapcsolatos információkért lásd: [konfigurálása a Local Configuration Manager korábbi verzióiban a Windows PowerShell-ben](metaconfig4.md).
+A Windows PowerShell 5,0 új beállításokat vezetett be a helyi Configuration Manager kezeléséhez.
+Az LCD Windows PowerShell 4,0-ben való konfigurálásával kapcsolatos információkért lásd: [a helyi Configuration Manager konfigurálása a Windows PowerShell korábbi verzióiban](metaconfig4.md).
 
-## <a name="writing-and-enacting-an-lcm-configuration"></a>És a egy LCM konfiguráció életbe léptetése
+## <a name="writing-and-enacting-an-lcm-configuration"></a>LCD-konfiguráció írása és létrehozása
 
-Az LCM konfigurálása, létrehozása és futtatása egy speciális típusú konfigurációt, amely érvényes LCM beállításait.
-Adjon meg egy LCM konfigurációt, használja a DscLocalConfigurationManager attribútum.
-Az alábbiakban látható egy egyszerű leküldéses módba állítja a LCM konfigurációját.
+Az LCD ChipOnGlas konfigurálásához hozzon létre és futtasson egy olyan speciális konfigurációt, amely az LCD-beállításokat alkalmazza.
+Az LCD ChipOnGlas-konfiguráció megadásához használja a DscLocalConfigurationManager attribútumot.
+Az alábbi ábrán egy egyszerű konfiguráció látható, amely az LCD-t leküldéses módba állítja.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -48,165 +48,168 @@ configuration LCMConfig
 }
 ```
 
-A beállítások alkalmazására LCM Konfigurálása a folyamat hasonlít a DSC-konfiguráció alkalmazása.
-Az LCM konfigurálása létrehoz, fordítsa MOF-fájlba, és alkalmazza azt a csomópontot.
-Ellentétben a DSC-konfigurációk, hogy nem kihirdeti az LCM konfigurálása meghívásával a [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) parancsmagot.
-Ehelyett hívja [Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager), Főhitelesítésszolgáltató az LCM konfigurálása paraméterként MOF elérési útját.
-Az LCM konfigurálása, kihirdeti, miután a LCM tulajdonságainak meghívásával láthatja a [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) parancsmagot.
+A beállítások az LCD-re való alkalmazásának folyamata hasonló a DSC-konfiguráció alkalmazásához.
+Létre fog hozni egy LCD ChipOnGlas-konfigurációt, le kell fordítania egy MOF-fájlba, majd alkalmaznia kell azt a csomópontra.
+A DSC-konfigurációktól eltérően a [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) parancsmag meghívásával nem hozhatja végre az LCD-konfigurációt.
+Ehelyett hívja a [set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager), és adja meg a (z) paraméterként az LCD ChipOnGlas konfigurációjának elérési útját.
+Miután megadta az LCD ChipOnGlas-konfigurációt, megtekintheti az LCD- [DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) parancsmag meghívásával elérhető tulajdonságait.
 
-Az LCM konfigurálása egységenként csak korlátozott számú erőforrásokat is tartalmazhat.
-Az előző példában a nevű egyetlen erőforrás van **beállítások**.
-A rendelkezésre álló erőforrások a következők:
+Az LCD ChipOnGlas-konfiguráció csak korlátozott erőforrás-készletekhez tartalmazhat blokkokat.
+Az előző példában az egyetlen nevű erőforrás a **beállítás**.
+A többi elérhető erőforrás a következők:
 
-* **ConfigurationRepositoryWeb**: egy HTTP-lekéréses szolgáltatást konfigurációk határozza meg.
-* **ConfigurationRepositoryShare**: Itt adhatja meg a konfigurációk SMB-megosztáson.
-* **ResourceRepositoryWeb**: Itt adhatja meg a modulok egy HTTP lekéréses szolgáltatás.
-* **ResourceRepositoryShare**: Itt adhatja meg a modulok SMB-megosztáson.
-* **ReportServerWeb**: Itt adhatja meg egy HTTP-lekéréses szolgáltatás, amely jelentések küldik.
-* **PartialConfiguration**: ahhoz, hogy részleges konfigurációk adatokat biztosít.
+* **ConfigurationRepositoryWeb**: http lekéréses szolgáltatást határoz meg a konfigurációkhoz.
+* **ConfigurationRepositoryShare**: a konfigurációk SMB-megosztását adja meg.
+* **ResourceRepositoryWeb**: a modulok http lekéréses szolgáltatását adja meg.
+* **ResourceRepositoryShare**: a modulok SMB-megosztását adja meg.
+* **ReportServerWeb**: egy http lekéréses szolgáltatást ad meg, amelybe a rendszer elküldi a jelentéseket.
+* **PartialConfiguration**: lehetővé teszi a részleges konfigurációk engedélyezését.
 
 ## <a name="basic-settings"></a>Alapbeállítások
 
-Eltérő lekéréses szolgáltatás végpontok/elérési utakat és részleges konfigurációk megadása, mind az LCM tulajdonságainak konfigurált egy **beállítások** letiltása.
-A következő tulajdonságok érhetők el egy **beállítások** letiltása.
+A lekéréses szolgáltatási végpontok/elérési utak és a részleges konfigurációk megadása nélkül az LCD ChipOnGlas összes tulajdonsága egy **beállítási** blokkban van konfigurálva.
+A **Beállítások** blokkban a következő tulajdonságok érhetők el.
 
 |  Tulajdonság  |  Típus  |  Leírás   |
 |----------- |------- |--------------- |
-| ActionAfterReboot| sztring| Itt adhatja meg, mi történik a számítógép újraindítása után a beállítások alkalmazása során. A lehetséges értékek a következők __"ContinueConfiguration"__ és __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: Továbbra is a számítógép újraindítása után az aktuális konfiguráció alkalmazása. Ez az az alapértelmezett érték</li><li>__StopConfiguration__: Állítsa le a számítógép újraindítása után az aktuális konfigurációt.</li></ul>|
-| AllowModuleOverwrite| bool| __$TRUE__ Ha a lekéréses szolgáltatásból letöltött új konfigurációk engedélyezettek-e a régieket célcsomóponton felülírásához. Más esetekben $FALSE.|
-| CertificateID| Karakterlánc| A konfigurációban az átadott hitelesítő adatok védelmére szolgáló tanúsítvány ujjlenyomatát. További információ: [hitelesítő adatai a Windows PowerShell Desired State Configuration engedélyezzen](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Megjegyzés:__ automatikusan ez történik, ha az Azure Automation DSC lekéréses szolgáltatás segítségével.|
-| ConfigurationDownloadManagers| CimInstance[]| Elavult. Használat __ConfigurationRepositoryWeb__ és __ConfigurationRepositoryShare__ érdekében adja meg a konfigurációs lekérési szolgáltatásvégpontokat.|
-| ConfigurationID| sztring| Visszamenőleges kompatibilitáshoz régebbi lekéréses Service a verziók. Egy GUID Azonosítót, amely azonosítja a konfigurációs fájl egy lekéréses szolgáltatásból való beolvasására. A konfiguráció nevét MOF ConfigurationID.mof neve a csomópont konfigurációk fogja lekérni a lekéréses szolgáltatás.<br> __Megjegyzés:__ Ha ezt a tulajdonságot, a csomópont történő regisztrációt egy lekéréses szolgáltatás használatával __RegistrationKey__ nem működik. További információkért lásd: [konfigurációs nevekkel lekérési ügyfél beállítása](../pull-server/pullClientConfigNames.md).|
-| ConfigurationMode| sztring | Itt adhatja meg, hogyan az LCM ténylegesen alkalmazza a konfigurációt, a célcsomópontokat. Lehetséges értékek a következők __"ApplyOnly"__,__"ApplyAndMonitor"__, és __"ApplyAndAutoCorrect"__. <ul><li>__ApplyOnly__: DSC konfigurációjának alkalmazására szolgál, és nem módosítja a további, kivéve, ha egy új konfiguráció leküldéssel a célcsomópont, vagy ha egy új konfigurációt a szolgáltatástól kéri le. Új konfiguráció kezdeti léptetés DSC nem ellenőrzi az előzőleg konfigurált állapotba való eltéréseket. Vegye figyelembe, hogy a alkalmazni a konfigurációt, egészen addig, amíg a sikeres előtt megkísérli DSC __ApplyOnly__ lép érvénybe. </li><li> __ApplyAndMonitor__: Ez az alapértelmezett érték. Az LCM vonatkozik minden új konfigurációt. Új konfiguráció, kezdeti alkalmazása után a a célcsomópont drifts a kívánt állapotból, ha DSC jelentések naplók az eltérést. Vegye figyelembe, hogy a alkalmazni a konfigurációt, egészen addig, amíg a sikeres előtt megkísérli DSC __ApplyAndMonitor__ lép érvénybe.</li><li>__ApplyAndAutoCorrect__: DSC vonatkozik minden új konfigurációt. Kezdeti alkalmazását követően az új konfiguráció a célcsomópont drifts a kívánt állapotból, ha DSC-jelentések a naplókban az eltérés, és majd újra alkalmazza a jelenlegi konfiguráció.</li></ul>|
-| ConfigurationModeFrequencyMins| UInt32| Milyen gyakran percek alatt, a jelenlegi konfiguráció be van jelölve és alkalmazása. A rendszer figyelmen kívül hagyja ezt a tulajdonságot, ha a ConfigurationMode tulajdonsága ApplyOnly. Az alapértelmezett érték 15.|
-| DebugMode| Karakterlánc| Lehetséges értékek a következők __nincs__, __ForceModuleImport__, és __összes__. <ul><li>Állítsa be __None__ a gyorsítótárazott erőforrások. Ez az alapértelmezett beállítás, és éles forgatókönyvekben használjon.</li><li>Beállítás __ForceModuleImport__, ide az újrabetöltéshez DSC erőforrás modulokat, még akkor is, ha azokat korábban már betöltötte és gyorsítótárba helyezték a LCM okoz. Ez hatással van DSC műveletek teljesítményének, minden egyes modul újbóli felhasználására. Általában használna az ezt az értéket egy erőforrás-hibakeresés közben</li><li>Ebben a kiadásban __összes__ azonos __ForceModuleImport__</li></ul> |
-| RebootNodeIfNeeded| bool| Állítsa a bestattempt értékre `$true` lehetővé teszik az erőforrások újraindításához, a Node használatával, a `$global:DSCMachineStatus` jelzőt. Ellenkező esetben el manuálisan indítsa újra a csomópont minden olyan konfiguráció, amely ezt megköveteli. Az alapértelmezett érték `$false`. Használja ezt a beállítást, ha újraindítás feltétel nem DSC (például a Windows Installer) szerint van gyakorlatokkal, kombinálja együtt a [xPendingReboot](https://github.com/powershell/xpendingreboot) modul.|
-| A RefreshMode| sztring| Itt adhatja meg, hogyan az LCM lekéri a konfigurációt. A lehetséges értékek a következők __"Letiltva"__, __"Push"__, és __"Lekérés"__. <ul><li>__Letiltott__: DSC-konfigurációk le van tiltva ezen a csomóponton.</li><li> __Leküldéses__: Konfigurációk meghívásával kezdeményezett a [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) parancsmagot. A konfiguráció alkalmazása azonnal megtörténik a csomópontra. Ez az alapértelmezett érték.</li><li>__Kérje le:__ A csomópont rendszeresen ellenőrzi a lekérési szolgáltatást vagy az SMB elérési konfigurációk van konfigurálva. Ha ez a tulajdonság értéke __lekéréses__, (szolgáltatás) HTTP- vagy SMB (megosztás) elérési utat adjon meg egy __ConfigurationRepositoryWeb__ vagy __ConfigurationRepositoryShare__ letiltása.</li></ul>|
-| RefreshFrequencyMins| Uint32| Az időintervallum, percek alatt, ahol az LCM lekéréses szolgáltatásával a szükséges frissített konfigurációk ellenőrzi. A rendszer figyelmen kívül hagyja ezt az értéket, ha az LCM lekéréses módban nincs konfigurálva. Az alapértelmezett érték 30.|
-| ReportManagers| CimInstance[]| Elavult. Használat __ReportServerWeb__ küldése végpontokat blokkolja egy lekéréses szolgáltatás számára.|
-| ResourceModuleManagers| CimInstance[]| Elavult. Használat __ResourceRepositoryWeb__ és __ResourceRepositoryShare__ lekéréses meghatározásához blokkok service HTTP-végpontokat vagy SMB elérési utak jelölik.|
-| PartialConfigurations| CimInstance| Není implementována. Ne használja.|
-| StatusRetentionTimeInDays | UInt32| Az LCM tartja az aktuális konfigurációs állapotát napok száma.|
+| ActionAfterReboot| sztring| Meghatározza, hogy mi történjen a konfiguráció alkalmazása során indított újraindítás után. A lehetséges értékek a következők: __"ContinueConfiguration"__ és __"stopconfiguration metódusa"__ . <ul><li> __ContinueConfiguration__: A számítógép újraindítása után folytassa a jelenlegi konfiguráció alkalmazását. Ez az alapértelmezett érték</li><li>__Stopconfiguration metódusa__: A számítógép újraindítása után állítsa le a jelenlegi konfigurációt.</li></ul>|
+| AllowModuleOverwrite| bool| __$True__ , hogy a lekéréses szolgáltatásból letöltött új konfigurációk felülírhatják-e a régieket a cél csomóponton. Ellenkező esetben $FALSE.|
+| CertificateID| sztring| Egy konfigurációban átadott hitelesítő adatok védelméhez használt tanúsítvány ujjlenyomata. További információ: a [hitelesítő adatok biztonságossá tétele a Windows PowerShell kívánt állapotának konfigurációjában](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Megjegyzés:__ a Azure Automation DSC lekéréses szolgáltatás használata esetén ez automatikusan felügyelhető.|
+| ConfigurationDownloadManagers| CimInstance []| Elavult. A konfigurációs lekéréses végpontok definiálásához használja a __ConfigurationRepositoryWeb__ és a __ConfigurationRepositoryShare__ blokkokat.|
+| ConfigurationID| sztring| A régebbi lekéréses szolgáltatás verzióival való visszamenőleges kompatibilitás érdekében. A lekéréses szolgáltatásból lekérdezni kívánt konfigurációs fájlt azonosító GUID. A csomópont lekéri a konfigurációkat a lekéréses szolgáltatásban, ha a konfigurációs MOF neve ConfigurationID. MOF néven szerepel.<br> __Megjegyzés:__ Ha ezt a tulajdonságot állítja be, akkor a __RegistrationKey__ használatával a csomópont regisztrálása lekéréses szolgáltatással nem működik. További információ: [lekéréses ügyfél beállítása konfigurációs nevekkel](../pull-server/pullClientConfigNames.md).|
+| ConfigurationMode| sztring | Meghatározza, hogy az LCD ChipOnGlas ténylegesen alkalmazza a konfigurációt a cél csomópontokra. A lehetséges értékek a következők: __"ApplyOnly"__ , __"ApplyAndMonitor"__ és __"ApplyAndAutoCorrect"__ . <ul><li>__ApplyOnly__: A DSC alkalmazza a konfigurációt, és nem tesz tovább mást, kivéve, ha új konfigurációt küld a cél csomópontra, vagy amikor új konfigurációt végez egy szolgáltatásból. Új konfiguráció kezdeti alkalmazása után a DSC nem keres eltolódást egy előzőleg konfigurált állapotból. Vegye figyelembe, hogy a DSC addig próbálkozik a konfiguráció alkalmazásával, amíg a __ApplyOnly__ érvénybe lép. </li><li> __ApplyAndMonitor__: Ez az alapértelmezett érték. Az LCD ChipOnGlas minden új konfigurációt alkalmaz. Egy új konfiguráció kezdeti alkalmazása után, ha a cél csomópont a kívánt állapotba sodródik, a DSC a naplókban lévő eltérést jelenti. Vegye figyelembe, hogy a DSC addig próbálkozik a konfiguráció alkalmazásával, amíg a __ApplyAndMonitor__ érvénybe lép.</li><li>__ApplyAndAutoCorrect__: A DSC minden új konfigurációt alkalmaz. Egy új konfiguráció kezdeti alkalmazása után, ha a cél csomópont a kívánt állapotba sodródik, a DSC a naplókban jelzi a következetlenségeket, majd újból alkalmazza az aktuális konfigurációt.</li></ul>|
+| ConfigurationModeFrequencyMins| UInt32| Az aktuális konfigurációt percek alatt ellenőrzi és alkalmazza. Ezt a tulajdonságot a rendszer figyelmen kívül hagyja, ha a ConfigurationMode tulajdonság értéke ApplyOnly. Az alapértelmezett érték 15.|
+| DebugMode| sztring| A lehetséges értékek a következők: __none__, __ForceModuleImport__és __all__. <ul><li>Állítsa a __nincs__ értékre a gyorsítótárazott erőforrások használatához. Ez az alapértelmezett érték, és éles környezetben kell használni.</li><li>A __ForceModuleImport__beállítás hatására az LCD-modul a DSC-erőforrás moduljait is betölti, még akkor is, ha azokat előzőleg betöltötték és gyorsítótárazták. Ez hatással van a DSC-műveletek teljesítményére, mivel minden modul használatban van. Ezt az értéket általában az erőforrás hibakeresése során érdemes használni</li><li>Ebben a kiadásban az __összes__ ugyanaz, mint a __ForceModuleImport__</li></ul> |
+| RebootNodeIfNeeded| bool| Ezzel `$true` a beállítással engedélyezheti az erőforrások számára a csomópont újraindítását a `$global:DSCMachineStatus` jelző használatával. Ellenkező esetben manuálisan kell újraindítani a csomópontot minden szükséges konfigurációhoz. Az alapértelmezett érték: `$false`. Ha ezt a beállítást akkor szeretné használni, ha a DSC-től eltérő (például Windows Installer) állapotú újraindítás feltételt alkalmaz, ezt a beállítást a [xPendingReboot](https://github.com/powershell/xpendingreboot) modullal kell kombinálni.|
+| RefreshMode| sztring| Meghatározza, hogyan legyenek a LCD-LCD-konfigurációk. A lehetséges értékek: __"Letiltva__", __"push"__ és __"pull"__ . <ul><li>__Letiltva__: A DSC-konfigurációk le vannak tiltva ehhez a csomóponthoz.</li><li> __Leküldés__: A konfigurációk a [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) parancsmag meghívásával indíthatók el. A rendszer azonnal alkalmazza a konfigurációt a csomópontra. Ez az alapértelmezett érték.</li><li>__Lekéréses__ A csomópont úgy van konfigurálva, hogy rendszeresen keressen konfigurációkat egy lekéréses szolgáltatásból vagy SMB-útvonalból. Ha ez a tulajdonság a __pull__értékre van állítva, meg kell adnia egy http (szolgáltatás) vagy SMB (megosztás) elérési utat egy __ConfigurationRepositoryWeb__ vagy __ConfigurationRepositoryShare__ blokkban.</li></ul>|
+| RefreshFrequencyMins| Uint32| Az az időtartam (percben kifejezve), ameddig az LCD-egység ellenőrzi a lekéréses szolgáltatást a frissített konfigurációk lekérdezéséhez. A rendszer figyelmen kívül hagyja ezt az értéket, ha az LCD ChipOnGlas nem lekéréses módban van konfigurálva. Az alapértelmezett érték 30.|
+| ReportManagers| CimInstance []| Elavult. __ReportServerWeb__ -blokkokkal definiálhat egy végpontot, amely jelentést küld egy lekéréses szolgáltatásnak.|
+| ResourceModuleManagers| CimInstance []| Elavult. A lekéréses szolgáltatás HTTP-végpontjai vagy SMB-elérési útjai a __ResourceRepositoryWeb__ és a __ResourceRepositoryShare__ blokk használatával definiálhatók.|
+| PartialConfigurations| CimInstance| Nincs implementálva. Ne használja.|
+| StatusRetentionTimeInDays | UInt32| Azon napok száma, ameddig az LCD-ben az aktuális konfiguráció állapota megmarad.|
 
 > [!NOTE]
-> Az LCM elindításakor a **ConfigurationModeFrequencyMins** ciklus alapján:
+> Az LCD ChipOnGlas a következő alapján indítja el a **ConfigurationModeFrequencyMins** ciklust:
 >
-> - Egy új metaconfig használatával alkalmazta `Set-DscLocalConfigurationManager`
-> - A gép újraindítása
+> - Új metaconfig alkalmaz a használatával`Set-DscLocalConfigurationManager`
+> - Számítógép újraindítása
 >
-> Minden olyan feltétel, ahol az időzítő folyamata során lép fel, amelyek 30 másodpercen belül összeomlás, és újraindítja a ciklus.
-> Egy párhuzamos művelet sikerült. a ciklus késleltetés az indítás alatt, ha ez a művelet időtartama meghaladja a konfigurált ciklus gyakoriságát, a következő időzítő nem indul el.
+> Minden olyan feltételnél, ahol az időzítő folyamata összeomlást tapasztal, 30 másodpercen belül észlelhető, és a ciklus újra fog indulni.
+> Egy egyidejű művelet késleltetheti a ciklus indítását, ha a művelet időtartama meghaladja a beállított ciklusok gyakoriságát, a következő időzítő nem fog elindulni.
 >
-> A példában a metaconfig lekéréses 15 perces gyakorisággal van beállítva, és egy lekéréses T1 kapcsolaton keresztül történik.  A csomópont nem fejeződik be a munkahelyi 16 percig.  Az első 15 perces ciklus a rendszer figyelmen kívül hagyja, és a következő lekéréses fog zajlani a T1 + 15: 15.
+> Példa: a metaconfig 15 perces lekéréses gyakorisággal van konfigurálva, és a lekéréses művelet a T1 időpontban történik.  A csomópont 16 percen belül nem fejeződik be.  Az első 15 perces ciklus figyelmen kívül lesz hagyva, és a következő lekérés a T1 + 15 + 15 időpontban történik.
 
-## <a name="pull-service"></a>Lekérési szolgáltatást
+## <a name="pull-service"></a>Lekéréses szolgáltatás
 
-Az LCM konfigurálása is támogatja a következő típusú lekéréses Szolgáltatásvégpontok:
+Az LCD ChipOnGlas-konfiguráció a következő típusú lekéréses szolgáltatási végpontok definiálását támogatja:
 
-- **Konfigurációs kiszolgáló**: Egy adattár a DSC-konfigurációk. Adja meg a konfigurációs kiszolgálók használatával **ConfigurationRepositoryWeb** (a web-alapú kiszolgálók) és **ConfigurationRepositoryShare** (az SMB-alapú kiszolgálók) blokkokat.
-- **Erőforrás-kiszolgáló**: DSC-erőforrások PowerShell-modulok csomagolt egy adattárat. Erőforrás-kiszolgálók megadása segítségével **ResourceRepositoryWeb** (a web-alapú kiszolgálók) és **ResourceRepositoryShare** (az SMB-alapú kiszolgálók) blokkokat.
-- **Jelentéskészítő kiszolgáló**: Egy szolgáltatás, amely a DSC jelentéskészítő adatokat küld. Adja meg a jelentéskészítő kiszolgálók használatával **ReportServerWeb** blokkokat. A jelentéskészítő kiszolgáló webszolgáltatás kell lennie.
+- **Konfigurációs kiszolgáló**: A DSC-konfigurációk tárháza. A konfigurációs kiszolgálók definiálása a **ConfigurationRepositoryWeb** (webalapú kiszolgálók esetében) és a **ConfigurationRepositoryShare** (SMB-alapú kiszolgálók esetében) használatával.
+- **Erőforrás-kiszolgáló**: Egy PowerShell-modulként csomagolt DSC-erőforrások tárháza. Az **ResourceRepositoryWeb** (webalapú kiszolgálók esetében) és a **ResourceRepositoryShare** (SMB-alapú kiszolgálók) blokkolja az erőforrás-kiszolgálók definiálását.
+- **Jelentéskészítő kiszolgáló**: Egy szolgáltatás, amelyet a DSC a jelentésre vonatkozó adatokat küld. Jelentéskészítő kiszolgálók definiálása **ReportServerWeb** -blokkok használatával. A jelentéskészítő kiszolgálónak webszolgáltatásnak kell lennie.
 
-További információ a lekéréses szolgáltatás:, [Desired State Configuration lekéréses szolgáltatás](../pull-server/pullServer.md).
+A lekéréses szolgáltatással kapcsolatos további részletekért tekintse meg a [kívánt állapot konfigurációjának lekérése szolgáltatást](../pull-server/pullServer.md).
 
-## <a name="configuration-server-blocks"></a>Konfigurációs kiszolgáló blokkok
+## <a name="configuration-server-blocks"></a>Konfigurációs kiszolgáló blokkolja
 
-Annak meghatározásához, web-alapú konfigurációs kiszolgáló, hozzon létre egy **ConfigurationRepositoryWeb** letiltása.
-A **ConfigurationRepositoryWeb** határozza meg az alábbi tulajdonságokat.
-
-|Tulajdonság|Típus|Leírás|
-|---|---|---|
-|AllowUnsecureConnection|bool|Állítsa be **$TRUE** , hogy a kiszolgáló hitelesítése nélkül csatlakozhat a csomópontról. Állítsa be **$FALSE** hitelesítést igényel.|
-|CertificateID|sztring|A kiszolgáló hitelesítésére használt tanúsítvány ujjlenyomatát.|
-|ConfigurationNames|String]|Le kell kérnie a cél csomópont-konfigurációk nevek tömbje. Ezek használhatók csak akkor, ha a csomópont regisztrálva van a lekéréses szolgáltatás segítségével egy **RegistrationKey**. További információkért lásd: [konfigurációs nevekkel lekérési ügyfél beállítása](../pull-server/pullClientConfigNames.md).|
-|RegistrationKey|Karakterlánc|Regisztrálja a csomópontot a lekéréses szolgáltatás GUID azonosítója. További információkért lásd: [konfigurációs nevekkel lekérési ügyfél beállítása](../pull-server/pullClientConfigNames.md).|
-|ServerURL|Karakterlánc|A konfigurációs szolgáltatás URL-címe|
-|ProxyURL*|Karakterlánc|A http-proxy a konfiguráció szolgáltatással való kommunikáció során használandó URL-címe|
-|ProxyCredential*|pscredential|A HTTP-proxy használni kívánt hitelesítő adatokat.|
-
->! Megjegyzés: \* Windows 1809 és újabb verzióiban támogatott.
-
-Példa parancsfájl egyszerűsítése érdekében a ConfigurationRepositoryWeb érték konfigurálása a helyszíni csomópont nem érhető el – lásd: [létrehozása DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
-
-Meghatároz egy SMB-alapú konfigurációs kiszolgálót, létre kell hozni egy **ConfigurationRepositoryShare** letiltása.
-A **ConfigurationRepositoryShare** határozza meg az alábbi tulajdonságokat.
+Webalapú konfigurációs kiszolgáló definiálásához létre kell hoznia egy **ConfigurationRepositoryWeb** -blokkot.
+A **ConfigurationRepositoryWeb** a következő tulajdonságokat határozzák meg.
 
 |Tulajdonság|Típus|Leírás|
 |---|---|---|
-|Hitelesítő adatok|MSFT_Credential|Az SMB-megosztás hitelesítéséhez használt hitelesítő adatokat.|
-|SourcePath|Karakterlánc|Az SMB-megosztás elérési útja.|
+|AllowUnsecureConnection|bool|Állítsa **$true** értékre, ha engedélyezni szeretné a csomópontról a kiszolgálóra való csatlakozást hitelesítés nélkül. A hitelesítés megköveteléséhez állítsa **$false** értékre.|
+|CertificateID|sztring|A kiszolgálón történő hitelesítéshez használt tanúsítvány ujjlenyomata.|
+|ConfigurationNames|Karakterlánc []|A cél csomópont által lekért konfigurációk neveinek tömbje. Ezeket csak akkor használja a rendszer, ha a csomópontot **RegistrationKey**használatával regisztrálják a lekéréses szolgáltatásban. További információ: [lekéréses ügyfél beállítása konfigurációs nevekkel](../pull-server/pullClientConfigNames.md).|
+|RegistrationKey|sztring|Egy GUID, amely regisztrálja a csomópontot a lekéréses szolgáltatásban. További információ: [lekéréses ügyfél beállítása konfigurációs nevekkel](../pull-server/pullClientConfigNames.md).|
+|ServerURL|sztring|A konfigurációs szolgáltatás URL-címe.|
+|ProxyURL*|sztring|A konfigurációs szolgáltatással folytatott kommunikáció során használandó http-proxy URL-címe.|
+|ProxyCredential*|pscredential|A http-proxyhoz használandó hitelesítő adat.|
 
-## <a name="resource-server-blocks"></a>Erőforrás-kiszolgáló blokkok
+> [!NOTE]
+> * A Windows 1809-es és újabb verzióiban támogatott.
 
-Annak meghatározásához, web-alapú erőforrás-kiszolgáló, hozzon létre egy **ResourceRepositoryWeb** letiltása.
-A **ResourceRepositoryWeb** határozza meg az alábbi tulajdonságokat.
+A helyszíni csomópontok ConfigurationRepositoryWeb-értékének egyszerűbb konfigurálását bemutató parancsfájl elérhető – lásd: [DSC-Metaconfigurations generálása](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
-|Tulajdonság|Típus|Leírás|
-|---|---|---|
-|AllowUnsecureConnection|bool|Állítsa be **$TRUE** , hogy a kiszolgáló hitelesítése nélkül csatlakozhat a csomópontról. Állítsa be **$FALSE** hitelesítést igényel.|
-|CertificateID|Karakterlánc|A kiszolgáló hitelesítésére használt tanúsítvány ujjlenyomatát.|
-|RegistrationKey|Karakterlánc|Egy GUID Azonosítót, amely azonosítja a csomópont a pull-szolgáltatáshoz.|
-|ServerURL|sztring|A konfigurációs kiszolgáló URL-címe|
-|ProxyURL*|sztring|A http-proxy a konfiguráció szolgáltatással való kommunikáció során használandó URL-címe|
-|ProxyCredential*|pscredential|A HTTP-proxy használni kívánt hitelesítő adatokat.|
-
->! Megjegyzés: \* Windows 1809 és újabb verzióiban támogatott.
-
-Példa parancsfájl egyszerűsítése érdekében a ResourceRepositoryWeb érték konfigurálása a helyszíni csomópont nem érhető el – lásd: [létrehozása DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
-
-Meghatároz egy SMB-alapú erőforrás-kiszolgáló, létre kell hozni egy **ResourceRepositoryShare** letiltása.
-**ResourceRepositoryShare** határozza meg az alábbi tulajdonságokat.
+Az SMB-alapú konfigurációs kiszolgáló definiálásához létre kell hoznia egy **ConfigurationRepositoryShare** -blokkot.
+A **ConfigurationRepositoryShare** a következő tulajdonságokat határozzák meg.
 
 |Tulajdonság|Típus|Leírás|
 |---|---|---|
-|Hitelesítő adatok|MSFT_Credential|Az SMB-megosztás hitelesítéséhez használt hitelesítő adatokat. A hitelesítő adatokat továbbít egy példa: [a DSC SMB-lekérési kiszolgálójának beállítása](../pull-server/pullServerSMB.md)|
-|SourcePath|Karakterlánc|Az SMB-megosztás elérési útja.|
+|Hitelesítőadat|MSFT_Credential|Az SMB-megosztás hitelesítéséhez használt hitelesítő adat.|
+|SourcePath|sztring|Az SMB-megosztás elérési útja.|
 
-## <a name="report-server-blocks"></a>Jelentéskészítő kiszolgáló blokkok
+## <a name="resource-server-blocks"></a>Erőforrás-kiszolgáló blokkolja
 
-Adja meg a jelentéskészítő kiszolgálón, létre kell hozni egy **ReportServerWeb** letiltása.
-A jelentéskészítő kiszolgálói szerepkör, ezért nem kompatibilis az SMB-alapú lekérési szolgáltatást.
-**ReportServerWeb** határozza meg az alábbi tulajdonságokat.
+Webalapú erőforrás-kiszolgáló definiálásához létre kell hoznia egy **ResourceRepositoryWeb** -blokkot.
+A **ResourceRepositoryWeb** a következő tulajdonságokat határozzák meg.
 
 |Tulajdonság|Típus|Leírás|
 |---|---|---|
-|AllowUnsecureConnection|bool|Állítsa be **$TRUE** , hogy a kiszolgáló hitelesítése nélkül csatlakozhat a csomópontról. Állítsa be **$FALSE** hitelesítést igényel.|
-|CertificateID|Karakterlánc|A kiszolgáló hitelesítésére használt tanúsítvány ujjlenyomatát.|
-|RegistrationKey|Karakterlánc|Egy GUID Azonosítót, amely azonosítja a csomópont a pull-szolgáltatáshoz.|
-|ServerURL|Karakterlánc|A konfigurációs kiszolgáló URL-címe|
-|ProxyURL*|Karakterlánc|A http-proxy a konfiguráció szolgáltatással való kommunikáció során használandó URL-címe|
-|ProxyCredential*|pscredential|A HTTP-proxy használni kívánt hitelesítő adatokat.|
+|AllowUnsecureConnection|bool|Állítsa **$true** értékre, ha engedélyezni szeretné a csomópontról a kiszolgálóra való csatlakozást hitelesítés nélkül. A hitelesítés megköveteléséhez állítsa **$false** értékre.|
+|CertificateID|sztring|A kiszolgálón történő hitelesítéshez használt tanúsítvány ujjlenyomata.|
+|RegistrationKey|sztring|Egy GUID, amely azonosítja a csomópontot a lekéréses szolgáltatáshoz.|
+|ServerURL|sztring|A konfigurációs kiszolgáló URL-címe.|
+|ProxyURL*|sztring|A konfigurációs szolgáltatással folytatott kommunikáció során használandó http-proxy URL-címe.|
+|ProxyCredential*|pscredential|A http-proxyhoz használandó hitelesítő adat.|
 
->! Megjegyzés: \* Windows 1809 és újabb verzióiban támogatott.
+> [!NOTE]
+> * A Windows 1809-es és újabb verzióiban támogatott.
 
-Példa parancsfájl egyszerűsítése érdekében a ReportServerWeb érték konfigurálása a helyszíni csomópont nem érhető el – lásd: [létrehozása DSC metaconfigurations](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+A helyszíni csomópontok ResourceRepositoryWeb-értékének egyszerűbb konfigurálását bemutató parancsfájl elérhető – lásd: [DSC-Metaconfigurations generálása](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+
+Egy SMB-alapú erőforrás-kiszolgáló definiálásához létre kell hoznia egy **ResourceRepositoryShare** -blokkot.
+A **ResourceRepositoryShare** a következő tulajdonságokat határozza meg.
+
+|Tulajdonság|Típus|Leírás|
+|---|---|---|
+|Hitelesítőadat|MSFT_Credential|Az SMB-megosztás hitelesítéséhez használt hitelesítő adat. A hitelesítő adatok átadására példát a [DSC SMB-lekérési kiszolgáló beállítása](../pull-server/pullServerSMB.md) című témakörben talál.|
+|SourcePath|sztring|Az SMB-megosztás elérési útja.|
+
+## <a name="report-server-blocks"></a>Jelentéskészítő kiszolgáló – blokkok
+
+A jelentéskészítő kiszolgáló definiálásához létre kell hoznia egy **ReportServerWeb** -blokkot.
+A jelentéskészítő kiszolgáló szerepkör nem kompatibilis az SMB-alapú lekéréses szolgáltatással.
+A **ReportServerWeb** a következő tulajdonságokat határozza meg.
+
+|Tulajdonság|Típus|Leírás|
+|---|---|---|
+|AllowUnsecureConnection|bool|Állítsa **$true** értékre, ha engedélyezni szeretné a csomópontról a kiszolgálóra való csatlakozást hitelesítés nélkül. A hitelesítés megköveteléséhez állítsa **$false** értékre.|
+|CertificateID|sztring|A kiszolgálón történő hitelesítéshez használt tanúsítvány ujjlenyomata.|
+|RegistrationKey|sztring|Egy GUID, amely azonosítja a csomópontot a lekéréses szolgáltatáshoz.|
+|ServerURL|sztring|A konfigurációs kiszolgáló URL-címe.|
+|ProxyURL*|sztring|A konfigurációs szolgáltatással folytatott kommunikáció során használandó http-proxy URL-címe.|
+|ProxyCredential*|pscredential|A http-proxyhoz használandó hitelesítő adat.|
+
+> [!NOTE]
+> * A Windows 1809-es és újabb verzióiban támogatott.
+
+A helyszíni csomópontok ReportServerWeb-értékének egyszerűbb konfigurálását bemutató parancsfájl elérhető – lásd: [DSC-Metaconfigurations generálása](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 ## <a name="partial-configurations"></a>Részleges konfigurációk
 
-Egy részleges konfiguráció definiálása, létre kell hozni egy **PartialConfiguration** letiltása.
-Részleges konfigurációk kapcsolatos további információkért lásd: [DSC részleges konfigurációk](../pull-server/partialConfigs.md).
-**PartialConfiguration** határozza meg az alábbi tulajdonságokat.
+Részleges konfiguráció definiálásához létre kell hoznia egy **PartialConfiguration** -blokkot.
+A részleges konfigurációkról a [DSC részleges konfigurációit](../pull-server/partialConfigs.md)ismertető témakörben olvashat bővebben.
+A **PartialConfiguration** a következő tulajdonságokat határozza meg.
 
 |Tulajdonság|Típus|Leírás|
 |---|---|---|
-|ConfigurationSource|String]|Korábban definiált konfigurációs kiszolgálók nevére tömbjét **ConfigurationRepositoryWeb** és **ConfigurationRepositoryShare** blokkok, ahol a részleges konfigurációs származhatnak.|
-|DependsOn|Karakterlánc{}|Egyéb konfigurációk, amelyek a részleges konfiguráció alkalmazása előtt el kell végezni a nevek listája.|
-|Leírás|Karakterlánc|A részleges konfigurációját leíró szöveg.|
-|ExclusiveResources|String]|Ehhez a konfigurációhoz részleges kizárólagos erőforrások tömbje.|
-|A RefreshMode|Karakterlánc|Itt adhatja meg, hogyan az LCM lekérdezi a részleges ezt a konfigurációt. A lehetséges értékek a következők __"Letiltva"__, __"Push"__, és __"Lekérés"__. <ul><li>__Letiltott__: A részleges konfigurációja le van tiltva.</li><li> __Leküldéses__: A részleges konfiguráció át lett helyezve a csomópont meghívásával a [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) parancsmagot. A csomópont minden részleges konfigurációk vagy leküldött vagy egy szolgáltatás származhatnak, miután a konfiguráció meghívásával indítható `Start-DscConfiguration –UseExisting`. Ez az alapértelmezett érték.</li><li>__Kérje le:__ A csomópont rendszeresen keressen egy lekéréses szolgáltatás részleges konfigurációs van konfigurálva. Ha ez a tulajdonság értéke __lekéréses__, meg kell adnia egy lekéréses szolgáltatás egy __ConfigurationSource__ tulajdonság. Azure Automation-lekérési szolgáltatással kapcsolatos további információkért lásd: [Azure Automation DSC áttekintése](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
-|ResourceModuleSource|String]|Tömb, ahonnan letölthető a részleges konfiguráció szükséges erőforrások erőforrás-kiszolgálók nevére. Ezeket a neveket kell hivatkoznia a korábban meghatározott szolgáltatásvégpontokra **ResourceRepositoryWeb** és **ResourceRepositoryShare** blokkokat.|
+|ConfigurationSource|karakterlánc []|A **ConfigurationRepositoryWeb** -és **ConfigurationRepositoryShare** -blokkokban korábban definiált konfigurációs kiszolgálók neveinek tömbje, ahol a részleges konfigurációt a rendszer lekéri.|
+|DependsOn|karakterlánc{}|Azon egyéb konfigurációk neveinek listája, amelyeket a részleges konfiguráció alkalmazása előtt kell végrehajtani.|
+|Leírás|sztring|A részleges konfiguráció leírására szolgáló szöveg|
+|ExclusiveResources|karakterlánc []|Erőforrások tömbje, amely kizárólag erre a részleges konfigurációra vonatkozik.|
+|RefreshMode|sztring|Megadja, hogy az LCD ChipOnGlas hogyan kapja meg ezt a részleges konfigurációt. A lehetséges értékek: __"Letiltva__", __"push"__ és __"pull"__ . <ul><li>__Letiltva__: Ez a részleges konfiguráció le van tiltva.</li><li> __Leküldés__: A részleges konfigurációt a rendszer leküldi a csomópontra a [publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) parancsmag meghívásával. Miután a csomópont összes részleges konfigurációját leküldték vagy lehúzta a szolgáltatásból, a konfiguráció meghívásával `Start-DscConfiguration –UseExisting`indítható el. Ez az alapértelmezett érték.</li><li>__Lekéréses__ A csomópont úgy van konfigurálva, hogy rendszeresen keressen egy lekéréses szolgáltatás részleges konfigurációját. Ha ez a tulajdonság a __pull__értékre van állítva, egy lekéréses szolgáltatást kell megadnia egy __ConfigurationSource__ tulajdonságban. Azure Automation lekéréses szolgáltatással kapcsolatos további információkért lásd: [Azure Automation DSC – áttekintés](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
+|ResourceModuleSource|karakterlánc []|Azon erőforrás-kiszolgálók neveinek tömbje, amelyekről le kell tölteni a szükséges erőforrásokat ehhez a részleges konfigurációhoz. Ezeknek a névnek a **ResourceRepositoryWeb** -és **ResourceRepositoryShare** -blokkokban korábban definiált szolgáltatási végpontokra kell vonatkoznia.|
 
-__Megjegyzés:__ részleges konfigurációk az Azure Automation DSC használata támogatott, de csak egy konfigurációs is le kell kérnie, a csomópontonkénti minden automation-fiók.
+__Megjegyzés:__ a részleges KONFIGURÁCIÓK Azure Automation DSC-vel támogatottak, de minden egyes Automation-fiókból csak egy konfigurációt lehet kihúzni.
 
 ## <a name="see-also"></a>Lásd még:
 
-### <a name="concepts"></a>Alapelvek
-[Desired State Configuration áttekintése](../overview/overview.md)
+### <a name="concepts"></a>Fogalmak
+[A kívánt állapot konfigurációjának áttekintése](../overview/overview.md)
 
-[Azure Automation DSC – első lépések](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
+[Első lépések a Azure Automation DSC-vel](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
 
-### <a name="other-resources"></a>Egyéb erőforrások
+### <a name="other-resources"></a>Egyéb források
 
 [Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager)
 
-[A konfigurációs nevek lekérési ügyfél beállítása](../pull-server/pullClientConfigNames.md)
+[Lekérési ügyfél beállítása konfigurációs nevekkel](../pull-server/pullClientConfigNames.md)

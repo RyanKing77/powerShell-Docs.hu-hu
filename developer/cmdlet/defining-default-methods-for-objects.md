@@ -1,5 +1,5 @@
 ---
-title: Az objektumok alapértelmezett módszerek meghatározása |} A Microsoft Docs
+title: Az objektumok alapértelmezett metódusának meghatározása | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,25 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
 caps.latest.revision: 9
-ms.openlocfilehash: af554cde5e888f2a008028010332caa473151622
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 346a194c6b4c81aa61a6331cdb62ae380a17bb1e
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733982"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215285"
 ---
 # <a name="defining-default-methods-for-objects"></a>Objektumok alapértelmezett módszereinek definiálása
 
-.NET-keretrendszer objektumait bővítésekor adhat hozzá kódot és parancsfájl módszereket az objektumokat. Ezek a metódusok meghatározásához használt XML a következő szakaszban ismertetjük.
+A .NET-keretrendszer objektumainak kiterjesztésekor programkódokat és parancsfájl-metódusokat adhat hozzá az objektumokhoz.
+A metódusok definiálásához használt XML-t a következő szakasz ismerteti.
 
 > [!NOTE]
-> Az alábbi szakaszokban található példák, a Windows PowerShell telepítési könyvtárában található Types.ps1xml típusok fájlból (`$pshome`).
+> A következő részben található példák a Windows PowerShell telepítési `Types.ps1xml` könyvtárában (`$PSHOME`) található típusok fájlból származnak. További információ: [About types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
-## <a name="code-methods"></a>Kód módszerek
+## <a name="code-methods"></a>Kód metódusai
 
-A kód metódus a .NET-keretrendszer objektum statická metoda hivatkozik.
+A kód metódus a .NET-keretrendszer objektumának statikus metódusára hivatkozik.
 
-A következő példában a **ConvertLargeIntegerToInt64** metódus adnak hozzá a [System.Xml.Xmlnode? Displayproperty = Fullname](/dotnet/api/System.Xml.XmlNode) típusa. A [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) elem definiálja a kiterjesztett metódus kódja módszerként. A [neve](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) elem nevét adja meg a kiterjesztett metódust. És a [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference) elem azt határozza meg a statikus metódust. (Azt is megteheti a [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) tagjaira elem a [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) elem.)
+A következő példában a **ToString** metódus hozzá lesz adva a [System. xml. XmlNode](/dotnet/api/System.Xml.XmlNode) típushoz. A [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) elem a kiterjesztett metódust kód metódusként határozza meg. A [Name (név](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) ) elem a kiterjesztett metódus nevét adja meg. A és a [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference) elem a statikus metódust is megadja. A [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) elemet a [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) elem tagjaihoz is hozzáadhatja.
 
 ```xml
 <Type>
@@ -35,7 +36,7 @@ A következő példában a **ConvertLargeIntegerToInt64** metódus adnak hozzá 
     <CodeMethod>
       <Name>ToString</Name>
       <CodeReference>
-        <TypeName>Microsoft.PowerShell.ToStringCodemethods</TypeName>
+        <TypeName>Microsoft.PowerShell.ToStringCodeMethods</TypeName>
         <MethodName>XmlNode</MethodName>
       </CodeReference>
     </CodeMethod>
@@ -45,7 +46,7 @@ A következő példában a **ConvertLargeIntegerToInt64** metódus adnak hozzá 
 
 ## <a name="script-methods"></a>Parancsfájl-metódusok
 
-A parancsfájl egy módszer, amelynek értéke a parancsfájl kimenete határozza meg. A következő példában a **ConvertToDateTime** metódus adnak hozzá a [System.Management.Managementobject? Displayproperty = Fullname](/dotnet/api/System.Management.ManagementObject) típusa. A [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) elem definiálja a kiterjesztett metódus parancsfájl módszerként. A [neve](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) elem nevét adja meg a kiterjesztett metódust. És a [parancsfájl](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script) elem azt határozza meg, a parancsfájl, amely létrehozza a módszerének értéke. (Azt is megteheti a [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) tagjaira elem a [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) elem.)
+A parancsfájl-metódus olyan metódust határoz meg, amelynek értéke egy parancsfájl kimenete. A következő példában a rendszer hozzáadja a **ConvertToDateTime** metódust a [System. Management. ManagementObject](/dotnet/api/System.Management.ManagementObject) típushoz. A [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) elem a kiterjesztett metódust parancsfájl-metódusként határozza meg. A [Name (név](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) ) elem a kiterjesztett metódus nevét adja meg. A [parancsfájl](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script) elem pedig azt a parancsfájlt adja meg, amely a metódus értékét hozza létre. A [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) elemet a [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) elem tagjaihoz is hozzáadhatja.
 
 ```xml
 <Type>
@@ -63,4 +64,4 @@ A parancsfájl egy módszer, amelynek értéke a parancsfájl kimenete határozz
 
 ## <a name="see-also"></a>Lásd még:
 
-[Egy Windows PowerShell-parancsmag írása](./writing-a-windows-powershell-cmdlet.md)
+[Windows PowerShell-parancsmag írása](./writing-a-windows-powershell-cmdlet.md)

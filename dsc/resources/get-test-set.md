@@ -1,23 +1,23 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, a konfigurációt, a beállítása
-title: Get-teszt – Set
-ms.openlocfilehash: e4aa7770bb5fc8b916b0c0a6488b1ccc0ef0ade9
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+keywords: DSC, PowerShell, konfigurálás, beállítás
+title: Get-test-set
+ms.openlocfilehash: 68738107cd4a222a13dd4afa158f0370953158ad
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229516"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215429"
 ---
-# <a name="get-test-set"></a>Get-teszt – Set
+# <a name="get-test-set"></a>Get-test-set
 
->Érvényes: Windows PowerShell 4.0-s, a Windows PowerShell 5.0
+>Érvényes: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-![Get, Test és Set](/media/get-test-set.png)
+![Get, Test és Set](../media/get-test-set.png)
 
-PowerShell Desired State Configuration körül jön létre egy **első**, **teszt**, és **beállítása** folyamat. DSC [erőforrások](resources.md) minden tartalmaz módszerek mindkét művelet végrehajtásához. Az egy [konfigurációs](../configurations/configurations.md), meg kell adni, amely egy erőforrás paraméterek válnak kulcsok erőforrás blokkok határoz meg **első**, **teszt**, és **beállítása** metódusok.
+A PowerShell kívánt állapotának konfigurálása **Get**, **test**és **set** folyamat körül történik. A DSC- [erőforrások](resources.md) mindegyike metódust tartalmaz az egyes műveletek végrehajtásához. Egy [konfigurációban](../configurations/configurations.md)az erőforrás-blokkokat úgy definiálhatja, hogy kitöltse azokat a kulcsokat, amelyek egy erőforrás **Get**, **test**és **set** metódusának paraméterei lesznek.
 
-Ez szintaxisa látható egy **szolgáltatás** erőforrás letiltása. A **szolgáltatás** erőforrás konfigurálja a Windows-szolgáltatások.
+Ez a **szolgáltatás** -erőforrás blokk szintaxisa. A **szolgáltatási** erőforrás konfigurálja a Windows-szolgáltatásokat.
 
 ```syntax
 Service [String] #ResourceName
@@ -37,7 +37,7 @@ Service [String] #ResourceName
 }
 ```
 
-A **első**, **teszt**, és **beállítása** módszerek a **szolgáltatás** erőforrás lesz paraméter blokkolja, hogy fogadja el ezeket az értékeket.
+A **szolgáltatási** erőforrás **Get**, **test**és **set** metódusának paraméter-blokkokkal kell elfogadnia ezeket az értékeket.
 
 ```powershell
     param
@@ -86,9 +86,9 @@ A **első**, **teszt**, és **beállítása** módszerek a **szolgáltatás** er
 ```
 
 > [!NOTE]
-> A nyelv és az erőforrás meghatározásához használt módszer határozza meg, hogyan a **első**, **teszt**, és **beállítása** módszerek meg lesznek határozva.
+> Az erőforrás definiálásához használt nyelv és metódus határozza meg a **Get**, a **test**és a **set** metódusok meghatározásának módját.
 
-Mivel a **szolgáltatás** erőforrás csak rendelkezik egy szükséges kulcs (`Name`), amely egy **szolgáltatás** blokk erőforrás egyszerű a megoldás lehet:
+Mivel a **szolgáltatási** erőforrásnak csak egy kötelező kulcsa (`Name`) van, a **szolgáltatási** blokk erőforrásai a következőképpen lehetnek egyszerűek:
 
 ```powershell
 Configuration TestConfig
@@ -104,7 +104,7 @@ Configuration TestConfig
 }
 ```
 
-Ha a fenti konfiguráció fordítása, egy kulcsot a megadott értékek a ".mof" fájl, amelyet vannak tárolva. További információkért lásd: [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
+A fenti konfiguráció fordításakor a rendszer a kulcshoz megadott értékeket a generált ". MOF" fájlban tárolja. További információ: [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
 
 ```
 instance of MSFT_ServiceResource as $MSFT_ServiceResource1ref
@@ -121,15 +121,15 @@ ModuleVersion = "1.0";
 };
 ```
 
-Alkalmazásakor a [helyi Configuration Manager](../managing-nodes/metaConfig.md) (LCM) olvassa el az értéket "Nyomtatásisor-kezelő" a ".mof" fájlból, majd adja azt át a `-Name` paraméterében a **első**, **teszt**, és **beállítása** módszerek "MyService" példányának a **szolgáltatás** erőforrás.
+Alkalmazása esetén a [helyi Configuration Manager](../managing-nodes/metaConfig.md) (LCD ChipOnGlas) a ". `-Name` MOF" fájlból olvassa be a "sorkezelő" értéket, és átadja a **Get**, **test**és **set** metódusok paraméterének a következőhöz: "MyService"  **Szolgáltatási** erőforrás.
 
 ## <a name="get"></a>Lekérés
 
-A **első** módszer egy adott erőforrás az erőforrás állapotát kérdezi le, a cél csomópont konfigurálva van. Ebben az állapotban adja vissza egy [kivonattábla](/powershell/module/microsoft.powershell.core/about/about_hash_tables). A kulcsait a **kivonattábla** lesz a konfigurálható értékeket, vagy a paraméterek, az erőforrás fogad el.
+Egy erőforrás **Get** metódusa lekéri az erőforrás állapotát, ahogy azt a célként megadott csomóponton konfigurálták. Ezt az állapotot [szórótábla](/powershell/module/microsoft.powershell.core/about/about_hash_tables)adja vissza. A **szórótábla** kulcsai lesznek a konfigurálható értékek vagy paraméterek, amelyeket az erőforrás elfogad.
 
-A **első** metódus közvetlenül leképezve a [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) parancsmagot. Meghívásakor `Get-DSCConfiguration`, az LCM fut a **első** metódus az egyes erőforrások jelenleg alkalmazott konfigurációjában. Az LCM paraméterekként minden kapcsolódó erőforrás-példányra ".mof" fájljában tárolt kulcs értékeit használja.
+A **Get** metódus leképezi közvetlenül a [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) parancsmagot. A hívásakor `Get-DSCConfiguration`az LCD a jelenleg alkalmazott konfigurációban futtatja az egyes erőforrások **Get** metódusát. Az LCD ChipOnGlas a ". MOF" fájlban tárolt kulcs értékeket használja paraméterekként az összes kapcsolódó erőforrás-példányhoz.
 
-Ez a minta kimenete egy **szolgáltatás** erőforrás, amely konfigurálja a "Nyomtatásisor-kezelő" szolgáltatást.
+Ez egy olyan **szolgáltatási** erőforrás mintája, amely a "sorkezelő" szolgáltatást konfigurálja.
 
 ```output
 ConfigurationName    : Test
@@ -155,7 +155,7 @@ PSComputerName       :
 CimClassName         : MSFT_ServiceResource
 ```
 
-A kimenet mutatja a jelenlegi érték tulajdonságok szerint konfigurálható a **szolgáltatás** erőforrás.
+A kimenet a **szolgáltatási** erőforrás által konfigurálható aktuális érték tulajdonságokat jeleníti meg.
 
 ```syntax
 Service [String] #ResourceName
@@ -175,12 +175,12 @@ Service [String] #ResourceName
 }
 ```
 
-## <a name="test"></a>Tesztelés
+## <a name="test"></a>Teszt
 
-A **teszt** módszer egy adott erőforrás meghatározza, hogy a célcsomópont jelenleg felelnek meg az erőforrás *kívánt állapot*. A **teszt** metódus visszatért `$True` vagy `$False` , csak adja meg, hogy a csomópont megfelelő.
-Meghívásakor [a Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration), a LCM meghívja a **teszt** metódus az egyes erőforrások jelenleg alkalmazott konfigurációjában. Az LCM paraméterekként minden kapcsolódó erőforrás-példányra ".mof" fájljában tárolt kulcs értékeit használja.
+Egy erőforrás **tesztelési** módszere határozza meg, hogy a cél csomópont jelenleg megfelel-e az erőforrás *kívánt állapotának*. A **teszt** metódus `$True` visszaadja `$False` vagy csak azt jelzi, hogy a csomópont megfelelő-e.
+A [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)hívásakor az LCD ChipOnGlas a jelenleg alkalmazott konfigurációban meghívja az egyes erőforrások **tesztelési** módszerét. Az LCD ChipOnGlas a ". MOF" fájlban tárolt kulcs értékeket használja paraméterekként az összes kapcsolódó erőforrás-példányhoz.
 
-Ha az eredmény minden egyes erőforrás **teszt** van `$False`, `Test-DSCConfiguration` adja vissza `$False` jelzi, hogy a csomópont esetében ez nem engedélyezett. Ha az összes erőforrás **teszt** módszerek is szolgálnak `$True`, `Test-DSCConfiguration` adja vissza `$True` azt jelzi, hogy a csomópont megfelelő.
+Ha egy adott erőforrás **tesztje** `$False`eredményét adja vissza, `Test-DSCConfiguration` a `$False` függvény azt jelzi, hogy a csomópont nem megfelelő. Ha az összes erőforrás **tesztelési** módszere `Test-DSCConfiguration` visszatér `$True` `$True`, a visszatérési érték azt jelzi, hogy a csomópont megfelelő.
 
 ```powershell
 Test-DSCConfiguration
@@ -190,7 +190,7 @@ Test-DSCConfiguration
 True
 ```
 
-A PowerShell 5.0-, kezdve a `-Detailed` paraméter hozzá lett adva. Adjon meg `-Detailed` hatására `Test-DSCConfiguration` visszaadandó eredmények megfelelő és nem megfelelő erőforrások gyűjteményei tartalmazó objektumot.
+A PowerShell 5,0-től kezdve `-Detailed` a paraméter hozzá lett adva. A megfelelő és `Test-DSCConfiguration` nem megfelelő erőforrások eredményeinek gyűjteményét tartalmazó objektum visszaadásának okai.`-Detailed`
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -202,13 +202,13 @@ PSComputerName  ResourcesInDesiredState        ResourcesNotInDesiredState     In
 localhost       {[Service]Spooler}                                            True
 ```
 
-További információkért lásd: [a Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
+További információ: [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
 
 ## <a name="set"></a>Beállítás
 
-A **beállítása** módszer egy adott erőforrás próbál kényszerítheti a csomópont az erőforrás megfelelő *kívánt állapot*. A **beállítása** módszer helyezni **idempotens**, ami azt jelenti, hogy **beállítása** lehet több példányban, és mindig elérhető ugyanaz az eredmény hiba nélkül.  Futtatásakor [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration), az egyes erőforrások a jelenleg alkalmazott konfiguráció LCM váltás. Az LCM kérdezi le a kulcs értékeit az aktuális erőforrás-példány a ".mof" fájlból, és használja ezeket a paraméterek a **teszt** metódust. Ha a **teszt** metódus visszatért `$True`, a csomópont nem felelnek meg az aktuális erőforrás és a **beállítása** metódus a rendszer kihagyta. Ha a **teszt** adja vissza `$False`, a csomópont nem megfelelő.  Az LCM továbbítja az erőforrás példány kulcsérték paraméterként az erőforrás **beállítása** módot, a csomópont megfelelőségi való visszaállítása.
+Egy erőforrás **set** metódusa megkísérli kényszeríteni a csomópontot, hogy az megfeleljen az erőforrás *kívánt állapotának*. A **set** metódusnak **idempotens**kell lennie, ami azt jelenti, hogy a **készlet** többször is futhat, és hibák nélkül mindig ugyanazt az eredményt kapja.  A [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration)futtatásakor az LCD ChipOnGlas az aktuálisan alkalmazott konfigurációban lévő összes erőforráson keresztüli ciklust használ. Az LCD ChipOnGlas lekéri az aktuális erőforrás-példány kulcsának értékeit a ". MOF" fájlból, és paraméterként használja azokat a **tesztelési** módszerhez. Ha a **teszt** metódus visszatér `$True`, a csomópont megfelel az aktuális erőforrásnak, és a **set** metódus ki lesz hagyva. Ha a **teszt** eredménye `$False`, a csomópont nem megfelelő.  Az LCD ChipOnGlas az erőforrás-példány kulcsának értékeit paraméterként adja át az erőforrás **beállított** metódusának, és a csomópontot a megfelelőségre állítja vissza.
 
-Adja meg a `-Verbose` és `-Wait` paraméterek állapotát megtekintheti a `Start-DSCConfiguration` parancsmag. Ebben a példában a csomópont már megfelelő. A `Verbose` kimeneti azt jelzi, hogy a **beállítása** metódus ki lett hagyva.
+A és `-Verbose` `-Wait` a paraméterek megadásával `Start-DSCConfiguration` megtekintheti a parancsmag előrehaladását. Ebben a példában a csomópont már megfelelő. A `Verbose` kimenet azt jelzi, hogy a **set** metódus ki lett hagyva.
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting
@@ -237,6 +237,6 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 
 ## <a name="see-also"></a>Lásd még:
 
-- [Az Azure Automation DSC – áttekintés](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
-- [Az SMB-lekérési kiszolgálójának beállítása](../pull-server/pullServerSMB.md)
-- [Lekérési ügyfél beállítása](../pull-server/pullClientConfigID.md)
+- [Azure Automation DSC – áttekintés](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [SMB-lekérési kiszolgáló beállítása](../pull-server/pullServerSMB.md)
+- [Lekérési ügyfél konfigurálása](../pull-server/pullClientConfigID.md)

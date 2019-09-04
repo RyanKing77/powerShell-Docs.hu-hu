@@ -1,65 +1,73 @@
 ---
 ms.date: 09/11/2018
 contributor: JKeithB
-keywords: katalógus, a powershell, a psgallery
+keywords: Galéria, PowerShell, psgallery
 title: Csomagok manuális letöltése
-ms.openlocfilehash: af628f99befe50c16c2c0c60f1a352647af34ff4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c0a96e866dfd27f9b2170ea540ec6dd0c67701fd
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075363"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215462"
 ---
 # <a name="manual-package-download"></a>Csomagok manuális letöltése
 
-A PowerShell-galériából támogatja a webhely a csomag közvetlenül, letölti a PowerShellGet-parancsmagok használata nélkül. Minden olyan csomag, a NuGet csomag (.nupkg) fájlt, amely majd másolhat egy belső tárházat töltheti le.
+A PowerShell-galéria támogatja a csomagok közvetlen letöltését a webhelyről a PowerShellGet-parancsmagok használata nélkül. A csomagokat letöltheti NuGet Package (`.nupkg`) fájlként, amelyet aztán egy belső tárházba másolhat.
 
 > [!NOTE]
-> Manuális csomag a Letöltés **nem** szánt az Install-Module parancsmaggal helyettesítője.
-> A csomag letöltése nem telepíti a modult vagy parancsfájl. Függőségek nem szerepelnek a NuGet-csomag letöltése. Az alábbi utasítások csak tájékoztatási céllal van megadva.
+> A manuális csomagok letöltése **nem** helyettesíti a `Install-Module` parancsmagot.
+> A csomag letöltése nem telepíti a modult vagy a parancsfájlt. A NuGet csomag nem tartalmazza a függőségeket. A következő utasítások csak referenciául szolgálnak.
 
-## <a name="using-manual-download-to-acquire-a-package"></a>Manuális letöltés segítségével csomag beszerzése
+## <a name="using-manual-download-to-acquire-a-package"></a>Manuális Letöltés használata csomag beolvasásához
 
-Minden oldalnak van a manuális letöltéséhez, egy hivatkozás, itt látható módon:
+Minden oldalon a manuális letöltésre mutató hivatkozás található, ahogy az itt látható:
 
-![Manuális letöltés](../../Images/packagedisplaypagewithpseditions.png)
+![Manuális Letöltés](../../Images/packagedisplaypagewithpseditions.png)
 
-Manuális letöltéséhez kattintson a **töltse le a nyers nupkg**. A csomag másolatát másolta a letöltési mappa nevét a böngésző `<name>.<version>.nupkg`.
+A manuális letöltéshez kattintson a **RAW nupkg fájl letöltése**elemre. A rendszer átmásolja a csomag egy példányát a böngésző letöltési mappájába a névvel `<name>.<version>.nupkg`.
 
-A NuGet-csomagot a csomag tartalma kapcsolatos információkat tartalmazó további fájlokat a ZIP-archívumot. Egyes böngészők, például az Internet Explorer, automatikusan cserélje le a `.nupkg` kiterjesztése a `.zip`. Bontsa ki a csomagot, nevezze át a `.nupkg` fájlt `.zip`, ha szükséges, bontsa ki a tartalmát egy helyi mappába.
+A NuGet-csomag egy ZIP-archívum, amely további, a csomag tartalmával kapcsolatos információkat tartalmazó fájlokat tartalmaz. Egyes böngészők, például az Internet Explorer, automatikusan lecserélik a `.zip`fájlkiterjesztést a `.nupkg` következővel:. A csomag kibontásához nevezze át `.nupkg` a `.zip`fájlt, ha szükséges, majd bontsa ki a tartalmat egy helyi mappába.
 
-A NuGet csomag fájlt a következő NuGet-specifikus elemeket, amelyek nem részei az eredeti csomagolt kódot tartalmazza:
+A NuGet-csomagfájl a következő **NuGet-specifikus elemeket** tartalmazza, amelyek nem részei az eredeti csomagolt kódnak:
 
-- Nevű mappa `_rels` -tartalmaz egy `.rels` fájlt, amely felsorolja a függőségeket
-- Nevű mappa `package` -NuGet-specifikus adatait tartalmazza
-- Nevű fájl `[Content_Types].xml` -ismerteti, hogyan működnek a PowerShellGet-kiterjesztése a NuGet
-- Nevű fájl `<name>.nuspec` -metaadatok tömeges tartalmaz
+- Egy nevű `_rels` mappa – tartalmaz egy `.rels` fájlt, amely felsorolja a függőségeket.
+- Egy nevű `package` mappa – tartalmazza a NuGet-specifikus adatkészletet.
+- Egy nevű `[Content_Types].xml` fájl – leírja, hogyan működik együtt a PowerShellGet a NuGet-mel
+- Egy nevű `<name>.nuspec` fájl – a metaadatok nagy részét tartalmazza.
 
-## <a name="installing-powershell-modules-from-a-nuget-package"></a>A NuGet-csomagot a PowerShell-modulok telepítése
+## <a name="installing-powershell-modules-from-a-nuget-package"></a>PowerShell-modulok telepítése NuGet-csomagból
 
 > [!NOTE]
-> Ezek az utasítások **nem** futtatásával ugyanazt az eredményt adja `Install-Module`. Ezek az utasítások megfelelnek a minimális követelményeknek. Ezek nem tartozhat helyettesítheti a `Install-Module`. Néhány által végrehajtott lépések `Install-Module` nem szerepelnek.
+> Ezek az utasítások **nem** adják meg ugyanazt az eredményt, `Install-Module`mint a Futtatás. Ezek az utasítások megfelelnek a minimális követelményeknek. Nem helyettesíti a következőt: `Install-Module`.
+> A `Install-Module` nem tartalmaz néhány lépést.
 
-A legegyszerűbb megközelítés, hogy távolítsa el a NuGet-specifikus elemek. A PowerShell-kóddal, a csomagot a szerző által létrehozott kihasználatlan marad. A lépések a következők:
+A legegyszerűbb módszer a NuGet-specifikus elemek eltávolítása a mappából. Az elemek eltávolítása elhagyja a csomag szerzője által létrehozott PowerShell-kódot.
+A NuGet-specifikus elemek listáját lásd: a [manuális Letöltés használata a csomagok beolvasásához](#using-manual-download-to-acquire-a-package).
 
-1. Bontsa ki a tartalmát egy helyi mappába a NuGet-csomagot.
-2. A NuGet-specifikus elemeket törölje a mappát.
-3. Nevezze át a mappát. Az alapértelmezett mappa neve: általában `<name>.<version>`. A verzió lehetnek "– előzetes" Ha a modul előzetes verziójának van megjelölve. Nevezze át a mappát csak a modul nevét. Például a "azurerm.storage.5.0.4-preview" "azurerm.storage" lesz.
-4. Másolja a mappát a található mappák közül a `$env:PSModulePath value`. `$env:PSModulePath` az elérési utak, amelyben PowerShell modulok kell keresnie egy pontosvesszővel elválasztott csoportja.
+A lépések a következők:
+
+1. Bontsa ki a NuGet-csomag tartalmát egy helyi mappába.
+2. Törölje a NuGet-specifikus elemeket a mappából.
+3. Nevezze át a mappát. Az alapértelmezett mappa neve általában `<name>.<version>`. A verzió tartalmazhat `-prerelease` , ha a modul előzetes verzióként van megjelölve. Nevezze át a mappát csak a modul nevére. Például `azurerm.storage.5.0.4-preview` a következő lesz `azurerm.storage`:.
+4. Másolja a mappát az egyik mappájába `$env:PSModulePath value`. `$env:PSModulePath`a egy pontosvesszővel tagolt készlet, amelyben a PowerShellnek a modulokat kell keresnie.
 
 > [!IMPORTANT]
-> A Manuális letöltés nem tartalmazza a modul által igényelt függőségek. Ha a csomag függőségekkel rendelkezik, a rendszer, hogy megfelelően működjön a modul csak telepíthető. A PowerShell-galériából jeleníti meg a csomag által igényelt összes függőségét.
+> A manuális letöltés nem tartalmazza a modul által igényelt függőségeket. Ha a csomag függőségei vannak, a modul megfelelő működéséhez telepítve kell lennie a rendszeren. A PowerShell-galéria megjeleníti a csomag által igényelt összes függőséget.
 
-## <a name="installing-powershell-scripts-from-a-nuget-package"></a>A NuGet-csomagot a PowerShell-parancsprogramok telepítése
+## <a name="installing-powershell-scripts-from-a-nuget-package"></a>PowerShell-parancsfájlok telepítése NuGet-csomagból
 
 > [!NOTE]
-> Ezek az utasítások **nem** futtatásával ugyanazt az eredményt adja `Install-Script`. Ezek az utasítások megfelelnek a minimális követelményeknek. Ezek nem tartozhat helyettesítheti a `Install-Script`.
+> Ezek az utasítások **nem** adják meg ugyanazt az eredményt, `Install-Script`mint a Futtatás. Ezek az utasítások megfelelnek a minimális követelményeknek. Nem helyettesíti a következőt: `Install-Script`.
 
-A legegyszerűbb megközelítés közvetlenül, hogy a kivonatot a NuGet-csomagot, majd használja a szkriptet. A lépések a következők:
+A legegyszerűbb módszer a NuGet-csomag kibontása, majd közvetlenül a szkript használata.
+
+A lépések a következők:
 
 1. Bontsa ki a NuGet-csomag tartalmát.
-2. A `.PS1` mappában található fájl közvetlenül a következő helyről is használható.
-3. Előfordulhat, hogy törli a NuGet-specifikus elemek a mappában.
+2. A mappában található fájl közvetlenül ezen a helyen használható. `.PS1`
+3. A mappában lévő NuGet-specifikus elemeket is törölheti.
+
+A NuGet-specifikus elemek listáját lásd: a [manuális Letöltés használata a csomagok beolvasásához](#using-manual-download-to-acquire-a-package).
 
 > [!IMPORTANT]
-> A Manuális letöltés nem tartalmazza a modul által igényelt függőségek. Ha a csomag függőségekkel rendelkezik, a rendszer, hogy megfelelően működjön a modul csak telepíthető. A PowerShell-galériából jeleníti meg a csomag által igényelt összes függőségét.
+> A manuális letöltés nem tartalmazza a modul által igényelt függőségeket. Ha a csomag függőségei vannak, a modul megfelelő működéséhez telepítve kell lennie a rendszeren. A PowerShell-galéria megjeleníti a csomag által igényelt összes függőséget.

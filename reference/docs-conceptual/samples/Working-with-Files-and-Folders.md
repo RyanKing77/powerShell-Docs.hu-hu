@@ -1,35 +1,35 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, a parancsmag
+keywords: PowerShell, parancsmag
 title: Fájlok és mappák használata
-ms.openlocfilehash: 0f7cb233918b59475417ec49b611ecc25a94ebe1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030687"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215533"
 ---
 # <a name="working-with-files-and-folders"></a>Fájlok és mappák használata
 
-Navigálás a Windows PowerShell-meghajtók és a rajtuk az elemek módosítása kezelésére szolgáló fizikai merevlemezek Windows található fájlok és mappák hasonlít. Ez a szakasz leírja, hogyan meghatározott fájl- és fájlkezelési feladatok PowerShell-lel kezelésére.
+A Windows PowerShell meghajtókon keresztüli navigálás és a rajtuk lévő elemek módosítása hasonló a fájlok és mappák Windows fizikai lemezmeghajtón való kezeléséhez. Ebből a szakaszból megtudhatja, hogyan kezelheti a fájlok és mappák kezelésére szolgáló feladatokat a PowerShell használatával.
 
-## <a name="listing-all-the-files-and-folders-within-a-folder"></a>A fájlok és a egy mappában található mappák listázása
+## <a name="listing-all-the-files-and-folders-within-a-folder"></a>A mappában található összes fájl és mappa listázása
 
-A közvetlenül egy mappában található minden elemet is kap **Get-ChildItem**. Adja hozzá a választható **kényszerített** rejtettek megjelenítése vagy rendszer elemek paramétert. Ez a parancs például a Windows PowerShell meghajtót C (Ez ugyanaz, mint a Windows fizikai meghajtó C) a közvetlen tartalmát jeleníti meg:
+A **Get-ChildItem**használatával közvetlenül a mappában található összes elem beolvasható. Adja hozzá a nem kötelező **kényszerített** paramétert a rejtett vagy a rendszerelemek megjelenítéséhez. Ez a parancs például a C Windows PowerShell-meghajtó közvetlen tartalmát jeleníti meg (amely megegyezik a Windows fizikai meghajtóval):
 
 ```powershell
 Get-ChildItem -Path C:\ -Force
 ```
 
-A parancs felsorolja a csak a közvetlenül benne lévő elemek, hasonlóan a Cmd.exe használatával **DIR** parancs vagy **ls** egy UNIX-rendszerhéjban. Annak érdekében, hogy a benne lévő elemek megjelenítése, meg kell adnia a **-Recurse** paramétert is. (Ez egy rendkívül hosszú ideig eltarthat.) Minden, a C meghajtó megjelenítése:
+A parancs csak a közvetlenül foglalt elemeket listázza, hasonlóan a cmd. exe **dir** parancsához vagy az **ls** -hoz egy UNIX-rendszerhéjban. A befoglalt elemek megjelenítéséhez a **-recurse** paramétert is meg kell adnia. (Ez nagyon hosszú időt vehet igénybe.) A C meghajtón található összes elem listázása:
 
 ```powershell
 Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
-**Get-ChildItem** szűrheti az elemeket a **elérési**, **szűrő**, **Belefoglalás**, és **kizárása** paraméterek, de ezek is általában csak a neve alapján. Összetett szűrését az egyéb elemek tulajdonságai alapján is végezhet **Where-Object**.
+A **Get-ChildItem** képes az elemeket az **elérési úttal**, **szűréssel**, **belefoglalási**és **kizárási** paraméterekkel szűrni, de ezek jellemzően csak a névben alapulnak. A **Where-Object**lehetőség használatával összetett szűrést végezhet az elemek egyéb tulajdonságai alapján.
 
-A következő parancsot, amely utoljára módosítva 2005. október 1. után, és amelyek sem a kisebb, mint 1 megabájt, sem a 10 MB-nál nagyobb a Program Files mappában található megkeresi az összes végrehajtható fájlok:
+A következő parancs megkeresi az összes olyan végrehajtható fájlt a program Files mappában, amelyet a 2005. október 1. után módosítottak, és amelyek nem kisebbek, mint 1 megabájt, és nem nagyobb 10 megabájtnál:
 
 ```powershell
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt '2005-10-01') -and ($_.Length -ge 1mb) -and ($_.Length -le 10mb)}
@@ -37,33 +37,33 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 
 ## <a name="copying-files-and-folders"></a>Fájlok és mappák másolása
 
-Másolás végzett **Copy-Item**. C: készít biztonsági másolatot a következő parancs\\Boot.ini fájlt a C:\\boot.bak:
+A másolás a másolási **elemmel**történik. A következő parancs biztonsági mentést készít a\\c: boot. ini fájlról c:\\boot. bak fájlba:
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-Ha a célfájl már létezik, a másolási kísérlet meghiúsul. Egy már létező célhelyre felülírásához használja a **kényszerített** paramétert:
+Ha a célfájl már létezik, a másolási kísérlet sikertelen lesz. Egy már létező célhely felülírásához használja a **Force** paramétert:
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
-Ez a parancs működik, akkor is, ha a cél csak olvasható.
+Ez a parancs akkor is működik, ha a célhely írásvédett.
 
-Mappa másolása ugyanúgy működik. Ez a parancs másolja át a C: mappa\\temp\\az új mappába C: Teszt1\\temp\\DeleteMe rekurzív módon:
+A mappa másolása ugyanúgy működik. Ez a parancs a c\\: Temp\\test1 mappát másolja át a c:\\Temp\\DeleteMe nevű új mappába:
 
 ```powershell
 Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
-A kijelölt elemek is másolhatja. A következő parancsot az összes, bárhol szerepel a c: .txt fájlt másolja\\c: adatok\\temp\\szöveg:
+Lehetőség van egy kijelölt elem másolására is. A következő parancs a c-ben bárhol tárolt összes. txt fájlt\\átmásolja a\\c\\: adatfájlból c: Temp szövegbe:
 
 ```powershell
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
-Más eszközök segítségével továbbra is rendszer fájlmásolás hajtható végre. XCOPY ROBOCOPY és COM-objektumok, például a **Scripting.FileSystemObject,** összes működik a Windows PowerShellben. Például használhatja a Windows Script Host **Scripting.FileSystem COM** biztonsági mentése a C: osztály\\Boot.ini fájlt a C:\\boot.bak:
+Továbbra is használhat más eszközöket a fájlrendszer másolatainak elvégzéséhez. Az XCOPY, a ROBOCOPY és a COM-objektumok, például a **Scripting. FileSystemObject,** mind a Windows PowerShellben működnek. Használhatja például a Windows Script Host **Scripting. filesystem com** osztályt a c:\\boot. ini fájlról c:\\boot. bak fájlba történő biztonsági mentéshez:
 
 ```powershell
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
@@ -71,23 +71,23 @@ Más eszközök segítségével továbbra is rendszer fájlmásolás hajtható v
 
 ## <a name="creating-files-and-folders"></a>Fájlok és mappák létrehozása
 
-Új elemek létrehozását ugyanúgy működik az összes Windows PowerShell-szolgáltató. Ha egy Windows PowerShell-szolgáltatóval rendelkezik-e egynél több elem típusa – például a fájlrendszer Windows PowerShell-szolgáltatóban megkülönbözteti könyvtárak és fájlok – meg kell adni az elem típusa.
+Az új elemek létrehozása ugyanúgy működik az összes Windows PowerShell-szolgáltatón. Ha egy Windows PowerShell-szolgáltató egynél több típusú elemmel rendelkezik – például a fájlrendszer Windows PowerShell-szolgáltatója megkülönbözteti a címtárakat és a fájlokat –, meg kell adnia az elem típusát.
 
-Ez a parancs létrehoz egy új mappát C:\\temp\\új mappa:
+Ez a parancs egy új, C:\\Temp\\új mappát hoz létre:
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder' -ItemType Directory
 ```
 
-Ez a parancs létrehoz egy új üres fájlt C:\\temp\\új mappa\\file.txt
+Ez a parancs létrehoz egy új üres fájlt a\\C\\: Temp\\New Folder file. txt fájlban
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 ```
 
-## <a name="removing-all-files-and-folders-within-a-folder"></a>Összes fájlt és mappát egy mappában lévő eltávolítása
+## <a name="removing-all-files-and-folders-within-a-folder"></a>Mappában lévő összes fájl és mappa eltávolítása
 
-Eltávolíthatja a benne lévő elemek használatával **Remove-cikk**, de meg kell adnia az eltávolítás megerősítéséhez, ha az elem tartalmaz bármi más. Például, ha törli a mappát a C: próbál\\temp\\más elemeket tartalmazó DeleteMe, Windows PowerShell megerősítést kér a felhasználótól a mappa törlése előtt:
+Az **Eltávolítás elem**használatával eltávolíthatja a tartalmazott elemeket, de a rendszer felszólítja, hogy erősítse meg az eltávolítást, ha az elem bármi mást tartalmaz. Ha például megpróbálja törölni a C:\\Temp\\DeleteMe mappát, amely más elemeket tartalmaz, a Windows PowerShell a mappa törlése előtt megkéri a megerősítést:
 
 ```
 Remove-Item -Path C:\temp\DeleteMe
@@ -100,25 +100,27 @@ sure you want to continue?
 (default is "Y"):
 ```
 
-Ha nem szeretné, hogy a rendszer minden egyes tartalmazott cikkhez, adja meg a **Recurse** paramétert:
+Ha nem kívánja megkérdezni az egyes befoglalt elemeket, akkor a **recurse** paramétert kell megadnia:
 
 ```powershell
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Elérhető Windows meghajtóként egy helyi mappába leképezése
+## <a name="mapping-a-local-folder-as-a-drive"></a>Helyi mappa leképezése meghajtóként
 
-Emellett leképezhet egy helyi mappába használatával a **subst** parancsot. A következő parancs létrehoz egy helyi meghajtóra P: feltörték a helyi programfájlok könyvtárban:
+A **New-PSDrive** parancs használatával egy helyi mappát is leképezheti. A következő parancs létrehoz egy helyi meghajtót (P: feltört a helyi programfájlok könyvtára), amely csak a PowerShell-munkamenetből látható:
 
 ```powershell
-subst p: $env:programfiles
+New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-Ugyanúgy mint a hálózati meghajtó, a meghajtók leképezve belül a Windows PowerShell használatával **subst** azonnal láthatók a Windows PowerShell parancshéj.
+A hálózati meghajtókhoz hasonlóan a Windows PowerShellben leképezett meghajtók azonnal láthatók a Windows PowerShell-rendszerhéjban.
+Ahhoz, hogy egy csatlakoztatott meghajtót a Fájlkezelőből hozzon létre, a **-megmaradás** paraméterre van szükség. Azonban csak a távoli elérési utak használhatók továbbra is.
 
-## <a name="reading-a-text-file-into-an-array"></a>Egy tömbbe egy szöveges fájl olvasása
 
-A gyakori tároló formátumok szöveges adatok egyik, egy fájlban, a különböző adatelemek számít külön sorban. A **Get-tartalom** parancsmag is használható egy teljes fájl egy lépésben elolvasható itt látható módon:
+## <a name="reading-a-text-file-into-an-array"></a>Szöveges fájl olvasása tömbbe
+
+A szöveges adatokat a leggyakoribb tárolási formátumok egyike egy olyan fájlban található, amely külön, különálló adatelemként kezelt sorokból áll. A **Get-Content** parancsmag egy teljes fájl olvasására használható egy lépésben, ahogy az itt látható:
 
 ```
 PS> Get-Content -Path C:\boot.ini
@@ -132,17 +134,17 @@ multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
 with Data Execution Prevention" /noexecute=optin /fastdetect
 ```
 
-**Get-tartalom** már kezeli egy tömb, a fájl tartalmának soronként egy elemet a fájlból beolvasott adatok. Ezt úgy ellenőrizheti a **hossza** a visszaadott tartalom:
+A **Get-Content** már a fájlból beolvasott adatokat tömbként kezeli, és soronként egy elemet. Ezt a visszaadott tartalom **hosszának** ellenőrzésével ellenőrizheti:
 
 ```
 PS> (Get-Content -Path C:\boot.ini).Length
 6
 ```
 
-Ez a parancs esetén a leghasznosabb közvetlenül első listák, amelyek Windows PowerShell segítségével. Például előfordulhat, hogy tárolása számítógépnevek vagy IP-címek listája egy fájlban C:\\temp\\domainMembers.txt, a fájl minden sorában egy névvel. Használhat **Get-tartalom** beolvasása a fájl tartalmát, és helyezze őket a változó **$Computers**:
+Ez a parancs akkor hasznos, ha közvetlenül a Windows PowerShellben jeleníti meg az információkat. Például a "C:\\Temp\\domainMembers. txt" fájlban tárolhatja a számítógépek nevét vagy IP-címeit, a fájl minden egyes sorában egy névvel. A **Get-Content** paranccsal lekérheti a fájl tartalmát, és elhelyezheti azokat a következő változóban **$Computers**:
 
 ```powershell
 $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 ```
 
-**$Computers** már az egyes elemei a számítógép nevét tartalmazó tömb.
+**$Computers** mostantól egy olyan tömb, amely az egyes elemekben számítógépnevet tartalmaz.
