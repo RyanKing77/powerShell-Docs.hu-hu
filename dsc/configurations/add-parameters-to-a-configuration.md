@@ -1,24 +1,24 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, erőforrás, katalógus, beállítása
+keywords: DSC, PowerShell, erőforrás, katalógus, beállítás
 title: Paraméterek hozzáadása konfigurációkhoz
-ms.openlocfilehash: 514bb4cf82b7adbe4cd3d3e34d5464f574cb2206
-ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
+ms.openlocfilehash: 72e6c15593d11ed39d7fe8ea79f794089f410cf8
+ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67301515"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386317"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Paraméterek hozzáadása konfigurációkhoz
 
-Funkciók, például [konfigurációk](configurations.md) , hogy a felhasználói bemenet alapján több dinamikus konfigurációk rendelkeznek. A lépések hasonlóak leírt [függvényeket paraméterekkel](/powershell/module/microsoft.powershell.core/about/about_functions).
+A függvényekhez hasonlóan a [konfigurációk](configurations.md) paraméterei is lehetővé teszik, hogy a felhasználók bevitele alapján több dinamikus konfigurációt engedélyezzen. A lépések hasonlóak a [függvények paraméterrel](/powershell/module/microsoft.powershell.core/about/about_functions)ismertetett műveletekhez.
 
-Ebben a példában a "Nyomtatásisor-kezelő" szolgáltatás "Fut" konfigurál alapkonfiguráció kezdődik.
+Ez a példa egy alapszintű konfigurációval kezdődik, amely úgy konfigurálja a "sorkezelő" szolgáltatást, hogy "fut".
 
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node localhost
@@ -32,21 +32,21 @@ Configuration TestConfig
 }
 ```
 
-## <a name="built-in-configuration-parameters"></a>Beépített konfigurációs paraméterei
+## <a name="built-in-configuration-parameters"></a>Beépített konfigurációs paraméterek
 
-Egy függvény eltérően azonban a [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) attribútum nincs funkciókkal bővíti a. Mellett [általános paraméterek](/powershell/module/microsoft.powershell.core/about/about_commonparameters), konfigurációk is használhatja az alábbi paraméterek, beépített anélkül, hogy definiálja azokat.
+A függvényektől eltérően a [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) attribútum nem hoz létre funkciókat. A [gyakori paraméterek](/powershell/module/microsoft.powershell.core/about/about_commonparameters)mellett a konfigurációk a következő beépített paramétereket is használhatják, anélkül, hogy meg kellene határozni őket.
 
 |Paraméter  |Leírás  |
 |---------|---------|
-|`-InstanceName`|Határozza meg [összetett konfigurációk](compositeconfigs.md)|
-|`-DependsOn`|Határozza meg [összetett konfigurációk](compositeconfigs.md)|
-|`-PSDSCRunAsCredential`|Határozza meg [összetett konfigurációk](compositeconfigs.md)|
-|`-ConfigurationData`|Amelyen a strukturált [konfigurációs adatok](configData.md) a konfigurációban való használat.|
-|`-OutputPath`|Hol adható meg a "\<computername\>.mof" fájl le lesz fordítva|
+|`-InstanceName`|[Összetett konfigurációk](compositeconfigs.md) definiálásakor használatos|
+|`-DependsOn`|[Összetett konfigurációk](compositeconfigs.md) definiálásakor használatos|
+|`-PSDSCRunAsCredential`|[Összetett konfigurációk](compositeconfigs.md) definiálásakor használatos|
+|`-ConfigurationData`|A konfigurációban használható strukturált [konfigurációs adatbevitelre](configData.md) szolgál.|
+|`-OutputPath`|Annak megadására szolgál,\<hogy\>a "számítógépnév. MOF" fájl hol lesz lefordítva|
 
-## <a name="adding-your-own-parameters-to-configurations"></a>Konfigurációk a saját paraméterek hozzáadása
+## <a name="adding-your-own-parameters-to-configurations"></a>Saját paraméterek hozzáadása a konfigurációkhoz
 
-A beépített paraméterek mellett is adhat a saját paraméterek a konfigurációk. A paraméterblokkban közvetlenül a konfigurációs nyilatkozat, csakúgy, mint egy függvény belülre irányul. Egy konfigurációs paraméter blokk kívül bármely kell **csomópont** nyilatkozatok, és minden újabb *importálása* utasításokat. Paraméterek hozzáadásával a konfigurációk megbízhatóbb és dinamikus teheti meg.
+A beépített paraméterek mellett saját paramétereket is hozzáadhat a konfigurációkhoz. A Block paraméter közvetlenül a konfigurációs deklarációban található, ugyanúgy, mint a függvény. A konfigurációs paraméterek blokkjának a **csomópont** deklarációján kívül kell lennie, és minden *importálási* utasítás felett kell lennie. Paraméterek hozzáadásával a konfigurációk robusztusabb és dinamikusak lehetnek.
 
 ```powershell
 Configuration TestConfig
@@ -57,9 +57,9 @@ Configuration TestConfig
     )
 ```
 
-### <a name="add-a-computername-parameter"></a>ComputerName paraméter hozzáadása
+### <a name="add-a-computername-parameter"></a>Számítógépnév-paraméter hozzáadása
 
-Az első paraméter lehetséges, hogy egy `-Computername` paramétert, így bármely dinamikusan állíthat össze egy ".mof" fájl `-Computername` adja át a konfigurációt. Funkciók, például megadhat egy alapértelmezett értéket, abban az esetben, ha a felhasználó nem felel meg egy értéket `-ComputerName`
+Az első paraméter, amelyet hozzáadhat, egy `-Computername` paraméter, így dinamikusan lefordíthatja a ". MOF" fájlt `-Computername` a konfigurációba való átadáshoz. A függvényekhez hasonlóan megadhat egy alapértelmezett értéket is abban az esetben, ha a felhasználó nem ad át értéket a következőnek:`-ComputerName`
 
 ```powershell
 param
@@ -69,7 +69,7 @@ param
 )
 ```
 
-Belül a konfigurációját, majd megadhatja a `-ComputerName` paraméter a csomópont blokk meghatározásakor.
+A konfiguráción belül megadhatja a `-ComputerName` paramétert a csomópont-blokk definiálásakor.
 
 ```powershell
 Node $ComputerName
@@ -78,17 +78,17 @@ Node $ComputerName
 }
 ```
 
-### <a name="calling-your-configuration-with-parameters"></a>A konfiguráció paraméterekkel hívása
+### <a name="calling-your-configuration-with-parameters"></a>A konfiguráció meghívása paraméterekkel
 
-Miután hozzáadta a paraméterek a konfigurációt, ugyanúgy, mint egy parancsmaggal használhatja őket.
+Miután hozzáadta a paramétereket a konfigurációhoz, azokat ugyanúgy használhatja, mint a parancsmagot.
 
 ```powershell
 TestConfig -ComputerName "server01"
 ```
 
-### <a name="compiling-multiple-mof-files"></a>Több .mof fájl fordítása
+### <a name="compiling-multiple-mof-files"></a>Több. MOF fájl fordítása
 
-A csomópont blokk is fogadhat számítógépnevek vesszővel tagolt listája, és minden ".mof" fájlokat hoz létre. Az összes számítógép átadott ".mof" fájlok létrehozásához az alábbi példa futtatása a `-ComputerName` paraméter.
+A csomópont-blokk is elfogadhatja a számítógépek neveinek vesszővel tagolt listáját, és mindegyikhez ". MOF" fájlokat fog készíteni. A következő példa futtatásával létrehozhat ". MOF" fájlokat a `-ComputerName` paraméternek átadott összes számítógép számára.
 
 ```powershell
 Configuration TestConfig
@@ -99,7 +99,7 @@ Configuration TestConfig
         $ComputerName="localhost"
     )
 
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node $ComputerName
@@ -115,9 +115,9 @@ Configuration TestConfig
 TestConfig -ComputerName "server01", "server02", "server03"
 ```
 
-## <a name="advanced-parameters-in-configurations"></a>Speciális paraméterek konfigurációk
+## <a name="advanced-parameters-in-configurations"></a>Speciális paraméterek a konfigurációkban
 
-Mellett egy `-ComputerName` paramétert, hozzáadhatja a szolgáltatás nevét és állapotát paramétereit. Az alábbi példa hozzáad egy paraméter blokkot, egy `-ServiceName` paramétert, és használja, ezzel dinamikusan definiálva a **szolgáltatás** erőforrás letiltása. Hozzáadja a `-State` paraméter, ezzel dinamikusan definiálva a **állapot** a a **szolgáltatás** erőforrás letiltása.
+A `-ComputerName` paraméter mellett paramétereket is hozzáadhat a szolgáltatás nevéhez és állapotához. Az alábbi példa egy paraméterrel rendelkező `-ServiceName` paramétert ad hozzá, és a használatával dinamikusan meghatározza a **szolgáltatás** -erőforrás blokkot. Egy `-State` paraméter hozzáadásával dinamikusan definiálja az **állapotot** a **szolgáltatás** -erőforrás blokkban.
 
 ```powershell
 Configuration TestConfig
@@ -134,7 +134,7 @@ Configuration TestConfig
         $ComputerName="localhost"
     )
 
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node $ComputerName
@@ -149,18 +149,18 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> Más advacned forgatókönyvekben, akkor előfordulhat, hogy célszerűbb, a dinamikus adatokat áthelyezni egy strukturált [konfigurációs adatok](configData.md).
+> További advacned forgatókönyvekben érdemes lehet a dinamikus adatok strukturált [konfigurációs adatokba](configData.md)való áthelyezésére.
 
-A példában most konfigurációs vesz igénybe egy dinamikus `$ServiceName`, de nincs megadva, ha fordítása hibát eredményez. Hozzáadhat például ebben a példában egy alapértelmezett értéket.
+A példában a konfiguráció dinamikusan `$ServiceName`zajlik, de ha nincs megadva, a rendszer hibát eredményez. Ehhez a példához hasonló alapértelmezett értéket adhat hozzá.
 
 ```powershell
 [String]
 $ServiceName="Spooler"
 ```
 
-Ebben a példányban, logikus további egyszerűen kényszerítik a felhasználót adjon meg egy értéket a `$ServiceName` paraméter. A `parameter` attribútum lehetővé teszi, hogy további ellenőrzési és a folyamat a konfigurációs paramétereket támogatja.
+Ebben a példányban azonban több értelme van, hogy egyszerűen kényszerítse a felhasználót a `$ServiceName` paraméter értékének megadására. Az `parameter` attribútum lehetővé teszi további érvényesítési és folyamat-támogatás hozzáadását a konfiguráció paramétereinek eléréséhez.
 
-Bármely paraméterdeklarációhoz felett adja hozzá a `parameter` attribútum letiltása az alábbi példában látható módon.
+A paraméterek deklarációja felett adja hozzá `parameter` az attribútum blokkot az alábbi példában látható módon.
 
 ```powershell
 [parameter()]
@@ -168,7 +168,7 @@ Bármely paraméterdeklarációhoz felett adja hozzá a `parameter` attribútum 
 $ServiceName
 ```
 
-A megadott argumentumok minden egyes `parameter` attribútum vezérlő aspektusainak paraméter van megadva. A következő példa a `$ServiceName` egy **kötelező** paraméter.
+Az egyes `parameter` attribútumokhoz argumentumokat adhat meg a definiált paraméter szempontjainak szabályozásához. A következő példa a `$ServiceName` **kötelező** paramétert teszi lehetővé.
 
 ```powershell
 [parameter(Mandatory)]
@@ -176,7 +176,7 @@ A megadott argumentumok minden egyes `parameter` attribútum vezérlő aspektusa
 $ServiceName
 ```
 
-Az a `$State` paramétert, szeretnénk, hogy a felhasználó kívül előre meghatározott értékeket (például a futó, a Leállítva) a `ValidationSet*`attribútum megakadályozná, hogy a felhasználó kívül (például a futó, előre meghatározott értékeket adjanak meg Leállítva). Az alábbi példa hozzáadja a `ValidationSet` attribútumot a `$State` paraméter. Mert szeretnénk, hogy nem a `$State` paraméter **kötelező**, hogy hozzá kell adnia egy alapértelmezett értéket.
+A paraméter esetében meg szeretnénk akadályozni, hogy a felhasználó az előre definiált készleten kívül (például a futó, leállított) értéket `ValidationSet*`adja meg. az attribútum megakadályozza, hogy a felhasználó egy előre definiált készleten kívüli értékeket határozzon meg (például a futtatást, `$State` Leállítva). A következő példa hozzáadja az `ValidationSet` attribútumot a `$State` paraméterhez. Mivel a `$State` paramétert nem szeretnénk **kötelezővé**tenni, hozzá kell adnia egy alapértelmezett értéket.
 
 ```powershell
 [ValidateSet("Running", "Stopped")]
@@ -185,13 +185,13 @@ $State="Running"
 ```
 
 > [!NOTE]
-> Nem kell megadnia egy `parameter` attribútum használata esetén egy `validation` attribútum.
+> Attribútum használatakor nem kell `parameter` attribútumot megadnia. `validation`
 
-További információ a `parameter` és az érvényesítési attribútumokat [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
+További információt a [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters)és az `parameter` érvényesítési attribútumokról a következő cikkekben olvashat:.
 
-## <a name="fully-parameterized-configuration"></a>Teljes körűen paraméteres Configuration
+## <a name="fully-parameterized-configuration"></a>Teljes mértékben paraméteres konfiguráció
 
-Ezzel kapunk egy paraméteres Configuration, amely a felhasználó adja meg egy `-InstanceName`, `-ServiceName`, és érvényesíti a `-State` paraméter.
+Most már van egy paraméteres konfiguráció, amely arra kényszeríti a felhasználót `-InstanceName`, `-ServiceName`hogy határozzon meg egy, `-State` és érvényesíti a paramétert.
 
 ```powershell
 Configuration TestConfig
@@ -210,7 +210,7 @@ Configuration TestConfig
         $ComputerName="localhost",
     )
 
-    # It is best practice to implicitly import any required resources or modules.
+    # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
     Node localhost
@@ -226,7 +226,7 @@ Configuration TestConfig
 
 ## <a name="see-also"></a>Lásd még:
 
-- [DSC-konfigurációk súgót írni](configHelp.md)
-- [A dinamikus konfigurációk](flow-control-in-configurations.md)
-- [Konfigurációs adatok használata a konfigurációk](configData.md)
-- [Külön konfigurációs és környezeti adatok](separatingEnvData.md)
+- [A DSC-konfigurációk írási súgója](configHelp.md)
+- [Dinamikus konfigurációk](flow-control-in-configurations.md)
+- [Konfigurációs adatai használata a konfigurációkban](configData.md)
+- [Különálló konfigurációs és környezeti adatértékek](separatingEnvData.md)

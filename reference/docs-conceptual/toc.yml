@@ -199,7 +199,7 @@
 - name: Mintaparancsfájlok
   items:
     - name: Mintaszkriptek felügyeleti célokra
-      href: samples/sample-scripts-for-administration.md
+      href: samples/sample-scripts-for-administration.yml
     - name: A számítógép állapotának módosítása
       href: samples/changing-computer-state.md
     - name: Adatgyűjtés a számítógépekről

@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Parancsfájlok a rendszerfelügyelethez
+summary: Ilyenek például a rendszerek PowerShell használatával történő felügyeletére szolgáló forgatókönyvek.
+metadata:
+  title: Parancsfájlok a rendszerfelügyelethez
+  description: Ilyenek például a rendszerek PowerShell használatával történő felügyeletére szolgáló forgatókönyvek.
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 09/05/2019
+  ms.openlocfilehash: 95ed43cf713f79d8b648a0f3af77fe2e0119f9c4
+  ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+  ms.translationtype: MT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 09/05/2019
+  ms.locfileid: "70392636"
+landingContent:
+- title: Objektumok használata
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Objektum szerkezetének megtekintése
+      url: ./viewing-object-structure--get-member-.md
+    - text: Az objektum részeinek kiválasztása
+      url: ./selecting-parts-of-objects--select-object-.md
+    - text: Objektumok szűrése a folyamatban
+      url: ./removing-objects-from-the-pipeline--where-object-.md
+    - text: Objektumok rendezése
+      url: ./sorting-objects.md
+    - text: Feladat megismétlése több objektumhoz
+      url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
+    - text: .NET-és COM-objektumok létrehozása
+      url: ./creating-.net-and-com-objects--new-object-.md
+    - text: Statikus osztályok és metódusok használata
+      url: ./using-static-classes-and-methods.md
+    - text: WMI-objektumok lékérése – Get-WmiObject
+      url: ./getting-wmi-objects--get-wmiobject-.md
+- title: Számítógépek kezelése
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: A számítógép állapotának módosítása
+      url: ./changing-computer-state.md
+    - text: Adatgyűjtés a számítógépekről
+      url: ./collecting-information-about-computers.md
+    - text: Get-WinEvent lekérdezések létrehozása FilterHashtable használatával
+      url: ./creating-get-winEvent-queries-with-filterhashtable.md
+- title: Folyamatok kezelése & szolgáltatásokkal
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Folyamatok kezelése folyamatparancsmagokkal
+      url: ./managing-processes-with-process-cmdlets.md
+    - text: Szolgáltatások kezelése
+      url: ./managing-services.md
+    - text: Windows PowerShell-illesztők kezelése
+      url: ./managing-windows-powershell-drives.md
+    - text: Nyomtatók használata
+      url: ./working-with-printers.md
+    - text: Hálózatkezelési feladatok végrehajtása
+      url: ./performing-networking-tasks.md
+    - text: Szoftvertelepítések használata
+      url: ./working-with-software-installations.md
+    - text: PowerShell-parancs dekódolása futó folyamatból
+      url: ./decode-powershell-command-from-a-running-process.md
+- title: A kimenet használata
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Adatátirányítás az Out-* parancsmagokkal
+      url: ./redirecting-data-with-out---cmdlets.md
+    - text: A kimeneti nézet módosítása formázási parancsokkal
+      url: ./using-format-commands-to-change-output-view.md
+- title: Meghajtók & fájlok kezelése
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Aktuális hely kezelése
+      url: ./managing-current-location.md
+    - text: Fájlok és mappák használata
+      url: ./working-with-files-and-folders.md
+    - text: Fájlmappák és beállításkulcsok használata
+      url: ./working-with-files-folders-and-registry-keys.md
+    - text: Beállításjegyzék-bejegyzések használata
+      url: ./working-with-registry-entries.md
+    - text: Beállításkulcsok használata
+      url: ./working-with-registry-keys.md
+- title: Felhasználói felületi elemek létrehozása
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Egyéni beviteli mező létrehozása
+      url: ./creating-a-custom-input-box.md
+    - text: Grafikus dátumválasztó létrehozása
+      url: ./creating-a-graphical-date-picker.md
+    - text: Többszörös kijelölésű listamezők
+      url: ./multiple-selection-list-boxes.md
+    - text: Elemek kiválasztása egy listamezőből
+      url: ./selecting-items-from-a-list-box.md
