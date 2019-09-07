@@ -1,5 +1,5 @@
 ---
-title: RemoteRunspace01 minta |} A Microsoft Docs
+title: RemoteRunspace01 minta | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059643"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737580"
 ---
-# <a name="remoterunspace01-sample"></a><span data-ttu-id="c168f-102">RemoteRunspace01 – minta</span><span class="sxs-lookup"><span data-stu-id="c168f-102">RemoteRunspace01 Sample</span></span>
+# <a name="remoterunspace01-sample"></a><span data-ttu-id="31a17-102">RemoteRunspace01 – minta</span><span class="sxs-lookup"><span data-stu-id="31a17-102">RemoteRunspace01 Sample</span></span>
 
-<span data-ttu-id="c168f-103">Ez a minta bemutatja, hogyan hozhat létre egy távoli futási teret, amely a távoli kapcsolat létesítésére szolgál.</span><span class="sxs-lookup"><span data-stu-id="c168f-103">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
+<span data-ttu-id="31a17-103">Ez a minta azt mutatja be, hogyan hozható létre távoli kapcsolat létesítésére szolgáló távoli RunSpace.</span><span class="sxs-lookup"><span data-stu-id="31a17-103">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="c168f-104">Követelmények</span><span class="sxs-lookup"><span data-stu-id="c168f-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="31a17-104">Követelmények</span><span class="sxs-lookup"><span data-stu-id="31a17-104">Requirements</span></span>
 
- <span data-ttu-id="c168f-105">Ez a minta Windows PowerShell 2.0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="c168f-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="31a17-105">Ehhez a mintához Windows PowerShell 2,0 szükséges.</span><span class="sxs-lookup"><span data-stu-id="31a17-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="c168f-106">Bemutatók</span><span class="sxs-lookup"><span data-stu-id="c168f-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="31a17-106">Bemutatja</span><span class="sxs-lookup"><span data-stu-id="31a17-106">Demonstrates</span></span>
 
-- <span data-ttu-id="c168f-107">Létrehozás egy [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektum.</span><span class="sxs-lookup"><span data-stu-id="c168f-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="31a17-107">[System. Management. Automation. futási terek. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektum létrehozása.</span><span class="sxs-lookup"><span data-stu-id="31a17-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="c168f-108">Beállítás a [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) és [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) a tulajdonságok a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektum.</span><span class="sxs-lookup"><span data-stu-id="c168f-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="31a17-108">A [System. Management. Automation. futási terek. Runspaceconnectioninfo. OperationTimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) és a [System. Management. Automation. futási terek. Runspaceconnectioninfo. Opentimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) [tulajdonságainak beállítása System. Management. Automation. futási terek. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektum.</span><span class="sxs-lookup"><span data-stu-id="31a17-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="c168f-109">Használó létrehozása egy távoli futási teret a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektum a távoli kapcsolat létrehozásához.</span><span class="sxs-lookup"><span data-stu-id="c168f-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
+- <span data-ttu-id="31a17-109">Hozzon létre egy távoli RunSpace, amely a [System. Management. Automation. futási terek. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektumot használja a távoli kapcsolat létrehozásához.</span><span class="sxs-lookup"><span data-stu-id="31a17-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
 
-- <span data-ttu-id="c168f-110">Bezárja a távoli futási teret a távoli kapcsolat felszabadítása érdekében.</span><span class="sxs-lookup"><span data-stu-id="c168f-110">Closing the remote runspace to release the remote connection.</span></span>
+- <span data-ttu-id="31a17-110">Zárja be a távoli RunSpace a távoli kapcsolatok felszabadításához.</span><span class="sxs-lookup"><span data-stu-id="31a17-110">Closing the remote runspace to release the remote connection.</span></span>
 
-## <a name="example"></a><span data-ttu-id="c168f-111">Példa</span><span class="sxs-lookup"><span data-stu-id="c168f-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="31a17-111">Példa</span><span class="sxs-lookup"><span data-stu-id="31a17-111">Example</span></span>
 
-<span data-ttu-id="c168f-112">Ez a példa határozza meg a távoli kapcsolat, és a távoli kapcsolatot létesíteni a kapcsolat adatait használja.</span><span class="sxs-lookup"><span data-stu-id="c168f-112">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
+<span data-ttu-id="31a17-112">Ez a minta távoli kapcsolatot határoz meg, majd a kapcsolati adatokat a távoli kapcsolat létrehozásához használja.</span><span class="sxs-lookup"><span data-stu-id="31a17-112">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
