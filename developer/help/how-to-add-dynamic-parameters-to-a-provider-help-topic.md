@@ -1,5 +1,5 @@
 ---
-title: Dinamikus paraméterek hozzáadása a szolgáltató súgótémakör |} A Microsoft Docs
+title: Dinamikus paraméterek hozzáadása szolgáltatói súgótémakörre | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -9,27 +9,27 @@ ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
 ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849524"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737602"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Dinamikus paraméterek hozzáadása egy szolgáltatói súgótémakörhöz
 
-Ez a szakasz azt ismerteti, hogyan töltse fel a **dinamikus paraméterek** szolgáltató súgótémakör szakaszában.
+Ez a szakasz azt ismerteti, hogyan tölthetők fel a szolgáltatói súgótémakör **dinamikus paraméterek** szakasza.
 
-*Dinamikus paraméterek* egy parancsmag-paraméterek vagy a megadott feltétel-függvény, amely csak az érhető el.
+A *dinamikus paraméterek* olyan parancsmagok vagy függvények paramétereinek, amelyek csak meghatározott feltételek esetén érhetők el.
 
-A szolgáltató súgótémakör ismertetett dinamikus paraméterek a dinamikus paraméterek, amelyek a szolgáltató ad hozzá a parancsmag vagy a funkció használatakor a parancsmagot vagy a funkció a szolgáltató meghajtón.
+A szolgáltatói súgótémakör által dokumentált dinamikus paraméterek a szolgáltató által a parancsmaghoz vagy függvényhez hozzáadott dinamikus paraméterek, ha a szolgáltató meghajtóján a parancsmagot vagy a függvényt használja a rendszer.
 
-Dinamikus paraméterek egyéni parancsmag súgójában talál egy szolgáltatót kell dokumentálni. Szolgáltató Súgó és az egyéni parancsmag súgóját írásakor szolgáltató, vegye fel a dinamikus paraméterek dokumentáció mindkét dokumentum. Egyéni parancsmag súgóját kapcsolatos további információkért lásd: [írása Windows PowerShell egyéni parancsmag segítségével a szolgáltatók](./writing-custom-cmdlet-help-for-windows-powershell-providers.md).
+A dinamikus paraméterek a szolgáltatók egyéni parancsmag súgójában is dokumentálva lehetnek. Ha a szolgáltató súgóját és az egyéni parancsmag súgóját is megírta a szolgáltatók számára, a dinamikus paraméterek dokumentációját is adja meg mindkét dokumentumban. További információ az egyéni parancsmag súgójában: [a Windows PowerShell egyéni parancsmag súgójának írása a szolgáltatók számára](./writing-custom-cmdlet-help-for-windows-powershell-providers.md).
 
-Ha a szolgáltató nem valósítja meg a dinamikus paraméterek, a szolgáltató Súgó-témakör tartalmaz egy üres `DynamicParameters` elemet.
+Ha a szolgáltató nem valósít meg dinamikus paramétereket, a szolgáltatói súgótémakör üres `DynamicParameters` elemet tartalmaz.
 
 ### <a name="to-add-dynamic-parameters"></a>Dinamikus paraméterek hozzáadása
 
-1. Az a *AssemblyName*belül a .dll-help.xml fájlt a `providerHelp` elem, adjon hozzá egy `DynamicParameters` elem. A `DynamicParameters` elem után meg kell jelennie a `Tasks` elem előtt a `RelatedLinks` elemet.
+1. A *AssemblyName*. dll-help. xml fájlban a `providerHelp` elemen belül adjon hozzá egy `DynamicParameters` elemet. Az `DynamicParameters` elemnek az `Tasks` elem után és az `RelatedLinks` elem előtt kell megjelennie.
 
    Például:
 
@@ -44,9 +44,9 @@ Ha a szolgáltató nem valósítja meg a dinamikus paraméterek, a szolgáltató
     </providerHelp>
     ```
 
-   Ha a szolgáltató nem valósítja meg a dinamikus paraméterek a `DynamicParameters` elem lehet üres.
+   Ha a szolgáltató nem valósít meg dinamikus paramétereket, az `DynamicParameters` elem üres is lehet.
 
-2. Belül a `DynamicParameters` elem, minden egyes dinamikus paraméterre, adjon hozzá egy `DynamicParameter` elemet.
+2. A `DynamicParameters` elemen belül minden dinamikus paraméterhez adjon hozzá egy `DynamicParameter` elemet.
 
    Például:
 
@@ -57,14 +57,14 @@ Ha a szolgáltató nem valósítja meg a dinamikus paraméterek, a szolgáltató
     </DynamicParameters>
     ```
 
-3. Az egyes `DynamicParameter` elem, adjon hozzá egy `Name` és `CmdletSupported` elemet.
+3. Minden `DynamicParameter` elemnél adjon hozzá egy `Name` és `CmdletSupported` egy elemet.
 
    |Elem neve|Leírás|
    |------------------|-----------------|
-   |Név|A paraméter neve.|
-   |CmdletSupported|Adja meg a parancsmagok, amelyben a paraméter nem érvényes. Írja be a parancsmag nevek vesszővel tagolt listája.|
+   |Név|Megadja a paraméter nevét.|
+   |CmdletSupported|Meghatározza azokat a parancsmagokat, amelyekben a paraméter érvényes. Adja meg a parancsmagok neveinek vesszővel tagolt listáját.|
 
-   Ha például a következő XML-dokumentumok a `Encoding` dinamikus paraméter, amely hozzáadja a Windows PowerShell fájlrendszer-szolgáltatót a `Add-Content`, `Get-Content`, `Set-Content` parancsmagok.
+   A következő XML- `Encoding` dokumentumok például a Windows PowerShell fájlrendszer-szolgáltató által a, `Add-Content` `Get-Content` `Set-Content` a parancsmagokhoz hozzáadott dinamikus paraméter.
 
     ```xml
     <DynamicParameters/>
@@ -75,9 +75,9 @@ Ha a szolgáltató nem valósítja meg a dinamikus paraméterek, a szolgáltató
 
     ```
 
-4. Az egyes `DynamicParameter` elemben adjon hozzá egy `Type` elemet. A `Type` elem tárolója a `Name` elem, amely tartalmazza a dinamikus paraméter értéke a .NET-típus.
+4. Minden `DynamicParameter` elemnél adjon hozzá egy `Type` elemet. Az `Type` elem a dinamikus paraméter értékének `Name` .net-típusát tartalmazó elem tárolója.
 
-   Ha például a következő XML formátumú típusát jeleníti meg, amely .NET a `Encoding` dinamikus paraméter a [Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) enumerálása.
+   Például a következő XML azt mutatja, hogy a `Encoding` dinamikus paraméter .net-típusa a [Microsoft. PowerShell. commands. FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) enumerálása.
 
     ```xml
     <DynamicParameters/>
@@ -91,9 +91,9 @@ Ha a szolgáltató nem valósítja meg a dinamikus paraméterek, a szolgáltató
     </DynamicParameters>
     ```
 
-5. Adja hozzá a `Description` elem, amely a dinamikus paraméterek rövid leírását tartalmazza. A leírás szerkesztésekor kövesse az alábbi útmutatást az összes parancsmag-paraméterek a előírt [paraméter-adatok hozzáadása](./how-to-add-parameter-information.md).
+5. Adja hozzá `Description` a (z) elemet, amely a dinamikus paraméter rövid leírását tartalmazza. A Leírás összeállítása során az összes parancsmag-paraméterhez megadott irányelvek [alapján adja](./how-to-add-parameter-information.md)meg a paraméter-információkat.
 
-   Például a következő XML-kódot tartalmaz a leírása a `Encoding` dinamikus paraméterét.
+   A következő XML például tartalmazza a `Encoding` dinamikus paraméter leírását.
 
     ```xml
     <DynamicParameters/>
@@ -108,18 +108,18 @@ Ha a szolgáltató nem valósítja meg a dinamikus paraméterek, a szolgáltató
     </DynamicParameters>
     ```
 
-6. Adja hozzá a `PossibleValues` elem és az alárendelt elemei. Ezek az elemek együtt, a dinamikus paraméterek értékeit mutatják. Ez az elem a felsorolt értékek lett tervezve. A dinamikus paraméterek nem vesz egy értéket, ha például egy kapcsoló paraméter esetében, vagy az értékek számbavétele nem lehetséges, vagy adjon hozzá egy üres `PossibleValues` elemet.
+6. Adja hozzá `PossibleValues` az elemet és annak alárendelt elemeit. Ezek az elemek együttesen írják le a dinamikus paraméter értékeit. Ez az elem enumerált értékekhez lett tervezve. Ha a dinamikus paraméter nem vesz fel értéket, például egy kapcsoló paraméterrel, vagy az értékek nem sorolhatók fel, adjon hozzá egy üres `PossibleValues` elemet.
 
-   A következő táblázat felsorolja és ismerteti a `PossibleValues` elem és az alárendelt elemei.
+   Az alábbi táblázat felsorolja és leírja az `PossibleValues` elemet és annak alárendelt elemeit.
 
    |Elem neve|Leírás|
    |------------------|-----------------|
-   |PossibleValues|Az elem a tárolóban. Az alárendelt elemei az alábbiakban tekintheti át. Vegyen fel egy `PossibleValues` elem minden szolgáltató Súgó-témakör. Lehet, hogy az elem üres.|
-   |PossibleValue|Az elem a tárolóban. Az alárendelt elemei az alábbiakban tekintheti át. Vegyen fel egy `PossibleValue` elem minden egyes érték a-dynamic paraméter.|
-   |Érték|Az érték nevét adja meg.|
-   |Leírás|Tento element obsahuje egy `Para` elemet. A szöveget a `Para` elem a nevű értékét mutatja be a `Value` elemet.|
+   |PossibleValues|Ez az elem egy tároló. Az alárendelt elemek az alábbiakban olvashatók. Adjon hozzá `PossibleValues` egy elemet az egyes szolgáltatói témakörökhöz. Az elem üres is lehet.|
+   |PossibleValue|Ez az elem egy tároló. Az alárendelt elemek az alábbiakban olvashatók. Adjon hozzá `PossibleValue` egy elemet a dinamikus paraméter minden értékéhez.|
+   |Érték|Megadja az érték nevét.|
+   |Leírás|Ez az elem egy `Para` elemet tartalmaz. Az `Para` elem szövege a `Value` elemben szereplő értéket írja le.|
 
-   Például a következő XML formátumú látható egy `PossibleValue` eleme a `Encoding` dinamikus paraméterét.
+   A következő XML például a `PossibleValue` `Encoding` dinamikus paraméter egy elemét jeleníti meg.
 
     ```xml
     <DynamicParameters/>
@@ -140,7 +140,7 @@ Ha a szolgáltató nem valósítja meg a dinamikus paraméterek, a szolgáltató
 
 ## <a name="example"></a>Példa
 
-A következő példa bemutatja a `DynamicParameters` eleme a `Encoding` dinamikus paraméterét.
+A következő példában a `DynamicParameters` `Encoding` dinamikus paraméter elemét láthatja.
 
 ```xml
 <DynamicParameters/>

@@ -1,5 +1,5 @@
 ---
-title: RemoteRunspace01 minta |} A Microsoft Docs
+title: RemoteRunspace01 minta | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059643"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737580"
 ---
 # <a name="remoterunspace01-sample"></a>RemoteRunspace01 – minta
 
-Ez a minta bemutatja, hogyan hozhat létre egy távoli futási teret, amely a távoli kapcsolat létesítésére szolgál.
+Ez a minta azt mutatja be, hogyan hozható létre távoli kapcsolat létesítésére szolgáló távoli RunSpace.
 
 ## <a name="requirements"></a>Követelmények
 
- Ez a minta Windows PowerShell 2.0 szükséges.
+ Ehhez a mintához Windows PowerShell 2,0 szükséges.
 
-## <a name="demonstrates"></a>Bemutatók
+## <a name="demonstrates"></a>Bemutatja
 
-- Létrehozás egy [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektum.
+- [System. Management. Automation. futási terek. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektum létrehozása.
 
-- Beállítás a [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) és [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) a tulajdonságok a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektum.
+- A [System. Management. Automation. futási terek. Runspaceconnectioninfo. OperationTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) és a [System. Management. Automation. futási terek. Runspaceconnectioninfo. Opentimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) [tulajdonságainak beállítása System. Management. Automation. futási terek. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektum.
 
-- Használó létrehozása egy távoli futási teret a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektum a távoli kapcsolat létrehozásához.
+- Hozzon létre egy távoli RunSpace, amely a [System. Management. Automation. futási terek. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objektumot használja a távoli kapcsolat létrehozásához.
 
-- Bezárja a távoli futási teret a távoli kapcsolat felszabadítása érdekében.
+- Zárja be a távoli RunSpace a távoli kapcsolatok felszabadításához.
 
 ## <a name="example"></a>Példa
 
-Ez a példa határozza meg a távoli kapcsolat, és a távoli kapcsolatot létesíteni a kapcsolat adatait használja.
+Ez a minta távoli kapcsolatot határoz meg, majd a kapcsolati adatokat a távoli kapcsolat létrehozásához használja.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
