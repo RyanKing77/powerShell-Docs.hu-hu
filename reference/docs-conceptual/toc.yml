@@ -94,8 +94,6 @@
       items:
         - name: A Windows PowerShell ISE bemutatása
           href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Windows PowerShell integrált parancsfájl-kezelési környezet ISE
-          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
         - name: A Windows PowerShell ISE használata
           items:
             - name: A Windows PowerShell ISE felfedezése
@@ -200,12 +198,66 @@
   items:
     - name: Mintaszkriptek felügyeleti célokra
       href: samples/sample-scripts-for-administration.yml
-    - name: A számítógép állapotának módosítása
-      href: samples/changing-computer-state.md
-    - name: Adatgyűjtés a számítógépekről
-      href: samples/collecting-information-about-computers.md
-    - name: Get-WinEvent lekérdezések létrehozása FilterHashtable használatával
-      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Objektumok használata
+      items:
+        - name: Az objektumstruktúra megtekintése – Get-Member
+          href: samples/viewing-object-structure--get-member-.md
+        - name: Objektumrészek kijelölése – Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: Objektumok eltávolítása a folyamatból – Where-Object
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: Objektumok rendezése
+          href: samples/sorting-objects.md
+        - name: Feladat megismétlése több objektumon – ForEach-Object
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: .NET- és COM-objektumok létrehozása – New-Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: Statikus osztályok és metódusok használata
+          href: samples/using-static-classes-and-methods.md
+        - name: WMI-objektumok lékérése – Get-WmiObject
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+    - name: Számítógépek kezelése
+      items:
+        - name: A számítógép állapotának módosítása
+          href: samples/changing-computer-state.md
+        - name: Adatgyűjtés a számítógépekről
+          href: samples/collecting-information-about-computers.md
+        - name: Get-WinEvent lekérdezések létrehozása FilterHashtable használatával
+          href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Folyamatok és szolgáltatások kezelése
+      items:
+        - name: Folyamatok kezelése folyamatparancsmagokkal
+          href: samples/managing-processes-with-process-cmdlets.md
+        - name: Szolgáltatások kezelése
+          href: samples/managing-services.md
+        - name: Windows PowerShell-illesztők kezelése
+          href: samples/managing-windows-powershell-drives.md
+        - name: Nyomtatók használata
+          href: samples/working-with-printers.md
+        - name: Hálózatkezelési feladatok végrehajtása
+          href: samples/performing-networking-tasks.md
+        - name: Szoftvertelepítések használata
+          href: samples/working-with-software-installations.md
+        - name: PowerShell-parancs dekódolása futó folyamatból
+          href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Kimenetek használata
+      items:
+        - name: Adatátirányítás az Out-* parancsmagokkal
+          href: samples/redirecting-data-with-out---cmdlets.md
+        - name: A kimeneti nézet módosítása formázási parancsokkal
+          href: samples/using-format-commands-to-change-output-view.md
+    - name: Meghajtók és fájlok kezelése
+      items:
+        - name: Aktuális hely kezelése
+          href: samples/managing-current-location.md
+        - name: Fájlok és mappák használata
+          href: samples/working-with-files-and-folders.md
+        - name: Fájlmappák és beállításkulcsok használata
+          href: samples/working-with-files-folders-and-registry-keys.md
+        - name: Beállításjegyzék-bejegyzések használata
+          href: samples/working-with-registry-entries.md
+        - name: Beállításkulcsok használata
+          href: samples/working-with-registry-keys.md
     - name: Felhasználói felületi elemek létrehozása
       items:
         - name: Egyéni beviteli mező létrehozása
@@ -216,57 +268,13 @@
           href: samples/multiple-selection-list-boxes.md
         - name: Elemek kiválasztása egy listamezőből
           href: samples/selecting-items-from-a-list-box.md
-    - name: PowerShell-parancs dekódolása futó folyamatból
-      href: samples/decode-powershell-command-from-a-running-process.md
-    - name: Aktuális hely kezelése
-      href: samples/managing-current-location.md
-    - name: Folyamatok kezelése folyamatparancsmagokkal
-      href: samples/managing-processes-with-process-cmdlets.md
-    - name: Szolgáltatások kezelése
-      href: samples/managing-services.md
-    - name: Windows PowerShell-illesztők kezelése
-      href: samples/managing-windows-powershell-drives.md
-    - name: Elemek közvetlen módosítása
-      href: samples/manipulating-items-directly.md
-    - name: Hálózatkezelési feladatok végrehajtása
-      href: samples/performing-networking-tasks.md
-    - name: Adatátirányítás az Out-* parancsmagokkal
-      href: samples/redirecting-data-with-out---cmdlets.md
-    - name: A kimeneti nézet módosítása formázási parancsokkal
-      href: samples/using-format-commands-to-change-output-view.md
-    - name: Fájlok és mappák használata
-      href: samples/working-with-files-and-folders.md
-    - name: Fájlmappák és beállításkulcsok használata
-      href: samples/working-with-files-folders-and-registry-keys.md
-    - name: Objektumok használata
+    - name: További példák
       items:
-        - name: WMI-objektumok lékérése – Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
-        - name: .NET- és COM-objektumok létrehozása – New-Object
-          href: samples/creating-.net-and-com-objects--new-object-.md
-        - name: Objektumok eltávolítása a folyamatból – Where-Object
-          href: samples/removing-objects-from-the-pipeline--where-object-.md
-        - name: Objektumrészek kijelölése – Select-Object
-          href: samples/selecting-parts-of-objects--select-object-.md
-        - name: Objektumok rendezése
-          href: samples/sorting-objects.md
-        - name: Feladat megismétlése több objektumon – ForEach-Object
-          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-        - name: Statikus osztályok és metódusok használata
-          href: samples/using-static-classes-and-methods.md
-        - name: Az objektumstruktúra megtekintése – Get-Member
-          href: samples/viewing-object-structure--get-member-.md
-    - name: Nyomtatók használata
-      href: samples/working-with-printers.md
-    - name: Beállításjegyzék-bejegyzések használata
-      href: samples/working-with-registry-entries.md
-    - name: Beállításkulcsok használata
-      href: samples/working-with-registry-keys.md
-    - name: Szoftvertelepítések használata
-      href: samples/working-with-software-installations.md
-    - name: További hasznos szkriptelési objektumok
-      href: samples/other-useful-scripting-objects.md
-    - name: '1. függelék: Kompatibilitási aliasok'
-      href: samples/appendix-1---compatibility-aliases.md
-    - name: '2. függelék: Egyéni PowerShell-parancsikon létrehozása'
-      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+        - name: Elemek közvetlen módosítása
+          href: samples/manipulating-items-directly.md
+        - name: További hasznos szkriptelési objektumok
+          href: samples/other-useful-scripting-objects.md
+        - name: '1. függelék: Kompatibilitási aliasok'
+          href: samples/appendix-1---compatibility-aliases.md
+        - name: '2. függelék: Egyéni PowerShell-parancsikon létrehozása'
+          href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
