@@ -1,5 +1,5 @@
 ---
-title: A PowerShell parancsfájlokban és függvényekben súgóinak |} A Microsoft Docs
+title: Súgó írása PowerShell-parancsfájlok és-függvények számára | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,70 +8,66 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
-ms.openlocfilehash: 98a3f61ff4fa2367f69357173d4e8e14288ff429
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083110"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848102"
 ---
-# <a name="writing-help-for-powershell-scripts-and-functions"></a>A PowerShell parancsfájlokban és függvényekben súgóinak összeállítása
+# <a name="writing-help-for-powershell-scripts-and-functions"></a>Súgó írása PowerShell-parancsfájlok és-függvények számára
 
-PowerShell-parancsprogramok és funkciók teljes körűen dokumentálni kell, amikor azok másokkal megosztott.
-A `Get-Help` parancsmag megjeleníti a parancsfájl és függvény súgótémakörök ugyanebben a formátumban, Súgó a parancsmagok, és az összes láthatók a `Get-Help` paraméterek dolgozhat parancsfájl és függvény Súgó-témaköröket.
+A PowerShell-parancsfájlokat és-függvényeket teljes mértékben dokumentálni kell, ha másokkal vannak megosztva.
+A parancsmag megjeleníti a parancsfájlt és a függvény súgóját a parancsmagok súgójában, valamint az összes `Get-Help` paramétert a parancsfájl és funkció Súgó témaköreiben. `Get-Help`
 
-PowerShell-parancsfájlok belefoglalhatja a parancsfájllal kapcsolatos súgótémakör és egyes funkciók lehetőségekről szóló súgótémakörök a parancsfájlt.
-Parancsfájlok függetlenül megosztott is többek között a saját Súgó-témaköröket.
+A PowerShell-parancsfájlok tartalmazhatnak egy súgótémakört a parancsfájlról, valamint a parancsfájl egyes funkcióihoz kapcsolódó súgótémaköröket is.
+A parancsfájloktól függetlenül megosztott függvények magukban foglalhatják a saját súgótémaköröket.
 
-Ez a dokumentum ismerteti a formátum és a megfelelő elhelyezési témakörök, és azt sugallja, hogy a tartalom irányelveket.
+Ez a dokumentum ismerteti a súgótémakörök formátumát és helyes elhelyezését, valamint útmutatást nyújt a tartalomhoz.
 
-## <a name="types-of-script-and-function-help"></a>Parancsfájl és a függvény súgója
+## <a name="types-of-script-and-function-help"></a>A szkriptek és függvények súgójának típusai
 
-### <a name="comment-based-help"></a>Megjegyzés-alapú súgó
-A parancsfájlokban vagy függvényekhez lévő hozzászólások csoportja, amely leírja a parancsfájlokban vagy függvényekhez súgótémakör is megvalósíthatók.
-Megjegyzés-alapú súgó talál egy parancsfájlt, és a Functions egy parancsfájlban írásakor a szabályok gondos figyelmet fordítania a Megjegyzés-alapú súgó biztonságnak.
-Az Elhelyezés határozza meg, hogy a `Get-Help` parancsmag Súgó-témakör társítja a parancsfájl vagy függvény.
-Megjegyzés-alapú súgó-témaköröket írt kapcsolatos további információkért lásd: [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+### <a name="comment-based-help"></a>Megjegyzés-alapú Súgó
+A parancsfájlt vagy függvényt leíró súgótémakör a parancsfájlban vagy a függvényben megjegyzésként is megvalósítható.
+Ha Megjegyzés-alapú súgót ír egy parancsfájlhoz, és a függvényeket egy parancsfájlban, gondosan figyeljen a Megjegyzés-alapú Súgó elhelyezésére vonatkozó szabályokra.
+Az elhelyezés meghatározza, hogy `Get-Help` a parancsmag társítja-e a súgótémakört a parancsfájllal vagy a függvénnyel.
+A Megjegyzés-alapú súgótémakörök írásával kapcsolatos további információkért lásd: [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
-### <a name="xml-based-command-help"></a>XML-alapú Súgóihoz
-XML-fájl, a parancssori súgó sémát használ, amely leírja a parancsfájlokban vagy függvényekhez súgótémakör implementálható.
-A parancsfájlokban vagy függvényekhez társítása az XML-fájlt, használja a `ExternalHelp` comment kulcsszót, az elérési útját és nevét az XML-fájlt.
+### <a name="xml-based-command-help"></a>XML-alapú parancs súgója
+A parancsfájlt vagy függvényt leíró súgótémakör a parancs Súgó sémáját használó XML-fájlban valósítható meg.
+Ha a parancsfájlt vagy függvényt az XML-fájllal szeretné hozzárendelni, használja a `ExternalHelp` comment kulcsszót, majd az XML-fájl elérési útját és nevét.
 
-Ha a `ExternalHelp` kulcsszó szerepel, akkor élvez Megjegyzés-alapú súgó megjegyzést, akkor is, ha `Get-Help` , amely megfelel a súgófájl nem található a `ExternalHelp` kulcsszót.
+Ha a `ExternalHelp` Megjegyzés kulcsszava megtalálható, elsőbbséget élvez a Megjegyzés-alapú súgóval, még akkor `Get-Help` is, ha nem talál a `ExternalHelp` kulcsszó értékével megegyező súgófájlokat.
 
 ### <a name="online-help"></a>Online súgó
-A Súgó-témaköröket közzé az interneten, és majd közvetlen `Get-Help` a témakörök megnyitásához.
-Megjegyzés-alapú súgó-témaköröket írt kapcsolatos további információkért lásd: [Online súgó támogatása](../module/supporting-online-help.md).
+A témaköröket közzéteheti az interneten, majd közvetlenül `Get-Help` megnyithatja a témákat.
+A Megjegyzés-alapú súgótémakörök írásával kapcsolatos további információkért tekintse meg az [online súgó támogatásával](../module/supporting-online-help.md)foglalkozó témakört.
 
-Nincs elméleti ("tudnivalók") témakörök a parancsfájlokban és függvényekben írásra létrehozott módszer.
-Azonban könyvelheti fogalmi témakörök az internetes listán a témaköröket, és saját URL-parancs súgótémakör kapcsolódó hivatkozások szakaszában.
+A szkriptek és a függvények fogalmi ("about") témaköreinek megírására nincs létrehozva metódus.
+A témaköröket és azok URL-jeit azonban az interneten is közzéteheti a parancsok súgójának kapcsolódó hivatkozások szakaszában.
 
-## <a name="content-considerations-for-script-and-function-help"></a>Tartalom szempontjai szkript és a függvény súgója
+## <a name="content-considerations-for-script-and-function-help"></a>A parancsfájl és a függvény súgójának tartalmi szempontjai
 
-- Ha csak a rendelkezésre álló parancssori súgó szakaszok néhány való írás nagyon rövid súgótémakör, mindenképp adja hozzá a parancsfájlokban vagy függvényekhez paraméterek egyértelmű leírását. Is egy vagy két minta közé olyan parancsok tartoznak a példa szakaszban, akkor is, ha úgy dönt, hogy hagyja ki a következő példa leírása.
+- Ha egy rövid súgótémakörre ír, és csak néhányat tartalmaz a parancssori Súgó néhány szakasza, ügyeljen rá, hogy a parancsfájl vagy a függvény paramétereit is törölje. A példák szakasz egy vagy két mintáját is tartalmazhatja, még akkor is, ha úgy dönt, hogy kihagyja a példa leírásait.
 
-- Az összes leírásáért tekintse meg a parancsot, mint a parancsfájlokban vagy függvényekhez. Ez az információ segít a megértéséhez és kezeléséhez a parancsot.
+- Az összes leírásban tekintse meg a parancsot parancsfájlként vagy függvényként. Ez az információ segít a felhasználónak a parancs megértésében és kezelésében.
 
-  Például az alábbi részletes leírás szerint, hogy a New-témakör parancs a következő parancsfájlt. Ez is emlékezteti a felhasználókat, hogy kell futtatásakor. Ez az elérési út és a teljes nevét adja meg.
+  Például a következő részletes leírás megállapítja, hogy a New-topic parancs egy parancsfájl. Ez arra emlékezteti a felhasználókat, hogy az elérési utat és a teljes nevet meg kell adniuk a futtatásakor.
 
-  > "A New-témakör a szkript létrehoz egy üres elvi témakör minden témakör név a bemeneti fájl..."
+  > "A New-topic szkript egy üres elméleti témakört hoz létre a bemeneti fájlban található egyes témakörök nevéhez..."
 
-  Az alábbi részletes leírást megállapítja, hogy `Disable-PSRemoting` függvénye. Ezek az információk különösen hasznos a felhasználók számára, amikor a munkamenet ugyanazzal a névvel, amelyek némelyike ablakméreteitől függően egy parancs által a magasabb több parancsokat is tartalmaz.
+  A következő részletes leírási állapotok `Disable-PSRemoting` függvényt képeznek. Ezek az információk különösen hasznosak a felhasználók számára, ha a munkamenet több, azonos nevű parancsot tartalmaz, amelyek némelyike egy magasabb prioritású paranccsal rejthető el.
 
-  > A `Disable-PSRemoting` függvény letiltja a helyi számítógép összes munkamenet-konfigurációk...
+  > A `Disable-PSRemoting` függvény letiltja az összes munkamenet-konfigurációt a helyi számítógépen...
 
-- A parancsfájl súgótémakör azt ismertetik, hogyan használja a parancsfájl egész. Ha is funkciók Súgó-témaköröket a szkriptben, ilyen a parancsfájl Súgó-témakör az a Funkciók, majd hivatkozásokat tartalmaznak arra a függvény Súgó-témaköröket a parancsfájl súgótémakör kapcsolódó hivatkozások szakaszában. Ezzel szemben függvény része egy parancsfájlt, amikor elmagyarázza, a függvény Súgó-témakör a szerepkör, amely a függvény játszik a szkriptet, és hogyan, előfordulhat, hogy használható egymástól függetlenül. A parancsfájl súgótémakör függvény Súgó-témakör kapcsolódó hivatkozások szakaszában listája.
+- A parancsfájlokkal foglalkozó témakörben megtudhatja, hogyan használhatja a parancsfájlt egészként. Ha a parancsfájlban a functions súgó témakörei is megtalálhatók, Megemlítheti a parancsfájl súgójában található függvényeket, és a parancsfájl súgójának kapcsolódó hivatkozások szakaszában szereplő, a függvény Súgó témaköreire mutató hivatkozásokat is tartalmaz. Ezzel szemben, ha egy függvény egy parancsfájl részét képezi, magyarázza el a függvény súgójában, hogy a függvény milyen szerepet játszik a parancsfájlban, és hogyan használható egymástól függetlenül. Ezután sorolja fel a parancsfájl Súgó témakört a függvény súgójának kapcsolódó hivatkozások szakaszában.
 
-- Példák a parancsfájl súgótémakör írásakor, mindenképp adja hozzá a parancsfájl elérési útját az a példában a parancs. Ez is emlékezteti felhasználókat, hogy azok kell megadnia, explicit módon, is, ha a parancsfájl az aktuális könyvtárban található.
+- Ha példákat ír egy parancsfájl-súgótémakörre, ügyeljen arra, hogy a példában szereplő parancsfájl elérési útját is tartalmazza. Ez arra emlékezteti a felhasználókat, hogy explicit módon kell megadniuk az elérési utat, még akkor is, ha a parancsfájl az aktuális könyvtárban van.
 
-- A függvény súgótémakör emlékeztesse a felhasználókat, hogy a függvény csak az aktuális munkamenetben létezik, és szeretne használni, más munkamenetek, szükségük van hozzá, vagy adja hozzá a PowerShell-profilt.
+- A függvény súgójában emlékeztesse a felhasználókat arra, hogy a függvény csak az aktuális munkamenetben legyen, és hogy más munkamenetekben is használhassa, hozzá kell adnia azt, vagy hozzá kell adnia egy PowerShell-profilt.
 
-- `Get-Help` a parancsfájlokban vagy függvényekhez tartozó súgó-témakör jeleníti meg, csak akkor, ha a parancsfájl és súgótémakör fájlokat a megfelelő helyekre lesznek mentve. Ezért hasznos nem, a PowerShell telepítése vagy Mentés vagy a parancsfájlokban vagy függvényekhez telepítése a parancsfájlokban vagy függvényekhez súgótémakörök útmutatást tartalmazza. Ehelyett tartalmazza a dokumentum, a parancsfájlokban vagy függvényekhez terjesztésére használt telepítési útmutatást.
+- `Get-Help`egy parancsfájlhoz vagy függvényhez tartozó súgótémakör megjelenítése csak akkor, ha a parancsfájlt és a súgótémakörök fájljait a megfelelő helyre menti. Ezért nem hasznos a PowerShell telepítésére vonatkozó utasítások, illetve a parancsfájl vagy függvény súgójának vagy funkciójának mentése vagy telepítése. Ehelyett vegyen fel minden olyan telepítési utasítást a dokumentumban, amelyet a parancsfájl vagy a függvény terjesztésére használ.
 
 ## <a name="see-also"></a>Lásd még:
 
- [A parancsfájlokban és függvényekben XML-alapú súgó-témaköröket írása](./writing-xml-based-help-topics-for-scripts-and-functions.md)
-
- [XML-alapú súgó-témaköröket írása parancsok](./writing-xml-based-help-topics-for-commands.md)
-
- [Megjegyzés-alapú súgó-témaköröket írása](./writing-comment-based-help-topics.md)
+[Megjegyzésekre épülő súgótémakörök írása](./writing-comment-based-help-topics.md)

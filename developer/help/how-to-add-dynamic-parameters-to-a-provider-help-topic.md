@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
-ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
+ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70737602"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848113"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Dinamikus paraméterek hozzáadása egy szolgáltatói súgótémakörhöz
 
@@ -23,7 +23,7 @@ A *dinamikus paraméterek* olyan parancsmagok vagy függvények paramétereinek,
 
 A szolgáltatói súgótémakör által dokumentált dinamikus paraméterek a szolgáltató által a parancsmaghoz vagy függvényhez hozzáadott dinamikus paraméterek, ha a szolgáltató meghajtóján a parancsmagot vagy a függvényt használja a rendszer.
 
-A dinamikus paraméterek a szolgáltatók egyéni parancsmag súgójában is dokumentálva lehetnek. Ha a szolgáltató súgóját és az egyéni parancsmag súgóját is megírta a szolgáltatók számára, a dinamikus paraméterek dokumentációját is adja meg mindkét dokumentumban. További információ az egyéni parancsmag súgójában: [a Windows PowerShell egyéni parancsmag súgójának írása a szolgáltatók számára](./writing-custom-cmdlet-help-for-windows-powershell-providers.md).
+A dinamikus paraméterek a szolgáltatók egyéni parancsmag súgójában is dokumentálva lehetnek. Ha a szolgáltató súgóját és az egyéni parancsmag súgóját is megírta a szolgáltatók számára, a dinamikus paraméterek dokumentációját is adja meg mindkét dokumentumban.
 
 Ha a szolgáltató nem valósít meg dinamikus paramétereket, a szolgáltatói súgótémakör üres `DynamicParameters` elemet tartalmaz.
 

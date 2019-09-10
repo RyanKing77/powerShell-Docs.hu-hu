@@ -1,5 +1,5 @@
 ---
-title: Egy Windows PowerShell-modul ismertetése |} A Microsoft Docs
+title: Windows PowerShell-modul ismertetése | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,114 +8,114 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66470784"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848064"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>A Windows PowerShell-modulok megértése
 
-A *modul* kapcsolódó Windows PowerShell-funkciók, csoportosítva (egyetlen címtárban általában mentett) kényelmes egységként készlete. Kapcsolódó parancsfájlokat, a szerelvények és a kapcsolódó erőforrások modulként definiálásával hivatkozhat, betöltése, továbbra is fennáll, és ossza sokkal egyszerűbb, mintha ellenkező esetben a kódot.
+A *modulok* a kapcsolódó Windows PowerShell-funkciók készletét alkotják, amelyek kényelmes egységként vannak csoportosítva (általában egyetlen könyvtárba mentve). A kapcsolódó parancsfájlok, szerelvények és kapcsolódó erőforrások modulként való definiálásával sokkal könnyebben hivatkozhat, betöltheti, megtarthatja és megoszthatja a kódját, mint egyébként.
 
-Egy modul fő célja, hogy lehetővé teszik a Windows PowerShell-kód modularization (ie, újból és absztrakciós). Például a modul létrehozásának legegyszerűbb módja, hogy egyszerűen egy Windows PowerShell-parancsfájl mentése egy .psm1 fájlban. Ezzel úgy teszi lehetővé (azaz ügyeljen nyilvános vagy privát) szabályozhatja a functions és a változók a szkriptnek. A parancsfájl mentése .psm1-fájlként is lehetővé teszi bizonyos változókat hatókörét szabályozza. Végül, mint például is használhatja parancsmagok [Install-Module](/powershell/module/PowershellGet/Install-Module) rendszerezésére, telepítését és használatát a parancsfájl kielégítésének nagyobb megoldásokhoz.
+A modul fő célja, hogy lehetővé tegye a Windows PowerShell-kód modularizáció (IE, újrafelhasználás és absztrakció) használatát. A modulok létrehozásának legalapvetőbb módja például az, hogy egyszerűen mentse a Windows PowerShell-parancsfájlt. psm1 fájlként. Így lehetővé válik a parancsfájlban található függvények és változók szabályozása (azaz nyilvános vagy magánjellegű). A szkript. psm1 fájlként való mentése lehetővé teszi bizonyos változók hatókörének szabályozását. Végezetül olyan parancsmagokat is használhat, mint például a [install-Module](/powershell/module/PowershellGet/Install-Module) a szkriptek rendszerezésére, telepítésére és használatára a nagyobb megoldások építőelemeként.
 
-## <a name="module-components-and-types"></a>A modul összetevők és típusok
+## <a name="module-components-and-types"></a>Modul összetevői és típusai
 
-A modul négy alapvető összetevők tevődik össze:
+A modulok négy alapvető összetevőből állnak:
 
-1. Néhány rendezheti a kódfájl – általában egy PowerShell-parancsfájlt és a egy parancsmag felügyelt szerelvény.
+1. Valamilyen kódrészlet – általában PowerShell-parancsfájl vagy felügyelt parancsmag-szerelvény.
 
-2. Bármi olyanra, amely a fenti kóddal fájl lehetséges, hogy segítségre van szükségük, további szerelvényeket, például fájlokat vagy parancsprogramokat.
+2. Bármi más, amit a fenti programkódnak szüksége lehet, például további szerelvények, súgófájlok vagy parancsfájlok.
 
-3. Jegyzékfájl, amely ismerteti a fenti fájlokat, valamint a tárolja, például a szerző és verziószámozási információt metadada...
+3. A fenti fájlokat leíró jegyzékfájl, valamint a metaadatok, például a szerzői és verziószámozási információk.
 
-4. Egy címtár, amely tartalmazza a fenti tartalom mindegyikét, található ahol PowerShell ésszerűen megtalálhassa azt.
+4. Az összes fenti tartalmat tartalmazó könyvtár, ahol a PowerShell ésszerűen megtalálhatja.
 
-   Vegye figyelembe, hogy ezeket az összetevőket, önmagukban, sem ténylegesen szükséges. Például egy modul technikailag lehet csak egy parancsprogram egy .psm1 fájlban. A modul, amely egy jegyzékfájl, főleg szervezeti célokat szolgál, amely azonban nem is rendelkezhet. Egy parancsfájl, amely dinamikusan létrehoz egy modult, és emiatt nem ténylegesen szükséges bármit könyvtárat is írhat. A következő szakaszok ismertetik a modulok megkaphassa keverése és a egy modul lehetséges különböző részeinek együtt megfelelő típusú.
+   Ne feledje, hogy a fenti összetevők egyike sem feltétlenül szükséges. Egy modul például technikailag csak egy. psm1 fájlban tárolt parancsfájl lehet. Olyan modult is használhat, amely nem egy olyan jegyzékfájl, amely főleg szervezeti célokra szolgál. Olyan parancsfájlt is írhat, amely dinamikusan létrehoz egy modult, és így valójában nem kell címtárban tárolnia semmit a-ben. A következő szakaszok leírják, hogy milyen típusú modulokat érhet el a modulok különböző lehetséges részeinek összekeverésével és egyeztetésével.
 
-### <a name="script-modules"></a>Parancsfájl-modulokba
+### <a name="script-modules"></a>Parancsfájl-modulok
 
-A neve is mutatja, ahogy egy *szkriptmodulba* egy fájl (.psm1), amely minden érvényes Windows PowerShell-kódot tartalmaz. Parancsfájl fejlesztők és rendszergazdák létrehozásához modulok, amelynek tagjai közé tartozik a függvények, változók és egyéb is az ilyen típusú modul. Egy szkriptmodulba szív, egy másik kiterjesztést, amely lehetővé teszi a rendszergazdák számára, hogy importálása, exportálása és felügyeleti funkciók, egyszerűen csak egy Windows PowerShell parancsfájlt.
+Ahogy a név is jelenti, a *parancsfájl-modul* egy olyan fájl (. psm1), amely bármely érvényes Windows PowerShell-kódot tartalmaz. A szkriptek fejlesztői és rendszergazdái az ilyen típusú modul használatával olyan modulokat hozhatnak létre, amelyek tagjai a függvényeket, a változókat és egyebeket is tartalmaznak. A (z) rendszerben egy parancsfájl-modul egyszerűen egy eltérő kiterjesztésű Windows PowerShell-parancsfájl, amely lehetővé teszi a rendszergazdák számára az importálási, exportálási és felügyeleti függvények használatát.
 
-Emellett a jegyzékfájlt használatával más erőforrások tartalmazzák a modul, például az adatfájlokat, más függő modul vagy a futásidejű parancsfájlok. Jegyzékfájlok is hasznosak nyomon követése a metaadatokat, például a szerzői műveletek és a verziókezelés információkat.
+Emellett jegyzékfájlt is használhat a modulban lévő egyéb erőforrások, például adatfájlok, egyéb függő modulok vagy futásidejű parancsfájlok hozzáadására. A jegyzékfájlok olyan metaadatok követésére is hasznosak, mint például a szerzői és verziószámozási információk.
 
-Végül egy szkriptmodulba, mint bármely egyéb modult, amely nem dinamikusan jön létre, meg kell menthető egy mappába, amely PowerShell ésszerű módon képes felderíteni. Általában ez jelenti az a PowerShell modul elérési útja; de szükség esetén explicit módon leírhatja, ahol a modul telepítve van. További információkért lásd: [szkriptet egy PowerShell-modul írása](./how-to-write-a-powershell-script-module.md).
+Végül egy parancsfájl-modult, mint bármely más, dinamikusan létrehozott modult, olyan mappába kell menteni, amelyet a PowerShell ésszerűen képes észlelni. Ez általában a PowerShell-modul útvonalán található. Ha azonban szükség van rá, explicit módon lekérdezheti, hogy hol van telepítve a modul. További információkért lásd: [PowerShell parancsfájl-modul írása](./how-to-write-a-powershell-script-module.md).
 
 ### <a name="binary-modules"></a>Bináris modulok
 
-A *bináris modul* egy .NET-keretrendszer szerelvényében (.dll), amely a lefordított kódot tartalmaz, mint például a C#. A parancsmag fejlesztők használhatják a modul az ilyen típusú parancsmagok és szolgáltatók további megosztásához. (Meglévő beépülő modulok is használható, a bináris modulok.) Egy szkriptmodulba képest, egy bináris modul lehetővé teszi, hogy hozhat létre a parancsmagok, amelyek gyorsabb, vagy funkciók használata (például a többszálas), amelyek nem egyszerű Windows PowerShell-parancsfájlok kód.
+A *bináris modul* egy olyan .NET-keretrendszer szerelvény (. dll), amely lefordított kódot tartalmaz C#, például:. A parancsmag-fejlesztők az ilyen típusú modul használatával megoszthatják a parancsmagokat, a szolgáltatókat és egyebeket. (A meglévő beépülő modulok bináris modulokként is használhatók.) A parancsfájl-modullal összehasonlítva a bináris modul lehetővé teszi, hogy olyan parancsmagokat hozzon létre, amelyek gyorsabbak vagy olyan szolgáltatásokat használnak (például többszálú), amelyek nem annyira egyszerűek a Windows PowerShell-parancsfájlok kódolásához.
 
-Ahogy a parancsfájl-modulokba belefoglalhatja a jegyzékfájlt leírása további erőforrások, amely a modul használja, és nyomon követheti a modul metaadatait. Hasonlóképpen valószínűleg kell telepítenie a bináris modul valahol a PowerShell-modul elérési út mentén egy mappában. További információkért lásd: How to [bináris PowerShell-modul írása](./how-to-write-a-powershell-binary-module.md).
+Akárcsak a parancsfájl-modulok esetében, hozzáadhat egy jegyzékfájlt, amely leírja a modul által használt további erőforrásokat, és nyomon követheti a modul metaadatait. Hasonlóképpen érdemes a bináris modult egy mappába telepíteni a PowerShell-modul elérési útja mentén. További információt a [PowerShell bináris moduljának írása](./how-to-write-a-powershell-binary-module.md)című témakörben talál.
 
-### <a name="manifest-modules"></a>Modulok manifest
+### <a name="manifest-modules"></a>Jegyzékfájl-modulok
 
-A *jegyzékfájl modul* olyan modul, amely a jegyzékfájlt használ írja le az összes összetevővel, de bármilyen základního sestavení vagy parancsfájl rendezés nem rendelkezik. (Korábbi, a jegyzékfájl modul elhagyja a `ModuleToProcess` vagy `RootModule` elem üres a jegyzékfájl.) Azonban továbbra is használhatja a funkciókat a modulok, például a betölteni a függő szerelvényeket, és automatikusan az egyes előfeldolgozási parancsfájlok futtatására. A jegyzékfájl modul kényelmesen erőforrásokat használó más modulok, például a beágyazott modulok, szerelvényeket, típus vagy formátumok csomag is használhatja. További információkért lásd: [írásával, egy PowerShell modul Manifest](./how-to-write-a-powershell-module-manifest.md).
+A *jegyzékfájl modul* egy olyan modul, amely egy jegyzékfájlt használ az összes összetevő leírására, de nem rendelkezik az alapszerelvények vagy a parancsfájlok egyikével sem. (A manifest-modul hivatalosan üresen hagyja `ModuleToProcess` a `RootModule` jegyzékfájl vagy elemét.) Azonban továbbra is használhatja a modul egyéb funkcióit, például a függő szerelvények betöltését vagy bizonyos előfeldolgozási parancsfájlok automatikus futtatását. A manifest-modult a más modulok által használt erőforrások (például beágyazott modulok, szerelvények, típusok vagy formátumok) csomagolásához is kényelmesen használhatja. További információ: [a PowerShell-modul írása](./how-to-write-a-powershell-module-manifest.md).
 
-### <a name="dynamic-modules"></a>A dinamikus modulok
+### <a name="dynamic-modules"></a>Dinamikus modulok
 
-A *dynamického modulu* olyan modul, amely nem a betöltve, vagy, egy fájlba menti. Ehelyett azok dinamikusan által létrehozott egy parancsfájl használatával a [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) parancsmagot. Az ilyen típusú modul lehetővé teszi, hogy a modul létrehozása az igény szerinti igénylő nem tölthető be vagy állandó tárolóba mentett parancsfájlt. Jellegénél fogva egy dinamikus modult kell lenniük a rövid élettartamú, és ezért nem érhető el a `Get-Module` parancsmagot. Hasonlóképpen általában nincs szükségük a modul jegyzékek, és valószínűleg szükségük van a kapcsolódó szerelvényeket tárolására szolgáló állandó mappákat.
+A *dinamikus modul* olyan modul, amely nem tölthető be vagy mentve egy fájlba. Ehelyett a rendszer dinamikusan létrehoz egy parancsfájlt a [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) parancsmag használatával. Ez a típusú modul lehetővé teszi, hogy egy parancsfájl olyan igény szerint hozzon létre egy modult, amely nem szükséges a betöltéshez vagy az állandó tárolóba mentve. Természeténél fogva a dinamikus modul célja, hogy rövid életű legyen, ezért a `Get-Module` parancsmag nem fér hozzá. Hasonlóképpen, általában nem szükségesek modul-jegyzékfájlok, és nem is valószínű, hogy állandó mappákra van szükségük a kapcsolódó szerelvények tárolásához.
 
-## <a name="module-manifests"></a>A modul jegyzékek
+## <a name="module-manifests"></a>Modul-jegyzékfájlok
 
-A *moduljegyzék* .psd1 fájl, amely tartalmaz egy kivonattáblát. A kulcsok és értékek a kivonattáblában tegye a következőket:
+A *modul jegyzékfájlja* egy. psd1-fájl, amely egy kivonatoló táblát tartalmaz. A kivonatoló táblában lévő kulcsok és értékek a következő műveleteket végzik el:
 
-- Tartalom és a modul attribútumai mutatják be.
+- A modul tartalmának és attribútumainak leírása.
 
 - Adja meg az előfeltételeket.
 
-- Határozza meg, hogyan dolgozza fel az összetevőket.
+- Határozza meg az összetevők feldolgozásának módját.
 
-  Jegyzékek modul nem szükségesek. Modulok hivatkozhat parancsfájlok (.ps1), parancsfájlok modul (.psm1), jegyzékfájlok (.psd1), formázását, és írja be a fájlokat (.ps1xml), a parancsmag és a szolgáltató szerelvények (.dll), Erőforrásfájlok, súgófájlokat, honosítási fájlok vagy bármilyen más típusú fájlt vagy erőforrást, amely a modul részét képező részét képezi. Az egy lehetővé tévő parancsprogramok esetén a modul mappa üzenet katalógus-fájlokat is tartalmaz. A modul mappába való felvételekor egy jegyzékfájl hivatkozhat a több fájl egyetlen egységként a jegyzékfájl hivatkozik.
+  A jegyzékfájlok nem szükségesek egy modulhoz. A modulok hivatkozhatnak parancsfájlokra (. ps1), parancsfájl-modulok (. psm1), jegyzékfájlok (. psd1), a formázás és a fájltípusok (. ps1xml), a parancsmag és a szolgáltató szerelvények (. dll), az erőforrás-fájlok, a súgófájlok, a honosított fájlok, illetve bármilyen más típusú fájl vagy erőforrás, amelyek a modul részeként van csomagolva. Egy nemzetközi parancsfájl esetében a modul mappája az üzenet-katalógus fájljainak készletét is tartalmazza. Ha jegyzékfájlt ad hozzá a modul mappájához, a jegyzékfájlra hivatkozva több fájlt is hivatkozhat egyetlen egységként.
 
-  A jegyzékfájl magát a következő kategóriákba tartozó információkat ismerteti:
+  A jegyzékfájl a következő adatkategóriákat ismerteti:
 
-- A modul, például a modul verziószámát, a szerző és a leírás metaadatait.
+- A modul metaadatai, például a modul verziószáma, a szerző és a leírás.
 
-- A modul, például a Windows PowerShell-verzió, a közös nyelvi futtatókörnyezet (CLR) verzió és a szükséges modulok importálásához szükséges előfeltételeket.
+- A modul importálásához szükséges előfeltételek, például a Windows PowerShell verziója, a közös nyelvi futtatókörnyezet (CLR) verziója és a szükséges modulok.
 
-- Feldolgozási irányelveknek, például a parancsfájlokat, formátumokat és típusok feldolgozásához.
+- Feldolgozási irányelvek, például a feldolgozandó parancsfájlok, formátumok és típusok feldolgozása.
 
-- Korlátozások a tagok a modul exportálni, például a aliasok, a functions, a változók és a parancsmagok segítségével exportálja.
+- Az exportálni kívánt modul tagjainak korlátozásai, például az aliasok, függvények, változók és az exportálandó parancsmagok.
 
-  További információkért lásd: [írásával, egy PowerShell modul Manifest](./how-to-write-a-powershell-module-manifest.md).
+  További információ: [a PowerShell-modul írása](./how-to-write-a-powershell-module-manifest.md).
 
-## <a name="storing-and-installing-a-module"></a>Tárolásához és a egy modul telepítése
+## <a name="storing-and-installing-a-module"></a>Modul tárolása és telepítése
 
-Miután létrehozott egy parancsfájl, a bináris vagy jegyzékfájl modul, mentheti munkáját egy helyen, hogy mások is hozzáférhetnek. Például a modul is tárolja a rendszer mappában, ahol telepítve van a Windows PowerShell vagy egy felhasználó-mappában tárolhatja.
+Miután létrehozott egy parancsfájlt, bináris vagy jegyzékfájl-modult, mentheti a munkáját egy olyan helyen, ahol mások is hozzáférhetnek. A modult például a rendszermappában lehet tárolni, ahol a Windows PowerShell telepítve van, vagy egy felhasználói mappában is tárolható.
 
-Általánosan fogalmazva, megadhatja, hogy hol telepítenie kell a modult a tárolt elérési utak egyikének használatával a `$ENV:PSModulePath` változó. Az elérési utak egyik azt jelenti, hogy PowerShell automatikusan megkeresheti és betölteni a modult, amikor a felhasználó hozzá hívást a kódra összpontosítsanak. Ha a modul valahol máshol tárolja, explicit módon engedélyezheti, PowerShell és a helyen a modul egy paraméter megadásával tudja hívásakor `Install-Module`.
+Általánosságban elmondható, hogy hol kell telepítenie a modult a `$ENV:PSModulePath` változóban tárolt egyik útvonal használatával. Ezen elérési utak egyikének használata azt jelenti, hogy a PowerShell automatikusan megkeresi és betölti a modult, amikor egy felhasználó meghívja azt a kódban. Ha a modult máshol tárolja, explicit módon megadhatja a PowerShellt, ha a hívásakor `Install-Module`paraméterként átadja a modul helyét.
 
-Függetlenül attól, a mappa elérési útját, a neve a *alap* a modul (ModuleBase), és a parancsfájl nevét, a bináris vagy jegyzékfájl modul fájlnak kell lennie ugyanaz, mint a modul mappa nevét, a következő kivételekkel:
+Függetlenül attól, hogy a mappa elérési útját a modul (Modulebase típusból) *alapjaként* kell megadni, és a parancsfájl, a bináris vagy a jegyzékfájl-modul nevének meg kell egyeznie a modul mappájával, a következő kivételekkel:
 
-- A dinamikus modulok által létrehozott a `New-Module` parancsmag használatával kell nevű a `Name` a parancsmag.
+- A `New-Module` parancsmag által létrehozott dinamikus modulok a parancsmag `Name` paraméterének használatával elnevezhető.
 
-- A szerelvény objektumok által importált modulok a  **`Import-Module` -szerelvény** parancs neve alapján a következő szintaxist: `"dynamic_code_module_" + assembly.GetName()`.
+- A szerelvény-objektumokból a  **`Import-Module` -Assembly** paranccsal importált modulok neve az alábbi szintaxisnak megfelelően történik: `"dynamic_code_module_" + assembly.GetName()`.
 
-  További információkért lásd: [egy PowerShell-modul telepítése](./installing-a-powershell-module.md) és [módosítása a PSModulePath telepítési útvonal](./modifying-the-psmodulepath-installation-path.md).
+  További információ: PowerShell- [modul telepítése](./installing-a-powershell-module.md) és [a PSModulePath telepítési útvonalának módosítása](./modifying-the-psmodulepath-installation-path.md).
 
-## <a name="module-cmdlets-and-variables"></a>A modul parancsmagjai és a változók
+## <a name="module-cmdlets-and-variables"></a>Modul-parancsmagok és változók
 
-A következő parancsmagokat és a változók által biztosított Windows PowerShell létrehozási és-modulok kezelésére.
+A következő parancsmagokat és változókat a Windows PowerShell nyújtja a modulok létrehozásához és kezeléséhez.
 
-[Új modul](/powershell/module/Microsoft.PowerShell.Core/New-Module) parancsmag Ez a parancsmag létrehoz egy új dinamikus modult, amely csak a memóriában. A modul jön létre a parancsprogram-blokkot, és annak exportált tagjait, például a functions és a változókat, azonnal elérhetők a munkamenetben, és elérhetők maradnak, amíg a munkamenetek bezárásakor.
+[New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) parancsmag ez a parancsmag egy új dinamikus modult hoz létre, amely csak a memóriában van. A modul egy parancsfájl-blokkból jön létre, és az exportált tagjai, például a függvények és változók azonnal elérhetők a munkamenetben, és a munkamenet lezárása előtt továbbra is elérhetők maradnak.
 
-[Új ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) parancsmag Ez a parancsmag létrehoz egy új modul jegyzékfájlt (.psd1) fájlt, tölti fel az értékeket, és menti az Alkalmazásjegyzék-fájl a megadott elérési úthoz. Ez a parancsmag is használható sablont szeretne létrehozni egy modul alkalmazásjegyzék is manuálisan kell módosítani.
+[New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) parancsmag ez a parancsmag létrehoz egy új modul manifest (. psd1) fájlt, feltölti annak értékeit, és menti a jegyzékfájlt a megadott elérési útra. Ezzel a parancsmaggal létrehozható egy modul jegyzékfájl-sablonja, amely manuálisan is kitölthető.
 
-[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) parancsmag Ez a parancsmag hozzáad egy vagy több modulja a jelenlegi munkamenet.
+Az [import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) parancsmag ez a parancsmag egy vagy több modult helyez el az aktuális munkamenethez.
 
-[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) parancsmag a ennek a parancsmagnak a modulok, amelyeket vagy a jelenlegi munkamenet importálhatók, amelyek adatait kérdezi le.
+A [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) parancsmag ez a parancsmag adatokat kér le az aktuális munkamenetbe importálható vagy importált modulokról.
 
-[Exportálás – ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) parancsmag ezt a parancsmagot, adja meg a parancsfájl modul (.psm1), vagy egy dinamikus modulból használatával létrehozott kiexportált modul tagok (például a parancsmagok, függvények, változók és aliasok) a `New-Module` parancsmagot.
+[Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) parancsmag ez a parancsmag megadja a modul azon tagjait (például parancsmagokat, függvényeket, változókat és aliasokat), amelyek egy parancsfájl-modul (. psm1) fájlból vagy egy, a `New-Module` parancsmag használatával létrehozott dinamikus modulból vannak exportálva.
 
-[Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) parancsmag ezt a parancsmagot modulok távolít el az aktuális munkamenet.
+[Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) parancsmag ez a parancsmag eltávolítja a modulokat az aktuális munkamenetből.
 
-[Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) Ez a parancsmag ellenőrzi, hogy egy moduljegyzék pontosan használt összetevők leírása olyan modul azáltal, hogy a fájlokat, a modul jegyzékfájlt (.psd1) szereplő ténylegesen található a megadott elérési utak a parancsmagot.
+[Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) parancsmag ez a parancsmag ellenőrzi, hogy egy modul jegyzékfájlja pontosan leírja-e egy modul összetevőit annak ellenőrzésével, hogy a modul jegyzékfájljában (. psd1) felsorolt fájlok ténylegesen léteznek-e a megadott elérési utakon.
 
-$PSScriptRoot Ez a változó tartalmazza a könyvtárban, amelyből a parancsfájl modul folyamatban van. Lehetővé teszi a szkriptek a modul elérési útja egyéb erőforrásainak elérésére.
+$PSScriptRoot ez a változó tartalmazza azt a könyvtárat, amelyből a parancsfájl-modult végrehajtja. Lehetővé teszi, hogy a parancsfájlok a modul elérési útját használják más erőforrások eléréséhez.
 
-$env: PSModulePath ezt a környezeti változót, hogy mely Windows PowerShell modulok tárolva vannak a könyvtárak listáját tartalmazza. Windows PowerShell modulok importálása automatikusan, és frissítéskor modulok Súgó-témaköröket a változó értékét használja.
+$env:P SModulePath ez a környezeti változó tartalmazza azon könyvtárak listáját, amelyekben a Windows PowerShell-modulok vannak tárolva. A Windows PowerShell ennek a változónak az értékét használja a modulok automatikus importálásakor és a modulok súgójának frissítése során.
 
 ## <a name="see-also"></a>Lásd még:
 

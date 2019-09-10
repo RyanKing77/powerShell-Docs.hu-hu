@@ -1,5 +1,5 @@
 ---
-title: Windows PowerShell-példakód |} A Microsoft Docs
+title: Windows PowerShell-mintakód | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,50 +8,51 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
 caps.latest.revision: 7
-ms.openlocfilehash: 4154aeb22b5dde7806f3af133559d471e82bb981
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: e9df44b17453e9f73f6eb388d9cbc8a69fce4ba2
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733775"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70847994"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell – Mintakód
 
-A Windows SDK-n keresztül Windows PowerShell® minták érhetők el. Ez a szakasz tartalmazza a mintakódot, amely a Windows SDK-minták az szerepel.
+A Windows PowerShell® minták a Windows SDKon keresztül érhetők el. Ez a szakasz tartalmazza a Windows SDK-mintákban található mintakód kódját.
 
 > [!NOTE]
-> A Windows SDK telepítve van, amikor egy **minták** könyvtár jön létre, amelyben a Windows PowerShell-minták elérhetővé válnak. Egy tipikus telepítési könyvtár nem **C:\Program Files\Microsoft SDKs\Windows\v6.0**. Indítsa el a Windows PowerShell és a típus **"cd Samples\SysMgmt\PowerShell"** keresse meg a Windows PowerShell-minták könyvtárat. Ez a dokumentum a Windows PowerShell-minták könyvtár nevezzük  **\<PowerShell-minták >** .
+> Ha a Windows SDK telepítve van, a rendszer létrehoz egy **minta** könyvtárat, amelyben az összes Windows PowerShell-minta elérhetővé válik. Egy tipikus telepítési könyvtár a **C:\Program Files\Microsoft SDKs\Windows\v6.0**.
+> Indítsa el a Windows PowerShellt, és írja be a **"CD Samples\SysMgmt\PowerShell"** parancsot a Windows PowerShell-minták könyvtárának megkereséséhez. Ebben a dokumentumban a Windows PowerShell-példákat tartalmazó könyvtárat  **\<PowerShell-minták >** nevezzük.
 
-## <a name="sample-code-listing"></a>Minta kódlista
+## <a name="sample-code-listing"></a>Mintakód listázása
 
 |Mintakód|Leírás|
 |-----------------|-----------------|
-|[AccessDbProviderSample01 Code Sample](./accessdbprovidersample01-code-sample.md)|Ez az, hogy a szolgáltató ismertetett [alapvető Windows PowerShell-szolgáltató létrehozása](./creating-a-basic-windows-powershell-provider.md).|
-|[AccessDbProviderSample02 kódminta](./accessdbprovidersample02-code-sample.md)|Ez az, hogy a szolgáltató ismertetett [egy Windows PowerShell-meghajtó szolgáltató létrehozása](./creating-a-windows-powershell-drive-provider.md).|
-|[AccessDbProviderSample03 kódminta](./accessdbprovidersample03-code-sample.md)|Ez az, hogy a szolgáltató ismertetett [egy Windows PowerShell elem szolgáltató létrehozása](./creating-a-windows-powershell-item-provider.md).|
-|[AccessDbProviderSample04 kódminta](./accessdbprovidersample04-code-sample.md)|Ez az, hogy a szolgáltató ismertetett [létrehozása a Windows PowerShell-tároló szolgáltató](./creating-a-windows-powershell-container-provider.md).|
-|[AccessDbProviderSample05 Code Sample](./accessdbprovidersample05-code-sample.md)|Ez az, hogy a szolgáltató ismertetett [egy Windows PowerShell navigációs szolgáltató létrehozása](./creating-a-windows-powershell-navigation-provider.md).|
-|[AccessDbProviderSample06 kódminta](./accessdbprovidersample06-code-sample.md)|Ez az, hogy a szolgáltató ismertetett [létrehozása a Windows PowerShell a Tartalomszolgáltatón](./creating-a-windows-powershell-content-provider.md).|
-|[GetProc01 Kódminták](./getproc01-code-samples.md)|Ez az alapszintű `Get-Process` parancsmag minta ismertetett [létrehozásához az első parancsmag](../cmdlet/creating-a-cmdlet-without-parameters.md).|
-|[GetProc02 Kódminták](./getproc02-code-samples.md)|Ez a `Get-Process` parancsmag minta ismertetett [a folyamat parancssori bemenet-paramétereket adunk hozzá](../cmdlet/adding-parameters-that-process-command-line-input.md).|
-|[GetProc03 Kódminták](./getproc03-code-samples.md)|Ez a `Get-Process` parancsmag minta ismertetett [a folyamat folyamat bemeneti paramétereket adunk hozzá](../cmdlet/adding-parameters-that-process-pipeline-input.md).|
-|[GetProc04 Kódminták](./getproc04-code-samples.md)|Ez a `Get-Process` parancsmag minta ismertetett [hozzáadása Nonterminating hibajelentés a parancsmaghoz](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
-|[GetProc05 Kódminták](./getproc05-code-samples.md)|Ez `Get-Process` parancsmag hasonlít a parancsmag ismertetett [hozzáadása Nonterminating hibajelentés a parancsmaghoz](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
-|[StopProc01 Kódminták](./stopproc01-code-samples.md)|Ez a `Stop-Process` parancsmag minta ismertetett [létrehozása egy parancsmag, hogy módosítja a rendszer](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md).|
-|[StopProcessSample04 Kódminták](./stopprocesssample04-code-samples.md)|Ez a `Stop-Process` parancsmag minta ismertetett [paraméterkészlettel hozzáadása egy parancsmag](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
-|[Runspace01 Kódminták](./runspace01-code-samples.md)|Ezek a Kódminták a futási térben ismertetett [létrehozása egy Console Application, hogy fut a megadott parancs](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).|
-|[Runspace02 Kódminták](./runspace02-code-samples.md)|Ebben a példában a [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) végrehajtásához az osztály a `Get-Process` parancsmag szinkron módon történik.|
-|[RunSpace03 Kódminták](./runspace03-code-samples.md)|Ezek a Kódminták a futási térben ismertetett [létrehozása egy Console Application, hogy fut a megadott parancsfájl](fd).|
-|[RunSpace04 Kódminták](./runspace04-code-samples.md)|Ez a kódminta egy futási teret használ, az a [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) osztály egy parancsfájlt, amely a leállítási hibát generál végrehajtásához.|
-|[RunSpace05 kódminta](./runspace05-code-sample.md)|Ez a forráskódja számára a Runspace05 minta ismertetett [konfigurálása a futási teret használ RunspaceConfiguration](https://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2).|
-|[RunSpace06 kódminta](./runspace06-code-sample.md)|Ez a forráskódja számára a Runspace06 minta ismertetett [konfigurálása egy futási teret egy Windows PowerShell beépülő modullal](https://msdn.microsoft.com/en-us/a7289ee8-9732-49ee-91c7-d533e9538b83).|
-|[RunSpace07 kódminta](./runspace07-code-sample.md)|Ez a forráskódja számára a Runspace07 minta ismertetett [egy alkalmazást, hogy hozzáadja konzolparancsok egy folyamat létrehozása](https://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e).|
-|[RunSpace08 kódminta](./runspace08-code-sample.md)|Ez a forráskódja számára a Runspace08 minta ismertetett [létrehozása egy Console Application, hogy hozzáadja a parancs paraméterei](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba).|
-|[RunSpace09 kódminta](./runspace09-code-sample.md)|Ez a forráskódja számára a Runspace09 minta ismertetett [egy Console Application, hogy meghívja a folyamat aszinkron módon létrehozása](https://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47).|
-|[RunSpace10 kódminta](./runspace10-code-sample.md)|Ez az a Runspace10 minta, amely egy parancsmag hozzáadja a forráskód [System.Management.Automation.Runspaces.Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) és a módosított konfigurációs információk segítségével a futási térben létrehozása.|
+|[AccessDbProviderSample01-kód minta](./accessdbprovidersample01-code-sample.md)|Ez az [alapszintű Windows PowerShell-szolgáltató létrehozása](./creating-a-basic-windows-powershell-provider.md)című témakörben leírt szolgáltató.|
+|[AccessDbProviderSample02-kód minta](./accessdbprovidersample02-code-sample.md)|Ezt a szolgáltatót a [Windows PowerShell-meghajtó létrehozásával](./creating-a-windows-powershell-drive-provider.md)kapcsolatban ismertetjük.|
+|[AccessDbProviderSample03-kód minta](./accessdbprovidersample03-code-sample.md)|Ezt a szolgáltatót a [Windows PowerShell-elemek szolgáltatójának létrehozása](./creating-a-windows-powershell-item-provider.md)című témakörben találja.|
+|[AccessDbProviderSample04-kód minta](./accessdbprovidersample04-code-sample.md)|Ez az a szolgáltató, amely a [Windows PowerShell-tároló szolgáltatójának létrehozása](./creating-a-windows-powershell-container-provider.md)című témakörben található.|
+|[AccessDbProviderSample05-kód minta](./accessdbprovidersample05-code-sample.md)|Ez a [Windows PowerShell navigációs szolgáltató létrehozása](./creating-a-windows-powershell-navigation-provider.md)című témakörben leírt szolgáltató.|
+|[AccessDbProviderSample06-kód minta](./accessdbprovidersample06-code-sample.md)|Ezt a szolgáltatót a [Windows PowerShell-tartalomszolgáltató létrehozása](./creating-a-windows-powershell-content-provider.md)című témakörben találja.|
+|[GetProc01](./getproc01-code-samples.md)|Ez az `Get-Process` [első parancsmag létrehozása](../cmdlet/creating-a-cmdlet-without-parameters.md)című témakörben leírt alapszintű parancsmag.|
+|[GetProc02](./getproc02-code-samples.md)|Ez az `Get-Process` a parancsmag-minta, [amely a parancssori bevitelt feldolgozó paraméterek hozzáadását](../cmdlet/adding-parameters-that-process-command-line-input.md)ismerteti.|
+|[GetProc03](./getproc03-code-samples.md)|Ez az `Get-Process` a parancsmag-minta, [amely a folyamat bemenetét feldolgozó paraméterek hozzáadását](../cmdlet/adding-parameters-that-process-pipeline-input.md)írja le.|
+|[GetProc04](./getproc04-code-samples.md)|Ez a `Get-Process` parancsmagnak a nem [lezáró hibajelentések a parancsmaghoz való hozzáadása](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)című részében ismertetett példa.|
+|[GetProc05](./getproc05-code-samples.md)|Ez `Get-Process` a parancsmag hasonló ahhoz a parancsmaghoz, amelyet a nem [lezáró hibajelentések hozzáadása a parancsmaghoz](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)című témakör ismertet.|
+|[StopProc01](./stopproc01-code-samples.md)|Ez a `Stop-Process` parancsmag a rendszer módosítását [módosító parancsmag létrehozása](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md)című példa.|
+|[StopProcessSample04](./stopprocesssample04-code-samples.md)|Ez az `Stop-Process` a parancsmag, amely a [paramétereket adja hozzá a parancsmaghoz](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
+|[Runspace01](./runspace01-code-samples.md)|Ezek a RunSpace a [megadott parancsot futtató konzolos alkalmazás létrehozása](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)című témakörben leírt példák.|
+|[Runspace02](./runspace02-code-samples.md)|Ez a példa a [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) osztályt használja a `Get-Process` parancsmag szinkron módon történő végrehajtásához.|
+|[RunSpace03](./runspace03-code-samples.md)|Ezek a RunSpace a "megadott parancsfájlt futtató konzolszoftver létrehozása" című témakörben leírt példák.|
+|[RunSpace04](./runspace04-code-samples.md)|Ez egy RunSpace, amely a [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) osztályt használja egy olyan parancsfájl végrehajtásához, amely megszakítási hibát generál.|
+|[RunSpace05-kód minta](./runspace05-code-sample.md)|Ez a Runspace05 minta forráskódja, amely a RunSpace a [RunspaceConfiguration használatával történő konfigurálását](https://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2)ismerteti.|
+|[RunSpace06-kód minta](./runspace06-code-sample.md)|Ez a Runspace06 minta forráskódja, amely a [RunSpace Windows PowerShell beépülő modullal történő konfigurálását](https://msdn.microsoft.com/en-us/a7289ee8-9732-49ee-91c7-d533e9538b83)ismerteti.|
+|[RunSpace07-kód minta](./runspace07-code-sample.md)|Ez a Runspace07 minta forráskódja, [amely egy olyan konzol-alkalmazás létrehozása, amely parancsokat vesz fel egy folyamathoz](https://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e).|
+|[RunSpace08-kód minta](./runspace08-code-sample.md)|Ez a Runspace08 minta forráskódja, [amely egy parancs paramétereinek](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba)hozzáadására szolgáló konzol-alkalmazás létrehozása című témakörben szerepel.|
+|[RunSpace09-kód minta](./runspace09-code-sample.md)|Ez a Runspace09-minta forráskódja, amely a folyamat aszinkron meghívására szolgáló [konzolos alkalmazás létrehozása](https://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47)című témakörben szerepel.|
+|[RunSpace10-kód minta](./runspace10-code-sample.md)|Ez a Runspace10 minta forráskódja, amely egy parancsmagot hoz létre a [System. Management. Automation. futási terek. Runspaceconfiguration fájlhoz](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) , majd a módosított konfigurációs adatokat használja a RunSpace létrehozásához.|
 
 ## <a name="see-also"></a>Lásd még:
 
-[Windows PowerShell programozói útmutató](./windows-powershell-programmer-s-guide.md)
+[A Windows PowerShell programozói útmutatója](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

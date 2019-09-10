@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 (VB.NET) kódminta |} A Microsoft Docs
+title: RunSpace03 (VB.NET) kód minta | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,23 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 6c625c325e491135af3e5c8d58eead62e89ccb4a
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 0931fe7a606b09475084203eaf9fa263ea1cd5f8
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67734985"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848011"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>Runspace03 (VB.NET) – Kódminta
 
-Itt van a VB.NET forráskódot a konzolalkalmazást ismertetett [létrehozása egy Console Application, hogy fut a megadott parancsfájl](fd). Ebben a példában a [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) osztály egy parancsfájlt, amely lekéri feldolgozni kívánt folyamat nevét a szkriptbe a lista információkat végrehajtásához. Bemutatja, hogyan adhatók át a bemeneti objektumok egy parancsfájlt, és hogyan kérheti le a hiba objektumokat, valamint a kimeneti objektumok.
+Itt látható a "megadott parancsfájlt futtató VB.NET létrehozása" című témakörben ismertetett konzolos alkalmazás forráskódja. Ez a példa a [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) osztályt használja egy olyan parancsfájl végrehajtásához, amely lekéri a parancsfájlba átadott négyszínes nevek listájának feldolgozási adatait. Bemutatja, hogyan adhatók át bemeneti objektumok egy parancsfájlnak, valamint hogyan lehet lekérdezni a hibákat, valamint a kimeneti objektumokat.
 
 > [!NOTE]
-> Letöltheti a VB.NET forrásfájl (runspace03.vb) ehhez a mintához Windows szoftverek fejlesztési Kit for Windows Vista és a Microsoft .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
->
-> A letöltött forrásfájlok érhetők el a  **\<PowerShell-minták >** könyvtár.
+> A mintához tartozó VB.NET-forrásfájl (runspace03. VB) a Windows Vista és a Microsoft .NET Framework 3,0 Runtime Components Windows szoftverfejlesztői készletének használatával tölthető le. A letöltési utasításokért lásd: a [Windows PowerShell telepítése és a Windows POWERSHELL SDK letöltése](/powershell/developer/installing-the-windows-powershell-sdk).
+> A letöltött forrásfájlok a  **\<PowerShell-minták >** könyvtárban érhetők el.
 
-## <a name="code-sample"></a>Kódminta
+## <a name="code-sample"></a>Mintakód
 
 ```vb
 Imports System
@@ -108,6 +107,6 @@ End Namespace
 
 ## <a name="see-also"></a>Lásd még:
 
-[Windows PowerShell programozói útmutató](./windows-powershell-programmer-s-guide.md)
+[A Windows PowerShell programozói útmutatója](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

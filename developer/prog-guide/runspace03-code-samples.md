@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 Kódminták |} A Microsoft Docs
+title: RunSpace03 | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,31 +8,30 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6b8303d-e868-4dd0-bbbb-ed2e6d8f2f76
 caps.latest.revision: 6
-ms.openlocfilehash: 985fbc6f53ca204e700da821fcd08187edc3b60f
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: bfb8d036a787ecf2f3afc394fca83ff0bf027af9
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67735027"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848051"
 ---
 # <a name="runspace03-code-samples"></a>Runspace03 – Kódminták
 
-Íme a mintakódokat, a futási térben ismertetett [létrehozása egy Console Application, hogy fut a megadott parancsfájl](fd).
+Itt láthatók a "megadott parancsfájlt futtató konzolszoftver létrehozása" című témakörben leírt RunSpace.
 
 > [!NOTE]
-> Letöltheti a C# forrás fájlt (runspace03.cs) és a VB.NET forrásfájl (runspace03.vb) ehhez a mintához a Microsoft Windows szoftverek fejlesztési Kit for Windows Vista és a Microsoft .NET Framework 3.0 futtatási összetevői. Letöltési útmutatás: [Windows PowerShell telepítése és a Windows PowerShell SDK letöltési](/powershell/developer/installing-the-windows-powershell-sdk).
->
-> A letöltött forrásfájlok érhetők el a  **\<PowerShell-minták >** könyvtár.
+> A következőhöz letölthető C# a forrásfájl (runspace03.cs) és a VB.net forrásfájl (runspace03. VB) a Microsoft Windows szoftverfejlesztői készlettel a Windows Vista és a Microsoft .NET Framework 3,0 Runtime Components használatával. A letöltési utasításokért lásd: a [Windows PowerShell telepítése és a Windows POWERSHELL SDK letöltése](/powershell/developer/installing-the-windows-powershell-sdk).
+> A letöltött forrásfájlok a  **\<PowerShell-minták >** könyvtárban érhetők el.
 
-Teljes minta kódot a következő témakörökben talál.
+A teljes mintakód a következő témakörökben található.
 
-|Nyelv|Témakör|
-|--------------|-----------|
-|C#|[RunSpace03 (C#) kódminta](./runspace03-csharp-code-sample.md)|
-|VB.NET|[RunSpace03 (VB.NET) Code Sample](./runspace03-vb-net-code-sample.md)|
+| Nyelv |                                 Témakör                                 |
+| -------- | --------------------------------------------------------------------- |
+| C#       | [RunSpace03 (C#) kód minta](./runspace03-csharp-code-sample.md)     |
+| VB.NET   | [RunSpace03 (VB.NET) kód minta](./runspace03-vb-net-code-sample.md) |
 
 ## <a name="see-also"></a>Lásd még:
 
-[Windows PowerShell programozói útmutató](./windows-powershell-programmer-s-guide.md)
+[A Windows PowerShell programozói útmutatója](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
