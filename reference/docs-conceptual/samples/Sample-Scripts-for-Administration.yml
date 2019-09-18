@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: <span data-ttu-id="77a9a-101">Parancsfájlok a rendszerfelügyelethez</span><span class="sxs-lookup"><span data-stu-id="77a9a-101">Sample scripts for system administration</span></span>
-summary: <span data-ttu-id="77a9a-102">Ilyenek például a rendszerek PowerShell használatával történő felügyeletére szolgáló forgatókönyvek.</span><span class="sxs-lookup"><span data-stu-id="77a9a-102">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+title: Parancsfájlok a rendszerfelügyelethez
+summary: Ilyenek például a rendszerek PowerShell használatával történő felügyeletére szolgáló forgatókönyvek.
 metadata:
-  title: <span data-ttu-id="77a9a-103">Parancsfájlok a rendszerfelügyelethez</span><span class="sxs-lookup"><span data-stu-id="77a9a-103">Sample scripts for system administration</span></span>
-  description: <span data-ttu-id="77a9a-104">Ilyenek például a rendszerek PowerShell használatával történő felügyeletére szolgáló forgatókönyvek.</span><span class="sxs-lookup"><span data-stu-id="77a9a-104">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+  title: Parancsfájlok a rendszerfelügyelethez
+  description: Ilyenek például a rendszerek PowerShell használatával történő felügyeletére szolgáló forgatókönyvek.
   ms.topic: landing-page
   author: sdwheeler
   ms.author: sewhee
@@ -15,85 +15,85 @@ metadata:
   ms.lasthandoff: 09/05/2019
   ms.locfileid: "70392636"
 landingContent:
-- title: <span data-ttu-id="77a9a-105">Objektumok használata</span><span class="sxs-lookup"><span data-stu-id="77a9a-105">Working with objects</span></span>
+- title: Objektumok használata
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="77a9a-106">Objektum szerkezetének megtekintése</span><span class="sxs-lookup"><span data-stu-id="77a9a-106">Viewing object structure</span></span>
+    - text: Objektum szerkezetének megtekintése
       url: ./viewing-object-structure--get-member-.md
-    - text: <span data-ttu-id="77a9a-107">Az objektum részeinek kiválasztása</span><span class="sxs-lookup"><span data-stu-id="77a9a-107">Selecting parts of object</span></span>
+    - text: Az objektum részeinek kiválasztása
       url: ./selecting-parts-of-objects--select-object-.md
-    - text: <span data-ttu-id="77a9a-108">Objektumok szűrése a folyamatban</span><span class="sxs-lookup"><span data-stu-id="77a9a-108">Filtering objects in the pipeline</span></span>
+    - text: Objektumok szűrése a folyamatban
       url: ./removing-objects-from-the-pipeline--where-object-.md
-    - text: <span data-ttu-id="77a9a-109">Objektumok rendezése</span><span class="sxs-lookup"><span data-stu-id="77a9a-109">Sorting objects</span></span>
+    - text: Objektumok rendezése
       url: ./sorting-objects.md
-    - text: <span data-ttu-id="77a9a-110">Feladat megismétlése több objektumhoz</span><span class="sxs-lookup"><span data-stu-id="77a9a-110">Repeating a task for multiple objects</span></span>
+    - text: Feladat megismétlése több objektumhoz
       url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
-    - text: <span data-ttu-id="77a9a-111">.NET-és COM-objektumok létrehozása</span><span class="sxs-lookup"><span data-stu-id="77a9a-111">Creating .NET and COM objects</span></span>
+    - text: .NET-és COM-objektumok létrehozása
       url: ./creating-.net-and-com-objects--new-object-.md
-    - text: <span data-ttu-id="77a9a-112">Statikus osztályok és metódusok használata</span><span class="sxs-lookup"><span data-stu-id="77a9a-112">Using static classes and methods</span></span>
+    - text: Statikus osztályok és metódusok használata
       url: ./using-static-classes-and-methods.md
-    - text: <span data-ttu-id="77a9a-113">WMI-objektumok lékérése – Get-WmiObject</span><span class="sxs-lookup"><span data-stu-id="77a9a-113">Getting WMI objects - Get-WmiObject</span></span>
+    - text: WMI-objektumok lékérése – Get-WmiObject
       url: ./getting-wmi-objects--get-wmiobject-.md
-- title: <span data-ttu-id="77a9a-114">Számítógépek kezelése</span><span class="sxs-lookup"><span data-stu-id="77a9a-114">Managing computers</span></span>
+- title: Számítógépek kezelése
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="77a9a-115">A számítógép állapotának módosítása</span><span class="sxs-lookup"><span data-stu-id="77a9a-115">Changing computer state</span></span>
+    - text: A számítógép állapotának módosítása
       url: ./changing-computer-state.md
-    - text: <span data-ttu-id="77a9a-116">Adatgyűjtés a számítógépekről</span><span class="sxs-lookup"><span data-stu-id="77a9a-116">Collecting information about computers</span></span>
+    - text: Adatgyűjtés a számítógépekről
       url: ./collecting-information-about-computers.md
-    - text: <span data-ttu-id="77a9a-117">Get-WinEvent lekérdezések létrehozása FilterHashtable használatával</span><span class="sxs-lookup"><span data-stu-id="77a9a-117">Creating Get-WinEvent queries with FilterHashtable</span></span>
+    - text: Get-WinEvent lekérdezések létrehozása FilterHashtable használatával
       url: ./creating-get-winEvent-queries-with-filterhashtable.md
-- title: <span data-ttu-id="77a9a-118">Folyamatok kezelése & szolgáltatásokkal</span><span class="sxs-lookup"><span data-stu-id="77a9a-118">Managing processes & services</span></span>
+- title: Folyamatok kezelése & szolgáltatásokkal
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="77a9a-119">Folyamatok kezelése folyamatparancsmagokkal</span><span class="sxs-lookup"><span data-stu-id="77a9a-119">Managing processes with process cmdlets</span></span>
+    - text: Folyamatok kezelése folyamatparancsmagokkal
       url: ./managing-processes-with-process-cmdlets.md
-    - text: <span data-ttu-id="77a9a-120">Szolgáltatások kezelése</span><span class="sxs-lookup"><span data-stu-id="77a9a-120">Managing services</span></span>
+    - text: Szolgáltatások kezelése
       url: ./managing-services.md
-    - text: <span data-ttu-id="77a9a-121">Windows PowerShell-illesztők kezelése</span><span class="sxs-lookup"><span data-stu-id="77a9a-121">Managing Windows PowerShell drives</span></span>
+    - text: Windows PowerShell-illesztők kezelése
       url: ./managing-windows-powershell-drives.md
-    - text: <span data-ttu-id="77a9a-122">Nyomtatók használata</span><span class="sxs-lookup"><span data-stu-id="77a9a-122">Working with printers</span></span>
+    - text: Nyomtatók használata
       url: ./working-with-printers.md
-    - text: <span data-ttu-id="77a9a-123">Hálózatkezelési feladatok végrehajtása</span><span class="sxs-lookup"><span data-stu-id="77a9a-123">Performing networking tasks</span></span>
+    - text: Hálózatkezelési feladatok végrehajtása
       url: ./performing-networking-tasks.md
-    - text: <span data-ttu-id="77a9a-124">Szoftvertelepítések használata</span><span class="sxs-lookup"><span data-stu-id="77a9a-124">Working with software installations</span></span>
+    - text: Szoftvertelepítések használata
       url: ./working-with-software-installations.md
-    - text: <span data-ttu-id="77a9a-125">PowerShell-parancs dekódolása futó folyamatból</span><span class="sxs-lookup"><span data-stu-id="77a9a-125">Decode a PowerShell command from a running process</span></span>
+    - text: PowerShell-parancs dekódolása futó folyamatból
       url: ./decode-powershell-command-from-a-running-process.md
-- title: <span data-ttu-id="77a9a-126">A kimenet használata</span><span class="sxs-lookup"><span data-stu-id="77a9a-126">Working with output</span></span>
+- title: A kimenet használata
   linkLists:
   - linkListType: concept
     links:
-    - text: <span data-ttu-id="77a9a-127">Adatátirányítás az Out-\* parancsmagokkal</span><span class="sxs-lookup"><span data-stu-id="77a9a-127">Redirecting data with Out-\* cmdlets</span></span>
+    - text: Adatátirányítás az Out-* parancsmagokkal
       url: ./redirecting-data-with-out---cmdlets.md
-    - text: <span data-ttu-id="77a9a-128">A kimeneti nézet módosítása formázási parancsokkal</span><span class="sxs-lookup"><span data-stu-id="77a9a-128">Using format commands to change output view</span></span>
+    - text: A kimeneti nézet módosítása formázási parancsokkal
       url: ./using-format-commands-to-change-output-view.md
-- title: <span data-ttu-id="77a9a-129">Meghajtók & fájlok kezelése</span><span class="sxs-lookup"><span data-stu-id="77a9a-129">Managing drives & files</span></span>
+- title: Meghajtók & fájlok kezelése
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="77a9a-130">Aktuális hely kezelése</span><span class="sxs-lookup"><span data-stu-id="77a9a-130">Managing current location</span></span>
+    - text: Aktuális hely kezelése
       url: ./managing-current-location.md
-    - text: <span data-ttu-id="77a9a-131">Fájlok és mappák használata</span><span class="sxs-lookup"><span data-stu-id="77a9a-131">Working with files and folders</span></span>
+    - text: Fájlok és mappák használata
       url: ./working-with-files-and-folders.md
-    - text: <span data-ttu-id="77a9a-132">Fájlmappák és beállításkulcsok használata</span><span class="sxs-lookup"><span data-stu-id="77a9a-132">Working with files folders and registry keys</span></span>
+    - text: Fájlmappák és beállításkulcsok használata
       url: ./working-with-files-folders-and-registry-keys.md
-    - text: <span data-ttu-id="77a9a-133">Beállításjegyzék-bejegyzések használata</span><span class="sxs-lookup"><span data-stu-id="77a9a-133">Working with registry entries</span></span>
+    - text: Beállításjegyzék-bejegyzések használata
       url: ./working-with-registry-entries.md
-    - text: <span data-ttu-id="77a9a-134">Beállításkulcsok használata</span><span class="sxs-lookup"><span data-stu-id="77a9a-134">Working with registry keys</span></span>
+    - text: Beállításkulcsok használata
       url: ./working-with-registry-keys.md
-- title: <span data-ttu-id="77a9a-135">Felhasználói felületi elemek létrehozása</span><span class="sxs-lookup"><span data-stu-id="77a9a-135">Creating UI elements</span></span>
+- title: Felhasználói felületi elemek létrehozása
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: <span data-ttu-id="77a9a-136">Egyéni beviteli mező létrehozása</span><span class="sxs-lookup"><span data-stu-id="77a9a-136">Creating a custom input box</span></span>
+    - text: Egyéni beviteli mező létrehozása
       url: ./creating-a-custom-input-box.md
-    - text: <span data-ttu-id="77a9a-137">Grafikus dátumválasztó létrehozása</span><span class="sxs-lookup"><span data-stu-id="77a9a-137">Creating a graphical date picker</span></span>
+    - text: Grafikus dátumválasztó létrehozása
       url: ./creating-a-graphical-date-picker.md
-    - text: <span data-ttu-id="77a9a-138">Többszörös kijelölésű listamezők</span><span class="sxs-lookup"><span data-stu-id="77a9a-138">Multiple selection list boxes</span></span>
+    - text: Többszörös kijelölésű listamezők
       url: ./multiple-selection-list-boxes.md
-    - text: <span data-ttu-id="77a9a-139">Elemek kiválasztása egy listamezőből</span><span class="sxs-lookup"><span data-stu-id="77a9a-139">Selecting items from a list box</span></span>
+    - text: Elemek kiválasztása egy listamezőből
       url: ./selecting-items-from-a-list-box.md
